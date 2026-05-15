@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html lang="az">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DAAB — Xaricdə Yaşayan Azərbaycanlı Alimlər</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+/* ===== merged from style block-1 ===== */
+:root{
+  --ink:#102033;--muted:#5f7188;--soft:#eef7fc;--line:rgba(27,91,137,.14);
+  --blue-900:#0d1f3c;--blue-800:#133f63;--blue-700:#1a5f8a;--blue-600:#1a6fa8;--blue-400:#2e9fd4;
+  --gold:#c89b38;--gold-soft:#f6df9c;--white:#fff;
+  --shadow:0 18px 50px rgba(13,31,60,.13);--shadow2:0 26px 80px rgba(13,31,60,.22);
+  --radius:24px;--radius2:18px;--max:1220px;--row-hover:rgba(46,159,212,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:#f4f9fd;line-height:1.58;min-height:100vh;overflow-x:hidden;font-size:14px}body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 10% 8%,rgba(46,159,212,.25),transparent 30%),radial-gradient(circle at 90% 10%,rgba(200,155,56,.18),transparent 28%),linear-gradient(180deg,#f8fcff 0%,#eef7fc 46%,#f8fbfd 100%)}body:after{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(26,111,168,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(26,111,168,.055) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,transparent 0%,#000 18%,#000 78%,transparent 100%)}a{color:inherit}.nav-strip{position:sticky;top:0;z-index:500;background:rgba(12,38,64,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.15);box-shadow:0 10px 30px rgba(13,31,60,.18)}.nav-inner{max-width:1440px;margin:auto;height:68px;display:flex;align-items:center;gap:14px;padding:0 22px;overflow-x:auto;scrollbar-width:none}.nav-inner::-webkit-scrollbar{display:none}.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:max-content}.brand-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#fff,#d0eefb);display:grid;place-items:center;color:var(--blue-700);font-family:Playfair Display,serif;font-weight:800;box-shadow:0 8px 22px rgba(0,0,0,.16)}.nav-brand-text{font-weight:800;color:#fff;line-height:1.15;font-size:13px;letter-spacing:.01em}.nav-divider{width:1px;height:30px;background:rgba(255,255,255,.2);flex:0 0 auto}.nav-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:rgba(255,255,255,.82);font-weight:700;font-size:12px;white-space:nowrap;border:1px solid transparent;border-radius:999px;padding:8px 11px;transition:.22s ease;text-transform:none;letter-spacing:0}.nav-link:hover,.nav-link.active{color:white;background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.18)}.nav-search-btn{margin-left:auto;flex-shrink:0;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 12px;color:rgba(255,255,255,.88);cursor:pointer;font-family:inherit;font-size:12px;font-weight:800}.nav-search-btn kbd{font-size:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:5px;padding:1px 5px;color:rgba(255,255,255,.75)}
+#search-overlay{display:none;position:fixed;inset:0;background:rgba(13,31,60,.72);backdrop-filter:blur(8px);z-index:9999;align-items:flex-start;justify-content:center;padding:10vh 16px 0}#search-overlay.open{display:flex}.search-modal{background:#fff;border-radius:24px;width:min(720px,94vw);box-shadow:0 28px 90px rgba(13,31,60,.38);overflow:hidden;border:1px solid rgba(255,255,255,.7)}.search-input-row{display:flex;align-items:center;padding:0 20px;border-bottom:1px solid var(--line);gap:12px}.search-icon-large{color:var(--blue-600);font-size:20px}#search-input{flex:1;border:none;outline:none;font-family:inherit;font-size:18px;color:var(--ink);padding:20px 0;background:transparent}.search-close-btn{background:#eef7fc;border:1px solid var(--line);border-radius:999px;padding:5px 10px;font-size:12px;color:var(--muted);cursor:pointer;font-family:inherit;font-weight:800}.search-results{max-height:420px;overflow-y:auto;padding:8px 0}.search-empty,.search-prompt{padding:30px 24px;text-align:center;color:#8aa0b7}.search-result-item{display:flex;align-items:center;gap:16px;padding:13px 24px;text-decoration:none;color:var(--ink);transition:.15s}.search-result-item:hover,.search-result-item.focused{background:#f0f8fd}.sri-icon{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--blue-700),var(--blue-400));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}.sri-body{flex:1;min-width:0}.sri-title{font-weight:800;font-size:14px}.sri-desc{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sri-tag{font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-700);background:#d0eefb;padding:4px 9px;border-radius:999px;white-space:nowrap}.search-hint{padding:10px 24px;font-size:11px;color:var(--muted);border-top:1px solid var(--line);display:flex;gap:16px;flex-wrap:wrap}.search-hint kbd{display:inline-block;background:#eef7fc;border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-family:monospace;font-size:10px;color:#445566;margin-right:3px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--blue-900) 0%,var(--blue-700) 56%,var(--blue-400) 100%);color:white}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 18%,rgba(255,255,255,.18),transparent 28%),radial-gradient(circle at 15% 80%,rgba(246,223,156,.18),transparent 35%)}.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:54px 54px;mask-image:radial-gradient(circle at center,#000,transparent 78%)}.hero-inner{max-width:var(--max);margin:auto;position:relative;z-index:1;text-align:left;min-height:360px;padding:72px 24px 86px;display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}.hero-copy{max-width:760px}.hero-badge{display:inline-flex;gap:9px;align-items:center;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.12);border-radius:999px;padding:7px 14px;font-weight:800;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:white;margin-bottom:18px}.hero-badge:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold-soft);box-shadow:0 0 0 7px rgba(246,223,156,.14)}h1{font-family:Playfair Display,Georgia,serif;font-size:clamp(36px,5vw,64px);line-height:1.03;margin:0 0 18px;letter-spacing:-.035em;color:white;text-shadow:none}.hero-sub{font-size:18px;color:rgba(255,255,255,.82);max-width:720px;margin:0;white-space:normal}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:18px 14px;text-align:center;backdrop-filter:blur(18px);box-shadow:0 18px 45px rgba(13,31,60,.14)}.stat-card:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}.stat-val{display:block;color:var(--gold-soft);font-size:32px;font-family:Playfair Display,serif;font-weight:800;line-height:1}.stat-label{font-size:10px;color:rgba(255,255,255,.78);font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-top:6px}
+.main{max-width:var(--max);margin:-46px auto 0;padding:0 24px 70px;position:relative;z-index:2}.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px;background:rgba(255,255,255,.9);border:1px solid rgba(255,255,255,.72);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;backdrop-filter:blur(14px)}.search-wrap{position:relative;flex:1;min-width:260px}.search-wrap svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#8ba2b8;pointer-events:none}input[type="search"]{width:100%;background:#f3f9fd;border:1px solid var(--line);border-radius:999px;color:var(--ink);font-size:14px;padding:13px 16px 13px 44px;outline:none;transition:.2s;font-family:inherit}input[type="search"]:focus{border-color:var(--blue-400);box-shadow:0 0 0 4px rgba(46,159,212,.14);background:white}.filter-group{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.sel-wrap{position:relative;display:inline-flex;align-items:center}select{background:#f3f9fd;border:1px solid var(--line);border-radius:999px;color:var(--blue-800);font-size:13px;font-weight:800;padding:12px 34px 12px 14px;outline:none;cursor:pointer;appearance:none;min-width:160px;font-family:inherit;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%23133f63' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center}.sel-wrap.active select{border-color:var(--blue-400);background:#e6f4fb;padding-left:14px}.sel-wrap.active:before{content:"";position:absolute;top:-3px;right:-3px;width:9px;height:9px;background:var(--gold);border-radius:50%;border:2px solid #fff;z-index:2}.sel-clear{display:none;position:absolute;right:25px;top:50%;transform:translateY(-50%);background:var(--blue-600);border:none;border-radius:50%;color:#fff;font-size:11px;width:17px;height:17px;cursor:pointer;z-index:3}.sel-wrap.active .sel-clear{display:flex;align-items:center;justify-content:center}.btn-clear{display:inline-flex;align-items:center;gap:7px;background:white;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:13px;font-weight:800;padding:11px 16px;cursor:pointer;white-space:nowrap;font-family:inherit}.btn-clear:before{content:'↺';font-size:15px}.btn-clear:hover{background:#fff2f2;border-color:#f3a4a4;color:#a52222}.result-info{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;background:rgba(255,255,255,.84);border:1px solid rgba(26,111,168,.1);border-radius:18px;padding:12px 16px}.result-count{font-size:13px;color:var(--muted);font-weight:700}.result-count span{color:var(--blue-700);font-weight:900}.table-wrap{background:rgba(255,255,255,.9);border:1px solid rgba(26,111,168,.12);border-radius:24px;overflow:hidden;box-shadow:0 16px 46px rgba(13,31,60,.12);backdrop-filter:blur(12px)}.table-scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}thead{background:linear-gradient(135deg,var(--blue-900),var(--blue-600));border-bottom:3px solid var(--gold)}th{padding:14px 15px;text-align:center;font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#fff;white-space:nowrap;user-select:none;cursor:pointer;position:relative;border-right:1px solid rgba(255,255,255,.18)}th:last-child{border-right:none}th:hover{color:var(--gold-soft)}th.sortable:after{content:' ⇅';opacity:.45;font-size:10px}th.asc:after{content:' ↑';opacity:1;color:var(--gold-soft)}th.desc:after{content:' ↓';opacity:1;color:var(--gold-soft)}tbody tr{border-bottom:1px solid rgba(26,111,168,.1);transition:.12s}tbody tr:hover{background:var(--row-hover)}td{padding:8px 15px;vertical-align:middle;color:var(--muted);line-height:1.35;border-right:1px solid rgba(26,111,168,.1)}td:last-child{border-right:none}.col-no{width:calc(3ch + 30px);text-align:center}td.col-no{color:#9badbd;font-weight:800;font-size:12px}.col-name{width:calc(20ch + 30px)}td.col-name{font-weight:900;color:var(--blue-700)}td.col-name a.name-link{color:inherit;text-decoration:none;border-bottom:1px solid rgba(26,111,168,.28)}td.col-name a.name-link:hover{color:var(--blue-900);border-color:var(--gold)}.col-cntry{width:calc(15ch + 30px)}.col-spec{width:calc(22ch + 30px)}.col-degree{width:calc(10ch + 30px)}.col-gender{width:calc(7ch + 30px)}.col-email{width:calc(25ch + 30px)}a.email-link{display:inline-flex;align-items:center;color:var(--blue-700);background:#e5f4fb;border:1px solid rgba(26,111,168,.14);border-radius:999px;padding:4px 10px;font-size:11.5px;font-weight:700;text-decoration:none;word-break:break-all}a.email-link:hover{background:#d0eefb;border-color:var(--blue-400)}.pagination{display:flex;align-items:center;justify-content:center;gap:5px;padding:16px 20px;border-top:1px solid rgba(26,111,168,.12);background:#f3f9fd}.page-btn{background:#fff;border:1px solid var(--line);border-radius:10px;color:var(--muted);font-size:13px;font-weight:800;padding:7px 12px;cursor:pointer;min-width:36px;transition:.15s}.page-btn:hover{background:#d0eefb;border-color:var(--blue-400);color:var(--blue-700)}.page-btn.active{background:var(--blue-700);border-color:var(--blue-700);color:#fff}.page-btn:disabled{opacity:.3;cursor:not-allowed}.page-ellipsis{color:#aaa;padding:0 3px}.no-results{text-align:center;padding:56px 20px;color:#8899aa;font-size:15px}.no-results svg{display:block;margin:0 auto 12px;opacity:.3}th .col-resizer{position:absolute;right:0;top:0;bottom:0;width:5px;cursor:col-resize;background:transparent}.footer-pro{background:linear-gradient(135deg,#102033,#1a6fa8);color:white;position:relative;overflow:hidden}.footer-pro:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 0%,rgba(255,255,255,.14),transparent 30%)}.footer-inner{max-width:var(--max);margin:auto;padding:28px 24px;position:relative}.footer-brand{text-align:center;margin-bottom:18px}.footer-brand h3{font-family:Playfair Display,serif;margin:0;font-size:24px}.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.footer-col{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px;text-align:center;backdrop-filter:blur(10px)}.footer-title{font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--gold-soft);margin-bottom:9px}.footer-item,.footer-address,.footer-leader{font-size:13px;color:rgba(255,255,255,.82);margin:0 0 6px;line-height:1.35}.footer-item{display:flex;align-items:center;justify-content:center;gap:6px}.footer-item a,.footer-address a{color:white;text-decoration:none}.footer-bottom{text-align:center;padding:12px 20px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;color:rgba(255,255,255,.66)}@media(max-width:1060px){.hero-inner{grid-template-columns:1fr}.stats{max-width:640px}.filter-group{width:100%}}@media(max-width:960px){.col-email{display:none}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:760px){.nav-inner{height:62px;padding:0 14px}.hero-inner{padding:48px 18px 80px}.main{padding:0 16px 48px}.toolbar{padding:16px}.filter-group,.sel-wrap,select,.btn-clear{width:100%}.stats,.footer-grid{grid-template-columns:1fr}.col-spec,.col-degree{display:none}.footer-col{padding:14px}.nav-brand-text{font-size:12px}}
+
+
+/* ===== merged from style converted-inline-styles ===== */
+/* Former inline styles converted to classes for consistency */
+.inline-style-001{min-width:72px !important;padding:5px 24px 5px 10px !important;}
+.inline-style-002{display:none !important;}
+</style>
+<meta content="Xaricdə yaşayan Azərbaycanlı alimlərin DAAB kataloqu." name="description"/><link href="daab-common.css" rel="stylesheet"/></head>
+<body><div aria-label="Axtarış" aria-modal="true" id="search-overlay" role="dialog">
+<div class="search-modal">
+<div class="search-input-row"><span class="search-icon-large">🔍</span><input autocomplete="off" id="search-input" placeholder="Axtarış üçün yazmağa başlayın…" spellcheck="false" type="text"/><button class="search-close-btn" id="search-close-btn">ESC</button></div>
+<div class="search-results" id="search-results"><div class="search-prompt">Axtarmaq üçün yuxarıdakı xanaya mətn daxil edin</div></div>
+<div class="search-hint"><span><kbd>↑</kbd><kbd>↓</kbd> naviqasiya</span><span><kbd>↵</kbd> aç</span><span><kbd>Esc</kbd> bağla</span></div>
+</div>
+</div><a class="skip" href="#content">Məzmuna keç</a>
+<!-- ══ SEARCH OVERLAY ══ -->
+<nav aria-label="Əsas naviqasiya" class="nav-strip"><div class="nav-inner"><a aria-label="DAAB ana səhifə" class="nav-brand" href="index.html"><span class="brand-mark">D</span><span class="nav-brand-text">Dünya Azərbaycanlı<br/>Alimlər Birliyi</span></a><div class="nav-divider"></div><a class="nav-link" href="index.html">🏠 Ana Səhifə</a><a class="nav-link" href="Mission_Vision_Values_AZ.html">💎 Missiyamız</a><a class="nav-link" href="Activities_AZ.html">📰 Fəaliyyətimiz</a><a class="nav-link" href="Founding_Necessity_AZ.html">⚡ Təsis Zərurəti</a><a class="nav-link" href="Istanbul_Founding_Meeting_AZ.html">🗺️ İstanbul Toplantısı</a><a class="nav-link active" href="Scientists_AZ.html">🌐 Alimlərimiz</a><a class="nav-link" href="Executive_Board_AZ.html">🎓 İdarə Heyəti</a><a class="nav-link" href="Charter_AZ.html">📜 Nizamnamə</a><a class="nav-link" href="Membership_Terms_AZ.html">✒️ Üzvlük</a></div></nav>
+<header class="hero">
+<div class="hero-inner">
+<section class="hero-copy">
+<div class="hero-badge">DAAB alimlər kataloqu</div>
+<h1>Xaricdə Yaşayan Azərbaycanlı Alimlər</h1>
+<p class="hero-sub">Siyahıdakı alimlər 2024-cü ilin 9–11 sentyabr tarixlərində Bakıda keçirilmiş forumda iştirak etmişlər. Kataloq ölkə, ixtisas, elmi dərəcə və digər meyarlar üzrə axtarış və süzgəcdən keçirmə imkanı verir.</p>
+</section>
+<aside aria-label="Kataloq statistikası" class="stats" id="statsRow"></aside>
+</div>
+</header>
+<main class="main" id="content">
+<div class="toolbar">
+<div class="search-wrap">
+<svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15">
+<circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+<input autocomplete="off" id="searchInput" placeholder="Ad, ölkə, ixtisas, elmi dərəcə, e-poçt…" type="search"/>
+</div>
+<div class="filter-group">
+<div class="sel-wrap">
+<select id="filterCountry"><option value="">🌍 Ölkə</option></select>
+<button class="sel-clear" data-for="filterCountry" title="Filtri sil">×</button>
+</div>
+<div class="sel-wrap">
+<select id="filterIxtilas"><option value="">📚 İxtisas</option></select>
+<button class="sel-clear" data-for="filterIxtilas" title="Filtri sil">×</button>
+</div>
+<div class="sel-wrap">
+<select id="filterDegree"><option value="">🎓 Elmi dərəcə</option></select>
+<button class="sel-clear" data-for="filterDegree" title="Filtri sil">×</button>
+</div>
+<div class="sel-wrap">
+<select id="filterGender"><option value="">👤 Cins</option><option value="kişi">Kişi</option><option value="qadın">Qadın</option></select>
+<button class="sel-clear" data-for="filterGender" title="Filtri sil">×</button>
+</div>
+<button class="btn-clear" id="clearFilters">Hamısını sıfırla</button>
+</div>
+</div>
+<div class="result-info">
+<div class="result-count" id="resultCount"></div>
+<div class="result-count">Cədvəldə sətirlərin sayı: 
+      <select class="inline-style-001" id="perPageSel">
+<option value="20">20</option>
+<option selected="" value="50">50</option>
+<option value="100">100</option>
+<option value="999999">Hamısı</option>
+</select>
+</div>
+</div>
+<div class="table-wrap">
+<div class="table-scroll">
+<table>
+<thead>
+<tr>
+<th class="col-no">№</th>
+<th class="sortable col-name" data-col="ad_soyad">Ad, Soyadı</th>
+<th class="sortable col-cntry" data-col="yasadigi_olke">Yaşadığı Ölkə</th>
+<th class="sortable col-spec" data-col="ixtilas">İxtisası</th>
+<th class="sortable col-degree" data-col="elmi_derece">Elmi<br/>Dərəcəsi</th>
+<th class="sortable col-gender" data-col="cinsi">Cinsi</th>
+<th class="col-email">E-poçt</th>
+</tr>
+</thead>
+<tbody id="tableBody"></tbody>
+</table>
+</div>
+<div class="no-results inline-style-002" id="noResults">
+<svg fill="none" height="44" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="44">
+<circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+<line x1="8" x2="14" y1="11" y2="11"></line>
+</svg>
+      Heç bir nəticə tapılmadı. Filtri sıfırlayın.
+    </div>
+<div class="pagination" id="pagination"></div>
+</div>
+</main>
+<script>
+const DATA = [{"say": 1, "yasadigi_olke": "ABŞ", "ad_soyad": "Asəf Salamov", "email": "aasalamov@lbl.gov", "ixtilas": "Biologiya", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/asaf-salamov?usp=sharing"}, {"say": 2, "yasadigi_olke": "ABŞ", "ad_soyad": "Aytəkin Hüseynli ", "email": "ahuseynli@wustl.edu", "ixtilas": "Sosial Siyasət", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/aytakin-huseynli?usp=sharing"}, {"say": 3, "yasadigi_olke": "ABŞ", "ad_soyad": "Cəmilə Cavadova-Spitzberg", "email": "aamfusa@gmail.com", "ixtilas": "Musiqiçi", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/jamila-javadova?usp=sharing"}, {"say": 4, "yasadigi_olke": "ABŞ", "ad_soyad": "Elşad Allahyarov ", "email": "exa54@case.edu", "ixtilas": "Fizika", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/eldar-veliyev?usp=sharing"}, {"say": 5, "yasadigi_olke": "ABŞ", "ad_soyad": "Sevinc Məmmədova", "email": "mammadova.sevinj@gmail.com", "ixtilas": "Təhsil", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/sevinj-mammadova?usp=sharing"}, {"say": 6, "yasadigi_olke": "ABŞ", "ad_soyad": "Şuay Abdullayev", "email": "shuay.abdullayev@gmail.com", "ixtilas": "Kimya", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/shuay-abdullayev?usp=sharing"}, {"say": 7, "yasadigi_olke": "ABŞ", "ad_soyad": "Toğrul Talişinski ", "email": "talishinskiy.toghrul@gmail.com", "ixtilas": "Həkim", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/togrul-talishinskiy?usp=sharing"}, {"say": 8, "yasadigi_olke": "Almaniya", "ad_soyad": "Məsud Əfəndiyev", "email": "messoud.efendiyev@gmail.com", "ixtilas": "Riyaziyyat", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/messoud-efendiyev?usp=sharing"}, {"say": 9, "yasadigi_olke": "Almaniya", "ad_soyad": "Mirzə Mütəllimov", "email": "m.mutallimov@yahoo.com", "ixtilas": "Həkim", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/mirza-mutallimov?usp=sharing"}, {"say": 10, "yasadigi_olke": "Almaniya", "ad_soyad": "Rasim Cənnətəliyev", "email": "rasimbaku@yahoo.com", "ixtilas": "Mühəndis", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/rasim-jannataliyev?usp=sharing"}, {"say": 11, "yasadigi_olke": "Almaniya", "ad_soyad": "Rauf Abdullayev", "email": "rauf_abdullayev@yahoo.fr", "ixtilas": "Kompüter Elmləri", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/rauf-abdullayev?usp=sharing"}, {"say": 12, "yasadigi_olke": "Almaniya", "ad_soyad": "Sevda Kərimova", "email": "sevda.aydin.k@gmail.com", "ixtilas": "Hüquq", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/sevda-karimova?usp=sharing"}, {"say": 13, "yasadigi_olke": "Almaniya", "ad_soyad": "Toğrul Kərimov", "email": "toghs@mpi-sws.org", "ixtilas": "Kompüter Elmləri", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/togrul-karimov?usp=sharing"}, {"say": 14, "yasadigi_olke": "Almaniya", "ad_soyad": "Valeh Rüstəmov", "email": "rustamov.valeh@gmail.com", "ixtilas": "Həkim", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/valeh-rustamov?usp=sharing"}, {"say": 15, "yasadigi_olke": "Almaniya", "ad_soyad": "Xədicə Zeynalova", "email": "x.zeynalova@gmail.com", "ixtilas": "Musiqiçi", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/xadica-zeynalova?usp=sharing"}, {"say": 16, "yasadigi_olke": "Almaniya", "ad_soyad": "Yaşar Musayev", "email": "Mussa_98@hotmail.de", "ixtilas": "Mühəndis", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/yashar-musayev?usp=sharing"}, {"say": 17, "yasadigi_olke": "Avstriya", "ad_soyad": "Bəxtiyar Siracov", "email": "b.sirajov@hotmail.com", "ixtilas": "Kompüter Elmləri", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/bakhtiyar-siracov/%C3%B6z%C3%BCm-haqq%C4%B1nda#h.advjj0p0u9sy"}, {"say": 18, "yasadigi_olke": "Avstriya", "ad_soyad": "Dinara Abbasova", "email": "dinara_abasova@hotmail.com", "ixtilas": "Kimya", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/dinara-abbasova?usp=sharing"}, {"say": 19, "yasadigi_olke": "Avstriya", "ad_soyad": "Kamal Əkbərov", "email": "kamal.akbarov@gmail.com", "ixtilas": "Həkim", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/kamal-akbarov?usp=sharing"}, {"say": 20, "yasadigi_olke": "Avstriya", "ad_soyad": "Murad Abuzərli", "email": "murad.abuzarli@univie.ac.at", "ixtilas": "Fizika", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/murad-abuzarli?usp=sharing"}, {"say": 21, "yasadigi_olke": "Birləşmiş Krallıq", "ad_soyad": "Qərib Mürşüdov", "email": "garib@mrc-lmb.cam.ac.uk", "ixtilas": "Biologiya", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/qarib-murshudov?usp=sharing"}, {"say": 22, "yasadigi_olke": "Birləşmiş Krallıq", "ad_soyad": "Vəhid Gəruslu", "email": " vehid.geruslu@gmail.com", "ixtilas": "Kompüter Elmləri", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/vahid-geruslu?usp=sharing"}, {"say": 23, "yasadigi_olke": "Estoniya", "ad_soyad": "Xaqani Qayıblı", "email": "hakan@ut.ee", "ixtilas": "Ədəbiyyat", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/xaqani-qayibli?usp=sharing"}, {"say": 24, "yasadigi_olke": "Fransa", "ad_soyad": "Aynur Quliyeva", "email": "aynur_guliyeva@yahoo.com", "ixtilas": "Kimya", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/aynur-quliyeva?usp=sharing"}, {"say": 25, "yasadigi_olke": "Fransa", "ad_soyad": "Günel Səfərova", "email": "gunelsafarova@hotmail.com", "ixtilas": "İqtisadiyyat", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/gunel-safarova?usp=sharing"}, {"say": 26, "yasadigi_olke": "Fransa", "ad_soyad": "Reyhan Həsənova", "email": "reyhan.hasanova@gmail.com", "ixtilas": "Biologiya", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/reyhan-hasanova?usp=sharing"}, {"say": 27, "yasadigi_olke": "Gürcüstan", "ad_soyad": "Aygül İsayeva", "email": "isayevaaygul2003@yahoo.com", "ixtilas": "İqtisadiyyat", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/aygul-isayeva?usp=sharing"}, {"say": 28, "yasadigi_olke": "İsrail", "ad_soyad": "Lev Eppelbaum", "email": "levap@tauex.tau.ac.il", "ixtilas": "Geofizika", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/lev-eppelbaum?usp=sharing"}, {"say": 29, "yasadigi_olke": "İsrail", "ad_soyad": "Mark Vilen Applebaum", "email": "applebaum.mark@gmail.com", "ixtilas": "Riyaziyyat", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/mehdi-genceli-ismayilov?usp=sharing"}, {"say": 30, "yasadigi_olke": "İsveç", "ad_soyad": "Səadət Kərimi", "email": "saadat953@hotmail.com", "ixtilas": "Riyaziyyat", "elmi_derece": "Prof.Dr.", "cinsi": "qadın", "url": "https://sites.google.com/view/saadat-karimi?usp=sharing"}, {"say": 31, "yasadigi_olke": "İtaliya", "ad_soyad": "Zərifə Osmanlı", "email": "zerifeosmanli91@gmail.com", "ixtilas": "Bioinformatika", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/zarifa-osmanli?usp=sharing"}, {"say": 32, "yasadigi_olke": "Kanada", "ad_soyad": "İlham Axundov", "email": "iakhundo@uwaterloo.ca", "ixtilas": "Riyaziyyat", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/ilham-axundov?usp=sharing"}, {"say": 33, "yasadigi_olke": "Kanada", "ad_soyad": "Rıza Moridi", "email": "reza@rezamoridi.com", "ixtilas": "Fizika", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/reza-moridi?usp=sharing"}, {"say": 34, "yasadigi_olke": "Kanada", "ad_soyad": "Səbinə İsgəndərova", "email": "sabina@ualberta.net", "ixtilas": "Biologiya", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/sabina-isgandrova?usp=sharing"}, {"say": 35, "yasadigi_olke": "Kanada", "ad_soyad": "Yulduz Rəhimov", "email": "raguimov@yorku.ca", "ixtilas": "Riyaziyyat", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/yulduz-rahimov?usp=sharing"}, {"say": 36, "yasadigi_olke": "Koreya", "ad_soyad": "Rövşən İbrahimov", "email": "rovshanibrahimov@gmail.com", "ixtilas": "Beynəlxalq hüquq", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/rovshan-ibrahimov?usp=sharing"}, {"say": 37, "yasadigi_olke": "Meksika", "ad_soyad": "Natiq Atakişiyev", "email": "natig_atakishiyev@hotmail.com", "ixtilas": "Fizika", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/natiq-agakishiyev?usp=sharing"}, {"say": 38, "yasadigi_olke": "Misir", "ad_soyad": "Seymur Nəsirov", "email": "seymur.nasirov@gmail.com", "ixtilas": "Ərəb dili və ədəbiyyatı", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/seymur-nasirov?usp=sharing"}, {"say": 39, "yasadigi_olke": "Oman", "ad_soyad": "Səidə Xəlilova", "email": "Dr.Saidakhalilova@gmail.com", "ixtilas": "Musiqiçi", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/saida-xalilova?usp=sharing"}, {"say": 40, "yasadigi_olke": "Polşa", "ad_soyad": "Şəhriyar Muxtarov ", "email": "s.mukhtarov@vistula.edu.pl", "ixtilas": "İqtisadiyyat", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/shahriyar-muxtarov?usp=sharing"}, {"say": 41, "yasadigi_olke": "Qazaxıstan", "ad_soyad": "Akif Suleymanov", "email": "a.suleimanov@turan-edu.kz", "ixtilas": "Hüquq", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/akif-suleyman?usp=sharing"}, {"say": 42, "yasadigi_olke": "Qazaxıstan", "ad_soyad": "Arzu Qurbanova", "email": "arzu_gur@mail.ru", "ixtilas": "Ədəbiyyat", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/arzuqurbanova?usp=sharing"}, {"say": 43, "yasadigi_olke": "Qazaxıstan", "ad_soyad": "Tofiq Aydarov", "email": "tofik-750908@mail.ru", "ixtilas": "Mühəndis", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/tofiq-aydarov?usp=sharing"}, {"say": 44, "yasadigi_olke": "Qırğızıstan", "ad_soyad": "Akif Alaferdov", "email": "akif_allahverdi@mail.ru", "ixtilas": "Həkim", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/akif-alaferdov?usp=sharing"}, {"say": 45, "yasadigi_olke": "Rusiya Federasiyası", "ad_soyad": "Ağamalı Məmmədov", "email": "akmnauka@yandex.ru", "ixtilas": "Fəlsəfə, Hüquq", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/agamali-mammadov?usp=sharing"}, {"say": 46, "yasadigi_olke": "Rusiya Federasiyası", "ad_soyad": "Eldar Əhədov ", "email": "dolma60@yandex.ru ", "ixtilas": "Ədəbiyyat", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/elchin-badalov?usp=sharing"}, {"say": 47, "yasadigi_olke": "Rusiya Federasiyası", "ad_soyad": "Ələddin Allahverdiyev", "email": "aallahverdiyev@mail.ru", "ixtilas": "Riyaziyyat", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/elvin-afandi?usp=sharing"}, {"say": 48, "yasadigi_olke": "Rusiya Federasiyası", "ad_soyad": "Əliheydər Rəhimov ", "email": "ra50@mail.ru", "ixtilas": "Həkim", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/emil-ahmadov?usp=sharing"}, {"say": 49, "yasadigi_olke": "Rusiya Federasiyası", "ad_soyad": "Emil Əhmədov ", "email": "akhmedov.et@mipt.ru", "ixtilas": "Fizika", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/aliheydar-rahimov?usp=sharing"}, {"say": 50, "yasadigi_olke": "Rusiya Federasiyası", "ad_soyad": "İsmayıl Əliyev", "email": "aliev.05@mail.ru", "ixtilas": "İqtisadiyyat", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/ismayil-aliyev?usp=sharing"}, {"say": 51, "yasadigi_olke": "Rusiya Federasiyası", "ad_soyad": "Kamran Rüstəmov", "email": "aliev.05@mail.ru", "ixtilas": "Mühəndis", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/kamran-rustamov?usp=sharing"}, {"say": 52, "yasadigi_olke": "Rusiya Federasiyası", "ad_soyad": "Nigar Məsumova", "email": "masumova@mail.ru", "ixtilas": "İqtisadiyyat", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/nigar-masimova?usp=sharing"}, {"say": 53, "yasadigi_olke": "Rusiya Federasiyası", "ad_soyad": "Nizami Məmmədov", "email": "nizami-mamedov@mail.ru", "ixtilas": "Mühəndis", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/nizami-mammadov?usp=sharing"}, {"say": 54, "yasadigi_olke": "Rusiya Federasiyası", "ad_soyad": "Sevinc Əsgərova", "email": "s_askerova@yahoo.com", "ixtilas": "Həkim", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/sevinc-asgarova?usp=sharing"}, {"say": 55, "yasadigi_olke": "Rusiya Federasiyası", "ad_soyad": "Suleyman Allahverdiyev", "email": "suleyman.allakhverdiev@gmail.com", "ixtilas": "Fizika", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/suleyman-allahverdiyev?usp=sharing"}, {"say": 56, "yasadigi_olke": "Rusiya Federasiyası", "ad_soyad": "Vahid Qədimov", "email": "vkadymov@yandex.ru", "ixtilas": "Riyaziyyat", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/vahid-qadimov?usp=sharing"}, {"say": 57, "yasadigi_olke": "Rusiya Federasiyası", "ad_soyad": "Zahid Qocayev", "email": "fic51@mail.ru", "ixtilas": "Mühəndis", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/zahid-qocayev?usp=sharing"}, {"say": 58, "yasadigi_olke": "Səudiyyə Ərəbistanı", "ad_soyad": "Azər Abdullayev", "email": "aabdullayev@moh.sa.gov", "ixtilas": "Həkim", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/azer-abdullayev?usp=sharing#h.tak4ig9wjzvx"}, {"say": 59, "yasadigi_olke": "Səudiyyə Ərəbistanı", "ad_soyad": "Elvin Əfəndi", "email": "e.afandi@yahoo.com", "ixtilas": "İqtisadiyyat", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/aladdin-allahverdiyev?usp=sharing"}, {"say": 60, "yasadigi_olke": "Türkiyə", "ad_soyad": "Afina Barmanbay", "email": "afina.barmanbay@gmail.com", "ixtilas": "Ədəbiyyat", "elmi_derece": "PhD", "cinsi": "qadın", "url": "https://sites.google.com/view/afina-barmanbay/%C3%B6z%C3%BCm-haqq%C4%B1nda#h.y728qk470ax3"}, {"say": 61, "yasadigi_olke": "Türkiyə", "ad_soyad": "Cavid Qasımov", "email": "cavidahmedoglu@gmail.com", "ixtilas": "Tarix, Şərqşünaslıq", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/cavid-qasmov/%C3%B6z%C3%BCm-haqq%C4%B1nda#h.hfahuezd25c4"}, {"say": 62, "yasadigi_olke": "Türkiyə", "ad_soyad": "Əbulfəz Suleymanov", "email": "ebulfez.suleymanli@uskudar.edu.tr", "ixtilas": "Sosiologiya", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/elshad-allahyarov?usp=sharing"}, {"say": 63, "yasadigi_olke": "Türkiyə", "ad_soyad": "Elçin Bədəlov", "email": "elcinbedeloglu@gmail.com", "ixtilas": "Həkim", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/elchin-badalov/%C3%B6z%C3%BCm-haqq%C4%B1nda#h.tak4ig9wjzvx"}, {"say": 64, "yasadigi_olke": "Türkiyə", "ad_soyad": "Əmirullah Məhmədov ", "email": "mamedov@bilkent.edu.tr", "ixtilas": "Nanotexnologiya", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/amirulla-mammadov?usp=sharing"}, {"say": 65, "yasadigi_olke": "Türkiyə", "ad_soyad": "Hacıəli Nəcəfoğlu ", "email": "alinecef@hotmail.com", "ixtilas": "Kimya", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/hacali-necefoglu?usp=sharing"}, {"say": 66, "yasadigi_olke": "Türkiyə", "ad_soyad": "İlkin Gulusoy", "email": "ilkingulusoy@gmail.com", "ixtilas": "Türkologiya", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/ilkin-qulusoy?usp=sharing"}, {"say": 67, "yasadigi_olke": "Türkiyə", "ad_soyad": "İsmixan Bayramov", "email": "ismihan.bayramoglu@ieu.edu.tr", "ixtilas": "Riyaziyyat", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/ismixan-bayramov?usp=sharing"}, {"say": 68, "yasadigi_olke": "Türkiyə", "ad_soyad": "Makbulə Sabziyeva", "email": "makbulesabziyeva@anadolu.edu.tr", "ixtilas": "Ədəbiyyat", "elmi_derece": "Prof.Dr.", "cinsi": "qadın", "url": "https://sites.google.com/view/mark-applebaum?usp=sharing"}, {"say": 69, "yasadigi_olke": "Türkiyə", "ad_soyad": "Mehdi Ismayilov (Gəncəli)", "email": "mehdi.genceli@marmara.edu.tr", "ixtilas": "Türk Dili və Ədəbiyyatı", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/mehdi-genceli-ismayilov?usp=sharing"}, {"say": 70, "yasadigi_olke": "Türkiyə", "ad_soyad": "Mehmet Rıza Heyət", "email": "mrheyet@gmail.com", "ixtilas": "Türk Dili və Ədəbiyyatı", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/maqbula-sabziyeva?usp=sharing"}, {"say": 71, "yasadigi_olke": "Türkiyə", "ad_soyad": "Oruc Allahverdiyev", "email": "orucfarm@gmail.com", "ixtilas": "Farmakologiya", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/oruc-allahverdiyev?usp=sharing"}, {"say": 72, "yasadigi_olke": "Türkiyə", "ad_soyad": "Qafar Mehdiyev (Çaxmaxçı)", "email": "qafar56@gmail.com", "ixtilas": "Ermənişünaslıq", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/qafar-mehdiyev?usp=sharing"}, {"say": 73, "yasadigi_olke": "Türkiyə", "ad_soyad": "Ramin Əliyev", "email": "aliyevus@gmail.com", "ixtilas": "Psixologiya", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/ramin-aliyev?usp=sharing"}, {"say": 74, "yasadigi_olke": "Türkiyə", "ad_soyad": "Şahin Əhmədoğlu", "email": "sehmetoglu@hotmail.com", "ixtilas": "Tarix", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/shahin-ahmedoglu?usp=sharing"}, {"say": 75, "yasadigi_olke": "Türkiyə", "ad_soyad": "Saleh Sultansoy", "email": "ssultansoy@etu.edu.tr", "ixtilas": "Fizika", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/saleh-sultansoy?usp=sharing"}, {"say": 76, "yasadigi_olke": "Türkiyə", "ad_soyad": "Teymur Rzayev", "email": "teymurrr@gmail.com", "ixtilas": "Rəssam", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/teymur-rzayev?usp=sharing"}, {"say": 77, "yasadigi_olke": "Türkiyə", "ad_soyad": "Toğrul İsmayıl", "email": "togrul65@hotmail.com", "ixtilas": "Siyasi tarix", "elmi_derece": "Prof.Dr.", "cinsi": "kişi", "url": "https://sites.google.com/view/togrul-ismayil?usp=sharing"}, {"say": 78, "yasadigi_olke": "Türkiyə", "ad_soyad": "Varqa Kələntərov", "email": "vkalantarov@ku.edu.tr", "ixtilas": "Riyaziyyat", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/varqa-kalantarov?usp=sharing"}, {"say": 79, "yasadigi_olke": "Türkiyə", "ad_soyad": "Vəfa Qurban", "email": "vefa.kurban@ege.edu.tr", "ixtilas": "İqtisadiyyat", "elmi_derece": "Prof.Dr.", "cinsi": "qadın", "url": "https://sites.google.com/view/vefa-kurban?usp=sharing"}, {"say": 80, "yasadigi_olke": "Ukrayna", "ad_soyad": "Arif Quliyev", "email": "arifguliyev@ukr.net", "ixtilas": "Beynəlxalq hüquq", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/arif-quliyev?usp=sharing"}, {"say": 81, "yasadigi_olke": "Ukrayna", "ad_soyad": "Eldar Vəliyev", "email": " veliev51@gmail.com ", "ixtilas": "Mühəndis", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/eldar-ahadov?usp=sharing"}, {"say": 82, "yasadigi_olke": "Ukrayna", "ad_soyad": "Murad Ömərov", "email": "murad.omarov@nure.ua", "ixtilas": "Mühəndis", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/murad-omarov?usp=sharing"}, {"say": 83, "yasadigi_olke": "Yaponiya", "ad_soyad": "Xəlil Kələntər", "email": "gosx2020@gmail.com", "ixtilas": "Fizika", "elmi_derece": "PhD", "cinsi": "kişi", "url": "https://sites.google.com/view/xalil-kalantar?usp=sharing"}];
+
+
+// ── Azerbaijani alphabet sort ──
+const AZ_ALPHA = 'AaBbCcÇçDdEeƏəFfGgĞğHhXxIıİiJjKkQqLlMmNnOoÖöPpRrSsŞşTtUuÜüVvYyZz';
+const AZ_ORDER = {};
+[...AZ_ALPHA].forEach((ch, i) => { AZ_ORDER[ch] = i; });
+
+function azSort(arr) {
+  return [...arr].sort((a, b) => {
+    const as = String(a), bs = String(b);
+    for (let i = 0; i < Math.min(as.length, bs.length); i++) {
+      const ai = AZ_ORDER[as[i]] ?? 999, bi = AZ_ORDER[bs[i]] ?? 999;
+      if (ai !== bi) return ai - bi;
+    }
+    return as.length - bs.length;
+  });
+}
+
+function azCompare(a, b) {
+  const as = String(a||''), bs = String(b||'');
+  for (let i = 0; i < Math.max(as.length, bs.length); i++) {
+    if (i >= as.length) return -1;
+    if (i >= bs.length) return  1;
+    const ai = AZ_ORDER[as[i]] ?? 999, bi = AZ_ORDER[bs[i]] ?? 999;
+    if (ai !== bi) return ai - bi;
+  }
+  return 0;
+}
+
+let filtered=[...DATA], sortCol='ad_soyad', sortDir=1, page=1, perPage=50;
+const countries  = azSort([...new Set(DATA.map(r=>r.yasadigi_olke).filter(Boolean))]);
+const degrees    = azSort([...new Set(DATA.map(r=>(r.elmi_derece||'').trim()).filter(Boolean))]);
+const ixtisaslar = azSort([...new Set(DATA.map(r=>(r.ixtilas||'').trim()).filter(Boolean))]);
+
+countries.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;document.getElementById('filterCountry').appendChild(o);});
+degrees.forEach(d=>{const o=document.createElement('option');o.value=d;o.textContent=d;document.getElementById('filterDegree').appendChild(o);});
+ixtisaslar.forEach(x=>{const o=document.createElement('option');o.value=x;o.textContent=x;document.getElementById('filterIxtilas').appendChild(o);});
+
+// ── stats ──
+(function(){
+  const cCount=countries.length;
+  const males  =DATA.filter(r=>r.cinsi==='kişi').length;
+  const females=DATA.filter(r=>r.cinsi==='qadın').length;
+  const profs  =DATA.filter(r=>(r.elmi_derece||'').toLowerCase().includes('prof')).length;
+  const phds   =DATA.filter(r=>(r.elmi_derece||'').trim().toLowerCase().startsWith('phd')).length;
+  document.getElementById('statsRow').innerHTML=`
+    <div class="stat-card"><div class="stat-val">${DATA.length}</div><div class="stat-label">İştirakçı</div></div>
+    <div class="stat-card"><div class="stat-val">${cCount}</div><div class="stat-label">Ölkə</div></div>
+    <div class="stat-card"><div class="stat-val">${profs}</div><div class="stat-label">Prof.Dr.</div></div>
+    <div class="stat-card"><div class="stat-val">${phds}</div><div class="stat-label">PhD</div></div>
+    <div class="stat-card"><div class="stat-val">${males}</div><div class="stat-label">Kişi</div></div>
+    <div class="stat-card"><div class="stat-val">${females}</div><div class="stat-label">Qadın</div></div>
+  `;
+})();
+
+// ── filter ──
+function applyFilters(){
+  const q     =document.getElementById('searchInput').value.trim().toLowerCase();
+  const cntry =document.getElementById('filterCountry').value;  const degree=document.getElementById('filterDegree').value;
+  const gender=document.getElementById('filterGender').value;
+  const ixtilas=document.getElementById('filterIxtilas').value;
+  filtered=DATA.filter(r=>{
+    if(cntry   && r.yasadigi_olke!==cntry) return false;    if(degree  && (r.elmi_derece||'').trim()!==degree) return false;
+    if(gender  && r.cinsi!==gender)        return false;
+    if(ixtilas && (r.ixtilas||'').trim()!==ixtilas)   return false;
+    if(q){
+      const hay=[r.ad_soyad,r.yasadigi_olke,r.ixtilas,r.elmi_derece,r.cinsi,r.email].join(' ').toLowerCase();
+      if(!hay.includes(q)) return false;
+    }
+    return true;
+  });
+  if(sortCol){
+    filtered.sort((a,b)=> sortDir * azCompare(a[sortCol], b[sortCol]));
+  }
+  page=1; render();
+}
+
+// ── render ──
+function render(){
+  perPage=parseInt(document.getElementById('perPageSel').value);
+  const total=filtered.length,pages=perPage>=999999?1:Math.ceil(total/perPage);
+  if(page>pages) page=Math.max(1,pages);
+  const start=(page-1)*perPage,slice=filtered.slice(start,start+perPage);
+  document.getElementById('resultCount').innerHTML=
+    `<span>${total}</span> nəticə${total<DATA.length?' ('+DATA.length+' ümumi)':''}`;
+  const tbody=document.getElementById('tableBody');
+  const noRes=document.getElementById('noResults');
+  if(!slice.length){tbody.innerHTML='';noRes.style.display='block';}
+  else{noRes.style.display='none';tbody.innerHTML=slice.map((r,i)=>rowHTML(r,start+i+1)).join('');}
+  renderPagination(pages);
+}
+
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+
+function rowHTML(r,idx){  const email=(r.email||'').trim();
+  const gender=r.cinsi==='kişi'?'Kişi':r.cinsi==='qadın'?'Qadın':'—';
+  const deg=(r.elmi_derece||'').trim();
+  const nameCell = r.url
+    ? `<a class="name-link" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.ad_soyad)||'—'}</a>`
+    : `${esc(r.ad_soyad)||'—'}`;
+  return `<tr>
+    <td class="col-no">${idx}</td>
+    <td class="col-name">${nameCell}</td>
+    <td class="col-cntry">${esc(r.yasadigi_olke)||'—'}</td>
+    <td class="col-spec">${esc((r.ixtilas||'').trim())||'—'}</td>
+    <td class="col-degree">${esc(deg)||''}</td>
+    <td class="col-gender">${esc(gender)}</td>
+    <td class="col-email">${email?`<a class="email-link" href="mailto:${esc(email)}">${esc(email)}</a>`:'<span style="color:var(--text3)">—</span>'}</td>
+  </tr>`;
+}
+
+// ── pagination ──
+function renderPagination(pages){
+  const el=document.getElementById('pagination');
+  if(pages<=1){el.innerHTML='';return;}
+  const btn=(p,l,d=false,a=false)=>
+    `<button class="page-btn${a?' active':''}${d?' disabled':''}" ${d?'disabled':''} onclick="goPage(${p})">${l}</button>`;
+  let h=btn(page-1,'←',page===1);
+  const lo=Math.max(1,page-2),hi=Math.min(pages,page+2);
+  if(lo>1){h+=btn(1,'1');if(lo>2)h+='<span class="page-ellipsis">…</span>';}
+  for(let p=lo;p<=hi;p++)h+=btn(p,p,false,p===page);
+  if(hi<pages){if(hi<pages-1)h+='<span class="page-ellipsis">…</span>';h+=btn(pages,pages);}
+  h+=btn(page+1,'→',page===pages);
+  el.innerHTML=h;
+}
+function goPage(p){page=p;render();window.scrollTo({top:0,behavior:'smooth'});}
+
+// ── sort ──
+document.querySelectorAll('th[data-col]').forEach(th=>{
+  th.addEventListener('click',()=>{
+    const col=th.dataset.col;
+    if(sortCol===col) sortDir*=-1; else{sortCol=col;sortDir=1;}
+    document.querySelectorAll('th').forEach(t=>t.classList.remove('asc','desc'));
+    th.classList.add(sortDir===1?'asc':'desc');
+    applyFilters();
+  });
+});
+
+// ── events ──
+document.getElementById('searchInput').addEventListener('input',applyFilters);
+
+function updateFilterStyles() {
+  ['filterCountry','filterIxtilas','filterDegree','filterGender'].forEach(id => {
+    const el   = document.getElementById(id);
+    const wrap = el.closest('.sel-wrap');
+    if (wrap) wrap.classList.toggle('active', el.value !== '');
+  });
+}
+
+// individual × clear buttons
+document.querySelectorAll('.sel-clear').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById(btn.dataset.for).value = '';
+    updateFilterStyles();
+    applyFilters();
+  });
+});
+
+['filterCountry','filterIxtilas','filterDegree','filterGender'].forEach(id=>{
+  document.getElementById(id).addEventListener('change', () => { applyFilters(); updateFilterStyles(); });
+});
+document.getElementById('perPageSel').addEventListener('change',()=>{page=1;render();});
+document.getElementById('clearFilters').addEventListener('click',()=>{
+  document.getElementById('searchInput').value='';
+  ['filterCountry','filterIxtilas','filterDegree','filterGender'].forEach(id=>{
+    document.getElementById(id).value='';
+  });
+  updateFilterStyles();
+  document.querySelectorAll('th').forEach(t=>t.classList.remove('asc','desc'));
+  sortCol='ad_soyad';sortDir=1;filtered=[...DATA];page=1;
+  document.querySelector('th[data-col="ad_soyad"]').classList.add('asc');
+  render();
+});
+
+// mark default sort column header
+document.querySelector('th[data-col="ad_soyad"]').classList.add('asc');
+
+applyFilters();
+
+// ── Resizable columns ──
+function initResizableColumns() {
+  const ths = document.querySelectorAll('thead th');
+  ths.forEach(th => {
+    // set initial width explicitly so table-layout:fixed works
+    th.style.width = th.offsetWidth + 'px';
+    const resizer = document.createElement('div');
+    resizer.className = 'col-resizer';
+    th.appendChild(resizer);
+
+    let startX, startW;
+
+    resizer.addEventListener('mousedown', e => {
+      startX = e.clientX;
+      startW = th.offsetWidth;
+      resizer.classList.add('active');
+      document.body.style.cursor = 'col-resize';
+      document.body.style.userSelect = 'none';
+
+      const onMove = e => {
+        const newW = Math.max(40, startW + (e.clientX - startX));
+        th.style.width = newW + 'px';
+      };
+      const onUp = () => {
+        resizer.classList.remove('active');
+        document.body.style.cursor = '';
+        document.body.style.userSelect = '';
+        document.removeEventListener('mousemove', onMove);
+        document.removeEventListener('mouseup', onUp);
+      };
+      document.addEventListener('mousemove', onMove);
+      document.addEventListener('mouseup', onUp);
+      e.preventDefault();
+    });
+
+    // prevent sort trigger on resizer click
+    resizer.addEventListener('click', e => e.stopPropagation());
+  });
+}
+
+// re-init whenever table is re-rendered
+const _origRender = render;
+render = function() {
+  _origRender();
+  // widths are on thead ths which persist — no need to re-run
+};
+
+initResizableColumns();
+</script>
+<!-- FOOTER -->
+<footer class="footer-pro">
+<div class="footer-inner">
+<div class="footer-brand"><h3>Dünya Azərbaycanlı Alimlər Birliyi</h3></div>
+<div class="footer-grid">
+<div class="footer-col"><div class="footer-title">Əlaqə</div><div class="footer-item">✉ <a href="mailto:daad.waas2024@gmail.com">daad.waas2024@gmail.com</a></div><div class="footer-item">☎ <span>+90 555 147 46 74</span></div><div class="footer-item">🌐 <a href="https://daab-waas.org" target="_blank">daab-waas.org</a></div></div>
+<div class="footer-col"><div class="footer-title">Ünvan</div><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, İstanbul, Türkiyə</p></div>
+<div class="footer-col"><div class="footer-title">Rəhbərlik</div><p class="footer-leader"><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>DAAB İdarə Heyətinin Sədri<br/>Germany — James D. Murray Distinguished Professor</p></div>
+</div>
+</div>
+<div class="footer-bottom">© 2026 DAAB / WAAS — All Rights Reserved</div>
+</footer>
+<script id="daab-shared-search-script">
+document.addEventListener("DOMContentLoaded", function () {
+  var PAGES = [
+    { title: "Ana Səhifə", desc: "DAAB website main entry page", icon: "🏠", tag: "Main", url: "index.html", kw: ["home", "daab", "index", "start"] },
+    { title: "Missiya, Vizyon və Dəyərlər", desc: "Strategic direction, purpose and institutional values", icon: "💎", tag: "About", url: "Mission_Vision_Values_AZ.html", kw: ["mission", "vision", "values", "purpose", "strategy", "missiya", "vizyon"] },
+    { title: "Fəaliyyətimiz", desc: "Scientific, academic and cultural events chronicle", icon: "📰", tag: "Activities", url: "Activities_AZ.html", kw: ["activities", "events", "conference", "seminar", "fəaliyyət"] },
+    { title: "Təsis Zərurəti", desc: "Conceptual rationale for establishing DAAB", icon: "⚡", tag: "About", url: "Founding_Necessity_AZ.html", kw: ["founding", "necessity", "establishment", "diaspora", "təsis"] },
+    { title: "İstanbul Təsis Toplantısı", desc: "Official founding assembly", icon: "🗺️", tag: "Event", url: "Istanbul_Founding_Meeting_AZ.html", kw: ["istanbul", "meeting", "founding"] },
+    { title: "Alimlərimiz", desc: "Catalogue of Azerbaijani scientists worldwide", icon: "🌐", tag: "Catalogue", url: "Scientists_AZ.html", kw: ["scientists", "scholars", "professor", "doctor", "alimlər"] },
+    { title: "İdarə Heyəti", desc: "Leadership board and members", icon: "🎓", tag: "Governance", url: "Executive_Board_AZ.html", kw: ["board", "executive", "leadership", "members", "idarə"] },
+    { title: "Nizamnamə", desc: "Official DAAB charter in Azerbaijani", icon: "📜", tag: "Charter AZ", url: "Charter_AZ.html", kw: ["charter", "statute", "rules", "nizamnamə"] },
+    { title: "Üzvlük Şərtləri", desc: "Requirements, benefits and application procedure", icon: "✒️", tag: "Membership", url: "Membership_Terms_AZ.html", kw: ["membership", "terms", "application", "üzvlük"] }
+  ];
+  , inp=document.getElementById("search-input"), res=document.getElementById("search-results"), nb=document.getElementById("nav-search-btn"), cb=document.getElementById("search-close-btn");
+  if(!ov||!inp||!res) return; var fi=-1;
+  function openSearch(){ov.classList.add("open");inp.value="";fi=-1;res.innerHTML='<div class="search-prompt">Axtarmaq üçün yuxarıdakı xanaya mətn daxil edin</div>';setTimeout(function(){inp.focus()},50)}
+  function closeSearch(){ov.classList.remove("open");inp.value="";fi=-1}
+  function score(p,q){var ql=q.toLowerCase();var corpus=[p.title,p.desc,p.tag].concat(p.kw).join(" ").toLowerCase();if(corpus.indexOf(ql)!==-1)return 10;var words=ql.split(/\s+/).filter(Boolean);var s=0;words.forEach(function(w){if(corpus.indexOf(w)!==-1)s+=2;else if(corpus.split(/\s+/).some(function(cw){return cw.indexOf(w)===0}))s+=1});return s}
+  function updateFocus(){var items=res.querySelectorAll(".search-result-item");items.forEach(function(el,i){el.classList.toggle("focused",i===fi);if(i===fi)el.scrollIntoView({block:"nearest"})})}
+  function renderResults(pages){fi=-1;if(!pages.length){res.innerHTML='<div class="search-empty">Nəticə tapılmadı. Başqa söz cəhd edin.</div>';return}res.innerHTML=pages.map(function(p){return '<a class="search-result-item" href="'+p.url+'"><div class="sri-icon">'+p.icon+'</div><div class="sri-body"><div class="sri-title">'+p.title+'</div><div class="sri-desc">'+p.desc+'</div></div><span class="sri-tag">'+p.tag+'</span></a>'}).join("");updateFocus()}
+  inp.addEventListener("input",function(){var q=inp.value.trim();if(!q){res.innerHTML='<div class="search-prompt">Axtarmaq üçün yuxarıdakı xanaya mətn daxil edin</div>';fi=-1;return}renderResults(PAGES.map(function(p){return{p:p,s:score(p,q)}}).filter(function(x){return x.s>0}).sort(function(a,b){return b.s-a.s}).map(function(x){return x.p}))});
+  inp.addEventListener("keydown",function(e){var items=res.querySelectorAll(".search-result-item");if(e.key==="ArrowDown"){e.preventDefault();fi=Math.min(fi+1,items.length-1);updateFocus()}else if(e.key==="ArrowUp"){e.preventDefault();fi=Math.max(fi-1,0);updateFocus()}else if(e.key==="Enter"&&fi>=0&&items[fi]){items[fi].click()}else if(e.key==="Escape"){closeSearch()}});
+  if(nb)nb.addEventListener("click",openSearch); if(cb)cb.addEventListener("click",closeSearch); ov.addEventListener("click",function(e){if(e.target===ov)closeSearch()}); document.addEventListener("keydown",function(e){if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();ov.classList.contains("open")?closeSearch():openSearch()} if(e.key==="Escape"&&ov.classList.contains("open"))closeSearch()});
+});
+</script></body>
+</html>
