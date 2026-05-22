@@ -251,6 +251,26 @@ def externalize_scientists_list_data(html: str, depth: int) -> str:
     return INLINE_LIST_DATA_RE.sub(block, html, count=1)
 
 
+LEGACY_REDIRECT_RE = re.compile(
+    r'<meta\s+http-equiv=["\']refresh["\'][^>]*>\s*',
+    re.IGNORECASE,
+)
+
+
+def strip_legacy_redirect_meta(html: str) -> str:
+    """Remove meta-refresh tags copied from root *_az.html legacy files."""
+    html = LEGACY_REDIRECT_RE.sub("", html)
+    html = re.sub(r"<!-- data-daab-legacy-redirect -->\s*", "", html)
+    html = re.sub(
+        r'<link\s+rel=["\']canonical["\']\s+href=["\']az/[^"\']*["\']\s*/>\s*',
+        "",
+        html,
+        count=1,
+        flags=re.IGNORECASE,
+    )
+    return html
+
+
 def replace_inline_search(html: str, depth: int) -> str:
     prefix = asset_prefix(depth)
     tag = f'<script src="{prefix}js/daab-search.js?v=1" defer></script>'
@@ -314,6 +334,7 @@ def build_az_page(legacy_name: str, dest: Path, page_id: str) -> None:
         return
     depth = len(dest.relative_to(ROOT).parts) - 1  # az/x.html -> 2, az/scientists/x.html -> 3
     html = src.read_text(encoding="utf-8")
+    html = strip_legacy_redirect_meta(html)
     html = rewrite_asset_paths(html, depth)
     html = rewrite_internal_links(html, depth)
     html = inject_i18n_head(html, depth, page_id, "az")
@@ -362,7 +383,10 @@ def en_nav_links(active_id: str, depth: int) -> str:
 def en_page_is_complete(path: Path) -> bool:
     if not path.is_file():
         return False
-    return EN_COMPLETE_MARKER in path.read_text(encoding="utf-8", errors="replace")
+    html = path.read_text(encoding="utf-8", errors="replace")
+    if LEGACY_REDIRECT_RE.search(html):
+        return False
+    return EN_COMPLETE_MARKER in html
 
 
 def build_en_stub(page: dict) -> None:

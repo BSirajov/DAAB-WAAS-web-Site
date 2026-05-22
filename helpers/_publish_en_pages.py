@@ -34,6 +34,24 @@ except ImportError:
 
 EN_COMPLETE_MARKER = "<!-- daab-en-complete -->"
 
+LEGACY_REDIRECT_RE = re.compile(
+    r'<meta\s+http-equiv=["\']refresh["\'][^>]*>\s*',
+    re.IGNORECASE,
+)
+
+
+def strip_legacy_redirect_meta(html: str) -> str:
+    html = LEGACY_REDIRECT_RE.sub("", html)
+    html = re.sub(r"<!-- data-daab-legacy-redirect -->\s*", "", html)
+    html = re.sub(
+        r'<link\s+rel=["\']canonical["\']\s+href=["\']az/[^"\']*["\']\s*/>\s*',
+        "",
+        html,
+        count=1,
+        flags=re.IGNORECASE,
+    )
+    return html
+
 EN_NAV_ITEMS = [
     ("home", "index.html", "🏠 Home"),
     ("foundation", "foundation.html", "🏛️ Foundation"),
@@ -370,6 +388,7 @@ def publish_from_az(
     nav_depth = max(0, len(en_parts) - 2)
     asset_root = "../" * (nav_depth + 1)
     html = az_path.read_text(encoding="utf-8")
+    html = strip_legacy_redirect_meta(html)
     html = html.replace('data-daab-lang="az"', 'data-daab-lang="en"')
     html = re.sub(r'\s*lang="az"\s*', " ", html, count=1)
     html = re.sub(
@@ -396,7 +415,15 @@ def publish_from_az(
     if postprocess:
         html = postprocess(html)
     html = re.sub(r'\s*lang="az"\s*', " ", html)
-    html = re.sub(r"<html([^>]*)>", r'<html lang="en"\1', html, count=1, flags=re.I)
+    html = re.sub(r"<html([^>\n]*)>", r'<html lang="en"\1>', html, count=1, flags=re.I)
+    html = re.sub(
+        r"<html([^>]*)\s+lang=\"en\"\s+lang=\"en\"",
+        r'<html lang="en"\1',
+        html,
+        count=1,
+        flags=re.I,
+    )
+    html = re.sub(r"<html([^>\n]*)\n", r"<html\1>\n", html, count=1, flags=re.I)
     html = re.sub(r"<footer class=\"footer-pro\">.*?</footer>", en_footer_html(), html, flags=re.DOTALL)
     en_path.parent.mkdir(parents=True, exist_ok=True)
     en_path.write_text(html, encoding="utf-8", newline="\n")
