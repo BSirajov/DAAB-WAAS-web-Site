@@ -72,8 +72,29 @@
     return isMobileNav() || TOUCH_UI_MQ.matches;
   }
 
+  function currentNavKey() {
+    var path = location.pathname.replace(/\\/g, "/");
+    var page = path.split("/").pop() || "index.html";
+    var navLink = document.querySelector(
+      'a[data-nav-id][href$="' + page + '"], a[data-nav-id][href$="/' + page + '"]'
+    );
+    if (navLink) return navLink.getAttribute("data-nav-id");
+    var html = document.documentElement;
+    var pageId = html.getAttribute("data-daab-page-id");
+    if (pageId) return pageId;
+    return page;
+  }
+
+  function hrefMatchesNav(linkHref, page) {
+    if (!linkHref) return false;
+    var href = linkHref.split("#")[0].split("?")[0];
+    if (href === page) return true;
+    return href.endsWith("/" + page) || href.endsWith(page);
+  }
+
   function initNavDropdowns() {
     var page = location.pathname.split("/").pop() || "index.html";
+    var navKey = currentNavKey();
     var dropdowns = document.querySelectorAll("[data-nav-dropdown]");
 
     dropdowns.forEach(function (dropdown) {
@@ -82,7 +103,9 @@
       if (!toggle) return;
 
       links.forEach(function (link) {
-        if (link.getAttribute("href") === page) {
+        var id = link.getAttribute("data-nav-id");
+        var match = (id && id === navKey) || hrefMatchesNav(link.getAttribute("href"), page);
+        if (match) {
           link.classList.add("active");
           link.setAttribute("aria-current", "page");
           dropdown.classList.add("has-active-child");
@@ -124,6 +147,14 @@
         var btn = dropdown.querySelector(".nav-dropdown-toggle");
         if (btn) btn.setAttribute("aria-expanded", "false");
       });
+    });
+
+    document.querySelectorAll(".nav-menu > a.nav-link[data-nav-id]").forEach(function (link) {
+      var id = link.getAttribute("data-nav-id");
+      if ((id && id === navKey) || hrefMatchesNav(link.getAttribute("href"), page)) {
+        link.classList.add("active");
+        link.setAttribute("aria-current", "page");
+      }
     });
   }
 

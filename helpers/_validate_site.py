@@ -32,6 +32,17 @@ REQUIRED_SNIPPETS = {
     "daab-mobile.js": "js/daab-mobile.js",
 }
 
+def bilingual_html_files() -> list[Path]:
+    out: list[Path] = []
+    for folder in ("az", "en"):
+        base = ROOT / folder
+        if base.is_dir():
+            out.extend(base.rglob("*.html"))
+    return out
+
+
+BILINGUAL_PAGES = bilingual_html_files()
+
 # Obsolete targets that often survive refactors
 OBSOLETE_TARGETS = {
     "Scientists_AZ.html",
@@ -61,7 +72,10 @@ SKIP_PREFIXES = ("http://", "https://", "//", "mailto:", "tel:", "data:", "#", "
 
 
 def site_html_files() -> list[Path]:
-    return sorted(ROOT.glob("*.html"))
+    files = sorted(ROOT.glob("*.html"))
+    for pattern in ("az/**/*.html", "en/**/*.html"):
+        files.extend(sorted(ROOT.glob(pattern)))
+    return files
 
 
 def resolve_ref(page: Path, ref: str) -> Path | None:
@@ -109,10 +123,13 @@ def main() -> int:
     for page in pages:
         text = page.read_text(encoding="utf-8", errors="replace")
 
-        if page.name in MAIN_PAGES:
+        check_snippets = page.name in MAIN_PAGES or page in BILINGUAL_PAGES
+        if check_snippets:
             for label, snippet in REQUIRED_SNIPPETS.items():
-                if snippet not in text:
-                    warnings.append(f"{page.name}: missing {label} ({snippet})")
+                # az/en pages use ../css paths
+                if snippet not in text and snippet.replace("css/", "../css/") not in text:
+                    if snippet.replace("js/", "../js/") not in text:
+                        warnings.append(f"{page.relative_to(ROOT)}: missing {label}")
 
         for m in HREF_SRC_RE.finditer(text):
             ref = m.group(1)

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="az" data-daab-lang="az">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>DAAB — Dil seçimi / Choose language</title>
+  <meta name="description" content="Dünya Azərbaycanlı Alimlər Birliyi — rəsmi veb sayt. Choose Azerbaijani or English."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="css/daab-common.css?v=8" rel="stylesheet"/>
+  <link href="css/daab-lang.css?v=1" rel="stylesheet"/>
+  <style>
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; }
+  </style>
+  <script src="js/daab-i18n.js?v=1" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.DAAB_I18N && !new URLSearchParams(location.search).get("choose")) {
+        window.DAAB_I18N.initGateway();
+      }
+    });
+  </script>
+</head>
+<body class="daab-gateway">
+  <main class="daab-gateway-page">
+    <div class="daab-gateway-card">
+      <img class="daab-gateway-logo" src="images/daab-logo.svg" alt="DAAB"/>
+      <h1>Dünya Azərbaycanlı Alimlər Birliyi</h1>
+      <p>World Association of Azerbaijani Scientists — welcome. Choose your language.</p>
+      <div class="daab-gateway-actions">
+        <a class="btn btn-primary" href="az/index.html" id="gatewayAz">Azərbaycan dilində davam et</a>
+        <a class="btn btn-secondary" href="en/index.html" id="gatewayEn">Continue in English</a>
+      </div>
+      <p class="daab-gateway-note">
+        <a href="?choose=1">Stay on this page</a> ·
+        <a href="index.html?choose=1">Legacy Azerbaijani home</a>
+      </p>
+    </div>
+  </main>
+  <script>
+    document.getElementById("gatewayAz")?.addEventListener("click", function () {
+      try { localStorage.setItem("daab-lang", "az"); } catch (e) {}
+    });
+    document.getElementById("gatewayEn")?.addEventListener("click", function () {
+      try { localStorage.setItem("daab-lang", "en"); } catch (e) {}
+    });
+  </script>
+</body>
+</html>

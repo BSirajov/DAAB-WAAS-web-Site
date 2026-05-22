@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "brand": {
+    "az": {
+      "short": "Dünya Azərbaycanlı Alimlər Birliyi",
+      "line1": "Dünya Azərbaycanlı",
+      "line2": "Alimlər Birliyi"
+    },
+    "en": {
+      "short": "World Association of Azerbaijani Scientists",
+      "line1": "World Association of",
+      "line2": "Azerbaijani Scientists"
+    }
+  },
+  "gateway": {
+    "az": {
+      "title": "DAAB — Dil seçimi",
+      "heading": "Dünya Azərbaycanlı Alimlər Birliyi",
+      "subtitle": "Rəsmi veb saytına xoş gəlmisiniz. Davam etmək üçün dil seçin.",
+      "btnAz": "Azərbaycan dilində davam et",
+      "btnEn": "Continue in English",
+      "note": "Əsas auditoriya üçün standart dil Azərbaycan dilidir."
+    },
+    "en": {
+      "title": "DAAB — Choose language",
+      "heading": "World Association of Azerbaijani Scientists",
+      "subtitle": "Welcome to the official website. Choose your language to continue.",
+      "btnAz": "Continue in Azerbaijani",
+      "btnEn": "Continue in English",
+      "note": "Azerbaijani is the default language for the primary audience."
+    }
+  },
+  "langSwitch": {
+    "az": { "label": "Dil seçimi", "az": "AZ", "en": "EN" },
+    "en": { "label": "Language", "az": "AZ", "en": "EN" }
+  },
+  "nav": {
+    "az": {
+      "ariaMain": "Əsas naviqasiya",
+      "ariaHome": "DAAB ana səhifə",
+      "menuOpen": "Menyunu aç",
+      "menuClose": "Menyunu bağla",
+      "skip": "Məzmuna keç",
+      "home": "🏠 Ana Səhifə",
+      "foundation": "🏛️ Birliyin Təsisi",
+      "mission": "💎 Missiyamız",
+      "activities": "📰 Fəaliyyətimiz",
+      "scientists": "🌐 Alimlərimiz",
+      "scientistsList": "📋 Siyahı",
+      "scientistsProfiles": "👤 Profil",
+      "executiveBoard": "🎓 İdarə Heyəti",
+      "charter": "📜 Nizamnamə",
+      "membership": "✒️ Üzvlük"
+    },
+    "en": {
+      "ariaMain": "Main navigation",
+      "ariaHome": "DAAB home",
+      "menuOpen": "Open menu",
+      "menuClose": "Close menu",
+      "skip": "Skip to content",
+      "home": "🏠 Home",
+      "foundation": "🏛️ Foundation",
+      "mission": "💎 Mission",
+      "activities": "📰 Activities",
+      "scientists": "🌐 Scientists",
+      "scientistsList": "📋 Directory",
+      "scientistsProfiles": "👤 Profiles",
+      "executiveBoard": "🎓 Executive Board",
+      "charter": "📜 Charter",
+      "membership": "✒️ Membership"
+    }
+  },
+  "stub": {
+    "en": {
+      "badge": "English version",
+      "title": "Translation in progress",
+      "body": "This page is part of the new bilingual site structure. Full English content will be published here. You can read the Azerbaijani version in the meantime.",
+      "btnAz": "View Azerbaijani page",
+      "btnHome": "English home"
+    }
+  },
+  "footer": {
+    "az": {
+      "contact": "Əlaqə",
+      "address": "Ünvan",
+      "leadership": "Rəhbərlik",
+      "chairRole": "DAAB İdarə Heyətinin Sədri"
+    },
+    "en": {
+      "contact": "Contact",
+      "address": "Address",
+      "leadership": "Leadership",
+      "chairRole": "Chair of the DAAB Executive Board"
+    }
+  }
+}

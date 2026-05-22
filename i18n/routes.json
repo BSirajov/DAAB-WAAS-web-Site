@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "defaultLang": "az",
+  "languages": ["az", "en"],
+  "pages": [
+    {
+      "id": "home",
+      "navId": "home",
+      "legacy": "index.html",
+      "az": "az/index.html",
+      "en": "en/index.html"
+    },
+    {
+      "id": "foundation",
+      "navId": "foundation",
+      "legacy": "foundation_az.html",
+      "az": "az/foundation.html",
+      "en": "en/foundation.html"
+    },
+    {
+      "id": "mission",
+      "navId": "mission",
+      "legacy": "mission_vision_values_az.html",
+      "az": "az/mission.html",
+      "en": "en/mission.html"
+    },
+    {
+      "id": "activities",
+      "navId": "activities",
+      "legacy": "activities_az.html",
+      "az": "az/activities.html",
+      "en": "en/activities.html"
+    },
+    {
+      "id": "scientists-list",
+      "navId": "scientists-list",
+      "legacy": "scientists_list_view_az.html",
+      "az": "az/scientists/list.html",
+      "en": "en/scientists/list.html"
+    },
+    {
+      "id": "scientists-profiles",
+      "navId": "scientists-profiles",
+      "legacy": "scientists_card_view_az.html",
+      "az": "az/scientists/profiles.html",
+      "en": "en/scientists/profiles.html"
+    },
+    {
+      "id": "executive-board",
+      "navId": "executive-board",
+      "legacy": "executive_board_az.html",
+      "az": "az/executive-board.html",
+      "en": "en/executive-board.html"
+    },
+    {
+      "id": "charter",
+      "navId": "charter",
+      "legacy": "charter_az.html",
+      "az": "az/charter.html",
+      "en": "en/charter.html"
+    },
+    {
+      "id": "membership",
+      "navId": "membership",
+      "legacy": "membership_terms_az.html",
+      "az": "az/membership.html",
+      "en": "en/membership.html"
+    }
+  ],
+  "legacyRedirects": {
+    "index.html": "az/index.html",
+    "foundation_az.html": "az/foundation.html",
+    "mission_vision_values_az.html": "az/mission.html",
+    "activities_az.html": "az/activities.html",
+    "scientists_list_view_az.html": "az/scientists/list.html",
+    "scientists_card_view_az.html": "az/scientists/profiles.html",
+    "executive_board_az.html": "az/executive-board.html",
+    "charter_az.html": "az/charter.html",
+    "membership_terms_az.html": "az/membership.html"
+  }
+}
