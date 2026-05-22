@@ -2,11 +2,21 @@
 
 Static website for **Dünya Azərbaycanlı Alimlər Birliyi** (World Association of Azerbaijani Scientists).
 
+## Bilingual site (Azerbaijani + English)
+
+| Language | Address (local) | Address (live) |
+|----------|-----------------|----------------|
+| Azerbaijani | http://localhost:8010/az/ | https://daab-waas.org/az/ |
+| English | http://localhost:8010/en/ | https://daab-waas.org/en/ |
+
+Use **AZ | EN** in the top menu to switch language.  
+Plain guide: [`documents/HOW-TO-USE-THE-BILINGUAL-SITE.md`](documents/HOW-TO-USE-THE-BILINGUAL-SITE.md)
+
 ## Open the site locally (fix for “This page isn’t working”)
 
 **Double-click:** [`START-SITE.bat`](START-SITE.bat) in this folder.
 
-That starts the web server and opens http://localhost:8010/index.html.  
+That starts the web server and opens the site.  
 Keep the black **“DAAB Server”** window open while you browse.
 
 If you see **“This page isn’t working”**: the server is not running, or an old server is still on port 8010 — close it, then run `START-SITE.bat` again. Do not double-click HTML files (`file://`).
@@ -52,9 +62,11 @@ In VS Code/Cursor: run task **“Start DAAB static server”** before **“Launc
 ## Validate before deploy
 
 ```bash
+python helpers/_build_bilingual_tree.py
+python helpers/_publish_en_pages.py all
+python helpers/_validate_bilingual.py
 python helpers/_validate_site.py
 python helpers/_validate_cv_cards.py
-python helpers/_check_name_order.py
 ```
 
 ## Maintenance

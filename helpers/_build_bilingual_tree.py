@@ -41,6 +41,13 @@ SEARCH_SCRIPT_RE = re.compile(
     re.DOTALL | re.IGNORECASE,
 )
 
+HOME_AZ_SOURCE = "sources/home_az.html"
+
+INLINE_LIST_DATA_RE = re.compile(
+    r"<script>\s*const DATA = \[.*?\];\s*",
+    re.DOTALL,
+)
+
 EN_COMPLETE_MARKER = "<!-- daab-en-complete -->"
 
 LOCALE_HINT = (
@@ -233,6 +240,17 @@ def inject_i18n_head(html: str, depth: int, page_id: str, lang: str) -> str:
     return html
 
 
+def externalize_scientists_list_data(html: str, depth: int) -> str:
+    prefix = asset_prefix(depth)
+    if "const DATA = [" not in html:
+        return html
+    block = (
+        f'<script src="{prefix}js/scientists-catalog-data.js?v=1"></script>\n'
+        "<script>\nconst DATA = window.SCIENTISTS_CATALOG_DATA || [];\n"
+    )
+    return INLINE_LIST_DATA_RE.sub(block, html, count=1)
+
+
 def replace_inline_search(html: str, depth: int) -> str:
     prefix = asset_prefix(depth)
     tag = f'<script src="{prefix}js/daab-search.js?v=1" defer></script>'
@@ -301,6 +319,7 @@ def build_az_page(legacy_name: str, dest: Path, page_id: str) -> None:
     html = inject_i18n_head(html, depth, page_id, "az")
     html = add_nav_data_attrs(html)
     html = replace_inline_search(html, depth)
+    html = externalize_scientists_list_data(html, depth)
     html = bump_nav_script(html)
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(html, encoding="utf-8", newline="\n")
@@ -453,10 +472,6 @@ def build_en_home() -> None:
 </div>
 </div></header>
 <main class="main shell" id="content" style="padding-bottom:60px;">
-<section class="daab-stub-banner" style="margin-bottom:24px;">
-<h2>English site — rolling publication</h2>
-<p><strong>Mission</strong> and <strong>Foundation</strong> are available in English. Other sections are being translated; use <strong>AZ</strong> in the menu for the full Azerbaijani site.</p>
-</section>
 <section class="cards-grid">{''.join(card_html)}</section>
 </main>
 <footer class="footer-pro"><div class="footer-bottom">© 2026 DAAB / WAAS — All Rights Reserved</div></footer>
@@ -470,7 +485,7 @@ def build_en_home() -> None:
 def patch_legacy(pages: list) -> None:
     for page in pages:
         legacy = page.get("legacy")
-        if not legacy:
+        if not legacy or legacy == "index.html":
             continue
         path = ROOT / legacy
         if not path.is_file():
@@ -572,7 +587,9 @@ def main() -> int:
     print("Building Azerbaijani tree (/az/)...")
     for page in pages:
         legacy = page.get("legacy")
-        if legacy:
+        if page["id"] == "home":
+            build_az_page(HOME_AZ_SOURCE, ROOT / page["az"], page["id"])
+        elif legacy:
             build_az_page(legacy, ROOT / page["az"], page["id"])
 
     print("Building English stubs (/en/)...")

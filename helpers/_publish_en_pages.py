@@ -338,37 +338,11 @@ def postprocess_activities_en(html: str) -> str:
         ("Search üçün yazmağa başlayın…", "Start typing to search…"),
     ):
         html = html.replace(old, new)
-    banner = (
-        '<section class="daab-stub-banner" style="margin-bottom:20px;">'
-        "<h2>Activities in English</h2>"
-        "<p>Headlines, timeline and source links are in English. "
-        "Full event descriptions are available in Azerbaijani on the "
-        '<a href="../az/activities.html">AZ version</a> of this page.</p></section>'
-    )
-    if "Activities in English" not in html:
-        html = html.replace(
-            '<main class="news-feed main" id="content">',
-            f'<main class="news-feed main" id="content">\n{banner}',
-            1,
-        )
     return html
 
 
 def postprocess_charter_en(html: str) -> str:
     html = re.sub(r"<h2>Maddə (\d+)\.</h2>", r"<h2>Article \1.</h2>", html)
-    banner = (
-        '<section class="daab-stub-banner" style="margin-bottom:20px;">'
-        "<h2>Charter — English interface</h2>"
-        "<p>The summary and table of contents are in English. "
-        "The full legal text of all 26 articles is in Azerbaijani; "
-        'see the <a href="../az/charter.html">AZ charter page</a> for the authoritative version.</p></section>'
-    )
-    if "Charter — English interface" not in html:
-        html = html.replace(
-            '<main class="main" id="content">',
-            f'<main class="main" id="content">\n{banner}',
-            1,
-        )
     return html
 
 
@@ -380,20 +354,7 @@ def postprocess_scientists_list_en(html: str) -> str:
 
 
 def postprocess_scientists_profiles_en(html: str) -> str:
-    html = postprocess_scientists_list_en(html)
-    banner = (
-        '<section class="daab-stub-banner" style="margin-bottom:20px;">'
-        "<h2>Academic profiles</h2>"
-        "<p>Search, filters and layout are in English. Profile descriptions remain in Azerbaijani "
-        'for now; use the <a href="../../az/scientists/profiles.html">AZ profiles page</a> if needed.</p></section>'
-    )
-    if "Profile descriptions remain" not in html:
-        html = html.replace(
-            '<main class="main" id="content">',
-            f'<main class="main" id="content">\n{banner}',
-            1,
-        )
-    return html
+    return postprocess_scientists_list_en(html)
 
 
 def publish_from_az(

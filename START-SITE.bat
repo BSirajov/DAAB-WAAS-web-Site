@@ -20,7 +20,7 @@ rem Reuse existing server if port is already up
 powershell -NoProfile -Command "try { (Invoke-WebRequest -UseBasicParsing -Uri 'http://localhost:8010/index.html' -TimeoutSec 2).StatusCode } catch { exit 1 }" >nul 2>&1
 if not errorlevel 1 (
   echo Server already running on http://localhost:8010/
-  start "" "http://localhost:8010/index.html"
+  start "" "http://localhost:8010/"
   exit /b 0
 )
 
@@ -29,9 +29,11 @@ start "DAAB Server (keep open)" cmd /k "cd /d "%~dp0" && python -m http.server 8
 echo Waiting for server...
 timeout /t 2 /nobreak >nul
 
-start "" "http://localhost:8010/index.html"
+start "" "http://localhost:8010/"
 echo.
-echo  Open in browser: http://localhost:8010/index.html
+echo  Open in browser: http://localhost:8010/
+echo  Azerbaijani: http://localhost:8010/az/
+echo  English:     http://localhost:8010/en/
 echo  To stop: close the "DAAB Server" window or press Ctrl+C there.
 echo.
 pause
