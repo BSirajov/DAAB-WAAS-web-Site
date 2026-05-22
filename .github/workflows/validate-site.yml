@@ -1,0 +1,20 @@
+name: Validate DAAB site
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Link and structure checks
+        run: |
+          python helpers/_validate_site.py
+          python helpers/_validate_cv_cards.py
+          python helpers/_check_name_order.py

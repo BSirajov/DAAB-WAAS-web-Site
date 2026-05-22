@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+    <title>
+      DAAB — Missiya, Vizyon və Dəyərlər
+    </title>
+    <meta content="Dünya Azərbaycanlı Alimlər Birliyinin missiyası, vizyonu və akademik dəyərləri." name="description"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="css/daab-common.css?v=8" rel="stylesheet"/>
+<link href="css/daab-mobile.css?v=3" rel="stylesheet"/>
+    <style>
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: var(--ink) !important;
+  background: #fff url("images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, .36);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, .18), rgba(255, 255, 255, 0));
+  opacity: .72;
+  mix-blend-mode: normal;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
+}
+
+.hero-wrap {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.12fr .88fr;
+  gap: 32px;
+  align-items: start;
+  padding: 28px 24px 36px;
+}
+
+.hero h1 {
+  margin: 0;
+  padding-top: 0;
+  color: #08263b;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(30.4px, 4.8vw, 57.6px);
+  line-height: 1.12;
+  letter-spacing: -.035em;
+}
+
+.hero h1 span {
+  color: var(--blue-700);
+}
+
+.hero-panel {
+  align-self: start;
+  padding: 0 22px 22px 22px;
+  background: rgba(255, 255, 255, .12) !important;
+  border: 1px solid rgba(255, 255, 255, .24) !important;
+  border-radius: 30px;
+  box-shadow: 0 18px 50px rgba(0, 45, 82, .22) !important;
+  backdrop-filter: blur(18px);
+}
+
+
+.panel-card {
+  padding: 24px;
+  color: var(--ink) !important;
+  background: rgba(255, 255, 255, .92) !important;
+  border: 1px solid rgba(255, 255, 255, .62) !important;
+  border-radius: 24px;
+}
+
+.panel-title {
+  margin: 0 0 10px;
+  color: #094d78 !important;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.18;
+  text-align: center;
+}
+
+.panel-copy {
+  color: #345d76 !important;
+  font-size: 14px;
+}
+
+.main {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 24px 24px 70px;
+}
+
+.glass-card,
+.intro-card,
+.core-card,
+.vd-item {
+  background: rgba(245, 251, 255, .96) !important;
+  border: 1px solid #9ed6f5 !important;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow) !important;
+  backdrop-filter: blur(14px);
+}
+
+.intro-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 26px 30px;
+}
+
+.intro-card h2,
+.values-title h2 {
+  margin: 0 0 6px;
+  color: var(--blue-900);
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.intro-card h2 {
+  font-size: 28px;
+}
+
+.intro-card p,
+.values-title p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.toc a {
+  padding: 9px 12px;
+  color: var(--blue-700);
+  background: #dff2ff;
+  border: 1px solid #9ed6f5;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .2s;
+}
+
+.toc a:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.core-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.core-card {
+  position: relative;
+  overflow: hidden;
+  transition: .25s ease;
+}
+
+.core-card::before {
+  content: "";
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  width: 140px;
+  height: 140px;
+  background: rgba(46, 159, 212, .09);
+  border-radius: 50%;
+}
+
+.core-card:hover,
+.vd-item:hover {
+  transform: translateY(-6px);
+  border-color: var(--blue-400) !important;
+  box-shadow: var(--shadow-strong) !important;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  color: #fff;
+  background: var(--blue-700) !important;
+  border-bottom: 3px solid var(--blue-400) !important;
+}
+
+.section-head .icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, .14);
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 14px;
+  font-size: 22px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.section-body {
+  padding: 24px;
+}
+
+.mission-text {
+  margin: 0;
+  color: #33475f;
+  font-size: 15px;
+  line-height: 1.85;
+  text-align: justify;
+}
+
+.accent-line {
+  padding-left: 16px;
+  border-left: 4px solid var(--blue-400);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9px;
+}
+
+.value-pill {
+  display: flex;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(26, 111, 168, .06);
+  transition: .2s ease;
+}
+
+.value-pill:hover {
+  background: #f8fcff;
+  border-color: rgba(46, 159, 212, .38);
+  transform: translateX(3px);
+}
+
+.value-pill a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 11px 13px;
+  text-decoration: none;
+}
+
+.value-name {
+  color: var(--blue-900);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .04em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.value-pill a::after {
+  content: "↓";
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: var(--blue-700);
+  background: #e5f4fb;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 900;
+  transition: .2s;
+}
+
+.value-pill:hover a::after {
+  color: #fff;
+  background: var(--blue-700);
+}
+
+.values-title {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 22px;
+  margin: 8px 0 18px;
+}
+
+.values-title h2 {
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.values-title p {
+  max-width: 570px;
+  font-size: 14px;
+}
+
+.values-detail {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.vd-item {
+  min-height: 190px;
+  padding: 20px;
+  scroll-margin-top: 110px;
+  transition: .25s ease;
+}
+
+.vd-item:target {
+  background: #fff !important;
+  border-color: var(--blue-400) !important;
+  box-shadow: 0 0 0 4px rgba(46, 159, 212, .18), var(--shadow-strong) !important;
+  transform: translateY(-3px);
+}
+
+.vd-title {
+  margin: 0 0 12px;
+  padding-bottom: 9px;
+  color: var(--blue-700);
+  border-bottom: 2px solid rgba(46, 159, 212, .28);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.vd-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vd-list li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+  text-align: justify;
+}
+
+.vd-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--blue-400);
+  font-weight: 900;
+}
+
+.vd-conclusion {
+  position: relative;
+  grid-column: 1 / -1;
+  overflow: hidden;
+  padding: 24px 26px;
+  color: #fff;
+  background: var(--blue-700);
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.vd-conclusion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 84% 15%, rgba(255, 255, 255, .18), transparent 30%);
+}
+
+.vd-conclusion span {
+  position: relative;
+}
+
+.values-detail.dimmed .vd-item {
+  opacity: .45;
+  transform: scale(.985);
+}
+
+.values-detail .vd-item.active-highlight {
+  opacity: 1;
+  background: #fff !important;
+  border-color: var(--blue-400) !important;
+  box-shadow: 0 6px 24px rgba(26, 111, 168, .22) !important;
+  transform: scale(1.02);
+}
+
+
+
+@media (max-width: 1060px) {
+  .hero-wrap,
+  .intro-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-panel {
+    max-width: 640px;
+  }
+
+  .core-grid,
+  .values-detail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  img,
+  svg,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .shell,
+  .main {
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero-wrap {
+    gap: 22px;
+    padding: 42px 18px 34px;
+  }
+
+  .hero-panel {
+    max-width: 100%;
+  }
+
+  .toc {
+    width: 100%;
+  }
+
+  .toc {
+    justify-content: flex-start;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero h1 {
+    font-size: clamp(30px, 10.5vw, 42px);
+    line-height: 1.12;
+  }
+
+
+  .panel-card,
+  .intro-card {
+    padding: 20px;
+  }
+
+  .intro-card h2 {
+    font-size: 24px;
+    line-height: 1.18;
+  }
+
+  .core-grid,
+  .values-grid,
+  .values-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .values-title {
+    display: block;
+  }
+
+  .values-title h2 {
+    margin-bottom: 8px;
+    font-size: 28px;
+  }
+
+  .footer-inner {
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .shell,
+  .main {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 10vw, 38px);
+  }
+
+  .intro-card h2 {
+    font-size: 22px;
+  }
+}
+</style>
+    <script src="js/daab-nav.js?v=4" defer></script>
+  <script src="js/daab-mobile.js?v=1" defer></script>
+</head>
+  <body>
+<a class="skip" href="#content">
+  Məzmuna keç
+</a>
+<nav aria-label="Əsas naviqasiya" class="nav-strip">
+  <div class="nav-inner">
+    <button class="mobile-menu-toggle" type="button" aria-label="Menyunu aç" aria-expanded="false" aria-controls="primaryNavMenu">
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+    </button>
+    <div class="page-logo">
+      <a aria-label="DAAB ana səhifə" href="index.html">
+        <img src="images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo">
+      </a>
+    </div>
+    <a aria-label="DAAB ana səhifə" class="nav-brand" href="index.html">
+      <span class="nav-brand-text">
+        Dünya Azərbaycanlı
+        <br class="mobile-hidden-break">
+        Alimlər Birliyi
+      </span>
+    </a>
+    <div class="nav-menu" id="primaryNavMenu">
+      <div class="nav-divider">
+      </div>
+      <a class="nav-link" href="index.html">
+        🏠 Ana Səhifə
+      </a>
+      <a class="nav-link" href="foundation_az.html">
+        🏛️ Birliyin Təsisi
+      </a>
+      <a aria-current="page" class="nav-link active" href="mission_vision_values_az.html">
+        💎 Missiyamız
+      </a>
+      <a class="nav-link" href="activities_az.html">
+        📰 Fəaliyyətimiz
+      </a>
+      <div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">🌐 Alimlərimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="scientists_list_view_az.html">📋 Siyahı</a><a class="nav-dropdown-link" role="menuitem" href="scientists_card_view_az.html">👤 Profil</a></div></div>
+      <a class="nav-link" href="executive_board_az.html">
+        🎓 İdarə Heyəti
+      </a>
+      <a class="nav-link" href="charter_az.html">
+        📜 Nizamnamə
+      </a>
+      <a class="nav-link" href="membership_terms_az.html">
+        ✒️ Üzvlük
+      </a>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  <div class="hero-wrap shell">
+    <section>
+      <h1>
+        Missiya, Vizyon və
+        <span>
+          Dəyərlər
+        </span>
+      </h1>
+    </section>
+    <aside aria-label="DAAB missiya və vizyon qısa məlumat" class="hero-panel">
+      <div class="panel-card">
+        <h2 class="panel-title">
+          Elm, etika və gələcəyə baxış
+        </h2>
+        <div class="panel-copy">
+          DAAB-ın məqsədi, gələcəyə baxışı və akademik fəaliyyət istiqamətləri akademik azadlıq, şəffaflıq, keyfiyyət və məsuliyyət prinsiplərinə əsaslanır və Azərbaycan elminin beynəlxalq inteqrasiyasına töhfə verməyə yönəlir.
+        </div>
+      </div>
+    </aside>
+  </div>
+</header>
+<main class="main" id="content">
+  <section class="intro-card glass-card">
+    <div>
+      <h2>
+        DAAB-ın institusional əsasları
+      </h2>
+      <p>
+        Bu səhifədə birliyin missiyası, vizyonu və akademik dəyərləri vahid konseptual çərçivədə təqdim olunur.
+      </p>
+    </div>
+    <nav aria-label="Səhifədaxili keçidlər" class="toc">
+      <a href="#mission">
+        Missiya
+      </a>
+      <a href="#vision">
+        Vizyon
+      </a>
+      <a href="#values">
+        Dəyərlər
+      </a>
+    </nav>
+  </section>
+  <section aria-label="Missiya, vizyon və dəyərlər" class="core-grid">
+    <article class="core-card glass-card" id="mission">
+      <div class="section-head">
+        <span class="icon">
+          🏛
+        </span>
+        <h2>
+          Missiyamız
+        </h2>
+      </div>
+      <div class="section-body">
+        <p class="mission-text accent-line">
+          Dünya Azərbaycanlı Alimlər Birliyi dünyanın müxtəlif ölkələrində yaşayan Azərbaycanlı ziyalıların birliyi kimi fəaliyyət göstərən qeyri-hökumət təşkilatı olaraq elm və texnologiya, energetika, təhsil, səhiyyə, sosial elmlər və mədəniyyət sahələri ilə bağlı strateji planların hazırlanması və icra olunmasında Azərbaycana dəstək verir.
+        </p>
+      </div>
+    </article>
+    <article class="core-card glass-card" id="vision">
+      <div class="section-head">
+        <span class="icon">
+          🌐
+        </span>
+        <h2>
+          Vizyonumuz
+        </h2>
+      </div>
+      <div class="section-body">
+        <p class="mission-text accent-line">
+          Dünya Azərbaycanlı Alimlər Birliyi elmi biliklərin inkişaf etdirilməsi, innovasiyaların təşviqi, Azərbaycanda və dünya çapında fərq yarada biləcək alimlərin, mühəndislərin, incəsənət xadimlərinin, səhiyyə işçilərinin yetişdirilməsinə yönəlmiş fəaliyyətində mükəmməlliyi ilə tanınan beynəlxalq bir qurum olmaq niyyətindədir. Biz Azərbaycanın dünya miqyasında zəngin və dərin tarixə malik, bəşəriyyət üçün firavan və dinc gələcək yaratmaq uğrunda böyük sərmayə yatırmış sülhsevər bir dövlət kimi tanınması və qəbul edilməsini istəyirik. Dünya Azərbaycanın qlobal arenada iştirakından faydalanacaq və öz növbəsində Azərbaycan da beynəlxalq təcrübədən yararlanaraq gələcək nəsillər üçün daha güclü dövlət qurmağa davam edəcək.
+        </p>
+      </div>
+    </article>
+    <article class="core-card glass-card" id="values">
+      <div class="section-head">
+        <span class="icon">
+          ⭐
+        </span>
+        <h2>
+          Dəyərlərimiz
+        </h2>
+      </div>
+      <div class="section-body">
+        <div class="values-grid">
+          <div class="value-pill">
+            <a href="#vd-azadliq">
+              <div class="value-name">
+                Akademik Azadlıq
+              </div>
+            </a>
+          </div>
+          <div class="value-pill">
+            <a href="#vd-etika">
+              <div class="value-name">
+                Akademik Etika
+              </div>
+            </a>
+          </div>
+          <div class="value-pill">
+            <a href="#vd-durust">
+              <div class="value-name">
+                Dürüstlük
+              </div>
+            </a>
+          </div>
+          <div class="value-pill">
+            <a href="#vd-ferq">
+              <div class="value-name">
+                Fərqliliklərə Hörmət
+              </div>
+            </a>
+          </div>
+          <div class="value-pill">
+            <a href="#vd-key">
+              <div class="value-name">
+                Keyfiyyət
+              </div>
+            </a>
+          </div>
+          <div class="value-pill">
+            <a href="#vd-mes">
+              <div class="value-name">
+                Məsuliyyət
+              </div>
+            </a>
+          </div>
+          <div class="value-pill">
+            <a href="#vd-muk">
+              <div class="value-name">
+                Mükəmməllik
+              </div>
+            </a>
+          </div>
+          <div class="value-pill">
+            <a href="#vd-ley">
+              <div class="value-name">
+                Ləyaqət
+              </div>
+            </a>
+          </div>
+          <div class="value-pill">
+            <a href="#vd-sef">
+              <div class="value-name">
+                Şəffaflıq
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section aria-label="Dəyərlərin izahı" id="values-detail">
+    <div class="values-title">
+      <h2>
+        Dəyərlərin izahı
+      </h2>
+      <p>
+        Dəyərlər DAAB-ın akademik mədəniyyətini, əməkdaşlıq modelini və beynəlxalq elmi mühitdə etibarlılığını formalaşdıran əsas prinsiplərdir.
+      </p>
+    </div>
+    <div class="values-detail">
+      <div class="vd-item" id="vd-azadliq">
+        <h3 class="vd-title">
+          Akademik azadlıq
+        </h3>
+        <ul class="vd-list">
+          <li>
+            Elmi tədqiqatların sərbəst şəkildə aparılması və hər hansı ideoloji, siyasi və ya kommersiya təsirindən uzaq olması.
+          </li>
+          <li>
+            Alimlərin öz elmi görüşlərini maneəsiz şəkildə ifadə edə bilməsi.
+          </li>
+        </ul>
+      </div>
+      <div class="vd-item" id="vd-etika">
+        <h3 class="vd-title">
+          Akademik etika
+        </h3>
+        <ul class="vd-list">
+          <li>
+            Elmi fəaliyyət zamanı etik qaydalara əməl olunması, plagiat və saxta nəticələrdən uzaq durulması.
+          </li>
+          <li>
+            Tədqiqatlarda obyektivliyin qorunması və elmi işlərin dürüst aparılması.
+          </li>
+        </ul>
+      </div>
+      <div class="vd-item" id="vd-durust">
+        <h3 class="vd-title">
+          Dürüstlük
+        </h3>
+        <ul class="vd-list">
+          <li>
+            Alimlərin öz tədqiqatlarında və elmi müzakirələrində həqiqətə sadiq qalması.
+          </li>
+          <li>
+            Mövcud biliklər əsasında səhvlərin qəbul edilməsi və düzəldilməsi.
+          </li>
+        </ul>
+      </div>
+      <div class="vd-item" id="vd-ferq">
+        <h3 class="vd-title">
+          Fərqliliklərə hörmət
+        </h3>
+        <ul class="vd-list">
+          <li>
+            Fərqli elmi yanaşmalara və alternativ baxışlara açıq olmaq.
+          </li>
+          <li>
+            Cins, irq, din, dil, sosial status və digər fərqliliklərə qarşı dözümlülük və inklüzivlik.
+          </li>
+        </ul>
+      </div>
+      <div class="vd-item" id="vd-key">
+        <h3 class="vd-title">
+          Keyfiyyət
+        </h3>
+        <ul class="vd-list">
+          <li>
+            Tədqiqatların yüksək akademik standartlara uyğun aparılması.
+          </li>
+          <li>
+            Beynəlxalq səviyyədə qəbul edilən metodologiyalardan və araşdırma prinsiplərindən istifadə edilməsi.
+          </li>
+        </ul>
+      </div>
+      <div class="vd-item" id="vd-mes">
+        <h3 class="vd-title">
+          Məsuliyyət
+        </h3>
+        <ul class="vd-list">
+          <li>
+            Alimlərin cəmiyyətə, tələbələrə və gələcək nəsillərə qarşı məsuliyyət daşıması.
+          </li>
+          <li>
+            Elmin yalnız nəzəri deyil, praktik və sosial fayda verməsi üçün çalışmaq.
+          </li>
+        </ul>
+      </div>
+      <div class="vd-item" id="vd-muk">
+        <h3 class="vd-title">
+          Mükəmməllik
+        </h3>
+        <ul class="vd-list">
+          <li>
+            Davamlı öyrənmək, inkişaf etmək və daha yüksək elmi nailiyyətlər əldə etməyə çalışmaq.
+          </li>
+          <li>
+            Elmi araşdırmalarda və tədrisdə daim ən yaxşı nəticələri əldə etməyə yönəlmək.
+          </li>
+        </ul>
+      </div>
+      <div class="vd-item" id="vd-ley">
+        <h3 class="vd-title">
+          Ləyaqət
+        </h3>
+        <ul class="vd-list">
+          <li>
+            Alimlərin öz peşə fəaliyyətlərini yüksək əxlaqi dəyərlərlə aparması.
+          </li>
+          <li>
+            Bir-birinə hörmət və kollektiv akademik mühitin yaradılması.
+          </li>
+        </ul>
+      </div>
+      <div class="vd-item" id="vd-sef">
+        <h3 class="vd-title">
+          Şəffaflıq
+        </h3>
+        <ul class="vd-list">
+          <li>
+            Elmi araşdırmaların açıq və aydın şəkildə aparılması.
+          </li>
+          <li>
+            Qərarvermə prosesində obyektivlik və hesabatlılığın təmin olunması.
+          </li>
+        </ul>
+      </div>
+      <div class="vd-conclusion">
+        <span>
+          Bu dəyərlər alimlər arasında həmrəyliyi gücləndirir, beynəlxalq elmi mühitdə etibarı artırır və gənc tədqiqatçılar üçün sağlam akademik ənənələr yaradır.
+        </span>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer-pro">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>
+        Dünya Azərbaycanlı Alimlər Birliyi
+      </h3>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="footer-title">
+            Əlaqə
+          </h4>
+        <div class="footer-item">
+          ✉
+          <a href="mailto:daad.waas2024@gmail.com">
+            daad.waas2024@gmail.com
+          </a>
+        </div>
+        <div class="footer-item">
+          ☎
+          <span>
+            +90 555 147 46 74
+          </span>
+        </div>
+        <div class="footer-item">
+          🌐
+          <a href="https://daab-waas.org" rel="noopener noreferrer" target="_blank">
+            daab-waas.org
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-title">
+            Ünvan
+          </h4>
+        <p class="footer-address">
+          Feneryolu Mahallesi
+          <br/>
+          Gazi Muhtar Paşa Sokak No:44
+          <br/>
+          Kadıköy, İstanbul, Türkiyə
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-title">
+            Rəhbərlik
+          </h4>
+        <p class="footer-leader">
+          <strong>
+            Prof. Dr. Məsud Əfəndiyev
+          </strong>
+          <br/>
+          DAAB İdarə Heyətinin Sədri
+          <br/>
+          Germany — James D. Murray Distinguished Professor
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 DAAB / WAAS — All Rights Reserved
+  </div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const valuesGrid = document.querySelector('.values-grid');
+  const detailArea = document.querySelector('.values-detail');
+  const links = document.querySelectorAll('.value-pill a');
+  const boxes = document.querySelectorAll('.vd-item');
+  function clearHighlight(){boxes.forEach(box=>box.classList.remove('active-highlight'));detailArea?.classList.remove('dimmed');}
+  function highlightBox(targetId){clearHighlight();const target=document.getElementById(targetId);if(target&&detailArea){detailArea.classList.add('dimmed');target.classList.add('active-highlight');}}
+  links.forEach(link=>{const targetId=link.getAttribute('href').replace('#','');link.addEventListener('mouseenter',()=>highlightBox(targetId));link.addEventListener('focus',()=>highlightBox(targetId));link.addEventListener('click',()=>highlightBox(targetId));});
+  valuesGrid?.addEventListener('mouseleave',clearHighlight);
+  window.addEventListener('hashchange',()=>{if(!valuesGrid?.matches(':hover')) clearHighlight();});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+
+# Editor / OS
+.cursor/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Optional: keep launch.json — remove .vscode/ line above if you commit tasks.json
+
+# Local / non-deploy
+_pdf_extract.txt
+
+# Accidental duplicates (use css/ and js/ only)
+/daab-common.css
+/daab-nav.js

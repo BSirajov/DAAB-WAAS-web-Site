@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculum Vitae — Bakhtiyar Sirajov</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── UNEC Vacancy Palette ── */
+    :root {
+      --blue-dark:   #1A6FA8;
+      --blue-mid:    #2E9FD4;
+      --blue-light:  #D0EEFB;
+      --blue-accent: #56B4E8;
+      --blue-soft:   #AACDE6;
+      --body-text:   #555555;
+      --footer-text: #999999;
+      --bg:          #F2F2F2;
+      --white:       #FFFFFF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background: var(--bg);
+      color: var(--body-text);
+      line-height: 1.65;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    /* ── Language switch ── */
+    .lang-switch {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .lang-switch button {
+      padding: 7px 18px;
+      border: 2px solid var(--blue-dark);
+      background: var(--white);
+      color: var(--blue-dark);
+      font-family: 'Times New Roman', serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .lang-switch button.active,
+    .lang-switch button:hover {
+      background: var(--blue-dark);
+      color: var(--white);
+    }
+
+    .lang { display: none; }
+    .lang.active { display: inline; }
+    .lang.block.active { display: block; }
+
+    /* ── HERO / Header ── */
+    .hero {
+      background: var(--blue-dark);
+      color: var(--white);
+      padding: 0;
+      border-radius: 4px 4px 0 0;
+      overflow: hidden;
+    }
+
+    .hero-top {
+      padding: 36px 40px 28px;
+      background: linear-gradient(135deg, #1A6FA8 60%, #2E9FD4 100%);
+      border-bottom: 4px solid var(--blue-mid);
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero-photo {
+      flex-shrink: 0;
+      width: 160px;
+      height: 200px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+      border: 3px solid var(--white);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cv-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: rgba(255,255,255,0.88);
+      max-width: 680px;
+      line-height: 1.7;
+    }
+
+    /* Rank bar (blue-mid strip with personal details) */
+    .rank-bar {
+      background: var(--blue-mid);
+      padding: 16px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .rank-item dt {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .rank-item dd {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 2px;
+    }
+
+    /* ── Section ── */
+    .section {
+      background: var(--white);
+      border: 1px solid #d0dde8;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(26,111,168,0.07);
+    }
+
+    /* Section header — UNEC dark blue bar */
+    .section-title {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 14px 22px;
+      background: var(--blue-dark);
+      color: var(--white);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    /* Callout box (light blue, left border) */
+    .callout {
+      background: var(--blue-light);
+      border-left: 5px solid var(--blue-mid);
+      padding: 18px 22px;
+      margin: 0;
+      color: var(--body-text);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    /* ── Competency grid ── */
+    .competency-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      padding: 20px 22px;
+    }
+
+    .comp-group {
+      background: var(--bg);
+      border: 1px solid #d0dde8;
+      border-left: 4px solid var(--blue-mid);
+      padding: 16px 18px;
+      border-radius: 3px;
+    }
+
+    .comp-group h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+
+    .comp-group ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--body-text);
+      font-size: 14px;
+    }
+
+    .comp-group li { margin-bottom: 5px; }
+
+    /* ── Timeline ── */
+    .timeline { padding: 8px 22px 22px; }
+
+    .item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 24px;
+      padding: 22px 0;
+      border-bottom: 1px solid #e0eaf2;
+    }
+
+    .item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .period {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      padding-top: 3px;
+      line-height: 1.4;
+    }
+
+    .item h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
+      line-height: 1.3;
+    }
+
+    /* Role badge — light blue pill */
+    .role {
+      display: inline-block;
+      padding: 5px 12px;
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 3px;
+      border: 1px solid var(--blue-accent);
+      margin-bottom: 10px;
+    }
+
+    .item p {
+      margin: 8px 0 0;
+      font-size: 14.5px;
+      color: var(--body-text);
+      line-height: 1.7;
+    }
+
+    /* ── Education grid ── */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      padding: 20px 22px;
+    }
+
+    .edu-card {
+      background: var(--bg);
+      border: 1px solid #d0dde8;
+      border-top: 4px solid var(--blue-dark);
+      padding: 20px 18px;
+      border-radius: 3px;
+    }
+
+    .edu-card .period {
+      font-size: 13px;
+      color: var(--blue-mid);
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .edu-card h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      line-height: 1.35;
+    }
+
+    .edu-card p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--body-text);
+      line-height: 1.65;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid #d0dde8;
+      font-size: 13px;
+      color: var(--footer-text);
+      font-family: 'Times New Roman', serif;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      .competency-grid,
+      .education-grid,
+      .item,
+      .stats { grid-template-columns: 1fr; }
+      .hero-top { padding: 26px 20px 20px; flex-direction: column-reverse; gap: 20px; text-align: center; }
+      .hero-photo { width: 140px; height: 175px; }
+      .subtitle { margin: 0 auto; }
+      .rank-bar { padding: 14px 20px; gap: 18px; }
+      .timeline { padding: 8px 16px 16px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { padding: 0; }
+      .lang-switch { display: none; }
+      .section { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<main class="page">
+
+  <!-- Language switch -->
+  <div class="lang-switch">
+    <button id="btn-en" type="button" onclick="setLang('en')">English</button>
+    <button id="btn-az" type="button" onclick="setLang('az')">Azərbaycan</button>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <header class="hero">
+    <div class="hero-top">
+      <div class="hero-text">
+        <span class="cv-label">
+          <span class="lang en">Curriculum Vitae</span>
+          <span class="lang az">Tərcümeyi-hal</span>
+        </span>
+        <h1>
+          <span class="lang en">Bakhtiyar Sirajov</span>
+          <span class="lang az">Bəxtiyar Siracov</span>
+        </h1>
+        <p class="subtitle">
+          <span class="lang en">Senior international expert in information systems and software engineering with over four decades of experience, including more than 25 years at a United Nations organization.</span>
+          <span class="lang az">İnformasiya sistemləri və proqram mühəndisliyi sahəsində 40 ildən artıq təcrübəyə malik, o cümlədən BMT sisteminə daxil olan beynəlxalq təşkilatda 25 ildən çox fəaliyyət göstərmiş yüksək səviyyəli beynəlxalq ekspert.</span>
+        </p>
+      </div>
+      <figure class="hero-photo">
+        <img src="/images/bakhtiyar-sirajov.png" alt="Bakhtiyar Sirajov" width="160" height="200" loading="eager" />
+      </figure>
+    </div>
+
+    <!-- Rank bar -->
+    <dl class="rank-bar">
+      <div class="rank-item">
+        <dt><span class="lang en">Date of Birth</span><span class="lang az">Doğum tarixi</span></dt>
+        <dd><span class="lang en">21 October 1957</span><span class="lang az">21 oktyabr 1957</span></dd>
+      </div>
+      <div class="rank-item">
+        <dt><span class="lang en">Place of Birth</span><span class="lang az">Doğulduğu yer</span></dt>
+        <dd><span class="lang en">Baku, Azerbaijan</span><span class="lang az">Bakı, Azərbaycan</span></dd>
+      </div>
+      <div class="rank-item">
+        <dt><span class="lang en">Nationality</span><span class="lang az">Vətəndaşlıq</span></dt>
+        <dd><span class="lang en">Azerbaijani</span><span class="lang az">Azərbaycan</span></dd>
+      </div>
+      <div class="rank-item">
+        <dt><span class="lang en">Gender</span><span class="lang az">Cins</span></dt>
+        <dd><span class="lang en">Male</span><span class="lang az">Kişi</span></dd>
+      </div>
+    </dl>
+  </header>
+
+  <!-- ══ EXECUTIVE SUMMARY ══ -->
+  <section class="section">
+    <h2 class="section-title">
+      <span class="icon"></span>
+      <span class="lang en">Executive Summary</span>
+      <span class="lang az">İcraçı xülasə</span>
+    </h2>
+    <div class="callout">
+      <span class="lang en">
+        Senior international expert with extensive experience in designing and leading mission-critical information systems within complex institutional environments. Over 25 years at the International Atomic Energy Agency (IAEA), contributing to global nuclear safeguards through advanced IT solutions. Recognized for strategic leadership, systems reliability, and long-term institutional impact in high-security, data-intensive domains.
+      </span>
+      <span class="lang az">
+        Mürəkkəb institusional mühitlərdə kritik əhəmiyyətli informasiya sistemlərinin layihələndirilməsi və idarə olunması sahəsində geniş təcrübəyə malik beynəlxalq ekspert. Beynəlxalq Atom Enerjisi Agentliyində (BAEA) 25 ildən artıq fəaliyyət göstərərək qabaqcıl İT həlləri vasitəsilə qlobal nüvə təminatları sisteminə töhfə vermişdir. Yüksək təhlükəsizlikli və məlumat intensiv sahələrdə strateji liderlik, sistem etibarlılığı və uzunmüddətli institusional təsir üzrə tanınır.
+      </span>
+    </div>
+  </section>
+
+  <!-- ══ CORE COMPETENCIES ══ -->
+  <section class="section">
+    <h2 class="section-title">
+      <span class="icon"></span>
+      <span class="lang en">Core Competencies</span>
+      <span class="lang az">Əsas kompetensiyalar</span>
+    </h2>
+    <div class="competency-grid">
+      <div class="comp-group">
+        <h3><span class="lang en">Strategic &amp; Leadership</span><span class="lang az">Strateji liderlik</span></h3>
+        <ul>
+          <li><span class="lang en">Strategic leadership of enterprise-scale information systems</span><span class="lang az">Böyükmiqyaslı informasiya sistemlərinin strateji idarə edilməsi</span></li>
+          <li><span class="lang en">Management of multidisciplinary international technical teams</span><span class="lang az">Çoxşaxəli beynəlxalq texniki komandaların idarə olunması</span></li>
+          <li><span class="lang en">Long-term planning and modernization of institutional IT infrastructure</span><span class="lang az">İnstitusional İT infrastrukturunun uzunmüddətli planlaşdırılması</span></li>
+        </ul>
+      </div>
+      <div class="comp-group">
+        <h3><span class="lang en">Technical &amp; Systems Expertise</span><span class="lang az">Texniki və sistem ekspertizası</span></h3>
+        <ul>
+          <li><span class="lang en">Architecture and development of mission-critical software systems</span><span class="lang az">Kritik əhəmiyyətli proqram sistemlərinin arxitekturası</span></li>
+          <li><span class="lang en">Large-scale data processing, analysis, and information management</span><span class="lang az">Böyük həcmli məlumatların emalı və analizi</span></li>
+          <li><span class="lang en">Database systems design and high-reliability application development</span><span class="lang az">Verilənlər bazası sistemlərinin layihələndirilməsi</span></li>
+        </ul>
+      </div>
+      <div class="comp-group">
+        <h3><span class="lang en">Safeguards &amp; International Context</span><span class="lang az">Təminatlar və beynəlxalq kontekst</span></h3>
+        <ul>
+          <li><span class="lang en">Information systems supporting nuclear safeguards and verification</span><span class="lang az">Nüvə təminatları və yoxlama fəaliyyətlərini dəstəkləyən sistemlər</span></li>
+          <li><span class="lang en">Secure data handling, traceability, and integrity</span><span class="lang az">Məlumatların təhlükəsiz emalı, izlənə bilənliyi və bütövlüyü</span></li>
+          <li><span class="lang en">Alignment of IT solutions with international regulatory frameworks</span><span class="lang az">İT həllərinin beynəlxalq tənzimləyici çərçivələrə uyğunlaşdırılması</span></li>
+        </ul>
+      </div>
+      <div class="comp-group">
+        <h3><span class="lang en">Operational Excellence</span><span class="lang az">Əməliyyat mükəmməlliyi</span></h3>
+        <ul>
+          <li><span class="lang en">Delivery of complex IT projects in high-stakes environments</span><span class="lang az">Yüksək məsuliyyətli mühitlərdə mürəkkəb İT layihələrinin icrası</span></li>
+          <li><span class="lang en">System reliability, continuity, and lifecycle management</span><span class="lang az">Sistemlərin etibarlılığı, davamlılığı və idarə olunması</span></li>
+          <li><span class="lang en">Cross-functional coordination with technical and policy stakeholders</span><span class="lang az">Texniki və siyasət yönümlü tərəflərlə koordinasiya</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROFESSIONAL EXPERIENCE ══ -->
+  <section class="section">
+    <h2 class="section-title">
+      <span class="icon"></span>
+      <span class="lang en">Professional Experience</span>
+      <span class="lang az">Peşəkar fəaliyyət</span>
+    </h2>
+    <div class="timeline">
+
+      <article class="item">
+        <div class="period">
+          <span class="lang en">July 1995 –<br>November 2021</span>
+          <span class="lang az">İyul 1995 –<br>noyabr 2021</span>
+        </div>
+        <div>
+          <h3><span class="lang en">International Atomic Energy Agency (IAEA), Vienna, Austria</span><span class="lang az">Beynəlxalq Atom Enerjisi Agentliyi (BAEA), Vyana, Avstriya</span></h3>
+          <span class="role"><span class="lang en">Team Leader / Section Head (P5) — Office of Safeguards Information Systems</span><span class="lang az">Komanda rəhbəri / Bölmə rəhbəri (P5) — Təminatlar üzrə İnformasiya Sistemləri Ofisi</span></span>
+          <p><span class="lang en">Served at the IAEA in the Office of Safeguards Information Systems from 1995 to 2021. Led the Application Development Team and later the Application Development Section as Section Head (2020–2021). Contributed to the design, development, and evolution of mission-critical IT systems supporting nuclear safeguards verification, including secure data processing, analysis, and information management.</span><span class="lang az">1995–2021-ci illərdə BAEA-nın Təminatlar üzrə İnformasiya Sistemləri Ofisində fəaliyyət göstərmişdir. Tətbiqi Proqramların İnkişafı Komandasına, daha sonra isə Tətbiqi Proqramların İnkişafı Bölməsinə bölmə rəhbəri kimi rəhbərlik etmişdir (2020–2021). Nüvə təminatları üzrə yoxlama fəaliyyətlərini dəstəkləyən kritik əhəmiyyətli İT sistemlərinin layihələndirilməsi və inkişafına töhfə vermişdir.</span></p>
+          <p><span class="lang en">Played a key role in the modernization and continuity of safeguards information systems over more than two decades. Served at the IAEA during the period when the Agency was awarded the Nobel Peace Prize (2005).</span><span class="lang az">İyirmi ildən artıq müddətdə təminatlar üzrə informasiya sistemlərinin modernləşdirilməsində mühüm rol oynamışdır. BAEA-nın Nobel Sülh Mükafatına layiq görüldüyü dövrdə (2005) Agentlikdə çalışmışdır.</span></p>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="period">
+          <span class="lang en">October 1992 –<br>June 1995</span>
+          <span class="lang az">Oktyabr 1992 –<br>iyun 1995</span>
+        </div>
+        <div>
+          <h3><span class="lang en">I-NET GmbH, Vienna, Austria</span><span class="lang az">I-NET GmbH, Vyana, Avstriya</span></h3>
+          <span class="role"><span class="lang en">Systems Analyst / Application Programmer</span><span class="lang az">Sistem analitiki / Tətbiqi proqramçı</span></span>
+          <p><span class="lang en">Participated in the development of database applications for various Austrian companies. Designed and implemented business-critical data solutions.</span><span class="lang az">Müxtəlif Avstriya şirkətləri üçün verilənlər bazası tətbiqlərinin hazırlanmasında iştirak etmiş, biznes üçün kritik əhəmiyyətli məlumat həllərini layihələndirmiş və tətbiq etmişdir.</span></p>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="period">
+          <span class="lang en">August 1987 –<br>August 1988</span>
+          <span class="lang az">Avqust 1987 –<br>avqust 1988</span>
+        </div>
+        <div>
+          <h3><span class="lang en">Institute of Technical Cybernetics, Slovak Academy of Sciences, Bratislava</span><span class="lang az">Texniki Kibernetika İnstitutu, Slovakiya Elmlər Akademiyası, Bratislava</span></h3>
+          <span class="role"><span class="lang en">Systems Analyst / Application Programmer</span><span class="lang az">Sistem analitiki / Tətbiqi proqramçı</span></span>
+          <p><span class="lang en">Worked in the International Laboratory for Artificial Intelligence. Contributed to the development of a computer graphics system for the design of large-scale integration (LSI) microchips.</span><span class="lang az">Beynəlxalq Süni İntellekt Laboratoriyasında çalışmış və böyük inteqral sxemlərin mikroçiplərinin layihələndirilməsi üçün kompüter qrafikası sisteminin hazırlanması layihəsinə töhfə vermişdir.</span></p>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="period">
+          <span class="lang en">August 1979 –<br>June 1995</span>
+          <span class="lang az">Avqust 1979 –<br>iyun 1995</span>
+        </div>
+        <div>
+          <h3><span class="lang en">Institute of Cybernetics, Azerbaijani Academy of Sciences, Baku</span><span class="lang az">Kibernetika İnstitutu, Azərbaycan Elmlər Akademiyası, Bakı</span></h3>
+          <span class="role"><span class="lang en">Head of PC Software Section</span><span class="lang az">PC proqram təminatı bölməsinin rəhbəri</span></span>
+          <p><span class="lang en">Led the PC Software Section, responsible for CAD and database applications for industrial companies in Azerbaijan. In 1990, successfully defended a doctoral dissertation and received a PhD in Physics and Mathematics at the Computer Center of the former USSR Academy of Sciences, Moscow.</span><span class="lang az">PC proqram təminatı bölməsinə rəhbərlik etmiş, Azərbaycandakı sənaye müəssisələri üçün CAD və verilənlər bazası tətbiqlərinin hazırlanmasına məsul olmuşdur. 1990-cı ildə fizika-riyaziyyat üzrə fəlsəfə doktoru elmi dərəcəsini almışdır.</span></p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ EDUCATION ══ -->
+  <section class="section">
+    <h2 class="section-title">
+      <span class="icon"></span>
+      <span class="lang en">Education &amp; Academic Credentials</span>
+      <span class="lang az">Təhsil və akademik göstəricilər</span>
+    </h2>
+    <div class="education-grid">
+      <article class="edu-card">
+        <div class="period">1979 – 1986</div>
+        <h3><span class="lang en">PhD in Physics &amp; Mathematics</span><span class="lang az">Fizika-riyaziyyat üzrə fəlsəfə doktoru</span></h3>
+        <p><span class="lang en">Computer Center of the former USSR Academy of Sciences, Moscow, Russia. Postgraduate studies. Author of seven scientific publications and participant in international scientific conferences.</span><span class="lang az">Keçmiş SSRİ Elmlər Akademiyasının Hesablama Mərkəzi, Moskva, Rusiya. Aspirantura təhsili. Yeddi elmi məqalənin müəllifi və beynəlxalq elmi konfransların iştirakçısı.</span></p>
+      </article>
+      <article class="edu-card">
+        <div class="period">1974 – 1979</div>
+        <h3><span class="lang en">Master's Degree in Computer Science</span><span class="lang az">Kompüter elmləri üzrə magistr dərəcəsi</span></h3>
+        <p><span class="lang en">Azerbaijan State University, Department of Applied Mathematics, Baku, Azerbaijan.</span><span class="lang az">Azərbaycan Dövlət Universiteti, Tətbiqi riyaziyyat fakültəsi, Bakı, Azərbaycan.</span></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <span class="lang en">Bakhtiyar Sirajov &ensp;·&ensp; Curriculum Vitae &ensp;·&ensp; Baku, Azerbaijan</span>
+    <span class="lang az">Bəxtiyar Siracov &ensp;·&ensp; Tərcümeyi-hal &ensp;·&ensp; Bakı, Azərbaycan</span>
+  </footer>
+
+</main>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    document.querySelectorAll('.lang.' + lang).forEach(function(el) {
+      el.classList.add('active');
+    });
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-az').classList.toggle('active', lang === 'az');
+  }
+  setLang('en');
+</script>
+</body>
+</html>

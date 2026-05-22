@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+
+<html lang="az">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>DAAB — Fəaliyyətimiz</title>
+<meta content="Dünya Azərbaycanlı Alimlər Birliyinin fəaliyyətləri, tədbirləri, görüşləri və təşəbbüsləri." name="description"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/><link href="css/daab-common.css?v=8" rel="stylesheet"/>
+<link href="css/daab-mobile.css?v=2" rel="stylesheet"/>
+
+<style>
+/* ===== merged from style block-1 ===== */
+:root{--navy:     #0d1f3c;--teal:     #1a7a8a;--teal-lt:  #22a2b5;--gold:     #c89b38;--gold-lt:  #f6df9c;--cream:    #f7f4ef;--white:    #ffffff;--text:     #102033;--text-mid: #4a5568;--text-lt:  #718096;--border:   #d8dde6;--card-bg:  #ffffff;--tag-bg:   #eef6f8;}
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin:0;
+    font-family: Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text);
+    background:#f4f9fd;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ─── HEADER ─────────────────────────────────────────── */
+
+
+  .header-nav a.active { color: var(--gold-lt); font-weight: 600; }
+
+  /* ─── HERO BAND ───────────────────────────────────────── */
+  .page-hero {
+    background: linear-gradient(135deg, #1A6FA8 0%, #2E9FD4 100%);
+    padding: 28px 24px 28px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    overflow: hidden;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 20% 50%, rgba(26,122,138,.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 80% 30%, rgba(196,154,60,.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+
+  .page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 46px);
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: .02em;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .page-hero p {
+    max-width: 580px;
+    margin: 0 auto;
+    color: rgba(255,255,255,.62);
+    font-size: 15px;
+  }
+
+  /* ─── LAYOUT ──────────────────────────────────────────── */
+  .content-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 52px 24px 80px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  /* ─── NEWS FEED ───────────────────────────────────────── */
+  .news-feed { display: flex; flex-direction: column; gap: 0; }
+
+  .news-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 28px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 16px rgba(13,31,60,.06);
+    transition: transform .22s, box-shadow .22s;
+    scroll-margin-top: 230px;
+  }
+
+  .news-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(13,31,60,.12);
+  }
+
+  .card-header {
+    background: linear-gradient(135deg, #1A6FA8 0%, #2E9FD4 100%);
+    padding: 22px 28px 18px;
+    position: relative;
+  }
+
+  .card-date {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--gold-lt);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-date::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.35;
+  }
+
+  .card-body { padding: 24px 28px; }
+
+  .card-text {
+    font-size: 14.5px;
+    color: var(--text-mid);
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+
+  .card-source {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--tag-bg);
+    color: var(--teal);
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid rgba(26,122,138,.2);
+    margin-top: 0;
+    margin-bottom: 20px;
+    transition: all .2s;
+  }
+
+  .card-source:hover {
+    background: var(--teal);
+    color: var(--white);
+    border-color: var(--teal);
+  }
+
+  /* Space between standalone img and button */
+  img + .card-source { margin-top: 1em; }
+
+  .card-source svg { flex-shrink: 0; }
+
+  .card-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    margin-top: 18px;
+    margin-bottom: 1em;
+  }
+
+  .card-gallery.single { grid-template-columns: 1fr; }
+  .card-gallery.double { grid-template-columns: 1fr 1fr; }
+  .card-gallery.triple { grid-template-columns: 1fr 1fr 1fr; }
+  .card-gallery.quadruple { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+  .card-gallery img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    border: 1px solid var(--border);
+  }
+
+  .card-gallery.single img { height: 260px; }
+
+
+  .award-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 22px;
+    margin-bottom: 1em;
+    align-items: stretch;
+  }
+
+  .award-item {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(13,31,60,.06);
+  }
+
+  .award-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    background: #f7f9fb;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .award-item p {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text);
+    padding: 8px 10px;
+    text-align: center;
+  }
+
+  /* ─── SIDEBAR ─────────────────────────────────────────── */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: sticky;
+    top: 230px;
+  }
+
+  .sidebar-widget {
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .widget-head {
+    background: linear-gradient(135deg, #1A6FA8 0%, #2E9FD4 100%);
+    padding: 14px 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: .04em;
+    border-bottom: 2px solid var(--gold);
+    text-align: center;
+  }
+
+  .widget-body {
+    padding: 16px 20px;
+    max-height: calc(15 * 41px + 32px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #2E9FD4 #e8eef5;
+  }
+
+  .widget-body::-webkit-scrollbar { width: 6px; }
+  .widget-body::-webkit-scrollbar-track { background: #e8eef5; border-radius: 3px; }
+  .widget-body::-webkit-scrollbar-thumb { background: #2E9FD4; border-radius: 3px; }
+  .widget-body::-webkit-scrollbar-thumb:hover { background: #1A6FA8; }
+
+
+  .timeline-list { list-style: none; }
+
+  .timeline-list li {
+    display: flex;
+    gap: 12px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.5;
+    cursor: pointer;
+    transition: color .18s;
+  }
+
+  .timeline-list li:last-child { border-bottom: none; }
+  .timeline-list li:hover { color: var(--teal); }
+
+  .timeline-list .tl-date {
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .timeline-list a {
+    color: inherit;
+    text-decoration: none;
+    border-radius: 6px;
+    padding: 2px 6px;
+    margin: -2px -6px;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .timeline-list a:hover {
+    background: #daeef2;
+    color: var(--teal);
+  }
+
+  .timeline-list a.tl-active {
+    color: var(--teal);
+    font-weight: 700;
+    background: #e8edf3;
+    border-radius: 6px;
+    padding: 2px 6px;
+    margin: -2px -6px;
+  }
+
+  .timeline-list li:has(a.tl-active) .tl-date {
+    color: var(--teal);
+  }
+
+  /* ─── CONF CARD ───────────────────────────────────────── */
+
+
+  /* ─── FOOTER ──────────────────────────────────────────── */
+/* ─── DIVIDER ──────────────────────────────────────────── */
+
+
+  /* ─── IMAGE PLACEHOLDER ──────────────────────────────── */
+
+
+  .card-gallery.single .img-ph { height: 260px; }
+
+
+  .list-az { list-style: none; padding-left: 0; }
+  .list-az li { padding: 4px 0 4px 22px; position: relative; font-size: 14px; color: var(--text-mid); }
+  .list-az li::before { content: '▸'; position: absolute; left: 0; color: var(--teal); font-size: 12px; top: 6px; }
+
+
+  @media (max-width: 1100px) {
+    .award-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .award-grid { grid-template-columns: repeat(2, 1fr); }
+    .award-item img { height: 190px; }
+  }
+  @media (max-width: 900px) {
+    .content-wrap { grid-template-columns: 1fr; }
+
+  }
+
+/* Two-image gallery normalization */
+.card-gallery.double {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+  gap: 18px !important;
+  align-items: stretch !important;
+}
+
+.card-gallery.double img {
+  width: 100% !important;
+  height: 260px !important;
+  min-height: 260px !important;
+  max-height: 260px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #f7fbff !important;
+  border-radius: 10px !important;
+  padding: 6px !important;
+}
+
+
+/* Qazax Center gallery */
+.card-gallery.qazax-gallery{
+    display:grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap:18px !important;
+}
+.card-gallery.qazax-gallery img{
+    width:100% !important;
+    height:220px !important;
+    object-fit:cover !important;
+    border-radius:12px !important;
+    display:block !important;
+}
+@media(max-width:768px){
+    .card-gallery.qazax-gallery{
+        grid-template-columns:1fr !important;
+    }
+}
+
+/* BDU masterclass gallery */
+.card-gallery.bdu-gallery{
+    display:grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap:12px !important;
+}
+.card-gallery.bdu-gallery img{
+    width:100% !important;
+    height:160px !important;
+    object-fit:cover !important;
+    border-radius:12px !important;
+    display:block !important;
+}
+@media(max-width:768px){
+    .card-gallery.bdu-gallery{
+        grid-template-columns:1fr !important;
+    }
+}
+
+/* Bəxtiyar Siracov BDU gallery */
+.card-gallery.siracov-gallery{
+    display:grid !important;
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:12px !important;
+}
+.card-gallery.siracov-gallery img{
+    width:100% !important;
+    height:240px !important;
+    object-fit:cover !important;
+    border-radius:12px !important;
+    display:block !important;
+}
+@media(max-width:768px){
+    .card-gallery.siracov-gallery{
+        grid-template-columns:1fr !important;
+    }
+    .card-gallery.siracov-gallery img{
+        height:auto !important;
+    }
+}
+@media(max-width:768px){
+    .card-gallery.siracov-gallery{
+        grid-template-columns:1fr !important;
+    }
+    .card-gallery.siracov-gallery img:first-child{
+        grid-column:auto !important;
+        height:320px !important;
+    }
+}
+
+/* ===== Global typography normalization ===== */
+body, p, li, a, span, div, .card-text, .timeline-list li, .card-source, .widget-body, .widget-head{
+    font-family: Inter,system-ui,-apple-system,Segoe UI,sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+    letter-spacing: 0 !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.card-title,
+.page-hero h1 {
+    font-family: 'Playfair Display', serif !important;
+    line-height: 1.25 !important;
+}
+
+/* Reduce spacing between paragraphs */
+.card-body p,
+.card-text {
+    margin-bottom: 10px !important;
+}
+
+/* Compact lists */
+li {
+    margin-bottom: 2px !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+
+/* Sidebar compactness */
+.timeline-list li {
+    line-height: 1.3 !important;
+}
+
+/* Improve readability of long texts */
+.card-body {
+    line-height: 1.45 !important;
+}
+
+/* Egypt medal gallery */
+.egypt-medal-gallery{
+    display:grid !important;
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:18px !important;
+}
+.egypt-medal-gallery img{
+    width:100% !important;
+    height:320px !important;
+    object-fit:contain !important;
+    background:#fff !important;
+    border-radius:12px !important;
+    display:block !important;
+}
+@media(max-width:768px){
+    .egypt-medal-gallery{
+        grid-template-columns:1fr !important;
+    }
+}
+
+/* Egypt President Award Gallery */
+.egypt-president-gallery{
+    display:grid !important;
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:18px !important;
+}
+.egypt-president-gallery img{
+    width:100% !important;
+    height:340px !important;
+    object-fit:contain !important;
+    background:#fff !important;
+    border-radius:12px !important;
+    display:block !important;
+}
+@media(max-width:768px){
+    .egypt-president-gallery{
+        grid-template-columns:1fr !important;
+    }
+}
+
+/* Saadet Kerimi image */
+.saadet-gallery{
+    display:flex !important;
+    justify-content:center !important;
+}
+.saadet-gallery img{
+    width:320px !important;
+    height:320px !important;
+    object-fit:cover !important;
+    border-radius:16px !important;
+    display:block !important;
+}
+
+/* Float Səadət Kərimi image to top-right */
+.saadet-gallery img{
+    width:240px !important;
+    height:240px !important;
+    object-fit:cover !important;
+    border-radius:16px !important;
+    box-shadow:0 4px 18px rgba(0,0,0,0.12) !important;
+}
+@media(max-width:768px){
+    .saadet-gallery{
+        float:none !important;
+        width:100% !important;
+        margin:0 auto 20px auto !important;
+        text-align:center !important;
+    }
+}
+
+/* Improved portrait fitting */
+.saadet-gallery{
+    float:right !important;
+    width:240px !important;
+    margin:0 0 18px 24px !important;
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+}
+
+.saadet-gallery img{
+    width:100% !important;
+    height:auto !important;
+    max-height:320px !important;
+    object-fit:contain !important;
+    background:#ffffff !important;
+    border-radius:16px !important;
+    box-shadow:0 4px 18px rgba(0,0,0,0.12) !important;
+    padding:6px !important;
+}
+
+@media(max-width:768px){
+    .saadet-gallery{
+        float:none !important;
+        width:100% !important;
+        margin:0 auto 20px auto !important;
+        text-align:center !important;
+    }
+    .saadet-gallery img{
+        width:240px !important;
+    }
+}
+
+/* Telman Əliyev 90 gallery */
+.telman-gallery{
+    display:grid !important;
+    grid-template-columns: 0.9fr 1.6fr !important;
+    gap:18px !important;
+    align-items:start !important;
+}
+.telman-gallery img{
+    width:100% !important;
+    max-height:520px !important;
+    height:auto !important;
+    object-fit:contain !important;
+    background:#fff !important;
+    border-radius:12px !important;
+    padding:6px !important;
+    display:block !important;
+    box-shadow:0 2px 14px rgba(13,31,60,.08) !important;
+}
+@media(max-width:768px){
+    .telman-gallery{
+        grid-template-columns:1fr !important;
+    }
+}
+
+/* Bilingual open letter columns */
+.open-letter-bilingual{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+  gap:22px !important;
+  margin:22px 0 28px 0 !important;
+  clear:both !important;
+}
+.open-letter-column{
+  background:#ffffff !important;
+  border:1px solid var(--border) !important;
+  border-radius:12px !important;
+  padding:18px 20px !important;
+  box-shadow:0 2px 14px rgba(13,31,60,.06) !important;
+  max-height:720px !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+}
+.open-letter-column h3{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif !important;
+  font-size:16px !important;
+  color:var(--teal) !important;
+  margin:0 0 12px 0 !important;
+  text-align:center !important;
+  border-bottom:1px solid var(--border) !important;
+  padding-bottom:8px !important;
+}
+.open-letter-column p{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif !important;
+  font-size:14px !important;
+  line-height:1.42 !important;
+  margin:0 0 10px 0 !important;
+  color:var(--text-mid) !important;
+  word-break:normal !important;
+}
+@media(max-width:900px){
+  .open-letter-bilingual{
+    grid-template-columns:1fr !important;
+  }
+}
+
+/* Center align all card captions/titles */
+.card-title, .card-header, article h1, article h2, article h3, article h4{
+    text-align:center !important;
+}
+
+
+/* Current activity page layout */
+:root {
+  --daab-nav-height: 68px;
+  --activities-gap: 32px;
+}
+
+.content-wrap {
+  width: 100% !important;
+  max-width: var(--max) !important;
+  margin: var(--activities-gap) auto 0 !important;
+  padding: 0 24px 80px !important;
+  display: grid !important;
+  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr) !important;
+  gap: 28px !important;
+  align-items: start !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.sidebar {
+  position: sticky !important;
+  top: calc(var(--daab-nav-height) + 18px) !important;
+  height: max-content !important;
+  max-height: calc(100vh - var(--daab-nav-height) - 36px) !important;
+}
+
+.sidebar .widget-body {
+  max-height: calc(100vh - var(--daab-nav-height) - 120px) !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+}
+
+.news-card {
+  scroll-margin-top: calc(var(--daab-nav-height) + 28px) !important;
+}
+
+@media (max-width: 1060px) {
+  :root { --daab-nav-height: 62px; --activities-gap: 24px; }
+
+  .content-wrap {
+    grid-template-columns: 1fr !important;
+    padding: 0 18px 64px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .content-wrap {
+    padding: 0 14px 52px !important;
+  }
+}
+
+
+/* ===== merged from style converted-inline-styles ===== */
+/* Former inline styles converted to classes for consistency */
+.inline-style-001{font-weight:700 !important;color:var(--text) !important;margin-bottom:8px !important;}
+.inline-style-002{width:100% !important;height:160px !important;object-fit:cover !important;border-radius:8px !important;display:block !important;}
+.inline-style-003{width:100% !important;height:220px !important;object-fit:cover !important;object-position:center top !important;border-radius:10px !important;display:block !important;background:#f7f9fb !important;border:1px solid var(--border) !important;box-shadow:0 1px 8px rgba(13,31,60,.06) !important;}
+.inline-style-004{border-left:3px solid var(--gold) !important;padding:12px 18px !important;margin:0 0 16px !important;background:var(--cream) !important;border-radius:0 8px 8px 0 !important;font-style:italic !important;color:var(--text-mid) !important;font-size:14px !important;line-height:1.7 !important;}
+.inline-style-005{display:flex !important;gap:10px !important;margin-bottom:16px !important;flex-wrap:wrap !important;}
+.inline-style-006{margin-top:22px !important;margin-bottom:28px !important;}
+.inline-style-007{margin-top:18px !important;margin-bottom:26px !important;}
+.inline-style-008{float:right !important;width:240px !important;margin:0 0 18px 24px !important;display:block !important;}
+.inline-style-009{background:var(--cream) !important;border-radius:8px !important;padding:16px 20px !important;margin-bottom:16px !important;border-left:3px solid var(--teal) !important;}
+.inline-style-010{font-size:13px !important;font-weight:600 !important;color:var(--text) !important;margin-bottom:10px !important;}
+.inline-style-011{color:var(--teal) !important;}
+.inline-style-012{background:var(--navy) !important;border-radius:8px !important;padding:16px 20px !important;color:white !important;}
+.inline-style-013{font-size:13px !important;font-weight:600 !important;color:var(--gold-lt) !important;margin-bottom:10px !important;}
+.inline-style-014{font-size:13px !important;color:rgba(255,255,255,.75) !important;margin-bottom:4px !important;}
+.inline-style-015{color:var(--gold-lt) !important;}
+.inline-style-016{font-size:13px !important;color:rgba(255,255,255,.75) !important;}
+.inline-style-017{margin:20px 0 26px 0 !important;text-align:center !important;}
+.inline-style-018{width:100% !important;max-width:900px !important;height:auto !important;border-radius:14px !important;object-fit:contain !important;box-shadow:0 4px 18px rgba(0,0,0,0.12) !important;}
+.inline-style-019{display:grid !important;grid-template-columns:repeat(auto-fit,minmax(320px,1fr)) !important;gap:18px !important;margin:22px 0 28px 0 !important;align-items:start !important;}
+.inline-style-020{background:#fff !important;border-radius:14px !important;overflow:hidden !important;box-shadow:0 4px 16px rgba(0,0,0,.12) !important;padding:8px !important;}
+.inline-style-021{width:100% !important;height:360px !important;object-fit:cover !important;border-radius:10px !important;display:block !important;margin:auto !important;}
+.inline-style-022{width:100% !important;height:320px !important;object-fit:cover !important;border-radius:10px !important;display:block !important;margin:auto !important;}
+.inline-style-023{width:60% !important;border-radius:10px !important;display:block !important;margin:0 auto 16px auto !important;}
+.inline-style-024{display:flex !important;gap:12px !important;margin-bottom:16px !important;}
+.inline-style-025{flex:1 !important;display:flex !important;flex-direction:column !important;gap:1em !important;}
+.inline-style-026{width:100% !important;height:180px !important;border-radius:10px !important;object-fit:cover !important;}
+.inline-style-027{display:flex !important;width:100% !important;justify-content:center !important;font-size:11px !important;}
+.inline-style-028{display:flex !important;gap:12px !important;}
+.inline-style-029{width:100% !important;max-width:600px !important;border-radius:10px !important;display:block !important;margin:0 auto 16px auto !important;}
+.inline-style-030{width:50% !important;border-radius:10px !important;object-fit:cover !important;}
+.inline-style-031{display:flex !important;gap:10px !important;margin-top:14px !important;flex-wrap:wrap !important;}
+
+
+/* ===== DAAB common UI alignment ===== */
+:root {
+  --navy: var(--blue-900);
+  --teal: var(--blue-700);
+  --teal-lt: var(--blue-400);
+  --gold-lt: var(--gold-soft);
+  --cream: #f7fbff;
+  --text: var(--ink);
+  --text-mid: var(--muted);
+  --text-lt: #6d8298;
+  --border: var(--line);
+  --card-bg: rgba(255, 255, 255, .96);
+  --tag-bg: #eef7fc;
+}
+
+body {
+  color: var(--ink) !important;
+  background: #fff url("images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
+}
+
+.page-hero {
+  color: var(--ink) !important;
+  background: #fff url("images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
+  border-bottom: 1px solid rgba(0, 105, 180, .10) !important;
+}
+
+.page-hero::before {
+  background: rgba(255, 255, 255, .36) !important;
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, .18), rgba(255, 255, 255, 0));
+  opacity: .72;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
+}
+
+.page-hero h1,
+.page-hero p {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.page-hero h1 {
+  color: #08263b !important;
+  font-size: clamp(30.4px, 4.8vw, 57.6px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -.035em !important;
+}
+
+.page-hero p {
+  max-width: 720px !important;
+  color: var(--muted) !important;
+  font-weight: 600 !important;
+}
+
+.content-wrap {
+  max-width: var(--max) !important;
+  gap: 28px !important;
+}
+
+.news-card,
+.sidebar-widget {
+  background: rgba(255, 255, 255, .96) !important;
+  border: 1px solid rgba(0, 105, 180, .18) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.news-card {
+  margin-bottom: 26px !important;
+}
+
+.news-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: var(--shadow-strong) !important;
+  border-color: rgba(78, 180, 238, .42) !important;
+}
+
+.card-header,
+.widget-head {
+  background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 58%, var(--blue-400) 100%) !important;
+}
+
+.card-header {
+  padding: 24px 28px 20px !important;
+}
+
+.card-date {
+  color: var(--gold-soft) !important;
+  justify-content: center !important;
+  font-weight: 800 !important;
+}
+
+.card-date::before {
+  background: var(--gold) !important;
+}
+
+.card-title {
+  color: #fff !important;
+  font-size: clamp(20px, 2.2vw, 28px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -.015em !important;
+}
+
+.card-body {
+  padding: 26px 28px !important;
+}
+
+.card-text,
+.card-body p,
+.card-body li {
+  color: var(--muted) !important;
+  font-size: 15px !important;
+  line-height: 1.62 !important;
+}
+
+.card-source {
+  color: var(--blue-700) !important;
+  background: #fff !important;
+  border: 1px solid rgba(0, 105, 180, .26) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 10px 24px rgba(0, 45, 82, .10) !important;
+  font-weight: 800 !important;
+}
+
+.card-source:hover {
+  color: #fff !important;
+  background: var(--blue-700) !important;
+  border-color: var(--blue-700) !important;
+  transform: translateY(-1px) !important;
+}
+
+.card-gallery img,
+.award-item img {
+  border-color: rgba(0, 105, 180, .16) !important;
+  border-radius: 14px !important;
+  background: #f7fbff !important;
+}
+
+.widget-head {
+  border-bottom: 2px solid var(--gold) !important;
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+}
+
+.timeline-list a {
+  border-radius: 10px !important;
+}
+
+.timeline-list a:hover,
+.timeline-list a.tl-active {
+  color: var(--blue-700) !important;
+  background: #eef7fc !important;
+}
+
+@media (max-width: 760px) {
+  .card-body,
+  .card-header {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .card-title {
+    font-size: 22px !important;
+  }
+}
+
+
+/* ===== Title panel consistency with shared pages ===== */
+:root {
+  --activities-title-height: 0px;
+  --activities-gap: 32px;
+}
+
+.page-hero {
+  position: relative !important;
+  top: auto !important;
+  z-index: 1 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  color: var(--ink) !important;
+  text-align: left !important;
+  background: #fff url("images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+.page-hero::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(255, 255, 255, .36) !important;
+  pointer-events: none !important;
+}
+
+.page-hero::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, .18), rgba(255, 255, 255, 0)) !important;
+  opacity: .72 !important;
+  mix-blend-mode: normal !important;
+  pointer-events: none !important;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 82%) !important;
+}
+
+.activities-hero-wrap {
+  position: relative !important;
+  z-index: 1 !important;
+  display: grid !important;
+  grid-template-columns: 1.12fr .88fr !important;
+  gap: 32px !important;
+  align-items: start !important;
+  padding: 32px 24px 40px !important;
+}
+
+.page-hero h1 {
+  margin: 0 0 14px !important;
+  padding-top: .08em !important;
+  color: #08263b !important;
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-size: clamp(30.4px, 4.8vw, 57.6px) !important;
+  font-weight: 800 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.035em !important;
+}
+
+.activities-summary-panel {
+  padding: 22px !important;
+  background: rgba(255, 255, 255, .14) !important;
+  border: 1px solid rgba(255, 255, 255, .28) !important;
+  border-radius: 30px !important;
+  box-shadow: 0 18px 50px rgba(0, 45, 82, .22) !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+.activities-summary-card {
+  padding: 24px !important;
+  color: var(--ink) !important;
+  background: rgba(255, 255, 255, .92) !important;
+  border: 1px solid rgba(255, 255, 255, .62) !important;
+  border-radius: 24px !important;
+}
+
+.activities-summary-card .hero-text {
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+.content-wrap {
+  margin: var(--activities-gap) auto 0 !important;
+}
+
+.sidebar {
+  top: calc(var(--daab-nav-height) + 18px) !important;
+  max-height: calc(100vh - var(--daab-nav-height) - 36px) !important;
+}
+
+.sidebar .widget-body {
+  max-height: calc(100vh - var(--daab-nav-height) - 120px) !important;
+}
+
+.news-card {
+  scroll-margin-top: calc(var(--daab-nav-height) + 28px) !important;
+}
+
+@media (max-width: 760px) {
+  .page-hero {
+    background-size: auto 360px !important;
+  }
+
+  .activities-hero-wrap {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+    padding: 42px 18px 34px !important;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(30px, 10.5vw, 42px) !important;
+  }
+
+  .activities-summary-panel {
+    max-width: 100% !important;
+  }
+}
+
+
+/* ===== Instant event navigation and mobile timeline ===== */
+html {
+  scroll-behavior: auto !important;
+}
+
+.timeline-list a {
+  display: inline-block !important;
+  min-height: 36px !important;
+  line-height: 1.35 !important;
+}
+
+
+.events-menu-toggle {
+  display: none;
+}
+
+@media (max-width: 1060px) {
+  .sidebar-widget {
+    overflow: hidden !important;
+  }
+
+  .widget-head {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 14px !important;
+    text-align: left !important;
+  }
+
+  .events-menu-toggle {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    width: 42px !important;
+    height: 38px !important;
+    padding: 0 10px !important;
+    cursor: pointer !important;
+    background: rgba(255, 255, 255, .16) !important;
+    border: 1px solid rgba(255, 255, 255, .34) !important;
+    border-radius: 10px !important;
+  }
+
+  .events-menu-toggle span {
+    display: block !important;
+    width: 100% !important;
+    height: 2px !important;
+    background: #fff !important;
+    border-radius: 999px !important;
+  }
+
+  .sidebar-widget .widget-body {
+    max-height: 0 !important;
+    padding: 0 12px !important;
+    overflow: hidden !important;
+    transition: max-height .22s ease, padding .22s ease !important;
+  }
+
+  .sidebar-widget.events-open .widget-body {
+    max-height: min(70vh, 560px) !important;
+    padding: 12px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .timeline-list {
+    display: block !important;
+    padding: 0 !important;
+  }
+
+  .timeline-list li {
+    display: flex !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 9px 0 !important;
+    border-bottom: 1px solid rgba(0, 105, 180, .12) !important;
+  }
+
+  .timeline-list .tl-date {
+    flex: 0 0 64px !important;
+    margin: 0 !important;
+    padding-top: 3px !important;
+  }
+
+  .timeline-list a {
+    min-height: 44px !important;
+    padding: 10px 12px !important;
+  }
+}
+
+/* Final mobile override: show events hamburger panel reliably */
+@media (max-width: 1060px) {
+  .content-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+  }
+
+  .sidebar {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: sticky !important;
+    top: calc(var(--daab-nav-height) + 10px) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    order: 0 !important;
+    z-index: 4500 !important;
+  }
+
+  .news-feed {
+    order: 1 !important;
+  }
+
+  .sidebar-widget {
+    display: block !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    border-radius: 18px !important;
+  }
+
+  .widget-head {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    min-height: 58px !important;
+    padding: 12px 16px !important;
+  }
+
+  .events-menu-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    width: 44px !important;
+    height: 42px !important;
+    min-width: 44px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .events-menu-toggle span {
+    display: block !important;
+    width: 20px !important;
+    height: 2px !important;
+    background: #fff !important;
+  }
+
+  .sidebar-widget:not(.events-open) .widget-body {
+    display: block !important;
+    max-height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .sidebar-widget.events-open .widget-body {
+    display: block !important;
+    max-height: min(62vh, 520px) !important;
+    padding: 12px !important;
+    overflow-y: auto !important;
+  }
+
+  .card-gallery,
+  .award-grid,
+  .inline-style-019,
+  .inline-style-024,
+  .inline-style-028 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .card-gallery img,
+  .award-item img,
+  .inline-style-002,
+  .inline-style-003,
+  .inline-style-018,
+  .inline-style-021,
+  .inline-style-022,
+  .inline-style-023,
+  .inline-style-026,
+  .inline-style-029,
+  .inline-style-030 {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .award-item {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+
+/* Clear portrait layout for the presidential award section */
+#serencam-2026 .award-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)) !important;
+  gap: 16px !important;
+  align-items: stretch !important;
+  overflow: visible !important;
+  width: 100% !important;
+}
+
+#serencam-2026 .award-item {
+  display: flex !important;
+  min-width: 0 !important;
+  height: auto !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 10px !important;
+  overflow: hidden !important;
+  background: #fff !important;
+  border: 1px solid rgba(0, 105, 180, .16) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 24px rgba(0, 45, 82, .10) !important;
+}
+
+#serencam-2026 .award-item img {
+  display: block !important;
+  width: 100% !important;
+  height: 170px !important;
+  min-height: 170px !important;
+  max-height: 170px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  padding: 6px !important;
+  background: #f7fbff !important;
+  border: 1px solid rgba(0, 105, 180, .12) !important;
+  border-radius: 14px !important;
+}
+
+#serencam-2026 .award-item p {
+  min-height: 0 !important;
+  margin: 10px 0 0 !important;
+  padding: 0 !important;
+  color: var(--ink) !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+  text-align: center !important;
+}
+
+@media (min-width: 1180px) {
+  #serencam-2026 .award-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 1060px) {
+  #serencam-2026 .award-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    gap: 16px !important;
+    overflow: visible !important;
+  }
+
+  #serencam-2026 .award-item {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  #serencam-2026 .award-item img {
+    position: static !important;
+    float: none !important;
+    height: 160px !important;
+    min-height: 160px !important;
+    max-height: 160px !important;
+    transform: none !important;
+    padding: 6px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  #serencam-2026 .award-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #serencam-2026 .award-item img {
+    height: 180px !important;
+    min-height: 180px !important;
+    max-height: 180px !important;
+  }
+}
+
+/* Compact responsive layouts for BMU and 187 school online event galleries */
+#bmu-2026 .card-gallery.double,
+#baxtiyar-187-2026 .card-gallery.double {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  gap: 16px !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+#bmu-2026 .card-gallery.double img,
+#baxtiyar-187-2026 .card-gallery.double img {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 6px !important;
+  object-position: center center !important;
+  background: #f7fbff !important;
+  border: 1px solid rgba(0, 105, 180, .16) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 18px rgba(0, 45, 82, .08) !important;
+}
+
+#bmu-2026 .card-gallery.double img {
+  height: 180px !important;
+  min-height: 180px !important;
+  max-height: 180px !important;
+  object-fit: contain !important;
+}
+
+#baxtiyar-187-2026 .card-gallery.double img {
+  height: 220px !important;
+  min-height: 220px !important;
+  max-height: 220px !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+}
+
+@media (max-width: 760px) {
+  #bmu-2026 .card-gallery.double,
+  #baxtiyar-187-2026 .card-gallery.double {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)) !important;
+    gap: 14px !important;
+  }
+
+  #bmu-2026 .card-gallery.double img {
+    height: 160px !important;
+    min-height: 160px !important;
+    max-height: 160px !important;
+  }
+
+  #baxtiyar-187-2026 .card-gallery.double img {
+    height: clamp(190px, 56vw, 260px) !important;
+    min-height: 190px !important;
+    max-height: 260px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  #bmu-2026 .card-gallery.double,
+  #baxtiyar-187-2026 .card-gallery.double {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+</style>
+
+  <script src="js/daab-nav.js?v=4" defer></script>
+  <script src="js/daab-mobile.js?v=1" defer></script>
+</head>
+<body><div aria-label="Axtarış" aria-modal="true" id="search-overlay" role="dialog">
+<div class="search-modal">
+<div class="search-input-row"><span class="search-icon-large">🔍</span><input autocomplete="off" id="search-input" placeholder="Axtarış üçün yazmağa başlayın…" spellcheck="false" type="text"/><button class="search-close-btn" id="search-close-btn">ESC</button></div>
+<div class="search-results" id="search-results"><div class="search-prompt">Axtarmaq üçün yuxarıdakı xanaya mətn daxil edin</div></div>
+<div class="search-hint"><span><kbd>↑</kbd><kbd>↓</kbd> naviqasiya</span><span><kbd>↵</kbd> aç</span><span><kbd>Esc</kbd> bağla</span></div>
+</div>
+</div><a class="skip" href="#content">Məzmuna keç</a>
+<!-- ══ MAIN NAVIGATION ══ -->
+<nav aria-label="Əsas naviqasiya" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="Menyunu aç" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a aria-label="DAAB ana səhifə" href="index.html"><img src="images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"></a></div><a aria-label="DAAB ana səhifə" class="nav-brand" href="index.html"><span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">Alimlər Birliyi</span></a><div class="nav-menu" id="primaryNavMenu"><div class="nav-divider"></div><a class="nav-link" href="index.html">🏠 Ana Səhifə</a><a class="nav-link" href="foundation_az.html">🏛️ Birliyin Təsisi</a><a class="nav-link" href="mission_vision_values_az.html">💎 Missiyamız</a><a aria-current="page" class="nav-link active" href="activities_az.html">📰 Fəaliyyətimiz</a><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">🌐 Alimlərimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="scientists_list_view_az.html">📋 Siyahı</a><a class="nav-dropdown-link" role="menuitem" href="scientists_card_view_az.html">👤 Profil</a></div></div><a class="nav-link" href="executive_board_az.html">🎓 İdarə Heyəti</a><a class="nav-link" href="charter_az.html">📜 Nizamnamə</a><a class="nav-link" href="membership_terms_az.html">✒️ Üzvlük</a></div></div></nav>
+<!-- ═══ HERO ══════════════════════════════════════════════════ -->
+<header class="page-hero">
+<div class="activities-hero-wrap shell">
+<section>
+<h1>Fəaliyyətimiz</h1>
+</section>
+<aside aria-label="Fəaliyyət səhifəsi haqqında qısa məlumat" class="activities-summary-panel">
+<div class="activities-summary-card">
+<p class="hero-text">Dünya Azərbaycanlı Alimlər Birliyinin elmi, akademik və mədəni tədbirlərinin xronikası</p>
+</div>
+</aside>
+</div>
+</header>
+<!-- ═══ MAIN CONTENT ══════════════════════════════════════════ -->
+<div class="content-wrap">
+<!-- ─── SIDEBAR ─────────────────────────────────────────── -->
+<aside class="sidebar">
+<!-- Timeline -->
+<div class="sidebar-widget">
+<div class="widget-head"><span>📅 Tədbirlər</span><button aria-controls="eventsTimelineMenu" aria-expanded="false" aria-label="Tədbirlər menyusunu aç" class="events-menu-toggle" type="button"><span></span><span></span><span></span></button></div>
+<div class="widget-body">
+<ul class="timeline-list" id="eventsTimelineMenu">
+<li><span class="tl-date">04.2026</span><a href="#ankara-rektor-2026">Ankara Universiteti rektoru — Azərbaycan alimləri</a></li>
+<li><span class="tl-date">04.2026</span><a href="#atu-2026">Azərbaycan Tibb Universiteti ilə əməkdaşlıq</a></li>
+<li><span class="tl-date">04.2026</span><a href="#qarabag-genislenir-2026">Qarabağ Universiteti əməkdaşlığı genişlənir</a></li>
+<li><span class="tl-date">03.2026</span><a href="#bmu-2026">BMU ilə onlayn əməkdaşlıq görüşü</a></li>
+<li><span class="tl-date">02.2026</span><a href="#baxtiyar-187-2026">Bəxtiyar Siracov — 187 saylı məktəb görüşü</a></li>
+<li><span class="tl-date">02.2026</span><a href="#maa-2026">MAA "Fevral Məruzələri 2026" konfransı</a></li>
+<li><span class="tl-date">01.2026</span><a href="#serencam-2026">Prezident Sərəncamı ilə 5 üzv təltif</a></li>
+<li><span class="tl-date">12.2025</span><a href="#azmiu-2025">AzMİU 50 illik yubileyi</a></li>
+<li><span class="tl-date">12.2025</span><a href="#seymur-qahire-2025">Seymur Nəsirov Qahirədə təltif</a></li>
+<li><span class="tl-date">11.2025</span><a href="#amea-memorandum-2025">AMEA ilə memorandum imzası</a></li>
+<li><span class="tl-date">11.2025</span><a href="#amea-80-2025">AMEA 80 il — Prof. Əfəndiyevin açıqlaması</a></li>
+<li><span class="tl-date">10.2025</span><a href="#yulduz-ada-2025">Yulduz Rəhimov — ADA Qazax Mərkəzi</a></li>
+<li><span class="tl-date">10.2025</span><a href="#yulduz-bdu-2025">Yulduz Rəhimov BDU-da ustad dərsi</a></li>
+<li><span class="tl-date">10.2025</span><a href="#baxtiyar-bdu-2025">Bəxtiyar Siracov BDU-da görüş</a></li>
+<li><span class="tl-date">10.2025</span><a href="#seymur-medal-2025">Seymur Nəsirov — Misir Təhsil medalı</a></li>
+<li><span class="tl-date">09.2025</span><a href="#seymur-orden-2025">Misir Prezidentinin "Elm və Fənlər" ordeni</a></li>
+<li><span class="tl-date">07.2025</span><a href="#qarabag-uni-2025">Qarabağ Universiteti — Pedaqogika kursu</a></li>
+<li><span class="tl-date">05.2025</span><a href="#telman-90-2025">Akademik Telman Əliyevin 90 illik yubileyi</a></li>
+<li><span class="tl-date">02.2025</span><a href="#fevral-2025">MAA "Fevral məruzələri 2025" konfransı</a></li>
+<li><span class="tl-date">02.2025</span><a href="#qahire-kitab-2025">Qahirə Beynəlxalq Kitab Sərgisi görüşü</a></li>
+<li><span class="tl-date">01.2025</span><a href="#diaspora-video-2025">85 ölkə — Diaspora videokonfransı, 3 DAAB üzvü medalı</a></li>
+<li><span class="tl-date">01.2025</span><a href="#qobustan-nobel-2025">QOBUSTAN — Nobel Komitəsinə Müraciət</a></li>
+<li><span class="tl-date">01.2025</span><a href="#unec-daab-2025">AZPOLİTİKA — UNEC ilə DAAB yeni təşəbbüs</a></li>
+<li><span class="tl-date">12.2024</span><a href="#525-mesud-2024">525 Qəzet — Məsud Əfəndiyev müsahibəsi</a></li>
+<li><span class="tl-date">09.2024</span><a href="#diaspora-sila-2024">Diaspora Komitəsi — СИЛА В ЕДИНСТВЕ videolar</a></li>
+<li><span class="tl-date">10.2024</span><a href="#qarabag-online-2024">Qarabağ Universiteti ilə onlayn görüş</a></li>
+</ul>
+</div>
+</div>
+</aside>
+<!-- ─── NEWS FEED ─────────────────────────────────────────── -->
+<main class="news-feed main" id="content">
+<!-- CARD A: Ankara Universiteti rektoru -->
+<article class="news-card" id="ankara-rektor-2026">
+<div class="card-header">
+<div class="card-date">27 Aprel 2026</div>
+<h2 class="card-title">Ankara Universitetinin rektorundan Azərbaycan alimləri haqqında paylaşım</h2>
+</div>
+<div class="card-body">
+<p class="card-text inline-style-001">
+          NECDET ÜNÜVAR AKADEMİK KAMAL ABDULLA, PROFESSORLAR RAFİQ ƏLİYEV VƏ MƏSUD ƏFƏNDİYEV İLƏ KEÇİRİLƏN GÖRÜŞÜ ƏLAMƏTDAR HADİSƏ ADLANDIRIB.
+        </p>
+<p class="card-text">
+          Aprelin 24-də Ankara Universitetində Azərbaycan-Türkiyə elmi və mədəni əməkdaşlığının müasir tarixinə daha bir uğurla səhifə əlavə edilib. Həmin gün Ankara Universitetində Azərbaycanın görkəmli elm xadimləri – Xalq yazıçısı, akademik Kamal Abdulla və AMEA-nın müxbir üzvü, professor Rafiq Əliyevin həmmüəllif olduqları "Kitabi-Dədə Qorqud" və qeyri-səlis məntiq", "Qeyri-səlis məntiq və dil-nitq", eləcə də azərbaycanlı alimlərin Türkiyənin sabiq təhsil naziri, professor Ziya Selcuk ilə birgə qələmə aldıqları "Uşaqlar üçün qeyri-səlis məntiq" kitablarının təqdimatı və müzakirəsi keçirilib. Ankara Universitetinin rektoru Necdet Ünüvar akademik Kamal Abdulla, professorlar Rafiq Əliyev və Məsud Əfəndiyev ilə keçirilən görüşü əlamətdar hadisə adlandırıb.
+        </p>
+<div class="card-gallery triple">
+<img alt="Ankara Universiteti görüşü 1" class="inline-style-002" src="/images/activities/001-ankara-universiteti-gorusu-1.jpg" loading="lazy"/>
+<img alt="Ankara Universiteti görüşü 2" class="inline-style-002" src="/images/activities/002-ankara-universiteti-gorusu-2.jpg" loading="lazy"/>
+<img alt="Ankara Universiteti görüşü 3" class="inline-style-002" src="/images/activities/003-ankara-universiteti-gorusu-3.jpg" loading="lazy"/>
+</div>
+<a rel="noopener noreferrer" class="card-source" href="https://www.musavat.com/news/ankara-universitetinin-rektorundan-azerbaycan-alimleri-haqqinda-paylasim_1256700.html" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          Müsavat — Tam xəbər
+        </a>
+</div>
+</article>
+<!-- CARD B: ATU əməkdaşlıq -->
+<article class="news-card" id="atu-2026">
+<div class="card-header">
+<div class="card-date">11 Aprel 2026</div>
+<h2 class="card-title">Azərbaycan Tibb Universiteti ilə Dünya Azərbaycanlı Alimlər Birliyi əməkdaşlığa başlayır</h2>
+</div>
+<div class="card-body">
+<p class="card-text">
+          Azərbaycan Tibb Universiteti (ATU) ilə Dünya Azərbaycanlı Alimlər Birliyi (DAAB) arasında rəsmi əməkdaşlığı dəstəkləyən Anlaşma Memorandumu imzalanıb. ATU-nun rektoru, professor Gəray Gəraybəyli və DAAB-ın sədri, professor Məsud Əfəndiyev tərəfindən imzalanan sənəd təhsil, elm və mədəniyyət sahəsində qarşılıqlı, faydalı əməkdaşlığın təşkili və inkişafını nəzərdə tutur. Bundan əlavə, memorandum birgə elmi və tədqiqat proqramları, layihə və işlərin icrasını dəstəkləyir. Eyni zamanda müxtəlif sahələr üzrə, o cümlədən elmi tədqiqat, alim və mütəxəssislərin peşəkar inkişafı, akademik və inzibati heyətin, bakalavr, magistratura və rezidentura tələbələrinin mübadiləsi kimi istiqamətləri ehtiva edir.
+        </p>
+<div class="card-gallery quadruple">
+<img alt="ATU-DAAB əməkdaşlıq 1" class="inline-style-002" src="/images/activities/004-atu-daab-emekdasliq-1.jpg" loading="lazy"/>
+<img alt="ATU-DAAB əməkdaşlıq 2" class="inline-style-002" src="/images/activities/005-atu-daab-emekdasliq-2.jpg" loading="lazy"/>
+<img alt="ATU-DAAB əməkdaşlıq 3" class="inline-style-002" src="/images/activities/006-atu-daab-emekdasliq-3.jpg" loading="lazy"/>
+<img alt="ATU-DAAB əməkdaşlıq 4" class="inline-style-002" src="/images/activities/007-atu-daab-emekdasliq-4.jpg" loading="lazy"/>
+</div>
+<a rel="noopener noreferrer" class="card-source" href="https://amu.edu.az/news/5651/azerbaycan-tibb-universiteti-ile-dunya-azerbaycanli-alimler-birliyi-emekdasliga-baslayir" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          ATU — Tam xəbər
+        </a>
+</div>
+</article>
+<!-- CARD C: Qarabağ əməkdaşlıq genişlənir -->
+<article class="news-card" id="qarabag-genislenir-2026">
+<div class="card-header">
+<div class="card-date">8 Aprel 2026</div>
+<h2 class="card-title">Qarabağ Universiteti ilə Dünya Azərbaycanlı Alimlər Birliyi arasında əməkdaşlıq genişlənir</h2>
+</div>
+<div class="card-body">
+<p class="card-text">
+          Aprelin 8-də Dünya Azərbaycanlı Alimlər Birliyi (DAAB) ilə mövcud əməkdaşlıq çərçivəsində Qarabağ Universitetində görüş keçirilib. Bu əməkdaşlıq yalnız ayrı-ayrı tədbirlərin təşkili ilə məhdudlaşmır, eyni zamanda Qarabağ Universitetinin beynəlxalq elmi mühitə inteqrasiyası, akademik potensialının gücləndirilməsi və müasir ali təhsil standartlarına uyğun inkişafı baxımından mühüm strateji əhəmiyyət daşıyır.
+        </p>
+<p class="card-text">
+          Tərəflər arasında əvvəlki görüşlərdə ortaq elmi-tədqiqat layihələrinin həyata keçirilməsi, müasir laboratoriyaların yaradılması, onlayn dərs və seminarların təşkili, xaricdə fəaliyyət göstərən azərbaycanlı alimlərin tədris prosesinə cəlb edilməsi, eləcə də birgə konfrans, forum və simpoziumların keçirilməsi kimi mühüm əməkdaşlıq istiqamətləri müəyyən edilib və bu istiqamətlər üzrə konkret fəaliyyət planı formalaşdırılıb.
+        </p>
+<p class="card-text">
+          Görüşdə DAAB-ın sədri, Almaniyada fəaliyyət göstərən azərbaycanlı riyaziyyatçı-alim, professor Məsud Əfəndiyev və birliyin üzvü, İsveçdə yerləşən Qoteborq Universitetinin professoru Səadət Kərimi iştirak ediblər.
+        </p>
+<div class="card-gallery quadruple">
+<img alt="Qarabağ Universiteti-DAAB görüşü 1" class="inline-style-002" src="/images/activities/008-qarabag-universiteti-daab-gorusu-1.jpg" loading="lazy"/>
+<img alt="Qarabağ Universiteti-DAAB görüşü 2" class="inline-style-002" src="/images/activities/009-qarabag-universiteti-daab-gorusu-2.jpg" loading="lazy"/>
+<img alt="Qarabağ Universiteti-DAAB görüşü 3" class="inline-style-002" src="/images/activities/010-qarabag-universiteti-daab-gorusu-3.jpg" loading="lazy"/>
+<img alt="Qarabağ Universiteti-DAAB görüşü 4" class="inline-style-002" src="/images/activities/011-qarabag-universiteti-daab-gorusu-4.jpg" loading="lazy"/>
+</div>
+<a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/qarabag_universiteti_ile_dunya_azerbaycanli_alimler_birliyi_arasinda_emekdasliq_genislenir-4119467" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          AZƏRTAC — Tam xəbər
+        </a>
+</div>
+</article>
+<!-- CARD 1: BMU -->
+<article class="news-card" id="bmu-2026">
+<div class="card-header">
+<div class="card-date">15 Mart 2026</div>
+<h2 class="card-title">DAAB və Bakı Mühəndislik Universiteti arasında onlayn görüş keçirilib</h2>
+</div>
+<div class="card-body">
+<p class="card-text">
+          Bakı Mühəndislik Universiteti (BMU) ilə Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) üzvləri arasında onlayn görüş keçirilib. Görüşdə universitetlə xaricdə fəaliyyət göstərən azərbaycanlı alimlər arasında əməkdaşlıq imkanları müzakirə olunub. Görüş zamanı alimlərin tədris prosesinə cəlb olunması, tələbələr üçün master-klasların təşkili və birgə elmi tədqiqatların aparılması kimi məsələlər ön plana çıxarılıb. BMU-nun rektoru universitetin son illərdəki nailiyyətləri, beynəlxalq tərəfdaşlıqları və elmi fəaliyyətin genişləndirilməsi istiqamətindəki işlər barədə məlumat verib. Sonda tərəflər gələcək əməkdaşlığın inkişafı ilə bağlı ilkin razılıq əldə edərək koordinatorlar təyin ediblər.
+        </p>
+<div class="card-gallery double">
+<img alt="BMU görüşü 1" class="inline-style-002" src="/images/activities/012-bmu-gorusu-1.jpg" loading="lazy"/>
+<img alt="BMU görüşü 2" class="inline-style-002" src="/images/activities/013-bmu-gorusu-2.jpg" loading="lazy"/>
+</div>
+<a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/dunya_azerbaycanli_alimler_birliyinin_uzvleri_bmu_da_tedris_prosesine_celb_oluna_biler-4076143" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          AZƏRTAC — Tam xəbər
+        </a>
+</div>
+</article>
+<!-- CARD D: Bəxtiyar 187 saylı məktəb -->
+<article class="news-card" id="baxtiyar-187-2026">
+<div class="card-header">
+<div class="card-date">24 Fevral 2026</div>
+<h2 class="card-title">DAAB İH-nin həmsədri Bəxtiyar Siracov Bakının 187 saylı məktəbinin müəllim və şagirdləri ilə onlayn görüşdə iştirak etmişdir</h2>
+</div>
+<div class="card-body">
+<p class="card-text">DAAB İdarə Heyətinin həmsədri Dr. Bəxtiyar Siracov Bakının 187 saylı ümumtəhsil məktəbinin müəllim və şagirdləri ilə onlayn görüş keçirmişdir. Görüş zamanı elmin önəmi, beynəlxalq elm arenasında azərbaycanlı alimlərin rolu və gənc nəslə tövsiyələr müzakirə olunmuşdur.</p>
+<div class="card-gallery double">
+<img alt="187 saylı məktəb görüşü 1" class="inline-style-002" src="/images/activities/014-187-sayli-mekteb-gorusu-1.jpg" loading="lazy"/>
+<img alt="187 saylı məktəb görüşü 2" class="inline-style-002" src="/images/activities/015-187-sayli-mekteb-gorusu-2.jpg" loading="lazy"/>
+</div>
+</div>
+</article>
+<!-- CARD 2: MAA Fevral Məruzələri -->
+<article class="news-card" id="maa-2026">
+<div class="card-header">
+<div class="card-date">3 Fevral 2026</div>
+<h2 class="card-title">DAAB İdarə Heyətinin sədri Prof. Məsud Əfəndiyev Milli Aviasiya Akademiyasında "Fevral Məruzələri" konfransının açılışında çıxış edib</h2>
+</div>
+<div class="card-body">
+<p class="card-text">
+          Milli Aviasiya Akademiyasında "Fevral məruzələri 2026: Aviakosmik məsələlərin həllində gənclərin yaradıcı potensialı" adlı XI beynəlxalq elmi-praktik gənclər konfransının açılışı olub. Plenar iclasda DAAB-ın sədri, professor Məsud Əfəndiyev xaricdə yaşayan azərbaycanlı alimlərin Azərbaycan elm və təhsilinə inteqrasiyasının əhəmiyyətindən danışıb. O, DAAB-ın əsas məqsədlərindən birinin dünya üzrə fəaliyyət göstərən azərbaycanlı alimlər arasında əməkdaşlığı gücləndirmək olduğunu vurğulayıb.
+        </p><div class="card-gallery triple"><img alt="MAA Konfrans şəkli 1" src="/images/activities/016-maa-konfrans-sekli-1.jpg" loading="lazy"/><img alt="MAA Konfrans şəkli 2" src="/images/activities/017-maa-konfrans-sekli-2.jpg" loading="lazy"/><img alt="MAA Konfrans şəkli 3" src="/images/activities/018-maa-konfrans-sekli-3.jpg" loading="lazy"/></div>
+<a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/milli_aviasiya_akademiyasinda_enenevi_fevral_meruzeleri_beynelxalq_elmi_praktik_gencler_konfransinin_achilisi_olub_video-4001083" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          AZƏRTAC — Tam xəbər (video)
+        </a>
+</div>
+</article>
+<!-- CARD 3: Prezident Sərəncamı -->
+<article class="news-card" id="serencam-2026">
+<div class="card-header">
+<div class="card-date">13 Yanvar 2026</div>
+<h2 class="card-title">DAAB-ın bir neçə üzvü Azərbaycan Prezidenti cənab İlham Əliyev tərəfindən təltif olunub</h2>
+</div>
+<div class="card-body">
+<p class="card-text">
+          Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin 7 yanvar 2026-cı il tarixli Sərəncamı ilə xalqlar arasında dostluğun möhkəmləndirilməsi və Azərbaycan diasporunun inkişafına göstərdikləri töhfələrə görə bir qrup azərbaycanlı yüksək dövlət təltifinə layiq görülmüşdür. Təltif edilənlər arasında DAAB-ın fəal üzvləri də xüsusi yer tutmuşdur: Məsud Aşina "Şöhrət" ordeni, Akif Alaferdov, Xəlil Kələntər, Bəxtiyar Siracov və Xədicə Zeynalova isə "Tərəqqi" medalı ilə mükafatlandırılmışlar.
+        </p>
+<div class="award-grid">
+<div class="award-item">
+<img alt="Məsud Aşina" class="inline-style-003" src="/images/activities/019-mesud-asina.jpg" loading="lazy"/>
+<p>Məsud Aşina</p>
+</div>
+<div class="award-item">
+<img alt="Akif Alaferdov" class="inline-style-003" src="/images/activities/020-akif-alaferdov.jpg" loading="lazy"/>
+<p>Akif Alaferdov</p>
+</div>
+<div class="award-item">
+<img alt="Xəlil Kələntər" class="inline-style-003" src="/images/activities/021-xelil-kelenter.jpg" loading="lazy"/>
+<p>Xəlil Kələntər</p>
+</div>
+<div class="award-item">
+<img alt="Bəxtiyar Siracov" class="inline-style-003" src="/images/activities/022-bextiyar-siracov.png" loading="lazy"/>
+<p>Bəxtiyar Siracov</p>
+</div>
+<div class="award-item">
+<img alt="Xədicə Zeynalova" class="inline-style-003" src="/images/activities/023-xedice-zeynalova.jpg" loading="lazy"/>
+<p>Xədicə Zeynalova</p>
+</div>
+</div>
+<a rel="noopener noreferrer" class="card-source" href="https://president.az/az/articles/view/71233" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          Prezidentin müvafiq Sərəncamı
+        </a>
+</div>
+</article>
+<!-- CARD 4: AzMİU 50 il -->
+<article class="news-card" id="azmiu-2025">
+<div class="card-header">
+<div class="card-date">22 Dekabr 2025</div>
+<h2 class="card-title">Humboldt mükafatı laureatı professor Məsud Əfəndiyev AzMİU-nun 50 illik yubiley tədbirində iştirak edib, AzMİU-nun gənc alimləri ilə görüşüb</h2>
+</div>
+<div class="card-body">
+<p class="card-text">
+          Dekabrın 18-də Azərbaycan Memarlıq və İnşaat Universitetinin (AzMİU) yaradılmasının 50 illik yubileyi münasibətilə təntənəli yığıncaq keçirilib. Tədbirin iştirakçıları arasında olan dünya şöhrətli alim, DAAB İdarə Heyətinin sədri, AzMİU rektorunun müşaviri professor Məsud Əfəndiyev təəssüratlarını bölüşüb.
+        </p>
+<blockquote class="inline-style-004">
+          "Azərbaycan Memarlıq və İnşaat Universitetinin keçdiyi 50 illik yol tədbirdə gözümüzün qarşısında canlandı. AzMİU Azərbaycan üçün önəmli bir universitetdir. Memarlıq və inşaat bizim qalib xalqımıza yaraşan, Azərbaycan üçün vacib olan komponentlərdən biridir. Tədbirdə Memarlıq və İnşaat Universiteti barədə çox gözəl fikirlər səsləndi, onun müstəsna rol oynadığı vurğulandı."
+        </blockquote>
+<p class="card-text">
+          Məsud Əfəndiyev həm də bu ali məktəbin doktorantları və gənc tədqiqatçı alimləri ilə ikigünlük görüş keçirib. Görüş çərçivəsində doktorantların elmi-tədqiqat fəaliyyəti, beynəlxalq elmi inteqrasiya imkanları və qlobal elm arenasına çıxış mexanizmləri geniş müzakirə olunub. Gənc tədqiqatçıların elmi məqalələrinin "Web of Science" və "Scopus" kimi beynəlxalq indeksli jurnallarda dərc olunması məsələləri xüsusi diqqət mərkəzində olub.
+        </p>
+<p class="card-text">
+          Professor Məsud Əfəndiyev məqalə yazılışı, resenziya prosesləri, elmi etik normalar və beynəlxalq akademik şəbəkələrə çıxış yolları barədə ətraflı tövsiyələr verib. Müzakirələr zamanı "Alexander von Humboldt" Fondu, DAAD (Alman Akademik Mübadilə Xidməti), "Horizon Europe və ERC" (European Research Council) proqramları, eləcə də digər beynəlxalq elmi-tədqiqat və innovasiya platformaları geniş müzakirə olunub. Qlobal elmi gündəmdə olan aktual tədqiqat istiqamətləri, multidisiplinar layihələr və beynəlxalq konsorsiumlarda iştirak imkanları da nəzərdən keçirilib.
+        </p>
+<div class="inline-style-005">
+<div class="card-gallery triple"><img alt="AzMİU şəkli 1" src="/images/activities/024-azmiu-sekli-1.jpg" loading="lazy"/><img alt="AzMİU şəkli 2" src="/images/activities/025-azmiu-sekli-2.png" loading="lazy"/><img alt="AzMİU şəkli 3" src="/images/activities/026-azmiu-sekli-3.png" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/humboldt_mukafati_laureati_professor_mesud_efendiyev_azmiu_nun_genc_alimleri_ile_gorusub-3930787" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            AZƏRTAC xəbəri
+          </a>
+<a rel="noopener noreferrer" class="card-source" href="https://525.az/news/316101-azmiu-azerbaycan-ucun-onemli-bir-universitetdir--mesud-efendiyev" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            525.az xəbəri
+          </a>
+</div>
+</div>
+</article>
+<!-- CARD 5: Seymur Nəsirov Misirdə təltif -->
+<article class="news-card" id="seymur-qahire-2025">
+<div class="card-header">
+<div class="card-date">17 Dekabr 2025</div>
+<h2 class="card-title">DAAB-ın həmsədri Seymur Nəsirov Misirdə beynəlxalq konfransda elmi töhfələrinə görə təltif olunub</h2>
+</div>
+<div class="card-body">
+<p class="card-text">
+          Qahirədə "Fətva və humanitar gerçəklik problemləri" şüarı ilə keçirilmiş beynəlxalq konfransda 50-dən çox ölkədən müftilər, şəriət alimləri və mütəxəssislər iştirak edib. Konfransda DAAB-ın həmsədri Seymur Nəsirov Azərbaycandakı tolerantlıq mühitindən danışıb. Misir müftisi tərəfindən seçilmiş alim və müftilər fəaliyyətlərinə görə təltif edilib; Seymur Nəsirov da mükafat alanlar sırasında olub.
+        </p>
+<div class="card-gallery triple"><img alt="Seymur Nəsirov tədbir şəkli 1" src="/images/activities/027-seymur-nesirov-tedbir-sekli-1.jpg" loading="lazy"/><img alt="Seymur Nəsirov tədbir şəkli 2" src="/images/activities/028-seymur-nesirov-tedbir-sekli-2.jpg" loading="lazy"/><img alt="Seymur Nəsirov tədbir şəkli 3" src="/images/activities/029-seymur-nesirov-tedbir-sekli-3.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://crossmedia.az/az/article/59856" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          Crossmedia.az — Tam xəbər
+        </a>
+</div>
+</article>
+<!-- CARD 6: BDU Kembric -->
+<!-- CARD 7: AMEA Memorandum -->
+<article class="news-card" id="amea-memorandum-2025">
+<div class="card-header">
+<div class="card-date">4 Noyabr 2025</div>
+<h2 class="card-title">AMEA ilə DAAB arasında anlaşma memorandumu imzalanıb</h2>
+</div>
+<div class="card-body">
+<p class="card-text">
+          AMEA-nın 80 illik yubileyi çərçivəsində bir sıra ölkələrin Elmlər Akademiyaları ilə anlaşma memorandumlarının imzalanma mərasimi olub. Digər anlaşmalarla yanaşı, AMEA ilə Dünya Azərbaycanlı Alimlər Birliyi (DAAB) arasında da anlaşma memorandumu imzalanıb.
+        </p>
+<div class="card-gallery triple"><img alt="AMEA memorandum şəkli 1" src="/images/activities/030-amea-memorandum-sekli-1.jpg" loading="lazy"/><img alt="AMEA memorandum şəkli 2" src="/images/activities/031-amea-memorandum-sekli-2.jpg" loading="lazy"/><img alt="AMEA memorandum şəkli 3" src="/images/activities/032-amea-memorandum-sekli-3.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://science.gov.az/az/news/open/33947" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          science.gov.az — Tam xəbər
+        </a>
+</div>
+</article>
+<!-- CARD 8: AMEA 80 il -->
+<article class="news-card" id="amea-80-2025">
+<div class="card-header">
+<div class="card-date">3 Noyabr 2025</div>
+<h2 class="card-title">Professor Məsud Əfəndiyev: "AMEA bütün dövrlərdə öz prinsiplərinə sadiq qalıb"</h2>
+</div>
+<div class="card-body">
+<p class="card-text">
+          Dünya elminin ən yüksək təltiflərdən biri sayılan Humboldt mükafatının ilk azərbaycanlı laureatı, Almaniyada "Helmholtz" Elmi-Tədqiqat Mərkəzinin Dinamik Sistemlər şöbəsinin müdiri, professor Məsud Əfəndiyev AMEA-nın 80 illik yubileyi ilə əlaqədar açıqlama verib.
+        </p>
+<div class="card-gallery double"><img alt="AMEA şəkli 1" src="/images/activities/033-amea-sekli-1.jpg" loading="lazy"/><img alt="AMEA şəkli 2" src="/images/activities/034-amea-sekli-2.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://science.gov.az/az/news/open/33909" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          science.gov.az — Açıqlama
+        </a>
+</div>
+</article>
+<!-- CARD 9: Yulduz Rəhimov ADA Qazax -->
+<article class="news-card" id="yulduz-ada-2025">
+<div class="card-header">
+<div class="card-date">29 Oktyabr 2025</div>
+<h2 class="card-title">Prof. Dr. Yulduz Rəhimov ADA Universitetinin Qazax Mərkəzinə səfər edib</h2>
+</div>
+<div class="card-body">
+<p>Dünya Azərbaycanlı Alimlər Birliyinin Elmi katibi, Kanadada yaşayan Azərbaycanlı alim, York Universitetinin Professoru Yulduz Rəhimov 29 oktyabr 2025-ci il tarixində ADA Universitetinin Qazax Mərkəzinə səfər edib. Səfər ADA Universitetinin Təsisçi Rektoru və Qazax Mərkəzinin yaradıcı ideya müəllifi olan Hafiz Paşayevin təşəbbüsü ilə həyata keçirilib. Ziyarətdə İtaliyanın Roma Tor Vergata Universitetinin magistrantı Nicat Rəhimli də iştirak etmişdir. Mərkəzin sədri Yeganə Göyüşova qonaqlara Mərkəzin fəaliyyəti, tarixi binaların bərpası və inkişaf məqsədləri haqqında geniş məlumat təqdim edib.</p><p>Qazax Müəllimlər Seminariyasının tarixi binasında 2022-ci ilin oktyabrından fəaliyyət göstərən ADA Universiteti Qazax Mərkəzi həm regionun tarixi irsini qoruyur, həm də bölgəyə müasir və innovativ təhsil mühiti gətirir. Kompleksin memarlığı orijinal üslubuna uyğun olaraq yüksək səviyyədə bərpa olunub, ətraf ərazi abadlaşdırılaraq müasir kampus infrastrukturuna çevrilib. Tələbələr üçün rəqəmsal tədris avadanlıqları ilə təchiz edilmiş dərs otaqları, geniş kitabxana, oxu və müzakirə sahələri, komfortlu sosial məkanlar və dekorativ bitgilərlə bəzədilmiş yaşıl istirahət zonaları yaradılıb.</p><p>Mərkəzdə yaşayan pedaqoji heyət üçün inşa edilmiş Müəllimlər Evi tam şəraitli yaşayış imkanları ilə təmin olunub. Tikinti prosesi zamanı, əvvəllər həmin ərazidə yaşayan sakinlər üçün ədalətli kompensasiya verilməsi layihənin sosial məsuliyyət prinsiplərinə uyğun şəkildə həyata keçirildiyini göstərir. Eyni zamanda ADA Qazax Mərkəzində tələbələr üçün nəzərdə tutulmuş yataqxana da tam şəraitli, funksional və müasir standartlara cavab verən yaşayış mühiti təmsil edir. Tələbə yataqxanası geniş otaqlar, istirahət sahələri, oxu və qrup işləri üçün müasir məkanlarla təchiz olunub, həmçinin əlilliyi olan tələbələr üçün xüsusi uyğunlaşdırılmış şərait nəzərdə tutulub.</p><p>Mərkəzin tədris kompleksinə daxil olan XIX əsrə aid yerli əhəmiyyətli tarixi İsrafil Ağa hamamı da bərpadan sonra mədəniyyət və yaradıcılıq məkanına çevrilib. Hamamın daxilində Qazax xalçaçılıq məktəbinə aid nümunələri bir araya gətirən muzey və yerli gənclər üçün rəsm dərnəyi fəaliyyət göstərir. Bu tarixi məkan kiçik həcmli musiqili, ədəbi və mədəni tədbirlərin təşkili üçün ideal şəraitə malikdir və Seminariyanın tarixi ruhunu müasir yaradıcılıq ilə birləşdirir.</p><p>Səfər zamanı DAAB elmi katibi və ADA Universiteti Qazax Mərkəzinin rəhbərliyi arasında aparılan müzakirələr xüsusilə səmimi və ilhamverici atmosferdə keçib. Tərəflər elmi şəbəkənin genişləndirilməsi, birgə tədqiqat layihələrinin həyata keçirilməsi və akademik mübadilə imkanlarının artırılması ilə bağlı fikirlərini bölüşərkən həm Qazaxın tarixi elmi irsinə, həm də burada formalaşan yeni təhsil mühitinə böyük dəyər verildiyini vurğulayıblar. Regionun elmi-mədəni potensialının gücləndirilməsi, gənclərin elmə bağlılığının artırılması və Qazaxın intellektual mərkəz kimi yenidən dirçəlməsi istiqamətində irəli sürülən ideyalar görüşə xüsusi ruh qatıb. Səfər hər iki tərəf üçün yeni əməkdaşlıq imkanlarının formalaşdırılmasına töhfə verən əhəmiyyətli addım kimi yadda qalacaq.</p><div class="card-gallery qazax-gallery"><img alt="Qazax Mərkəzi şəkli 1" src="/images/activities/035-qazax-merkezi-sekli-1.jpg" loading="lazy"/><img alt="Qazax Mərkəzi şəkli 2" src="/images/activities/036-qazax-merkezi-sekli-2.jpg" loading="lazy"/><img alt="Qazax Mərkəzi şəkli 3" src="/images/activities/037-qazax-merkezi-sekli-3.jpg" loading="lazy"/><img alt="Qazax Mərkəzi şəkli 4" src="/images/activities/038-qazax-merkezi-sekli-4.jpg" loading="lazy"/><img alt="Qazax Mərkəzi şəkli 5" src="/images/activities/039-qazax-merkezi-sekli-5.jpg" loading="lazy"/><img alt="Qazax Mərkəzi şəkli 6" src="/images/activities/040-qazax-merkezi-sekli-6.jpg" loading="lazy"/></div></div>
+</article>
+<!-- CARD 10: Yulduz BDU -->
+<article class="news-card" id="yulduz-bdu-2025">
+<div class="card-header">
+<div class="card-date">23 Oktyabr 2025</div>
+<h2 class="card-title">Prof. Dr. Yulduz Rəhimov BDU-nun Tətbiqi Riyaziyyat və Kibernetika Fakultəsində ustad dərsi verib</h2>
+</div>
+<div class="card-body">
+<p class="card-text">
+          BDU-nun məzunu, Kanadanın York Universitetinin professoru, DAAB İdarə Heyətinin üzvü Yulduz Rəhimov ilə görüş keçirilib. Professor Yulduz Rəhimov fakültənin professor-müəllim heyəti, tələbə və doktorantları qarşısında "Ədədlər nəzəriyyəsi və kriptoqrafiya" mövzusunda ustad dərsi keçib.
+        </p>
+<div class="card-gallery bdu-gallery inline-style-006"><img alt="BDU ustad dərsi şəkli 1" src="/images/activities/041-bdu-ustad-dersi-sekli-1.jpg" loading="lazy"/><img alt="BDU ustad dərsi şəkli 2" src="/images/activities/042-bdu-ustad-dersi-sekli-2.jpg" loading="lazy"/><img alt="BDU ustad dərsi şəkli 3" src="/images/activities/043-bdu-ustad-dersi-sekli-3.jpg" loading="lazy"/><img alt="BDU ustad dərsi şəkli 4" src="/images/activities/044-bdu-ustad-dersi-sekli-4.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="http://bsu.edu.az/az/news/bdu_mzunu_kanadann_york_universitetinin_professoru_yulduz_rhimovun_ustad_drsi" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          BDU.edu.az — Tam xəbər
+        </a>
+</div>
+</article>
+<!-- CARD 11: Bəxtiyar BDU -->
+<article class="news-card" id="baxtiyar-bdu-2025">
+<div class="card-header">
+<div class="card-date">20 Oktyabr 2025</div>
+<h2 class="card-title">Dr. Bəxtiyar Siracov BDU-nun Tətbiqi Riyaziyyat Fakultəsinin professor-müəllim heyəti və tələbələrlə görüşüb</h2>
+</div>
+<div class="card-body">
+<p>Bakı Dövlət Universitetinin (BDU) Tətbiqi riyaziyyat və kibernetika fakültəsinin məzunu, DAAB İdarə Heyətinin həmsədri Dr. Bəxtiyar Siracovla görüş keçirilib.</p><p>Tədbirdə BDU-nun elm və innovasiyalar üzrə prorektoru Hüseyn Məmmədov, Tətbiqi riyaziyyat və kibernetika fakültəsinin dekanı Ələkbər Əliyev, fakültənin müəllim və tələbələri iştirak ediblər.</p><p>Fakültə dekanı Ələkbər Əliyev qeyd edib ki, Tətbiqi riyaziyyat və kibernetika fakültəsinin məzunları dünyanın müxtəlif ölkələrində, o cümlədən Azərbaycanda uğurla fəaliyyət göstərir, yüksək vəzifələrdə çalışırlar. Belə məzunlardan biri də Nobel Sülh Mükafatına layiq görülən Bəxtiyar Siracovdur. Ələkbər Əliyev Norveç Sülh Komitəsinin qərarı ilə 2005-ci ildə Nobel Sülh mükafatına layiq görülən və uzun illər Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) məsul əməkdaşı olan məzunumuzun həyat yolu haqqında tələbələrə məlumat verib, belə görüşlərin tələbələrin inkişafında önəmli rol oynadığını vurğulayıb.</p><p>Bəxtiyar Siracov bildirib ki, 1974-1979-cu illərdə BDU-nun Tətbiqi riyaziyyat və kibernetika fakültəsində təhsil alıb. O, məzunu olduğu universitetdə tələbələrlə görüşdən məmnunluğunu ifadə edib. Qonaq tələbəlik illərindən tutmuş AEBA-dakı fəaliyyətinədək keçdiyi yol barədə ətraflı məlumat verib, elmin inkişafına gənclərin töhfəsinin vacibliyini vurğulayıb. O, bilik və təcrübələrindən bəhrələndiyi Azərbaycan alimlərini minnətdarlıqla yad edib, onların yetirmələrinin bu gün dünyanın nüfuzlu universitetlərində, elm mərkəzlərində çalışdığını fəxrlə bildirib.</p><p>Qeyd olunub ki, 2005-ci ildə Norveç Sülh Komitəsinin qərarı ilə AEBA və onun Baş Direktoru Məhəmməd əl-Baradei nüvə enerjisinin hərbi məqsədlər üçün istifadəsinin qarşısının alınmasında və nüvə enerjisindən dinc məqsədlər üçün təhlükəsiz şəkildə istifadə edilməsinin təmin edilməsində göstəridikləri xidmətlərə görə Nobel Sülh Mükafatına layiq görülüblər. Bəxtiyar Siracov da məhz o tarixdən AEBA-da çalışan digər əməkdaşlarla bərabər Nobel Sülh Mükafatını alanlar sırasındadır.</p><p>Sonra Bəxtiyar Siracov tələbələrin suallarını cavablandırıb.</p>
+<div class="card-gallery siracov-gallery inline-style-006"><img alt="Bəxtiyar Siracov BDU şəkil 1" src="/images/activities/045-bextiyar-siracov-bdu-sekil-1.jpg" loading="lazy"/><img alt="Bəxtiyar Siracov BDU şəkil 2" src="/images/activities/046-bextiyar-siracov-bdu-sekil-2.jpg" loading="lazy"/><img alt="Bəxtiyar Siracov BDU şəkil 3" src="/images/activities/047-bextiyar-siracov-bdu-sekil-3.jpg" loading="lazy"/><img alt="Bəxtiyar Siracov BDU şəkil 5" src="/images/activities/048-bextiyar-siracov-bdu-sekil-5.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="http://bsu.edu.az/az/news/bdu_mzunu_nobel_slh_mkafats_bxtiyar_siracov_tlblrl_grb" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          BDU.edu.az — Tam xəbər
+        </a>
+</div>
+</article>
+<!-- CARD 12: Seymur Misir Təhsil Nazirliyi -->
+<article class="news-card" id="seymur-medal-2025">
+<div class="card-header">
+<div class="card-date">1 Oktyabr 2025</div>
+<h2 class="card-title">Azərbaycanlı alim Misir Təhsil Nazirliyinin medalı ilə təltif olunub</h2>
+</div>
+<div class="card-body">
+<p class="card-text">
+          Tədqiqatçı-alim Seymur Nəsirov Misir Ərəb Respublikası ilə Azərbaycan Respublikası arasında elmi-mədəni əlaqələrin inkişafındakı xidmətlərinə görə Misir Təhsil Nazirliyinin medalı ilə təltif olunub. Mükafatı ona Bakıda Misir Mədəniyyət Mərkəzinin direktoru professor Tariq Əbu Futuh təqdim edib.
+        </p>
+<div class="card-gallery egypt-medal-gallery inline-style-007"><img alt="Seymur Nəsirov Misir Təhsil Nazirliyi 1" src="/images/activities/049-seymur-nesirov-misir-tehsil-nazirliyi-1.jpg" loading="lazy"/><img alt="Seymur Nəsirov Misir Təhsil Nazirliyi 2" src="/images/activities/050-seymur-nesirov-misir-tehsil-nazirliyi-2.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/azerbaycanli_alim_misir_tehsil_nazirliyinin_medali_ile_teltif_olunub-3778631" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          AZƏRTAC — Tam xəbər
+        </a>
+</div>
+</article>
+<!-- CARD 13: Misir Prezidenti ordeni -->
+<article class="news-card" id="seymur-orden-2025">
+<div class="card-header">
+<div class="card-date">3 Sentyabr 2025</div>
+<h2 class="card-title">Misir Prezidenti azərbaycanlı alimi birinci dərəcəli "Elm və Fənlər" ordeni ilə təltif edib</h2>
+</div>
+<div class="card-body">
+<p class="card-text">
+          Misir Prezidenti Əbdül Fəttah əl-Sisi azərbaycanlı tədqiqatçı-alim Seymur Nəsirovu birinci dərəcəli "Elm və Fənlər" ordeni ilə təltif edib. Misir Prezidentinin şəxsən özü tərəfindən verilən bu orden elmin inkişafı və yayılması sahəsindəki xidmətlərə görə görkəmli alimlərə təqdim edilir.
+        </p>
+<div class="card-gallery egypt-president-gallery inline-style-007"><img alt="Misir Prezidenti orden mərasimi 1" src="/images/activities/051-misir-prezidenti-orden-merasimi-1.jpg" loading="lazy"/><img alt="Misir Prezidenti orden mərasimi 2" src="/images/activities/052-misir-prezidenti-orden-merasimi-2.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/misir_prezidenti_azerbaycanli_alimi_birinci_dereceli_ordenle_teltif_edib-3727187" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          AZƏRTAC — Tam xəbər
+        </a>
+</div>
+</article>
+<!-- CARD 14: Qarabağ Universiteti -->
+<article class="news-card" id="qarabag-uni-2025">
+<div class="card-header">
+<div class="card-date">19 İyul 2025</div>
+<h2 class="card-title">DAAB və Qarabağ Universiteti arasında əməkdaşlıq çərçivəsində "ALİ MƏKTƏB PEDAQOQİKASI" kursu tədris edilib</h2>
+</div>
+<div class="card-body"><div class="card-gallery saadet-gallery inline-style-008"><img alt="Səadət Kərimi" src="/images/activities/053-seadet-kerimi.png" loading="lazy"/></div>
+<p class="card-text">
+          2025-ci ilin May ayından başlayaraq DAAB-ın İdarə Heyətinin üzvü və mətbuat katibi, İsveçin Gothenburg Universitetinin dosenti, elmlər doktoru Səadət Kərimi Qarabağ Universitetinin bir qrupp müəllimlərinə "ALİ MƏKTƏB PEDAQOQİKASI" (TEACHING AND LEARNING IN HIGHER EDUCATION) fənni üzrə əhatəli kursun tədrisinə başlamışdır. Tədris əsasən İngilis dilində və Avropa İttifaqı qaydalarına uyğun olaraq distant formatda həyata keçirilmişdir. İştirak edən müəllimlərin əksəriyyəti xaricdə magister, doktorantura təhsili almış olmasına baxmayaraq, bu kursun əhəmiyyətini dərk etdiklərini və yaranan imkana görə minnətdarlıqlarını bildirirlər.
+        </p>
+<p class="card-text">
+          Kursun məqsədi bakalavriat və magistratura pillələrində təhsilin keyfiyyətini gücləndirmək, tələbələrin öyrənilməsi və biliklərinin inkişafı üçün yaxşı şərait yaratmaq üçün ali məktəb müəllimlərini müəllim hazırlığı ilə təmin etməkdir. Kurs həmçinin elmi rəhbərlik (supervisor) işinin keyfiyyətini gücləndirməyi əhatə edir.
+        </p>
+<p class="card-text">
+          Kurs iki moduldan ibarətdir. Birinci modul 10 İyun 2025 tarixində imtahanlarla başa çatmışdır; ikinci modul avqustun ikinci yarısından noyabr ayının ilk həftəsinədək davam edəcək və sertifikatla nəticələnəcəkdir. Toplam 50 saatlıq kurs 15 kredit səviyyəsindədir: həftədə 3 saat leksiya, seminar və vorkşoplardan ibarət olub.
+        </p>
+<p class="card-text">
+          Səadət Kərimi Qarabağ Universitetinə töhfə verə bildiyi üçün şərəf və məmnuniyyət hissi duyduğunu, Azərbaycan Respublikasının sürətli quruculuq işlərində, o cümlədən elm və təhsil sahəsində, yaxından iştirak edə bildiyi üçün xoşbəxt olduğunu bildirmişdir. Onun fikrincə, kursun mütəmadi olaraq hər semestrdə yeni işə qəbul olunmuş ali məktəb müəllimlərinə verilməsi məqsədəuyğundur. Bu kurs Azərbaycanın müxtəlif universitetlərindən müəllimlər tərəfindən distant şəkildə götürülə bilər.
+        </p>
+<div class="inline-style-009">
+<p class="inline-style-010">📚 Canvas Öyrənmə İdarəetmə Sistemi — Faydalı Keçidlər</p>
+<ul class="list-az">
+<li><a rel="noopener noreferrer" class="inline-style-011" href="https://canvas.gu.se/courses/20995/pages/in-english" target="_blank">Göteborg Universiteti Canvas Manual (İngilis dilində)</a></li>
+<li><a rel="noopener noreferrer" class="inline-style-011" href="https://community.canvaslms.com/t5/Student-Guide/tkb-p/student" target="_blank">Canvas tələbə təlimatları (provayderın rəsmi sənədi)</a></li>
+</ul>
+</div>
+<div class="inline-style-012">
+<p class="inline-style-013">📞 Müzakirə, təklif və əməkdaşlıq üçün əlaqə</p>
+<p class="inline-style-014">📱 Telefon: +46 70 46 48 650</p>
+<p class="inline-style-014">✉️ <a class="inline-style-015" href="mailto:saadat.karimi@edu.lidkoping.se">saadat.karimi@edu.lidkoping.se</a></p>
+<p class="inline-style-016">✉️ <a class="inline-style-015" href="mailto:saadat953@hotmail.com">saadat953@hotmail.com</a></p>
+</div>
+</div>
+</article>
+<!-- CARD 15: Hərbi Münaqişə Konfransı (Az+En) -->
+<!-- CARD 16: Telman Əliyev 90 -->
+<article class="news-card" id="telman-90-2025">
+<div class="card-header">
+<div class="card-date">2 May 2025</div>
+<h2 class="card-title">Akademik Telman Əliyevin 90 illik yubileyi münasibətilə DAAB-ın İdarə Heyəti təbrik məktubu ünvanlamışdır</h2>
+</div>
+<div class="card-body">
+<div class="card-gallery telman-gallery inline-style-007"><img alt="Telman Əliyev 90 illik yubiley 1" src="/images/activities/054-telman-eliyev-90-illik-yubiley-1.jpg" loading="lazy"/><img alt="Telman Əliyev 90 illik yubiley 2" src="/images/activities/055-telman-eliyev-90-illik-yubiley-2.jpg" loading="lazy"/></div></div>
+</article>
+<!-- CARD 17: Fevral Məruzələri 2025 -->
+<article class="news-card" id="fevral-2025">
+<div class="card-header">
+<div class="card-date">4 Fevral 2025</div>
+<h2 class="card-title">Milli Aviasiya Akademiyasında "Fevral məruzələri 2025" beynəlxalq konfransında DAAB İdarə Heyətinin sədri Professor Məsud Əfəndiyev birliyin fəaliyyəti barədə məruzə ilə çıxış etmişdir</h2>
+</div>
+<div class="card-body">
+<p>Fevralın 4-də “Azərbaycan Hava Yolları” QSC-nin Milli Aviasiya Akademiyasında (MAA) Azərbaycan Gəncləri Gününə və ölkəmizin ilk telekommunikasiya peyki “Azerspace 1”in orbitə buraxılması tarixinə həsr olunan “Fevral məruzələri 2025: Aviakosmik məsələlərin həllində gənclərin yaradıcı potensialı” 10-cu beynəlxalq elmi-praktik gənclər konfransı işə başlayıb.</p><p>AZƏRTAC xəbər verir ki, konfransa Rusiya, Qazaxıstan, Türkiyə, Ukrayna, Belarus, Almaniya, Böyük Britaniya, Fransa, İsrail və Azərbaycandan olmaqla 20-dən çox elm və təhsil müəssisəsi, o cümlədən 13 universitet, 7 tədqiqat mərkəzi, institut, dövlət qurumları və aparıcı təşkilatları təmsil edən 150-dən çox iştirakçı qatılıb.</p><p>Konfransda DAAB İdarə Heyətinin sədri Professor Məsud Əfəndiyev DAAB-ın fəaliyyətii barədə məruzə ilə çıxış etmişdir.</p>
+<div class="inline-style-017"><img alt="" class="inline-style-018" src="/images/activities/056-activity-image-056.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/milli_aviasiya_akademiyasinda_fevral_meruzeleri_2025_beynelxalq_konfransi_ise_baslayib_video-3402999" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          AZƏRTAC
+        </a>
+</div>
+</article>
+<!-- CARD 18: Qahirə Kitab Sərgisi -->
+<article class="news-card" id="qahire-kitab-2025">
+<div class="card-header">
+<div class="card-date">4 Fevral 2025</div>
+<h2 class="card-title">Qahirə Beynəlxalq Kitab Sərgisi çərçivəsində Misir-Azərbaycan Dostluq Cəmiyyətinin sədri azərbaycanlı alim Seymur Nəsirovla görüş keçirilib</h2>
+</div>
+<div class="card-body">
+<p>Qahirə Beynəlxalq Kitab Sərgisi çərçivəsində Misir-Azərbaycan Dostluq Cəmiyyətinin sədri azərbaycanlı alim Seymur Nəsirovla görüş keçirilib.</p><p>AZƏRTAC Misir-Azərbaycan Dostluq Cəmiyyətinə istinadla xəbər verir ki, Misirin Vəqflər Nazirliyi tərəfindən təşkil olunan görüşdə Misirin yüksəkvəzifəli şəxsləri, elm xadimləri və burada təhsil alan xarici tələbələr iştirak ediblər.</p><p>Tədbirdə İslam İşləri Üzrə Ali Şuranın baş katibi professor Məhəmməd əl-Bəyyumi Seymur Nəsirovun elmi, ictimai və mədəni fəaliyyətlərinin Misir ictimaiyyəti tərəfindən yüksək qiymətləndirildiyini və onun ölkədə təhsil alan tələbələr üçün böyük bir nümunə olduğunu qeyd edib.</p>
+<div class="inline-style-019"><div class="inline-style-020"><img alt="" class="inline-style-021" src="/images/activities/057-activity-image-057.jpg" loading="lazy"/></div><div class="inline-style-020"><img alt="" class="inline-style-021" src="/images/activities/058-activity-image-058.jpg" loading="lazy"/></div></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/qahire_beynelxalq_kitab_sergisi_cherchivesinde_azerbaycanli_alimle_gorus_kechirilib-3402935" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          AZƏRTAC
+        </a>
+</div>
+</article>
+<!-- CARD 19: Diaspora videokonfrans -->
+<article class="news-card" id="diaspora-video-2025">
+<div class="card-header">
+<div class="card-date">23 Yanvar 2025</div>
+<h2 class="card-title">85 ölkədən 1000-ə yaxın soydaşımızın iştirakı ilə videokonfrans keçirilib — DAAB üzvləri "Diaspor fəaliyyətində xidmətə görə" medalı ilə təltif olunub</h2>
+</div>
+<div class="card-body">
+<p class="card-text">Diasporla İş üzrə Dövlət Komitəsinin təşkilatçılığı ilə 85 ölkədən 1000-ə yaxın soydaşımızın iştirakı ilə videokonfrans keçirilib. Konfrans zamanı DAAB üzvləri Səidə Xəlilova (Oman), Rövşən İbrahimov (Cənubi Koreya) və Hacalı Nəcəfov (Türkiyə) "Diaspor fəaliyyətində xidmətə görə" medalı ilə təltif olunduqları elan edilib.</p>
+<div class="inline-style-019"><div class="inline-style-020"><img alt="" class="inline-style-022" src="/images/activities/059-activity-image-059.jpg" loading="lazy"/></div><div class="inline-style-020"><img alt="" class="inline-style-022" src="/images/activities/060-activity-image-060.jpg" loading="lazy"/></div></div><a rel="noopener noreferrer" class="card-source" href="https://diaspor.gov.az/az/news-detail/85-olkeden-1000-e-yaxin-soydasimizin-istiraki-ile-videokonfrans-kecirilib-5471" target="_blank">Diasporla İş üzrə Dövlət Komitəsi - 2024-cü ilin yekunları</a>
+</div>
+</article>
+<!-- CARD 20: QOBUSTAN Nobel -->
+<article class="news-card" id="qobustan-nobel-2025">
+<div class="card-header">
+<div class="card-date">20 Yanvar 2025</div>
+<h2 class="card-title">QOBUSTAN — İsveçdə Azərbaycan Aydınlar Ocağı M.Qorbaçovun Nobel sülh mükafatından məhrum edilməsi tələbi ilə Norveç Nobel Komitəsinə Müraciət</h2>
+</div>
+<div class="card-body">
+<p class="card-text">İsveçdə Azərbaycan Aydınlar Ocağı Norveç Nobel Komitəsinə Mixail Qorbaçovun Nobel sülh mükafatından məhrum edilməsi tələbi ilə rəsmi müraciət ünvanlamışdır.</p>
+<div class="open-letter-bilingual"><div class="open-letter-column"><h3>English</h3><p>THE OPEN LETTER<br/>TO THE NORWEGIAN NOBEL COMMITTEE<br/>From "GOBUSTAN" – ASSOCIATION of AZERBAIJANI ACADEMICS (AAAS)<br/>in the Kingdom of Sweden<br/>20.01.2025</p><p>On January 19, 2025, more than 100 participants, members of “GOBUSTAN – Association of Azerbaijani Academics in Sweden” (AAAS), and the Azerbaijani public activists, family members of the January 20 martyrs, and January 20 veterans who attended the ZOOM conference organized by the “GOBUSTAN AAAS” adopted a RESOLUTION as the result of the conference. This resolution is addressed to the chairman and members of the Norwegian Nobel Committee in the following:</p><p>Honored Chairman of the Norwegian Nobel Committee, Mr. Jørgen Watne Frydnes and honored members of the Norwegian Nobel Committee - Mr. Asle Toje, Ms. Anne Enger, Ms. Kristin Clemet, Ms. Gry Larsen!</p><p>We - the members of “Gobustan” - Association of Azerbaijani Academics in Sweden - together with the family members of the January 20 martyrs, Azerbaijani social activists living in different countries of the world, and January 20 veterans who participated in the public conference we held on January 19, 2025, would like to present to you our RESOLUTION on the awarding of the NOBEL PEACE PRIZE to the General Secretary of the Central Committee of the Communist Party of the Soviet Union MIKHAIL GORBACHEV by the Norwegian Nobel Committee in October 1990.</p><p>We consider the fact that Mikhail Gorbachev still bears the title of Nobel Peace Prize laureate to be the greatest injustice in the history of this prize and in the history of mankind, as well as disrespect for the Azerbaijani people, and a black spot in history! We consider the deprivation of Mikhail Gorbachev from the Nobel Peace Prize a necessary step!</p><p>By depriving Mikhail Gorbachev of the Nobel Peace Prize, the Nobel Committee would have belatedly cleansed this black spot and eliminated the injustice committed against the Azerbaijani people. Your decision to deprive Mikhail Gorbachev of his award would have strengthened the world community's faith in justice and the moral authority of the Nobel Peace Prize. This is sorely needed!</p><p>It is with great pain that we announce that the awarding of the Nobel Peace Prize to Mikhail Gorbachev, whose hands were soaked in the blood of the Azerbaijani people, by the Norwegian Nobel Committee after the January 20, 1990 massacre is as painful for us as the sorrow of January 20. However, for many years, the Azerbaijani public has not lost faith that this injustice will one day be eliminated.</p><p>The Azerbaijani people commemorate the anniversary of the mass murder of a total of 170 people and 800 seriously injured on the night of January 19-20, 1990, as a result of the deployment of Soviet troops to Baku and several regions of Azerbaijan, the firing of heavy equipment and various types of weapons on the civilian population, with the same sadness as every year, cursing the murderer Mikhail Gorbachev and expressing deep hatred for the perpetrators of this tragedy. It is a known and undeniable fact that Mikhail Gorbachev personally gave the order to deploy troops to Baku and against the civilian population! He bears direct responsibility for the mass murders! The bloody trail of this crime is indelible.</p><p>There are sufficient legal grounds for bringing the criminals who committed the January 20 tragedy to justice. The January 20, 1990 Massacre is, first of all, a violation of the requirements of the UN Universal Declaration of Human Rights, the International Covenant on Civil and Political Rights and other international legal conventions! This massacre is a crime against humanity, during which peaceful people were killed, injured, kidnapped and tortured. A historical crime was committed against the entire people!</p><p>All investigations give us reason to call the January 20 massacre a pre-planned state crime to stifle the struggle for freedom and independence of the Azerbaijani people, who protested against the unjust policy of the USSR!</p><p>We hope that the Nobel Peace Committee will not turn a blind eye to the insult to Nobel values, and that you will restore historical justice by signing a decision to deprive Mikhail Gorbachev, who has earned the deep hatred of the Azerbaijani people, as well as other peoples of the former Soviet Union, of the Nobel Peace Prize.</p><p>Best regards,<br/>100 signatures</p></div><div class="open-letter-column"><h3>Azərbaycanca</h3><p>İSVEÇ Krallığında fəaliyyət göstərən<br/>"QOBUSTAN" – AZƏRBAYCANLI ALİMLƏR ASSOSİASİYASINDAN (AAAS)<br/>NORVEÇ NOBEL KOMİTƏSİNƏ<br/>AÇIQ MƏKTUB<br/>20.01.2025</p><p>19 Yanvar 2025 ci il tarixində İsveçdə fəaliyyət göstərən ”GOBUSTAN  - Azərbaycan Aydınlar Ocağı” dərnəyinin təşkil etdiyi ZOOM konfransına qatılan 100 nəfərdən çox iştirakçı, dərnəyin üzvləri, və dəvət olunmuş Azərbaycan ictimai fəalları, 20 Yanvar şəhidlərinin ailə üzvləri, 20 Yanvar veteranları konfransın nəticəsi olaraq QƏTNAMƏ qəbul ediblər. Bu qətnamə Norveç Nobel Komitəsinin sədrinə və üzvlərinə Açıq Məktubda ünvanlanıbdır.</p><p>Hörmətli Norveç Nobel Komitəsinin sədri cənab Jørgen Watne Frydnes.<br/>Hörmətli Norveç Nobel Komitəsinin üzvləri - cənab Asle Toje, xanım Anne Enger, xanım Kristin Clemet, xanım Gry Larsen.</p><p>Biz – İsveçdə fəaliyyət göstərən Qobustan Azərbaycan Aydınlar Ocağı – 19 Yanvar 2025 ci tarixində keçirdiyimiz ictimaiyyətə açıq konfransa qatılan 20 Yanvar şəhidlərinin ailə üzvləri, dünyanın müxtəlif ölkələrində yaşayan Azərbaycanlı sosial-ictimai fəallar, 20 Yanvar veteranları ilə birlikdə, Sizə 1990-cı ilin oktyabrında Sovet İttifaqı Kommunist Partiyası Mərkəzi Komitəsinin baş katibi MİXAİL QORBAÇOVUN Norveç Nobel Komitəsi tərəfindən NOBEL SÜLH MÜKAFATI ilə təltif olunması barədə qəbul etdiyimiz QƏTNAMƏMİZİ TƏQDİM EDİRİK.</p><p>Mixail Qorbaçovun hələ də Nobel Sülh Mükafatı laureatı adını daşımasını bu mükafatın tarixində və bəşəriyyət tarixində ən böyük ədalətsizlik, Azərbaycan xalqına qarşı sayqısızlıq və tarixdə qara ləkə hesab edirik! Mixail Qorbaçovun Nobel Sülh Mükafatından məhrum edilməsini gərəkli addım hesab edirik!</p><p>Mixail Gorbaçovu Nobel Sülh Mükafatından məhrum etməklə Nobel Komitəsi gec də olsa bu qara ləkəni təmizləmiş olar və Azərbaycan xalqına qarşı yol verilmiş haqsızlığı aradan qaldırmış olar.  Mixail Qorbaçovu mükafatından məhrum etmək qərarınız dünya ictimaiyyətinin ədalətə və Nobel Sülh Mükafatının mənəvi nüfuzuna inamını gücləndirərdi. Buna ciddi ehtiyac var!</p><p>Böyük ağrı hissi ilə bildiririk ki, məhz 1990 cı il 20 Yanvar qətliamından sonra Norveç Nobel Komitəsi tərəfindən əlləri Azərbaycan xalqının qanına batmış Mixail Qorbaçovun Nobel Sülh Mükafatı ilə təltif edilməsi bizim üçün 20 Yanvar kədəri qədər əzablıdır. Lakin, Azərbaycan ictimaiyyəti uzun illərdir ki, bu ədalətsizliyin bir gün mütləq aradan qaldırılacağına inamını itirməyib.</p><p>Azərbaycan xalqı hər il 1990-cı il yanvarın 19-dan 20-nə keçən gecə sovet qoşunlarının Bakıya və Azərbaycanın bir neçə rayonuna yeridilməsi, dinc əhalinin ağır texnikadan və müxtəlif tipli silahlardan atəşə tutulması nəticəsində ümumilikdə 150 nəfərin kütləvi şəkildə qətlə yetirilməsinin ildönümünü hər il olduğu kimi bu ildə eyni hüznlə qeyd edir, qatil Mixail Qorbaçovu lənətləyir, bu faciəni törədənlərə dərin nifrətini ifadə edir. Mixail Qorbaçovun şəxsən Bakıya, dinc əhaliyə qarşı qoşun yeridilməsi əmrini verməsi məlum və inkar edilməz faktdır! O, kütləvi qətllərə görə birbaşa məsuliyyət daşıyır! Bu cinayətin qanlı izi silinməzdir.</p><p>20 Yanvar faciəsini törədən cinayətkarların ədalət mühakiməsinə cəlb olunması üçün kifayət qədər hüquqi əsaslar mövcuddur. 20 Yanvar 1990 Qətliamı hər şeydən öncə BMT-nin Ümumdünya İnsan Hüquqları Bəyannaməsinin, Mülki və Siyasi hüquqlar Haqqında Beynəlxalq Paktın və digər beynəlxalq hüquqi konvensiyaların tələblərinin pozulması faktıdır! Bu qətliam bəşəriyyət əleyhinə cinayətdir, bu hadisə zamanı dinc insanlar qətlə yetirilib, yaralanıb, oğurlanıb, işgəncələrə məruz qalıb. Bütöv bir xalqa qarşı tarixi cinayət törədilib.</p><p>Bütün araşdırmalar bizə 20 Yanvar qətliamını SSRİ-nin ədalətsiz siyasətinə etiraz edən Azərbaycan xalqının azadlıq və müstəqillik mübarizəsinin boğulması üçün əvvəlcədən planlaşdırılmış dövlət cinayəti adlandırmağa əsas verir!</p><p>Biz ümid edirik ki, Nobel Sülh Komitəsi Nobel dəyərlərinin təhqir edilməsinə göz yummayacaq, Azərbaycan xalqının, eləcə də keçmiş Sovet İttifaqının digər xalqlarının dərin nifrətini qazanmış Mixail Qorbaçovun Nobel Sülh Mükafatından məhrum edilməsi barədə qərara imza atmaqla tarixi ədaləti bərpa edəcəksiniz.</p><p>Hörmətlə,<br/>100 imza</p></div></div><a rel="noopener noreferrer" class="card-source" href="#" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          Qobustan
+        </a>
+</div>
+</article>
+<!-- CARD 21: QOBUSTAN 20 Yanvar -->
+<!-- CARD 22: CROSS MEDİA Vətən -->
+<!-- CARD 23: Teymur Rzayev medalı -->
+<!-- CARD 24: UNEC-DAAB təşəbbüs -->
+<article class="news-card" id="unec-daab-2025">
+<div class="card-header">
+<div class="card-date">17 Yanvar 2025</div>
+<h2 class="card-title">AZPOLİTİKA.İNFO — UNEC ilə Dünya Azərbaycanlı Alimlər Birliyi yeni təşəbbüsə imza atdı</h2>
+</div>
+<div class="card-body">
+<img alt="DAAB-UNEC onlayn görüş" class="inline-style-023" src="/images/activities/061-daab-unec-onlayn-gorus.jpg" loading="lazy"/>
+<p class="card-text">UNEC-in rektoru Prof. Ədalət Muradov:
+
+Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) bütün qitələrdən olan üzvləri ilə UNEC-in əməkdaşlıq imkanlarını müzakirə etdik. Ortaq elmi tədqiqatlar və onların nəticələrinin yayılması, gənc alimlərə dəstək, birgə jurnallar, elmi fəaliyyət sahəsində məlumat mübadilə mexanizminin yaradılması və digər məsələləri müzakirə etdik. UNEC-ə ayırdıqları vaxta və göstərdikləri dəstəyə görə DAAB-ın İdarə Heyətinin Sədri professor Məsud müəllim Əfəndiyev başda olmaqla müzakirədə iştirak edən hər bir DAAB üzvünə təşəkkür edirəm.</p>
+<a rel="noopener noreferrer" class="card-source" href="https://azpolitika.info/?p=781801" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          AzPolitika.info
+        </a>
+</div>
+</article>
+<!-- CARD 25: Diaspora Komitəsi 17.01 -->
+<!-- CARD 26: Azərbaycan Müəllimi -->
+<!-- CARD 27: Бакинский Рабочий -->
+<!-- CARD 28: Teymur Rzayev Türkiyə proqramı -->
+<!-- CARD 29: Diaspora СИЛА В ЕДИНСТВЕ -->
+<article class="news-card" id="diaspora-sila-2024">
+<div class="card-header">
+<div class="card-date">Sentyabr 2024</div>
+<h2 class="card-title">Diasporla İş üzrə Dövlət Komitəsi — СИЛА В ЕДИНСТВЕ (VİDEO MÜSAHİBƏLƏR)</h2>
+</div>
+<div class="card-body">
+<div class="inline-style-024">
+<div class="inline-style-025">
+<img alt="Бахтияр Сираджов — Сила в Единстве" class="inline-style-026" src="/images/activities/062-activity-image-062.jpg" loading="lazy"/>
+<a rel="noopener noreferrer" class="card-source inline-style-027" href="https://www.youtube.com/watch?v=LaxepNdkStM&amp;list=PLXixFNPPDMVsCqk7zkKjzFjgWnT1GtvLY&amp;index=3&amp;t=1s" target="_blank"><svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>Бахтияр Сираджов, Австрия</a>
+</div>
+<div class="inline-style-025">
+<img alt="Хадиджа Зейналова — Сила в Единстве" class="inline-style-026" src="/images/activities/063-activity-image-063.jpg" loading="lazy"/>
+<a rel="noopener noreferrer" class="card-source inline-style-027" href="https://www.youtube.com/watch?v=GLF9DuZmdwE" target="_blank"><svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>Хадиджа Зейналова, Германия</a>
+</div>
+<div class="inline-style-025">
+<img alt="Масуд Эфендиев — Сила в Единстве" class="inline-style-026" src="/images/activities/064-activity-image-064.jpg" loading="lazy"/>
+<a rel="noopener noreferrer" class="card-source inline-style-027" href="https://www.youtube.com/watch?v=KlsHbeaU6Ug" target="_blank"><svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>Масуд Эфендиев, Германия</a>
+</div>
+</div>
+<div class="inline-style-028">
+<div class="inline-style-025">
+<img alt="Йулдуз Рагимов — Сила в Единстве" class="inline-style-026" src="/images/activities/065-activity-image-065.jpg" loading="lazy"/>
+<a rel="noopener noreferrer" class="card-source inline-style-027" href="https://www.youtube.com/watch?v=cit5y1h1xgg" target="_blank"><svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>Йулдуз Рагимов, Канада</a>
+</div>
+<div class="inline-style-025">
+<img alt="Акиф Алафердов — Сила в Единстве" class="inline-style-026" src="/images/activities/066-activity-image-066.jpg" loading="lazy"/>
+<a rel="noopener noreferrer" class="card-source inline-style-027" href="https://www.youtube.com/watch?v=RaB48q0-k9s" target="_blank"><svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>Акиф Алафердов, Кыргызыстан</a>
+</div>
+<div class="inline-style-025">
+<img alt="Джамиля Джавадова-Шпицберг — Сила в Единстве" class="inline-style-026" src="/images/activities/067-activity-image-067.jpg" loading="lazy"/>
+<a rel="noopener noreferrer" class="card-source inline-style-027" href="https://www.youtube.com/watch?v=H4EpsqlKeyg" target="_blank"><svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>Джамиля Джавадова-Шпицберг, США</a>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 30: CROSS MEDİA Seymur müsahibə -->
+<!-- CARD 31: 525 Qəzet Məsud müsahibə -->
+<article class="news-card" id="525-mesud-2024">
+<div class="card-header">
+<div class="card-date">13 Dekabr 2024</div>
+<h2 class="card-title">525-ci Qəzet — Məsud Əfəndiyevlə müsahibə</h2>
+</div>
+<div class="card-body">
+<img alt="Məsud Əfəndiyev — NDU" class="inline-style-029" src="/images/activities/068-mesud-efendiyev-ndu.jpg" loading="lazy"/>
+<p class="card-text">Məqalədə Almaniyada fəaliyyət göstərən tanınmış azərbaycanlı alim, "Aleksander fon Humboldt" ("Kiçik Nobel mükafatı") mükafatının ilk azərbaycanlı laureatı Məsud Əfəndiyev haqqında geniş məlumat verilir. Alim Azərbaycanın elm və təhsil siyasətinin son illərdə sistemli və strateji xarakter aldığını, xüsusilə süni intellekt və informasiya texnologiyalarına diqqətin artdığını vurğulayır. O, Dünya Azərbaycanlı Alimlər Birliyi vasitəsilə xaricdə yaşayan azərbaycanlı alimlərin Azərbaycan elminin inkişafına töhfə verməyə çalışdıqlarını qeyd edir. Məqalədə həmçinin Naxçıvan Dövlət Universiteti ilə əməkdaşlıq perspektivləri, beynəlxalq elmi əlaqələrin genişləndirilməsi və gənclərin elmə təşviqinin əhəmiyyəti xüsusi vurğulanır. Məsud Əfəndiyev hesab edir ki, güclü elmi mühit, beynəlxalq əməkdaşlıq və keyfiyyətli tədqiqatlar gələcəkdə azərbaycanlı alimlərin daha böyük beynəlxalq uğurlar qazanmasına yol aça bilər.</p>
+<a rel="noopener noreferrer" class="card-source" href="https://525.az/news/282802-azerbaycanda-elme-munasibet-konseptual-ve-sistemli-xarakter-dasiyir--kicik-nobel-mukafatinin-ilk-azerbaycanli-laureati" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          525-ci Qəzet
+        </a>
+</div>
+</article>
+<!-- CARD 32: QOBUSTAN onlayn görüş -->
+<!-- CARD 33: Qarabağ Universiteti onlayn görüş -->
+<article class="news-card" id="qarabag-online-2024">
+<div class="card-header">
+<div class="card-date">15 Oktyabr 2024</div>
+<h2 class="card-title">Qarabağ Universiteti ilə onlayn görüş</h2>
+</div>
+<div class="card-body">
+<div class="inline-style-024"><img alt="Qarabağ Universiteti" class="inline-style-030" src="/images/activities/069-qarabag-universiteti.jpg" loading="lazy"/><img alt="Qarabağ Universiteti ilə onlayn görüş" class="inline-style-030" src="/images/activities/070-qarabag-universiteti-ile-onlayn-gorus.jpg" loading="lazy"/></div>
+<p class="card-text">15 oktyabr 2024-cü il tarixində Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) İdarə Heyətinin üzvləri və Qarabağ Universitetinin rəhbər heyəti arasında görüş keçirilib. DAAB-ın təşəbbüsü ilə onlayn formatda keçirilən görüş tədris, elmi-tədqiqat, eləcə də Qarabağ Universitetinin beynəlxalq səviyyədə tanınması və nüfuzunun gücləndirilməsi istiqamətlərində əməkdaşlıq imkanlarının müzakirəsi məqsədi daşıyıb.</p>
+<div class="inline-style-031">
+<a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/qarabag_universiteti_ve_dunya_azerbaycanli_alimler_birliyi_emekdasliq_edecekler-3235158" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    AzərTAC
+  </a>
+<a rel="noopener noreferrer" class="card-source" href="https://tehsil.biz/news/az/78597/Qaraba-Universiteti-v-DAAB-arasnda-mkdalq-msllri-mzakir-olunub" target="_blank">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    Təhsil.Biz
+  </a>
+</div>
+</div>
+</article>
+</main>
+</div>
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer class="footer-pro">
+<div class="footer-inner">
+<div class="footer-brand"><h3>Dünya Azərbaycanlı Alimlər Birliyi</h3></div>
+<div class="footer-grid">
+<div class="footer-col"><h4 class="footer-title">Əlaqə</h4><div class="footer-item">✉ <a href="mailto:daad.waas2024@gmail.com">daad.waas2024@gmail.com</a></div><div class="footer-item">☎ <span>+90 555 147 46 74</span></div><div class="footer-item">🌐 <a rel="noopener noreferrer" href="https://daab-waas.org" target="_blank">daab-waas.org</a></div></div>
+<div class="footer-col"><h4 class="footer-title">Ünvan</h4><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, İstanbul, Türkiyə</p></div>
+<div class="footer-col"><h4 class="footer-title">Rəhbərlik</h4><p class="footer-leader"><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>DAAB İdarə Heyətinin Sədri<br/>Germany — James D. Murray Distinguished Professor</p></div>
+</div>
+</div>
+<div class="footer-bottom">© 2026 DAAB / WAAS — All Rights Reserved</div>
+</footer>
+<!-- Updated: Xəlil Kələntər portrait replaced and portrait sizing unified -->
+<script>
+(function () {
+  const links = Array.from(document.querySelectorAll('.timeline-list a[href^="#"]'));
+  const ids = links.map(a => a.getAttribute('href').slice(1));
+  const cards = ids.map(id => document.getElementById(id)).filter(Boolean);
+  const eventsWidget = document.querySelector('.sidebar-widget');
+  const eventsToggle = document.querySelector('.events-menu-toggle');
+  const mobileQuery = window.matchMedia('(max-width: 1060px)');
+
+  function activate(link) {
+    links.forEach(a => a.classList.remove('tl-active'));
+    if (link) link.classList.add('tl-active');
+  }
+
+  function closeEventsMenu() {
+    if (!eventsWidget || !eventsToggle) return;
+    eventsWidget.classList.remove('events-open');
+    eventsToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function toggleEventsMenu() {
+    if (!eventsWidget || !eventsToggle) return;
+    const open = eventsWidget.classList.toggle('events-open');
+    eventsToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  function jumpToTarget(event) {
+    const link = event.currentTarget;
+    const target = document.getElementById(link.getAttribute('href').slice(1));
+    if (!target) return;
+
+    event.preventDefault();
+    activate(link);
+    target.scrollIntoView({ block: 'start', behavior: 'auto' });
+    history.pushState(null, '', link.getAttribute('href'));
+    if (mobileQuery.matches) closeEventsMenu();
+  }
+
+  function onScroll() {
+    const mid = window.scrollY + window.innerHeight * 0.35;
+    let active = null;
+    for (let i = cards.length - 1; i >= 0; i--) {
+      if (cards[i] && cards[i].offsetTop <= mid) {
+        active = i;
+        break;
+      }
+    }
+    activate(active !== null ? links[ids.indexOf(cards[active].id)] : null);
+  }
+
+  links.forEach(link => link.addEventListener('click', jumpToTarget));
+  if (eventsToggle) {
+    eventsToggle.addEventListener('click', event => {
+      event.stopPropagation();
+      toggleEventsMenu();
+    });
+  }
+  document.addEventListener('click', event => {
+    if (!mobileQuery.matches || !eventsWidget || !eventsWidget.classList.contains('events-open')) return;
+    if (eventsWidget.contains(event.target)) return;
+    closeEventsMenu();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeEventsMenu();
+  });
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+<script id="daab-shared-search-script">
+document.addEventListener("DOMContentLoaded", function () {
+  var PAGES = [
+    { title: "Ana Səhifə", desc: "DAAB website main entry page", icon: "🏠", tag: "Main", url: "index.html", kw: ["home","daab","index","start","ana səhifə"] },
+    { title: "Missiya, Vizyon və Dəyərlər", desc: "Strategic direction, purpose and institutional values", icon: "💎", tag: "About", url: "mission_vision_values_az.html", kw: ["mission","vision","values","purpose","strategy","missiya","vizyon","dəyərlər"] },
+    { title: "Fəaliyyətimiz", desc: "Scientific, academic and cultural events chronicle", icon: "📰", tag: "Activities", url: "activities_az.html", kw: ["activities","events","conference","seminar","fəaliyyət","tədbirlər"] },
+    { title: "Birliyin Təsisi", desc: "Təsis zərurəti və İstanbul təsis görüşü", icon: "🏛️", tag: "Foundation", url: "foundation_az.html", kw: ["founding","necessity","istanbul","meeting","təsis","zərurət","toplantı"] },
+    { title: "Alimlərimiz", desc: "Catalogue of Azerbaijani scientists worldwide", icon: "🌐", tag: "Catalogue", url: "scientists_list_view_az.html", kw: ["scientists","scholars","professor","doctor","alimlər","kataloq"] },
+    { title: "İdarə Heyəti", desc: "Leadership board, members, biography and contact", icon: "🎓", tag: "Governance", url: "executive_board_az.html", kw: ["board","executive","leadership","members","idarə","rəhbərlik"] },
+    { title: "Nizamnamə", desc: "Official DAAB charter in Azerbaijani", icon: "📜", tag: "Charter", url: "charter_az.html", kw: ["charter","statute","rules","nizamnamə"] },
+    { title: "Üzvlük Şərtləri", desc: "Requirements, benefits and application procedure", icon: "✒️", tag: "Membership", url: "membership_terms_az.html", kw: ["membership","terms","application","üzvlük","müraciət"] }
+  ];
+  var ov=document.getElementById("search-overlay"), inp=document.getElementById("search-input"), res=document.getElementById("search-results"), nb=document.getElementById("nav-search-btn"), cb=document.getElementById("search-close-btn");
+  if(!ov||!inp||!res) return; var fi=-1;
+  function openSearch(){ov.classList.add("open");inp.value="";fi=-1;res.innerHTML='<div class="search-prompt">Axtarmaq üçün yuxarıdakı xanaya mətn daxil edin</div>';setTimeout(function(){inp.focus()},50)}
+  function closeSearch(){ov.classList.remove("open");inp.value="";fi=-1}
+  function score(p,q){var ql=q.toLowerCase();var corpus=[p.title,p.desc,p.tag].concat(p.kw).join(" ").toLowerCase();if(corpus.indexOf(ql)!==-1)return 10;var words=ql.split(/\s+/).filter(Boolean);var s=0;words.forEach(function(w){if(corpus.indexOf(w)!==-1)s+=2;else if(corpus.split(/\s+/).some(function(cw){return cw.indexOf(w)===0}))s+=1});return s}
+  function updateFocus(){var items=res.querySelectorAll(".search-result-item");items.forEach(function(el,i){el.classList.toggle("focused",i===fi);if(i===fi)el.scrollIntoView({block:"nearest"})})}
+  function renderResults(pages){fi=-1;if(!pages.length){res.innerHTML='<div class="search-empty">Nəticə tapılmadı. Başqa söz cəhd edin.</div>';return}res.innerHTML=pages.map(function(p){return '<a class="search-result-item" href="'+p.url+'"><div class="sri-icon">'+p.icon+'</div><div class="sri-body"><div class="sri-title">'+p.title+'</div><div class="sri-desc">'+p.desc+'</div></div><span class="sri-tag">'+p.tag+'</span></a>'}).join("");updateFocus()}
+  inp.addEventListener("input",function(){var q=inp.value.trim();if(!q){res.innerHTML='<div class="search-prompt">Axtarmaq üçün yuxarıdakı xanaya mətn daxil edin</div>';fi=-1;return}renderResults(PAGES.map(function(p){return{p:p,s:score(p,q)}}).filter(function(x){return x.s>0}).sort(function(a,b){return b.s-a.s}).map(function(x){return x.p}))});
+  inp.addEventListener("keydown",function(e){var items=res.querySelectorAll(".search-result-item");if(e.key==="ArrowDown"){e.preventDefault();fi=Math.min(fi+1,items.length-1);updateFocus()}else if(e.key==="ArrowUp"){e.preventDefault();fi=Math.max(fi-1,0);updateFocus()}else if(e.key==="Enter"&&fi>=0&&items[fi]){items[fi].click()}else if(e.key==="Escape"){closeSearch()}});
+  if(nb)nb.addEventListener("click",openSearch); if(cb)cb.addEventListener("click",closeSearch); ov.addEventListener("click",function(e){if(e.target===ov)closeSearch()}); document.addEventListener("keydown",function(e){if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();ov.classList.contains("open")?closeSearch():openSearch()} if(e.key==="Escape"&&ov.classList.contains("open"))closeSearch()});
+});
+</script></body>
+</html>
