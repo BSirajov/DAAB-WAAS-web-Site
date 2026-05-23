@@ -5,10 +5,10 @@ import html
 import re
 from pathlib import Path
 
-from _paths import ROOT
+from _paths import ROOT, AZ_SCIENTISTS_PROFILES
 
 EXTRACT = ROOT / "_pdf_extract.txt"
-HTML_PATH = ROOT / "scientists_card_view_az.html"
+HTML_PATH = AZ_SCIENTISTS_PROFILES
 
 CHAPTER_START = (
     "XARİCDƏ YAŞAYAN  \nAZƏRBAYCANLI ALİMLƏR\nAMERİKA BİRLƏŞMİŞ ŞTATLARI"

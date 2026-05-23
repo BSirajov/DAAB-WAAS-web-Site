@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="az" lang="az" data-daab-lang="az" data-daab-asset-root="../../" data-daab-page-id="scientists-list" data-daab-nav-mount="1">
+<html lang="az" data-daab-lang="az" data-daab-asset-root="../../" data-daab-page-id="scientists-list" data-daab-nav-mount="1">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
@@ -249,18 +249,6 @@ td.col-name {
   font-weight: 900;
 }
 
-td.col-name a.name-link {
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0, 105, 180, .32);
-}
-
-td.col-name a.name-link:hover,
-td.col-name a.name-link:focus-visible {
-  color: var(--blue-900);
-  border-color: var(--gold);
-}
-
 a.email-link {
   display: inline-flex;
   align-items: center;
@@ -363,14 +351,15 @@ a.email-link:focus-visible {
 </style>
 <link href="../../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
   <script src="../../js/daab-mobile.js?v=1" defer></script>
-<link href="../../css/daab-lang.css?v=6" rel="stylesheet"/>
+<link href="../../css/daab-lang.css?v=7" rel="stylesheet"/>
 <link href="../../css/daab-nav-mega.css?v=11" rel="stylesheet"/>
-<script src="../../js/daab-i18n.js?v=9" defer></script>
+<script src="../../js/daab-i18n.js?v=11" defer></script>
+<script src="../../js/daab-lang-position.js?v=3" defer></script>
 <script src="../../js/daab-nav.js?v=7" defer></script>
 <script src="../../js/daab-primary-nav.js?v=8" defer></script>
 <script src="../../js/daab-breadcrumbs.js?v=4" defer></script>
 <script src="../../js/daab-section-nav.js?v=4" defer></script>
-<script src="../../js/daab-shell.js?v=6" defer></script>
+<script src="../../js/daab-shell.js?v=7" defer></script>
 </head>
 <body><div aria-label="Axtarış" aria-modal="true" id="search-overlay" role="dialog">
 <div class="search-modal">
@@ -403,7 +392,7 @@ a.email-link:focus-visible {
 <svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15">
 <circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line>
 </svg>
-<input autocomplete="off" id="searchInput" placeholder="Ad, ölkə, ixtisas, elmi dərəcə, e-poçt…" type="search"/>
+<input autocomplete="off" id="searchInput" placeholder="Ad, ölkə, ixtisas, elmi dərəcə, e-poçt…" type="search" aria-label="Alim axtar"/>
 </div>
 <div class="filter-group">
 <span class="filter-icon-label" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 9v5l-4-2v-3L3 5z"/></svg><span>Filtrlər</span></span>
@@ -472,35 +461,12 @@ a.email-link:focus-visible {
 <div class="pagination" id="pagination"></div>
 </div>
 </main>
-<script src="../../js/scientists-catalog-data.js?v=1"></script>
+<script src="../../js/scientists-catalog-data.js?v=2"></script>
+<script src="../../js/daab-collation.js?v=1"></script>
 <script>
 const DATA = window.SCIENTISTS_CATALOG_DATA || [];
-// ── Azerbaijani alphabet sort ──
-const AZ_ALPHA = 'AaBbCcÇçDdEeƏəFfGgĞğHhXxIıİiJjKkQqLlMmNnOoÖöPpRrSsŞşTtUuÜüVvYyZz';
-const AZ_ORDER = {};
-[...AZ_ALPHA].forEach((ch, i) => { AZ_ORDER[ch] = i; });
-
-function azSort(arr) {
-  return [...arr].sort((a, b) => {
-    const as = String(a), bs = String(b);
-    for (let i = 0; i < Math.min(as.length, bs.length); i++) {
-      const ai = AZ_ORDER[as[i]] ?? 999, bi = AZ_ORDER[bs[i]] ?? 999;
-      if (ai !== bi) return ai - bi;
-    }
-    return as.length - bs.length;
-  });
-}
-
-function azCompare(a, b) {
-  const as = String(a||''), bs = String(b||'');
-  for (let i = 0; i < Math.max(as.length, bs.length); i++) {
-    if (i >= as.length) return -1;
-    if (i >= bs.length) return  1;
-    const ai = AZ_ORDER[as[i]] ?? 999, bi = AZ_ORDER[bs[i]] ?? 999;
-    if (ai !== bi) return ai - bi;
-  }
-  return 0;
-}
+const azCompare = (a, b) => window.DAAB_COLLATION.compare(a, b);
+const azSort = (arr) => window.DAAB_COLLATION.sort(arr);
 
 let filtered=[...DATA], sortCol='ad_soyad', sortDir=1, page=1, perPage=50;
 const countries  = azSort([...new Set(DATA.map(r=>r.yasadigi_olke).filter(Boolean))]);
@@ -549,13 +515,10 @@ function render(){
 
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
-
 function rowHTML(r,idx){  const email=(r.email||'').trim();
   const deg=(r.elmi_derece||'').trim();
   const displayName = [r.ad_soyad, deg].map(v => (v || '').trim()).filter(Boolean).join(', ');
-  const nameCell = r.url
-    ? `<a class="name-link" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(displayName)||'—'}</a>`
-    : `${esc(displayName)||'—'}`;
+  const nameCell = `${esc(displayName)||'—'}`;
   return `<tr>
     <td class="col-no">${idx}</td>
     <td class="col-name">${nameCell}</td>

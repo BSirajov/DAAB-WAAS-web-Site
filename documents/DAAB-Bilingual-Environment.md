@@ -13,17 +13,14 @@ This folder documents the **Phase 0** bilingual infrastructure added to the stat
 | `css/daab-lang.css` | Switcher and gateway styles |
 | `az/` | Azerbaijani pages (built from legacy `*_az.html`) |
 | `en/` | English pages (home + “translation in progress” stubs) |
-| `index-gateway.html` | Optional language picker at site root |
+| `index.html` | Language gateway at site root (redirects to `/az/` or `/en/`) |
 | `helpers/_build_bilingual_tree.py` | Regenerates `az/` and `en/` after content edits |
+| `helpers/_thin_legacy_redirects.py` | Rebuilds thin redirect stubs for root `*_az.html` |
 
 ## URLs (local preview)
 
-- **Site entry:** `http://localhost:8010/` → redirects to `/az/`
-- **English mission (live):** `http://localhost:8010/en/mission.html`
-- Azerbaijani home: `http://localhost:8010/az/index.html`
-- English home: `http://localhost:8010/en/index.html`
-- Legacy home (old cards): `http://localhost:8010/index.html?legacy=1` (if gateway enabled)
-- Old filenames: `foundation_az.html`, etc. — still work, with AZ/EN hint bar
+- **Site entry:** `http://localhost:8010/` → redirects to `/az/` (or `/en/` if `localStorage daab-lang=en`)
+- **Choose language:** `http://localhost:8010/index.html?choose=1`
 
 ## Regenerate after editing legacy pages
 
@@ -41,7 +38,7 @@ By default this rebuilds `/az/` and `/en/`, patches legacy pages, sets the root 
 
 On any page that loads `daab-i18n.js` + `daab-shell.js`, the nav shows **AZ | EN**. The active language is highlighted; the other link goes to the matching page in `routes.json`.
 
-Preference is stored in `localStorage` (`daab-lang`) and used by `index-gateway.html` for automatic redirect.
+Preference is stored in `localStorage` (`daab-lang`) and used by `index.html` for automatic redirect.
 
 ## Publish a completed English page
 

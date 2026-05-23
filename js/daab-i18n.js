@@ -99,7 +99,7 @@
 
   function loadNav() {
     if (navCache) return Promise.resolve(navCache);
-    return fetchJson(i18nUrl("nav.json") + "?v=3").then(function (data) {
+    return fetchJson(i18nUrl("nav.json") + "?v=5").then(function (data) {
       navCache = data;
       return data;
     });

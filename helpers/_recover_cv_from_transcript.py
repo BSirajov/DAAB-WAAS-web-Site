@@ -3,7 +3,7 @@ import json
 import re
 from pathlib import Path
 
-from _paths import ROOT
+from _paths import AZ_SCIENTISTS_PROFILES, ROOT
 
 TRANSCRIPT = Path(
     r"C:\Users\BSira\.cursor\projects\c-Users-BSira-Documents-GitHub-DAAB-WAAS-web-site"
@@ -11,7 +11,7 @@ TRANSCRIPT = Path(
     r"\2d0cb383-2b26-4ef8-b10c-07f813cba3d4.jsonl"
 )
 
-CV = ROOT / "scientists_card_view_az.html"
+CV = AZ_SCIENTISTS_PROFILES
 
 best_cards = ""
 best_count = 0

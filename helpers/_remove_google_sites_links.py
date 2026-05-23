@@ -5,7 +5,7 @@ import re
 import sys
 from pathlib import Path
 
-from _paths import ROOT
+from _paths import AZ_SCIENTISTS_LIST, ROOT
 
 GOOGLE_SITES = re.compile(r"https://sites\.google\.com\S*")
 CARD_OPEN = re.compile(
@@ -17,7 +17,7 @@ CARD_OPEN = re.compile(
 
 def strip_data_files() -> int:
     count = 0
-    for name in ("js/scientists-catalog-data.js", "scientists_list_view_az.html"):
+    for name in ("js/scientists-catalog-data.js", AZ_SCIENTISTS_LIST.relative_to(ROOT).as_posix()):
         path = ROOT / name
         text = path.read_text(encoding="utf-8")
         found = len(GOOGLE_SITES.findall(text))

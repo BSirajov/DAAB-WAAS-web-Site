@@ -135,5 +135,5 @@ HOME_REPLACEMENTS: list[tuple[str, str]] = [
     ("Türkiyə", "Türkiye"),
     ("Rəhbərlik", "Leadership"),
     ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
-    ("Prof. Dr. Məsud Əfəndiyev", "Prof. Dr. Məsud Əfəndiyev"),
+    ("Prof. Dr. Məsud Əfəndiyev", "Prof. Dr. Messoud Efendiyev"),
 ]

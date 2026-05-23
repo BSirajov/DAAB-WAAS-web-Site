@@ -7,10 +7,10 @@ import re
 import unicodedata
 from pathlib import Path
 
-from _paths import ROOT
+from _paths import ROOT, AZ_SCIENTISTS_LIST, AZ_SCIENTISTS_PROFILES
 
-CV = ROOT / "scientists_card_view_az.html"
-AZ = ROOT / "scientists_list_view_az.html"
+CV = AZ_SCIENTISTS_PROFILES
+AZ = AZ_SCIENTISTS_LIST
 
 COUNTRY_CODE_TO_NAME = {
     "abs": "ABŞ",
@@ -231,6 +231,18 @@ def main() -> None:
 
     CV.write_text(new_text, encoding="utf-8")
     print(f"Wrote {len(rebuilt)} normalized cards")
+
+    try:
+        from _export_scientists_profiles_json import main as export_profiles_json
+        from _build_scientists_profiles import build_az, build_en
+    except ImportError:
+        from helpers._export_scientists_profiles_json import main as export_profiles_json  # type: ignore
+        from helpers._build_scientists_profiles import build_az, build_en  # type: ignore
+
+    export_profiles_json()
+    build_az()
+    build_en()
+    print("Synced i18n/scientists-profiles.json and rebuilt az/en catalogs")
 
 
 if __name__ == "__main__":

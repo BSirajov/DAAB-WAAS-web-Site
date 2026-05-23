@@ -308,28 +308,6 @@ MISSION_REPLACEMENTS: list[tuple[str, str]] = [
 
 
 def postprocess_membership_en(html: str) -> str:
-    html = re.sub(
-        r'<div class="lang-card">\s*<div class="lang-label">(?:Dünya Azərbaycanlı|World Association of Azerbaijani Scientists \(DAAB\)).*?</div>\s*'
-        r'<p><strong>DAAB</strong>.*?</p>\s*<p>DAAB elm.*?</p>\s*</div>\s*',
-        "",
-        html,
-        count=1,
-        flags=re.DOTALL,
-    )
-    html = re.sub(
-        r'<p><strong>DAAB</strong>.*?</p>\s*<p>DAAB elm.*?</p>\s*</div>\s*',
-        "",
-        html,
-        count=1,
-        flags=re.DOTALL,
-    )
-    html = re.sub(
-        r"<article class=\"card\">\s*<div class=\"card-header\">✒️ Üzvlük Şərtləri</div>.*?</article>\s*",
-        "",
-        html,
-        count=1,
-        flags=re.DOTALL,
-    )
     html = html.replace("✒️ Terms of Membership", "✒️ Membership Terms")
     html = re.sub(
         r"\.cards\{display:grid;grid-template-columns:1fr 1fr",
@@ -393,6 +371,21 @@ def postprocess_activities_en(html: str) -> str:
         ("<!-- CARD 33: Qarabağ Universiteti onlayn görüş -->", "<!-- CARD 33: Karabakh University online meeting -->"),
         ("<!-- CARD 33: Karabakh University onlayn görüş -->", "<!-- CARD 33: Karabakh University online meeting -->"),
         ("          AZƏRTAC\n", "          AZERTAC\n"),
+        ('alt="Бахтияр Сираджов — Сила в Единстве"', 'alt="Bakhtiyar Sirajov — Strength in Unity"'),
+        ('alt="Хадиджа Зейналова — Сила в Единстве"', 'alt="Khadiija Zeynalova — Strength in Unity"'),
+        ('alt="Масуд Эфендиев — Сила в Единстве"', 'alt="Messoud Efendiyev — Strength in Unity"'),
+        ('alt="Йулдуз Рагимов — Сила в Единстве"', 'alt="Yulduz Rahimov — Strength in Unity"'),
+        ('alt="Акиф Алафердов — Сила в Единстве"', 'alt="Akif Alafardov — Strength in Unity"'),
+        ('alt="Джамиля Джавадова-Шпицберг — Сила в Единстве"', 'alt="Jamila Javadova-Spitzberg — Strength in Unity"'),
+        ("Бахтияр Сираджов, Австрия", "Bakhtiyar Sirajov, Austria"),
+        ("Хадиджа Зейналова, Турция", "Khadiija Zeynalova, Türkiye"),
+        ("Масуд Эфендиев, Германия", "Messoud Efendiyev, Germany"),
+        ("Йулдуз Рагимов, Канада", "Yulduz Rahimov, Canada"),
+        ("Акиф Алафердов, Кыргызыстан", "Akif Alafardov, Kyrgyzstan"),
+        ("Джамиля Джавадова-Шпицберг, США", "Jamila Javadova-Spitzberg, USA"),
+        ("<!-- CARD 27: Бакинский Рабочий -->", "<!-- CARD 27: Baku Worker newspaper -->"),
+        ("<!-- CARD 29: Diaspora СИЛА В ЕДИНСТВЕ -->", "<!-- CARD 29: Diaspora Strength in Unity -->"),
+        ("Хадиджа Зейналова, Германия", "Khadiija Zeynalova, Germany"),
     ):
         html = html.replace(old, new)
     return html
@@ -406,12 +399,28 @@ def postprocess_charter_en(html: str) -> str:
 def postprocess_scientists_list_en(html: str) -> str:
     html = html.replace(" nəticə", " results")
     html = html.replace(" ümumi)", " total)")
-    html = html.replace('href="/cv/', 'href="../../cv/')
+    html = re.sub(
+        r"js/scientists-catalog-data\.js\?v=\d+",
+        "js/scientists-catalog-data-en.js?v=2",
+        html,
+        count=1,
+    )
     return html
 
 
 def postprocess_scientists_profiles_en(html: str) -> str:
-    return postprocess_scientists_list_en(html)
+    html = postprocess_scientists_list_en(html)
+    try:
+        from scientists_profiles_core import build_catalog_section, load_profiles, replace_catalog_in_html
+    except ImportError:
+        from helpers.scientists_profiles_core import (  # type: ignore
+            build_catalog_section,
+            load_profiles,
+            replace_catalog_in_html,
+        )
+    profiles = load_profiles()
+    catalog = build_catalog_section(profiles, "en", asset_prefix="../../")
+    return replace_catalog_in_html(html, catalog)
 
 
 def postprocess_home_en(html: str) -> str:
@@ -461,7 +470,11 @@ def publish_from_az(
             html = html.replace(old, new)
     if postprocess:
         html = postprocess(html)
-    html = re.sub(r'\s*lang="az"\s*', " ", html)
+    try:
+        from i18n_person_names_en import apply_person_name_latin
+    except ImportError:
+        from helpers.i18n_person_names_en import apply_person_name_latin  # type: ignore
+    html = apply_person_name_latin(html)
     html = re.sub(r"<html([^>\n]*)>", r'<html lang="en"\1>', html, count=1, flags=re.I)
     html = re.sub(
         r"<html([^>]*)\s+lang=\"en\"\s+lang=\"en\"",
@@ -491,12 +504,18 @@ def publish_mission() -> None:
     publish_from_az("az/mission.html", "en/mission.html", "mission", MISSION_REPLACEMENTS)
 
 
+def postprocess_foundation_en(html: str) -> str:
+    html = re.sub(r"\s*adlandırılsın\s*", "\n", html)
+    return html
+
+
 def publish_foundation() -> None:
     publish_from_az(
         "az/foundation.html",
         "en/foundation.html",
         "foundation",
         FOUNDATION_REPLACEMENTS,
+        postprocess_foundation_en,
     )
 
 
@@ -544,7 +563,16 @@ def publish_charter() -> None:
     )
 
 
+def ensure_scientists_catalog_data_en() -> None:
+    try:
+        from _build_scientists_catalog_data_en import main as build_catalog_en
+    except ImportError:
+        from helpers._build_scientists_catalog_data_en import main as build_catalog_en  # type: ignore
+    build_catalog_en()
+
+
 def publish_scientists_list() -> None:
+    ensure_scientists_catalog_data_en()
     publish_from_az(
         "az/scientists/list.html",
         "en/scientists/list.html",
@@ -555,6 +583,7 @@ def publish_scientists_list() -> None:
 
 
 def publish_scientists_profiles() -> None:
+    ensure_scientists_catalog_data_en()
     publish_from_az(
         "az/scientists/profiles.html",
         "en/scientists/profiles.html",
@@ -601,7 +630,10 @@ def main() -> int:
         publish_scientists_profiles()
         return 0
     if args.page == "all":
-        for fn in pages.values():
+        for key, fn in pages.items():
+            # Fully translated pages maintained outside the AZ-shell publish flow.
+            if key in ("charter", "mission"):
+                continue
             fn()
     else:
         pages[args.page]()

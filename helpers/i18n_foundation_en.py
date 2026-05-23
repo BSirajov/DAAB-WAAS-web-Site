@@ -187,7 +187,7 @@ FOUNDATION_REPLACEMENTS: list[tuple[str, str]] = [
         "Alimlərin məqalə, kitab və tədqiqatlarını əhatə edən elmi informasiya bazası formalaşdırılsın.",
         "Establish a scientific information base covering members' articles, books and research.",
     ),
-    ("İldə dört dəfə beynəlxalq səviyyəli elmi jurnal dərc edilsin.", "Publish an international scientific journal four times a year."),
+    ("İldə dörd dəfə beynəlxalq səviyyəli elmi jurnal dərc edilsin.", "Publish an international scientific journal four times a year."),
     (
         "Alimlər yaşadıqları ölkələrin xüsusiyyətlərinə uyğun tədqiqatlar və arxiv araşdırmaları aparsınlar.",
         "Encourage scholars to conduct research and archival studies suited to their countries of residence.",
@@ -245,5 +245,8 @@ FOUNDATION_REPLACEMENTS: list[tuple[str, str]] = [
     ("Türkiyə", "Türkiye"),
     ("Rəhbərlik", "Leadership"),
     ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
+    ("İdarə heyəti aşağıdakı tərkibdə qəbul edilsin:", "The executive board shall be confirmed in the following composition:"),
+    (" adlandırılsın", ""),
+    ("adlandırılsın", ""),
     ('lang="az" lang="az"', 'lang="en"'),
 ]

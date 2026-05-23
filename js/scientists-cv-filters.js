@@ -3,6 +3,22 @@
 
   var DATA = window.SCIENTISTS_CATALOG_DATA || [];
 
+  var collation = window.DAAB_COLLATION || {};
+  var localeCompare =
+    collation.compare ||
+    function (a, b) {
+      return String(a || "").localeCompare(String(b || ""), "en", {
+        sensitivity: "base",
+      });
+    };
+  var localeSort =
+    collation.sort ||
+    function (arr) {
+      return arr.slice().sort(function (a, b) {
+        return localeCompare(a, b);
+      });
+    };
+
   var COUNTRY_NAME_TO_CODE = {
     "ABŞ": "abs",
     "Almaniya": "de",
@@ -28,41 +44,6 @@
     "Ukrayna": "ua",
     "Yaponiya": "jp",
   };
-
-  var AZ_ALPHA =
-    "AaBbCcÇçDdEeƏəFfGgĞğHhXxIıİiJjKkQqLlMmNnOoÖöPpRrSsŞşTtUuÜüVvYyZz";
-  var AZ_ORDER = {};
-  AZ_ALPHA.split("").forEach(function (ch, i) {
-    AZ_ORDER[ch] = i;
-  });
-
-  function azSort(arr) {
-    return arr.slice().sort(function (a, b) {
-      var as = String(a);
-      var bs = String(b);
-      for (var i = 0; i < Math.min(as.length, bs.length); i++) {
-        var ai = AZ_ORDER[as[i]] != null ? AZ_ORDER[as[i]] : 999;
-        var bi = AZ_ORDER[bs[i]] != null ? AZ_ORDER[bs[i]] : 999;
-        if (ai !== bi) return ai - bi;
-      }
-      return as.length - bs.length;
-    });
-  }
-
-  function azCompare(a, b) {
-    var as = String(a || "");
-    var bs = String(b || "");
-    var len = Math.max(as.length, bs.length);
-    var i;
-    for (i = 0; i < len; i++) {
-      if (i >= as.length) return -1;
-      if (i >= bs.length) return 1;
-      var ai = AZ_ORDER[as[i]] != null ? AZ_ORDER[as[i]] : 999;
-      var bi = AZ_ORDER[bs[i]] != null ? AZ_ORDER[bs[i]] : 999;
-      if (ai !== bi) return ai - bi;
-    }
-    return 0;
-  }
 
   function normQuery(q) {
     return q.toLowerCase().replace(/\s+/g, " ").trim();
@@ -166,7 +147,7 @@
         list.sort(function (a, b) {
           return (
             sortDir *
-            azCompare(getSortValue(a, sortCol), getSortValue(b, sortCol))
+            localeCompare(getSortValue(a, sortCol), getSortValue(b, sortCol))
           );
         });
       }
@@ -187,7 +168,7 @@
     if (!searchInput || !filterCountry) return;
 
     if (DATA.length) {
-      var countries = azSort(
+      var countries = localeSort(
         Object.keys(
           DATA.reduce(function (acc, r) {
             if (r.yasadigi_olke) acc[r.yasadigi_olke] = 1;
@@ -195,7 +176,7 @@
           }, {})
         )
       );
-      var degrees = azSort(
+      var degrees = localeSort(
         Array.from(
           new Set(
             DATA.map(function (r) {
@@ -204,7 +185,7 @@
           )
         )
       );
-      var ixtisaslar = azSort(
+      var ixtisaslar = localeSort(
         Array.from(
           new Set(
             DATA.map(function (r) {

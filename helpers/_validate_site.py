@@ -12,18 +12,11 @@ from pathlib import Path
 
 from _paths import ROOT
 
-# Pages that must include shared assets (site root HTML only)
-MAIN_PAGES = [
-    "index.html",
-    "activities_az.html",
-    "charter_az.html",
-    "executive_board_az.html",
-    "foundation_az.html",
-    "membership_terms_az.html",
-    "mission_vision_values_az.html",
-    "scientists_list_view_az.html",
-    "scientists_card_view_az.html",
-]
+# Live pages are under az/ and en/; root *_az.html are thin redirect stubs only.
+MAIN_PAGES: list[str] = []
+
+# Gateway pages — language picker only; no full nav shell required.
+GATEWAY_PAGES = {"index.html", "404.html"}
 
 REQUIRED_SNIPPETS = {
     "daab-common.css": "css/daab-common.css",
@@ -123,7 +116,10 @@ def main() -> int:
     for page in pages:
         text = page.read_text(encoding="utf-8", errors="replace")
 
-        check_snippets = page.name in MAIN_PAGES or page in BILINGUAL_PAGES
+        check_snippets = (
+            (page.name in MAIN_PAGES or page in BILINGUAL_PAGES)
+            and page.name not in GATEWAY_PAGES
+        )
         if check_snippets:
             for label, snippet in REQUIRED_SNIPPETS.items():
                 # az/en pages use ../css paths

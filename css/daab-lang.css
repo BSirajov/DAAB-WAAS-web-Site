@@ -251,3 +251,12 @@
     margin-left: 10px;
   }
 }
+
+/* Anchor targets: sticky nav offset for hash links, back/forward, and lang switch */
+main article[id],
+main section[id],
+main .news-card[id],
+main .charter-card[id],
+main [data-daab-section-id] {
+  scroll-margin-top: calc(var(--daab-nav-height, 86px) + 1.25rem);
+}

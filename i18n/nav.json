@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "primary": [
     { "type": "page", "id": "home" },
     { "type": "page", "id": "activities" },
@@ -33,6 +33,10 @@
     "about": {
       "landingId": "mission",
       "pages": ["foundation", "mission", "executive-board", "charter"]
+    },
+    "scientists": {
+      "landingId": "scientists-list",
+      "pages": ["scientists-list", "scientists-profiles"]
     }
   }
 }

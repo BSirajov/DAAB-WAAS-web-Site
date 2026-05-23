@@ -5,8 +5,8 @@ import json
 import re
 from pathlib import Path
 
-from _paths import ROOT
-CV = ROOT / "scientists_card_view_az.html"
+from _paths import AZ_SCIENTISTS_PROFILES, ROOT
+CV = AZ_SCIENTISTS_PROFILES
 DATA_JS = ROOT / "js" / "scientists-catalog-data.js"
 
 CODE_TO_NAME = {

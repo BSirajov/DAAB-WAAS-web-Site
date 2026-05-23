@@ -3,10 +3,10 @@ import json
 import re
 from pathlib import Path
 
-from _paths import ROOT
+from _paths import ROOT, AZ_SCIENTISTS_LIST
 
 DATA_JS = ROOT / "js" / "scientists-catalog-data.js"
-LIST_HTML = ROOT / "scientists_list_view_az.html"
+LIST_HTML = AZ_SCIENTISTS_LIST
 MARKER = "// ── Azerbaijani alphabet sort ──"
 
 

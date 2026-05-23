@@ -9,9 +9,9 @@ import unicodedata
 from difflib import SequenceMatcher
 from pathlib import Path
 
-from _paths import ROOT, HELPERS
+from _paths import ROOT, HELPERS, AZ_SCIENTISTS_PROFILES
 
-CV = ROOT / "scientists_card_view_az.html"
+CV = AZ_SCIENTISTS_PROFILES
 DATA_JS = ROOT / "js" / "scientists-catalog-data.js"
 PHOTOS = ROOT / "images" / "scientists-photos"
 

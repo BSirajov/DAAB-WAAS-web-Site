@@ -21,12 +21,13 @@ NAV_PLACEHOLDER = (
 HTML_TAG_RE = re.compile(r"<html([^>]*)>", re.IGNORECASE)
 
 SCRIPT_VERSIONS = {
-    "daab-i18n.js": 9,
+    "daab-i18n.js": 11,
+    "daab-lang-position.js": 3,
     "daab-nav.js": 7,
     "daab-primary-nav.js": 8,
     "daab-breadcrumbs.js": 4,
     "daab-section-nav.js": 4,
-    "daab-shell.js": 6,
+    "daab-shell.js": 7,
 }
 
 STYLE_VERSIONS = {
@@ -38,6 +39,7 @@ STYLE_VERSIONS = {
 NAV_ASSETS = (
     '\n<link href="{prefix}css/daab-nav-mega.css?v=' + str(STYLE_VERSIONS["daab-nav-mega.css"]) + '" rel="stylesheet"/>'
     '\n<script src="{prefix}js/daab-i18n.js?v=' + str(SCRIPT_VERSIONS["daab-i18n.js"]) + '" defer></script>'
+    '\n<script src="{prefix}js/daab-lang-position.js?v=' + str(SCRIPT_VERSIONS["daab-lang-position.js"]) + '" defer></script>'
     '\n<script src="{prefix}js/daab-nav.js?v=' + str(SCRIPT_VERSIONS["daab-nav.js"]) + '" defer></script>'
     '\n<script src="{prefix}js/daab-primary-nav.js?v=' + str(SCRIPT_VERSIONS["daab-primary-nav.js"]) + '" defer></script>'
     '\n<script src="{prefix}js/daab-breadcrumbs.js?v=' + str(SCRIPT_VERSIONS["daab-breadcrumbs.js"]) + '" defer></script>'

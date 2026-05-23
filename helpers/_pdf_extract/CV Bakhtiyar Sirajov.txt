@@ -1,0 +1,79 @@
+Bakhtiyar
+First Name
+Last Name
+Sirajov
+21 October 1957
+Date of Birth
+Baku, Azerbaijan
+Place of Birth
+Azerbaijan
+Nationality
+Gender
+Male
+Employment Records
+International Atomic Energy Agency
+July 1995 – November 2021
+Team Leader
+(IAEA), Office of Safeguards
+(P5),
+Information Systems (SGIS),
+Section Head
+(P5)
+Application Development Section
+(DS), Application Development Team
+(ADT), Vienna, Austria
+During 1995-2006 I was involved in several software development projects as a project
+manager.
+In 2006 was promoted to the team leader position of the Application Development Team.
+During 2020-2021 worked in a section head position of the Application Development Section.
+Retired in November 2021.
+I-NET GmbH, Vienna,
+October 1992 – June 1995
+Systems Analyst /
+Application Programmer
+Austria
+During this period I participated in developing of database applications for various Austrian
+companies.
+August 1979 - June 1995
+Head of PC Software Section
+Institute of Cybernetics,
+Azerbaijani Academy of
+Sciences, Baku, Azerbaijan
+As a head of PC Software Section I was responsible for various computer-aided design (CAD)
+and database applications developed for some industrial companies in Azerbaijan.
+In 1990 I successfully submitted my doctoral dissertation and received PhD in Physics and
+Mathematics in Computer Center of the USSR Academy of Sciences in Moscow.
+August 1987 - August 1988
+Institute of Technical
+Systems Analyst /
+Application Programmer
+Cybernetics of
+Slovakian Academy of
+Sciences, Bratislava,
+Slovakia
+As an employee of the International Laboratory for Artificial Intelligence I took part in a
+project where I was responsible for developing of the computer graphics system to be used in
+the design of large scaled integration (LSI) microchips.
+Educational Background
+1979-1986
+Computer Center of
+PhD in Physics and
+Postgraduate
+Mathematics
+study
+the USSR Academy of
+7 published papers and
+Sciences,
+Moscow, Russia
+participation in various
+scientific conferences.
+1974-1979
+Azerbaijan State
+Master Degree
+University
+University,
+in Computer Science
+studies
+Department of Applied
+Mathematics, Baku,
+Azerbaijan

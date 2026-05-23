@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html lang="az" lang="az" data-daab-lang="az" data-daab-asset-root="../" data-daab-page-id="activities" data-daab-nav-mount="1">
+<html lang="az" data-daab-lang="az" data-daab-asset-root="../" data-daab-page-id="activities" data-daab-nav-mount="1">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>DAAB — Fəaliyyətimiz</title>
 <meta content="Dünya Azərbaycanlı Alimlər Birliyinin fəaliyyətləri, tədbirləri, görüşləri və təşəbbüsləri." name="description"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/><link href="../css/daab-common.css?v=18" rel="stylesheet"/>
-<link href="../css/daab-mobile.css?v=2" rel="stylesheet"/>
+<link href="../css/daab-mobile.css?v=3" rel="stylesheet"/>
 
 <style>
 /* ===== merged from style block-1 ===== */
@@ -650,6 +650,18 @@ li {
   margin:0 0 10px 0 !important;
   color:var(--text-mid) !important;
   word-break:normal !important;
+}
+.open-letter-single{
+  grid-template-columns:minmax(0,1fr) !important;
+}
+.open-letter-single .open-letter-column{
+  max-height:none !important;
+  padding:22px 28px !important;
+}
+.open-letter-single .open-letter-column p{
+  font-size:15.5px !important;
+  line-height:1.55 !important;
+  color:var(--text) !important;
 }
 @media(max-width:900px){
   .open-letter-bilingual{
@@ -1303,13 +1315,14 @@ html {
 #serencam-2026 .award-item img {
   display: block !important;
   width: 100% !important;
-  height: 170px !important;
-  min-height: 170px !important;
-  max-height: 170px !important;
-  object-fit: contain !important;
-  object-position: center center !important;
-  padding: 6px !important;
-  background: #f7fbff !important;
+  aspect-ratio: 540 / 680 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  padding: 0 !important;
+  background: #fff !important;
   border: 1px solid rgba(0, 105, 180, .12) !important;
   border-radius: 14px !important;
 }
@@ -1351,23 +1364,18 @@ html {
   #serencam-2026 .award-item img {
     position: static !important;
     float: none !important;
-    height: 160px !important;
-    min-height: 160px !important;
-    max-height: 160px !important;
+    aspect-ratio: 540 / 680 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
     transform: none !important;
-    padding: 6px !important;
+    padding: 0 !important;
   }
 }
 
 @media (max-width: 520px) {
   #serencam-2026 .award-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  #serencam-2026 .award-item img {
-    height: 180px !important;
-    min-height: 180px !important;
-    max-height: 180px !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
 
@@ -1442,14 +1450,15 @@ html {
 <link href="../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
 
   <script src="../js/daab-mobile.js?v=1" defer></script>
-<link href="../css/daab-lang.css?v=6" rel="stylesheet"/>
+<link href="../css/daab-lang.css?v=7" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=11" rel="stylesheet"/>
-<script src="../js/daab-i18n.js?v=9" defer></script>
+<script src="../js/daab-i18n.js?v=11" defer></script>
+<script src="../js/daab-lang-position.js?v=3" defer></script>
 <script src="../js/daab-nav.js?v=7" defer></script>
 <script src="../js/daab-primary-nav.js?v=8" defer></script>
 <script src="../js/daab-breadcrumbs.js?v=4" defer></script>
 <script src="../js/daab-section-nav.js?v=4" defer></script>
-<script src="../js/daab-shell.js?v=6" defer></script>
+<script src="../js/daab-shell.js?v=7" defer></script>
 </head>
 <body><div aria-label="Axtarış" aria-modal="true" id="search-overlay" role="dialog">
 <div class="search-modal">
@@ -1647,28 +1656,28 @@ html {
 </div>
 <div class="card-body">
 <p class="card-text">
-          Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin 7 yanvar 2026-cı il tarixli Sərəncamı ilə xalqlar arasında dostluğun möhkəmləndirilməsi və Azərbaycan diasporunun inkişafına göstərdikləri töhfələrə görə bir qrup azərbaycanlı yüksək dövlət təltifinə layiq görülmüşdür. Təltif edilənlər arasında DAAB-ın fəal üzvləri də xüsusi yer tutmuşdur: Məsud Aşina "Şöhrət" ordeni, Akif Alaferdov, Xəlil Kələntər, Bəxtiyar Siracov və Xədicə Zeynalova isə "Tərəqqi" medalı ilə mükafatlandırılmışlar.
+          Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin 7 yanvar 2026-cı il tarixli Sərəncamı ilə xalqlar arasında dostluğun möhkəmləndirilməsi və Azərbaycan diasporunun inkişafına göstərdikləri töhfələrə görə bir qrup azərbaycanlı yüksək dövlət təltifinə layiq görülmüşdür. Təltif edilənlər arasında DAAB-ın fəal üzvləri də xüsusi yer tutmuşdur: Məsud Aşina "Şöhrət" ordeni, Akif Alaferdov, Bəxtiyar Siracov, Xədicə Zeynalova və Xəlil Kələntər isə "Tərəqqi" medalı ilə mükafatlandırılmışlar.
         </p>
 <div class="award-grid">
 <div class="award-item">
-<img alt="Məsud Aşina" class="inline-style-003" src="../images/activities/019-mesud-asina.jpg" loading="lazy"/>
+<img alt="Məsud Aşina" class="award-portrait" src="../images/activities/019-mesud-asina.jpg?v=2" loading="lazy"/>
 <p>Məsud Aşina</p>
 </div>
 <div class="award-item">
-<img alt="Akif Alaferdov" class="inline-style-003" src="../images/activities/020-akif-alaferdov.jpg" loading="lazy"/>
+<img alt="Akif Alaferdov" class="award-portrait" src="../images/activities/020-akif-alaferdov.jpg?v=2" loading="lazy"/>
 <p>Akif Alaferdov</p>
 </div>
 <div class="award-item">
-<img alt="Xəlil Kələntər" class="inline-style-003" src="../images/activities/021-xelil-kelenter.jpg" loading="lazy"/>
-<p>Xəlil Kələntər</p>
-</div>
-<div class="award-item">
-<img alt="Bəxtiyar Siracov" class="inline-style-003" src="../images/activities/022-bextiyar-siracov.png" loading="lazy"/>
+<img alt="Bəxtiyar Siracov" class="award-portrait" src="../images/activities/022-bextiyar-siracov.jpg?v=2" loading="lazy"/>
 <p>Bəxtiyar Siracov</p>
 </div>
 <div class="award-item">
-<img alt="Xədicə Zeynalova" class="inline-style-003" src="../images/activities/023-xedice-zeynalova.jpg" loading="lazy"/>
+<img alt="Xədicə Zeynalova" class="award-portrait" src="../images/activities/023-xedice-zeynalova.jpg?v=2" loading="lazy"/>
 <p>Xədicə Zeynalova</p>
+</div>
+<div class="award-item">
+<img alt="Xəlil Kələntər" class="award-portrait" src="../images/activities/021-xelil-kelenter.jpg?v=2" loading="lazy"/>
+<p>Xəlil Kələntər</p>
 </div>
 </div>
 <a rel="noopener noreferrer" class="card-source" href="https://president.az/az/articles/view/71233" target="_blank">
@@ -1880,7 +1889,7 @@ html {
 </div>
 <div class="card-body">
 <p>Fevralın 4-də “Azərbaycan Hava Yolları” QSC-nin Milli Aviasiya Akademiyasında (MAA) Azərbaycan Gəncləri Gününə və ölkəmizin ilk telekommunikasiya peyki “Azerspace 1”in orbitə buraxılması tarixinə həsr olunan “Fevral məruzələri 2025: Aviakosmik məsələlərin həllində gənclərin yaradıcı potensialı” 10-cu beynəlxalq elmi-praktik gənclər konfransı işə başlayıb.</p><p>AZƏRTAC xəbər verir ki, konfransa Rusiya, Qazaxıstan, Türkiyə, Ukrayna, Belarus, Almaniya, Böyük Britaniya, Fransa, İsrail və Azərbaycandan olmaqla 20-dən çox elm və təhsil müəssisəsi, o cümlədən 13 universitet, 7 tədqiqat mərkəzi, institut, dövlət qurumları və aparıcı təşkilatları təmsil edən 150-dən çox iştirakçı qatılıb.</p><p>Konfransda DAAB İdarə Heyətinin sədri Professor Məsud Əfəndiyev DAAB-ın fəaliyyətii barədə məruzə ilə çıxış etmişdir.</p>
-<div class="inline-style-017"><img alt="" class="inline-style-018" src="../images/activities/056-activity-image-056.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/milli_aviasiya_akademiyasinda_fevral_meruzeleri_2025_beynelxalq_konfransi_ise_baslayib_video-3402999" target="_blank">
+<div class="inline-style-017"><img alt="Fevral məruzələri 2025 konfransı — Milli Aviasiya Akademiyası" class="inline-style-018" src="../images/activities/056-activity-image-056.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/milli_aviasiya_akademiyasinda_fevral_meruzeleri_2025_beynelxalq_konfransi_ise_baslayib_video-3402999" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           AZƏRTAC
         </a>
@@ -1894,7 +1903,7 @@ html {
 </div>
 <div class="card-body">
 <p>Qahirə Beynəlxalq Kitab Sərgisi çərçivəsində Misir-Azərbaycan Dostluq Cəmiyyətinin sədri azərbaycanlı alim Seymur Nəsirovla görüş keçirilib.</p><p>AZƏRTAC Misir-Azərbaycan Dostluq Cəmiyyətinə istinadla xəbər verir ki, Misirin Vəqflər Nazirliyi tərəfindən təşkil olunan görüşdə Misirin yüksəkvəzifəli şəxsləri, elm xadimləri və burada təhsil alan xarici tələbələr iştirak ediblər.</p><p>Tədbirdə İslam İşləri Üzrə Ali Şuranın baş katibi professor Məhəmməd əl-Bəyyumi Seymur Nəsirovun elmi, ictimai və mədəni fəaliyyətlərinin Misir ictimaiyyəti tərəfindən yüksək qiymətləndirildiyini və onun ölkədə təhsil alan tələbələr üçün böyük bir nümunə olduğunu qeyd edib.</p>
-<div class="inline-style-019"><div class="inline-style-020"><img alt="" class="inline-style-021" src="../images/activities/057-activity-image-057.jpg" loading="lazy"/></div><div class="inline-style-020"><img alt="" class="inline-style-021" src="../images/activities/058-activity-image-058.jpg" loading="lazy"/></div></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/qahire_beynelxalq_kitab_sergisi_cherchivesinde_azerbaycanli_alimle_gorus_kechirilib-3402935" target="_blank">
+<div class="inline-style-019"><div class="inline-style-020"><img alt="Qahirə Beynəlxalq Kitab Sərgisi — görüş 1" class="inline-style-021" src="../images/activities/057-activity-image-057.jpg" loading="lazy"/></div><div class="inline-style-020"><img alt="Qahirə Beynəlxalq Kitab Sərgisi — görüş 2" class="inline-style-021" src="../images/activities/058-activity-image-058.jpg" loading="lazy"/></div></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/qahire_beynelxalq_kitab_sergisi_cherchivesinde_azerbaycanli_alimle_gorus_kechirilib-3402935" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           AZƏRTAC
         </a>
@@ -1908,7 +1917,7 @@ html {
 </div>
 <div class="card-body">
 <p class="card-text">Diasporla İş üzrə Dövlət Komitəsinin təşkilatçılığı ilə 85 ölkədən 1000-ə yaxın soydaşımızın iştirakı ilə videokonfrans keçirilib. Konfrans zamanı DAAB üzvləri Səidə Xəlilova (Oman), Rövşən İbrahimov (Cənubi Koreya) və Hacalı Nəcəfov (Türkiyə) "Diaspor fəaliyyətində xidmətə görə" medalı ilə təltif olunduqları elan edilib.</p>
-<div class="inline-style-019"><div class="inline-style-020"><img alt="" class="inline-style-022" src="../images/activities/059-activity-image-059.jpg" loading="lazy"/></div><div class="inline-style-020"><img alt="" class="inline-style-022" src="../images/activities/060-activity-image-060.jpg" loading="lazy"/></div></div><a rel="noopener noreferrer" class="card-source" href="https://diaspor.gov.az/az/news-detail/85-olkeden-1000-e-yaxin-soydasimizin-istiraki-ile-videokonfrans-kecirilib-5471" target="_blank">Diasporla İş üzrə Dövlət Komitəsi - 2024-cü ilin yekunları</a>
+<div class="inline-style-019"><div class="inline-style-020"><img alt="Diaspora videokonfransı — 2024-cü ilin yekunları 1" class="inline-style-022" src="../images/activities/059-activity-image-059.jpg" loading="lazy"/></div><div class="inline-style-020"><img alt="Diaspora videokonfransı — 2024-cü ilin yekunları 2" class="inline-style-022" src="../images/activities/060-activity-image-060.jpg" loading="lazy"/></div></div><a rel="noopener noreferrer" class="card-source" href="https://diaspor.gov.az/az/news-detail/85-olkeden-1000-e-yaxin-soydasimizin-istiraki-ile-videokonfrans-kecirilib-5471" target="_blank">Diasporla İş üzrə Dövlət Komitəsi - 2024-cü ilin yekunları</a>
 </div>
 </article>
 <!-- CARD 20: QOBUSTAN Nobel -->
@@ -1919,7 +1928,7 @@ html {
 </div>
 <div class="card-body">
 <p class="card-text">İsveçdə Azərbaycan Aydınlar Ocağı Norveç Nobel Komitəsinə Mixail Qorbaçovun Nobel sülh mükafatından məhrum edilməsi tələbi ilə rəsmi müraciət ünvanlamışdır.</p>
-<div class="open-letter-bilingual"><div class="open-letter-column"><h3>English</h3><p>THE OPEN LETTER<br/>TO THE NORWEGIAN NOBEL COMMITTEE<br/>From "GOBUSTAN" – ASSOCIATION of AZERBAIJANI ACADEMICS (AAAS)<br/>in the Kingdom of Sweden<br/>20.01.2025</p><p>On January 19, 2025, more than 100 participants, members of “GOBUSTAN – Association of Azerbaijani Academics in Sweden” (AAAS), and the Azerbaijani public activists, family members of the January 20 martyrs, and January 20 veterans who attended the ZOOM conference organized by the “GOBUSTAN AAAS” adopted a RESOLUTION as the result of the conference. This resolution is addressed to the chairman and members of the Norwegian Nobel Committee in the following:</p><p>Honored Chairman of the Norwegian Nobel Committee, Mr. Jørgen Watne Frydnes and honored members of the Norwegian Nobel Committee - Mr. Asle Toje, Ms. Anne Enger, Ms. Kristin Clemet, Ms. Gry Larsen!</p><p>We - the members of “Gobustan” - Association of Azerbaijani Academics in Sweden - together with the family members of the January 20 martyrs, Azerbaijani social activists living in different countries of the world, and January 20 veterans who participated in the public conference we held on January 19, 2025, would like to present to you our RESOLUTION on the awarding of the NOBEL PEACE PRIZE to the General Secretary of the Central Committee of the Communist Party of the Soviet Union MIKHAIL GORBACHEV by the Norwegian Nobel Committee in October 1990.</p><p>We consider the fact that Mikhail Gorbachev still bears the title of Nobel Peace Prize laureate to be the greatest injustice in the history of this prize and in the history of mankind, as well as disrespect for the Azerbaijani people, and a black spot in history! We consider the deprivation of Mikhail Gorbachev from the Nobel Peace Prize a necessary step!</p><p>By depriving Mikhail Gorbachev of the Nobel Peace Prize, the Nobel Committee would have belatedly cleansed this black spot and eliminated the injustice committed against the Azerbaijani people. Your decision to deprive Mikhail Gorbachev of his award would have strengthened the world community's faith in justice and the moral authority of the Nobel Peace Prize. This is sorely needed!</p><p>It is with great pain that we announce that the awarding of the Nobel Peace Prize to Mikhail Gorbachev, whose hands were soaked in the blood of the Azerbaijani people, by the Norwegian Nobel Committee after the January 20, 1990 massacre is as painful for us as the sorrow of January 20. However, for many years, the Azerbaijani public has not lost faith that this injustice will one day be eliminated.</p><p>The Azerbaijani people commemorate the anniversary of the mass murder of a total of 170 people and 800 seriously injured on the night of January 19-20, 1990, as a result of the deployment of Soviet troops to Baku and several regions of Azerbaijan, the firing of heavy equipment and various types of weapons on the civilian population, with the same sadness as every year, cursing the murderer Mikhail Gorbachev and expressing deep hatred for the perpetrators of this tragedy. It is a known and undeniable fact that Mikhail Gorbachev personally gave the order to deploy troops to Baku and against the civilian population! He bears direct responsibility for the mass murders! The bloody trail of this crime is indelible.</p><p>There are sufficient legal grounds for bringing the criminals who committed the January 20 tragedy to justice. The January 20, 1990 Massacre is, first of all, a violation of the requirements of the UN Universal Declaration of Human Rights, the International Covenant on Civil and Political Rights and other international legal conventions! This massacre is a crime against humanity, during which peaceful people were killed, injured, kidnapped and tortured. A historical crime was committed against the entire people!</p><p>All investigations give us reason to call the January 20 massacre a pre-planned state crime to stifle the struggle for freedom and independence of the Azerbaijani people, who protested against the unjust policy of the USSR!</p><p>We hope that the Nobel Peace Committee will not turn a blind eye to the insult to Nobel values, and that you will restore historical justice by signing a decision to deprive Mikhail Gorbachev, who has earned the deep hatred of the Azerbaijani people, as well as other peoples of the former Soviet Union, of the Nobel Peace Prize.</p><p>Best regards,<br/>100 signatures</p></div><div class="open-letter-column"><h3>Azərbaycanca</h3><p>İSVEÇ Krallığında fəaliyyət göstərən<br/>"QOBUSTAN" – AZƏRBAYCANLI ALİMLƏR ASSOSİASİYASINDAN (AAAS)<br/>NORVEÇ NOBEL KOMİTƏSİNƏ<br/>AÇIQ MƏKTUB<br/>20.01.2025</p><p>19 Yanvar 2025 ci il tarixində İsveçdə fəaliyyət göstərən ”GOBUSTAN  - Azərbaycan Aydınlar Ocağı” dərnəyinin təşkil etdiyi ZOOM konfransına qatılan 100 nəfərdən çox iştirakçı, dərnəyin üzvləri, və dəvət olunmuş Azərbaycan ictimai fəalları, 20 Yanvar şəhidlərinin ailə üzvləri, 20 Yanvar veteranları konfransın nəticəsi olaraq QƏTNAMƏ qəbul ediblər. Bu qətnamə Norveç Nobel Komitəsinin sədrinə və üzvlərinə Açıq Məktubda ünvanlanıbdır.</p><p>Hörmətli Norveç Nobel Komitəsinin sədri cənab Jørgen Watne Frydnes.<br/>Hörmətli Norveç Nobel Komitəsinin üzvləri - cənab Asle Toje, xanım Anne Enger, xanım Kristin Clemet, xanım Gry Larsen.</p><p>Biz – İsveçdə fəaliyyət göstərən Qobustan Azərbaycan Aydınlar Ocağı – 19 Yanvar 2025 ci tarixində keçirdiyimiz ictimaiyyətə açıq konfransa qatılan 20 Yanvar şəhidlərinin ailə üzvləri, dünyanın müxtəlif ölkələrində yaşayan Azərbaycanlı sosial-ictimai fəallar, 20 Yanvar veteranları ilə birlikdə, Sizə 1990-cı ilin oktyabrında Sovet İttifaqı Kommunist Partiyası Mərkəzi Komitəsinin baş katibi MİXAİL QORBAÇOVUN Norveç Nobel Komitəsi tərəfindən NOBEL SÜLH MÜKAFATI ilə təltif olunması barədə qəbul etdiyimiz QƏTNAMƏMİZİ TƏQDİM EDİRİK.</p><p>Mixail Qorbaçovun hələ də Nobel Sülh Mükafatı laureatı adını daşımasını bu mükafatın tarixində və bəşəriyyət tarixində ən böyük ədalətsizlik, Azərbaycan xalqına qarşı sayqısızlıq və tarixdə qara ləkə hesab edirik! Mixail Qorbaçovun Nobel Sülh Mükafatından məhrum edilməsini gərəkli addım hesab edirik!</p><p>Mixail Gorbaçovu Nobel Sülh Mükafatından məhrum etməklə Nobel Komitəsi gec də olsa bu qara ləkəni təmizləmiş olar və Azərbaycan xalqına qarşı yol verilmiş haqsızlığı aradan qaldırmış olar.  Mixail Qorbaçovu mükafatından məhrum etmək qərarınız dünya ictimaiyyətinin ədalətə və Nobel Sülh Mükafatının mənəvi nüfuzuna inamını gücləndirərdi. Buna ciddi ehtiyac var!</p><p>Böyük ağrı hissi ilə bildiririk ki, məhz 1990 cı il 20 Yanvar qətliamından sonra Norveç Nobel Komitəsi tərəfindən əlləri Azərbaycan xalqının qanına batmış Mixail Qorbaçovun Nobel Sülh Mükafatı ilə təltif edilməsi bizim üçün 20 Yanvar kədəri qədər əzablıdır. Lakin, Azərbaycan ictimaiyyəti uzun illərdir ki, bu ədalətsizliyin bir gün mütləq aradan qaldırılacağına inamını itirməyib.</p><p>Azərbaycan xalqı hər il 1990-cı il yanvarın 19-dan 20-nə keçən gecə sovet qoşunlarının Bakıya və Azərbaycanın bir neçə rayonuna yeridilməsi, dinc əhalinin ağır texnikadan və müxtəlif tipli silahlardan atəşə tutulması nəticəsində ümumilikdə 150 nəfərin kütləvi şəkildə qətlə yetirilməsinin ildönümünü hər il olduğu kimi bu ildə eyni hüznlə qeyd edir, qatil Mixail Qorbaçovu lənətləyir, bu faciəni törədənlərə dərin nifrətini ifadə edir. Mixail Qorbaçovun şəxsən Bakıya, dinc əhaliyə qarşı qoşun yeridilməsi əmrini verməsi məlum və inkar edilməz faktdır! O, kütləvi qətllərə görə birbaşa məsuliyyət daşıyır! Bu cinayətin qanlı izi silinməzdir.</p><p>20 Yanvar faciəsini törədən cinayətkarların ədalət mühakiməsinə cəlb olunması üçün kifayət qədər hüquqi əsaslar mövcuddur. 20 Yanvar 1990 Qətliamı hər şeydən öncə BMT-nin Ümumdünya İnsan Hüquqları Bəyannaməsinin, Mülki və Siyasi hüquqlar Haqqında Beynəlxalq Paktın və digər beynəlxalq hüquqi konvensiyaların tələblərinin pozulması faktıdır! Bu qətliam bəşəriyyət əleyhinə cinayətdir, bu hadisə zamanı dinc insanlar qətlə yetirilib, yaralanıb, oğurlanıb, işgəncələrə məruz qalıb. Bütöv bir xalqa qarşı tarixi cinayət törədilib.</p><p>Bütün araşdırmalar bizə 20 Yanvar qətliamını SSRİ-nin ədalətsiz siyasətinə etiraz edən Azərbaycan xalqının azadlıq və müstəqillik mübarizəsinin boğulması üçün əvvəlcədən planlaşdırılmış dövlət cinayəti adlandırmağa əsas verir!</p><p>Biz ümid edirik ki, Nobel Sülh Komitəsi Nobel dəyərlərinin təhqir edilməsinə göz yummayacaq, Azərbaycan xalqının, eləcə də keçmiş Sovet İttifaqının digər xalqlarının dərin nifrətini qazanmış Mixail Qorbaçovun Nobel Sülh Mükafatından məhrum edilməsi barədə qərara imza atmaqla tarixi ədaləti bərpa edəcəksiniz.</p><p>Hörmətlə,<br/>100 imza</p></div></div><a rel="noopener noreferrer" class="card-source" href="#" target="_blank">
+<div class="open-letter-bilingual open-letter-single"><div class="open-letter-column"><p>İSVEÇ Krallığında fəaliyyət göstərən<br/>"QOBUSTAN" – AZƏRBAYCANLI ALİMLƏR ASSOSİASİYASINDAN (AAAS)<br/>NORVEÇ NOBEL KOMİTƏSİNƏ<br/>AÇIQ MƏKTUB<br/>20.01.2025</p><p>19 Yanvar 2025 ci il tarixində İsveçdə fəaliyyət göstərən ”GOBUSTAN  - Azərbaycan Aydınlar Ocağı” dərnəyinin təşkil etdiyi ZOOM konfransına qatılan 100 nəfərdən çox iştirakçı, dərnəyin üzvləri, və dəvət olunmuş Azərbaycan ictimai fəalları, 20 Yanvar şəhidlərinin ailə üzvləri, 20 Yanvar veteranları konfransın nəticəsi olaraq QƏTNAMƏ qəbul ediblər. Bu qətnamə Norveç Nobel Komitəsinin sədrinə və üzvlərinə Açıq Məktubda ünvanlanıbdır.</p><p>Hörmətli Norveç Nobel Komitəsinin sədri cənab Jørgen Watne Frydnes.<br/>Hörmətli Norveç Nobel Komitəsinin üzvləri - cənab Asle Toje, xanım Anne Enger, xanım Kristin Clemet, xanım Gry Larsen.</p><p>Biz – İsveçdə fəaliyyət göstərən Qobustan Azərbaycan Aydınlar Ocağı – 19 Yanvar 2025 ci tarixində keçirdiyimiz ictimaiyyətə açıq konfransa qatılan 20 Yanvar şəhidlərinin ailə üzvləri, dünyanın müxtəlif ölkələrində yaşayan Azərbaycanlı sosial-ictimai fəallar, 20 Yanvar veteranları ilə birlikdə, Sizə 1990-cı ilin oktyabrında Sovet İttifaqı Kommunist Partiyası Mərkəzi Komitəsinin baş katibi MİXAİL QORBAÇOVUN Norveç Nobel Komitəsi tərəfindən NOBEL SÜLH MÜKAFATI ilə təltif olunması barədə qəbul etdiyimiz QƏTNAMƏMİZİ TƏQDİM EDİRİK.</p><p>Mixail Qorbaçovun hələ də Nobel Sülh Mükafatı laureatı adını daşımasını bu mükafatın tarixində və bəşəriyyət tarixində ən böyük ədalətsizlik, Azərbaycan xalqına qarşı sayqısızlıq və tarixdə qara ləkə hesab edirik! Mixail Qorbaçovun Nobel Sülh Mükafatından məhrum edilməsini gərəkli addım hesab edirik!</p><p>Mixail Gorbaçovu Nobel Sülh Mükafatından məhrum etməklə Nobel Komitəsi gec də olsa bu qara ləkəni təmizləmiş olar və Azərbaycan xalqına qarşı yol verilmiş haqsızlığı aradan qaldırmış olar.  Mixail Qorbaçovu mükafatından məhrum etmək qərarınız dünya ictimaiyyətinin ədalətə və Nobel Sülh Mükafatının mənəvi nüfuzuna inamını gücləndirərdi. Buna ciddi ehtiyac var!</p><p>Böyük ağrı hissi ilə bildiririk ki, məhz 1990 cı il 20 Yanvar qətliamından sonra Norveç Nobel Komitəsi tərəfindən əlləri Azərbaycan xalqının qanına batmış Mixail Qorbaçovun Nobel Sülh Mükafatı ilə təltif edilməsi bizim üçün 20 Yanvar kədəri qədər əzablıdır. Lakin, Azərbaycan ictimaiyyəti uzun illərdir ki, bu ədalətsizliyin bir gün mütləq aradan qaldırılacağına inamını itirməyib.</p><p>Azərbaycan xalqı hər il 1990-cı il yanvarın 19-dan 20-nə keçən gecə sovet qoşunlarının Bakıya və Azərbaycanın bir neçə rayonuna yeridilməsi, dinc əhalinin ağır texnikadan və müxtəlif tipli silahlardan atəşə tutulması nəticəsində ümumilikdə 150 nəfərin kütləvi şəkildə qətlə yetirilməsinin ildönümünü hər il olduğu kimi bu ildə eyni hüznlə qeyd edir, qatil Mixail Qorbaçovu lənətləyir, bu faciəni törədənlərə dərin nifrətini ifadə edir. Mixail Qorbaçovun şəxsən Bakıya, dinc əhaliyə qarşı qoşun yeridilməsi əmrini verməsi məlum və inkar edilməz faktdır! O, kütləvi qətllərə görə birbaşa məsuliyyət daşıyır! Bu cinayətin qanlı izi silinməzdir.</p><p>20 Yanvar faciəsini törədən cinayətkarların ədalət mühakiməsinə cəlb olunması üçün kifayət qədər hüquqi əsaslar mövcuddur. 20 Yanvar 1990 Qətliamı hər şeydən öncə BMT-nin Ümumdünya İnsan Hüquqları Bəyannaməsinin, Mülki və Siyasi hüquqlar Haqqında Beynəlxalq Paktın və digər beynəlxalq hüquqi konvensiyaların tələblərinin pozulması faktıdır! Bu qətliam bəşəriyyət əleyhinə cinayətdir, bu hadisə zamanı dinc insanlar qətlə yetirilib, yaralanıb, oğurlanıb, işgəncələrə məruz qalıb. Bütöv bir xalqa qarşı tarixi cinayət törədilib.</p><p>Bütün araşdırmalar bizə 20 Yanvar qətliamını SSRİ-nin ədalətsiz siyasətinə etiraz edən Azərbaycan xalqının azadlıq və müstəqillik mübarizəsinin boğulması üçün əvvəlcədən planlaşdırılmış dövlət cinayəti adlandırmağa əsas verir!</p><p>Biz ümid edirik ki, Nobel Sülh Komitəsi Nobel dəyərlərinin təhqir edilməsinə göz yummayacaq, Azərbaycan xalqının, eləcə də keçmiş Sovet İttifaqının digər xalqlarının dərin nifrətini qazanmış Mixail Qorbaçovun Nobel Sülh Mükafatından məhrum edilməsi barədə qərara imza atmaqla tarixi ədaləti bərpa edəcəksiniz.</p><p>Hörmətlə,<br/>100 imza</p></div></div><a rel="noopener noreferrer" class="card-source" href="#" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           Qobustan
         </a>

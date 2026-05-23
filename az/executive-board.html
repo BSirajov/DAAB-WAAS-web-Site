@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="az" lang="az" data-daab-lang="az" data-daab-asset-root="../" data-daab-page-id="executive-board" data-daab-nav-mount="1">
+<html lang="az" data-daab-lang="az" data-daab-asset-root="../" data-daab-page-id="executive-board" data-daab-nav-mount="1">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
@@ -11,6 +11,11 @@
 <link href="../css/daab-common.css?v=18" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=3" rel="stylesheet"/>
 <style>
+
+body {
+  font-size: 14px;
+  line-height: 1.58;
+}
 
 .hero {
   position: relative;
@@ -35,20 +40,63 @@
   mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
 }
 
-.hero-inner {
+.hero-wrap {
   position: relative;
   z-index: 1;
-  padding: 32px 24px 40px;
+  display: grid;
+  grid-template-columns: 1.12fr .88fr;
+  gap: 28px;
+  align-items: start;
+  padding: 28px 24px 36px;
+}
+
+.hero-copy {
+  max-width: 720px;
+}
+
+.hero-panel {
+  align-self: start;
+  padding: 0 18px 18px;
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 26px;
+  box-shadow: 0 18px 50px rgba(0, 45, 82, .22);
+  backdrop-filter: blur(18px);
+}
+
+.panel-card {
+  padding: 18px 20px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, .92);
+  border: 1px solid rgba(255, 255, 255, .62);
+  border-radius: 20px;
+}
+
+.panel-title {
+  margin: 0 0 8px;
+  color: #094d78;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.15;
   text-align: center;
+}
+
+.panel-copy {
+  margin: 0;
+  color: #345d76;
+  font-size: 13px;
+  line-height: 1.48;
 }
 
 .hero h1 {
   margin: 0;
   color: #08263b;
   font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(30.4px, 4.8vw, 57.6px);
+  font-size: clamp(25px, 3.8vw, 46px);
   line-height: 1.12;
   letter-spacing: -.035em;
+  text-align: left;
 }
 
 
@@ -154,19 +202,19 @@
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  padding: 20px;
+  padding: 16px 18px;
 }
 
 .person-role {
   width: max-content;
   max-width: 100%;
-  margin-bottom: 12px;
-  padding: 6px 10px;
+  margin-bottom: 10px;
+  padding: 5px 9px;
   color: var(--blue-700);
   background: #e5f4fb;
   border: 1px solid rgba(0, 105, 180, .12);
   border-radius: 999px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 900;
   letter-spacing: .09em;
   text-transform: uppercase;
@@ -176,20 +224,22 @@
   margin: 0;
   color: var(--blue-900);
   font-family: "Playfair Display", Georgia, serif;
-  font-size: 19.8px;
+  font-size: 17px;
   font-weight: 800;
   line-height: 1.15;
 }
 
 .person-extra {
-  margin-top: 8px;
+  margin-top: 7px;
   color: var(--gold);
+  font-size: 13px;
   font-weight: 800;
 }
 
 .person-country {
-  margin-top: 8px;
+  margin-top: 7px;
   color: var(--muted);
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -202,12 +252,12 @@
 
 .section-label h2 {
   margin: 0;
-  padding: 8px 12px;
+  padding: 7px 11px;
   color: var(--blue-700);
   background: #e5f4fb;
   border: 1px solid rgba(0, 105, 180, .12);
   border-radius: 999px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 900;
   letter-spacing: .1em;
   text-transform: uppercase;
@@ -237,10 +287,14 @@
 }
 
 @media (max-width: 760px) {
-  .hero-inner {
+  .hero-wrap {
     grid-template-columns: 1fr;
-    gap: 22px;
-    padding: 42px 18px 34px;
+    gap: 20px;
+    padding: 28px 18px 34px;
+  }
+
+  .hero-panel {
+    max-width: 100%;
   }
 
   .main {
@@ -276,16 +330,36 @@
   }
 }
 
+.footer-pro .footer-brand h3 {
+  font-size: 20px;
+}
+
+.footer-pro .footer-title {
+  font-size: 11px;
+}
+
+.footer-pro .footer-item,
+.footer-pro .footer-address,
+.footer-pro .footer-leader {
+  font-size: 12px;
+}
+
+.footer-pro .footer-bottom {
+  font-size: 11px;
+}
+
 </style>
+<link href="../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
   <script src="../js/daab-mobile.js?v=1" defer></script>
-<link href="../css/daab-lang.css?v=6" rel="stylesheet"/>
+<link href="../css/daab-lang.css?v=7" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=11" rel="stylesheet"/>
-<script src="../js/daab-i18n.js?v=9" defer></script>
+<script src="../js/daab-i18n.js?v=11" defer></script>
+<script src="../js/daab-lang-position.js?v=3" defer></script>
 <script src="../js/daab-nav.js?v=7" defer></script>
 <script src="../js/daab-primary-nav.js?v=8" defer></script>
 <script src="../js/daab-breadcrumbs.js?v=4" defer></script>
 <script src="../js/daab-section-nav.js?v=4" defer></script>
-<script src="../js/daab-shell.js?v=6" defer></script>
+<script src="../js/daab-shell.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#content">Məzmuna keç</a>
@@ -311,8 +385,16 @@
 </div>
 </nav>
 <header class="hero">
-<div class="hero-inner shell">
+<div class="hero-wrap shell">
+<section class="hero-copy">
 <h1>İdarə Heyəti</h1>
+</section>
+<aside aria-label="İdarə Heyəti haqqında qısa məlumat" class="hero-panel">
+<div class="panel-card">
+<h2 class="panel-title">Rəhbərlik və idarəetmə</h2>
+<div class="panel-copy">Bu səhifədə Dünya Azərbaycanlı Alimlər Birliyinin İdarə Heyətinin sədri, həmsədrləri və üzvləri təqdim olunur. İdarə Heyəti birliyin strategiyasının formalaşdırılması, elmi proqramların koordinasiyası və beynəlxalq akademik əməkdaşlığın inkişafında mərkəzi rol oynayır.</div>
+</div>
+</aside>
 </div>
 </header>
 <main class="main" id="content">

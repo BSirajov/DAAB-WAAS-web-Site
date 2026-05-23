@@ -88,6 +88,7 @@ SCIENTISTS_COMMON_REPLACEMENTS: list[tuple[str, str]] = [
     ("Axtarış", "Search"),
     ("Menyunu aç", "Open menu"),
     ("Əsas naviqasiya", "Main navigation"),
+    ("Filtrlər", "Filters"),
 ]
 
 SCIENTISTS_LIST_REPLACEMENTS = SCIENTISTS_COMMON_REPLACEMENTS

@@ -167,7 +167,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "ixtilas": "Kompüter Elmləri",
     "elmi_derece": "PhD",
     "cinsi": "kişi",
-    "url": "cv/bakhtiyar_sirajov_cv.html"
+    "url": ""
   },
   {
     "say": 18,
@@ -597,7 +597,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "ixtilas": "Filologiya",
     "elmi_derece": "PhD",
     "cinsi": "qadın",
-    "url": "/cv/afina_barmanbay.html"
+    "url": ""
   },
   {
     "say": 61,

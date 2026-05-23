@@ -13,7 +13,7 @@ from pathlib import Path
 from _paths import ROOT
 
 ROUTES_PATH = ROOT / "i18n" / "routes.json"
-REQUIRED_SCRIPTS = ("daab-i18n.js", "daab-shell.js")
+REQUIRED_SCRIPTS = ("daab-i18n.js", "daab-lang-position.js", "daab-shell.js")
 
 
 def load_routes() -> dict:
@@ -83,6 +83,13 @@ def main() -> int:
 
     issues.extend(check_sitemap(routes))
     issues.extend(check_legacy_redirects(routes))
+
+    try:
+        from _validate_section_anchors import collect_issues as anchor_issues
+
+        issues.extend(anchor_issues())
+    except Exception as exc:
+        issues.append(f"section anchor check error: {exc}")
 
     if not (ROOT / "robots.txt").is_file():
         issues.append("missing robots.txt — run _build_bilingual_tree.py")

@@ -5,9 +5,9 @@ import html as html_lib
 import re
 from pathlib import Path
 
-from _paths import ROOT
+from _paths import AZ_SCIENTISTS_PROFILES, ROOT
 
-HTML_PATH = ROOT / "scientists_card_view_az.html"
+HTML_PATH = AZ_SCIENTISTS_PROFILES
 
 SENT_SPLIT = re.compile(r"(?<=[.!?])\s+(?=[A-ZƏÜÖĞŞİÇ\"0-9(«])")
 ABBR_GUARD = re.compile(

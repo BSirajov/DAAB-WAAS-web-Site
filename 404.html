@@ -2,17 +2,30 @@
 <html lang="az">
 <head>
   <meta charset="utf-8"/>
-  <meta http-equiv="refresh" content="0; url=index.html"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DAAB — yönləndirmə</title>
-  <link rel="canonical" href="index.html"/>
-  <style>
-    body { font-family: system-ui, sans-serif; max-width: 36rem; margin: 3rem auto; padding: 0 1rem; color: #08263b; }
-    a { color: #0069b4; font-weight: 700; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta http-equiv="refresh" content="0; url=az/index.html"/>
+  <link rel="canonical" href="az/index.html"/>
+  <title>DAAB — səhifə tapılmadı</title>
+  <link href="css/daab-common.css?v=18" rel="stylesheet"/>
+  <link href="css/daab-lang.css?v=6" rel="stylesheet"/>
+  <script>
+    (function () {
+      var saved;
+      try { saved = localStorage.getItem("daab-lang"); } catch (e) {}
+      location.replace(saved === "en" ? "en/index.html" : "az/index.html");
+    })();
+  </script>
 </head>
-<body>
-  <p>Səhifə tapılmadı. <a href="index.html">Ana səhifəyə keçid</a> edilir…</p>
-  <script>location.replace("index.html");</script>
+<body class="daab-gateway">
+  <main class="daab-gateway-page">
+    <div class="daab-gateway-card">
+      <h1>Səhifə tapılmadı</h1>
+      <p>Page not found</p>
+      <div class="daab-gateway-actions">
+        <a class="btn btn-primary" href="az/index.html">Azərbaycan</a>
+        <a class="btn btn-secondary" href="en/index.html">English</a>
+      </div>
+    </div>
+  </main>
 </body>
 </html>

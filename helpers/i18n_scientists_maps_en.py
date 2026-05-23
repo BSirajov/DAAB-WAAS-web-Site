@@ -1,0 +1,71 @@
+"""Lookup tables for English scientist catalogue metadata."""
+
+COUNTRY_EN: dict[str, str] = {
+    "ABŞ": "USA",
+    "Almaniya": "Germany",
+    "Avstriya": "Austria",
+    "Birləşmiş Krallıq": "United Kingdom",
+    "Estoniya": "Estonia",
+    "Fransa": "France",
+    "Gürcüstan": "Georgia",
+    "Kanada": "Canada",
+    "Koreya": "South Korea",
+    "Meksika": "Mexico",
+    "Misir": "Egypt",
+    "Oman": "Oman",
+    "Polşa": "Poland",
+    "Qazaxıstan": "Kazakhstan",
+    "Qırğızıstan": "Kyrgyzstan",
+    "Rusiya Federasiyası": "Russia",
+    "Səudiyyə Ərəbistanı": "Saudi Arabia",
+    "Türkiyə": "Türkiye",
+    "Ukrayna": "Ukraine",
+    "Yaponiya": "Japan",
+    "İsrail": "Israel",
+    "İsveç": "Sweden",
+    "İtaliya": "Italy",
+}
+
+FIELD_EN: dict[str, str] = {
+    "Beynəlxalq hüquq": "International law",
+    "Bioinformatika": "Bioinformatics",
+    "Biologiya": "Biology",
+    "Ermənişünaslıq": "Armenian studies",
+    "Farmakologiya": "Pharmacology",
+    "Filologiya": "Philology",
+    "Fizika": "Physics",
+    "Fəlsəfə, Hüquq": "Philosophy, Law",
+    "Geofizika": "Geophysics",
+    "Hüquq": "Law",
+    "Həkim": "Medicine",
+    "Kimya": "Chemistry",
+    "Kompüter Elmləri": "Computer science",
+    "Musiqiçi": "Musician",
+    "Mühəndis": "Engineering",
+    "Nanotexnologiya": "Nanotechnology",
+    "Psixologiya": "Psychology",
+    "Riyaziyyat": "Mathematics",
+    "Rəssam": "Artist",
+    "Siyasi tarix": "Political history",
+    "Sosial Siyasət": "Social policy",
+    "Sosiologiya": "Sociology",
+    "Tarix": "History",
+    "Tarix, Şərqşünaslıq": "History, Oriental studies",
+    "Türk Dili və Ədəbiyyatı": "Turkish language and literature",
+    "Türkologiya": "Turkology",
+    "Təhsil": "Education",
+    "İqtisadiyyat": "Economics",
+    "Ərəb dili və ədəbiyyatı": "Arabic language and literature",
+}
+
+GENDER_EN: dict[str, str] = {
+    "kişi": "male",
+    "qadın": "female",
+}
+
+BIO_SECTION_HEADINGS_EN: dict[str, str] = {
+    "Elmi maraqları:": "Research interests:",
+    "Mükafatları:": "Awards:",
+    "Təhsil:": "Education:",
+    "Fəaliyyət:": "Professional activity:",
+}

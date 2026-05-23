@@ -6,8 +6,9 @@ Developer-only tools for updating catalogue HTML, syncing book text, and validat
 
 Scripts resolve the **repository root** via `helpers/_paths.py`:
 
-- `ROOT` — parent of this folder (contains `index.html`, `scientists_card_view_az.html`, `css/`, `js/`, `images/`)
+- `ROOT` — parent of this folder (contains `index.html`, `az/`, `en/`, `css/`, `js/`, `images/`)
 - `HELPERS` — this directory
+- **Live scientist pages:** `az/scientists/list.html`, `az/scientists/profiles.html` (not root `scientists_*_az.html` stubs)
 
 ## Run from repository root
 
@@ -34,7 +35,8 @@ Some scripts need optional dependencies (e.g. `pypdf` for `helpers/_extract_pdf.
 | `_format_card_bios.py` | Format bio paragraphs and bullets |
 | `_validate_site.py` | Check broken links/paths across all site HTML (run before deploy) |
 | `_validate_cv_cards.py` | Validate card HTML structure |
-| `_check_name_order.py` | Compare CV vs list name order |
+| `_check_name_order.py` | Compare profile card vs catalogue name order |
+| `_apply_html_cleanup.py` | Bulk fix duplicate `lang`, align cache-bust versions |
 | `_print_norms.py` | Debug name normalization |
 | `_recover_cv_from_transcript.py` | Emergency recovery (one-off) |
 

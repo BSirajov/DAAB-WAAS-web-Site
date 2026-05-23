@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Comprehensive international CV template — academic and professional use" />
+  <title>Curriculum Vitae — Full Name</title>
+  <style>
+    /* ── Design tokens (customize for your brand) ── */
+    :root {
+      --text: #1a1a1a;
+      --text-muted: #4a4a4a;
+      --text-light: #666;
+      --accent: #2c5282;
+      --accent-soft: #ebf4ff;
+      --border: #d8d8d8;
+      --bg: #ffffff;
+      --section-gap: 28px;
+      --font-body: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      --font-serif: Georgia, "Times New Roman", Times, serif;
+      --max-width: 820px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { font-size: 16px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    body {
+      margin: 0;
+      padding: 32px 20px 48px;
+      font-family: var(--font-body);
+      font-size: 10.5pt;
+      line-height: 1.55;
+      color: var(--text);
+      background: #f0f0f0;
+    }
+
+    /* ── Page shell ── */
+    .cv {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      background: var(--bg);
+      padding: 40px 48px 48px;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    /* ── Header ── */
+    .cv-header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 20px;
+      margin-bottom: var(--section-gap);
+    }
+
+    .cv-header h1 {
+      margin: 0 0 4px;
+      font-family: var(--font-serif);
+      font-size: 26pt;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .cv-header .tagline {
+      margin: 0 0 16px;
+      font-size: 12pt;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px 24px;
+      font-size: 9.5pt;
+      color: var(--text-muted);
+    }
+
+    .contact-grid a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-grid a:hover { text-decoration: underline; }
+
+    .contact-item { display: flex; gap: 8px; }
+    .contact-item .label {
+      min-width: 72px;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+
+    /* ── Sections ── */
+    section { margin-bottom: var(--section-gap); }
+
+    section:last-of-type { margin-bottom: 0; }
+
+    h2 {
+      margin: 0 0 12px;
+      padding-bottom: 4px;
+      font-family: var(--font-serif);
+      font-size: 12pt;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      margin: 0 0 2px;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    h4 {
+      margin: 14px 0 6px;
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    p { margin: 0 0 8px; }
+
+    ul, ol {
+      margin: 0 0 8px;
+      padding-left: 1.35em;
+    }
+
+    li { margin-bottom: 4px; }
+
+    li:last-child { margin-bottom: 0; }
+
+    /* ── Summary ── */
+    .summary {
+      font-size: 10.5pt;
+      color: var(--text-muted);
+      text-align: justify;
+    }
+
+    /* ── Skill tags ── */
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .skill-tags li {
+      margin: 0;
+      padding: 3px 10px;
+      background: var(--accent-soft);
+      border: 1px solid #bee3f8;
+      border-radius: 3px;
+      font-size: 9pt;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ── Two-column competency grid ── */
+    .competency-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px 32px;
+    }
+
+    .competency-group h3 {
+      font-size: 9.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .competency-group ul {
+      font-size: 9.5pt;
+      color: var(--text-muted);
+    }
+
+    /* ── Entry blocks (experience, education, etc.) ── */
+    .entry {
+      margin-bottom: 16px;
+      page-break-inside: avoid;
+    }
+
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .entry-header .org { flex: 1; min-width: 200px; }
+
+    .entry-header .dates {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: var(--text-light);
+      white-space: nowrap;
+    }
+
+    .entry .role {
+      display: block;
+      font-size: 10pt;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .entry .location {
+      font-size: 9.5pt;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    .entry .details {
+      margin-top: 6px;
+      font-size: 10pt;
+      color: var(--text-muted);
+    }
+
+    .entry .details ul { margin-top: 4px; }
+
+    /* ── Metrics row ── */
+    .metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 14px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: var(--section-gap);
+    }
+
+    .metric { text-align: center; min-width: 80px; }
+
+    .metric .value {
+      display: block;
+      font-size: 18pt;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .metric .label {
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+    }
+
+    /* ── Publications (numbered lists) ── */
+    .pub-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: pub;
+    }
+
+    .pub-list > li {
+      counter-increment: pub;
+      margin-bottom: 8px;
+      padding-left: 2em;
+      position: relative;
+      font-size: 9.5pt;
+      line-height: 1.6;
+    }
+
+    .pub-list > li::before {
+      content: counter(pub) ".";
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      color: var(--text-light);
+    }
+
+    .pub-list em { font-style: italic; }
+
+    /* ── Table (skills matrix, courses, etc.) ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.5pt;
+      margin-top: 8px;
+    }
+
+    .data-table th,
+    .data-table td {
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .data-table th {
+      background: #f7f7f7;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    /* ── Reference cards ── */
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .ref-card {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      font-size: 9.5pt;
+      line-height: 1.55;
+    }
+
+    .ref-card strong {
+      display: block;
+      font-size: 10pt;
+      margin-bottom: 4px;
+    }
+
+    /* ── Language proficiency ── */
+    .lang-table .level { color: var(--text-light); font-style: italic; }
+
+    /* ── Footer note ── */
+    .cv-footer {
+      margin-top: 32px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 8.5pt;
+      color: var(--text-light);
+      text-align: center;
+    }
+
+    /* ── Template guide (remove before submitting) ── */
+    .template-guide {
+      background: #fffbeb;
+      border: 1px solid #f0d060;
+      border-radius: 4px;
+      padding: 14px 18px;
+      margin-bottom: 28px;
+      font-size: 9pt;
+      line-height: 1.6;
+      color: #5c4a00;
+    }
+
+    .template-guide strong { display: block; margin-bottom: 6px; font-size: 10pt; }
+
+    .template-guide ul { margin: 8px 0 0; padding-left: 1.2em; }
+
+    @media screen {
+      .print-only { display: none; }
+    }
+
+    /* ── Print / PDF export ── */
+    @media print {
+      body { background: white; padding: 0; font-size: 10pt; }
+      .cv { box-shadow: none; padding: 0; max-width: none; }
+      .template-guide { display: none; }
+      a { color: var(--text); text-decoration: none; }
+      section { page-break-inside: avoid; }
+      .entry { page-break-inside: avoid; }
+    }
+
+    @page {
+      size: A4;
+      margin: 18mm 16mm;
+    }
+
+    @media (max-width: 640px) {
+      .cv { padding: 24px 20px; }
+      .contact-grid,
+      .competency-grid,
+      .ref-grid { grid-template-columns: 1fr; }
+      .entry-header { flex-direction: column; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+<article class="cv" aria-label="Curriculum Vitae">
+
+  <!-- Remove the template-guide block before submitting your CV -->
+  <aside class="template-guide" aria-label="Template instructions">
+    <strong>International CV template — usage guide</strong>
+    This is a master reference covering sections commonly expected in academic, research, and senior professional CVs worldwide (EU, UK, US, UN agencies, and international organizations).
+    <ul>
+      <li>Delete sections you do not need; never omit content from your source document to fit the template.</li>
+      <li>Use reverse chronological order (most recent first) unless your field requires otherwise.</li>
+      <li>Date format: <em>Month YYYY – Month YYYY</em> (e.g., Jan 2020 – Present). Use en-dash (–), not hyphen (-).</li>
+      <li>Omit date of birth, marital status, photo, and full home address unless explicitly required in your target country.</li>
+      <li>Export to PDF via browser Print → Save as PDF for submission.</li>
+    </ul>
+  </aside>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HEADER — Contact & identity
+       ═══════════════════════════════════════════════════════════ -->
+  <header class="cv-header">
+    <h1>Full Name, Ph.D.</h1>
+    <p class="tagline">Professional Title · Specialization · Field</p>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span class="label">Email</span>
+        <a href="mailto:name@university.edu">name@university.edu</a>
+      </div>
+      <div class="contact-item">
+        <span class="label">Phone</span>
+        <span>+1 (000) 000-0000</span>
+      </div>
+      <div class="contact-item">
+        <span class="label">Location</span>
+        <span>City, Country</span>
+      </div>
+      <div class="contact-item">
+        <span class="label">LinkedIn</span>
+        <a href="https://linkedin.com/in/username">linkedin.com/in/username</a>
+      </div>
+      <div class="contact-item">
+        <span class="label">ORCID</span>
+        <a href="https://orcid.org/0000-0000-0000-0000">0000-0000-0000-0000</a>
+      </div>
+      <div class="contact-item">
+        <span class="label">Website</span>
+        <a href="https://www.example.edu/profile">www.example.edu/profile</a>
+      </div>
+      <div class="contact-item">
+        <span class="label">Google Scholar</span>
+        <a href="https://scholar.google.com/citations?user=XXXXX">Scholar profile</a>
+      </div>
+      <div class="contact-item">
+        <span class="label">GitHub</span>
+        <a href="https://github.com/username">github.com/username</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Optional: citation metrics (common in academic CVs) -->
+  <div class="metrics" role="group" aria-label="Research metrics">
+    <div class="metric"><span class="value">XX</span><span class="label">Publications</span></div>
+    <div class="metric"><span class="value">X,XXX</span><span class="label">Citations</span></div>
+    <div class="metric"><span class="value">XX</span><span class="label">h-index</span></div>
+    <div class="metric"><span class="value">XX</span><span class="label">Years experience</span></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       1. PROFESSIONAL SUMMARY
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="summary" aria-labelledby="heading-summary">
+    <h2 id="heading-summary">Professional Summary</h2>
+    <p class="summary">
+      Three to six sentences describing your professional identity, core expertise, career trajectory,
+      major achievements, and the value you bring. Tailor this section to each application.
+      For academic CVs, emphasize research program, teaching philosophy, and international collaboration.
+      For industry roles, emphasize leadership, measurable outcomes, and domain expertise.
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       2. AREAS OF EXPERTISE / RESEARCH INTERESTS
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="expertise" aria-labelledby="heading-expertise">
+    <h2 id="heading-expertise">Areas of Expertise</h2>
+    <ul class="skill-tags">
+      <li>Research area or domain skill</li>
+      <li>Methodology or technique</li>
+      <li>Industry sector or application</li>
+      <li>Cross-disciplinary theme</li>
+      <li>Policy or regulatory domain</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       3. CORE COMPETENCIES
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="competencies" aria-labelledby="heading-competencies">
+    <h2 id="heading-competencies">Core Competencies</h2>
+    <div class="competency-grid">
+      <div class="competency-group">
+        <h3>Research &amp; Analysis</h3>
+        <ul>
+          <li>Quantitative / qualitative methods</li>
+          <li>Experimental design</li>
+          <li>Data interpretation and reporting</li>
+        </ul>
+      </div>
+      <div class="competency-group">
+        <h3>Leadership &amp; Management</h3>
+        <ul>
+          <li>Team leadership and mentoring</li>
+          <li>Project and budget management</li>
+          <li>Stakeholder engagement</li>
+        </ul>
+      </div>
+      <div class="competency-group">
+        <h3>Communication</h3>
+        <ul>
+          <li>Scientific writing and grant proposals</li>
+          <li>Public speaking and media engagement</li>
+          <li>Cross-cultural collaboration</li>
+        </ul>
+      </div>
+      <div class="competency-group">
+        <h3>Technical</h3>
+        <ul>
+          <li>Software, platforms, and tools</li>
+          <li>Laboratory or field techniques</li>
+          <li>Statistical and computational methods</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       4. PROFESSIONAL EXPERIENCE
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="experience" aria-labelledby="heading-experience">
+    <h2 id="heading-experience">Professional Experience</h2>
+
+    <article class="entry">
+      <div class="entry-header">
+        <div class="org">
+          <h3>University or Organization Name</h3>
+          <span class="location">City, Country</span>
+        </div>
+        <time class="dates" datetime="2020/2026">Jan 2020 – Present</time>
+      </div>
+      <span class="role">Professor / Director / Senior Role Title</span>
+      <div class="details">
+        <ul>
+          <li>Lead a research group of N members focusing on [topic]; secured $X in external funding.</li>
+          <li>Developed and delivered graduate courses in [subjects] to N+ students annually.</li>
+          <li>Established international partnerships with institutions in [countries/regions].</li>
+          <li>Key achievement with measurable outcome (publications, patents, policy impact, revenue, etc.).</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-header">
+        <div class="org">
+          <h3>Previous Institution or Company</h3>
+          <span class="location">City, Country</span>
+        </div>
+        <time class="dates" datetime="2015/2019">Sep 2015 – Dec 2019</time>
+      </div>
+      <span class="role">Associate Professor / Manager / Consultant</span>
+      <div class="details">
+        <p>Brief paragraph or bullet list describing scope, responsibilities, and outcomes.</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-header">
+        <div class="org">
+          <h3>Earlier Position</h3>
+          <span class="location">City, Country</span>
+        </div>
+        <time class="dates" datetime="2010/2015">Jun 2010 – Aug 2015</time>
+      </div>
+      <span class="role">Role Title</span>
+      <div class="details">
+        <p>Description of duties and achievements.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       5. EDUCATION
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="education" aria-labelledby="heading-education">
+    <h2 id="heading-education">Education</h2>
+
+    <article class="entry">
+      <div class="entry-header">
+        <div class="org">
+          <h3>Ph.D. in [Field]</h3>
+          <span class="location">Institution Name, City, Country</span>
+        </div>
+        <time class="dates" datetime="2010/2014">2010 – 2014</time>
+      </div>
+      <div class="details">
+        <p><strong>Dissertation:</strong> &ldquo;Full dissertation title.&rdquo;</p>
+        <p><strong>Supervisor:</strong> Prof. Name · <strong>Examiners:</strong> Prof. A, Prof. B</p>
+        <p><strong>Honors:</strong> Summa cum laude / Distinction / Award name (if applicable)</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-header">
+        <div class="org">
+          <h3>M.Sc. / M.A. in [Field]</h3>
+          <span class="location">Institution Name, City, Country</span>
+        </div>
+        <time class="dates" datetime="2008/2010">2008 – 2010</time>
+      </div>
+      <div class="details">
+        <p>Thesis title, GPA, or relevant coursework (optional).</p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-header">
+        <div class="org">
+          <h3>B.Sc. / B.A. in [Field]</h3>
+          <span class="location">Institution Name, City, Country</span>
+        </div>
+        <time class="dates" datetime="2004/2008">2004 – 2008</time>
+      </div>
+    </article>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       6. CERTIFICATIONS & PROFESSIONAL LICENSES
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="certifications" aria-labelledby="heading-certifications">
+    <h2 id="heading-certifications">Certifications &amp; Professional Licenses</h2>
+    <ul>
+      <li><strong>Certification Name</strong> — Issuing body, Credential ID (if any) — Year</li>
+      <li><strong>Professional License</strong> — Licensing authority, jurisdiction — Year obtained; valid through Year</li>
+      <li><strong>Continuing education</strong> — Course or program — Institution — Year</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       7. PUBLICATIONS
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="publications" aria-labelledby="heading-publications">
+    <h2 id="heading-publications">Publications</h2>
+    <p style="font-size:9pt;color:var(--text-light);margin-bottom:12px;">
+      Use a consistent citation style (APA, Chicago, Vancouver, or field-specific) throughout.
+      List all authors unless your field uses &ldquo;et al.&rdquo; after a threshold.
+    </p>
+
+    <h4>Peer-Reviewed Journal Articles</h4>
+    <ol class="pub-list">
+      <li>
+        Author, A. A., Author, B. B., &amp; Author, C. C. (Year). Article title in sentence case.
+        <em>Journal Name</em>, <em>Volume</em>(Issue), pages. https://doi.org/xx.xxxx/xxxxx
+      </li>
+      <li>
+        Author, A. A. (Year). Second article citation following the same style.
+        <em>Journal Abbreviation</em>, <em>Vol</em>(Iss), pp–pp.
+      </li>
+    </ol>
+
+    <h4>Books &amp; Monographs</h4>
+    <ol class="pub-list">
+      <li>
+        Author, A. A. (Year). <em>Book title in italics</em> (Edition). Publisher. ISBN: XXXX
+      </li>
+    </ol>
+
+    <h4>Book Chapters &amp; Edited Volumes</h4>
+    <ol class="pub-list">
+      <li>
+        Author, A. A. (Year). Chapter title. In E. Editor (Ed.), <em>Book title</em> (pp. xx–xx). Publisher.
+      </li>
+    </ol>
+
+    <h4>Conference Proceedings (peer-reviewed)</h4>
+    <ol class="pub-list">
+      <li>
+        Author, A. A. (Year, Month). Paper title. In <em>Proceedings of Conference Name</em> (pp. xx–xx). Publisher. DOI or URL
+      </li>
+    </ol>
+
+    <h4>Preprints &amp; Working Papers</h4>
+    <ol class="pub-list">
+      <li>
+        Author, A. A. (Year). Title. <em>arXiv preprint</em> arXiv:XXXX.XXXXX or SSRN/Working Paper No.
+      </li>
+    </ol>
+
+    <h4>Reports &amp; Policy Briefs</h4>
+    <ol class="pub-list">
+      <li>
+        Organization. (Year). <em>Report title</em>. Publisher or commissioning body. URL
+      </li>
+    </ol>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       8. RESEARCH GRANTS & FUNDED PROJECTS
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="grants" aria-labelledby="heading-grants">
+    <h2 id="heading-grants">Research Grants &amp; Funded Projects</h2>
+    <ul>
+      <li>
+        <strong>Project title</strong> — Funding agency (Grant No. XXXXX) — Role: PI / Co-PI / Collaborator —
+        Amount: $XXX,XXX — Period: YYYY–YYYY
+      </li>
+      <li>
+        <strong>Second project</strong> — Agency — Role — Period. Brief description of aims and outcomes.
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       9. TEACHING & TRAINING
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="teaching" aria-labelledby="heading-teaching">
+    <h2 id="heading-teaching">Teaching &amp; Training</h2>
+
+    <h4>Courses Taught</h4>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Course</th>
+          <th>Level</th>
+          <th>Institution</th>
+          <th>Period</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Course Name (CODE 101)</td>
+          <td>Undergraduate / Graduate</td>
+          <td>University Name</td>
+          <td>2018 – Present</td>
+        </tr>
+        <tr>
+          <td>Advanced Topic Seminar</td>
+          <td>Ph.D.</td>
+          <td>University Name</td>
+          <td>2015 – 2022</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Curriculum Development &amp; Pedagogical Initiatives</h4>
+    <ul>
+      <li>Designed new course/module on [topic]; adopted by N institutions.</li>
+      <li>Led accreditation or quality assurance activity (describe).</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       10. SUPERVISION & MENTORING
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="supervision" aria-labelledby="heading-supervision">
+    <h2 id="heading-supervision">Supervision &amp; Mentoring</h2>
+
+    <h4>Ph.D. Supervision (completed / in progress)</h4>
+    <ol>
+      <li>Student Name — &ldquo;Thesis title&rdquo; — Year — Institution — Status: Completed / In progress</li>
+      <li>Student Name — &ldquo;Thesis title&rdquo; — Expected Year — Co-supervised with Prof. Name</li>
+    </ol>
+
+    <h4>Master's &amp; Postdoctoral Supervision</h4>
+    <ul>
+      <li>N master's theses supervised (YYYY–YYYY)</li>
+      <li>Postdoctoral researchers mentored: Name (YYYY–YYYY), Name (YYYY–YYYY)</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       11. INVITED TALKS & CONFERENCE PRESENTATIONS
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="presentations" aria-labelledby="heading-presentations">
+    <h2 id="heading-presentations">Invited Talks &amp; Conference Presentations</h2>
+
+    <h4>Invited Lectures &amp; Keynotes</h4>
+    <ul>
+      <li>&ldquo;Talk title.&rdquo; Event or host institution, City, Country. Month Year.</li>
+    </ul>
+
+    <h4>Conference Presentations (selected)</h4>
+    <ul>
+      <li>Author, A. (Year, Month). &ldquo;Presentation title.&rdquo; Conference Name, City. [Oral / Poster]</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       12. AWARDS, HONORS & DISTINCTIONS
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="awards" aria-labelledby="heading-awards">
+    <h2 id="heading-awards">Awards, Honors &amp; Distinctions</h2>
+    <ul>
+      <li><strong>Award name</strong> — Granting organization — Year</li>
+      <li><strong>Fellowship or prize</strong> — Context and selection criteria — Year</li>
+      <li><strong>Honorary title</strong> — Academy or society — Year</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       13. FELLOWSHIPS & VISITING APPOINTMENTS
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="fellowships" aria-labelledby="heading-fellowships">
+    <h2 id="heading-fellowships">Fellowships &amp; Visiting Appointments</h2>
+
+    <article class="entry">
+      <div class="entry-header">
+        <div class="org">
+          <h3>Host Institution</h3>
+          <span class="location">City, Country</span>
+        </div>
+        <time class="dates" datetime="2019/2019">Sep – Dec 2019</time>
+      </div>
+      <span class="role">Visiting Professor / Research Fellow</span>
+      <div class="details">
+        <p>Purpose of visit, collaborators, and outcomes (publications, grants, etc.).</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       14. PROFESSIONAL MEMBERSHIPS & AFFILIATIONS
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="memberships" aria-labelledby="heading-memberships">
+    <h2 id="heading-memberships">Professional Memberships &amp; Affiliations</h2>
+    <ul>
+      <li><strong>Society or academy name</strong> — Member / Fellow — Year joined</li>
+      <li><strong>Professional body</strong> — Registered member (membership no.) — Year</li>
+      <li><strong>Network or consortium</strong> — Role — Period</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       15. EDITORIAL, REVIEWING & EXAMINING ACTIVITIES
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="editorial" aria-labelledby="heading-editorial">
+    <h2 id="heading-editorial">Editorial, Reviewing &amp; Examining Activities</h2>
+    <ul>
+      <li><strong>Editorial board member</strong> — <em>Journal Name</em> — YYYY–Present</li>
+      <li><strong>Guest editor</strong> — Special issue, <em>Journal</em> — Year</li>
+      <li><strong>Peer reviewer</strong> — Journals: list or &ldquo;40+ journals in [fields]&rdquo;</li>
+      <li><strong>External examiner</strong> — Ph.D. theses at [institutions] — Years</li>
+      <li><strong>Grant panel member</strong> — Funding agency — Years</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       16. PATENTS & INTELLECTUAL PROPERTY
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="patents" aria-labelledby="heading-patents">
+    <h2 id="heading-patents">Patents &amp; Intellectual Property</h2>
+    <ol>
+      <li>
+        Inventor, A., Inventor, B. (Year). Patent title. Patent No. XXXXXXX. Patent Office, Country. Status: Granted / Pending
+      </li>
+    </ol>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       17. LANGUAGES
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="languages" aria-labelledby="heading-languages">
+    <h2 id="heading-languages">Languages</h2>
+    <table class="data-table lang-table">
+      <thead>
+        <tr>
+          <th>Language</th>
+          <th>Reading</th>
+          <th>Writing</th>
+          <th>Speaking</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>English</td>
+          <td>Fluent</td>
+          <td>Fluent</td>
+          <td>Fluent</td>
+          <td>Working language</td>
+        </tr>
+        <tr>
+          <td>Language 2</td>
+          <td>Advanced</td>
+          <td>Advanced</td>
+          <td>Intermediate</td>
+          <td>CEFR C1 / Professional working proficiency</td>
+        </tr>
+        <tr>
+          <td>Language 3</td>
+          <td>Native</td>
+          <td>Native</td>
+          <td>Native</td>
+          <td>Mother tongue</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:9pt;color:var(--text-light);margin-top:8px;">
+      Use CEFR levels (A1–C2), ILR (0–5), or descriptive terms consistently. Self-assessment is acceptable unless certification is required.
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       18. TECHNICAL & SOFTWARE SKILLS
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="technical" aria-labelledby="heading-technical">
+    <h2 id="heading-technical">Technical &amp; Software Skills</h2>
+    <div class="competency-grid">
+      <div class="competency-group">
+        <h3>Programming &amp; Data</h3>
+        <ul>
+          <li>Python, R, SQL — Advanced</li>
+          <li>MATLAB, Stata — Intermediate</li>
+        </ul>
+      </div>
+      <div class="competency-group">
+        <h3>Design &amp; Productivity</h3>
+        <ul>
+          <li>LaTeX, Microsoft Office, Google Workspace</li>
+          <li>Adobe Creative Suite — Basic</li>
+        </ul>
+      </div>
+      <div class="competency-group">
+        <h3>Research Infrastructure</h3>
+        <ul>
+          <li>HPC clusters, cloud platforms (AWS, Azure)</li>
+          <li>Version control: Git, GitHub</li>
+        </ul>
+      </div>
+      <div class="competency-group">
+        <h3>Laboratory / Field</h3>
+        <ul>
+          <li>Technique or instrument — proficiency level</li>
+          <li>Safety certifications — list</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       19. VOLUNTEER & COMMUNITY ENGAGEMENT
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="volunteer" aria-labelledby="heading-volunteer">
+    <h2 id="heading-volunteer">Volunteer &amp; Community Engagement</h2>
+    <article class="entry">
+      <div class="entry-header">
+        <div class="org">
+          <h3>Organization or Initiative</h3>
+          <span class="location">City, Country</span>
+        </div>
+        <time class="dates" datetime="2018/2024">2018 – Present</time>
+      </div>
+      <span class="role">Board member / Mentor / Volunteer role</span>
+      <div class="details">
+        <p>Description of contribution and impact.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       20. PROFESSIONAL DEVELOPMENT
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="development" aria-labelledby="heading-development">
+    <h2 id="heading-development">Professional Development</h2>
+    <ul>
+      <li><strong>Workshop or training</strong> — Provider — Year — Duration</li>
+      <li><strong>Leadership program</strong> — Institution — Year</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       21. REFERENCES
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="references" aria-labelledby="heading-references">
+    <h2 id="heading-references">References</h2>
+    <p style="font-size:9.5pt;color:var(--text-muted);margin-bottom:14px;">
+      Option A: list referees below. Option B: state &ldquo;Available upon request&rdquo; (common in US/UK applications).
+    </p>
+
+    <div class="ref-grid">
+      <div class="ref-card">
+        <strong>Prof. Reference Name, Ph.D.</strong>
+        Title and Department<br />
+        Institution Name<br />
+        City, Country<br />
+        Email: reference@university.edu<br />
+        Phone: +XX XXX XXX XXXX
+      </div>
+      <div class="ref-card">
+        <strong>Dr. Reference Name</strong>
+        Title and Organization<br />
+        City, Country<br />
+        Email: reference2@org.org<br />
+        Relationship: Ph.D. supervisor / Collaborator / Manager
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       22. ADDITIONAL INFORMATION (optional catch-all)
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="additional" aria-labelledby="heading-additional">
+    <h2 id="heading-additional">Additional Information</h2>
+    <ul>
+      <li><strong>Work authorization:</strong> Eligible to work in [countries/regions] — Visa status if relevant</li>
+      <li><strong>Security clearance:</strong> Level, country — valid through Year (if applicable)</li>
+      <li><strong>Media &amp; outreach:</strong> Selected interviews, public engagement activities</li>
+      <li><strong>Other:</strong> Any section-specific content that does not fit above</li>
+    </ul>
+  </section>
+
+  <footer class="cv-footer">
+    <span class="print-only">Curriculum Vitae — Full Name — Last updated: Month YYYY</span>
+    <span>Last updated: Month YYYY · Page 1 of 1 (adjust after export)</span>
+  </footer>
+
+</article>
+
+</body>
+</html>

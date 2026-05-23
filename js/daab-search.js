@@ -63,14 +63,14 @@
       };
     }
     return {
-      home: "index.html",
-      mission: "mission_vision_values_az.html",
-      activities: "activities_az.html",
-      foundation: "foundation_az.html",
-      scientists: "scientists_list_view_az.html",
-      board: "executive_board_az.html",
-      charter: "charter_az.html",
-      membership: "membership_terms_az.html"
+      home: "az/index.html",
+      mission: "az/mission.html",
+      activities: "az/activities.html",
+      foundation: "az/foundation.html",
+      scientists: "az/scientists/list.html",
+      board: "az/executive-board.html",
+      charter: "az/charter.html",
+      membership: "az/membership.html"
     };
   }
 

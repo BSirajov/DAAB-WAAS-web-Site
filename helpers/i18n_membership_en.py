@@ -37,4 +37,40 @@ MEMBERSHIP_REPLACEMENTS: list[tuple[str, str]] = [
     ("naviqasiya", "navigate"),
     ("aç", "open"),
     ("bağla", "close"),
+    (
+        '<div class="lang-label">Dünya Azərbaycanlı Alimlər Birliyi (DAAB)</div>',
+        '<div class="lang-label">World Association of Azerbaijani Scientists (WAAS)</div>',
+    ),
+    (
+        "<p><strong>DAAB</strong> dünyanın müxtəlif ölkələrində yaşayan azərbaycanlı ziyalıların birliyi kimi fəaliyyət göstərən qeyri-hökumət təşkilatıdır.</p>",
+        "<p><strong>WAAS</strong> is a non-governmental organization that operates as a union of Azerbaijani intellectuals living in various countries around the world.</p>",
+    ),
+    (
+        "<p>DAAB elm və texnologiya, energetika, təhsil, səhiyyə, sosial elmlər və mədəniyyət sahələri ilə bağlı strateji planların hazırlanması və icrasında Azərbaycana dəstək verir.</p>",
+        "<p>WAAS supports Azerbaijan in developing and implementing strategic plans related to science and technology, energy, education, healthcare, social sciences and culture.</p>",
+    ),
+    ("✒️ Üzvlük Şərtləri", "✒️ Membership Terms"),
+    ("<p><strong>Hörmətli həmkarımız,</strong></p>", "<p><strong>Dear colleague,</strong></p>"),
+    (
+        "<p>Sizi Dünya Azərbaycanlı Alimlər Birliyinin üzvü olmağa dəvət edirik.</p>",
+        "<p>We invite you to become a member of the World Association of Azerbaijani Scientists.</p>",
+    ),
+    (
+        '<p>Birliyimizə üzv olmaq üçün “DAAB-a üzv olun” düyməsini klikləyin və növbəti açılan səhifələrdə tələb olunan məlumatları daxil edin.</p>',
+        '<p>To join our association, click the “Join WAAS” button and enter the required information on the pages that open next.</p>',
+    ),
+    (
+        "<p>DAAB üzvlüyünün təsdiqlənməsi üçün üzvlük haqqının ödənilməsi tələb olunur. Üzvlük haqqı aşağıdakı iki qaydadan biri ilə ödənilə bilər:</p>",
+        "<p>Payment of the membership fee is required to confirm WAAS membership. The fee may be paid in either of the following two ways:</p>",
+    ),
+    (
+        "<p>Qeydiyyatdan keçdikdən sonra aşağıdakı bank hesabına ödəniş etməyinizi xahiş edirik:</p>",
+        "<p>After registering, please make your payment to the bank account below:</p>",
+    ),
+    (
+        '<p class="signature">Sizin dəstəyiniz bizim üçün çox dəyərlidir. Birliyimizə qoşulduğunuza görə təşəkkür edirik.<br/><br/>Hörmətlə və ən xoş arzularla,<br/><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>DAAB İdarə Heyətinin Sədri</p>',
+        '<p class="signature">Your support means a great deal to us. Thank you for joining our association.<br/><br/>With respect and best wishes,<br/><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Executive Board</p>',
+    ),
+    ("Almaniya — James D. Murray mükafatlı professoru", "Germany — James D. Murray Distinguished Professor"),
+    ("© 2026 DAAB — Bütün hüquqlar qorunur", "© 2026 WAAS — All Rights Reserved"),
 ]

@@ -1,0 +1,714 @@
+Academic CV
+Dr. Sci. Elshad Allahyarov
+Appointments
+Current
+:
+Research Professor, Physics, Case Western Reserve University, Cleveland OH, USA
+Research Professor, Soft Matter Institute, Theoretical Physics II, HHU, Dusseldorf, Germany
+Professor, Theoretical Department, Institute for High Temperatures, RAS, Moscow, Russia.
+email: elshad.allakhyarov@case.edu          exa54@case.edu
+Recent individual grant:
+2021-2025:     300,000 Euro individual research funding provided by DFG (German Research Society)
+for the work on the actuation properties of composite elastomers.
+Education
+
+Russian Academy of Sciences- Moscow, Russia
+Doctor of Sciences in Physics and Mathematics (2005), (German- Dr. habil.)
+Thesis: The role of Coulomb correlations in colloids and biocolloids.
+
+Russian Academy of Sciences- Moscow, Russia
+Doctor of Philosophy in Physics (1994), (German- Dr., USA- PhD.)
+Thesis: Structure factor and effective interactions in non-ideal plasma and liquid metals
+
+Moscow State University- Moscow, Russia
+Diploma of Physics (1988) (US equivalent of Master of Arts in Physics)
+Thesis: Injection of relativistic electron beams  into dense plasma.
+Previous Appointments
+research professor, Physics Department, (2018-2025)
+
+Case Western Reserve University, Cleveland, Ohio
+
+researcher, Institute of Theoretical Physics II (2012-2017)
+Heinrich-Heine University of Düsseldorf, Germany
+
+Visiting Professor, Macromolecular Science (6 months in 2015)
+Case Western Reserve University, Cleveland, Ohio
+
+Visiting Professor, Macromolecular Science (6 months in 2014)
+Case Western Reserve University, Cleveland, Ohio
+
+Research Associate, Physics Department (2006-2011)
+Case Western Reserve University, Cleveland, Ohio
+
+Postdoctoral Researcher,  Institute of Theoretical Physics II (2004-2006)
+Heinrich-Heine University of Düsseldorf, Germany
+
+Privat Dozent, Institute of Solid State Research (2000-2003)
+IFF Theory II, Nuclear Research Center, Julich, Germany
+
+Visiting  Researcher (1995-1997)
+Laboratory of complex fluids, Technical University of Eindhoven, The Netherlands
+
+Postgraduate Student , researcher (1988-1999)
+Joint Institute for High Temperatures, Russian Academy of Sciences, Moscow, Russia
+Skills and Techniques
+
+Strong background in Theoretical Physics
+
+Expert level of qualification in Fortran, C++, Python programmings (+30 years)
+
+Expert level of qualification in Monte Carlo, Molecular Dynamics, and Brownian
+Dynamics techniques (+30 years)
+
+Expert level of qualification in Finite Element Simulations
+
+Expert level  of qualification in MatLab programming, parallel computing coding
+Research Interests
+morphological changes in poled proton conducting ionomers, conductivity of ionomers,
+
+development of water-free conductive nanocomposite ionomers.
+actuation of elastomer composites, electrostriction effects in dipolar systems,
+
+development of nanocomposites with locomotion ability in applied fields.
+colloidal physics, theory of effective interaction potential in electrolytes,  phase transition
+
+in charged systems, fluid-crystal nucleation processes, critical electrolytes in nanopores.
+correlation effects in many-body systems, DNA-DNA condensation  effects, protein-
+
+DNA interactions.
+nucleation processes and template-guided phase transition in dusty plasma systems.
+
+liquid crystals on curved surfaces, defect-defect interactions, field-dependent
+
+morphologies.
+new composite materials for energy storage applications, Coulomb correlation effects for
+
+induced dipoles.
+artificial intelligent and deep learning in material research applications.
+
+Courses Taught
+1990-1998: PHYSICS COURSES (theoretical mechanics, optics, electricity and magnetism, quantum
+mechanics, statistical mechanics, theory of liquids, thermodynamics, solid state physics, plasma physics,
+hydrodynamics), MATHEMATICS COURSES (all branches of mathematics)- to undergraduate and
+graduate students from the  Physics Department of Moscow Power Energy Institute.
+2000-2004: Special Courses on Soft Matter Physics, including Statistical Physics and Thermodynamics, to
+undergraduate and graduate student at the Physics Department of the University of Düsseldorf, Germany.
+2009-2010: PHYS 116 - Introduction to Physics II, Case Western Reserve University, Ohio,  USA
+Assisted physics master and  PhD students in their research and thesis preparation.
+2017-2020: Special courses on Quantum Molecular Dynamics, CP2, Car-Parinello, DFT simulations- to
+theoretical chemistry and physics students at Duisburg-Essen University, Germany.
+Referee to Journals
+
+Physical Review Letters
+
+Physical Review E
+
+Physical Review Applied
+
+Soft Matter
+
+J. Phys.: Condensed Matter
+
+J. Chemical Physics
+Langmuir
+
+
+J. Membrane Science
+
+Europhysics Letters
+
+J. Polymer Science: Polymer Physics
+
+J. American Chemical Society
+
+J. Physical Chemistry Chemical Physics
+
+BioResources
+
+Nanoletters
+
+Small
+
+Current Nanomedicine
+
+J. Molecular Modeling
+
+High Temperatures (Russian Journal)
+
+Coating
+
+Nanoscale
+
+Materials Today Communications
+
+Biomedical Signal Processing and Control
+
+Polymers
+
+Pleiades Publishing
+
+Physica A
+
+Crystals
+
+Nanomaterials
+
+J. Composite Sciences
+
+J. Colloid and Interface Sciences
+
+Macromolecules
+
+Progress in Material Sciences
+
+Royal Society of Chemistry Advances
+
+Bioresources
+
+International J. of Smart and Nano Materials
+
+ACS Applied Materials and Interfaces
+
+Ceramics International
+
+J. of Applied Physics
+
+Physical Review Researcher
+
+Physics Journals
+
+Physical Review Materials
+
+Physical Review Applied
+Membership in professional societies
+
+European SoftComp Network of Excellence
+American Chemical Society
+
+American Physical Society
+
+International Society of Electrochemistry
+
+Conferences, Seminars, and Colloquia
+
+Oral and poster contributions to American Physical Society March Meetings, 2006-2024
+
+Oral and poster contributions to International Conferences on Liquid Matter, 2002-2024
+
+Oral and poster contributions to Julich Soft Matter Days Conferences, 2000-2022
+
+Oral and poster contributions to Computational Physics Conferences, 2000-2023
+
+Oral and poster contributions to various workshops on Soft Matter Physics subjects organized by
+Forschungszentrum Julich (2000-2007), University of Dusseldorf (1995-2015),
+and Technical University of Eindhoven (1992-1998)
+
+Invited seminar talks in the USA universities (Laboratory of Phys. Struct. Biology of NIH- V. Parsegian,
+Case Western Reserve University- P. Taylor, University of Akron- A. Sokolov, University of College Park
+Maryland- M. Fisher,  Soft Matter Laboratory  of Florida International University), European universities
+(Lund University-P. Linse, Göteborg University- R. Kjellander, University of Konstanz- R. Klein,
+Humboldt University of Berlin- W. Ebeling, University of Mainz- C. Holm, University of Wuppertal- S.
+Dietrich, University of Essen-Duisburg- E. Spohr, University of Aachen- G. Gompper, FOM University of
+Amsterdam- D. Frenkel, Technical University of Eindhoven- P. Schram, University of Utrecht- A.
+Blaaderen, University of Cambridge- J.-P. Hansen, Moscow State University- A.Khokhlov), and in Russian
+Academy of Sciences (Institute of General Physics- A. Rukhadze, Institute for High Temperatures- V.
+Fortov, Institute of Chemical Physics- O. Vinogradova) during 1992-2020.
+References
+
+Philip L. Taylor, Distinguished University Professor
+Department of Physics, Case Western Reserve University,
+10900 Euclid Ave, Cleveland, OH 44106-7079
+taylor@case.edu
+
+Alexei R. Khokhlov, Vice-Rector of Lomonosov Moscow State University
+Leninskie Gory, 1-2,  Faculty of Physics, Moscow State University, Moscow 119991
+khokhlov@polly.phys.msu.ru
+
+Hartmut Löwen: Professor
+Institut fur Theoretische Physik II Heinrich-Heine-Universitat Dusseldorf,
+Universitatsstrasse 1, D-40225, Dusseldorf, Germany
+hlowen@thphy.uni-duesseldorf.de
+
+Alexei Sokolov, Professor
+Department of Chemistry, University of Tennessee,
+1420 Circle Drive, 563 Buehler Hall, Knoxville, TN 37996-1600
+sokolov@utk.edu
+
+Peter  Pintauro, Professor
+Department of Chemical Engineering, Vanderbilt University,
+VU Station B, Box 351604, Nashville, TN 37235-1304
+peter.pintauro@vanderbilt.edu
+
+Rudolf Podgornik, Professor
+Faculty of Mathematics and Physics, University of Ljubljana,
+Jamova 39, SI-1000 Ljubljana, Slovenia
+rudolf.podgornik@fmf.uni-lj.si
+
+Gerhard Gompper, Professor
+Forschungszentrum Julich, Institut fuer Festkoerperforschung,
+D-52425 Julich, Germany
+g.gompper@fz-juelich.de
+
+Lei Zhu, Professor
+Macromolecular Science, Case Western Reserve University,
+10900 Euclid Ave, Cleveland, OH 44106-7079
+lxz121@case.edu
+A list of ten most significant publications
+1.   Attraction between like-charged macroions by Coulomb depletion
+, I. D'Amico, H. Löwen, Phys. Rev. Letters 81, 1334 (1998).
+Allahyarov
+E.
+2.    Predicted electric-field-induced hexatic structure in an ionomer membrane
+, P. Taylor, Phys. Rev. E 80, 020801(R) (2009).
+Allahyarov
+E.
+3.    Nonmonotonicity of second virial coefficient in strongly correlated systems
+Allahyarov,
+E.
+H. Löwen, J.-P. Hansen, A. A. Louis, Phys. Rev. E 67, 051404 (2003).
+4.    Mesoscopic solvent simulations: Multi-particle-collision dynamics of three-dimensional flows
+, G. Gompper, Phys. Rev. E 66, 036702 (2003).
+Allahyarov
+E.
+5.    Attraction between DNA molecules mediated by multivalent ions
+, G. Gompper, H. Löwen,  Phys. Rev. E. 69, 041904 (2004);
+E.  Allahyarov
+6.    Double clustering in binary mass hard sphere system
+, H. Löwen,  J. Chem. Phys.  135, 134115 (2011).
+Allahyarov
+E.
+7.   Enhanced ionic diffusion in ionomer-filled nanopores,
+E. Allahyarov, P. L. Taylor,  and H. Löwen, J. Chem. Phys. 143, 243126 (2015).
+8.   Crystallization seeds favour crystallization only during initial growth ,
+E. Allahyarov, K. Sandomirski, S. U. Egelhaaf, and H. Löwen, Nature Communications 6, 1-9 (2015).
+9.   A simulation study of the electrostriction effects in dielectric elastomer composites containing
+polarizable inclusions with different spatial distributions,
+E. Allahyarov,  H. Löwen, L. Zhu, Phys. Chem. Chem. Phys. 17, 32479 (2015).
+10. Theoretical Study of Nanocomposite Permittivity with a Tunable Clustering of Inclusions,
+E. Allahyarov,  Advanced Theory and Simulations 1-20  (2020),  https://doi.org/10.1002/adts.202000005
+Publications
+
+Dispersion of plasma oscillations in non-ideal Coulomb systems
+, S. A. Trigger, Teplofizika Vysokikh Tepmeratur 30, 136 (1992).
+Allahyarov
+E.
+
+Three-dimensional dispersion of Langmuir oscillations in non-ideal plasma
+, S. A. Trigger,Teplofizika Vysokikh Temperatur 30,  462 (1992).
+Allahyarov
+E.
+
+The influence of non-Coulomb interaction on plasma oscillation spectrum in classical two-component plasma
+, V. B. Bobrov, S. A. Trigger, Teplofizika Vysokikh Temperatur 30, 876 (1992).
+Allahyarov
+E.
+
+On the temperature dependence of the liquid lithium electric resistance,
+, V. B. Bobrov, Teplofizika Vysokikh Temperatur  31, 207 (1993)
+Allahyarov
+E.
+
+Static structure factor and electric conduction of expanded liquid cesium,
+, V. B. Bobrov, S. A. Trigger, Teplofizika Vysokikh Temperatur  31, 44 (1993).
+Allahyarov
+E.
+
+Electrical conductivity of fully ionized plasmas with arbitrary electron degeneracy. 1: Classical plasma,
+, High temperatures 31, 422 (1993).
+Allahyarov
+V. B. Bobrov, E.
+
+Electric conductivity of a fully ionized plasma with arbitrary electron degeneration. 2. Liquid-metal plasma
+, Teplofizika Vysokikh Temperatur  31, 352 (1993).
+Allahyarov
+V. B. Bobrov, E.
+
+Kramers–Kronig relations for the dielectric constant of a classical plasma and the spectrum of plasma oscillations.
+, V.B. Bobrov,  High Tempertures  31, 644  (1993)
+Allahyarov
+E.
+
+Structure factor of liquid metals at small wave vectors and a model of a one-component plasma,
+., V. B. Bobrov, S. A. Trigger, High Temperatures  32, 341 (1994).
+Allahyarov
+E.
+
+OCP reference theory of dynamic structure factors of expanded liquid metals
+, P. P. J. M.Schram, Physica B 212,  97 (1995).
+Allahyarov
+S. A. Trigger, E.
+
+Low-angle structure behavior of expanded liquid metals,
+, P. P. J. M.Schram, S. A. Trigger, Physica B 212, 88  (1995).
+Allahyrov
+E.
+
+Overscreening in colloidal systems: the attractive branch of pair macroion interaction,
+, L. I. Podloubny, P. P. J. M.Schram, S. A. Trigger, Physica A 220, 349  (1995).
+Allahyarov
+E.
+
+MD simulation of the pair correlation function and static structure of charged colloidal suspensions,
+, P. P. J. M. Schram, S. A. Trigger,  Phys.B,  228, 136 (1996).
+Allahyarov
+E.
+
+Effective macroion interaction in colloidal systems: Possibility of attraction,
+, L. I. Podloubny, P. P. J. M. Schram, S. A. Trigger, Physica B  229,  132 (1996).
+Allahyarov
+E.
+
+Damping of longtudinal waves in charged colloids,
+, L. I. Podloubny, P. P. J. M. Schram, S. A. Trigger, Physica B 228, 166 (1996).
+Allahyarov
+E.
+
+The breaking crack build-up in perforated planes by uniform ring switching,
+,  Int. J. Fracture  79, R17 (1996).
+Allahyarov
+V. M. Mirsalimov, E.
+
+Damping of longtudinal waves in colloidal crystals of finite size
+, L. I. Podloubny, P. P. J. M.Schram, S. A. Trigger, Phys. Rev. E 55, 592 (1997).
+Allahyarov
+E.
+
+Attraction between like-charged macroions by Coulomb depletion
+, I. D'Amico, H. Löwen, Phys. Rev. Letters 81, 1334 (1998).
+Allahyarov
+E.
+
+Possibility of an attraction between highly charged colloids
+, P. P. J. M. Schram, S. A. Trigger, Proc. Int. Conf. Strongly Coupled Coulomb Systems,
+Allahyarov
+E.
+Plenum Press, New-York,  247 (1998).
+
+Role of effective triplet interactions in charged colloidal suspensions
+,  J. Phys. Condensed Matter 10, 4147 (1998).
+Allahyarov
+H.Löwen, E.
+
+Effective forces between macroions: the cases of asymmetric macroions and added salt
+, H. Löwen, S. Trigger,  Phys. Rev. E 57, 5818 (1998).
+Allahyarov
+E.
+
+Effect of confinement on the interaction between charged colloidal particles
+Allahyarov,
+E.
+I. D'Amico, H. Löwen, Phys. Rev. E  60, 3199 (1999).
+
+The  hard physics of soft matter
+Allahyarov,
+H. Löwen, E.
+et al, Advances in Solid State Physics  40, 809 (2000).
+
+Effective interaction between helical biomolecules
+, H. Löwen,  Phys. Rev. E 62, 5542 (2000).
+Allahyarov
+E.
+
+Effective interaction between confined colloids: repulsion or attraction
+, I. D'Amico,  Progr. Colloid Polym. Sci. 115, 367 (2000).
+Allahyarov
+H. Löwen, E.
+
+Influence of solvent granularity on the effective interaction between charged colloidal suspensions
+, H. Löwen, Phys. Rev. E  63, 041403 (2001).
+Allahyarov
+E.
+
+Discrete solvent effects on the effective interaction between charged colloids
+Allahyarov,
+E.
+H. Löwen, J. Phys. Condensed Matter 13, L277 (2001).
+
+Interactions and phase transitions of colloidal dispersions in bulk and at interfaces
+, et al, Phil. Trans. Roy. Soc. Lond. A  359, 909 (2001).
+Allahyarov
+H. Löwen, E.
+
+Discrete charge patterns, Coulomb correlations and interactions in protein solutions
+, H. Löwen, J. P. Hansen, A. A. Louis, Europhys. Letters. 57, 731 (2002).
+Allahyarov
+E.
+
+Effective forces in colloidal mixtures: from depletion attraction to accumulation repulsion
+, H. Löwen, R. Roth, Phys. Rev. E 65, 061407 (2002).
+A. A. Louis, E.
+Allahyarov
+
+Adsorption of monovalent and multivalent cations and anions on DNA molecules
+, H. Löwen, G. Gompper, Phys. Rev. E  68, 061903 (2003).
+Allahyarov
+E.
+
+Nonmonotonicity of second virial coefficient in strongly correlated systems
+Allahyarov,
+E.
+H. Löwen, J.-P. Hansen, A. A. Louis, Phys. Rev. E 67, 051404 (2003);
+Virtual Journal of Biological Physics Research 5,(2003).
+
+Charged colloids, polyelectrolytes and biomolecules viewed as strongly coupled Coulomb systems
+, et al., J. Phys. A: Math. Gen. 36, 5827 (2003).
+Allahyarov
+H. Löwen, E.
+
+Mesoscopic solvent simulations: Multi-particle-collision dynamics of three-dimensional flows
+, G. Gompper, Phys. Rev. E 66, 036702 (2003).
+Allahyarov
+E.
+
+Erratum: Mesoscopic solvent simulations: Multiparticle-collision dynamics of three-dimensional flows
+Allahyarov,
+E.
+G. Gompper, Phys. Rev. E 67, 059901 (2003).
+
+Re entrance in DNA condensation,
+, N. Gusein-zade, Phys. Reports of Russian Academy of Sciences 6, 49 (2004).
+Allahyarov
+E.
+
+Crystallization of colloidal plasma: charge renormalization in added salt
+, S. Trigger, High Temperature Physics 43, 315 (2005).
+Allahyarov
+E.
+
+Attraction between DNA molecules mediated by multivalent ions
+, G. Gompper, H. Löwen,  Phys. Rev. E. 69, 041904 (2004);
+Allahyarov
+E.
+Virtual Journal of Biological Physics Research 7, (2004).
+
+DNA condensation, re dissolution and mesocrystals induced by tetravalent counterions
+, H. Löwen, G. Gompper, Euro. Phys. Letters 68, 894 (2004).
+Allahyarov
+E.
+
+Interaction between overcharged DNA molecules
+, G.Gompper,  H.Löwen,  J.Phys. Cond. Matter 17, S1827 (2005).
+Allahyarov
+E.
+
+Charged colloids and polyelectrolytes: from statics to electrokinetics
+Allahyarov
+H. Löwen, E.
+et al,  J. Phys.: Conf. Ser. 11, 207 (2005).
+
+Interaction between charged colloids in  a low dielectric constant solvent
+Allahyarov
+E.
+et al,   Euro.Phys. Letters 78, 38802 (2007).
+
+Role of electrostatic forces in cluster formation in a dry ionomer
+Allahyarov,
+E.
+P. Taylor, J. Chem. Phys. 127, 154901 (2007).
+
+Charged colloidal particles in a charged wedge: do they go in or out
+H. Löwen, E.Allahyarov et al, J. Phys.: Condens. Matter 20, 404221 (2008).
+
+Colloids in a low dielectric constant solvent,
+Allahyarov,
+E.
+E. Zaccarelli, F. Sciortino, H. Löwen, Europhys. Lett.  81, 59901 (2008).
+
+Predicted electric-field-induced hexatic structure in an ionomer membrane
+, P. Taylor, Phys. Rev. E 80, 020801(R) (2009).
+Allahyarov
+E.
+
+Simulation Study of the Correlation between Structure and Conductivity in Stretched Nafion
+, P. Taylor, J. Phys. Chem. B 113, 610 (2009).
+Allahyarov
+E.
+
+Nonadditivity in the effective interactions of binary charged colloidal suspensions,
+, H. Löwen,  J. Phys.: Condens. Matter 21, 424117 (2009).
+Allahyarov
+E.
+
+Simulation Study of Sulfonate Cluster Swelling in Ionomers
+Allahyarov,
+E.
+P. Taylor, H. Löwen, Phys. Rev. E 80, 061802 (2009).
+
+Simulation study of field-induced morphological changes in a proton-conducting ionomer
+, P. Taylor, H. Löwen, Phys. Rev. E 81, 031805 (2010).
+Allahyarov
+E.
+
+Simulation study of the equilibrium morphology in ionomers with  different architectures
+, P. Taylor,  J. Polymer Sci. B: Polymer Physics 49, 368 (2011).
+Allahyarov
+E.
+
+Simulation study of field-induced proton conduction pathways in dry ionomers
+, P. Taylor,  H. Löwen, J. Phys.: Condens. Matter 23, 234105  (2011).
+Allahyarov
+E.
+
+Heterogeneous crystallization of hard-sphere colloids near a wall
+, H. Löwen, S. U. Egelhaaf, Soft Matter 7, 8050 (2011).
+Allahyarov
+K. Sandomirski, E.
+
+Huge broadening of the crystal-fluid interface for sedimenting colloids
+, H. Löwen, Euro. Phys. Letters  95, 38004 (2011).
+Allahyarov
+E.
+
+Simulation study of poled low-water ionomers with  different architectures
+, P. Taylor, H. Löwen, J. Phys.: Condens. Matter 23, 455102 (2011).
+Allahyarov
+E.
+
+Double clustering in binary mass hard sphere system
+, H. Löwen,  J. Chem. Phys.  135, 134115 (2011).
+Allahyarov
+E.
+
+Heterogeneous crystallization in colloids and complex plasmas: the role of binary mobilities.
+, A. Ivlev, G. E. Morfill,  J. Phys.: Condens. Matter 24, 284125 (2012).
+Allahyarov
+H. Löwen, E.
+
+Crystal Orientation and Temperature Effects on Double Hysteresis Loop Behavior in a
+Poly(vinylidene fluoride-co-trifluoroethylene-co-chlorotrifluoroethylene)-graft-Polystyrene Graft Copolymer,
+Allahyarov,
+F. Guan, L. Zhu, Macromolecules  46,  9698–9711 (2013).
+L. Yang, E.
+
+Novel polymer ferroelectric behavior via crystal isomorphism and the nanoconfinement effect,
+L. Yang, X. Li, E. Allahyarov, P. Taylor,  Q.M. Zhang, L. Zhu,  Polymer  54, 1709-1728 (2013).
+
+Highly asymmetric electrolytes in the primitive model: Hypernetted chain solution in arbitrary spatial dimensions.
+, H. Löwen, J.  Comp. Chem. 35, 275-289 (2014).
+Allahyarov
+M. Heinen, E.
+
+Magnetomechanical response of bilayered magnetic elastomers,
+A. M. Menzel, L. Zhu, H. Löwen,  Smart Materials and Structures 23, 115004 (1-12) (2014).
+E.  Allahyarov,
+
+Heterogeneous crystallization of hard and soft spheres near flat and curved walls,
+A. B. Schofield, H. Löwen, W. Richtering,
+Allahyarov,
+K. Sandomirski, S. Walta, J. Dubbert, E.
+S. U. Egelhaaf,  Eur. Phys. J 223, 439-454 (2014).
+
+Analysis of the actuation properties of charged multilayer films,
+E. Allahyarov, H. Löwen and L. Zhu,   J. Appl. Phys. 117, 034504 (1-14) (2015).
+
+Crystallization seeds favour crystallization only during initial growth,
+E. Allahyarov, K. Sandomirski, S. U. Egelhaaf, and  H. Löwen, Nature Communications 6, 1-9 (2015).
+A simulation study of the electrostriction effects in dielectric elastomer composites containing polarizable inclusions
+
+with different spatial distributions,
+E. Allahyarov,  H. Löwen, L. Zhu, Phys. Chem. Chem. Phys. 17, 32479-32497  (2015).
+Semicrystalline structure - dielectric property relationship and electrical conduction in a biaxially oriented
+
+poly(vinylidene fluoride) film under high electric fields and high temperatures,
+Yang,  J. Ho,  E. Allahyarov, R.  Mu, L.  Zhu,   ACS Appl. Mater. Interfaces 7, 19894-19905 (2015).
+Enhanced ionic diffusion in ionomer-filled nanopores,
+
+E. Allahyarov, P. L. Taylor,  and H. Löwen, J. Chem. Phys. 143, 243126 (1-10) (2015).
+
+Interfacial Polarization-Induced Loss Mechanisms in Polypropylene/BaTiO3 Nanocomposite Dielectrics,
+G. Zhang,  D. Brannum, D. Dong,  L. Tang, E. Allahyarov, S. Tang, Saide, K. Kodweis, J.-K. Lee, L. Zhu,
+Chemistry of Materials  28,  4646-4660  (2016).
+Dipole Correlation Effects on Local Field and Effective Dielectric Constant in Composite Dielectrics
+
+containing High-k Inclusions,
+E. Allahyarov, H. Löwen and L. Zhu,  Phys. Chem. Chem. Phys.  8, 19103-19117 (2016).
+Simulation Study of Ion Diffusion in Charged Nanopores with Anchored Terminal Groups,
+
+E. Allahyarov, H. Löwen, P. L. Taylor,  Electrochimica Acta  242,  73-85 (2017).
+Triple junction at the triple point resolved on the individual particle level,
+
+M. Chaudhuri, E. Allahyarov , H. Löwen, S. U. Egelhaaf, D. A. Weitz, Phys. Rev. Lett. 119 , 128001 (1-6) ((2017).
+
+Smectic monolayer confined on a sphere: Topology at the particle scale,
+E.  Allahyarov, A. Voigt,  H.  Löwen,  Soft Matter, 13,  8120-8135 (2017)
+
+Understanding reversible Maxwellian electroactuation in a 3M VHB dielectric elastomer with prestrain,
+L. Liu, Y. Huang, Y. Zhang, E. Allahyarov, Z. Zhang, F. Lv, L. Zhu, Polymer 144, 150-158 (2018).
+Polymer Nanodielectrics: Current Accomplishments and Future Challenges for Electric Energy Storage,
+
+G. Zhang, E. Allahyarov, L. Zhu, Springer Nature, Editors  B. Li and T. Jiao,  1-48, (2018)
+Length segregation in mixtures of spherocylinders induced by imposed topological defects,
+
+E.  Allahyarov,
+H.  Löwen,  Soft Matter 14, 8962-8973 (2018)
+
+Reducing dielectric loss and enhancing electrical insulation for multilayer polymer films by nanoconfined ion transport
+under high poling electric fields,
+E. Allahyarov et all, J. Mater. Chem. C  1-20 (2020),  https://doi.org/10.1039/D0TC00522C
+
+Reducing Dielectric Loss by Nanoconfined Impurity Ion Transport in Multilayer Films under Low Electric Fields,
+E. Allahyarov et all,  Composites Part B- Engineering 190, 107908  1-16 (2020).
+
+Theoretical Study of Nanocomposite Permittivity with a Tunable Clustering of Inclusions,
+E. Allahyarov,  Advanced Theory and Simulations 1-20  (2020),  https://doi.org/10.1002/adts.202000005
+
+G. Zhang, Q. Li, E. Allahyarov, Y. Li, L. Zhu, , Challenges and opportunities of polymer nanodielectrics for electric
+energy storage , ACS APPL MATER INTER 13 , 37939-37960 (2021).
+
+, L. Zhu, R. Li, F. Santos, Q. Li, G. Rui, Zh. Zhu, T. Soulestin, H. He, P. Taylor, Electrostriction-
+E. Allahyarov
+enhanced giant piezoelectricity via relaxor-like secondary crystals in extended-chain ferroelectric polymers, CELL 4 ,
+11 , 3696-3709. (2021).
+
+Y. Huang, G. Rui, Q. Li, Elshad Allahyarov, R. Li, M. Fukuto, G.-J. Zhong, J.-Z. Xu, Z.-M. Li, P. L. Taylor, L. Zhu ,
+Enhanced piezoelectricity from highly polarizable oriented amorphous fractions in biaxially oriented poly(vinylidene
+fluoride) with pure β crystals , NATURE  12 , 675, 1-8  (2021)
+
+G. Rui, E. Allahyarov, R. Li, P. L. Taylor, L. Zhu, Hard-to-soft transition-enhanced piezoelectricity in poly(vinylidene
+fluoride) via relaxor-like secondary crystals activated by high-power ultrasonication, Material Horizons 9. 1992-1998
+(2022).
+
+, Q. Li, T. Ju, Y.-W. Harn, H. Luo, D. Zhang, Z. Lin, L. Zhu, High electric field-induced ferroelectric
+E. Allahyarov
+behavior of polymer/paraelectric barium titanate particle nanocomposites, to appear in Chem. Engineering J. (2022).
+
+Elshad Allahyarov and Hartmut Löwen, Structural correlations and phase separation in binary mixtures of charged
+and neutral colloids, accepted to J. Chem. Phys. 157, 164902 (2022).
+
+Elshad Allahyarov, Hartmut Löwen, Alan R. Denton, Structural correlations in highly asymmetric binary charged
+colloidal mixtures, Phys. Chem. Chem. Phys. 25, 15439-15451 (2022).
+
+G. Rui, E. Allahyarov, P. Taylor, L. Zhu, Temperature-dependent rotational dipole mobility and devitrification of rigid
+amorphous fraction in unpoled and poled biaxially oriented poly(vinylidene fluoride), Macromolecules 55, 21, 9705–
+9714 (2022).
+
+Namik G. Gusein-zade, Andrey A. Slezkin, Elshad Allahyarov, Statistical processing of time slices of
+electroencephalography signals during brain reaction to visual stimuli, BIOMED. SIGNAL PROCES. 83,  104656 1-
+11  (2023).
+
+E. Allahyarov, Q. Li, T. Ju, Y.-W. Harn, H. Luo, D. Zhang, Z. Lin, L. Zhu,  High electric field-induced ferroelectric
+behavior of polymer/paraelectric barium titanate particle nanocomposites,  CHEM. ENG. J. 463, 142490 (1-12)
+(2023).
+
+Guanchun Rui, Elshad Allahyarov, Honghu Zhang, Ruipeng Li, Shihai Zhang, Philip L. Taylor, Lei Zhu,
+Effect of chemical defects on electrostriction-enhanced piezoelectric property of poly(vinylidene fluoride) via high-
+power ultrasonication,  NANO ENERGY 113, 108590 1-20 (2023).
+
+Q. Li, E. Allahyarov, T. Ju, Z. Lin, L. Zhu, Nonlinear ferroelectric characteristics of barium titanate nanocrystals
+determined via a polymer nanocomposite approach,  Nanoscale  16, 3606-3621  (2024).
+
+Y. Zhu, H. Wu, A. Martin, P. Beck, E. Allahyarov, T. Wongwirat, G. Rui, Y. Zhu, D. Hawthorne, J. Fan, J. Wu, S.
+Zhang, L. Zhu, S. Kaur, Q. Pei, Operando investigation of the molecular origins of dipole switching in P(VDF-TrFE-
+CFE) terpolymer for large adiabatic temperature change, Adv. Func. Mater 34, 2314705 1-12 ((2024).
+
+Rui, G.; Allahyrov, E.; Zhu, Z.; Huang, Y.; Wongwirat, T.; Zou, Q.; Talyor, P. L.; Zhu, L., Challenges and
+opportunities in piezoelectric polymers: Effect of oriented amorphous fraction in ferroelectric semicrystalline
+polymers. Responsive Materials 2, 1-22 (2024).
+
+Elshad Allahyarov
+and Hartmut Lowen, Electric field-induced clustering in nanocomposite films of highly polarizable
+inclusions, J. Colloid & Interface Science 668, 587-598 (2024).
+
+Namik G. Gusein-zade, Andrey A. Slezkin, Vitaly V. Podlepich, and Elshad Allahyarov, Machine learning in
+predicting the development of neurogenic dysphagia after neurosurgical intervention, to appear in Clinical
+Neurophysiology (2024).

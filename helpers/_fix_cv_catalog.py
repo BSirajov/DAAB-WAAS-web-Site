@@ -1,9 +1,9 @@
 """Rebuild flat catalog from card blocks in scientists_card_view_az.html."""
 import re
 
-from _paths import ROOT
+from _paths import AZ_SCIENTISTS_PROFILES, ROOT
 
-CV = ROOT / "scientists_card_view_az.html"
+CV = AZ_SCIENTISTS_PROFILES
 text = CV.read_text(encoding="utf-8")
 
 cards = re.findall(

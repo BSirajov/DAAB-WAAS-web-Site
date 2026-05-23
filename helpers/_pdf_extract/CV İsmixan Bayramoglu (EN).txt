@@ -1,0 +1,466 @@
+Ismihan Bayramoglu, Izmir University of Economics, Izmir, Turkey
+Family name                        BAYRAMOGLU      (Bairamov)
+First name                            ISMIHAN
+ORCID:  https://orcid.org/0000-0002-8575-8405
+ResearvherID: https://www.webofscience.com/wos/author/record/E-7721-2018
+Web: https://ismihanbayramoglu.academia.edu/
+Google Scholar: https://scholar.google.com/citations?user=hYlaue0AAAAJ&hl=tr
+Education History:
+Ph.D.(1988) Kiev State University, Faculty of Cybernetics, Department of Computational Mathematics.
+Dissertation: “Invariant Confidence Intervals and  Statistical Criteria Based on Training Samples “
+Master, BSc (1981) Azerbaijan State University, Faculty of Applied Mathematics
+Work History:
+ Prof. Dr. , Izmir University of Economics 2001-
+ Prof. Dr. , Izmir University of Economics, Dean  Faculty of Arts and Sciences, 2001-2022
+Chair Department of Mathematics,   2001-2015
+Prof.Dr., Faculty of Science , Department of Statistics, Ankara University, 1993-2001.
+Azerbaijan National Aerospace Agency (1989-1993) Scientist,  Senior Scientist,
+Leading Scientist.
+Azerbaijan National Aerospace Agency (1983-1989), Scientist.
+Azerbaijan State University, Faculty of Mathematics and Azerbaijan Petrol Academy (1988-1993),
+Lecturer
+Azerbaijan Academy of Sciences, Institute of Cybernetics, (1981-1983), Assistant Scientist
+Invited visits for joint research:
+Rider University, NJ, USA, 1998, May, Professor M. Ahsanullah
+McMaster University Canada, 2002, June-September, Professor N. Balakrishnan
+Warsaw University of Technology-May 2003, Professor J. Wesolowsky, Professor T. Rychlik
+McMaster University 2004-July-September, Prof. I. Akhundov, N. Balakrishnan
+Illinois State University-2014 May, Prof. O. Akman
+KU Leuven, 2024 January- February, Professor Jan Dhaene
+Research Interest : Theory of Probability, Theory of Statistics, Stochastic Processes,
+Measure Theory and Reel Analysis, Nonparametric Statistics, Characterization of Distributions, Record
+Theory, Asymptotical Methods in Probability and Statistics, Multivariate Distributions and Copulas.
+Awards:  Scientific Prize of Ankara University 2000-2001
+Editorship
+Guest Editor: Special issue of Communications in Statistics-Theory and Methods  on Ordered Statistical Data:
+Approximations, Bounds and Characterizations, Vol. 36, Issue 7.
+https://www.tandfonline.com/toc/lsta20/36/7?nav=tocList
+Guest Editor: Special issue of Journal of Computational and Applied Mathematics,  Volume 235, Issue,16, 2011
+(with O.L.Gebizlioglu and Ersan Akyıldız)
+https://www.sciencedirect.com/journal/journal-of-computational-and-applied-mathematics/vol/235/issue/16,
+Associate Editor:
+-COMMUNICATIONS IN STATISTICS-THEORY AND METHODS, Taylor and Francis. 2009-
+https://www.tandfonline.com/action/journalInformation?show=editorialBoard&journalCode=lsta20
+-COMMUNICATIONS IN STATISTICS- SIMULATION AND COMPUTATION, Taylor and Francis. 2009-
+https://www.tandfonline.com/action/journalInformation?show=editorialBoard&journalCode=lssp20,
+COMMUNICATIONS IN STATISTICS-CASE STUDIES AND DATA ANALYSIS. Taylor and Francis. ,
+https://www.tandfonline.com/action/journalInformation?show=editorialBoard&journalCode=ucas20
+Editor-in-Chief: ISTATISTIK. Journal of the Turkish Statsitical Association,
+https://dergipark.org.tr/tr/pub/ijtsa
+PUBLICATIONS
+BAYRAMOGLU, I. (2024)  On the new properties of conditional expectations. REVSTAT (in press)
+BAYRAMOGLU, I. and STEPANOV, A. (2024) Asymptotic properties of  th spacings based on records. Statistics
+and Probability Letters.  208,  110052, P. 1-10.
+EREM, A.  AND I.BAYRAMOGLU,  I. (2023) A consistent statistical test based on bivariate random samples.
+Hacettepe Journal Of Mathematics & Statistics , Vol. 52, Issue  1, 209 – 228.
+BAYRAMOGLU. I. (2022)  A note on fıbonaccı sequences of random varıables. Statıstıca , Vol. 82, No. 1, 1-12, ISBN:
+1973-2201.
+BAYRAMOGLU, I. And  ÖZKUT,  C.M. (2022) Recent Developments About Marshall-Olkin Bivariate Distribution.
+Journal Of Statistical Theory And Practice , Vol. 16, No. 1, 1-14, ISBN: 1559-8608.
+BAYRAMOGLU, I. (2022) Fuzzy improved distribution function and order statistics.
+Journal Of Computational And Applied Mathematics , Vol. 411, 1-12.
+BAYRAMOGLU, I. and GEBİZLİOGLU, O.L. (2021) A max–min model of random variables in bivariate random
+Sequences. Journal of Computational and Applied Mathematics. 388, 113304.
+BAYRAMOGLU. I. (2021) Bivariate and multivariate distributions with bimodal marginals. Communications In
+Statistics-Theory And Methods , Vol. 49, No. 2, 361-384, ISBN: 0361-0926.
+TAVANGAR M. and BAYRAMOGLU, I.  (2020) On some models of ordered random variables and characterizations
+of distributions. Mathematical Methodso of Statistics , Volume 29, pages149–158.
+BAYRAMOGLU, I. (2020) Joint distribution of a random sample and an order statistic: A new approach with an
+application in reliability analysis. Reliability Engineering and System Safety.  193 (2020) 106594
+BAYRAMOGLU, I. (2020) Bivariate and Multivariate distributions with bimodal marginals. Communications in
+Statistics-Theory and Methods.  Vol. 49, Issue 2, 361-384.
+KEMALBAY, G. and BAYRAMOGLU, I. (2019) On distribution of upper marginal records in bivariate random
+sequences. Turkish Journal of Mathematics. 43, 1474-1491.
+Kemalbay. G. and Bayramoglu,  I, (2015) Joint distribution of new sample rank of bivariate order
+statistics. Journal of Applied Statistics. Vol. 42, No. 10, 2280-2289.
+Gurler, S., Hudaverdi, B. and Bairamov, I. (2015) On the remaining strength at the system level for
+some bivariate survival models based on exponential distribution.  Journal of Computational and Applied
+Mathematics. Vol. 290,535-542.
+Bayramoglu (Bairamov),  I. and Ozkut, M. (2015) The reliability of coherent systems subjected to
+Marshall-Olkin type shocks. IEEE Trancactions on Reliability. Vol. 64. No1, 435-443.
+Bayramoglu (Bairamov), I. and Eryilmaz, S. (2015) Order statistics of dependent sequences consisting
+of two different sets of exchangeable variables. Journal of Computational and Applied Mathematics.  Vol.
+286, 1-6.
+Bairamov, I., Gürler, S. and Hudaverdi, B. (2015) On the mean remaining strength of the k-out-of-n:F
+system with exchangeable components.  Communications in Statistics-Simulation and Computation. Vol.
+44, issue 1, 1-13.
+Bairamov, I. and Yapakci Giner, G. (2014) Order statistics and exceedances for some models of INID
+random variables. Brazilian Journal of Probability and Statistics. Vol. 28, Issue 4, 492-514
+Baranov, I. and Tavangar, M. (2014) More on Progressively Type-II order statistics for multivariate
+obervations. Australian and New Zealand Journal of Statistics. Vol. 56, Issue 4, 385-394.
+Bayramoglu, K. and Bairamov, I. (2014) On censored bivariate random variables: copula,
+characterization and estimation. Communications in Statistics-Simulation and Computation. 43,  2173–
+2185.
+Ozkut, M.  and Bayramoglu (Bairamov), I. (2014)  On Marshall–Olkin type distribution with effect of
+shock magnitude . Journal of Computational and Applied Mathematics, 271, 150–162.
+Bairamov, I., Khaledi, B.E. and Shaked, M. (2014) Stochastic comparison of order statistics and their
+concomitants. Journal of Multivariate Analysis. 124, 105-115.
+Bairamov I. (2014) On conditionally independent random variables, copula and order statistics.
+Communications in Statistics-Theory and Methods. Vol. 43, issue 10-12, 2105-2117.
+Bayramoglu, K. and  Bairamov, I. (2014) Baker-Lin-Huang type bivariate distributions based on order
+statistics. Communications in Statistics-Theory and Methods. Vol. 43, issue 10-12, 1992-2006.
+Bairamov, I. (2013) Reliability and mean residual life of complex systems with two dependent
+components per element. IEEE Transactions on Reliability. Vol. 62, 276-285.
+Bairamov, I. and Kemalbay, G. (2013) Some novel discrete distributions under fourfold sampling
+schemes and conditional bivariate order statistics. Journal of Computational and Applied Mathematics.
+248, 1-14.
+Bairamov, I. and Stepanov, A. (2013) Number of observations near the maximum in an F-alfa scheme.
+Statistics. Vol. 47, No.1, 191-201.
+Bairamov, I. and  Bayramoglu, K. (2013)  From the Huang-Kotz distribution to Baker’s bivariate
+distribution.  Journal of Multivariate Analysis. 113, 106-115
+Tavangar, M. and Bairamov, I. (2012)  A Note on the residual lifetimes in a life-test under Progressive
+Type-II right censoring scheme. Applied and  Computational  Mathematics. N. 3, 368-377.
+Bairamov, I.  (2012) Corrigendum to “Majorization bounds for distribution functions” Statist. Probab.
+Lett. 82 (2012) 1799–1806],  pp. 7-8.
+Bairamov, I.  (2012) Majorization bounds for distribution functions. Statistics and Probability Letters. 82,
+1799-1809.
+Eryılmaz, S. and  Bayramoglu, I. (2012) On extreme residual lives after the failure of the system.
+Mathematical Problems in Engineering. Volume 2012, Article ID 342940, 11 pages.
+Tavangar, M. and Bairamov, I. (2012)  On the residual lifetimes of coherent systems with exchangeable
+components. Pakistan Journal of Statistics. Vol. 28(3), 303-313.
+Bairamov, I., Altınsoy (Yağcı), B. and Kerns, G. Jay. (2011) On generalized Sarmanov bivariate
+distributions. TWMS Journal of Applied and Engineering Mathematics. Vol. 1, No. 1, 2011.
+Bairamov, I and Parsi, S. (2011) Order statistics from mixed exchangeable random variables. Journal of
+Computational and Applied Mathematics, Volume 35, Issue 16, 4629-4638..
+Bairamov, I. and Parsi, S. (2011) On flexible progressive censoring. Journal of Computational and
+Applied Mathematics, Volume 35, Issue 16, 4517-4898..
+Bairamov, I. and Stepanov, A. (2011) Numbers of near bivariate record-concomitant obsrvations. Journal
+of Multivariate Analysis. 102, Issue 5, 908-917.
+Bairamov I (2010), Order Statistics. In: Penelope Peterson, Eva Baker, Barry McGaw, (Editors),
+International Encyclopedia of Education, Volume 7, pp. 360-365. Oxford: Elsevier.
+Bairamov, I. and Elmastas G. O. (2010) Discrete distributions connected with the bivariate binomial.
+Hacettepe Journal of Mathematics and Statistics. Volume 39(1),109-120.
+Bairamov, I. Stepanov, A. (2010) Numbers of near-maxima for the bivariate case. Statistics and
+Probability Letters ,80, 196-205. .
+Bairamov, I. Berred, A. and Stepanov, A. (2010) Limit results for ordered uniform spacings. Statistical
+Papers. 51, 227-241.
+Bairamov, I. and Ucer, B. (2009) On a dependence between random variables in a neighborhood of a
+particular point Journal of Statistical Theory and Applications.
+Volume, 8, No. 4, pp. 392-402
+Parsi, S. Bairamov, I. (2009) Expected values of the number of failures for two populations under joint
+Type-II progressive censoring. Comput. Statist. Data. Anal.
+Bairamov I. and Eryılmaz, S. (2009) Wating times of exceedances in random threshold models. Statist.
+and Probab. Letters. 79, 676-683.
+Gurler, S. and Bairamov, I. (2009) Parallel and k-out-of-n:G systems with nonidentical components and
+their mean residual life functions. Applied  Mathematical Modeling. 33. 1116-1125.
+Bairamov I. and Eryılmaz, S. (2009) Wating times of exceedances in random threshold models. Statistics
+and Probability Letters. 79 , 676-683
+Bairamov, I. Berred, A. and Stepanov, A. (2009) Limit results for ordered uniform spacings. Statistical
+Papers. (Forthcoming)
+Bairamov, I. and Eryilmaz, S. (2008) Joint Behaviour of precedences and exceedances in random
+threshold models. Australian and New Zealand  Journal of Statistics
+Bairamov, I. and Arnold, B. (2008) On the residual lifelengths of the remaining components in an n-k+1
+out of n system. Statistics and Probability  Letters.78,  945-952. PDF
+Bairamov, I. and Tanil, H. (2008) Distributions of exceedances of generalized order statistics. Statistics.,
+42, Issue 1, 67-76.
+Bairamov, I. and Ozkal, T. (2007) On characterization of distributions through the properties of conditional
+expectations of order statistics. Communications in Statistics-Theory and Methods, 36,1319-1326
+Bairamov, I. and Tanil, H. (2007) On distributions of exceedances based on generalized order
+statistics.Communications in Statistics—Theory and  Methods, 36:  1479–1491.
+Bairamov, I. (2007) Preface. Communications in Statistics—Theory and Methods, 36: 1271–1272
+(Special Issue: Ordered Statistical Data)
+Bairamov, I. and Khan, M.K. (2007) On exceedances of record and order statistics.
+Proceedings of the American Mathematical Society. Volume 135, Number 6, pp. 1935-1945.
+Ismihan Bairamov  and Alexei Stepanov (2006) A note on large deviations for weak records.
+Statistics and Probability Letters. 76, pp. 1449-1453.
+Ismihan Bairamov (2006) Advances in Exceedance Statistics Based on Ordered Random
+Variables. Recent Developments in Ordered Random Variables. Eds. Mohammad Ahsanullah
+and M.Z. Raqab. Nova Science Publishers. New York.
+Asadi M. and Bayramoglu I. (2006) The Mean Residual Lifetime and Mean Past Lifetime of k-
+out-of-n-Structures at the System Level.  Recent Developments in Ordered Random
+Variables. Eds. Mohammad Ahsanullah and M.Z. Raqab. Nova Science Publishers. New York.
+Asadi, M. and Bayramoglu, I. (2006) The mean residual life function of a k-out-of- n
+structure at the system level. IEEE Transactions on Reliability.  Vol. 55, No. 2, June.
+Bairamov, I. (2006) Progressive Type II censored order statistics for multivariate
+observations. Journal of Multivariate Analysis. 97, 797-809.
+Bairamov I.G. and Eryılmaz S. (2006) Spaciings, exceedances and concomitants in
+progressive type II censoring scheme. Journal of Statistical Planning and inference. 136, pp.
+527-536.
+Bairamov I., Ahsanullah M. and Anthony Pakes (2005) A characterization of continuous
+distributions via regression of pairs of record values. Australian and New Zealand Journal of
+Statistics.47 (4), 543-547.
+Arslan, G., Ahsanullah, M. and  Bayramoglu, I. (2005) On Characteristics Properties of
+Uniform Distribution. Sankhya: The Indian Journal of Statistics.  Volume 67, Part 4, pp 717-
+723.
+Balakrishnan, N., Bairamov, I. and O.L. Gebizlioglu.(2005) Advances on Models,
+Characterizations and Applications. Chapman and Hall/CRC.
+Asadi M. and Bairamoglu I. (2005) A Note on the Mean Residual Life Function of a Parallel
+System. Communications in Statistics. Vol. 34, Issue 2 . pp. 475-485.
+O. Ege Oruc and I. Bayramoglu (2005) On the general class of two sided power distribution.
+Communications in Statistics. Vol. 34, Issue 5. 34, 1009-1017.
+Bairamov I. and Eryılmaz S. (2004) Characterization of symmetry and exceedance models
+in multivariate FGM distributions. Journal of Applied Statistical Science. Vol. 13, Number 2,
+pp. 87-99.
+Bairamov I.G., Kotz S. and Kozubovski T. (2003) A new measure on linear local
+dependence. Statistics. Vol. 37(3),pp. 243-258.
+Eryilmaz, S. and Bairamov, I.G. (2003). On a new sample rank of an order statistic and its
+concomitant. Statistics &Probability Letters,  63, pp. 123-131.
+Bairamov, I. and Kotz, S (2003) On a new family of positive quadrant dependent bivariate
+distributions. International Mathematical Journal. Vol. 3, No. 11.
+Bairamov I.G. and Kotz S. (2002) Dependence structure and symmetry of Huang -Kotz FGM
+distributions and their extensions. Metrika, 56 /1, 55-72 Springer.
+Bairamov I.G., Ahsanullah M. and Akhundov I. (2002) A residual life function of a system having
+parallel or series structure. J. Statist. Theor. Appl. , Vol 1, No 2.
+Bairamov I.G. and Kotz S. (2001) On distributions of exceedances associated with order statistics and
+record values for arbitrary distributions. Statistical Papers. Volume 42, Issue 2, pp 171-185. Springer.
+Bairamov I.G. , Gebizlioglu O.L. and Kaya M.F. (2001) Asymptotic Distributions of Statistics Based on
+Order Statistics and Record Values and Invariant Confidence Intervals. In ''Asymptotic Methods in
+Probability and Statistics with Applications'' ( Eds. N. Balakrishnan, I.A. Ibragimov, V.B. Nevzorov). P.
+309-320. Birkhauser Boston.
+Lai C.D., Xie M. and Bairamov I.G. (2001) Dependence and Ageing Properties of Bivariate Lomax
+Distribution. In System and Bayesian Reliability. (Essays in Honor of Professor Richard E. Barlow on
+His 70 th Birthday. Eds. Yu. Hayakava, T. Irony and M. Xie)
+Bairamov I.G. , Kotz S. and Gebizlioglu O.L. (2001) On a generalization of FGM and Sarmanov class of
+distributions. South African Statistical Journal. 35, 205-224
+Bairamov, I.G. and Eryilmaz, S. (2001). On properties of statistics connected with minimal spacing
+and record exceedances. Applied Statistical Science V, 245-254, Nova Science Publishers, USA.
+Bairamov I.G. , Kotz s. and Bekci M. (2000) New generalized Farlie-Gumbel-Morgenstern distributions
+and concomitants of order statistics. Journal of Applied Statistics. Vol. 28, No. 5, 521-536. CARFAX
+PUBLISHING, UK.
+Bairamov I.G. (2000) On the characteristic properties of exponential distribution. Annals of Institute of
+Statistical Mathematics. Vol. 52, No. 3, 448-458. Kluwer Academic Publishers, Tokyo.
+Bairamov I. G. and Apaydin A. (2000) Characterizations of continuous distributions by property of
+conditional expectation. South African Statist. Journal, 34, 37-48.
+Bairamov I.G. and Eryilmaz S.N. (2000) Distributional properties of statistics based on minimal
+spacing and record exceedance statistics. Journal of Statistical Planning and Inference, 90, 21-33.
+Bairamov I.G. and Ahsanullah M. (2000) Distributional relations between order statistics and the
+sample itself and characterization of exponential distribution. Journal of Applied Statistical Science. Vol
+10, No. 1, 1-16. Nova Science Publisher, USA.
+Bairamov I.G. and Özkaya N. (2000) On the nonparametric Test for two Sample Problem based on
+spacings. Journal of Applied Statistical Science. Vol. 10, No. 1, 57-68. Nova Science Publisher, USA.
+Bairamov, I.G. and Kotz, S. (2000) On local dependence function for multivariate distributions. New
+Trends in Probability and Statistics. Vol. 5, pp. 27-44.
+Bairamov I.G., Gebizlioglu O.L. and Kaya M.F. (1999) Distributional properties of statistics based on
+invariant confidence intervals. Istatistik. Journal of the Turkish Statistical Association. Vol. 2. No 1, 15-
+32.
+Bairamov I.G. and Gebizlioglu O.L. (1998) On the distance sequence of distribution functions. Journal
+of Applied Statistical Science. Vol. 8. No 1, p. 59-66.  Nova Science Publisher, USA.
+Bairamov I.G. and Aliev F.A. (1998) On characterization of distributions through the properties of
+records. Journal of Applied Statistical Science. Vol. 8. No 1. Nova Science Publisher, USA.
+Bairamov I.G. and Gebizlioglu O.L. (1998) On the distance sequence of distribution functions and
+goodness of fit tests. Istatistic. Journal of the Turkish Statistical Association. Vol. 1. No 1, pp. 51-61.
+Bairamov I.G., Klyushin D. and Petunin Yu.I. (1998) Construction of confidence intervals for
+dependent observations. Istatistic. Journal of the Turkish Statistical Association. Vol.1. No 2, 67-74.
+Klyushin D., Petunin Yu.I. and Bairamov I.G. (1998) Test of heterogeneity of general population.
+Istatistik. Journal of the Turkish Statistical Association. Vol 1, No 3,19-29.
+Bairamov I.G. (1998) (with Petunin, Klyushin, Ganina, Boroday) Statistical Investigation of the
+Malignancy Associated Changes in Buccal Ephidelium Under Breast Cancer. Applied Statistical Science
+4. Nova Science Publishers. USA.
+Bairamov I.G. (1998) On the new test based on training samples for the observation classification
+problem. Applied Statistical Science 4. Nova Science Publishers. USA.
+Bairamov I.G. (1998) (with Petunin, Klyushin, Ganina, Boroday) Retrospective determination of
+prognostic significance of cytogenetic, morphological and clinical factors in the linear regression model
+and calculation of confidence limits for survival time of patients suffering from malignant melanoma.
+Applied Statistical Science 4. Nova Science Publishers. USA.
+Bairamov I.G. (1997) Some distribution free properties of statistics based on record values and
+characterizations of distributions through a record. Journal of Applied Statistical Science. Vol 5. No 1,
+pp. 17-25. Nova Science Publisher, USA .
+Bairamov I.G. and Gebizlioglu O.L. (1997) On the ordering of random vectors in a norm sense. Journal
+of Applied Statistical Science. Vol. 6, No 1, p.77-86. Nova Science Publisher, USA.
+Bairamov I.G. and Petunin Yu.I. (1992) Statistical criteria based on training samples. Cybernetics. No
+3, p. 408-413.
+Bairamov I.G. (1992) Statistical criteria based on training samples in the problem of classification of
+observations. Theory of Probability and Mathematical Statistics. No 46, p. 13-17.
+Bairamov I.G. and Guseynov P.M. (1992) On the problem of classification of observations on the basis
+of samples of brightnesses of the homogenous natural formations. J.Soobsheniya NPO Kosmicheskih
+issledovaniy. N 6. Baku-1990 .P.41-44. (in russian)
+Bairamov I.G. and Petunin Yu.I. (1991) Structure of invariant confidence intervals containing the main
+distributed mass. Theory of Probabability and Its Applications. Vol. 35, No 1, p. 15-26.
+Bairamov I.G. (1991) Distributions related with differences of addjacent order statistics. Transactions
+of Academy of Sciences of  Azerbaijan. Series of Physical-Technical and Mathematical Sciences. Vol.
+12. No 1, p. 42-44.
+Bairamov I.G. (1990) Testing of statistical hypothesis with the help of statistical criteria based on
+training samples. Transactions of Academy of Sciences of  Azerbaijan. Series of Physical-Technical and
+Mathematical Sciences. Vol. 11, No 1-2 , p. 151-156.
+Bairamov I.G. and Petunin Yu.I. (1988) Invariant confidence intervals containing the general part of
+the distributed mass of general set. Vichislitelnaya i pricladnaya matematica.   Kiev, Vol. 65, p. 112-
+117. (in russian) English translation in J. Soviet. Math. 66 (1993), No. 5, 2534-2538.
+TEACHING: COURSES TAUGHT in 1989-2024
+UNDERGRADUATE
+Introduction to Probability and Statistics I-II 2000-2001; Baku State University, Faculty of Applied Mathematics
+1989-1993)
+Theory of Stochastic Processes  I-II Baku State University, Faculty of Applied Mathematics, 1989-1993 )
+Numerical optimization (Azerbaijan Petrol Academy, Faculty of Applied Mathematics,  1989-1993)
+Nonparametric Statistics (Ankara University Faculty of Science Department of Statistics, 1993-2001)
+Statistical Theory of Reliability  (Ankara University Faculty of Science Department of Statistics, 1998-2001)
+Measure Theory (Ankara University Faculty of Science Department of Statistics, 1993-1996)
+Theory of Stochastic Processes  I-II (Ankara University Faculty of Science Department of Statistics, 1993-2001;
+Introduction to Probability and Statistics I-II  (Ankara University Faculty of Science    Department of
+Mathematics,
+Nonparametric Statistics (Ankara University Faculty of Science Department of Statistics, 1993-2001)
+Statistical Theory of Reliability  (Ankara University Faculty of Science Department of Statistics, 1998-2001)
+Measure Theory (Ankara University Faculty of Science Department of Statistics, 1993-1996)
+Fundamentals of Mathematics (Izmir University of Economics, Department of Mathematics, 2001-2005)
+Calculus I, II (Izmir University of Economics, Department of Mathematics, 2001-current
+Theory of Probability  I- II (Izmir University of Economics, Department of Mathematics, 2002- current
+Stochastic Processes  I-II (Izmir University of Economics) 2002-current
+Theory of Statistics  I-II (Izmir University of Economics) 2002-current
+GRADUATE
+Theory of Statistics (Ankara University Faculty of Science Department of Statistics, 1993-2001)
+Advanced Theory of Statistics (Ankara University Faculty of Science Department of Statistics, 1993-2001)
+Measure Theory and Probability (Ankara University Faculty of Science Department of Statistics, 1998-2000,
+Theory of Nonparametric Statistics (Ankara University Faculty of Science Department of Statistics, 1993-2001)
+Theory of Records (Ankara University Faculty of Science Department of Statistics, 1999-2001)
+Asymptotical  Theory of Extreme Order Statistics (Ankara University Faculty of Science Department of Statistics,
+1998-2001)
+Probability Metric Spaces and Copulas (Ankara University Faculty of Science Department of Statistics, 1993-
+2001)
+Probability and Statistics (Izmir University of Economics), 2006-
+Probabilistic System Analysis (PhD)  Izmir University of Economics, 2006-
+PhD Students
+Dr. Mehmet Fedai Kaya, 1998 Ankara University (Currently as Professor at The Selcuk University)
+Dr. Nejla Ozkaya, 2002, Ankara University (Currently as Assistant Professor at the Ankara University)
+Dr. GUvenc Arslan, 2002, Ankara University (Currently as a Professor at the Kırıkkale University)
+Dr. Serkan Eryılmaz, 2002, Ankara,University (Currently as a Professor at the Atılım University,
+President of the Atılım University)
+Dr. Muhammet Bekçi, 2003, Ankara University  (Currently as Professor at the Sivas Cumhuriyet
+University)
+Dr. Halil Tanıl, 2004, Ege University (Currently as Associate  Professor at the Ege University)
+Dr. Selma Gürler, 2006, Dokuz Eylul University (Currently as a Professor at Dokuz Eylül Univrsity)
+Dr. Burcu Hudaverdi, 2007, Dokuz Eylul University (Currently as a Professor at Dokuz Eylül University)
+Dr. Tuğba Özkal, 2007, Dokuz Eylul University (Currently as a Professor at Dokuz Eylül University)
+Dr. Özge Elmastaş, 2010, Ege University (Currently as Associate Professor at Ege University)
+Dr. Olcay Bozkurt, 2010, Ege University (Currently as Associate Professor at Sinop University)
+Dr. Gulder Kemalbay. 2013, Izmir University of Economics (Currently as Associate Professor at Yıldız
+Technic University)
+Dr. Goknur Yapakçı Giner. 2013, Izmir University of Economics  (Currently as Postdoctoral Fellow at
+Melbourne University)
+Dr. Femin Yalçın. 2013, Izmir University of Economics (Currently as a Professor at Katip Celebi
+University)
+Dr. Cemal Murat Özkut. 2015, Izmir University of Economics. (Currently as Associate Professor at
+Izmir University of Economics)
+Dr. Cihangir Kan. 2015, Izmir University of Economics. (Currently as Associate Professor at Liverpool
+University, China.)
+Dr. Aysegul Erem. 2017-2021 Izmir University of Economics, Currently as Associate Professor at
+Cyprus International University
+Gulser Öz-2024-Izmir University of Economics, PhD student
+https://tez.yok.gov.tr/UlusalTezMerkezi/tezSorguSonucYeni.jsp
+International conferences
+Bayramoglu, I. On some new results on order statistics and applications in reliability analysis. (Keynote speaker)
+ICAS International Conference on Advances in Statistics. 22-24 April 2019, Athens, Creece
+BAYRAMOGLU, I. On general models of exceedance statistics based on random intervals and ordered random
+variables. 18 th International Summer Conference on Probability and Statistics . (keynote invited speaker)
+(ISCPS’18) June 25-30, 2018, Pomorie, Bulgaria. (http://www.math.bas.bg/~statlab/ISCPS2018/)
+BAYRAMOGLU, I. Fibonacci Sequences of Random Variables.  ICAS Conference. 4th international conference on
+advances in statistics. St Petersburg, Russia, 11-13 May, 2018.  (http://icasconference.com/)
+BAYRAMOGLU, I.  Bivariate and multivariate data in reliability and survival analysis. 4-rd International Researchers,
+Statisticians and Young Statisticians Congress.  28-30 April 018, Dokuz Eylul University  (IRSYSC 2018)  (plenary
+speaker)
+http://www.irsysc2018.com/
+BAYRAMOGLU, I.  Bounds and new ordering of distribution functions. 3-rd International Researchers, Statisticians
+and Young Statisticians Congress.  24-26 May 2017, Selçuk University, Konya (IRSYSC 2017)  (plenary speaker)
+BAYRAMOGLU, I.   Some models in reliability of complex systems. 3rd International Conference on Advances in
+Statistics. 28-30 April 2017, Helsinki, Finland.
+BAYRAMOGLU, I.  On some new models of multivariate record values. 12th International Conference On Order
+Statistical Data. University of Piraeus, 25-28 May, 2016. (Invited speaker)
+BAYRAMOGLU, I.  Ordered Random variables- theory and applications. All in One Conferences-Statistics and
+Econometrics. Zagreb, 19-22 April, 2016. (Keynote speaker)
+BAYRAMOGLU, I. Distributional results for records of multivariate observations. EMS 2015. European Meeting of
+Statisticians. Amsterdam, July 6-10, 2015.
+BAYRAMOGLU, I. Multivariate record times and values.  “16th International Symposium on Econometrics,
+Operations Research and Statistics”, Trakya University MAY 7-12, 2015. (Invited speaker)
+BAYRAMOGLU, I.   Bivariate order statistics and their applications in reliability. 9 th International Statistics Days
+Symposium, 10-14 May 2014, Antalya, Turkey.
+BAIRAMOV, I. Bivariate Order Statistics. New developments and applications. Ordered data Analysis, models, and
+health research methods: An international conference in honor of H.N. Nagaraja for his 60 th birthday. March 7-9,
+2014, The University of Texas at Dallas, Richardson, Texas, USA
+BAIRAMOV, I.  Marshall-Olkin type distribution with effect of shock magnitude. An international conference on
+Marshall-Olkin distribution. University of Bologna, Bologna, Italy, 2013.
+BAIRAMOV, I. Mixed exchangeable random variables order statistics and MRL.  New developments in theory and
+applications of order statistics, Izmir, Turkey, Izmir University of Economics, 2011.
+BAIRAMOV, I.  On conditional independent random variables. International Conference on Advances in Probability
+and Statistics, Hong Kong, 2011.
+BAIRAMOV, I.  Order statistics from exchangeable random variables and their applications in reliability.  Ordered
+Statistical Data and its Applications (OSDA) 2010, Zagazig, Egypt, July 11-13, 2010.
+BAYRAMOGLU,  I.  Ordered random variables-recent developments. 14th International Congress on
+Computational and Applied Mathematics, Antalya, Turkey, September 29-October 2, 2009.
+BAIRAMOV, I. Waiting times for exceedances based on order statistics. Conference on Ordered Statistical Data
+and Its Applications, RWTH Aachen University, Aachen, Germany, March 7-8, 2008.
+BAIRAMOV, I. Asymptotic distributions of progressive type II cencored order statistics. International Conference
+on Ordered Statistical Data and Inequalities: Theory & Applications, The University of Jordan, Amman, Jordan,
+June 12-14, 2007.
+BAIRAMOV, I.  International conference on mathematical and statistical modeling-ICMSM, University of Castilla-La
+Mancha, Ciudad Real, Spain, 2006.
+BAIRAMOV, I. and TANIL, H. Exceedances based on generalized order statistics.  Ordered Statistical Data:
+Approximations, Bounds and Applications, İzmir, Turkey, 2005.
+BAIRAMOV, I.G. and OZKAL, T.  On the joint distributions of nonadjacent progressively type II censored order
+statistics. Ordered Statistical Data: Approximations, Bounds and Applications, Warsaw, Poland, May, 2004.
+BAIRAMOV, I.G. On exceedances based on ordered random variables. Ordered Statistical Data: Approximations,
+Bounds and Applications, Warsaw, Poland, May 12-17, 2003.
+BAIRAMOV, I.G. Exceedance statistics based on ordered random variables. Characterizations and Bounds for
+Ordered Statistical Data, Warsaw, Poland, May 12-17, 2003.
+BAIRAMOV, I.G. On the bivariate binomial distribution and its extension. 3. İstatistik Kongresi, Antalya, Turkey,
+April 16-20, 2003.
+BAIRAMOV, I.G. Aşan istatistiklerin asimptotik özellikleri. 3. İstatistik Kongresi, Antalya, Turkey, April 16-20, 2003.
+BAIRAMOV, I.G. On a generalized Sarmanov bivariate distributions. 3. İstatistik Kongresi, Antalya, Turkey, April 16-
+20, 2003.
+BAIRAMOV, I.G. Random intervals based on order statistics and records. Seminars of order statistics and record
+values, McMaster University, Canada, July 12, 2002.
+BAIRAMOV, I.G. Bivariate binomial type distributions and their applications. Seminars of order statistics and
+record values, McMaster University, Canada, July 12, 2002.
+BAIRAMOV, I.G. On the distributions of the new sample rank of an order statistics and its concomitant. İstatistik
+Günleri 2002, Hacettepe University, Ankara, Turkey, May 23-24, 2002.
+BAIRAMOV, I.G. Exceedances based on generalized order statistics. İstatistik Günleri 2002, Hacettepe Universitesi,
+Ankara, Turkey, May 23-24, 2002.
+BAIRAMOV, I.G. and ARSLAN, G. Asagi rekorlar ile iki dagilimin karakterizasyonu. 2. İstatistik Kongresi Bildiriler
+Kitabı pp.196-199, Antalya, Turkey, 2-6 Mayıs, 2001.
+BEKCI, M. and BAIRAMOV, I.G. Çok degiskenli dagilimlarda rekor degerler. 2. İstatistik Kongresi Bildiriler Kitabı
+pp.207-211, Antalya, Turkey, 2-6 Mayıs, 2001.
+ERYILMAZ, S. and BAIRAMOV I.G. FGM sequences, exceedances and records. 2. İstatistik Kongresi Bildiriler Kitabı
+pp.310-314, Antalya, Turkey, 2-6 Mayıs, 2001.
+BAIRAMOV I.G., ERYILMAZ, S. and YAGCI, B. On a new class of Archimedean copulas. 2. İstatistik Kongresi
+Bildiriler Kitabı pp.318-321, Antalya, Turkey, 2-6 Mayıs, 2001.
+BAIRAMOV, I.G. and TERCAN, A. Mean residual life function. Procedings of statistical conference 2000 pp.107-117,
+Gazi University, Ankara, Turkey, 2000.
+BAIRAMOV, I.G. Characterization of distributions. Procedings of statistical conference 2000 3-19, Gazi University,
+Ankara, Turkey, 2000.
+BAIRAMOV, I.G. and AHSANULLAH, M. Characterization of distributions through the properties of spacings.
+International conference on Applied Statistical Science, Rider University, USA, May 22-23, 1999.
+BAIRAMOV I.G. and ERYILMAZ, S. Distributional properties of statistics based on minimal spacing and record
+exceedance statistics. International conference on Applied Statistical Science, Rider University, USA, May 22-23,
+1999.
+BAIRAMOV, I.G. and AKDI, Y. Distribution of record times for random walk processes. Procedincs of Statistical
+Conference 1998 pp.3-12, Gazi University, Ankara, Turker, 1998.
+BAIRAMOV I.G. and GEBIZLIOGLU, O.L. Assymptotic distributions of statistics based on order statistics and record
+values. International conference on Assymptotical Methods in Probability and Statistics, St. Petersburg, May,
+1998.
+GEBIZLIOGLU, O.L., BAIRAMOV, I.G. and AKDI, Y. Stochastic modelling of index series as a merging or mixing
+process. Bulletin of the International Statistical Institute, 51 th session, Book 1, pp.167-170, 1997.
+GEBIZLIOGLU, O.L. and BAIRAMOV, I.G. A discussion on analysis of random points and shapes. Bulletin of the
+International Statistical Institute, 51 th session, Tome LVII, Book 3, pp.334-335, 1997.
+BAIRAMOV, I.G. and GEBIZLIOGLU, O.L. Some limit theorems for record values of water related processes. Water
+and Statistics, ISI sattelite meeting, August 28-30, 1997.
+BAIRAMOV, I.G. Test based on training samples for the classification observation problem. Procedings of Second
+Math. Mod., Vien, Austria, February 5-7, 1997.
+BAIRAMOV, I.G. Limit theorems for order statistics and record values. Araştırma Sempozyumu 96, Program ve
+bildiriler pp.3/41 - 3/45, 1996.
+BAIRAMOV, I.G., GEBIZLIOGLU, O.L. and KAYA, M.F. Confidence of criteria based on invariant confidense intervals
+for testing composite hypothesis. Araştırma Sempozyumu 95, Program ve bildiriler pp.83-87, 1995.
+BAIRAMOV, I.G. and KAYA, M.F. Invaryant güven aralıklara dayalı parametrik olmayan hipotez testleri. Araştırma
+Sempozyumu 95, Program ve bildiriler pp.3/41 - 3/45, 1995.
+BAIRAMOV, I.G. and OZBEK, L. Dağılımlarınn İstatistiksel yakınık ölçüsüne dayalı yeni, tutarlı ve parametrik
+olmayan uyum iyiliği testi. Araştırma Sempozyumu 94, Program ve bildiriler pp.1/27 - 1/40, 1994.
+BAIRAMOV, I.G. The statistical distance measure of distributions. Araştırma Sempozyumu 93, Program ve bildiri
+Özetleri pp.40, 1993.
+BAIRAMOV, I.G. Statistical criteria based on training samples for the observation classification problem. Ulusal
+ekonometri ve istatistik sempozyumu, Bildiriler pp.30-36, İzmir, Turkey, November 11-12, 1993.
+BAIRAMOV, I.G. On invariant statistical criteria based on training samples. The 3-rd Turkish-Azerbaijan
+mathematics simposium. Trabzon, Turkey, August 31-Septmeber 4, 1993.
+BAIRAMOV, I.G. Invariant statistik kriteriler. The 2-nd Turkish-Azerbaijcan mathematics simposium. Baku,
+Azerbaijcan, September 8-14, 1992.
+BAIRAMOV, I.G. and PETUNIN, Yu.I. Order statistical test based on training Samples. Statistical decision functions
+and processes, Praque, 1990.
+BAIRAMOV, I.G. The boundary for expextes of order statistics expressed by quantil of distribution. Mat. of All-
+Republic conference of young scientist pp.39-40, Baku, Azerbaijcan, 1984.
+BAIRAMOV, I.G. Nonparametric confidence intervals for order statistics from continuous distribution. Mat. of 5th
+Respublication conference of young Scientists of matematics and mechanics pp.65-67, Baku, Azerbaijcan, May 21-
+24, 1984.
+Address:
+Izmir University of Economics, Department of Mathematics
+Sakarya Caddesi 156, 35330, Balcova, Izmir, TURKEY.
+E-mail: ismihan.bayramoglu@ieu.edu.tr
+ibayramov@gmail.com
+Web: http://dm.ieu.edu.tr/bayramoglu.htm
+PUBLONS: https://publons.com/researcher/1708293/ismihan-bayramoglu/
+WEB OF SCİENCE RESEARCHERID: E-7721-2018
+ORCID: https://orcid.org/0000-0002-8575-8405

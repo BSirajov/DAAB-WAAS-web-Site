@@ -7,9 +7,10 @@ import unicodedata
 from difflib import SequenceMatcher
 from pathlib import Path
 
-from _paths import ROOT
-AZ = ROOT / "scientists_list_view_az.html"
-CV = ROOT / "scientists_card_view_az.html"
+from _paths import ROOT, AZ_SCIENTISTS_LIST, AZ_SCIENTISTS_PROFILES
+
+AZ = AZ_SCIENTISTS_LIST
+CV = AZ_SCIENTISTS_PROFILES
 
 COUNTRY_CODE_TO_NAME = {
     "abs": "ABŞ",

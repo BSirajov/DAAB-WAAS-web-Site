@@ -29,4 +29,13 @@ EXECUTIVE_BOARD_REPLACEMENTS: list[tuple[str, str]] = [
     ("Əlaqə", "Contact"),
     ("Ünvan", "Address"),
     ("Rəhbərlik", "Leadership"),
+    (
+        'aria-label="İdarə Heyəti haqqında qısa məlumat"',
+        'aria-label="Executive Board summary"',
+    ),
+    ("Rəhbərlik və idarəetmə", "Leadership and governance"),
+    (
+        "Bu səhifədə Dünya Azərbaycanlı Alimlər Birliyinin İdarə Heyətinin sədri, həmsədrləri və üzvləri təqdim olunur. İdarə Heyəti birliyin strategiyasının formalaşdırılması, elmi proqramların koordinasiyası və beynəlxalq akademik əməkdaşlığın inkişafında mərkəzi rol oynayır.",
+        "This page presents the Chair, Co-Chairs and members of the World Association of Azerbaijani Scientists Executive Board. The Board plays a central role in shaping the Association's strategy, coordinating scientific programmes and advancing international academic cooperation.",
+    ),
 ]
