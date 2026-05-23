@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html lang="en" data-daab-lang="en" data-daab-asset-root="../" data-daab-page-id="membership">
+<html lang="en" data-daab-lang="en" data-daab-asset-root="../" data-daab-page-id="membership" data-daab-nav-mount="1">
 <head>
 <!-- daab-en-complete -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>DAAB — Membership Terms</title>
+<title>WAAS — Membership Terms</title>
 <meta content="Membership terms, application form and payment information — World Association of Azerbaijani Scientists." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -176,7 +176,8 @@ a{color:inherit}.shell{max-width:var(--max);margin:auto;padding:0 24px}.skip{pos
 @media(max-width:1060px){.membership-page .hero-wrap{grid-template-columns:1fr}.membership-page .hero-panel{max-width:640px}.cards,.intro-card{grid-template-columns:1fr}}@media(max-width:760px){.nav-inner{height:62px;padding:0 14px}.membership-page .hero-wrap{padding:48px 18px 40px}.membership-page .main{padding:28px 16px 48px}.action-row,.pricing,.footer-grid{grid-template-columns:1fr}.hero-actions{flex-direction:column}.btn{justify-content:center}.card-body{padding:20px}.bank-table th,.bank-table td{display:block;width:100%}.bank-table th{border-bottom:0}.footer-grid{grid-template-columns:1fr}.footer-brand h3{font-size:20px}.nav-brand-text{font-size:12px}.membership-page .panel-title{font-size:clamp(15px,3.8vw,18px)!important}}
 
 </style>
-<link href="../css/daab-common.css?v=8" rel="stylesheet"/>
+<link href="../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
+<link href="../css/daab-common.css?v=18" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=3" rel="stylesheet"/>
 <style id="daab-responsive-nav-final">
 @media (max-width: 1180px) {
@@ -329,11 +330,15 @@ a{color:inherit}.shell{max-width:var(--max);margin:auto;padding:0 24px}.skip{pos
   }
 }
 </style>
-  <script src="../js/daab-nav.js?v=5" defer></script>
   <script src="../js/daab-mobile.js?v=1" defer></script>
-<link href="../css/daab-lang.css?v=1" rel="stylesheet"/>
-<script src="../js/daab-i18n.js?v=1" defer></script>
-<script src="../js/daab-shell.js?v=1" defer></script>
+<link href="../css/daab-lang.css?v=6" rel="stylesheet"/>
+<link href="../css/daab-nav-mega.css?v=11" rel="stylesheet"/>
+<script src="../js/daab-i18n.js?v=9" defer></script>
+<script src="../js/daab-nav.js?v=7" defer></script>
+<script src="../js/daab-primary-nav.js?v=8" defer></script>
+<script src="../js/daab-breadcrumbs.js?v=4" defer></script>
+<script src="../js/daab-section-nav.js?v=4" defer></script>
+<script src="../js/daab-shell.js?v=6" defer></script>
 </head>
 <body class="membership-page"><div aria-label="Search" aria-modal="true" id="search-overlay" role="dialog">
 <div class="search-modal">
@@ -346,37 +351,23 @@ a{color:inherit}.shell{max-width:var(--max);margin:auto;padding:0 24px}.skip{pos
 <nav aria-label="Main navigation" class="nav-strip">
 <div class="nav-inner">
 <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button>
-<div class="page-logo"><a aria-label="DAAB home" href="index.html">
-<img src="../images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"></a></div>
-<a aria-label="DAAB home" class="nav-brand" href="index.html">
+<div class="page-logo"><a aria-label="WAAS home" href="index.html">
+<img src="../images/daab-logo.svg" class="nav-brand-logo" alt="WAAS Logo"></a></div>
+<a aria-label="WAAS home" class="nav-brand" href="index.html">
 <span class="nav-brand-text">World Association of<br class="mobile-hidden-break">Azerbaijani Scientists</span></a>
-<div class="nav-menu" id="primaryNavMenu"><div class="nav-divider"></div>
-<a class="nav-link" data-nav-id="home" href="index.html">🏠 Home</a>
-<a class="nav-link" data-nav-id="foundation" href="foundation.html">🏛️ Foundation</a>
-<a class="nav-link" data-nav-id="mission" href="mission.html">💎 Mission</a>
-<a class="nav-link" data-nav-id="activities" href="activities.html">📰 Activities</a>
-<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">🌐 Scientists <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu">
-<a class="nav-dropdown-link" data-nav-id="scientists-list" role="menuitem" href="scientists/list.html">📋 Directory</a>
-<a class="nav-dropdown-link" data-nav-id="scientists-profiles" role="menuitem" href="scientists/profiles.html">👤 Profiles</a>
-</div></div>
-<a class="nav-link" data-nav-id="executive-board" href="executive-board.html">🎓 Executive Board</a>
-<a class="nav-link" data-nav-id="charter" href="charter.html">📜 Charter</a>
-<a class="nav-link active" data-nav-id="membership" href="membership.html" aria-current="page">✒️ Membership</a>
-</div></div></nav>
+<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div><a class="nav-link" href="index.html" data-nav-id="home">Home</a><a class="nav-link" href="activities.html" data-nav-id="activities">Activities</a><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Scientists <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="scientists/list.html" data-nav-id="scientists-list"><span class="nav-dropdown-link-title">Directory</span><span class="nav-dropdown-link-desc">Directory of all scientists</span></a><a class="nav-dropdown-link" role="menuitem" href="scientists/profiles.html" data-nav-id="scientists-profiles"><span class="nav-dropdown-link-title">Profiles</span><span class="nav-dropdown-link-desc">Academic profiles of scientists</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">About <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="foundation.html" data-nav-id="foundation"><span class="nav-dropdown-link-title">Foundation</span><span class="nav-dropdown-link-desc">History and founding process</span></a><a class="nav-dropdown-link" role="menuitem" href="mission.html" data-nav-id="mission"><span class="nav-dropdown-link-title">Mission &amp; values</span><span class="nav-dropdown-link-desc">Mission, vision and academic values</span></a><a class="nav-dropdown-link" role="menuitem" href="executive-board.html" data-nav-id="executive-board"><span class="nav-dropdown-link-title">Executive board</span><span class="nav-dropdown-link-desc">Leadership and governance structure</span></a><a class="nav-dropdown-link" role="menuitem" href="charter.html" data-nav-id="charter"><span class="nav-dropdown-link-title">Charter</span><span class="nav-dropdown-link-desc">Charter and governance rules</span></a></div></div><a class="nav-link" href="membership.html" data-nav-id="membership">Membership</a></div></div></nav>
 <header class="hero">
 <div class="hero-wrap shell">
 <section>
 <h1>Membership <span>Terms</span></h1>
-<p class="hero-text">Application rules, membership fees and payment details for joining the World Association of Azerbaijani Scientists.</p>
 <div class="hero-actions">
-<a class="btn btn-primary" href="https://forms.gle/ne5NeW1L9X6p2rN2A" rel="noopener" target="_blank">Join DAAB</a>
-<a class="btn btn-secondary" href="https://forms.gle/ne5NeW1L9X6p2rN2A" rel="noopener" target="_blank">Join WAAS</a>
+<a class="btn btn-primary" href="https://forms.gle/ne5NeW1L9X6p2rN2A" rel="noopener" target="_blank">Join WAAS</a>
 </div>
 </section>
 <aside aria-label="Membership summary" class="hero-panel">
 <div class="panel-card">
 <h2 class="panel-title">Join the scientific network</h2>
-<p class="panel-copy">DAAB membership expands opportunities for scientific cooperation, mentoring, international academic connections and contribution to Azerbaijan's scientific development.</p>
+<p class="panel-copy">WAAS membership expands opportunities for scientific cooperation, mentoring, international academic connections and contribution to Azerbaijan's scientific development. Here you will find membership-related application rules, membership fees and payment information.</p>
 </div>
 <div class="stats">
 <div class="stat"><strong>5 USD</strong><span>Monthly membership</span></div>
@@ -418,9 +409,9 @@ a{color:inherit}.shell{max-width:var(--max);margin:auto;padding:0 24px}.skip{pos
     <div class="footer-grid">
       <div class="footer-col">
         <h4 class="footer-title">Contact</h4>
-        <div class="footer-item">✉ <a href="mailto:daad.waas2024@gmail.com">daad.waas2024@gmail.com</a></div>
+        <div class="footer-item">✉ <a href="mailto:bilik.birlik@gmail.com">bilik.birlik@gmail.com</a></div>
         <div class="footer-item">☎ <span>+90 555 147 46 74</span></div>
-        <div class="footer-item">🌐 <a href="https://daab-waas.org" rel="noopener noreferrer" target="_blank">daab-waas.org</a></div>
+        <div class="footer-item">🌐 <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div>
       </div>
       <div class="footer-col">
         <h4 class="footer-title">Address</h4>
@@ -429,11 +420,11 @@ a{color:inherit}.shell{max-width:var(--max);margin:auto;padding:0 24px}.skip{pos
       <div class="footer-col">
         <h4 class="footer-title">Leadership</h4>
         <p class="footer-leader"><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>
-        Chair of the DAAB Executive Board<br/>Germany — James D. Murray Distinguished Professor</p>
+        Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p>
       </div>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 DAAB / WAAS — All Rights Reserved</div>
+  <div class="footer-bottom">© 2026 WAAS — All Rights Reserved</div>
 </footer>
 <script src="../js/daab-search.js?v=1" defer></script></body>
 </html>

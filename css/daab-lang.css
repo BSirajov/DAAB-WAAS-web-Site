@@ -1,48 +1,95 @@
 /* Language switcher + gateway (bilingual environment) */
 
+/* Flag-icon language switcher (text labels are kept sr-only for a11y) */
 .daab-lang-switch {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 6px;
+  flex: 0 0 auto;
   flex-shrink: 0;
-  margin-left: auto;
+  margin-left: 10px;
   padding: 4px;
-  background: rgba(255, 255, 255, .12);
-  border: 1px solid rgba(255, 255, 255, .28);
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .22);
   border-radius: 999px;
+  position: relative;
+  z-index: 10003;
 }
 
-.daab-lang-switch a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 36px;
-  min-height: 32px;
-  padding: 4px 10px;
-  color: rgba(255, 255, 255, .92);
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: .06em;
-  text-decoration: none;
-  transition: background .2s ease, color .2s ease;
+.daab-lang-switch a,
+.daab-lang-switch .daab-lang-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  box-sizing: border-box !important;
+  width: 36px !important;
+  height: 28px !important;
+  min-width: 36px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
 
-.daab-lang-switch a:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, .16);
+.daab-lang-flag {
+  display: block;
+  width: 26px;
+  height: 16px;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .25);
+  opacity: .55;
+  filter: grayscale(35%);
+  transition: opacity .18s ease, filter .18s ease, transform .18s ease;
+}
+
+.daab-lang-code {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.daab-lang-switch a:hover .daab-lang-flag,
+.daab-lang-switch a:focus-visible .daab-lang-flag {
+  opacity: 1;
+  filter: none;
+  transform: scale(1.04);
+}
+
+.daab-lang-switch a:hover,
+.daab-lang-switch a:focus-visible {
+  background: rgba(255, 255, 255, .14) !important;
+}
+
+.daab-lang-switch a:focus-visible {
+  outline: 2px solid rgba(255, 240, 191, .95);
+  outline-offset: 2px;
 }
 
 .daab-lang-switch a[aria-current="true"] {
-  color: var(--blue-700, #005a9a);
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 45, 82, .18);
+  background: rgba(255, 255, 255, .22) !important;
+  border-color: rgba(255, 255, 255, .45) !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .15) inset !important;
 }
 
+.daab-lang-switch a[aria-current="true"] .daab-lang-flag {
+  opacity: 1;
+  filter: none;
+}
+
+/* Legacy separator hidden — flags no longer need a divider */
 .daab-lang-sep {
-  width: 1px;
-  height: 18px;
-  background: rgba(255, 255, 255, .35);
+  display: none;
 }
 
 .daab-gateway-page {
@@ -175,12 +222,32 @@
   border-color: var(--blue-700, #005a9a);
 }
 
+/* Compact header: language switcher lives inside .page-logo (see daab-shell.js) */
 @media (max-width: 1180px) {
-  .nav-inner .daab-lang-switch {
+  .page-logo .daab-lang-switch {
     margin-left: 0;
-    order: 10;
-    width: 100%;
-    justify-content: center;
-    margin-top: 8px;
+    margin-top: clamp(6px, 1.5vw, 10px);
+    padding: 3px;
+    flex-shrink: 0;
+    overflow: visible;
+  }
+
+  .page-logo .daab-lang-switch a {
+    width: 32px !important;
+    min-width: 32px !important;
+    height: 24px !important;
+  }
+
+  .page-logo .daab-lang-switch .daab-lang-flag {
+    width: 22px;
+    height: 13px;
+  }
+}
+
+/* Desktop: switcher sits after the menu (see daab-shell.js) */
+@media (min-width: 1181px) {
+  .nav-inner > .daab-lang-switch {
+    flex-shrink: 0;
+    margin-left: 10px;
   }
 }

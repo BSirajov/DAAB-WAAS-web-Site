@@ -1,7 +1,7 @@
 """English replacements for en/activities.html."""
 
 ACTIVITIES_REPLACEMENTS: list[tuple[str, str]] = [
-    ("<title>DAAB — Fəaliyyətimiz</title>", "<title>DAAB — Activities</title>"),
+    ("<title>DAAB — Fəaliyyətimiz</title>", "<title>WAAS — Activities</title>"),
     (
         'content="Dünya Azərbaycanlı Alimlər Birliyinin fəaliyyətləri, tədbirləri, görüşləri və təşəbbüsləri."',
         'content="Activities, events, meetings and initiatives of the World Association of Azerbaijani Scientists."',
@@ -9,9 +9,10 @@ ACTIVITIES_REPLACEMENTS: list[tuple[str, str]] = [
     ("Məzmuna keç", "Skip to content"),
     ("Fəaliyyətimiz", "Our activities"),
     ('aria-label="Fəaliyyət səhifəsi haqqında qısa məlumat"', 'aria-label="Activities page summary"'),
+    ("Fəaliyyətimizin mənzərəsi", "Highlights of Our Activities"),
     (
-        "Dünya Azərbaycanlı Alimlər Birliyinin elmi, akademik və mədəni tədbirlərinin xronikası",
-        "A chronicle of the scientific, academic and cultural events of the World Association of Azerbaijani Scientists",
+        "Bu səhifədə Dünya Azərbaycanlı Alimlər Birliyinin elmi və ictimai fəaliyyəti, əməkdaşlıq təşəbbüsləri, beynəlxalq görüşlər və alimlərimizin iştirakı ilə keçirilən tədbirlər təqdim olunur. Məzmun xronoloji ardıcıllıqla davamlı olaraq yenilənir.",
+        "This page presents the scientific and public activities of the World Association of Azerbaijani Scientists, including cooperation initiatives, international meetings, and events held with the participation of our scientists. The content is continuously updated in chronological order.",
     ),
     ("📅 Tədbirlər", "📅 Events"),
     ('aria-label="Tədbirlər menyusunu aç"', 'aria-label="Open events menu"'),
@@ -35,7 +36,7 @@ ACTIVITIES_REPLACEMENTS: list[tuple[str, str]] = [
     ("Akademik Telman Əliyevin 90 illik yubileyi", "90th anniversary of Academician Telman Aliyev"),
     ('MAA "Fevral məruzələri 2025" konfransı', 'MAA "February Lectures 2025" conference'),
     ("Qahirə Beynəlxalq Kitab Sərgisi görüşü", "Cairo International Book Fair meeting"),
-    ("85 ölkə — Diaspora videokonfransı, 3 DAAB üzvü medalı", "85 countries — diaspora videoconference, 3 DAAB members awarded"),
+    ("85 ölkə — Diaspora videokonfransı, 3 DAAB üzvü medalı", "85 countries — diaspora videoconference, 3 WAAS members awarded"),
     ("QOBUSTAN — Nobel Komitəsinə Müraciət", "GOBUSTAN — appeal to the Nobel Committee"),
     ("AZPOLİTİKA — UNEC ilə DAAB yeni təşəbbüs", "AZPOLITIKA — new initiative with UNEC"),
     ("Diaspora Komitəsi — СИЛА В ЕДИНСТВЕ videolar", "Diaspora Committee — STRENGTH IN UNITY videos"),
@@ -57,8 +58,7 @@ ACTIVITIES_REPLACEMENTS: list[tuple[str, str]] = [
     ("BDU.edu.az — Tam xəbər", "BDU.edu.az — Full article"),
     ("525.az — Tam xəbər", "525.az — Full article"),
     ("AZƏRTAC — Tam xəbər (video)", "AZERTAC — Full article (video)"),
-    ("Diasporla İş üzrə Dövlət Komitəsi - 2024-cü ilin yekunları",
-     "State Committee on Diaspora Affairs — 2024 year in review"),
+    ("Diasporla İş üzrə Dövlət Komitəsi - 2024-cü ilin yekunları", "State Committee on Diaspora Affairs — 2024 year in review"),
     ("Axtarış", "Search"),
     ("Axtarış üçün yazmağa başlayın…", "Start typing to search…"),
     ("Axtarmaq üçün yuxarıdakı xanaya mətn daxil edin", "Enter text in the box above to search"),
@@ -72,27 +72,27 @@ ACTIVITIES_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "Azərbaycan Tibb Universiteti ilə Dünya Azərbaycanlı Alimlər Birliyi əməkdaşlığa başlayır",
-        "Azerbaijan Medical University and DAAB begin cooperation",
+        "Azerbaijan Medical University and WAAS begin cooperation",
     ),
     (
         "Qarabağ Universiteti ilə Dünya Azərbaycanlı Alimlər Birliyi arasında əməkdaşlıq genişlənir",
-        "Cooperation between Karabakh University and DAAB expands",
+        "Cooperation between Karabakh University and WAAS expands",
     ),
     (
         "DAAB və Bakı Mühəndislik Universiteti arasında onlayn görüş keçirilib",
-        "Online meeting held between DAAB and Baku Engineering University",
+        "Online meeting held between WAAS and Baku Engineering University",
     ),
     (
         "DAAB İH-nin həmsədri Bəxtiyar Siracov Bakının 187 saylı məktəbinin müəllim və şagirdləri ilə onlayn görüşdə iştirak etmişdir",
-        "DAAB Co-Chair Bakhtiyar Sirajov joins online meeting with teachers and pupils of Baku School No. 187",
+        "WAAS Co-Chair Bakhtiyar Sirajov joins online meeting with teachers and pupils of Baku School No. 187",
     ),
     (
         'DAAB İdarə Heyətinin sədri Prof. Məsud Əfəndiyev Milli Aviasiya Akademiyasında "Fevral Məruzələri" konfransının açılışında çıxış edib',
-        'DAAB Chair Prof. Messoud Efendiyev speaks at opening of "February Lectures" conference at National Aviation Academy',
+        'WAAS Chair Prof. Messoud Efendiyev speaks at opening of "February Lectures" conference at National Aviation Academy',
     ),
     (
         "DAAB-ın bir neçə üzvü Azərbaycan Prezidenti cənab İlham Əliyev tərəfindən təltif olunub",
-        "Several DAAB members honoured by President of Azerbaijan Ilham Aliyev",
+        "Several WAAS members honoured by President of Azerbaijan Ilham Aliyev",
     ),
     (
         "Humboldt mükafatı laureatı professor Məsud Əfəndiyev AzMİU-nun 50 illik yubiley tədbirində iştirak edib, AzMİU-nun gənc alimləri ilə görüşüb",
@@ -100,11 +100,11 @@ ACTIVITIES_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "DAAB-ın həmsədri Seymur Nəsirov Misirdə beynəlxalq konfransda elmi töhfələrinə görə təltif olunub",
-        "DAAB Co-Chair Seymur Nasirov honoured in Egypt for scientific contributions",
+        "WAAS Co-Chair Seymur Nasirov honoured in Egypt for scientific contributions",
     ),
     (
         "AMEA ilə DAAB arasında anlaşma memorandumu imzalanıb",
-        "Memorandum of understanding signed between ANAS and DAAB",
+        "Memorandum of understanding signed between ANAS and WAAS",
     ),
     (
         'Professor Məsud Əfəndiyev: "AMEA bütün dövrlərdə öz prinsiplərinə sadiq qalıb"',
@@ -132,15 +132,15 @@ ACTIVITIES_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         'DAAB və Qarabağ Universiteti arasında əməkdaşlıq çərçivəsində "ALİ MƏKTƏB PEDAQOQİKASI" kursu tədris edilib',
-        'DAAB and Karabakh University deliver "PRIMARY SCHOOL PEDAGOGY" course under cooperation framework',
+        'WAAS and Karabakh University deliver "PRIMARY SCHOOL PEDAGOGY" course under cooperation framework',
     ),
     (
         "Akademik Telman Əliyevin 90 illik yubileyi münasibətilə DAAB-ın İdarə Heyəti təbrik məktubu ünvanlamışdır",
-        "DAAB Executive Board sends congratulatory letter on 90th anniversary of Academician Telman Aliyev",
+        "WAAS Executive Board sends congratulatory letter on 90th anniversary of Academician Telman Aliyev",
     ),
     (
         'Milli Aviasiya Akademiyasında "Fevral məruzələri 2025" beynəlxalq konfransında DAAB İdarə Heyətinin sədri Professor Məsud Əfəndiyev birliyin fəaliyyəti barədə məruzə ilə çıxış etmişdir',
-        'DAAB Chair Professor Messoud Efendiyev presents on Association activities at MAA "February Lectures 2025" conference',
+        'WAAS Chair Professor Messoud Efendiyev presents on Association activities at MAA "February Lectures 2025" conference',
     ),
     (
         "Qahirə Beynəlxalq Kitab Sərgisi çərçivəsində Misir-Azərbaycan Dostluq Cəmiyyətinin sədri azərbaycanlı alim Seymur Nəsirovla görüş keçirilib",
@@ -148,7 +148,7 @@ ACTIVITIES_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         '85 ölkədən 1000-ə yaxın soydaşımızın iştirakı ilə videokonfrans keçirilib — DAAB üzvləri "Diaspor fəaliyyətində xidmətə görə" medalı ilə təltif olunub',
-        'Videoconference with nearly 1,000 compatriots from 85 countries — DAAB members awarded "For service in diaspora activity" medal',
+        'Videoconference with nearly 1,000 compatriots from 85 countries — WAAS members awarded "For service in diaspora activity" medal',
     ),
     (
         "QOBUSTAN — İsveçdə Azərbaycan Aydınlar Ocağı M.Qorbaçovun Nobel sülh mükafatından məhrum edilməsi tələbi ilə Norveç Nobel Komitəsinə Müraciət",
@@ -156,7 +156,7 @@ ACTIVITIES_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "AZPOLİTİKA.İNFO — UNEC ilə Dünya Azərbaycanlı Alimlər Birliyi yeni təşəbbüsə imza atdı",
-        "AZPOLITIKA.INFO — UNEC and DAAB sign new initiative",
+        "AZPOLITIKA.INFO — UNEC and WAAS sign new initiative",
     ),
     (
         "Diasporla İş üzrə Dövlət Komitəsi — СИЛА В ЕДИНСТВЕ (VİDEO MÜSAHİBƏLƏR)",
@@ -174,7 +174,7 @@ ACTIVITIES_REPLACEMENTS: list[tuple[str, str]] = [
     ("Əlaqə", "Contact"),
     ("Ünvan", "Address"),
     ("Rəhbərlik", "Leadership"),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the DAAB Executive Board"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
     # Image alt texts (common patterns)
     ("Ankara Universiteti görüşü", "Ankara University meeting"),
     ("AzMİU şəkli", "AzMIU photo"),
@@ -185,15 +185,15 @@ ACTIVITIES_REPLACEMENTS: list[tuple[str, str]] = [
     ("Seymur Nəsirov tədbir şəkli", "Seymur Nasirov event photo"),
     ("Misir Prezidenti orden mərasimi", "Egyptian President award ceremony"),
     ("MAA Konfrans şəkli", "MAA conference photo"),
-    ("DAAB İdarə Heyətinin həmsədri", "DAAB Executive Board Co-Chair"),
-    ("DAAB İdarə Heyətinin sədri", "DAAB Executive Board Chair"),
-    ("DAAB İdarə Heyətinin üzvü", "DAAB Executive Board member"),
-    ("DAAB İdarə Heyətinin üzvləri", "DAAB Executive Board members"),
+    ("DAAB İdarə Heyətinin həmsədri", "WAAS Executive Board Co-Chair"),
+    ("DAAB İdarə Heyətinin sədri", "WAAS Executive Board Chair"),
+    ("DAAB İdarə Heyətinin üzvü", "WAAS Executive Board member"),
+    ("DAAB İdarə Heyətinin üzvləri", "WAAS Executive Board members"),
     ("İdarə Heyətinin həmsədri", "Executive Board Co-Chair"),
     ("İdarə Heyətinin sədri", "Executive Board Chair"),
     ("İdarə Heyətinin üzvü", "Executive Board member"),
     ("İdarə Heyətinin üzvləri", "Executive Board members"),
-    ("DAAB İH", "DAAB EB"),
+    ("DAAB İH", "WAAS EB"),
     ("Axtarış üçün yazmağa başlayın…", "Start typing to search…"),
     ("cənab İlham Əliyev", "President Ilham Aliyev"),
     ("Bakı Mühəndislik Universiteti", "Baku Engineering University"),
@@ -203,3 +203,10 @@ ACTIVITIES_REPLACEMENTS: list[tuple[str, str]] = [
     ("Fevral Məruzələri", "February Lectures"),
     ("Fevral məruzələri", "February Lectures"),
 ]
+
+try:
+    from _complete_activities_en_translations import ACTIVITIES_BODY_REPLACEMENTS
+except ImportError:
+    from helpers._complete_activities_en_translations import ACTIVITIES_BODY_REPLACEMENTS  # type: ignore
+
+ACTIVITIES_REPLACEMENTS = ACTIVITIES_REPLACEMENTS + ACTIVITIES_BODY_REPLACEMENTS

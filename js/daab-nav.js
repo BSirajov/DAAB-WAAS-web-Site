@@ -24,10 +24,15 @@
       document.body.classList.toggle("daab-scroll-lock", on);
     }
 
+    function menuLabel(which) {
+      var key = which === "close" ? "data-label-close" : "data-label-open";
+      return menuToggle.getAttribute(key) || (which === "close" ? "Menyunu bağla" : "Menyunu aç");
+    }
+
     function closeMobileMenu() {
       navMenu.classList.remove("open");
       menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Menyunu aç");
+      menuToggle.setAttribute("aria-label", menuLabel("open"));
       closeAllDropdowns();
       var searchOpen = document.getElementById("search-overlay")?.classList.contains("open");
       setBodyScrollLock(!!searchOpen);
@@ -37,7 +42,7 @@
       event.stopPropagation();
       var open = navMenu.classList.toggle("open");
       menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
-      menuToggle.setAttribute("aria-label", open ? "Menyunu bağla" : "Menyunu aç");
+      menuToggle.setAttribute("aria-label", open ? menuLabel("close") : menuLabel("open"));
       if (!open) {
         closeAllDropdowns();
       } else {
@@ -92,6 +97,8 @@
     return href.endsWith("/" + page) || href.endsWith(page);
   }
 
+  var dropdownToggleAttached = new WeakSet();
+
   function initNavDropdowns() {
     var page = location.pathname.split("/").pop() || "index.html";
     var navKey = currentNavKey();
@@ -99,7 +106,7 @@
 
     dropdowns.forEach(function (dropdown) {
       var toggle = dropdown.querySelector(".nav-dropdown-toggle");
-      var links = dropdown.querySelectorAll(".nav-dropdown-link");
+      var links = dropdown.querySelectorAll(".nav-dropdown-link, .nav-mega-link");
       if (!toggle) return;
 
       links.forEach(function (link) {
@@ -112,22 +119,80 @@
         }
       });
 
-      /* Desktop hover opens panel; mobile & touch devices use tap */
-      toggle.addEventListener("click", function (event) {
-        if (!needsTapDropdown()) return;
-        event.preventDefault();
-        event.stopPropagation();
-        var willOpen = !dropdown.classList.contains("open");
-        document.querySelectorAll("[data-nav-dropdown].open").forEach(function (other) {
-          if (other === dropdown) return;
-          other.classList.remove("open");
-          var otherToggle = other.querySelector(".nav-dropdown-toggle");
-          if (otherToggle) otherToggle.setAttribute("aria-expanded", "false");
+      if (!dropdownToggleAttached.has(toggle)) {
+        dropdownToggleAttached.add(toggle);
+        /* Desktop hover opens panel; mobile & touch devices use tap */
+        toggle.addEventListener("click", function (event) {
+          if (!needsTapDropdown()) return;
+          event.preventDefault();
+          event.stopPropagation();
+          var willOpen = !dropdown.classList.contains("open");
+          document.querySelectorAll("[data-nav-dropdown].open").forEach(function (other) {
+            if (other === dropdown) return;
+            other.classList.remove("open");
+            var otherToggle = other.querySelector(".nav-dropdown-toggle");
+            if (otherToggle) otherToggle.setAttribute("aria-expanded", "false");
+          });
+          dropdown.classList.toggle("open", willOpen);
+          toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
         });
-        dropdown.classList.toggle("open", willOpen);
-        toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      }
+    });
+
+    document.querySelectorAll(".nav-menu > a.nav-link[data-nav-id]").forEach(function (link) {
+      var id = link.getAttribute("data-nav-id");
+      if ((id && id === navKey) || hrefMatchesNav(link.getAttribute("href"), page)) {
+        link.classList.add("active");
+        link.setAttribute("aria-current", "page");
+      }
+    });
+  }
+
+  var documentListenersAttached = false;
+  var mobileInitialized = false;
+  var menuLinkHandlerAttached = new WeakSet();
+
+  function init() {
+    if (!mobileInitialized) {
+      mobileInitialized = initMobileNavOnce();
+    } else {
+      attachLinkCloseHandlers();
+    }
+    initNavDropdowns();
+    attachGlobalDropdownHandlers();
+  }
+
+  function initMobileNavOnce() {
+    var menuToggle = document.querySelector(".mobile-menu-toggle");
+    var navMenu = document.getElementById("primaryNavMenu");
+    if (!menuToggle || !navMenu) return false;
+    initMobileNav();
+    return true;
+  }
+
+  function attachLinkCloseHandlers() {
+    var navMenu = document.getElementById("primaryNavMenu");
+    var menuToggle = document.querySelector(".mobile-menu-toggle");
+    if (!navMenu || !menuToggle) return;
+    navMenu.querySelectorAll("a").forEach(function (link) {
+      if (menuLinkHandlerAttached.has(link)) return;
+      menuLinkHandlerAttached.add(link);
+      link.addEventListener("click", function () {
+        navMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        document.querySelectorAll("[data-nav-dropdown].open").forEach(function (d) {
+          d.classList.remove("open");
+          var btn = d.querySelector(".nav-dropdown-toggle");
+          if (btn) btn.setAttribute("aria-expanded", "false");
+        });
+        document.body.classList.remove("daab-scroll-lock");
       });
     });
+  }
+
+  function attachGlobalDropdownHandlers() {
+    if (documentListenersAttached) return;
+    documentListenersAttached = true;
 
     document.addEventListener("click", function (event) {
       if (!needsTapDropdown()) return;
@@ -148,24 +213,20 @@
         if (btn) btn.setAttribute("aria-expanded", "false");
       });
     });
-
-    document.querySelectorAll(".nav-menu > a.nav-link[data-nav-id]").forEach(function (link) {
-      var id = link.getAttribute("data-nav-id");
-      if ((id && id === navKey) || hrefMatchesNav(link.getAttribute("href"), page)) {
-        link.classList.add("active");
-        link.setAttribute("aria-current", "page");
-      }
-    });
   }
 
-  function init() {
-    initMobileNav();
-    initNavDropdowns();
+  window.DAAB_NAV = { init: init };
+
+  function maybeAutoInit() {
+    if (document.documentElement.getAttribute("data-daab-nav-mount") === "1") {
+      return;
+    }
+    init();
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", maybeAutoInit);
   } else {
-    init();
+    maybeAutoInit();
   }
 })();

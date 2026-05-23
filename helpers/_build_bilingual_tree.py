@@ -18,8 +18,13 @@ from _paths import ROOT
 ROUTES_PATH = ROOT / "i18n" / "routes.json"
 I18N_HEAD = """
 <link href="{prefix}css/daab-lang.css?v=1" rel="stylesheet"/>
-<script src="{prefix}js/daab-i18n.js?v=1" defer></script>
-<script src="{prefix}js/daab-shell.js?v=1" defer></script>
+<link href="{prefix}css/daab-nav-mega.css?v=1" rel="stylesheet"/>
+<script src="{prefix}js/daab-i18n.js?v=3" defer></script>
+<script src="{prefix}js/daab-nav.js?v=6" defer></script>
+<script src="{prefix}js/daab-primary-nav.js?v=2" defer></script>
+<script src="{prefix}js/daab-breadcrumbs.js?v=1" defer></script>
+<script src="{prefix}js/daab-section-nav.js?v=1" defer></script>
+<script src="{prefix}js/daab-shell.js?v=2" defer></script>
 """
 
 LEGACY_LINK_MAP = {
@@ -50,12 +55,9 @@ INLINE_LIST_DATA_RE = re.compile(
 
 EN_COMPLETE_MARKER = "<!-- daab-en-complete -->"
 
-LOCALE_HINT = (
-    '<div id="daab-locale-hint" class="daab-locale-hint" role="note">'
-    '<span class="daab-locale-hint-label">Rəsmi sayt:</span> '
-    '<a data-locale-az href="az/index.html">AZ</a> '
-    '<a data-locale-en href="en/index.html">EN</a>'
-    "</div>"
+LOCALE_HINT_RE = re.compile(
+    r'<div id="daab-locale-hint"[^>]*>.*?</div>\s*',
+    re.DOTALL | re.IGNORECASE,
 )
 
 GATEWAY_INDEX = """<!DOCTYPE html>
@@ -230,7 +232,7 @@ def inject_i18n_head(html: str, depth: int, page_id: str, lang: str) -> str:
     html = re.sub(r'\s*data-daab-page-id="[^"]*"', "", html)
     html = re.sub(
         r"<html([^>]*)>",
-        f'<html\\1 lang="{lang}" data-daab-lang="{lang}" data-daab-asset-root="{prefix}" data-daab-page-id="{page_id}">',
+        f'<html\\1 lang="{lang}" data-daab-lang="{lang}" data-daab-asset-root="{prefix}" data-daab-page-id="{page_id}" data-daab-nav-mount="1">',
         html,
         count=1,
         flags=re.I,
@@ -285,10 +287,8 @@ def bump_nav_script(html: str) -> str:
     return html.replace("daab-nav.js?v=4", "daab-nav.js?v=5")
 
 
-def inject_locale_hint(html: str) -> str:
-    if 'id="daab-locale-hint"' in html:
-        return html
-    return html.replace("</nav>", "</nav>\n" + LOCALE_HINT, 1)
+def strip_locale_hint(html: str) -> str:
+    return LOCALE_HINT_RE.sub("", html)
 
 
 def add_nav_data_attrs(html: str) -> str:
@@ -342,6 +342,7 @@ def build_az_page(legacy_name: str, dest: Path, page_id: str) -> None:
     html = replace_inline_search(html, depth)
     html = externalize_scientists_list_data(html, depth)
     html = bump_nav_script(html)
+    html = strip_locale_hint(html)
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(html, encoding="utf-8", newline="\n")
     print(f"  az: {dest.relative_to(ROOT)}")
@@ -427,9 +428,19 @@ def build_en_stub(page: dict) -> None:
 
 def build_en_home() -> None:
     dest = ROOT / "en" / "index.html"
-    if en_page_is_complete(dest):
-        print(f"  en: {dest.relative_to(ROOT)} (published — skipped)")
-        return
+    az_home = ROOT / "az" / "index.html"
+    if dest.is_file() and en_page_is_complete(dest):
+        if "hero-panel" in dest.read_text(encoding="utf-8"):
+            print(f"  en: {dest.relative_to(ROOT)} (published home — skipped)")
+            return
+    if az_home.is_file():
+        try:
+            from _publish_en_pages import publish_home
+
+            publish_home()
+            return
+        except Exception as exc:
+            print(f"  en: home publish failed ({exc}), using stub")
     cards = [
         ("mission.html", "💎", "Mission, Vision & Values", "Available in English — mission, vision and academic values."),
         ("activities.html", "📰", "Activities", "Events, conferences, and institutional initiatives."),
@@ -438,7 +449,7 @@ def build_en_home() -> None:
         ("scientists/profiles.html", "👤", "Academic profiles", "Detailed scholar profiles and CV links."),
         ("executive-board.html", "🎓", "Executive Board", "Leadership and governance."),
         ("charter.html", "📜", "Charter", "Statutes and governing documents."),
-        ("membership.html", "✒️", "Membership", "How to join DAAB."),
+        ("membership.html", "✒️", "Membership", "How to join WAAS."),
     ]
     card_html = []
     for href, icon, title, desc in cards:
@@ -458,7 +469,7 @@ def build_en_home() -> None:
 {EN_COMPLETE_MARKER}
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<title>DAAB — World Association of Azerbaijani Scientists</title>
+<title>WAAS — World Association of Azerbaijani Scientists</title>
 <meta name="description" content="International scientific network of Azerbaijani scholars worldwide."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
@@ -489,7 +500,7 @@ def build_en_home() -> None:
 </div></div></nav>
 <header class="hero"><div class="hero-wrap shell">
 <h1>World Association of <span style="color:var(--blue-700)">Azerbaijani Scientists</span></h1>
-<p style="color:#345d76;max-width:52ch;">DAAB connects Azerbaijani scholars abroad with universities, research centres, and international partners.</p>
+<p style="color:#345d76;max-width:52ch;">WAAS connects Azerbaijani scholars abroad with universities, research centres, and international partners.</p>
 <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:16px;">
 <a class="btn btn-primary" href="scientists/list.html">Meet our scientists</a>
 <a class="btn btn-secondary" href="membership.html">Membership</a>
@@ -498,7 +509,7 @@ def build_en_home() -> None:
 <main class="main shell" id="content" style="padding-bottom:60px;">
 <section class="cards-grid">{''.join(card_html)}</section>
 </main>
-<footer class="footer-pro"><div class="footer-bottom">© 2026 DAAB / WAAS — All Rights Reserved</div></footer>
+<footer class="footer-pro"><div class="footer-bottom">© 2026 WAAS — All Rights Reserved</div></footer>
 </body>
 </html>"""
     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -519,8 +530,7 @@ def patch_legacy(pages: list) -> None:
         html = add_nav_data_attrs(html)
         html = replace_inline_search(html, 0)
         html = bump_nav_script(html)
-        if legacy != "index.html":
-            html = inject_locale_hint(html)
+        html = strip_locale_hint(html)
         path.write_text(html, encoding="utf-8", newline="\n")
         print(f"  legacy patch: {legacy}")
 
@@ -530,7 +540,7 @@ def write_gateway_index() -> None:
     print("  gateway: index.html -> az/index.html")
 
 
-SITE_ORIGIN = "https://daab-waas.org"
+SITE_ORIGIN = "https://daab-waas.com"
 
 
 def write_sitemap(routes: dict) -> None:

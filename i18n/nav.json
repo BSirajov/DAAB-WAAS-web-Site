@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "primary": [
+    { "type": "page", "id": "home" },
+    { "type": "page", "id": "activities" },
+    {
+      "type": "group",
+      "id": "scientists",
+      "style": "dropdown",
+      "labelKey": "scientists",
+      "landingId": "scientists-list",
+      "children": [
+        { "id": "scientists-list", "descKey": "scientistsListDesc" },
+        { "id": "scientists-profiles", "descKey": "scientistsProfilesDesc" }
+      ]
+    },
+    {
+      "type": "group",
+      "id": "about",
+      "style": "dropdown",
+      "labelKey": "about",
+      "landingId": "mission",
+      "children": [
+        { "id": "foundation", "descKey": "aboutFoundationDesc" },
+        { "id": "mission", "descKey": "aboutMissionDesc" },
+        { "id": "executive-board", "descKey": "aboutBoardDesc" },
+        { "id": "charter", "descKey": "aboutCharterDesc" }
+      ]
+    },
+    { "type": "page", "id": "membership" }
+  ],
+  "sections": {
+    "about": {
+      "landingId": "mission",
+      "pages": ["foundation", "mission", "executive-board", "charter"]
+    }
+  }
+}

@@ -71,6 +71,55 @@
   align-items: center;
 }
 
+.filter-icon-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 12px 0 10px;
+  color: var(--blue-700, #0069b4);
+  background: rgba(0, 105, 180, .08);
+  border: 1px solid rgba(0, 105, 180, .22);
+  border-radius: 999px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background .18s ease, border-color .18s ease, color .18s ease;
+}
+
+.filter-icon-label svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+}
+
+.filter-icon-label > span {
+  display: inline;
+}
+
+.filter-group:hover .filter-icon-label,
+.filter-group:focus-within .filter-icon-label {
+  color: #003e6b;
+  background: rgba(0, 105, 180, .14);
+  border-color: rgba(0, 105, 180, .35);
+}
+
+@media (max-width: 720px) {
+  .filter-icon-label {
+    padding: 0 10px;
+    font-size: 11px;
+    letter-spacing: .05em;
+  }
+
+  .filter-icon-label > span {
+    display: none;
+  }
+}
+
 .sel-wrap {
   position: relative;
   display: inline-flex;

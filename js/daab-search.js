@@ -78,14 +78,14 @@
     var u = urls(ctx);
     if (ctx === "en" || ctx === "en-scientists") {
       return [
-        { title: "Home", desc: "DAAB website main entry", icon: "🏠", tag: "Main", url: u.home, kw: ["home", "daab", "index"] },
+        { title: "Home", desc: "WAAS website main entry", icon: "🏠", tag: "Main", url: u.home, kw: ["home", "daab", "index"] },
         { title: "Mission, Vision & Values", desc: "Strategic direction and values", icon: "💎", tag: "About", url: u.mission, kw: ["mission", "vision", "values"] },
         { title: "Activities", desc: "Events and initiatives", icon: "📰", tag: "Activities", url: u.activities, kw: ["activities", "events", "conference"] },
         { title: "Foundation", desc: "Establishment of the association", icon: "🏛️", tag: "Foundation", url: u.foundation, kw: ["foundation", "founding", "istanbul"] },
         { title: "Scientists", desc: "Directory of Azerbaijani scientists", icon: "🌐", tag: "Catalogue", url: u.scientists, kw: ["scientists", "scholars", "directory"] },
         { title: "Executive Board", desc: "Leadership and governance", icon: "🎓", tag: "Governance", url: u.board, kw: ["board", "executive", "leadership"] },
         { title: "Charter", desc: "Governing documents", icon: "📜", tag: "Charter", url: u.charter, kw: ["charter", "statute", "rules"] },
-        { title: "Membership", desc: "How to join DAAB", icon: "✒️", tag: "Membership", url: u.membership, kw: ["membership", "application"] }
+        { title: "Membership", desc: "How to join WAAS", icon: "✒️", tag: "Membership", url: u.membership, kw: ["membership", "application"] }
       ];
     }
     return [

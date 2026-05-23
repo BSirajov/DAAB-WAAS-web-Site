@@ -4,7 +4,11 @@ SCIENTISTS_COMMON_REPLACEMENTS: list[tuple[str, str]] = [
     ("Məzmuna keç", "Skip to content"),
     (
         "<title>DAAB — Xaricdə Yaşayan Azərbaycanlı Alimlər</title>",
-        "<title>DAAB — Azerbaijani Scientists Abroad</title>",
+        "<title>WAAS — Azerbaijani Scientists Abroad</title>",
+    ),
+    (
+        'content="Xaricdə yaşayan Azərbaycanlı alimlərin DAAB siyahısı."',
+        'content="Directory of Azerbaijani scientists abroad — World Association of Azerbaijani Scientists."',
     ),
     (
         'content="Xaricdə yaşayan Azərbaycanlı alimlərin DAAB kataloqu."',
@@ -12,7 +16,7 @@ SCIENTISTS_COMMON_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "<title>DAAB — Xaricdə Yaşayan Azərbaycanlı Alimlər CV Kataloqu</title>",
-        "<title>DAAB — Academic Profiles Catalogue</title>",
+        "<title>WAAS — Academic Profiles Catalogue</title>",
     ),
     (
         'content="Xaricdə yaşayan Azərbaycanlı alimlərin DAAB CV kataloqu."',
@@ -20,6 +24,7 @@ SCIENTISTS_COMMON_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     ("Xaricdə Yaşayan<br><em>Azərbaycanlı Alimlər</em>", "Azerbaijani Scientists<br><em>Living Abroad</em>"),
     ("Xaricdə Yaşayan<br><em>Azərbaycanlı Alimlər</em>", "Azerbaijani Scientists<br><em>Living Abroad</em>"),
+    ('aria-label="Alimlər siyahısı haqqında qısa məlumat"', 'aria-label="Scientists directory summary"'),
     ('aria-label="Alimlər kataloqu haqqında qısa məlumat"', 'aria-label="Scientists directory summary"'),
     ('aria-label="Alimlər CV kataloqu haqqında qısa məlumat"', 'aria-label="Academic profiles summary"'),
     ("Alimlərimizin siyahısı", "Scientists directory"),
@@ -79,7 +84,7 @@ SCIENTISTS_COMMON_REPLACEMENTS: list[tuple[str, str]] = [
     ("Əlaqə", "Contact"),
     ("Ünvan", "Address"),
     ("Rəhbərlik", "Leadership"),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the DAAB Executive Board"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
     ("Axtarış", "Search"),
     ("Menyunu aç", "Open menu"),
     ("Əsas naviqasiya", "Main navigation"),

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html lang="en" data-daab-lang="en" data-daab-asset-root="../" data-daab-page-id="activities">
+<html lang="en" data-daab-lang="en" data-daab-asset-root="../" data-daab-page-id="activities" data-daab-nav-mount="1">
 <head>
 <!-- daab-en-complete -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>DAAB — Activities</title>
-<meta content="Activities, events, meetings and initiatives of the World Association of Azerbaijani Scientists." name="description"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/><link href="../css/daab-common.css?v=8" rel="stylesheet"/>
+<title>WAAS — Activities</title>
+<meta content="Activities, events, meetings and initiatives of the World Association of Azerbaijani Scientists." name="description"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/><link href="../css/daab-common.css?v=18" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=2" rel="stylesheet"/>
 
 <style>
@@ -420,7 +420,7 @@
     }
 }
 
-/* Bəxtiyar Siracov BDU gallery */
+/* Bakhtiyar Sirajov BDU gallery */
 .card-gallery.siracov-gallery{
     display:grid !important;
     grid-template-columns:repeat(2,1fr) !important;
@@ -543,7 +543,7 @@ li {
     display:block !important;
 }
 
-/* Float Səadət Kərimi image to top-right */
+/* Float Saadat Karimi image to top-right */
 .saadet-gallery img{
     width:240px !important;
     height:240px !important;
@@ -593,7 +593,7 @@ li {
     }
 }
 
-/* Telman Əliyev 90 gallery */
+/* Telman Aliyev 90 gallery */
 .telman-gallery{
     display:grid !important;
     grid-template-columns: 0.9fr 1.6fr !important;
@@ -971,9 +971,9 @@ body {
   z-index: 1 !important;
   display: grid !important;
   grid-template-columns: 1.12fr .88fr !important;
-  gap: 32px !important;
+  gap: 24px !important;
   align-items: start !important;
-  padding: 32px 24px 40px !important;
+  padding: 22px 20px 26px !important;
 }
 
 .page-hero h1 {
@@ -988,25 +988,38 @@ body {
 }
 
 .activities-summary-panel {
-  padding: 22px !important;
+  padding: 10px !important;
   background: rgba(255, 255, 255, .14) !important;
   border: 1px solid rgba(255, 255, 255, .28) !important;
-  border-radius: 30px !important;
+  border-radius: 22px !important;
   box-shadow: 0 18px 50px rgba(0, 45, 82, .22) !important;
   backdrop-filter: blur(18px) !important;
 }
 
 .activities-summary-card {
-  padding: 24px !important;
+  padding: 12px 14px !important;
   color: var(--ink) !important;
   background: rgba(255, 255, 255, .92) !important;
   border: 1px solid rgba(255, 255, 255, .62) !important;
-  border-radius: 24px !important;
+  border-radius: 16px !important;
+}
+
+.activities-summary-card .activities-summary-title {
+  margin: 0 0 6px;
+  color: #094d78 !important;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
 }
 
 .activities-summary-card .hero-text {
   max-width: none !important;
   margin: 0 !important;
+  color: #345d76 !important;
+  font-size: 13px;
+  line-height: 1.42;
 }
 
 .content-wrap {
@@ -1033,16 +1046,26 @@ body {
 
   .activities-hero-wrap {
     grid-template-columns: 1fr !important;
-    gap: 22px !important;
-    padding: 42px 18px 34px !important;
-  }
-
-  .page-hero h1 {
-    font-size: clamp(30px, 10.5vw, 42px) !important;
+    gap: 14px !important;
+    padding: 26px 16px 22px !important;
   }
 
   .activities-summary-panel {
     max-width: 100% !important;
+    padding: 8px !important;
+  }
+
+  .activities-summary-card {
+    padding: 10px 12px !important;
+  }
+
+  .activities-summary-card .activities-summary-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(30px, 10.5vw, 42px) !important;
   }
 }
 
@@ -1417,12 +1440,17 @@ html {
 
 
 </style>
+<link href="../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
 
-  <script src="../js/daab-nav.js?v=5" defer></script>
   <script src="../js/daab-mobile.js?v=1" defer></script>
-<link href="../css/daab-lang.css?v=1" rel="stylesheet"/>
-<script src="../js/daab-i18n.js?v=1" defer></script>
-<script src="../js/daab-shell.js?v=1" defer></script>
+<link href="../css/daab-lang.css?v=6" rel="stylesheet"/>
+<link href="../css/daab-nav-mega.css?v=11" rel="stylesheet"/>
+<script src="../js/daab-i18n.js?v=9" defer></script>
+<script src="../js/daab-nav.js?v=7" defer></script>
+<script src="../js/daab-primary-nav.js?v=8" defer></script>
+<script src="../js/daab-breadcrumbs.js?v=4" defer></script>
+<script src="../js/daab-section-nav.js?v=4" defer></script>
+<script src="../js/daab-shell.js?v=6" defer></script>
 </head>
 <body><div aria-label="Search" aria-modal="true" id="search-overlay" role="dialog">
 <div class="search-modal">
@@ -1435,9 +1463,9 @@ html {
 <nav aria-label="Main navigation" class="nav-strip">
 <div class="nav-inner">
 <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button>
-<div class="page-logo"><a aria-label="DAAB home" href="index.html">
-<img src="../images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"></a></div>
-<a aria-label="DAAB home" class="nav-brand" href="index.html">
+<div class="page-logo"><a aria-label="WAAS home" href="index.html">
+<img src="../images/daab-logo.svg" class="nav-brand-logo" alt="WAAS Logo"></a></div>
+<a aria-label="WAAS home" class="nav-brand" href="index.html">
 <span class="nav-brand-text">World Association of<br class="mobile-hidden-break">Azerbaijani Scientists</span></a>
 <div class="nav-menu" id="primaryNavMenu"><div class="nav-divider"></div>
 <a class="nav-link" data-nav-id="home" href="index.html">🏠 Home</a>
@@ -1460,7 +1488,8 @@ html {
 </section>
 <aside aria-label="Activities page summary" class="activities-summary-panel">
 <div class="activities-summary-card">
-<p class="hero-text">A chronicle of the scientific, academic and cultural events of the World Association of Azerbaijani Scientists</p>
+<h2 class="activities-summary-title">Highlights of Our Activities</h2>
+<p class="hero-text">This page presents the scientific and public activities of the World Association of Azerbaijani Scientists, including cooperation initiatives, international meetings, and events held with the participation of our scientists. The content is continuously updated in chronological order.</p>
 </div>
 </aside>
 </div>
@@ -1494,7 +1523,7 @@ html {
 <li><span class="tl-date">05.2025</span><a href="#telman-90-2025">90th anniversary of Academician Telman Aliyev</a></li>
 <li><span class="tl-date">02.2025</span><a href="#fevral-2025">MAA "February Lectures 2025" conference</a></li>
 <li><span class="tl-date">02.2025</span><a href="#qahire-kitab-2025">Cairo International Book Fair meeting</a></li>
-<li><span class="tl-date">01.2025</span><a href="#diaspora-video-2025">85 countries — diaspora videoconference, 3 DAAB members awarded</a></li>
+<li><span class="tl-date">01.2025</span><a href="#diaspora-video-2025">85 countries — diaspora videoconference, 3 WAAS members awarded</a></li>
 <li><span class="tl-date">01.2025</span><a href="#qobustan-nobel-2025">GOBUSTAN — appeal to the Nobel Committee</a></li>
 <li><span class="tl-date">01.2025</span><a href="#unec-daab-2025">AZPOLITIKA — new initiative with UNEC</a></li>
 <li><span class="tl-date">12.2024</span><a href="#525-mesud-2024">525 Newspaper — interview with Messoud Efendiyev</a></li>
@@ -1514,10 +1543,10 @@ html {
 </div>
 <div class="card-body">
 <p class="card-text inline-style-001">
-          NECDET ÜNÜVAR AKADEMİK KAMAL ABDULLA, PROFESSORLAR RAFİQ ƏLİYEV VƏ MƏSUD ƏFƏNDİYEV İLƏ KEÇİRİLƏN GÖRÜŞÜ ƏLAMƏTDAR HADİSƏ ADLANDIRIB.
+          NECDET ÜNÜVAR HAS DESCRIBED THE MEETING WITH ACADEMICIAN KAMAL ABDULLA AND PROFESSORS RAFIQ ALIYEV AND MESSOUD EFENDIYEV AS A LANDMARK EVENT.
         </p>
 <p class="card-text">
-          Aprilin 24-də Ankara Universitetində Azərbaycan-Türkiyə elmi və mədəni əməkdaşlığının müasir tarixinə daha bir uğurla səhifə əlavə edilib. Həmin gün Ankara Universitetində Azərbaycanın görkəmli elm xadimləri – Xalq yazıçısı, akademik Kamal Abdulla və AMEA-nın müxbir üzvü, professor Rafiq Əliyevin həmmüəllif olduqları "Kitabi-Dədə Qorqud" və qeyri-səlis məntiq", "Qeyri-səlis məntiq və dil-nitq", eləcə də azərbaycanlı alimlərin Türkiyənin sabiq təhsil naziri, professor Ziya Selcuk ilə birgə qələmə aldıqları "Uşaqlar üçün qeyri-səlis məntiq" kitablarının təqdimatı və müzakirəsi keçirilib. Ankara Universitetinin rektoru Necdet Ünüvar akademik Kamal Abdulla, professorlar Rafiq Əliyev və Məsud Əfəndiyev ilə keçirilən görüşü əlamətdar hadisə adlandırıb.
+          On 24 April, another successful chapter was added to the modern history of Azerbaijani–Turkish scientific and cultural cooperation at Ankara University. That day, Ankara University hosted the presentation and discussion of books co-authored by distinguished Azerbaijani scholars — People's Writer, Academician Kamal Abdulla, and corresponding member of ANAS, Professor Rafiq Aliyev: "Book of Dede Korkut and Fuzzy Logic", "Fuzzy Logic and Language-Speech", as well as "Fuzzy Logic for Children", which Azerbaijani scholars co-authored with Turkey's former Minister of Education, Professor Ziya Selcuk. Rector of Ankara University Necdet Ünüvar described the meeting with Academician Kamal Abdulla and Professors Rafiq Aliyev and Messoud Efendiyev as a landmark event.
         </p>
 <div class="card-gallery triple">
 <img alt="Ankara University meeting 1" class="inline-style-002" src="../images/activities/001-ankara-universiteti-gorusu-1.jpg" loading="lazy"/>
@@ -1530,21 +1559,21 @@ html {
         </a>
 </div>
 </article>
-<!-- CARD B: ATU əməkdaşlıq -->
+<!-- CARD B: ATU cooperation -->
 <article class="news-card" id="atu-2026">
 <div class="card-header">
 <div class="card-date">11 April 2026</div>
-<h2 class="card-title">Azerbaijan Medical University and DAAB begin cooperation</h2>
+<h2 class="card-title">Azerbaijan Medical University and WAAS begin cooperation</h2>
 </div>
 <div class="card-body">
 <p class="card-text">
-          Azerbaijan Medical University (ATU) ilə World Association of Azerbaijani Scientists (DAAB) arasında rəsmi əməkdaşlığı dəstəkləyən Anlaşma Memorandumu imzalanıb. ATU-nun rektoru, professor Gəray Gəraybəyli və DAAB-ın sədri, professor Məsud Əfəndiyev tərəfindən imzalanan sənəd təhsil, elm və mədəniyyət sahəsində qarşılıqlı, faydalı əməkdaşlığın təşkili və inkişafını nəzərdə tutur. Bundan əlavə, memorandum birgə elmi və tədqiqat proqramları, layihə və işlərin icrasını dəstəkləyir. Eyni zamanda müxtəlif sahələr üzrə, o cümlədən elmi tədqiqat, alim və mütəxəssislərin peşəkar inkişafı, akademik və inzibati heyətin, bakalavr, magistratura və rezidentura tələbələrinin mübadiləsi kimi istiqamətləri ehtiva edir.
+          A Memorandum of Understanding supporting official cooperation between Azerbaijan Medical University (ATU) and the World Association of Azerbaijani Scientists (WAAS) has been signed. The document, signed by ATU Rector Professor Garay Garaybeyli and WAAS Chair Professor Messoud Efendiyev, provides for the organisation and development of mutually beneficial cooperation in education, science and culture. The memorandum also supports joint scientific and research programmes, projects and activities, including scientific research, professional development of scholars and specialists, and exchange of academic and administrative staff and undergraduate, master's and residency students.
         </p>
 <div class="card-gallery quadruple">
-<img alt="ATU-DAAB əməkdaşlıq 1" class="inline-style-002" src="../images/activities/004-atu-daab-emekdasliq-1.jpg" loading="lazy"/>
-<img alt="ATU-DAAB əməkdaşlıq 2" class="inline-style-002" src="../images/activities/005-atu-daab-emekdasliq-2.jpg" loading="lazy"/>
-<img alt="ATU-DAAB əməkdaşlıq 3" class="inline-style-002" src="../images/activities/006-atu-daab-emekdasliq-3.jpg" loading="lazy"/>
-<img alt="ATU-DAAB əməkdaşlıq 4" class="inline-style-002" src="../images/activities/007-atu-daab-emekdasliq-4.jpg" loading="lazy"/>
+<img alt="ATU-WAAS cooperation 1" class="inline-style-002" src="../images/activities/004-atu-daab-emekdasliq-1.jpg" loading="lazy"/>
+<img alt="ATU-WAAS cooperation 2" class="inline-style-002" src="../images/activities/005-atu-daab-emekdasliq-2.jpg" loading="lazy"/>
+<img alt="ATU-WAAS cooperation 3" class="inline-style-002" src="../images/activities/006-atu-daab-emekdasliq-3.jpg" loading="lazy"/>
+<img alt="ATU-WAAS cooperation 4" class="inline-style-002" src="../images/activities/007-atu-daab-emekdasliq-4.jpg" loading="lazy"/>
 </div>
 <a rel="noopener noreferrer" class="card-source" href="https://amu.edu.az/news/5651/azerbaycan-tibb-universiteti-ile-dunya-azerbaycanli-alimler-birliyi-emekdasliga-baslayir" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -1552,27 +1581,27 @@ html {
         </a>
 </div>
 </article>
-<!-- CARD C: Qarabağ əməkdaşlıq genişlənir -->
+<!-- CARD C: Karabakh cooperation expands -->
 <article class="news-card" id="qarabag-genislenir-2026">
 <div class="card-header">
 <div class="card-date">8 April 2026</div>
-<h2 class="card-title">Cooperation between Karabakh University and DAAB expands</h2>
+<h2 class="card-title">Cooperation between Karabakh University and WAAS expands</h2>
 </div>
 <div class="card-body">
 <p class="card-text">
-          Aprilin 8-də World Association of Azerbaijani Scientists (DAAB) ilə mövcud əməkdaşlıq çərçivəsində Karabakh Universityndə görüş keçirilib. Bu əməkdaşlıq yalnız ayrı-ayrı tədbirlərin təşkili ilə məhdudlaşmır, eyni zamanda Karabakh Universitynin beynəlxalq elmi mühitə inteqrasiyası, akademik potensialının gücləndirilməsi və müasir ali təhsil standartlarına uyğun inkişafı baxımından mühüm strateji əhəmiyyət daşıyır.
+          On 8 April, a meeting was held at Karabakh University within the existing cooperation framework with the World Association of Azerbaijani Scientists (WAAS). This cooperation is not limited to organising individual events; it also carries significant strategic importance for Karabakh University's integration into the international scientific environment, strengthening its academic potential and development in line with modern higher education standards.
         </p>
 <p class="card-text">
-          Tərəflər arasında əvvəlki görüşlərdə ortaq elmi-tədqiqat layihələrinin həyata keçirilməsi, müasir laboratoriyaların yaradılması, onlayn dərs və seminarların təşkili, xaricdə fəaliyyət göstərən azərbaycanlı alimlərin tədris prosesinə cəlb edilməsi, eləcə də birgə konfrans, forum və simpoziumların keçirilməsi kimi mühüm əməkdaşlıq istiqamətləri müəyyən edilib və bu istiqamətlər üzrə konkret fəaliyyət planı formalaşdırılıb.
+          At previous meetings, the parties identified key areas of cooperation, including joint research projects, establishing modern laboratories, organising online classes and seminars, engaging Azerbaijani scholars abroad in teaching, and holding joint conferences, forums and symposiums, and developed a concrete action plan in these areas.
         </p>
 <p class="card-text">
-          Görüşdə DAAB-ın sədri, Almaniyada fəaliyyət göstərən azərbaycanlı riyaziyyatçı-alim, professor Məsud Əfəndiyev və birliyin üzvü, İsveçdə yerləşən Qoteborq Universitetinin professoru Səadət Kərimi iştirak ediblər.
+          The meeting was attended by WAAS Chair Professor Messoud Efendiyev, an Azerbaijani mathematician-scholar based in Germany, and WAAS member Professor Saadat Karimi of the University of Gothenburg in Sweden.
         </p>
 <div class="card-gallery quadruple">
-<img alt="Karabakh University-DAAB görüşü 1" class="inline-style-002" src="../images/activities/008-qarabag-universiteti-daab-gorusu-1.jpg" loading="lazy"/>
-<img alt="Karabakh University-DAAB görüşü 2" class="inline-style-002" src="../images/activities/009-qarabag-universiteti-daab-gorusu-2.jpg" loading="lazy"/>
-<img alt="Karabakh University-DAAB görüşü 3" class="inline-style-002" src="../images/activities/010-qarabag-universiteti-daab-gorusu-3.jpg" loading="lazy"/>
-<img alt="Karabakh University-DAAB görüşü 4" class="inline-style-002" src="../images/activities/011-qarabag-universiteti-daab-gorusu-4.jpg" loading="lazy"/>
+<img alt="Karabakh University-WAAS meeting 1" class="inline-style-002" src="../images/activities/008-qarabag-universiteti-daab-gorusu-1.jpg" loading="lazy"/>
+<img alt="Karabakh University-WAAS meeting 2" class="inline-style-002" src="../images/activities/009-qarabag-universiteti-daab-gorusu-2.jpg" loading="lazy"/>
+<img alt="Karabakh University-WAAS meeting 3" class="inline-style-002" src="../images/activities/010-qarabag-universiteti-daab-gorusu-3.jpg" loading="lazy"/>
+<img alt="Karabakh University-WAAS meeting 4" class="inline-style-002" src="../images/activities/011-qarabag-universiteti-daab-gorusu-4.jpg" loading="lazy"/>
 </div>
 <a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/qarabag_universiteti_ile_dunya_azerbaycanli_alimler_birliyi_arasinda_emekdasliq_genislenir-4119467" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -1584,15 +1613,15 @@ html {
 <article class="news-card" id="bmu-2026">
 <div class="card-header">
 <div class="card-date">15 March 2026</div>
-<h2 class="card-title">Online meeting held between DAAB and Baku Engineering University</h2>
+<h2 class="card-title">Online meeting held between WAAS and Baku Engineering University</h2>
 </div>
 <div class="card-body">
 <p class="card-text">
-          Baku Engineering University (BMU) ilə World Association of Azerbaijani Scientistsnin (DAAB) üzvləri arasında onlayn görüş keçirilib. Görüşdə universitetlə xaricdə fəaliyyət göstərən azərbaycanlı alimlər arasında əməkdaşlıq imkanları müzakirə olunub. Görüş zamanı alimlərin tədris prosesinə cəlb olunması, tələbələr üçün master-klasların təşkili və birgə elmi tədqiqatların aparılması kimi məsələlər ön plana çıxarılıb. BMU-nun rektoru universitetin son illərdəki nailiyyətləri, beynəlxalq tərəfdaşlıqları və elmi fəaliyyətin genişləndirilməsi istiqamətindəki işlər barədə məlumat verib. Sonda tərəflər gələcək əməkdaşlığın inkişafı ilə bağlı ilkin razılıq əldə edərək koordinatorlar təyin ediblər.
+          An online meeting was held between Baku Engineering University (BMU) and members of the World Association of Azerbaijani Scientists (WAAS). The meeting discussed cooperation opportunities between the university and Azerbaijani scholars working abroad. Key topics included engaging scholars in teaching, organising master classes for students and conducting joint scientific research. BMU's rector provided information on the university's recent achievements, international partnerships and efforts to expand scientific activity. The parties reached preliminary agreement on future cooperation and appointed coordinators.
         </p>
 <div class="card-gallery double">
-<img alt="BMU görüşü 1" class="inline-style-002" src="../images/activities/012-bmu-gorusu-1.jpg" loading="lazy"/>
-<img alt="BMU görüşü 2" class="inline-style-002" src="../images/activities/013-bmu-gorusu-2.jpg" loading="lazy"/>
+<img alt="BMU meeting 1" class="inline-style-002" src="../images/activities/012-bmu-gorusu-1.jpg" loading="lazy"/>
+<img alt="BMU meeting 2" class="inline-style-002" src="../images/activities/013-bmu-gorusu-2.jpg" loading="lazy"/>
 </div>
 <a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/dunya_azerbaycanli_alimler_birliyinin_uzvleri_bmu_da_tedris_prosesine_celb_oluna_biler-4076143" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -1600,17 +1629,17 @@ html {
         </a>
 </div>
 </article>
-<!-- CARD D: Bəxtiyar 187 saylı məktəb -->
+<!-- CARD D: Bakhtiyar Sirajov School No. 187 -->
 <article class="news-card" id="baxtiyar-187-2026">
 <div class="card-header">
 <div class="card-date">24 February 2026</div>
-<h2 class="card-title">DAAB Co-Chair Bakhtiyar Sirajov joins online meeting with teachers and pupils of Baku School No. 187</h2>
+<h2 class="card-title">WAAS Co-Chair Bakhtiyar Sirajov joins online meeting with teachers and pupils of Baku School No. 187</h2>
 </div>
 <div class="card-body">
-<p class="card-text">DAAB Executive Board Co-Chair Dr. Bəxtiyar Siracov Bakının 187 saylı ümumtəhsil məktəbinin müəllim və şagirdləri ilə onlayn görüş keçirmişdir. Görüş zamanı elmin önəmi, beynəlxalq elm arenasında azərbaycanlı alimlərin rolu və gənc nəslə tövsiyələr müzakirə olunmuşdur.</p>
+<p class="card-text">WAAS Executive Board Co-Chair Dr. Bakhtiyar Sirajov held an online meeting with the teachers and pupils of Baku General Education School No. 187. The meeting discussed the importance of science, the role of Azerbaijani scholars on the international stage and advice for the younger generation.</p>
 <div class="card-gallery double">
-<img alt="187 saylı məktəb görüşü 1" class="inline-style-002" src="../images/activities/014-187-sayli-mekteb-gorusu-1.jpg" loading="lazy"/>
-<img alt="187 saylı məktəb görüşü 2" class="inline-style-002" src="../images/activities/015-187-sayli-mekteb-gorusu-2.jpg" loading="lazy"/>
+<img alt="School No. 187 meeting 1" class="inline-style-002" src="../images/activities/014-187-sayli-mekteb-gorusu-1.jpg" loading="lazy"/>
+<img alt="School No. 187 meeting 2" class="inline-style-002" src="../images/activities/015-187-sayli-mekteb-gorusu-2.jpg" loading="lazy"/>
 </div>
 </div>
 </article>
@@ -1618,11 +1647,11 @@ html {
 <article class="news-card" id="maa-2026">
 <div class="card-header">
 <div class="card-date">3 February 2026</div>
-<h2 class="card-title">DAAB Chair Prof. Messoud Efendiyev speaks at opening of "February Lectures" conference at National Aviation Academy</h2>
+<h2 class="card-title">WAAS Chair Prof. Messoud Efendiyev speaks at opening of "February Lectures" conference at National Aviation Academy</h2>
 </div>
 <div class="card-body">
 <p class="card-text">
-          at the National Aviation Academy "February Lectures 2026: Aviakosmik məsələlərin həllində gənclərin yaradıcı potensialı" adlı XI beynəlxalq elmi-praktik gənclər konfransının openılışı olub. Plenar iclasda DAAB-ın sədri, professor Məsud Əfəndiyev xaricdə yaşayan azərbaycanlı alimlərin Azərbaycan elm və təhsilinə inteqrasiyasının əhəmiyyətindən danışıb. O, DAAB-ın əsas məqsədlərindən birinin dünya üzrə fəaliyyət göstərən azərbaycanlı alimlər arasında əməkdaşlığı gücləndirmək olduğunu vurğulayıb.
+          The opening ceremony of the XI International Scientific and Practical Youth Conference "February Lectures 2026: Creative Potential of Youth in Solving Aerospace Issues" was held at the National Aviation Academy. At the plenary session, WAAS Chair Professor Messoud Efendiyev spoke about the importance of integrating Azerbaijani scholars living abroad into Azerbaijan's science and education. He emphasised that one of WAAS's main goals is to strengthen cooperation among Azerbaijani scholars working worldwide.
         </p><div class="card-gallery triple"><img alt="MAA conference photo 1" src="../images/activities/016-maa-konfrans-sekli-1.jpg" loading="lazy"/><img alt="MAA conference photo 2" src="../images/activities/017-maa-konfrans-sekli-2.jpg" loading="lazy"/><img alt="MAA conference photo 3" src="../images/activities/018-maa-konfrans-sekli-3.jpg" loading="lazy"/></div>
 <a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/milli_aviasiya_akademiyasinda_enenevi_fevral_meruzeleri_beynelxalq_elmi_praktik_gencler_konfransinin_achilisi_olub_video-4001083" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -1630,45 +1659,45 @@ html {
         </a>
 </div>
 </article>
-<!-- CARD 3: Prezident Sərəncamı -->
+<!-- CARD 3: Presidential Order -->
 <article class="news-card" id="serencam-2026">
 <div class="card-header">
 <div class="card-date">13 January 2026</div>
-<h2 class="card-title">Several DAAB members honoured by President of Azerbaijan Ilham Aliyev</h2>
+<h2 class="card-title">Several WAAS members honoured by President of Azerbaijan Ilham Aliyev</h2>
 </div>
 <div class="card-body">
 <p class="card-text">
-          Azərbaycan Respublikası Prezidenti President Ilham Aliyevin 7 yanvar 2026-cı il tarixli Sərəncamı ilə xalqlar arasında dostluğun möhkəmləndirilməsi və Azərbaycan diasporunun inkişafına göstərdikləri töhfələrə görə bir qrup azərbaycanlı yüksək dövlət təltifinə layiq görülmüşdür. Təltif edilənlər arasında DAAB-ın fəal üzvləri də xüsusi yer tutmuşdur: Məsud Aşina "Şöhrət" ordeni, Akif Alaferdov, Xəlil Kələntər, Bəxtiyar Siracov və Xədicə Zeynalova isə "Tərəqqi" medalı ilə mükafatlandırılmışlar.
+          By Decree of the President of the Republic of Azerbaijan Ilham Aliyev dated 7 January 2026, a group of Azerbaijanis were awarded high state honours for strengthening friendship among peoples and contributing to the development of the Azerbaijani diaspora. Active WAAS members were among those honoured: Mesud Asina received the Order of Glory; Akif Alaferdov, Khalil Kelenter, Bakhtiyar Sirajov and Khadija Zeynalova were awarded the Progress Medal.
         </p>
 <div class="award-grid">
 <div class="award-item">
-<img alt="Məsud Aşina" class="inline-style-003" src="../images/activities/019-mesud-asina.jpg" loading="lazy"/>
-<p>Məsud Aşina</p>
+<img alt="Mesud Asina" class="inline-style-003" src="../images/activities/019-mesud-asina.jpg" loading="lazy"/>
+<p>Mesud Asina</p>
 </div>
 <div class="award-item">
 <img alt="Akif Alaferdov" class="inline-style-003" src="../images/activities/020-akif-alaferdov.jpg" loading="lazy"/>
 <p>Akif Alaferdov</p>
 </div>
 <div class="award-item">
-<img alt="Xəlil Kələntər" class="inline-style-003" src="../images/activities/021-xelil-kelenter.jpg" loading="lazy"/>
-<p>Xəlil Kələntər</p>
+<img alt="Khalil Kelenter" class="inline-style-003" src="../images/activities/021-xelil-kelenter.jpg" loading="lazy"/>
+<p>Khalil Kelenter</p>
 </div>
 <div class="award-item">
-<img alt="Bəxtiyar Siracov" class="inline-style-003" src="../images/activities/022-bextiyar-siracov.png" loading="lazy"/>
-<p>Bəxtiyar Siracov</p>
+<img alt="Bakhtiyar Sirajov" class="inline-style-003" src="../images/activities/022-bextiyar-siracov.png" loading="lazy"/>
+<p>Bakhtiyar Sirajov</p>
 </div>
 <div class="award-item">
-<img alt="Xədicə Zeynalova" class="inline-style-003" src="../images/activities/023-xedice-zeynalova.jpg" loading="lazy"/>
-<p>Xədicə Zeynalova</p>
+<img alt="Khadija Zeynalova" class="inline-style-003" src="../images/activities/023-xedice-zeynalova.jpg" loading="lazy"/>
+<p>Khadija Zeynalova</p>
 </div>
 </div>
 <a rel="noopener noreferrer" class="card-source" href="https://president.az/az/articles/view/71233" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-          Prezidentin müvafiq Sərəncamı
+          Presidential Order
         </a>
 </div>
 </article>
-<!-- CARD 4: AzMİU 50 il -->
+<!-- CARD 4: AzMIU 50th anniversary -->
 <article class="news-card" id="azmiu-2025">
 <div class="card-header">
 <div class="card-date">22 December 2025</div>
@@ -1676,38 +1705,38 @@ html {
 </div>
 <div class="card-body">
 <p class="card-text">
-          Decemberın 18-də Azərbaycan Memarlıq və İnşaat Universitetinin (AzMİU) yaradılmasının 50 illik yubileyi münasibətilə təntənəli yığıncaq keçirilib. Tədbirin iştirakçıları arasında olan dünya şöhrətli alim, DAAB Executive Board Chair, AzMİU rektorunun müşaviri professor Məsud Əfəndiyev təəssüratlarını bölüşüb.
+          On 18 December, a ceremonial gathering was held to mark the 50th anniversary of the founding of Azerbaijan University of Architecture and Construction (AzMIU). World-renowned scholar, WAAS Executive Board Chair and Adviser to the AzMIU Rector Professor Messoud Efendiyev shared his impressions as one of the participants.
         </p>
 <blockquote class="inline-style-004">
-          "Azərbaycan Memarlıq və İnşaat Universitetinin keçdiyi 50 illik yol tədbirdə gözümüzün qarşısında canlandı. AzMİU Azərbaycan üçün önəmli bir universitetdir. Memarlıq və inşaat bizim qalib xalqımıza yaraşan, Azərbaycan üçün vacib olan komponentlərdən biridir. Tədbirdə Memarlıq və İnşaat Universiteti barədə çox gözəl fikirlər səsləndi, onun müstəsna rol oynadığı vurğulandı."
+          "The 50-year journey of Azerbaijan University of Architecture and Construction came vividly to life at the event. AzMIU is an important university for Azerbaijan. Architecture and construction are components worthy of our victorious people and essential for Azerbaijan. Many fine words were spoken about the University at the event, and its exceptional role was emphasised."
         </blockquote>
 <p class="card-text">
-          Məsud Əfəndiyev həm də bu ali məktəbin doktorantları və gənc tədqiqatçı alimləri ilə ikigünlük görüş keçirib. Görüş çərçivəsində doktorantların elmi-tədqiqat fəaliyyəti, beynəlxalq elmi inteqrasiya imkanları və qlobal elm arenasına çıxış mexanizmləri geniş müzakirə olunub. Gənc tədqiqatçıların elmi məqalələrinin "Web of Science" və "Scopus" kimi beynəlxalq indeksli jurnallarda dərc olunması məsələləri xüsusi diqqət mərkəzində olub.
+          Messoud Efendiyev also held a two-day meeting with the university's doctoral students and young research scholars. Discussions covered doctoral research activity, opportunities for international scientific integration and pathways to the global scientific arena. Particular attention was given to publishing young researchers' articles in internationally indexed journals such as Web of Science and Scopus.
         </p>
 <p class="card-text">
-          Professor Məsud Əfəndiyev məqalə yazılışı, resenziya prosesləri, elmi etik normalar və beynəlxalq akademik şəbəkələrə çıxış yolları barədə ətraflı tövsiyələr verib. Müzakirələr zamanı "Alexander von Humboldt" Fondu, DAAD (Alman Akademik Mübadilə Xidməti), "Horizon Europe və ERC" (European Research Council) proqramları, eləcə də digər beynəlxalq elmi-tədqiqat və innovasiya platformaları geniş müzakirə olunub. Qlobal elmi gündəmdə olan aktual tədqiqat istiqamətləri, multidisiplinar layihələr və beynəlxalq konsorsiumlarda iştirak imkanları da nəzərdən keçirilib.
+          Professor Messoud Efendiyev gave detailed advice on writing articles, peer review processes, research ethics and access to international academic networks. Discussions also covered the Alexander von Humboldt Foundation, DAAD (German Academic Exchange Service), Horizon Europe and ERC (European Research Council) programmes, and other international research and innovation platforms. Current research priorities on the global agenda, multidisciplinary projects and opportunities to participate in international consortia were also reviewed.
         </p>
 <div class="inline-style-005">
 <div class="card-gallery triple"><img alt="AzMIU photo 1" src="../images/activities/024-azmiu-sekli-1.jpg" loading="lazy"/><img alt="AzMIU photo 2" src="../images/activities/025-azmiu-sekli-2.png" loading="lazy"/><img alt="AzMIU photo 3" src="../images/activities/026-azmiu-sekli-3.png" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/humboldt_mukafati_laureati_professor_mesud_efendiyev_azmiu_nun_genc_alimleri_ile_gorusub-3930787" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            AZƏRTAC xəbəri
+            AZERTAC report
           </a>
 <a rel="noopener noreferrer" class="card-source" href="https://525.az/news/316101-azmiu-azerbaycan-ucun-onemli-bir-universitetdir--mesud-efendiyev" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            525.az xəbəri
+            525.az report
           </a>
 </div>
 </div>
 </article>
-<!-- CARD 5: Seymur Nəsirov Misirdə təltif -->
+<!-- CARD 5: Seymur Nasirov honoured in Egypt -->
 <article class="news-card" id="seymur-qahire-2025">
 <div class="card-header">
 <div class="card-date">17 December 2025</div>
-<h2 class="card-title">DAAB Co-Chair Seymur Nasirov honoured in Egypt for scientific contributions</h2>
+<h2 class="card-title">WAAS Co-Chair Seymur Nasirov honoured in Egypt for scientific contributions</h2>
 </div>
 <div class="card-body">
 <p class="card-text">
-          Qahirədə "Fətva və humanitar gerçəklik problemləri" şüarı ilə keçirilmiş beynəlxalq konfransda 50-dən çox ölkədən müftilər, şəriət alimləri və mütəxəssislər iştirak edib. Konfransda DAAB-ın həmsədri Seymur Nəsirov Azərbaycandakı tolerantlıq mühitindən danışıb. Misir müftisi tərəfindən seçilmiş alim və müftilər fəaliyyətlərinə görə təltif edilib; Seymur Nəsirov da mükafat alanlar sırasında olub.
+          An international conference on "Fatwa and Humanitarian Reality Issues" was held in Cairo with muftis, Islamic scholars and specialists from more than 50 countries. WAAS Co-Chair Seymur Nasirov spoke at the conference about the climate of tolerance in Azerbaijan. Scholars and muftis selected by Egypt's Grand Mufti were honoured for their work; Seymur Nasirov was among the recipients.
         </p>
 <div class="card-gallery triple"><img alt="Seymur Nasirov event photo 1" src="../images/activities/027-seymur-nesirov-tedbir-sekli-1.jpg" loading="lazy"/><img alt="Seymur Nasirov event photo 2" src="../images/activities/028-seymur-nesirov-tedbir-sekli-2.jpg" loading="lazy"/><img alt="Seymur Nasirov event photo 3" src="../images/activities/029-seymur-nesirov-tedbir-sekli-3.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://crossmedia.az/az/article/59856" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -1719,12 +1748,12 @@ html {
 <!-- CARD 7: AMEA Memorandum -->
 <article class="news-card" id="amea-memorandum-2025">
 <div class="card-header">
-<div class="card-date">4 Noyabr 2025</div>
-<h2 class="card-title">Memorandum of understanding signed between ANAS and DAAB</h2>
+<div class="card-date">4 November 2025</div>
+<h2 class="card-title">Memorandum of understanding signed between ANAS and WAAS</h2>
 </div>
 <div class="card-body">
 <p class="card-text">
-          AMEA-nın 80 illik yubileyi çərçivəsində bir sıra ölkələrin Elmlər Akademiyaları ilə anlaşma memorandumlarının imzalanma mərasimi olub. Digər anlaşmalarla yanaşı, AMEA ilə World Association of Azerbaijani Scientists (DAAB) arasında da anlaşma memorandumu imzalanıb.
+          As part of ANAS's 80th anniversary, a ceremony was held to sign memoranda of understanding with academies of sciences from several countries. Among other agreements, a memorandum of understanding was also signed between ANAS and the World Association of Azerbaijani Scientists (WAAS).
         </p>
 <div class="card-gallery triple"><img alt="ANAS memorandum photo 1" src="../images/activities/030-amea-memorandum-sekli-1.jpg" loading="lazy"/><img alt="ANAS memorandum photo 2" src="../images/activities/031-amea-memorandum-sekli-2.jpg" loading="lazy"/><img alt="ANAS memorandum photo 3" src="../images/activities/032-amea-memorandum-sekli-3.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://science.gov.az/az/news/open/33947" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -1735,37 +1764,37 @@ html {
 <!-- CARD 8: AMEA 80 il -->
 <article class="news-card" id="amea-80-2025">
 <div class="card-header">
-<div class="card-date">3 Noyabr 2025</div>
+<div class="card-date">3 November 2025</div>
 <h2 class="card-title">Professor Messoud Efendiyev: "ANAS has remained true to its principles in every era"</h2>
 </div>
 <div class="card-body">
 <p class="card-text">
-          Dünya elminin ən yüksək təltiflərdən biri sayılan Humboldt mükafatının ilk azərbaycanlı laureatı, Almaniyada "Helmholtz" Elmi-Tədqiqat Mərkəzinin Dinamik Sistemlər şöbəsinin müdiri, professor Məsud Əfəndiyev AMEA-nın 80 illik yubileyi ilə əlaqədar openıqlama verib.
+          Professor Messoud Efendiyev, the first Azerbaijani laureate of the Humboldt Award — one of the highest honours in world science — and Head of the Dynamic Systems Division at the Helmholtz Research Centre in Germany, issued a statement on the occasion of ANAS's 80th anniversary.
         </p>
 <div class="card-gallery double"><img alt="ANAS photo 1" src="../images/activities/033-amea-sekli-1.jpg" loading="lazy"/><img alt="ANAS photo 2" src="../images/activities/034-amea-sekli-2.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://science.gov.az/az/news/open/33909" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-          science.gov.az — Açıqlama
+          science.gov.az — Statement
         </a>
 </div>
 </article>
-<!-- CARD 9: Yulduz Rəhimov ADA Qazax -->
+<!-- CARD 9: Yulduz Rahimov ADA Gazakh -->
 <article class="news-card" id="yulduz-ada-2025">
 <div class="card-header">
-<div class="card-date">29 Oktyabr 2025</div>
+<div class="card-date">29 October 2025</div>
 <h2 class="card-title">Prof. Dr. Yulduz Rahimov visits ADA University Gazakh Centre</h2>
 </div>
 <div class="card-body">
-<p>World Association of Azerbaijani Scientistsnin Elmi katibi, Kanadada yaşayan Azərbaycanlı alim, York Universitetinin Professoru Yulduz Rəhimov 29 oktyabr 2025-ci il tarixində ADA Universitetinin Qazax Mərkəzinə səfər edib. Səfər ADA Universitetinin Təsisçi Rektoru və Qazax Mərkəzinin yaradıcı ideya müəllifi olan Hafiz Paşayevin təşəbbüsü ilə həyata keçirilib. Ziyarətdə İtaliyanın Roma Tor Vergata Universitetinin magistrantı Nicat Rəhimli də iştirak etmişdir. Mərkəzin sədri Yeganə Göyüşova qonaqlara Mərkəzin fəaliyyəti, tarixi binaların bərpası və inkişaf məqsədləri haqqında geniş məlumat təqdim edib.</p><p>Qazax Müəllimlər Seminariyasının tarixi binasında 2022-ci ilin oktyabrından fəaliyyət göstərən ADA Universiteti Qazax Mərkəzi həm regionun tarixi irsini qoruyur, həm də bölgəyə müasir və innovativ təhsil mühiti gətirir. Kompleksin memarlığı orijinal üslubuna uyğun olaraq yüksək səviyyədə bərpa olunub, ətraf ərazi abadlaşdırılaraq müasir kampus infrastrukturuna çevrilib. Tələbələr üçün rəqəmsal tədris avadanlıqları ilə təchiz edilmiş dərs otaqları, geniş kitabxana, oxu və müzakirə sahələri, komfortlu sosial məkanlar və dekorativ bitgilərlə bəzədilmiş yaşıl istirahət zonaları yaradılıb.</p><p>Mərkəzdə yaşayan pedaqoji heyət üçün inşa edilmiş Müəllimlər Evi tam şəraitli yaşayış imkanları ilə təmin olunub. Tikinti prosesi zamanı, əvvəllər həmin ərazidə yaşayan sakinlər üçün ədalətli kompensasiya verilməsi layihənin sosial məsuliyyət prinsiplərinə uyğun şəkildə həyata keçirildiyini göstərir. Eyni zamanda ADA Qazax Mərkəzində tələbələr üçün nəzərdə tutulmuş yataqxana da tam şəraitli, funksional və müasir standartlara cavab verən yaşayış mühiti təmsil edir. Tələbə yataqxanası geniş otaqlar, istirahət sahələri, oxu və qrup işləri üçün müasir məkanlarla təchiz olunub, həmçinin əlilliyi olan tələbələr üçün xüsusi uyğunlaşdırılmış şərait nəzərdə tutulub.</p><p>Mərkəzin tədris kompleksinə daxil olan XIX əsrə aid yerli əhəmiyyətli tarixi İsrafil Ağa hamamı da bərpadan sonra mədəniyyət və yaradıcılıq məkanına çevrilib. Hamamın daxilində Qazax xalçopenılıq məktəbinə aid nümunələri bir araya gətirən muzey və yerli gənclər üçün rəsm dərnəyi fəaliyyət göstərir. Bu tarixi məkan kiçik həcmli musiqili, ədəbi və mədəni tədbirlərin təşkili üçün ideal şəraitə malikdir və Seminariyanın tarixi ruhunu müasir yaradıcılıq ilə birləşdirir.</p><p>Səfər zamanı DAAB elmi katibi və ADA Universiteti Qazax Mərkəzinin rəhbərliyi arasında aparılan müzakirələr xüsusilə səmimi və ilhamverici atmosferdə keçib. Tərəflər elmi şəbəkənin genişləndirilməsi, birgə tədqiqat layihələrinin həyata keçirilməsi və akademik mübadilə imkanlarının artırılması ilə bağlı fikirlərini bölüşərkən həm Qazaxın tarixi elmi irsinə, həm də burada formalaşan yeni təhsil mühitinə böyük dəyər verildiyini vurğulayıblar. Regionun elmi-mədəni potensialının gücləndirilməsi, gənclərin elmə bağlılığının artırılması və Qazaxın intellektual mərkəz kimi yenidən dirçəlməsi istiqamətində irəli sürülən ideyalar görüşə xüsusi ruh qatıb. Səfər hər iki tərəf üçün yeni əməkdaşlıq imkanlarının formalaşdırılmasına töhfə verən əhəmiyyətli addım kimi yadda qalacaq.</p><div class="card-gallery qazax-gallery"><img alt="Qazax Mərkəzi şəkli 1" src="../images/activities/035-qazax-merkezi-sekli-1.jpg" loading="lazy"/><img alt="Qazax Mərkəzi şəkli 2" src="../images/activities/036-qazax-merkezi-sekli-2.jpg" loading="lazy"/><img alt="Qazax Mərkəzi şəkli 3" src="../images/activities/037-qazax-merkezi-sekli-3.jpg" loading="lazy"/><img alt="Qazax Mərkəzi şəkli 4" src="../images/activities/038-qazax-merkezi-sekli-4.jpg" loading="lazy"/><img alt="Qazax Mərkəzi şəkli 5" src="../images/activities/039-qazax-merkezi-sekli-5.jpg" loading="lazy"/><img alt="Qazax Mərkəzi şəkli 6" src="../images/activities/040-qazax-merkezi-sekli-6.jpg" loading="lazy"/></div></div>
+<p>Yulduz Rahimov, Scientific Secretary of WAAS, Azerbaijani scholar living in Canada and Professor at York University, visited ADA University's Gazakh Centre on 29 October 2025. The visit was organised on the initiative of Hafiz Pashayev, Founding Rector of ADA University and originator of the Gazakh Centre concept. Nicat Rahimli, a master's student at Roma Tor Vergata University in Italy, also took part. Centre Director Yegana Goyushova gave guests detailed information about the Centre's activities, restoration of historic buildings and development goals.</p><p>Operating since October 2022 in the historic building of the Gazakh Teachers' Seminary, ADA University Gazakh Centre both preserves the region's historical heritage and brings a modern, innovative educational environment to the area. The complex has been restored to a high standard in its original architectural style, and the surrounding area has been landscaped into modern campus infrastructure. Classrooms equipped with digital teaching tools, a spacious library, reading and discussion areas, comfortable social spaces and green recreation zones with ornamental plants have been created for students.</p><p>Teachers' House, built for the pedagogical staff living at the Centre, provides fully equipped accommodation. Fair compensation for former residents during construction reflects the project's social responsibility principles. The student dormitory at ADA Gazakh Centre also offers a fully equipped, functional living environment meeting modern standards, with spacious rooms, recreation areas and modern spaces for reading and group work, as well as facilities adapted for students with disabilities.</p><p>The locally significant historic Israfil Agha bathhouse of the 19th century, part of the Centre's teaching complex, has been restored and converted into a cultural and creative space. It houses a museum bringing together examples from the Gazakh carpet school and an art club for local youth. This historic venue is ideal for small-scale musical, literary and cultural events and combines the Seminary's historic spirit with contemporary creativity.</p><p>Discussions between the WAAS Scientific Secretary and the leadership of ADA University Gazakh Centre during the visit took place in a particularly warm and inspiring atmosphere. Sharing views on expanding the scientific network, implementing joint research projects and increasing academic exchange opportunities, both sides emphasised the great value of Gazakh's historic scientific heritage and the new educational environment forming there. Ideas put forward to strengthen the region's scientific and cultural potential, increase young people's commitment to science and revive Gazakh as an intellectual centre gave the meeting special spirit. The visit will be remembered as a significant step contributing to new cooperation opportunities for both sides.</p><div class="card-gallery qazax-gallery"><img alt="Gazakh Centre photo 1" src="../images/activities/035-qazax-merkezi-sekli-1.jpg" loading="lazy"/><img alt="Gazakh Centre photo 2" src="../images/activities/036-qazax-merkezi-sekli-2.jpg" loading="lazy"/><img alt="Gazakh Centre photo 3" src="../images/activities/037-qazax-merkezi-sekli-3.jpg" loading="lazy"/><img alt="Gazakh Centre photo 4" src="../images/activities/038-qazax-merkezi-sekli-4.jpg" loading="lazy"/><img alt="Gazakh Centre photo 5" src="../images/activities/039-qazax-merkezi-sekli-5.jpg" loading="lazy"/><img alt="Gazakh Centre photo 6" src="../images/activities/040-qazax-merkezi-sekli-6.jpg" loading="lazy"/></div></div>
 </article>
 <!-- CARD 10: Yulduz BDU -->
 <article class="news-card" id="yulduz-bdu-2025">
 <div class="card-header">
-<div class="card-date">23 Oktyabr 2025</div>
+<div class="card-date">23 October 2025</div>
 <h2 class="card-title">Prof. Dr. Yulduz Rahimov delivers master class at BDU Faculty of Applied Mathematics and Cybernetics</h2>
 </div>
 <div class="card-body">
 <p class="card-text">
-          BDU-nun məzunu, Kanadanın York Universitetinin professoru, DAAB Executive Board member Yulduz Rəhimov ilə görüş keçirilib. Professor Yulduz Rəhimov fakültənin professor-müəllim heyəti, tələbə və doktorantları qarşısında "Ədədlər nəzəriyyəsi və kriptoqrafiya" mövzusunda ustad dərsi keçib.
+          A meeting was held with Yulduz Rahimov, a graduate of Baku State University (BDU), Professor at York University in Canada and WAAS Executive Board member. Professor Yulduz Rahimov delivered a master class on "Number Theory and Cryptography" for the faculty's academic staff, students and doctoral candidates.
         </p>
 <div class="card-gallery bdu-gallery inline-style-006"><img alt="BDU master class photo 1" src="../images/activities/041-bdu-ustad-dersi-sekli-1.jpg" loading="lazy"/><img alt="BDU master class photo 2" src="../images/activities/042-bdu-ustad-dersi-sekli-2.jpg" loading="lazy"/><img alt="BDU master class photo 3" src="../images/activities/043-bdu-ustad-dersi-sekli-3.jpg" loading="lazy"/><img alt="BDU master class photo 4" src="../images/activities/044-bdu-ustad-dersi-sekli-4.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="http://bsu.edu.az/az/news/bdu_mzunu_kanadann_york_universitetinin_professoru_yulduz_rhimovun_ustad_drsi" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -1773,31 +1802,31 @@ html {
         </a>
 </div>
 </article>
-<!-- CARD 11: Bəxtiyar BDU -->
+<!-- CARD 11: Bakhtiyar Sirajov BDU -->
 <article class="news-card" id="baxtiyar-bdu-2025">
 <div class="card-header">
-<div class="card-date">20 Oktyabr 2025</div>
+<div class="card-date">20 October 2025</div>
 <h2 class="card-title">Dr. Bakhtiyar Sirajov meets faculty and students at BDU Faculty of Applied Mathematics</h2>
 </div>
 <div class="card-body">
-<p>Bakı Dövlət Universitetinin (BDU) Tətbiqi riyaziyyat və kibernetika fakültəsinin məzunu, DAAB Executive Board Co-Chair Dr. Bəxtiyar Siracovla görüş keçirilib.</p><p>Tədbirdə BDU-nun elm və innovasiyalar üzrə prorektoru Hüseyn Məmmədov, Tətbiqi riyaziyyat və kibernetika fakültəsinin dekanı Ələkbər Əliyev, fakültənin müəllim və tələbələri iştirak ediblər.</p><p>Fakültə dekanı Ələkbər Əliyev qeyd edib ki, Tətbiqi riyaziyyat və kibernetika fakültəsinin məzunları dünyanın müxtəlif ölkələrində, o cümlədən Azərbaycanda uğurla fəaliyyət göstərir, yüksək vəzifələrdə çalışırlar. Belə məzunlardan biri də Nobel Sülh Mükafatına layiq görülən Bəxtiyar Siracovdur. Ələkbər Əliyev Norveç Sülh Komitəsinin qərarı ilə 2005-ci ildə Nobel Sülh mükafatına layiq görülən və uzun illər Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) məsul əməkdaşı olan məzunumuzun həyat yolu haqqında tələbələrə məlumat verib, belə görüşlərin tələbələrin inkişafında önəmli rol oynadığını vurğulayıb.</p><p>Bəxtiyar Siracov bildirib ki, 1974-1979-cu illərdə BDU-nun Tətbiqi riyaziyyat və kibernetika fakültəsində təhsil alıb. O, məzunu olduğu universitetdə tələbələrlə görüşdən məmnunluğunu ifadə edib. Qonaq tələbəlik illərindən tutmuş AEBA-dakı fəaliyyətinədək keçdiyi yol barədə ətraflı məlumat verib, elmin inkişafına gənclərin töhfəsinin vacibliyini vurğulayıb. O, bilik və təcrübələrindən bəhrələndiyi Azərbaycan alimlərini minnətdarlıqla yad edib, onların yetirmələrinin bu gün dünyanın nüfuzlu universitetlərində, elm mərkəzlərində çalışdığını fəxrlə bildirib.</p><p>Qeyd olunub ki, 2005-ci ildə Norveç Sülh Komitəsinin qərarı ilə AEBA və onun Baş Direktoru Məhəmməd əl-Baradei nüvə enerjisinin hərbi məqsədlər üçün istifadəsinin qarşısının alınmasında və nüvə enerjisindən dinc məqsədlər üçün təhlükəsiz şəkildə istifadə edilməsinin təmin edilməsində göstəridikləri xidmətlərə görə Nobel Sülh Mükafatına layiq görülüblər. Bəxtiyar Siracov da məhz o tarixdən AEBA-da çalışan digər əməkdaşlarla bərabər Nobel Sülh Mükafatını alanlar sırasındadır.</p><p>Sonra Bəxtiyar Siracov tələbələrin suallarını cavablandırıb.</p>
+<p>A meeting was held with Dr. Bakhtiyar Sirajov, a graduate of the Faculty of Applied Mathematics and Cybernetics at Baku State University (BDU) and WAAS Executive Board Co-Chair.</p><p>The event was attended by BDU Vice-Rector for Science and Innovation Huseyn Mammadov, Dean of the Faculty of Applied Mathematics and Cybernetics Alekber Aliyev, and the faculty's teachers and students.</p><p>Dean Alekber Aliyev noted that graduates of the Faculty of Applied Mathematics and Cybernetics work successfully in various countries, including Azerbaijan, holding senior positions. One such graduate is Bakhtiyar Sirajov, a Nobel Peace Prize laureate. Alekber Aliyev told students about the life path of our graduate, who received the Nobel Peace Prize in 2005 by decision of the Norwegian Nobel Committee and worked for many years as a senior official at the International Atomic Energy Agency (IAEA), and emphasised that such meetings play an important role in students' development.</p><p>Bakhtiyar Sirajov said he studied at BDU's Faculty of Applied Mathematics and Cybernetics from 1974 to 1979. He expressed pleasure at meeting students at his alma mater. The guest gave detailed information about his path from student years to his work at the IAEA and emphasised the importance of young people's contribution to the development of science. He gratefully remembered the Azerbaijani scholars from whom he benefited and proudly noted that their students today work at prestigious universities and research centres around the world.</p><p>It was noted that in 2005, by decision of the Norwegian Nobel Committee, the IAEA and its Director General Mohamed ElBaradei were awarded the Nobel Peace Prize for their services in preventing the military use of nuclear energy and ensuring its safe use for peaceful purposes. Bakhtiyar Sirajov has been among the Nobel Peace Prize recipients since that time, together with other IAEA staff.</p><p>Bakhtiyar Sirajov then answered students' questions.</p>
 <div class="card-gallery siracov-gallery inline-style-006"><img alt="Bakhtiyar Sirajov BDU photo 1" src="../images/activities/045-bextiyar-siracov-bdu-sekil-1.jpg" loading="lazy"/><img alt="Bakhtiyar Sirajov BDU photo 2" src="../images/activities/046-bextiyar-siracov-bdu-sekil-2.jpg" loading="lazy"/><img alt="Bakhtiyar Sirajov BDU photo 3" src="../images/activities/047-bextiyar-siracov-bdu-sekil-3.jpg" loading="lazy"/><img alt="Bakhtiyar Sirajov BDU photo 5" src="../images/activities/048-bextiyar-siracov-bdu-sekil-5.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="http://bsu.edu.az/az/news/bdu_mzunu_nobel_slh_mkafats_bxtiyar_siracov_tlblrl_grb" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           BDU.edu.az — Full article
         </a>
 </div>
 </article>
-<!-- CARD 12: Seymur Misir Təhsil Nazirliyi -->
+<!-- CARD 12: Seymur Nasirov Egypt Education Ministry -->
 <article class="news-card" id="seymur-medal-2025">
 <div class="card-header">
-<div class="card-date">1 Oktyabr 2025</div>
+<div class="card-date">1 October 2025</div>
 <h2 class="card-title">Azerbaijani scholar awarded medal of Egypt's Ministry of Education</h2>
 </div>
 <div class="card-body">
 <p class="card-text">
-          Tədqiqatçı-alim Seymur Nəsirov Misir Ərəb Respublikası ilə Azərbaycan Respublikası arasında elmi-mədəni əlaqələrin inkişafındakı xidmətlərinə görə Misir Təhsil Nazirliyinin medalı ilə təltif olunub. Mükafatı ona Bakıda Misir Mədəniyyət Mərkəzinin direktoru professor Tariq Əbu Futuh təqdim edib.
+          Research scholar Seymur Nasirov was awarded the medal of Egypt's Ministry of Education for services to the development of scientific and cultural relations between the Arab Republic of Egypt and the Republic of Azerbaijan. The award was presented in Baku by Professor Tariq Abu Futuh, Director of the Egypt Culture Centre.
         </p>
-<div class="card-gallery egypt-medal-gallery inline-style-007"><img alt="Seymur Nəsirov Misir Təhsil Nazirliyi 1" src="../images/activities/049-seymur-nesirov-misir-tehsil-nazirliyi-1.jpg" loading="lazy"/><img alt="Seymur Nəsirov Misir Təhsil Nazirliyi 2" src="../images/activities/050-seymur-nesirov-misir-tehsil-nazirliyi-2.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/azerbaycanli_alim_misir_tehsil_nazirliyinin_medali_ile_teltif_olunub-3778631" target="_blank">
+<div class="card-gallery egypt-medal-gallery inline-style-007"><img alt="Seymur Nasirov Egypt Ministry of Education 1" src="../images/activities/049-seymur-nesirov-misir-tehsil-nazirliyi-1.jpg" loading="lazy"/><img alt="Seymur Nasirov Egypt Ministry of Education 2" src="../images/activities/050-seymur-nesirov-misir-tehsil-nazirliyi-2.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/azerbaycanli_alim_misir_tehsil_nazirliyinin_medali_ile_teltif_olunub-3778631" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           AZERTAC — Full article
         </a>
@@ -1806,12 +1835,12 @@ html {
 <!-- CARD 13: Misir Prezidenti ordeni -->
 <article class="news-card" id="seymur-orden-2025">
 <div class="card-header">
-<div class="card-date">3 Sentyabr 2025</div>
+<div class="card-date">3 September 2025</div>
 <h2 class="card-title">President of Egypt awards Azerbaijani scholar first-class "Science and Arts" order</h2>
 </div>
 <div class="card-body">
 <p class="card-text">
-          Misir Prezidenti Əbdül Fəttah əl-Sisi azərbaycanlı tədqiqatçı-alim Seymur Nəsirovu birinci dərəcəli "Elm və Fənlər" ordeni ilə təltif edib. Misir Prezidentinin şəxsən özü tərəfindən verilən bu orden elmin inkişafı və yayılması sahəsindəki xidmətlərə görə görkəmli alimlərə təqdim edilir.
+          President of Egypt Abdel Fattah el-Sisi awarded Azerbaijani research scholar Seymur Nasirov the first-class "Science and Arts" order. This order, presented personally by the President of Egypt, is awarded to distinguished scholars for services to the development and dissemination of science.
         </p>
 <div class="card-gallery egypt-president-gallery inline-style-007"><img alt="Egyptian President award ceremony 1" src="../images/activities/051-misir-prezidenti-orden-merasimi-1.jpg" loading="lazy"/><img alt="Egyptian President award ceremony 2" src="../images/activities/052-misir-prezidenti-orden-merasimi-2.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/misir_prezidenti_azerbaycanli_alimi_birinci_dereceli_ordenle_teltif_edib-3727187" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -1822,72 +1851,72 @@ html {
 <!-- CARD 14: Karabakh University -->
 <article class="news-card" id="qarabag-uni-2025">
 <div class="card-header">
-<div class="card-date">19 İyul 2025</div>
-<h2 class="card-title">DAAB and Karabakh University deliver "PRIMARY SCHOOL PEDAGOGY" course under cooperation framework</h2>
+<div class="card-date">19 July 2025</div>
+<h2 class="card-title">WAAS and Karabakh University deliver "PRIMARY SCHOOL PEDAGOGY" course under cooperation framework</h2>
 </div>
-<div class="card-body"><div class="card-gallery saadet-gallery inline-style-008"><img alt="Səadət Kərimi" src="../images/activities/053-seadet-kerimi.png" loading="lazy"/></div>
+<div class="card-body"><div class="card-gallery saadet-gallery inline-style-008"><img alt="Saadat Karimi" src="../images/activities/053-seadet-kerimi.png" loading="lazy"/></div>
 <p class="card-text">
-          2025-ci ilin May ayından başlayaraq DAAB-ın Executive Board member və mətbuat katibi, İsveçin Gothenburg Universitetinin dosenti, elmlər doktoru Səadət Kərimi Karabakh Universitynin bir qrupp müəllimlərinə "ALİ MƏKTƏB PEDAQOQİKASI" (TEACHING AND LEARNING IN HIGHER EDUCATION) fənni üzrə əhatəli kursun tədrisinə başlamışdır. Tədris əsasən İngilis dilində və Avropa İttifaqı qaydalarına uyğun olaraq distant formatda həyata keçirilmişdir. İştirak edən müəllimlərin əksəriyyəti xaricdə magister, doktorantura təhsili almış olmasına baxmayaraq, bu kursun əhəmiyyətini dərk etdiklərini və yaranan imkana görə minnətdarlıqlarını bildirirlər.
+          Since May 2025, WAAS Executive Board member and press secretary Dr. Saadat Karimi, Associate Professor at the University of Gothenburg in Sweden, has been teaching a comprehensive course on "HIGHER EDUCATION PEDAGOGY" (TEACHING AND LEARNING IN HIGHER EDUCATION) to a group of teachers at Karabakh University. Instruction has been delivered mainly in English, remotely and in accordance with European Union standards. Although most participating teachers have completed master's or doctoral studies abroad, they have expressed appreciation for the opportunity and recognised the importance of the course.
         </p>
 <p class="card-text">
-          Kursun məqsədi bakalavriat və magistratura pillələrində təhsilin keyfiyyətini gücləndirmək, tələbələrin öyrənilməsi və biliklərinin inkişafı üçün yaxşı şərait yaratmaq üçün ali məktəb müəllimlərini müəllim hazırlığı ilə təmin etməkdir. Kurs həmçinin elmi rəhbərlik (supervisor) işinin keyfiyyətini gücləndirməyi əhatə edir.
+          The course aims to equip university teachers with pedagogical training to strengthen the quality of education at undergraduate and master's levels and to create favourable conditions for student learning and knowledge development. It also covers strengthening the quality of academic supervision.
         </p>
 <p class="card-text">
-          Kurs iki moduldan ibarətdir. Birinci modul 10 İyun 2025 tarixində imtahanlarla başa çatmışdır; ikinci modul avqustun ikinci yarısından noyabr ayının ilk həftəsinədək davam edəcək və sertifikatla nəticələnəcəkdir. Toplam 50 saatlıq kurs 15 kredit səviyyəsindədir: həftədə 3 saat leksiya, seminar və vorkşoplardan ibarət olub.
+          The course consists of two modules. The first module concluded with examinations on 10 June 2025; the second module will run from the second half of August until the first week of November and will conclude with certification. The 50-hour course is at the 15-credit level and comprises three hours per week of lectures, seminars and workshops.
         </p>
 <p class="card-text">
-          Səadət Kərimi Karabakh Universitynə töhfə verə bildiyi üçün şərəf və məmnuniyyət hissi duyduğunu, Azərbaycan Respublikasının sürətli quruculuq işlərində, o cümlədən elm və təhsil sahəsində, yaxından iştirak edə bildiyi üçün xoşbəxt olduğunu bildirmişdir. Onun fikrincə, kursun mütəmadi olaraq hər semestrdə yeni işə qəbul olunmuş ali məktəb müəllimlərinə verilməsi məqsədəuyğundur. Bu kurs Azərbaycanın müxtəlif universitetlərindən müəllimlər tərəfindən distant şəkildə götürülə bilər.
+          Saadat Karimi said she felt honoured and pleased to contribute to Karabakh University and to participate closely in the rapid construction efforts of the Republic of Azerbaijan, including in science and education. In her view, it would be appropriate to offer the course regularly each semester to newly appointed university teachers. Teachers from various universities across Azerbaijan could take the course remotely.
         </p>
 <div class="inline-style-009">
-<p class="inline-style-010">📚 Canvas Öyrənmə İdarəetmə Sistemi — Faydalı Keçidlər</p>
+<p class="inline-style-010">📚 Canvas Learning Management System — Useful Links</p>
 <ul class="list-az">
-<li><a rel="noopener noreferrer" class="inline-style-011" href="https://canvas.gu.se/courses/20995/pages/in-english" target="_blank">Göteborg Universiteti Canvas Manual (İngilis dilində)</a></li>
-<li><a rel="noopener noreferrer" class="inline-style-011" href="https://community.canvaslms.com/t5/Student-Guide/tkb-p/student" target="_blank">Canvas tələbə təlimatları (provayderın rəsmi sənədi)</a></li>
+<li><a rel="noopener noreferrer" class="inline-style-011" href="https://canvas.gu.se/courses/20995/pages/in-english" target="_blank">University of Gothenburg Canvas Manual (in English)</a></li>
+<li><a rel="noopener noreferrer" class="inline-style-011" href="https://community.canvaslms.com/t5/Student-Guide/tkb-p/student" target="_blank">Canvas student guide (official provider documentation)</a></li>
 </ul>
 </div>
 <div class="inline-style-012">
-<p class="inline-style-013">📞 Müzakirə, təklif və əməkdaşlıq üçün əlaqə</p>
+<p class="inline-style-013">📞 Contact for discussion, suggestions and cooperation</p>
 <p class="inline-style-014">📱 Telefon: +46 70 46 48 650</p>
 <p class="inline-style-014">✉️ <a class="inline-style-015" href="mailto:saadat.karimi@edu.lidkoping.se">saadat.karimi@edu.lidkoping.se</a></p>
 <p class="inline-style-016">✉️ <a class="inline-style-015" href="mailto:saadat953@hotmail.com">saadat953@hotmail.com</a></p>
 </div>
 </div>
 </article>
-<!-- CARD 15: Hərbi Münaqişə Konfransı (Az+En) -->
-<!-- CARD 16: Telman Əliyev 90 -->
+<!-- CARD 15: Military conflict conference (AZ+EN) -->
+<!-- CARD 16: Telman Aliyev 90 -->
 <article class="news-card" id="telman-90-2025">
 <div class="card-header">
 <div class="card-date">2 May 2025</div>
-<h2 class="card-title">DAAB Executive Board sends congratulatory letter on 90th anniversary of Academician Telman Aliyev</h2>
+<h2 class="card-title">WAAS Executive Board sends congratulatory letter on 90th anniversary of Academician Telman Aliyev</h2>
 </div>
 <div class="card-body">
-<div class="card-gallery telman-gallery inline-style-007"><img alt="Telman Əliyev 90 illik yubiley 1" src="../images/activities/054-telman-eliyev-90-illik-yubiley-1.jpg" loading="lazy"/><img alt="Telman Əliyev 90 illik yubiley 2" src="../images/activities/055-telman-eliyev-90-illik-yubiley-2.jpg" loading="lazy"/></div></div>
+<div class="card-gallery telman-gallery inline-style-007"><img alt="Telman Aliyev 90th anniversary 1" src="../images/activities/054-telman-eliyev-90-illik-yubiley-1.jpg" loading="lazy"/><img alt="Telman Aliyev 90th anniversary 2" src="../images/activities/055-telman-eliyev-90-illik-yubiley-2.jpg" loading="lazy"/></div></div>
 </article>
 <!-- CARD 17: February Lectures 2025 -->
 <article class="news-card" id="fevral-2025">
 <div class="card-header">
 <div class="card-date">4 February 2025</div>
-<h2 class="card-title">DAAB Chair Professor Messoud Efendiyev presents on Association activities at MAA "February Lectures 2025" conference</h2>
+<h2 class="card-title">WAAS Chair Professor Messoud Efendiyev presents on Association activities at MAA "February Lectures 2025" conference</h2>
 </div>
 <div class="card-body">
-<p>Februaryın 4-də “Azərbaycan Hava Yolları” QSC-nin at the National Aviation Academy (MAA) Azərbaycan Gəncləri Gününə və ölkəmizin ilk telekommunikasiya peyki “Azerspace 1”in orbitə buraxılması tarixinə həsr olunan “February Lectures 2025: Aviakosmik məsələlərin həllində gənclərin yaradıcı potensialı” 10-cu beynəlxalq elmi-praktik gənclər konfransı işə başlayıb.</p><p>AZƏRTAC xəbər verir ki, konfransa Rusiya, Qazaxıstan, Türkiyə, Ukrayna, Belarus, Almaniya, Böyük Britaniya, Fransa, İsrail və Azərbaycandan olmaqla 20-dən çox elm və təhsil müəssisəsi, o cümlədən 13 universitet, 7 tədqiqat mərkəzi, institut, dövlət qurumları və aparıcı təşkilatları təmsil edən 150-dən çox iştirakçı qatılıb.</p><p>Konfransda DAAB Executive Board Chair Professor Məsud Əfəndiyev DAAB-ın fəaliyyətii barədə məruzə ilə çıxış etmişdir.</p>
+<p>On 4 February, the 10th International Scientific and Practical Youth Conference "February Lectures 2025: Creative Potential of Youth in Solving Aerospace Issues", dedicated to Azerbaijan Youth Day and the launch date of our country's first telecommunications satellite Azerspace 1, began at the National Aviation Academy (MAA) of Azerbaijan Airlines.</p><p>AZERTAC reports that more than 150 participants representing over 20 scientific and educational institutions from Russia, Kazakhstan, Türkiye, Ukraine, Belarus, Germany, the United Kingdom, France, Israel and Azerbaijan — including 13 universities, 7 research centres, institutes, government bodies and leading organisations — took part in the conference.</p><p>At the conference, WAAS Executive Board Chair Professor Messoud Efendiyev presented on the activities of WAAS.</p>
 <div class="inline-style-017"><img alt="" class="inline-style-018" src="../images/activities/056-activity-image-056.jpg" loading="lazy"/></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/milli_aviasiya_akademiyasinda_fevral_meruzeleri_2025_beynelxalq_konfransi_ise_baslayib_video-3402999" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-          AZƏRTAC
+          AZERTAC
         </a>
 </div>
 </article>
-<!-- CARD 18: Qahirə Kitab Sərgisi -->
+<!-- CARD 18: Cairo International Book Fair -->
 <article class="news-card" id="qahire-kitab-2025">
 <div class="card-header">
 <div class="card-date">4 February 2025</div>
 <h2 class="card-title">Chair of Egypt–Azerbaijan Friendship Society meets scholar Seymur Nasirov at Cairo International Book Fair</h2>
 </div>
 <div class="card-body">
-<p>Chair of Egypt–Azerbaijan Friendship Society meets scholar Seymur Nasirov at Cairo International Book Fair.</p><p>AZƏRTAC Misir-Azərbaycan Dostluq Cəmiyyətinə istinadla xəbər verir ki, Misirin Vəqflər Nazirliyi tərəfindən təşkil olunan görüşdə Misirin yüksəkvəzifəli şəxsləri, elm xadimləri və burada təhsil alan xarici tələbələr iştirak ediblər.</p><p>Tədbirdə İslam İşləri Üzrə Ali Şuranın baş katibi professor Məhəmməd əl-Bəyyumi Seymur Nəsirovun elmi, ictimai və mədəni fəaliyyətlərinin Misir ictimaiyyəti tərəfindən yüksək qiymətləndirildiyini və onun ölkədə təhsil alan tələbələr üçün böyük bir nümunə olduğunu qeyd edib.</p>
+<p>A meeting was held with Azerbaijani scholar Seymur Nasirov, Chair of the Egypt–Azerbaijan Friendship Society, within the Cairo International Book Fair.</p><p>AZERTAC reports, citing the Egypt–Azerbaijan Friendship Society, that senior Egyptian officials, scholars and foreign students studying in the country took part in the meeting organised by Egypt's Ministry of Endowments.</p><p>At the event, Secretary General of the Supreme Council for Islamic Affairs Professor Muhammad al-Bayyumi noted that Seymur Nasirov's scientific, public and cultural activities are highly valued by Egyptian society and that he is a great example for students studying in the country.</p>
 <div class="inline-style-019"><div class="inline-style-020"><img alt="" class="inline-style-021" src="../images/activities/057-activity-image-057.jpg" loading="lazy"/></div><div class="inline-style-020"><img alt="" class="inline-style-021" src="../images/activities/058-activity-image-058.jpg" loading="lazy"/></div></div><a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/qahire_beynelxalq_kitab_sergisi_cherchivesinde_azerbaycanli_alimle_gorus_kechirilib-3402935" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-          AZƏRTAC
+          AZERTAC
         </a>
 </div>
 </article>
@@ -1895,10 +1924,10 @@ html {
 <article class="news-card" id="diaspora-video-2025">
 <div class="card-header">
 <div class="card-date">23 January 2025</div>
-<h2 class="card-title">Videoconference with nearly 1,000 compatriots from 85 countries — DAAB members awarded "For service in diaspora activity" medal</h2>
+<h2 class="card-title">Videoconference with nearly 1,000 compatriots from 85 countries — WAAS members awarded "For service in diaspora activity" medal</h2>
 </div>
 <div class="card-body">
-<p class="card-text">Diasporla İş üzrə Dövlət Komitəsinin təşkilatçılığı ilə 85 ölkədən 1000-ə yaxın soydaşımızın iştirakı ilə videokonfrans keçirilib. Konfrans zamanı DAAB üzvləri Səidə Xəlilova (Oman), Rövşən İbrahimov (Cənubi Koreya) və Hacalı Nəcəfov (Türkiyə) "Diaspor fəaliyyətində xidmətə görə" medalı ilə təltif olunduqları elan edilib.</p>
+<p class="card-text">A videoconference with nearly 1,000 compatriots from 85 countries was held under the auspices of the State Committee on Diaspora Affairs. During the conference, it was announced that WAAS members Saida Khalilova (Oman), Rovshan Ibrahimov (South Korea) and Hajali Najafov (Türkiye) had been awarded the medal "For service in diaspora activity".</p>
 <div class="inline-style-019"><div class="inline-style-020"><img alt="" class="inline-style-022" src="../images/activities/059-activity-image-059.jpg" loading="lazy"/></div><div class="inline-style-020"><img alt="" class="inline-style-022" src="../images/activities/060-activity-image-060.jpg" loading="lazy"/></div></div><a rel="noopener noreferrer" class="card-source" href="https://diaspor.gov.az/az/news-detail/85-olkeden-1000-e-yaxin-soydasimizin-istiraki-ile-videokonfrans-kecirilib-5471" target="_blank">State Committee on Diaspora Affairs — 2024 year in review</a>
 </div>
 </article>
@@ -1909,41 +1938,41 @@ html {
 <h2 class="card-title">GOBUSTAN — appeal to Norwegian Nobel Committee on M. Gorbachev peace prize (Azerbaijani Academics Association, Sweden)</h2>
 </div>
 <div class="card-body">
-<p class="card-text">İsveçdə Azərbaycan Aydınlar Ocağı Norveç Nobel Komitəsinə Mixail Qorbopenovun Nobel sülh mükafatından məhrum edilməsi tələbi ilə rəsmi müraciət ünvanlamışdır.</p>
-<div class="open-letter-bilingual"><div class="open-letter-column"><h3>English</h3><p>THE OPEN LETTER<br/>TO THE NORWEGIAN NOBEL COMMITTEE<br/>From "GOBUSTAN" – ASSOCIATION of AZERBAIJANI ACADEMICS (AAAS)<br/>in the Kingdom of Sweden<br/>20.01.2025</p><p>On January 19, 2025, more than 100 participants, members of “GOBUSTAN – Association of Azerbaijani Academics in Sweden” (AAAS), and the Azerbaijani public activists, family members of the January 20 martyrs, and January 20 veterans who attended the ZOOM conference organized by the “GOBUSTAN AAAS” adopted a RESOLUTION as the result of the conference. This resolution is addressed to the chairman and members of the Norwegian Nobel Committee in the following:</p><p>Honored Chairman of the Norwegian Nobel Committee, Mr. Jørgen Watne Frydnes and honored members of the Norwegian Nobel Committee - Mr. Asle Toje, Ms. Anne Enger, Ms. Kristin Clemet, Ms. Gry Larsen!</p><p>We - the members of “Gobustan” - Association of Azerbaijani Academics in Sweden - together with the family members of the January 20 martyrs, Azerbaijani social activists living in different countries of the world, and January 20 veterans who participated in the public conference we held on January 19, 2025, would like to present to you our RESOLUTION on the awarding of the NOBEL PEACE PRIZE to the General Secretary of the Central Committee of the Communist Party of the Soviet Union MIKHAIL GORBACHEV by the Norwegian Nobel Committee in October 1990.</p><p>We consider the fact that Mikhail Gorbachev still bears the title of Nobel Peace Prize laureate to be the greatest injustice in the history of this prize and in the history of mankind, as well as disrespect for the Azerbaijani people, and a black spot in history! We consider the deprivation of Mikhail Gorbachev from the Nobel Peace Prize a necessary step!</p><p>By depriving Mikhail Gorbachev of the Nobel Peace Prize, the Nobel Committee would have belatedly cleansed this black spot and eliminated the injustice committed against the Azerbaijani people. Your decision to deprive Mikhail Gorbachev of his award would have strengthened the world community's faith in justice and the moral authority of the Nobel Peace Prize. This is sorely needed!</p><p>It is with great pain that we announce that the awarding of the Nobel Peace Prize to Mikhail Gorbachev, whose hands were soaked in the blood of the Azerbaijani people, by the Norwegian Nobel Committee after the January 20, 1990 massacre is as painful for us as the sorrow of January 20. However, for many years, the Azerbaijani public has not lost faith that this injustice will one day be eliminated.</p><p>The Azerbaijani people commemorate the anniversary of the mass murder of a total of 170 people and 800 seriously injured on the night of January 19-20, 1990, as a result of the deployment of Soviet troops to Baku and several regions of Azerbaijan, the firing of heavy equipment and various types of weapons on the civilian population, with the same sadness as every year, cursing the murderer Mikhail Gorbachev and expressing deep hatred for the perpetrators of this tragedy. It is a known and undeniable fact that Mikhail Gorbachev personally gave the order to deploy troops to Baku and against the civilian population! He bears direct responsibility for the mass murders! The bloody trail of this crime is indelible.</p><p>There are sufficient legal grounds for bringing the criminals who committed the January 20 tragedy to justice. The January 20, 1990 Massacre is, first of all, a violation of the requirements of the UN Universal Declaration of Human Rights, the International Covenant on Civil and Political Rights and other international legal conventions! This massacre is a crime against humanity, during which peaceful people were killed, injured, kidnapped and tortured. A historical crime was committed against the entire people!</p><p>All investigations give us reason to call the January 20 massacre a pre-planned state crime to stifle the struggle for freedom and independence of the Azerbaijani people, who protested against the unjust policy of the USSR!</p><p>We hope that the Nobel Peace Committee will not turn a blind eye to the insult to Nobel values, and that you will restore historical justice by signing a decision to deprive Mikhail Gorbachev, who has earned the deep hatred of the Azerbaijani people, as well as other peoples of the former Soviet Union, of the Nobel Peace Prize.</p><p>Best regards,<br/>100 signatures</p></div><div class="open-letter-column"><h3>Azərbaycanca</h3><p>İSVEÇ Krallığında fəaliyyət göstərən<br/>"QOBUSTAN" – AZƏRBAYCANLI ALİMLƏR ASSOSİASİYASINDAN (AAAS)<br/>NORVEÇ NOBEL KOMİTƏSİNƏ<br/>AÇIQ MƏKTUB<br/>20.01.2025</p><p>19 January 2025 ci il tarixində İsveçdə fəaliyyət göstərən ”GOBUSTAN  - Azərbaycan Aydınlar Ocağı” dərnəyinin təşkil etdiyi ZOOM konfransına qatılan 100 nəfərdən çox iştirakçı, dərnəyin üzvləri, və dəvət olunmuş Azərbaycan ictimai fəalları, 20 January şəhidlərinin ailə üzvləri, 20 January veteranları konfransın nəticəsi olaraq QƏTNAMƏ qəbul ediblər. Bu qətnamə Norveç Nobel Komitəsinin sədrinə və üzvlərinə Açıq Məktubda ünvanlanıbdır.</p><p>Hörmətli Norveç Nobel Komitəsinin sədri cənab Jørgen Watne Frydnes.<br/>Hörmətli Norveç Nobel Komitəsinin üzvləri - cənab Asle Toje, xanım Anne Enger, xanım Kristin Clemet, xanım Gry Larsen.</p><p>Biz – İsveçdə fəaliyyət göstərən Qobustan Azərbaycan Aydınlar Ocağı – 19 January 2025 ci tarixində keçirdiyimiz ictimaiyyətə openıq konfransa qatılan 20 January şəhidlərinin ailə üzvləri, dünyanın müxtəlif ölkələrində yaşayan Azərbaycanlı sosial-ictimai fəallar, 20 January veteranları ilə birlikdə, Sizə 1990-cı ilin oktyabrında Sovet İttifaqı Kommunist Partiyası Mərkəzi Komitəsinin baş katibi MİXAİL QORBAÇOVUN Norveç Nobel Komitəsi tərəfindən NOBEL SÜLH MÜKAFATI ilə təltif olunması barədə qəbul etdiyimiz QƏTNAMƏMİZİ TƏQDİM EDİRİK.</p><p>Mixail Qorbopenovun hələ də Nobel Sülh Mükafatı laureatı adını daşımasını bu mükafatın tarixində və bəşəriyyət tarixində ən böyük ədalətsizlik, Azərbaycan xalqına qarşı sayqısızlıq və tarixdə qara ləkə hesab edirik! Mixail Qorbopenovun Nobel Sülh Mükafatından məhrum edilməsini gərəkli addım hesab edirik!</p><p>Mixail Gorbopenovu Nobel Sülh Mükafatından məhrum etməklə Nobel Komitəsi gec də olsa bu qara ləkəni təmizləmiş olar və Azərbaycan xalqına qarşı yol verilmiş haqsızlığı aradan qaldırmış olar.  Mixail Qorbopenovu mükafatından məhrum etmək qərarınız dünya ictimaiyyətinin ədalətə və Nobel Sülh Mükafatının mənəvi nüfuzuna inamını gücləndirərdi. Buna ciddi ehtiyac var!</p><p>Böyük ağrı hissi ilə bildiririk ki, məhz 1990 cı il 20 January qətliamından sonra Norveç Nobel Komitəsi tərəfindən əlləri Azərbaycan xalqının qanına batmış Mixail Qorbopenovun Nobel Sülh Mükafatı ilə təltif edilməsi bizim üçün 20 January kədəri qədər əzablıdır. Lakin, Azərbaycan ictimaiyyəti uzun illərdir ki, bu ədalətsizliyin bir gün mütləq aradan qaldırılacağına inamını itirməyib.</p><p>Azərbaycan xalqı hər il 1990-cı il yanvarın 19-dan 20-nə keçən gecə sovet qoşunlarının Bakıya və Azərbaycanın bir neçə rayonuna yeridilməsi, dinc əhalinin ağır texnikadan və müxtəlif tipli silahlardan atəşə tutulması nəticəsində ümumilikdə 150 nəfərin kütləvi şəkildə qətlə yetirilməsinin ildönümünü hər il olduğu kimi bu ildə eyni hüznlə qeyd edir, qatil Mixail Qorbopenovu lənətləyir, bu faciəni törədənlərə dərin nifrətini ifadə edir. Mixail Qorbopenovun şəxsən Bakıya, dinc əhaliyə qarşı qoşun yeridilməsi əmrini verməsi məlum və inkar edilməz faktdır! O, kütləvi qətllərə görə birbaşa məsuliyyət daşıyır! Bu cinayətin qanlı izi silinməzdir.</p><p>20 January faciəsini törədən cinayətkarların ədalət mühakiməsinə cəlb olunması üçün kifayət qədər hüquqi əsaslar mövcuddur. 20 January 1990 Qətliamı hər şeydən öncə BMT-nin Ümumdünya İnsan Hüquqları Bəyannaməsinin, Mülki və Siyasi hüquqlar Haqqında Beynəlxalq Paktın və digər beynəlxalq hüquqi konvensiyaların tələblərinin pozulması faktıdır! Bu qətliam bəşəriyyət əleyhinə cinayətdir, bu hadisə zamanı dinc insanlar qətlə yetirilib, yaralanıb, oğurlanıb, işgəncələrə məruz qalıb. Bütöv bir xalqa qarşı tarixi cinayət törədilib.</p><p>Bütün araşdırmalar bizə 20 January qətliamını SSRİ-nin ədalətsiz siyasətinə etiraz edən Azərbaycan xalqının azadlıq və müstəqillik mübarizəsinin boğulması üçün əvvəlcədən planlaşdırılmış dövlət cinayəti adlandırmağa əsas verir!</p><p>Biz ümid edirik ki, Nobel Sülh Komitəsi Nobel dəyərlərinin təhqir edilməsinə göz yummayacaq, Azərbaycan xalqının, eləcə də keçmiş Sovet İttifaqının digər xalqlarının dərin nifrətini qazanmış Mixail Qorbopenovun Nobel Sülh Mükafatından məhrum edilməsi barədə qərara imza atmaqla tarixi ədaləti bərpa edəcəksiniz.</p><p>Hörmətlə,<br/>100 imza</p></div></div><a rel="noopener noreferrer" class="card-source" href="#" target="_blank">
+<p class="card-text">The Association of Azerbaijani Academics in Sweden (GOBUSTAN) has addressed an official appeal to the Norwegian Nobel Committee requesting that Mikhail Gorbachev be deprived of the Nobel Peace Prize.</p>
+<div class="open-letter-bilingual"><div class="open-letter-column"><h3>English</h3><p>THE OPEN LETTER<br/>TO THE NORWEGIAN NOBEL COMMITTEE<br/>From "GOBUSTAN" – ASSOCIATION of AZERBAIJANI ACADEMICS (AAAS)<br/>in the Kingdom of Sweden<br/>20.01.2025</p><p>On January 19, 2025, more than 100 participants, members of “GOBUSTAN – Association of Azerbaijani Academics in Sweden” (AAAS), and the Azerbaijani public activists, family members of the January 20 martyrs, and January 20 veterans who attended the ZOOM conference organized by the “GOBUSTAN AAAS” adopted a RESOLUTION as the result of the conference. This resolution is addressed to the chairman and members of the Norwegian Nobel Committee in the following:</p><p>Honored Chairman of the Norwegian Nobel Committee, Mr. Jørgen Watne Frydnes and honored members of the Norwegian Nobel Committee - Mr. Asle Toje, Ms. Anne Enger, Ms. Kristin Clemet, Ms. Gry Larsen!</p><p>We - the members of “Gobustan” - Association of Azerbaijani Academics in Sweden - together with the family members of the January 20 martyrs, Azerbaijani social activists living in different countries of the world, and January 20 veterans who participated in the public conference we held on January 19, 2025, would like to present to you our RESOLUTION on the awarding of the NOBEL PEACE PRIZE to the General Secretary of the Central Committee of the Communist Party of the Soviet Union MIKHAIL GORBACHEV by the Norwegian Nobel Committee in October 1990.</p><p>We consider the fact that Mikhail Gorbachev still bears the title of Nobel Peace Prize laureate to be the greatest injustice in the history of this prize and in the history of mankind, as well as disrespect for the Azerbaijani people, and a black spot in history! We consider the deprivation of Mikhail Gorbachev from the Nobel Peace Prize a necessary step!</p><p>By depriving Mikhail Gorbachev of the Nobel Peace Prize, the Nobel Committee would have belatedly cleansed this black spot and eliminated the injustice committed against the Azerbaijani people. Your decision to deprive Mikhail Gorbachev of his award would have strengthened the world community's faith in justice and the moral authority of the Nobel Peace Prize. This is sorely needed!</p><p>It is with great pain that we announce that the awarding of the Nobel Peace Prize to Mikhail Gorbachev, whose hands were soaked in the blood of the Azerbaijani people, by the Norwegian Nobel Committee after the January 20, 1990 massacre is as painful for us as the sorrow of January 20. However, for many years, the Azerbaijani public has not lost faith that this injustice will one day be eliminated.</p><p>The Azerbaijani people commemorate the anniversary of the mass murder of a total of 170 people and 800 seriously injured on the night of January 19-20, 1990, as a result of the deployment of Soviet troops to Baku and several regions of Azerbaijan, the firing of heavy equipment and various types of weapons on the civilian population, with the same sadness as every year, cursing the murderer Mikhail Gorbachev and expressing deep hatred for the perpetrators of this tragedy. It is a known and undeniable fact that Mikhail Gorbachev personally gave the order to deploy troops to Baku and against the civilian population! He bears direct responsibility for the mass murders! The bloody trail of this crime is indelible.</p><p>There are sufficient legal grounds for bringing the criminals who committed the January 20 tragedy to justice. The January 20, 1990 Massacre is, first of all, a violation of the requirements of the UN Universal Declaration of Human Rights, the International Covenant on Civil and Political Rights and other international legal conventions! This massacre is a crime against humanity, during which peaceful people were killed, injured, kidnapped and tortured. A historical crime was committed against the entire people!</p><p>All investigations give us reason to call the January 20 massacre a pre-planned state crime to stifle the struggle for freedom and independence of the Azerbaijani people, who protested against the unjust policy of the USSR!</p><p>We hope that the Nobel Peace Committee will not turn a blind eye to the insult to Nobel values, and that you will restore historical justice by signing a decision to deprive Mikhail Gorbachev, who has earned the deep hatred of the Azerbaijani people, as well as other peoples of the former Soviet Union, of the Nobel Peace Prize.</p><p>Best regards,<br/>100 signatures</p></div></div><a rel="noopener noreferrer" class="card-source" href="#" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           Qobustan
         </a>
 </div>
 </article>
 <!-- CARD 21: QOBUSTAN 20 January -->
-<!-- CARD 22: CROSS MEDİA Vətən -->
-<!-- CARD 23: Teymur Rzayev medalı -->
-<!-- CARD 24: UNEC-DAAB təşəbbüs -->
+<!-- CARD 22: Crossmedia homeland -->
+<!-- CARD 23: Teymur Rzayev medal -->
+<!-- CARD 24: UNEC-WAAS initiative -->
 <article class="news-card" id="unec-daab-2025">
 <div class="card-header">
 <div class="card-date">17 January 2025</div>
-<h2 class="card-title">AZPOLITIKA.INFO — UNEC and DAAB sign new initiative</h2>
+<h2 class="card-title">AZPOLITIKA.INFO — UNEC and WAAS sign new initiative</h2>
 </div>
 <div class="card-body">
-<img alt="DAAB-UNEC onlayn görüş" class="inline-style-023" src="../images/activities/061-daab-unec-onlayn-gorus.jpg" loading="lazy"/>
-<p class="card-text">UNEC-in rektoru Prof. Ədalət Muradov:
+<img alt="WAAS-UNEC online meeting" class="inline-style-023" src="../images/activities/061-daab-unec-onlayn-gorus.jpg" loading="lazy"/>
+<p class="card-text">UNEC Rector Prof. Adalet Muradov:
 
-World Association of Azerbaijani Scientistsnin (DAAB) bütün qitələrdən olan üzvləri ilə UNEC-in əməkdaşlıq imkanlarını müzakirə etdik. Ortaq elmi tədqiqatlar və onların nəticələrinin yayılması, gənc alimlərə dəstək, birgə jurnallar, elmi fəaliyyət sahəsində məlumat mübadilə mexanizminin yaradılması və digər məsələləri müzakirə etdik. UNEC-ə ayırdıqları vaxta və göstərdikləri dəstəyə görə DAAB-ın İdarə Heyətinin Sədri professor Məsud müəllim Əfəndiyev başda olmaqla müzakirədə iştirak edən hər bir DAAB üzvünə təşəkkür edirəm.</p>
+We discussed UNEC's cooperation opportunities with WAAS members from all continents. We discussed joint scientific research and dissemination of results, support for young scholars, joint journals, creating a mechanism for exchanging information in scientific activity and other matters. I thank every WAAS member who took part in the discussion, led by WAAS Executive Board Chair Professor Messoud Efendiyev, for the time and support they devoted to UNEC.</p>
 <a rel="noopener noreferrer" class="card-source" href="https://azpolitika.info/?p=781801" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           AzPolitika.info
         </a>
 </div>
 </article>
-<!-- CARD 25: Diaspora Komitəsi 17.01 -->
-<!-- CARD 26: Azərbaycan Müəllimi -->
+<!-- CARD 25: Diaspora Committee 17.01 -->
+<!-- CARD 26: Azerbaijani Teacher -->
 <!-- CARD 27: Бакинский Рабочий -->
-<!-- CARD 28: Teymur Rzayev Türkiyə proqramı -->
+<!-- CARD 28: Teymur Rzayev Türkiye programme -->
 <!-- CARD 29: Diaspora СИЛА В ЕДИНСТВЕ -->
 <article class="news-card" id="diaspora-sila-2024">
 <div class="card-header">
-<div class="card-date">Sentyabr 2024</div>
+<div class="card-date">September 2024</div>
 <h2 class="card-title">State Committee on Diaspora Affairs — STRENGTH IN UNITY (video interviews)</h2>
 </div>
 <div class="card-body">
@@ -1977,40 +2006,40 @@ World Association of Azerbaijani Scientistsnin (DAAB) bütün qitələrdən olan
 </div>
 </div>
 </article>
-<!-- CARD 30: CROSS MEDİA Seymur müsahibə -->
-<!-- CARD 31: 525 Qəzet Məsud müsahibə -->
+<!-- CARD 30: Crossmedia Seymur interview -->
+<!-- CARD 31: 525 Newspaper Messoud interview -->
 <article class="news-card" id="525-mesud-2024">
 <div class="card-header">
 <div class="card-date">13 December 2024</div>
 <h2 class="card-title">525 Newspaper — interview with Messoud Efendiyev</h2>
 </div>
 <div class="card-body">
-<img alt="Məsud Əfəndiyev — NDU" class="inline-style-029" src="../images/activities/068-mesud-efendiyev-ndu.jpg" loading="lazy"/>
-<p class="card-text">Məqalədə Almaniyada fəaliyyət göstərən tanınmış azərbaycanlı alim, "Aleksander fon Humboldt" ("Kiçik Nobel mükafatı") mükafatının ilk azərbaycanlı laureatı Məsud Əfəndiyev haqqında geniş məlumat verilir. Alim Azərbaycanın elm və təhsil siyasətinin son illərdə sistemli və strateji xarakter aldığını, xüsusilə süni intellekt və informasiya texnologiyalarına diqqətin artdığını vurğulayır. O, World Association of Azerbaijani Scientists vasitəsilə xaricdə yaşayan azərbaycanlı alimlərin Azərbaycan elminin inkişafına töhfə verməyə çalışdıqlarını qeyd edir. Məqalədə həmçinin Naxçıvan Dövlət Universiteti ilə əməkdaşlıq perspektivləri, beynəlxalq elmi əlaqələrin genişləndirilməsi və gənclərin elmə təşviqinin əhəmiyyəti xüsusi vurğulanır. Məsud Əfəndiyev hesab edir ki, güclü elmi mühit, beynəlxalq əməkdaşlıq və keyfiyyətli tədqiqatlar gələcəkdə azərbaycanlı alimlərin daha böyük beynəlxalq uğurlar qazanmasına yol opena bilər.</p>
+<img alt="Messoud Efendiyev — NDU" class="inline-style-029" src="../images/activities/068-mesud-efendiyev-ndu.jpg" loading="lazy"/>
+<p class="card-text">The article provides extensive information about Messoud Efendiyev, a distinguished Azerbaijani scholar based in Germany and the first Azerbaijani laureate of the Alexander von Humboldt Award ("small Nobel prize"). The scholar emphasises that Azerbaijan's science and education policy has taken on a systematic and strategic character in recent years, with growing attention to artificial intelligence and information technology. He notes that through WAAS, Azerbaijani scholars abroad seek to contribute to the development of science in Azerbaijan. The article also highlights cooperation prospects with Nakhchivan State University, expanding international scientific ties and the importance of encouraging young people in science. Messoud Efendiyev believes that a strong scientific environment, international cooperation and quality research can pave the way for greater international success for Azerbaijani scholars in the future.</p>
 <a rel="noopener noreferrer" class="card-source" href="https://525.az/news/282802-azerbaycanda-elme-munasibet-konseptual-ve-sistemli-xarakter-dasiyir--kicik-nobel-mukafatinin-ilk-azerbaycanli-laureati" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-          525-ci Qəzet
+          525 Newspaper
         </a>
 </div>
 </article>
-<!-- CARD 32: QOBUSTAN onlayn görüş -->
-<!-- CARD 33: Karabakh University onlayn görüş -->
+<!-- CARD 32: GOBUSTAN online meeting -->
+<!-- CARD 33: Karabakh University online meeting -->
 <article class="news-card" id="qarabag-online-2024">
 <div class="card-header">
-<div class="card-date">15 Oktyabr 2024</div>
+<div class="card-date">15 October 2024</div>
 <h2 class="card-title">Online meeting with Karabakh University</h2>
 </div>
 <div class="card-body">
 <div class="inline-style-024"><img alt="Karabakh University" class="inline-style-030" src="../images/activities/069-qarabag-universiteti.jpg" loading="lazy"/><img alt="Online meeting with Karabakh University" class="inline-style-030" src="../images/activities/070-qarabag-universiteti-ile-onlayn-gorus.jpg" loading="lazy"/></div>
-<p class="card-text">15 oktyabr 2024-cü il tarixində World Association of Azerbaijani Scientistsnin (DAAB) Executive Board members və Karabakh Universitynin rəhbər heyəti arasında görüş keçirilib. DAAB-ın təşəbbüsü ilə onlayn formatda keçirilən görüş tədris, elmi-tədqiqat, eləcə də Karabakh Universitynin beynəlxalq səviyyədə tanınması və nüfuzunun gücləndirilməsi istiqamətlərində əməkdaşlıq imkanlarının müzakirəsi məqsədi daşıyıb.</p>
+<p class="card-text">On 15 October 2024, a meeting was held between members of the WAAS Executive Board and the leadership of Karabakh University. Initiated by WAAS and held online, the meeting aimed to discuss cooperation opportunities in teaching, research and strengthening the international recognition and standing of Karabakh University.</p>
 <div class="inline-style-031">
 <a rel="noopener noreferrer" class="card-source" href="https://azertag.az/xeber/qarabag_universiteti_ve_dunya_azerbaycanli_alimler_birliyi_emekdasliq_edecekler-3235158" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    AzərTAC
+    Azertag
   </a>
 <a rel="noopener noreferrer" class="card-source" href="https://tehsil.biz/news/az/78597/Qaraba-Universiteti-v-DAAB-arasnda-mkdalq-msllri-mzakir-olunub" target="_blank">
 <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    Təhsil.Biz
+    Tehsil.Biz
   </a>
 </div>
 </div>
@@ -2026,9 +2055,9 @@ World Association of Azerbaijani Scientistsnin (DAAB) bütün qitələrdən olan
     <div class="footer-grid">
       <div class="footer-col">
         <h4 class="footer-title">Contact</h4>
-        <div class="footer-item">✉ <a href="mailto:daad.waas2024@gmail.com">daad.waas2024@gmail.com</a></div>
+        <div class="footer-item">✉ <a href="mailto:bilik.birlik@gmail.com">bilik.birlik@gmail.com</a></div>
         <div class="footer-item">☎ <span>+90 555 147 46 74</span></div>
-        <div class="footer-item">🌐 <a href="https://daab-waas.org" rel="noopener noreferrer" target="_blank">daab-waas.org</a></div>
+        <div class="footer-item">🌐 <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div>
       </div>
       <div class="footer-col">
         <h4 class="footer-title">Address</h4>
@@ -2036,14 +2065,14 @@ World Association of Azerbaijani Scientistsnin (DAAB) bütün qitələrdən olan
       </div>
       <div class="footer-col">
         <h4 class="footer-title">Leadership</h4>
-        <p class="footer-leader"><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>
-        Chair of the DAAB Executive Board<br/>Germany — James D. Murray Distinguished Professor</p>
+        <p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>
+        Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p>
       </div>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 DAAB / WAAS — All Rights Reserved</div>
+  <div class="footer-bottom">© 2026 WAAS — All Rights Reserved</div>
 </footer>
-<!-- Updated: Xəlil Kələntər portrait replaced and portrait sizing unified -->
+<!-- Updated: Khalil Kelenter portrait replaced and portrait sizing unified -->
 <script>
 (function () {
   const links = Array.from(document.querySelectorAll('.timeline-list a[href^="#"]'));

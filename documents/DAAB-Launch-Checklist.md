@@ -24,9 +24,9 @@ All three should succeed with no errors.
 
 | Audience | URL |
 |----------|-----|
-| Default (Azerbaijani) | `https://daab-waas.org/az/` |
-| English | `https://daab-waas.org/en/` |
-| Language choice | `https://daab-waas.org/` |
+| Default (Azerbaijani) | `https://daab-waas.com/az/` |
+| English | `https://daab-waas.com/en/` |
+| Language choice | `https://daab-waas.com/` |
 
 Update **Google Sites** and email signatures to use `/az/` or `/en/`, not old `*_az.html` filenames.
 

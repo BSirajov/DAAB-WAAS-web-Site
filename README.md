@@ -6,8 +6,8 @@ Static website for **Dünya Azərbaycanlı Alimlər Birliyi** (World Association
 
 | Language | Address (local) | Address (live) |
 |----------|-----------------|----------------|
-| Azerbaijani | http://localhost:8010/az/ | https://daab-waas.org/az/ |
-| English | http://localhost:8010/en/ | https://daab-waas.org/en/ |
+| Azerbaijani | http://localhost:8010/az/ | https://daab-waas.com/az/ |
+| English | http://localhost:8010/en/ | https://daab-waas.com/en/ |
 
 Use **AZ | EN** in the top menu to switch language.  
 Plain guide: [`documents/HOW-TO-USE-THE-BILINGUAL-SITE.md`](documents/HOW-TO-USE-THE-BILINGUAL-SITE.md)

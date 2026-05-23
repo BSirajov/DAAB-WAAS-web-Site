@@ -1,7 +1,7 @@
 """English replacements for en/executive-board.html."""
 
 EXECUTIVE_BOARD_REPLACEMENTS: list[tuple[str, str]] = [
-    ("<title>DAAB — İdarə Heyəti</title>", "<title>DAAB — Executive Board</title>"),
+    ("<title>DAAB — İdarə Heyəti</title>", "<title>WAAS — Executive Board</title>"),
     (
         'content="Dünya Azərbaycanlı Alimlər Birliyi — İdarə Heyəti və rəhbərlik."',
         'content="Executive Board and leadership of the World Association of Azerbaijani Scientists."',
@@ -11,9 +11,9 @@ EXECUTIVE_BOARD_REPLACEMENTS: list[tuple[str, str]] = [
     ("İdarə Heyəti Üzvləri", "Executive Board Members"),
     ("İdarə Heyəti Üzvü", "Executive Board Member"),
     ('aria-label="İdarə Heyəti üzvləri"', 'aria-label="Executive Board members"'),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the DAAB Executive Board"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
     ("İdarə Heyəti", "Executive Board"),
-    ('aria-label="DAAB rəhbərliyi"', 'aria-label="DAAB leadership"'),
+    ('aria-label="DAAB rəhbərliyi"', 'aria-label="WAAS leadership"'),
     ("Həmsədr", "Co-Chair"),
     ("Mətbuat Katibi", "Press Secretary"),
     ("Elmi Katib", "Scientific Secretary"),

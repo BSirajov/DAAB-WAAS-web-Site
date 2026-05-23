@@ -1,22 +1,18 @@
 """English replacements for en/membership.html."""
 
 MEMBERSHIP_REPLACEMENTS: list[tuple[str, str]] = [
-    ("<title>DAAB — Üzvlük Şərtləri</title>", "<title>DAAB — Membership Terms</title>"),
+    ("<title>DAAB — Üzvlük Şərtləri</title>", "<title>WAAS — Membership Terms</title>"),
     (
         'content="Dünya Azərbaycanlı Alimlər Birliyi — üzvlük şərtləri, müraciət forması və ödəniş məlumatları."',
         'content="Membership terms, application form and payment information — World Association of Azerbaijani Scientists."',
     ),
     ("Məzmuna keç", "Skip to content"),
     ("Üzvlük <span>Şərtləri</span>", "Membership <span>Terms</span>"),
-    (
-        "Dünya Azərbaycanlı Alimlər Birliyinə qoşulmaq üçün müraciət qaydaları, üzvlük haqqı və ödəniş məlumatları.",
-        "Application rules, membership fees and payment details for joining the World Association of Azerbaijani Scientists.",
-    ),
     ('aria-label="Üzvlük qısa məlumat"', 'aria-label="Membership summary"'),
     ("Elmi şəbəkəyə qoşulun", "Join the scientific network"),
     (
-        "DAAB üzvlüyü elmi əməkdaşlıq, mentorluq, beynəlxalq akademik əlaqələr və Azərbaycanın elmi inkişafına töhfə imkanlarını genişləndirir.",
-        "DAAB membership expands opportunities for scientific cooperation, mentoring, international academic connections and contribution to Azerbaijan's scientific development.",
+        "DAAB üzvlüyü elmi əməkdaşlıq, mentorluq, beynəlxalq akademik əlaqələr və Azərbaycanın elmi inkişafına töhfə imkanlarını genişləndirir. Burada üzvlüklə bağlı müraciət qaydaları, üzvlük haqqı və ödəniş məlumatları təqdim olunur.",
+        "WAAS membership expands opportunities for scientific cooperation, mentoring, international academic connections and contribution to Azerbaijan's scientific development. Here you will find membership-related application rules, membership fees and payment information.",
     ),
     ("Aylıq üzvlük", "Monthly membership"),
     ("İllik üzvlük", "Annual membership"),
@@ -33,10 +29,10 @@ MEMBERSHIP_REPLACEMENTS: list[tuple[str, str]] = [
     ("Ünvan", "Address"),
     ("Türkiyə", "Türkiye"),
     ("Rəhbərlik", "Leadership"),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the DAAB Executive Board"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
     ("Axtarış üçün yazmağa başlayın…", "Start typing to search…"),
     ("Axtarış", "Search"),
-    ("DAAB-a üzv olun", "Join DAAB"),
+    ("DAAB-a üzv olun", "Join WAAS"),
     ("Axtarmaq üçün yuxarıdakı xanaya mətn daxil edin", "Enter text in the box above to search"),
     ("naviqasiya", "navigate"),
     ("aç", "open"),

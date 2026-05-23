@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://daab-waas.org/sitemap.xml
+Sitemap: https://daab-waas.com/sitemap.xml

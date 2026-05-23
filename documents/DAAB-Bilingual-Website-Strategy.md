@@ -1,6 +1,6 @@
 # DAAB bilingual website strategy (Azerbaijani + English)
 
-This document describes a recommended approach for converting the DAAB website into a professional bilingual platform, initially supporting **Azerbaijani (AZ)** and **English (EN)**. It is tailored to the current stack: static HTML on GitHub Pages / `daab-waas.org`, shared `css/` + `js/`, Python helpers for the scientist catalogue, `*_az.html` naming, and optional **Google Sites** links or embeds.
+This document describes a recommended approach for converting the DAAB website into a professional bilingual platform, initially supporting **Azerbaijani (AZ)** and **English (EN)**. It is tailored to the current stack: static HTML on GitHub Pages / `daab-waas.com`, shared `css/` + `js/`, Python helpers for the scientist catalogue, `*_az.html` naming, and optional **Google Sites** links or embeds.
 
 ---
 
@@ -9,7 +9,7 @@ This document describes a recommended approach for converting the DAAB website i
 ### Target model: static site + structured content + thin shared shell
 
 ```text
-daab-waas.org/
+daab-waas.com/
 ├── index.html              → language gateway (or redirect)
 ├── az/                     → Azerbaijani pages (canonical for now)
 │   ├── index.html
@@ -92,8 +92,8 @@ daab-waas.org/
 
 ### URL-based switching (required for SEO and bookmarks)
 
-- User on `https://daab-waas.org/az/scientists/list.html`
-- Switcher goes to `https://daab-waas.org/en/scientists/list.html`
+- User on `https://daab-waas.com/az/scientists/list.html`
+- Switcher goes to `https://daab-waas.com/en/scientists/list.html`
 - Same **page identity**, different language — not a JS toggle that hides content.
 
 ### UI pattern (desktop + mobile)
@@ -135,12 +135,12 @@ Place in the **nav strip**, right side (before search if present):
 ### Preferred (clean, scalable)
 
 ```text
-https://daab-waas.org/az/                    → home (AZ)
-https://daab-waas.org/en/                    → home (EN)
-https://daab-waas.org/az/scientists/list/
-https://daab-waas.org/en/scientists/list/
-https://daab-waas.org/az/membership/
-https://daab-waas.org/en/membership/
+https://daab-waas.com/az/                    → home (AZ)
+https://daab-waas.com/en/                    → home (EN)
+https://daab-waas.com/az/scientists/list/
+https://daab-waas.com/en/scientists/list/
+https://daab-waas.com/az/membership/
+https://daab-waas.com/en/membership/
 ```
 
 ### Root behaviour
@@ -168,7 +168,7 @@ For SEO, **separate URLs per language** are better than toggle-only; toggles are
 ### Google Sites
 
 - Do **not** embed different languages in one iframe without a clear URL.
-- Use two buttons: “Azərbaycan versiyası” → `https://daab-waas.org/az/`, “English version” → `https://daab-waas.org/en/`.
+- Use two buttons: “Azərbaycan versiyası” → `https://daab-waas.com/az/`, “English version” → `https://daab-waas.com/en/`.
 - Prefer **open in new tab** over iframe (see `DAAB-Site-Stability-and-Deployment-Guide.md` for iframe/header issues).
 
 ---
@@ -179,10 +179,10 @@ For SEO, **separate URLs per language** are better than toggle-only; toggles are
 
 ```html
 <html lang="az">   <!-- or lang="en" -->
-<link rel="canonical" href="https://daab-waas.org/az/scientists/list.html" />
-<link rel="alternate" hreflang="az" href="https://daab-waas.org/az/scientists/list.html" />
-<link rel="alternate" hreflang="en" href="https://daab-waas.org/en/scientists/list.html" />
-<link rel="alternate" hreflang="x-default" href="https://daab-waas.org/az/scientists/list.html" />
+<link rel="canonical" href="https://daab-waas.com/az/scientists/list.html" />
+<link rel="alternate" hreflang="az" href="https://daab-waas.com/az/scientists/list.html" />
+<link rel="alternate" hreflang="en" href="https://daab-waas.com/en/scientists/list.html" />
+<link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/scientists/list.html" />
 ```
 
 - **Unique `<title>` and `meta description` per language** (not translated by JS after load).
@@ -290,7 +290,7 @@ Load fonts once in shared CSS; subsetting optional for performance.
 
 | Constraint | Implication for bilingual |
 |------------|---------------------------|
-| Sites cannot host the repo | All languages live on **daab-waas.org** (or GitHub Pages) |
+| Sites cannot host the repo | All languages live on **daab-waas.com** (or GitHub Pages) |
 | iframe may break (X-Frame-Options, scroll) | Prefer **outbound links** per language |
 | Every URL change needs manual Sites update | Stabilize URLs early (`/az/`, `/en/`) |
 | HTTPS required | Both language roots must be HTTPS |
@@ -298,8 +298,8 @@ Load fonts once in shared CSS; subsetting optional for performance.
 ### Practical setup on Google Sites
 
 - Section: “Official website”
-  - Button → `https://daab-waas.org/az/`
-  - Button → `https://daab-waas.org/en/`
+  - Button → `https://daab-waas.com/az/`
+  - Button → `https://daab-waas.com/en/`
 - Avoid embedding the full catalogue iframe; link to list view instead.
 
 See also: `documents/DAAB-Site-Stability-and-Deployment-Guide.md` (§2.6, §10).

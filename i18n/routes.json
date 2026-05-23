@@ -1,11 +1,14 @@
 {
-  "version": 1,
+  "version": 2,
   "defaultLang": "az",
   "languages": ["az", "en"],
   "pages": [
     {
       "id": "home",
       "navId": "home",
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": 1,
       "legacy": "index.html",
       "az": "az/index.html",
       "en": "en/index.html"
@@ -13,6 +16,9 @@
     {
       "id": "foundation",
       "navId": "foundation",
+      "navGroup": "about",
+      "navParent": "about",
+      "navOrder": 1,
       "legacy": "foundation_az.html",
       "az": "az/foundation.html",
       "en": "en/foundation.html"
@@ -20,6 +26,9 @@
     {
       "id": "mission",
       "navId": "mission",
+      "navGroup": "about",
+      "navParent": "about",
+      "navOrder": 2,
       "legacy": "mission_vision_values_az.html",
       "az": "az/mission.html",
       "en": "en/mission.html"
@@ -27,6 +36,9 @@
     {
       "id": "activities",
       "navId": "activities",
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": 4,
       "legacy": "activities_az.html",
       "az": "az/activities.html",
       "en": "en/activities.html"
@@ -34,6 +46,9 @@
     {
       "id": "scientists-list",
       "navId": "scientists-list",
+      "navGroup": "scientists",
+      "navParent": "scientists",
+      "navOrder": 1,
       "legacy": "scientists_list_view_az.html",
       "az": "az/scientists/list.html",
       "en": "en/scientists/list.html"
@@ -41,6 +56,9 @@
     {
       "id": "scientists-profiles",
       "navId": "scientists-profiles",
+      "navGroup": "scientists",
+      "navParent": "scientists",
+      "navOrder": 2,
       "legacy": "scientists_card_view_az.html",
       "az": "az/scientists/profiles.html",
       "en": "en/scientists/profiles.html"
@@ -48,6 +66,9 @@
     {
       "id": "executive-board",
       "navId": "executive-board",
+      "navGroup": "about",
+      "navParent": "about",
+      "navOrder": 3,
       "legacy": "executive_board_az.html",
       "az": "az/executive-board.html",
       "en": "en/executive-board.html"
@@ -55,6 +76,9 @@
     {
       "id": "charter",
       "navId": "charter",
+      "navGroup": "about",
+      "navParent": "about",
+      "navOrder": 4,
       "legacy": "charter_az.html",
       "az": "az/charter.html",
       "en": "en/charter.html"
@@ -62,6 +86,9 @@
     {
       "id": "membership",
       "navId": "membership",
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": 5,
       "legacy": "membership_terms_az.html",
       "az": "az/membership.html",
       "en": "en/membership.html"

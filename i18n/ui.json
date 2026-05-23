@@ -22,7 +22,7 @@
       "note": "Əsas auditoriya üçün standart dil Azərbaycan dilidir."
     },
     "en": {
-      "title": "DAAB — Choose language",
+      "title": "WAAS — Choose language",
       "heading": "World Association of Azerbaijani Scientists",
       "subtitle": "Welcome to the official website. Choose your language to continue.",
       "btnAz": "Continue in Azerbaijani",
@@ -31,8 +31,24 @@
     }
   },
   "langSwitch": {
-    "az": { "label": "Dil seçimi", "az": "AZ", "en": "EN" },
-    "en": { "label": "Language", "az": "AZ", "en": "EN" }
+    "az": {
+      "label": "Dil seçimi",
+      "az": "AZ",
+      "en": "EN",
+      "azFull": "Azərbaycan dili",
+      "enFull": "İngilis dili",
+      "switchTo": "{lang} dilinə keç",
+      "current": "Hazırkı dil"
+    },
+    "en": {
+      "label": "Language",
+      "az": "AZ",
+      "en": "EN",
+      "azFull": "Azerbaijani",
+      "enFull": "English",
+      "switchTo": "Switch to {lang}",
+      "current": "Current language"
+    }
   },
   "nav": {
     "az": {
@@ -41,33 +57,86 @@
       "menuOpen": "Menyunu aç",
       "menuClose": "Menyunu bağla",
       "skip": "Məzmuna keç",
-      "home": "🏠 Ana Səhifə",
-      "foundation": "🏛️ Birliyin Təsisi",
-      "mission": "💎 Missiyamız",
-      "activities": "📰 Fəaliyyətimiz",
-      "scientists": "🌐 Alimlərimiz",
-      "scientistsList": "📋 Siyahı",
-      "scientistsProfiles": "👤 Profil",
-      "executiveBoard": "🎓 İdarə Heyəti",
-      "charter": "📜 Nizamnamə",
-      "membership": "✒️ Üzvlük"
+      "home": "Ana səhifə",
+      "about": "Haqqımızda",
+      "foundation": "Birliyin təsisi",
+      "mission": "Missiya və dəyərlər",
+      "activities": "Fəaliyyətimiz",
+      "scientists": "Alimlərimiz",
+      "scientistsList": "Siyahı",
+      "scientistsProfiles": "Profillər",
+      "executiveBoard": "İdarə heyəti",
+      "charter": "Nizamnamə",
+      "membership": "Üzvlük",
+      "aboutFoundationDesc": "Yaradılma tarixi və təsis prosesi",
+      "aboutMissionDesc": "Missiya, vizyon və akademik dəyərlər",
+      "aboutBoardDesc": "İdarə heyəti və rəhbərlik",
+      "aboutCharterDesc": "Nizamnamə və idarəetmə qaydaları",
+      "scientistsListDesc": "Bütün alimlərin siyahısı",
+      "scientistsProfilesDesc": "Alimlərin akademik profilləri"
     },
     "en": {
       "ariaMain": "Main navigation",
-      "ariaHome": "DAAB home",
+      "ariaHome": "WAAS home",
       "menuOpen": "Open menu",
       "menuClose": "Close menu",
       "skip": "Skip to content",
-      "home": "🏠 Home",
-      "foundation": "🏛️ Foundation",
-      "mission": "💎 Mission",
-      "activities": "📰 Activities",
-      "scientists": "🌐 Scientists",
-      "scientistsList": "📋 Directory",
-      "scientistsProfiles": "👤 Profiles",
-      "executiveBoard": "🎓 Executive Board",
-      "charter": "📜 Charter",
-      "membership": "✒️ Membership"
+      "home": "Home",
+      "about": "About",
+      "foundation": "Foundation",
+      "mission": "Mission & values",
+      "activities": "Activities",
+      "scientists": "Scientists",
+      "scientistsList": "Directory",
+      "scientistsProfiles": "Profiles",
+      "executiveBoard": "Executive board",
+      "charter": "Charter",
+      "membership": "Membership",
+      "aboutFoundationDesc": "History and founding process",
+      "aboutMissionDesc": "Mission, vision and academic values",
+      "aboutBoardDesc": "Leadership and governance structure",
+      "aboutCharterDesc": "Charter and governance rules",
+      "scientistsListDesc": "Directory of all scientists",
+      "scientistsProfilesDesc": "Academic profiles of scientists"
+    }
+  },
+  "navIcons": {
+    "home": "🏠",
+    "activities": "📰",
+    "membership": "✒️",
+    "about": "🏛️",
+    "scientists": "🌐",
+    "foundation": "🏛️",
+    "mission": "💎",
+    "executive-board": "🎓",
+    "charter": "📜",
+    "scientists-list": "📋",
+    "scientists-profiles": "👤"
+  },
+  "breadcrumbs": {
+    "az": {
+      "aria": "Səhifə yolu",
+      "home": "Ana səhifə",
+      "about": "Haqqımızda",
+      "scientists": "Alimlərimiz"
+    },
+    "en": {
+      "aria": "Breadcrumb",
+      "home": "Home",
+      "about": "About",
+      "scientists": "Scientists"
+    }
+  },
+  "sectionNav": {
+    "az": {
+      "aria": "Bu bölmədə",
+      "aboutTitle": "Haqqımızda",
+      "scientistsTitle": "Alimlərimiz"
+    },
+    "en": {
+      "aria": "In this section",
+      "aboutTitle": "About",
+      "scientistsTitle": "Scientists"
     }
   },
   "stub": {
@@ -90,7 +159,7 @@
       "contact": "Contact",
       "address": "Address",
       "leadership": "Leadership",
-      "chairRole": "Chair of the DAAB Executive Board"
+      "chairRole": "Chair of the WAAS Executive Board"
     }
   }
 }

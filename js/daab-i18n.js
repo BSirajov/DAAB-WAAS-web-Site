@@ -9,6 +9,7 @@
   var UI_URL = null;
   var routesCache = null;
   var uiCache = null;
+  var navCache = null;
 
   function assetRoot() {
     var root = document.documentElement.getAttribute("data-daab-asset-root");
@@ -49,10 +50,25 @@
     return p.replace(/\\/g, "/").replace(/^\//, "").toLowerCase();
   }
 
+  function siteRelativePath(path) {
+    path = path.replace(/\\/g, "/");
+    var localeIdx = path.search(/\/(az|en)(\/|$)/i);
+    if (localeIdx >= 0) {
+      return path.slice(localeIdx + 1);
+    }
+    var base = path.split("/").pop() || "";
+    if (/\.html?$/i.test(base)) return base;
+    if (!path.endsWith("/")) path += "/";
+    return path.replace(/^\//, "") + "index.html";
+  }
+
   function currentPathKey() {
-    var path = location.pathname.replace(/\\/g, "/");
-    var name = path.split("/").pop() || "index.html";
-    if (!/\.html?$/i.test(name)) name = "index.html";
+    var path = siteRelativePath(location.pathname);
+    var name = path.split("/").pop() || "";
+    if (!name || !/\.html?$/i.test(name)) {
+      if (!path.endsWith("/")) path += "/";
+      path += "index.html";
+    }
     return normalizePath(path.replace(/^\//, ""));
   }
 
@@ -66,7 +82,7 @@
   function loadRoutes() {
     if (routesCache) return Promise.resolve(routesCache);
     ROUTES_URL = ROUTES_URL || i18nUrl("routes.json");
-    return fetchJson(ROUTES_URL + "?v=1").then(function (data) {
+    return fetchJson(ROUTES_URL + "?v=2").then(function (data) {
       routesCache = data;
       return data;
     });
@@ -75,10 +91,37 @@
   function loadUi() {
     if (uiCache) return Promise.resolve(uiCache);
     UI_URL = UI_URL || i18nUrl("ui.json");
-    return fetchJson(UI_URL + "?v=1").then(function (data) {
+    return fetchJson(UI_URL + "?v=7").then(function (data) {
       uiCache = data;
       return data;
     });
+  }
+
+  function loadNav() {
+    if (navCache) return Promise.resolve(navCache);
+    return fetchJson(i18nUrl("nav.json") + "?v=3").then(function (data) {
+      navCache = data;
+      return data;
+    });
+  }
+
+  /** Path relative to current page (e.g. foundation.html, ../mission.html). */
+  function pageHref(page, lang) {
+    if (!page) return lang === "en" ? "index.html" : "index.html";
+    var target = lang === "en" ? page.en : page.az;
+    var prefix = lang + "/";
+    if (target.toLowerCase().indexOf(prefix) === 0) {
+      target = target.slice(prefix.length);
+    }
+    var pathKey = currentPathKey();
+    var hereSuffix = pathKey;
+    if (hereSuffix.toLowerCase().indexOf(prefix) === 0) {
+      hereSuffix = hereSuffix.slice(prefix.length);
+    }
+    var hereParts = hereSuffix.split("/").filter(Boolean);
+    if (hereParts.length) hereParts.pop();
+    var up = hereParts.length;
+    return (up ? Array(up + 1).join("../") : "") + target;
   }
 
   function findPage(routes, pathKey) {
@@ -188,6 +231,8 @@
     detectLang: detectLang,
     loadRoutes: loadRoutes,
     loadUi: loadUi,
+    loadNav: loadNav,
+    pageHref: pageHref,
     getPageId: getPageId,
     getAlternateUrl: getAlternateUrl,
     findPage: function (routes) {

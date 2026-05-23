@@ -64,7 +64,7 @@ Avoid:
 
 ### 2.6 Google Sites embedding
 
-If the public site is an **iframe** to `https://daab-waas.org/...` or GitHub Pages:
+If the public site is an **iframe** to `https://daab-waas.com/...` or GitHub Pages:
 
 - Embed URL must be **exact** (including filename and lowercase)
 - **HTTPS** embed target required for HTTPS Sites
@@ -233,7 +233,7 @@ Tell editors to hard-refresh after deploy.
 ### GitHub Pages
 
 - Publish from **`main`** branch, folder **`/` (root)** or `/docs` if you move site there — pick one and keep consistent.
-- Repo name with spaces becomes awkward URLs; custom domain `daab-waas.org` is fine if DNS points correctly.
+- Repo name with spaces becomes awkward URLs; custom domain `daab-waas.com` is fine if DNS points correctly.
 - **Case-sensitive paths** — test on Linux CI.
 
 ### Google Sites
@@ -277,13 +277,13 @@ There is no server-side log for pure static hosting unless you add analytics (Pl
 
 | Approach | Pros | Cons |
 |----------|------|------|
-| Link out to `https://daab-waas.org/...` | Most reliable | Leaves Google Sites chrome |
+| Link out to `https://daab-waas.com/...` | Most reliable | Leaves Google Sites chrome |
 | iframe embed | Looks integrated | Blocked by headers, sizing, mobile scroll |
 | Upload HTML to Sites | — | **Not supported** for this multi-file site |
 
 **Recommendations:**
 
-- Host the full site on **daab-waas.org** or GitHub Pages.
+- Host the full site on **daab-waas.com** or GitHub Pages.
 - On Google Sites, use prominent **buttons/links** to the real site.
 - If using iframe: test on phone; set width 100%; avoid nested scroll fights.
 - Never point embed at `localhost` or `file://`.
@@ -314,7 +314,7 @@ Today the site is **static HTML + CSS + JS** (no bundler). That is fine if disci
 
 - **Eleventy (11ty)** or **Astro** — components, includes, one nav partial
 - **npm scripts**: `npm run build`, `npm run validate`, `npm run preview`
-- **Staging** subdomain (`staging.daab-waas.org`) for preview before production
+- **Staging** subdomain (`staging.daab-waas.com`) for preview before production
 - **CDN** for images; **responsive images** (`srcset`)
 
 ---

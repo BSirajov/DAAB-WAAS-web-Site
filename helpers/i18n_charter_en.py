@@ -1,7 +1,7 @@
 """English replacements for en/charter.html (hero, meta, UI; articles stay AZ until full translation)."""
 
 CHARTER_REPLACEMENTS: list[tuple[str, str]] = [
-    ("<title>DAAB — Nizamnamə</title>", "<title>DAAB — Charter</title>"),
+    ("<title>DAAB — Nizamnamə</title>", "<title>WAAS — Charter</title>"),
     (
         'content="Dünya Azərbaycanlı Alimlər Birliyinin Azərbaycan dilində nizamnaməsi."',
         'content="Charter of the World Association of Azerbaijani Scientists."',
@@ -25,7 +25,7 @@ CHARTER_REPLACEMENTS: list[tuple[str, str]] = [
     ("Ünvan", "Address"),
     ("Türkiyə", "Türkiye"),
     ("Rəhbərlik", "Leadership"),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the DAAB Executive Board"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
     ("Axtarış", "Search"),
     ("Axtarış üçün yazmağa başlayın…", "Start typing to search…"),
     ("Axtarmaq üçün yuxarıdakı xanaya mətn daxil edin", "Enter text in the box above to search"),

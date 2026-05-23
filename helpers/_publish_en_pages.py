@@ -15,6 +15,7 @@ from pathlib import Path
 from _paths import ROOT
 
 try:
+    from i18n_home_en import HOME_REPLACEMENTS
     from i18n_foundation_en import FOUNDATION_REPLACEMENTS
     from i18n_membership_en import MEMBERSHIP_REPLACEMENTS
     from i18n_executive_board_en import EXECUTIVE_BOARD_REPLACEMENTS
@@ -22,6 +23,7 @@ try:
     from i18n_charter_en import CHARTER_REPLACEMENTS
     from i18n_scientists_en import SCIENTISTS_LIST_REPLACEMENTS, SCIENTISTS_PROFILES_REPLACEMENTS
 except ImportError:
+    from helpers.i18n_home_en import HOME_REPLACEMENTS  # type: ignore
     from helpers.i18n_foundation_en import FOUNDATION_REPLACEMENTS  # type: ignore
     from helpers.i18n_membership_en import MEMBERSHIP_REPLACEMENTS  # type: ignore
     from helpers.i18n_executive_board_en import EXECUTIVE_BOARD_REPLACEMENTS  # type: ignore
@@ -81,9 +83,9 @@ def en_nav_html(active_id: str, nav_depth: int = 0) -> str:
         '<div class="nav-inner">',
         '<button class="mobile-menu-toggle" type="button" aria-label="Open menu" '
         'aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button>',
-        f'<div class="page-logo"><a aria-label="DAAB home" href="{home_href}">',
-        f'<img src="{img_src}" class="nav-brand-logo" alt="DAAB Logo"></a></div>',
-        f'<a aria-label="DAAB home" class="nav-brand" href="{home_href}">',
+        f'<div class="page-logo"><a aria-label="WAAS home" href="{home_href}">',
+        f'<img src="{img_src}" class="nav-brand-logo" alt="WAAS Logo"></a></div>',
+        f'<a aria-label="WAAS home" class="nav-brand" href="{home_href}">',
         '<span class="nav-brand-text">World Association of<br class="mobile-hidden-break">'
         "Azerbaijani Scientists</span></a>",
         '<div class="nav-menu" id="primaryNavMenu"><div class="nav-divider"></div>',
@@ -126,9 +128,9 @@ def en_footer_html() -> str:
     <div class="footer-grid">
       <div class="footer-col">
         <h4 class="footer-title">Contact</h4>
-        <div class="footer-item">✉ <a href="mailto:daad.waas2024@gmail.com">daad.waas2024@gmail.com</a></div>
+        <div class="footer-item">✉ <a href="mailto:bilik.birlik@gmail.com">bilik.birlik@gmail.com</a></div>
         <div class="footer-item">☎ <span>+90 555 147 46 74</span></div>
-        <div class="footer-item">🌐 <a href="https://daab-waas.org" rel="noopener noreferrer" target="_blank">daab-waas.org</a></div>
+        <div class="footer-item">🌐 <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div>
       </div>
       <div class="footer-col">
         <h4 class="footer-title">Address</h4>
@@ -136,33 +138,33 @@ def en_footer_html() -> str:
       </div>
       <div class="footer-col">
         <h4 class="footer-title">Leadership</h4>
-        <p class="footer-leader"><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>
-        Chair of the DAAB Executive Board<br/>Germany — James D. Murray Distinguished Professor</p>
+        <p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>
+        Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p>
       </div>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 DAAB / WAAS — All Rights Reserved</div>
+  <div class="footer-bottom">© 2026 WAAS — All Rights Reserved</div>
 </footer>"""
 
 
 MISSION_REPLACEMENTS: list[tuple[str, str]] = [
     ('<title>\n      DAAB — Missiya, Vizyon və Dəyərlər\n    </title>',
-     "<title>DAAB — Mission, Vision and Values</title>"),
+     "<title>WAAS — Mission, Vision and Values</title>"),
     ('content="Dünya Azərbaycanlı Alimlər Birliyinin missiyası, vizyonu və akademik dəyərləri."',
      'content="Mission, vision and academic values of the World Association of Azerbaijani Scientists."'),
     ("Məzmuna keç", "Skip to content"),
     ("Missiya, Vizyon və\n        <span>\n          Dəyərlər\n        </span>",
      "Mission, Vision and\n        <span>\n          Values\n        </span>"),
-    ('aria-label="DAAB missiya və vizyon qısa məlumat"', 'aria-label="DAAB mission and vision summary"'),
+    ('aria-label="DAAB missiya və vizyon qısa məlumat"', 'aria-label="WAAS mission and vision summary"'),
     ("Elm, etika və gələcəyə baxış", "Science, ethics and outlook"),
     (
         "DAAB-ın məqsədi, gələcəyə baxışı və akademik fəaliyyət istiqamətləri akademik azadlıq, "
         "şəffaflıq, keyfiyyət və məsuliyyət prinsiplərinə əsaslanır və Azərbaycan elminin beynəlxalq "
         "inteqrasiyasına töhfə verməyə yönəlir.",
-        "DAAB's purpose, outlook and academic priorities are grounded in academic freedom, transparency, "
+        "WAAS's purpose, outlook and academic priorities are grounded in academic freedom, transparency, "
         "quality and responsibility, and aim to strengthen the international integration of Azerbaijani science.",
     ),
-    ("DAAB-ın institusional əsasları", "DAAB institutional foundations"),
+    ("DAAB-ın institusional əsasları", "WAAS institutional foundations"),
     (
         "Bu səhifədə birliyin missiyası, vizyonu və akademik dəyərləri vahid konseptual çərçivədə təqdim olunur.",
         "This page presents the Association's mission, vision and academic values within a single conceptual framework.",
@@ -212,7 +214,7 @@ MISSION_REPLACEMENTS: list[tuple[str, str]] = [
     (
         "Dəyərlər DAAB-ın akademik mədəniyyətini, əməkdaşlıq modelini və beynəlxalq elmi mühitdə etibarlılığını "
         "formalaşdıran əsas prinsiplərdir.",
-        "These values are the core principles that shape DAAB's academic culture, model of cooperation and "
+        "These values are the core principles that shape WAAS's academic culture, model of cooperation and "
         "credibility in the international scientific community.",
     ),
     ("Akademik azadlıq", "Academic freedom"),
@@ -291,9 +293,9 @@ MISSION_REPLACEMENTS: list[tuple[str, str]] = [
         "Objectivity and accountability in decision-making processes.",
     ),
     (
-        "Bu dəyərlər alimlər arasında həmrəyliyi gücləndirir, beynəlxalq elmi mühitdə etibarı artırır "
+        "Bu dəyərlər alimlər arasında həmrəyliyi gücləndirir, beynəlxalq elmi mühitdə etibarı artırır<br/> "
         "və gənc tədqiqatçılar üçün sağlam akademik ənənələr yaradır.",
-        "These values strengthen solidarity among scholars, build trust in the international scientific community "
+        "These values strengthen solidarity among scholars, build trust in the international scientific community<br/> "
         "and establish sound academic traditions for young researchers.",
     ),
     ("Dünya Azərbaycanlı Alimlər Birliyi", "World Association of Azerbaijani Scientists"),
@@ -301,7 +303,7 @@ MISSION_REPLACEMENTS: list[tuple[str, str]] = [
     ("Ünvan", "Address"),
     ("Türkiyə", "Türkiye"),
     ("Rəhbərlik", "Leadership"),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the DAAB Executive Board"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
 ]
 
 
@@ -346,6 +348,12 @@ def postprocess_membership_en(html: str) -> str:
 
 def postprocess_activities_en(html: str) -> str:
     html = html.replace('src="/images/', 'src="../images/')
+    html = re.sub(
+        r'<div class="open-letter-column"><h3>Azərbaycanca</h3>.*?</div>\s*',
+        "",
+        html,
+        flags=re.DOTALL,
+    )
     for old, new in (
         ("Executive Boardnin həmsədri", "Executive Board Co-Chair"),
         ("Executive Boardnin sədri", "Executive Board Chair"),
@@ -354,6 +362,37 @@ def postprocess_activities_en(html: str) -> str:
         ("Executive Boardnin üzvləri", "Executive Board members"),
         ("Executive Boardnin", "of the Executive Board"),
         ("Search üçün yazmağa başlayın…", "Start typing to search…"),
+        ("World Association of Azerbaijani Scientistsnin", "World Association of Azerbaijani Scientists'"),
+        ("Karabakh Universityndə", "Karabakh University"),
+        ("Karabakh Universitynin", "Karabakh University's"),
+        ("openılışı", "opening"),
+        ("525-ci Qəzet", "525 Newspaper"),
+        ("Prof. Dr. Məsud Əfəndiyev", "Prof. Dr. Messoud Efendiyev"),
+        ("/* Telman Əliyev 90 gallery */", "/* Telman Aliyev 90 gallery */"),
+        ("<!-- CARD B: ATU əməkdaşlıq -->", "<!-- CARD B: ATU cooperation -->"),
+        ("<!-- CARD C: Qarabağ əməkdaşlıq genişlənir -->", "<!-- CARD C: Karabakh cooperation expands -->"),
+        ("<!-- CARD D: Bəxtiyar 187 saylı məktəb -->", "<!-- CARD D: Bakhtiyar Sirajov School No. 187 -->"),
+        ("<!-- CARD 3: Prezident Sərəncamı -->", "<!-- CARD 3: Presidential Order -->"),
+        ("<!-- CARD 4: AzMİU 50 il -->", "<!-- CARD 4: AzMIU 50th anniversary -->"),
+        ("<!-- CARD 5: Seymur Nəsirov Misirdə təltif -->", "<!-- CARD 5: Seymur Nasirov honoured in Egypt -->"),
+        ("<!-- CARD 9: Yulduz Rəhimov ADA Qazax -->", "<!-- CARD 9: Yulduz Rahimov ADA Gazakh -->"),
+        ("<!-- CARD 11: Bəxtiyar BDU -->", "<!-- CARD 11: Bakhtiyar Sirajov BDU -->"),
+        ("<!-- CARD 12: Seymur Misir Təhsil Nazirliyi -->", "<!-- CARD 12: Seymur Nasirov Egypt Education Ministry -->"),
+        ("<!-- CARD 15: Hərbi Münaqişə Konfransı (Az+En) -->", "<!-- CARD 15: Military conflict conference (AZ+EN) -->"),
+        ("<!-- CARD 16: Telman Əliyev 90 -->", "<!-- CARD 16: Telman Aliyev 90 -->"),
+        ("<!-- CARD 18: Qahirə Kitab Sərgisi -->", "<!-- CARD 18: Cairo International Book Fair -->"),
+        ("<!-- CARD 22: CROSS MEDİA Vətən -->", "<!-- CARD 22: Crossmedia homeland -->"),
+        ("<!-- CARD 23: Teymur Rzayev medalı -->", "<!-- CARD 23: Teymur Rzayev medal -->"),
+        ("<!-- CARD 24: UNEC-DAAB təşəbbüs -->", "<!-- CARD 24: UNEC-WAAS initiative -->"),
+        ("<!-- CARD 25: Diaspora Komitəsi 17.01 -->", "<!-- CARD 25: Diaspora Committee 17.01 -->"),
+        ("<!-- CARD 26: Azərbaycan Müəllimi -->", "<!-- CARD 26: Azerbaijani Teacher -->"),
+        ("<!-- CARD 28: Teymur Rzayev Türkiyə proqramı -->", "<!-- CARD 28: Teymur Rzayev Türkiye programme -->"),
+        ("<!-- CARD 30: CROSS MEDİA Seymur müsahibə -->", "<!-- CARD 30: Crossmedia Seymur interview -->"),
+        ("<!-- CARD 31: 525 Qəzet Məsud müsahibə -->", "<!-- CARD 31: 525 Newspaper Messoud interview -->"),
+        ("<!-- CARD 32: QOBUSTAN onlayn görüş -->", "<!-- CARD 32: GOBUSTAN online meeting -->"),
+        ("<!-- CARD 33: Qarabağ Universiteti onlayn görüş -->", "<!-- CARD 33: Karabakh University online meeting -->"),
+        ("<!-- CARD 33: Karabakh University onlayn görüş -->", "<!-- CARD 33: Karabakh University online meeting -->"),
+        ("          AZƏRTAC\n", "          AZERTAC\n"),
     ):
         html = html.replace(old, new)
     return html
@@ -373,6 +412,14 @@ def postprocess_scientists_list_en(html: str) -> str:
 
 def postprocess_scientists_profiles_en(html: str) -> str:
     return postprocess_scientists_list_en(html)
+
+
+def postprocess_home_en(html: str) -> str:
+    html = html.replace(
+        "white-space: nowrap !important;",
+        "white-space: normal !important;",
+    )
+    return html
 
 
 def publish_from_az(
@@ -430,6 +477,16 @@ def publish_from_az(
     print(f"Published {en_path.relative_to(ROOT)}")
 
 
+def publish_home() -> None:
+    publish_from_az(
+        "az/index.html",
+        "en/index.html",
+        "home",
+        HOME_REPLACEMENTS,
+        postprocess_home_en,
+    )
+
+
 def publish_mission() -> None:
     publish_from_az("az/mission.html", "en/mission.html", "mission", MISSION_REPLACEMENTS)
 
@@ -463,6 +520,11 @@ def publish_executive_board() -> None:
 
 
 def publish_activities() -> None:
+    az_path = ROOT / "az" / "activities.html"
+    az_html = az_path.read_text(encoding="utf-8")
+    fixed_az = az_html.replace('src="/images/', 'src="../images/')
+    if fixed_az != az_html:
+        az_path.write_text(fixed_az, encoding="utf-8")
     publish_from_az(
         "az/activities.html",
         "en/activities.html",
@@ -508,6 +570,7 @@ def main() -> int:
         "page",
         nargs="?",
         choices=[
+            "home",
             "mission",
             "foundation",
             "membership",
@@ -523,6 +586,7 @@ def main() -> int:
     )
     args = parser.parse_args()
     pages = {
+        "home": publish_home,
         "mission": publish_mission,
         "foundation": publish_foundation,
         "membership": publish_membership,
