@@ -21,7 +21,7 @@
 
   var SORT_STORAGE_KEY = "daab-profiles-sort";
 
-  var COUNTRY_NAME_TO_CODE = {
+  var COUNTRY_NAME_TO_CODE_AZ = {
     "ABŞ": "abs",
     "Almaniya": "de",
     "Avstriya": "at",
@@ -46,6 +46,56 @@
     "Ukrayna": "ua",
     "Yaponiya": "jp",
   };
+
+  function buildCountryNameToCode(cards) {
+    var map = {};
+    var key;
+    for (key in COUNTRY_NAME_TO_CODE_AZ) {
+      if (Object.prototype.hasOwnProperty.call(COUNTRY_NAME_TO_CODE_AZ, key)) {
+        map[key] = COUNTRY_NAME_TO_CODE_AZ[key];
+      }
+    }
+    cards.forEach(function (card) {
+      var name = card.dataset.countryName;
+      var code = card.dataset.country;
+      if (name && code) map[name] = code;
+    });
+    return map;
+  }
+
+  function pageLang() {
+    var el = document.documentElement;
+    return (el.getAttribute("data-daab-lang") || el.lang || "az").slice(0, 2);
+  }
+
+  function filterCountLabels(lang) {
+    if (lang === "en") {
+      return {
+        all: function (n) {
+          return "<span>" + n + "</span> profile" + (n === 1 ? "" : "s");
+        },
+        matched: function (visible, total) {
+          var html =
+            "<span>" +
+            visible +
+            "</span> matching profile" +
+            (visible === 1 ? "" : "s");
+          if (visible < total) html += " (" + total + " total)";
+          return html;
+        },
+      };
+    }
+    return {
+      all: function (n) {
+        return "<span>" + n + "</span> profil";
+      },
+      matched: function (visible, total) {
+        var html = "<span>" + visible + "</span> uyğun profil";
+        if (visible < total) html += " (" + total + " ümumi)";
+        return html;
+      },
+    };
+  }
 
   function normQuery(q) {
     return q.toLowerCase().replace(/\s+/g, " ").trim();
@@ -110,13 +160,12 @@
     return { sortCol: "name", sortDir: 1 };
   }
 
-  function showAllCards(cards, resultCount, noResults) {
+  function showAllCards(cards, resultCount, noResults, countLabels) {
     cards.forEach(function (card) {
       card.classList.remove("is-filtered-out", "is-match", "is-excluded");
     });
-    if (resultCount) {
-      resultCount.innerHTML =
-        "<span>" + cards.length + "</span> profil";
+    if (resultCount && countLabels) {
+      resultCount.innerHTML = countLabels.all(cards.length);
     }
     if (noResults) {
       noResults.classList.remove("visible");
@@ -176,6 +225,8 @@
     var savedSort = readSortState() || defaultSortState();
     var sortCol = savedSort.sortCol;
     var sortDir = savedSort.sortDir;
+    var countryNameToCode = buildCountryNameToCode(cards);
+    var countLabels = filterCountLabels(pageLang());
 
     function markProfilesReady() {
       document.documentElement.classList.add("daab-profiles-ready");
@@ -245,7 +296,7 @@
     }
 
     /* Restore filters, apply default A→Z (or saved sort), then reveal catalogue */
-    showAllCards(cards, resultCount, noResults);
+    showAllCards(cards, resultCount, noResults, countLabels);
     clearFilterInputs(searchInput, filterCountry, filterIxtilas, filterDegree);
     applySortState(sortCol, sortDir, false);
 
@@ -379,12 +430,12 @@
       var cntry = filterCountry.value;
       var degree = filterDegree ? filterDegree.value : "";
       var ixtilas = filterIxtilas ? filterIxtilas.value : "";
-      var countryCode = cntry ? COUNTRY_NAME_TO_CODE[cntry] || "" : "";
+      var countryCode = cntry ? countryNameToCode[cntry] || "" : "";
       var filtering = !!(q || cntry || degree || ixtilas);
       var visible = 0;
 
       if (!filtering) {
-        showAllCards(cards, resultCount, noResults);
+        showAllCards(cards, resultCount, noResults, countLabels);
         updateFilterStyles();
         reorderCards();
         return;
@@ -397,11 +448,7 @@
       });
 
       if (resultCount) {
-        resultCount.innerHTML =
-          "<span>" +
-          visible +
-          "</span> uyğun profil" +
-          (visible < cards.length ? " (" + cards.length + " ümumi)" : "");
+        resultCount.innerHTML = countLabels.matched(visible, cards.length);
       }
       if (noResults) {
         noResults.classList.toggle("visible", visible === 0);
@@ -431,7 +478,7 @@
 
     filterCountry.addEventListener("change", function () {
       applyFilters();
-      scrollToFirstVisible(COUNTRY_NAME_TO_CODE[filterCountry.value] || "");
+      scrollToFirstVisible(countryNameToCode[filterCountry.value] || "");
     });
 
     if (filterIxtilas) {

@@ -11,14 +11,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
-<link href="../../css/daab-common.css?v=23" rel="stylesheet"/>
+<link href="../../css/daab-common.css?v=24" rel="stylesheet"/>
 <link href="../../css/daab-mobile.css?v=5" rel="stylesheet"/>
 <link href="../../css/daab-search.css?v=1" rel="stylesheet"/>
 <link href="../../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
 <link href="../../css/scientists-catalog-toolbar.css?v=9" rel="stylesheet"/>
 <link href="../../css/scientists-profile-tts.css?v=2" rel="stylesheet"/>
 <link href="../../css/scientists-profile-deep-link.css?v=4" rel="stylesheet"/>
-<link href="../../css/scientists-profile-qr.css?v=1" rel="stylesheet"/>
+<link href="../../css/scientists-profile-qr.css?v=4" rel="stylesheet"/>
 <style>
 /* Scientists CV catalogue page styles */
 :root {
@@ -178,11 +178,13 @@ body {
   }
 }
 
-.card-avatar {
+.card {
   --avatar-w: 148px;
   --avatar-h: 176px;
+}
+
+.card-avatar {
   display: block;
-  flex: 0 0 var(--avatar-w);
   flex-shrink: 0;
   width: var(--avatar-w);
   min-width: var(--avatar-w);
@@ -485,10 +487,12 @@ a.card-name:focus-visible {
 }
 
 @media (max-width: 900px) {
-  .card-avatar {
+  .card {
     --avatar-w: 124px;
     --avatar-h: 148px;
-    flex-shrink: 0;
+  }
+
+  .card-avatar {
     border-radius: 18px;
   }
 
@@ -524,9 +528,12 @@ a.card-name:focus-visible {
     padding: 18px;
   }
 
-  .card-avatar {
+  .card {
     --avatar-w: 112px;
     --avatar-h: 134px;
+  }
+
+  .card-avatar {
     border-radius: 18px;
   }
 
@@ -565,15 +572,9 @@ a.card-name:focus-visible {
     padding: 16px;
   }
 
-  .card-avatar {
+  .card-portrait {
     --avatar-w: 132px;
     --avatar-h: 157px;
-    align-self: center;
-    width: var(--avatar-w);
-    min-width: var(--avatar-w);
-    max-width: var(--avatar-w);
-    height: var(--avatar-h);
-    flex: 0 0 var(--avatar-w);
   }
 
   .card-avatar img {
@@ -612,14 +613,12 @@ a.card-name:focus-visible {
     border-radius: calc(var(--radius) - 2px);
   }
 
-  .card-avatar {
+  .card {
     --avatar-w: 120px;
     --avatar-h: 143px;
-    width: var(--avatar-w);
-    min-width: var(--avatar-w);
-    max-width: var(--avatar-w);
-    height: var(--avatar-h);
-    flex: 0 0 var(--avatar-w);
+  }
+
+  .card-avatar {
     border-radius: 16px;
   }
 
@@ -652,14 +651,9 @@ a.card-name:focus-visible {
 }
 
 @media (max-width: 360px) {
-  .card-avatar {
+  .card {
     --avatar-w: 112px;
     --avatar-h: 133px;
-    width: var(--avatar-w);
-    min-width: var(--avatar-w);
-    max-width: var(--avatar-w);
-    height: var(--avatar-h);
-    flex: 0 0 var(--avatar-w);
   }
 }
 
@@ -675,7 +669,7 @@ a.card-name:focus-visible {
 
 </style>
 <link href="../../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
-<link href="../../css/daab-lang.css?v=9" rel="stylesheet"/>
+<link href="../../css/daab-lang.css?v=10" rel="stylesheet"/>
 <link href="../../css/daab-nav-mega.css?v=12" rel="stylesheet"/>
 <script src="../../js/daab-mobile.js?v=1" defer></script>
 <script src="../../js/daab-back-to-top.js?v=2" defer></script>
@@ -686,8 +680,8 @@ a.card-name:focus-visible {
 <script src="../../js/daab-primary-nav.js?v=8" defer></script>
 <script src="../../js/daab-breadcrumbs.js?v=5" defer></script>
 <script src="../../js/daab-section-nav.js?v=4" defer></script>
-<script src="../../js/daab-shell.js?v=10" defer></script>
-<script src="../../js/daab-search.js?v=3" defer></script>
+<script src="../../js/daab-shell.js?v=11" defer></script>
+<script src="../../js/daab-search.js?v=4" defer></script>
 </head>
 <body><div aria-label="Axtarış" aria-modal="true" id="search-overlay" role="dialog">
 <div class="search-modal">
@@ -2536,7 +2530,7 @@ a.card-name:focus-visible {
 <script src="../../js/scientists-catalog-data.js?v=2"></script>
 <script src="../../js/daab-collation.js?v=1"></script>
 <script src="../../js/daab-scientists-toolbar-mobile.js?v=3"></script>
-<script src="../../js/scientists-cv-filters.js?v=20" defer></script>
+<script src="../../js/scientists-cv-filters.js?v=21" defer></script>
 <script src="../../js/daab-profile-tts.js?v=8" defer></script>
 
 <footer class="footer-pro">

@@ -225,6 +225,7 @@
 /* Compact header: language switcher stacked under search (see daab-shell.js) */
 @media (max-width: 1180px) {
   .nav-inner > .daab-lang-switch,
+  .nav-actions > .daab-lang-switch,
   .page-logo .daab-lang-switch {
     margin: 0;
     padding: 2px 3px;
@@ -234,6 +235,7 @@
   }
 
   .nav-inner > .daab-lang-switch a,
+  .nav-actions > .daab-lang-switch a,
   .page-logo .daab-lang-switch a {
     width: 30px !important;
     min-width: 30px !important;
@@ -241,17 +243,19 @@
   }
 
   .nav-inner > .daab-lang-switch .daab-lang-flag,
+  .nav-actions > .daab-lang-switch .daab-lang-flag,
   .page-logo .daab-lang-switch .daab-lang-flag {
     width: 20px;
     height: 12px;
   }
 }
 
-/* Desktop: switcher sits after the menu (see daab-shell.js) */
+/* Desktop: switcher sits in .nav-actions with search (see daab-shell.js) */
 @media (min-width: 1181px) {
-  .nav-inner > .daab-lang-switch {
+  .nav-inner > .daab-lang-switch,
+  .nav-actions > .daab-lang-switch {
     flex-shrink: 0;
-    margin-left: 10px;
+    margin-left: 0;
   }
 }
 

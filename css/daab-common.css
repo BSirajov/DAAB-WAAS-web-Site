@@ -257,9 +257,23 @@ article.charter-card[id],
   flex-wrap: nowrap;
 }
 
-.nav-inner > .daab-lang-switch {
+/* Search + language switcher — grouped so flex does not push search off-screen */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.nav-actions .nav-search-btn {
+  margin-left: 0;
+}
+
+.nav-inner > .daab-lang-switch,
+.nav-actions > .daab-lang-switch {
   flex: 0 0 auto !important;
-  margin-left: auto !important;
+  margin-left: 0 !important;
   position: relative !important;
   z-index: 10003 !important;
 }
@@ -568,7 +582,7 @@ main a:not(.btn):not(.nav-link):not(.nav-dropdown-link):not(.page-card):not(.new
 
 /* Optional shared search overlay used by catalogue-style pages. */
 .nav-search-btn {
-  margin-left: auto;
+  margin-left: 0;
   flex-shrink: 0;
   display: inline-flex !important;
   align-items: center;
@@ -835,19 +849,15 @@ main a:not(.btn):not(.nav-link):not(.nav-dropdown-link):not(.page-card):not(.new
     display: flex !important;
     flex: 1 1 auto !important;
     min-width: 0 !important;
+    max-width: none !important;
     justify-content: center !important;
     overflow: visible !important;
   }
 
-  .nav-inner > .daab-lang-switch {
+  .nav-actions {
+    display: flex !important;
     flex: 0 0 auto !important;
     margin-left: auto !important;
-    position: relative !important;
-    z-index: 10003 !important;
-  }
-
-  .nav-menu {
-    max-width: calc(100% - 400px) !important;
   }
 }
 
@@ -869,7 +879,7 @@ main a:not(.btn):not(.nav-link):not(.nav-dropdown-link):not(.page-card):not(.new
   .nav-menu {
     gap: 4px !important;
     flex-wrap: nowrap !important;
-    justify-content: flex-end !important;
+    justify-content: center !important;
   }
 
   .nav-link,
@@ -905,6 +915,10 @@ main a:not(.btn):not(.nav-link):not(.nav-dropdown-link):not(.page-card):not(.new
 @media (max-width: 1180px) {
   .nav-strip {
     overflow: visible !important;
+  }
+
+  .nav-actions {
+    display: contents;
   }
 
   .nav-inner {

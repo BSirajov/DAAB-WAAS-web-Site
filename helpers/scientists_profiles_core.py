@@ -199,7 +199,7 @@ def render_card(profile: dict, lang: str, *, asset_prefix: str = "../../") -> st
   <div class="card-portrait">
     <div class="card-avatar card-photo"><img src="{asset_prefix}images/scientists-photos/{html.escape(photo)}" alt="{alt}" loading="lazy"/></div>
     <a class="card-qr-link" href="{profile_href}" title="{esc_attr(qr_labels["title"])}" aria-label="{esc_attr(qr_labels["aria"])}">
-      <img class="card-qr" src="{qr_src}" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+      <img class="card-qr" src="{qr_src}" width="148" height="148" alt="" decoding="async" loading="lazy"/>
     </a>
   </div>
   <div class="card-body">

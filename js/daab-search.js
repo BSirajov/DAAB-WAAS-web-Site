@@ -262,6 +262,21 @@
     document.getElementById("search-input").placeholder = labels.placeholder;
   }
 
+  function ensureNavActions(inner) {
+    if (!inner) return null;
+    if (global.DAAB_SHELL && global.DAAB_SHELL.ensureNavActions) {
+      return global.DAAB_SHELL.ensureNavActions(inner);
+    }
+    var actions = inner.querySelector(".nav-actions");
+    if (!actions) {
+      actions = document.createElement("div");
+      actions.className = "nav-actions";
+      actions.setAttribute("role", "group");
+      inner.appendChild(actions);
+    }
+    return actions;
+  }
+
   function mountNavButton(labels) {
     if (document.getElementById("nav-search-btn")) return;
     var inner = document.querySelector(".nav-inner");
@@ -281,9 +296,9 @@
       '<span class="nav-search-btn-label">' + escapeHtml(labels.open) + "</span>" +
       '<kbd class="nav-search-kbd">' + escapeHtml(labels.shortcut) + "</kbd>";
 
-    var menu = document.getElementById("primaryNavMenu");
-    if (menu && menu.parentNode === inner) {
-      inner.insertBefore(btn, menu.nextSibling);
+    var actions = ensureNavActions(inner);
+    if (actions) {
+      actions.insertBefore(btn, actions.firstChild);
     } else {
       inner.appendChild(btn);
     }

@@ -1,24 +1,39 @@
-/* Scientist profile QR codes — portrait column on catalog cards */
+/* Scientist profile QR — photo left, text center, QR right (same row as photo) */
+
+.cards-grid > .card {
+  --avatar-w: 148px;
+  --avatar-h: 176px;
+  display: grid;
+  grid-template-columns: var(--avatar-w) minmax(0, 1fr) var(--avatar-w);
+  column-gap: 22px;
+  row-gap: 0;
+  align-items: start;
+}
 
 .card-portrait {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  flex: 0 0 var(--avatar-w, 148px);
-  flex-shrink: 0;
-  width: var(--avatar-w, 148px);
-  min-width: var(--avatar-w, 148px);
-  max-width: var(--avatar-w, 148px);
+  display: contents;
 }
 
-.card-portrait .card-avatar {
-  flex: 0 0 auto;
-  width: 100%;
+.cards-grid > .card .card-avatar {
+  grid-column: 1;
+  grid-row: 1;
+  width: var(--avatar-w);
+  min-width: var(--avatar-w);
+  max-width: var(--avatar-w);
 }
 
-.card-qr-link {
-  display: block;
+.cards-grid > .card > .card-body {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.cards-grid > .card .card-qr-link {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: start;
+  justify-self: end;
+  width: var(--avatar-w);
   line-height: 0;
   border-radius: 10px;
   background: #fff;
@@ -34,8 +49,9 @@
 
 .card-qr {
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   border-radius: 9px;
 }
 
@@ -47,20 +63,47 @@
   }
 }
 
+@media (max-width: 900px) {
+  .cards-grid > .card {
+    --avatar-w: 124px;
+    --avatar-h: 148px;
+  }
+}
+
+@media (max-width: 760px) {
+  .cards-grid > .card {
+    --avatar-w: 112px;
+    --avatar-h: 134px;
+  }
+}
+
 @media (max-width: 640px) {
-  .card-portrait {
-    align-self: center;
-    width: var(--avatar-w, 132px);
-    min-width: var(--avatar-w, 132px);
-    max-width: var(--avatar-w, 132px);
-    flex-basis: auto;
+  .cards-grid > .card {
+    --avatar-w: 132px;
+    --avatar-h: 157px;
+    grid-template-columns: var(--avatar-w) minmax(0, 1fr) var(--avatar-w);
+    grid-template-rows: auto auto;
+    row-gap: 14px;
+  }
+
+  .cards-grid > .card > .card-body {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .card-qr {
-    width: 72px;
-    height: 72px;
+  .cards-grid > .card {
+    --avatar-w: 120px;
+    --avatar-h: 143px;
+  }
+}
+
+@media (max-width: 360px) {
+  .cards-grid > .card {
+    --avatar-w: 112px;
+    --avatar-h: 133px;
   }
 }
 

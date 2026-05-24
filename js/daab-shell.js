@@ -179,6 +179,32 @@
     return wrap;
   }
 
+  function ensureNavActions(inner) {
+    if (!inner) return null;
+    var actions = inner.querySelector(".nav-actions");
+    if (!actions) {
+      actions = document.createElement("div");
+      actions.className = "nav-actions";
+      actions.setAttribute("role", "group");
+      inner.appendChild(actions);
+    }
+    return actions;
+  }
+
+  function migrateNavTools(inner) {
+    var actions = ensureNavActions(inner);
+    if (!actions) return;
+    var search = document.getElementById("nav-search-btn");
+    if (search && search.parentNode !== actions) {
+      actions.insertBefore(search, actions.firstChild);
+    }
+    inner.querySelectorAll(":scope > .daab-lang-switch").forEach(function (lang) {
+      if (lang.parentNode !== actions) {
+        actions.appendChild(lang);
+      }
+    });
+  }
+
   function placeSwitcher(node) {
     if (!node) return;
     var inner = document.querySelector(".nav-inner");
@@ -186,16 +212,13 @@
     switcherNode = node;
     var existing = inner.querySelector(".daab-lang-switch");
     if (existing && existing !== node) existing.remove();
-    if (compactNavMq.matches) {
-      var searchBtn = document.getElementById("nav-search-btn");
-      if (searchBtn && searchBtn.parentNode === inner) {
-        inner.insertBefore(node, searchBtn.nextSibling);
-      } else {
-        inner.appendChild(node);
-      }
-      return;
+    var actions = ensureNavActions(inner);
+    if (actions) {
+      actions.appendChild(node);
+      migrateNavTools(inner);
+    } else {
+      inner.appendChild(node);
     }
-    inner.appendChild(node);
   }
 
   function mountSwitcher(ui, routes, lang) {
@@ -279,6 +302,9 @@
   document.addEventListener("daab-primary-nav-ready", repositionSwitcher);
   document.addEventListener("daab-nav-tools-mounted", repositionSwitcher);
 
-  window.DAAB_SHELL = { repositionSwitcher: repositionSwitcher };
+  window.DAAB_SHELL = {
+    ensureNavActions: ensureNavActions,
+    repositionSwitcher: repositionSwitcher,
+  };
 })();
 
