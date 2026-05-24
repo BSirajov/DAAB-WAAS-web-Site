@@ -1,39 +1,48 @@
-/* Scientist profile QR — photo left, text center, QR right (same row as photo) */
+/* Scientist profile QR — top-right of each catalogue card */
 
-.cards-grid > .card {
-  --avatar-w: 148px;
-  --avatar-h: 176px;
-  display: grid;
-  grid-template-columns: var(--avatar-w) minmax(0, 1fr) var(--avatar-w);
-  column-gap: 22px;
-  row-gap: 0;
-  align-items: start;
+html[data-daab-page-id="scientists-profiles"] {
+  --card-qr-size: 80px;
+  --card-qr-inset: 20px;
 }
 
-.card-portrait {
-  display: contents;
+html[data-daab-page-id="scientists-profiles"] .cards-grid > .card {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  gap: 22px;
+  overflow: visible;
 }
 
-.cards-grid > .card .card-avatar {
-  grid-column: 1;
-  grid-row: 1;
-  width: var(--avatar-w);
-  min-width: var(--avatar-w);
-  max-width: var(--avatar-w);
+html[data-daab-page-id="scientists-profiles"] .cards-grid > .card > .card-avatar {
+  flex: 0 0 var(--avatar-w, 148px);
+  width: var(--avatar-w, 148px);
+  min-width: var(--avatar-w, 148px);
+  max-width: var(--avatar-w, 148px);
 }
 
-.cards-grid > .card > .card-body {
-  grid-column: 2;
-  grid-row: 1;
+html[data-daab-page-id="scientists-profiles"] .cards-grid > .card > .card-body {
+  position: relative;
+  flex: 1 1 auto;
   min-width: 0;
+  width: auto;
+  padding-top: calc(var(--card-qr-size) + 8px);
+  padding-right: calc(var(--card-qr-size) + 14px);
 }
 
-.cards-grid > .card .card-qr-link {
-  grid-column: 3;
-  grid-row: 1;
-  align-self: start;
-  justify-self: end;
-  width: var(--avatar-w);
+html[data-daab-page-id="scientists-profiles"] .cards-grid > .card > .card-qr-link,
+html[data-daab-page-id="scientists-profiles"] .cards-grid > .card > .card-body > .card-qr-link {
+  position: absolute;
+  top: var(--card-qr-inset);
+  right: var(--card-qr-inset);
+  bottom: auto;
+  z-index: 2;
+  display: block;
+  width: var(--card-qr-size);
+  height: var(--card-qr-size);
+  max-width: var(--card-qr-size);
+  max-height: var(--card-qr-size);
+  margin: 0;
   line-height: 0;
   border-radius: 10px;
   background: #fff;
@@ -47,16 +56,19 @@
   outline-offset: 2px;
 }
 
-.card-qr {
+html[data-daab-page-id="scientists-profiles"] .cards-grid > .card .card-qr {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   border-radius: 9px;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .card-qr-link:hover {
+  html[data-daab-page-id="scientists-profiles"] .cards-grid > .card > .card-qr-link:hover,
+  html[data-daab-page-id="scientists-profiles"] .cards-grid > .card > .card-body > .card-qr-link:hover {
     border-color: rgba(0, 105, 180, 0.34);
     box-shadow: 0 8px 20px rgba(13, 31, 60, 0.12);
     transform: translateY(-1px);
@@ -64,52 +76,52 @@
 }
 
 @media (max-width: 900px) {
-  .cards-grid > .card {
-    --avatar-w: 124px;
-    --avatar-h: 148px;
-  }
-}
-
-@media (max-width: 760px) {
-  .cards-grid > .card {
-    --avatar-w: 112px;
-    --avatar-h: 134px;
+  html[data-daab-page-id="scientists-profiles"] {
+    --card-qr-size: 76px;
   }
 }
 
 @media (max-width: 640px) {
-  .cards-grid > .card {
-    --avatar-w: 132px;
-    --avatar-h: 157px;
-    grid-template-columns: var(--avatar-w) minmax(0, 1fr) var(--avatar-w);
-    grid-template-rows: auto auto;
-    row-gap: 14px;
+  html[data-daab-page-id="scientists-profiles"] {
+    --card-qr-size: 72px;
+    --card-qr-inset: 16px;
   }
 
-  .cards-grid > .card > .card-body {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    width: 100%;
+  html[data-daab-page-id="scientists-profiles"] .cards-grid > .card {
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+
+  html[data-daab-page-id="scientists-profiles"] .cards-grid > .card > .card-avatar {
+    align-self: flex-start;
+  }
+
+  html[data-daab-page-id="scientists-profiles"] .cards-grid > .card > .card-body {
+    flex: 1 1 auto;
+    width: auto;
+    padding-top: calc(var(--card-qr-size) + 6px);
+    padding-right: calc(var(--card-qr-size) + 10px);
   }
 }
 
 @media (max-width: 480px) {
-  .cards-grid > .card {
-    --avatar-w: 120px;
-    --avatar-h: 143px;
-  }
-}
-
-@media (max-width: 360px) {
-  .cards-grid > .card {
-    --avatar-w: 112px;
-    --avatar-h: 133px;
+  html[data-daab-page-id="scientists-profiles"] {
+    --card-qr-size: 68px;
+    --card-qr-inset: 14px;
   }
 }
 
 @media print {
-  .card-qr-link {
+  html[data-daab-page-id="scientists-profiles"] .cards-grid > .card > .card-qr-link,
+  html[data-daab-page-id="scientists-profiles"] .cards-grid > .card > .card-body > .card-qr-link {
+    position: static;
+    margin: 0 0 12px auto;
     box-shadow: none;
     border-color: #ccc;
+  }
+
+  html[data-daab-page-id="scientists-profiles"] .cards-grid > .card > .card-body {
+    padding-top: 0;
+    padding-right: 0;
   }
 }
