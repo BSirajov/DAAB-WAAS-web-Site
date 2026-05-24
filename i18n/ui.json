@@ -89,7 +89,7 @@
       "scientists": "Scientists",
       "scientistsList": "Directory",
       "scientistsProfiles": "Profiles",
-      "executiveBoard": "Executive board",
+      "executiveBoard": "Board of Directors",
       "charter": "Charter",
       "membership": "Membership",
       "aboutFoundationDesc": "History and founding process",
@@ -148,6 +148,44 @@
       "btnHome": "English home"
     }
   },
+  "search": {
+    "az": {
+      "ariaDialog": "Sayt üzrə axtarış",
+      "placeholder": "Səhifələr, alimlər, fəaliyyətlər, nizamnamə…",
+      "prompt": "Bütün sayt üzrə axtarmaq üçün yazın",
+      "empty": "Nəticə tapılmadı. Başqa söz və ya yazılış cəhd edin.",
+      "close": "Bağla",
+      "open": "Axtar",
+      "hintNav": "seç",
+      "hintOpen": "aç",
+      "hintClose": "bağla",
+      "loading": "Axtarış indeksi yüklənir…",
+      "error": "Axtarış müvəqqəti olaraq əlçatan deyil.",
+      "shortcut": "Ctrl K"
+    },
+    "en": {
+      "ariaDialog": "Site search",
+      "placeholder": "Search pages, scientists, activities, charter…",
+      "prompt": "Type to search the whole site",
+      "empty": "No results found. Try another keyword or spelling.",
+      "close": "Close",
+      "open": "Search",
+      "hintNav": "navigate",
+      "hintOpen": "open",
+      "hintClose": "close",
+      "loading": "Loading search index…",
+      "error": "Search is temporarily unavailable.",
+      "shortcut": "Ctrl K"
+    }
+  },
+  "backToTop": {
+    "az": {
+      "label": "Yuxarı qayıt"
+    },
+    "en": {
+      "label": "Back to top"
+    }
+  },
   "footer": {
     "az": {
       "contact": "Əlaqə",
@@ -159,7 +197,7 @@
       "contact": "Contact",
       "address": "Address",
       "leadership": "Leadership",
-      "chairRole": "Chair of the WAAS Executive Board"
+      "chairRole": "Chair of the WAAS Board of Directors"
     }
   }
 }

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="az" data-daab-lang="az" data-daab-asset-root="../../" data-daab-page-id="scientists-profiles" data-daab-nav-mount="1">
 <head>
+<script id="daab-profile-hash-boot">
+(function(){if(!location.hash)return;document.documentElement.classList.add("daab-profiles-boot");if("scrollRestoration"in history)history.scrollRestoration="manual";document.documentElement.style.scrollBehavior="auto";window.scrollTo(0,0);})();
+</script>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>DAAB — Xaricdə Yaşayan Azərbaycanlı Alimlər CV Kataloqu</title>
@@ -8,10 +11,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
-<link href="../../css/daab-common.css?v=18" rel="stylesheet"/>
-<link href="../../css/daab-mobile.css?v=3" rel="stylesheet"/>
-<link href="../../css/scientists-catalog-toolbar.css?v=6" rel="stylesheet"/>
+<link href="../../css/daab-common.css?v=23" rel="stylesheet"/>
+<link href="../../css/daab-mobile.css?v=5" rel="stylesheet"/>
+<link href="../../css/daab-search.css?v=1" rel="stylesheet"/>
+<link href="../../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
+<link href="../../css/scientists-catalog-toolbar.css?v=9" rel="stylesheet"/>
 <link href="../../css/scientists-profile-tts.css?v=2" rel="stylesheet"/>
+<link href="../../css/scientists-profile-deep-link.css?v=4" rel="stylesheet"/>
+<link href="../../css/scientists-profile-qr.css?v=1" rel="stylesheet"/>
 <style>
 /* Scientists CV catalogue page styles */
 :root {
@@ -19,7 +26,7 @@
   --card-line: rgba(0, 105, 180, .18);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 body {
   color: var(--ink);
@@ -668,16 +675,19 @@ a.card-name:focus-visible {
 
 </style>
 <link href="../../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
-  <script src="../../js/daab-mobile.js?v=1" defer></script>
-<link href="../../css/daab-lang.css?v=7" rel="stylesheet"/>
-<link href="../../css/daab-nav-mega.css?v=11" rel="stylesheet"/>
-<script src="../../js/daab-i18n.js?v=11" defer></script>
-<script src="../../js/daab-lang-position.js?v=3" defer></script>
-<script src="../../js/daab-nav.js?v=7" defer></script>
+<link href="../../css/daab-lang.css?v=9" rel="stylesheet"/>
+<link href="../../css/daab-nav-mega.css?v=12" rel="stylesheet"/>
+<script src="../../js/daab-mobile.js?v=1" defer></script>
+<script src="../../js/daab-back-to-top.js?v=2" defer></script>
+<script src="../../js/daab-i18n.js?v=12" defer></script>
+<script src="../../js/daab-lang-position.js?v=7" defer></script>
+<script src="../../js/daab-profile-deep-link.js?v=4"></script>
+<script src="../../js/daab-nav.js?v=8" defer></script>
 <script src="../../js/daab-primary-nav.js?v=8" defer></script>
-<script src="../../js/daab-breadcrumbs.js?v=4" defer></script>
+<script src="../../js/daab-breadcrumbs.js?v=5" defer></script>
 <script src="../../js/daab-section-nav.js?v=4" defer></script>
-<script src="../../js/daab-shell.js?v=7" defer></script>
+<script src="../../js/daab-shell.js?v=10" defer></script>
+<script src="../../js/daab-search.js?v=3" defer></script>
 </head>
 <body><div aria-label="Axtarış" aria-modal="true" id="search-overlay" role="dialog">
 <div class="search-modal">
@@ -705,11 +715,16 @@ a.card-name:focus-visible {
 </header>
 
 <main class="main" id="content">
-<div class="toolbar toolbar--sticky" aria-label="Alimlər filtri">
+<div class="toolbar catalog-toolbar" aria-label="Alimlər filtri">
+<div class="catalog-toolbar__head">
 <div class="search-wrap">
 <svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="15"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
 <input autocomplete="off" id="searchInput" placeholder="Ad, ölkə, ixtisas, elmi dərəcə, e-poçt…" type="search" aria-label="Alim axtar"/>
 </div>
+<button type="button" class="catalog-toolbar__toggle" aria-expanded="false" aria-controls="catalogFilterPanel" aria-label="Filtrləri göstər"><svg class="catalog-toolbar__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 9v5l-4-2v-3L3 5z"/></svg><span class="catalog-toolbar__toggle-text">Filtrlər</span><span class="catalog-toolbar__badge" hidden></span></button>
+</div>
+<div class="catalog-toolbar__panel" id="catalogFilterPanel">
+<div class="catalog-toolbar__panel-inner">
 <div class="filter-group">
 <span class="filter-icon-label" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 9v5l-4-2v-3L3 5z"/></svg><span>Filtrlər</span></span>
 <div class="sel-wrap">
@@ -727,6 +742,8 @@ a.card-name:focus-visible {
 <button class="btn-clear" id="clearFilters" type="button">Hamısını sıfırla</button>
 </div>
 </div>
+</div>
+</div>
 <div class="result-info result-info--catalog">
 <div class="result-count" id="resultCount"></div>
 <div class="sort-control" aria-label="Sıralama">
@@ -741,7 +758,6 @@ a.card-name:focus-visible {
 <option selected="" value="name">Ad, Soyad</option>
 <option value="country">Ölkə</option>
 <option value="ixtilas">İxtisas</option>
-<option value="degree">Elmi dərəcə</option>
 </select>
 <span class="sort-control__chevron" aria-hidden="true">
 <svg fill="none" height="14" viewBox="0 0 24 24" width="14"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
@@ -765,8 +781,13 @@ a.card-name:focus-visible {
 <section class="catalog-section" id="scientists-catalog">
   <div class="cards-grid">
 
-<div class="card" data-country-name="ABŞ" data-country="abs" data-search="asəf salamov ph.d. phd staff data scientist, birləşmiş genom i̇nstitutu, lawrence berkeley milli laboratoriyası abş aasalamov@lbl.gov biologiya abs phd aasalamov@lbl.gov biologiya" data-email="aasalamov@lbl.gov" data-ixtilas="Biologiya" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/asef-salamov.png" alt="Asəf Salamov" loading="lazy"/></div>
+<div class="card" id="asef-salamov" tabindex="-1" data-country-name="ABŞ" data-country="abs" data-search="asəf salamov ph.d. phd staff data scientist, birləşmiş genom i̇nstitutu, lawrence berkeley milli laboratoriyası abş aasalamov@lbl.gov biologiya abs phd aasalamov@lbl.gov biologiya" data-email="aasalamov@lbl.gov" data-ixtilas="Biologiya" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/asef-salamov.png" alt="Asəf Salamov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#asef-salamov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/asef-salamov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ASƏF SALAMOV <span class="cred">Ph.D.</span></span>
@@ -781,8 +802,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="ABŞ" data-country="abs" data-search="aytəkin hüseynli ph.d. phd asistent tədqiqat professoru, vaşinqton universiteti (st. louis) abş ahuseynli@wustl.edu sosial siyasət abs phd ahuseynli@wustl.edu sosial siyasət" data-email="ahuseynli@wustl.edu" data-ixtilas="Sosial Siyasət" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/aytekin-huseynli.png" alt="Aytəkin Hüseynli" loading="lazy"/></div>
+<div class="card" id="aytekin-huseynli" tabindex="-1" data-country-name="ABŞ" data-country="abs" data-search="aytəkin hüseynli ph.d. phd asistent tədqiqat professoru, vaşinqton universiteti (st. louis) abş ahuseynli@wustl.edu sosial siyasət abs phd ahuseynli@wustl.edu sosial siyasət" data-email="ahuseynli@wustl.edu" data-ixtilas="Sosial Siyasət" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/aytekin-huseynli.png" alt="Aytəkin Hüseynli" loading="lazy"/></div>
+    <a class="card-qr-link" href="#aytekin-huseynli" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/aytekin-huseynli.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AYTƏKİN HÜSEYNLİ <span class="cred">Ph.D.</span></span>
@@ -797,8 +823,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="ABŞ" data-country="abs" data-search="cəmilə cavadova-spitzberg ph.d. phd tətbiqi orqan və klavesin professoru, musiqi ifaçılığı üzrə incəsənət doktoru, texas dövlət universiteti, arlinqton abş aamfusa@gmail.com musiqiçi abs phd aamfusa@gmail.com musiqiçi" data-email="aamfusa@gmail.com" data-ixtilas="Musiqiçi" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/cemile-cavadova-spitzberq.png" alt="Cəmilə Cavadova-Spitzberg" loading="lazy"/></div>
+<div class="card" id="cemile-cavadova-spitzberq" tabindex="-1" data-country-name="ABŞ" data-country="abs" data-search="cəmilə cavadova-spitzberg ph.d. phd tətbiqi orqan və klavesin professoru, musiqi ifaçılığı üzrə incəsənət doktoru, texas dövlət universiteti, arlinqton abş aamfusa@gmail.com musiqiçi abs phd aamfusa@gmail.com musiqiçi" data-email="aamfusa@gmail.com" data-ixtilas="Musiqiçi" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/cemile-cavadova-spitzberq.png" alt="Cəmilə Cavadova-Spitzberg" loading="lazy"/></div>
+    <a class="card-qr-link" href="#cemile-cavadova-spitzberq" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/cemile-cavadova-spitzberq.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">CƏMİLƏ CAVADOVA-SPİTZBERG <span class="cred">Ph.D.</span></span>
@@ -813,8 +844,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="ABŞ" data-country="abs" data-search="elşad allahyarov ph.d. phd tədqiqat professoru, fizika, “case western reserve” universiteti, klivlend, ohayo, abş exa54@case.edu fizika abs phd exa54@case.edu fizika" data-email="exa54@case.edu" data-ixtilas="Fizika" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/elsad-allahyarov.png" alt="Elşad Allahyarov" loading="lazy"/></div>
+<div class="card" id="elsad-allahyarov" tabindex="-1" data-country-name="ABŞ" data-country="abs" data-search="elşad allahyarov ph.d. phd tədqiqat professoru, fizika, “case western reserve” universiteti, klivlend, ohayo, abş exa54@case.edu fizika abs phd exa54@case.edu fizika" data-email="exa54@case.edu" data-ixtilas="Fizika" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/elsad-allahyarov.png" alt="Elşad Allahyarov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#elsad-allahyarov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/elsad-allahyarov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ELŞAD ALLAHYAROV <span class="cred">Ph.D.</span></span>
@@ -829,8 +865,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="ABŞ" data-country="abs" data-search="sevinc məmmədova ph.d. phd dekan müavini, təhsil siyasəti və təhsilin i̇darə edilməsi üzrə professor, corc vaşinqton universiteti abş mammadova.sevinj@gmail.com təhsil abs phd mammadova.sevinj@gmail.com təhsil" data-email="mammadova.sevinj@gmail.com" data-ixtilas="Təhsil" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sevinj-mammadova.png" alt="Sevinc Məmmədova" loading="lazy"/></div>
+<div class="card" id="sevinj-mammadova" tabindex="-1" data-country-name="ABŞ" data-country="abs" data-search="sevinc məmmədova ph.d. phd dekan müavini, təhsil siyasəti və təhsilin i̇darə edilməsi üzrə professor, corc vaşinqton universiteti abş mammadova.sevinj@gmail.com təhsil abs phd mammadova.sevinj@gmail.com təhsil" data-email="mammadova.sevinj@gmail.com" data-ixtilas="Təhsil" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sevinj-mammadova.png" alt="Sevinc Məmmədova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#sevinj-mammadova" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/sevinj-mammadova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SEVİNC MƏMMƏDOVA <span class="cred">Ph.D.</span></span>
@@ -845,8 +886,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="ABŞ" data-country="abs" data-search="şuay abdullayev ph.d. phd əczaçılıq və biotibbi elmlər departamenti və kompleks karbohidratlar araşdırma mərkəzi – postdoktorant, corciya universiteti abş shuay.abdullayev@gmail.com kimya abs phd shuay.abdullayev@gmail.com kimya" data-email="shuay.abdullayev@gmail.com" data-ixtilas="Kimya" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/suay-abdullayev.png" alt="Şuay Abdullayev" loading="lazy"/></div>
+<div class="card" id="suay-abdullayev" tabindex="-1" data-country-name="ABŞ" data-country="abs" data-search="şuay abdullayev ph.d. phd əczaçılıq və biotibbi elmlər departamenti və kompleks karbohidratlar araşdırma mərkəzi – postdoktorant, corciya universiteti abş shuay.abdullayev@gmail.com kimya abs phd shuay.abdullayev@gmail.com kimya" data-email="shuay.abdullayev@gmail.com" data-ixtilas="Kimya" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/suay-abdullayev.png" alt="Şuay Abdullayev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#suay-abdullayev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/suay-abdullayev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ŞUAY ABDULLAYEV <span class="cred">Ph.D.</span></span>
@@ -861,8 +907,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="ABŞ" data-country="abs" data-search="toğrul talişinski ph.d. phd st. joseph universiteti minimal invaziv cərrahiyyə direktoru, seton hall universitetinin hackensack meridian tibb məktəbində cərrahiyyə üzrə dosent abş talishinskiy.toghrul@gmail.com həkim abs phd talishinskiy.toghrul@gmail.com həkim" data-email="talishinskiy.toghrul@gmail.com" data-ixtilas="Həkim" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/togrul-talisinski.png" alt="Toğrul Talişinski" loading="lazy"/></div>
+<div class="card" id="togrul-talisinski" tabindex="-1" data-country-name="ABŞ" data-country="abs" data-search="toğrul talişinski ph.d. phd st. joseph universiteti minimal invaziv cərrahiyyə direktoru, seton hall universitetinin hackensack meridian tibb məktəbində cərrahiyyə üzrə dosent abş talishinskiy.toghrul@gmail.com həkim abs phd talishinskiy.toghrul@gmail.com həkim" data-email="talishinskiy.toghrul@gmail.com" data-ixtilas="Həkim" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/togrul-talisinski.png" alt="Toğrul Talişinski" loading="lazy"/></div>
+    <a class="card-qr-link" href="#togrul-talisinski" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/togrul-talisinski.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">TOĞRUL TALİŞİNSKİ <span class="cred">Ph.D.</span></span>
@@ -877,8 +928,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Almaniya" data-country="de" data-search="məsud əfəndiyev prof. dr. prof.dr. daab i̇darə heyətinin sədri almaniya messoud.efendiyev@gmail.com riyaziyyat de prof.dr. messoud.efendiyev@gmail.com riyaziyyat" data-email="messoud.efendiyev@gmail.com" data-ixtilas="Riyaziyyat" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/messoud-efendiyev.png" alt="Məsud Əfəndiyev" loading="lazy"/></div>
+<div class="card" id="messoud-efendiyev" tabindex="-1" data-country-name="Almaniya" data-country="de" data-search="məsud əfəndiyev prof. dr. prof.dr. daab i̇darə heyətinin sədri almaniya messoud.efendiyev@gmail.com riyaziyyat de prof.dr. messoud.efendiyev@gmail.com riyaziyyat" data-email="messoud.efendiyev@gmail.com" data-ixtilas="Riyaziyyat" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/messoud-efendiyev.png" alt="Məsud Əfəndiyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#messoud-efendiyev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/messoud-efendiyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MƏSUD ƏFƏNDİYEV <span class="cred">Prof. Dr.</span></span>
@@ -893,8 +949,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Almaniya" data-country="de" data-search="mirzə mütəllimov ph.d. phd mainz universitetinin tədris klinikasında ritmologiya şöbəsinin müdiri, baş tədqiqatçı həkim, saarland universitet klinikasında aparıcı baş mütəxəssis-kardioloq, dosent almaniya m.mutallimov@yahoo.com həkim de phd m.mutallimov@yahoo.com həkim" data-email="m.mutallimov@yahoo.com" data-ixtilas="Həkim" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mirze-mutellimov.png" alt="Mirzə Mütəllimov" loading="lazy"/></div>
+<div class="card" id="mirze-mutellimov" tabindex="-1" data-country-name="Almaniya" data-country="de" data-search="mirzə mütəllimov ph.d. phd mainz universitetinin tədris klinikasında ritmologiya şöbəsinin müdiri, baş tədqiqatçı həkim, saarland universitet klinikasında aparıcı baş mütəxəssis-kardioloq, dosent almaniya m.mutallimov@yahoo.com həkim de phd m.mutallimov@yahoo.com həkim" data-email="m.mutallimov@yahoo.com" data-ixtilas="Həkim" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mirze-mutellimov.png" alt="Mirzə Mütəllimov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#mirze-mutellimov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/mirze-mutellimov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MİRZƏ MÜTƏLLİMOV <span class="cred">Ph.D.</span></span>
@@ -909,8 +970,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Almaniya" data-country="de" data-search="rasim cənnətəliyev ph.d. phd ağıllı enerji sistemləri üzrə layihə meneceri, enbw ag, stuttgart, almaniya almaniya rasimbaku@yahoo.com mühəndis de phd rasimbaku@yahoo.com mühəndis" data-email="rasimbaku@yahoo.com" data-ixtilas="Mühəndis" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/rasim-cenneteliyev.png" alt="Rasim Cənnətəliyev" loading="lazy"/></div>
+<div class="card" id="rasim-cenneteliyev" tabindex="-1" data-country-name="Almaniya" data-country="de" data-search="rasim cənnətəliyev ph.d. phd ağıllı enerji sistemləri üzrə layihə meneceri, enbw ag, stuttgart, almaniya almaniya rasimbaku@yahoo.com mühəndis de phd rasimbaku@yahoo.com mühəndis" data-email="rasimbaku@yahoo.com" data-ixtilas="Mühəndis" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/rasim-cenneteliyev.png" alt="Rasim Cənnətəliyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#rasim-cenneteliyev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/rasim-cenneteliyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">RASİM CƏNNƏTƏLİYEV <span class="cred">Ph.D.</span></span>
@@ -925,8 +991,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Almaniya" data-country="de" data-search="rauf abdullayev ph.d. phd “stadler” şirkəti almaniya rauf_abdullayev@yahoo.fr kompüter elmləri de phd rauf_abdullayev@yahoo.fr kompüter elmləri" data-email="rauf_abdullayev@yahoo.fr" data-ixtilas="Kompüter Elmləri" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/rauf-abdullayev.png" alt="Rauf Abdullayev" loading="lazy"/></div>
+<div class="card" id="rauf-abdullayev" tabindex="-1" data-country-name="Almaniya" data-country="de" data-search="rauf abdullayev ph.d. phd “stadler” şirkəti almaniya rauf_abdullayev@yahoo.fr kompüter elmləri de phd rauf_abdullayev@yahoo.fr kompüter elmləri" data-email="rauf_abdullayev@yahoo.fr" data-ixtilas="Kompüter Elmləri" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/rauf-abdullayev.png" alt="Rauf Abdullayev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#rauf-abdullayev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/rauf-abdullayev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">RAUF ABDULLAYEV <span class="cred">Ph.D.</span></span>
@@ -941,8 +1012,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Almaniya" data-country="de" data-search="sevda kərimova ph.d. phd bochum ruhr universiteti tibb etikası və tarixi i̇nstitutunda beynəlxalq tədqiqatçı, hacettepe universiteti bioetika mərkəzində beynəlxalq tədqiqatçı, “vice versa consulting” hüquq şirkətində hüquqşünas almaniya sevda.aydin.k@gmail.com hüquq de phd sevda.aydin.k@gmail.com hüquq" data-email="sevda.aydin.k@gmail.com" data-ixtilas="Hüquq" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sevda-kerimova.png" alt="Sevda Kərimova" loading="lazy"/></div>
+<div class="card" id="sevda-kerimova" tabindex="-1" data-country-name="Almaniya" data-country="de" data-search="sevda kərimova ph.d. phd bochum ruhr universiteti tibb etikası və tarixi i̇nstitutunda beynəlxalq tədqiqatçı, hacettepe universiteti bioetika mərkəzində beynəlxalq tədqiqatçı, “vice versa consulting” hüquq şirkətində hüquqşünas almaniya sevda.aydin.k@gmail.com hüquq de phd sevda.aydin.k@gmail.com hüquq" data-email="sevda.aydin.k@gmail.com" data-ixtilas="Hüquq" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sevda-kerimova.png" alt="Sevda Kərimova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#sevda-kerimova" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/sevda-kerimova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SEVDA KƏRİMOVA <span class="cred">Ph.D.</span></span>
@@ -957,8 +1033,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Almaniya" data-country="de" data-search="toğrul kərimov ph.d. phd max planck institute for software systems, postdoktoral tədqiqatçı almaniya toghs@mpi-sws.org kompüter elmləri de phd toghs@mpi-sws.org kompüter elmləri" data-email="toghs@mpi-sws.org" data-ixtilas="Kompüter Elmləri" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/togrul-karimov.png" alt="Toğrul Kərimov" loading="lazy"/></div>
+<div class="card" id="togrul-karimov" tabindex="-1" data-country-name="Almaniya" data-country="de" data-search="toğrul kərimov ph.d. phd max planck institute for software systems, postdoktoral tədqiqatçı almaniya toghs@mpi-sws.org kompüter elmləri de phd toghs@mpi-sws.org kompüter elmləri" data-email="toghs@mpi-sws.org" data-ixtilas="Kompüter Elmləri" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/togrul-karimov.png" alt="Toğrul Kərimov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#togrul-karimov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/togrul-karimov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">TOĞRUL KƏRİMOV <span class="cred">Ph.D.</span></span>
@@ -973,8 +1054,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Almaniya" data-country="de" data-search="valeh rüstəmov ph.d. phd mannhaym tətbiqi elmlər universiteti, biotexnologiya fakültəsi, hüceyrə və molekulyar biologiya i̇nstitutu və həmçinin cemos tədqiqat və transfer mərkəzinin elmi işçisi və qrup rəhbəri almaniya rustamov.valeh@gmail.com həkim de phd rustamov.valeh@gmail.com həkim" data-email="rustamov.valeh@gmail.com" data-ixtilas="Həkim" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/valeh-rustemov.png" alt="Valeh Rüstəmov" loading="lazy"/></div>
+<div class="card" id="valeh-rustemov" tabindex="-1" data-country-name="Almaniya" data-country="de" data-search="valeh rüstəmov ph.d. phd mannhaym tətbiqi elmlər universiteti, biotexnologiya fakültəsi, hüceyrə və molekulyar biologiya i̇nstitutu və həmçinin cemos tədqiqat və transfer mərkəzinin elmi işçisi və qrup rəhbəri almaniya rustamov.valeh@gmail.com həkim de phd rustamov.valeh@gmail.com həkim" data-email="rustamov.valeh@gmail.com" data-ixtilas="Həkim" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/valeh-rustemov.png" alt="Valeh Rüstəmov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#valeh-rustemov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/valeh-rustemov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">VALEH RÜSTƏMOV <span class="cred">Ph.D.</span></span>
@@ -989,8 +1075,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Almaniya" data-country="de" data-search="xədicə zeynalova ph.d. phd bəstəkar, musiqişünas, alim tədqiqatçı, dosent, sənətşünaslıq üzrə fəlsəfə doktoru, bakı musiqi akademiyası, detmold musiqi akademiyası (hochschule für musik detmold), və paderborn universitetinin məzunu, almaniya bri̇dge of sound təşkilatının sədri və eyniadlı orkestrin təsisçisi, bədii rəhbəri, harmony of sound beynəlxalq musiqi festivalının yaradıcısı, kuratoru və bədii rəhbəri almaniya x.zeynalova@gmail.com musiqiçi de phd x.zeynalova@gmail.com musiqiçi" data-email="x.zeynalova@gmail.com" data-ixtilas="Musiqiçi" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/xedice-zeynalova.png" alt="Xədicə Zeynalova" loading="lazy"/></div>
+<div class="card" id="xedice-zeynalova" tabindex="-1" data-country-name="Almaniya" data-country="de" data-search="xədicə zeynalova ph.d. phd bəstəkar, musiqişünas, alim tədqiqatçı, dosent, sənətşünaslıq üzrə fəlsəfə doktoru, bakı musiqi akademiyası, detmold musiqi akademiyası (hochschule für musik detmold), və paderborn universitetinin məzunu, almaniya bri̇dge of sound təşkilatının sədri və eyniadlı orkestrin təsisçisi, bədii rəhbəri, harmony of sound beynəlxalq musiqi festivalının yaradıcısı, kuratoru və bədii rəhbəri almaniya x.zeynalova@gmail.com musiqiçi de phd x.zeynalova@gmail.com musiqiçi" data-email="x.zeynalova@gmail.com" data-ixtilas="Musiqiçi" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/xedice-zeynalova.png" alt="Xədicə Zeynalova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#xedice-zeynalova" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/xedice-zeynalova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">XƏDİCƏ ZEYNALOVA <span class="cred">Ph.D.</span></span>
@@ -1005,8 +1096,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Almaniya" data-country="de" data-search="yaşar musayev ph.d. phd “siemens energy” şirkəti, senior management almaniya mussa_98@hotmail.de mühəndis de phd mussa_98@hotmail.de mühəndis" data-email="mussa_98@hotmail.de" data-ixtilas="Mühəndis" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/yasar-musayev.png" alt="Yaşar Musayev" loading="lazy"/></div>
+<div class="card" id="yasar-musayev" tabindex="-1" data-country-name="Almaniya" data-country="de" data-search="yaşar musayev ph.d. phd “siemens energy” şirkəti, senior management almaniya mussa_98@hotmail.de mühəndis de phd mussa_98@hotmail.de mühəndis" data-email="mussa_98@hotmail.de" data-ixtilas="Mühəndis" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/yasar-musayev.png" alt="Yaşar Musayev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#yasar-musayev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/yasar-musayev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">YAŞAR MUSAYEV <span class="cred">Ph.D.</span></span>
@@ -1021,8 +1117,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Avstriya" data-country="at" data-search="bəxtiyar siracov ph.d. phd daab-nin i̇darə heyətinin həmsədri avstriya b.sirajov@hotmail.com kompüter elmləri at phd b.sirajov@hotmail.com kompüter elmləri" data-email="b.sirajov@hotmail.com" data-ixtilas="Kompüter Elmləri" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/bakhtiyar-sirajov.png" alt="Bəxtiyar Siracov" loading="lazy"/></div>
+<div class="card" id="bakhtiyar-sirajov" tabindex="-1" data-country-name="Avstriya" data-country="at" data-search="bəxtiyar siracov ph.d. phd daab-nin i̇darə heyətinin həmsədri avstriya b.sirajov@hotmail.com kompüter elmləri at phd b.sirajov@hotmail.com kompüter elmləri" data-email="b.sirajov@hotmail.com" data-ixtilas="Kompüter Elmləri" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/bakhtiyar-sirajov.png" alt="Bəxtiyar Siracov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#bakhtiyar-sirajov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/bakhtiyar-sirajov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">BƏXTİYAR SİRACOV <span class="cred">Ph.D.</span></span>
@@ -1037,8 +1138,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Avstriya" data-country="at" data-search="dinara abbasova ph.d. phd atom enerjisi üzrə beynəlxalq agentliyin (aeba) məsləhətçisi, “qadınlar nüvə sahəsində” (“women in nuclear”) ümumdünya assosiasiyasının azərbaycan üzrə rəsmi nümayəndəsi avstriya dinara_abasova@hotmail.com kimya at phd dinara_abasova@hotmail.com kimya" data-email="dinara_abasova@hotmail.com" data-ixtilas="Kimya" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/dinara-abbasova.png" alt="Dinara Abbasova" loading="lazy"/></div>
+<div class="card" id="dinara-abbasova" tabindex="-1" data-country-name="Avstriya" data-country="at" data-search="dinara abbasova ph.d. phd atom enerjisi üzrə beynəlxalq agentliyin (aeba) məsləhətçisi, “qadınlar nüvə sahəsində” (“women in nuclear”) ümumdünya assosiasiyasının azərbaycan üzrə rəsmi nümayəndəsi avstriya dinara_abasova@hotmail.com kimya at phd dinara_abasova@hotmail.com kimya" data-email="dinara_abasova@hotmail.com" data-ixtilas="Kimya" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/dinara-abbasova.png" alt="Dinara Abbasova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#dinara-abbasova" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/dinara-abbasova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">DİNARA ABBASOVA <span class="cred">Ph.D.</span></span>
@@ -1053,8 +1159,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Avstriya" data-country="at" data-search="kamal əkbərov ph.d. phd ümumdünya səhiyyə təşkilatı (üst), radiasiya, nüvə, kimyəvi və bioloji təhlükələrə qarşı mütəxəssis, ukrayna və avropa regionu avstriya kamal.akbarov@gmail.com həkim at phd kamal.akbarov@gmail.com həkim" data-email="kamal.akbarov@gmail.com" data-ixtilas="Həkim" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/kamal-ekberov.png" alt="Kamal Əkbərov" loading="lazy"/></div>
+<div class="card" id="kamal-ekberov" tabindex="-1" data-country-name="Avstriya" data-country="at" data-search="kamal əkbərov ph.d. phd ümumdünya səhiyyə təşkilatı (üst), radiasiya, nüvə, kimyəvi və bioloji təhlükələrə qarşı mütəxəssis, ukrayna və avropa regionu avstriya kamal.akbarov@gmail.com həkim at phd kamal.akbarov@gmail.com həkim" data-email="kamal.akbarov@gmail.com" data-ixtilas="Həkim" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/kamal-ekberov.png" alt="Kamal Əkbərov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#kamal-ekberov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/kamal-ekberov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">KAMAL ƏKBƏROV <span class="cred">Ph.D.</span></span>
@@ -1069,8 +1180,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Avstriya" data-country="at" data-search="murad abuzərli ph.d. phd vyana universiteti (university of vienna) fizika fakültəsi, ”kvant optikası, kvant informasiya və nanofizika” qrupunda postdoktorantura avstriya murad.abuzarli@univie.ac.at fizika at phd murad.abuzarli@univie.ac.at fizika" data-email="murad.abuzarli@univie.ac.at" data-ixtilas="Fizika" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/murad-abuzerli.png" alt="Murad Abuzərli" loading="lazy"/></div>
+<div class="card" id="murad-abuzerli" tabindex="-1" data-country-name="Avstriya" data-country="at" data-search="murad abuzərli ph.d. phd vyana universiteti (university of vienna) fizika fakültəsi, ”kvant optikası, kvant informasiya və nanofizika” qrupunda postdoktorantura avstriya murad.abuzarli@univie.ac.at fizika at phd murad.abuzarli@univie.ac.at fizika" data-email="murad.abuzarli@univie.ac.at" data-ixtilas="Fizika" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/murad-abuzerli.png" alt="Murad Abuzərli" loading="lazy"/></div>
+    <a class="card-qr-link" href="#murad-abuzerli" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/murad-abuzerli.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MURAD ABUZƏRLİ <span class="cred">Ph.D.</span></span>
@@ -1085,8 +1201,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Birləşmiş Krallıq" data-country="uk" data-search="qərib mürşüdov ph.d. phd birləşmiş krallığın kembric şəhərində mrc molekulyar biologiya laboratoriyası birləşmiş krallıq garib@mrc-lmb.cam.ac.uk biologiya uk phd garib@mrc-lmb.cam.ac.uk biologiya" data-email="garib@mrc-lmb.cam.ac.uk" data-ixtilas="Biologiya" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/qerib-mursudov.png" alt="Qərib Mürşüdov" loading="lazy"/></div>
+<div class="card" id="qerib-mursudov" tabindex="-1" data-country-name="Birləşmiş Krallıq" data-country="uk" data-search="qərib mürşüdov ph.d. phd birləşmiş krallığın kembric şəhərində mrc molekulyar biologiya laboratoriyası birləşmiş krallıq garib@mrc-lmb.cam.ac.uk biologiya uk phd garib@mrc-lmb.cam.ac.uk biologiya" data-email="garib@mrc-lmb.cam.ac.uk" data-ixtilas="Biologiya" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/qerib-mursudov.png" alt="Qərib Mürşüdov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#qerib-mursudov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/qerib-mursudov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">QƏRİB MÜRŞÜDOV <span class="cred">Ph.D.</span></span>
@@ -1101,8 +1222,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Birləşmiş Krallıq" data-country="uk" data-search="vəhid gəruslu prof. dr. prof.dr. birləşmiş krallığın belfast şəhərindəki ”queen’s” universitetinin proqram təminatı mühəndisliyi professoru birləşmiş krallıq vehid.geruslu@gmail.com kompüter elmləri uk prof.dr. vehid.geruslu@gmail.com kompüter elmləri" data-email="vehid.geruslu@gmail.com" data-ixtilas="Kompüter Elmləri" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/vehid-geruslu.png" alt="Vəhid Gəruslu" loading="lazy"/></div>
+<div class="card" id="vehid-geruslu" tabindex="-1" data-country-name="Birləşmiş Krallıq" data-country="uk" data-search="vəhid gəruslu prof. dr. prof.dr. birləşmiş krallığın belfast şəhərindəki ”queen’s” universitetinin proqram təminatı mühəndisliyi professoru birləşmiş krallıq vehid.geruslu@gmail.com kompüter elmləri uk prof.dr. vehid.geruslu@gmail.com kompüter elmləri" data-email="vehid.geruslu@gmail.com" data-ixtilas="Kompüter Elmləri" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/vehid-geruslu.png" alt="Vəhid Gəruslu" loading="lazy"/></div>
+    <a class="card-qr-link" href="#vehid-geruslu" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/vehid-geruslu.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">VƏHİD GƏRUSLU <span class="cred">Prof. Dr.</span></span>
@@ -1117,8 +1243,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Estoniya" data-country="ee" data-search="xaqani qayıblı ph.d. phd fin-uqor və türk xalqları araşdırma mərkəzinin sədri estoniya hakan@ut.ee filologiya ee phd hakan@ut.ee filologiya" data-email="hakan@ut.ee" data-ixtilas="Filologiya" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/xaqani-qayibli.png" alt="Xaqani Qayıblı" loading="lazy"/></div>
+<div class="card" id="xaqani-qayibli" tabindex="-1" data-country-name="Estoniya" data-country="ee" data-search="xaqani qayıblı ph.d. phd fin-uqor və türk xalqları araşdırma mərkəzinin sədri estoniya hakan@ut.ee filologiya ee phd hakan@ut.ee filologiya" data-email="hakan@ut.ee" data-ixtilas="Filologiya" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/xaqani-qayibli.png" alt="Xaqani Qayıblı" loading="lazy"/></div>
+    <a class="card-qr-link" href="#xaqani-qayibli" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/xaqani-qayibli.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">XAQANİ QAYİBLİ <span class="cred">Ph.D.</span></span>
@@ -1133,8 +1264,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Fransa" data-country="fr" data-search="aynur quliyeva ph.d. phd fransa toulouse universitetləri nəzdində milli tarbes mühəndislik akademiyasında (enit/uttop) dosent, fransa dövlət qulluqçusu fransa aynur_guliyeva@yahoo.com kimya fr phd aynur_guliyeva@yahoo.com kimya" data-email="aynur_guliyeva@yahoo.com" data-ixtilas="Kimya" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/aynur-quliyeva.png" alt="Aynur Quliyeva" loading="lazy"/></div>
+<div class="card" id="aynur-quliyeva" tabindex="-1" data-country-name="Fransa" data-country="fr" data-search="aynur quliyeva ph.d. phd fransa toulouse universitetləri nəzdində milli tarbes mühəndislik akademiyasında (enit/uttop) dosent, fransa dövlət qulluqçusu fransa aynur_guliyeva@yahoo.com kimya fr phd aynur_guliyeva@yahoo.com kimya" data-email="aynur_guliyeva@yahoo.com" data-ixtilas="Kimya" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/aynur-quliyeva.png" alt="Aynur Quliyeva" loading="lazy"/></div>
+    <a class="card-qr-link" href="#aynur-quliyeva" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/aynur-quliyeva.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AYNUR QULİYEVA <span class="cred">Ph.D.</span></span>
@@ -1149,8 +1285,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Fransa" data-country="fr" data-search="günel səfərova ph.d. phd paris-sakle universitetinin (université paris-saclay) iqtisad elmləri üzrə fəlsəfə doktoru, fransada təsis edilmiş ali̇m elmi assosiasiyasının rəhbəri və assosiasiyanın layihələri çərçivəsində elmi konfransların təşkilatçısı fransa gunelsafarova@hotmail.com i̇qtisadiyyat fr phd gunelsafarova@hotmail.com i̇qtisadiyyat" data-email="gunelsafarova@hotmail.com" data-ixtilas="İqtisadiyyat" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/gunel-seferova.png" alt="Günel Səfərova" loading="lazy"/></div>
+<div class="card" id="gunel-seferova" tabindex="-1" data-country-name="Fransa" data-country="fr" data-search="günel səfərova ph.d. phd paris-sakle universitetinin (université paris-saclay) iqtisad elmləri üzrə fəlsəfə doktoru, fransada təsis edilmiş ali̇m elmi assosiasiyasının rəhbəri və assosiasiyanın layihələri çərçivəsində elmi konfransların təşkilatçısı fransa gunelsafarova@hotmail.com i̇qtisadiyyat fr phd gunelsafarova@hotmail.com i̇qtisadiyyat" data-email="gunelsafarova@hotmail.com" data-ixtilas="İqtisadiyyat" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/gunel-seferova.png" alt="Günel Səfərova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#gunel-seferova" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/gunel-seferova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">GÜNEL SƏFƏROVA <span class="cred">Ph.D.</span></span>
@@ -1165,8 +1306,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Fransa" data-country="fr" data-search="reyhan həsənova ph.d. phd beynəlxalq şirkət olan “oracle france”da tədqiqat məsləhətçisi fransa reyhan.hasanova@gmail.com biologiya fr phd reyhan.hasanova@gmail.com biologiya" data-email="reyhan.hasanova@gmail.com" data-ixtilas="Biologiya" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/reyhan-hesenova.png" alt="Reyhan Həsənova" loading="lazy"/></div>
+<div class="card" id="reyhan-hesenova" tabindex="-1" data-country-name="Fransa" data-country="fr" data-search="reyhan həsənova ph.d. phd beynəlxalq şirkət olan “oracle france”da tədqiqat məsləhətçisi fransa reyhan.hasanova@gmail.com biologiya fr phd reyhan.hasanova@gmail.com biologiya" data-email="reyhan.hasanova@gmail.com" data-ixtilas="Biologiya" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/reyhan-hesenova.png" alt="Reyhan Həsənova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#reyhan-hesenova" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/reyhan-hesenova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">REYHAN HƏSƏNOVA <span class="cred">Ph.D.</span></span>
@@ -1181,8 +1327,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Gürcüstan" data-country="ge" data-search="aygül i̇sayeva ph.d. phd socar-enerji gürcüstan, biznes kommunikasiyaları və ictimaiyyətlə əlaqələr üzrə mütəxəssis gürcüstan isayevaaygul2003@yahoo.com i̇qtisadiyyat ge phd isayevaaygul2003@yahoo.com i̇qtisadiyyat" data-email="isayevaaygul2003@yahoo.com" data-ixtilas="İqtisadiyyat" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/aygul-isayeva.png" alt="Aygül İsayeva" loading="lazy"/></div>
+<div class="card" id="aygul-isayeva" tabindex="-1" data-country-name="Gürcüstan" data-country="ge" data-search="aygül i̇sayeva ph.d. phd socar-enerji gürcüstan, biznes kommunikasiyaları və ictimaiyyətlə əlaqələr üzrə mütəxəssis gürcüstan isayevaaygul2003@yahoo.com i̇qtisadiyyat ge phd isayevaaygul2003@yahoo.com i̇qtisadiyyat" data-email="isayevaaygul2003@yahoo.com" data-ixtilas="İqtisadiyyat" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/aygul-isayeva.png" alt="Aygül İsayeva" loading="lazy"/></div>
+    <a class="card-qr-link" href="#aygul-isayeva" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/aygul-isayeva.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AYGÜL İSAYEVA <span class="cred">Ph.D.</span></span>
@@ -1197,8 +1348,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="İsrail" data-country="il" data-search="lev eppelbaum ph.d. phd təl-əviv universitetinin professoru, i̇srail levap@tauex.tau.ac.il geofizika il phd levap@tauex.tau.ac.il geofizika" data-email="levap@tauex.tau.ac.il" data-ixtilas="Geofizika" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/lev-v-eppelbaum.png" alt="Lev Eppelbaum" loading="lazy"/></div>
+<div class="card" id="lev-v-eppelbaum" tabindex="-1" data-country-name="İsrail" data-country="il" data-search="lev eppelbaum ph.d. phd təl-əviv universitetinin professoru, i̇srail levap@tauex.tau.ac.il geofizika il phd levap@tauex.tau.ac.il geofizika" data-email="levap@tauex.tau.ac.il" data-ixtilas="Geofizika" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/lev-v-eppelbaum.png" alt="Lev Eppelbaum" loading="lazy"/></div>
+    <a class="card-qr-link" href="#lev-v-eppelbaum" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/lev-v-eppelbaum.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">LEV EPPELBAUM <span class="cred">Ph.D.</span></span>
@@ -1213,8 +1369,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="İsrail" data-country="il" data-search="mark vilen applebaum prof. dr. prof.dr. riyaziyyat təhsili üzrə professor və kaye akademik təhsil kollecində i̇nteqrativ stem təhsili magistr proqramının rəhbəri i̇srail applebaum.mark@gmail.com riyaziyyat il prof.dr. applebaum.mark@gmail.com riyaziyyat" data-email="applebaum.mark@gmail.com" data-ixtilas="Riyaziyyat" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mark-applebaum.png" alt="Mark Vilen Applebaum" loading="lazy"/></div>
+<div class="card" id="mark-applebaum" tabindex="-1" data-country-name="İsrail" data-country="il" data-search="mark vilen applebaum prof. dr. prof.dr. riyaziyyat təhsili üzrə professor və kaye akademik təhsil kollecində i̇nteqrativ stem təhsili magistr proqramının rəhbəri i̇srail applebaum.mark@gmail.com riyaziyyat il prof.dr. applebaum.mark@gmail.com riyaziyyat" data-email="applebaum.mark@gmail.com" data-ixtilas="Riyaziyyat" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mark-applebaum.png" alt="Mark Vilen Applebaum" loading="lazy"/></div>
+    <a class="card-qr-link" href="#mark-applebaum" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/mark-applebaum.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MARK VİLEN APPLEBAUM <span class="cred">Prof. Dr.</span></span>
@@ -1229,8 +1390,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="İsveç" data-country="se" data-search="səadət kərimi prof. dr. prof.dr. daab i̇darə heyətinin üzvü, mətbuat katibi i̇sveç saadat953@hotmail.com riyaziyyat se prof.dr. saadat953@hotmail.com riyaziyyat" data-email="saadat953@hotmail.com" data-ixtilas="Riyaziyyat" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/saadat-karimi.png" alt="Səadət Kərimi" loading="lazy"/></div>
+<div class="card" id="saadat-karimi" tabindex="-1" data-country-name="İsveç" data-country="se" data-search="səadət kərimi prof. dr. prof.dr. daab i̇darə heyətinin üzvü, mətbuat katibi i̇sveç saadat953@hotmail.com riyaziyyat se prof.dr. saadat953@hotmail.com riyaziyyat" data-email="saadat953@hotmail.com" data-ixtilas="Riyaziyyat" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/saadat-karimi.png" alt="Səadət Kərimi" loading="lazy"/></div>
+    <a class="card-qr-link" href="#saadat-karimi" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/saadat-karimi.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SƏADƏT KƏRİMİ <span class="cred">Prof. Dr.</span></span>
@@ -1245,8 +1411,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="İtaliya" data-country="it" data-search="zərifə osmanlı ph.d. phd padova universiteti, biotibbi elmlər departamenti, postdoktoral tədqiqatçı i̇taliya zerifeosmanli91@gmail.com bioinformatika it phd zerifeosmanli91@gmail.com bioinformatika" data-email="zerifeosmanli91@gmail.com" data-ixtilas="Bioinformatika" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/zerife-osmanli.png" alt="Zərifə Osmanlı" loading="lazy"/></div>
+<div class="card" id="zerife-osmanli" tabindex="-1" data-country-name="İtaliya" data-country="it" data-search="zərifə osmanlı ph.d. phd padova universiteti, biotibbi elmlər departamenti, postdoktoral tədqiqatçı i̇taliya zerifeosmanli91@gmail.com bioinformatika it phd zerifeosmanli91@gmail.com bioinformatika" data-email="zerifeosmanli91@gmail.com" data-ixtilas="Bioinformatika" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/zerife-osmanli.png" alt="Zərifə Osmanlı" loading="lazy"/></div>
+    <a class="card-qr-link" href="#zerife-osmanli" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/zerife-osmanli.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ZƏRİFƏ OSMANLİ <span class="cred">Ph.D.</span></span>
@@ -1261,8 +1432,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Kanada" data-country="ca" data-search="i̇lham axundov ph.d. phd vaterloo universiteti (university of waterloo), riyaziyyat, biznes və mühasibat proqramları direktoru kanada iakhundo@uwaterloo.ca riyaziyyat ca phd iakhundo@uwaterloo.ca riyaziyyat" data-email="iakhundo@uwaterloo.ca" data-ixtilas="Riyaziyyat" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ilham-axundov.png" alt="İlham Axundov" loading="lazy"/></div>
+<div class="card" id="ilham-axundov" tabindex="-1" data-country-name="Kanada" data-country="ca" data-search="i̇lham axundov ph.d. phd vaterloo universiteti (university of waterloo), riyaziyyat, biznes və mühasibat proqramları direktoru kanada iakhundo@uwaterloo.ca riyaziyyat ca phd iakhundo@uwaterloo.ca riyaziyyat" data-email="iakhundo@uwaterloo.ca" data-ixtilas="Riyaziyyat" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ilham-axundov.png" alt="İlham Axundov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#ilham-axundov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/ilham-axundov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">İLHAM AXUNDOV <span class="cred">Ph.D.</span></span>
@@ -1277,8 +1453,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Kanada" data-country="ca" data-search="rıza moridi ph.d. phd toronto universiteti, massey kolleci, böyük elmi işçi kanada reza@rezamoridi.com fizika ca phd reza@rezamoridi.com fizika" data-email="reza@rezamoridi.com" data-ixtilas="Fizika" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/reza-moridi.png" alt="Rıza Moridi" loading="lazy"/></div>
+<div class="card" id="reza-moridi" tabindex="-1" data-country-name="Kanada" data-country="ca" data-search="rıza moridi ph.d. phd toronto universiteti, massey kolleci, böyük elmi işçi kanada reza@rezamoridi.com fizika ca phd reza@rezamoridi.com fizika" data-email="reza@rezamoridi.com" data-ixtilas="Fizika" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/reza-moridi.png" alt="Rıza Moridi" loading="lazy"/></div>
+    <a class="card-qr-link" href="#reza-moridi" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/reza-moridi.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">RİZA MORİDİ <span class="cred">Ph.D.</span></span>
@@ -1293,8 +1474,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Kanada" data-country="ca" data-search="səbinə i̇sgəndərova ph.d. phd kalqari universiteti ətraf mühitin i̇darə edilməsi proqramının təlimatçısı, bay river kolleci, kalqari, alberta, kanada, tətbiqi ətraf mühit texnologiyaları fakültəsinin üzvü və təlimatçısı kanada sabina@ualberta.net biologiya ca phd sabina@ualberta.net biologiya" data-email="sabina@ualberta.net" data-ixtilas="Biologiya" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sebine-isgenderova.png" alt="Səbinə İsgəndərova" loading="lazy"/></div>
+<div class="card" id="sebine-isgenderova" tabindex="-1" data-country-name="Kanada" data-country="ca" data-search="səbinə i̇sgəndərova ph.d. phd kalqari universiteti ətraf mühitin i̇darə edilməsi proqramının təlimatçısı, bay river kolleci, kalqari, alberta, kanada, tətbiqi ətraf mühit texnologiyaları fakültəsinin üzvü və təlimatçısı kanada sabina@ualberta.net biologiya ca phd sabina@ualberta.net biologiya" data-email="sabina@ualberta.net" data-ixtilas="Biologiya" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sebine-isgenderova.png" alt="Səbinə İsgəndərova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#sebine-isgenderova" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/sebine-isgenderova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SƏBİNƏ İSGƏNDƏROVA <span class="cred">Ph.D.</span></span>
@@ -1309,8 +1495,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Kanada" data-country="ca" data-search="yulduz rəhimov ph.d. phd kanada, york universitetinin elm fakültəsinin riyaziyyat və statistika departamenti, mövsümi dosent (uzun xidmət tədris təyinatlı) kanada raguimov@yorku.ca riyaziyyat ca phd raguimov@yorku.ca riyaziyyat" data-email="raguimov@yorku.ca" data-ixtilas="Riyaziyyat" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/yulduz-rahimov.png" alt="Yulduz Rəhimov" loading="lazy"/></div>
+<div class="card" id="yulduz-rahimov" tabindex="-1" data-country-name="Kanada" data-country="ca" data-search="yulduz rəhimov ph.d. phd kanada, york universitetinin elm fakültəsinin riyaziyyat və statistika departamenti, mövsümi dosent (uzun xidmət tədris təyinatlı) kanada raguimov@yorku.ca riyaziyyat ca phd raguimov@yorku.ca riyaziyyat" data-email="raguimov@yorku.ca" data-ixtilas="Riyaziyyat" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/yulduz-rahimov.png" alt="Yulduz Rəhimov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#yulduz-rahimov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/yulduz-rahimov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">YULDUZ RƏHİMOV <span class="cred">Ph.D.</span></span>
@@ -1325,8 +1516,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Koreya" data-country="kr" data-search="rövşən i̇brahimov prof. dr. prof.dr. regionşünaslıq üzrə hankuk universitetinin professoru koreya rovshanibrahimov@gmail.com beynəlxalq hüquq kr prof.dr. rovshanibrahimov@gmail.com beynəlxalq hüquq" data-email="rovshanibrahimov@gmail.com" data-ixtilas="Beynəlxalq hüquq" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/rovsen-ibrahimov.png" alt="Rövşən İbrahimov" loading="lazy"/></div>
+<div class="card" id="rovsen-ibrahimov" tabindex="-1" data-country-name="Koreya" data-country="kr" data-search="rövşən i̇brahimov prof. dr. prof.dr. regionşünaslıq üzrə hankuk universitetinin professoru koreya rovshanibrahimov@gmail.com beynəlxalq hüquq kr prof.dr. rovshanibrahimov@gmail.com beynəlxalq hüquq" data-email="rovshanibrahimov@gmail.com" data-ixtilas="Beynəlxalq hüquq" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/rovsen-ibrahimov.png" alt="Rövşən İbrahimov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#rovsen-ibrahimov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/rovsen-ibrahimov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">RÖVŞƏN İBRAHİMOV <span class="cred">Prof. Dr.</span></span>
@@ -1341,8 +1537,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Meksika" data-country="mx" data-search="natiq atakişiyev ph.d. phd meksika milli muxtar universitetinin riyaziyyat i̇nstitutu, fizika-riyaziyyat elmləri doktoru, meksikanın əməkdar milli tədqiqatçısı (emeritus national researcher) meksika elmlər akademiyasının üzvü meksika natig_atakishiyev@hotmail.com fizika mx phd natig_atakishiyev@hotmail.com fizika" data-email="natig_atakishiyev@hotmail.com" data-ixtilas="Fizika" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/natiq-agakisiyev.png" alt="Natiq Atakişiyev" loading="lazy"/></div>
+<div class="card" id="natiq-agakisiyev" tabindex="-1" data-country-name="Meksika" data-country="mx" data-search="natiq atakişiyev ph.d. phd meksika milli muxtar universitetinin riyaziyyat i̇nstitutu, fizika-riyaziyyat elmləri doktoru, meksikanın əməkdar milli tədqiqatçısı (emeritus national researcher) meksika elmlər akademiyasının üzvü meksika natig_atakishiyev@hotmail.com fizika mx phd natig_atakishiyev@hotmail.com fizika" data-email="natig_atakishiyev@hotmail.com" data-ixtilas="Fizika" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/natiq-agakisiyev.png" alt="Natiq Atakişiyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#natiq-agakisiyev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/natiq-agakisiyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">NATİQ ATAKİŞİYEV <span class="cred">Ph.D.</span></span>
@@ -1357,8 +1558,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Misir" data-country="eg" data-search="seymur nəsirov ph.d. phd daab i̇darə heyətinin həmsədri misir seymur.nasirov@gmail.com ərəb dili və ədəbiyyatı eg phd seymur.nasirov@gmail.com ərəb dili və ədəbiyyatı" data-email="seymur.nasirov@gmail.com" data-ixtilas="Ərəb dili və ədəbiyyatı" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/seymur-nasirov.png" alt="Seymur Nəsirov" loading="lazy"/></div>
+<div class="card" id="seymur-nasirov" tabindex="-1" data-country-name="Misir" data-country="eg" data-search="seymur nəsirov ph.d. phd daab i̇darə heyətinin həmsədri misir seymur.nasirov@gmail.com ərəb dili və ədəbiyyatı eg phd seymur.nasirov@gmail.com ərəb dili və ədəbiyyatı" data-email="seymur.nasirov@gmail.com" data-ixtilas="Ərəb dili və ədəbiyyatı" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/seymur-nasirov.png" alt="Seymur Nəsirov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#seymur-nasirov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/seymur-nasirov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SEYMUR NƏSİROV <span class="cred">Ph.D.</span></span>
@@ -1373,8 +1579,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Oman" data-country="om" data-search="səidə xəlilova ph.d. phd muskat (oman) şəhərində yerləşən kral konservatoriyasının təsisçisi və direktoru oman dr.saidakhalilova@gmail.com musiqiçi om phd dr.saidakhalilova@gmail.com musiqiçi" data-email="dr.saidakhalilova@gmail.com" data-ixtilas="Musiqiçi" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/seide-xelilova.png" alt="Səidə Xəlilova" loading="lazy"/></div>
+<div class="card" id="seide-xelilova" tabindex="-1" data-country-name="Oman" data-country="om" data-search="səidə xəlilova ph.d. phd muskat (oman) şəhərində yerləşən kral konservatoriyasının təsisçisi və direktoru oman dr.saidakhalilova@gmail.com musiqiçi om phd dr.saidakhalilova@gmail.com musiqiçi" data-email="dr.saidakhalilova@gmail.com" data-ixtilas="Musiqiçi" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/seide-xelilova.png" alt="Səidə Xəlilova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#seide-xelilova" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/seide-xelilova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SƏİDƏ XƏLİLOVA <span class="cred">Ph.D.</span></span>
@@ -1389,8 +1600,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Polşa" data-country="pl" data-search="şəhriyar muxtarov ph.d. phd vistula universitetində doktorantura proqramının rəhbəri, i̇qtisadiyyat və maliyyə kafedrasının professoru, eyni zamanda koreya universitetinin i̇qtisadiyyat kafedrasının professoru. polşa s.mukhtarov@vistula.edu.pl i̇qtisadiyyat pl phd s.mukhtarov@vistula.edu.pl i̇qtisadiyyat" data-email="s.mukhtarov@vistula.edu.pl" data-ixtilas="İqtisadiyyat" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sehriyar-muxtarov.png" alt="Şəhriyar Muxtarov" loading="lazy"/></div>
+<div class="card" id="sehriyar-muxtarov" tabindex="-1" data-country-name="Polşa" data-country="pl" data-search="şəhriyar muxtarov ph.d. phd vistula universitetində doktorantura proqramının rəhbəri, i̇qtisadiyyat və maliyyə kafedrasının professoru, eyni zamanda koreya universitetinin i̇qtisadiyyat kafedrasının professoru. polşa s.mukhtarov@vistula.edu.pl i̇qtisadiyyat pl phd s.mukhtarov@vistula.edu.pl i̇qtisadiyyat" data-email="s.mukhtarov@vistula.edu.pl" data-ixtilas="İqtisadiyyat" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sehriyar-muxtarov.png" alt="Şəhriyar Muxtarov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#sehriyar-muxtarov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/sehriyar-muxtarov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ŞƏHRİYAR MUXTAROV <span class="cred">Ph.D.</span></span>
@@ -1405,8 +1621,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Qazaxıstan" data-country="kz" data-search="akif suleymanov ph.d. phd qazaxıstan respublikasının konstitusiya məhkəməsi yanında elmi məsləhət şurasının üzvü, turan universitetinin beynəlxalq hüquq və hüquq kafedrasının professoru, hüquq elmləri doktoru; parlamentarizmin i̇nkişafı fondunun layihə proqramının rəhbəri qazaxıstan a.suleimanov@turan-edu.kz hüquq kz phd a.suleimanov@turan-edu.kz hüquq" data-email="a.suleimanov@turan-edu.kz" data-ixtilas="Hüquq" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/akif-suleymanov.png" alt="Akif Suleymanov" loading="lazy"/></div>
+<div class="card" id="akif-suleymanov" tabindex="-1" data-country-name="Qazaxıstan" data-country="kz" data-search="akif suleymanov ph.d. phd qazaxıstan respublikasının konstitusiya məhkəməsi yanında elmi məsləhət şurasının üzvü, turan universitetinin beynəlxalq hüquq və hüquq kafedrasının professoru, hüquq elmləri doktoru; parlamentarizmin i̇nkişafı fondunun layihə proqramının rəhbəri qazaxıstan a.suleimanov@turan-edu.kz hüquq kz phd a.suleimanov@turan-edu.kz hüquq" data-email="a.suleimanov@turan-edu.kz" data-ixtilas="Hüquq" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/akif-suleymanov.png" alt="Akif Suleymanov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#akif-suleymanov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/akif-suleymanov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AKİF SULEYMANOV <span class="cred">Ph.D.</span></span>
@@ -1421,8 +1642,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Qazaxıstan" data-country="kz" data-search="arzu qurbanova ph.d. phd pedaqoji elmlər namizədi, orta asiya i̇nnovasiya universitetinin dillər və ədəbiyyat kafedrasının professoru qazaxıstan arzu_gur@mail.ru filologiya kz phd arzu_gur@mail.ru filologiya" data-email="arzu_gur@mail.ru" data-ixtilas="Filologiya" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/arzu-qurbanova.png" alt="Arzu Qurbanova" loading="lazy"/></div>
+<div class="card" id="arzu-qurbanova" tabindex="-1" data-country-name="Qazaxıstan" data-country="kz" data-search="arzu qurbanova ph.d. phd pedaqoji elmlər namizədi, orta asiya i̇nnovasiya universitetinin dillər və ədəbiyyat kafedrasının professoru qazaxıstan arzu_gur@mail.ru filologiya kz phd arzu_gur@mail.ru filologiya" data-email="arzu_gur@mail.ru" data-ixtilas="Filologiya" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/arzu-qurbanova.png" alt="Arzu Qurbanova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#arzu-qurbanova" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/arzu-qurbanova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ARZU QURBANOVA <span class="cred">Ph.D.</span></span>
@@ -1437,8 +1663,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Qazaxıstan" data-country="kz" data-search="tofiq aydarov ph.d. phd m.auezov adına cənubi qazaxıstan universiteti, menecment və marketinq kafedrasının müdiri qazaxıstan tofik-750908@mail.ru mühəndis kz phd tofik-750908@mail.ru mühəndis" data-email="tofik-750908@mail.ru" data-ixtilas="Mühəndis" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/tofiq-aydarov.png" alt="Tofiq Aydarov" loading="lazy"/></div>
+<div class="card" id="tofiq-aydarov" tabindex="-1" data-country-name="Qazaxıstan" data-country="kz" data-search="tofiq aydarov ph.d. phd m.auezov adına cənubi qazaxıstan universiteti, menecment və marketinq kafedrasının müdiri qazaxıstan tofik-750908@mail.ru mühəndis kz phd tofik-750908@mail.ru mühəndis" data-email="tofik-750908@mail.ru" data-ixtilas="Mühəndis" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/tofiq-aydarov.png" alt="Tofiq Aydarov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#tofiq-aydarov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/tofiq-aydarov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">TOFİQ AYDAROV <span class="cred">Ph.D.</span></span>
@@ -1453,8 +1684,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Qırğızıstan" data-country="kg" data-search="akif alaferdov ph.d. phd qırğızıstan respublikasının əməkdar həkimi, tibb üzrə fəlsəfə doktoru, “qırğızıstan-azərbaycan” dostluq və əməkdaşlıq cəmiyyətinin sədri qırğızıstan akif_allahverdi@mail.ru həkim kg phd akif_allahverdi@mail.ru həkim" data-email="akif_allahverdi@mail.ru" data-ixtilas="Həkim" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/akif-alaferdov.png" alt="Akif Alaferdov" loading="lazy"/></div>
+<div class="card" id="akif-alaferdov" tabindex="-1" data-country-name="Qırğızıstan" data-country="kg" data-search="akif alaferdov ph.d. phd qırğızıstan respublikasının əməkdar həkimi, tibb üzrə fəlsəfə doktoru, “qırğızıstan-azərbaycan” dostluq və əməkdaşlıq cəmiyyətinin sədri qırğızıstan akif_allahverdi@mail.ru həkim kg phd akif_allahverdi@mail.ru həkim" data-email="akif_allahverdi@mail.ru" data-ixtilas="Həkim" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/akif-alaferdov.png" alt="Akif Alaferdov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#akif-alaferdov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/akif-alaferdov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AKİF ALAFERDOV <span class="cred">Ph.D.</span></span>
@@ -1469,8 +1705,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="ağamalı məmmədov prof. dr. prof.dr. lomonosov adına moskva dövlət universiteti kommunikasiya və sosiologiya kafedrasının müdiri, rusiya yazıçılar birliyinin üzvü rusiya federasiyası akmnauka@yandex.ru fəlsəfə, hüquq ru prof.dr. akmnauka@yandex.ru fəlsəfə, hüquq" data-email="akmnauka@yandex.ru" data-ixtilas="Fəlsəfə, Hüquq" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/agamali-memmedov.png" alt="Ağamalı Məmmədov" loading="lazy"/></div>
+<div class="card" id="agamali-memmedov" tabindex="-1" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="ağamalı məmmədov prof. dr. prof.dr. lomonosov adına moskva dövlət universiteti kommunikasiya və sosiologiya kafedrasının müdiri, rusiya yazıçılar birliyinin üzvü rusiya federasiyası akmnauka@yandex.ru fəlsəfə, hüquq ru prof.dr. akmnauka@yandex.ru fəlsəfə, hüquq" data-email="akmnauka@yandex.ru" data-ixtilas="Fəlsəfə, Hüquq" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/agamali-memmedov.png" alt="Ağamalı Məmmədov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#agamali-memmedov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/agamali-memmedov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AĞAMALİ MƏMMƏDOV <span class="cred">Prof. Dr.</span></span>
@@ -1485,8 +1726,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="eldar əhədov ph.d. phd yazıçı və şair, rusiya yazıçılar birliyinin üzvü, azərbaycan yazıçılar birliyinin fəxri üzvü, dünya yazıçılar təşkilatının koordinasiya şurasının rəhbəri rusiya federasiyası dolma60@yandex.ru filologiya ru phd dolma60@yandex.ru filologiya" data-email="dolma60@yandex.ru" data-ixtilas="Filologiya" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eldar-ehedov.png" alt="Eldar Əhədov" loading="lazy"/></div>
+<div class="card" id="eldar-ehedov" tabindex="-1" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="eldar əhədov ph.d. phd yazıçı və şair, rusiya yazıçılar birliyinin üzvü, azərbaycan yazıçılar birliyinin fəxri üzvü, dünya yazıçılar təşkilatının koordinasiya şurasının rəhbəri rusiya federasiyası dolma60@yandex.ru filologiya ru phd dolma60@yandex.ru filologiya" data-email="dolma60@yandex.ru" data-ixtilas="Filologiya" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eldar-ehedov.png" alt="Eldar Əhədov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#eldar-ehedov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/eldar-ehedov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ELDAR ƏHƏDOV <span class="cred">Ph.D.</span></span>
@@ -1501,8 +1747,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="ələddin allahverdiyev prof. dr. prof.dr. keçmiş ssri̇ elektron sənayesi nazirliyi, elmi tədqiqat “fonon” i̇nstitutu – şöbə müdiri, moskva dövlət biznes i̇darəetmə akademiyası – professor, kafedra müdiri, dekan, prorektor, birinci prorektor, “mi̇et” milli tədqiqat universiteti – professor, təhsil prosesinin keyfiyyəti sahəsinin rəhbəri, prorektor müavini rusiya federasiyası aallahverdiyev@mail.ru riyaziyyat ru prof.dr. aallahverdiyev@mail.ru riyaziyyat" data-email="aallahverdiyev@mail.ru" data-ixtilas="Riyaziyyat" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eleddin-allahverdiyev.png" alt="Ələddin Allahverdiyev" loading="lazy"/></div>
+<div class="card" id="eleddin-allahverdiyev" tabindex="-1" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="ələddin allahverdiyev prof. dr. prof.dr. keçmiş ssri̇ elektron sənayesi nazirliyi, elmi tədqiqat “fonon” i̇nstitutu – şöbə müdiri, moskva dövlət biznes i̇darəetmə akademiyası – professor, kafedra müdiri, dekan, prorektor, birinci prorektor, “mi̇et” milli tədqiqat universiteti – professor, təhsil prosesinin keyfiyyəti sahəsinin rəhbəri, prorektor müavini rusiya federasiyası aallahverdiyev@mail.ru riyaziyyat ru prof.dr. aallahverdiyev@mail.ru riyaziyyat" data-email="aallahverdiyev@mail.ru" data-ixtilas="Riyaziyyat" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eleddin-allahverdiyev.png" alt="Ələddin Allahverdiyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#eleddin-allahverdiyev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/eleddin-allahverdiyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ƏLƏDDİN ALLAHVERDİYEV <span class="cred">Prof. Dr.</span></span>
@@ -1517,8 +1768,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="əliheydər rəhimov prof. dr. prof.dr. i̇.m.seçenov adına birinci moskva dövlət tibb universitetinin anesteziologiya və reanimatologiya kafedrasının professoru, tibb elmləri doktoru, professor, ali dərəcəli transfuzioloq həkim rusiya federasiyası ra50@mail.ru həkim ru prof.dr. ra50@mail.ru həkim" data-email="ra50@mail.ru" data-ixtilas="Həkim" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eliheyder-rehimov.png" alt="Əliheydər Rəhimov" loading="lazy"/></div>
+<div class="card" id="eliheyder-rehimov" tabindex="-1" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="əliheydər rəhimov prof. dr. prof.dr. i̇.m.seçenov adına birinci moskva dövlət tibb universitetinin anesteziologiya və reanimatologiya kafedrasının professoru, tibb elmləri doktoru, professor, ali dərəcəli transfuzioloq həkim rusiya federasiyası ra50@mail.ru həkim ru prof.dr. ra50@mail.ru həkim" data-email="ra50@mail.ru" data-ixtilas="Həkim" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eliheyder-rehimov.png" alt="Əliheydər Rəhimov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#eliheyder-rehimov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/eliheyder-rehimov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ƏLİHEYDƏR RƏHİMOV <span class="cred">Prof. Dr.</span></span>
@@ -1533,8 +1789,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="emil əhmədov ph.d. phd moskva fizika-texniki i̇nstitutu, l. d. landau adına nəzəri fizika kafedrasının müdiri rusiya federasiyası akhmedov.et@mipt.ru fizika ru phd akhmedov.et@mipt.ru fizika" data-email="akhmedov.et@mipt.ru" data-ixtilas="Fizika" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/emil-ahmadov.png" alt="Emil Əhmədov" loading="lazy"/></div>
+<div class="card" id="emil-ahmadov" tabindex="-1" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="emil əhmədov ph.d. phd moskva fizika-texniki i̇nstitutu, l. d. landau adına nəzəri fizika kafedrasının müdiri rusiya federasiyası akhmedov.et@mipt.ru fizika ru phd akhmedov.et@mipt.ru fizika" data-email="akhmedov.et@mipt.ru" data-ixtilas="Fizika" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/emil-ahmadov.png" alt="Emil Əhmədov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#emil-ahmadov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/emil-ahmadov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">EMİL ƏHMƏDOV <span class="cred">Ph.D.</span></span>
@@ -1549,8 +1810,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="i̇smayıl əliyev prof. dr. prof.dr. sankt-peterburq dövlət i̇qtisad universitetində kafedra müdiri (2020–2023) sankt-peterburq dövlət i̇qtisad universiteti “müəssisələrin və sənaye komplekslərinin i̇qtisadiyyatı və i̇darə edilməsi” kafedrasında professoru rusiya federasiyası aliev.05@mail.ru i̇qtisadiyyat ru prof.dr. aliev.05@mail.ru i̇qtisadiyyat" data-email="aliev.05@mail.ru" data-ixtilas="İqtisadiyyat" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ismayil-eliyev.png" alt="İsmayıl Əliyev" loading="lazy"/></div>
+<div class="card" id="ismayil-eliyev" tabindex="-1" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="i̇smayıl əliyev prof. dr. prof.dr. sankt-peterburq dövlət i̇qtisad universitetində kafedra müdiri (2020–2023) sankt-peterburq dövlət i̇qtisad universiteti “müəssisələrin və sənaye komplekslərinin i̇qtisadiyyatı və i̇darə edilməsi” kafedrasında professoru rusiya federasiyası aliev.05@mail.ru i̇qtisadiyyat ru prof.dr. aliev.05@mail.ru i̇qtisadiyyat" data-email="aliev.05@mail.ru" data-ixtilas="İqtisadiyyat" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ismayil-eliyev.png" alt="İsmayıl Əliyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#ismayil-eliyev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/ismayil-eliyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">İSMAYİL ƏLİYEV <span class="cred">Prof. Dr.</span></span>
@@ -1565,8 +1831,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="kamran rüstəmov prof. dr. prof.dr. azərbaycan respublikasının əməkdar elm xadimi, rusiya memarlıq və i̇nşaat elmləri akademiyasının (raai̇sn) əcnəbi üzvü, azərbaycan və rusiya jurnalistlər ittifaqlarının üzvü rusiya federasiyası aliev.05@mail.ru mühəndis ru prof.dr. aliev.05@mail.ru mühəndis" data-email="aliev.05@mail.ru" data-ixtilas="Mühəndis" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/kamran-rustemov.png" alt="Kamran Rüstəmov" loading="lazy"/></div>
+<div class="card" id="kamran-rustemov" tabindex="-1" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="kamran rüstəmov prof. dr. prof.dr. azərbaycan respublikasının əməkdar elm xadimi, rusiya memarlıq və i̇nşaat elmləri akademiyasının (raai̇sn) əcnəbi üzvü, azərbaycan və rusiya jurnalistlər ittifaqlarının üzvü rusiya federasiyası aliev.05@mail.ru mühəndis ru prof.dr. aliev.05@mail.ru mühəndis" data-email="aliev.05@mail.ru" data-ixtilas="Mühəndis" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/kamran-rustemov.png" alt="Kamran Rüstəmov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#kamran-rustemov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/kamran-rustemov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">KAMRAN RÜSTƏMOV <span class="cred">Prof. Dr.</span></span>
@@ -1581,8 +1852,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="nigar məsumova ph.d. phd i̇qtisad elmləri namizədi, dosent, reklam və i̇ctimaiyyətlə əlaqələr kafedrasının müdiri, rusiya federasiyası xarici i̇şlər nazirliyinin moskva dövlət beynəlxalq münasibətlər i̇nstitutunun (mdbmi̇) beynəlxalq jurnalistika fakültəsinin dekan müavini rusiya federasiyası masumova@mail.ru i̇qtisadiyyat ru phd masumova@mail.ru i̇qtisadiyyat" data-email="masumova@mail.ru" data-ixtilas="İqtisadiyyat" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/nigar-masimova.png" alt="Nigar Məsumova" loading="lazy"/></div>
+<div class="card" id="nigar-masimova" tabindex="-1" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="nigar məsumova ph.d. phd i̇qtisad elmləri namizədi, dosent, reklam və i̇ctimaiyyətlə əlaqələr kafedrasının müdiri, rusiya federasiyası xarici i̇şlər nazirliyinin moskva dövlət beynəlxalq münasibətlər i̇nstitutunun (mdbmi̇) beynəlxalq jurnalistika fakültəsinin dekan müavini rusiya federasiyası masumova@mail.ru i̇qtisadiyyat ru phd masumova@mail.ru i̇qtisadiyyat" data-email="masumova@mail.ru" data-ixtilas="İqtisadiyyat" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/nigar-masimova.png" alt="Nigar Məsumova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#nigar-masimova" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/nigar-masimova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">NİGAR MƏSUMOVA <span class="cred">Ph.D.</span></span>
@@ -1597,8 +1873,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="nizami məmmədov prof. dr. prof.dr. rusiya prezident akademiyasının (ranepa) professoru, rusiyanın fəxri təhsil işçisi, rusiya təbiət elmləri akademiyasının, rusiya ekologiya akademiyasının və beynəlxalq kommunikologiya akademiyasının həqiqi üzvü, unesco-nun rəsmi eksperti rusiya federasiyası nizami-mamedov@mail.ru mühəndis ru prof.dr. nizami-mamedov@mail.ru mühəndis" data-email="nizami-mamedov@mail.ru" data-ixtilas="Mühəndis" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/nizami-memmedov.png" alt="Nizami Məmmədov" loading="lazy"/></div>
+<div class="card" id="nizami-memmedov" tabindex="-1" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="nizami məmmədov prof. dr. prof.dr. rusiya prezident akademiyasının (ranepa) professoru, rusiyanın fəxri təhsil işçisi, rusiya təbiət elmləri akademiyasının, rusiya ekologiya akademiyasının və beynəlxalq kommunikologiya akademiyasının həqiqi üzvü, unesco-nun rəsmi eksperti rusiya federasiyası nizami-mamedov@mail.ru mühəndis ru prof.dr. nizami-mamedov@mail.ru mühəndis" data-email="nizami-mamedov@mail.ru" data-ixtilas="Mühəndis" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/nizami-memmedov.png" alt="Nizami Məmmədov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#nizami-memmedov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/nizami-memmedov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">NİZAMİ MƏMMƏDOV <span class="cred">Prof. Dr.</span></span>
@@ -1613,8 +1894,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="sevinc əsgərova ph.d. phd tibb elmləri doktoru, rusiya təbiət elmləri akademiyasının (tea) akademiki, əməkdar elm və təhsil xadimi, n.i̇.piroqov adına rusiya milli tədqiqat tibb universitetinin professoru və baş elmi işçisi rusiya federasiyası s_askerova@yahoo.com həkim ru phd s_askerova@yahoo.com həkim" data-email="s_askerova@yahoo.com" data-ixtilas="Həkim" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sevinc-esgerova.png" alt="Sevinc Əsgərova" loading="lazy"/></div>
+<div class="card" id="sevinc-esgerova" tabindex="-1" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="sevinc əsgərova ph.d. phd tibb elmləri doktoru, rusiya təbiət elmləri akademiyasının (tea) akademiki, əməkdar elm və təhsil xadimi, n.i̇.piroqov adına rusiya milli tədqiqat tibb universitetinin professoru və baş elmi işçisi rusiya federasiyası s_askerova@yahoo.com həkim ru phd s_askerova@yahoo.com həkim" data-email="s_askerova@yahoo.com" data-ixtilas="Həkim" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sevinc-esgerova.png" alt="Sevinc Əsgərova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#sevinc-esgerova" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/sevinc-esgerova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SEVİNC ƏSGƏROVA <span class="cred">Ph.D.</span></span>
@@ -1629,8 +1915,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="suleyman allahverdiyev ph.d. phd biologiya elmləri doktoru, rusiya elmlər akademiyasının (rea) müxbir üzvü, rea-nın k.a. timiryazev adına bitki fiziologiyası i̇nstitutunun “i̇darə olunan fotobiosintez” laboratoriyasının müdiri (moskva), rea-nın biologiyanın fundamental problemləri i̇nstitutunun baş elmi işçisi (puşçino), m.v.lomonosov adına moskva dövlət universitetinin və moskva fizika və texnologiya i̇nstitutunun professoru, türkiyədə isə bahçeşehir universitetinin “fotosintez və hidrogen enerjisi” laboratoriyasının müdiridir rusiya federasiyası suleyman.allakhverdiev@gmail.com fizika ru phd suleyman.allakhverdiev@gmail.com fizika" data-email="suleyman.allakhverdiev@gmail.com" data-ixtilas="Fizika" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/suleyman-allahverdiyev.png" alt="Suleyman Allahverdiyev" loading="lazy"/></div>
+<div class="card" id="suleyman-allahverdiyev" tabindex="-1" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="suleyman allahverdiyev ph.d. phd biologiya elmləri doktoru, rusiya elmlər akademiyasının (rea) müxbir üzvü, rea-nın k.a. timiryazev adına bitki fiziologiyası i̇nstitutunun “i̇darə olunan fotobiosintez” laboratoriyasının müdiri (moskva), rea-nın biologiyanın fundamental problemləri i̇nstitutunun baş elmi işçisi (puşçino), m.v.lomonosov adına moskva dövlət universitetinin və moskva fizika və texnologiya i̇nstitutunun professoru, türkiyədə isə bahçeşehir universitetinin “fotosintez və hidrogen enerjisi” laboratoriyasının müdiridir rusiya federasiyası suleyman.allakhverdiev@gmail.com fizika ru phd suleyman.allakhverdiev@gmail.com fizika" data-email="suleyman.allakhverdiev@gmail.com" data-ixtilas="Fizika" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/suleyman-allahverdiyev.png" alt="Suleyman Allahverdiyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#suleyman-allahverdiyev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/suleyman-allahverdiyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SULEYMAN ALLAHVERDİYEV <span class="cred">Ph.D.</span></span>
@@ -1645,8 +1936,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="vahid qədimov ph.d. phd rusiya texnologiya universiteti (mi̇rea), ali riyaziyyat və proqramlaşdırma kafedrasının professoru rusiya federasiyası vkadymov@yandex.ru riyaziyyat ru phd vkadymov@yandex.ru riyaziyyat" data-email="vkadymov@yandex.ru" data-ixtilas="Riyaziyyat" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/vahid-qedimov.png" alt="Vahid Qədimov" loading="lazy"/></div>
+<div class="card" id="vahid-qedimov" tabindex="-1" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="vahid qədimov ph.d. phd rusiya texnologiya universiteti (mi̇rea), ali riyaziyyat və proqramlaşdırma kafedrasının professoru rusiya federasiyası vkadymov@yandex.ru riyaziyyat ru phd vkadymov@yandex.ru riyaziyyat" data-email="vkadymov@yandex.ru" data-ixtilas="Riyaziyyat" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/vahid-qedimov.png" alt="Vahid Qədimov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#vahid-qedimov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/vahid-qedimov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">VAHİD QƏDİMOV <span class="cred">Ph.D.</span></span>
@@ -1661,8 +1957,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="zahid qocayev prof. dr. prof.dr. federal elmi aqrotexnika mərkəzi vim-in (fgbnu) i̇nnovasiya və tətbiqetmə üzrə direktor müavini, moskva politexnik universitetinin və n.e.bauman adına moskva dövlət texniki universitetinin professoru, texnika elmləri doktoru, professor, rusiya elmlər akademiyasının müxbir üzvü rusiya federasiyası fic51@mail.ru mühəndis ru prof.dr. fic51@mail.ru mühəndis" data-email="fic51@mail.ru" data-ixtilas="Mühəndis" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/zahid-qocayev.png" alt="Zahid Qocayev" loading="lazy"/></div>
+<div class="card" id="zahid-qocayev" tabindex="-1" data-country-name="Rusiya Federasiyası" data-country="ru" data-search="zahid qocayev prof. dr. prof.dr. federal elmi aqrotexnika mərkəzi vim-in (fgbnu) i̇nnovasiya və tətbiqetmə üzrə direktor müavini, moskva politexnik universitetinin və n.e.bauman adına moskva dövlət texniki universitetinin professoru, texnika elmləri doktoru, professor, rusiya elmlər akademiyasının müxbir üzvü rusiya federasiyası fic51@mail.ru mühəndis ru prof.dr. fic51@mail.ru mühəndis" data-email="fic51@mail.ru" data-ixtilas="Mühəndis" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/zahid-qocayev.png" alt="Zahid Qocayev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#zahid-qocayev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/zahid-qocayev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ZAHİD QOCAYEV <span class="cred">Prof. Dr.</span></span>
@@ -1677,8 +1978,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Səudiyyə Ərəbistanı" data-country="sa" data-search="azər abdullayev ph.d. phd səudiyyə ərəbistanında kral fahad və sabya xəstəxanalarında ortopediya şöbəsinin müdiri, cərrah-konsultant səudiyyə ərəbistanı aabdullayev@moh.sa.gov həkim sa phd aabdullayev@moh.sa.gov həkim" data-email="aabdullayev@moh.sa.gov" data-ixtilas="Həkim" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/azer-abdullayev.png" alt="Azər Abdullayev" loading="lazy"/></div>
+<div class="card" id="azer-abdullayev" tabindex="-1" data-country-name="Səudiyyə Ərəbistanı" data-country="sa" data-search="azər abdullayev ph.d. phd səudiyyə ərəbistanında kral fahad və sabya xəstəxanalarında ortopediya şöbəsinin müdiri, cərrah-konsultant səudiyyə ərəbistanı aabdullayev@moh.sa.gov həkim sa phd aabdullayev@moh.sa.gov həkim" data-email="aabdullayev@moh.sa.gov" data-ixtilas="Həkim" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/azer-abdullayev.png" alt="Azər Abdullayev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#azer-abdullayev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/azer-abdullayev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AZƏR ABDULLAYEV <span class="cred">Ph.D.</span></span>
@@ -1693,8 +1999,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Səudiyyə Ərəbistanı" data-country="sa" data-search="elvin əfəndi ph.d. phd i̇slam i̇nkişaf bankı qrupu, korporativ strategiya və tədqiqatlar şöbəsinin rəhbəri səudiyyə ərəbistanı e.afandi@yahoo.com i̇qtisadiyyat sa phd e.afandi@yahoo.com i̇qtisadiyyat" data-email="e.afandi@yahoo.com" data-ixtilas="İqtisadiyyat" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/elvin-efendi.png" alt="Elvin Əfəndi" loading="lazy"/></div>
+<div class="card" id="elvin-efendi" tabindex="-1" data-country-name="Səudiyyə Ərəbistanı" data-country="sa" data-search="elvin əfəndi ph.d. phd i̇slam i̇nkişaf bankı qrupu, korporativ strategiya və tədqiqatlar şöbəsinin rəhbəri səudiyyə ərəbistanı e.afandi@yahoo.com i̇qtisadiyyat sa phd e.afandi@yahoo.com i̇qtisadiyyat" data-email="e.afandi@yahoo.com" data-ixtilas="İqtisadiyyat" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/elvin-efendi.png" alt="Elvin Əfəndi" loading="lazy"/></div>
+    <a class="card-qr-link" href="#elvin-efendi" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/elvin-efendi.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ELVİN ƏFƏNDİ <span class="cred">Ph.D.</span></span>
@@ -1709,8 +2020,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="afina barmanbay ph.d. phd qars şəhəri, qafqaz universiteti fən və ədəbiyyat fakültəsi türkiyə afina.barmanbay@gmail.com filologiya tr phd afina.barmanbay@gmail.com filologiya" data-email="afina.barmanbay@gmail.com" data-ixtilas="Filologiya" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/afina-memmedli-barmanbay.png" alt="Afina Barmanbay" loading="lazy"/></div>
+<div class="card" id="afina-memmedli-barmanbay" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="afina barmanbay ph.d. phd qars şəhəri, qafqaz universiteti fən və ədəbiyyat fakültəsi türkiyə afina.barmanbay@gmail.com filologiya tr phd afina.barmanbay@gmail.com filologiya" data-email="afina.barmanbay@gmail.com" data-ixtilas="Filologiya" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/afina-memmedli-barmanbay.png" alt="Afina Barmanbay" loading="lazy"/></div>
+    <a class="card-qr-link" href="#afina-memmedli-barmanbay" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/afina-memmedli-barmanbay.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AFİNA BARMANBAY <span class="cred">Ph.D.</span></span>
@@ -1725,8 +2041,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="cavid qasımov prof. dr. prof.dr. van yüzüncü yıl universiteti tarix və beynəlxalq münasibətlər fakültəsinin professoru türkiyə cavidahmedoglu@gmail.com tarix, şərqşünaslıq tr prof.dr. cavidahmedoglu@gmail.com tarix, şərqşünaslıq" data-email="cavidahmedoglu@gmail.com" data-ixtilas="Tarix, Şərqşünaslıq" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/cavid-qasimov.png" alt="Cavid Qasımov" loading="lazy"/></div>
+<div class="card" id="cavid-qasimov" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="cavid qasımov prof. dr. prof.dr. van yüzüncü yıl universiteti tarix və beynəlxalq münasibətlər fakültəsinin professoru türkiyə cavidahmedoglu@gmail.com tarix, şərqşünaslıq tr prof.dr. cavidahmedoglu@gmail.com tarix, şərqşünaslıq" data-email="cavidahmedoglu@gmail.com" data-ixtilas="Tarix, Şərqşünaslıq" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/cavid-qasimov.png" alt="Cavid Qasımov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#cavid-qasimov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/cavid-qasimov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">CAVİD QASİMOV <span class="cred">Prof. Dr.</span></span>
@@ -1741,8 +2062,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="əbulfəz suleymanov ph.d. phd üsküdar universiteti sosiologiya kafedrasının müdiri, beynəlxalq türk akademiyasının eksperti, türk dünyası sosioloqlar birliyinin vitse-prezidenti, beynəxalq fəlsəfə tədqiqatlar mərkəzinin (ufad) idarə heyətinin üzvü türkiyə ebulfez.suleymanli@uskudar.edu.tr sosiologiya tr phd ebulfez.suleymanli@uskudar.edu.tr sosiologiya" data-email="ebulfez.suleymanli@uskudar.edu.tr" data-ixtilas="Sosiologiya" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ebulfez-suleymanov.png" alt="Əbulfəz Suleymanov" loading="lazy"/></div>
+<div class="card" id="ebulfez-suleymanov" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="əbulfəz suleymanov ph.d. phd üsküdar universiteti sosiologiya kafedrasının müdiri, beynəlxalq türk akademiyasının eksperti, türk dünyası sosioloqlar birliyinin vitse-prezidenti, beynəxalq fəlsəfə tədqiqatlar mərkəzinin (ufad) idarə heyətinin üzvü türkiyə ebulfez.suleymanli@uskudar.edu.tr sosiologiya tr phd ebulfez.suleymanli@uskudar.edu.tr sosiologiya" data-email="ebulfez.suleymanli@uskudar.edu.tr" data-ixtilas="Sosiologiya" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ebulfez-suleymanov.png" alt="Əbulfəz Suleymanov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#ebulfez-suleymanov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/ebulfez-suleymanov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ƏBULFƏZ SULEYMANOV <span class="cred">Ph.D.</span></span>
@@ -1757,8 +2083,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="elçin bədəlov ph.d. phd i̇stanbul aydın universiteti diş həkimliyi fakültəsi ağız diş və çənə cərrahiyəsi kafedrasının professoru türkiyə elcinbedeloglu@gmail.com həkim tr phd elcinbedeloglu@gmail.com həkim" data-email="elcinbedeloglu@gmail.com" data-ixtilas="Həkim" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/elcin-bedelov.png" alt="Elçin Bədəlov" loading="lazy"/></div>
+<div class="card" id="elcin-bedelov" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="elçin bədəlov ph.d. phd i̇stanbul aydın universiteti diş həkimliyi fakültəsi ağız diş və çənə cərrahiyəsi kafedrasının professoru türkiyə elcinbedeloglu@gmail.com həkim tr phd elcinbedeloglu@gmail.com həkim" data-email="elcinbedeloglu@gmail.com" data-ixtilas="Həkim" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/elcin-bedelov.png" alt="Elçin Bədəlov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#elcin-bedelov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/elcin-bedelov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ELÇİN BƏDƏLOV <span class="cred">Ph.D.</span></span>
@@ -1773,8 +2104,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="əmirullah məhmədov prof. dr. prof.dr. azərbaycanlı bilim i̇nsanları dərnəyinin (türkiyə) sədri, türkiyə mamedov@bilkent.edu.tr nanotexnologiya tr prof.dr. mamedov@bilkent.edu.tr nanotexnologiya" data-email="mamedov@bilkent.edu.tr" data-ixtilas="Nanotexnologiya" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/emirulla-memmedov.png" alt="Əmirullah Məhmədov" loading="lazy"/></div>
+<div class="card" id="emirulla-memmedov" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="əmirullah məhmədov prof. dr. prof.dr. azərbaycanlı bilim i̇nsanları dərnəyinin (türkiyə) sədri, türkiyə mamedov@bilkent.edu.tr nanotexnologiya tr prof.dr. mamedov@bilkent.edu.tr nanotexnologiya" data-email="mamedov@bilkent.edu.tr" data-ixtilas="Nanotexnologiya" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/emirulla-memmedov.png" alt="Əmirullah Məhmədov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#emirulla-memmedov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/emirulla-memmedov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ƏMİRULLAH MƏHMƏDOV <span class="cred">Prof. Dr.</span></span>
@@ -1789,8 +2125,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="hacıəli nəcəfoğlu prof. dr. prof.dr. qars şəhəri, qafqaz universitetinin xarici əlaqələr ofisinin rəhbəri, universitet i̇darə heyətinin üzvü, qafqaz və orta asiya araşdırma mərkəzinin müdiri, qeyri-üzvi kimya kafedrasının müdiri türkiyə alinecef@hotmail.com kimya tr prof.dr. alinecef@hotmail.com kimya" data-email="alinecef@hotmail.com" data-ixtilas="Kimya" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/hacali-necefoglu.png" alt="Hacıəli Nəcəfoğlu" loading="lazy"/></div>
+<div class="card" id="hacali-necefoglu" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="hacıəli nəcəfoğlu prof. dr. prof.dr. qars şəhəri, qafqaz universitetinin xarici əlaqələr ofisinin rəhbəri, universitet i̇darə heyətinin üzvü, qafqaz və orta asiya araşdırma mərkəzinin müdiri, qeyri-üzvi kimya kafedrasının müdiri türkiyə alinecef@hotmail.com kimya tr prof.dr. alinecef@hotmail.com kimya" data-email="alinecef@hotmail.com" data-ixtilas="Kimya" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/hacali-necefoglu.png" alt="Hacıəli Nəcəfoğlu" loading="lazy"/></div>
+    <a class="card-qr-link" href="#hacali-necefoglu" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/hacali-necefoglu.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">HACİƏLİ NƏCƏFOĞLU <span class="cred">Prof. Dr.</span></span>
@@ -1805,8 +2146,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="i̇lkin gulusoy prof. dr. prof.dr. türkiyə respublikası qafqaz universiteti çağdaş türk ləhcələri və ədəbiyyatları (azərbaycan türkcəsi və ədəbiyyatı) bölümünün rəhbəri türkiyə ilkingulusoy@gmail.com türkologiya tr prof.dr. ilkingulusoy@gmail.com türkologiya" data-email="ilkingulusoy@gmail.com" data-ixtilas="Türkologiya" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ilkin-qulusoy.png" alt="İlkin Gulusoy" loading="lazy"/></div>
+<div class="card" id="ilkin-qulusoy" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="i̇lkin gulusoy prof. dr. prof.dr. türkiyə respublikası qafqaz universiteti çağdaş türk ləhcələri və ədəbiyyatları (azərbaycan türkcəsi və ədəbiyyatı) bölümünün rəhbəri türkiyə ilkingulusoy@gmail.com türkologiya tr prof.dr. ilkingulusoy@gmail.com türkologiya" data-email="ilkingulusoy@gmail.com" data-ixtilas="Türkologiya" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ilkin-qulusoy.png" alt="İlkin Gulusoy" loading="lazy"/></div>
+    <a class="card-qr-link" href="#ilkin-qulusoy" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/ilkin-qulusoy.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">İLKİN GULUSOY <span class="cred">Prof. Dr.</span></span>
@@ -1821,8 +2167,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="i̇smixan bayramov prof. dr. prof.dr. i̇zmir i̇qtisad universitetinin professoru, elmlər fakültəsinin qurucu dekanı və dekanı (2001–2022), riyaziyyat kafedrasının müdiri (2001–2014) türkiyə ismihan.bayramoglu@ieu.edu.tr riyaziyyat tr prof.dr. ismihan.bayramoglu@ieu.edu.tr riyaziyyat" data-email="ismihan.bayramoglu@ieu.edu.tr" data-ixtilas="Riyaziyyat" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ismixan-bayramov.png" alt="İsmixan Bayramov" loading="lazy"/></div>
+<div class="card" id="ismixan-bayramov" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="i̇smixan bayramov prof. dr. prof.dr. i̇zmir i̇qtisad universitetinin professoru, elmlər fakültəsinin qurucu dekanı və dekanı (2001–2022), riyaziyyat kafedrasının müdiri (2001–2014) türkiyə ismihan.bayramoglu@ieu.edu.tr riyaziyyat tr prof.dr. ismihan.bayramoglu@ieu.edu.tr riyaziyyat" data-email="ismihan.bayramoglu@ieu.edu.tr" data-ixtilas="Riyaziyyat" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ismixan-bayramov.png" alt="İsmixan Bayramov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#ismixan-bayramov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/ismixan-bayramov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">İSMİXAN BAYRAMOV <span class="cred">Prof. Dr.</span></span>
@@ -1837,8 +2188,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="makbulə sabziyeva prof. dr. prof.dr. anadolu universitetinin rus dili və ədəbiyyatı bölümünün müdiri türkiyə makbulesabziyeva@anadolu.edu.tr filologiya tr prof.dr. makbulesabziyeva@anadolu.edu.tr filologiya" data-email="makbulesabziyeva@anadolu.edu.tr" data-ixtilas="Filologiya" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/meqbule-sebziyeva.png" alt="Makbulə Sabziyeva" loading="lazy"/></div>
+<div class="card" id="meqbule-sebziyeva" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="makbulə sabziyeva prof. dr. prof.dr. anadolu universitetinin rus dili və ədəbiyyatı bölümünün müdiri türkiyə makbulesabziyeva@anadolu.edu.tr filologiya tr prof.dr. makbulesabziyeva@anadolu.edu.tr filologiya" data-email="makbulesabziyeva@anadolu.edu.tr" data-ixtilas="Filologiya" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/meqbule-sebziyeva.png" alt="Makbulə Sabziyeva" loading="lazy"/></div>
+    <a class="card-qr-link" href="#meqbule-sebziyeva" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/meqbule-sebziyeva.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MAKBULƏ SABZİYEVA <span class="cred">Prof. Dr.</span></span>
@@ -1853,8 +2209,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="mehdi ismayilov (gəncəli) prof. dr. prof.dr. marmara universitetinin dosenti türkiyə mehdi.genceli@marmara.edu.tr türk dili və ədəbiyyatı tr prof.dr. mehdi.genceli@marmara.edu.tr türk dili və ədəbiyyatı" data-email="mehdi.genceli@marmara.edu.tr" data-ixtilas="Türk Dili və Ədəbiyyatı" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mehdi-genceli-ismayilov.png" alt="Mehdi Ismayilov (Gəncəli)" loading="lazy"/></div>
+<div class="card" id="mehdi-genceli-ismayilov" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="mehdi ismayilov (gəncəli) prof. dr. prof.dr. marmara universitetinin dosenti türkiyə mehdi.genceli@marmara.edu.tr türk dili və ədəbiyyatı tr prof.dr. mehdi.genceli@marmara.edu.tr türk dili və ədəbiyyatı" data-email="mehdi.genceli@marmara.edu.tr" data-ixtilas="Türk Dili və Ədəbiyyatı" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mehdi-genceli-ismayilov.png" alt="Mehdi Ismayilov (Gəncəli)" loading="lazy"/></div>
+    <a class="card-qr-link" href="#mehdi-genceli-ismayilov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/mehdi-genceli-ismayilov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MEHDİ İSMAYİLOV (GƏNCƏLİ) <span class="cred">Prof. Dr.</span></span>
@@ -1869,8 +2230,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="mehmet rıza heyət ph.d. phd ankara universitetinin çağdaş türk ləhcələri və ədəbiyyatları bölümü müəllimi türkiyə mrheyet@gmail.com türk dili və ədəbiyyatı tr phd mrheyet@gmail.com türk dili və ədəbiyyatı" data-email="mrheyet@gmail.com" data-ixtilas="Türk Dili və Ədəbiyyatı" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mehmet-riza-heyet.png" alt="Mehmet Rıza Heyət" loading="lazy"/></div>
+<div class="card" id="mehmet-riza-heyet" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="mehmet rıza heyət ph.d. phd ankara universitetinin çağdaş türk ləhcələri və ədəbiyyatları bölümü müəllimi türkiyə mrheyet@gmail.com türk dili və ədəbiyyatı tr phd mrheyet@gmail.com türk dili və ədəbiyyatı" data-email="mrheyet@gmail.com" data-ixtilas="Türk Dili və Ədəbiyyatı" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mehmet-riza-heyet.png" alt="Mehmet Rıza Heyət" loading="lazy"/></div>
+    <a class="card-qr-link" href="#mehmet-riza-heyet" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/mehmet-riza-heyet.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MEHMET RİZA HEYƏT <span class="cred">Ph.D.</span></span>
@@ -1885,8 +2251,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="oruc allahverdiyev ph.d. phd bolu abant i̇zzət baysal universitetinin tibb fakültəsi, farmakologiya kafedrası, təhsil üzrə koordinator türkiyə orucfarm@gmail.com farmakologiya tr phd orucfarm@gmail.com farmakologiya" data-email="orucfarm@gmail.com" data-ixtilas="Farmakologiya" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/oruc-allahverdiyev.png" alt="Oruc Allahverdiyev" loading="lazy"/></div>
+<div class="card" id="oruc-allahverdiyev" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="oruc allahverdiyev ph.d. phd bolu abant i̇zzət baysal universitetinin tibb fakültəsi, farmakologiya kafedrası, təhsil üzrə koordinator türkiyə orucfarm@gmail.com farmakologiya tr phd orucfarm@gmail.com farmakologiya" data-email="orucfarm@gmail.com" data-ixtilas="Farmakologiya" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/oruc-allahverdiyev.png" alt="Oruc Allahverdiyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#oruc-allahverdiyev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/oruc-allahverdiyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ORUC ALLAHVERDİYEV <span class="cred">Ph.D.</span></span>
@@ -1901,8 +2272,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="qafar mehdiyev (çaxmaxçı) prof. dr. prof.dr. erciyes universiteti (kayseri) ədəbiyyat fakültəsi erməni dili və mədəniyyəti bölümü rəhbəri türkiyə qafar56@gmail.com ermənişünaslıq tr prof.dr. qafar56@gmail.com ermənişünaslıq" data-email="qafar56@gmail.com" data-ixtilas="Ermənişünaslıq" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/qafar-caxmaqli-mehdiyev.png" alt="Qafar Mehdiyev (Çaxmaxçı)" loading="lazy"/></div>
+<div class="card" id="qafar-caxmaqli-mehdiyev" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="qafar mehdiyev (çaxmaxçı) prof. dr. prof.dr. erciyes universiteti (kayseri) ədəbiyyat fakültəsi erməni dili və mədəniyyəti bölümü rəhbəri türkiyə qafar56@gmail.com ermənişünaslıq tr prof.dr. qafar56@gmail.com ermənişünaslıq" data-email="qafar56@gmail.com" data-ixtilas="Ermənişünaslıq" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/qafar-caxmaqli-mehdiyev.png" alt="Qafar Mehdiyev (Çaxmaxçı)" loading="lazy"/></div>
+    <a class="card-qr-link" href="#qafar-caxmaqli-mehdiyev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/qafar-caxmaqli-mehdiyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">QAFAR MEHDİYEV (ÇAXMAXÇİ) <span class="cred">Prof. Dr.</span></span>
@@ -1917,8 +2293,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="ramin əliyev prof. dr. prof.dr. hasan kalyoncu universiteti, kafedra müdiri türkiyə aliyevus@gmail.com psixologiya tr prof.dr. aliyevus@gmail.com psixologiya" data-email="aliyevus@gmail.com" data-ixtilas="Psixologiya" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ramin-eliyev.png" alt="Ramin Əliyev" loading="lazy"/></div>
+<div class="card" id="ramin-eliyev" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="ramin əliyev prof. dr. prof.dr. hasan kalyoncu universiteti, kafedra müdiri türkiyə aliyevus@gmail.com psixologiya tr prof.dr. aliyevus@gmail.com psixologiya" data-email="aliyevus@gmail.com" data-ixtilas="Psixologiya" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ramin-eliyev.png" alt="Ramin Əliyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#ramin-eliyev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/ramin-eliyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">RAMİN ƏLİYEV <span class="cred">Prof. Dr.</span></span>
@@ -1933,8 +2314,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="şahin əhmədoğlu prof. dr. prof.dr. kilis 7 aralık universiteti, kilisli muallim rıfat eğitim fakültəsi dekanı türkiyə sehmetoglu@hotmail.com tarix tr prof.dr. sehmetoglu@hotmail.com tarix" data-email="sehmetoglu@hotmail.com" data-ixtilas="Tarix" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sahin-ehmedoglu.png" alt="Şahin Əhmədoğlu" loading="lazy"/></div>
+<div class="card" id="sahin-ehmedoglu" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="şahin əhmədoğlu prof. dr. prof.dr. kilis 7 aralık universiteti, kilisli muallim rıfat eğitim fakültəsi dekanı türkiyə sehmetoglu@hotmail.com tarix tr prof.dr. sehmetoglu@hotmail.com tarix" data-email="sehmetoglu@hotmail.com" data-ixtilas="Tarix" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sahin-ehmedoglu.png" alt="Şahin Əhmədoğlu" loading="lazy"/></div>
+    <a class="card-qr-link" href="#sahin-ehmedoglu" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/sahin-ehmedoglu.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ŞAHİN ƏHMƏDOĞLU <span class="cred">Prof. Dr.</span></span>
@@ -1949,8 +2335,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="saleh sultansoy prof. dr. prof.dr. türkiyə odalar və borsalar birliyinin (tobb) i̇qtisadiyyat və texnologiya universiteti türkiyə ssultansoy@etu.edu.tr fizika tr prof.dr. ssultansoy@etu.edu.tr fizika" data-email="ssultansoy@etu.edu.tr" data-ixtilas="Fizika" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/saleh-sultansoy.png" alt="Saleh Sultansoy" loading="lazy"/></div>
+<div class="card" id="saleh-sultansoy" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="saleh sultansoy prof. dr. prof.dr. türkiyə odalar və borsalar birliyinin (tobb) i̇qtisadiyyat və texnologiya universiteti türkiyə ssultansoy@etu.edu.tr fizika tr prof.dr. ssultansoy@etu.edu.tr fizika" data-email="ssultansoy@etu.edu.tr" data-ixtilas="Fizika" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/saleh-sultansoy.png" alt="Saleh Sultansoy" loading="lazy"/></div>
+    <a class="card-qr-link" href="#saleh-sultansoy" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/saleh-sultansoy.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SALEH SULTANSOY <span class="cred">Prof. Dr.</span></span>
@@ -1965,8 +2356,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="teymur rzayev prof. dr. prof.dr. daab i̇darə heyətinin üzvü, azərbaycan respublikasının əməkdar rəssamı, türkiyə cümhuriyyəti yeditepe universiteti gözəl sənətlər fakültəsi, plastik sənətlər-rəsm bölümü müəllimi türkiyə teymurrr@gmail.com rəssam tr prof.dr. teymurrr@gmail.com rəssam" data-email="teymurrr@gmail.com" data-ixtilas="Rəssam" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/teymur-rzayev.png" alt="Teymur Rzayev" loading="lazy"/></div>
+<div class="card" id="teymur-rzayev" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="teymur rzayev prof. dr. prof.dr. daab i̇darə heyətinin üzvü, azərbaycan respublikasının əməkdar rəssamı, türkiyə cümhuriyyəti yeditepe universiteti gözəl sənətlər fakültəsi, plastik sənətlər-rəsm bölümü müəllimi türkiyə teymurrr@gmail.com rəssam tr prof.dr. teymurrr@gmail.com rəssam" data-email="teymurrr@gmail.com" data-ixtilas="Rəssam" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/teymur-rzayev.png" alt="Teymur Rzayev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#teymur-rzayev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/teymur-rzayev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">TEYMUR RZAYEV <span class="cred">Prof. Dr.</span></span>
@@ -1981,8 +2377,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="toğrul i̇smayıl prof. dr. prof.dr. daab i̇darə heyətinin üzvü, türkiyə togrul65@hotmail.com siyasi tarix tr prof.dr. togrul65@hotmail.com siyasi tarix" data-email="togrul65@hotmail.com" data-ixtilas="Siyasi tarix" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/togrul-ismayil.png" alt="Toğrul İsmayıl" loading="lazy"/></div>
+<div class="card" id="togrul-ismayil" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="toğrul i̇smayıl prof. dr. prof.dr. daab i̇darə heyətinin üzvü, türkiyə togrul65@hotmail.com siyasi tarix tr prof.dr. togrul65@hotmail.com siyasi tarix" data-email="togrul65@hotmail.com" data-ixtilas="Siyasi tarix" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/togrul-ismayil.png" alt="Toğrul İsmayıl" loading="lazy"/></div>
+    <a class="card-qr-link" href="#togrul-ismayil" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/togrul-ismayil.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">TOĞRUL İSMAYİL <span class="cred">Prof. Dr.</span></span>
@@ -1997,8 +2398,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="varqa kələntərov ph.d. phd hacettepe universiteti, koç universiteti türkiyə vkalantarov@ku.edu.tr riyaziyyat tr phd vkalantarov@ku.edu.tr riyaziyyat" data-email="vkalantarov@ku.edu.tr" data-ixtilas="Riyaziyyat" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/varqa-kelenterov.png" alt="Varqa Kələntərov" loading="lazy"/></div>
+<div class="card" id="varqa-kelenterov" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="varqa kələntərov ph.d. phd hacettepe universiteti, koç universiteti türkiyə vkalantarov@ku.edu.tr riyaziyyat tr phd vkalantarov@ku.edu.tr riyaziyyat" data-email="vkalantarov@ku.edu.tr" data-ixtilas="Riyaziyyat" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/varqa-kelenterov.png" alt="Varqa Kələntərov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#varqa-kelenterov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/varqa-kelenterov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">VARQA KƏLƏNTƏROV <span class="cred">Ph.D.</span></span>
@@ -2013,8 +2419,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiyə" data-country="tr" data-search="vəfa qurban prof. dr. prof.dr. ege universiteti türk dünyası araşdırmaları i̇nstitutunun türkiyə vefa.kurban@ege.edu.tr i̇qtisadiyyat tr prof.dr. vefa.kurban@ege.edu.tr i̇qtisadiyyat" data-email="vefa.kurban@ege.edu.tr" data-ixtilas="İqtisadiyyat" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/vefa-qurban.png" alt="Vəfa Qurban" loading="lazy"/></div>
+<div class="card" id="vefa-qurban" tabindex="-1" data-country-name="Türkiyə" data-country="tr" data-search="vəfa qurban prof. dr. prof.dr. ege universiteti türk dünyası araşdırmaları i̇nstitutunun türkiyə vefa.kurban@ege.edu.tr i̇qtisadiyyat tr prof.dr. vefa.kurban@ege.edu.tr i̇qtisadiyyat" data-email="vefa.kurban@ege.edu.tr" data-ixtilas="İqtisadiyyat" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/vefa-qurban.png" alt="Vəfa Qurban" loading="lazy"/></div>
+    <a class="card-qr-link" href="#vefa-qurban" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/vefa-qurban.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">VƏFA QURBAN <span class="cred">Prof. Dr.</span></span>
@@ -2029,8 +2440,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Ukrayna" data-country="ua" data-search="arif quliyev ph.d. phd “odessa hüquq akademiyası” milli universitetinin kiyev əqli mülkiyyət və hüquq universitetində elmi şuranın üzvü, konstitusiya, beynəlxalq hüquq və i̇ctimai-hüquqi fənlər kafedrasının professoru, hüquq elmləri doktoru, professor, diplomat, ukraynanın əməkdar təhsil işçisi, ukrayna ali təhsil mea-nın akademiki, “ukrayna azərbaycanlıları alimlər şurası” və “xalq diplomatiyası i̇nstitutu” ictimai təşkilatlarının rəhbəri ukrayna arifguliyev@ukr.net beynəlxalq hüquq ua phd arifguliyev@ukr.net beynəlxalq hüquq" data-email="arifguliyev@ukr.net" data-ixtilas="Beynəlxalq hüquq" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/arif-quliyev.png" alt="Arif Quliyev" loading="lazy"/></div>
+<div class="card" id="arif-quliyev" tabindex="-1" data-country-name="Ukrayna" data-country="ua" data-search="arif quliyev ph.d. phd “odessa hüquq akademiyası” milli universitetinin kiyev əqli mülkiyyət və hüquq universitetində elmi şuranın üzvü, konstitusiya, beynəlxalq hüquq və i̇ctimai-hüquqi fənlər kafedrasının professoru, hüquq elmləri doktoru, professor, diplomat, ukraynanın əməkdar təhsil işçisi, ukrayna ali təhsil mea-nın akademiki, “ukrayna azərbaycanlıları alimlər şurası” və “xalq diplomatiyası i̇nstitutu” ictimai təşkilatlarının rəhbəri ukrayna arifguliyev@ukr.net beynəlxalq hüquq ua phd arifguliyev@ukr.net beynəlxalq hüquq" data-email="arifguliyev@ukr.net" data-ixtilas="Beynəlxalq hüquq" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/arif-quliyev.png" alt="Arif Quliyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#arif-quliyev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/arif-quliyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ARİF QULİYEV <span class="cred">Ph.D.</span></span>
@@ -2045,8 +2461,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Ukrayna" data-country="ua" data-search="eldar vəliyev ph.d. phd ukrayna milli texniki universiteti xarkov politexnik i̇nstitutunun (ntu “kpi”) elmi və pedaqoji işləri üzrə prorektoru ukrayna veliev51@gmail.com mühəndis ua phd veliev51@gmail.com mühəndis" data-email="veliev51@gmail.com" data-ixtilas="Mühəndis" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eldar-veliyev.png" alt="Eldar Vəliyev" loading="lazy"/></div>
+<div class="card" id="eldar-veliyev" tabindex="-1" data-country-name="Ukrayna" data-country="ua" data-search="eldar vəliyev ph.d. phd ukrayna milli texniki universiteti xarkov politexnik i̇nstitutunun (ntu “kpi”) elmi və pedaqoji işləri üzrə prorektoru ukrayna veliev51@gmail.com mühəndis ua phd veliev51@gmail.com mühəndis" data-email="veliev51@gmail.com" data-ixtilas="Mühəndis" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eldar-veliyev.png" alt="Eldar Vəliyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#eldar-veliyev" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/eldar-veliyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ELDAR VƏLİYEV <span class="cred">Ph.D.</span></span>
@@ -2061,8 +2482,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Ukrayna" data-country="ua" data-search="murad ömərov ph.d. phd beynəlxalq əməkdaşlıq üzrə prorektor, xarkov milli radio elektronika universiteti, ukrayna tətbiqi radioelektronika elmlər akademiyasının akademiki ukrayna murad.omarov@nure.ua mühəndis ua phd murad.omarov@nure.ua mühəndis" data-email="murad.omarov@nure.ua" data-ixtilas="Mühəndis" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/murad-omerov.png" alt="Murad Ömərov" loading="lazy"/></div>
+<div class="card" id="murad-omerov" tabindex="-1" data-country-name="Ukrayna" data-country="ua" data-search="murad ömərov ph.d. phd beynəlxalq əməkdaşlıq üzrə prorektor, xarkov milli radio elektronika universiteti, ukrayna tətbiqi radioelektronika elmlər akademiyasının akademiki ukrayna murad.omarov@nure.ua mühəndis ua phd murad.omarov@nure.ua mühəndis" data-email="murad.omarov@nure.ua" data-ixtilas="Mühəndis" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/murad-omerov.png" alt="Murad Ömərov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#murad-omerov" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/murad-omerov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MURAD ÖMƏROV <span class="cred">Ph.D.</span></span>
@@ -2077,8 +2503,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Yaponiya" data-country="jp" data-search="xəlil kələntər ph.d. phd qlobal optik həllər və kepler layihələri üzrə baş tədqiqatçı yaponiya gosx2020@gmail.com fizika jp phd gosx2020@gmail.com fizika" data-email="gosx2020@gmail.com" data-ixtilas="Fizika" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/xelil-kelenter.png" alt="Xəlil Kələntər" loading="lazy"/></div>
+<div class="card" id="xelil-kelenter" tabindex="-1" data-country-name="Yaponiya" data-country="jp" data-search="xəlil kələntər ph.d. phd qlobal optik həllər və kepler layihələri üzrə baş tədqiqatçı yaponiya gosx2020@gmail.com fizika jp phd gosx2020@gmail.com fizika" data-email="gosx2020@gmail.com" data-ixtilas="Fizika" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/xelil-kelenter.png" alt="Xəlil Kələntər" loading="lazy"/></div>
+    <a class="card-qr-link" href="#xelil-kelenter" title="Bu alimin profil səhifəsinə keçid" aria-label="Profil linkinin QR kodu">
+      <img class="card-qr" src="../../images/qr/az/xelil-kelenter.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">XƏLİL KƏLƏNTƏR <span class="cred">Ph.D.</span></span>
@@ -2104,7 +2535,8 @@ a.card-name:focus-visible {
 </main>
 <script src="../../js/scientists-catalog-data.js?v=2"></script>
 <script src="../../js/daab-collation.js?v=1"></script>
-<script src="../../js/scientists-cv-filters.js?v=12" defer></script>
+<script src="../../js/daab-scientists-toolbar-mobile.js?v=3"></script>
+<script src="../../js/scientists-cv-filters.js?v=20" defer></script>
 <script src="../../js/daab-profile-tts.js?v=8" defer></script>
 
 <footer class="footer-pro">
@@ -2119,6 +2551,5 @@ a.card-name:focus-visible {
 <div class="footer-bottom">© 2026 DAAB / WAAS — All Rights Reserved</div>
 </footer>
 
-<script src="../../js/daab-search.js?v=1" defer></script>
 </body>
 </html>

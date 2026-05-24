@@ -5,74 +5,12 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>DAAB — Fəaliyyətimiz</title>
-<meta content="Dünya Azərbaycanlı Alimlər Birliyinin fəaliyyətləri, tədbirləri, görüşləri və təşəbbüsləri." name="description"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/><link href="../css/daab-common.css?v=18" rel="stylesheet"/>
-<link href="../css/daab-mobile.css?v=3" rel="stylesheet"/>
+<meta content="Dünya Azərbaycanlı Alimlər Birliyinin fəaliyyətləri, tədbirləri, görüşləri və təşəbbüsləri." name="description"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/><link href="../css/daab-common.css?v=23" rel="stylesheet"/>
+<link href="../css/daab-mobile.css?v=5" rel="stylesheet"/>
+<link href="../css/daab-search.css?v=1" rel="stylesheet"/>
+<link href="../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
 
-<style>
-/* ===== merged from style block-1 ===== */
-:root{--navy:     #0d1f3c;--teal:     #1a7a8a;--teal-lt:  #22a2b5;--gold:     #c89b38;--gold-lt:  #f6df9c;--cream:    #f7f4ef;--white:    #ffffff;--text:     #102033;--text-mid: #4a5568;--text-lt:  #718096;--border:   #d8dde6;--card-bg:  #ffffff;--tag-bg:   #eef6f8;}
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    margin:0;
-    font-family: Inter,system-ui,-apple-system,Segoe UI,sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.65;
-    color: var(--text);
-    background:#f4f9fd;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  /* ─── HEADER ─────────────────────────────────────────── */
-
-
-  .header-nav a.active { color: var(--gold-lt); font-weight: 600; }
-
-  /* ─── HERO BAND ───────────────────────────────────────── */
-  .page-hero {
-    background: linear-gradient(135deg, #1A6FA8 0%, #2E9FD4 100%);
-    padding: 28px 24px 28px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 90;
-    overflow: hidden;
-  }
-
-  .page-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 80% at 20% 50%, rgba(26,122,138,.18) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 60% at 80% 30%, rgba(196,154,60,.1) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-
-  .page-hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(30px, 5vw, 46px);
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: .02em;
-    line-height: 1.2;
-    margin-bottom: 16px;
-  }
-
-  .page-hero p {
-    max-width: 580px;
-    margin: 0 auto;
-    color: rgba(255,255,255,.62);
-    font-size: 15px;
-  }
-
-  /* ─── LAYOUT ──────────────────────────────────────────── */
+<style>/* ─── LAYOUT ──────────────────────────────────────────── */
   .content-wrap {
     max-width: 1180px;
     margin: 0 auto;
@@ -94,7 +32,7 @@
     border: 1px solid var(--border);
     box-shadow: 0 2px 16px rgba(13,31,60,.06);
     transition: transform .22s, box-shadow .22s;
-    scroll-margin-top: 230px;
+    scroll-margin-top: calc(var(--daab-nav-height, 86px) + 1.25rem);
   }
 
   .news-card:hover {
@@ -239,8 +177,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    position: sticky;
-    top: 230px;
+    align-self: start;
   }
 
   .sidebar-widget {
@@ -276,7 +213,7 @@
   .widget-body::-webkit-scrollbar-thumb:hover { background: #1A6FA8; }
 
 
-  .timeline-list { list-style: none; }
+  .timeline-list { list-style: none; margin: 0; padding: 0; }
 
   .timeline-list li {
     display: flex;
@@ -692,20 +629,10 @@ li {
   align-items: start !important;
   position: relative !important;
   z-index: 2 !important;
+  overflow: visible !important;
 }
 
-.sidebar {
-  position: sticky !important;
-  top: calc(var(--daab-nav-height) + 18px) !important;
-  height: max-content !important;
-  max-height: calc(100vh - var(--daab-nav-height) - 36px) !important;
-}
-
-.sidebar .widget-body {
-  max-height: calc(100vh - var(--daab-nav-height) - 120px) !important;
-  overflow-y: auto !important;
-  overscroll-behavior: contain !important;
-}
+/* Sticky events column: css/daab-activities-layout.css */
 
 .news-card {
   scroll-margin-top: calc(var(--daab-nav-height) + 28px) !important;
@@ -1037,15 +964,6 @@ body {
   margin: var(--activities-gap) auto 0 !important;
 }
 
-.sidebar {
-  top: calc(var(--daab-nav-height) + 18px) !important;
-  max-height: calc(100vh - var(--daab-nav-height) - 36px) !important;
-}
-
-.sidebar .widget-body {
-  max-height: calc(100vh - var(--daab-nav-height) - 120px) !important;
-}
-
 .news-card {
   scroll-margin-top: calc(var(--daab-nav-height) + 28px) !important;
 }
@@ -1087,7 +1005,9 @@ html {
 }
 
 .timeline-list a {
-  display: inline-block !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  display: block !important;
   min-height: 36px !important;
   line-height: 1.35 !important;
 }
@@ -1185,8 +1105,8 @@ html {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    position: sticky !important;
-    top: calc(var(--daab-nav-height) + 10px) !important;
+    position: static !important;
+    top: auto !important;
     width: 100% !important;
     max-width: 100% !important;
     max-height: none !important;
@@ -1448,25 +1368,24 @@ html {
 
 </style>
 <link href="../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
+<link href="../css/daab-sidebar-widget.css?v=3" rel="stylesheet"/>
+<link href="../css/daab-activities-layout.css?v=4" rel="stylesheet"/>
 
   <script src="../js/daab-mobile.js?v=1" defer></script>
-<link href="../css/daab-lang.css?v=7" rel="stylesheet"/>
-<link href="../css/daab-nav-mega.css?v=11" rel="stylesheet"/>
-<script src="../js/daab-i18n.js?v=11" defer></script>
-<script src="../js/daab-lang-position.js?v=3" defer></script>
-<script src="../js/daab-nav.js?v=7" defer></script>
+<script src="../js/daab-back-to-top.js?v=2" defer></script>
+<link href="../css/daab-lang.css?v=9" rel="stylesheet"/>
+<link href="../css/daab-nav-mega.css?v=12" rel="stylesheet"/>
+<script src="../js/daab-i18n.js?v=12" defer></script>
+<script src="../js/daab-lang-position.js?v=6" defer></script>
+<script src="../js/daab-nav.js?v=8" defer></script>
 <script src="../js/daab-primary-nav.js?v=8" defer></script>
-<script src="../js/daab-breadcrumbs.js?v=4" defer></script>
+<script src="../js/daab-breadcrumbs.js?v=5" defer></script>
 <script src="../js/daab-section-nav.js?v=4" defer></script>
-<script src="../js/daab-shell.js?v=7" defer></script>
+<script src="../js/daab-shell.js?v=10" defer></script>
+<script src="../js/daab-search.js?v=3" defer></script>
 </head>
-<body><div aria-label="Axtarış" aria-modal="true" id="search-overlay" role="dialog">
-<div class="search-modal">
-<div class="search-input-row"><span class="search-icon-large">🔍</span><input autocomplete="off" id="search-input" placeholder="Axtarış üçün yazmağa başlayın…" spellcheck="false" type="text"/><button class="search-close-btn" id="search-close-btn">ESC</button></div>
-<div class="search-results" id="search-results"><div class="search-prompt">Axtarmaq üçün yuxarıdakı xanaya mətn daxil edin</div></div>
-<div class="search-hint"><span><kbd>↑</kbd><kbd>↓</kbd> naviqasiya</span><span><kbd>↵</kbd> aç</span><span><kbd>Esc</kbd> bağla</span></div>
-</div>
-</div><a class="skip" href="#content">Məzmuna keç</a>
+<body>
+<a class="skip" href="#content">Məzmuna keç</a>
 <!-- ══ MAIN NAVIGATION ══ -->
 <nav aria-label="Əsas naviqasiya" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="Menyunu aç" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a aria-label="DAAB ana səhifə" href="index.html"><img src="../images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"></a></div><a aria-label="DAAB ana səhifə" class="nav-brand" href="index.html"><span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">Alimlər Birliyi</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div><a class="nav-link" href="index.html" data-nav-id="home">Ana səhifə</a><a class="nav-link" href="activities.html" data-nav-id="activities">Fəaliyyətimiz</a><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Alimlərimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="scientists/list.html" data-nav-id="scientists-list"><span class="nav-dropdown-link-title">Siyahı</span><span class="nav-dropdown-link-desc">Bütün alimlərin siyahısı</span></a><a class="nav-dropdown-link" role="menuitem" href="scientists/profiles.html" data-nav-id="scientists-profiles"><span class="nav-dropdown-link-title">Profillər</span><span class="nav-dropdown-link-desc">Alimlərin akademik profilləri</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Haqqımızda <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="foundation.html" data-nav-id="foundation"><span class="nav-dropdown-link-title">Birliyin təsisi</span><span class="nav-dropdown-link-desc">Yaradılma tarixi və təsis prosesi</span></a><a class="nav-dropdown-link" role="menuitem" href="mission.html" data-nav-id="mission"><span class="nav-dropdown-link-title">Missiya və dəyərlər</span><span class="nav-dropdown-link-desc">Missiya, vizyon və akademik dəyərlər</span></a><a class="nav-dropdown-link" role="menuitem" href="executive-board.html" data-nav-id="executive-board"><span class="nav-dropdown-link-title">İdarə heyəti</span><span class="nav-dropdown-link-desc">İdarə heyəti və rəhbərlik</span></a><a class="nav-dropdown-link" role="menuitem" href="charter.html" data-nav-id="charter"><span class="nav-dropdown-link-title">Nizamnamə</span><span class="nav-dropdown-link-desc">Nizamnamə və idarəetmə qaydaları</span></a></div></div><a class="nav-link" href="membership.html" data-nav-id="membership">Üzvlük</a></div></div></nav>
 <!-- ═══ HERO ══════════════════════════════════════════════════ -->
@@ -1489,7 +1408,7 @@ html {
 <aside class="sidebar">
 <!-- Timeline -->
 <div class="sidebar-widget">
-<div class="widget-head"><span>📅 Tədbirlər</span><button aria-controls="eventsTimelineMenu" aria-expanded="false" aria-label="Tədbirlər menyusunu aç" class="events-menu-toggle" type="button"><span></span><span></span><span></span></button></div>
+<div class="widget-head"><span>📅 Yeniliklər</span><button aria-controls="eventsTimelineMenu" aria-expanded="false" aria-label="Yeniliklər menyusunu aç" class="events-menu-toggle" type="button"><span></span><span></span><span></span></button></div>
 <div class="widget-body">
 <ul class="timeline-list" id="eventsTimelineMenu">
 <li><span class="tl-date">04.2026</span><a href="#ankara-rektor-2026">Ankara Universiteti rektoru — Azərbaycan alimləri</a></li>
@@ -2076,12 +1995,18 @@ Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) bütün qitələrdən olan üzv
 
   function jumpToTarget(event) {
     const link = event.currentTarget;
-    const target = document.getElementById(link.getAttribute('href').slice(1));
+    const id = link.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
     if (!target) return;
 
     event.preventDefault();
     activate(link);
-    target.scrollIntoView({ block: 'start', behavior: 'auto' });
+    const Pos = window.DAAB_LANG_POSITION;
+    if (Pos && Pos.scrollToAnchor) {
+      Pos.scrollToAnchor(id, false);
+    } else {
+      target.scrollIntoView({ block: 'start', behavior: 'auto' });
+    }
     history.pushState(null, '', link.getAttribute('href'));
     if (mobileQuery.matches) closeEventsMenu();
   }
@@ -2116,6 +2041,5 @@ Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) bütün qitələrdən olan üzv
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
-</script>
-<script src="../js/daab-search.js?v=1" defer></script></body>
+</script></body>
 </html>

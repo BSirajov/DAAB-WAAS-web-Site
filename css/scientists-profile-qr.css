@@ -1,0 +1,72 @@
+/* Scientist profile QR codes — portrait column on catalog cards */
+
+.card-portrait {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 var(--avatar-w, 148px);
+  flex-shrink: 0;
+  width: var(--avatar-w, 148px);
+  min-width: var(--avatar-w, 148px);
+  max-width: var(--avatar-w, 148px);
+}
+
+.card-portrait .card-avatar {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.card-qr-link {
+  display: block;
+  line-height: 0;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid rgba(0, 105, 180, 0.16);
+  box-shadow: 0 4px 14px rgba(13, 31, 60, 0.08);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.card-qr-link:focus-visible {
+  outline: 3px solid rgba(26, 111, 168, 0.45);
+  outline-offset: 2px;
+}
+
+.card-qr {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 9px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-qr-link:hover {
+    border-color: rgba(0, 105, 180, 0.34);
+    box-shadow: 0 8px 20px rgba(13, 31, 60, 0.12);
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: 640px) {
+  .card-portrait {
+    align-self: center;
+    width: var(--avatar-w, 132px);
+    min-width: var(--avatar-w, 132px);
+    max-width: var(--avatar-w, 132px);
+    flex-basis: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-qr {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+@media print {
+  .card-qr-link {
+    box-shadow: none;
+    border-color: #ccc;
+  }
+}

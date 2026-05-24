@@ -30,8 +30,13 @@ body.daab-scroll-lock {
   touch-action: none;
 }
 
-/* Sticky nav respects notched devices */
+/* Sticky nav respects notched devices (height synced in daab-nav.js / daab-mobile.js) */
+body:not(.daab-gateway) > .nav-strip,
 .nav-strip {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
   padding-top: var(--daab-safe-top);
 }
 
@@ -187,32 +192,20 @@ body.daab-scroll-lock {
 }
 
 /* Landscape phones: compact sticky chrome */
-@media (max-height: 500px) and (orientation: landscape) {
+@media (max-width: 1180px) and (max-height: 500px) and (orientation: landscape) {
   .nav-inner {
-    height: 52px !important;
     min-height: 52px !important;
-  }
-
-  :root {
-    --daab-nav-height: 52px;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
   }
 
   .nav-menu {
-    max-height: calc(100dvh - 60px) !important;
-  }
-
-  .toolbar--sticky {
-    top: calc(var(--daab-nav-height) + 4px) !important;
+    max-height: min(68dvh, calc(100dvh - var(--daab-nav-height, 52px) - 12px)) !important;
   }
 
   #search-overlay {
     padding-top: max(48px, var(--daab-safe-top)) !important;
   }
-}
-
-/* Sticky filter toolbar offset (scientists pages) */
-.toolbar--sticky {
-  top: calc(var(--daab-nav-height) + var(--daab-safe-top));
 }
 
 /* Horizontal table scroll — visual affordance */

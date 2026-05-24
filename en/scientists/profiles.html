@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" data-daab-lang="en" data-daab-asset-root="../../" data-daab-page-id="scientists-profiles" data-daab-nav-mount="1">
 <head>
+<script id="daab-profile-hash-boot">
+(function(){if(!location.hash)return;document.documentElement.classList.add("daab-profiles-boot");if("scrollRestoration"in history)history.scrollRestoration="manual";document.documentElement.style.scrollBehavior="auto";window.scrollTo(0,0);})();
+</script>
 <!-- daab-en-complete -->
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
@@ -9,10 +12,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
-<link href="../../css/daab-common.css?v=18" rel="stylesheet"/>
-<link href="../../css/daab-mobile.css?v=3" rel="stylesheet"/>
-<link href="../../css/scientists-catalog-toolbar.css?v=6" rel="stylesheet"/>
+<link href="../../css/daab-common.css?v=23" rel="stylesheet"/>
+<link href="../../css/daab-mobile.css?v=5" rel="stylesheet"/>
+<link href="../../css/daab-search.css?v=1" rel="stylesheet"/>
+<link href="../../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
+<link href="../../css/scientists-catalog-toolbar.css?v=9" rel="stylesheet"/>
 <link href="../../css/scientists-profile-tts.css?v=2" rel="stylesheet"/>
+<link href="../../css/scientists-profile-deep-link.css?v=4" rel="stylesheet"/>
+<link href="../../css/scientists-profile-qr.css?v=1" rel="stylesheet"/>
 <style>
 /* Scientists CV catalogue page styles */
 :root {
@@ -20,7 +27,7 @@
   --card-line: rgba(0, 105, 180, .18);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 body {
   color: var(--ink);
@@ -670,23 +677,21 @@ a.card-name:focus-visible {
 </style>
 <link href="../../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
   <script src="../../js/daab-mobile.js?v=1" defer></script>
-<link href="../../css/daab-lang.css?v=7" rel="stylesheet"/>
-<link href="../../css/daab-nav-mega.css?v=11" rel="stylesheet"/>
-<script src="../../js/daab-i18n.js?v=11" defer></script>
-<script src="../../js/daab-lang-position.js?v=3" defer></script>
-<script src="../../js/daab-nav.js?v=7" defer></script>
+<script src="../../js/daab-back-to-top.js?v=2" defer></script>
+<link href="../../css/daab-lang.css?v=9" rel="stylesheet"/>
+<link href="../../css/daab-nav-mega.css?v=12" rel="stylesheet"/>
+<script src="../../js/daab-i18n.js?v=12" defer></script>
+<script src="../../js/daab-lang-position.js?v=7" defer></script>
+<script src="../../js/daab-profile-deep-link.js?v=4"></script>
+<script src="../../js/daab-nav.js?v=8" defer></script>
 <script src="../../js/daab-primary-nav.js?v=8" defer></script>
-<script src="../../js/daab-breadcrumbs.js?v=4" defer></script>
+<script src="../../js/daab-breadcrumbs.js?v=5" defer></script>
 <script src="../../js/daab-section-nav.js?v=4" defer></script>
-<script src="../../js/daab-shell.js?v=7" defer></script>
+<script src="../../js/daab-shell.js?v=10" defer></script>
+<script src="../../js/daab-search.js?v=3" defer></script>
 </head>
-<body><div aria-label="Search" aria-modal="true" id="search-overlay" role="dialog">
-<div class="search-modal">
-<div class="search-input-row"><span class="search-icon-large">🔍</span><input autocomplete="off" id="search-input" placeholder="Start typing to search…" spellcheck="false" type="text"/><button class="search-close-btn" id="search-close-btn">ESC</button></div>
-<div class="search-results" id="search-results"><div class="search-prompt">Enter text in the box above to search</div></div>
-<div class="search-hint"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>Esc</kbd> close</span></div>
-</div>
-</div><a class="skip" href="#content">Skip to content</a>
+<body>
+<a class="skip" href="#content">Skip to content</a>
 <nav aria-label="Main navigation" class="nav-strip">
 <div class="nav-inner">
 <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button>
@@ -713,11 +718,16 @@ a.card-name:focus-visible {
 </header>
 
 <main class="main" id="content">
-<div class="toolbar toolbar--sticky" aria-label="Scientists filters">
+<div class="toolbar catalog-toolbar" aria-label="Scientists filters">
+<div class="catalog-toolbar__head">
 <div class="search-wrap">
 <svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="15"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
 <input autocomplete="off" id="searchInput" placeholder="Name, country, field, degree, email…" type="search" aria-label="Search scientists"/>
 </div>
+<button type="button" class="catalog-toolbar__toggle" aria-expanded="false" aria-controls="catalogFilterPanel" aria-label="Show filters"><svg class="catalog-toolbar__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 9v5l-4-2v-3L3 5z"/></svg><span class="catalog-toolbar__toggle-text">Filters</span><span class="catalog-toolbar__badge" hidden></span></button>
+</div>
+<div class="catalog-toolbar__panel" id="catalogFilterPanel">
+<div class="catalog-toolbar__panel-inner">
 <div class="filter-group">
 <span class="filter-icon-label" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 9v5l-4-2v-3L3 5z"/></svg><span>Filters</span></span>
 <div class="sel-wrap">
@@ -735,6 +745,8 @@ a.card-name:focus-visible {
 <button class="btn-clear" id="clearFilters" type="button">Reset all</button>
 </div>
 </div>
+</div>
+</div>
 <div class="result-info result-info--catalog">
 <div class="result-count" id="resultCount"></div>
 <div class="sort-control" aria-label="Sort">
@@ -749,7 +761,6 @@ a.card-name:focus-visible {
 <option selected="" value="name">Name</option>
 <option value="country">Country</option>
 <option value="ixtilas">Field</option>
-<option value="degree">Degree</option>
 </select>
 <span class="sort-control__chevron" aria-hidden="true">
 <svg fill="none" height="14" viewBox="0 0 24 24" width="14"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
@@ -773,8 +784,13 @@ a.card-name:focus-visible {
 <section class="catalog-section" id="scientists-catalog">
   <div class="cards-grid">
 
-<div class="card" data-country-name="USA" data-country="abs" data-search="asaf salamov ph.d. phd staff data scientist, united genome institute, lawrence berkeley national laboratory usa aasalamov@lbl.gov biology abs phd aasalamov@lbl.gov biology" data-email="aasalamov@lbl.gov" data-ixtilas="Biology" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/asef-salamov.png" alt="Asaf Salamov" loading="lazy"/></div>
+<div class="card" id="asef-salamov" tabindex="-1" data-country-name="USA" data-country="abs" data-search="asaf salamov ph.d. phd staff data scientist, united genome institute, lawrence berkeley national laboratory usa aasalamov@lbl.gov biology abs phd aasalamov@lbl.gov biology" data-email="aasalamov@lbl.gov" data-ixtilas="Biology" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/asef-salamov.png" alt="Asaf Salamov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#asef-salamov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/asef-salamov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ASAF SALAMOV <span class="cred">Ph.D.</span></span>
@@ -789,8 +805,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="USA" data-country="abs" data-search="aytekin huseynli ph.d. phd assistant research professor, washington university (st. louis) usa ahuseynli@wustl.edu social policy abs phd ahuseynli@wustl.edu social policy" data-email="ahuseynli@wustl.edu" data-ixtilas="Social policy" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/aytekin-huseynli.png" alt="Aytekin Huseynli" loading="lazy"/></div>
+<div class="card" id="aytekin-huseynli" tabindex="-1" data-country-name="USA" data-country="abs" data-search="aytekin huseynli ph.d. phd assistant research professor, washington university (st. louis) usa ahuseynli@wustl.edu social policy abs phd ahuseynli@wustl.edu social policy" data-email="ahuseynli@wustl.edu" data-ixtilas="Social policy" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/aytekin-huseynli.png" alt="Aytekin Huseynli" loading="lazy"/></div>
+    <a class="card-qr-link" href="#aytekin-huseynli" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/aytekin-huseynli.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AYTEKIN HUSEYNLI <span class="cred">Ph.D.</span></span>
@@ -805,8 +826,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="USA" data-country="abs" data-search="jamila javadova-spitzberg ph.d. phd professor of applied organ and harpsichord, doctor of arts in music performance, texas state university, arlington usa aamfusa@gmail.com musician abs phd aamfusa@gmail.com musician" data-email="aamfusa@gmail.com" data-ixtilas="Musician" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/cemile-cavadova-spitzberq.png" alt="Jamila Javadova-Spitzberg" loading="lazy"/></div>
+<div class="card" id="cemile-cavadova-spitzberq" tabindex="-1" data-country-name="USA" data-country="abs" data-search="jamila javadova-spitzberg ph.d. phd professor of applied organ and harpsichord, doctor of arts in music performance, texas state university, arlington usa aamfusa@gmail.com musician abs phd aamfusa@gmail.com musician" data-email="aamfusa@gmail.com" data-ixtilas="Musician" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/cemile-cavadova-spitzberq.png" alt="Jamila Javadova-Spitzberg" loading="lazy"/></div>
+    <a class="card-qr-link" href="#cemile-cavadova-spitzberq" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/cemile-cavadova-spitzberq.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">JAMILA JAVADOVA-SPITZBERG <span class="cred">Ph.D.</span></span>
@@ -821,8 +847,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="USA" data-country="abs" data-search="elshad allahyarov ph.d. phd research professor, physics, case western reserve university, cleveland, ohio, usa exa54@case.edu physics abs phd exa54@case.edu physics" data-email="exa54@case.edu" data-ixtilas="Physics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/elsad-allahyarov.png" alt="Elshad Allahyarov" loading="lazy"/></div>
+<div class="card" id="elsad-allahyarov" tabindex="-1" data-country-name="USA" data-country="abs" data-search="elshad allahyarov ph.d. phd research professor, physics, case western reserve university, cleveland, ohio, usa exa54@case.edu physics abs phd exa54@case.edu physics" data-email="exa54@case.edu" data-ixtilas="Physics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/elsad-allahyarov.png" alt="Elshad Allahyarov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#elsad-allahyarov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/elsad-allahyarov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ELSHAD ALLAHYAROV <span class="cred">Ph.D.</span></span>
@@ -837,8 +868,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="USA" data-country="abs" data-search="sevinj mammadova ph.d. phd associate dean, professor of educational policy and educational administration, george washington university usa mammadova.sevinj@gmail.com education abs phd mammadova.sevinj@gmail.com education" data-email="mammadova.sevinj@gmail.com" data-ixtilas="Education" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sevinj-mammadova.png" alt="Sevinj Mammadova" loading="lazy"/></div>
+<div class="card" id="sevinj-mammadova" tabindex="-1" data-country-name="USA" data-country="abs" data-search="sevinj mammadova ph.d. phd associate dean, professor of educational policy and educational administration, george washington university usa mammadova.sevinj@gmail.com education abs phd mammadova.sevinj@gmail.com education" data-email="mammadova.sevinj@gmail.com" data-ixtilas="Education" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sevinj-mammadova.png" alt="Sevinj Mammadova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#sevinj-mammadova" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/sevinj-mammadova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SEVINJ MAMMADOVA <span class="cred">Ph.D.</span></span>
@@ -853,8 +889,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="USA" data-country="abs" data-search="shuay abdullayev ph.d. phd department of pharmaceutical and biomedical sciences and center for complex carbohydrate research – postdoctoral fellow, university of georgia usa shuay.abdullayev@gmail.com chemistry abs phd shuay.abdullayev@gmail.com chemistry" data-email="shuay.abdullayev@gmail.com" data-ixtilas="Chemistry" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/suay-abdullayev.png" alt="Shuay Abdullayev" loading="lazy"/></div>
+<div class="card" id="suay-abdullayev" tabindex="-1" data-country-name="USA" data-country="abs" data-search="shuay abdullayev ph.d. phd department of pharmaceutical and biomedical sciences and center for complex carbohydrate research – postdoctoral fellow, university of georgia usa shuay.abdullayev@gmail.com chemistry abs phd shuay.abdullayev@gmail.com chemistry" data-email="shuay.abdullayev@gmail.com" data-ixtilas="Chemistry" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/suay-abdullayev.png" alt="Shuay Abdullayev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#suay-abdullayev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/suay-abdullayev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SHUAY ABDULLAYEV <span class="cred">Ph.D.</span></span>
@@ -869,8 +910,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="USA" data-country="abs" data-search="togrul talishinski ph.d. phd st. joseph university director of minimally invasive surgery assistant professor of surgery at seton hall university hackensack meridian school of medicine usa talishinskiy.toghrul@gmail.com medicine abs phd talishinskiy.toghrul@gmail.com medicine" data-email="talishinskiy.toghrul@gmail.com" data-ixtilas="Medicine" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/togrul-talisinski.png" alt="Togrul Talishinski" loading="lazy"/></div>
+<div class="card" id="togrul-talisinski" tabindex="-1" data-country-name="USA" data-country="abs" data-search="togrul talishinski ph.d. phd st. joseph university director of minimally invasive surgery assistant professor of surgery at seton hall university hackensack meridian school of medicine usa talishinskiy.toghrul@gmail.com medicine abs phd talishinskiy.toghrul@gmail.com medicine" data-email="talishinskiy.toghrul@gmail.com" data-ixtilas="Medicine" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/togrul-talisinski.png" alt="Togrul Talishinski" loading="lazy"/></div>
+    <a class="card-qr-link" href="#togrul-talisinski" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/togrul-talisinski.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">TOGRUL TALISHINSKI <span class="cred">Ph.D.</span></span>
@@ -885,8 +931,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Germany" data-country="de" data-search="messoud efendiyev prof. dr. prof.dr. waas chairman of the board germany messoud.efendiyev@gmail.com mathematics de prof.dr. messoud.efendiyev@gmail.com mathematics" data-email="messoud.efendiyev@gmail.com" data-ixtilas="Mathematics" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/messoud-efendiyev.png" alt="Messoud Efendiyev" loading="lazy"/></div>
+<div class="card" id="messoud-efendiyev" tabindex="-1" data-country-name="Germany" data-country="de" data-search="messoud efendiyev prof. dr. prof.dr. waas chairman of the board germany messoud.efendiyev@gmail.com mathematics de prof.dr. messoud.efendiyev@gmail.com mathematics" data-email="messoud.efendiyev@gmail.com" data-ixtilas="Mathematics" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/messoud-efendiyev.png" alt="Messoud Efendiyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#messoud-efendiyev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/messoud-efendiyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MESSOUD EFENDIYEV <span class="cred">Prof. Dr.</span></span>
@@ -901,8 +952,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Germany" data-country="de" data-search="mirza mutallimov ph.d. phd head of the department of rhythmology at the mainz university teaching clinic, senior research doctor, leading cardiologist at the saarland university clinic, associate professor germany m.mutallimov@yahoo.com medicine de phd m.mutallimov@yahoo.com medicine" data-email="m.mutallimov@yahoo.com" data-ixtilas="Medicine" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mirze-mutellimov.png" alt="Mirza Mutallimov" loading="lazy"/></div>
+<div class="card" id="mirze-mutellimov" tabindex="-1" data-country-name="Germany" data-country="de" data-search="mirza mutallimov ph.d. phd head of the department of rhythmology at the mainz university teaching clinic, senior research doctor, leading cardiologist at the saarland university clinic, associate professor germany m.mutallimov@yahoo.com medicine de phd m.mutallimov@yahoo.com medicine" data-email="m.mutallimov@yahoo.com" data-ixtilas="Medicine" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mirze-mutellimov.png" alt="Mirza Mutallimov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#mirze-mutellimov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/mirze-mutellimov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MIRZA MUTALLIMOV <span class="cred">Ph.D.</span></span>
@@ -917,8 +973,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Germany" data-country="de" data-search="rasim jannataliyev ph.d. phd project manager for smart energy systems, enbw ag, stuttgart, germany germany rasimbaku@yahoo.com engineering de phd rasimbaku@yahoo.com engineering" data-email="rasimbaku@yahoo.com" data-ixtilas="Engineering" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/rasim-cenneteliyev.png" alt="Rasim Jannataliyev" loading="lazy"/></div>
+<div class="card" id="rasim-cenneteliyev" tabindex="-1" data-country-name="Germany" data-country="de" data-search="rasim jannataliyev ph.d. phd project manager for smart energy systems, enbw ag, stuttgart, germany germany rasimbaku@yahoo.com engineering de phd rasimbaku@yahoo.com engineering" data-email="rasimbaku@yahoo.com" data-ixtilas="Engineering" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/rasim-cenneteliyev.png" alt="Rasim Jannataliyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#rasim-cenneteliyev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/rasim-cenneteliyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">RASIM JANNATALIYEV <span class="cred">Ph.D.</span></span>
@@ -933,8 +994,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Germany" data-country="de" data-search="rauf abdullayev ph.d. phd &quot;stadler&quot; company germany rauf_abdullayev@yahoo.fr computer science de phd rauf_abdullayev@yahoo.fr computer science" data-email="rauf_abdullayev@yahoo.fr" data-ixtilas="Computer science" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/rauf-abdullayev.png" alt="Rauf Abdullayev" loading="lazy"/></div>
+<div class="card" id="rauf-abdullayev" tabindex="-1" data-country-name="Germany" data-country="de" data-search="rauf abdullayev ph.d. phd &quot;stadler&quot; company germany rauf_abdullayev@yahoo.fr computer science de phd rauf_abdullayev@yahoo.fr computer science" data-email="rauf_abdullayev@yahoo.fr" data-ixtilas="Computer science" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/rauf-abdullayev.png" alt="Rauf Abdullayev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#rauf-abdullayev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/rauf-abdullayev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">RAUF ABDULLAYEV <span class="cred">Ph.D.</span></span>
@@ -949,8 +1015,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Germany" data-country="de" data-search="sevda kerimova ph.d. phd international researcher at the institute of medical ethics and history of the ruhr university bochum, international researcher at the hacettepe university bioethics center, lawyer at the law firm &quot;vice versa consulting&quot; germany sevda.aydin.k@gmail.com law de phd sevda.aydin.k@gmail.com law" data-email="sevda.aydin.k@gmail.com" data-ixtilas="Law" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sevda-kerimova.png" alt="Sevda Kerimova" loading="lazy"/></div>
+<div class="card" id="sevda-kerimova" tabindex="-1" data-country-name="Germany" data-country="de" data-search="sevda kerimova ph.d. phd international researcher at the institute of medical ethics and history of the ruhr university bochum, international researcher at the hacettepe university bioethics center, lawyer at the law firm &quot;vice versa consulting&quot; germany sevda.aydin.k@gmail.com law de phd sevda.aydin.k@gmail.com law" data-email="sevda.aydin.k@gmail.com" data-ixtilas="Law" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sevda-kerimova.png" alt="Sevda Kerimova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#sevda-kerimova" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/sevda-kerimova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SEVDA KERIMOVA <span class="cred">Ph.D.</span></span>
@@ -965,8 +1036,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Germany" data-country="de" data-search="togrul karimov ph.d. phd max planck institute for software systems, postdoctoral researcher germany toghs@mpi-sws.org computer science de phd toghs@mpi-sws.org computer science" data-email="toghs@mpi-sws.org" data-ixtilas="Computer science" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/togrul-karimov.png" alt="Togrul Karimov" loading="lazy"/></div>
+<div class="card" id="togrul-karimov" tabindex="-1" data-country-name="Germany" data-country="de" data-search="togrul karimov ph.d. phd max planck institute for software systems, postdoctoral researcher germany toghs@mpi-sws.org computer science de phd toghs@mpi-sws.org computer science" data-email="toghs@mpi-sws.org" data-ixtilas="Computer science" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/togrul-karimov.png" alt="Togrul Karimov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#togrul-karimov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/togrul-karimov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">TOGRUL KARIMOV <span class="cred">Ph.D.</span></span>
@@ -981,8 +1057,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Germany" data-country="de" data-search="valeh rustamov ph.d. phd researcher and group leader at mannheim university of applied sciences, faculty of biotechnology, institute of cell and molecular biology and also cemos research and transfer center germany rustamov.valeh@gmail.com medicine de phd rustamov.valeh@gmail.com medicine" data-email="rustamov.valeh@gmail.com" data-ixtilas="Medicine" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/valeh-rustemov.png" alt="Valeh Rustamov" loading="lazy"/></div>
+<div class="card" id="valeh-rustemov" tabindex="-1" data-country-name="Germany" data-country="de" data-search="valeh rustamov ph.d. phd researcher and group leader at mannheim university of applied sciences, faculty of biotechnology, institute of cell and molecular biology and also cemos research and transfer center germany rustamov.valeh@gmail.com medicine de phd rustamov.valeh@gmail.com medicine" data-email="rustamov.valeh@gmail.com" data-ixtilas="Medicine" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/valeh-rustemov.png" alt="Valeh Rustamov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#valeh-rustemov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/valeh-rustemov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">VALEH RUSTAMOV <span class="cred">Ph.D.</span></span>
@@ -997,8 +1078,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Germany" data-country="de" data-search="khadija zeynalova ph.d. phd composer, musicologist, scientific researcher, associate professor, doctor of philosophy in art studies, baku music academy, detmold music academy (hochschule für musik detmold), and a graduate of paderborn university, chairman of the german bridge of sound organization and founder, artistic director of the orchestra of the same name, founder, curator and artistic director of the harmony of sound international music festival germany x.zeynalova@gmail.com musician de phd x.zeynalova@gmail.com musician" data-email="x.zeynalova@gmail.com" data-ixtilas="Musician" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/xedice-zeynalova.png" alt="Khadija Zeynalova" loading="lazy"/></div>
+<div class="card" id="xedice-zeynalova" tabindex="-1" data-country-name="Germany" data-country="de" data-search="khadija zeynalova ph.d. phd composer, musicologist, scientific researcher, associate professor, doctor of philosophy in art studies, baku music academy, detmold music academy (hochschule für musik detmold), and a graduate of paderborn university, chairman of the german bridge of sound organization and founder, artistic director of the orchestra of the same name, founder, curator and artistic director of the harmony of sound international music festival germany x.zeynalova@gmail.com musician de phd x.zeynalova@gmail.com musician" data-email="x.zeynalova@gmail.com" data-ixtilas="Musician" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/xedice-zeynalova.png" alt="Khadija Zeynalova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#xedice-zeynalova" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/xedice-zeynalova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">KHADIJA ZEYNALOVA <span class="cred">Ph.D.</span></span>
@@ -1013,8 +1099,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Germany" data-country="de" data-search="yashar musayev ph.d. phd &quot;siemens energy&quot; company, senior management germany mussa_98@hotmail.de engineering de phd mussa_98@hotmail.de engineering" data-email="mussa_98@hotmail.de" data-ixtilas="Engineering" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/yasar-musayev.png" alt="Yashar Musayev" loading="lazy"/></div>
+<div class="card" id="yasar-musayev" tabindex="-1" data-country-name="Germany" data-country="de" data-search="yashar musayev ph.d. phd &quot;siemens energy&quot; company, senior management germany mussa_98@hotmail.de engineering de phd mussa_98@hotmail.de engineering" data-email="mussa_98@hotmail.de" data-ixtilas="Engineering" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/yasar-musayev.png" alt="Yashar Musayev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#yasar-musayev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/yasar-musayev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">YASHAR MUSAYEV <span class="cred">Ph.D.</span></span>
@@ -1029,8 +1120,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Austria" data-country="at" data-search="bakhtiyar sirajov ph.d. phd co-chairman of the board of directors of waas austria b.sirajov@hotmail.com computer science at phd b.sirajov@hotmail.com computer science" data-email="b.sirajov@hotmail.com" data-ixtilas="Computer science" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/bakhtiyar-sirajov.png" alt="Bakhtiyar Sirajov" loading="lazy"/></div>
+<div class="card" id="bakhtiyar-sirajov" tabindex="-1" data-country-name="Austria" data-country="at" data-search="bakhtiyar sirajov ph.d. phd co-chairman of the board of directors of waas austria b.sirajov@hotmail.com computer science at phd b.sirajov@hotmail.com computer science" data-email="b.sirajov@hotmail.com" data-ixtilas="Computer science" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/bakhtiyar-sirajov.png" alt="Bakhtiyar Sirajov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#bakhtiyar-sirajov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/bakhtiyar-sirajov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">BAKHTIYAR SIRAJOV <span class="cred">Ph.D.</span></span>
@@ -1045,8 +1141,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Austria" data-country="at" data-search="dinara abbasova ph.d. phd advisor to the international atomic energy agency (iaea), official representative for azerbaijan of the world association &quot;women in nuclear&quot; austria dinara_abasova@hotmail.com chemistry at phd dinara_abasova@hotmail.com chemistry" data-email="dinara_abasova@hotmail.com" data-ixtilas="Chemistry" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/dinara-abbasova.png" alt="Dinara Abbasova" loading="lazy"/></div>
+<div class="card" id="dinara-abbasova" tabindex="-1" data-country-name="Austria" data-country="at" data-search="dinara abbasova ph.d. phd advisor to the international atomic energy agency (iaea), official representative for azerbaijan of the world association &quot;women in nuclear&quot; austria dinara_abasova@hotmail.com chemistry at phd dinara_abasova@hotmail.com chemistry" data-email="dinara_abasova@hotmail.com" data-ixtilas="Chemistry" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/dinara-abbasova.png" alt="Dinara Abbasova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#dinara-abbasova" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/dinara-abbasova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">DINARA ABBASOVA <span class="cred">Ph.D.</span></span>
@@ -1061,8 +1162,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Austria" data-country="at" data-search="kamal akbarov ph.d. phd world health organization (who), expert on radiation, nuclear, chemical and biological threats, ukraine and european region austria kamal.akbarov@gmail.com medicine at phd kamal.akbarov@gmail.com medicine" data-email="kamal.akbarov@gmail.com" data-ixtilas="Medicine" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/kamal-ekberov.png" alt="Kamal Akbarov" loading="lazy"/></div>
+<div class="card" id="kamal-ekberov" tabindex="-1" data-country-name="Austria" data-country="at" data-search="kamal akbarov ph.d. phd world health organization (who), expert on radiation, nuclear, chemical and biological threats, ukraine and european region austria kamal.akbarov@gmail.com medicine at phd kamal.akbarov@gmail.com medicine" data-email="kamal.akbarov@gmail.com" data-ixtilas="Medicine" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/kamal-ekberov.png" alt="Kamal Akbarov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#kamal-ekberov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/kamal-ekberov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">KAMAL AKBAROV <span class="cred">Ph.D.</span></span>
@@ -1077,8 +1183,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Austria" data-country="at" data-search="murad abuzerli ph.d. phd university of vienna, faculty of physics, postdoctoral studies in the group &quot;quantum optics, quantum information and nanophysics&quot; austria murad.abuzarli@univie.ac.at physics at phd murad.abuzarli@univie.ac.at physics" data-email="murad.abuzarli@univie.ac.at" data-ixtilas="Physics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/murad-abuzerli.png" alt="Murad Abuzerli" loading="lazy"/></div>
+<div class="card" id="murad-abuzerli" tabindex="-1" data-country-name="Austria" data-country="at" data-search="murad abuzerli ph.d. phd university of vienna, faculty of physics, postdoctoral studies in the group &quot;quantum optics, quantum information and nanophysics&quot; austria murad.abuzarli@univie.ac.at physics at phd murad.abuzarli@univie.ac.at physics" data-email="murad.abuzarli@univie.ac.at" data-ixtilas="Physics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/murad-abuzerli.png" alt="Murad Abuzerli" loading="lazy"/></div>
+    <a class="card-qr-link" href="#murad-abuzerli" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/murad-abuzerli.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MURAD ABUZERLI <span class="cred">Ph.D.</span></span>
@@ -1093,8 +1204,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="United Kingdom" data-country="uk" data-search="garib murshudov ph.d. phd mrc laboratory of molecular biology, cambridge, united kingdom united kingdom garib@mrc-lmb.cam.ac.uk biology uk phd garib@mrc-lmb.cam.ac.uk biology" data-email="garib@mrc-lmb.cam.ac.uk" data-ixtilas="Biology" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/qerib-mursudov.png" alt="Garib Murshudov" loading="lazy"/></div>
+<div class="card" id="qerib-mursudov" tabindex="-1" data-country-name="United Kingdom" data-country="uk" data-search="garib murshudov ph.d. phd mrc laboratory of molecular biology, cambridge, united kingdom united kingdom garib@mrc-lmb.cam.ac.uk biology uk phd garib@mrc-lmb.cam.ac.uk biology" data-email="garib@mrc-lmb.cam.ac.uk" data-ixtilas="Biology" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/qerib-mursudov.png" alt="Garib Murshudov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#qerib-mursudov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/qerib-mursudov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">GARIB MURSHUDOV <span class="cred">Ph.D.</span></span>
@@ -1109,8 +1225,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="United Kingdom" data-country="uk" data-search="vehid geruslu prof. dr. prof.dr. professor of software engineering at queen&#x27;s university, belfast, united kingdom united kingdom vehid.geruslu@gmail.com computer science uk prof.dr. vehid.geruslu@gmail.com computer science" data-email="vehid.geruslu@gmail.com" data-ixtilas="Computer science" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/vehid-geruslu.png" alt="Vehid Geruslu" loading="lazy"/></div>
+<div class="card" id="vehid-geruslu" tabindex="-1" data-country-name="United Kingdom" data-country="uk" data-search="vehid geruslu prof. dr. prof.dr. professor of software engineering at queen&#x27;s university, belfast, united kingdom united kingdom vehid.geruslu@gmail.com computer science uk prof.dr. vehid.geruslu@gmail.com computer science" data-email="vehid.geruslu@gmail.com" data-ixtilas="Computer science" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/vehid-geruslu.png" alt="Vehid Geruslu" loading="lazy"/></div>
+    <a class="card-qr-link" href="#vehid-geruslu" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/vehid-geruslu.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">VEHID GERUSLU <span class="cred">Prof. Dr.</span></span>
@@ -1125,8 +1246,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Estonia" data-country="ee" data-search="khagani gayibli ph.d. phd chairman of the finno-ugric and turkic peoples research center estonia hakan@ut.ee philology ee phd hakan@ut.ee philology" data-email="hakan@ut.ee" data-ixtilas="Philology" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/xaqani-qayibli.png" alt="Khagani Gayibli" loading="lazy"/></div>
+<div class="card" id="xaqani-qayibli" tabindex="-1" data-country-name="Estonia" data-country="ee" data-search="khagani gayibli ph.d. phd chairman of the finno-ugric and turkic peoples research center estonia hakan@ut.ee philology ee phd hakan@ut.ee philology" data-email="hakan@ut.ee" data-ixtilas="Philology" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/xaqani-qayibli.png" alt="Khagani Gayibli" loading="lazy"/></div>
+    <a class="card-qr-link" href="#xaqani-qayibli" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/xaqani-qayibli.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">KHAGANI GAYIBLI <span class="cred">Ph.D.</span></span>
@@ -1141,8 +1267,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="France" data-country="fr" data-search="aynur guliyeva ph.d. phd docent at the national engineering academy of tarbes (enit/uttop) under the university of toulouse, france, civil servant of france france aynur_guliyeva@yahoo.com chemistry fr phd aynur_guliyeva@yahoo.com chemistry" data-email="aynur_guliyeva@yahoo.com" data-ixtilas="Chemistry" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/aynur-quliyeva.png" alt="Aynur Guliyeva" loading="lazy"/></div>
+<div class="card" id="aynur-quliyeva" tabindex="-1" data-country-name="France" data-country="fr" data-search="aynur guliyeva ph.d. phd docent at the national engineering academy of tarbes (enit/uttop) under the university of toulouse, france, civil servant of france france aynur_guliyeva@yahoo.com chemistry fr phd aynur_guliyeva@yahoo.com chemistry" data-email="aynur_guliyeva@yahoo.com" data-ixtilas="Chemistry" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/aynur-quliyeva.png" alt="Aynur Guliyeva" loading="lazy"/></div>
+    <a class="card-qr-link" href="#aynur-quliyeva" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/aynur-quliyeva.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AYNUR GULIYEVA <span class="cred">Ph.D.</span></span>
@@ -1157,8 +1288,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="France" data-country="fr" data-search="gunel safarova ph.d. phd doctor of philosophy in economic sciences of paris-saclay university (université paris-saclay), head of scientific association alim founded in france and organizer of scientific conferences within the association&#x27;s projects france gunelsafarova@hotmail.com economics fr phd gunelsafarova@hotmail.com economics" data-email="gunelsafarova@hotmail.com" data-ixtilas="Economics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/gunel-seferova.png" alt="Gunel Safarova" loading="lazy"/></div>
+<div class="card" id="gunel-seferova" tabindex="-1" data-country-name="France" data-country="fr" data-search="gunel safarova ph.d. phd doctor of philosophy in economic sciences of paris-saclay university (université paris-saclay), head of scientific association alim founded in france and organizer of scientific conferences within the association&#x27;s projects france gunelsafarova@hotmail.com economics fr phd gunelsafarova@hotmail.com economics" data-email="gunelsafarova@hotmail.com" data-ixtilas="Economics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/gunel-seferova.png" alt="Gunel Safarova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#gunel-seferova" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/gunel-seferova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">GUNEL SAFAROVA <span class="cred">Ph.D.</span></span>
@@ -1173,8 +1309,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="France" data-country="fr" data-search="reyhan hasanova ph.d. phd research consultant at oracle france, an international company france reyhan.hasanova@gmail.com biology fr phd reyhan.hasanova@gmail.com biology" data-email="reyhan.hasanova@gmail.com" data-ixtilas="Biology" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/reyhan-hesenova.png" alt="Reyhan Hasanova" loading="lazy"/></div>
+<div class="card" id="reyhan-hesenova" tabindex="-1" data-country-name="France" data-country="fr" data-search="reyhan hasanova ph.d. phd research consultant at oracle france, an international company france reyhan.hasanova@gmail.com biology fr phd reyhan.hasanova@gmail.com biology" data-email="reyhan.hasanova@gmail.com" data-ixtilas="Biology" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/reyhan-hesenova.png" alt="Reyhan Hasanova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#reyhan-hesenova" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/reyhan-hesenova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">REYHAN HASANOVA <span class="cred">Ph.D.</span></span>
@@ -1189,8 +1330,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Georgia" data-country="ge" data-search="aygul isayeva ph.d. phd socar-energy georgia, business communications and public relations specialist georgia isayevaaygul2003@yahoo.com economics ge phd isayevaaygul2003@yahoo.com economics" data-email="isayevaaygul2003@yahoo.com" data-ixtilas="Economics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/aygul-isayeva.png" alt="Aygul Isayeva" loading="lazy"/></div>
+<div class="card" id="aygul-isayeva" tabindex="-1" data-country-name="Georgia" data-country="ge" data-search="aygul isayeva ph.d. phd socar-energy georgia, business communications and public relations specialist georgia isayevaaygul2003@yahoo.com economics ge phd isayevaaygul2003@yahoo.com economics" data-email="isayevaaygul2003@yahoo.com" data-ixtilas="Economics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/aygul-isayeva.png" alt="Aygul Isayeva" loading="lazy"/></div>
+    <a class="card-qr-link" href="#aygul-isayeva" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/aygul-isayeva.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AYGUL ISAYEVA <span class="cred">Ph.D.</span></span>
@@ -1205,11 +1351,16 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Israel" data-country="il" data-search="lev eppelbaum ph.d. phd tel aviv university professor, israel levap@tauex.tau.ac.il geophysics il phd levap@tauex.tau.ac.il geophysics" data-email="levap@tauex.tau.ac.il" data-ixtilas="Geophysics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/lev-v-eppelbaum.png" alt="Lev V. Eppelbaum" loading="lazy"/></div>
+<div class="card" id="lev-v-eppelbaum" tabindex="-1" data-country-name="Israel" data-country="il" data-search="lev eppelbaum ph.d. phd tel aviv university professor, israel levap@tauex.tau.ac.il geophysics il phd levap@tauex.tau.ac.il geophysics" data-email="levap@tauex.tau.ac.il" data-ixtilas="Geophysics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/lev-v-eppelbaum.png" alt="Lev Eppelbaum" loading="lazy"/></div>
+    <a class="card-qr-link" href="#lev-v-eppelbaum" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/lev-v-eppelbaum.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
-      <span class="card-name">LEV V. EPPELBAUM <span class="cred">Ph.D.</span></span>
+      <span class="card-name">LEV EPPELBAUM <span class="cred">Ph.D.</span></span>
       <p class="card-country">Israel</p>
     </div>
     <p class="card-title">Tel Aviv University professor,</p>
@@ -1217,12 +1368,17 @@ a.card-name:focus-visible {
       <div class="card-meta-row"><span class="card-meta-label">Field:</span><span class="card-meta-ixtilas">Geophysics</span></div>
       <div class="card-meta-row"><span class="card-meta-label">Email:</span><a class="card-email" href="mailto:levap@tauex.tau.ac.il">levap@tauex.tau.ac.il</a></div>
     </div>
-    <div class="card-bio"><p class="bio bio-lead">Honorary professor of Azerbaijan State Oil and Industry University</p><p class="bio">Professor Lev V. Eppelbaum (Tel Aviv University, Department of Geophysics) is the author of approximately 460 scientific publications. These include 12 books, 18 book chapters, 194 peer-reviewed journal articles, 81 conference materials and 171 abstracts published by international scientific publishers (Kluwer Academic Publisher, Springer, Elsevier, Chapman and Hall, Institute of Physics (Great Britain)). Prof. Eppelbaum&#x27;s main research areas are geodynamics and textonic reconstructions, applied and environmental geophysics, archaeological geophysics, and integrated analysis of geophysical, geological and related data.</p><p class="bio">He was elected head of scientific departments 26 times at international conferences. Professor Lev V. Eppelbaum is the editor-in-chief of the journal &quot;Geology, Geophysics, and Earth Sciences&quot; and the editorial board of such prestigious journals as &quot;Positioning&quot;, &quot;Open Petroleum Engineering Journal&quot;, &quot;Archaeological Discovery&quot;, &quot;Stratigraphy, Petroleum, Sedimentology, Geochemistry&quot;, &quot;ANAS Transactions, Earth Sciences&quot;, &quot;International Journal of Earthquake Engineering&quot;, &quot;Discover Geoscience&quot;, &quot;Academy Green Energy&quot;, &quot;Contributions to Geosciences&quot;, &quot;Geosciences&quot;, &quot;Russian Journal of Physical Chemistry&quot;, &quot;World Journal of Physics&quot;. is a member. At the same time, he served as a guest editor in the journals &quot;Advances in Geosciences&quot;, &quot;Journal of Geophysics and Engineering&quot;, &quot;Continent and Life Evolution&quot;, &quot;Frontiers in Earth Sciences&quot;, &quot;Geosciences (Switzerland)&quot;, &quot;Land&quot; and &quot;Applied Sciences (Switzerland)&quot;.</p><p class="bio">Professor Lev V. Eppelbaum is a member of two international geophysical commissions: &quot;Rotation of the Earth&quot; commission and &quot;WebmedCentral Ecology Advisory Board&quot;.</p><p class="bio">In 2020, he was awarded the title of honorary professor of the Azerbaijan State Oil and Industry University, and in 2023, he was elected a foreign member of the Georgian Academy of Sciences.</p><p class="bio">Professor Eppelbaum has received several awards; among them is the Christian Huygens medal of the European Geosciences Union (2019).</p><p class="bio">According to Google Scholar, his scholarly publications have been cited nearly 8,000 times.</p></div>
+    <div class="card-bio"><p class="bio bio-lead">Honorary professor of Azerbaijan State Oil and Industry University</p><p class="bio">Professor Lev Eppelbaum (Tel Aviv University, Department of Geophysics) is the author of approximately 460 scientific publications. These include 12 books, 18 book chapters, 194 peer-reviewed journal articles, 81 conference materials and 171 abstracts published by international scientific publishers (Kluwer Academic Publisher, Springer, Elsevier, Chapman and Hall, Institute of Physics (Great Britain)). Prof. Eppelbaum&#x27;s main research areas are geodynamics and textonic reconstructions, applied and environmental geophysics, archaeological geophysics, and integrated analysis of geophysical, geological and related data.</p><p class="bio">He was elected head of scientific departments 26 times at international conferences. Professor Lev Eppelbaum is the editor-in-chief of the journal &quot;Geology, Geophysics, and Earth Sciences&quot; and the editorial board of such prestigious journals as &quot;Positioning&quot;, &quot;Open Petroleum Engineering Journal&quot;, &quot;Archaeological Discovery&quot;, &quot;Stratigraphy, Petroleum, Sedimentology, Geochemistry&quot;, &quot;ANAS Transactions, Earth Sciences&quot;, &quot;International Journal of Earthquake Engineering&quot;, &quot;Discover Geoscience&quot;, &quot;Academy Green Energy&quot;, &quot;Contributions to Geosciences&quot;, &quot;Geosciences&quot;, &quot;Russian Journal of Physical Chemistry&quot;, &quot;World Journal of Physics&quot;. is a member. At the same time, he served as a guest editor in the journals &quot;Advances in Geosciences&quot;, &quot;Journal of Geophysics and Engineering&quot;, &quot;Continent and Life Evolution&quot;, &quot;Frontiers in Earth Sciences&quot;, &quot;Geosciences (Switzerland)&quot;, &quot;Land&quot; and &quot;Applied Sciences (Switzerland)&quot;.</p><p class="bio">Professor Lev Eppelbaum is a member of two international geophysical commissions: &quot;Rotation of the Earth&quot; commission and &quot;WebmedCentral Ecology Advisory Board&quot;.</p><p class="bio">In 2020, he was awarded the title of honorary professor of the Azerbaijan State Oil and Industry University, and in 2023, he was elected a foreign member of the Georgian Academy of Sciences.</p><p class="bio">Professor Eppelbaum has received several awards; among them is the Christian Huygens medal of the European Geosciences Union (2019).</p><p class="bio">According to Google Scholar, his scholarly publications have been cited nearly 8,000 times.</p></div>
   </div>
 </div>
 
-<div class="card" data-country-name="Israel" data-country="il" data-search="mark applebaum prof. dr. prof.dr. professor of mathematics education and head of the integrative stem education master&#x27;s program in the kaye college of academic education israel applebaum.mark@gmail.com mathematics il prof.dr. applebaum.mark@gmail.com mathematics" data-email="applebaum.mark@gmail.com" data-ixtilas="Mathematics" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mark-applebaum.png" alt="Mark Applebaum" loading="lazy"/></div>
+<div class="card" id="mark-applebaum" tabindex="-1" data-country-name="Israel" data-country="il" data-search="mark applebaum prof. dr. prof.dr. professor of mathematics education and head of the integrative stem education master&#x27;s program in the kaye college of academic education israel applebaum.mark@gmail.com mathematics il prof.dr. applebaum.mark@gmail.com mathematics" data-email="applebaum.mark@gmail.com" data-ixtilas="Mathematics" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mark-applebaum.png" alt="Mark Applebaum" loading="lazy"/></div>
+    <a class="card-qr-link" href="#mark-applebaum" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/mark-applebaum.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MARK APPLEBAUM <span class="cred">Prof. Dr.</span></span>
@@ -1237,8 +1393,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Sweden" data-country="se" data-search="saadat karimi prof. dr. prof.dr. member of waas board of directors, press secretary sweden saadat953@hotmail.com mathematics se prof.dr. saadat953@hotmail.com mathematics" data-email="saadat953@hotmail.com" data-ixtilas="Mathematics" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/saadat-karimi.png" alt="Saadat Karimi" loading="lazy"/></div>
+<div class="card" id="saadat-karimi" tabindex="-1" data-country-name="Sweden" data-country="se" data-search="saadat karimi prof. dr. prof.dr. member of waas board of directors, press secretary sweden saadat953@hotmail.com mathematics se prof.dr. saadat953@hotmail.com mathematics" data-email="saadat953@hotmail.com" data-ixtilas="Mathematics" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/saadat-karimi.png" alt="Saadat Karimi" loading="lazy"/></div>
+    <a class="card-qr-link" href="#saadat-karimi" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/saadat-karimi.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SAADAT KARIMI <span class="cred">Prof. Dr.</span></span>
@@ -1253,8 +1414,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Italy" data-country="it" data-search="zarifa osmanli ph.d. phd postdoctoral researcher, department of biomedical sciences, university of padova italy zerifeosmanli91@gmail.com bioinformatics it phd zerifeosmanli91@gmail.com bioinformatics" data-email="zerifeosmanli91@gmail.com" data-ixtilas="Bioinformatics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/zerife-osmanli.png" alt="Zarifa Osmanli" loading="lazy"/></div>
+<div class="card" id="zerife-osmanli" tabindex="-1" data-country-name="Italy" data-country="it" data-search="zarifa osmanli ph.d. phd postdoctoral researcher, department of biomedical sciences, university of padova italy zerifeosmanli91@gmail.com bioinformatics it phd zerifeosmanli91@gmail.com bioinformatics" data-email="zerifeosmanli91@gmail.com" data-ixtilas="Bioinformatics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/zerife-osmanli.png" alt="Zarifa Osmanli" loading="lazy"/></div>
+    <a class="card-qr-link" href="#zerife-osmanli" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/zerife-osmanli.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ZARIFA OSMANLI <span class="cred">Ph.D.</span></span>
@@ -1269,8 +1435,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Canada" data-country="ca" data-search="ilham akhundov ph.d. phd university of waterloo (university of waterloo), director of mathematics, business and accounting programs canada iakhundo@uwaterloo.ca mathematics ca phd iakhundo@uwaterloo.ca mathematics" data-email="iakhundo@uwaterloo.ca" data-ixtilas="Mathematics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ilham-axundov.png" alt="Ilham Akhundov" loading="lazy"/></div>
+<div class="card" id="ilham-axundov" tabindex="-1" data-country-name="Canada" data-country="ca" data-search="ilham akhundov ph.d. phd university of waterloo (university of waterloo), director of mathematics, business and accounting programs canada iakhundo@uwaterloo.ca mathematics ca phd iakhundo@uwaterloo.ca mathematics" data-email="iakhundo@uwaterloo.ca" data-ixtilas="Mathematics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ilham-axundov.png" alt="Ilham Akhundov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#ilham-axundov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/ilham-axundov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ILHAM AKHUNDOV <span class="cred">Ph.D.</span></span>
@@ -1285,8 +1456,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Canada" data-country="ca" data-search="riza moridi ph.d. phd senior fellow, massey college, university of toronto canada reza@rezamoridi.com physics ca phd reza@rezamoridi.com physics" data-email="reza@rezamoridi.com" data-ixtilas="Physics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/reza-moridi.png" alt="Reza Moridi" loading="lazy"/></div>
+<div class="card" id="reza-moridi" tabindex="-1" data-country-name="Canada" data-country="ca" data-search="riza moridi ph.d. phd senior fellow, massey college, university of toronto canada reza@rezamoridi.com physics ca phd reza@rezamoridi.com physics" data-email="reza@rezamoridi.com" data-ixtilas="Physics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/reza-moridi.png" alt="Riza Moridi" loading="lazy"/></div>
+    <a class="card-qr-link" href="#reza-moridi" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/reza-moridi.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">REZA MORIDI <span class="cred">Ph.D.</span></span>
@@ -1301,8 +1477,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Canada" data-country="ca" data-search="sabina isgenderova ph.d. phd faculty member and instructor in applied environmental technologies, university of calgary environmental management program, bay river college, calgary, alberta, canada canada sabina@ualberta.net biology ca phd sabina@ualberta.net biology" data-email="sabina@ualberta.net" data-ixtilas="Biology" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sebine-isgenderova.png" alt="Sabina Isgenderova" loading="lazy"/></div>
+<div class="card" id="sebine-isgenderova" tabindex="-1" data-country-name="Canada" data-country="ca" data-search="sabina isgenderova ph.d. phd faculty member and instructor in applied environmental technologies, university of calgary environmental management program, bay river college, calgary, alberta, canada canada sabina@ualberta.net biology ca phd sabina@ualberta.net biology" data-email="sabina@ualberta.net" data-ixtilas="Biology" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sebine-isgenderova.png" alt="Sabina Isgenderova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#sebine-isgenderova" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/sebine-isgenderova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SABINA ISGENDEROVA <span class="cred">Ph.D.</span></span>
@@ -1317,8 +1498,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Canada" data-country="ca" data-search="yulduz rahimov ph.d. phd seasonal associate professor (long service teaching appointment), department of mathematics and statistics, faculty of science, york university, canada canada raguimov@yorku.ca mathematics ca phd raguimov@yorku.ca mathematics" data-email="raguimov@yorku.ca" data-ixtilas="Mathematics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/yulduz-rahimov.png" alt="Yulduz Rahimov" loading="lazy"/></div>
+<div class="card" id="yulduz-rahimov" tabindex="-1" data-country-name="Canada" data-country="ca" data-search="yulduz rahimov ph.d. phd seasonal associate professor (long service teaching appointment), department of mathematics and statistics, faculty of science, york university, canada canada raguimov@yorku.ca mathematics ca phd raguimov@yorku.ca mathematics" data-email="raguimov@yorku.ca" data-ixtilas="Mathematics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/yulduz-rahimov.png" alt="Yulduz Rahimov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#yulduz-rahimov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/yulduz-rahimov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">YULDUZ RAHIMOV <span class="cred">Ph.D.</span></span>
@@ -1333,8 +1519,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="South Korea" data-country="kr" data-search="rovshan ibrahimov prof. dr. prof.dr. hankook university professor of regional studies south korea rovshanibrahimov@gmail.com international law kr prof.dr. rovshanibrahimov@gmail.com international law" data-email="rovshanibrahimov@gmail.com" data-ixtilas="International law" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/rovsen-ibrahimov.png" alt="Rovshan Ibrahimov" loading="lazy"/></div>
+<div class="card" id="rovsen-ibrahimov" tabindex="-1" data-country-name="South Korea" data-country="kr" data-search="rovshan ibrahimov prof. dr. prof.dr. hankook university professor of regional studies south korea rovshanibrahimov@gmail.com international law kr prof.dr. rovshanibrahimov@gmail.com international law" data-email="rovshanibrahimov@gmail.com" data-ixtilas="International law" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/rovsen-ibrahimov.png" alt="Rovshan Ibrahimov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#rovsen-ibrahimov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/rovsen-ibrahimov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ROVSHAN IBRAHIMOV <span class="cred">Prof. Dr.</span></span>
@@ -1349,8 +1540,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Mexico" data-country="mx" data-search="natig atakisiyev ph.d. phd institute of mathematics of the national autonomous university of mexico, doctor of physical and mathematical sciences, emeritus national researcher of mexico, member of the mexican academy of sciences mexico natig_atakishiyev@hotmail.com physics mx phd natig_atakishiyev@hotmail.com physics" data-email="natig_atakishiyev@hotmail.com" data-ixtilas="Physics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/natiq-agakisiyev.png" alt="Natig Atakisiyev" loading="lazy"/></div>
+<div class="card" id="natiq-agakisiyev" tabindex="-1" data-country-name="Mexico" data-country="mx" data-search="natig atakisiyev ph.d. phd institute of mathematics of the national autonomous university of mexico, doctor of physical and mathematical sciences, emeritus national researcher of mexico, member of the mexican academy of sciences mexico natig_atakishiyev@hotmail.com physics mx phd natig_atakishiyev@hotmail.com physics" data-email="natig_atakishiyev@hotmail.com" data-ixtilas="Physics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/natiq-agakisiyev.png" alt="Natig Atakisiyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#natiq-agakisiyev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/natiq-agakisiyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">NATIG ATAKISIYEV <span class="cred">Ph.D.</span></span>
@@ -1365,8 +1561,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Egypt" data-country="eg" data-search="seymur nasirov ph.d. phd co-chairman of waas board of directors egypt seymur.nasirov@gmail.com arabic language and literature eg phd seymur.nasirov@gmail.com arabic language and literature" data-email="seymur.nasirov@gmail.com" data-ixtilas="Arabic language and literature" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/seymur-nasirov.png" alt="Seymur Nasirov" loading="lazy"/></div>
+<div class="card" id="seymur-nasirov" tabindex="-1" data-country-name="Egypt" data-country="eg" data-search="seymur nasirov ph.d. phd co-chairman of waas board of directors egypt seymur.nasirov@gmail.com arabic language and literature eg phd seymur.nasirov@gmail.com arabic language and literature" data-email="seymur.nasirov@gmail.com" data-ixtilas="Arabic language and literature" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/seymur-nasirov.png" alt="Seymur Nasirov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#seymur-nasirov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/seymur-nasirov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SEYMUR NASIROV <span class="cred">Ph.D.</span></span>
@@ -1381,8 +1582,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Oman" data-country="om" data-search="saida khalilova ph.d. phd founder and director of the royal conservatory in muscat (oman). oman dr.saidakhalilova@gmail.com musician om phd dr.saidakhalilova@gmail.com musician" data-email="dr.saidakhalilova@gmail.com" data-ixtilas="Musician" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/seide-xelilova.png" alt="Saida Khalilova" loading="lazy"/></div>
+<div class="card" id="seide-xelilova" tabindex="-1" data-country-name="Oman" data-country="om" data-search="saida khalilova ph.d. phd founder and director of the royal conservatory in muscat (oman). oman dr.saidakhalilova@gmail.com musician om phd dr.saidakhalilova@gmail.com musician" data-email="dr.saidakhalilova@gmail.com" data-ixtilas="Musician" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/seide-xelilova.png" alt="Saida Khalilova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#seide-xelilova" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/seide-xelilova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SAIDA KHALILOVA <span class="cred">Ph.D.</span></span>
@@ -1397,8 +1603,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Poland" data-country="pl" data-search="shehriyar mukhtarov ph.d. phd head of doctoral program at vistula university, professor of the department of economics and finance, and also professor of the department of economics at korea university. poland s.mukhtarov@vistula.edu.pl economics pl phd s.mukhtarov@vistula.edu.pl economics" data-email="s.mukhtarov@vistula.edu.pl" data-ixtilas="Economics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sehriyar-muxtarov.png" alt="Shehriyar Mukhtarov" loading="lazy"/></div>
+<div class="card" id="sehriyar-muxtarov" tabindex="-1" data-country-name="Poland" data-country="pl" data-search="shehriyar mukhtarov ph.d. phd head of doctoral program at vistula university, professor of the department of economics and finance, and also professor of the department of economics at korea university. poland s.mukhtarov@vistula.edu.pl economics pl phd s.mukhtarov@vistula.edu.pl economics" data-email="s.mukhtarov@vistula.edu.pl" data-ixtilas="Economics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sehriyar-muxtarov.png" alt="Shehriyar Mukhtarov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#sehriyar-muxtarov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/sehriyar-muxtarov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SHEHRIYAR MUKHTAROV <span class="cred">Ph.D.</span></span>
@@ -1413,8 +1624,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Kazakhstan" data-country="kz" data-search="akif suleymanov ph.d. phd member of the scientific advisory council under the constitutional court of the republic of kazakhstan, professor of the department of international law and law of turan university, doctor of law; head of the project program of the fund for the development of parliamentarianism kazakhstan a.suleimanov@turan-edu.kz law kz phd a.suleimanov@turan-edu.kz law" data-email="a.suleimanov@turan-edu.kz" data-ixtilas="Law" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/akif-suleymanov.png" alt="Akif Suleymanov" loading="lazy"/></div>
+<div class="card" id="akif-suleymanov" tabindex="-1" data-country-name="Kazakhstan" data-country="kz" data-search="akif suleymanov ph.d. phd member of the scientific advisory council under the constitutional court of the republic of kazakhstan, professor of the department of international law and law of turan university, doctor of law; head of the project program of the fund for the development of parliamentarianism kazakhstan a.suleimanov@turan-edu.kz law kz phd a.suleimanov@turan-edu.kz law" data-email="a.suleimanov@turan-edu.kz" data-ixtilas="Law" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/akif-suleymanov.png" alt="Akif Suleymanov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#akif-suleymanov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/akif-suleymanov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AKIF SULEYMANOV <span class="cred">Ph.D.</span></span>
@@ -1429,8 +1645,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Kazakhstan" data-country="kz" data-search="arzu gurbanova ph.d. phd candidate of pedagogical sciences, professor of the department of languages ​​and literature of the central asia innovation university kazakhstan arzu_gur@mail.ru philology kz phd arzu_gur@mail.ru philology" data-email="arzu_gur@mail.ru" data-ixtilas="Philology" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/arzu-qurbanova.png" alt="Arzu Gurbanova" loading="lazy"/></div>
+<div class="card" id="arzu-qurbanova" tabindex="-1" data-country-name="Kazakhstan" data-country="kz" data-search="arzu gurbanova ph.d. phd candidate of pedagogical sciences, professor of the department of languages ​​and literature of the central asia innovation university kazakhstan arzu_gur@mail.ru philology kz phd arzu_gur@mail.ru philology" data-email="arzu_gur@mail.ru" data-ixtilas="Philology" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/arzu-qurbanova.png" alt="Arzu Gurbanova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#arzu-qurbanova" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/arzu-qurbanova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ARZU GURBANOVA <span class="cred">Ph.D.</span></span>
@@ -1445,8 +1666,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Kazakhstan" data-country="kz" data-search="tofig aydarov ph.d. phd head of the department of management and marketing, south kazakhstan university named after m. auezov kazakhstan tofik-750908@mail.ru engineering kz phd tofik-750908@mail.ru engineering" data-email="tofik-750908@mail.ru" data-ixtilas="Engineering" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/tofiq-aydarov.png" alt="Tofig Aydarov" loading="lazy"/></div>
+<div class="card" id="tofiq-aydarov" tabindex="-1" data-country-name="Kazakhstan" data-country="kz" data-search="tofig aydarov ph.d. phd head of the department of management and marketing, south kazakhstan university named after m. auezov kazakhstan tofik-750908@mail.ru engineering kz phd tofik-750908@mail.ru engineering" data-email="tofik-750908@mail.ru" data-ixtilas="Engineering" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/tofiq-aydarov.png" alt="Tofig Aydarov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#tofiq-aydarov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/tofiq-aydarov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">TOFIG AYDAROV <span class="cred">Ph.D.</span></span>
@@ -1461,8 +1687,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Kyrgyzstan" data-country="kg" data-search="akif alaferdov ph.d. phd honored doctor of the kyrgyz republic, doctor of philosophy in medicine, chairman of the friendship and cooperation society &quot;kyrgyzstan-azerbaijan&quot; kyrgyzstan akif_allahverdi@mail.ru medicine kg phd akif_allahverdi@mail.ru medicine" data-email="akif_allahverdi@mail.ru" data-ixtilas="Medicine" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/akif-alaferdov.png" alt="Akif Alaferdov" loading="lazy"/></div>
+<div class="card" id="akif-alaferdov" tabindex="-1" data-country-name="Kyrgyzstan" data-country="kg" data-search="akif alaferdov ph.d. phd honored doctor of the kyrgyz republic, doctor of philosophy in medicine, chairman of the friendship and cooperation society &quot;kyrgyzstan-azerbaijan&quot; kyrgyzstan akif_allahverdi@mail.ru medicine kg phd akif_allahverdi@mail.ru medicine" data-email="akif_allahverdi@mail.ru" data-ixtilas="Medicine" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/akif-alaferdov.png" alt="Akif Alaferdov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#akif-alaferdov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/akif-alaferdov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AKIF ALAFERDOV <span class="cred">Ph.D.</span></span>
@@ -1477,8 +1708,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Russia" data-country="ru" data-search="agamali mammadov prof. dr. prof.dr. head of the department of communication and sociology of lomonosov moscow state university, member of the union of russian writers russia akmnauka@yandex.ru philosophy, law ru prof.dr. akmnauka@yandex.ru philosophy, law" data-email="akmnauka@yandex.ru" data-ixtilas="Philosophy, Law" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/agamali-memmedov.png" alt="Agamali Mammadov" loading="lazy"/></div>
+<div class="card" id="agamali-memmedov" tabindex="-1" data-country-name="Russia" data-country="ru" data-search="agamali mammadov prof. dr. prof.dr. head of the department of communication and sociology of lomonosov moscow state university, member of the union of russian writers russia akmnauka@yandex.ru philosophy, law ru prof.dr. akmnauka@yandex.ru philosophy, law" data-email="akmnauka@yandex.ru" data-ixtilas="Philosophy, Law" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/agamali-memmedov.png" alt="Agamali Mammadov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#agamali-memmedov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/agamali-memmedov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AGAMALI MAMMADOV <span class="cred">Prof. Dr.</span></span>
@@ -1493,8 +1729,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Russia" data-country="ru" data-search="eldar ahadov ph.d. phd writer and poet, member of the russian writers&#x27; union, honorary member of the azerbaijani writers&#x27; union, head of the coordination council of the world writers&#x27; organization russia dolma60@yandex.ru philology ru phd dolma60@yandex.ru philology" data-email="dolma60@yandex.ru" data-ixtilas="Philology" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eldar-ehedov.png" alt="Eldar Ahadov" loading="lazy"/></div>
+<div class="card" id="eldar-ehedov" tabindex="-1" data-country-name="Russia" data-country="ru" data-search="eldar ahadov ph.d. phd writer and poet, member of the russian writers&#x27; union, honorary member of the azerbaijani writers&#x27; union, head of the coordination council of the world writers&#x27; organization russia dolma60@yandex.ru philology ru phd dolma60@yandex.ru philology" data-email="dolma60@yandex.ru" data-ixtilas="Philology" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eldar-ehedov.png" alt="Eldar Ahadov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#eldar-ehedov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/eldar-ehedov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ELDAR AHADOV <span class="cred">Ph.D.</span></span>
@@ -1509,8 +1750,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Russia" data-country="ru" data-search="aladdin allahverdiyev prof. dr. prof.dr. former ussr ministry of electronic industry, scientific research institute &quot;fonon&quot; - head of department, moscow state academy of business administration - professor, head of department, dean, vice-rector, first vice-rector, &quot;miet&quot; national research university - professor, head of the quality of education process, deputy vice-rector russia aallahverdiyev@mail.ru mathematics ru prof.dr. aallahverdiyev@mail.ru mathematics" data-email="aallahverdiyev@mail.ru" data-ixtilas="Mathematics" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eleddin-allahverdiyev.png" alt="Aladdin Allahverdiyev" loading="lazy"/></div>
+<div class="card" id="eleddin-allahverdiyev" tabindex="-1" data-country-name="Russia" data-country="ru" data-search="aladdin allahverdiyev prof. dr. prof.dr. former ussr ministry of electronic industry, scientific research institute &quot;fonon&quot; - head of department, moscow state academy of business administration - professor, head of department, dean, vice-rector, first vice-rector, &quot;miet&quot; national research university - professor, head of the quality of education process, deputy vice-rector russia aallahverdiyev@mail.ru mathematics ru prof.dr. aallahverdiyev@mail.ru mathematics" data-email="aallahverdiyev@mail.ru" data-ixtilas="Mathematics" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eleddin-allahverdiyev.png" alt="Aladdin Allahverdiyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#eleddin-allahverdiyev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/eleddin-allahverdiyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ALADDIN ALLAHVERDIYEV <span class="cred">Prof. Dr.</span></span>
@@ -1525,8 +1771,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Russia" data-country="ru" data-search="aliheydar rahimov prof. dr. prof.dr. professor of the department of anesthesiology and reanimatology of the first moscow state medical university named after i.m. sechenov, doctor of medical sciences, professor, senior transfusionist doctor russia ra50@mail.ru medicine ru prof.dr. ra50@mail.ru medicine" data-email="ra50@mail.ru" data-ixtilas="Medicine" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eliheyder-rehimov.png" alt="Aliheydar Rahimov" loading="lazy"/></div>
+<div class="card" id="eliheyder-rehimov" tabindex="-1" data-country-name="Russia" data-country="ru" data-search="aliheydar rahimov prof. dr. prof.dr. professor of the department of anesthesiology and reanimatology of the first moscow state medical university named after i.m. sechenov, doctor of medical sciences, professor, senior transfusionist doctor russia ra50@mail.ru medicine ru prof.dr. ra50@mail.ru medicine" data-email="ra50@mail.ru" data-ixtilas="Medicine" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eliheyder-rehimov.png" alt="Aliheydar Rahimov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#eliheyder-rehimov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/eliheyder-rehimov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ALIHEYDAR RAHIMOV <span class="cred">Prof. Dr.</span></span>
@@ -1541,8 +1792,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Russia" data-country="ru" data-search="emil ahmadov ph.d. phd head of the department of theoretical physics named after l. d. landau, moscow physico-technical institute russia akhmedov.et@mipt.ru physics ru phd akhmedov.et@mipt.ru physics" data-email="akhmedov.et@mipt.ru" data-ixtilas="Physics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/emil-ahmadov.png" alt="Emil Ahmadov" loading="lazy"/></div>
+<div class="card" id="emil-ahmadov" tabindex="-1" data-country-name="Russia" data-country="ru" data-search="emil ahmadov ph.d. phd head of the department of theoretical physics named after l. d. landau, moscow physico-technical institute russia akhmedov.et@mipt.ru physics ru phd akhmedov.et@mipt.ru physics" data-email="akhmedov.et@mipt.ru" data-ixtilas="Physics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/emil-ahmadov.png" alt="Emil Ahmadov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#emil-ahmadov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/emil-ahmadov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">EMIL AHMADOV <span class="cred">Ph.D.</span></span>
@@ -1557,8 +1813,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Russia" data-country="ru" data-search="ismayil aliyev prof. dr. prof.dr. head of department at st. petersburg state university of economics (2020-2023) professor at st. petersburg state university of economics &quot;economics and management of enterprises and industrial complexes&quot; russia aliev.05@mail.ru economics ru prof.dr. aliev.05@mail.ru economics" data-email="aliev.05@mail.ru" data-ixtilas="Economics" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ismayil-eliyev.png" alt="Ismayil Aliyev" loading="lazy"/></div>
+<div class="card" id="ismayil-eliyev" tabindex="-1" data-country-name="Russia" data-country="ru" data-search="ismayil aliyev prof. dr. prof.dr. head of department at st. petersburg state university of economics (2020-2023) professor at st. petersburg state university of economics &quot;economics and management of enterprises and industrial complexes&quot; russia aliev.05@mail.ru economics ru prof.dr. aliev.05@mail.ru economics" data-email="aliev.05@mail.ru" data-ixtilas="Economics" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ismayil-eliyev.png" alt="Ismayil Aliyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#ismayil-eliyev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/ismayil-eliyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ISMAYIL ALIYEV <span class="cred">Prof. Dr.</span></span>
@@ -1573,8 +1834,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Russia" data-country="ru" data-search="kamran rustamov prof. dr. prof.dr. honored scientist of the republic of azerbaijan, foreign member of the russian academy of architecture and construction sciences (raacs), member of the azerbaijan and russia journalists unions russia aliev.05@mail.ru engineering ru prof.dr. aliev.05@mail.ru engineering" data-email="aliev.05@mail.ru" data-ixtilas="Engineering" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/kamran-rustemov.png" alt="Kamran Rustamov" loading="lazy"/></div>
+<div class="card" id="kamran-rustemov" tabindex="-1" data-country-name="Russia" data-country="ru" data-search="kamran rustamov prof. dr. prof.dr. honored scientist of the republic of azerbaijan, foreign member of the russian academy of architecture and construction sciences (raacs), member of the azerbaijan and russia journalists unions russia aliev.05@mail.ru engineering ru prof.dr. aliev.05@mail.ru engineering" data-email="aliev.05@mail.ru" data-ixtilas="Engineering" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/kamran-rustemov.png" alt="Kamran Rustamov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#kamran-rustemov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/kamran-rustemov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">KAMRAN RUSTAMOV <span class="cred">Prof. Dr.</span></span>
@@ -1589,8 +1855,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Russia" data-country="ru" data-search="nigar masimova ph.d. phd candidate of economic sciences, associate professor, head of the department of advertising and public relations, deputy dean of the international journalism faculty of the moscow state institute of international relations of the ministry of foreign affairs of the russian federation russia masumova@mail.ru economics ru phd masumova@mail.ru economics" data-email="masumova@mail.ru" data-ixtilas="Economics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/nigar-masimova.png" alt="Nigar Masimova" loading="lazy"/></div>
+<div class="card" id="nigar-masimova" tabindex="-1" data-country-name="Russia" data-country="ru" data-search="nigar masimova ph.d. phd candidate of economic sciences, associate professor, head of the department of advertising and public relations, deputy dean of the international journalism faculty of the moscow state institute of international relations of the ministry of foreign affairs of the russian federation russia masumova@mail.ru economics ru phd masumova@mail.ru economics" data-email="masumova@mail.ru" data-ixtilas="Economics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/nigar-masimova.png" alt="Nigar Masimova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#nigar-masimova" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/nigar-masimova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">NIGAR MASIMOVA <span class="cred">Ph.D.</span></span>
@@ -1605,8 +1876,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Russia" data-country="ru" data-search="nizami mammadov prof. dr. prof.dr. professor of the russian presidential academy (ranepa), honored educationist of russia, full member of the russian academy of natural sciences, russian academy of ecology and the international academy of communicology, official expert of unesco russia nizami-mamedov@mail.ru engineering ru prof.dr. nizami-mamedov@mail.ru engineering" data-email="nizami-mamedov@mail.ru" data-ixtilas="Engineering" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/nizami-memmedov.png" alt="Nizami Mammadov" loading="lazy"/></div>
+<div class="card" id="nizami-memmedov" tabindex="-1" data-country-name="Russia" data-country="ru" data-search="nizami mammadov prof. dr. prof.dr. professor of the russian presidential academy (ranepa), honored educationist of russia, full member of the russian academy of natural sciences, russian academy of ecology and the international academy of communicology, official expert of unesco russia nizami-mamedov@mail.ru engineering ru prof.dr. nizami-mamedov@mail.ru engineering" data-email="nizami-mamedov@mail.ru" data-ixtilas="Engineering" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/nizami-memmedov.png" alt="Nizami Mammadov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#nizami-memmedov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/nizami-memmedov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">NIZAMI MAMMADOV <span class="cred">Prof. Dr.</span></span>
@@ -1621,8 +1897,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Russia" data-country="ru" data-search="sevinj asgerova ph.d. phd doctor of medical sciences, academician of the russian academy of natural sciences (tea), honored scientist and educator, professor and senior researcher of the russian national research medical university named after n.i. pirogov russia s_askerova@yahoo.com medicine ru phd s_askerova@yahoo.com medicine" data-email="s_askerova@yahoo.com" data-ixtilas="Medicine" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sevinc-esgerova.png" alt="Sevinj Asgerova" loading="lazy"/></div>
+<div class="card" id="sevinc-esgerova" tabindex="-1" data-country-name="Russia" data-country="ru" data-search="sevinj asgerova ph.d. phd doctor of medical sciences, academician of the russian academy of natural sciences (tea), honored scientist and educator, professor and senior researcher of the russian national research medical university named after n.i. pirogov russia s_askerova@yahoo.com medicine ru phd s_askerova@yahoo.com medicine" data-email="s_askerova@yahoo.com" data-ixtilas="Medicine" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sevinc-esgerova.png" alt="Sevinj Asgerova" loading="lazy"/></div>
+    <a class="card-qr-link" href="#sevinc-esgerova" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/sevinc-esgerova.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SEVINJ ASGEROVA <span class="cred">Ph.D.</span></span>
@@ -1637,8 +1918,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Russia" data-country="ru" data-search="suleyman allahverdiyev ph.d. phd doctor of biological sciences, corresponding member of the russian academy of sciences (rea), rea&#x27;s k.a. head of the &quot;controlled photobiosynthesis&quot; laboratory of the timiryazev institute of plant physiology (moscow), senior researcher of the institute of fundamental problems of biology of rea (pushchino), professor of m.v. lomonosov moscow state university and moscow institute of physics and technology, and head of the &quot;photosynthesis and hydrogen energy&quot; laboratory of bahçeşehir university in turkey russia suleyman.allakhverdiev@gmail.com physics ru phd suleyman.allakhverdiev@gmail.com physics" data-email="suleyman.allakhverdiev@gmail.com" data-ixtilas="Physics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/suleyman-allahverdiyev.png" alt="Suleyman Allahverdiyev" loading="lazy"/></div>
+<div class="card" id="suleyman-allahverdiyev" tabindex="-1" data-country-name="Russia" data-country="ru" data-search="suleyman allahverdiyev ph.d. phd doctor of biological sciences, corresponding member of the russian academy of sciences (rea), rea&#x27;s k.a. head of the &quot;controlled photobiosynthesis&quot; laboratory of the timiryazev institute of plant physiology (moscow), senior researcher of the institute of fundamental problems of biology of rea (pushchino), professor of m.v. lomonosov moscow state university and moscow institute of physics and technology, and head of the &quot;photosynthesis and hydrogen energy&quot; laboratory of bahçeşehir university in turkey russia suleyman.allakhverdiev@gmail.com physics ru phd suleyman.allakhverdiev@gmail.com physics" data-email="suleyman.allakhverdiev@gmail.com" data-ixtilas="Physics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/suleyman-allahverdiyev.png" alt="Suleyman Allahverdiyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#suleyman-allahverdiyev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/suleyman-allahverdiyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SULEYMAN ALLAHVERDIYEV <span class="cred">Ph.D.</span></span>
@@ -1653,8 +1939,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Russia" data-country="ru" data-search="vahid gadimov ph.d. phd russian university of technology (mirea), professor of the department of higher mathematics and programming russia vkadymov@yandex.ru mathematics ru phd vkadymov@yandex.ru mathematics" data-email="vkadymov@yandex.ru" data-ixtilas="Mathematics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/vahid-qedimov.png" alt="Vahid Gadimov" loading="lazy"/></div>
+<div class="card" id="vahid-qedimov" tabindex="-1" data-country-name="Russia" data-country="ru" data-search="vahid gadimov ph.d. phd russian university of technology (mirea), professor of the department of higher mathematics and programming russia vkadymov@yandex.ru mathematics ru phd vkadymov@yandex.ru mathematics" data-email="vkadymov@yandex.ru" data-ixtilas="Mathematics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/vahid-qedimov.png" alt="Vahid Gadimov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#vahid-qedimov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/vahid-qedimov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">VAHID GADIMOV <span class="cred">Ph.D.</span></span>
@@ -1669,8 +1960,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Russia" data-country="ru" data-search="zahid gocayev prof. dr. prof.dr. deputy director for innovation and implementation of the federal scientific agrotechnical center vim (fgbnu), professor of moscow polytechnic university and n.e. bauman moscow state technical university, doctor of technical sciences, professor, corresponding member of the russian academy of sciences russia fic51@mail.ru engineering ru prof.dr. fic51@mail.ru engineering" data-email="fic51@mail.ru" data-ixtilas="Engineering" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/zahid-qocayev.png" alt="Zahid Gocayev" loading="lazy"/></div>
+<div class="card" id="zahid-qocayev" tabindex="-1" data-country-name="Russia" data-country="ru" data-search="zahid gocayev prof. dr. prof.dr. deputy director for innovation and implementation of the federal scientific agrotechnical center vim (fgbnu), professor of moscow polytechnic university and n.e. bauman moscow state technical university, doctor of technical sciences, professor, corresponding member of the russian academy of sciences russia fic51@mail.ru engineering ru prof.dr. fic51@mail.ru engineering" data-email="fic51@mail.ru" data-ixtilas="Engineering" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/zahid-qocayev.png" alt="Zahid Gocayev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#zahid-qocayev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/zahid-qocayev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ZAHID GOCAYEV <span class="cred">Prof. Dr.</span></span>
@@ -1685,8 +1981,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Saudi Arabia" data-country="sa" data-search="azer abdullayev ph.d. phd consultant surgeon, head of orthopedic department at king fahad and sabya hospitals in saudi arabia saudi arabia aabdullayev@moh.sa.gov medicine sa phd aabdullayev@moh.sa.gov medicine" data-email="aabdullayev@moh.sa.gov" data-ixtilas="Medicine" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/azer-abdullayev.png" alt="Azer Abdullayev" loading="lazy"/></div>
+<div class="card" id="azer-abdullayev" tabindex="-1" data-country-name="Saudi Arabia" data-country="sa" data-search="azer abdullayev ph.d. phd consultant surgeon, head of orthopedic department at king fahad and sabya hospitals in saudi arabia saudi arabia aabdullayev@moh.sa.gov medicine sa phd aabdullayev@moh.sa.gov medicine" data-email="aabdullayev@moh.sa.gov" data-ixtilas="Medicine" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/azer-abdullayev.png" alt="Azer Abdullayev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#azer-abdullayev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/azer-abdullayev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AZER ABDULLAYEV <span class="cred">Ph.D.</span></span>
@@ -1701,8 +2002,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Saudi Arabia" data-country="sa" data-search="elvin efendi ph.d. phd islamic development bank group, head of corporate strategy and research department saudi arabia e.afandi@yahoo.com economics sa phd e.afandi@yahoo.com economics" data-email="e.afandi@yahoo.com" data-ixtilas="Economics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/elvin-efendi.png" alt="Elvin Efendi" loading="lazy"/></div>
+<div class="card" id="elvin-efendi" tabindex="-1" data-country-name="Saudi Arabia" data-country="sa" data-search="elvin efendi ph.d. phd islamic development bank group, head of corporate strategy and research department saudi arabia e.afandi@yahoo.com economics sa phd e.afandi@yahoo.com economics" data-email="e.afandi@yahoo.com" data-ixtilas="Economics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/elvin-efendi.png" alt="Elvin Efendi" loading="lazy"/></div>
+    <a class="card-qr-link" href="#elvin-efendi" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/elvin-efendi.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ELVIN EFENDI <span class="cred">Ph.D.</span></span>
@@ -1717,8 +2023,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="afina barmanbay ph.d. phd kars city, qafqaz university, faculty of science and literature türkiye afina.barmanbay@gmail.com philology tr phd afina.barmanbay@gmail.com philology" data-email="afina.barmanbay@gmail.com" data-ixtilas="Philology" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/afina-memmedli-barmanbay.png" alt="Afina Barmanbay" loading="lazy"/></div>
+<div class="card" id="afina-memmedli-barmanbay" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="afina barmanbay ph.d. phd kars city, qafqaz university, faculty of science and literature türkiye afina.barmanbay@gmail.com philology tr phd afina.barmanbay@gmail.com philology" data-email="afina.barmanbay@gmail.com" data-ixtilas="Philology" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/afina-memmedli-barmanbay.png" alt="Afina Barmanbay" loading="lazy"/></div>
+    <a class="card-qr-link" href="#afina-memmedli-barmanbay" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/afina-memmedli-barmanbay.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">AFINA BARMANBAY <span class="cred">Ph.D.</span></span>
@@ -1733,8 +2044,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="javid gasimov prof. dr. prof.dr. van yüzüncü yıl university, professor of the faculty of history and international relations türkiye cavidahmedoglu@gmail.com history, oriental studies tr prof.dr. cavidahmedoglu@gmail.com history, oriental studies" data-email="cavidahmedoglu@gmail.com" data-ixtilas="History, Oriental studies" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/cavid-qasimov.png" alt="Javid Gasimov" loading="lazy"/></div>
+<div class="card" id="cavid-qasimov" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="javid gasimov prof. dr. prof.dr. van yüzüncü yıl university, professor of the faculty of history and international relations türkiye cavidahmedoglu@gmail.com history, oriental studies tr prof.dr. cavidahmedoglu@gmail.com history, oriental studies" data-email="cavidahmedoglu@gmail.com" data-ixtilas="History, Oriental studies" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/cavid-qasimov.png" alt="Javid Gasimov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#cavid-qasimov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/cavid-qasimov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">JAVID GASIMOV <span class="cred">Prof. Dr.</span></span>
@@ -1749,8 +2065,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="ebulfez suleymanov ph.d. phd head of the department of sociology at üsküdar university, expert of the international turkish academy, vice-president of the turkish world sociologists union, member of the board of the international philosophical research center (ufad) türkiye ebulfez.suleymanli@uskudar.edu.tr sociology tr phd ebulfez.suleymanli@uskudar.edu.tr sociology" data-email="ebulfez.suleymanli@uskudar.edu.tr" data-ixtilas="Sociology" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ebulfez-suleymanov.png" alt="Ebulfez Suleymanov" loading="lazy"/></div>
+<div class="card" id="ebulfez-suleymanov" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="ebulfez suleymanov ph.d. phd head of the department of sociology at üsküdar university, expert of the international turkish academy, vice-president of the turkish world sociologists union, member of the board of the international philosophical research center (ufad) türkiye ebulfez.suleymanli@uskudar.edu.tr sociology tr phd ebulfez.suleymanli@uskudar.edu.tr sociology" data-email="ebulfez.suleymanli@uskudar.edu.tr" data-ixtilas="Sociology" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ebulfez-suleymanov.png" alt="Ebulfez Suleymanov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#ebulfez-suleymanov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/ebulfez-suleymanov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">EBULFEZ SULEYMANOV <span class="cred">Ph.D.</span></span>
@@ -1765,8 +2086,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="elchin badalov ph.d. phd professor of the department of oral and maxillofacial surgery, faculty of dentistry, istanbul aydın university türkiye elcinbedeloglu@gmail.com medicine tr phd elcinbedeloglu@gmail.com medicine" data-email="elcinbedeloglu@gmail.com" data-ixtilas="Medicine" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/elcin-bedelov.png" alt="Elchin Badalov" loading="lazy"/></div>
+<div class="card" id="elcin-bedelov" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="elchin badalov ph.d. phd professor of the department of oral and maxillofacial surgery, faculty of dentistry, istanbul aydın university türkiye elcinbedeloglu@gmail.com medicine tr phd elcinbedeloglu@gmail.com medicine" data-email="elcinbedeloglu@gmail.com" data-ixtilas="Medicine" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/elcin-bedelov.png" alt="Elchin Badalov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#elcin-bedelov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/elcin-bedelov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ELCHIN BADALOV <span class="cred">Ph.D.</span></span>
@@ -1781,8 +2107,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="emirullah mehmedov prof. dr. prof.dr. chairman of the association of azerbaijani scientists (turkey), türkiye mamedov@bilkent.edu.tr nanotechnology tr prof.dr. mamedov@bilkent.edu.tr nanotechnology" data-email="mamedov@bilkent.edu.tr" data-ixtilas="Nanotechnology" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/emirulla-memmedov.png" alt="Emirullah Mehmedov" loading="lazy"/></div>
+<div class="card" id="emirulla-memmedov" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="emirullah mehmedov prof. dr. prof.dr. chairman of the association of azerbaijani scientists (turkey), türkiye mamedov@bilkent.edu.tr nanotechnology tr prof.dr. mamedov@bilkent.edu.tr nanotechnology" data-email="mamedov@bilkent.edu.tr" data-ixtilas="Nanotechnology" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/emirulla-memmedov.png" alt="Emirullah Mehmedov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#emirulla-memmedov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/emirulla-memmedov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">EMIRULLAH MEHMEDOV <span class="cred">Prof. Dr.</span></span>
@@ -1797,8 +2128,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="hajali nejefoglu prof. dr. prof.dr. kars city, head of the foreign relations office of the caucasus university, member of the university board, head of the caucasus and central asia research center, head of the department of inorganic chemistry türkiye alinecef@hotmail.com chemistry tr prof.dr. alinecef@hotmail.com chemistry" data-email="alinecef@hotmail.com" data-ixtilas="Chemistry" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/hacali-necefoglu.png" alt="Hajali Nejefoglu" loading="lazy"/></div>
+<div class="card" id="hacali-necefoglu" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="hajali nejefoglu prof. dr. prof.dr. kars city, head of the foreign relations office of the caucasus university, member of the university board, head of the caucasus and central asia research center, head of the department of inorganic chemistry türkiye alinecef@hotmail.com chemistry tr prof.dr. alinecef@hotmail.com chemistry" data-email="alinecef@hotmail.com" data-ixtilas="Chemistry" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/hacali-necefoglu.png" alt="Hajali Nejefoglu" loading="lazy"/></div>
+    <a class="card-qr-link" href="#hacali-necefoglu" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/hacali-necefoglu.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">HAJALI NEJEFOGLU <span class="cred">Prof. Dr.</span></span>
@@ -1813,8 +2149,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="ilkin gulusoy prof. dr. prof.dr. head of the department of contemporary turkish dialects and literatures (azerbaijani turkish and literature) at qafqaz university of the republic of turkey türkiye ilkingulusoy@gmail.com turkology tr prof.dr. ilkingulusoy@gmail.com turkology" data-email="ilkingulusoy@gmail.com" data-ixtilas="Turkology" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ilkin-qulusoy.png" alt="Ilkin Gulusoy" loading="lazy"/></div>
+<div class="card" id="ilkin-qulusoy" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="ilkin gulusoy prof. dr. prof.dr. head of the department of contemporary turkish dialects and literatures (azerbaijani turkish and literature) at qafqaz university of the republic of turkey türkiye ilkingulusoy@gmail.com turkology tr prof.dr. ilkingulusoy@gmail.com turkology" data-email="ilkingulusoy@gmail.com" data-ixtilas="Turkology" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ilkin-qulusoy.png" alt="Ilkin Gulusoy" loading="lazy"/></div>
+    <a class="card-qr-link" href="#ilkin-qulusoy" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/ilkin-qulusoy.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ILKIN GULUSOY <span class="cred">Prof. Dr.</span></span>
@@ -1829,8 +2170,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="ismikhan bayramov prof. dr. prof.dr. professor of izmir university of economics, founding dean and dean of the faculty of sciences (2001–2022), head of the department of mathematics (2001–2014) türkiye ismihan.bayramoglu@ieu.edu.tr mathematics tr prof.dr. ismihan.bayramoglu@ieu.edu.tr mathematics" data-email="ismihan.bayramoglu@ieu.edu.tr" data-ixtilas="Mathematics" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ismixan-bayramov.png" alt="Ismikhan Bayramov" loading="lazy"/></div>
+<div class="card" id="ismixan-bayramov" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="ismikhan bayramov prof. dr. prof.dr. professor of izmir university of economics, founding dean and dean of the faculty of sciences (2001–2022), head of the department of mathematics (2001–2014) türkiye ismihan.bayramoglu@ieu.edu.tr mathematics tr prof.dr. ismihan.bayramoglu@ieu.edu.tr mathematics" data-email="ismihan.bayramoglu@ieu.edu.tr" data-ixtilas="Mathematics" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ismixan-bayramov.png" alt="Ismikhan Bayramov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#ismixan-bayramov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/ismixan-bayramov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ISMIKHAN BAYRAMOV <span class="cred">Prof. Dr.</span></span>
@@ -1845,8 +2191,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="makbule sabziyeva prof. dr. prof.dr. head of the department of russian language and literature of anadolu university türkiye makbulesabziyeva@anadolu.edu.tr philology tr prof.dr. makbulesabziyeva@anadolu.edu.tr philology" data-email="makbulesabziyeva@anadolu.edu.tr" data-ixtilas="Philology" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/meqbule-sebziyeva.png" alt="Makbule Sabziyeva" loading="lazy"/></div>
+<div class="card" id="meqbule-sebziyeva" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="makbule sabziyeva prof. dr. prof.dr. head of the department of russian language and literature of anadolu university türkiye makbulesabziyeva@anadolu.edu.tr philology tr prof.dr. makbulesabziyeva@anadolu.edu.tr philology" data-email="makbulesabziyeva@anadolu.edu.tr" data-ixtilas="Philology" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/meqbule-sebziyeva.png" alt="Makbule Sabziyeva" loading="lazy"/></div>
+    <a class="card-qr-link" href="#meqbule-sebziyeva" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/meqbule-sebziyeva.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MAKBULE SABZIYEVA <span class="cred">Prof. Dr.</span></span>
@@ -1861,8 +2212,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="mehdi ismayilov (genceli) prof. dr. prof.dr. docent of marmara university türkiye mehdi.genceli@marmara.edu.tr turkish language and literature tr prof.dr. mehdi.genceli@marmara.edu.tr turkish language and literature" data-email="mehdi.genceli@marmara.edu.tr" data-ixtilas="Turkish language and literature" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mehdi-genceli-ismayilov.png" alt="Mehdi Ismayilov (Genceli)" loading="lazy"/></div>
+<div class="card" id="mehdi-genceli-ismayilov" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="mehdi ismayilov (genceli) prof. dr. prof.dr. docent of marmara university türkiye mehdi.genceli@marmara.edu.tr turkish language and literature tr prof.dr. mehdi.genceli@marmara.edu.tr turkish language and literature" data-email="mehdi.genceli@marmara.edu.tr" data-ixtilas="Turkish language and literature" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mehdi-genceli-ismayilov.png" alt="Mehdi Ismayilov (Genceli)" loading="lazy"/></div>
+    <a class="card-qr-link" href="#mehdi-genceli-ismayilov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/mehdi-genceli-ismayilov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MEHDI ISMAYILOV (GENCELI) <span class="cred">Prof. Dr.</span></span>
@@ -1877,8 +2233,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="mehmet riza heyet ph.d. phd teacher of ankara university&#x27;s department of contemporary turkish dialects and literatures türkiye mrheyet@gmail.com turkish language and literature tr phd mrheyet@gmail.com turkish language and literature" data-email="mrheyet@gmail.com" data-ixtilas="Turkish language and literature" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mehmet-riza-heyet.png" alt="Mehmet Riza Heyet" loading="lazy"/></div>
+<div class="card" id="mehmet-riza-heyet" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="mehmet riza heyet ph.d. phd teacher of ankara university&#x27;s department of contemporary turkish dialects and literatures türkiye mrheyet@gmail.com turkish language and literature tr phd mrheyet@gmail.com turkish language and literature" data-email="mrheyet@gmail.com" data-ixtilas="Turkish language and literature" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/mehmet-riza-heyet.png" alt="Mehmet Riza Heyet" loading="lazy"/></div>
+    <a class="card-qr-link" href="#mehmet-riza-heyet" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/mehmet-riza-heyet.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MEHMET RIZA HEYET <span class="cred">Ph.D.</span></span>
@@ -1893,8 +2254,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="oruc allahverdiyev ph.d. phd bolu abant izzet baysal university faculty of medicine, department of pharmacology, educational coordinator türkiye orucfarm@gmail.com pharmacology tr phd orucfarm@gmail.com pharmacology" data-email="orucfarm@gmail.com" data-ixtilas="Pharmacology" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/oruc-allahverdiyev.png" alt="Oruc Allahverdiyev" loading="lazy"/></div>
+<div class="card" id="oruc-allahverdiyev" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="oruc allahverdiyev ph.d. phd bolu abant izzet baysal university faculty of medicine, department of pharmacology, educational coordinator türkiye orucfarm@gmail.com pharmacology tr phd orucfarm@gmail.com pharmacology" data-email="orucfarm@gmail.com" data-ixtilas="Pharmacology" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/oruc-allahverdiyev.png" alt="Oruc Allahverdiyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#oruc-allahverdiyev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/oruc-allahverdiyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ORUC ALLAHVERDIYEV <span class="cred">Ph.D.</span></span>
@@ -1909,8 +2275,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="gafar mehdiyev (chakhmatchi) prof. dr. prof.dr. erciyes university (kayseri) faculty of literature, head of the department of armenian language and culture türkiye qafar56@gmail.com armenian studies tr prof.dr. qafar56@gmail.com armenian studies" data-email="qafar56@gmail.com" data-ixtilas="Armenian studies" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/qafar-caxmaqli-mehdiyev.png" alt="Gafar Mehdiyev (Chakhmatchi)" loading="lazy"/></div>
+<div class="card" id="qafar-caxmaqli-mehdiyev" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="gafar mehdiyev (chakhmatchi) prof. dr. prof.dr. erciyes university (kayseri) faculty of literature, head of the department of armenian language and culture türkiye qafar56@gmail.com armenian studies tr prof.dr. qafar56@gmail.com armenian studies" data-email="qafar56@gmail.com" data-ixtilas="Armenian studies" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/qafar-caxmaqli-mehdiyev.png" alt="Gafar Mehdiyev (Chakhmatchi)" loading="lazy"/></div>
+    <a class="card-qr-link" href="#qafar-caxmaqli-mehdiyev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/qafar-caxmaqli-mehdiyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">GAFAR MEHDIYEV (CHAKHMATCHI) <span class="cred">Prof. Dr.</span></span>
@@ -1925,8 +2296,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="ramin aliyev prof. dr. prof.dr. hasan kalyoncu university, cafe director türkiye aliyevus@gmail.com psychology tr prof.dr. aliyevus@gmail.com psychology" data-email="aliyevus@gmail.com" data-ixtilas="Psychology" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ramin-eliyev.png" alt="Ramin Aliyev" loading="lazy"/></div>
+<div class="card" id="ramin-eliyev" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="ramin aliyev prof. dr. prof.dr. hasan kalyoncu university, cafe director türkiye aliyevus@gmail.com psychology tr prof.dr. aliyevus@gmail.com psychology" data-email="aliyevus@gmail.com" data-ixtilas="Psychology" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/ramin-eliyev.png" alt="Ramin Aliyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#ramin-eliyev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/ramin-eliyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">RAMIN ALIYEV <span class="cred">Prof. Dr.</span></span>
@@ -1941,8 +2317,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="shahin ahmedoglu prof. dr. prof.dr. kilis 7 aralik university, kilisli muallim rıfat dean of the faculty of education türkiye sehmetoglu@hotmail.com history tr prof.dr. sehmetoglu@hotmail.com history" data-email="sehmetoglu@hotmail.com" data-ixtilas="History" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sahin-ehmedoglu.png" alt="Shahin Ahmedoglu" loading="lazy"/></div>
+<div class="card" id="sahin-ehmedoglu" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="shahin ahmedoglu prof. dr. prof.dr. kilis 7 aralik university, kilisli muallim rıfat dean of the faculty of education türkiye sehmetoglu@hotmail.com history tr prof.dr. sehmetoglu@hotmail.com history" data-email="sehmetoglu@hotmail.com" data-ixtilas="History" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/sahin-ehmedoglu.png" alt="Shahin Ahmedoglu" loading="lazy"/></div>
+    <a class="card-qr-link" href="#sahin-ehmedoglu" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/sahin-ehmedoglu.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SHAHIN AHMEDOGLU <span class="cred">Prof. Dr.</span></span>
@@ -1957,8 +2338,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="saleh sultansoy prof. dr. prof.dr. university of economics and technology of the union of chambers and exchanges of turkey (tobb). türkiye ssultansoy@etu.edu.tr physics tr prof.dr. ssultansoy@etu.edu.tr physics" data-email="ssultansoy@etu.edu.tr" data-ixtilas="Physics" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/saleh-sultansoy.png" alt="Saleh Sultansoy" loading="lazy"/></div>
+<div class="card" id="saleh-sultansoy" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="saleh sultansoy prof. dr. prof.dr. university of economics and technology of the union of chambers and exchanges of turkey (tobb). türkiye ssultansoy@etu.edu.tr physics tr prof.dr. ssultansoy@etu.edu.tr physics" data-email="ssultansoy@etu.edu.tr" data-ixtilas="Physics" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/saleh-sultansoy.png" alt="Saleh Sultansoy" loading="lazy"/></div>
+    <a class="card-qr-link" href="#saleh-sultansoy" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/saleh-sultansoy.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">SALEH SULTANSOY <span class="cred">Prof. Dr.</span></span>
@@ -1973,8 +2359,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="teymur rzayev prof. dr. prof.dr. member of waas board of directors, honored artist of the republic of azerbaijan, yeditepe university of the republic of turkey, faculty of fine arts, teacher of plastic arts-painting department türkiye teymurrr@gmail.com artist tr prof.dr. teymurrr@gmail.com artist" data-email="teymurrr@gmail.com" data-ixtilas="Artist" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/teymur-rzayev.png" alt="Teymur Rzayev" loading="lazy"/></div>
+<div class="card" id="teymur-rzayev" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="teymur rzayev prof. dr. prof.dr. member of waas board of directors, honored artist of the republic of azerbaijan, yeditepe university of the republic of turkey, faculty of fine arts, teacher of plastic arts-painting department türkiye teymurrr@gmail.com artist tr prof.dr. teymurrr@gmail.com artist" data-email="teymurrr@gmail.com" data-ixtilas="Artist" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/teymur-rzayev.png" alt="Teymur Rzayev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#teymur-rzayev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/teymur-rzayev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">TEYMUR RZAYEV <span class="cred">Prof. Dr.</span></span>
@@ -1989,8 +2380,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="togrul ismayil prof. dr. prof.dr. waas board member, türkiye togrul65@hotmail.com political history tr prof.dr. togrul65@hotmail.com political history" data-email="togrul65@hotmail.com" data-ixtilas="Political history" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/togrul-ismayil.png" alt="Togrul Ismayil" loading="lazy"/></div>
+<div class="card" id="togrul-ismayil" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="togrul ismayil prof. dr. prof.dr. waas board member, türkiye togrul65@hotmail.com political history tr prof.dr. togrul65@hotmail.com political history" data-email="togrul65@hotmail.com" data-ixtilas="Political history" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/togrul-ismayil.png" alt="Togrul Ismayil" loading="lazy"/></div>
+    <a class="card-qr-link" href="#togrul-ismayil" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/togrul-ismayil.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">TOGRUL ISMAYIL <span class="cred">Prof. Dr.</span></span>
@@ -2005,8 +2401,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="varga kalantarov ph.d. phd hacettepe university, koç university türkiye vkalantarov@ku.edu.tr mathematics tr phd vkalantarov@ku.edu.tr mathematics" data-email="vkalantarov@ku.edu.tr" data-ixtilas="Mathematics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/varqa-kelenterov.png" alt="Varga Kalantarov" loading="lazy"/></div>
+<div class="card" id="varqa-kelenterov" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="varga kalantarov ph.d. phd hacettepe university, koç university türkiye vkalantarov@ku.edu.tr mathematics tr phd vkalantarov@ku.edu.tr mathematics" data-email="vkalantarov@ku.edu.tr" data-ixtilas="Mathematics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/varqa-kelenterov.png" alt="Varga Kalantarov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#varqa-kelenterov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/varqa-kelenterov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">VARGA KALANTAROV <span class="cred">Ph.D.</span></span>
@@ -2021,8 +2422,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Türkiye" data-country="tr" data-search="vefa gurban prof. dr. prof.dr. ege university institute of turkish world studies türkiye vefa.kurban@ege.edu.tr economics tr prof.dr. vefa.kurban@ege.edu.tr economics" data-email="vefa.kurban@ege.edu.tr" data-ixtilas="Economics" data-degree="Prof.Dr.">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/vefa-qurban.png" alt="Vefa Gurban" loading="lazy"/></div>
+<div class="card" id="vefa-qurban" tabindex="-1" data-country-name="Türkiye" data-country="tr" data-search="vefa gurban prof. dr. prof.dr. ege university institute of turkish world studies türkiye vefa.kurban@ege.edu.tr economics tr prof.dr. vefa.kurban@ege.edu.tr economics" data-email="vefa.kurban@ege.edu.tr" data-ixtilas="Economics" data-degree="Prof.Dr.">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/vefa-qurban.png" alt="Vefa Gurban" loading="lazy"/></div>
+    <a class="card-qr-link" href="#vefa-qurban" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/vefa-qurban.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">VEFA GURBAN <span class="cred">Prof. Dr.</span></span>
@@ -2037,8 +2443,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Ukraine" data-country="ua" data-search="arif guliyev ph.d. phd member of the academic council at the kyiv university of intellectual property and law of the national university &quot;odessa law academy&quot;, professor of the department of constitution, international law and public-legal sciences, doctor of law, professor, diplomat, honored education worker of ukraine, academician of the higher education ministry of ukraine, head of the public organizations &quot;council of scientists of azerbaijanis of ukraine&quot; and &quot;institute of people&#x27;s diplomacy&quot; ukraine arifguliyev@ukr.net international law ua phd arifguliyev@ukr.net international law" data-email="arifguliyev@ukr.net" data-ixtilas="International law" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/arif-quliyev.png" alt="Arif Guliyev" loading="lazy"/></div>
+<div class="card" id="arif-quliyev" tabindex="-1" data-country-name="Ukraine" data-country="ua" data-search="arif guliyev ph.d. phd member of the academic council at the kyiv university of intellectual property and law of the national university &quot;odessa law academy&quot;, professor of the department of constitution, international law and public-legal sciences, doctor of law, professor, diplomat, honored education worker of ukraine, academician of the higher education ministry of ukraine, head of the public organizations &quot;council of scientists of azerbaijanis of ukraine&quot; and &quot;institute of people&#x27;s diplomacy&quot; ukraine arifguliyev@ukr.net international law ua phd arifguliyev@ukr.net international law" data-email="arifguliyev@ukr.net" data-ixtilas="International law" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/arif-quliyev.png" alt="Arif Guliyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#arif-quliyev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/arif-quliyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ARIF GULIYEV <span class="cred">Ph.D.</span></span>
@@ -2053,8 +2464,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Ukraine" data-country="ua" data-search="eldar veliyev ph.d. phd vice-rector for scientific and pedagogical affairs of kharkiv polytechnic institute of the national technical university of ukraine (ntu &quot;kpi&quot;) ukraine veliev51@gmail.com engineering ua phd veliev51@gmail.com engineering" data-email="veliev51@gmail.com" data-ixtilas="Engineering" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eldar-veliyev.png" alt="Eldar Veliyev" loading="lazy"/></div>
+<div class="card" id="eldar-veliyev" tabindex="-1" data-country-name="Ukraine" data-country="ua" data-search="eldar veliyev ph.d. phd vice-rector for scientific and pedagogical affairs of kharkiv polytechnic institute of the national technical university of ukraine (ntu &quot;kpi&quot;) ukraine veliev51@gmail.com engineering ua phd veliev51@gmail.com engineering" data-email="veliev51@gmail.com" data-ixtilas="Engineering" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/eldar-veliyev.png" alt="Eldar Veliyev" loading="lazy"/></div>
+    <a class="card-qr-link" href="#eldar-veliyev" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/eldar-veliyev.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">ELDAR VELIYEV <span class="cred">Ph.D.</span></span>
@@ -2069,8 +2485,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Ukraine" data-country="ua" data-search="murad omerov ph.d. phd vice-rector for international cooperation, kharkiv national university of radioelectronics, academician of the ukrainian academy of applied radioelectronic sciences ukraine murad.omarov@nure.ua engineering ua phd murad.omarov@nure.ua engineering" data-email="murad.omarov@nure.ua" data-ixtilas="Engineering" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/murad-omerov.png" alt="Murad Omerov" loading="lazy"/></div>
+<div class="card" id="murad-omerov" tabindex="-1" data-country-name="Ukraine" data-country="ua" data-search="murad omerov ph.d. phd vice-rector for international cooperation, kharkiv national university of radioelectronics, academician of the ukrainian academy of applied radioelectronic sciences ukraine murad.omarov@nure.ua engineering ua phd murad.omarov@nure.ua engineering" data-email="murad.omarov@nure.ua" data-ixtilas="Engineering" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/murad-omerov.png" alt="Murad Omerov" loading="lazy"/></div>
+    <a class="card-qr-link" href="#murad-omerov" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/murad-omerov.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">MURAD OMEROV <span class="cred">Ph.D.</span></span>
@@ -2085,8 +2506,13 @@ a.card-name:focus-visible {
   </div>
 </div>
 
-<div class="card" data-country-name="Japan" data-country="jp" data-search="khalil kelenter ph.d. phd senior researcher for global optical solutions and kepler projects japan gosx2020@gmail.com physics jp phd gosx2020@gmail.com physics" data-email="gosx2020@gmail.com" data-ixtilas="Physics" data-degree="PhD">
-  <div class="card-avatar card-photo"><img src="../../images/scientists-photos/xelil-kelenter.png" alt="Khalil Kelenter" loading="lazy"/></div>
+<div class="card" id="xelil-kelenter" tabindex="-1" data-country-name="Japan" data-country="jp" data-search="khalil kelenter ph.d. phd senior researcher for global optical solutions and kepler projects japan gosx2020@gmail.com physics jp phd gosx2020@gmail.com physics" data-email="gosx2020@gmail.com" data-ixtilas="Physics" data-degree="PhD">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="../../images/scientists-photos/xelil-kelenter.png" alt="Khalil Kelenter" loading="lazy"/></div>
+    <a class="card-qr-link" href="#xelil-kelenter" title="Link to this scientist&#x27;s profile page" aria-label="QR code for profile link">
+      <img class="card-qr" src="../../images/qr/en/xelil-kelenter.png?v=1" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">KHALIL KELENTER <span class="cred">Ph.D.</span></span>
@@ -2112,7 +2538,8 @@ a.card-name:focus-visible {
 </main>
 <script src="../../js/scientists-catalog-data-en.js?v=2"></script>
 <script src="../../js/daab-collation.js?v=1"></script>
-<script src="../../js/scientists-cv-filters.js?v=12" defer></script>
+<script src="../../js/daab-scientists-toolbar-mobile.js?v=3"></script>
+<script src="../../js/scientists-cv-filters.js?v=20" defer></script>
 <script src="../../js/daab-profile-tts.js?v=8" defer></script>
 
 <footer class="footer-pro">
@@ -2134,13 +2561,12 @@ a.card-name:focus-visible {
       <div class="footer-col">
         <h4 class="footer-title">Leadership</h4>
         <p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>
-        Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p>
+        Chair of the WAAS Board of Directors<br/>Germany — James D. Murray Distinguished Professor</p>
       </div>
     </div>
   </div>
   <div class="footer-bottom">© 2026 WAAS — All Rights Reserved</div>
 </footer>
 
-<script src="../../js/daab-search.js?v=1" defer></script>
 </body>
 </html>

@@ -28,7 +28,7 @@ HOME_REPLACEMENTS: list[tuple[str, str]] = [
             </span>""",
     ),
     ("Alimlərimizlə tanış olun", "Meet our scientists"),
-    ("DAAB-a üzv olun", "Join WAAS"),
+    ("Birliyimizə üzv olun", "Join our Association"),
     ('aria-label="DAAB qısa məlumat"', 'aria-label="WAAS summary"'),
     (
         """              Beynəlxalq Elmi Şəbəkələşmə və Əməkdaşlıq
@@ -37,13 +37,13 @@ HOME_REPLACEMENTS: list[tuple[str, str]] = [
             """,
     ),
     (
-        "Dünya Azərbaycanlı Alimlər Birliyi akademik potensialı vahid şəbəkəyə çevirir, universitetlər, tədqiqat mərkəzləri və beynəlxalq tərəfdaşlarla davamlı əlaqələr yaradır.",
-        "The World Association of Azerbaijani Scientists connects academic potential into a unified network, building lasting relationships with universities, research centres and international partners.",
+        "Dünya Azərbaycanlı Alimlər Birliyi (DAAB) akademik potensialı vahid şəbəkəyə çevirir, universitetlər, tədqiqat mərkəzləri və beynəlxalq tərəfdaşlarla davamlı əlaqələr yaradır.",
+        "The World Association of Azerbaijani Scientists (WAAS) connects academic potential into a unified network, building lasting relationships with universities, research centres and international partners.",
     ),
     (
-        """            Dünya Azərbaycanlı Alimlər Birliyi (DAAB) ilə tanış olun
+        """            Dünya Azərbaycanlı Alimlər Birliyi ilə tanış olun
           """,
-        """            Discover the World Association of Azerbaijani Scientists (WAAS)
+        """            Discover the World Association of Azerbaijani Scientists
           """,
     ),
     (
@@ -98,8 +98,8 @@ HOME_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     ("Siyahı", "Directory"),
     ("Kataloq", "Directory"),
-    ('data-title="İdarə Heyəti rəhbərlik"', 'data-title="Executive Board leadership"'),
-    ("İdarə Heyəti", "Executive Board"),
+    ('data-title="İdarə Heyəti rəhbərlik"', 'data-title="Board of Directors leadership"'),
+    ("İdarə Heyəti", "Board of Directors"),
     (
         "DAAB rəhbərliyi, idarə heyəti üzvləri, bioqrafiyalar, akademik titullar və əlaqə məlumatları.",
         "WAAS leadership, executive board members, biographies, academic titles and contact details.",
@@ -134,6 +134,6 @@ HOME_REPLACEMENTS: list[tuple[str, str]] = [
     ("Ünvan", "Address"),
     ("Türkiyə", "Türkiye"),
     ("Rəhbərlik", "Leadership"),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Board of Directors"),
     ("Prof. Dr. Məsud Əfəndiyev", "Prof. Dr. Messoud Efendiyev"),
 ]

@@ -337,6 +337,8 @@ Today the site is **static HTML + CSS + JS** (no bundler). That is fine if disci
 ## Related files
 
 - `README.md` — quick start  
+- `documents/DAAB-Deployment-and-Change-Tracking-Guide.md` — identify changed files and selective deploy workflow  
+- `documents/DAAB-Site-Audit-and-Cleanup-Report.md` — latest audit, baseline asset versions, known follow-ups  
 - `documents/DAAB-Site-Python-and-JavaScript-Files.md` — scripts reference  
 - `.cursor/rules/daab-file-organization.mdc` — where to put new files  
 - `helpers/_validate_site.py` — automated link/path checks  

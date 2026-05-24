@@ -10,9 +10,12 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
-<link href="../../css/daab-common.css?v=18" rel="stylesheet"/>
-<link href="../../css/daab-mobile.css?v=3" rel="stylesheet"/>
-<link href="../../css/scientists-catalog-toolbar.css?v=6" rel="stylesheet"/>
+<link href="../../css/daab-common.css?v=23" rel="stylesheet"/>
+<link href="../../css/daab-mobile.css?v=5" rel="stylesheet"/>
+<link href="../../css/daab-search.css?v=1" rel="stylesheet"/>
+<link href="../../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
+<link href="../../css/scientists-catalog-toolbar.css?v=9" rel="stylesheet"/>
+<link href="../../css/scientists-list-preview.css?v=2" rel="stylesheet"/>
 <style>
 /* Scientists catalogue page styles */
 :root {
@@ -338,11 +341,6 @@ a.email-link:focus-visible {
     padding: 42px 18px 34px;
   }
   .main { padding: 18px 16px 48px; }
-  .toolbar { padding: 16px; }
-  .filter-group,
-  .sel-wrap,
-  select,
-  .btn-clear { width: 100%; }
   .col-spec,
   .col-degree { display: none; }
   table { min-width: 560px; }
@@ -352,24 +350,20 @@ a.email-link:focus-visible {
 </style>
 <link href="../../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
   <script src="../../js/daab-mobile.js?v=1" defer></script>
-<link href="../../css/daab-lang.css?v=7" rel="stylesheet"/>
-<link href="../../css/daab-nav-mega.css?v=11" rel="stylesheet"/>
-<script src="../../js/daab-i18n.js?v=11" defer></script>
-<script src="../../js/daab-lang-position.js?v=3" defer></script>
-<script src="../../js/daab-nav.js?v=7" defer></script>
+<script src="../../js/daab-back-to-top.js?v=2" defer></script>
+<link href="../../css/daab-lang.css?v=9" rel="stylesheet"/>
+<link href="../../css/daab-nav-mega.css?v=12" rel="stylesheet"/>
+<script src="../../js/daab-i18n.js?v=12" defer></script>
+<script src="../../js/daab-lang-position.js?v=6" defer></script>
+<script src="../../js/daab-nav.js?v=8" defer></script>
 <script src="../../js/daab-primary-nav.js?v=8" defer></script>
-<script src="../../js/daab-breadcrumbs.js?v=4" defer></script>
+<script src="../../js/daab-breadcrumbs.js?v=5" defer></script>
 <script src="../../js/daab-section-nav.js?v=4" defer></script>
-<script src="../../js/daab-shell.js?v=7" defer></script>
+<script src="../../js/daab-shell.js?v=10" defer></script>
+<script src="../../js/daab-search.js?v=3" defer></script>
 </head>
-<body><div aria-label="Search" aria-modal="true" id="search-overlay" role="dialog">
-<div class="search-modal">
-<div class="search-input-row"><span class="search-icon-large">🔍</span><input autocomplete="off" id="search-input" placeholder="Start typing to search…" spellcheck="false" type="text"/><button class="search-close-btn" id="search-close-btn">ESC</button></div>
-<div class="search-results" id="search-results"><div class="search-prompt">Enter text in the box above to search</div></div>
-<div class="search-hint"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> open</span><span><kbd>Esc</kbd> close</span></div>
-</div>
-</div><a class="skip" href="#content">Skip to content</a>
-<!-- ══ SEARCH OVERLAY ══ -->
+<body>
+<a class="skip" href="#content">Skip to content</a>
 <nav aria-label="Main navigation" class="nav-strip">
 <div class="nav-inner">
 <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button>
@@ -395,13 +389,18 @@ a.email-link:focus-visible {
 </div>
 </header>
 <main class="main" id="content">
-<div class="toolbar">
+<div class="toolbar catalog-toolbar">
+<div class="catalog-toolbar__head">
 <div class="search-wrap">
 <svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15">
 <circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line>
 </svg>
 <input autocomplete="off" id="searchInput" placeholder="Name, country, field, degree, email…" type="search" aria-label="Search scientists"/>
 </div>
+<button type="button" class="catalog-toolbar__toggle" aria-expanded="false" aria-controls="catalogFilterPanel" aria-label="Show filters"><svg class="catalog-toolbar__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 9v5l-4-2v-3L3 5z"/></svg><span class="catalog-toolbar__toggle-text">Filters</span><span class="catalog-toolbar__badge" hidden></span></button>
+</div>
+<div class="catalog-toolbar__panel" id="catalogFilterPanel">
+<div class="catalog-toolbar__panel-inner">
 <div class="filter-group">
 <span class="filter-icon-label" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 9v5l-4-2v-3L3 5z"/></svg><span>Filters</span></span>
 <div class="sel-wrap">
@@ -417,6 +416,8 @@ a.email-link:focus-visible {
 <button class="sel-clear" data-for="filterDegree" title="Clear filter">×</button>
 </div>
 <button class="btn-clear" id="clearFilters">Reset all</button>
+</div>
+</div>
 </div>
 </div>
 <div class="result-info result-info--catalog">
@@ -471,6 +472,7 @@ a.email-link:focus-visible {
 </main>
 <script src="../../js/scientists-catalog-data-en.js?v=2"></script>
 <script src="../../js/daab-collation.js?v=1"></script>
+<script src="../../js/scientists-list-preview.js?v=3"></script>
 <script>
 const DATA = window.SCIENTISTS_CATALOG_DATA || [];
 const azCompare = (a, b) => window.DAAB_COLLATION.compare(a, b);
@@ -518,6 +520,7 @@ function render(){
   const noRes=document.getElementById('noResults');
   if(!slice.length){tbody.innerHTML='';noRes.style.display='block';}
   else{noRes.style.display='none';tbody.innerHTML=slice.map((r,i)=>rowHTML(r,start+i+1)).join('');}
+  if(window.DAABScientistsListPreview) window.DAABScientistsListPreview.refresh();
   renderPagination(pages);
 }
 
@@ -526,7 +529,12 @@ function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').
 function rowHTML(r,idx){  const email=(r.email||'').trim();
   const deg=(r.elmi_derece||'').trim();
   const displayName = [r.ad_soyad, deg].map(v => (v || '').trim()).filter(Boolean).join(', ');
-  const nameCell = `${esc(displayName)||'—'}`;
+  const nameLabel = esc(displayName) || '—';
+  const sayAttr = r.say != null ? ` data-scientist-say="${esc(String(r.say))}"` : '';
+  const emailAttr = email ? ` data-scientist-email="${esc(email)}"` : '';
+  const nameCell = (email || r.say != null)
+    ? `<button type="button" class="scientist-name-trigger"${emailAttr}${sayAttr} aria-expanded="false">${nameLabel}</button>`
+    : nameLabel;
   return `<tr>
     <td class="col-no">${idx}</td>
     <td class="col-name">${nameCell}</td>
@@ -604,6 +612,7 @@ document.getElementById('clearFilters').addEventListener('click',()=>{
 document.querySelector('th[data-col="ad_soyad"]').classList.add('asc');
 
 applyFilters();
+if (window.DAABScientistsListPreview) window.DAABScientistsListPreview.refresh();
 
 </script>
 <!-- FOOTER -->
@@ -626,11 +635,11 @@ applyFilters();
       <div class="footer-col">
         <h4 class="footer-title">Leadership</h4>
         <p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>
-        Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p>
+        Chair of the WAAS Board of Directors<br/>Germany — James D. Murray Distinguished Professor</p>
       </div>
     </div>
   </div>
   <div class="footer-bottom">© 2026 WAAS — All Rights Reserved</div>
-</footer>
-<script src="../../js/daab-search.js?v=1" defer></script></body>
+</footer><script src="../../js/daab-scientists-toolbar-mobile.js?v=3"></script>
+</body>
 </html>

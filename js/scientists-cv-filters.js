@@ -19,6 +19,8 @@
       });
     };
 
+  var SORT_STORAGE_KEY = "daab-profiles-sort";
+
   var COUNTRY_NAME_TO_CODE = {
     "ABŞ": "abs",
     "Almaniya": "de",
@@ -66,12 +68,46 @@
         return card.dataset.countryName || "";
       case "ixtilas":
         return card.dataset.ixtilas || "";
-      case "degree":
-        return card.dataset.degree || "";
       case "name":
       default:
         return getCardName(card);
     }
+  }
+
+  function readSortState() {
+    try {
+      var raw = sessionStorage.getItem(SORT_STORAGE_KEY);
+      if (!raw) return null;
+      var s = JSON.parse(raw);
+      if (!s || typeof s !== "object") return null;
+      var col = s.sortCol;
+      var dir = s.sortDir;
+      if (col === "degree") {
+        col = "name";
+      }
+      if (col !== "name" && col !== "country" && col !== "ixtilas") {
+        return null;
+      }
+      if (dir !== 1 && dir !== -1) return null;
+      return { sortCol: col, sortDir: dir };
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function saveSortState(sortCol, sortDir) {
+    try {
+      sessionStorage.setItem(
+        SORT_STORAGE_KEY,
+        JSON.stringify({ sortCol: sortCol, sortDir: sortDir })
+      );
+    } catch (e) {
+      /* ignore */
+    }
+  }
+
+  function defaultSortState() {
+    return { sortCol: "name", sortDir: 1 };
   }
 
   function showAllCards(cards, resultCount, noResults) {
@@ -94,6 +130,33 @@
     if (filterDegree) filterDegree.value = "";
   }
 
+  function hashProfileId() {
+    if (window.DAAB_PROFILE_DEEPLINK && window.DAAB_PROFILE_DEEPLINK.hashId) {
+      return window.DAAB_PROFILE_DEEPLINK.hashId();
+    }
+    if (!location.hash) return "";
+    try {
+      return decodeURIComponent(location.hash.slice(1));
+    } catch (e) {
+      return location.hash.slice(1);
+    }
+  }
+
+  function spotlightCard(card) {
+    if (!card) return;
+    card.classList.remove("daab-profile-spotlight");
+    void card.offsetWidth;
+    card.classList.add("daab-profile-spotlight");
+    card.addEventListener(
+      "animationend",
+      function onEnd() {
+        card.classList.remove("daab-profile-spotlight");
+        card.removeEventListener("animationend", onEnd);
+      },
+      { once: true }
+    );
+  }
+
   function init() {
     var searchInput = document.getElementById("searchInput");
     var filterCountry = document.getElementById("filterCountry");
@@ -110,13 +173,25 @@
     var sortBy = document.getElementById("sortBy");
     var sortAscBtn = document.getElementById("sortAscBtn");
     var sortDescBtn = document.getElementById("sortDescBtn");
-    var sortCol = sortBy ? sortBy.value : "name";
-    var sortDir = 1;
+    var savedSort = readSortState() || defaultSortState();
+    var sortCol = savedSort.sortCol;
+    var sortDir = savedSort.sortDir;
 
-    if (!cards.length) return;
+    function markProfilesReady() {
+      document.documentElement.classList.add("daab-profiles-ready");
+      document.documentElement.classList.remove("daab-profiles-boot");
+    }
+
+    if (!cards.length) {
+      markProfilesReady();
+      return;
+    }
 
     function updateSortDirUi() {
       var ascending = sortDir === 1;
+      if (sortBy && sortBy.value !== sortCol) {
+        sortBy.value = sortCol;
+      }
       if (sortAscBtn) {
         sortAscBtn.classList.toggle("is-active", ascending);
         sortAscBtn.setAttribute("aria-pressed", ascending ? "true" : "false");
@@ -127,10 +202,11 @@
       }
     }
 
-    function setSortDir(dir) {
-      sortDir = dir === -1 ? -1 : 1;
-      updateSortDirUi();
-      reorderCards();
+    function compareCards(a, b) {
+      var primary =
+        sortDir * localeCompare(getSortValue(a, sortCol), getSortValue(b, sortCol));
+      if (primary !== 0) return primary;
+      return sortDir * localeCompare(a.id || "", b.id || "");
     }
 
     function reorderCards() {
@@ -144,12 +220,7 @@
       });
 
       function sortList(list) {
-        list.sort(function (a, b) {
-          return (
-            sortDir *
-            localeCompare(getSortValue(a, sortCol), getSortValue(b, sortCol))
-          );
-        });
+        list.sort(compareCards);
       }
 
       sortList(visible);
@@ -159,11 +230,78 @@
       });
     }
 
-    /* Always restore full catalogue on load */
+    function applySortState(nextCol, nextDir, persist) {
+      sortCol = nextCol === "degree" ? "name" : nextCol || "name";
+      sortDir = nextDir === -1 ? -1 : 1;
+      if (persist !== false) {
+        saveSortState(sortCol, sortDir);
+      }
+      updateSortDirUi();
+      reorderCards();
+    }
+
+    function setSortDir(dir) {
+      applySortState(sortCol, dir === -1 ? -1 : 1, true);
+    }
+
+    /* Restore filters, apply default A→Z (or saved sort), then reveal catalogue */
     showAllCards(cards, resultCount, noResults);
     clearFilterInputs(searchInput, filterCountry, filterIxtilas, filterDegree);
-    updateSortDirUi();
-    reorderCards();
+    applySortState(sortCol, sortDir, false);
+
+    function revealProfileById(id) {
+      if (!id) return false;
+      if (window.DAAB_PROFILE_DEEPLINK && window.DAAB_PROFILE_DEEPLINK.focusProfile) {
+        return window.DAAB_PROFILE_DEEPLINK.focusProfile(id);
+      }
+      var card = document.getElementById(id);
+      if (!card || !card.classList.contains("card")) return false;
+
+      clearFilterInputs(searchInput, filterCountry, filterIxtilas, filterDegree);
+      showAllCards(cards, resultCount, noResults);
+
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () {
+          var target = document.getElementById(id);
+          if (!target) return;
+          var root = document.documentElement;
+          var prevInline = root.style.scrollBehavior;
+          root.style.scrollBehavior = "auto";
+          var nav = document.querySelector(".nav-strip");
+          var navH = nav ? nav.getBoundingClientRect().height : 86;
+          var top =
+            target.getBoundingClientRect().top + window.pageYOffset - navH - 20;
+          window.scrollTo({ top: Math.max(0, top), behavior: "auto" });
+          window.requestAnimationFrame(function () {
+            root.style.scrollBehavior = prevInline;
+          });
+          spotlightCard(target);
+        });
+      });
+      return true;
+    }
+
+    function handleProfileHash() {
+      return revealProfileById(hashProfileId());
+    }
+
+    window.addEventListener("hashchange", function () {
+      if (window.DAAB_PROFILE_DEEPLINK && window.DAAB_PROFILE_DEEPLINK.scheduleFocus) {
+        window.DAAB_PROFILE_DEEPLINK.scheduleFocus();
+        return;
+      }
+      handleProfileHash();
+    });
+
+    document.dispatchEvent(new CustomEvent("daab-profiles-catalog-ready"));
+    if (window.DAAB_PROFILE_DEEPLINK && window.DAAB_PROFILE_DEEPLINK.scheduleFocus) {
+      window.DAAB_PROFILE_DEEPLINK.scheduleFocus();
+    } else if (handleProfileHash()) {
+      document.dispatchEvent(new CustomEvent("daab-profile-focused"));
+      markProfilesReady();
+    } else {
+      markProfilesReady();
+    }
 
     if (!searchInput || !filterCountry) return;
 
@@ -285,11 +423,8 @@
     }
 
     function resetSort() {
-      sortCol = "name";
-      sortDir = 1;
-      if (sortBy) sortBy.value = "name";
-      updateSortDirUi();
-      reorderCards();
+      var defaults = defaultSortState();
+      applySortState(defaults.sortCol, defaults.sortDir, true);
     }
 
     searchInput.addEventListener("input", applyFilters);
@@ -308,8 +443,7 @@
 
     if (sortBy) {
       sortBy.addEventListener("change", function () {
-        sortCol = sortBy.value;
-        reorderCards();
+        applySortState(sortBy.value, sortDir, true);
       });
     }
 
@@ -341,6 +475,11 @@
     }
 
     updateFilterStyles();
+
+    if (window.DAAB_SCIENTISTS_TOOLBAR && window.DAAB_SCIENTISTS_TOOLBAR.syncAll) {
+      window.DAAB_SCIENTISTS_TOOLBAR.syncAll();
+    }
+    document.dispatchEvent(new CustomEvent("daab-scientists-catalog-ready"));
   }
 
   if (document.readyState === "loading") {

@@ -25,7 +25,7 @@ CHARTER_REPLACEMENTS: list[tuple[str, str]] = [
     ("Ünvan", "Address"),
     ("Türkiyə", "Türkiye"),
     ("Rəhbərlik", "Leadership"),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Board of Directors"),
     ("Axtarış", "Search"),
     ("Axtarış üçün yazmağa başlayın…", "Start typing to search…"),
     ("Axtarmaq üçün yuxarıdakı xanaya mətn daxil edin", "Enter text in the box above to search"),

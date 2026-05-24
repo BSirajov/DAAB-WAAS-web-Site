@@ -9,8 +9,10 @@
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
-    <link href="../css/daab-common.css?v=18" rel="stylesheet"/>
-<link href="../css/daab-mobile.css?v=3" rel="stylesheet"/>
+    <link href="../css/daab-common.css?v=23" rel="stylesheet"/>
+<link href="../css/daab-mobile.css?v=5" rel="stylesheet"/>
+<link href="../css/daab-search.css?v=1" rel="stylesheet"/>
+<link href="../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
     <style>
 .hero {
   position: relative;
@@ -146,7 +148,7 @@
 
 .section-block {
   margin-top: 28px;
-  scroll-margin-top: 110px;
+  scroll-margin-top: calc(var(--daab-nav-height, 86px) + 1.25rem);
 }
 
 .section-heading {
@@ -745,15 +747,17 @@
 
 <link href="../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=1" defer></script>
-<link href="../css/daab-lang.css?v=7" rel="stylesheet"/>
-<link href="../css/daab-nav-mega.css?v=11" rel="stylesheet"/>
-<script src="../js/daab-i18n.js?v=11" defer></script>
-<script src="../js/daab-lang-position.js?v=3" defer></script>
-<script src="../js/daab-nav.js?v=7" defer></script>
+<script src="../js/daab-back-to-top.js?v=2" defer></script>
+<link href="../css/daab-lang.css?v=9" rel="stylesheet"/>
+<link href="../css/daab-nav-mega.css?v=12" rel="stylesheet"/>
+<script src="../js/daab-i18n.js?v=12" defer></script>
+<script src="../js/daab-lang-position.js?v=6" defer></script>
+<script src="../js/daab-nav.js?v=8" defer></script>
 <script src="../js/daab-primary-nav.js?v=8" defer></script>
-<script src="../js/daab-breadcrumbs.js?v=4" defer></script>
+<script src="../js/daab-breadcrumbs.js?v=5" defer></script>
 <script src="../js/daab-section-nav.js?v=4" defer></script>
-<script src="../js/daab-shell.js?v=7" defer></script>
+<script src="../js/daab-shell.js?v=10" defer></script>
+<script src="../js/daab-search.js?v=3" defer></script>
 </head>
   <body>
     <a class="skip" href="#content">
@@ -1516,7 +1520,7 @@
       <div class="footer-col">
         <h4 class="footer-title">Leadership</h4>
         <p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>
-        Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p>
+        Chair of the WAAS Board of Directors<br/>Germany — James D. Murray Distinguished Professor</p>
       </div>
     </div>
   </div>

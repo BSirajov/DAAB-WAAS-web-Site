@@ -10,6 +10,7 @@
   var routesCache = null;
   var uiCache = null;
   var navCache = null;
+  var searchIndexCache = null;
 
   function assetRoot() {
     var root = document.documentElement.getAttribute("data-daab-asset-root");
@@ -91,8 +92,16 @@
   function loadUi() {
     if (uiCache) return Promise.resolve(uiCache);
     UI_URL = UI_URL || i18nUrl("ui.json");
-    return fetchJson(UI_URL + "?v=7").then(function (data) {
+    return fetchJson(UI_URL + "?v=8").then(function (data) {
       uiCache = data;
+      return data;
+    });
+  }
+
+  function loadSearchIndex() {
+    if (searchIndexCache) return Promise.resolve(searchIndexCache);
+    return fetchJson(i18nUrl("search-index.json") + "?v=1").then(function (data) {
+      searchIndexCache = data;
       return data;
     });
   }
@@ -232,6 +241,7 @@
     loadRoutes: loadRoutes,
     loadUi: loadUi,
     loadNav: loadNav,
+    loadSearchIndex: loadSearchIndex,
     pageHref: pageHref,
     getPageId: getPageId,
     getAlternateUrl: getAlternateUrl,

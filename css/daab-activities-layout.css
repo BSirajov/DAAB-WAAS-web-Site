@@ -1,0 +1,76 @@
+/**
+ * Activities page — charter-aligned sticky events column.
+ * Sticky is on the grid item (.sidebar), not a nested child, so the panel
+ * stays in view while the news feed scrolls (see az/charter.html .toc-card).
+ */
+html[data-daab-page-id="activities"] .content-wrap {
+  display: grid !important;
+  align-items: start !important;
+  overflow: visible !important;
+}
+
+html[data-daab-page-id="activities"] .news-feed {
+  min-width: 0 !important;
+}
+
+/* Desktop: grid-item sticky sidebar */
+@media (min-width: 1061px) {
+  html[data-daab-page-id="activities"] .sidebar {
+    position: sticky !important;
+    top: calc(var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) + 12px) !important;
+    align-self: start !important;
+    width: 100% !important;
+    max-height: calc(100vh - var(--daab-nav-height, 86px) - 28px) !important;
+    overflow: visible !important;
+    z-index: 20 !important;
+  }
+
+  html[data-daab-page-id="activities"] .sidebar-widget {
+    position: static !important;
+    top: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-height: calc(100vh - var(--daab-nav-height, 86px) - 28px) !important;
+    overflow: hidden !important;
+  }
+
+  html[data-daab-page-id="activities"] .sidebar-widget .widget-head {
+    flex: 0 0 auto !important;
+  }
+
+  html[data-daab-page-id="activities"] .sidebar-widget .widget-body {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Tablet / mobile: stacked layout, collapsible panel (no sticky) */
+@media (max-width: 1060px) {
+  html[data-daab-page-id="activities"] .content-wrap {
+    align-items: start !important;
+  }
+
+  html[data-daab-page-id="activities"] .sidebar {
+    position: static !important;
+    top: auto !important;
+    max-height: none !important;
+    width: 100% !important;
+    z-index: 4500 !important;
+  }
+
+  html[data-daab-page-id="activities"] .sidebar-widget {
+    position: static !important;
+    max-height: none !important;
+    display: block !important;
+  }
+
+  html[data-daab-page-id="activities"] .sidebar-widget .widget-body {
+    flex: none !important;
+  }
+}

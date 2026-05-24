@@ -4,363 +4,30 @@
 <!-- daab-en-complete -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-<title>WAAS — Executive Board</title>
-<meta content="Executive Board and leadership of the World Association of Azerbaijani Scientists." name="description"/>
+<title>WAAS — Board of Directors</title>
+<meta content="Board of Directors and leadership of the World Association of Azerbaijani Scientists." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
-<link href="../css/daab-common.css?v=18" rel="stylesheet"/>
-<link href="../css/daab-mobile.css?v=3" rel="stylesheet"/>
-<style>
-
-body {
-  font-size: 14px;
-  line-height: 1.58;
-}
-
-.hero {
-  position: relative;
-  overflow: hidden;
-  color: var(--ink);
-  background: #fff url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, .36);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, .18), rgba(255, 255, 255, 0));
-  opacity: .72;
-  mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
-}
-
-.hero-wrap {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1.12fr .88fr;
-  gap: 28px;
-  align-items: start;
-  padding: 28px 24px 36px;
-}
-
-.hero-copy {
-  max-width: 720px;
-}
-
-.hero-panel {
-  align-self: start;
-  padding: 0 18px 18px;
-  background: rgba(255, 255, 255, .12);
-  border: 1px solid rgba(255, 255, 255, .24);
-  border-radius: 26px;
-  box-shadow: 0 18px 50px rgba(0, 45, 82, .22);
-  backdrop-filter: blur(18px);
-}
-
-.panel-card {
-  padding: 18px 20px;
-  color: var(--ink);
-  background: rgba(255, 255, 255, .92);
-  border: 1px solid rgba(255, 255, 255, .62);
-  border-radius: 20px;
-}
-
-.panel-title {
-  margin: 0 0 8px;
-  color: #094d78;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 1.15;
-  text-align: center;
-}
-
-.panel-copy {
-  margin: 0;
-  color: #345d76;
-  font-size: 13px;
-  line-height: 1.48;
-}
-
-.hero h1 {
-  margin: 0;
-  color: #08263b;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(25px, 3.8vw, 46px);
-  line-height: 1.12;
-  letter-spacing: -.035em;
-  text-align: left;
-}
-
-
-.main {
-  position: relative;
-  z-index: 2;
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 26px 24px 70px;
-}
-
-.leader-layout {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  align-items: stretch;
-}
-
-.chair-card,
-.co-card,
-.person-card {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  overflow: hidden;
-  color: inherit;
-  text-decoration: none;
-  background: rgba(245, 251, 255, .96);
-  border: 1px solid #9ed6f5;
-  border-radius: 24px;
-  box-shadow: var(--shadow);
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-}
-
-.chair-card::before,
-.co-card::before,
-.person-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  opacity: 0;
-  background: linear-gradient(135deg, rgba(46, 159, 212, .12), transparent 52%, rgba(201, 155, 59, .13));
-  transition: opacity .25s ease;
-}
-
-.chair-card:hover,
-.co-card:hover,
-.person-card:hover {
-  transform: translateY(-7px);
-  border-color: var(--blue-400);
-  box-shadow: var(--shadow-strong);
-}
-
-.chair-card:hover::before,
-.co-card:hover::before,
-.person-card:hover::before {
-  opacity: 1;
-}
-
-.co-grid {
-  display: contents;
-}
-
-.chair-card,
-.co-card,
-.person-card {
-  min-height: 170px;
-}
-
-.photo-wrap {
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  flex: 0 0 auto;
-  padding: 12px;
-  background: linear-gradient(135deg, #eef7fc, #fff);
-  border-bottom: 1px solid rgba(0, 105, 180, .14);
-}
-
-.chair-card .photo-wrap,
-.co-card .photo-wrap,
-.person-card .photo-wrap {
-  width: 130px;
-  min-width: 130px;
-  align-self: stretch;
-  border-right: 1px solid rgba(0, 105, 180, .14);
-  border-bottom: 0;
-}
-
-.photo-wrap img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center center;
-}
-
-.person-body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  padding: 16px 18px;
-}
-
-.person-role {
-  width: max-content;
-  max-width: 100%;
-  margin-bottom: 10px;
-  padding: 5px 9px;
-  color: var(--blue-700);
-  background: #e5f4fb;
-  border: 1px solid rgba(0, 105, 180, .12);
-  border-radius: 999px;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-}
-
-.person-name {
-  margin: 0;
-  color: var(--blue-900);
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 17px;
-  font-weight: 800;
-  line-height: 1.15;
-}
-
-.person-extra {
-  margin-top: 7px;
-  color: var(--gold);
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.person-country {
-  margin-top: 7px;
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.section-label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 30px 0 18px;
-}
-
-.section-label h2 {
-  margin: 0;
-  padding: 7px 11px;
-  color: var(--blue-700);
-  background: #e5f4fb;
-  border: 1px solid rgba(0, 105, 180, .12);
-  border-radius: 999px;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.section-label::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--line);
-}
-
-.members-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-
-@media (max-width: 980px) {
-  .members-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .leader-layout {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 760px) {
-  .hero-wrap {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 28px 18px 34px;
-  }
-
-  .hero-panel {
-    max-width: 100%;
-  }
-
-  .main {
-    padding: 24px 18px 48px;
-  }
-
-  .chair-card,
-  .co-card,
-  .person-card {
-    flex-direction: column;
-  }
-
-  .chair-card .photo-wrap,
-  .co-card .photo-wrap,
-  .person-card .photo-wrap {
-    width: 100%;
-    height: 220px;
-    min-width: 0;
-    align-self: auto;
-    border-right: 0;
-    border-bottom: 1px solid rgba(0, 105, 180, .14);
-  }
-
-  .leader-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 420px) {
-  .main {
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-}
-
-.footer-pro .footer-brand h3 {
-  font-size: 20px;
-}
-
-.footer-pro .footer-title {
-  font-size: 11px;
-}
-
-.footer-pro .footer-item,
-.footer-pro .footer-address,
-.footer-pro .footer-leader {
-  font-size: 12px;
-}
-
-.footer-pro .footer-bottom {
-  font-size: 11px;
-}
-
-</style>
+<link href="../css/daab-common.css?v=23" rel="stylesheet"/>
+<link href="../css/daab-mobile.css?v=5" rel="stylesheet"/>
+<link href="../css/daab-search.css?v=1" rel="stylesheet"/>
+<link href="../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
+<link href="../css/scientists-profile-qr.css?v=1" rel="stylesheet"/>
+<link href="../css/daab-executive-board.css?v=4" rel="stylesheet"/>
 <link href="../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
-  <script src="../js/daab-mobile.js?v=1" defer></script>
-<link href="../css/daab-lang.css?v=7" rel="stylesheet"/>
-<link href="../css/daab-nav-mega.css?v=11" rel="stylesheet"/>
-<script src="../js/daab-i18n.js?v=11" defer></script>
-<script src="../js/daab-lang-position.js?v=3" defer></script>
-<script src="../js/daab-nav.js?v=7" defer></script>
+<link href="../css/daab-lang.css?v=9" rel="stylesheet"/>
+<link href="../css/daab-nav-mega.css?v=12" rel="stylesheet"/>
+<script src="../js/daab-mobile.js?v=1" defer></script>
+<script src="../js/daab-back-to-top.js?v=2" defer></script>
+<script src="../js/daab-i18n.js?v=12" defer></script>
+<script src="../js/daab-lang-position.js?v=6" defer></script>
+<script src="../js/daab-nav.js?v=8" defer></script>
 <script src="../js/daab-primary-nav.js?v=8" defer></script>
-<script src="../js/daab-breadcrumbs.js?v=4" defer></script>
+<script src="../js/daab-breadcrumbs.js?v=5" defer></script>
 <script src="../js/daab-section-nav.js?v=4" defer></script>
-<script src="../js/daab-shell.js?v=7" defer></script>
+<script src="../js/daab-shell.js?v=10" defer></script>
+<script src="../js/daab-search.js?v=3" defer></script>
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -375,12 +42,12 @@ body {
 <header class="hero">
 <div class="hero-wrap shell">
 <section class="hero-copy">
-<h1>Executive Board</h1>
+<h1>Board of Directors</h1>
 </section>
-<aside aria-label="Executive Board summary" class="hero-panel">
+<aside aria-label="Board of Directors summary" class="hero-panel">
 <div class="panel-card">
 <h2 class="panel-title">Leadership and governance</h2>
-<div class="panel-copy">This page presents the Chair, Co-Chairs and members of the World Association of Azerbaijani Scientists Executive Board. The Board plays a central role in shaping the Association's strategy, coordinating scientific programmes and advancing international academic cooperation.</div>
+<div class="panel-copy">This page presents the Chair, Co-Chairs and members of the World Association of Azerbaijani Scientists Board of Directors. The Board plays a central role in shaping the Association's strategy, coordinating scientific programmes and advancing international academic cooperation.</div>
 </div>
 </aside>
 </div>
@@ -392,9 +59,12 @@ body {
 <img alt="Messoud Efendiyev, Prof. Dr." src="../images/board-members-photos/messoud-efendiyev.png" loading="lazy"/>
 </div>
 <div class="person-body">
-<div class="person-role">Chair of the Executive Board</div>
+<div class="person-role">Chair</div>
 <h2 class="person-name">Messoud Efendiyev, Prof. Dr.</h2>
 <div class="person-country">Germany</div>
+<a class="board-card-qr-link card-qr-link" href="scientists/profiles.html#messoud-efendiyev" title="Link to this scientist's profile page" aria-label="QR code for profile link">
+<img class="board-card-qr card-qr" src="../images/qr/en/messoud-efendiyev.png?v=1" width="64" height="64" alt="" decoding="async" loading="lazy"/>
+</a>
 </div>
 </div>
 <div class="co-grid">
@@ -406,6 +76,9 @@ body {
 <div class="person-role">Co-Chair</div>
 <h2 class="person-name">Bakhtiyar Sirajov, Dr.</h2>
 <div class="person-country">Austria</div>
+<a class="board-card-qr-link card-qr-link" href="scientists/profiles.html#bakhtiyar-sirajov" title="Link to this scientist's profile page" aria-label="QR code for profile link">
+<img class="board-card-qr card-qr" src="../images/qr/en/bakhtiyar-sirajov.png?v=1" width="64" height="64" alt="" decoding="async" loading="lazy"/>
+</a>
 </div>
 </div>
 <div class="co-card">
@@ -416,22 +89,28 @@ body {
 <div class="person-role">Co-Chair</div>
 <h2 class="person-name">Seymur Nasirov, Dr.</h2>
 <div class="person-country">Egypt</div>
+<a class="board-card-qr-link card-qr-link" href="scientists/profiles.html#seymur-nasirov" title="Link to this scientist's profile page" aria-label="QR code for profile link">
+<img class="board-card-qr card-qr" src="../images/qr/en/seymur-nasirov.png?v=1" width="64" height="64" alt="" decoding="async" loading="lazy"/>
+</a>
 </div>
 </div>
 </div>
 </section>
 <div class="section-label">
-<h2>Executive Board Members</h2>
+<h2>Board Members</h2>
 </div>
-<section aria-label="Executive Board members" class="members-grid">
+<section aria-label="Board of Directors members" class="members-grid">
 <div class="person-card">
 <div class="photo-wrap">
 <img alt="Emil Ahmadov, Prof. Dr." src="../images/board-members-photos/emil-ahmadov.png" loading="lazy"/>
 </div>
 <div class="person-body">
-<div class="person-role">Executive Board Member</div>
+<div class="person-role">Board Member</div>
 <h2 class="person-name">Emil Ahmadov, Prof. Dr.</h2>
 <div class="person-country">Russian Federation</div>
+<a class="board-card-qr-link card-qr-link" href="scientists/profiles.html#emil-ahmadov" title="Link to this scientist's profile page" aria-label="QR code for profile link">
+<img class="board-card-qr card-qr" src="../images/qr/en/emil-ahmadov.png?v=1" width="64" height="64" alt="" decoding="async" loading="lazy"/>
+</a>
 </div>
 </div>
 <div class="person-card">
@@ -439,9 +118,12 @@ body {
 <img alt="Nigar Masimova, Dr." src="../images/board-members-photos/nigar-masimova.png" loading="lazy"/>
 </div>
 <div class="person-body">
-<div class="person-role">Executive Board Member</div>
+<div class="person-role">Board Member</div>
 <h2 class="person-name">Nigar Masimova, Dr.</h2>
 <div class="person-country">Russian Federation</div>
+<a class="board-card-qr-link card-qr-link" href="scientists/profiles.html#nigar-masimova" title="Link to this scientist's profile page" aria-label="QR code for profile link">
+<img class="board-card-qr card-qr" src="../images/qr/en/nigar-masimova.png?v=1" width="64" height="64" alt="" decoding="async" loading="lazy"/>
+</a>
 </div>
 </div>
 <div class="person-card">
@@ -449,9 +131,12 @@ body {
 <img alt="Sevinj Mammadova, Dr." src="../images/board-members-photos/sevinj-mammadova.png" loading="lazy"/>
 </div>
 <div class="person-body">
-<div class="person-role">Executive Board Member</div>
+<div class="person-role">Board Member</div>
 <h2 class="person-name">Sevinj Mammadova, Dr.</h2>
 <div class="person-country">USA</div>
+<a class="board-card-qr-link card-qr-link" href="scientists/profiles.html#sevinj-mammadova" title="Link to this scientist's profile page" aria-label="QR code for profile link">
+<img class="board-card-qr card-qr" src="../images/qr/en/sevinj-mammadova.png?v=1" width="64" height="64" alt="" decoding="async" loading="lazy"/>
+</a>
 </div>
 </div>
 <div class="person-card">
@@ -459,10 +144,13 @@ body {
 <img alt="Saadat Karimi, Prof. Dr." src="../images/board-members-photos/saadat-karimi.png" loading="lazy"/>
 </div>
 <div class="person-body">
-<div class="person-role">Executive Board Member</div>
+<div class="person-role">Board Member</div>
 <h2 class="person-name">Saadat Karimi, Prof. Dr.</h2>
 <div class="person-extra">Press Secretary</div>
 <div class="person-country">Sweden</div>
+<a class="board-card-qr-link card-qr-link" href="scientists/profiles.html#saadat-karimi" title="Link to this scientist's profile page" aria-label="QR code for profile link">
+<img class="board-card-qr card-qr" src="../images/qr/en/saadat-karimi.png?v=1" width="64" height="64" alt="" decoding="async" loading="lazy"/>
+</a>
 </div>
 </div>
 <div class="person-card">
@@ -470,9 +158,12 @@ body {
 <img alt="Teymur Rzayev, Prof. Dr." src="../images/board-members-photos/teymur-rzayev.png" loading="lazy"/>
 </div>
 <div class="person-body">
-<div class="person-role">Executive Board Member</div>
+<div class="person-role">Board Member</div>
 <h2 class="person-name">Teymur Rzayev, Prof. Dr.</h2>
 <div class="person-country">Türkiye</div>
+<a class="board-card-qr-link card-qr-link" href="scientists/profiles.html#teymur-rzayev" title="Link to this scientist's profile page" aria-label="QR code for profile link">
+<img class="board-card-qr card-qr" src="../images/qr/en/teymur-rzayev.png?v=1" width="64" height="64" alt="" decoding="async" loading="lazy"/>
+</a>
 </div>
 </div>
 <div class="person-card">
@@ -480,9 +171,12 @@ body {
 <img alt="Togrul Ismayil, Prof. Dr." src="../images/board-members-photos/togrul-ismayil.png" loading="lazy"/>
 </div>
 <div class="person-body">
-<div class="person-role">Executive Board Member</div>
+<div class="person-role">Board Member</div>
 <h2 class="person-name">Togrul Ismayil, Prof. Dr.</h2>
 <div class="person-country">Türkiye</div>
+<a class="board-card-qr-link card-qr-link" href="scientists/profiles.html#togrul-ismayil" title="Link to this scientist's profile page" aria-label="QR code for profile link">
+<img class="board-card-qr card-qr" src="../images/qr/en/togrul-ismayil.png?v=1" width="64" height="64" alt="" decoding="async" loading="lazy"/>
+</a>
 </div>
 </div>
 <div class="person-card">
@@ -490,9 +184,12 @@ body {
 <img alt="Togrul Karimov, Dr." src="../images/board-members-photos/togrul-karimov.png" loading="lazy"/>
 </div>
 <div class="person-body">
-<div class="person-role">Executive Board Member</div>
+<div class="person-role">Board Member</div>
 <h2 class="person-name">Togrul Karimov, Dr.</h2>
 <div class="person-country">Germany</div>
+<a class="board-card-qr-link card-qr-link" href="scientists/profiles.html#togrul-karimov" title="Link to this scientist's profile page" aria-label="QR code for profile link">
+<img class="board-card-qr card-qr" src="../images/qr/en/togrul-karimov.png?v=1" width="64" height="64" alt="" decoding="async" loading="lazy"/>
+</a>
 </div>
 </div>
 <div class="person-card">
@@ -500,10 +197,13 @@ body {
 <img alt="Yulduz Rahimov, Prof. Dr." src="../images/board-members-photos/yulduz-rahimov.png" loading="lazy"/>
 </div>
 <div class="person-body">
-<div class="person-role">Executive Board Member</div>
+<div class="person-role">Board Member</div>
 <h2 class="person-name">Yulduz Rahimov, Prof. Dr.</h2>
 <div class="person-extra">Scientific Secretary</div>
 <div class="person-country">Canada</div>
+<a class="board-card-qr-link card-qr-link" href="scientists/profiles.html#yulduz-rahimov" title="Link to this scientist's profile page" aria-label="QR code for profile link">
+<img class="board-card-qr card-qr" src="../images/qr/en/yulduz-rahimov.png?v=1" width="64" height="64" alt="" decoding="async" loading="lazy"/>
+</a>
 </div>
 </div>
 </section>
@@ -527,7 +227,7 @@ body {
       <div class="footer-col">
         <h4 class="footer-title">Leadership</h4>
         <p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>
-        Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p>
+        Chair of the WAAS Board of Directors<br/>Germany — James D. Murray Distinguished Professor</p>
       </div>
     </div>
   </div>

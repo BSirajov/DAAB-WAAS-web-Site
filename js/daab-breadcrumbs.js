@@ -156,6 +156,19 @@
     document.querySelectorAll("#daab-breadcrumbs, nav.daab-breadcrumbs").forEach(function (el) {
       el.remove();
     });
+    document.documentElement.style.setProperty("--daab-breadcrumbs-height", "0px");
+  }
+
+  function syncBreadcrumbsHeight() {
+    var el = document.getElementById("daab-breadcrumbs");
+    if (!el) {
+      document.documentElement.style.setProperty("--daab-breadcrumbs-height", "0px");
+      return;
+    }
+    var h = Math.ceil(el.getBoundingClientRect().height);
+    if (h > 0) {
+      document.documentElement.style.setProperty("--daab-breadcrumbs-height", h + "px");
+    }
   }
 
   function findCurrentPage(I18N, routes) {
@@ -287,6 +300,12 @@
         var el = render(crumbs, ui, lang);
         mountPoint.parent.insertBefore(el, mountPoint.before);
         breadcrumbsInserted = true;
+        syncBreadcrumbsHeight();
+        if (typeof ResizeObserver !== "undefined") {
+          var ro = new ResizeObserver(syncBreadcrumbsHeight);
+          ro.observe(el);
+        }
+        window.addEventListener("resize", syncBreadcrumbsHeight, { passive: true });
       })
       .catch(function (err) {
         console.warn("[daab-breadcrumbs] Mount failed:", err);

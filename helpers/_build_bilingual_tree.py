@@ -159,7 +159,7 @@ EN_NAV = [
     ("activities", "activities.html", "📰 Activities"),
     ("scientists-list", "scientists/list.html", "📋 Directory"),
     ("scientists-profiles", "scientists/profiles.html", "👤 Profiles"),
-    ("executive-board", "executive-board.html", "🎓 Executive Board"),
+    ("executive-board", "executive-board.html", "🎓 Board of Directors"),
     ("charter", "charter.html", "📜 Charter"),
     ("membership", "membership.html", "✒️ Membership"),
 ]
@@ -447,7 +447,7 @@ def build_en_home() -> None:
         ("foundation.html", "🏛️", "Foundation", "Available in English — Shusha Congress to Istanbul founding meeting."),
         ("scientists/list.html", "📋", "Scientists directory", "Searchable list of member scientists."),
         ("scientists/profiles.html", "👤", "Academic profiles", "Detailed scholar profiles and CV links."),
-        ("executive-board.html", "🎓", "Executive Board", "Leadership and governance."),
+        ("executive-board.html", "🎓", "Board of Directors", "Leadership and governance."),
         ("charter.html", "📜", "Charter", "Statutes and governing documents."),
         ("membership.html", "✒️", "Membership", "How to join WAAS."),
     ]

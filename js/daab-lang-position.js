@@ -79,6 +79,10 @@
   }
 
   function getLogicalAnchor() {
+    if (isNearPageTop()) {
+      return null;
+    }
+
     var id = hashId();
     if (id && !SKIP_IDS[id] && document.getElementById(id)) {
       return id;
@@ -112,12 +116,51 @@
   function navOffset() {
     var root = document.documentElement;
     var style = global.getComputedStyle(root);
-    var h = parseFloat(style.getPropertyValue("--daab-nav-height"));
+    var h = parseFloat(style.getPropertyValue("--daab-sticky-top-stack"));
     if (!isFinite(h) || h <= 0) {
-      var nav = document.querySelector(".nav-strip");
-      h = nav ? nav.getBoundingClientRect().height : 86;
+      h = parseFloat(style.getPropertyValue("--daab-nav-height"));
+      if (!isFinite(h) || h <= 0) {
+        var nav = document.querySelector(".nav-strip");
+        h = nav ? nav.getBoundingClientRect().height : 86;
+      }
+      var crumbsH = parseFloat(style.getPropertyValue("--daab-breadcrumbs-height"));
+      if (isFinite(crumbsH) && crumbsH > 0) {
+        h += crumbsH;
+      } else {
+        var crumbs = document.getElementById("daab-breadcrumbs");
+        if (crumbs) {
+          h += crumbs.getBoundingClientRect().height;
+        }
+      }
     }
     return Math.ceil(h) + 20;
+  }
+
+  /** True when nav + hero/header should remain in view (not mid-article). */
+  function isNearPageTop() {
+    var y = window.scrollY || document.documentElement.scrollTop || 0;
+    return y <= navOffset() + 32;
+  }
+
+  function clearUrlHash() {
+    if (!location.hash) return;
+    if (global.history && global.history.replaceState) {
+      global.history.replaceState(
+        null,
+        "",
+        location.pathname + location.search
+      );
+    }
+  }
+
+  function isProfileCardAnchor(id) {
+    if (!id) return false;
+    var el = document.getElementById(id);
+    return !!(el && el.classList && el.classList.contains("card"));
+  }
+
+  function shouldDeferProfileRestore() {
+    return pageId() === "scientists-profiles" && isProfileCardAnchor(hashId());
   }
 
   function scrollToAnchor(id, smooth) {
@@ -128,10 +171,20 @@
     if (!el) return false;
     var top =
       el.getBoundingClientRect().top + window.pageYOffset - navOffset();
+    var root = document.documentElement;
+    var prevInline = root.style.scrollBehavior;
+    if (!smooth) {
+      root.style.scrollBehavior = "auto";
+    }
     window.scrollTo({
       top: Math.max(0, top),
       behavior: smooth ? "smooth" : "auto"
     });
+    if (!smooth) {
+      global.requestAnimationFrame(function () {
+        root.style.scrollBehavior = prevInline;
+      });
+    }
     return true;
   }
 
@@ -159,10 +212,11 @@
   }
 
   function saveIntent(targetLang, anchor) {
+    var atTop = isNearPageTop();
     var payload = {
       pageId: pageId(),
-      anchor: anchor || null,
-      ratio: scrollRatio(),
+      anchor: atTop ? null : anchor || null,
+      ratio: atTop ? 0 : scrollRatio(),
       targetLang: targetLang,
       ts: Date.now()
     };
@@ -194,14 +248,38 @@
     return appendHash(url, anchor);
   }
 
+  function restoreTop() {
+    var root = document.documentElement;
+    var prevInline = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    global.requestAnimationFrame(function () {
+      root.style.scrollBehavior = prevInline;
+    });
+    return true;
+  }
+
   function restoreFromIntent() {
+    var intent = readIntent();
+
+    if (
+      intent &&
+      !intent.anchor &&
+      typeof intent.ratio === "number" &&
+      intent.ratio <= 0.04
+    ) {
+      clearUrlHash();
+      restoreTop();
+      clearIntent();
+      return true;
+    }
+
     var id = hashId();
     if (id && scrollToAnchor(id, false)) {
       clearIntent();
       return true;
     }
 
-    var intent = readIntent();
     if (!intent) return false;
 
     var currentPage = pageId();
@@ -223,6 +301,11 @@
     }
 
     if (typeof intent.ratio === "number") {
+      if (!intent.anchor && intent.ratio <= 0.04) {
+        restoreTop();
+        clearIntent();
+        return true;
+      }
       var max = Math.max(
         1,
         document.documentElement.scrollHeight - window.innerHeight
@@ -256,6 +339,15 @@
     if (document.body && document.body.classList.contains("daab-gateway")) {
       return;
     }
+    if (pageId() === "scientists-profiles") {
+      if (!hashId()) {
+        clearIntent();
+        return;
+      }
+      if (shouldDeferProfileRestore()) {
+        return;
+      }
+    }
     if (restorePending) return;
     restorePending = true;
     tryRestore(0);
@@ -267,6 +359,10 @@
     if (hashSyncTimer) return;
     hashSyncTimer = global.setTimeout(function () {
       hashSyncTimer = null;
+      if (isNearPageTop()) {
+        clearUrlHash();
+        return;
+      }
       var anchor = getLogicalAnchor();
       if (!anchor || anchor === hashId()) return;
       if (global.history && global.history.replaceState) {
@@ -303,6 +399,9 @@
 
   global.addEventListener("hashchange", function () {
     var id = hashId();
+    if (pageId() === "scientists-profiles" && isProfileCardAnchor(id)) {
+      return;
+    }
     if (id) scrollToAnchor(id, false);
   });
 
@@ -310,9 +409,11 @@
 
   global.DAAB_LANG_POSITION = {
     getLogicalAnchor: getLogicalAnchor,
+    isNearPageTop: isNearPageTop,
     decorateAlternateUrl: decorateAlternateUrl,
     appendHash: appendHash,
     scrollToAnchor: scrollToAnchor,
+    navOffset: navOffset,
     saveIntent: saveIntent,
     restoreFromIntent: restoreFromIntent
   };

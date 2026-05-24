@@ -244,7 +244,7 @@ FOUNDATION_REPLACEMENTS: list[tuple[str, str]] = [
     ("Ünvan", "Address"),
     ("Türkiyə", "Türkiye"),
     ("Rəhbərlik", "Leadership"),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Board of Directors"),
     ("İdarə heyəti aşağıdakı tərkibdə qəbul edilsin:", "The executive board shall be confirmed in the following composition:"),
     (" adlandırılsın", ""),
     ("adlandırılsın", ""),

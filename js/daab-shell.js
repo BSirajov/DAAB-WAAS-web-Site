@@ -117,7 +117,6 @@
 
   function resolveUrls(routes, lang) {
     var I18N = getI18n();
-    var Pos = window.DAAB_LANG_POSITION;
     var search = location.search || "";
     var azUrl = fallbackAlternateUrl("az");
     var enUrl = fallbackAlternateUrl("en");
@@ -127,11 +126,7 @@
     }
     if (search && azUrl.indexOf("?") < 0) azUrl += search;
     if (search && enUrl.indexOf("?") < 0) enUrl += search;
-    if (Pos) {
-      var anchor = Pos.getLogicalAnchor();
-      azUrl = Pos.appendHash(azUrl, anchor);
-      enUrl = Pos.appendHash(enUrl, anchor);
-    }
+    /* Scroll/hash for the alternate page is applied on click via decorateAlternateUrl. */
     return { az: azUrl, en: enUrl };
   }
 
@@ -191,9 +186,13 @@
     switcherNode = node;
     var existing = inner.querySelector(".daab-lang-switch");
     if (existing && existing !== node) existing.remove();
-    var logoWrap = inner.querySelector(".page-logo");
-    if (compactNavMq.matches && logoWrap) {
-      logoWrap.appendChild(node);
+    if (compactNavMq.matches) {
+      var searchBtn = document.getElementById("nav-search-btn");
+      if (searchBtn && searchBtn.parentNode === inner) {
+        inner.insertBefore(node, searchBtn.nextSibling);
+      } else {
+        inner.appendChild(node);
+      }
       return;
     }
     inner.appendChild(node);
@@ -261,12 +260,25 @@
     boot(0);
   }
 
+  function onCompactNavChange() {
+    repositionSwitcher();
+    if (window.DAAB_NAV && window.DAAB_NAV.syncNavHeight) {
+      window.DAAB_NAV.syncNavHeight();
+    }
+    if (!compactNavMq.matches && window.DAAB_NAV && window.DAAB_NAV.closeMobileMenu) {
+      window.DAAB_NAV.closeMobileMenu();
+    }
+  }
+
   if (typeof compactNavMq.addEventListener === "function") {
-    compactNavMq.addEventListener("change", repositionSwitcher);
+    compactNavMq.addEventListener("change", onCompactNavChange);
   } else if (typeof compactNavMq.addListener === "function") {
-    compactNavMq.addListener(repositionSwitcher);
+    compactNavMq.addListener(onCompactNavChange);
   }
 
   document.addEventListener("daab-primary-nav-ready", repositionSwitcher);
+  document.addEventListener("daab-nav-tools-mounted", repositionSwitcher);
+
+  window.DAAB_SHELL = { repositionSwitcher: repositionSwitcher };
 })();
 

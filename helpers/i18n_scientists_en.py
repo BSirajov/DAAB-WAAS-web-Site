@@ -84,7 +84,7 @@ SCIENTISTS_COMMON_REPLACEMENTS: list[tuple[str, str]] = [
     ("Əlaqə", "Contact"),
     ("Ünvan", "Address"),
     ("Rəhbərlik", "Leadership"),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Board of Directors"),
     ("Axtarış", "Search"),
     ("Menyunu aç", "Open menu"),
     ("Əsas naviqasiya", "Main navigation"),

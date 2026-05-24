@@ -55,13 +55,23 @@
   color: #fff !important;
 }
 
-/* Breadcrumbs — sits below sticky nav, above hero/content */
+/* Breadcrumbs — sticky directly under the primary nav */
 .daab-breadcrumbs {
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: var(--daab-nav-height, 86px);
   z-index: 9998;
+  width: 100%;
+  margin: 0;
   background: #e8f4fb;
   border-bottom: 1px solid rgba(0, 105, 180, .2);
   box-shadow: 0 1px 0 rgba(255, 255, 255, .65) inset;
+}
+
+/* Side panels sit below nav + breadcrumbs when both are present */
+.charter-layout > .toc-card,
+.charter-sidebar.toc-card {
+  top: calc(var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) + 12px) !important;
 }
 
 .daab-breadcrumbs-list {

@@ -56,6 +56,19 @@ META_LABELS = {
     "en": {"field": "Field:", "email": "Email:"},
 }
 
+QR_LABELS = {
+    "az": {
+        "aria": "Profil linkinin QR kodu",
+        "title": "Bu alimin profil səhifəsinə keçid",
+    },
+    "en": {
+        "aria": "QR code for profile link",
+        "title": "Link to this scientist's profile page",
+    },
+}
+
+SITE_BASE = "https://daab-waas.com"
+
 
 def esc_attr(s: str) -> str:
     return html.escape((s or "").strip(), quote=True)
@@ -68,6 +81,15 @@ def az_upper_name(name: str) -> str:
 
 def norm_search(s: str) -> str:
     return re.sub(r"\s+", " ", (s or "").lower()).strip()
+
+
+def slug_from_photo(photo: str) -> str:
+    return Path((photo or "").strip()).stem or ""
+
+
+def profile_deep_link(lang: str, slug: str, *, base: str = SITE_BASE) -> str:
+    locale = "az" if lang == "az" else "en"
+    return f"{base.rstrip('/')}/{locale}/scientists/profiles.html#{slug}"
 
 
 def load_profiles() -> list[dict]:
@@ -148,6 +170,7 @@ def render_card(profile: dict, lang: str, *, asset_prefix: str = "../../") -> st
     bio_html = profile_bio(profile, lang)
     labels = META_LABELS[lang]
     photo = (profile.get("photo") or "img_001_p61.jpeg").strip()
+    slug = slug_from_photo(photo)
     name_display = profile_name(profile, lang)
     name_heading = az_upper_name_latin(name_display) if lang == "en" else az_upper_name(name_display)
 
@@ -168,9 +191,17 @@ def render_card(profile: dict, lang: str, *, asset_prefix: str = "../../") -> st
 
     cred_html = f' <span class="cred">{html.escape(cred)}</span>' if cred else ""
     alt = html.escape(name_display)
+    qr_labels = QR_LABELS[lang]
+    profile_href = f"#{html.escape(slug)}"
+    qr_src = f"{asset_prefix}images/qr/{lang}/{html.escape(slug)}.png?v=1"
 
-    return f'''<div class="card" data-country-name="{esc_attr(country)}" data-country="{esc_attr(code)}" data-search="{esc_attr(search)}" data-email="{esc_attr(email)}" data-ixtilas="{esc_attr(field)}" data-degree="{esc_attr(degree)}">
-  <div class="card-avatar card-photo"><img src="{asset_prefix}images/scientists-photos/{html.escape(photo)}" alt="{alt}" loading="lazy"/></div>
+    return f'''<div class="card" id="{html.escape(slug)}" tabindex="-1" data-country-name="{esc_attr(country)}" data-country="{esc_attr(code)}" data-search="{esc_attr(search)}" data-email="{esc_attr(email)}" data-ixtilas="{esc_attr(field)}" data-degree="{esc_attr(degree)}">
+  <div class="card-portrait">
+    <div class="card-avatar card-photo"><img src="{asset_prefix}images/scientists-photos/{html.escape(photo)}" alt="{alt}" loading="lazy"/></div>
+    <a class="card-qr-link" href="{profile_href}" title="{esc_attr(qr_labels["title"])}" aria-label="{esc_attr(qr_labels["aria"])}">
+      <img class="card-qr" src="{qr_src}" width="80" height="80" alt="" decoding="async" loading="lazy"/>
+    </a>
+  </div>
   <div class="card-body">
     <div class="card-header">
       <span class="card-name">{html.escape(name_heading)}{cred_html}</span>
@@ -205,9 +236,10 @@ def replace_catalog_in_html(text: str, catalog_html: str) -> str:
     if not start_m:
         raise SystemExit("catalog section not found")
     start = start_m.start()
-    end_m = re.search(r'</section>\s*\n\s*<div class="no-results"', text[start:])
+    # Anchor on no-results, not the first </section>, so legacy wrapper markup is removed.
+    end_m = re.search(r'<div class="no-results"', text[start:])
     if not end_m:
         raise SystemExit("catalog end not found")
-    end = start + end_m.start() + len("</section>")
-    return text[:start] + catalog_html.rstrip() + text[end:]
+    end = start + end_m.start()
+    return text[:start] + catalog_html.rstrip() + "\n  " + text[end:]
 

@@ -29,10 +29,10 @@ MEMBERSHIP_REPLACEMENTS: list[tuple[str, str]] = [
     ("Ünvan", "Address"),
     ("Türkiyə", "Türkiye"),
     ("Rəhbərlik", "Leadership"),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Board of Directors"),
     ("Axtarış üçün yazmağa başlayın…", "Start typing to search…"),
     ("Axtarış", "Search"),
-    ("DAAB-a üzv olun", "Join WAAS"),
+    ("Birliyimizə üzv olun", "Join our Association"),
     ("Axtarmaq üçün yuxarıdakı xanaya mətn daxil edin", "Enter text in the box above to search"),
     ("naviqasiya", "navigate"),
     ("aç", "open"),
@@ -56,8 +56,8 @@ MEMBERSHIP_REPLACEMENTS: list[tuple[str, str]] = [
         "<p>We invite you to become a member of the World Association of Azerbaijani Scientists.</p>",
     ),
     (
-        '<p>Birliyimizə üzv olmaq üçün “DAAB-a üzv olun” düyməsini klikləyin və növbəti açılan səhifələrdə tələb olunan məlumatları daxil edin.</p>',
-        '<p>To join our association, click the “Join WAAS” button and enter the required information on the pages that open next.</p>',
+        '<p>Birliyimizə üzv olmaq üçün “Birliyimizə üzv olun” düyməsini klikləyin və növbəti açılan səhifələrdə tələb olunan məlumatları daxil edin.</p>',
+        '<p>To join our association, click the “Join our Association” button and enter the required information on the pages that open next.</p>',
     ),
     (
         "<p>DAAB üzvlüyünün təsdiqlənməsi üçün üzvlük haqqının ödənilməsi tələb olunur. Üzvlük haqqı aşağıdakı iki qaydadan biri ilə ödənilə bilər:</p>",
@@ -69,7 +69,7 @@ MEMBERSHIP_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         '<p class="signature">Sizin dəstəyiniz bizim üçün çox dəyərlidir. Birliyimizə qoşulduğunuza görə təşəkkür edirik.<br/><br/>Hörmətlə və ən xoş arzularla,<br/><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>DAAB İdarə Heyətinin Sədri</p>',
-        '<p class="signature">Your support means a great deal to us. Thank you for joining our association.<br/><br/>With respect and best wishes,<br/><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Executive Board</p>',
+        '<p class="signature">Your support means a great deal to us. Thank you for joining our association.<br/><br/>With respect and best wishes,<br/><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Board of Directors</p>',
     ),
     ("Almaniya — James D. Murray mükafatlı professoru", "Germany — James D. Murray Distinguished Professor"),
     ("© 2026 DAAB — Bütün hüquqlar qorunur", "© 2026 WAAS — All Rights Reserved"),
