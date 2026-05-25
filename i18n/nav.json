@@ -1,8 +1,29 @@
 {
   "version": 2,
   "primary": [
-    { "type": "page", "id": "home" },
-    { "type": "page", "id": "activities" },
+    {
+      "type": "page",
+      "id": "home"
+    },
+    {
+      "type": "group",
+      "id": "activities",
+      "style": "dropdown",
+      "labelKey": "activities",
+      "landingId": "activities",
+      "children": [
+        {
+          "id": "activities",
+          "labelKey": "activitiesNews",
+          "descKey": "activitiesNewsDesc"
+        },
+        {
+          "id": "forum-2024",
+          "labelKey": "forum2024",
+          "descKey": "forum2024Desc"
+        }
+      ]
+    },
     {
       "type": "group",
       "id": "scientists",
@@ -10,8 +31,14 @@
       "labelKey": "scientists",
       "landingId": "scientists-list",
       "children": [
-        { "id": "scientists-list", "descKey": "scientistsListDesc" },
-        { "id": "scientists-profiles", "descKey": "scientistsProfilesDesc" }
+        {
+          "id": "scientists-list",
+          "descKey": "scientistsListDesc"
+        },
+        {
+          "id": "scientists-profiles",
+          "descKey": "scientistsProfilesDesc"
+        }
       ]
     },
     {
@@ -21,22 +48,63 @@
       "labelKey": "about",
       "landingId": "mission",
       "children": [
-        { "id": "foundation", "descKey": "aboutFoundationDesc" },
-        { "id": "mission", "descKey": "aboutMissionDesc" },
-        { "id": "executive-board", "descKey": "aboutBoardDesc" },
-        { "id": "charter", "descKey": "aboutCharterDesc" }
+        {
+          "id": "foundation",
+          "descKey": "aboutFoundationDesc"
+        },
+        {
+          "id": "mission",
+          "descKey": "aboutMissionDesc"
+        },
+        {
+          "id": "executive-board",
+          "descKey": "aboutBoardDesc"
+        },
+        {
+          "id": "charter",
+          "descKey": "aboutCharterDesc"
+        }
       ]
     },
-    { "type": "page", "id": "membership" }
+    {
+      "type": "page",
+      "id": "membership"
+    }
   ],
   "sections": {
     "about": {
       "landingId": "mission",
-      "pages": ["foundation", "mission", "executive-board", "charter"]
+      "pages": [
+        "foundation",
+        "mission",
+        "executive-board",
+        "charter"
+      ]
     },
     "scientists": {
       "landingId": "scientists-list",
-      "pages": ["scientists-list", "scientists-profiles"]
+      "pages": [
+        "scientists-list",
+        "scientists-profiles"
+      ]
+    },
+    "activities": {
+      "landingId": "activities",
+      "pages": [
+        "activities",
+        "forum-2024"
+      ]
+    },
+    "forum": {
+      "landingId": "forum-2024",
+      "pages": [
+        "forum-2024",
+        "forum-official",
+        "forum-program",
+        "forum-2024-presentations",
+        "forum-impressions",
+        "forum-roadmap"
+      ]
     }
   }
 }

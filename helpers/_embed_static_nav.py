@@ -24,7 +24,15 @@ def _drop(items: list[tuple[str, str, str, str]]) -> str:
 NAV_AZ = (
     '<div class="nav-divider"></div>'
     '<a class="nav-link" href="index.html" data-nav-id="home">Ana səhifə</a>'
-    '<a class="nav-link" href="activities.html" data-nav-id="activities">Fəaliyyətimiz</a>'
+    '<div class="nav-dropdown" data-nav-dropdown>'
+    '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
+    'Fəaliyyətimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    '<div class="nav-dropdown-panel" role="menu">'
+    + _drop([
+        ("activities.html", "activities", "Yeniliklər", "Əsas fəaliyyət və yeniliklər"),
+        ("forum/2024/index.html", "forum-2024", "Forum 2024", "Forum 2024 kitabı və bölmələr"),
+    ])
+    + "</div></div>"
     '<div class="nav-dropdown" data-nav-dropdown>'
     '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
     'Alimlərimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
@@ -51,7 +59,15 @@ NAV_AZ = (
 NAV_EN = (
     '<div class="nav-divider"></div>'
     '<a class="nav-link" href="index.html" data-nav-id="home">Home</a>'
-    '<a class="nav-link" href="activities.html" data-nav-id="activities">Activities</a>'
+    '<div class="nav-dropdown" data-nav-dropdown>'
+    '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
+    'Activities <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    '<div class="nav-dropdown-panel" role="menu">'
+    + _drop([
+        ("activities.html", "activities", "News", "News and updates"),
+        ("forum/2024/index.html", "forum-2024", "Forum 2024", "Forum 2024 book and sections"),
+    ])
+    + "</div></div>"
     '<div class="nav-dropdown" data-nav-dropdown>'
     '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
     'Scientists <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
@@ -83,7 +99,67 @@ NAV_SCI_AZ = NAV_AZ.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="executive-board.html"', 'href="../executive-board.html"'
 ).replace('href="charter.html"', 'href="../charter.html"').replace(
     'href="activities.html"', 'href="../activities.html"'
+).replace(
+    'href="forum/2024/index.html"', 'href="../forum/2024/index.html"'
 ).replace('href="membership.html"', 'href="../membership.html"')
+
+FORUM_PREFIX_REPLACES = [
+    ('href="index.html"', 'href="../../index.html"'),
+    ('href="activities.html"', 'href="../../activities.html"'),
+    ('href="forum/2024/index.html"', 'href="index.html"'),
+    ('href="scientists/', 'href="../../scientists/'),
+    ('href="foundation.html"', 'href="../../foundation.html"'),
+    ('href="mission.html"', 'href="../../mission.html"'),
+    ('href="executive-board.html"', 'href="../../executive-board.html"'),
+    ('href="charter.html"', 'href="../../charter.html"'),
+    ('href="membership.html"', 'href="../../membership.html"'),
+]
+
+
+def forum_nav(nav: str) -> str:
+    for old, new in FORUM_PREFIX_REPLACES:
+        nav = nav.replace(old, new)
+    return nav
+
+
+def forum_nav_strip(lang: str = "az", *, active_nav_id: str | None = None) -> str:
+    """Full nav-strip HTML for pages under az|en/forum/2024/ (three levels below locale root)."""
+    asset = "../../../"
+    menu = forum_nav(NAV_EN if lang == "en" else NAV_AZ)
+    if active_nav_id:
+        menu = menu.replace(
+            f'data-nav-id="{active_nav_id}"',
+            f'data-nav-id="{active_nav_id}" class="active" aria-current="page"',
+            1,
+        )
+    if lang == "en":
+        return (
+            f'<nav aria-label="Main navigation" class="nav-strip"><div class="nav-inner">'
+            f'<button class="mobile-menu-toggle" type="button" aria-label="Open menu" '
+            f'aria-expanded="false" aria-controls="primaryNavMenu">'
+            f"<span></span><span></span><span></span></button>"
+            f'<div class="page-logo"><a aria-label="WAAS home" href="../../index.html">'
+            f'<img src="{asset}images/daab-logo.svg" class="nav-brand-logo" alt="WAAS Logo"></a></div>'
+            f'<a aria-label="WAAS home" class="nav-brand" href="../../index.html">'
+            f'<span class="nav-brand-text">World Association of<br class="mobile-hidden-break">'
+            f"Azerbaijani Scientists</span></a>"
+            f'<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1">{menu}</div>'
+            f"</div></nav>"
+        )
+    return (
+        f'<nav aria-label="Əsas naviqasiya" class="nav-strip"><div class="nav-inner">'
+        f'<button class="mobile-menu-toggle" type="button" aria-label="Menyunu aç" '
+        f'aria-expanded="false" aria-controls="primaryNavMenu">'
+        f"<span></span><span></span><span></span></button>"
+        f'<div class="page-logo"><a aria-label="DAAB ana səhifə" href="../../index.html">'
+        f'<img src="{asset}images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"></a></div>'
+        f'<a aria-label="DAAB ana səhifə" class="nav-brand" href="../../index.html">'
+        f'<span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">'
+        f"Alimlər Birliyi</span></a>"
+        f'<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1">{menu}</div>'
+        f"</div></nav>"
+    )
+
 
 NAV_SCI_EN = NAV_EN.replace('href="scientists/list.html"', 'href="list.html"').replace(
     'href="scientists/profiles.html"', 'href="profiles.html"'
@@ -93,6 +169,8 @@ NAV_SCI_EN = NAV_EN.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="executive-board.html"', 'href="../executive-board.html"'
 ).replace('href="charter.html"', 'href="../charter.html"').replace(
     'href="activities.html"', 'href="../activities.html"'
+).replace(
+    'href="forum/2024/index.html"', 'href="../forum/2024/index.html"'
 ).replace('href="membership.html"', 'href="../membership.html"')
 
 PLACEHOLDER_RE = re.compile(
@@ -114,6 +192,10 @@ def nav_html(path: Path) -> str:
         return NAV_SCI_EN
     if rel.startswith("az/scientists/"):
         return NAV_SCI_AZ
+    if "forum/2024/" in rel:
+        if rel.startswith("en/"):
+            return forum_nav(NAV_EN)
+        return forum_nav(NAV_AZ)
     if rel.startswith("en/"):
         return NAV_EN
     return NAV_AZ

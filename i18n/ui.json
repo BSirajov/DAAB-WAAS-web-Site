@@ -62,6 +62,14 @@
       "foundation": "Birliyin təsisi",
       "mission": "Missiya və dəyərlər",
       "activities": "Fəaliyyətimiz",
+      "activitiesNews": "Yeniliklər",
+      "forum2024": "Forum 2024",
+      "forumOfficial": "Rəsmi müraciətlər",
+      "forumProgram": "Forumun proqramı",
+      "forumImpressions": "Təəssüratlar",
+      "forum2024Presentations": "Məruzələr",
+      "activitiesNewsDesc": "Əsas fəaliyyət və yeniliklər",
+      "forum2024Desc": "Forum 2024 kitabı və bölmələr",
       "scientists": "Alimlərimiz",
       "scientistsList": "Siyahı",
       "scientistsProfiles": "Profillər",
@@ -73,7 +81,8 @@
       "aboutBoardDesc": "İdarə heyəti və rəhbərlik",
       "aboutCharterDesc": "Nizamnamə və idarəetmə qaydaları",
       "scientistsListDesc": "Bütün alimlərin siyahısı",
-      "scientistsProfilesDesc": "Alimlərin akademik profilləri"
+      "scientistsProfilesDesc": "Alimlərin akademik profilləri",
+      "forumRoadmap": "Strateji yol xəritəsi"
     },
     "en": {
       "ariaMain": "Main navigation",
@@ -86,6 +95,14 @@
       "foundation": "Foundation",
       "mission": "Mission & values",
       "activities": "Activities",
+      "activitiesNews": "News",
+      "forum2024": "Forum 2024",
+      "forumOfficial": "Official addresses",
+      "forumProgram": "Forum programme",
+      "forumImpressions": "Impressions",
+      "forum2024Presentations": "Presentations",
+      "activitiesNewsDesc": "News and updates",
+      "forum2024Desc": "Forum 2024 book and sections",
       "scientists": "Scientists",
       "scientistsList": "Directory",
       "scientistsProfiles": "Profiles",
@@ -97,12 +114,19 @@
       "aboutBoardDesc": "Leadership and governance structure",
       "aboutCharterDesc": "Charter and governance rules",
       "scientistsListDesc": "Directory of all scientists",
-      "scientistsProfilesDesc": "Academic profiles of scientists"
+      "scientistsProfilesDesc": "Academic profiles of scientists",
+      "forumRoadmap": "Strategic roadmap"
     }
   },
   "navIcons": {
     "home": "🏠",
     "activities": "📰",
+    "activitiesNews": "📰",
+    "forum2024": "🎤",
+    "forum-official": "🏛️",
+    "forum-program": "📅",
+    "forum-2024-presentations": "📊",
+    "forum-impressions": "💬",
     "membership": "✒️",
     "about": "🏛️",
     "scientists": "🌐",
@@ -111,32 +135,39 @@
     "executive-board": "🎓",
     "charter": "📜",
     "scientists-list": "📋",
-    "scientists-profiles": "👤"
+    "scientists-profiles": "👤",
+    "forum-roadmap": "🗺️"
   },
   "breadcrumbs": {
     "az": {
       "aria": "Səhifə yolu",
       "home": "Ana səhifə",
       "about": "Haqqımızda",
-      "scientists": "Alimlərimiz"
+      "scientists": "Alimlərimiz",
+      "activities": "Fəaliyyətimiz"
     },
     "en": {
       "aria": "Breadcrumb",
       "home": "Home",
       "about": "About",
-      "scientists": "Scientists"
+      "scientists": "Scientists",
+      "activities": "Activities"
     }
   },
   "sectionNav": {
     "az": {
       "aria": "Bu bölmədə",
       "aboutTitle": "Haqqımızda",
-      "scientistsTitle": "Alimlərimiz"
+      "scientistsTitle": "Alimlərimiz",
+      "activitiesTitle": "Fəaliyyətimiz",
+      "forumTitle": "Forum 2024"
     },
     "en": {
       "aria": "In this section",
       "aboutTitle": "About",
-      "scientistsTitle": "Scientists"
+      "scientistsTitle": "Scientists",
+      "activitiesTitle": "Activities",
+      "forumTitle": "Forum 2024"
     }
   },
   "stub": {

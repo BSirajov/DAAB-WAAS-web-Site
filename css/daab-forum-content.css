@@ -1,0 +1,620 @@
+/**
+ * Forum 2024 content pages — same look/feel as az/activities.html (Yeniliklər).
+ */
+html[data-daab-page-id="forum-official"],
+html[data-daab-page-id="forum-2024-presentations"],
+html[data-daab-page-id="forum-program"],
+html[data-daab-page-id="forum-impressions"],
+html[data-daab-page-id="forum-roadmap"]{
+  --navy: var(--blue-900);
+  --teal: var(--blue-700);
+  --gold-lt: var(--gold-soft);
+  --text-mid: var(--muted);
+  --border: var(--line);
+  --card-bg: rgba(255, 255, 255, 0.96);
+  --daab-nav-height: 68px;
+}
+
+html[data-daab-page-id="forum-official"] body,
+html[data-daab-page-id="forum-2024-presentations"] body,
+html[data-daab-page-id="forum-program"] body,
+html[data-daab-page-id="forum-impressions"] body,
+html[data-daab-page-id="forum-roadmap"] body{
+  color: var(--ink) !important;
+  background: #fff url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
+}
+
+html[data-daab-page-id="forum-official"] .page-hero,
+html[data-daab-page-id="forum-2024-presentations"] .page-hero,
+html[data-daab-page-id="forum-program"] .page-hero,
+html[data-daab-page-id="forum-impressions"] .page-hero,
+html[data-daab-page-id="forum-roadmap"] .page-hero{
+  position: relative;
+  overflow: hidden;
+  color: var(--ink) !important;
+  background: #fff url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
+  border-bottom: 1px solid rgba(0, 105, 180, 0.1) !important;
+}
+
+html[data-daab-page-id="forum-official"] .page-hero::before,
+html[data-daab-page-id="forum-2024-presentations"] .page-hero::before,
+html[data-daab-page-id="forum-program"] .page-hero::before,
+html[data-daab-page-id="forum-impressions"] .page-hero::before,
+html[data-daab-page-id="forum-roadmap"] .page-hero::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.36) !important;
+  pointer-events: none;
+}
+
+html[data-daab-page-id="forum-official"] .page-hero::after,
+html[data-daab-page-id="forum-2024-presentations"] .page-hero::after,
+html[data-daab-page-id="forum-program"] .page-hero::after,
+html[data-daab-page-id="forum-impressions"] .page-hero::after,
+html[data-daab-page-id="forum-roadmap"] .page-hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+  opacity: 0.72;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
+}
+
+html[data-daab-page-id="forum-official"] .page-hero h1,
+html[data-daab-page-id="forum-2024-presentations"] .page-hero h1,
+html[data-daab-page-id="forum-program"] .page-hero h1,
+html[data-daab-page-id="forum-impressions"] .page-hero h1,
+html[data-daab-page-id="forum-roadmap"] .page-hero h1{
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #08263b !important;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(30.4px, 4.8vw, 57.6px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.12;
+}
+
+html[data-daab-page-id="forum-official"] .page-hero h1 span,
+html[data-daab-page-id="forum-2024-presentations"] .page-hero h1 span,
+html[data-daab-page-id="forum-program"] .page-hero h1 span,
+html[data-daab-page-id="forum-impressions"] .page-hero h1 span,
+html[data-daab-page-id="forum-roadmap"] .page-hero h1 span{
+  color: var(--blue-700);
+}
+
+html[data-daab-page-id="forum-official"] .page-hero .hero-wrap,
+html[data-daab-page-id="forum-2024-presentations"] .page-hero .hero-wrap,
+html[data-daab-page-id="forum-program"] .page-hero .hero-wrap,
+html[data-daab-page-id="forum-impressions"] .page-hero .hero-wrap,
+html[data-daab-page-id="forum-roadmap"] .page-hero .hero-wrap{
+  position: relative;
+  z-index: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 28px;
+  align-items: start;
+  padding: 38px 24px 42px;
+}
+
+html[data-daab-page-id="forum-official"] .page-hero .hero-panel,
+html[data-daab-page-id="forum-2024-presentations"] .page-hero .hero-panel,
+html[data-daab-page-id="forum-program"] .page-hero .hero-panel,
+html[data-daab-page-id="forum-impressions"] .page-hero .hero-panel,
+html[data-daab-page-id="forum-roadmap"] .page-hero .hero-panel{
+  align-self: start;
+  padding: 0 0 0 4px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 30px;
+  box-shadow: 0 18px 50px rgba(0, 45, 82, 0.22);
+  backdrop-filter: blur(18px);
+}
+
+html[data-daab-page-id="forum-official"] .page-hero .panel-card,
+html[data-daab-page-id="forum-2024-presentations"] .page-hero .panel-card,
+html[data-daab-page-id="forum-program"] .page-hero .panel-card,
+html[data-daab-page-id="forum-impressions"] .page-hero .panel-card,
+html[data-daab-page-id="forum-roadmap"] .page-hero .panel-card{
+  padding: 22px 24px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 24px;
+}
+
+html[data-daab-page-id="forum-official"] .page-hero .panel-title,
+html[data-daab-page-id="forum-2024-presentations"] .page-hero .panel-title,
+html[data-daab-page-id="forum-program"] .page-hero .panel-title,
+html[data-daab-page-id="forum-impressions"] .page-hero .panel-title,
+html[data-daab-page-id="forum-roadmap"] .page-hero .panel-title{
+  margin: 0 0 10px;
+  color: #094d78;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 21px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.2;
+}
+
+html[data-daab-page-id="forum-official"] .page-hero .panel-copy,
+html[data-daab-page-id="forum-2024-presentations"] .page-hero .panel-copy,
+html[data-daab-page-id="forum-program"] .page-hero .panel-copy,
+html[data-daab-page-id="forum-impressions"] .page-hero .panel-copy,
+html[data-daab-page-id="forum-roadmap"] .page-hero .panel-copy{
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+html[data-daab-page-id="forum-official"] .timeline-list li,
+html[data-daab-page-id="forum-2024-presentations"] .timeline-list li,
+html[data-daab-page-id="forum-program"] .timeline-list li,
+html[data-daab-page-id="forum-impressions"] .timeline-list li,
+html[data-daab-page-id="forum-roadmap"] .timeline-list li{
+  display: block;
+}
+
+html[data-daab-page-id="forum-official"] .timeline-list a,
+html[data-daab-page-id="forum-2024-presentations"] .timeline-list a,
+html[data-daab-page-id="forum-program"] .timeline-list a,
+html[data-daab-page-id="forum-impressions"] .timeline-list a,
+html[data-daab-page-id="forum-roadmap"] .timeline-list a{
+  display: block;
+  padding: 9px 11px;
+  border-radius: 14px;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+html[data-daab-page-id="forum-official"] .content-wrap,
+html[data-daab-page-id="forum-2024-presentations"] .content-wrap,
+html[data-daab-page-id="forum-program"] .content-wrap,
+html[data-daab-page-id="forum-impressions"] .content-wrap,
+html[data-daab-page-id="forum-roadmap"] .content-wrap{
+  width: 100% !important;
+  max-width: var(--max) !important;
+  margin: 32px auto 0 !important;
+  padding: 0 24px 80px !important;
+  display: grid !important;
+  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr) !important;
+  gap: 28px !important;
+  align-items: start !important;
+  position: relative;
+  z-index: 2;
+  overflow: visible !important;
+}
+
+html[data-daab-page-id="forum-official"] .news-feed,
+html[data-daab-page-id="forum-2024-presentations"] .news-feed,
+html[data-daab-page-id="forum-program"] .news-feed,
+html[data-daab-page-id="forum-impressions"] .news-feed,
+html[data-daab-page-id="forum-roadmap"] .news-feed{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+html[data-daab-page-id="forum-official"] .news-card,
+html[data-daab-page-id="forum-2024-presentations"] .news-card,
+html[data-daab-page-id="forum-program"] .news-card,
+html[data-daab-page-id="forum-impressions"] .news-card,
+html[data-daab-page-id="forum-roadmap"] .news-card{
+  background: var(--card-bg) !important;
+  border-radius: var(--radius) !important;
+  overflow: hidden;
+  margin-bottom: 26px !important;
+  border: 1px solid rgba(0, 105, 180, 0.18) !important;
+  box-shadow: var(--shadow) !important;
+  scroll-margin-top: calc(var(--daab-nav-height) + 28px) !important;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+html[data-daab-page-id="forum-official"] .news-card:hover,
+html[data-daab-page-id="forum-2024-presentations"] .news-card:hover,
+html[data-daab-page-id="forum-program"] .news-card:hover,
+html[data-daab-page-id="forum-impressions"] .news-card:hover,
+html[data-daab-page-id="forum-roadmap"] .news-card:hover{
+  transform: translateY(-5px) !important;
+  box-shadow: var(--shadow-strong) !important;
+  border-color: rgba(78, 180, 238, 0.42) !important;
+}
+
+html[data-daab-page-id="forum-official"] .card-header,
+html[data-daab-page-id="forum-2024-presentations"] .card-header,
+html[data-daab-page-id="forum-program"] .card-header,
+html[data-daab-page-id="forum-impressions"] .card-header,
+html[data-daab-page-id="forum-roadmap"] .card-header,
+html[data-daab-page-id="forum-official"] .widget-head,
+html[data-daab-page-id="forum-2024-presentations"] .widget-head,
+html[data-daab-page-id="forum-program"] .widget-head,
+html[data-daab-page-id="forum-impressions"] .widget-head,
+html[data-daab-page-id="forum-roadmap"] .widget-head{
+  background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 58%, var(--blue-400) 100%) !important;
+}
+
+html[data-daab-page-id="forum-official"] .card-header,
+html[data-daab-page-id="forum-2024-presentations"] .card-header,
+html[data-daab-page-id="forum-program"] .card-header,
+html[data-daab-page-id="forum-impressions"] .card-header,
+html[data-daab-page-id="forum-roadmap"] .card-header{
+  padding: 24px 28px 20px !important;
+  text-align: center;
+}
+
+html[data-daab-page-id="forum-official"] .card-title,
+html[data-daab-page-id="forum-2024-presentations"] .card-title,
+html[data-daab-page-id="forum-program"] .card-title,
+html[data-daab-page-id="forum-impressions"] .card-title,
+html[data-daab-page-id="forum-roadmap"] .card-title{
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(14px, 1.6vw, 20px) !important;
+  font-weight: 800 !important;
+  color: #fff !important;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-align: center !important;
+}
+
+html[data-daab-page-id="forum-official"] .card-body,
+html[data-daab-page-id="forum-2024-presentations"] .card-body,
+html[data-daab-page-id="forum-program"] .card-body,
+html[data-daab-page-id="forum-impressions"] .card-body,
+html[data-daab-page-id="forum-roadmap"] .card-body{
+  padding: 24px 28px;
+}
+
+html[data-daab-page-id="forum-official"] .card-gallery,
+html[data-daab-page-id="forum-2024-presentations"] .card-gallery,
+html[data-daab-page-id="forum-program"] .card-gallery,
+html[data-daab-page-id="forum-impressions"] .card-gallery,
+html[data-daab-page-id="forum-roadmap"] .card-gallery{
+  display: grid;
+  gap: 12px;
+  margin: 0 0 20px;
+}
+
+html[data-daab-page-id="forum-official"] .card-gallery.single,
+html[data-daab-page-id="forum-2024-presentations"] .card-gallery.single,
+html[data-daab-page-id="forum-program"] .card-gallery.single,
+html[data-daab-page-id="forum-impressions"] .card-gallery.single,
+html[data-daab-page-id="forum-roadmap"] .card-gallery.single{
+  grid-template-columns: 1fr;
+}
+
+html[data-daab-page-id="forum-official"] .card-gallery.double,
+html[data-daab-page-id="forum-2024-presentations"] .card-gallery.double,
+html[data-daab-page-id="forum-program"] .card-gallery.double,
+html[data-daab-page-id="forum-impressions"] .card-gallery.double,
+html[data-daab-page-id="forum-roadmap"] .card-gallery.double{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+html[data-daab-page-id="forum-official"] .card-gallery img,
+html[data-daab-page-id="forum-2024-presentations"] .card-gallery img,
+html[data-daab-page-id="forum-program"] .card-gallery img,
+html[data-daab-page-id="forum-impressions"] .card-gallery img,
+html[data-daab-page-id="forum-roadmap"] .card-gallery img{
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  object-position: center center;
+  background: #f7fbff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 105, 180, 0.12);
+  display: block;
+}
+
+html[data-daab-page-id="forum-official"] .card-gallery.double img,
+html[data-daab-page-id="forum-2024-presentations"] .card-gallery.double img,
+html[data-daab-page-id="forum-program"] .card-gallery.double img,
+html[data-daab-page-id="forum-impressions"] .card-gallery.double img,
+html[data-daab-page-id="forum-roadmap"] .card-gallery.double img{
+  width: 100%;
+  height: 280px;
+  min-height: 280px;
+  max-height: 280px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+@media (max-width: 640px) {
+  html[data-daab-page-id="forum-official"] .card-gallery.double,
+html[data-daab-page-id="forum-2024-presentations"] .card-gallery.double,
+html[data-daab-page-id="forum-program"] .card-gallery.double,
+html[data-daab-page-id="forum-impressions"] .card-gallery.double,
+html[data-daab-page-id="forum-roadmap"] .card-gallery.double{
+    grid-template-columns: 1fr;
+  }
+}
+
+html[data-daab-page-id="forum-official"] .card-lead,
+html[data-daab-page-id="forum-2024-presentations"] .card-lead,
+html[data-daab-page-id="forum-program"] .card-lead,
+html[data-daab-page-id="forum-impressions"] .card-lead,
+html[data-daab-page-id="forum-roadmap"] .card-lead{
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blue-700);
+  line-height: 1.55;
+  margin: 0 0 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(0, 105, 180, 0.12);
+}
+
+html[data-daab-page-id="forum-official"] .card-text,
+html[data-daab-page-id="forum-2024-presentations"] .card-text,
+html[data-daab-page-id="forum-program"] .card-text,
+html[data-daab-page-id="forum-impressions"] .card-text,
+html[data-daab-page-id="forum-roadmap"] .card-text{
+  font-size: 14.5px;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+
+html[data-daab-page-id="forum-official"] .card-text:last-child,
+html[data-daab-page-id="forum-2024-presentations"] .card-text:last-child,
+html[data-daab-page-id="forum-program"] .card-text:last-child,
+html[data-daab-page-id="forum-impressions"] .card-text:last-child,
+html[data-daab-page-id="forum-roadmap"] .card-text:last-child{
+  margin-bottom: 0;
+}
+
+html[data-daab-page-id="forum-official"] .card-signoff,
+html[data-daab-page-id="forum-2024-presentations"] .card-signoff,
+html[data-daab-page-id="forum-program"] .card-signoff,
+html[data-daab-page-id="forum-impressions"] .card-signoff,
+html[data-daab-page-id="forum-roadmap"] .card-signoff{
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #345d76;
+  margin: 0 0 8px;
+}
+
+html[data-daab-page-id^="forum-"] .program-subhead {
+  margin: 20px 0 10px;
+  color: #094d78;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+html[data-daab-page-id^="forum-"] .program-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 16px 0 20px;
+  border: 1px solid rgba(0, 105, 180, 0.18);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(0, 90, 154, 0.07);
+}
+
+html[data-daab-page-id^="forum-"] .program-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 480px;
+}
+
+html[data-daab-page-id^="forum-"] .program-table--wide {
+  min-width: 720px;
+}
+
+html[data-daab-page-id^="forum-"] .program-table th,
+html[data-daab-page-id^="forum-"] .program-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid #d8edf8;
+  text-align: left;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #213f51;
+}
+
+html[data-daab-page-id^="forum-"] .program-table th {
+  background: #dff2ff;
+  color: #005a9a;
+  font-weight: 800;
+}
+
+html[data-daab-page-id^="forum-"] .program-table tr:last-child td {
+  border-bottom: 0;
+}
+
+html[data-daab-page-id^="forum-"] .program-table td:first-child {
+  white-space: nowrap;
+  font-weight: 700;
+  color: #005a9a;
+  width: 1%;
+}
+
+html[data-daab-page-id^="forum-"] .content-list {
+  margin: 8px 0 16px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+html[data-daab-page-id^="forum-"] .content-list li {
+  position: relative;
+  padding: 4px 0 4px calc(34px + 3ch);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: #213f51;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+html[data-daab-page-id^="forum-"] .content-list li::before {
+  content: "▸";
+  position: absolute;
+  left: calc(14px + 3ch);
+  top: 4px;
+  color: #1a6fa8;
+  font-weight: 900;
+}
+
+html[data-daab-page-id="forum-official"] .card-quote,
+html[data-daab-page-id="forum-2024-presentations"] .card-quote,
+html[data-daab-page-id="forum-program"] .card-quote,
+html[data-daab-page-id="forum-impressions"] .card-quote,
+html[data-daab-page-id="forum-roadmap"] .card-quote{
+  border-left: 3px solid var(--gold);
+  padding: 12px 18px;
+  margin: 18px 0;
+  background: #f7fbff;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text-mid);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+@media (max-width: 1000px) {
+  html[data-daab-page-id="forum-official"] .page-hero .hero-wrap,
+html[data-daab-page-id="forum-2024-presentations"] .page-hero .hero-wrap,
+html[data-daab-page-id="forum-program"] .page-hero .hero-wrap,
+html[data-daab-page-id="forum-impressions"] .page-hero .hero-wrap,
+html[data-daab-page-id="forum-roadmap"] .page-hero .hero-wrap{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1060px) {
+  html[data-daab-page-id="forum-official"],
+html[data-daab-page-id="forum-program"]{
+    --daab-nav-height: 62px;
+  }
+
+  html[data-daab-page-id="forum-official"] .content-wrap,
+html[data-daab-page-id="forum-2024-presentations"] .content-wrap,
+html[data-daab-page-id="forum-program"] .content-wrap,
+html[data-daab-page-id="forum-impressions"] .content-wrap,
+html[data-daab-page-id="forum-roadmap"] .content-wrap{
+    grid-template-columns: 1fr !important;
+    padding: 0 18px 64px !important;
+    margin-top: 24px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  html[data-daab-page-id="forum-official"] .content-wrap,
+  html[data-daab-page-id="forum-program"] .content-wrap {
+    padding: 0 14px 52px !important;
+  }
+
+  html[data-daab-page-id="forum-official"] .card-body,
+  html[data-daab-page-id="forum-program"] .card-body,
+  html[data-daab-page-id="forum-official"] .card-header,
+  html[data-daab-page-id="forum-program"] .card-header {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+/* Static breadcrumb bar — forum content pages (program, official, …) */
+html[data-daab-page-id="forum-official"] .forum-breadcrumbs,
+html[data-daab-page-id="forum-2024-presentations"] .forum-breadcrumbs,
+html[data-daab-page-id="forum-program"] .forum-breadcrumbs,
+html[data-daab-page-id="forum-impressions"] .forum-breadcrumbs ,
+html[data-daab-page-id="forum-roadmap"] .forum-breadcrumbs {
+  display: block !important;
+  visibility: visible !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 12px 24px 12px clamp(132px, 14vw, 156px) !important;
+  box-sizing: border-box;
+  position: relative !important;
+  top: auto !important;
+  z-index: 100 !important;
+  color: #55778b !important;
+  font-family: Inter, system-ui, "Segoe UI", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  background: #e8f4fb !important;
+  border-bottom: 1px solid rgba(0, 105, 180, 0.2) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.65) inset;
+}
+
+html[data-daab-page-id="forum-official"] .forum-breadcrumbs a,
+html[data-daab-page-id="forum-2024-presentations"] .forum-breadcrumbs a,
+html[data-daab-page-id="forum-program"] .forum-breadcrumbs a,
+html[data-daab-page-id="forum-impressions"] .forum-breadcrumbs a ,
+html[data-daab-page-id="forum-roadmap"] .forum-breadcrumbs a {
+  color: #2c5470 !important;
+  text-decoration: none !important;
+}
+
+html[data-daab-page-id="forum-official"] .forum-breadcrumbs a:hover,
+html[data-daab-page-id="forum-official"] .forum-breadcrumbs a:focus-visible,
+html[data-daab-page-id="forum-program"] .forum-breadcrumbs a:hover,
+html[data-daab-page-id="forum-program"] .forum-breadcrumbs a:focus-visible {
+  color: #1a6fa8 !important;
+  text-decoration: underline !important;
+}
+
+html[data-daab-page-id="forum-official"] .forum-breadcrumbs span[aria-hidden="true"],
+html[data-daab-page-id="forum-2024-presentations"] .forum-breadcrumbs span[aria-hidden="true"],
+html[data-daab-page-id="forum-program"] .forum-breadcrumbs span[aria-hidden="true"],
+html[data-daab-page-id="forum-impressions"] .forum-breadcrumbs span[aria-hidden="true"] ,
+html[data-daab-page-id="forum-roadmap"] .forum-breadcrumbs span[aria-hidden="true"] {
+  margin: 0 7px;
+  color: #9ab2c2;
+}
+
+html[data-daab-page-id="forum-official"] .forum-breadcrumbs-current,
+html[data-daab-page-id="forum-2024-presentations"] .forum-breadcrumbs-current,
+html[data-daab-page-id="forum-program"] .forum-breadcrumbs-current,
+html[data-daab-page-id="forum-impressions"] .forum-breadcrumbs-current ,
+html[data-daab-page-id="forum-roadmap"] .forum-breadcrumbs-current {
+  color: #345d76 !important;
+}
+
+@media (max-width: 720px) {
+  html[data-daab-page-id="forum-official"] .forum-breadcrumbs,
+  html[data-daab-page-id="forum-program"] .forum-breadcrumbs {
+    padding: 10px 16px 10px 56px !important;
+    font-size: 12px !important;
+  }
+}
+
+html[data-daab-page-id="forum-impressions"] .card-body > .card-lead:first-child,
+html[data-daab-page-id="forum-roadmap"] .card-body > .card-lead:first-child,
+html[data-daab-page-id="forum-2024-presentations"] .card-body > .card-lead:first-child {
+  font-weight: 700;
+  color: var(--blue-700);
+}
+
+/* Anchor navigation — match Activities (Yeniliklər) panel */
+html[data-daab-page-id="forum-official"],
+html[data-daab-page-id="forum-program"],
+html[data-daab-page-id="forum-2024-presentations"],
+html[data-daab-page-id="forum-impressions"] ,
+html[data-daab-page-id="forum-roadmap"] {
+  scroll-behavior: auto !important;
+}
+
+html[data-daab-page-id="forum-official"] .timeline-list a,
+html[data-daab-page-id="forum-program"] .timeline-list a,
+html[data-daab-page-id="forum-2024-presentations"] .timeline-list a,
+html[data-daab-page-id="forum-impressions"] .timeline-list a,
+html[data-daab-page-id="forum-roadmap"] .timeline-list a {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  min-height: 36px !important;
+}

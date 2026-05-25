@@ -13,6 +13,14 @@
     mission: "mission",
     "executive-board": "executiveBoard",
     charter: "charter",
+    activities: "activitiesNews",
+    "forum-2024": "forum2024",
+    "forum-2024-presentations": "forum2024",
+    "forum-official": "forumOfficial",
+    "forum-program": "forumProgram",
+    "forum-impressions": "forumImpressions",
+    "forum-2024-presentations": "forum2024Presentations",
+    "forum-roadmap": "forumRoadmap",
     "scientists-list": "scientistsList",
     "scientists-profiles": "scientistsProfiles"
   };
@@ -38,7 +46,50 @@
         id: "activities",
         az: "az/activities.html",
         en: "en/activities.html",
-        navGroup: null
+        navGroup: "activities",
+        navParent: "activities"
+      },
+      {
+        id: "forum-2024",
+        az: "az/forum/2024/index.html",
+        en: "en/forum/2024/index.html",
+        navGroup: "forum",
+        navParent: "forum"
+      },
+      {
+        id: "forum-2024-presentations",
+        az: "az/forum/2024/presentations.html",
+        en: "en/forum/2024/presentations.html",
+        navGroup: "forum",
+        navParent: "forum"
+      },
+      {
+        id: "forum-official",
+        az: "az/forum/2024/official.html",
+        en: "en/forum/2024/official.html",
+        navGroup: "forum",
+        navParent: "forum"
+      },
+      {
+        id: "forum-program",
+        az: "az/forum/2024/program.html",
+        en: "en/forum/2024/program.html",
+        navGroup: "forum",
+        navParent: "forum"
+      },
+      {
+        id: "forum-impressions",
+        az: "az/forum/2024/impressions.html",
+        en: "en/forum/2024/impressions.html",
+        navGroup: "forum",
+        navParent: "forum"
+      },
+      {
+        id: "forum-roadmap",
+        az: "az/forum/2024/roadmap.html",
+        en: "en/forum/2024/roadmap.html",
+        navGroup: "forum",
+        navParent: "forum"
       },
       {
         id: "scientists-list",
@@ -91,6 +142,13 @@
         mission: "Missiya və dəyərlər",
         executiveBoard: "İdarə heyəti",
         charter: "Nizamnamə",
+        activitiesNews: "Yeniliklər",
+        forum2024: "Forum 2024",
+        forumOfficial: "Rəsmi müraciətlər",
+        forumProgram: "Forumun proqramı",
+        forum2024Presentations: "Məruzələr",
+        forumImpressions: "Təəssüratlar",
+        forumRoadmap: "Strateji yol xəritəsi",
         scientistsList: "Siyahı",
         scientistsProfiles: "Profillər"
       },
@@ -99,6 +157,13 @@
         mission: "Mission & values",
         executiveBoard: "Executive board",
         charter: "Charter",
+        activitiesNews: "News",
+        forum2024: "Forum 2024",
+        forumOfficial: "Official addresses",
+        forumProgram: "Forum programme",
+        forum2024Presentations: "Presentations",
+        forumImpressions: "Impressions",
+        forumRoadmap: "Strategic roadmap",
         scientistsList: "Directory",
         scientistsProfiles: "Profiles"
       }
@@ -114,6 +179,21 @@
       scientists: {
         landingId: "scientists-list",
         pages: ["scientists-list", "scientists-profiles"]
+      },
+      activities: {
+        landingId: "activities",
+        pages: ["activities", "forum-2024"]
+      },
+      forum: {
+        landingId: "forum-2024",
+        pages: [
+          "forum-2024",
+          "forum-official",
+          "forum-program",
+          "forum-2024-presentations",
+          "forum-impressions",
+          "forum-roadmap"
+        ]
       }
     }
   };
@@ -172,6 +252,37 @@
     });
   }
 
+  var HERO_HEADER_SEL = "header.forum-hero, header.page-hero, header.hero";
+
+  /**
+   * Place section pills below the page title/hero band, not above it (and not under breadcrumbs only).
+   */
+  function findSectionNavInsertPoint(main) {
+    var i;
+    var heroSel = HERO_HEADER_SEL.split(", ");
+    for (i = 0; i < heroSel.length; i++) {
+      var inMain = main.querySelector(":scope > " + heroSel[i]);
+      if (inMain) {
+        return { parent: main, before: inMain.nextSibling };
+      }
+    }
+
+    var contentWrap = main.closest(".content-wrap");
+    if (contentWrap && contentWrap.parentNode) {
+      var heroBeforeWrap = contentWrap.previousElementSibling;
+      if (heroBeforeWrap && heroBeforeWrap.matches(HERO_HEADER_SEL)) {
+        return { parent: contentWrap.parentNode, before: contentWrap };
+      }
+    }
+
+    var prev = main.previousElementSibling;
+    if (prev && prev.matches && prev.matches(HERO_HEADER_SEL)) {
+      return { parent: main.parentNode, before: main };
+    }
+
+    return { parent: main, before: main.firstElementChild };
+  }
+
   function mount() {
     if (sectionNavInserted || mountInFlight) return;
     if (document.body && document.body.classList.contains("daab-gateway")) return;
@@ -205,7 +316,7 @@
         var main = document.getElementById("content") || document.querySelector("main.main");
         if (!main) return;
 
-        var anchor = main.firstElementChild;
+        var insertPoint = findSectionNavInsertPoint(main);
         var sectionUi = ui.sectionNav && ui.sectionNav[lang];
         var navLabels = ui.nav && ui.nav[lang];
         if (!sectionUi || !navLabels) return;
@@ -240,10 +351,10 @@
         });
 
         nav.appendChild(list);
-        if (anchor) {
-          main.insertBefore(nav, anchor);
+        if (insertPoint.before) {
+          insertPoint.parent.insertBefore(nav, insertPoint.before);
         } else {
-          main.prepend(nav);
+          insertPoint.parent.appendChild(nav);
         }
         sectionNavInserted = true;
       })

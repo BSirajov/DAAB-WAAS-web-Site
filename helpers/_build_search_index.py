@@ -41,6 +41,12 @@ PAGE_LABEL_KEYS = {
     "foundation": "foundation",
     "mission": "mission",
     "activities": "activities",
+    "forum-2024": "forum2024",
+    "forum-official": "forumOfficial",
+    "forum-program": "forumProgram",
+    "forum-2024-presentations": "forum2024Presentations",
+    "forum-impressions": "forumImpressions",
+    "forum-roadmap": "forumRoadmap",
     "scientists-list": "scientistsList",
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",
@@ -219,6 +225,66 @@ def add_nav(entries: list[dict], ui: dict, nav_def: dict) -> None:
                             extra=group_label,
                         )
                     )
+
+
+def extract_forum_sections(raw: str, lang: str, page_id: str) -> list[dict]:
+    out: list[dict] = []
+    for m in re.finditer(
+        r'<article[^>]*class="[^"]*news-card[^"]*"[^>]*id="([^"]+)"[^>]*>(.*?)</article>',
+        raw,
+        re.I | re.S,
+    ):
+        anchor = m.group(1)
+        block = m.group(2)
+        tm = re.search(r'<h2[^>]*class="[^"]*card-title[^"]*"[^>]*>(.*?)</h2>', block, re.I | re.S)
+        title = strip_html(tm.group(1)) if tm else anchor
+        pm = re.search(
+            r'<p[^>]*class="[^"]*card-(?:text|lead)[^"]*"[^>]*>(.*?)</p>',
+            block,
+            re.I | re.S,
+        )
+        summary = strip_html(pm.group(1))[:240] if pm else ""
+        out.append(
+            entry(
+                eid=f"section-{page_id}-{anchor}-{lang}",
+                lang=lang,
+                kind="section",
+                page_id=page_id,
+                title=title,
+                summary=summary,
+                anchor=anchor,
+                icon="🎤",
+            )
+        )
+    return out
+
+
+def extract_forum_stories(raw: str, lang: str) -> list[dict]:
+    out: list[dict] = []
+    for m in re.finditer(
+        r'<article[^>]*class="[^"]*story-card[^"]*"[^>]*id="([^"]+)"[^>]*>(.*?)</article>',
+        raw,
+        re.I | re.S,
+    ):
+        anchor = m.group(1)
+        block = m.group(2)
+        hm = re.search(r'<h2[^>]*>(.*?)</h2>', block, re.I | re.S)
+        title = strip_html(hm.group(1)) if hm else anchor
+        pm = re.search(r'<div[^>]*class="[^"]*story-body[^"]*"[^>]*>(.*?)</div>', block, re.I | re.S)
+        summary = strip_html(pm.group(1))[:240] if pm else ""
+        out.append(
+            entry(
+                eid=f"section-forum-impressions-{anchor}-{lang}",
+                lang=lang,
+                kind="section",
+                page_id="forum-impressions",
+                title=title,
+                summary=summary,
+                anchor=anchor,
+                icon="💬",
+            )
+        )
+    return out
 
 
 def extract_activities(raw: str, lang: str) -> list[dict]:
@@ -405,6 +471,11 @@ def build() -> dict:
         "mission": extract_mission_sections,
         "charter": extract_charter_sections,
         "executive-board": extract_board_members,
+        "forum-official": lambda raw, lang: extract_forum_sections(raw, lang, "forum-official"),
+        "forum-program": lambda raw, lang: extract_forum_sections(raw, lang, "forum-program"),
+        "forum-impressions": lambda raw, lang: extract_forum_sections(raw, lang, "forum-impressions"),
+        "forum-2024-presentations": lambda raw, lang: extract_forum_sections(raw, lang, "forum-2024-presentations"),
+        "forum-roadmap": lambda raw, lang: extract_forum_sections(raw, lang, "forum-roadmap"),
     }
     for page in routes["pages"]:
         pid = page["id"]
@@ -412,7 +483,10 @@ def build() -> dict:
         if not loader:
             continue
         for lang in ("az", "en"):
-            path = ROOT / page[lang]
+            rel = page.get(lang)
+            if not rel:
+                continue
+            path = ROOT / rel
             if path.is_file():
                 entries.extend(loader(path.read_text(encoding="utf-8"), lang))
 

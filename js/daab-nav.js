@@ -114,32 +114,87 @@
     return isMobileNav() || TOUCH_UI_MQ.matches;
   }
 
-  function currentNavKey() {
+  function siteRelativePath() {
     var path = location.pathname.replace(/\\/g, "/");
-    var page = path.split("/").pop() || "index.html";
-    var navLink = document.querySelector(
-      'a[data-nav-id][href$="' + page + '"], a[data-nav-id][href$="/' + page + '"]'
-    );
-    if (navLink) return navLink.getAttribute("data-nav-id");
-    var html = document.documentElement;
-    var pageId = html.getAttribute("data-daab-page-id");
-    if (pageId) return pageId;
-    return page;
+    var m = path.match(/\/(az|en)\/(.+)$/i);
+    if (m) return m[2].toLowerCase();
+    var base = path.split("/").pop() || "";
+    return base ? base.toLowerCase() : "index.html";
   }
 
-  function hrefMatchesNav(linkHref, page) {
-    if (!linkHref) return false;
-    var href = linkHref.split("#")[0].split("?")[0];
-    if (href === page) return true;
-    return href.endsWith("/" + page) || href.endsWith(page);
+  function currentNavKey() {
+    var pageId = document.documentElement.getAttribute("data-daab-page-id");
+    if (pageId) return pageId;
+
+    var rel = siteRelativePath();
+    var file = rel.split("/").pop() || "index.html";
+    var navLinks = document.querySelectorAll("a[data-nav-id]");
+    var i;
+    for (i = 0; i < navLinks.length; i++) {
+      var href = navLinks[i].getAttribute("href");
+      if (!href) continue;
+      href = href.split("#")[0].split("?")[0].replace(/\\/g, "/").toLowerCase();
+      if (href === rel || href.endsWith("/" + rel)) {
+        return navLinks[i].getAttribute("data-nav-id");
+      }
+    }
+    if (rel.indexOf("/") === -1) {
+      for (i = 0; i < navLinks.length; i++) {
+        if (hrefMatchesNav(navLinks[i].getAttribute("href"), file)) {
+          return navLinks[i].getAttribute("data-nav-id");
+        }
+      }
+    }
+    return file;
+  }
+
+  function hrefMatchesNav(linkHref, pagePath) {
+    if (!linkHref || !pagePath) return false;
+    var href = linkHref.split("#")[0].split("?")[0].replace(/\\/g, "/").toLowerCase();
+    pagePath = pagePath.replace(/\\/g, "/").toLowerCase();
+    if (href === pagePath) return true;
+    if (href.endsWith("/" + pagePath)) return true;
+    return false;
+  }
+
+  /** Forum hub + forum content pages (forum-official, forum-program, …). */
+  function isForumNavPageId(id) {
+    return id === "forum-2024" || (typeof id === "string" && id.indexOf("forum-") === 0);
+  }
+
+  function clearNavActiveStates() {
+    document.querySelectorAll(".nav-menu a.active").forEach(function (link) {
+      link.classList.remove("active");
+      link.removeAttribute("aria-current");
+    });
+    document.querySelectorAll("[data-nav-dropdown].has-active-child").forEach(function (dropdown) {
+      dropdown.classList.remove("has-active-child");
+    });
+  }
+
+  /**
+   * Match nav link to current page. When data-daab-page-id is set, use ids only
+   * (avoids false positives from many pages named index.html).
+   */
+  function navLinkIsActive(id, href, navKey, pageIdAttr, relPath) {
+    if (!navKey) return false;
+    if (id && id === navKey) return true;
+    if (id === "forum-2024" && isForumNavPageId(navKey) && navKey !== "activities") {
+      return true;
+    }
+    if (pageIdAttr) return false;
+    return hrefMatchesNav(href, relPath);
   }
 
   var dropdownToggleAttached = new WeakSet();
 
   function initNavDropdowns() {
-    var page = location.pathname.split("/").pop() || "index.html";
+    var pageIdAttr = document.documentElement.getAttribute("data-daab-page-id");
     var navKey = currentNavKey();
+    var relPath = siteRelativePath();
     var dropdowns = document.querySelectorAll("[data-nav-dropdown]");
+
+    clearNavActiveStates();
 
     dropdowns.forEach(function (dropdown) {
       var toggle = dropdown.querySelector(".nav-dropdown-toggle");
@@ -148,8 +203,8 @@
 
       links.forEach(function (link) {
         var id = link.getAttribute("data-nav-id");
-        var match = (id && id === navKey) || hrefMatchesNav(link.getAttribute("href"), page);
-        if (match) {
+        var href = link.getAttribute("href");
+        if (navLinkIsActive(id, href, navKey, pageIdAttr, relPath)) {
           link.classList.add("active");
           link.setAttribute("aria-current", "page");
           dropdown.classList.add("has-active-child");
@@ -177,7 +232,8 @@
 
     document.querySelectorAll(".nav-menu > a.nav-link[data-nav-id]").forEach(function (link) {
       var id = link.getAttribute("data-nav-id");
-      if ((id && id === navKey) || hrefMatchesNav(link.getAttribute("href"), page)) {
+      var href = link.getAttribute("href");
+      if (navLinkIsActive(id, href, navKey, pageIdAttr, relPath)) {
         link.classList.add("active");
         link.setAttribute("aria-current", "page");
       }
@@ -270,7 +326,9 @@
   window.DAAB_NAV = {
     init: init,
     closeMobileMenu: closeMobileMenu,
-    syncNavHeight: syncNavHeight
+    syncNavHeight: syncNavHeight,
+    currentNavKey: currentNavKey,
+    isForumNavPageId: isForumNavPageId
   };
 
   function maybeAutoInit() {
@@ -288,4 +346,10 @@
 
   window.addEventListener("load", scheduleNavHeightSync, { once: true });
   document.addEventListener("daab-primary-nav-ready", scheduleNavHeightSync);
+
+  window.addEventListener("pageshow", function (ev) {
+    if (ev.persisted) {
+      initNavDropdowns();
+    }
+  });
 })();

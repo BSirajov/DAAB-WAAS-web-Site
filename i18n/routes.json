@@ -1,7 +1,10 @@
 {
   "version": 2,
   "defaultLang": "az",
-  "languages": ["az", "en"],
+  "languages": [
+    "az",
+    "en"
+  ],
   "pages": [
     {
       "id": "home",
@@ -36,12 +39,62 @@
     {
       "id": "activities",
       "navId": "activities",
-      "navGroup": null,
-      "navParent": null,
-      "navOrder": 4,
+      "navGroup": "activities",
+      "navParent": "activities",
+      "navOrder": 1,
       "legacy": "activities_az.html",
       "az": "az/activities.html",
       "en": "en/activities.html"
+    },
+    {
+      "id": "forum-2024",
+      "navId": "forum-2024",
+      "navGroup": "forum",
+      "navParent": "forum",
+      "navOrder": 2,
+      "legacy": null,
+      "az": "az/forum/2024/index.html",
+      "en": "en/forum/2024/index.html"
+    },
+    {
+      "id": "forum-2024-presentations",
+      "navId": "forum-2024-presentations",
+      "navGroup": "forum",
+      "navParent": "forum",
+      "navOrder": 3,
+      "legacy": null,
+      "az": "az/forum/2024/presentations.html",
+      "en": "en/forum/2024/presentations.html"
+    },
+    {
+      "id": "forum-official",
+      "navId": "forum-official",
+      "navGroup": "forum",
+      "navParent": "forum",
+      "navOrder": 4,
+      "legacy": null,
+      "az": "az/forum/2024/official.html",
+      "en": "en/forum/2024/official.html"
+    },
+    {
+      "id": "forum-program",
+      "navId": "forum-program",
+      "navGroup": "forum",
+      "navParent": "forum",
+      "navOrder": 5,
+      "legacy": null,
+      "az": "az/forum/2024/program.html",
+      "en": "en/forum/2024/program.html"
+    },
+    {
+      "id": "forum-impressions",
+      "navId": "forum-impressions",
+      "navGroup": "forum",
+      "navParent": "forum",
+      "navOrder": 6,
+      "legacy": null,
+      "az": "az/forum/2024/impressions.html",
+      "en": "en/forum/2024/impressions.html"
     },
     {
       "id": "scientists-list",
@@ -92,6 +145,16 @@
       "legacy": "membership_terms_az.html",
       "az": "az/membership.html",
       "en": "en/membership.html"
+    },
+    {
+      "id": "forum-roadmap",
+      "navId": "forum-roadmap",
+      "navGroup": "forum",
+      "navParent": "forum",
+      "navOrder": 7,
+      "legacy": null,
+      "az": "az/forum/2024/roadmap.html",
+      "en": "en/forum/2024/roadmap.html"
     }
   ],
   "legacyRedirects": {

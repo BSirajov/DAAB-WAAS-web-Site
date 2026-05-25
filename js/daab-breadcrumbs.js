@@ -12,7 +12,12 @@
     home: "home",
     foundation: "foundation",
     mission: "mission",
-    activities: "activities",
+    activities: "activitiesNews",
+    "forum-2024": "forum2024",
+    "forum-2024-presentations": "forum2024Presentations",
+    "forum-official": "forumOfficial",
+    "forum-program": "forumProgram",
+    "forum-impressions": "forumImpressions",
     "scientists-list": "scientistsList",
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",
@@ -22,7 +27,8 @@
 
   var GROUP_LABEL_KEYS = {
     about: "about",
-    scientists: "scientists"
+    scientists: "scientists",
+    activities: "activities"
   };
 
   var FALLBACK_ROUTES = {
@@ -30,7 +36,42 @@
       { id: "home", az: "az/index.html", en: "en/index.html", navParent: null },
       { id: "foundation", az: "az/foundation.html", en: "en/foundation.html", navParent: "about" },
       { id: "mission", az: "az/mission.html", en: "en/mission.html", navParent: "about" },
-      { id: "activities", az: "az/activities.html", en: "en/activities.html", navParent: null },
+      {
+        id: "activities",
+        az: "az/activities.html",
+        en: "en/activities.html",
+        navParent: "activities"
+      },
+      {
+        id: "forum-2024",
+        az: "az/forum/2024/index.html",
+        en: "en/forum/2024/index.html",
+        navParent: "forum"
+      },
+      {
+        id: "forum-2024-presentations",
+        az: "az/forum/2024/presentations.html",
+        en: "en/forum/2024/presentations.html",
+        navParent: "forum"
+      },
+      {
+        id: "forum-official",
+        az: "az/forum/2024/official.html",
+        en: "en/forum/2024/official.html",
+        navParent: "forum"
+      },
+      {
+        id: "forum-program",
+        az: "az/forum/2024/program.html",
+        en: "en/forum/2024/program.html",
+        navParent: "forum"
+      },
+      {
+        id: "forum-impressions",
+        az: "az/forum/2024/impressions.html",
+        en: "en/forum/2024/impressions.html",
+        navParent: "forum"
+      },
       {
         id: "scientists-list",
         az: "az/scientists/list.html",
@@ -60,13 +101,15 @@
         aria: "Səhifə yolu",
         home: "Ana səhifə",
         about: "Haqqımızda",
-        scientists: "Alimlərimiz"
+        scientists: "Alimlərimiz",
+        activities: "Fəaliyyətimiz"
       },
       en: {
         aria: "Breadcrumb",
         home: "Home",
         about: "About",
-        scientists: "Scientists"
+        scientists: "Scientists",
+        activities: "Activities"
       }
     },
     nav: {
@@ -75,6 +118,10 @@
         foundation: "Birliyin təsisi",
         mission: "Missiya və dəyərlər",
         activities: "Fəaliyyətimiz",
+        activitiesNews: "Yeniliklər",
+        forum2024: "Forum 2024",
+        forumOfficial: "Rəsmi müraciətlər",
+        forumProgram: "Forumun proqramı",
         scientistsList: "Siyahı",
         scientistsProfiles: "Profillər",
         executiveBoard: "İdarə heyəti",
@@ -86,6 +133,8 @@
         foundation: "Foundation",
         mission: "Mission & values",
         activities: "Activities",
+        activitiesNews: "News",
+        forum2024: "Forum 2024",
         scientistsList: "Directory",
         scientistsProfiles: "Profiles",
         executiveBoard: "Executive board",
@@ -98,7 +147,8 @@
   var FALLBACK_NAV = {
     sections: {
       about: { landingId: "mission" },
-      scientists: { landingId: "scientists-list" }
+      scientists: { landingId: "scientists-list" },
+      activities: { landingId: "activities" }
     }
   };
 
@@ -144,16 +194,33 @@
     return sec ? sec.landingId : null;
   }
 
+  function isBreadcrumbNode(node) {
+    return (
+      node &&
+      (node.id === "daab-breadcrumbs" ||
+        (node.classList && node.classList.contains("daab-breadcrumbs")))
+    );
+  }
+
   function findMountPoint() {
     var nav = document.querySelector(".nav-strip");
-    if (nav && nav.parentNode) return { parent: nav.parentNode, before: nav.nextSibling };
+    if (nav && nav.parentNode) {
+      var before = nav.nextElementSibling;
+      while (isBreadcrumbNode(before)) {
+        before = before.nextElementSibling;
+      }
+      return { parent: nav.parentNode, before: before };
+    }
     var main = document.getElementById("content") || document.querySelector("main");
-    if (main) return { parent: main.parentNode, before: main };
+    if (main && main.parentNode) {
+      return { parent: main.parentNode, before: main };
+    }
     return null;
   }
 
   function removeBreadcrumbs() {
     document.querySelectorAll("#daab-breadcrumbs, nav.daab-breadcrumbs").forEach(function (el) {
+      if (el.getAttribute("data-daab-breadcrumbs-static") === "1") return;
       el.remove();
     });
     document.documentElement.style.setProperty("--daab-breadcrumbs-height", "0px");
@@ -175,6 +242,12 @@
     if (I18N && typeof I18N.findPage === "function") {
       var found = I18N.findPage(routes);
       if (found) return found;
+    }
+
+    var pageId = document.documentElement.getAttribute("data-daab-page-id");
+    if (pageId) {
+      var byId = pageById(routes, pageId);
+      if (byId) return byId;
     }
 
     var pathKey = I18N && typeof I18N.currentPathKey === "function" ? I18N.currentPathKey() : "";
@@ -211,6 +284,16 @@
         href: landing ? pageHref(I18N, landing, lang) : null,
         text: groupKey ? t(ui, lang, "breadcrumbs", groupKey) : page.navParent
       });
+    }
+
+    if (page.id && page.id.indexOf("forum-") === 0 && page.id !== "forum-2024") {
+      var forumHub = pageById(routes, "forum-2024");
+      if (forumHub) {
+        crumbs.push({
+          href: pageHref(I18N, forumHub, lang),
+          text: pageTitle(ui, lang, "forum-2024")
+        });
+      }
     }
 
     crumbs.push({
@@ -272,9 +355,24 @@
     });
   }
 
+  function adoptExistingBreadcrumbs() {
+    var existing = document.getElementById("daab-breadcrumbs");
+    if (!existing || !existing.querySelector(".daab-breadcrumbs-list")) return false;
+    breadcrumbsInserted = true;
+    syncBreadcrumbsHeight();
+    requestAnimationFrame(syncBreadcrumbsHeight);
+    if (typeof ResizeObserver !== "undefined") {
+      var ro = new ResizeObserver(syncBreadcrumbsHeight);
+      ro.observe(existing);
+    }
+    window.addEventListener("resize", syncBreadcrumbsHeight, { passive: true });
+    return true;
+  }
+
   function mount() {
     if (breadcrumbsInserted || mountInFlight) return;
     if (document.body && document.body.classList.contains("daab-gateway")) return;
+    if (adoptExistingBreadcrumbs()) return;
 
     var I18N = getI18n();
     if (!I18N) return;
@@ -293,12 +391,18 @@
         var crumbs = buildTrail(routes, navDef, ui, lang, page, I18N);
         if (!crumbs || crumbs.length < 2) return;
 
-        var mountPoint = findMountPoint();
-        if (!mountPoint) return;
-
         removeBreadcrumbs();
         var el = render(crumbs, ui, lang);
-        mountPoint.parent.insertBefore(el, mountPoint.before);
+        var mountPoint = findMountPoint();
+        if (mountPoint) {
+          mountPoint.parent.insertBefore(el, mountPoint.before);
+        } else {
+          var nav = document.querySelector(".nav-strip");
+          if (nav && nav.parentNode) {
+            nav.parentNode.insertBefore(el, nav.nextSibling);
+          }
+        }
+        if (!document.getElementById("daab-breadcrumbs")) return;
         breadcrumbsInserted = true;
         syncBreadcrumbsHeight();
         if (typeof ResizeObserver !== "undefined") {
@@ -317,6 +421,7 @@
 
   function boot(attempt) {
     if (breadcrumbsInserted) return;
+    if (adoptExistingBreadcrumbs()) return;
     if (getI18n()) {
       mount();
       return;

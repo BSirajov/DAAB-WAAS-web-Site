@@ -12,6 +12,14 @@
     foundation: "foundation",
     mission: "mission",
     activities: "activities",
+    activitiesNews: "activitiesNews",
+    forum2024: "forum2024",
+    "forum-2024": "forum2024",
+    "forum-2024-presentations": "forum2024Presentations",
+    "forum-official": "forumOfficial",
+    "forum-program": "forumProgram",
+    "forum-impressions": "forumImpressions",
+    "forum-roadmap": "forumRoadmap",
     "scientists-list": "scientistsList",
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",
@@ -51,8 +59,28 @@
     return key ? label(ui, lang, key) : pageId;
   }
 
+  function childLabel(ui, lang, childDef, page) {
+    var key = childDef.labelKey || PAGE_LABEL_KEYS[page.id] || page.id;
+    return label(ui, lang, key);
+  }
+
   function currentPageId(routes) {
     return activeI18n.getPageId(routes) || document.documentElement.getAttribute("data-daab-page-id");
+  }
+
+  function isForumNavPageId(id) {
+    if (window.DAAB_NAV && typeof window.DAAB_NAV.isForumNavPageId === "function") {
+      return window.DAAB_NAV.isForumNavPageId(id);
+    }
+    return id === "forum-2024" || (typeof id === "string" && id.indexOf("forum-") === 0);
+  }
+
+  function childLinkIsActive(page, childDef, activeId) {
+    if (page.id === activeId) return true;
+    if (childDef.id === "forum-2024" && isForumNavPageId(activeId) && activeId !== "activities") {
+      return true;
+    }
+    return false;
   }
 
   function buildLink(page, lang, ui, activeId, className, extra) {
@@ -107,9 +135,10 @@
       link.setAttribute("role", "menuitem");
       link.setAttribute("data-nav-id", page.navId || page.id);
 
+      var iconKey = childDef.labelKey || page.id;
       var title = document.createElement("span");
       title.className = "nav-dropdown-link-title";
-      title.textContent = labelWithIcon(ui, page.id, pageLabel(ui, lang, page.id));
+      title.textContent = labelWithIcon(ui, iconKey, childLabel(ui, lang, childDef, page));
       link.appendChild(title);
 
       if (childDef.descKey) {
@@ -122,7 +151,7 @@
         }
       }
 
-      if (page.id === activeId) {
+      if (childLinkIsActive(page, childDef, activeId)) {
         link.classList.add("active");
         link.setAttribute("aria-current", "page");
         groupActive = true;
@@ -181,18 +210,21 @@
 
   function staticHref(name) {
     var path = location.pathname.replace(/\\/g, "/");
+    var inForum = /\/forum\/2024\//.test(path);
     var inSci = /\/scientists\//.test(path);
-    var up = inSci ? "../" : "";
+    var up = inForum ? "../../" : inSci ? "../" : "";
     var sci = inSci ? "" : "scientists/";
+    var forum = inForum ? "" : "forum/2024/";
     var map = {
       home: up + "index.html",
       foundation: up + "foundation.html",
       mission: up + "mission.html",
       board: up + "executive-board.html",
       charter: up + "charter.html",
-      list: (inSci ? "" : sci) + "list.html",
-      profiles: (inSci ? "" : sci) + "profiles.html",
+      list: (inSci ? "" : up + sci) + "list.html",
+      profiles: (inSci ? "" : up + sci) + "profiles.html",
       activities: up + "activities.html",
+      "forum-2024": up + forum + "index.html",
       membership: up + "membership.html"
     };
     return map[name] || up + "index.html";
@@ -213,6 +245,9 @@
   var FALLBACK_ICONS = {
     home: "🏠",
     activities: "📰",
+    activitiesNews: "📰",
+    forum2024: "🎤",
+    "forum-2024": "🎤",
     membership: "✒️",
     about: "🏛️",
     scientists: "🌐",
@@ -233,7 +268,11 @@
     var az =
       '<div class="nav-divider"></div>' +
       '<a class="nav-link" href="' + staticHref("home") + '" data-nav-id="home">' + fallbackIcon("home") + 'Ana səhifə</a>' +
-      '<a class="nav-link" href="' + staticHref("activities") + '" data-nav-id="activities">' + fallbackIcon("activities") + 'Fəaliyyətimiz</a>' +
+      '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("activities") + 'Fəaliyyətimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
+      '<div class="nav-dropdown-panel" role="menu">' +
+      dropLink(staticHref("activities"), "activities", "Yeniliklər", "Əsas fəaliyyət və yeniliklər", FALLBACK_ICONS.activitiesNews) +
+      dropLink(staticHref("forum-2024"), "forum-2024", "Forum 2024", "Forum 2024 kitabı və bölmələr", FALLBACK_ICONS["forum-2024"]) +
+      '</div></div>' +
       '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("scientists") + 'Alimlərimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
       '<div class="nav-dropdown-panel" role="menu">' +
       dropLink(staticHref("list"), "scientists-list", "Siyahı", "Bütün alimlərin siyahısı", FALLBACK_ICONS["scientists-list"]) +
@@ -250,7 +289,11 @@
     var en =
       '<div class="nav-divider"></div>' +
       '<a class="nav-link" href="' + staticHref("home") + '" data-nav-id="home">' + fallbackIcon("home") + 'Home</a>' +
-      '<a class="nav-link" href="' + staticHref("activities") + '" data-nav-id="activities">' + fallbackIcon("activities") + 'Activities</a>' +
+      '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("activities") + 'Activities <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
+      '<div class="nav-dropdown-panel" role="menu">' +
+      dropLink(staticHref("activities"), "activities", "News", "News and updates", FALLBACK_ICONS.activitiesNews) +
+      dropLink(staticHref("forum-2024"), "forum-2024", "Forum 2024", "Forum 2024 book and sections", FALLBACK_ICONS["forum-2024"]) +
+      '</div></div>' +
       '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("scientists") + 'Scientists <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
       '<div class="nav-dropdown-panel" role="menu">' +
       dropLink(staticHref("list"), "scientists-list", "Directory", "Directory of all scientists", FALLBACK_ICONS["scientists-list"]) +

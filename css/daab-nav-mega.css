@@ -126,6 +126,16 @@
 }
 
 /* In-section navigation — pill buttons mirror the project's .btn system. */
+/* Section pills sit below the page hero/title band (see daab-section-nav.js). */
+header.page-hero + .daab-section-nav,
+header.hero + .daab-section-nav,
+header.forum-hero + .daab-section-nav {
+  max-width: 1180px;
+  margin: 0 auto 20px;
+  padding: 16px 24px;
+  box-sizing: border-box;
+}
+
 .daab-section-nav {
   margin: 0 0 24px;
   padding: 16px 18px;

@@ -1,21 +1,67 @@
 /**
- * Activities page — charter-aligned sticky events column.
+ * Activities + Forum content pages — charter-aligned sticky events column.
+ * v10 — fix feed column width (daab-common `.main` must not shrink grid cell).
  * Sticky is on the grid item (.sidebar), not a nested child, so the panel
- * stays in view while the news feed scrolls (see az/charter.html .toc-card).
+ * stays in view while the news feed scrolls (see az/activities.html).
+ *
+ * Page IDs using this layout must stay in sync with forum sidebar pages in
+ * helpers/_forum_layout_pages.py
  */
-html[data-daab-page-id="activities"] .content-wrap {
+html[data-daab-page-id="activities"] .content-wrap,
+html[data-daab-page-id="forum-official"] .content-wrap,
+html[data-daab-page-id="forum-program"] .content-wrap,
+html[data-daab-page-id="forum-2024-presentations"] .content-wrap,
+html[data-daab-page-id="forum-impressions"] .content-wrap,
+html[data-daab-page-id="forum-roadmap"] .content-wrap {
   display: grid !important;
   align-items: start !important;
   overflow: visible !important;
 }
 
-html[data-daab-page-id="activities"] .news-feed {
+/* daab-common.css sets `.main { max-width: var(--max); margin: auto }` for hub
+   pages; inside `.content-wrap` grid that can shrink the feed column to ~0. */
+html[data-daab-page-id="activities"] .content-wrap > main.news-feed,
+html[data-daab-page-id="forum-official"] .content-wrap > main.news-feed,
+html[data-daab-page-id="forum-program"] .content-wrap > main.news-feed,
+html[data-daab-page-id="forum-2024-presentations"] .content-wrap > main.news-feed,
+html[data-daab-page-id="forum-impressions"] .content-wrap > main.news-feed,
+html[data-daab-page-id="forum-roadmap"] .content-wrap > main.news-feed {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+  justify-self: stretch !important;
+}
+
+html[data-daab-page-id="activities"] .sidebar,
+html[data-daab-page-id="forum-official"] .sidebar,
+html[data-daab-page-id="forum-program"] .sidebar,
+html[data-daab-page-id="forum-2024-presentations"] .sidebar,
+html[data-daab-page-id="forum-impressions"] .sidebar,
+html[data-daab-page-id="forum-roadmap"] .sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-self: start;
+}
+
+html[data-daab-page-id="activities"] .news-feed,
+html[data-daab-page-id="forum-official"] .news-feed,
+html[data-daab-page-id="forum-program"] .news-feed,
+html[data-daab-page-id="forum-2024-presentations"] .news-feed,
+html[data-daab-page-id="forum-impressions"] .news-feed,
+html[data-daab-page-id="forum-roadmap"] .news-feed {
   min-width: 0 !important;
 }
 
-/* Desktop: grid-item sticky sidebar */
+/* Desktop: grid-item sticky sidebar (same as Activities Yeniliklər panel) */
 @media (min-width: 1061px) {
-  html[data-daab-page-id="activities"] .sidebar {
+  html[data-daab-page-id="activities"] .sidebar,
+  html[data-daab-page-id="forum-official"] .sidebar,
+  html[data-daab-page-id="forum-program"] .sidebar,
+  html[data-daab-page-id="forum-2024-presentations"] .sidebar,
+  html[data-daab-page-id="forum-impressions"] .sidebar,
+  html[data-daab-page-id="forum-roadmap"] .sidebar {
     position: sticky !important;
     top: calc(var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) + 12px) !important;
     align-self: start !important;
@@ -25,7 +71,12 @@ html[data-daab-page-id="activities"] .news-feed {
     z-index: 20 !important;
   }
 
-  html[data-daab-page-id="activities"] .sidebar-widget {
+  html[data-daab-page-id="activities"] .sidebar-widget,
+  html[data-daab-page-id="forum-official"] .sidebar-widget,
+  html[data-daab-page-id="forum-program"] .sidebar-widget,
+  html[data-daab-page-id="forum-2024-presentations"] .sidebar-widget,
+  html[data-daab-page-id="forum-impressions"] .sidebar-widget,
+  html[data-daab-page-id="forum-roadmap"] .sidebar-widget {
     position: static !important;
     top: auto !important;
     display: flex !important;
@@ -35,11 +86,21 @@ html[data-daab-page-id="activities"] .news-feed {
     overflow: hidden !important;
   }
 
-  html[data-daab-page-id="activities"] .sidebar-widget .widget-head {
+  html[data-daab-page-id="activities"] .sidebar-widget .widget-head,
+  html[data-daab-page-id="forum-official"] .sidebar-widget .widget-head,
+  html[data-daab-page-id="forum-program"] .sidebar-widget .widget-head,
+  html[data-daab-page-id="forum-2024-presentations"] .sidebar-widget .widget-head,
+  html[data-daab-page-id="forum-impressions"] .sidebar-widget .widget-head,
+  html[data-daab-page-id="forum-roadmap"] .sidebar-widget .widget-head {
     flex: 0 0 auto !important;
   }
 
-  html[data-daab-page-id="activities"] .sidebar-widget .widget-body {
+  html[data-daab-page-id="activities"] .sidebar-widget .widget-body,
+  html[data-daab-page-id="forum-official"] .sidebar-widget .widget-body,
+  html[data-daab-page-id="forum-program"] .sidebar-widget .widget-body,
+  html[data-daab-page-id="forum-2024-presentations"] .sidebar-widget .widget-body,
+  html[data-daab-page-id="forum-impressions"] .sidebar-widget .widget-body,
+  html[data-daab-page-id="forum-roadmap"] .sidebar-widget .widget-body {
     flex: 1 1 auto !important;
     min-height: 0 !important;
     max-height: none !important;
@@ -52,11 +113,21 @@ html[data-daab-page-id="activities"] .news-feed {
 
 /* Tablet / mobile: stacked layout, collapsible panel (no sticky) */
 @media (max-width: 1060px) {
-  html[data-daab-page-id="activities"] .content-wrap {
+  html[data-daab-page-id="activities"] .content-wrap,
+  html[data-daab-page-id="forum-official"] .content-wrap,
+  html[data-daab-page-id="forum-program"] .content-wrap,
+  html[data-daab-page-id="forum-2024-presentations"] .content-wrap,
+  html[data-daab-page-id="forum-impressions"] .content-wrap,
+  html[data-daab-page-id="forum-roadmap"] .content-wrap {
     align-items: start !important;
   }
 
-  html[data-daab-page-id="activities"] .sidebar {
+  html[data-daab-page-id="activities"] .sidebar,
+  html[data-daab-page-id="forum-official"] .sidebar,
+  html[data-daab-page-id="forum-program"] .sidebar,
+  html[data-daab-page-id="forum-2024-presentations"] .sidebar,
+  html[data-daab-page-id="forum-impressions"] .sidebar,
+  html[data-daab-page-id="forum-roadmap"] .sidebar {
     position: static !important;
     top: auto !important;
     max-height: none !important;
@@ -64,13 +135,23 @@ html[data-daab-page-id="activities"] .news-feed {
     z-index: 4500 !important;
   }
 
-  html[data-daab-page-id="activities"] .sidebar-widget {
+  html[data-daab-page-id="activities"] .sidebar-widget,
+  html[data-daab-page-id="forum-official"] .sidebar-widget,
+  html[data-daab-page-id="forum-program"] .sidebar-widget,
+  html[data-daab-page-id="forum-2024-presentations"] .sidebar-widget,
+  html[data-daab-page-id="forum-impressions"] .sidebar-widget,
+  html[data-daab-page-id="forum-roadmap"] .sidebar-widget {
     position: static !important;
     max-height: none !important;
     display: block !important;
   }
 
-  html[data-daab-page-id="activities"] .sidebar-widget .widget-body {
+  html[data-daab-page-id="activities"] .sidebar-widget .widget-body,
+  html[data-daab-page-id="forum-official"] .sidebar-widget .widget-body,
+  html[data-daab-page-id="forum-program"] .sidebar-widget .widget-body,
+  html[data-daab-page-id="forum-2024-presentations"] .sidebar-widget .widget-body,
+  html[data-daab-page-id="forum-impressions"] .sidebar-widget .widget-body,
+  html[data-daab-page-id="forum-roadmap"] .sidebar-widget .widget-body {
     flex: none !important;
   }
 }
