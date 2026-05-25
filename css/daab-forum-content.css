@@ -5,7 +5,9 @@ html[data-daab-page-id="forum-official"],
 html[data-daab-page-id="forum-2024-presentations"],
 html[data-daab-page-id="forum-program"],
 html[data-daab-page-id="forum-impressions"],
-html[data-daab-page-id="forum-roadmap"]{
+html[data-daab-page-id="forum-roadmap"],
+html[data-daab-page-id="forum-bagli-hekayeler"],
+html[data-daab-page-id="forum-cooperation"]{
   --navy: var(--blue-900);
   --teal: var(--blue-700);
   --gold-lt: var(--gold-soft);
@@ -19,7 +21,9 @@ html[data-daab-page-id="forum-official"] body,
 html[data-daab-page-id="forum-2024-presentations"] body,
 html[data-daab-page-id="forum-program"] body,
 html[data-daab-page-id="forum-impressions"] body,
-html[data-daab-page-id="forum-roadmap"] body{
+html[data-daab-page-id="forum-roadmap"] body,
+html[data-daab-page-id="forum-bagli-hekayeler"] body,
+html[data-daab-page-id="forum-cooperation"] body{
   color: var(--ink) !important;
   background: #fff url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
 }
@@ -28,7 +32,9 @@ html[data-daab-page-id="forum-official"] .page-hero,
 html[data-daab-page-id="forum-2024-presentations"] .page-hero,
 html[data-daab-page-id="forum-program"] .page-hero,
 html[data-daab-page-id="forum-impressions"] .page-hero,
-html[data-daab-page-id="forum-roadmap"] .page-hero{
+html[data-daab-page-id="forum-roadmap"] .page-hero,
+html[data-daab-page-id="forum-bagli-hekayeler"] .page-hero,
+html[data-daab-page-id="forum-cooperation"] .page-hero{
   position: relative;
   overflow: hidden;
   color: var(--ink) !important;
@@ -40,7 +46,9 @@ html[data-daab-page-id="forum-official"] .page-hero::before,
 html[data-daab-page-id="forum-2024-presentations"] .page-hero::before,
 html[data-daab-page-id="forum-program"] .page-hero::before,
 html[data-daab-page-id="forum-impressions"] .page-hero::before,
-html[data-daab-page-id="forum-roadmap"] .page-hero::before{
+html[data-daab-page-id="forum-roadmap"] .page-hero::before,
+html[data-daab-page-id="forum-bagli-hekayeler"] .page-hero::before,
+html[data-daab-page-id="forum-cooperation"] .page-hero::before{
   content: "";
   position: absolute;
   inset: 0;
@@ -52,7 +60,9 @@ html[data-daab-page-id="forum-official"] .page-hero::after,
 html[data-daab-page-id="forum-2024-presentations"] .page-hero::after,
 html[data-daab-page-id="forum-program"] .page-hero::after,
 html[data-daab-page-id="forum-impressions"] .page-hero::after,
-html[data-daab-page-id="forum-roadmap"] .page-hero::after{
+html[data-daab-page-id="forum-roadmap"] .page-hero::after,
+html[data-daab-page-id="forum-bagli-hekayeler"] .page-hero::after,
+html[data-daab-page-id="forum-cooperation"] .page-hero::after{
   content: "";
   position: absolute;
   inset: 0;
@@ -67,7 +77,9 @@ html[data-daab-page-id="forum-official"] .page-hero h1,
 html[data-daab-page-id="forum-2024-presentations"] .page-hero h1,
 html[data-daab-page-id="forum-program"] .page-hero h1,
 html[data-daab-page-id="forum-impressions"] .page-hero h1,
-html[data-daab-page-id="forum-roadmap"] .page-hero h1{
+html[data-daab-page-id="forum-roadmap"] .page-hero h1,
+html[data-daab-page-id="forum-bagli-hekayeler"] .page-hero h1,
+html[data-daab-page-id="forum-cooperation"] .page-hero h1{
   position: relative;
   z-index: 1;
   margin: 0;
@@ -83,7 +95,9 @@ html[data-daab-page-id="forum-official"] .page-hero h1 span,
 html[data-daab-page-id="forum-2024-presentations"] .page-hero h1 span,
 html[data-daab-page-id="forum-program"] .page-hero h1 span,
 html[data-daab-page-id="forum-impressions"] .page-hero h1 span,
-html[data-daab-page-id="forum-roadmap"] .page-hero h1 span{
+html[data-daab-page-id="forum-roadmap"] .page-hero h1 span,
+html[data-daab-page-id="forum-bagli-hekayeler"] .page-hero h1 span,
+html[data-daab-page-id="forum-cooperation"] .page-hero h1 span{
   color: var(--blue-700);
 }
 
@@ -91,7 +105,9 @@ html[data-daab-page-id="forum-official"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-2024-presentations"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-program"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-impressions"] .page-hero .hero-wrap,
-html[data-daab-page-id="forum-roadmap"] .page-hero .hero-wrap{
+html[data-daab-page-id="forum-roadmap"] .page-hero .hero-wrap,
+html[data-daab-page-id="forum-bagli-hekayeler"] .page-hero .hero-wrap,
+html[data-daab-page-id="forum-cooperation"] .page-hero .hero-wrap{
   position: relative;
   z-index: 1;
   max-width: var(--max);
@@ -107,7 +123,9 @@ html[data-daab-page-id="forum-official"] .page-hero .hero-panel,
 html[data-daab-page-id="forum-2024-presentations"] .page-hero .hero-panel,
 html[data-daab-page-id="forum-program"] .page-hero .hero-panel,
 html[data-daab-page-id="forum-impressions"] .page-hero .hero-panel,
-html[data-daab-page-id="forum-roadmap"] .page-hero .hero-panel{
+html[data-daab-page-id="forum-roadmap"] .page-hero .hero-panel,
+html[data-daab-page-id="forum-bagli-hekayeler"] .page-hero .hero-panel,
+html[data-daab-page-id="forum-cooperation"] .page-hero .hero-panel{
   align-self: start;
   padding: 0 0 0 4px;
   background: rgba(255, 255, 255, 0.12);
@@ -121,7 +139,9 @@ html[data-daab-page-id="forum-official"] .page-hero .panel-card,
 html[data-daab-page-id="forum-2024-presentations"] .page-hero .panel-card,
 html[data-daab-page-id="forum-program"] .page-hero .panel-card,
 html[data-daab-page-id="forum-impressions"] .page-hero .panel-card,
-html[data-daab-page-id="forum-roadmap"] .page-hero .panel-card{
+html[data-daab-page-id="forum-roadmap"] .page-hero .panel-card,
+html[data-daab-page-id="forum-bagli-hekayeler"] .page-hero .panel-card,
+html[data-daab-page-id="forum-cooperation"] .page-hero .panel-card{
   padding: 22px 24px;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.62);
@@ -132,7 +152,9 @@ html[data-daab-page-id="forum-official"] .page-hero .panel-title,
 html[data-daab-page-id="forum-2024-presentations"] .page-hero .panel-title,
 html[data-daab-page-id="forum-program"] .page-hero .panel-title,
 html[data-daab-page-id="forum-impressions"] .page-hero .panel-title,
-html[data-daab-page-id="forum-roadmap"] .page-hero .panel-title{
+html[data-daab-page-id="forum-roadmap"] .page-hero .panel-title,
+html[data-daab-page-id="forum-bagli-hekayeler"] .page-hero .panel-title,
+html[data-daab-page-id="forum-cooperation"] .page-hero .panel-title{
   margin: 0 0 10px;
   color: #094d78;
   font-family: "Playfair Display", Georgia, serif;
@@ -146,7 +168,9 @@ html[data-daab-page-id="forum-official"] .page-hero .panel-copy,
 html[data-daab-page-id="forum-2024-presentations"] .page-hero .panel-copy,
 html[data-daab-page-id="forum-program"] .page-hero .panel-copy,
 html[data-daab-page-id="forum-impressions"] .page-hero .panel-copy,
-html[data-daab-page-id="forum-roadmap"] .page-hero .panel-copy{
+html[data-daab-page-id="forum-roadmap"] .page-hero .panel-copy,
+html[data-daab-page-id="forum-bagli-hekayeler"] .page-hero .panel-copy,
+html[data-daab-page-id="forum-cooperation"] .page-hero .panel-copy{
   color: var(--muted);
   font-size: 14px;
   line-height: 1.55;
@@ -156,7 +180,8 @@ html[data-daab-page-id="forum-official"] .timeline-list li,
 html[data-daab-page-id="forum-2024-presentations"] .timeline-list li,
 html[data-daab-page-id="forum-program"] .timeline-list li,
 html[data-daab-page-id="forum-impressions"] .timeline-list li,
-html[data-daab-page-id="forum-roadmap"] .timeline-list li{
+html[data-daab-page-id="forum-roadmap"] .timeline-list li,
+html[data-daab-page-id="forum-cooperation"] .timeline-list li{
   display: block;
 }
 
@@ -164,7 +189,8 @@ html[data-daab-page-id="forum-official"] .timeline-list a,
 html[data-daab-page-id="forum-2024-presentations"] .timeline-list a,
 html[data-daab-page-id="forum-program"] .timeline-list a,
 html[data-daab-page-id="forum-impressions"] .timeline-list a,
-html[data-daab-page-id="forum-roadmap"] .timeline-list a{
+html[data-daab-page-id="forum-roadmap"] .timeline-list a,
+html[data-daab-page-id="forum-cooperation"] .timeline-list a{
   display: block;
   padding: 9px 11px;
   border-radius: 14px;
@@ -176,7 +202,9 @@ html[data-daab-page-id="forum-official"] .content-wrap,
 html[data-daab-page-id="forum-2024-presentations"] .content-wrap,
 html[data-daab-page-id="forum-program"] .content-wrap,
 html[data-daab-page-id="forum-impressions"] .content-wrap,
-html[data-daab-page-id="forum-roadmap"] .content-wrap{
+html[data-daab-page-id="forum-roadmap"] .content-wrap,
+html[data-daab-page-id="forum-bagli-hekayeler"] .content-wrap,
+html[data-daab-page-id="forum-cooperation"] .content-wrap{
   width: 100% !important;
   max-width: var(--max) !important;
   margin: 32px auto 0 !important;
@@ -194,7 +222,9 @@ html[data-daab-page-id="forum-official"] .news-feed,
 html[data-daab-page-id="forum-2024-presentations"] .news-feed,
 html[data-daab-page-id="forum-program"] .news-feed,
 html[data-daab-page-id="forum-impressions"] .news-feed,
-html[data-daab-page-id="forum-roadmap"] .news-feed{
+html[data-daab-page-id="forum-roadmap"] .news-feed,
+html[data-daab-page-id="forum-bagli-hekayeler"] .news-feed,
+html[data-daab-page-id="forum-cooperation"] .news-feed{
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -205,7 +235,9 @@ html[data-daab-page-id="forum-official"] .news-card,
 html[data-daab-page-id="forum-2024-presentations"] .news-card,
 html[data-daab-page-id="forum-program"] .news-card,
 html[data-daab-page-id="forum-impressions"] .news-card,
-html[data-daab-page-id="forum-roadmap"] .news-card{
+html[data-daab-page-id="forum-roadmap"] .news-card,
+html[data-daab-page-id="forum-bagli-hekayeler"] .news-card,
+html[data-daab-page-id="forum-cooperation"] .news-card{
   background: var(--card-bg) !important;
   border-radius: var(--radius) !important;
   overflow: hidden;
@@ -220,7 +252,9 @@ html[data-daab-page-id="forum-official"] .news-card:hover,
 html[data-daab-page-id="forum-2024-presentations"] .news-card:hover,
 html[data-daab-page-id="forum-program"] .news-card:hover,
 html[data-daab-page-id="forum-impressions"] .news-card:hover,
-html[data-daab-page-id="forum-roadmap"] .news-card:hover{
+html[data-daab-page-id="forum-roadmap"] .news-card:hover,
+html[data-daab-page-id="forum-bagli-hekayeler"] .news-card:hover,
+html[data-daab-page-id="forum-cooperation"] .news-card:hover{
   transform: translateY(-5px) !important;
   box-shadow: var(--shadow-strong) !important;
   border-color: rgba(78, 180, 238, 0.42) !important;
@@ -231,11 +265,15 @@ html[data-daab-page-id="forum-2024-presentations"] .card-header,
 html[data-daab-page-id="forum-program"] .card-header,
 html[data-daab-page-id="forum-impressions"] .card-header,
 html[data-daab-page-id="forum-roadmap"] .card-header,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-header,
+html[data-daab-page-id="forum-cooperation"] .card-header,
 html[data-daab-page-id="forum-official"] .widget-head,
 html[data-daab-page-id="forum-2024-presentations"] .widget-head,
 html[data-daab-page-id="forum-program"] .widget-head,
 html[data-daab-page-id="forum-impressions"] .widget-head,
-html[data-daab-page-id="forum-roadmap"] .widget-head{
+html[data-daab-page-id="forum-roadmap"] .widget-head,
+html[data-daab-page-id="forum-bagli-hekayeler"] .widget-head,
+html[data-daab-page-id="forum-cooperation"] .widget-head{
   background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 58%, var(--blue-400) 100%) !important;
 }
 
@@ -243,7 +281,9 @@ html[data-daab-page-id="forum-official"] .card-header,
 html[data-daab-page-id="forum-2024-presentations"] .card-header,
 html[data-daab-page-id="forum-program"] .card-header,
 html[data-daab-page-id="forum-impressions"] .card-header,
-html[data-daab-page-id="forum-roadmap"] .card-header{
+html[data-daab-page-id="forum-roadmap"] .card-header,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-header,
+html[data-daab-page-id="forum-cooperation"] .card-header{
   padding: 24px 28px 20px !important;
   text-align: center;
 }
@@ -252,7 +292,9 @@ html[data-daab-page-id="forum-official"] .card-title,
 html[data-daab-page-id="forum-2024-presentations"] .card-title,
 html[data-daab-page-id="forum-program"] .card-title,
 html[data-daab-page-id="forum-impressions"] .card-title,
-html[data-daab-page-id="forum-roadmap"] .card-title{
+html[data-daab-page-id="forum-roadmap"] .card-title,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-title,
+html[data-daab-page-id="forum-cooperation"] .card-title{
   margin: 0;
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(14px, 1.6vw, 20px) !important;
@@ -267,7 +309,9 @@ html[data-daab-page-id="forum-official"] .card-body,
 html[data-daab-page-id="forum-2024-presentations"] .card-body,
 html[data-daab-page-id="forum-program"] .card-body,
 html[data-daab-page-id="forum-impressions"] .card-body,
-html[data-daab-page-id="forum-roadmap"] .card-body{
+html[data-daab-page-id="forum-roadmap"] .card-body,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-body,
+html[data-daab-page-id="forum-cooperation"] .card-body{
   padding: 24px 28px;
 }
 
@@ -275,7 +319,9 @@ html[data-daab-page-id="forum-official"] .card-gallery,
 html[data-daab-page-id="forum-2024-presentations"] .card-gallery,
 html[data-daab-page-id="forum-program"] .card-gallery,
 html[data-daab-page-id="forum-impressions"] .card-gallery,
-html[data-daab-page-id="forum-roadmap"] .card-gallery{
+html[data-daab-page-id="forum-roadmap"] .card-gallery,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-gallery,
+html[data-daab-page-id="forum-cooperation"] .card-gallery{
   display: grid;
   gap: 12px;
   margin: 0 0 20px;
@@ -285,7 +331,9 @@ html[data-daab-page-id="forum-official"] .card-gallery.single,
 html[data-daab-page-id="forum-2024-presentations"] .card-gallery.single,
 html[data-daab-page-id="forum-program"] .card-gallery.single,
 html[data-daab-page-id="forum-impressions"] .card-gallery.single,
-html[data-daab-page-id="forum-roadmap"] .card-gallery.single{
+html[data-daab-page-id="forum-roadmap"] .card-gallery.single,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-gallery.single,
+html[data-daab-page-id="forum-cooperation"] .card-gallery.single{
   grid-template-columns: 1fr;
 }
 
@@ -293,7 +341,9 @@ html[data-daab-page-id="forum-official"] .card-gallery.double,
 html[data-daab-page-id="forum-2024-presentations"] .card-gallery.double,
 html[data-daab-page-id="forum-program"] .card-gallery.double,
 html[data-daab-page-id="forum-impressions"] .card-gallery.double,
-html[data-daab-page-id="forum-roadmap"] .card-gallery.double{
+html[data-daab-page-id="forum-roadmap"] .card-gallery.double,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-gallery.double,
+html[data-daab-page-id="forum-cooperation"] .card-gallery.double{
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   align-items: stretch;
@@ -303,7 +353,9 @@ html[data-daab-page-id="forum-official"] .card-gallery img,
 html[data-daab-page-id="forum-2024-presentations"] .card-gallery img,
 html[data-daab-page-id="forum-program"] .card-gallery img,
 html[data-daab-page-id="forum-impressions"] .card-gallery img,
-html[data-daab-page-id="forum-roadmap"] .card-gallery img{
+html[data-daab-page-id="forum-roadmap"] .card-gallery img,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-gallery img,
+html[data-daab-page-id="forum-cooperation"] .card-gallery img{
   width: 100%;
   height: auto;
   max-height: 420px;
@@ -319,7 +371,9 @@ html[data-daab-page-id="forum-official"] .card-gallery.double img,
 html[data-daab-page-id="forum-2024-presentations"] .card-gallery.double img,
 html[data-daab-page-id="forum-program"] .card-gallery.double img,
 html[data-daab-page-id="forum-impressions"] .card-gallery.double img,
-html[data-daab-page-id="forum-roadmap"] .card-gallery.double img{
+html[data-daab-page-id="forum-roadmap"] .card-gallery.double img,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-gallery.double img,
+html[data-daab-page-id="forum-cooperation"] .card-gallery.double img{
   width: 100%;
   height: 280px;
   min-height: 280px;
@@ -333,7 +387,9 @@ html[data-daab-page-id="forum-roadmap"] .card-gallery.double img{
 html[data-daab-page-id="forum-2024-presentations"] .card-gallery.double,
 html[data-daab-page-id="forum-program"] .card-gallery.double,
 html[data-daab-page-id="forum-impressions"] .card-gallery.double,
-html[data-daab-page-id="forum-roadmap"] .card-gallery.double{
+html[data-daab-page-id="forum-roadmap"] .card-gallery.double,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-gallery.double,
+html[data-daab-page-id="forum-cooperation"] .card-gallery.double{
     grid-template-columns: 1fr;
   }
 }
@@ -342,7 +398,9 @@ html[data-daab-page-id="forum-official"] .card-lead,
 html[data-daab-page-id="forum-2024-presentations"] .card-lead,
 html[data-daab-page-id="forum-program"] .card-lead,
 html[data-daab-page-id="forum-impressions"] .card-lead,
-html[data-daab-page-id="forum-roadmap"] .card-lead{
+html[data-daab-page-id="forum-roadmap"] .card-lead,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-lead,
+html[data-daab-page-id="forum-cooperation"] .card-lead{
   font-size: 14px;
   font-weight: 700;
   color: var(--blue-700);
@@ -356,7 +414,9 @@ html[data-daab-page-id="forum-official"] .card-text,
 html[data-daab-page-id="forum-2024-presentations"] .card-text,
 html[data-daab-page-id="forum-program"] .card-text,
 html[data-daab-page-id="forum-impressions"] .card-text,
-html[data-daab-page-id="forum-roadmap"] .card-text{
+html[data-daab-page-id="forum-roadmap"] .card-text,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-text,
+html[data-daab-page-id="forum-cooperation"] .card-text{
   font-size: 14.5px;
   color: var(--text-mid);
   line-height: 1.65;
@@ -367,7 +427,9 @@ html[data-daab-page-id="forum-official"] .card-text:last-child,
 html[data-daab-page-id="forum-2024-presentations"] .card-text:last-child,
 html[data-daab-page-id="forum-program"] .card-text:last-child,
 html[data-daab-page-id="forum-impressions"] .card-text:last-child,
-html[data-daab-page-id="forum-roadmap"] .card-text:last-child{
+html[data-daab-page-id="forum-roadmap"] .card-text:last-child,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-text:last-child,
+html[data-daab-page-id="forum-cooperation"] .card-text:last-child{
   margin-bottom: 0;
 }
 
@@ -375,7 +437,9 @@ html[data-daab-page-id="forum-official"] .card-signoff,
 html[data-daab-page-id="forum-2024-presentations"] .card-signoff,
 html[data-daab-page-id="forum-program"] .card-signoff,
 html[data-daab-page-id="forum-impressions"] .card-signoff,
-html[data-daab-page-id="forum-roadmap"] .card-signoff{
+html[data-daab-page-id="forum-roadmap"] .card-signoff,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-signoff,
+html[data-daab-page-id="forum-cooperation"] .card-signoff{
   font-size: 13.5px;
   font-weight: 700;
   color: #345d76;
@@ -470,7 +534,9 @@ html[data-daab-page-id="forum-official"] .card-quote,
 html[data-daab-page-id="forum-2024-presentations"] .card-quote,
 html[data-daab-page-id="forum-program"] .card-quote,
 html[data-daab-page-id="forum-impressions"] .card-quote,
-html[data-daab-page-id="forum-roadmap"] .card-quote{
+html[data-daab-page-id="forum-roadmap"] .card-quote,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-quote,
+html[data-daab-page-id="forum-cooperation"] .card-quote{
   border-left: 3px solid var(--gold);
   padding: 12px 18px;
   margin: 18px 0;
@@ -488,7 +554,9 @@ html[data-daab-page-id="forum-roadmap"] .card-quote{
 html[data-daab-page-id="forum-2024-presentations"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-program"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-impressions"] .page-hero .hero-wrap,
-html[data-daab-page-id="forum-roadmap"] .page-hero .hero-wrap{
+html[data-daab-page-id="forum-roadmap"] .page-hero .hero-wrap,
+html[data-daab-page-id="forum-bagli-hekayeler"] .page-hero .hero-wrap,
+html[data-daab-page-id="forum-cooperation"] .page-hero .hero-wrap{
     grid-template-columns: 1fr;
   }
 }
@@ -503,7 +571,9 @@ html[data-daab-page-id="forum-program"]{
 html[data-daab-page-id="forum-2024-presentations"] .content-wrap,
 html[data-daab-page-id="forum-program"] .content-wrap,
 html[data-daab-page-id="forum-impressions"] .content-wrap,
-html[data-daab-page-id="forum-roadmap"] .content-wrap{
+html[data-daab-page-id="forum-roadmap"] .content-wrap,
+html[data-daab-page-id="forum-bagli-hekayeler"] .content-wrap,
+html[data-daab-page-id="forum-cooperation"] .content-wrap{
     grid-template-columns: 1fr !important;
     padding: 0 18px 64px !important;
     margin-top: 24px !important;
@@ -530,7 +600,9 @@ html[data-daab-page-id="forum-official"] .forum-breadcrumbs,
 html[data-daab-page-id="forum-2024-presentations"] .forum-breadcrumbs,
 html[data-daab-page-id="forum-program"] .forum-breadcrumbs,
 html[data-daab-page-id="forum-impressions"] .forum-breadcrumbs ,
-html[data-daab-page-id="forum-roadmap"] .forum-breadcrumbs {
+html[data-daab-page-id="forum-roadmap"] .forum-breadcrumbs ,
+html[data-daab-page-id="forum-bagli-hekayeler"] .forum-breadcrumbs ,
+html[data-daab-page-id="forum-cooperation"] .forum-breadcrumbs {
   display: block !important;
   visibility: visible !important;
   width: 100% !important;
@@ -555,7 +627,9 @@ html[data-daab-page-id="forum-official"] .forum-breadcrumbs a,
 html[data-daab-page-id="forum-2024-presentations"] .forum-breadcrumbs a,
 html[data-daab-page-id="forum-program"] .forum-breadcrumbs a,
 html[data-daab-page-id="forum-impressions"] .forum-breadcrumbs a ,
-html[data-daab-page-id="forum-roadmap"] .forum-breadcrumbs a {
+html[data-daab-page-id="forum-roadmap"] .forum-breadcrumbs a ,
+html[data-daab-page-id="forum-bagli-hekayeler"] .forum-breadcrumbs a ,
+html[data-daab-page-id="forum-cooperation"] .forum-breadcrumbs a {
   color: #2c5470 !important;
   text-decoration: none !important;
 }
@@ -572,7 +646,9 @@ html[data-daab-page-id="forum-official"] .forum-breadcrumbs span[aria-hidden="tr
 html[data-daab-page-id="forum-2024-presentations"] .forum-breadcrumbs span[aria-hidden="true"],
 html[data-daab-page-id="forum-program"] .forum-breadcrumbs span[aria-hidden="true"],
 html[data-daab-page-id="forum-impressions"] .forum-breadcrumbs span[aria-hidden="true"] ,
-html[data-daab-page-id="forum-roadmap"] .forum-breadcrumbs span[aria-hidden="true"] {
+html[data-daab-page-id="forum-roadmap"] .forum-breadcrumbs span[aria-hidden="true"] ,
+html[data-daab-page-id="forum-bagli-hekayeler"] .forum-breadcrumbs span[aria-hidden="true"] ,
+html[data-daab-page-id="forum-cooperation"] .forum-breadcrumbs span[aria-hidden="true"] {
   margin: 0 7px;
   color: #9ab2c2;
 }
@@ -581,7 +657,9 @@ html[data-daab-page-id="forum-official"] .forum-breadcrumbs-current,
 html[data-daab-page-id="forum-2024-presentations"] .forum-breadcrumbs-current,
 html[data-daab-page-id="forum-program"] .forum-breadcrumbs-current,
 html[data-daab-page-id="forum-impressions"] .forum-breadcrumbs-current ,
-html[data-daab-page-id="forum-roadmap"] .forum-breadcrumbs-current {
+html[data-daab-page-id="forum-roadmap"] .forum-breadcrumbs-current ,
+html[data-daab-page-id="forum-bagli-hekayeler"] .forum-breadcrumbs-current ,
+html[data-daab-page-id="forum-cooperation"] .forum-breadcrumbs-current {
   color: #345d76 !important;
 }
 
@@ -595,6 +673,10 @@ html[data-daab-page-id="forum-roadmap"] .forum-breadcrumbs-current {
 
 html[data-daab-page-id="forum-impressions"] .card-body > .card-lead:first-child,
 html[data-daab-page-id="forum-roadmap"] .card-body > .card-lead:first-child,
+html[data-daab-page-id="forum-2024-presentations"] .card-body > .card-lead:first-child ,
+html[data-daab-page-id="forum-bagli-hekayeler"] .card-body > .card-lead:first-child,
+html[data-daab-page-id="forum-2024-presentations"] .card-body > .card-lead:first-child ,
+html[data-daab-page-id="forum-cooperation"] .card-body > .card-lead:first-child,
 html[data-daab-page-id="forum-2024-presentations"] .card-body > .card-lead:first-child {
   font-weight: 700;
   color: var(--blue-700);
@@ -605,7 +687,9 @@ html[data-daab-page-id="forum-official"],
 html[data-daab-page-id="forum-program"],
 html[data-daab-page-id="forum-2024-presentations"],
 html[data-daab-page-id="forum-impressions"] ,
-html[data-daab-page-id="forum-roadmap"] {
+html[data-daab-page-id="forum-roadmap"] ,
+html[data-daab-page-id="forum-bagli-hekayeler"] ,
+html[data-daab-page-id="forum-cooperation"] {
   scroll-behavior: auto !important;
 }
 
@@ -613,8 +697,66 @@ html[data-daab-page-id="forum-official"] .timeline-list a,
 html[data-daab-page-id="forum-program"] .timeline-list a,
 html[data-daab-page-id="forum-2024-presentations"] .timeline-list a,
 html[data-daab-page-id="forum-impressions"] .timeline-list a,
-html[data-daab-page-id="forum-roadmap"] .timeline-list a {
+html[data-daab-page-id="forum-roadmap"] .timeline-list a,
+html[data-daab-page-id="forum-bagli-hekayeler"] .timeline-list a,
+html[data-daab-page-id="forum-cooperation"] .timeline-list a,
+html[data-daab-page-id="forum-bagli-hekayeler"] ,
+html[data-daab-page-id="forum-cooperation"] {
+  scroll-behavior: auto !important;
+}
+
+html[data-daab-page-id="forum-official"] .timeline-list a,
+html[data-daab-page-id="forum-program"] .timeline-list a,
+html[data-daab-page-id="forum-2024-presentations"] .timeline-list a,
+html[data-daab-page-id="forum-impressions"] .timeline-list a,
+html[data-daab-page-id="forum-roadmap"] .timeline-list a,
+html[data-daab-page-id="forum-bagli-hekayeler"] .timeline-list a ,
+html[data-daab-page-id="forum-cooperation"] .timeline-list a {
   flex: 1 1 auto !important;
   min-width: 0 !important;
   min-height: 36px !important;
+}
+
+html[data-daab-page-id="forum-bagli-hekayeler"] .forum-story-caption ,
+html[data-daab-page-id="forum-cooperation"] .forum-story-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+html[data-daab-page-id="forum-bagli-hekayeler"] .hero-doc-lead ,
+html[data-daab-page-id="forum-cooperation"] .hero-doc-lead {
+  margin-top: 0.75rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: 600;
+  color: var(--blue-800);
+  line-height: 1.45;
+  max-width: 42rem;
+}
+
+/* VƏTƏN HİSSLƏRİ — smaller hero image (~50%), centered, balanced text flow */
+html[data-daab-page-id="forum-bagli-hekayeler"] .forum-story-figure--half ,
+html[data-daab-page-id="forum-cooperation"] .forum-story-figure--half {
+  width: min(50%, 440px);
+  max-width: 100%;
+  margin: 0 auto 1.35rem;
+}
+
+html[data-daab-page-id="forum-bagli-hekayeler"] .forum-story-figure--half img ,
+html[data-daab-page-id="forum-cooperation"] .forum-story-figure--half img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 760px) {
+  html[data-daab-page-id="forum-bagli-hekayeler"] .forum-story-figure--half ,
+html[data-daab-page-id="forum-cooperation"] .forum-story-figure--half {
+    width: min(72%, 320px);
+    margin-bottom: 1.1rem;
+  }
 }

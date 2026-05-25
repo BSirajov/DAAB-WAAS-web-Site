@@ -155,6 +155,26 @@
       "legacy": null,
       "az": "az/forum/2024/roadmap.html",
       "en": "en/forum/2024/roadmap.html"
+    },
+    {
+      "id": "forum-bagli-hekayeler",
+      "navId": "forum-bagli-hekayeler",
+      "navGroup": "forum",
+      "navParent": "forum",
+      "navOrder": 8,
+      "legacy": null,
+      "az": "az/forum/2024/stories.html",
+      "en": "en/forum/2024/stories.html"
+    },
+    {
+      "id": "forum-cooperation",
+      "navId": "forum-cooperation",
+      "navGroup": "forum",
+      "navParent": "forum",
+      "navOrder": 9,
+      "legacy": null,
+      "az": "az/forum/2024/cooperation.html",
+      "en": "en/forum/2024/cooperation.html"
     }
   ],
   "legacyRedirects": {

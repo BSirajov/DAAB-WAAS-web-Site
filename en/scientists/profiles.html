@@ -19,7 +19,7 @@
 <link href="../../css/scientists-catalog-toolbar.css?v=9" rel="stylesheet"/>
 <link href="../../css/scientists-profile-tts.css?v=2" rel="stylesheet"/>
 <link href="../../css/scientists-profile-deep-link.css?v=4" rel="stylesheet"/>
-<link href="../../css/scientists-profile-qr.css?v=9" rel="stylesheet"/>
+<link href="../../css/scientists-profile-qr.css?v=10" rel="stylesheet"/>
 <style>
 /* Scientists CV catalogue page styles */
 :root {
@@ -566,10 +566,34 @@ a.card-name:focus-visible {
   }
 }
 
+@media (max-width: 760px) {
+  .card {
+    height: auto;
+  }
+
+  .card-body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .card-bio {
+    margin-top: 12px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cred {
+    display: inline-flex;
+    margin-top: 4px;
+    margin-left: 0;
+  }
+}
+
 @media (max-width: 640px) {
   .card {
-    --avatar-w: 132px;
-    --avatar-h: 157px;
+    --avatar-w: 112px;
+    --avatar-h: 134px;
     padding: 16px;
   }
 
@@ -577,20 +601,6 @@ a.card-name:focus-visible {
     width: 100%;
     height: 100%;
     aspect-ratio: 37 / 44;
-  }
-
-  .card-body {
-    width: 100%;
-  }
-
-  .card-bio {
-    margin-top: 10px;
-  }
-
-  .cred {
-    display: inline-flex;
-    margin-top: 4px;
-    margin-left: 0;
   }
 }
 

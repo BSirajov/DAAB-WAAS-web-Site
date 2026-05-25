@@ -20,6 +20,8 @@
     "forum-program": "forumProgram",
     "forum-impressions": "forumImpressions",
     "forum-roadmap": "forumRoadmap",
+    "forum-bagli-hekayeler": "forumBagliHekayeler",
+    "forum-cooperation": "forumCooperation",
     "scientists-list": "scientistsList",
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",

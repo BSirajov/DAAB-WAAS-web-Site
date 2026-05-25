@@ -47,6 +47,8 @@ PAGE_LABEL_KEYS = {
     "forum-2024-presentations": "forum2024Presentations",
     "forum-impressions": "forumImpressions",
     "forum-roadmap": "forumRoadmap",
+    "forum-bagli-hekayeler": "forumBagliHekayeler",
+    "forum-cooperation": "forumCooperation",
     "scientists-list": "scientistsList",
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",
@@ -476,6 +478,12 @@ def build() -> dict:
         "forum-impressions": lambda raw, lang: extract_forum_sections(raw, lang, "forum-impressions"),
         "forum-2024-presentations": lambda raw, lang: extract_forum_sections(raw, lang, "forum-2024-presentations"),
         "forum-roadmap": lambda raw, lang: extract_forum_sections(raw, lang, "forum-roadmap"),
+        "forum-bagli-hekayeler": lambda raw, lang: extract_forum_sections(
+            raw, lang, "forum-bagli-hekayeler"
+        ),
+        "forum-cooperation": lambda raw, lang: extract_forum_sections(
+            raw, lang, "forum-cooperation"
+        ),
     }
     for page in routes["pages"]:
         pid = page["id"]

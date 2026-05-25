@@ -82,7 +82,9 @@
       "aboutCharterDesc": "Nizamnamə və idarəetmə qaydaları",
       "scientistsListDesc": "Bütün alimlərin siyahısı",
       "scientistsProfilesDesc": "Alimlərin akademik profilləri",
-      "forumRoadmap": "Strateji yol xəritəsi"
+      "forumRoadmap": "Strateji yol xəritəsi",
+      "forumBagliHekayeler": "Forumla bağlı hekayələr",
+      "forumCooperation": "Töhfələr və əməkdaşlıq"
     },
     "en": {
       "ariaMain": "Main navigation",
@@ -115,7 +117,9 @@
       "aboutCharterDesc": "Charter and governance rules",
       "scientistsListDesc": "Directory of all scientists",
       "scientistsProfilesDesc": "Academic profiles of scientists",
-      "forumRoadmap": "Strategic roadmap"
+      "forumRoadmap": "Strategic roadmap",
+      "forumBagliHekayeler": "Stories of the forum",
+      "forumCooperation": "Contributions and cooperation"
     }
   },
   "navIcons": {
@@ -136,7 +140,9 @@
     "charter": "📜",
     "scientists-list": "📋",
     "scientists-profiles": "👤",
-    "forum-roadmap": "🗺️"
+    "forum-roadmap": "🗺️",
+    "forum-bagli-hekayeler": "📖",
+    "forum-cooperation": "🤝"
   },
   "breadcrumbs": {
     "az": {

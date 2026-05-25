@@ -11,7 +11,7 @@ if str(ROOT) not in sys.path:
 
 from helpers._paths import AZ_SCIENTISTS_PROFILES, EN_SCIENTISTS_PROFILES
 
-QR_VERSION = 9
+QR_VERSION = 10
 LAYOUT_BLOCK = re.compile(
     r'<style id="daab-profile-card-layout">.*?</style>\s*',
     re.DOTALL,

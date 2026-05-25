@@ -21,6 +21,8 @@
     "forum-impressions": "forumImpressions",
     "forum-2024-presentations": "forum2024Presentations",
     "forum-roadmap": "forumRoadmap",
+    "forum-bagli-hekayeler": "forumBagliHekayeler",
+    "forum-cooperation": "forumCooperation",
     "scientists-list": "scientistsList",
     "scientists-profiles": "scientistsProfiles"
   };
@@ -92,6 +94,13 @@
         navParent: "forum"
       },
       {
+        id: "forum-bagli-hekayeler",
+        az: "az/forum/2024/stories.html",
+        en: "en/forum/2024/stories.html",
+        navGroup: "forum",
+        navParent: "forum"
+      },
+      {
         id: "scientists-list",
         az: "az/scientists/list.html",
         en: "en/scientists/list.html",
@@ -149,6 +158,8 @@
         forum2024Presentations: "Məruzələr",
         forumImpressions: "Təəssüratlar",
         forumRoadmap: "Strateji yol xəritəsi",
+        forumBagliHekayeler: "Forumla bağlı hekayələr",
+        forumCooperation: "Töhfələr və əməkdaşlıq",
         scientistsList: "Siyahı",
         scientistsProfiles: "Profillər"
       },
@@ -164,6 +175,7 @@
         forum2024Presentations: "Presentations",
         forumImpressions: "Impressions",
         forumRoadmap: "Strategic roadmap",
+        forumBagliHekayeler: "Stories of the forum",
         scientistsList: "Directory",
         scientistsProfiles: "Profiles"
       }
@@ -192,7 +204,9 @@
           "forum-program",
           "forum-2024-presentations",
           "forum-impressions",
-          "forum-roadmap"
+          "forum-roadmap",
+          "forum-bagli-hekayeler",
+          "forum-cooperation"
         ]
       }
     }
