@@ -53,7 +53,9 @@ PAGE_LABEL_KEYS = {
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",
     "charter": "charter",
-    "membership": "membership",
+    "membership": "membershipTerms",
+    "membership-value": "membershipWhy",
+    "membership-application": "membershipJoin",
 }
 
 TYPE_BOOST = {

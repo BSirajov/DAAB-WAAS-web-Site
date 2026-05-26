@@ -620,12 +620,12 @@
       "type": "nav",
       "pageId": "membership-value",
       "anchor": "",
-      "title": "membership-value",
+      "title": "Niyə üzv olmalı",
       "summary": "Üzvlüyün faydaları və dəyər təklifi",
       "tag": "Naviqasiya",
       "icon": "✒️",
       "boost": 11,
-      "norm": "membership-value u zvlu yu n faydalari ve deyer teklifi u zvlu k"
+      "norm": "niye u zv olmali u zvlu yu n faydalari ve deyer teklifi u zvlu k"
     },
     {
       "id": "nav-membership-az",
@@ -633,12 +633,12 @@
       "type": "nav",
       "pageId": "membership",
       "anchor": "",
-      "title": "Üzvlük",
+      "title": "Üzvlük şərtləri",
       "summary": "Üzvlük qaydaları, ödəniş və müraciət məlumatları",
       "tag": "Naviqasiya",
       "icon": "✒️",
       "boost": 11,
-      "norm": "u zvlu k u zvlu k qaydalari o denis ve mu raciet melumatlari u zvlu k"
+      "norm": "u zvlu k s ertleri u zvlu k qaydalari o denis ve mu raciet melumatlari u zvlu k"
     },
     {
       "id": "nav-membership-application-az",
@@ -646,12 +646,12 @@
       "type": "nav",
       "pageId": "membership-application",
       "anchor": "",
-      "title": "membership-application",
+      "title": "Bizə qoşulun",
       "summary": "Onlayn üzvlük müraciət forması",
       "tag": "Naviqasiya",
       "icon": "✒️",
       "boost": 11,
-      "norm": "membership-application onlayn u zvlu k mu raciet formasi u zvlu k"
+      "norm": "bize qos ulun onlayn u zvlu k mu raciet formasi u zvlu k"
     },
     {
       "id": "nav-home-en",
@@ -776,12 +776,12 @@
       "type": "nav",
       "pageId": "membership-value",
       "anchor": "",
-      "title": "membership-value",
+      "title": "Why become a member",
       "summary": "Benefits and value of WAAS membership",
       "tag": "Navigation",
       "icon": "✒️",
       "boost": 11,
-      "norm": "membership-value benefits and value of waas membership membership"
+      "norm": "why become a member benefits and value of waas membership membership"
     },
     {
       "id": "nav-membership-en",
@@ -789,12 +789,12 @@
       "type": "nav",
       "pageId": "membership",
       "anchor": "",
-      "title": "Membership",
+      "title": "Membership terms",
       "summary": "Membership rules, fees and application information",
       "tag": "Navigation",
       "icon": "✒️",
       "boost": 11,
-      "norm": "membership membership rules fees and application information membership"
+      "norm": "membership terms membership rules fees and application information membership"
     },
     {
       "id": "nav-membership-application-en",
@@ -802,12 +802,12 @@
       "type": "nav",
       "pageId": "membership-application",
       "anchor": "",
-      "title": "membership-application",
+      "title": "Join us",
       "summary": "Online membership application form",
       "tag": "Navigation",
       "icon": "✒️",
       "boost": 11,
-      "norm": "membership-application online membership application form membership"
+      "norm": "join us online membership application form membership"
     },
     {
       "id": "section-foundation-necessity-az",
@@ -2830,7 +2830,7 @@
       "type": "person",
       "pageId": "executive-board",
       "anchor": "",
-      "title": "Nigar Masimova, Dr.",
+      "title": "Nigar Masumova, Dr.",
       "summary": "Executive Board",
       "tag": "Person",
       "icon": "🎓",
@@ -4832,7 +4832,7 @@
       "type": "scientist",
       "pageId": "scientists-profiles",
       "anchor": "reza-moridi",
-      "title": "Riza Moridi",
+      "title": "Reza Moridi",
       "summary": "Senior Fellow, Massey College, University of Toronto · Physics · Canada",
       "tag": "Scientist",
       "icon": "👤",
@@ -5326,7 +5326,7 @@
       "type": "scientist",
       "pageId": "scientists-profiles",
       "anchor": "nigar-masimova",
-      "title": "Nigar Masimova",
+      "title": "Nigar Masumova",
       "summary": "Candidate of Economic Sciences, Associate Professor, Head of the Department of Advertising and Public Relations, Deputy Dean of the International Journalism Faculty of the Moscow State Institute of International Relations of the Ministry of",
       "tag": "Scientist",
       "icon": "👤",
@@ -5456,7 +5456,7 @@
       "type": "scientist",
       "pageId": "scientists-profiles",
       "anchor": "zahid-qocayev",
-      "title": "Zahid Gocayev",
+      "title": "Zahid Gojayev",
       "summary": "Deputy Director for Innovation and Implementation of the Federal Scientific Agrotechnical Center VIM (FGBNU), professor of Moscow Polytechnic University and N.E. Bauman Moscow State Technical University, doctor of technical sciences, profes",
       "tag": "Scientist",
       "icon": "👤",
@@ -5664,7 +5664,7 @@
       "type": "scientist",
       "pageId": "scientists-profiles",
       "anchor": "hacali-necefoglu",
-      "title": "Hajali Nejefoglu",
+      "title": "Hajali Najafoglu",
       "summary": "Kars city, Head of the Foreign Relations Office of the Caucasus University, Member of the University Board, Head of the Caucasus and Central Asia Research Center, Head of the Department of Inorganic Chemistry · Chemistry · Türkiye",
       "tag": "Scientist",
       "icon": "👤",
@@ -6028,7 +6028,7 @@
       "type": "scientist",
       "pageId": "scientists-profiles",
       "anchor": "vefa-qurban",
-      "title": "Vefa Gurban",
+      "title": "Vefa Kurban",
       "summary": "Ege University Institute of Turkish World Studies · Economics · Türkiye",
       "tag": "Scientist",
       "icon": "👤",
@@ -6106,7 +6106,7 @@
       "type": "scientist",
       "pageId": "scientists-profiles",
       "anchor": "murad-omerov",
-      "title": "Murad Omerov",
+      "title": "Murad Omarov",
       "summary": "Vice-rector for international cooperation, Kharkiv National University of Radioelectronics, Academician of the Ukrainian Academy of Applied Radioelectronic Sciences · Engineering · Ukraine",
       "tag": "Scientist",
       "icon": "👤",
@@ -6132,7 +6132,7 @@
       "type": "scientist",
       "pageId": "scientists-profiles",
       "anchor": "xelil-kelenter",
-      "title": "Khalil Kelenter",
+      "title": "Khalil Kalantar",
       "summary": "Senior Researcher for Global Optical Solutions and Kepler projects · Physics · Japan",
       "tag": "Scientist",
       "icon": "👤",

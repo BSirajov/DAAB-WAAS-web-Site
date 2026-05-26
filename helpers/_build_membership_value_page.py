@@ -154,8 +154,8 @@ def shell_head(cfg: dict) -> str:
 <script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
 <script src="{ASSET}js/daab-nav.js?v=13" defer></script>
 <script src="{ASSET}js/daab-primary-nav.js?v=13" defer></script>
-<script src="{ASSET}js/daab-breadcrumbs.js?v=7" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v=5" defer></script>
+<script src="{ASSET}js/daab-breadcrumbs.js?v=6" defer></script>
+<script src="{ASSET}js/daab-section-nav.js?v=7" defer></script>
 <script src="{ASSET}js/daab-shell.js?v=11" defer></script>
 <script src="{ASSET}js/daab-search.js?v=4" defer></script>
 </head>
@@ -189,7 +189,28 @@ NAV_PLACEHOLDER
 </aside>
 </div>
 </header>
+MEMBERSHIP_SECTION_NAV
 <main class="main membership-value-main" id="content">
+"""
+
+SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə">
+<p class="daab-section-nav-title">Üzvlük</p>
+<ul class="daab-section-nav-list">
+<li><a class="active" href="membership_value.html" aria-current="page">Niyə üzv olmalı</a></li>
+<li><a href="membership.html">Üzvlük şərtləri</a></li>
+<li><a href="application.html">Bizə qoşulun</a></li>
+</ul>
+</nav>
+"""
+
+SECTION_NAV_EN = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section">
+<p class="daab-section-nav-title">Membership</p>
+<ul class="daab-section-nav-list">
+<li><a class="active" href="membership_value.html" aria-current="page">Why become a member</a></li>
+<li><a href="membership.html">Membership terms</a></li>
+<li><a href="application.html">Join us</a></li>
+</ul>
+</nav>
 """
 
 
@@ -207,8 +228,13 @@ def build_locale(key: str) -> None:
         raise SystemExit(f"Could not extract footer from {cfg['membership']}")
     main = extract_main(src)
     main = main.replace("__CTA_HREF__", cfg["cta_href"]).replace("__CTA_TEXT__", cfg["cta_btn"])
+    section_nav = SECTION_NAV_AZ if cfg["lang"] == "az" else SECTION_NAV_EN
     html = shell_head(cfg)
-    html += hero_block(cfg).replace("NAV_PLACEHOLDER", nav)
+    html += (
+        hero_block(cfg)
+        .replace("NAV_PLACEHOLDER", nav)
+        .replace("MEMBERSHIP_SECTION_NAV", section_nav)
+    )
     html += main + "\n</main>\n"
     html += footer + "\n</body>\n</html>\n"
     cfg["out"].write_text(html, encoding="utf-8", newline="\n")

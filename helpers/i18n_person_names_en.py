@@ -63,8 +63,37 @@ PERSON_NAME_OVERRIDES: dict[str, str] = {
     "Yulduz Rəhimov, Prof. Dr.": "Yulduz Rahimov, Prof. Dr.",
     "Emil Əhmədov": "Emil Ahmadov",
     "Emil Əhmədov, Prof. Dr.": "Emil Ahmadov, Prof. Dr.",
-    "Nigar Məsumova": "Nigar Masimova",
-    "Nigar Məsumova, Dr.": "Nigar Masimova, Dr.",
+    "Nigar Məsumova": "Nigar Masumova",
+    "Nigar Məsumova, Dr.": "Nigar Masumova, Dr.",
+    "Günel Səfərova": "Gunel Safarova",
+    "Reyhan Həsənova": "Reyhan Hasanova",
+    "Zərifə Osmanlı": "Zarifa Osmanli",
+    "Rıza Moridi": "Reza Moridi",
+    "Səbinə İsgəndərova": "Sabina Isgenderova",
+    "Səidə Xəlilova": "Saida Khalilova",
+    "Eldar Əhədov": "Eldar Ahadov",
+    "Eldar Əhədov ": "Eldar Ahadov",
+    "Sevinc Əsgərova": "Sevinj Asgerova",
+    "Vahid Qədimov": "Vahid Gadimov",
+    "Afina Məmmədli Barmanbay": "Afina Mammadli Barmanbay",
+    "Elçin Bədəlov": "Elchin Badalov",
+    "Kamal Əkbərov": "Kamal Akbarov",
+    "Valeh Rüstəmov": "Valeh Rustamov",
+    "Mirzə Mütəllimov": "Mirza Mutallimov",
+    "Varqa Kələntərov": "Varga Kalantarov",
+    "Murad Ömərov": "Murad Omarov",
+    "Ağamalı Məmmədov": "Agamali Mammadov",
+    "Ələddin Allahverdiyev": "Aladdin Allahverdiyev",
+    "Əliheydər Rəhimov": "Aliheydar Rahimov",
+    "Əliheydər Rəhimov ": "Aliheydar Rahimov",
+    "Nizami Məmmədov": "Nizami Mammadov",
+    "Kamran Rüstəmov": "Kamran Rustamov",
+    "Zahid Qocayev": "Zahid Gojayev",
+    "Hacıəli Nəcəfoğlu": "Hajali Najafoglu",
+    "Hacıəli Nəcəfoğlu ": "Hajali Najafoglu",
+    "Şahin Əhmədoğlu": "Shahin Ahmedoglu",
+    "Vəfa Qurban": "Vefa Kurban",
+    "Qərib Mürşüdov": "Garib Murshudov",
     "Sevinc Məmmədova": "Sevinj Mammadova",
     "Sevinc Məmmədova, Dr.": "Sevinj Mammadova, Dr.",
     "Mehdi İsmayilov (Gəncəli)": "Mehdi Ismayilov (Gancali)",
@@ -112,7 +141,7 @@ PERSON_NAME_OVERRIDES: dict[str, str] = {
     "Toğrul İsmayıl": "Togrul Ismayil",
     "Vüqar İmanbəyli": "Vugar Imanbeyli",
     "Xaqani Qayıblı": "Khagani Gayibli",
-    "Xəlil Kələntər": "Khalil Kelenter",
+    "Xəlil Kələntər": "Khalil Kalantar",
     "Zaur Sadıqbəyli": "Zaur Sadigbeyli",
     "Rasim Cənnətəliyev": "Rasim Jannataliyev",
     "İsmayıl Əliyev": "Ismayil Aliyev",
@@ -206,7 +235,10 @@ def build_name_map() -> dict[str, str]:
         az = (row.get("ad_soyad") or "").strip()
         if not az or re.search(r"[А-Яа-яЁё]", az):
             continue
-        latin = _latin_from_photo(az, files, by_norm) or transliterate_az_name(az)
+        if az in PERSON_NAME_OVERRIDES:
+            latin = PERSON_NAME_OVERRIDES[az]
+        else:
+            latin = _latin_from_photo(az, files, by_norm) or transliterate_az_name(az)
         mapping[az] = latin
         mapping[az.upper()] = latin.upper()
         if "-" in az:

@@ -853,3 +853,20 @@
     transition: none !important;
   }
 }
+
+/* Scientists directory list — hide gender column in UI; DOM + filter/sort data unchanged */
+html[data-daab-page-id="scientists-list"] th.col-cins,
+html[data-daab-page-id="scientists-list"] td.col-cins {
+  display: none !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  overflow: hidden;
+}
+
+html[data-daab-page-id="scientists-list"] th.col-email,
+html[data-daab-page-id="scientists-list"] td.col-email {
+  border-right: 0;
+}

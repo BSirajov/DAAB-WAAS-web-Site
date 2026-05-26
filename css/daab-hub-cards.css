@@ -78,17 +78,28 @@ html[data-daab-page-id="forum-2024"] .hero-copy h1 {
   margin-bottom: 14px;
 }
 
+/* Forum 2024 hero — three org logos with names (ref: forum_2024/DAAB, DIDK, ETN Logos.docx) */
 html[data-daab-page-id="forum-2024"] .forum-partner-logos {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 22px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2.8vw, 28px);
+  align-items: start;
+  justify-items: stretch;
   margin: 0;
-  padding: 4px 0 6px;
+  padding: 6px 0 10px;
   width: 100%;
   max-width: 100%;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-partner-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 0;
+  min-width: 0;
+  text-align: center;
 }
 
 html[data-daab-page-id="forum-2024"] .forum-partner-logo {
@@ -96,19 +107,23 @@ html[data-daab-page-id="forum-2024"] .forum-partner-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   box-sizing: border-box;
 }
 
 html[data-daab-page-id="forum-2024"] .forum-partner-logo img {
   display: block;
-  width: 100%;
-  height: 100%;
-  max-width: 64px;
-  max-height: 64px;
+  width: auto;
+  height: auto;
+  max-width: 80px;
+  max-height: 80px;
   object-fit: contain;
   object-position: center;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-partner-logo--didk img {
+  max-width: 76px;
 }
 
 html[data-daab-page-id="forum-2024"] .forum-partner-logo--etn {
@@ -117,9 +132,29 @@ html[data-daab-page-id="forum-2024"] .forum-partner-logo--etn {
 }
 
 html[data-daab-page-id="forum-2024"] .forum-partner-logo--etn img {
+  max-width: 72px;
+  max-height: 72px;
   filter: none;
   transform: none;
   image-rendering: auto;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-partner-name {
+  margin: 0;
+  padding: 0 2px;
+  max-width: 100%;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: clamp(9px, 1.25vw, 11px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #002060;
+  text-wrap: balance;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
+  display: block;
 }
 
 .daab-hub-page .hero-actions {
@@ -458,18 +493,27 @@ html[data-daab-page-id="forum-2024"] .forum-partner-logo--etn img {
   }
 
   html[data-daab-page-id="forum-2024"] .forum-partner-logos {
-    gap: 14px;
-    flex-wrap: nowrap;
+    gap: 12px;
   }
 
   html[data-daab-page-id="forum-2024"] .forum-partner-logo {
-    width: 52px;
-    height: 52px;
+    width: 64px;
+    height: 64px;
   }
 
   html[data-daab-page-id="forum-2024"] .forum-partner-logo img {
-    max-width: 52px;
-    max-height: 52px;
+    max-width: 64px;
+    max-height: 64px;
+  }
+
+  html[data-daab-page-id="forum-2024"] .forum-partner-logo--etn img {
+    max-width: 58px;
+    max-height: 58px;
+  }
+
+  html[data-daab-page-id="forum-2024"] .forum-partner-name {
+    font-size: 9px;
+    letter-spacing: 0.02em;
   }
 
   .daab-hub-page .hero {
@@ -493,5 +537,22 @@ html[data-daab-page-id="forum-2024"] .forum-partner-logo--etn img {
 
   .daab-hub-page .page-card {
     min-height: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  html[data-daab-page-id="forum-2024"] .forum-partner-logos {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    max-width: 22rem;
+  }
+
+  html[data-daab-page-id="forum-2024"] .forum-partner-item {
+    gap: 12px;
+  }
+
+  html[data-daab-page-id="forum-2024"] .forum-partner-name {
+    font-size: 10.5px;
+    max-width: 20rem;
   }
 }

@@ -13,8 +13,9 @@
 <link href="../../css/daab-mobile.css?v=5" rel="stylesheet"/>
 <link href="../../css/daab-search.css?v=3" rel="stylesheet"/>
 <link href="../../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
-<link href="../../css/scientists-catalog-toolbar.css?v=9" rel="stylesheet"/>
+<link href="../../css/scientists-catalog-toolbar.css?v=10" rel="stylesheet"/>
 <link href="../../css/scientists-list-preview.css?v=2" rel="stylesheet"/>
+<link href="../../css/daab-table-resize.css?v=1" rel="stylesheet"/>
 <style>
 /* Scientists catalogue page styles */
 :root {
@@ -241,12 +242,11 @@ td.col-no {
   font-weight: 800;
 }
 
-.col-name { width: calc(20ch + 30px); }
-.col-cins { width: calc(8ch + 30px); }
+.col-name { width: calc(22ch + 30px); }
 .col-cntry { width: calc(15ch + 30px); }
 .col-spec { width: calc(22ch + 30px); }
 .col-degree { width: calc(10ch + 30px); }
-.col-email { width: calc(25ch + 30px); }
+.col-email { width: calc(30ch + 30px); }
 
 td.col-name {
   color: var(--blue-700);
@@ -342,7 +342,7 @@ a.email-link:focus-visible {
   .main { padding: 18px 16px 48px; }
   .col-spec,
   .col-degree { display: none; }
-  table { min-width: 560px; }
+  table { min-width: 500px; }
 }
 
 
@@ -439,7 +439,7 @@ a.email-link:focus-visible {
 </div>
 <div class="table-wrap">
 <div class="table-scroll">
-<table>
+<table data-daab-resizable-table="1">
 <thead>
 <tr>
 <th class="col-no">№</th>
@@ -448,7 +448,7 @@ a.email-link:focus-visible {
 <th class="sortable col-spec" data-col="ixtilas">İxtisası</th>
 <th class="sortable col-degree" data-col="elmi_derece">Elmi<br/>Dərəcəsi</th>
 <th class="col-email">E-poçt</th>
-<th class="sortable col-cins" data-col="cinsi">Cins</th>
+<th class="sortable col-cins" data-col="cinsi" aria-hidden="true">Cins</th>
 </tr>
 </thead>
 <tbody id="tableBody"></tbody>
@@ -467,6 +467,7 @@ a.email-link:focus-visible {
 <script src="../../js/scientists-catalog-data.js?v=2"></script>
 <script src="../../js/daab-collation.js?v=1"></script>
 <script src="../../js/scientists-list-preview.js?v=3"></script>
+<script src="../../js/daab-table-resize.js?v=1" defer></script>
 <script>
 const DATA = window.SCIENTISTS_CATALOG_DATA || [];
 const azCompare = (a, b) => window.DAAB_COLLATION.compare(a, b);
@@ -538,7 +539,7 @@ function rowHTML(r,idx){  const email=(r.email||'').trim();
     <td class="col-spec">${esc((r.ixtilas||'').trim())||'—'}</td>
     <td class="col-degree">${esc(deg)||''}</td>
     <td class="col-email">${email?`<a class="email-link" href="mailto:${esc(email)}">${esc(email)}</a>`:'<span class="empty-email">—</span>'}</td>
-    <td class="col-cins">${esc((r.cinsi||'').trim())||'—'}</td>
+    <td class="col-cins" aria-hidden="true">${esc((r.cinsi||'').trim())||'—'}</td>
   </tr>`;
 }
 

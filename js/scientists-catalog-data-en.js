@@ -82,7 +82,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 9,
     "yasadigi_olke": "Germany",
-    "ad_soyad": "Mirze Mutellimov",
+    "ad_soyad": "Mirza Mutallimov",
     "email": "m.mutallimov@yahoo.com",
     "ixtilas": "Medicine",
     "elmi_derece": "PhD",
@@ -132,7 +132,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 14,
     "yasadigi_olke": "Germany",
-    "ad_soyad": "Valeh Rustemov",
+    "ad_soyad": "Valeh Rustamov",
     "email": "rustamov.valeh@gmail.com",
     "ixtilas": "Medicine",
     "elmi_derece": "PhD",
@@ -182,7 +182,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 19,
     "yasadigi_olke": "Austria",
-    "ad_soyad": "Kamal Ekberov",
+    "ad_soyad": "Kamal Akbarov",
     "email": "kamal.akbarov@gmail.com",
     "ixtilas": "Medicine",
     "elmi_derece": "PhD",
@@ -202,7 +202,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 21,
     "yasadigi_olke": "United Kingdom",
-    "ad_soyad": "Gerib Mursudov",
+    "ad_soyad": "Garib Murshudov",
     "email": "garib@mrc-lmb.cam.ac.uk",
     "ixtilas": "Biology",
     "elmi_derece": "PhD",
@@ -242,7 +242,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 25,
     "yasadigi_olke": "France",
-    "ad_soyad": "Gunel Seferova",
+    "ad_soyad": "Gunel Safarova",
     "email": "gunelsafarova@hotmail.com",
     "ixtilas": "Economics",
     "elmi_derece": "PhD",
@@ -252,7 +252,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 26,
     "yasadigi_olke": "France",
-    "ad_soyad": "Reyhan Hesenova",
+    "ad_soyad": "Reyhan Hasanova",
     "email": "reyhan.hasanova@gmail.com",
     "ixtilas": "Biology",
     "elmi_derece": "PhD",
@@ -302,7 +302,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 31,
     "yasadigi_olke": "Italy",
-    "ad_soyad": "Zerife Osmanli",
+    "ad_soyad": "Zarifa Osmanli",
     "email": "zerifeosmanli91@gmail.com",
     "ixtilas": "Bioinformatics",
     "elmi_derece": "PhD",
@@ -322,7 +322,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 33,
     "yasadigi_olke": "Canada",
-    "ad_soyad": "Riza Moridi",
+    "ad_soyad": "Reza Moridi",
     "email": "reza@rezamoridi.com",
     "ixtilas": "Physics",
     "elmi_derece": "PhD",
@@ -332,7 +332,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 34,
     "yasadigi_olke": "Canada",
-    "ad_soyad": "Sebine Isgenderova",
+    "ad_soyad": "Sabina Isgenderova",
     "email": "sabina@ualberta.net",
     "ixtilas": "Biology",
     "elmi_derece": "PhD",
@@ -382,7 +382,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 39,
     "yasadigi_olke": "Oman",
-    "ad_soyad": "Seide Khelilova",
+    "ad_soyad": "Saida Khalilova",
     "email": "dr.saidakhalilova@gmail.com",
     "ixtilas": "Musician",
     "elmi_derece": "PhD",
@@ -442,7 +442,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 45,
     "yasadigi_olke": "Russia",
-    "ad_soyad": "Agamali Memmedov",
+    "ad_soyad": "Agamali Mammadov",
     "email": "akmnauka@yandex.ru",
     "ixtilas": "Philosophy, Law",
     "elmi_derece": "Prof.Dr.",
@@ -452,7 +452,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 46,
     "yasadigi_olke": "Russia",
-    "ad_soyad": "Eldar Ehedov",
+    "ad_soyad": "Eldar Ahadov",
     "email": "dolma60@yandex.ru ",
     "ixtilas": "Philology",
     "elmi_derece": "PhD",
@@ -462,7 +462,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 47,
     "yasadigi_olke": "Russia",
-    "ad_soyad": "Eleddin Allahverdiyev",
+    "ad_soyad": "Aladdin Allahverdiyev",
     "email": "aallahverdiyev@mail.ru",
     "ixtilas": "Mathematics",
     "elmi_derece": "Prof.Dr.",
@@ -472,7 +472,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 48,
     "yasadigi_olke": "Russia",
-    "ad_soyad": "Eliheyder Rehimov",
+    "ad_soyad": "Aliheydar Rahimov",
     "email": "ra50@mail.ru",
     "ixtilas": "Medicine",
     "elmi_derece": "Prof.Dr.",
@@ -502,7 +502,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 51,
     "yasadigi_olke": "Russia",
-    "ad_soyad": "Kamran Rustemov",
+    "ad_soyad": "Kamran Rustamov",
     "email": "aliev.05@mail.ru",
     "ixtilas": "Engineering",
     "elmi_derece": "Prof.Dr.",
@@ -512,7 +512,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 52,
     "yasadigi_olke": "Russia",
-    "ad_soyad": "Nigar Masimova",
+    "ad_soyad": "Nigar Masumova",
     "email": "masumova@mail.ru",
     "ixtilas": "Economics",
     "elmi_derece": "PhD",
@@ -522,7 +522,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 53,
     "yasadigi_olke": "Russia",
-    "ad_soyad": "Nizami Memmedov",
+    "ad_soyad": "Nizami Mammadov",
     "email": "nizami-mamedov@mail.ru",
     "ixtilas": "Engineering",
     "elmi_derece": "Prof.Dr.",
@@ -532,7 +532,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 54,
     "yasadigi_olke": "Russia",
-    "ad_soyad": "Sevinc Esgerova",
+    "ad_soyad": "Sevinj Asgerova",
     "email": "s_askerova@yahoo.com",
     "ixtilas": "Medicine",
     "elmi_derece": "PhD",
@@ -552,7 +552,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 56,
     "yasadigi_olke": "Russia",
-    "ad_soyad": "Vahid Gedimov",
+    "ad_soyad": "Vahid Gadimov",
     "email": "vkadymov@yandex.ru",
     "ixtilas": "Mathematics",
     "elmi_derece": "PhD",
@@ -562,7 +562,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 57,
     "yasadigi_olke": "Russia",
-    "ad_soyad": "Zahid Gocayev",
+    "ad_soyad": "Zahid Gojayev",
     "email": "fic51@mail.ru",
     "ixtilas": "Engineering",
     "elmi_derece": "Prof.Dr.",
@@ -592,7 +592,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 60,
     "yasadigi_olke": "Türkiye",
-    "ad_soyad": "Afina Memmedli Barmanbay",
+    "ad_soyad": "Afina Mammadli Barmanbay",
     "email": "afina.barmanbay@gmail.com",
     "ixtilas": "Philology",
     "elmi_derece": "PhD",
@@ -622,7 +622,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 63,
     "yasadigi_olke": "Türkiye",
-    "ad_soyad": "Elcin Bedelov",
+    "ad_soyad": "Elchin Badalov",
     "email": "elcinbedeloglu@gmail.com",
     "ixtilas": "Medicine",
     "elmi_derece": "PhD",
@@ -642,7 +642,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 65,
     "yasadigi_olke": "Türkiye",
-    "ad_soyad": "Hacieli Necefoglu",
+    "ad_soyad": "Hajali Najafoglu",
     "email": "alinecef@hotmail.com",
     "ixtilas": "Chemistry",
     "elmi_derece": "Prof.Dr.",
@@ -732,7 +732,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 74,
     "yasadigi_olke": "Türkiye",
-    "ad_soyad": "Sahin Ehmedoglu",
+    "ad_soyad": "Shahin Ahmedoglu",
     "email": "sehmetoglu@hotmail.com",
     "ixtilas": "History",
     "elmi_derece": "Prof.Dr.",
@@ -772,7 +772,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 78,
     "yasadigi_olke": "Türkiye",
-    "ad_soyad": "Varga Kelenterov",
+    "ad_soyad": "Varga Kalantarov",
     "email": "vkalantarov@ku.edu.tr",
     "ixtilas": "Mathematics",
     "elmi_derece": "PhD",
@@ -782,7 +782,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 79,
     "yasadigi_olke": "Türkiye",
-    "ad_soyad": "Vefa Gurban",
+    "ad_soyad": "Vefa Kurban",
     "email": "vefa.kurban@ege.edu.tr",
     "ixtilas": "Economics",
     "elmi_derece": "Prof.Dr.",
@@ -812,7 +812,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 82,
     "yasadigi_olke": "Ukraine",
-    "ad_soyad": "Murad Omerov",
+    "ad_soyad": "Murad Omarov",
     "email": "murad.omarov@nure.ua",
     "ixtilas": "Engineering",
     "elmi_derece": "PhD",
@@ -822,7 +822,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 83,
     "yasadigi_olke": "Japan",
-    "ad_soyad": "Khalil Kelenter",
+    "ad_soyad": "Khalil Kalantar",
     "email": "gosx2020@gmail.com",
     "ixtilas": "Physics",
     "elmi_derece": "PhD",

@@ -153,6 +153,8 @@
     var href = linkHref.split("#")[0].split("?")[0].replace(/\\/g, "/").toLowerCase();
     pagePath = pagePath.replace(/\\/g, "/").toLowerCase();
     if (href === pagePath) return true;
+    /* Locale home is index.html only — not forum/.../index.html or other nested index pages. */
+    if (pagePath === "index.html") return false;
     if (href.endsWith("/" + pagePath)) return true;
     return false;
   }
@@ -191,9 +193,10 @@
     if (id === "forum-2024" && isForumNavPageId(navKey) && navKey !== "activities") {
       return true;
     }
-    if (pageIdAttr && navKey === pageIdAttr && hrefMatchesNav(href, relPath)) {
+    if (id === "membership-value" && isMembershipNavPageId(navKey)) {
       return true;
     }
+    /* When data-daab-page-id is set, match by id only (see comment above navLinkIsActive). */
     if (pageIdAttr) return false;
     return hrefMatchesNav(href, relPath);
   }

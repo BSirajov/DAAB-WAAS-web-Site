@@ -21,19 +21,19 @@ NAV_PLACEHOLDER = (
 HTML_TAG_RE = re.compile(r"<html([^>]*)>", re.IGNORECASE)
 
 SCRIPT_VERSIONS = {
-    "daab-i18n.js": 11,
-    "daab-lang-position.js": 3,
-    "daab-nav.js": 7,
-    "daab-primary-nav.js": 8,
-    "daab-breadcrumbs.js": 4,
-    "daab-section-nav.js": 4,
-    "daab-shell.js": 7,
+    "daab-i18n.js": 12,
+    "daab-lang-position.js": 7,
+    "daab-nav.js": 13,
+    "daab-primary-nav.js": 13,
+    "daab-breadcrumbs.js": 6,
+    "daab-section-nav.js": 7,
+    "daab-shell.js": 11,
 }
 
 STYLE_VERSIONS = {
-    "daab-nav-mega.css": 11,
-    "daab-lang.css": 6,
-    "daab-common.css": 18,
+    "daab-nav-mega.css": 13,
+    "daab-lang.css": 10,
+    "daab-common.css": 26,
 }
 
 NAV_ASSETS = (
