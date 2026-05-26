@@ -8,6 +8,19 @@
   margin: 12px 0 0;
 }
 
+.card-listen-lead {
+  margin: 10px 0 0;
+  color: #1a3d5c;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+/* Xaqani Qayibli — bullet lists indented +3ch */
+#xaqani-qayibli .card-bio .awards-list {
+  padding-left: calc(1.15em + 3ch);
+}
+
 .card-tts-btn,
 .card-tts-stop {
   display: inline-flex;

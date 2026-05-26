@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
 <link href="../../css/daab-common.css?v=24" rel="stylesheet"/>
 <link href="../../css/daab-mobile.css?v=5" rel="stylesheet"/>
-<link href="../../css/daab-search.css?v=1" rel="stylesheet"/>
+<link href="../../css/daab-search.css?v=3" rel="stylesheet"/>
 <link href="../../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
 <link href="../../css/scientists-catalog-toolbar.css?v=9" rel="stylesheet"/>
 <link href="../../css/scientists-list-preview.css?v=2" rel="stylesheet"/>
@@ -243,6 +243,7 @@ td.col-no {
 }
 
 .col-name { width: calc(20ch + 30px); }
+.col-cins { width: calc(8ch + 30px); }
 .col-cntry { width: calc(15ch + 30px); }
 .col-spec { width: calc(22ch + 30px); }
 .col-degree { width: calc(10ch + 30px); }
@@ -376,9 +377,6 @@ a.email-link:focus-visible {
 <div class="hero-inner">
 <section class="hero-copy">
 <h1>Azerbaijani Scientists<br><em>Living Abroad</em></h1>
-<div class="hero-actions">
-<a class="btn btn-primary" href="profiles.html">Academic profiles</a>
-</div>
 </section>
 <aside aria-label="Scientists directory summary" class="hero-summary-panel">
 <div class="hero-summary-card">
@@ -414,6 +412,10 @@ a.email-link:focus-visible {
 <div class="sel-wrap">
 <select id="filterDegree"><option value="">🎓 Degree</option></select>
 <button class="sel-clear" data-for="filterDegree" title="Clear filter">×</button>
+</div>
+<div class="sel-wrap">
+<select id="filterCins"><option value="">⚥ Gender</option><option value="male">Male</option><option value="female">Female</option></select>
+<button class="sel-clear" data-for="filterCins" title="Clear filter">×</button>
 </div>
 <button class="btn-clear" id="clearFilters">Reset all</button>
 </div>
@@ -455,6 +457,7 @@ a.email-link:focus-visible {
 <th class="sortable col-spec" data-col="ixtilas">Field</th>
 <th class="sortable col-degree" data-col="elmi_derece">Academic<br/>degree</th>
 <th class="col-email">Email</th>
+<th class="sortable col-cins" data-col="cinsi">Gender</th>
 </tr>
 </thead>
 <tbody id="tableBody"></tbody>
@@ -493,11 +496,13 @@ function applyFilters(){
   const q     =document.getElementById('searchInput').value.trim().toLowerCase();
   const cntry =document.getElementById('filterCountry').value;  const degree=document.getElementById('filterDegree').value;
   const ixtilas=document.getElementById('filterIxtilas').value;
+  const cins  =document.getElementById('filterCins').value;
   filtered=DATA.filter(r=>{
     if(cntry   && r.yasadigi_olke!==cntry) return false;    if(degree  && (r.elmi_derece||'').trim()!==degree) return false;
     if(ixtilas && (r.ixtilas||'').trim()!==ixtilas)   return false;
+    if(cins    && (r.cinsi||'').trim()!==cins) return false;
     if(q){
-      const hay=[r.ad_soyad,r.yasadigi_olke,r.ixtilas,r.elmi_derece,r.email].join(' ').toLowerCase();
+      const hay=[r.ad_soyad,r.cinsi,r.yasadigi_olke,r.ixtilas,r.elmi_derece,r.email].join(' ').toLowerCase();
       if(!hay.includes(q)) return false;
     }
     return true;
@@ -542,6 +547,7 @@ function rowHTML(r,idx){  const email=(r.email||'').trim();
     <td class="col-spec">${esc((r.ixtilas||'').trim())||'—'}</td>
     <td class="col-degree">${esc(deg)||''}</td>
     <td class="col-email">${email?`<a class="email-link" href="mailto:${esc(email)}">${esc(email)}</a>`:'<span class="empty-email">—</span>'}</td>
+    <td class="col-cins">${esc((r.cinsi||'').trim())||'—'}</td>
   </tr>`;
 }
 
@@ -576,7 +582,7 @@ document.querySelectorAll('th[data-col]').forEach(th=>{
 document.getElementById('searchInput').addEventListener('input',applyFilters);
 
 function updateFilterStyles() {
-  ['filterCountry','filterIxtilas','filterDegree'].forEach(id => {
+  ['filterCountry','filterIxtilas','filterDegree','filterCins'].forEach(id => {
     const el   = document.getElementById(id);
     const wrap = el.closest('.sel-wrap');
     if (wrap) wrap.classList.toggle('active', el.value !== '');
@@ -592,13 +598,13 @@ document.querySelectorAll('.sel-clear').forEach(btn => {
   });
 });
 
-['filterCountry','filterIxtilas','filterDegree'].forEach(id=>{
+['filterCountry','filterIxtilas','filterDegree','filterCins'].forEach(id=>{
   document.getElementById(id).addEventListener('change', () => { applyFilters(); updateFilterStyles(); });
 });
 document.getElementById('perPageSel').addEventListener('change',()=>{page=1;render();});
 document.getElementById('clearFilters').addEventListener('click',()=>{
   document.getElementById('searchInput').value='';
-  ['filterCountry','filterIxtilas','filterDegree'].forEach(id=>{
+  ['filterCountry','filterIxtilas','filterDegree','filterCins'].forEach(id=>{
     document.getElementById(id).value='';
   });
   updateFilterStyles();

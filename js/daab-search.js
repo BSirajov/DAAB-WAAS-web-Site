@@ -293,7 +293,7 @@
       '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">' +
       '<circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>' +
       "</svg></span>" +
-      '<span class="nav-search-btn-label">' + escapeHtml(labels.open) + "</span>" +
+      '<span class="nav-search-btn-label">' + escapeHtml(labels.placeholder) + "</span>" +
       '<kbd class="nav-search-kbd">' + escapeHtml(labels.shortcut) + "</kbd>";
 
     var actions = ensureNavActions(inner);

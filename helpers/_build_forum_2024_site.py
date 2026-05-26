@@ -120,7 +120,7 @@ def page_shell(
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
 <link href="{ASSET}css/daab-common.css?v=24" rel="stylesheet"/>
 <link href="{ASSET}css/daab-mobile.css?v=5" rel="stylesheet"/>
-<link href="{ASSET}css/daab-search.css?v=1" rel="stylesheet"/>
+<link href="{ASSET}css/daab-search.css?v=3" rel="stylesheet"/>
 <link href="{ASSET}css/daab-back-to-top.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-lang.css?v=10" rel="stylesheet"/>
 <link href="{ASSET}css/daab-nav-mega.css?v=12" rel="stylesheet"/>

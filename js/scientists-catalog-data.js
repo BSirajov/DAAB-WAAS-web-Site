@@ -383,7 +383,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "say": 39,
     "yasadigi_olke": "Oman",
     "ad_soyad": "Səidə Xəlilova",
-    "email": "Dr.Saidakhalilova@gmail.com",
+    "email": "dr.saidakhalilova@gmail.com",
     "ixtilas": "Musiqiçi",
     "elmi_derece": "PhD",
     "cinsi": "qadın",
@@ -592,7 +592,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 60,
     "yasadigi_olke": "Türkiyə",
-    "ad_soyad": "Afina Barmanbay",
+    "ad_soyad": "Afina Məmmədli Barmanbay",
     "email": "afina.barmanbay@gmail.com",
     "ixtilas": "Filologiya",
     "elmi_derece": "PhD",

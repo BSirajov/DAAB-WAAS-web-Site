@@ -8,7 +8,7 @@ from _paths import ROOT
 
 SHELL_CSS = """<link href="../css/daab-common.css?v=21" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=4" rel="stylesheet"/>
-<link href="../css/daab-search.css?v=1" rel="stylesheet"/>
+<link href="../css/daab-search.css?v=3" rel="stylesheet"/>
 <link href="../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
 """
 

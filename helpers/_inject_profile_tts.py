@@ -4,9 +4,9 @@ from __future__ import annotations
 from _paths import AZ_SCIENTISTS_PROFILES, EN_SCIENTISTS_PROFILES, ROOT
 
 CSS_MARK = "scientists-profile-tts.css"
-CSS_SNIPPET = '<link href="{prefix}css/scientists-profile-tts.css?v=2" rel="stylesheet"/>'
+CSS_SNIPPET = '<link href="{prefix}css/scientists-profile-tts.css?v=3" rel="stylesheet"/>'
 JS_MARK = "daab-profile-tts.js"
-JS_SNIPPET = '<script src="{prefix}js/daab-profile-tts.js?v=8" defer></script>'
+JS_SNIPPET = '<script src="{prefix}js/daab-profile-tts.js?v=9" defer></script>'
 
 
 def inject(path, prefix: str) -> list[str]:

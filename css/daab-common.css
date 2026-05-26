@@ -580,27 +580,11 @@ main a:not(.btn):not(.nav-link):not(.nav-dropdown-link):not(.page-card):not(.new
   filter: brightness(1.03);
 }
 
-/* Optional shared search overlay used by catalogue-style pages. */
+/* Nav search trigger — modern pill field in css/daab-search.css */
 .nav-search-btn {
   margin-left: 0;
   flex-shrink: 0;
-  display: inline-flex !important;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  color: rgba(255, 255, 255, .95);
-  background: rgba(0, 0, 0, .12);
-  border: 1px solid rgba(255, 255, 255, .25);
-  border-radius: 4px;
   font: inherit;
-  font-size: 12px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.nav-search-btn:hover {
-  color: #fff;
-  background: rgba(0, 0, 0, .2);
 }
 
 #search-overlay {
@@ -889,17 +873,7 @@ main a:not(.btn):not(.nav-link):not(.nav-dropdown-link):not(.page-card):not(.new
     font-size: 13px !important;
   }
 
-  .nav-search-btn-label {
-    display: none !important;
-  }
-
-  .nav-search-kbd {
-    display: none !important;
-  }
-
-  .nav-search-btn {
-    padding: 8px 10px !important;
-  }
+  /* Label/kbd + compact pill: css/daab-search.css */
 }
 
 @media (max-width: 1220px) and (min-width: 1181px) {
@@ -973,7 +947,6 @@ main a:not(.btn):not(.nav-link):not(.nav-dropdown-link):not(.page-card):not(.new
     margin: 0 !important;
     min-width: 44px;
     min-height: 40px;
-    padding: 6px 10px !important;
   }
 
   .nav-inner > .daab-lang-switch,

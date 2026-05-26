@@ -637,13 +637,26 @@
     wrap.appendChild(playBtn);
     wrap.appendChild(stopBtn);
 
+    var listenLead = (card.getAttribute("data-listen-lead") || "").trim();
+    var listenLeadEl = null;
+    if (listenLead) {
+      listenLeadEl = document.createElement("p");
+      listenLeadEl.className = "card-listen-lead";
+      listenLeadEl.textContent = listenLead;
+    }
+
     var bio = card.querySelector(".card-bio");
     var meta = card.querySelector(".card-meta");
     if (meta && meta.parentNode) {
-      meta.parentNode.insertBefore(wrap, bio || meta.nextSibling);
+      var parent = meta.parentNode;
+      parent.insertBefore(wrap, bio || meta.nextSibling);
+      if (listenLeadEl) parent.insertBefore(listenLeadEl, bio || wrap.nextSibling);
     } else {
       var body = card.querySelector(".card-body");
-      if (body) body.appendChild(wrap);
+      if (body) {
+        body.appendChild(wrap);
+        if (listenLeadEl) body.appendChild(listenLeadEl);
+      }
     }
   }
 

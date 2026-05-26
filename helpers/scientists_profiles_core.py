@@ -172,7 +172,12 @@ def render_card(profile: dict, lang: str, *, asset_prefix: str = "../../") -> st
     photo = (profile.get("photo") or "img_001_p61.jpeg").strip()
     slug = slug_from_photo(photo)
     name_display = profile_name(profile, lang)
-    name_heading = az_upper_name_latin(name_display) if lang == "en" else az_upper_name(name_display)
+    if lang == "az" and profile.get("name_heading_az"):
+        name_heading = profile["name_heading_az"]
+    elif lang == "en" and profile.get("name_heading_en"):
+        name_heading = profile["name_heading_en"]
+    else:
+        name_heading = az_upper_name_latin(name_display) if lang == "en" else az_upper_name(name_display)
 
     if email:
         email_row = (
@@ -194,8 +199,12 @@ def render_card(profile: dict, lang: str, *, asset_prefix: str = "../../") -> st
     qr_labels = QR_LABELS[lang]
     profile_href = f"#{html.escape(slug)}"
     qr_src = f"{asset_prefix}images/qr/{lang}/{html.escape(slug)}.png?v=1"
+    listen_lead = (profile.get("listen_lead_az") if lang == "az" else profile.get("listen_lead_en")) or ""
+    listen_lead_attr = (
+        f' data-listen-lead="{esc_attr(listen_lead)}"' if listen_lead.strip() else ""
+    )
 
-    return f'''<div class="card" id="{html.escape(slug)}" tabindex="-1" data-country-name="{esc_attr(country)}" data-country="{esc_attr(code)}" data-search="{esc_attr(search)}" data-email="{esc_attr(email)}" data-ixtilas="{esc_attr(field)}" data-degree="{esc_attr(degree)}">
+    return f'''<div class="card" id="{html.escape(slug)}" tabindex="-1" data-country-name="{esc_attr(country)}" data-country="{esc_attr(code)}" data-search="{esc_attr(search)}" data-email="{esc_attr(email)}" data-ixtilas="{esc_attr(field)}" data-degree="{esc_attr(degree)}"{listen_lead_attr}>
   <div class="card-avatar card-photo"><img src="{asset_prefix}images/scientists-photos/{html.escape(photo)}" alt="{alt}" loading="lazy"/></div>
   <div class="card-body">
     <div class="card-header">

@@ -11,7 +11,7 @@ IMPRESSIONS_PHRASES: dict[str, str] = {
     "Bu səhifə forum iştirakçılarının elmi əməkdaşlıq, diaspor həmrəyliyi və Qarabağ səfəri ilə bağlı təəssüratlarını vahid, oxunaqlı formatda təqdim edir.": (
         "This page presents participants' impressions of scientific cooperation, diaspora solidarity and the Karabakh visit in a unified, readable format."
     ),
-    "Afina Məmmədli Barmanbay": "Afina Memmedli Barmanbay",
+    "Afina Məmmədli Barmanbay": "Afina Mammadli Barmanbay",
     "Arif Quliyev": "Arif Guliyev",
     "Hacalı Nəcəfoğlu": "Hajali Najafoglu",
     "İlkin Qulusoy": "Ilkin Qulusoy",
@@ -21,7 +21,7 @@ IMPRESSIONS_PHRASES: dict[str, str] = {
     "Reza Moridi": "Reza Moridi",
     "Seymur Nəsirov": "Seymur Nasirov",
     "Şəhriyar Muxtarov": "Shahriyar Mukhtarov",
-    "Afina Məmmədli Barmanbay – əlavə yekun düşüncələr": "Afina Memmedli Barmanbay — additional closing thoughts",
+    "Afina Məmmədli Barmanbay – əlavə yekun düşüncələr": "Afina Mammadli Barmanbay — additional closing thoughts",
     "Forumla bağlı ümumi düşüncələr": "Overall reflections on the forum",
     # intro-card
     "İştirakçı təəssüratları": "Participant impressions",

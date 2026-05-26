@@ -25,7 +25,7 @@ CHARTER_HEAD_SHELL = """<link href="https://fonts.googleapis.com" rel="preconnec
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
 <link href="../css/daab-common.css?v=21" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=4" rel="stylesheet"/>
-<link href="../css/daab-search.css?v=1" rel="stylesheet"/>
+<link href="../css/daab-search.css?v=3" rel="stylesheet"/>
 <link href="../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
 """
 
