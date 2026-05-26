@@ -104,6 +104,14 @@ NAV_PLACEHOLDER
 </aside>
 </div>
 </header>
+<nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə">
+<p class="daab-section-nav-title">Üzvlük</p>
+<ul class="daab-section-nav-list">
+<li><a href="membership_value.html">Niyə üzv olmalı</a></li>
+<li><a href="membership.html">Üzvlük şərtləri</a></li>
+<li><a class="active" href="application.html" aria-current="page">Bizə qoşulun</a></li>
+</ul>
+</nav>
 <main class="main application-main" id="content">
 """
 
