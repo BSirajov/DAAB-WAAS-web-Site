@@ -103,6 +103,14 @@ NAV_PLACEHOLDER
 </aside>
 </div>
 </header>
+<nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section">
+<p class="daab-section-nav-title">Membership</p>
+<ul class="daab-section-nav-list">
+<li><a href="membership_value.html">Why become a member</a></li>
+<li><a href="membership.html">Membership terms</a></li>
+<li><a class="active" href="application.html" aria-current="page">Join us</a></li>
+</ul>
+</nav>
 <main class="main application-main" id="content">
 """
 
