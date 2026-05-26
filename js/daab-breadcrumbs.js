@@ -22,13 +22,16 @@
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",
     charter: "charter",
-    membership: "membership"
+    membership: "membershipTerms",
+    "membership-value": "membershipWhy",
+    "membership-application": "membershipJoin"
   };
 
   var GROUP_LABEL_KEYS = {
     about: "about",
     scientists: "scientists",
-    activities: "activities"
+    activities: "activities",
+    membership: "membership"
   };
 
   var FALLBACK_ROUTES = {
@@ -91,7 +94,19 @@
         navParent: "about"
       },
       { id: "charter", az: "az/charter.html", en: "en/charter.html", navParent: "about" },
-      { id: "membership", az: "az/membership.html", en: "en/membership.html", navParent: null }
+      {
+        id: "membership-value",
+        az: "az/membership_value.html",
+        en: "en/membership_value.html",
+        navParent: "membership"
+      },
+      { id: "membership", az: "az/membership.html", en: "en/membership.html", navParent: "membership" },
+      {
+        id: "membership-application",
+        az: "az/application.html",
+        en: "en/application.html",
+        navParent: "membership"
+      }
     ]
   };
 
@@ -126,7 +141,10 @@
         scientistsProfiles: "Profillər",
         executiveBoard: "İdarə heyəti",
         charter: "Nizamnamə",
-        membership: "Üzvlük"
+        membership: "Üzvlük",
+        membershipWhy: "Niyə üzv olmalı",
+        membershipTerms: "Üzvlük şərtləri",
+        membershipJoin: "Bizə qoşulun"
       },
       en: {
         home: "Home",
@@ -139,7 +157,10 @@
         scientistsProfiles: "Profiles",
         executiveBoard: "Executive board",
         charter: "Charter",
-        membership: "Membership"
+        membership: "Membership",
+        membershipWhy: "Why become a member",
+        membershipTerms: "Membership terms",
+        membershipJoin: "Join us"
       }
     }
   };
@@ -148,7 +169,8 @@
     sections: {
       about: { landingId: "mission" },
       scientists: { landingId: "scientists-list" },
-      activities: { landingId: "activities" }
+      activities: { landingId: "activities" },
+      membership: { landingId: "membership-value" }
     }
   };
 

@@ -24,7 +24,10 @@
     "forum-bagli-hekayeler": "forumBagliHekayeler",
     "forum-cooperation": "forumCooperation",
     "scientists-list": "scientistsList",
-    "scientists-profiles": "scientistsProfiles"
+    "scientists-profiles": "scientistsProfiles",
+    membership: "membershipTerms",
+    "membership-value": "membershipWhy",
+    "membership-application": "membershipJoin"
   };
 
   var FALLBACK_ROUTES = {
@@ -128,7 +131,21 @@
         navGroup: "about",
         navParent: "about"
       },
-      { id: "membership", az: "az/membership.html", en: "en/membership.html", navGroup: null }
+      {
+        id: "membership-value",
+        az: "az/membership_value.html",
+        en: "en/membership_value.html",
+        navGroup: "membership",
+        navParent: "membership"
+      },
+      { id: "membership", az: "az/membership.html", en: "en/membership.html", navGroup: "membership", navParent: "membership" },
+      {
+        id: "membership-application",
+        az: "az/application.html",
+        en: "en/application.html",
+        navGroup: "membership",
+        navParent: "membership"
+      }
     ]
   };
 
@@ -137,12 +154,14 @@
       az: {
         aria: "Bu bölmədə",
         aboutTitle: "Haqqımızda",
-        scientistsTitle: "Alimlərimiz"
+        scientistsTitle: "Alimlərimiz",
+        membershipTitle: "Üzvlük"
       },
       en: {
         aria: "In this section",
         aboutTitle: "About",
-        scientistsTitle: "Scientists"
+        scientistsTitle: "Scientists",
+        membershipTitle: "Membership"
       }
     },
     nav: {
@@ -161,7 +180,10 @@
         forumBagliHekayeler: "Forumla bağlı hekayələr",
         forumCooperation: "Töhfələr və əməkdaşlıq",
         scientistsList: "Siyahı",
-        scientistsProfiles: "Profillər"
+        scientistsProfiles: "Profillər",
+        membershipWhy: "Niyə üzv olmalı",
+        membershipTerms: "Üzvlük şərtləri",
+        membershipJoin: "Bizə qoşulun"
       },
       en: {
         foundation: "Foundation",
@@ -177,7 +199,10 @@
         forumRoadmap: "Strategic roadmap",
         forumBagliHekayeler: "Stories of the forum",
         scientistsList: "Directory",
-        scientistsProfiles: "Profiles"
+        scientistsProfiles: "Profiles",
+        membershipWhy: "Why become a member",
+        membershipTerms: "Membership terms",
+        membershipJoin: "Join us"
       }
     }
   };
@@ -208,6 +233,10 @@
           "forum-bagli-hekayeler",
           "forum-cooperation"
         ]
+      },
+      membership: {
+        landingId: "membership-value",
+        pages: ["membership-value", "membership", "membership-application"]
       }
     }
   };
@@ -355,7 +384,11 @@
           var a = document.createElement("a");
           a.href = pageHref(I18N, p, lang);
           var key = PAGE_LABEL_KEYS[pid];
-          a.textContent = key ? navLabels[key] : pid;
+          var fallbackNav = FALLBACK_UI.nav[lang] || {};
+          a.textContent =
+            (key && navLabels[key]) ||
+            (key && fallbackNav[key]) ||
+            pid;
           if (p.id === page.id) {
             a.classList.add("active");
             a.setAttribute("aria-current", "page");

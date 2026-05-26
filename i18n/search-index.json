@@ -1,7 +1,7 @@
 {
   "version": 1,
   "generated": "2026-05-26",
-  "entryCount": 466,
+  "entryCount": 472,
   "entries": [
     {
       "id": "page-home-az",
@@ -342,6 +342,58 @@
       "norm": "waas charter charter of the world association of azerbaijani scientists."
     },
     {
+      "id": "page-membership-value-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "membership-value",
+      "anchor": "",
+      "title": "DAAB — Üzvlük sizə nə qazandırır?",
+      "summary": "DAAB üzvlüyünün faydaları, əməkdaşlıq imkanları və qlobal elmi şəbəkəyə qoşulma dəyəri.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "daab u zvlu k size ne qazandirir daab u zvlu yu nu n faydalari emekdas liq imkanlari ve qlobal elmi s ebekeye qos ulma deyeri."
+    },
+    {
+      "id": "page-membership-value-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "membership-value",
+      "anchor": "",
+      "title": "WAAS — Why become a member?",
+      "summary": "Benefits of WAAS membership, collaboration opportunities, and the value of joining the global Azerbaijani scientific network.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "waas why become a member benefits of waas membership collaboration opportunities and the value of joining the global azerbaijani scientific network."
+    },
+    {
+      "id": "page-membership-application-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "membership-application",
+      "anchor": "",
+      "title": "DAAB — Üzvlük Müraciət Forması",
+      "summary": "Dünya Azərbaycanlı Alimlər Birliyinə üzvlük üçün onlayn müraciət forması.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "daab u zvlu k mu raciet formasi du nya azerbaycanli alimler birliyine u zvlu k u c u n onlayn mu raciet formasi."
+    },
+    {
+      "id": "page-membership-application-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "membership-application",
+      "anchor": "",
+      "title": "WAAS — Membership Application Form",
+      "summary": "Online membership application form for the World Association of Azerbaijani Scientists (WAAS).",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "waas membership application form online membership application form for the world association of azerbaijani scientists waas ."
+    },
+    {
       "id": "page-membership-az",
       "lang": "az",
       "type": "page",
@@ -478,11 +530,11 @@
       "pageId": "forum-2024",
       "anchor": "",
       "title": "Forum 2024",
-      "summary": "Forum 2024 kitabı və bölmələr",
+      "summary": "Forum 2024-ü kəşf edin",
       "tag": "Naviqasiya",
       "icon": "📰",
       "boost": 11,
-      "norm": "forum 2024 forum 2024 kitabi ve bo lmeler fealiyyetimiz"
+      "norm": "forum 2024 forum 2024-u kes f edin fealiyyetimiz"
     },
     {
       "id": "nav-scientists-list-az",
@@ -563,17 +615,43 @@
       "norm": "nizamname nizamname ve idareetme qaydalari haqqimizda"
     },
     {
+      "id": "nav-membership-value-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "membership-value",
+      "anchor": "",
+      "title": "membership-value",
+      "summary": "Üzvlüyün faydaları və dəyər təklifi",
+      "tag": "Naviqasiya",
+      "icon": "✒️",
+      "boost": 11,
+      "norm": "membership-value u zvlu yu n faydalari ve deyer teklifi u zvlu k"
+    },
+    {
       "id": "nav-membership-az",
       "lang": "az",
       "type": "nav",
       "pageId": "membership",
       "anchor": "",
       "title": "Üzvlük",
-      "summary": "Üzvlük",
+      "summary": "Üzvlük qaydaları, ödəniş və müraciət məlumatları",
       "tag": "Naviqasiya",
       "icon": "✒️",
       "boost": 11,
-      "norm": "u zvlu k u zvlu k"
+      "norm": "u zvlu k u zvlu k qaydalari o denis ve mu raciet melumatlari u zvlu k"
+    },
+    {
+      "id": "nav-membership-application-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "membership-application",
+      "anchor": "",
+      "title": "membership-application",
+      "summary": "Onlayn üzvlük müraciət forması",
+      "tag": "Naviqasiya",
+      "icon": "✒️",
+      "boost": 11,
+      "norm": "membership-application onlayn u zvlu k mu raciet formasi u zvlu k"
     },
     {
       "id": "nav-home-en",
@@ -608,11 +686,11 @@
       "pageId": "forum-2024",
       "anchor": "",
       "title": "Forum 2024",
-      "summary": "Forum 2024 book and sections",
+      "summary": "Explore Forum 2024",
       "tag": "Navigation",
       "icon": "📰",
       "boost": 11,
-      "norm": "forum 2024 forum 2024 book and sections activities"
+      "norm": "forum 2024 explore forum 2024 activities"
     },
     {
       "id": "nav-scientists-list-en",
@@ -693,17 +771,43 @@
       "norm": "charter charter and governance rules about"
     },
     {
+      "id": "nav-membership-value-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "membership-value",
+      "anchor": "",
+      "title": "membership-value",
+      "summary": "Benefits and value of WAAS membership",
+      "tag": "Navigation",
+      "icon": "✒️",
+      "boost": 11,
+      "norm": "membership-value benefits and value of waas membership membership"
+    },
+    {
       "id": "nav-membership-en",
       "lang": "en",
       "type": "nav",
       "pageId": "membership",
       "anchor": "",
       "title": "Membership",
-      "summary": "Membership",
+      "summary": "Membership rules, fees and application information",
       "tag": "Navigation",
       "icon": "✒️",
       "boost": 11,
-      "norm": "membership membership"
+      "norm": "membership membership rules fees and application information membership"
+    },
+    {
+      "id": "nav-membership-application-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "membership-application",
+      "anchor": "",
+      "title": "membership-application",
+      "summary": "Online membership application form",
+      "tag": "Navigation",
+      "icon": "✒️",
+      "boost": 11,
+      "norm": "membership-application online membership application form membership"
     },
     {
       "id": "section-foundation-necessity-az",
@@ -3865,19 +3969,6 @@
       "norm": "to hfeler ve terefdas lar forumun yu ksek seviyyede tes kiline strateji destek go steren azerbaycan respublikasinin diasporla i s u zre do vlet komitesinin sedri cenab fuad muradovun rehberliyi altinda komite emekdas lari s ahin camalov leyla hemzeyeva helime fetullazade"
     },
     {
-      "id": "section-forum-cooperation-university-rectors-az",
-      "lang": "az",
-      "type": "section",
-      "pageId": "forum-cooperation",
-      "anchor": "university-rectors",
-      "title": "Universitet rektorları",
-      "summary": "",
-      "tag": "Bölmə",
-      "icon": "🎤",
-      "boost": 9,
-      "norm": "universitet rektorlari"
-    },
-    {
       "id": "section-forum-cooperation-contributions-en",
       "lang": "en",
       "type": "section",
@@ -3889,19 +3980,6 @@
       "icon": "🎤",
       "boost": 9,
       "norm": "contributions and partners under the leadership of mr fuad muradov chair of the state committee on diaspora affairs of the republic of azerbaijan committee staff shahin jamalov leyla hamzayeva halima fatullazade jahid ismayilov mehriban sultanova tural safarov"
-    },
-    {
-      "id": "section-forum-cooperation-university-rectors-en",
-      "lang": "en",
-      "type": "section",
-      "pageId": "forum-cooperation",
-      "anchor": "university-rectors",
-      "title": "University rectors",
-      "summary": "",
-      "tag": "Section",
-      "icon": "🎤",
-      "boost": 9,
-      "norm": "university rectors"
     },
     {
       "id": "scientist-asef-salamov-az",

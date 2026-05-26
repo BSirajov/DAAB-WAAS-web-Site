@@ -73,7 +73,7 @@ COOPERATION_EN = {
         (
             "Rectors of Azerbaijani universities, who enriched plenary sessions and informal "
             "discussions with intellectual input, performed an important function in shaping "
-            "an academic exchange environment:"
+            "an academic exchange environment"
         ),
         (
             "Scientific presentations by Asaf Salamov, Bakhtiyar Siracov, Dinara Abbasova, "

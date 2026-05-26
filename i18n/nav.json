@@ -67,8 +67,28 @@
       ]
     },
     {
-      "type": "page",
-      "id": "membership"
+      "type": "group",
+      "id": "membership",
+      "style": "dropdown",
+      "labelKey": "membership",
+      "landingId": "membership-value",
+      "children": [
+        {
+          "id": "membership-value",
+          "labelKey": "membershipWhy",
+          "descKey": "membershipWhyDesc"
+        },
+        {
+          "id": "membership",
+          "labelKey": "membershipTerms",
+          "descKey": "membershipTermsDesc"
+        },
+        {
+          "id": "membership-application",
+          "labelKey": "membershipJoin",
+          "descKey": "membershipJoinDesc"
+        }
+      ]
     }
   ],
   "sections": {
@@ -106,6 +126,14 @@
         "forum-roadmap",
         "forum-bagli-hekayeler",
         "forum-cooperation"
+      ]
+    },
+    "membership": {
+      "landingId": "membership-value",
+      "pages": [
+        "membership-value",
+        "membership",
+        "membership-application"
       ]
     }
   }

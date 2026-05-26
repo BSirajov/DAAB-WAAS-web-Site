@@ -162,6 +162,15 @@
     return id === "forum-2024" || (typeof id === "string" && id.indexOf("forum-") === 0);
   }
 
+  /** Membership submenu pages (value, terms, application). */
+  function isMembershipNavPageId(id) {
+    return (
+      id === "membership" ||
+      id === "membership-value" ||
+      id === "membership-application"
+    );
+  }
+
   function clearNavActiveStates() {
     document.querySelectorAll(".nav-menu a.active").forEach(function (link) {
       link.classList.remove("active");
@@ -180,6 +189,9 @@
     if (!navKey) return false;
     if (id && id === navKey) return true;
     if (id === "forum-2024" && isForumNavPageId(navKey) && navKey !== "activities") {
+      return true;
+    }
+    if (pageIdAttr && navKey === pageIdAttr && hrefMatchesNav(href, relPath)) {
       return true;
     }
     if (pageIdAttr) return false;
@@ -328,7 +340,8 @@
     closeMobileMenu: closeMobileMenu,
     syncNavHeight: syncNavHeight,
     currentNavKey: currentNavKey,
-    isForumNavPageId: isForumNavPageId
+    isForumNavPageId: isForumNavPageId,
+    isMembershipNavPageId: isMembershipNavPageId
   };
 
   function maybeAutoInit() {
@@ -345,7 +358,10 @@
   }
 
   window.addEventListener("load", scheduleNavHeightSync, { once: true });
-  document.addEventListener("daab-primary-nav-ready", scheduleNavHeightSync);
+  document.addEventListener("daab-primary-nav-ready", function () {
+    initNavDropdowns();
+    scheduleNavHeightSync();
+  });
 
   window.addEventListener("pageshow", function (ev) {
     if (ev.persisted) {

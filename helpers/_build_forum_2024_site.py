@@ -245,7 +245,7 @@ def build_index() -> None:
         ("official.html", "Rəsmi müraciətlər", "Prezident, Nobel laureatları və alimlərin müraciəti (kitab səh. 24–28)."),
         ("program.html", "Forumun proqramı", "9–11 sentyabr 2024 tədbir cədvəli (kitab səh. 31–35)."),
         ("speeches.html", "Nitqlər və müzakirələr", "Dövlət, universitet və diaspora çıxışları (kitab səh. 36–69)."),
-        ("presentations.html", "Məruzələr", "Foruma təqdim olunmuş elmi məruzələr (kitab səh. 70–114)."),
+        ("presentations.html", "Məruzələr", "Foruma təqdim olunmuş elmi məruzələr."),
         ("impressions.html", "Təəssüratlar", "İştirakçıların şəxsi təəssüratları (kitab səh. 176–203)."),
         (f"{AZ}/scientists/profiles.html", "Alimlər kataloqu", "Tam akademik profillər (sayt kataloqu)."),
     ]
@@ -255,7 +255,7 @@ def build_index() -> None:
     )
     pdf_btn = (
         f'<a class="btn btn-primary" href="{ASSET}{PDF_REL}" download>'
-        "Kitabı PDF yüklə</a>"
+        "Kitabı yüklə</a>"
     )
     hero_panel = """
 <aside class="hero-panel" aria-label="Forum haqqında qısa məlumat">

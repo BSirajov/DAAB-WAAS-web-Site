@@ -26,7 +26,9 @@
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",
     charter: "charter",
-    membership: "membership"
+    membership: "membershipTerms",
+    "membership-value": "membershipWhy",
+    "membership-application": "membershipJoin"
   };
 
   function pageById(routes, id) {
@@ -135,7 +137,7 @@
       link.href = pageHref(page, lang);
       link.className = "nav-dropdown-link";
       link.setAttribute("role", "menuitem");
-      link.setAttribute("data-nav-id", page.navId || page.id);
+      link.setAttribute("data-nav-id", page.id);
 
       var iconKey = childDef.labelKey || page.id;
       var title = document.createElement("span");
@@ -227,7 +229,9 @@
       profiles: (inSci ? "" : up + sci) + "profiles.html",
       activities: up + "activities.html",
       "forum-2024": up + forum + "index.html",
-      membership: up + "membership.html"
+      membership: up + "membership.html",
+      "membership-value": up + "membership_value.html",
+      "membership-application": up + "application.html"
     };
     return map[name] || up + "index.html";
   }
@@ -251,6 +255,9 @@
     forum2024: "🎤",
     "forum-2024": "🎤",
     membership: "✒️",
+    membershipWhy: "💡",
+    membershipTerms: "✒️",
+    membershipJoin: "📝",
     about: "🏛️",
     scientists: "🌐",
     foundation: "🏛️",
@@ -273,7 +280,7 @@
       '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("activities") + 'Fəaliyyətimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
       '<div class="nav-dropdown-panel" role="menu">' +
       dropLink(staticHref("activities"), "activities", "Yeniliklər", "Əsas fəaliyyət və yeniliklər", FALLBACK_ICONS.activitiesNews) +
-      dropLink(staticHref("forum-2024"), "forum-2024", "Forum 2024", "Forum 2024 kitabı və bölmələr", FALLBACK_ICONS["forum-2024"]) +
+      dropLink(staticHref("forum-2024"), "forum-2024", "Forum 2024", "Forum 2024-ü kəşf edin", FALLBACK_ICONS["forum-2024"]) +
       '</div></div>' +
       '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("scientists") + 'Alimlərimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
       '<div class="nav-dropdown-panel" role="menu">' +
@@ -287,14 +294,19 @@
       dropLink(staticHref("board"), "executive-board", "İdarə heyəti", "İdarə heyəti və rəhbərlik", FALLBACK_ICONS["executive-board"]) +
       dropLink(staticHref("charter"), "charter", "Nizamnamə", "Nizamnamə və idarəetmə qaydaları", FALLBACK_ICONS.charter) +
       '</div></div>' +
-      '<a class="nav-link" href="' + staticHref("membership") + '" data-nav-id="membership">' + fallbackIcon("membership") + 'Üzvlük</a>';
+      '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("membership") + 'Üzvlük <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
+      '<div class="nav-dropdown-panel" role="menu">' +
+      dropLink(staticHref("membership-value"), "membership-value", "Niyə üzv olmalı", "Üzvlüyün faydaları və dəyər təklifi", FALLBACK_ICONS.membership) +
+      dropLink(staticHref("membership"), "membership", "Üzvlük şərtləri", "Üzvlük qaydaları, ödəniş və müraciət məlumatları", FALLBACK_ICONS.membership) +
+      dropLink(staticHref("membership-application"), "membership-application", "Bizə qoşulun", "Onlayn üzvlük müraciət forması", FALLBACK_ICONS.membership) +
+      '</div></div>';
     var en =
       '<div class="nav-divider"></div>' +
       '<a class="nav-link" href="' + staticHref("home") + '" data-nav-id="home">' + fallbackIcon("home") + 'Home</a>' +
       '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("activities") + 'Activities <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
       '<div class="nav-dropdown-panel" role="menu">' +
       dropLink(staticHref("activities"), "activities", "News", "News and updates", FALLBACK_ICONS.activitiesNews) +
-      dropLink(staticHref("forum-2024"), "forum-2024", "Forum 2024", "Forum 2024 book and sections", FALLBACK_ICONS["forum-2024"]) +
+      dropLink(staticHref("forum-2024"), "forum-2024", "Forum 2024", "Explore Forum 2024", FALLBACK_ICONS["forum-2024"]) +
       '</div></div>' +
       '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("scientists") + 'Scientists <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
       '<div class="nav-dropdown-panel" role="menu">' +
@@ -308,7 +320,12 @@
       dropLink(staticHref("board"), "executive-board", "Executive board", "Leadership and governance structure", FALLBACK_ICONS["executive-board"]) +
       dropLink(staticHref("charter"), "charter", "Charter", "Charter and governance rules", FALLBACK_ICONS.charter) +
       '</div></div>' +
-      '<a class="nav-link" href="' + staticHref("membership") + '" data-nav-id="membership">' + fallbackIcon("membership") + 'Membership</a>';
+      '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("membership") + 'Membership <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
+      '<div class="nav-dropdown-panel" role="menu">' +
+      dropLink(staticHref("membership-value"), "membership-value", "Why become a member", "Benefits and value of WAAS membership", FALLBACK_ICONS.membership) +
+      dropLink(staticHref("membership"), "membership", "Membership terms", "Membership rules, fees and application information", FALLBACK_ICONS.membership) +
+      dropLink(staticHref("membership-application"), "membership-application", "Join us", "Online membership application form", FALLBACK_ICONS.membership) +
+      '</div></div>';
     menu.innerHTML = lang === "en" ? en : az;
     if (window.DAAB_NAV && typeof window.DAAB_NAV.init === "function") {
       window.DAAB_NAV.init();

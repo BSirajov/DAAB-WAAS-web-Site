@@ -40,7 +40,8 @@ def main() -> None:
         "<strong>səhifə 176–203</strong> (iştirakçı təəssüratları) — DAAB saytında strukturlaşdırılıb.",
         "<strong>pages 176–203</strong> (participant impressions) — structured on the WAAS website.",
     )
-    text = text.replace("Kitabı PDF yüklə", "Download book PDF")
+    text = text.replace("Kitabı PDF yüklə", "Download book")
+    text = text.replace("Kitabı yüklə", "Download book")
     text = text.replace("Rəsmi müraciətlər", "Official addresses")
     text = text.replace(
         "Prezident, Nobel laureatları və alimlərin müraciəti (kitab səh. 24–28).",
@@ -61,6 +62,10 @@ def main() -> None:
         "Foruma təqdim olunmuş elmi məruzələr (kitab səh. 70–114).",
         "Scientific presentations at the forum (book pp. 70–114).",
     )
+    text = text.replace(
+        "Foruma təqdim olunmuş elmi məruzələr.",
+        "Scientific presentations at the forum (book pp. 70–114).",
+    )
     text = text.replace("Təəssüratlar", "Impressions")
     text = text.replace(
         "İştirakçıların şəxsi təəssüratları (kitab səh. 176–203).",
@@ -69,8 +74,9 @@ def main() -> None:
     text = text.replace("Alimlər kataloqu", "Scientists directory")
     text = text.replace(
         "Tam akademik profillər (sayt kataloqu).",
-        "Full academic profiles (site catalogue).",
+        "Full academic profiles (site directory).",
     )
+    text = text.replace("Kataloq", "Directory")
     DST.parent.mkdir(parents=True, exist_ok=True)
     DST.write_text(text, encoding="utf-8", newline="\n")
     print(f"Wrote {DST.relative_to(ROOT)}")

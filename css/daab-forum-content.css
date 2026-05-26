@@ -218,6 +218,12 @@ html[data-daab-page-id="forum-cooperation"] .content-wrap{
   overflow: visible !important;
 }
 
+/* Cooperation page: sidebar TOC removed — full-width main column */
+html[data-daab-page-id="forum-cooperation"] .content-wrap.content-wrap--single{
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0 !important;
+}
+
 html[data-daab-page-id="forum-official"] .news-feed,
 html[data-daab-page-id="forum-2024-presentations"] .news-feed,
 html[data-daab-page-id="forum-program"] .news-feed,

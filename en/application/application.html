@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership Application Form — DAAB / WAAS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #08263b;
+    --muted:    #345d76;
+    --blue-700: #005a9a;
+    --blue-400: #4db6f0;
+    --gold:     #c89b38;
+    --gold-lt:  #f0d078;
+    --card-bg:  rgba(245,251,255,.96);
+    --border:   #9ed6f5;
+    --tag-bg:   #dff2ff;
+    --bg:       #eef8ff;
+    --white:    #ffffff;
+    --error:    #c0392b;
+    --success:  #1a7a4a;
+    --section-header-gradient: linear-gradient(135deg,#005a9a,#2e9fd4);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* ── NAV ── */
+  .nav-strip {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(8,38,59,.97);
+    border-bottom: 3px solid var(--gold);
+    height: 56px;
+    display: flex; align-items: center;
+    padding: 0 32px;
+    gap: 14px;
+  }
+  .nav-logo {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--blue-700);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .nav-logo svg { width: 22px; height: 22px; }
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px; font-weight: 700;
+    color: var(--white);
+    letter-spacing: .3px;
+    line-height: 1.2;
+  }
+  .nav-brand span {
+    display: block; font-size: 10px; font-weight: 400;
+    color: var(--blue-400); font-family: 'Inter', sans-serif;
+    letter-spacing: 1.5px; text-transform: uppercase;
+  }
+  .nav-sep { flex: 1; }
+  .nav-link {
+    font-size: 11px; font-weight: 500; letter-spacing: 1px;
+    text-transform: uppercase; color: rgba(255,255,255,.64);
+    text-decoration: none; transition: color .2s;
+  }
+  .nav-link:hover { color: var(--blue-400); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--blue-700) 0%, #1a7ab8 50%, #2e9fd4 100%);
+    padding: 52px 32px 40px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3Ccircle cx='30' cy='30' r='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.3);
+    color: var(--white);
+    font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 38px);
+    color: var(--white); line-height: 1.2; margin-bottom: 8px;
+  }
+  .hero p {
+    font-size: 13px; color: rgba(255,255,255,.78);
+    max-width: 560px; margin: 0 auto 6px; line-height: 1.6;
+  }
+  .hero-sub {
+    font-size: 12px; color: rgba(255,255,255,.52);
+    max-width: 540px; margin: 0 auto; font-style: italic;
+  }
+
+  /* ── PROGRESS ── */
+  .progress-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 32px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 0; flex-wrap: wrap;
+  }
+  .prog-step {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 500;
+    color: var(--muted); opacity: .5;
+    cursor: pointer; transition: opacity .2s;
+    padding: 4px 12px;
+  }
+  .prog-step.active { opacity: 1; color: var(--blue-700); }
+  .prog-step.done   { opacity: .85; color: var(--success); }
+  .prog-num {
+    width: 22px; height: 22px; border-radius: 50%;
+    border: 2px solid currentColor;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 700; flex-shrink: 0;
+  }
+  .prog-step.active .prog-num { background: var(--blue-700); color: #fff; border-color: var(--blue-700); }
+  .prog-step.done   .prog-num { background: var(--success);  color: #fff; border-color: var(--success); }
+  .prog-sep { width: 30px; height: 2px; background: var(--border); flex-shrink: 0; }
+
+  /* ── WRAPPER ── */
+  .form-wrapper {
+    max-width: 760px; margin: 0 auto;
+    padding: 32px 16px 60px;
+  }
+
+  /* ── SECTION CARD ── */
+  .form-section { display: none; animation: fadeIn .35s ease; }
+  .form-section.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  .section-header {
+    background: var(--section-header-gradient);
+    border-radius: 16px 16px 0 0;
+    padding: 20px 26px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(255,255,255,.2);
+    border: 2px solid rgba(255,255,255,.5);
+    color: #fff; font-size: 13px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px; color: #fff; line-height: 1.2;
+  }
+  .section-title small {
+    display: block; font-family: 'Inter', sans-serif;
+    font-size: 11px; font-weight: 400; color: rgba(255,255,255,.7);
+    letter-spacing: 1px; text-transform: uppercase; margin-top: 2px;
+  }
+
+  .section-body {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 16px 16px;
+    padding: 28px 26px;
+    display: flex; flex-direction: column; gap: 22px;
+  }
+
+  /* intro box */
+  .intro-box {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 13.5px; line-height: 1.65; color: var(--ink);
+  }
+  .intro-box a { color: var(--blue-700); }
+
+  /* ── FORM FIELDS ── */
+  .field-group { display: flex; flex-direction: column; gap: 6px; }
+  .field-label {
+    font-size: 13px; font-weight: 600; color: var(--ink);
+    display: flex; align-items: baseline; gap: 4px; flex-wrap: wrap;
+  }
+  .field-hint {
+    font-size: 11.5px; font-weight: 400; color: var(--muted);
+    font-style: italic; display: block; margin-top: 2px;
+  }
+  .req { color: var(--error); font-size: 13px; }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px; color: var(--ink);
+    background: var(--bg); outline: none;
+    transition: border-color .2s, box-shadow .2s;
+    resize: vertical;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  textarea:focus {
+    border-color: var(--blue-400);
+    box-shadow: 0 0 0 3px rgba(77,182,240,.15);
+    background: var(--white);
+  }
+  textarea { min-height: 80px; }
+
+  /* ── RADIO / CHECKBOX ── */
+  .options-list { display: flex; flex-direction: column; gap: 8px; }
+  .opt-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px; cursor: pointer;
+    transition: border-color .15s, background .15s;
+    background: var(--bg);
+  }
+  .opt-item:hover { border-color: var(--blue-400); background: var(--tag-bg); }
+  .opt-item input { margin-top: 2px; accent-color: var(--blue-700); flex-shrink: 0; }
+  .opt-item label { font-size: 13px; color: var(--ink); cursor: pointer; line-height: 1.4; }
+  .opt-item.selected { border-color: var(--blue-700); background: var(--tag-bg); }
+
+  /* ── SCIENCE CATEGORY ── */
+  .sci-category {
+    border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+  }
+  .sci-cat-header {
+    background: linear-gradient(90deg, var(--blue-700), #1a7ab8);
+    padding: 11px 18px;
+    font-size: 13px; font-weight: 600; color: #fff;
+  }
+  .sci-cat-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    background: var(--white);
+  }
+  .sci-item {
+    display: flex; align-items: flex-start; gap: 9px;
+    padding: 9px 16px;
+    border-bottom: 1px solid rgba(158,214,245,.3);
+    border-right: 1px solid rgba(158,214,245,.2);
+    cursor: pointer; transition: background .15s;
+  }
+  .sci-item:hover { background: var(--tag-bg); }
+  .sci-item input { accent-color: var(--blue-700); flex-shrink: 0; margin-top: 2px; }
+  .sci-item label { font-size: 12.5px; color: var(--ink); cursor: pointer; line-height: 1.35; }
+
+  /* ── NAVIGATION BUTTONS ── */
+  .btn-row {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 12px; gap: 12px;
+  }
+  .btn {
+    padding: 11px 28px; border-radius: 8px; border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: all .2s;
+  }
+  .btn-primary { background: var(--blue-700); color: #fff; }
+  .btn-primary:hover { background: #004880; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,90,154,.3); }
+  .btn-secondary { background: transparent; color: var(--muted); border: 1.5px solid var(--border); }
+  .btn-secondary:hover { border-color: var(--blue-400); color: var(--blue-700); }
+  .btn-submit {
+    background: linear-gradient(135deg, var(--gold), var(--gold-lt));
+    color: var(--ink); font-weight: 700;
+  }
+  .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(200,155,56,.4); }
+
+  /* ── SUCCESS SCREEN ── */
+  .success-screen {
+    display: none; text-align: center;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 52px 32px;
+    animation: fadeIn .4s ease;
+  }
+  .success-screen.active { display: block; }
+  .success-icon {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: linear-gradient(135deg,#1a7a4a,#2ecc71);
+    margin: 0 auto 22px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px;
+  }
+  .success-screen h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px; color: var(--ink); margin-bottom: 12px;
+  }
+  .success-screen p { font-size: 14px; color: var(--muted); line-height: 1.65; max-width: 480px; margin: 0 auto; }
+
+  /* ── FOOTER ── */
+  .footer-pro {
+    background: linear-gradient(135deg, #2d7cab, #56b4e8);
+    padding: 36px 32px 20px;
+  }
+  .footer-inner { max-width: 960px; margin: 0 auto; }
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px; font-weight: 700; color: #fff;
+    text-align: center; margin-bottom: 22px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 20px; margin-bottom: 22px;
+  }
+  .footer-col {
+    background: rgba(255,255,255,.045);
+    border-radius: 10px; padding: 16px 18px;
+  }
+  .footer-col-title {
+    font-size: 10px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #d7effc; margin-bottom: 10px;
+  }
+  .footer-col p, .footer-col a {
+    font-size: 12px; color: rgba(255,255,255,.72);
+    line-height: 1.65; text-decoration: none; display: block;
+  }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom {
+    background: rgba(0,0,0,.08); border-radius: 8px; padding: 9px;
+    text-align: center; font-size: 10px; color: rgba(255,255,255,.52);
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .section-body { padding: 20px 16px; }
+    .progress-bar { gap: 4px; padding: 10px 12px; }
+    .prog-sep { width: 16px; }
+    .prog-step { padding: 4px 6px; font-size: 10px; }
+    .sci-cat-body { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-strip">
+  <div class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="9" stroke="#4db6f0" stroke-width="1.5"/>
+      <circle cx="12" cy="12" r="3" fill="#4db6f0"/>
+      <ellipse cx="12" cy="12" rx="9" ry="4" stroke="#c89b38" stroke-width="1.2" transform="rotate(45 12 12)"/>
+      <ellipse cx="12" cy="12" rx="9" ry="4" stroke="rgba(255,255,255,.4)" stroke-width="1.2" transform="rotate(-45 12 12)"/>
+    </svg>
+  </div>
+  <div class="nav-brand">
+    World Association of Azerbaijani Scientists
+    <span>WAAS · DAAB</span>
+  </div>
+  <div class="nav-sep"></div>
+  <a href="#" class="nav-link">Home</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Membership Application</div>
+  <h1>Membership Application Form</h1>
+  <p>To become a member of WAAS, please read our Charter and complete the form below.</p>
+  <p class="hero-sub">Dünya Azərbaycanlı Alimlər Birliyi (DAAB) — Founded 2022, Istanbul</p>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-bar">
+  <div class="prog-step active" id="prog-1" onclick="goTo(1)">
+    <div class="prog-num">1</div>
+    <span>Introduction</span>
+  </div>
+  <div class="prog-sep"></div>
+  <div class="prog-step" id="prog-2" onclick="goTo(2)">
+    <div class="prog-num">2</div>
+    <span>Personal Info</span>
+  </div>
+  <div class="prog-sep"></div>
+  <div class="prog-step" id="prog-3" onclick="goTo(3)">
+    <div class="prog-num">3</div>
+    <span>Scientific Fields</span>
+  </div>
+  <div class="prog-sep"></div>
+  <div class="prog-step" id="prog-4" onclick="goTo(4)">
+    <div class="prog-num">4</div>
+    <span>Additional Info</span>
+  </div>
+</div>
+
+<!-- FORM WRAPPER -->
+<div class="form-wrapper">
+  <form id="mainForm" novalidate>
+
+    <!-- ═══ SECTION 1 — Introduction ═══ -->
+    <div class="form-section active" id="sec-1">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <div class="section-title">
+          Introduction
+          <small>Section 1 of 4</small>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="intro-box">
+          To become a member of the <strong>World Association of Azerbaijani Scientists (WAAS / DAAB)</strong>,
+          you are requested to familiarize yourself with our <a href="#">Charter</a> and provide
+          the following information. All fields marked with <span style="color:var(--error)">*</span> are required.
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="email">
+            Email Address <span class="req">*</span>
+          </label>
+          <span class="field-hint">This will be used for all correspondence regarding your membership.</span>
+          <input type="email" id="email" name="email" placeholder="example@email.com" required>
+        </div>
+
+        <div class="btn-row">
+          <span></span>
+          <button type="button" class="btn btn-primary" onclick="next(1)">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 2 — Personal Information ═══ -->
+    <div class="form-section" id="sec-2">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <div class="section-title">
+          Personal Information
+          <small>Section 2 of 4</small>
+        </div>
+      </div>
+      <div class="section-body">
+
+        <div class="field-group">
+          <label class="field-label" for="name">First Name <span class="req">*</span></label>
+          <input type="text" id="name" name="name" placeholder="Enter your first name" required>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="surname">Last Name / Surname <span class="req">*</span></label>
+          <input type="text" id="surname" name="surname" placeholder="Enter your last name" required>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="country">Country and City of Residence <span class="req">*</span></label>
+          <span class="field-hint">Please specify your current country and city of residence.</span>
+          <textarea id="country" name="country" placeholder="e.g. Austria, Vienna" required></textarea>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="phone">Phone Number <span class="req">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="+43 XXX XXX XXXX">
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="university">University You Graduated From <span class="req">*</span></label>
+          <span class="field-hint">Please include the name of the institution and year of graduation.</span>
+          <textarea id="university" name="university" placeholder="e.g. University of Vienna, 2010" required></textarea>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="fieldofstudy">Field of Study <span class="req">*</span></label>
+          <span class="field-hint">Your academic specialisation or discipline.</span>
+          <textarea id="fieldofstudy" name="fieldofstudy" placeholder="e.g. Computer Science, Biochemistry" required></textarea>
+        </div>
+
+        <!-- Academic Degree -->
+        <div class="field-group">
+          <div class="field-label">Academic Degree <span class="req">*</span></div>
+          <span class="field-hint">Select the highest academic degree you hold.</span>
+          <div class="options-list">
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg1" value="bachelor">
+              <label for="deg1"><strong>Bachelor's Degree</strong> — BA (Bachelor of Arts), BSc (Bachelor of Science), BEng (Bachelor of Engineering)</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg2" value="master">
+              <label for="deg2"><strong>Master's Degree</strong> — MA (Master of Arts), MSc (Master of Science), MEng (Master of Engineering)</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg3" value="phd">
+              <label for="deg3"><strong>PhD</strong> (Doctor of Philosophy) — Doctor of Sciences in Philosophy</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg4" value="dsc">
+              <label for="deg4"><strong>DSc</strong> (Doctor of Science) / <strong>Dr. Habil.</strong> (Habilitation) — Post-doctoral degree</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg5" value="md">
+              <label for="deg5"><strong>MD</strong> (Doctor of Medicine) — Doctoral degree in Medicine</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg6" value="jd">
+              <label for="deg6"><strong>JD</strong> (Juris Doctor) — Doctor of Law</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg7" value="other">
+              <label for="deg7">Other</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="deginst">Institution Where You Earned Your Academic Degree <span class="req">*</span></label>
+          <span class="field-hint">Include the institution name, country, and year awarded.</span>
+          <textarea id="deginst" name="deginst" placeholder="e.g. University of Vienna, Austria, 2015" required></textarea>
+        </div>
+
+        <!-- Academic Title -->
+        <div class="field-group">
+          <div class="field-label">Academic Title <span class="req">*</span></div>
+          <span class="field-hint">Select the academic title you currently hold.</span>
+          <div class="options-list">
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit1" value="docent">
+              <label for="tit1"><strong>Associate Professor (Docent)</strong> — For scholars holding a PhD and a recognised record of academic achievement.</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit2" value="professor">
+              <label for="tit2"><strong>Full Professor</strong> — The highest academic rank, typically awarded after DSc or habilitation.</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit3" value="honorary">
+              <label for="tit3"><strong>Honorary Doctor (Dr. h.c.)</strong> — An honorary academic title conferred by a university or academy.</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit4" value="other">
+              <label for="tit4">Other</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="titinst">Institution Where You Earned Your Academic Title <span class="req">*</span></label>
+          <span class="field-hint">Include the institution name, country, and year awarded.</span>
+          <textarea id="titinst" name="titinst" placeholder="e.g. Technical University of Munich, Germany, 2018" required></textarea>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="currentjob">Current Job and Position <span class="req">*</span></label>
+          <span class="field-hint">Please state your institution, role, and country.</span>
+          <textarea id="currentjob" name="currentjob" placeholder="e.g. Senior Researcher, Institute of Molecular Biology, Austria" required></textarea>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="prevjobs">Previous Jobs and Positions <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+          <span class="field-hint">List any relevant previous positions you have held.</span>
+          <textarea id="prevjobs" name="prevjobs" placeholder="e.g. Postdoctoral Fellow, University of Oxford, UK, 2010–2013"></textarea>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="contributions">Contributions You Can Make to the Activities of WAAS <span class="req">*</span></label>
+          <span class="field-hint">Describe how you plan to contribute to WAAS / DAAB activities and goals.</span>
+          <textarea id="contributions" name="contributions" placeholder="e.g. I can contribute to organising scientific conferences, mentoring young Azerbaijani scientists abroad, and participating in collaborative research projects..." required style="min-height:110px;"></textarea>
+        </div>
+
+        <div class="btn-row">
+          <button type="button" class="btn btn-secondary" onclick="prev(2)">← Back</button>
+          <button type="button" class="btn btn-primary" onclick="next(2)">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 3 — Scientific Fields ═══ -->
+    <div class="form-section" id="sec-3">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <div class="section-title">
+          Scientific Fields You Are Engaged In
+          <small>Section 3 of 4 — Select all that apply</small>
+        </div>
+      </div>
+      <div class="section-body">
+
+        <!-- 1. Humanities & Social Sciences -->
+        <div class="sci-category">
+          <div class="sci-cat-header">1. Humanities and Social Sciences</div>
+          <div class="sci-cat-body">
+            <div class="sci-item"><input type="checkbox" id="h1" name="sci" value="philology"><label for="h1">Philology (Languages, Literature, Linguistics)</label></div>
+            <div class="sci-item"><input type="checkbox" id="h2" name="sci" value="philosophy"><label for="h2">Philosophy</label></div>
+            <div class="sci-item"><input type="checkbox" id="h3" name="sci" value="history"><label for="h3">History</label></div>
+            <div class="sci-item"><input type="checkbox" id="h4" name="sci" value="archaeology"><label for="h4">Archaeology</label></div>
+            <div class="sci-item"><input type="checkbox" id="h5" name="sci" value="ethnology"><label for="h5">Ethnology and Anthropology</label></div>
+            <div class="sci-item"><input type="checkbox" id="h6" name="sci" value="political"><label for="h6">Political Science</label></div>
+            <div class="sci-item"><input type="checkbox" id="h7" name="sci" value="sociology"><label for="h7">Sociology</label></div>
+            <div class="sci-item"><input type="checkbox" id="h8" name="sci" value="psychology"><label for="h8">Psychology</label></div>
+            <div class="sci-item"><input type="checkbox" id="h9" name="sci" value="pedagogy"><label for="h9">Pedagogy</label></div>
+            <div class="sci-item"><input type="checkbox" id="h10" name="sci" value="journalism"><label for="h10">Journalism and Mass Communication</label></div>
+            <div class="sci-item"><input type="checkbox" id="h11" name="sci" value="law"><label for="h11">Law / Jurisprudence</label></div>
+            <div class="sci-item"><input type="checkbox" id="h12" name="sci" value="economics"><label for="h12">Economics and Management</label></div>
+            <div class="sci-item"><input type="checkbox" id="h13" name="sci" value="international"><label for="h13">International Relations</label></div>
+          </div>
+        </div>
+
+        <!-- 2. Exact & Applied Sciences -->
+        <div class="sci-category">
+          <div class="sci-cat-header">2. Exact and Applied Sciences</div>
+          <div class="sci-cat-body">
+            <div class="sci-item"><input type="checkbox" id="d1" name="sci" value="mathematics"><label for="d1">Mathematics (Algebra, Analysis, Topology, Mathematical Statistics)</label></div>
+            <div class="sci-item"><input type="checkbox" id="d2" name="sci" value="logic"><label for="d2">Logic and Computational Mathematics</label></div>
+            <div class="sci-item"><input type="checkbox" id="d3" name="sci" value="cybernetics"><label for="d3">Cybernetics and Artificial Intelligence</label></div>
+            <div class="sci-item"><input type="checkbox" id="d4" name="sci" value="physics"><label for="d4">Physics (Quantum, Nuclear, Astrophysics, Optics)</label></div>
+            <div class="sci-item"><input type="checkbox" id="d5" name="sci" value="chemistry"><label for="d5">Chemistry (General, Inorganic, Organic, Physical, Analytical, Biochemistry)</label></div>
+            <div class="sci-item"><input type="checkbox" id="d6" name="sci" value="geology"><label for="d6">Geology and Mineralogy</label></div>
+            <div class="sci-item"><input type="checkbox" id="d7" name="sci" value="geography"><label for="d7">Geography and Cartography</label></div>
+            <div class="sci-item"><input type="checkbox" id="d8" name="sci" value="astronomy"><label for="d8">Astronomy</label></div>
+          </div>
+        </div>
+
+        <!-- 3. Technical & Engineering -->
+        <div class="sci-category">
+          <div class="sci-cat-header">3. Technical and Engineering Sciences</div>
+          <div class="sci-cat-body">
+            <div class="sci-item"><input type="checkbox" id="t1" name="sci" value="cs"><label for="t1">Computer Science and Informatics</label></div>
+            <div class="sci-item"><input type="checkbox" id="t2" name="sci" value="electronics"><label for="t2">Electronics and Telecommunications</label></div>
+            <div class="sci-item"><input type="checkbox" id="t3" name="sci" value="robotics"><label for="t3">Automation and Robotics</label></div>
+            <div class="sci-item"><input type="checkbox" id="t4" name="sci" value="petroleum"><label for="t4">Petroleum and Gas Engineering</label></div>
+            <div class="sci-item"><input type="checkbox" id="t5" name="sci" value="construction"><label for="t5">Construction and Architecture</label></div>
+            <div class="sci-item"><input type="checkbox" id="t6" name="sci" value="energy"><label for="t6">Energy and Electrical Engineering</label></div>
+            <div class="sci-item"><input type="checkbox" id="t7" name="sci" value="mechanics"><label for="t7">Mechanics and Mechanical Engineering</label></div>
+            <div class="sci-item"><input type="checkbox" id="t8" name="sci" value="materials"><label for="t8">Materials Science and Nanotechnology</label></div>
+            <div class="sci-item"><input type="checkbox" id="t9" name="sci" value="transport"><label for="t9">Transport and Logistics</label></div>
+            <div class="sci-item"><input type="checkbox" id="t10" name="sci" value="aerospace"><label for="t10">Aerospace Engineering</label></div>
+          </div>
+        </div>
+
+        <!-- 4. Biological & Medical -->
+        <div class="sci-category">
+          <div class="sci-cat-header">4. Biological and Medical Sciences</div>
+          <div class="sci-cat-body">
+            <div class="sci-item"><input type="checkbox" id="b1" name="sci" value="biology"><label for="b1">Biology (Genetics, Molecular Biology, Botany, Zoology)</label></div>
+            <div class="sci-item"><input type="checkbox" id="b2" name="sci" value="medicine"><label for="b2">Medicine (General, Surgery, Cardiology, Oncology, Neurology)</label></div>
+            <div class="sci-item"><input type="checkbox" id="b3" name="sci" value="pharmacy"><label for="b3">Pharmacy and Pharmacology</label></div>
+            <div class="sci-item"><input type="checkbox" id="b4" name="sci" value="veterinary"><label for="b4">Veterinary Sciences</label></div>
+            <div class="sci-item"><input type="checkbox" id="b5" name="sci" value="ecology"><label for="b5">Ecology and Environmental Sciences</label></div>
+            <div class="sci-item"><input type="checkbox" id="b6" name="sci" value="biotech"><label for="b6">Biotechnology and Bioengineering</label></div>
+          </div>
+        </div>
+
+        <!-- 5. Agricultural Sciences -->
+        <div class="sci-category">
+          <div class="sci-cat-header">5. Agricultural and Earth Sciences</div>
+          <div class="sci-cat-body">
+            <div class="sci-item"><input type="checkbox" id="k1" name="sci" value="agronomy"><label for="k1">Agronomy and Crop Science</label></div>
+            <div class="sci-item"><input type="checkbox" id="k2" name="sci" value="soil"><label for="k2">Soil Science and Agrochemistry</label></div>
+            <div class="sci-item"><input type="checkbox" id="k3" name="sci" value="horticulture"><label for="k3">Horticulture and Fruit Growing</label></div>
+            <div class="sci-item"><input type="checkbox" id="k4" name="sci" value="forestry"><label for="k4">Forestry and Arboriculture</label></div>
+            <div class="sci-item"><input type="checkbox" id="k5" name="sci" value="water"><label for="k5">Water Management and Irrigation</label></div>
+            <div class="sci-item"><input type="checkbox" id="k6" name="sci" value="animal"><label for="k6">Animal Science and Livestock</label></div>
+            <div class="sci-item"><input type="checkbox" id="k7" name="sci" value="fishery"><label for="k7">Fisheries and Aquaculture</label></div>
+          </div>
+        </div>
+
+        <!-- 6. Arts & Cultural Sciences -->
+        <div class="sci-category">
+          <div class="sci-cat-header">6. Arts and Cultural Sciences</div>
+          <div class="sci-cat-body">
+            <div class="sci-item"><input type="checkbox" id="i1" name="sci" value="musicology"><label for="i1">Musicology</label></div>
+            <div class="sci-item"><input type="checkbox" id="i2" name="sci" value="theatre"><label for="i2">Theatre and Film Studies</label></div>
+            <div class="sci-item"><input type="checkbox" id="i3" name="sci" value="finearts"><label for="i3">Fine Arts and Design</label></div>
+            <div class="sci-item"><input type="checkbox" id="i4" name="sci" value="folklore"><label for="i4">Folk Arts and Folklore</label></div>
+            <div class="sci-item"><input type="checkbox" id="i5" name="sci" value="culturalhistory"><label for="i5">Cultural and Art History</label></div>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button type="button" class="btn btn-secondary" onclick="prev(3)">← Back</button>
+          <button type="button" class="btn btn-primary" onclick="next(3)">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 4 — Additional Information ═══ -->
+    <div class="form-section" id="sec-4">
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <div class="section-title">
+          Additional Information
+          <small>Section 4 of 4</small>
+        </div>
+      </div>
+      <div class="section-body">
+
+        <div class="field-group">
+          <label class="field-label" for="addinfo">Additional Information You Would Like to Share <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+          <span class="field-hint">Any further details you consider relevant to your membership application.</span>
+          <textarea id="addinfo" name="addinfo" placeholder="e.g. Awards, grants, professional memberships, publications, or any other relevant information..." style="min-height:110px;"></textarea>
+        </div>
+
+        <div class="intro-box">
+          <strong>📎 Photo and CV</strong><br>
+          Please send your personal photo and CV to our
+          <a href="mailto:info@daab.az">email address</a>
+          after submitting this form.<br><br>
+          <span style="font-size:12px;color:var(--muted);">
+            Accepted formats: PDF, DOCX for CV; JPG or PNG for photo.
+            Please use the subject line: <em>"WAAS Membership — [Your Full Name]"</em>
+          </span>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="cvconfirm">I confirm I will send my photo and CV by email</label>
+          <div class="opt-item" style="max-width:360px;">
+            <input type="checkbox" id="cvconfirm" name="cvconfirm">
+            <label for="cvconfirm">Yes, I will send my photo and CV to <a href="mailto:info@daab.az">info@daab.az</a></label>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button type="button" class="btn btn-secondary" onclick="prev(4)">← Back</button>
+          <button type="button" class="btn btn-submit" onclick="submitForm()">✓ Submit Application</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-screen" id="success">
+      <div class="success-icon">✓</div>
+      <h2>Application Submitted Successfully!</h2>
+      <p>
+        Thank you for applying to join the World Association of Azerbaijani Scientists (WAAS / DAAB).
+        Your application has been received and we will be in touch with you shortly.<br><br>
+        Please remember to send your <strong>photo and CV</strong> to
+        <a href="mailto:info@daab.az" style="color:var(--blue-700);">info@daab.az</a>.
+      </p>
+    </div>
+
+  </form>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-pro">
+  <div class="footer-inner">
+    <div class="footer-brand">World Association of Azerbaijani Scientists (WAAS / DAAB)</div>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <a href="mailto:info@daab.az">info@daab.az</a>
+        <p>daab.az</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Address</div>
+        <p>Istanbul, Turkey</p>
+        <p>Established: 2022</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Leadership</div>
+        <p>Prof. Dr. Masud Afandiyev<br><em>Board Chair</em></p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 DAAB / WAAS — All Rights Reserved</div>
+  </div>
+</footer>
+
+<script>
+  let currentSection = 1;
+  const totalSections = 4;
+
+  function updateProgress(n) {
+    for (let i = 1; i <= totalSections; i++) {
+      const el = document.getElementById('prog-' + i);
+      el.classList.remove('active', 'done');
+      if (i < n) el.classList.add('done');
+      else if (i === n) el.classList.add('active');
+    }
+  }
+
+  function showSection(n) {
+    document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+    const sec = document.getElementById('sec-' + n);
+    if (sec) sec.classList.add('active');
+    updateProgress(n);
+    currentSection = n;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function goTo(n) {
+    if (n <= currentSection) showSection(n);
+  }
+
+  function next(n) {
+    if (n < totalSections) showSection(n + 1);
+  }
+
+  function prev(n) {
+    if (n > 1) showSection(n - 1);
+  }
+
+  function submitForm() {
+    document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+    document.getElementById('success').classList.add('active');
+    document.querySelectorAll('.prog-step').forEach(el => {
+      el.classList.remove('active');
+      el.classList.add('done');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Highlight selected radio options
+  document.querySelectorAll('.opt-item input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      const name = radio.getAttribute('name');
+      document.querySelectorAll(`.opt-item input[name="${name}"]`).forEach(r => {
+        r.closest('.opt-item').classList.remove('selected');
+      });
+      radio.closest('.opt-item').classList.add('selected');
+    });
+  });
+</script>
+</body>
+</html>

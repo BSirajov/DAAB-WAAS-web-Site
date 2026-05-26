@@ -23,10 +23,7 @@ ASSET = "../../../"
 PAGE_ID = "forum-cooperation"
 SIDEBAR_SCRIPT = f'<script src="{ASSET}js/daab-sidebar-timeline.js?v=1" defer></script>'
 
-SECTIONS = (
-    {"id": "contributions", "az_title": "Töhfələr və tərəfdaşlar"},
-    {"id": "university-rectors", "az_title": "Universitet rektorları"},
-)
+SECTIONS = ({"id": "contributions", "az_title": "Töhfələr və tərəfdaşlar"},)
 
 
 def esc(s: str) -> str:
@@ -77,9 +74,8 @@ def contributions_body(data: dict, *, lang: str) -> str:
         paragraphs = data["items"]
     parts: list[str] = []
     for i, text in enumerate(paragraphs):
-        if i == 7 and text.rstrip().endswith(":"):
-            parts.append(f'<p class="card-lead">{esc(text)}</p>')
-            continue
+        if i == 7:
+            text = text.rstrip().rstrip(":")
         parts.append(f'<p class="card-text">{esc(text)}</p>')
     return "\n".join(parts)
 
@@ -174,11 +170,7 @@ def page_html(data: dict, *, lang: str) -> str:
 </footer>"""
 
     contrib_body = contributions_body(data, lang=lang)
-    rectors_body = table_html(data["rectors"], lang=lang)
-    cards = section_card(SECTIONS[0], contrib_body, lang=lang) + section_card(
-        SECTIONS[1], rectors_body, lang=lang
-    )
-    toc = toc_items(lang=lang)
+    cards = section_card(SECTIONS[0], contrib_body, lang=lang)
     nav = forum_nav_strip(lang, active_nav_id="forum-2024")
 
     return f"""<!DOCTYPE html>
@@ -221,7 +213,6 @@ def page_html(data: dict, *, lang: str) -> str:
 <div class="hero-wrap shell">
 <section class="hero-copy">
 <h1>{hero_h1}</h1>
-<p class="hero-doc-lead">{esc(doc_lead)}</p>
 </section>
 <aside aria-label="{esc(panel_aria)}" class="hero-panel">
 <div class="panel-card">
@@ -231,23 +222,12 @@ def page_html(data: dict, *, lang: str) -> str:
 </aside>
 </div>
 </header>
-<div class="content-wrap">
-<aside class="sidebar">
-<div class="sidebar-widget">
-<div class="widget-head"><span>{sidebar_label}</span><button aria-controls="cooperationTOC" aria-expanded="false" aria-label="{esc(sidebar_aria)}" class="events-menu-toggle" type="button"><span></span><span></span><span></span></button></div>
-<div class="widget-body">
-<ul class="timeline-list" id="cooperationTOC">
-{toc}
-</ul>
-</div>
-</div>
-</aside>
+<div class="content-wrap content-wrap--single">
 <main class="news-feed main" id="content">
 {cards}
 </main>
 </div>
 {footer_html}
-{SIDEBAR_SCRIPT}
 </body>
 </html>
 """

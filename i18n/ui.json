@@ -69,13 +69,19 @@
       "forumImpressions": "Təəssüratlar",
       "forum2024Presentations": "Məruzələr",
       "activitiesNewsDesc": "Əsas fəaliyyət və yeniliklər",
-      "forum2024Desc": "Forum 2024 kitabı və bölmələr",
+      "forum2024Desc": "Forum 2024-ü kəşf edin",
       "scientists": "Alimlərimiz",
       "scientistsList": "Siyahı",
       "scientistsProfiles": "Profillər",
       "executiveBoard": "İdarə heyəti",
       "charter": "Nizamnamə",
       "membership": "Üzvlük",
+      "membershipWhy": "Niyə üzv olmalı",
+      "membershipTerms": "Üzvlük şərtləri",
+      "membershipJoin": "Bizə qoşulun",
+      "membershipWhyDesc": "Üzvlüyün faydaları və dəyər təklifi",
+      "membershipTermsDesc": "Üzvlük qaydaları, ödəniş və müraciət məlumatları",
+      "membershipJoinDesc": "Onlayn üzvlük müraciət forması",
       "aboutFoundationDesc": "Yaradılma tarixi və təsis prosesi",
       "aboutMissionDesc": "Missiya, vizyon və akademik dəyərlər",
       "aboutBoardDesc": "İdarə heyəti və rəhbərlik",
@@ -104,13 +110,19 @@
       "forumImpressions": "Impressions",
       "forum2024Presentations": "Presentations",
       "activitiesNewsDesc": "News and updates",
-      "forum2024Desc": "Forum 2024 book and sections",
+      "forum2024Desc": "Explore Forum 2024",
       "scientists": "Scientists",
       "scientistsList": "Directory",
       "scientistsProfiles": "Profiles",
       "executiveBoard": "Board of Directors",
       "charter": "Charter",
       "membership": "Membership",
+      "membershipWhy": "Why become a member",
+      "membershipTerms": "Membership terms",
+      "membershipJoin": "Join us",
+      "membershipWhyDesc": "Benefits and value of WAAS membership",
+      "membershipTermsDesc": "Membership rules, fees and application information",
+      "membershipJoinDesc": "Online membership application form",
       "aboutFoundationDesc": "History and founding process",
       "aboutMissionDesc": "Mission, vision and academic values",
       "aboutBoardDesc": "Leadership and governance structure",
@@ -132,6 +144,9 @@
     "forum-2024-presentations": "📊",
     "forum-impressions": "💬",
     "membership": "✒️",
+    "membershipWhy": "💡",
+    "membershipTerms": "✒️",
+    "membershipJoin": "📝",
     "about": "🏛️",
     "scientists": "🌐",
     "foundation": "🏛️",
@@ -150,14 +165,16 @@
       "home": "Ana səhifə",
       "about": "Haqqımızda",
       "scientists": "Alimlərimiz",
-      "activities": "Fəaliyyətimiz"
+      "activities": "Fəaliyyətimiz",
+      "membership": "Üzvlük"
     },
     "en": {
       "aria": "Breadcrumb",
       "home": "Home",
       "about": "About",
       "scientists": "Scientists",
-      "activities": "Activities"
+      "activities": "Activities",
+      "membership": "Membership"
     }
   },
   "sectionNav": {
@@ -166,14 +183,16 @@
       "aboutTitle": "Haqqımızda",
       "scientistsTitle": "Alimlərimiz",
       "activitiesTitle": "Fəaliyyətimiz",
-      "forumTitle": "Forum 2024"
+      "forumTitle": "Forum 2024",
+      "membershipTitle": "Üzvlük"
     },
     "en": {
       "aria": "In this section",
       "aboutTitle": "About",
       "scientistsTitle": "Scientists",
       "activitiesTitle": "Activities",
-      "forumTitle": "Forum 2024"
+      "forumTitle": "Forum 2024",
+      "membershipTitle": "Membership"
     }
   },
   "stub": {

@@ -137,11 +137,30 @@
       "en": "en/charter.html"
     },
     {
+      "id": "membership-value",
+      "navId": "membership",
+      "navGroup": "membership",
+      "navParent": "membership",
+      "navOrder": 1,
+      "legacy": null,
+      "az": "az/membership_value.html",
+      "en": "en/membership_value.html"
+    },
+    {
+      "id": "membership-application",
+      "navId": "membership",
+      "navGroup": "membership",
+      "navParent": "membership",
+      "navOrder": 3,
+      "az": "az/application.html",
+      "en": "en/application.html"
+    },
+    {
       "id": "membership",
       "navId": "membership",
-      "navGroup": null,
-      "navParent": null,
-      "navOrder": 5,
+      "navGroup": "membership",
+      "navParent": "membership",
+      "navOrder": 2,
       "legacy": "membership_terms_az.html",
       "az": "az/membership.html",
       "en": "en/membership.html"

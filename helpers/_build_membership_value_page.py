@@ -1,0 +1,227 @@
+#!/usr/bin/env python3
+"""Build az|en/membership_value.html from application/membership_value.html with DAAB shell."""
+from __future__ import annotations
+
+import re
+import sys
+from pathlib import Path
+
+from _paths import ROOT
+
+ASSET = "../"
+CSS_V = "1"
+
+LOCALES = {
+    "az": {
+        "src": ROOT / "az" / "application" / "membership_value.html",
+        "membership": ROOT / "az" / "membership.html",
+        "out": ROOT / "az" / "membership_value.html",
+        "lang": "az",
+        "brand": "DAAB",
+        "page_id": "membership-value",
+        "title": "DAAB — Üzvlük sizə nə qazandırır?",
+        "description": "DAAB üzvlüyünün faydaları, əməkdaşlıq imkanları və qlobal elmi şəbəkəyə qoşulma dəyəri.",
+        "skip": "Məzmuna keç",
+        "nav_aria": "Əsas naviqasiya",
+        "hero_h1": "DAAB mənə nə verəcək? <span>Niyə üzv olum?</span>",
+        "hero_text": (
+            "DAAB üzvlüyü sadəcə bir təşkilata qoşulmaq deyil. Bu, qlobal Azərbaycan elmi "
+            "ekosisteminin bir hissəsi olmaq, öz bilik və təcrübənizi görünən etmək, yeni "
+            "əməkdaşlıqlar qurmaq və Azərbaycanın intellektual gələcəyinə real töhfə vermək imkanıdır."
+        ),
+        "hero_primary": "Cavablara bax →",
+        "hero_primary_href": "#answers",
+        "hero_secondary": "Üstünlüklər",
+        "hero_secondary_href": "#benefits",
+        "panel_title": "Üzvlük şəxsi fayda ilə ictimai missiyanın kəsişməsidir",
+        "panel_copy": (
+            "DAAB üzvlərə peşəkar görünürlük, beynəlxalq əlaqələr, akademik əməkdaşlıq "
+            "və Azərbaycana xidmət imkanı yaradır."
+        ),
+        "cta_btn": "Bizə qoşulun",
+        "cta_href": "application.html",
+    },
+    "en": {
+        "src": ROOT / "en" / "application" / "membership_value.html",
+        "membership": ROOT / "en" / "membership.html",
+        "out": ROOT / "en" / "membership_value.html",
+        "lang": "en",
+        "brand": "WAAS",
+        "page_id": "membership-value",
+        "title": "WAAS — Why become a member?",
+        "description": (
+            "Benefits of WAAS membership, collaboration opportunities, and the value of "
+            "joining the global Azerbaijani scientific network."
+        ),
+        "skip": "Skip to content",
+        "nav_aria": "Main navigation",
+        "hero_h1": "What does WAAS offer me? <span>Why should I join?</span>",
+        "hero_text": (
+            "WAAS membership is not simply joining an association. It means becoming part of a "
+            "global Azerbaijani scientific ecosystem, making your knowledge and experience more "
+            "visible, building new collaborations, and contributing meaningfully to Azerbaijan’s "
+            "intellectual future."
+        ),
+        "hero_primary": "See the answers →",
+        "hero_primary_href": "#answers",
+        "hero_secondary": "Benefits",
+        "hero_secondary_href": "#benefits",
+        "panel_title": "Membership connects personal benefit with public mission",
+        "panel_copy": (
+            "WAAS gives its members professional visibility, international connections, "
+            "academic cooperation opportunities, and a meaningful channel for serving "
+            "Azerbaijan’s scientific development."
+        ),
+        "cta_btn": "Join us",
+        "cta_href": "application.html",
+    },
+}
+
+
+def extract_nav(html: str, nav_aria: str) -> str:
+    m = re.search(
+        rf'(<nav aria-label="{re.escape(nav_aria)}" class="nav-strip">.*?</nav>)',
+        html,
+        re.DOTALL,
+    )
+    return m.group(1) if m else ""
+
+
+def extract_footer(html: str) -> str:
+    m = re.search(r'(<footer class="footer-pro">.*?</footer>)', html, re.DOTALL)
+    return m.group(1) if m else ""
+
+
+def extract_main(src: str) -> str:
+    start = src.find('<main id="content">')
+    if start < 0:
+        raise SystemExit("Could not find <main id=\"content\"> in source")
+    start = src.find(">", start) + 1
+    end = src.find("</main>", start)
+    if end < 0:
+        raise SystemExit("Could not find </main> in source")
+    block = src[start:end].strip()
+    replacements = [
+        ('class="value"', 'class="mv-value"'),
+        ('class="section"', 'class="mv-section"'),
+        ('class="section-head"', 'class="mv-section-head"'),
+        ('class="grid grid3"', 'class="mv-grid mv-grid-3"'),
+        ('class="grid grid2"', 'class="mv-grid mv-grid-2"'),
+        ('class="card"', 'class="mv-card"'),
+        ('class="icon"', 'class="mv-icon"'),
+        ('class="clean"', 'class="mv-clean"'),
+        ('class="qa"', 'class="mv-qa"'),
+        ('class="qa-item"', 'class="mv-qa-item"'),
+        ('class="cta"', 'class="mv-cta"'),
+        ('class="stats"', 'class="mv-stats"'),
+        ('class="stat"', 'class="mv-stat"'),
+        ('class="value-grid"', 'class="mv-value-grid"'),
+        ('class="mini"', 'class="mv-mini"'),
+    ]
+    for old, new in replacements:
+        block = block.replace(old, new)
+    block = re.sub(
+        r'<a class="btn" href="mailto:[^"]+">[^<]+</a>',
+        '<a class="btn" href="__CTA_HREF__">__CTA_TEXT__</a>',
+        block,
+        count=1,
+    )
+    return block
+
+
+def shell_head(cfg: dict) -> str:
+    return f"""<!DOCTYPE html>
+<html lang="{cfg["lang"]}" data-daab-lang="{cfg["lang"]}" data-daab-asset-root="{ASSET}" data-daab-page-id="{cfg["page_id"]}" data-daab-nav-mount="1">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>{cfg["title"]}</title>
+<meta name="description" content="{cfg["description"]}"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="{ASSET}css/daab-common.css?v=26" rel="stylesheet"/>
+<link href="{ASSET}css/daab-mobile.css?v=5" rel="stylesheet"/>
+<link href="{ASSET}css/daab-search.css?v=3" rel="stylesheet"/>
+<link href="{ASSET}css/daab-back-to-top.css?v=1" rel="stylesheet"/>
+<link href="{ASSET}css/daab-lang.css?v=10" rel="stylesheet"/>
+<link href="{ASSET}css/daab-nav-mega.css?v=13" rel="stylesheet"/>
+<link href="{ASSET}css/daab-hero-summary.css?v=1" rel="stylesheet"/>
+<link href="{ASSET}css/daab-membership-value.css?v={CSS_V}" rel="stylesheet"/>
+<script src="{ASSET}js/daab-mobile.js?v=1" defer></script>
+<script src="{ASSET}js/daab-back-to-top.js?v=2" defer></script>
+<script src="{ASSET}js/daab-i18n.js?v=12" defer></script>
+<script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
+<script src="{ASSET}js/daab-nav.js?v=13" defer></script>
+<script src="{ASSET}js/daab-primary-nav.js?v=13" defer></script>
+<script src="{ASSET}js/daab-breadcrumbs.js?v=7" defer></script>
+<script src="{ASSET}js/daab-section-nav.js?v=5" defer></script>
+<script src="{ASSET}js/daab-shell.js?v=11" defer></script>
+<script src="{ASSET}js/daab-search.js?v=4" defer></script>
+</head>
+"""
+
+
+def hero_block(cfg: dict) -> str:
+    return f"""<body class="membership-value-page membership-page">
+<a class="skip" href="#content">{cfg["skip"]}</a>
+NAV_PLACEHOLDER
+<header class="hero">
+<div class="hero-wrap shell">
+<section>
+<h1>{cfg["hero_h1"]}</h1>
+<p class="hero-text">{cfg["hero_text"]}</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="{cfg["hero_primary_href"]}">{cfg["hero_primary"]}</a>
+<a class="btn btn-secondary" href="{cfg["hero_secondary_href"]}">{cfg["hero_secondary"]}</a>
+</div>
+</section>
+<aside aria-label="{cfg["panel_title"]}" class="hero-panel">
+<div class="panel-card">
+<h2 class="panel-title">{cfg["panel_title"]}</h2>
+<p class="panel-copy">{cfg["panel_copy"]}</p>
+<div class="mv-stats">
+<div class="mv-stat"><strong>🌍</strong><span>{"Görünürlük" if cfg["lang"] == "az" else "Visibility"}</span></div>
+<div class="mv-stat"><strong>🤝</strong><span>{"Əlaqələr" if cfg["lang"] == "az" else "Connections"}</span></div>
+<div class="mv-stat"><strong>🚀</strong><span>{"İnkişaf" if cfg["lang"] == "az" else "Growth"}</span></div>
+</div>
+</div>
+</aside>
+</div>
+</header>
+<main class="main membership-value-main" id="content">
+"""
+
+
+def build_locale(key: str) -> None:
+    cfg = LOCALES[key]
+    if not cfg["src"].is_file():
+        raise SystemExit(f"Missing source: {cfg['src']}")
+    membership = cfg["membership"].read_text(encoding="utf-8")
+    src = cfg["src"].read_text(encoding="utf-8")
+    nav = extract_nav(membership, cfg["nav_aria"])
+    if not nav:
+        raise SystemExit(f"Could not extract nav from {cfg['membership']}")
+    footer = extract_footer(membership)
+    if not footer:
+        raise SystemExit(f"Could not extract footer from {cfg['membership']}")
+    main = extract_main(src)
+    main = main.replace("__CTA_HREF__", cfg["cta_href"]).replace("__CTA_TEXT__", cfg["cta_btn"])
+    html = shell_head(cfg)
+    html += hero_block(cfg).replace("NAV_PLACEHOLDER", nav)
+    html += main + "\n</main>\n"
+    html += footer + "\n</body>\n</html>\n"
+    cfg["out"].write_text(html, encoding="utf-8", newline="\n")
+    print(f"Wrote {cfg['out'].relative_to(ROOT)}")
+
+
+def main() -> None:
+    targets = sys.argv[1:] if len(sys.argv) > 1 else list(LOCALES.keys())
+    for key in targets:
+        if key not in LOCALES:
+            raise SystemExit(f"Unknown locale: {key}")
+        build_locale(key)
+
+
+if __name__ == "__main__":
+    main()

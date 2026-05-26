@@ -30,7 +30,7 @@ NAV_AZ = (
     '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
         ("activities.html", "activities", "Yeniliklər", "Əsas fəaliyyət və yeniliklər"),
-        ("forum/2024/index.html", "forum-2024", "Forum 2024", "Forum 2024 kitabı və bölmələr"),
+        ("forum/2024/index.html", "forum-2024", "Forum 2024", "Forum 2024-ü kəşf edin"),
     ])
     + "</div></div>"
     '<div class="nav-dropdown" data-nav-dropdown>'
@@ -53,7 +53,16 @@ NAV_AZ = (
         ("charter.html", "charter", "Nizamnamə", "Nizamnamə və idarəetmə qaydaları"),
     ])
     + "</div></div>"
-    '<a class="nav-link" href="membership.html" data-nav-id="membership">Üzvlük</a>'
+    '<div class="nav-dropdown" data-nav-dropdown>'
+    '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
+    'Üzvlük <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    '<div class="nav-dropdown-panel" role="menu">'
+    + _drop([
+        ("membership_value.html", "membership-value", "Niyə üzv olmalı", "Üzvlüyün faydaları və dəyər təklifi"),
+        ("membership.html", "membership", "Üzvlük şərtləri", "Üzvlük qaydaları, ödəniş və müraciət məlumatları"),
+        ("application.html", "membership-application", "Bizə qoşulun", "Onlayn üzvlük müraciət forması"),
+    ])
+    + "</div></div>"
 )
 
 NAV_EN = (
@@ -65,7 +74,7 @@ NAV_EN = (
     '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
         ("activities.html", "activities", "News", "News and updates"),
-        ("forum/2024/index.html", "forum-2024", "Forum 2024", "Forum 2024 book and sections"),
+        ("forum/2024/index.html", "forum-2024", "Forum 2024", "Explore Forum 2024"),
     ])
     + "</div></div>"
     '<div class="nav-dropdown" data-nav-dropdown>'
@@ -88,7 +97,16 @@ NAV_EN = (
         ("charter.html", "charter", "Charter", "Charter and governance rules"),
     ])
     + "</div></div>"
-    '<a class="nav-link" href="membership.html" data-nav-id="membership">Membership</a>'
+    '<div class="nav-dropdown" data-nav-dropdown>'
+    '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
+    'Membership <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    '<div class="nav-dropdown-panel" role="menu">'
+    + _drop([
+        ("membership_value.html", "membership-value", "Why become a member", "Benefits and value of WAAS membership"),
+        ("membership.html", "membership", "Membership terms", "Membership rules, fees and application information"),
+        ("application.html", "membership-application", "Join us", "Online membership application form"),
+    ])
+    + "</div></div>"
 )
 
 NAV_SCI_AZ = NAV_AZ.replace('href="scientists/list.html"', 'href="list.html"').replace(
@@ -101,7 +119,9 @@ NAV_SCI_AZ = NAV_AZ.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="activities.html"', 'href="../activities.html"'
 ).replace(
     'href="forum/2024/index.html"', 'href="../forum/2024/index.html"'
-).replace('href="membership.html"', 'href="../membership.html"')
+).replace('href="membership.html"', 'href="../membership.html"').replace(
+    'href="membership_value.html"', 'href="../membership_value.html"'
+).replace('href="application.html"', 'href="../application.html"')
 
 FORUM_PREFIX_REPLACES = [
     ('href="index.html"', 'href="../../index.html"'),
@@ -113,6 +133,8 @@ FORUM_PREFIX_REPLACES = [
     ('href="executive-board.html"', 'href="../../executive-board.html"'),
     ('href="charter.html"', 'href="../../charter.html"'),
     ('href="membership.html"', 'href="../../membership.html"'),
+    ('href="membership_value.html"', 'href="../../membership_value.html"'),
+    ('href="application.html"', 'href="../../application.html"'),
 ]
 
 
@@ -171,7 +193,9 @@ NAV_SCI_EN = NAV_EN.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="activities.html"', 'href="../activities.html"'
 ).replace(
     'href="forum/2024/index.html"', 'href="../forum/2024/index.html"'
-).replace('href="membership.html"', 'href="../membership.html"')
+).replace('href="membership.html"', 'href="../membership.html"').replace(
+    'href="membership_value.html"', 'href="../membership_value.html"'
+).replace('href="application.html"', 'href="../application.html"')
 
 PLACEHOLDER_RE = re.compile(
     r'(<div class="nav-menu" id="primaryNavMenu"[^>]*>)(.*?)(</div>\s*</div>\s*</nav>)',
