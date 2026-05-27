@@ -30,7 +30,7 @@ NAV_AZ = (
     '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
         ("activities.html", "activities", "Yeniliklər", "Əsas fəaliyyət və yeniliklər"),
-        ("forum/2024/index.html", "forum-2024", "Forum 2024", "Forum 2024-ü kəşf edin"),
+        ("forum/2024/index.html", "forum-2024", "Forum 2024", "Forum 2024 haqqında"),
     ])
     + "</div></div>"
     '<div class="nav-dropdown" data-nav-dropdown>'
@@ -88,7 +88,7 @@ NAV_EN = (
     + "</div></div>"
     '<div class="nav-dropdown" data-nav-dropdown>'
     '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    'About <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    'About us <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
         ("foundation.html", "foundation", "Foundation", "History and founding process"),

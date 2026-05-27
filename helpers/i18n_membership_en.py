@@ -11,8 +11,8 @@ MEMBERSHIP_REPLACEMENTS: list[tuple[str, str]] = [
     ('aria-label="Üzvlük qısa məlumat"', 'aria-label="Membership summary"'),
     ("Elmi şəbəkəyə qoşulun", "Join the scientific network"),
     (
-        "DAAB üzvlüyü elmi əməkdaşlıq, mentorluq, beynəlxalq akademik əlaqələr və Azərbaycanın elmi inkişafına töhfə imkanlarını genişləndirir. Burada üzvlüklə bağlı müraciət qaydaları, üzvlük haqqı və ödəniş məlumatları təqdim olunur.",
-        "WAAS membership expands opportunities for scientific cooperation, mentoring, international academic connections and contribution to Azerbaijan's scientific development. Here you will find membership-related application rules, membership fees and payment information.",
+        "DAAB üzvlüyü elmi əməkdaşlıq, mentorluq, beynəlxalq akademik əlaqələr və Azərbaycanın elmi inkişafına töhfə imkanlarını genişləndirir. Burada üzvlüklə bağlı müraciət qaydaları və prosedurlar təqdim olunur.",
+        "WAAS membership expands opportunities for scientific cooperation, mentoring, international academic connections and contribution to Azerbaijan's scientific development. Here you will find membership-related application rules and procedures.",
     ),
     ("Aylıq üzvlük", "Monthly membership"),
     ("İllik üzvlük", "Annual membership"),

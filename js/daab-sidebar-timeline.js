@@ -10,7 +10,14 @@
   const cards = ids.map((id) => document.getElementById(id)).filter(Boolean);
   const eventsWidget = document.querySelector('.sidebar-widget');
   const eventsToggle = document.querySelector('.events-menu-toggle');
-  const mobileQuery = window.matchMedia('(max-width: 1060px)');
+  function sidebarStackMediaQuery() {
+    if (window.DAAB_DESIGN && typeof window.DAAB_DESIGN.sidebarStackMq === 'function') {
+      return window.DAAB_DESIGN.sidebarStackMq();
+    }
+    return window.matchMedia('(max-width: 1060px)');
+  }
+
+  const mobileQuery = sidebarStackMediaQuery();
 
   function activate(link) {
     links.forEach((a) => a.classList.remove('tl-active'));

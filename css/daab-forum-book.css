@@ -2,10 +2,10 @@
 
 html[data-daab-page-id^="forum-"] {
   --forum-max: 1180px;
-  --forum-ink: #08263b;
-  --forum-muted: #345d76;
+  --forum-ink: var(--ink);
+  --forum-muted: var(--muted-hero);
   --forum-blue: #1a6fa8;
-  --forum-border: #9ed6f5;
+  --forum-border: var(--blue-soft);
   --forum-gold: #c89b38;
   --forum-shadow: 0 16px 42px rgba(0, 45, 82, 0.12);
   --forum-radius: 26px;
@@ -14,7 +14,7 @@ html[data-daab-page-id^="forum-"] {
 html[data-daab-page-id^="forum-"] .forum-hero {
   position: relative;
   overflow: hidden;
-  background: #fff url("../images/diaspor-body-top-bg.jpg") top center/100% auto no-repeat;
+  background: var(--white) url("../images/diaspor-body-top-bg.jpg") top center/100% auto no-repeat;
   color: var(--forum-ink);
 }
 
@@ -39,8 +39,8 @@ html[data-daab-page-id^="forum-"] .forum-hero-wrap {
 
 html[data-daab-page-id^="forum-"] .forum-hero h1 {
   margin: 0;
-  color: #08263b;
-  font-family: "Playfair Display", Georgia, serif;
+  color: var(--ink);
+  font-family: var(--font-serif);
   font-size: clamp(34px, 4.8vw, 60px);
   line-height: 1.1;
   letter-spacing: -0.035em;
@@ -68,24 +68,24 @@ html[data-daab-page-id^="forum-"] .forum-hero-actions {
 html[data-daab-page-id^="forum-"] .forum-hero .hero-panel {
   align-self: start;
   padding: 0 0 0 4px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: var(--color-hero-panel-bg);
+  border: 1px solid var(--color-hero-panel-border);
   border-radius: 30px;
-  box-shadow: 0 18px 50px rgba(0, 45, 82, 0.22);
+  box-shadow: var(--shadow-hero-panel);
   backdrop-filter: blur(18px);
 }
 
 html[data-daab-page-id^="forum-"] .forum-hero .panel-card {
   padding: 22px 24px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.62);
-  border-radius: 24px;
+  background: var(--color-panel-card-bg);
+  border: 1px solid var(--color-panel-card-border);
+  border-radius: var(--radius);
 }
 
 html[data-daab-page-id^="forum-"] .forum-hero .panel-title {
   margin: 0 0 10px;
-  color: #094d78;
-  font-family: "Playfair Display", Georgia, serif;
+  color: var(--color-heading-blue);
+  font-family: var(--font-serif);
   font-size: 21px;
   font-weight: 800;
   text-align: center;
@@ -122,17 +122,17 @@ html[data-daab-page-id^="forum-"] .forum-toc {
   position: sticky;
   top: calc(var(--daab-nav-height, 86px) + 12px);
   padding: 18px;
-  background: rgba(245, 251, 255, 0.96);
+  background: var(--color-surface-toolbar);
   border: 1px solid var(--forum-border);
-  border-radius: 24px;
+  border-radius: var(--radius);
   box-shadow: var(--forum-shadow);
 }
 
 html[data-daab-page-id^="forum-"] .forum-toc-title {
   margin: 0 0 12px;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 22px;
-  color: #094d78;
+  color: var(--color-heading-blue);
 }
 
 html[data-daab-page-id^="forum-"] .forum-toc-list {
@@ -156,8 +156,8 @@ html[data-daab-page-id^="forum-"] .forum-toc-link {
 
 html[data-daab-page-id^="forum-"] .forum-toc-link:hover,
 html[data-daab-page-id^="forum-"] .forum-toc-link.is-active {
-  background: #dff2ff;
-  color: #005a9a;
+  background: var(--color-tint-blue);
+  color: var(--blue-dark);
 }
 
 html[data-daab-page-id^="forum-"] .forum-flow {
@@ -174,7 +174,7 @@ html[data-daab-page-id^="forum-"] .forum-source-note {
 html[data-daab-page-id^="forum-"] .forum-intro,
 html[data-daab-page-id^="forum-"] .forum-hub-card {
   padding: 24px 28px;
-  background: rgba(245, 251, 255, 0.96);
+  background: var(--color-surface-toolbar);
   border: 1px solid var(--forum-border);
   border-radius: var(--forum-radius);
   box-shadow: var(--forum-shadow);
@@ -207,8 +207,8 @@ html[data-daab-page-id^="forum-"] .forum-hub-link:hover {
 
 html[data-daab-page-id^="forum-"] .forum-hub-link h3 {
   margin: 0 0 8px;
-  color: #005a9a;
-  font-family: "Playfair Display", Georgia, serif;
+  color: var(--blue-dark);
+  font-family: var(--font-serif);
   font-size: 20px;
 }
 
@@ -237,11 +237,11 @@ html[data-daab-page-id^="forum-"] .story-number {
   place-items: center;
   width: 52px;
   height: 52px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #d9f0ff, #fff);
+  border-radius: var(--radius2);
+  background: linear-gradient(135deg, #d9f0ff, var(--white));
   border: 1px solid var(--forum-border);
   font-weight: 900;
-  color: #005a9a;
+  color: var(--blue-dark);
 }
 
 html[data-daab-page-id^="forum-"] .story-head {
@@ -252,8 +252,8 @@ html[data-daab-page-id^="forum-"] .story-head {
 
 html[data-daab-page-id^="forum-"] .story-head h2 {
   margin: 0;
-  color: #005a9a;
-  font-family: "Playfair Display", Georgia, serif;
+  color: var(--blue-dark);
+  font-family: var(--font-serif);
   font-size: 29px;
   line-height: 1.18;
 }
@@ -279,7 +279,7 @@ html[data-daab-page-id^="forum-"] .story-subtitle {
 
 html[data-daab-page-id^="forum-"] .story-signoff {
   margin: 0 0 8px;
-  color: #345d76;
+  color: var(--muted-hero);
   font-size: 14px;
   font-weight: 700;
 }
@@ -287,7 +287,7 @@ html[data-daab-page-id^="forum-"] .story-signoff {
 html[data-daab-page-id^="forum-"] .story-body blockquote {
   margin: 18px 0;
   padding: 16px 18px;
-  background: #eef8ff;
+  background: var(--soft-alt);
   border-left: 4px solid var(--forum-blue);
   border-radius: 16px;
   color: #16435d;
@@ -303,9 +303,9 @@ html[data-daab-page-id^="forum-"] .forum-intro-split {
 
 html[data-daab-page-id^="forum-"] .forum-intro-split h2 {
   margin: 0 0 8px;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 29px;
-  color: #094d78;
+  color: var(--color-heading-blue);
 }
 
 html[data-daab-page-id^="forum-"] .forum-intro-split p {
@@ -332,7 +332,7 @@ html[data-daab-page-id^="forum-"] .breadcrumbs span {
 }
 
 html[data-daab-page-id^="forum-"] .footer-pro {
-  background: #fff;
+  background: var(--white);
   border-top: 1px solid rgba(158, 214, 245, 0.7);
 }
 
@@ -344,8 +344,8 @@ html[data-daab-page-id^="forum-"] .footer-inner {
 
 html[data-daab-page-id^="forum-"] .footer-brand h3 {
   margin: 0 0 20px;
-  font-family: "Playfair Display", Georgia, serif;
-  color: #094d78;
+  font-family: var(--font-serif);
+  color: var(--color-heading-blue);
 }
 
 html[data-daab-page-id^="forum-"] .footer-grid {
@@ -356,7 +356,7 @@ html[data-daab-page-id^="forum-"] .footer-grid {
 
 html[data-daab-page-id^="forum-"] .footer-title {
   margin: 0 0 10px;
-  color: #005a9a;
+  color: var(--blue-dark);
 }
 
 html[data-daab-page-id^="forum-"] .footer-item,
@@ -379,8 +379,8 @@ html[data-daab-page-id^="forum-"] .program-table-wrap {
   overflow-x: auto;
   margin: 12px 0 18px;
   border: 1px solid var(--forum-border);
-  border-radius: 18px;
-  background: #fff;
+  border-radius: var(--radius2);
+  background: var(--white);
 }
 
 html[data-daab-page-id^="forum-"] .program-table {
@@ -400,8 +400,8 @@ html[data-daab-page-id^="forum-"] .program-table td {
 }
 
 html[data-daab-page-id^="forum-"] .program-table th {
-  background: #dff2ff;
-  color: #005a9a;
+  background: var(--color-tint-blue);
+  color: var(--blue-dark);
   font-weight: 900;
 }
 

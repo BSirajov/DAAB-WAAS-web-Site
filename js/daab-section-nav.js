@@ -23,6 +23,7 @@
     "forum-roadmap": "forumRoadmap",
     "forum-bagli-hekayeler": "forumBagliHekayeler",
     "forum-cooperation": "forumCooperation",
+    "forum-photos-gallery": "forumPhotosGallery",
     "scientists-list": "scientistsList",
     "scientists-profiles": "scientistsProfiles",
     membership: "membershipTerms",
@@ -86,6 +87,13 @@
         id: "forum-impressions",
         az: "az/forum/2024/impressions.html",
         en: "en/forum/2024/impressions.html",
+        navGroup: "forum",
+        navParent: "forum"
+      },
+      {
+        id: "forum-photos-gallery",
+        az: "az/forum/2024/photos_gallery.html",
+        en: "en/forum/2024/photos_gallery.html",
         navGroup: "forum",
         navParent: "forum"
       },
@@ -159,7 +167,7 @@
       },
       en: {
         aria: "In this section",
-        aboutTitle: "About",
+        aboutTitle: "About us",
         scientistsTitle: "Scientists",
         membershipTitle: "Membership"
       }
@@ -179,6 +187,7 @@
         forumRoadmap: "Strateji yol xəritəsi",
         forumBagliHekayeler: "Forumla bağlı hekayələr",
         forumCooperation: "Töhfələr və əməkdaşlıq",
+        forumPhotosGallery: "Foto qalereya",
         scientistsList: "Siyahı",
         scientistsProfiles: "Profillər",
         membershipWhy: "Niyə üzv olmalı",
@@ -198,6 +207,8 @@
         forumImpressions: "Impressions",
         forumRoadmap: "Strategic roadmap",
         forumBagliHekayeler: "Stories of the forum",
+        forumCooperation: "Contributions and cooperation",
+        forumPhotosGallery: "Photos gallery",
         scientistsList: "Directory",
         scientistsProfiles: "Profiles",
         membershipWhy: "Why become a member",
@@ -229,6 +240,7 @@
           "forum-program",
           "forum-2024-presentations",
           "forum-impressions",
+          "forum-photos-gallery",
           "forum-roadmap",
           "forum-bagli-hekayeler",
           "forum-cooperation"

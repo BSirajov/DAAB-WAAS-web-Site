@@ -23,8 +23,8 @@ HTML_TAG_RE = re.compile(r"<html([^>]*)>", re.IGNORECASE)
 SCRIPT_VERSIONS = {
     "daab-i18n.js": 12,
     "daab-lang-position.js": 7,
-    "daab-nav.js": 13,
-    "daab-primary-nav.js": 13,
+    "daab-nav.js": 16,
+    "daab-primary-nav.js": 14,
     "daab-breadcrumbs.js": 6,
     "daab-section-nav.js": 7,
     "daab-shell.js": 11,

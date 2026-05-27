@@ -50,7 +50,7 @@
 /* Card */
 .sidebar-widget {
   background: rgba(255, 255, 255, .96);
-  border: 1px solid rgba(0, 105, 180, .18);
+  border: 1px solid var(--color-border-blue-faint);
   border-radius: 14px;
   box-shadow: 0 14px 28px rgba(0, 45, 82, .10);
   overflow: hidden;
@@ -63,10 +63,10 @@
   justify-content: space-between;
   gap: 12px;
   padding: 14px 20px;
-  background: linear-gradient(135deg, #08263b 0%, #005a9a 58%, #2e9fd4 100%);
+  background: linear-gradient(135deg, var(--ink) 0%, var(--blue-dark) 58%, #2e9fd4 100%);
   border-bottom: 2px solid #f0c75e;
-  color: #fff;
-  font-family: "Playfair Display", Georgia, serif;
+  color: var(--white);
+  font-family: var(--font-serif);
   font-size: 18px;
   font-weight: 800;
   letter-spacing: .01em;
@@ -104,10 +104,10 @@
   gap: 12px;
   padding: 6px 0;
   border-bottom: 1px solid rgba(0, 45, 82, .08);
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   font-size: 15px;
   line-height: 1.3;
-  color: #345d76;
+  color: var(--muted-hero);
   transition: color .18s;
 }
 
@@ -116,16 +116,16 @@
 }
 
 .timeline-list li:hover {
-  color: var(--blue-700, #0069b4);
+  color: var(--blue-700, var(--blue-700));
 }
 
 .timeline-list .tl-date {
   flex-shrink: 0;
   padding-top: 2px;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 600;
-  color: #08263b;
+  color: var(--ink);
   white-space: nowrap;
 }
 
@@ -141,7 +141,7 @@
   color: inherit;
   background: transparent;
   border-radius: 10px;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   font-size: 15px;
   font-weight: 500;
   line-height: 1.3;
@@ -153,8 +153,8 @@
 .timeline-list a:hover,
 .timeline-list a:focus-visible,
 .timeline-list a.tl-active {
-  color: var(--blue-700, #0069b4) !important;
-  background: #eef7fc !important;
+  color: var(--blue-700, var(--blue-700)) !important;
+  background: var(--soft) !important;
   text-decoration: none !important;
 }
 
@@ -163,7 +163,7 @@
 }
 
 .timeline-list li:has(a.tl-active) .tl-date {
-  color: var(--blue-700, #0069b4);
+  color: var(--blue-700, var(--blue-700));
 }
 
 /* Mobile-collapse toggle — visible only at narrow widths. */
@@ -185,8 +185,8 @@
   display: block;
   width: 100%;
   height: 2px;
-  background: #fff;
-  border-radius: 999px;
+  background: var(--white);
+  border-radius: var(--radius-pill);
 }
 
 @media (max-width: 1060px) {

@@ -9,365 +9,38 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
-<link href="../../css/daab-common.css?v=24" rel="stylesheet"/>
+<link href="../../css/daab-common.css?v=30" rel="stylesheet"/>
 <link href="../../css/daab-mobile.css?v=5" rel="stylesheet"/>
-<link href="../../css/daab-search.css?v=3" rel="stylesheet"/>
+<link href="../../css/daab-search.css?v=4" rel="stylesheet"/>
 <link href="../../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
-<link href="../../css/scientists-catalog-toolbar.css?v=10" rel="stylesheet"/>
+<link href="../../css/scientists-catalog-toolbar.css?v=2" rel="stylesheet"/>
 <link href="../../css/scientists-list-preview.css?v=2" rel="stylesheet"/>
 <link href="../../css/daab-table-resize.css?v=1" rel="stylesheet"/>
-<style>
-/* Scientists catalogue page styles */
-:root {
-  --row-hover: rgba(0, 105, 180, .07);
-  --text3: #8899aa;
-}
-
-.hero {
-  position: relative;
-  overflow: hidden;
-  color: var(--ink) !important;
-  background: #fff url("../../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, .36);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, .18), rgba(255, 255, 255, 0));
-  opacity: .72;
-  mix-blend-mode: normal;
-  mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1.12fr .88fr;
-  gap: 32px;
-  align-items: start;
-  max-width: var(--max);
-  min-height: auto;
-  margin: auto;
-  padding: 32px 24px 40px;
-}
-
-.hero-copy {
-  max-width: 820px;
-}
-
-.hero-summary-panel {
-  padding: 22px;
-  background: rgba(255, 255, 255, .12) !important;
-  border: 1px solid rgba(255, 255, 255, .24) !important;
-  border-radius: 30px;
-  box-shadow: 0 18px 50px rgba(0, 45, 82, .22) !important;
-  backdrop-filter: blur(18px);
-}
-
-.hero-summary-card {
-  padding: 24px;
-  color: var(--ink) !important;
-  background: rgba(255, 255, 255, .92) !important;
-  border: 1px solid rgba(255, 255, 255, .62) !important;
-  border-radius: 24px;
-  box-shadow: 0 18px 50px rgba(0, 45, 82, .16) !important;
-  backdrop-filter: blur(18px);
-}
-
-.hero-summary-card .panel-title {
-  margin: 0 0 10px;
-  color: #094d78;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 18px;
-  font-weight: 800;
-  line-height: 1.15;
-  text-align: center;
-}
-
-.hero h1 {
-  margin: 0 0 14px;
-  padding-top: .08em;
-  color: #08263b;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(30.4px, 4.8vw, 57.6px);
-  line-height: 1.12;
-  letter-spacing: -.035em;
-}
-
-.hero h1 em {
-  color: var(--blue-700);
-  font-style: normal;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 0;
-}
-
-.main {
-  position: relative;
-  z-index: 2;
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 24px 24px 70px;
-}
-
-.table-wrap {
-  background: rgba(245, 251, 255, .96) !important;
-  border: 1px solid #9ed6f5 !important;
-  box-shadow: var(--shadow) !important;
-  backdrop-filter: blur(14px);
-}
-
-.page-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 42px;
-  color: var(--blue-700);
-  background: #fff;
-  border: 1px solid rgba(0, 105, 180, .24);
-  border-radius: 999px;
-  font: inherit;
-  font-size: 13px;
-  font-weight: 900;
-  cursor: pointer;
-  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease;
-}
-
-.page-btn:hover:not(:disabled) {
-  color: #fff;
-  background: var(--blue-700);
-  box-shadow: 0 12px 24px rgba(0, 78, 140, .18);
-  transform: translateY(-1px);
-}
-
-.table-wrap {
-  overflow: hidden;
-  border-radius: var(--radius);
-}
-
-.table-scroll {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-table {
-  width: 100%;
-  min-width: 820px;
-  border-collapse: collapse;
-  table-layout: fixed;
-  font-size: 13px;
-}
-
-thead {
-  background: linear-gradient(135deg, var(--blue-900), var(--blue-700));
-  border-bottom: 3px solid var(--gold);
-}
-
-th {
-  position: relative;
-  padding: 14px 15px;
-  color: #fff;
-  border-right: 1px solid rgba(255, 255, 255, .18);
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: .06em;
-  line-height: 1.2;
-  text-align: center;
-  text-transform: uppercase;
-  white-space: nowrap;
-  cursor: pointer;
-  user-select: none;
-}
-
-th:last-child,
-td:last-child {
-  border-right: 0;
-}
-
-th:hover,
-th.asc {
-  color: var(--gold-soft);
-}
-
-th.sortable::after {
-  content: ' ⇅';
-  opacity: .5;
-  font-size: 10px;
-}
-
-th.asc::after {
-  content: ' ↑';
-  opacity: 1;
-  color: var(--gold-soft);
-}
-
-tbody tr {
-  border-bottom: 1px solid rgba(0, 105, 180, .12);
-  transition: background-color .12s ease;
-}
-
-tbody tr:hover {
-  background: var(--row-hover);
-}
-
-td {
-  padding: 10px 15px;
-  color: var(--muted);
-  border-right: 1px solid rgba(0, 105, 180, .10);
-  line-height: 1.35;
-  vertical-align: middle;
-}
-
-.col-no {
-  width: calc(3ch + 30px);
-  text-align: center;
-}
-
-td.col-no {
-  color: #7894ad;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.col-name { width: calc(22ch + 30px); }
-.col-cntry { width: calc(15ch + 30px); }
-.col-spec { width: calc(22ch + 30px); }
-.col-degree { width: calc(10ch + 30px); }
-.col-email { width: calc(30ch + 30px); }
-
-td.col-name {
-  color: var(--blue-700);
-  font-weight: 900;
-}
-
-a.email-link {
-  display: inline-flex;
-  align-items: center;
-  max-width: 100%;
-  padding: 4px 10px;
-  color: var(--blue-700);
-  background: #e5f4fb;
-  border: 1px solid rgba(0, 105, 180, .16);
-  border-radius: 999px;
-  font-size: 11.5px;
-  font-weight: 800;
-  text-decoration: none;
-  word-break: break-all;
-}
-
-a.email-link:hover,
-a.email-link:focus-visible {
-  background: #d0eefb;
-  border-color: var(--blue-400);
-}
-
-.empty-email {
-  color: var(--text3);
-}
-
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 16px 20px;
-  background: #f3f9fd;
-  border-top: 1px solid rgba(0, 105, 180, .14);
-}
-
-.page-btn {
-  min-width: 38px;
-  padding: 8px 12px;
-}
-
-.page-btn.active {
-  color: #fff;
-  background: var(--blue-700);
-  border-color: var(--blue-700);
-}
-
-.page-btn:disabled {
-  cursor: not-allowed;
-  opacity: .45;
-}
-
-.page-ellipsis {
-  padding: 0 3px;
-  color: #7894ad;
-}
-
-.no-results {
-  display: none;
-  padding: 56px 20px;
-  color: var(--muted);
-  font-size: 15px;
-  text-align: center;
-}
-
-.no-results svg {
-  display: block;
-  margin: 0 auto 12px;
-  opacity: .35;
-}
-
-@media (max-width: 1060px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-@media (max-width: 960px) {
-  .col-email { display: none; }
-}
-
-@media (max-width: 760px) {
-  .hero-inner {
-    gap: 22px;
-    padding: 42px 18px 34px;
-  }
-  .main { padding: 18px 16px 48px; }
-  .col-spec,
-  .col-degree { display: none; }
-  table { min-width: 500px; }
-}
-
-
-</style>
-<link href="../../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
+<link href="../../css/daab-scientists-list-page.css?v=2" rel="stylesheet"/>
+<link href="../../css/daab-hero-summary.css?v=4" rel="stylesheet"/>
   <script src="../../js/daab-mobile.js?v=1" defer></script>
 <script src="../../js/daab-back-to-top.js?v=2" defer></script>
 <link href="../../css/daab-lang.css?v=10" rel="stylesheet"/>
-<link href="../../css/daab-nav-mega.css?v=12" rel="stylesheet"/>
-<script src="../../js/daab-i18n.js?v=12" defer></script>
+<link href="../../css/daab-nav-mega.css?v=14" rel="stylesheet"/>
+<script src="../../js/daab-i18n.js?v=15" defer></script>
 <script src="../../js/daab-lang-position.js?v=6" defer></script>
-<script src="../../js/daab-nav.js?v=10" defer></script>
-<script src="../../js/daab-primary-nav.js?v=11" defer></script>
+<script src="../../js/daab-design-tokens.js?v=1" defer></script>
+<script src="../../js/daab-nav.js?v=17" defer></script>
+<script src="../../js/daab-primary-nav.js?v=14" defer></script>
 <script src="../../js/daab-breadcrumbs.js?v=6" defer></script>
 <script src="../../js/daab-section-nav.js?v=4" defer></script>
-<script src="../../js/daab-shell.js?v=11" defer></script>
-<script src="../../js/daab-search.js?v=4" defer></script>
+<script src="../../js/daab-shell.js?v=12" defer></script>
+<script src="../../js/daab-page-subtitle.js?v=2" defer></script>
+<script src="../../js/daab-search.js?v=5" defer></script>
 </head>
 <body>
 <a class="skip" href="#content">Məzmuna keç</a>
-<nav aria-label="Əsas naviqasiya" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="Menyunu aç" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a aria-label="DAAB ana səhifə" href="../index.html"><img src="../../images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"></a></div><a aria-label="DAAB ana səhifə" class="nav-brand" href="../index.html"><span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">Alimlər Birliyi</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div><a class="nav-link" href="../index.html" data-nav-id="home">Ana səhifə</a><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Fəaliyyətimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="../activities.html" data-nav-id="activities"><span class="nav-dropdown-link-title">Yeniliklər</span><span class="nav-dropdown-link-desc">Əsas fəaliyyət və yeniliklər</span></a><a class="nav-dropdown-link" role="menuitem" href="../forum/2024/index.html" data-nav-id="forum-2024"><span class="nav-dropdown-link-title">Forum 2024</span><span class="nav-dropdown-link-desc">Forum 2024-ü kəşf edin</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Alimlərimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="list.html" data-nav-id="scientists-list"><span class="nav-dropdown-link-title">Siyahı</span><span class="nav-dropdown-link-desc">Bütün alimlərin siyahısı</span></a><a class="nav-dropdown-link" role="menuitem" href="profiles.html" data-nav-id="scientists-profiles"><span class="nav-dropdown-link-title">Profillər</span><span class="nav-dropdown-link-desc">Alimlərin akademik profilləri</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Haqqımızda <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="../foundation.html" data-nav-id="foundation"><span class="nav-dropdown-link-title">Birliyin təsisi</span><span class="nav-dropdown-link-desc">Yaradılma tarixi və təsis prosesi</span></a><a class="nav-dropdown-link" role="menuitem" href="../mission.html" data-nav-id="mission"><span class="nav-dropdown-link-title">Missiya və dəyərlər</span><span class="nav-dropdown-link-desc">Missiya, vizyon və akademik dəyərlər</span></a><a class="nav-dropdown-link" role="menuitem" href="../executive-board.html" data-nav-id="executive-board"><span class="nav-dropdown-link-title">İdarə heyəti</span><span class="nav-dropdown-link-desc">İdarə heyəti və rəhbərlik</span></a><a class="nav-dropdown-link" role="menuitem" href="../charter.html" data-nav-id="charter"><span class="nav-dropdown-link-title">Nizamnamə</span><span class="nav-dropdown-link-desc">Nizamnamə və idarəetmə qaydaları</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Üzvlük <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="../membership_value.html" data-nav-id="membership-value"><span class="nav-dropdown-link-title">Niyə üzv olmalı</span><span class="nav-dropdown-link-desc">Üzvlüyün faydaları və dəyər təklifi</span></a><a class="nav-dropdown-link" role="menuitem" href="../membership.html" data-nav-id="membership"><span class="nav-dropdown-link-title">Üzvlük şərtləri</span><span class="nav-dropdown-link-desc">Üzvlük qaydaları, ödəniş və müraciət məlumatları</span></a><a class="nav-dropdown-link" role="menuitem" href="../application.html" data-nav-id="membership-application"><span class="nav-dropdown-link-title">Bizə qoşulun</span><span class="nav-dropdown-link-desc">Onlayn üzvlük müraciət forması</span></a></div></div></div></div></nav>
+<nav aria-label="Əsas naviqasiya" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="Menyunu aç" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a aria-label="DAAB ana səhifə" href="../index.html"><img src="../../images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"></a></div><a aria-label="DAAB ana səhifə" class="nav-brand" href="../index.html"><span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">Alimlər Birliyi</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div><a class="nav-link" href="../index.html" data-nav-id="home">Ana səhifə</a><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Fəaliyyətimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="../activities.html" data-nav-id="activities"><span class="nav-dropdown-link-title">Yeniliklər</span><span class="nav-dropdown-link-desc">Əsas fəaliyyət və yeniliklər</span></a><a class="nav-dropdown-link" role="menuitem" href="../forum/2024/index.html" data-nav-id="forum-2024"><span class="nav-dropdown-link-title">Forum 2024</span><span class="nav-dropdown-link-desc">Forum 2024 haqqında</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Alimlərimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="list.html" data-nav-id="scientists-list"><span class="nav-dropdown-link-title">Siyahı</span><span class="nav-dropdown-link-desc">Bütün alimlərin siyahısı</span></a><a class="nav-dropdown-link" role="menuitem" href="profiles.html" data-nav-id="scientists-profiles"><span class="nav-dropdown-link-title">Profillər</span><span class="nav-dropdown-link-desc">Alimlərin akademik profilləri</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Haqqımızda <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="../foundation.html" data-nav-id="foundation"><span class="nav-dropdown-link-title">Birliyin təsisi</span><span class="nav-dropdown-link-desc">Yaradılma tarixi və təsis prosesi</span></a><a class="nav-dropdown-link" role="menuitem" href="../mission.html" data-nav-id="mission"><span class="nav-dropdown-link-title">Missiya və dəyərlər</span><span class="nav-dropdown-link-desc">Missiya, vizyon və akademik dəyərlər</span></a><a class="nav-dropdown-link" role="menuitem" href="../executive-board.html" data-nav-id="executive-board"><span class="nav-dropdown-link-title">İdarə heyəti</span><span class="nav-dropdown-link-desc">İdarə heyəti və rəhbərlik</span></a><a class="nav-dropdown-link" role="menuitem" href="../charter.html" data-nav-id="charter"><span class="nav-dropdown-link-title">Nizamnamə</span><span class="nav-dropdown-link-desc">Nizamnamə və idarəetmə qaydaları</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Üzvlük <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="../membership_value.html" data-nav-id="membership-value"><span class="nav-dropdown-link-title">Niyə üzv olmalı</span><span class="nav-dropdown-link-desc">Üzvlüyün faydaları və dəyər təklifi</span></a><a class="nav-dropdown-link" role="menuitem" href="../membership.html" data-nav-id="membership"><span class="nav-dropdown-link-title">Üzvlük şərtləri</span><span class="nav-dropdown-link-desc">Üzvlük qaydaları, ödəniş və müraciət məlumatları</span></a><a class="nav-dropdown-link" role="menuitem" href="../application.html" data-nav-id="membership-application"><span class="nav-dropdown-link-title">Bizə qoşulun</span><span class="nav-dropdown-link-desc">Onlayn üzvlük müraciət forması</span></a></div></div></div></div></nav>
 <header class="hero">
 <div class="hero-inner">
 <section class="hero-copy">
 <h1>Xaricdə Yaşayan<br><em>Azərbaycanlı Alimlər</em></h1>
+<p class="page-hero-subtitle" id="page-hero-subtitle" role="doc-subtitle">Forum iştirakçılarını ölkə, sahə və elmi dərəcəyə görə axtarın.</p>
 </section>
 <aside aria-label="Alimlər siyahısı haqqında qısa məlumat" class="hero-summary-panel">
 <div class="hero-summary-card">

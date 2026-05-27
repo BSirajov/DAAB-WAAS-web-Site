@@ -23,20 +23,17 @@ LOCALES = {
         "description": "DAAB üzvlüyünün faydaları, əməkdaşlıq imkanları və qlobal elmi şəbəkəyə qoşulma dəyəri.",
         "skip": "Məzmuna keç",
         "nav_aria": "Əsas naviqasiya",
-        "hero_h1": "DAAB mənə nə verəcək? <span>Niyə üzv olum?</span>",
-        "hero_text": (
-            "DAAB üzvlüyü sadəcə bir təşkilata qoşulmaq deyil. Bu, qlobal Azərbaycan elmi "
-            "ekosisteminin bir hissəsi olmaq, öz bilik və təcrübənizi görünən etmək, yeni "
-            "əməkdaşlıqlar qurmaq və Azərbaycanın intellektual gələcəyinə real töhfə vermək imkanıdır."
-        ),
+        "hero_h1": "DAAB mənə nə verəcək? <span>Niyə üzv olmalıyam?</span>",
         "hero_primary": "Cavablara bax →",
         "hero_primary_href": "#answers",
         "hero_secondary": "Üstünlüklər",
         "hero_secondary_href": "#benefits",
         "panel_title": "Üzvlük şəxsi fayda ilə ictimai missiyanın kəsişməsidir",
         "panel_copy": (
-            "DAAB üzvlərə peşəkar görünürlük, beynəlxalq əlaqələr, akademik əməkdaşlıq "
-            "və Azərbaycana xidmət imkanı yaradır."
+            "DAAB üzvlüyü sadəcə bir təşkilata qoşulmaq deyil; bu, peşəkar nüfuzunuzu artıran, "
+            "beynəlxalq əlaqələrinizi genişləndirən, akademik əməkdaşlıq imkanları yaradan və "
+            "Azərbaycanın elmi-intellektual gələcəyinə mənalı töhfə verməyə imkan verən qlobal "
+            "Azərbaycan elmi ekosisteminin bir hissəsinə çevrilmək deməkdir."
         ),
         "cta_btn": "Bizə qoşulun",
         "cta_href": "application.html",
@@ -56,21 +53,17 @@ LOCALES = {
         "skip": "Skip to content",
         "nav_aria": "Main navigation",
         "hero_h1": "What does WAAS offer me? <span>Why should I join?</span>",
-        "hero_text": (
-            "WAAS membership is not simply joining an association. It means becoming part of a "
-            "global Azerbaijani scientific ecosystem, making your knowledge and experience more "
-            "visible, building new collaborations, and contributing meaningfully to Azerbaijan’s "
-            "intellectual future."
-        ),
         "hero_primary": "See the answers →",
         "hero_primary_href": "#answers",
         "hero_secondary": "Benefits",
         "hero_secondary_href": "#benefits",
         "panel_title": "Membership connects personal benefit with public mission",
         "panel_copy": (
-            "WAAS gives its members professional visibility, international connections, "
-            "academic cooperation opportunities, and a meaningful channel for serving "
-            "Azerbaijan’s scientific development."
+            "WAAS membership is not simply joining an association; it means becoming part of a "
+            "global Azerbaijani scientific ecosystem that enhances your professional visibility, "
+            "expands international connections, creates opportunities for academic cooperation, "
+            "and enables you to contribute meaningfully to Azerbaijan’s scientific and "
+            "intellectual future."
         ),
         "cta_btn": "Join us",
         "cta_href": "application.html",
@@ -152,8 +145,8 @@ def shell_head(cfg: dict) -> str:
 <script src="{ASSET}js/daab-back-to-top.js?v=2" defer></script>
 <script src="{ASSET}js/daab-i18n.js?v=12" defer></script>
 <script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
-<script src="{ASSET}js/daab-nav.js?v=13" defer></script>
-<script src="{ASSET}js/daab-primary-nav.js?v=13" defer></script>
+<script src="{ASSET}js/daab-nav.js?v=16" defer></script>
+<script src="{ASSET}js/daab-primary-nav.js?v=14" defer></script>
 <script src="{ASSET}js/daab-breadcrumbs.js?v=6" defer></script>
 <script src="{ASSET}js/daab-section-nav.js?v=7" defer></script>
 <script src="{ASSET}js/daab-shell.js?v=11" defer></script>
@@ -170,7 +163,6 @@ NAV_PLACEHOLDER
 <div class="hero-wrap shell">
 <section>
 <h1>{cfg["hero_h1"]}</h1>
-<p class="hero-text">{cfg["hero_text"]}</p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="{cfg["hero_primary_href"]}">{cfg["hero_primary"]}</a>
 <a class="btn btn-secondary" href="{cfg["hero_secondary_href"]}">{cfg["hero_secondary"]}</a>

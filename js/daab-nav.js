@@ -1,7 +1,14 @@
 (function () {
   "use strict";
 
-  var MOBILE_NAV_MQ = window.matchMedia("(max-width: 1180px)");
+  function navCompactMediaQuery() {
+    if (window.DAAB_DESIGN && typeof window.DAAB_DESIGN.navCompactMq === "function") {
+      return window.DAAB_DESIGN.navCompactMq();
+    }
+    return window.matchMedia("(max-width: 1180px)");
+  }
+
+  var MOBILE_NAV_MQ = navCompactMediaQuery();
 
   function isMobileNav() {
     return MOBILE_NAV_MQ.matches;
@@ -123,7 +130,7 @@
   }
 
   function currentNavKey() {
-    var pageId = document.documentElement.getAttribute("data-daab-page-id");
+    var pageId = (document.documentElement.getAttribute("data-daab-page-id") || "").trim();
     if (pageId) return pageId;
 
     var rel = siteRelativePath();
@@ -174,7 +181,9 @@
   }
 
   function clearNavActiveStates() {
-    document.querySelectorAll(".nav-menu a.active").forEach(function (link) {
+    var menu = document.getElementById("primaryNavMenu");
+    var scope = menu ? menu.querySelectorAll("a.active, a[aria-current]") : document.querySelectorAll(".nav-menu a.active, .nav-menu a[aria-current]");
+    scope.forEach(function (link) {
       link.classList.remove("active");
       link.removeAttribute("aria-current");
     });
@@ -193,9 +202,6 @@
     if (id === "forum-2024" && isForumNavPageId(navKey) && navKey !== "activities") {
       return true;
     }
-    if (id === "membership-value" && isMembershipNavPageId(navKey)) {
-      return true;
-    }
     /* When data-daab-page-id is set, match by id only (see comment above navLinkIsActive). */
     if (pageIdAttr) return false;
     return hrefMatchesNav(href, relPath);
@@ -204,7 +210,7 @@
   var dropdownToggleAttached = new WeakSet();
 
   function initNavDropdowns() {
-    var pageIdAttr = document.documentElement.getAttribute("data-daab-page-id");
+    var pageIdAttr = (document.documentElement.getAttribute("data-daab-page-id") || "").trim() || null;
     var navKey = currentNavKey();
     var relPath = siteRelativePath();
     var dropdowns = document.querySelectorAll("[data-nav-dropdown]");

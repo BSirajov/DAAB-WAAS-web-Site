@@ -205,11 +205,32 @@
   background: #f7fbfd;
 }
 
+/* Hide Ctrl/Cmd+K hint on touch devices and compact nav (desktop keeps hint) */
+@media (max-width: 1180px), (hover: none), (pointer: coarse) {
+  .nav-search-kbd,
+  .gateway-search-kbd {
+    display: none !important;
+  }
+
+  .nav-search-btn {
+    padding-right: 12px;
+    gap: 8px;
+  }
+
+  .gateway-search-btn .gateway-search-kbd {
+    display: none !important;
+  }
+
+  .search-hint {
+    display: none !important;
+  }
+}
+
 /* Compact icon pill when nav hides label (matches daab-common @1320px) */
 @media (max-width: 1320px) {
   .nav-search-btn-label,
   .nav-search-kbd {
-    display: none;
+    display: none !important;
   }
 
   .nav-search-btn {
@@ -248,8 +269,7 @@
   }
 
   .search-hint {
-    gap: 10px;
-    font-size: 10px;
+    display: none !important;
   }
 
   .sri-desc {

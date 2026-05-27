@@ -108,3 +108,38 @@
     margin-bottom: 5px !important;
   }
 }
+
+.hero .page-hero-subtitle,
+.page-hero .page-hero-subtitle,
+header.hero .page-hero-subtitle,
+header.page-hero .page-hero-subtitle {
+  margin: 0.35rem 0 0.85rem;
+  max-width: 36rem;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(1rem, 1.65vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--muted-hero) !important;
+  text-wrap: pretty;
+}
+
+.hero-copy > h1 + .page-hero-subtitle,
+.hero-wrap > section > h1 + .page-hero-subtitle,
+.activities-hero-wrap > section > h1 + .page-hero-subtitle,
+.page-hero h1 + .page-hero-subtitle {
+  margin-bottom: 0.35rem;
+}
+
+.hero-copy > .page-hero-subtitle + .hero-actions,
+.hero-wrap > section > .page-hero-subtitle + .hero-actions {
+  margin-top: 1rem;
+}
+
+@media (max-width: 760px) {
+  .page-hero-subtitle {
+    max-width: none;
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+}

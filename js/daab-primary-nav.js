@@ -69,7 +69,9 @@
   }
 
   function currentPageId(routes) {
-    return activeI18n.getPageId(routes) || document.documentElement.getAttribute("data-daab-page-id");
+    var explicit = document.documentElement.getAttribute("data-daab-page-id");
+    if (explicit) return explicit;
+    return activeI18n.getPageId(routes);
   }
 
   function isForumNavPageId(id) {
@@ -80,7 +82,8 @@
   }
 
   function childLinkIsActive(page, childDef, activeId) {
-    if (page.id === activeId) return true;
+    if (!activeId) return false;
+    if (childDef.id === activeId || page.id === activeId) return true;
     if (childDef.id === "forum-2024" && isForumNavPageId(activeId) && activeId !== "activities") {
       return true;
     }
@@ -91,7 +94,7 @@
     var a = document.createElement("a");
     a.href = pageHref(page, lang);
     a.className = className;
-    a.setAttribute("data-nav-id", page.navId || page.id);
+    a.setAttribute("data-nav-id", page.id);
     if (extra && extra.role) a.setAttribute("role", extra.role);
     a.textContent = labelWithIcon(ui, page.id, pageLabel(ui, lang, page.id));
     if (page.id === activeId) {
@@ -137,7 +140,7 @@
       link.href = pageHref(page, lang);
       link.className = "nav-dropdown-link";
       link.setAttribute("role", "menuitem");
-      link.setAttribute("data-nav-id", page.id);
+      link.setAttribute("data-nav-id", childDef.id);
 
       var iconKey = childDef.labelKey || page.id;
       var title = document.createElement("span");
@@ -313,7 +316,7 @@
       dropLink(staticHref("list"), "scientists-list", "Directory", "Directory of all scientists", FALLBACK_ICONS["scientists-list"]) +
       dropLink(staticHref("profiles"), "scientists-profiles", "Profiles", "Academic profiles of scientists", FALLBACK_ICONS["scientists-profiles"]) +
       '</div></div>' +
-      '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("about") + 'About <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
+      '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("about") + 'About us <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
       '<div class="nav-dropdown-panel" role="menu">' +
       dropLink(staticHref("foundation"), "foundation", "Foundation", "History and founding process", FALLBACK_ICONS.foundation) +
       dropLink(staticHref("mission"), "mission", "Mission &amp; values", "Mission, vision and academic values", FALLBACK_ICONS.mission) +
@@ -360,6 +363,9 @@
       .catch(function (err) {
         console.error("[daab-primary-nav] Menu build failed:", err);
         renderStaticFallback(menu, lang);
+        if (window.DAAB_NAV && typeof window.DAAB_NAV.init === "function") {
+          window.DAAB_NAV.init();
+        }
         document.dispatchEvent(new CustomEvent("daab-primary-nav-ready"));
       });
   }

@@ -10,9 +10,9 @@ html.daab-hub-page .breadcrumbs.forum-breadcrumbs {
   visibility: visible !important;
   position: relative !important;
   top: auto !important;
-  z-index: 100 !important;
+  z-index: var(--z-breadcrumbs) !important;
   flex-shrink: 0;
-  min-height: 40px;
+  min-height: var(--daab-breadcrumbs-min-height);
 }
 
 html.daab-hub-page header.hero {
@@ -24,14 +24,14 @@ html.daab-hub-page header.hero {
   position: relative;
   overflow: hidden;
   color: var(--ink) !important;
-  background: #fff url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
+  background: var(--white) url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
 }
 
 .daab-hub-page .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.36);
+  background: var(--color-hero-scrim);
 }
 
 .daab-hub-page .hero::after {
@@ -57,14 +57,23 @@ html.daab-hub-page header.hero {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 0;
   min-width: 0;
+}
+
+.daab-hub-page .hero::after {
+  mix-blend-mode: normal;
+}
+
+.daab-hub-page .hero-wrap {
+  min-height: 0;
 }
 
 .daab-hub-page .hero h1 {
   margin: 0 0 20px;
   padding-top: 0;
-  color: #08263b;
-  font-family: "Playfair Display", Georgia, serif;
+  color: var(--ink);
+  font-family: var(--font-serif);
   font-size: clamp(30.4px, 4.8vw, 57.6px);
   line-height: 1.12;
   letter-spacing: -0.035em;
@@ -167,35 +176,37 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
 .daab-hub-page .hero-panel {
   align-self: start;
   padding: 0 0 0 4px;
-  background: rgba(255, 255, 255, 0.12) !important;
-  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+  background: var(--color-hero-panel-bg) !important;
+  border: 1px solid var(--color-hero-panel-border) !important;
   border-radius: 30px;
-  box-shadow: 0 18px 50px rgba(0, 45, 82, 0.22) !important;
+  box-shadow: var(--shadow-hero-panel) !important;
   backdrop-filter: blur(18px);
 }
 
 .daab-hub-page .panel-card {
   padding: 20px 24px 22px;
-  background: rgba(255, 255, 255, 0.92) !important;
-  border: 1px solid rgba(255, 255, 255, 0.62) !important;
-  border-radius: 24px;
+  color: var(--ink) !important;
+  background: var(--color-panel-card-bg) !important;
+  border: 1px solid var(--color-panel-card-border) !important;
+  border-radius: var(--radius);
 }
 
 .daab-hub-page .panel-title {
   margin: 0 0 10px;
-  color: #094d78 !important;
-  font-family: "Playfair Display", Georgia, serif;
+  color: var(--color-heading-blue) !important;
+  font-family: var(--font-serif);
   font-size: 18px !important;
   font-weight: 800;
   line-height: 1.15 !important;
   text-align: center;
+  white-space: normal !important;
 }
 
 .daab-hub-page .panel-copy {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  color: #345d76 !important;
+  color: var(--muted-hero) !important;
   font-size: 14px;
   line-height: 1.55;
 }
@@ -215,7 +226,7 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
 
 .daab-hub-page .panel-card .panel-copy-organizers {
   padding-top: 10px;
-  border-top: 1px solid rgba(0, 105, 180, 0.14);
+  border-top: 1px solid var(--color-border-blue-muted);
   color: #3a6178 !important;
   font-size: 13px !important;
   line-height: 1.48 !important;
@@ -232,8 +243,8 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
 
 .daab-hub-page .intro-card,
 .daab-hub-page .page-card {
-  background: rgba(245, 251, 255, 0.96) !important;
-  border: 1px solid #9ed6f5 !important;
+  background: var(--color-surface-toolbar) !important;
+  border: 1px solid var(--blue-soft) !important;
   box-shadow: var(--shadow) !important;
 }
 
@@ -249,7 +260,7 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
 
 .daab-hub-page .intro-card h2 {
   margin: 0 0 6px;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 28px;
 }
 
@@ -265,9 +276,9 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
   width: min(340px, 100%);
   padding: 12px 16px;
   color: var(--muted);
-  background: #eef8ff !important;
-  border: 1px solid #9ed6f5 !important;
-  border-radius: 999px;
+  background: var(--soft-alt) !important;
+  border: 1px solid var(--blue-soft) !important;
+  border-radius: var(--radius-pill);
 }
 
 .daab-hub-page .search-box input {
@@ -285,9 +296,9 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
   padding: 18px 20px;
   color: var(--muted);
   text-align: center;
-  background: rgba(245, 251, 255, 0.96);
-  border: 1px solid #9ed6f5;
-  border-radius: 18px;
+  background: var(--color-surface-toolbar);
+  border: 1px solid var(--blue-soft);
+  border-radius: var(--radius2);
 }
 
 .daab-hub-page .cards-grid {
@@ -295,6 +306,11 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   align-items: stretch;
+}
+
+html[data-daab-page-id="home"] .daab-hub-page .cards-grid,
+html[data-daab-page-id="home"] .cards-grid {
+  grid-auto-rows: minmax(260px, auto);
 }
 
 .daab-hub-page .page-card {
@@ -305,9 +321,15 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
   min-height: 240px;
   padding: 22px;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: var(--radius);
   text-decoration: none;
   transition: 0.25s ease;
+}
+
+html[data-daab-page-id="home"] .daab-hub-page .page-card,
+html[data-daab-page-id="home"] .page-card {
+  min-height: 260px;
+  height: 100%;
 }
 
 .daab-hub-page .page-card::before {
@@ -349,14 +371,15 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
 
 .daab-hub-page .card-icon-wrap {
   display: grid;
+  flex-shrink: 0;
   place-items: center;
   width: 56px;
   height: 56px;
   margin-bottom: 14px;
-  background: linear-gradient(135deg, #d9f0ff, #fff) !important;
-  border: 1px solid #9ed6f5 !important;
-  border-radius: 18px;
-  box-shadow: inset 0 1px 0 #fff, 0 10px 22px rgba(0, 105, 180, 0.16) !important;
+  background: linear-gradient(135deg, #d9f0ff, var(--white)) !important;
+  border: 1px solid var(--blue-soft) !important;
+  border-radius: var(--radius2);
+  box-shadow: inset 0 1px 0 var(--white), 0 10px 22px var(--color-border-blue-16) !important;
   font-size: 27px;
 }
 
@@ -369,22 +392,28 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
 
 .daab-hub-page .card-title {
   margin-bottom: 8px;
-  color: #005a9a !important;
-  font-family: "Playfair Display", Georgia, serif;
+  color: var(--blue-dark) !important;
+  font-family: var(--font-serif);
   font-size: 18px;
   font-weight: 800;
   line-height: 1.25;
 }
 
 .daab-hub-page .card-desc {
+  display: -webkit-box;
   flex: 1;
+  overflow: hidden;
   color: var(--muted) !important;
-  font-size: 13px;
+  font-size: var(--font-size-sm);
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
   line-height: 1.5;
 }
 
 .daab-hub-page .card-footer {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
@@ -394,10 +423,10 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
 
 .daab-hub-page .card-tag {
   padding: 6px 10px;
-  color: #005a9a !important;
-  background: #dff2ff !important;
-  border: 1px solid #9ed6f5 !important;
-  border-radius: 999px;
+  color: var(--blue-dark) !important;
+  background: var(--color-tint-blue) !important;
+  border: 1px solid var(--blue-soft) !important;
+  border-radius: var(--radius-pill);
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -409,7 +438,7 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
   place-items: center;
   width: 36px;
   height: 36px;
-  color: #fff;
+  color: var(--white);
   background: var(--blue-700) !important;
   border-radius: 50%;
   font-weight: 800;
@@ -430,14 +459,26 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
   margin-top: 34px;
   padding: 32px 34px;
   overflow: hidden;
+  color: var(--ink) !important;
   background: linear-gradient(135deg, #d9f0ff, #9bd6f5) !important;
   border: 1px solid #8cccf0 !important;
   border-radius: 28px;
 }
 
+.daab-hub-page .join-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.18), transparent 30%);
+}
+
+.daab-hub-page .join-banner > * {
+  position: relative;
+}
+
 .daab-hub-page .join-banner h2 {
   margin: 0 0 6px;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 30px;
 }
 
@@ -446,37 +487,166 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
   color: var(--muted) !important;
 }
 
+/* Forum hub breadcrumb bar (was inline on forum/2024/index.html) */
+.daab-hub-page .forum-breadcrumbs {
+  display: block !important;
+  visibility: visible !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 12px 24px 12px clamp(132px, 14vw, 156px) !important;
+  box-sizing: border-box;
+  color: #55778b !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-sm) !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  background: #e8f4fb !important;
+  border-bottom: 1px solid var(--color-border-blue-subtle) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.65) inset;
+  position: relative !important;
+  z-index: var(--z-breadcrumbs) !important;
+}
+
+.daab-hub-page .forum-breadcrumbs a {
+  color: #2c5470 !important;
+  text-decoration: none !important;
+}
+
+.daab-hub-page .forum-breadcrumbs a:hover,
+.daab-hub-page .forum-breadcrumbs a:focus-visible {
+  color: #1a6fa8 !important;
+  text-decoration: underline !important;
+}
+
+.daab-hub-page .forum-breadcrumbs span[aria-hidden="true"] {
+  margin: 0 7px;
+  color: #9ab2c2;
+}
+
+.daab-hub-page .forum-breadcrumbs-current {
+  color: var(--muted-hero) !important;
+}
+
+@media (max-width: 720px) {
+  .daab-hub-page .forum-breadcrumbs {
+    padding: 10px 16px 10px 56px !important;
+    font-size: var(--font-size-xs) !important;
+  }
+}
+
 @media (max-width: 1060px) {
   .daab-hub-page .hero-wrap {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .daab-hub-page .hero-panel {
+    max-width: 640px;
+    padding: 0;
   }
 
   .daab-hub-page .cards-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
   }
 }
 
 @media (max-width: 900px) {
   .daab-hub-page .shell,
   .daab-hub-page .main {
+    width: 100%;
     padding-left: 18px;
     padding-right: 18px;
   }
 
+  .daab-hub-page .hero-wrap {
+    gap: 22px;
+    padding: 42px 18px 34px;
+  }
+
+  .daab-hub-page .hero-panel {
+    max-width: 100%;
+  }
+
   .daab-hub-page .intro-card {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .daab-hub-page .search-box {
     width: 100%;
   }
 
-  .daab-hub-page .join-banner {
+  .daab-hub-page .page-card {
+    min-height: auto;
+    height: auto;
+  }
+
+  .daab-hub-page .join-banner,
+  .daab-hub-page .footer-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 760px) {
+  .daab-hub-page .hero h1 {
+    font-size: clamp(30px, 10.5vw, 42px) !important;
+    line-height: 1.12 !important;
+  }
+
+  .daab-hub-page .hero-actions {
+    gap: 10px;
+  }
+
+  .daab-hub-page .hero-actions .btn {
+    padding: 12px 16px;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .daab-hub-page .panel-card {
+    padding: 20px;
+  }
+
+  .daab-hub-page .panel-title {
+    font-size: clamp(14px, 3.6vw, 18px) !important;
+  }
+
+  .daab-hub-page .intro-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .daab-hub-page .intro-card h2 {
+    font-size: 24px;
+    line-height: 1.18;
+  }
+
+  .daab-hub-page .cards-grid {
+    gap: 14px;
+  }
+
+  .daab-hub-page .page-card {
+    padding: 20px;
+  }
+
+  .daab-hub-page .card-desc {
+    display: block;
+    overflow: visible;
+    line-clamp: unset;
+    -webkit-line-clamp: unset;
+  }
+
+  .daab-hub-page .join-banner {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  .daab-hub-page .footer-inner {
+    padding: 24px 16px;
+  }
+
   .daab-hub-page .panel-copy {
     gap: 8px;
   }
@@ -537,6 +707,26 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
 
   .daab-hub-page .page-card {
     min-height: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .daab-hub-page .shell,
+  .daab-hub-page .main {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .daab-hub-page .hero h1 {
+    font-size: clamp(28px, 10vw, 38px) !important;
+  }
+
+  .daab-hub-page .panel-title {
+    font-size: 13px !important;
+  }
+
+  .daab-hub-page .intro-card h2 {
+    font-size: 22px;
   }
 }
 

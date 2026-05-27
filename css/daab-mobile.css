@@ -1,13 +1,6 @@
 /* DAAB shared mobile / touch / cross-browser enhancements */
 
-:root {
-  --daab-nav-height: 86px;
-  --daab-safe-top: env(safe-area-inset-top, 0px);
-  --daab-safe-right: env(safe-area-inset-right, 0px);
-  --daab-safe-bottom: env(safe-area-inset-bottom, 0px);
-  --daab-safe-left: env(safe-area-inset-left, 0px);
-  --daab-touch-min: 44px;
-}
+/* Nav height, safe-area, and touch tokens: css/daab-tokens.css (via daab-common.css) */
 
 @media (max-width: 1180px) {
   :root {
@@ -36,7 +29,7 @@ body:not(.daab-gateway) > .nav-strip,
   position: -webkit-sticky !important;
   position: sticky !important;
   top: 0 !important;
-  z-index: 9999 !important;
+  z-index: var(--z-nav) !important;
   padding-top: var(--daab-safe-top);
 }
 

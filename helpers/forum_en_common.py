@@ -35,7 +35,7 @@ SHELL_REPLACEMENTS: list[tuple[str, str]] = [
     ("Bütün alimlərin siyahısı", "Directory of all scientists"),
     ("Profillər", "Profiles"),
     ("Alimlərin akademik profilləri", "Academic profiles of scientists"),
-    ("Haqqımızda", "About"),
+    ("Haqqımızda", "About us"),
     ("Birliyin təsisi", "Foundation"),
     ("Yaradılama tarixi və təsis prosesi", "History and founding process"),
     ("Yaradılma tarixi və təsis prosesi", "History and founding process"),

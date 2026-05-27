@@ -209,6 +209,23 @@
     return !!(document.body && document.body.classList.contains("daab-gateway"));
   }
 
+  /** Desktop pointer + hover: show Ctrl/Cmd+K chip in the nav search control. */
+  function showSearchShortcutHint() {
+    return window.matchMedia("(min-width: 1181px) and (hover: hover) and (pointer: fine)").matches;
+  }
+
+  function searchButtonTitle(labels) {
+    if (showSearchShortcutHint()) {
+      return labels.open + " (" + labels.shortcut + ")";
+    }
+    return labels.open;
+  }
+
+  function shortcutKbdHtml(className, labels) {
+    if (!showSearchShortcutHint()) return "";
+    return '<kbd class="' + className + '">' + escapeHtml(labels.shortcut) + "</kbd>";
+  }
+
   function mountGatewayButton(labels) {
     if (document.getElementById("gateway-search-btn")) return;
     var actions = document.querySelector(".daab-gateway-actions");
@@ -219,14 +236,14 @@
     btn.className = "btn btn-secondary gateway-search-btn";
     btn.id = "gateway-search-btn";
     btn.setAttribute("aria-label", labels.open);
-    btn.setAttribute("title", labels.open + " (" + labels.shortcut + ")");
+    btn.setAttribute("title", searchButtonTitle(labels));
     btn.innerHTML =
       '<span class="gateway-search-btn-icon" aria-hidden="true">' +
       '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">' +
       '<circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>' +
       "</svg></span>" +
       '<span>' + escapeHtml(labels.open) + "</span>" +
-      '<kbd class="gateway-search-kbd">' + escapeHtml(labels.shortcut) + "</kbd>";
+      shortcutKbdHtml("gateway-search-kbd", labels);
     actions.appendChild(btn);
   }
 
@@ -287,14 +304,14 @@
     btn.className = "nav-search-btn";
     btn.id = "nav-search-btn";
     btn.setAttribute("aria-label", labels.open);
-    btn.setAttribute("title", labels.open + " (" + labels.shortcut + ")");
+    btn.setAttribute("title", searchButtonTitle(labels));
     btn.innerHTML =
       '<span class="nav-search-btn-icon" aria-hidden="true">' +
       '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">' +
       '<circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>' +
       "</svg></span>" +
       '<span class="nav-search-btn-label">' + escapeHtml(labels.placeholder) + "</span>" +
-      '<kbd class="nav-search-kbd">' + escapeHtml(labels.shortcut) + "</kbd>";
+      shortcutKbdHtml("nav-search-kbd", labels);
 
     var actions = ensureNavActions(inner);
     if (actions) {

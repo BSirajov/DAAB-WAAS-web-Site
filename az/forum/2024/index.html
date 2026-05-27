@@ -8,71 +8,29 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
-<link href="../../../css/daab-common.css?v=26" rel="stylesheet"/>
+<link href="../../../css/daab-common.css?v=30" rel="stylesheet"/>
 <link href="../../../css/daab-mobile.css?v=5" rel="stylesheet"/>
-<link href="../../../css/daab-search.css?v=3" rel="stylesheet"/>
+<link href="../../../css/daab-search.css?v=4" rel="stylesheet"/>
 <link href="../../../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
 <link href="../../../css/daab-lang.css?v=10" rel="stylesheet"/>
-<link href="../../../css/daab-nav-mega.css?v=13" rel="stylesheet"/>
-<link href="../../../css/daab-hub-cards.css?v=10" rel="stylesheet"/>
-<link href="../../../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
-<style>
-/* Forum hub — breadcrumb bar (inline so it always shows under the nav) */
-.daab-hub-page .forum-breadcrumbs {
-  display: block !important;
-  visibility: visible !important;
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 12px 24px 12px clamp(132px, 14vw, 156px) !important;
-  box-sizing: border-box;
-  color: #55778b !important;
-  font-family: Inter, system-ui, "Segoe UI", sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  line-height: 1.35 !important;
-  background: #e8f4fb !important;
-  border-bottom: 1px solid rgba(0, 105, 180, 0.2) !important;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.65) inset;
-  position: relative !important;
-  z-index: 100 !important;
-}
-.daab-hub-page .forum-breadcrumbs a {
-  color: #2c5470 !important;
-  text-decoration: none !important;
-}
-.daab-hub-page .forum-breadcrumbs a:hover,
-.daab-hub-page .forum-breadcrumbs a:focus-visible {
-  color: #1a6fa8 !important;
-  text-decoration: underline !important;
-}
-.daab-hub-page .forum-breadcrumbs span[aria-hidden="true"] {
-  margin: 0 7px;
-  color: #9ab2c2;
-}
-.daab-hub-page .forum-breadcrumbs-current {
-  color: #345d76 !important;
-}
-@media (max-width: 720px) {
-  .daab-hub-page .forum-breadcrumbs {
-    padding: 10px 16px 10px 56px !important;
-    font-size: 12px !important;
-  }
-}
-</style>
+<link href="../../../css/daab-nav-mega.css?v=14" rel="stylesheet"/>
+<link href="../../../css/daab-hub-cards.css?v=12" rel="stylesheet"/>
+<link href="../../../css/daab-hero-summary.css?v=4" rel="stylesheet"/>
 <script src="../../../js/daab-mobile.js?v=1" defer></script>
 <script src="../../../js/daab-back-to-top.js?v=2" defer></script>
-<script src="../../../js/daab-i18n.js?v=12" defer></script>
+<script src="../../../js/daab-i18n.js?v=15" defer></script>
 <script src="../../../js/daab-lang-position.js?v=7" defer></script>
-<script src="../../../js/daab-nav.js?v=14" defer></script>
-<script src="../../../js/daab-primary-nav.js?v=13" defer></script>
+<script src="../../../js/daab-design-tokens.js?v=1" defer></script>
+<script src="../../../js/daab-nav.js?v=17" defer></script>
+<script src="../../../js/daab-primary-nav.js?v=14" defer></script>
 <script src="../../../js/daab-section-nav.js?v=7" defer></script>
-<script src="../../../js/daab-shell.js?v=11" defer></script>
-<script src="../../../js/daab-search.js?v=4" defer></script>
+<script src="../../../js/daab-shell.js?v=12" defer></script>
+<script src="../../../js/daab-page-subtitle.js?v=2" defer></script>
+<script src="../../../js/daab-search.js?v=5" defer></script>
 </head>
 <body class="daab-hub-page">
 <a class="skip" href="#content">Məzmuna keç</a>
-<nav aria-label="Əsas naviqasiya" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="Menyunu aç" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a aria-label="DAAB ana səhifə" href="../../index.html"><img src="../../../images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"></a></div><a aria-label="DAAB ana səhifə" class="nav-brand" href="../../index.html"><span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">Alimlər Birliyi</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div><a class="nav-link" href="../../index.html" data-nav-id="home">Ana səhifə</a><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Fəaliyyətimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="../../activities.html" data-nav-id="activities"><span class="nav-dropdown-link-title">Yeniliklər</span><span class="nav-dropdown-link-desc">Əsas fəaliyyət və yeniliklər</span></a><a class="nav-dropdown-link" role="menuitem" href="index.html" data-nav-id="forum-2024"><span class="nav-dropdown-link-title">Forum 2024</span><span class="nav-dropdown-link-desc">Forum 2024-ü kəşf edin</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Alimlərimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="../../scientists/list.html" data-nav-id="scientists-list"><span class="nav-dropdown-link-title">Siyahı</span><span class="nav-dropdown-link-desc">Bütün alimlərin siyahısı</span></a><a class="nav-dropdown-link" role="menuitem" href="../../scientists/profiles.html" data-nav-id="scientists-profiles"><span class="nav-dropdown-link-title">Profillər</span><span class="nav-dropdown-link-desc">Alimlərin akademik profilləri</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Haqqımızda <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="../../foundation.html" data-nav-id="foundation"><span class="nav-dropdown-link-title">Birliyin təsisi</span><span class="nav-dropdown-link-desc">Yaradılma tarixi və təsis prosesi</span></a><a class="nav-dropdown-link" role="menuitem" href="../../mission.html" data-nav-id="mission"><span class="nav-dropdown-link-title">Missiya və dəyərlər</span><span class="nav-dropdown-link-desc">Missiya, vizyon və akademik dəyərlər</span></a><a class="nav-dropdown-link" role="menuitem" href="../../executive-board.html" data-nav-id="executive-board"><span class="nav-dropdown-link-title">İdarə heyəti</span><span class="nav-dropdown-link-desc">İdarə heyəti və rəhbərlik</span></a><a class="nav-dropdown-link" role="menuitem" href="../../charter.html" data-nav-id="charter"><span class="nav-dropdown-link-title">Nizamnamə</span><span class="nav-dropdown-link-desc">Nizamnamə və idarəetmə qaydaları</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Üzvlük <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="../../membership_value.html" data-nav-id="membership-value"><span class="nav-dropdown-link-title">Niyə üzv olmalı</span><span class="nav-dropdown-link-desc">Üzvlüyün faydaları və dəyər təklifi</span></a><a class="nav-dropdown-link" role="menuitem" href="../../membership.html" data-nav-id="membership"><span class="nav-dropdown-link-title">Üzvlük şərtləri</span><span class="nav-dropdown-link-desc">Üzvlük qaydaları, ödəniş və müraciət məlumatları</span></a><a class="nav-dropdown-link" role="menuitem" href="../../application.html" data-nav-id="membership-application"><span class="nav-dropdown-link-title">Bizə qoşulun</span><span class="nav-dropdown-link-desc">Onlayn üzvlük müraciət forması</span></a></div></div></div></div></nav>
+<nav aria-label="Əsas naviqasiya" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="Menyunu aç" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a aria-label="DAAB ana səhifə" href="../../index.html"><img src="../../../images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"></a></div><a aria-label="DAAB ana səhifə" class="nav-brand" href="../../index.html"><span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">Alimlər Birliyi</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div><a class="nav-link" href="../../index.html" data-nav-id="home">Ana səhifə</a><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Fəaliyyətimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="../../activities.html" data-nav-id="activities"><span class="nav-dropdown-link-title">Yeniliklər</span><span class="nav-dropdown-link-desc">Əsas fəaliyyət və yeniliklər</span></a><a class="nav-dropdown-link" role="menuitem" href="index.html" data-nav-id="forum-2024"><span class="nav-dropdown-link-title">Forum 2024</span><span class="nav-dropdown-link-desc">Forum 2024 haqqında</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Alimlərimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="../../scientists/list.html" data-nav-id="scientists-list"><span class="nav-dropdown-link-title">Siyahı</span><span class="nav-dropdown-link-desc">Bütün alimlərin siyahısı</span></a><a class="nav-dropdown-link" role="menuitem" href="../../scientists/profiles.html" data-nav-id="scientists-profiles"><span class="nav-dropdown-link-title">Profillər</span><span class="nav-dropdown-link-desc">Alimlərin akademik profilləri</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Haqqımızda <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="../../foundation.html" data-nav-id="foundation"><span class="nav-dropdown-link-title">Birliyin təsisi</span><span class="nav-dropdown-link-desc">Yaradılma tarixi və təsis prosesi</span></a><a class="nav-dropdown-link" role="menuitem" href="../../mission.html" data-nav-id="mission"><span class="nav-dropdown-link-title">Missiya və dəyərlər</span><span class="nav-dropdown-link-desc">Missiya, vizyon və akademik dəyərlər</span></a><a class="nav-dropdown-link" role="menuitem" href="../../executive-board.html" data-nav-id="executive-board"><span class="nav-dropdown-link-title">İdarə heyəti</span><span class="nav-dropdown-link-desc">İdarə heyəti və rəhbərlik</span></a><a class="nav-dropdown-link" role="menuitem" href="../../charter.html" data-nav-id="charter"><span class="nav-dropdown-link-title">Nizamnamə</span><span class="nav-dropdown-link-desc">Nizamnamə və idarəetmə qaydaları</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Üzvlük <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="../../membership_value.html" data-nav-id="membership-value"><span class="nav-dropdown-link-title">Niyə üzv olmalı</span><span class="nav-dropdown-link-desc">Üzvlüyün faydaları və dəyər təklifi</span></a><a class="nav-dropdown-link" role="menuitem" href="../../membership.html" data-nav-id="membership"><span class="nav-dropdown-link-title">Üzvlük şərtləri</span><span class="nav-dropdown-link-desc">Üzvlük qaydaları, ödəniş və müraciət məlumatları</span></a><a class="nav-dropdown-link" role="menuitem" href="../../application.html" data-nav-id="membership-application"><span class="nav-dropdown-link-title">Bizə qoşulun</span><span class="nav-dropdown-link-desc">Onlayn üzvlük müraciət forması</span></a></div></div></div></div></nav>
 <div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Səhifə yolu">
 <a href="../../index.html">Ana səhifə</a><span aria-hidden="true">›</span><a href="../../activities.html">Fəaliyyətimiz</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">Forum 2024</span>
 </div>
@@ -148,6 +106,14 @@
 <h3 class="card-title">Təəssüratlar</h3>
 <div class="card-desc">İştirakçıların şəxsi təəssüratları.</div>
 <div class="card-footer"><span class="card-tag">Oxu</span><span class="card-arrow">→</span></div>
+</div>
+</a>
+<a class="page-card" data-title="Foto qalereya forum şəkillər" href="photos_gallery.html">
+<div class="card-icon-wrap">📷</div>
+<div class="card-body">
+<h3 class="card-title">Foto qalereya</h3>
+<div class="card-desc">Forum foto dəstləri — açılış, müzakirələr, Qarabağ səfəri və digər anlar.</div>
+<div class="card-footer"><span class="card-tag">Bax</span><span class="card-arrow">→</span></div>
 </div>
 </a>
 

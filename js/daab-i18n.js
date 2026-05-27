@@ -83,7 +83,7 @@
   function loadRoutes() {
     if (routesCache) return Promise.resolve(routesCache);
     ROUTES_URL = ROUTES_URL || i18nUrl("routes.json");
-    return fetchJson(ROUTES_URL + "?v=2").then(function (data) {
+    return fetchJson(ROUTES_URL + "?v=3").then(function (data) {
       routesCache = data;
       return data;
     });
@@ -92,7 +92,7 @@
   function loadUi() {
     if (uiCache) return Promise.resolve(uiCache);
     UI_URL = UI_URL || i18nUrl("ui.json");
-    return fetchJson(UI_URL + "?v=8").then(function (data) {
+    return fetchJson(UI_URL + "?v=11").then(function (data) {
       uiCache = data;
       return data;
     });
@@ -100,7 +100,7 @@
 
   function loadSearchIndex() {
     if (searchIndexCache) return Promise.resolve(searchIndexCache);
-    return fetchJson(i18nUrl("search-index.json") + "?v=1").then(function (data) {
+    return fetchJson(i18nUrl("search-index.json") + "?v=5").then(function (data) {
       searchIndexCache = data;
       return data;
     });

@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>
+<script>
+
+(async () => {
+  const out = {};
+  const urls = ["http://127.0.0.1:8010/en/membership.html","http://127.0.0.1:8010/en/application.html","http://127.0.0.1:8010/en/membership_value.html","http://127.0.0.1:8010/az/membership.html","http://127.0.0.1:8010/az/application.html"];
+  for (const url of urls) {
+    await new Promise((r) => setTimeout(r, 1200));
+    const links = [...document.querySelectorAll("#primaryNavMenu .nav-dropdown-link")];
+    const membership = links.filter((a) => {
+      const id = a.getAttribute("data-nav-id") || "";
+      return id.indexOf("membership") === 0;
+    });
+    out[url] = {
+      pageId: document.documentElement.getAttribute("data-daab-page-id"),
+      navKey: window.DAAB_NAV && DAAB_NAV.currentNavKey ? DAAB_NAV.currentNavKey() : null,
+      membershipLinks: membership.map((a) => ({
+        id: a.getAttribute("data-nav-id"),
+        href: a.getAttribute("href"),
+        active: a.classList.contains("active"),
+      })),
+    };
+  }
+  return JSON.stringify(out, null, 2);
+})()
+.then((json) => {
+  document.title = "DUMP:" + json;
+});
+</script></body></html>

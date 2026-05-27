@@ -1,0 +1,82 @@
+{
+  "version": 2,
+  "source": "documents/docx/Subtitles by page.docx",
+  "pages": {
+    "home": {
+      "en": "Connect with Azerbaijani scientists around the world.",
+      "az": "Dünyanın müxtəlif ölkələrində yaşayan azərbaycanlı alimlərlə əlaqə qurun."
+    },
+    "foundation": {
+      "en": "Follow the journey from the Shusha Congress to the Istanbul founding meeting.",
+      "az": "Şuşa Qurultayından İstanbul təsis görüşünə qədər əsas mərhələləri izləyin."
+    },
+    "mission": {
+      "en": "The values and goals guiding WAAS activities.",
+      "az": "DAAB-ın fəaliyyətini istiqamətləndirən dəyərlər və məqsədlər."
+    },
+    "activities": {
+      "en": "Follow activities, partnerships, and important events across our global network.",
+      "az": "Qlobal şəbəkəmizdəki fəaliyyətləri, əməkdaşlıqları və mühüm hadisələri izləyin."
+    },
+    "forum-2024-presentations": {
+      "en": "Explore presentations on science, education, policy, and more.",
+      "az": "Elm, təhsil, siyasət və digər mövzular üzrə təqdimatlarla tanış olun."
+    },
+    "forum-official": {
+      "en": "Official speeches and messages that shaped the Forum.",
+      "az": "Forumun istiqamətini müəyyən edən rəsmi çıxış və müraciətlər."
+    },
+    "forum-program": {
+      "en": "Explore the programme of the Baku–Khankendi–Shusha forum journey.",
+      "az": "Bakı–Xankəndi–Şuşa forum proqramı ilə tanış olun."
+    },
+    "forum-impressions": {
+      "en": "Participants share their thoughts and experiences from the Forum and Karabakh visit.",
+      "az": "İştirakçıların Forum və Qarabağ səfəri ilə bağlı təəssüratları."
+    },
+    "forum-photos-gallery": {
+      "en": "Moments from the forum — exhibition, discussions, portraits, and the Karabakh visit.",
+      "az": "Forumdan anlar — sərgi, müzakirələr, portretlər və Qarabağ səfəri."
+    },
+    "scientists-list": {
+      "en": "Quickly search forum participants by country, field, or academic rank.",
+      "az": "Forum iştirakçılarını ölkə, sahə və elmi dərəcəyə görə axtarın."
+    },
+    "scientists-profiles": {
+      "en": "Learn more about scientists and their fields of work.",
+      "az": "Alimlər və onların fəaliyyət sahələri haqqında daha ətraflı məlumat əldə edin."
+    },
+    "executive-board": {
+      "en": "Meet the people leading and managing the Association.",
+      "az": "Birliyə rəhbərlik edən və onun fəaliyyətini idarə edən şəxslərlə tanış olun."
+    },
+    "charter": {
+      "en": "The main document defining how the Association works.",
+      "az": "Birliyin fəaliyyət qaydalarını müəyyən edən əsas sənəd."
+    },
+    "membership-value": {
+      "en": "Discover the benefits of becoming a WAAS member.",
+      "az": "DAAB üzvlüyünün üstünlükləri ilə tanış olun."
+    },
+    "membership": {
+      "en": "Information about membership rules and procedures.",
+      "az": "Üzvlük qaydaları və prosedurları haqqında məlumat."
+    },
+    "membership-application": {
+      "en": "Submit your information step by step and send supporting files by email.",
+      "az": "Məlumatlarınızı addım-addım təqdim edin və əlavə sənədləri e-poçtla göndərin."
+    },
+    "forum-roadmap": {
+      "en": "Ideas and proposals for the future of science, education, and diaspora cooperation.",
+      "az": "Elm, təhsil və diaspora əməkdaşlığının gələcəyinə dair təkliflər."
+    },
+    "forum-bagli-hekayeler": {
+      "en": "Literary reflections capturing the spirit and memories of the Forum.",
+      "az": "Forumun ab-havasını və xatirələrini əks etdirən ədəbi yazılar."
+    },
+    "forum-cooperation": {
+      "en": "Recognising the partners who supported the Forum.",
+      "az": "Forumun təşkilinə dəstək verən tərəfdaşlarla tanış olun."
+    }
+  }
+}

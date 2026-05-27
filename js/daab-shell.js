@@ -4,7 +4,14 @@
 (function () {
   "use strict";
 
-  var compactNavMq = window.matchMedia("(max-width: 1180px)");
+  function navCompactMediaQuery() {
+    if (window.DAAB_DESIGN && typeof window.DAAB_DESIGN.navCompactMq === "function") {
+      return window.DAAB_DESIGN.navCompactMq();
+    }
+    return window.matchMedia("(max-width: 1180px)");
+  }
+
+  var compactNavMq = navCompactMediaQuery();
   var switcherNode = null;
 
   function getI18n() {

@@ -1,0 +1,78 @@
+C:\Users\BSira\Documents\GitHub\DAAB-WAAS web site\helpers\_match_alley_of_honor_gallery.py:51: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  pixels = list(gray.getdata())
+Gallery URLs: 70
+Indexing local photos…
+Local index: 931 files
+Match 1/70… FAIL download: HTTP Error 403: Forbidden
+Match 2/70… FAIL download: HTTP Error 403: Forbidden
+Match 3/70… FAIL download: HTTP Error 403: Forbidden
+Match 4/70… FAIL download: HTTP Error 403: Forbidden
+Match 5/70… FAIL download: HTTP Error 403: Forbidden
+Match 6/70… FAIL download: HTTP Error 403: Forbidden
+Match 7/70… FAIL download: HTTP Error 403: Forbidden
+Match 8/70… FAIL download: HTTP Error 403: Forbidden
+Match 9/70… FAIL download: HTTP Error 403: Forbidden
+Match 10/70… FAIL download: HTTP Error 403: Forbidden
+Match 11/70… FAIL download: HTTP Error 403: Forbidden
+Match 12/70… FAIL download: HTTP Error 403: Forbidden
+Match 13/70… FAIL download: HTTP Error 403: Forbidden
+Match 14/70… FAIL download: HTTP Error 403: Forbidden
+Match 15/70… FAIL download: HTTP Error 403: Forbidden
+Match 16/70… FAIL download: HTTP Error 403: Forbidden
+Match 17/70… FAIL download: HTTP Error 403: Forbidden
+Match 18/70… FAIL download: HTTP Error 403: Forbidden
+Match 19/70… FAIL download: HTTP Error 403: Forbidden
+Match 20/70… FAIL download: HTTP Error 403: Forbidden
+Match 21/70… FAIL download: HTTP Error 403: Forbidden
+Match 22/70… FAIL download: HTTP Error 403: Forbidden
+Match 23/70… FAIL download: HTTP Error 403: Forbidden
+Match 24/70… FAIL download: HTTP Error 403: Forbidden
+Match 25/70… FAIL download: HTTP Error 403: Forbidden
+Match 26/70… FAIL download: HTTP Error 403: Forbidden
+Match 27/70… FAIL download: HTTP Error 403: Forbidden
+Match 28/70… FAIL download: HTTP Error 403: Forbidden
+Match 29/70… FAIL download: HTTP Error 403: Forbidden
+Match 30/70… FAIL download: HTTP Error 403: Forbidden
+Match 31/70… FAIL download: HTTP Error 403: Forbidden
+Match 32/70… FAIL download: HTTP Error 403: Forbidden
+Match 33/70… FAIL download: HTTP Error 403: Forbidden
+Match 34/70… FAIL download: HTTP Error 403: Forbidden
+Match 35/70… FAIL download: HTTP Error 403: Forbidden
+Match 36/70… FAIL download: HTTP Error 403: Forbidden
+Match 37/70… FAIL download: HTTP Error 403: Forbidden
+Match 38/70… FAIL download: HTTP Error 403: Forbidden
+Match 39/70… FAIL download: HTTP Error 403: Forbidden
+Match 40/70… FAIL download: HTTP Error 403: Forbidden
+Match 41/70… FAIL download: HTTP Error 403: Forbidden
+Match 42/70… FAIL download: HTTP Error 403: Forbidden
+Match 43/70… FAIL download: HTTP Error 403: Forbidden
+Match 44/70… FAIL download: HTTP Error 403: Forbidden
+Match 45/70… FAIL download: HTTP Error 403: Forbidden
+Match 46/70… FAIL download: HTTP Error 403: Forbidden
+Match 47/70… FAIL download: HTTP Error 403: Forbidden
+Match 48/70… FAIL download: HTTP Error 403: Forbidden
+Match 49/70… FAIL download: HTTP Error 403: Forbidden
+Match 50/70… FAIL download: HTTP Error 403: Forbidden
+Match 51/70… FAIL download: HTTP Error 403: Forbidden
+Match 52/70… FAIL download: HTTP Error 403: Forbidden
+Match 53/70… FAIL download: HTTP Error 403: Forbidden
+Match 54/70… FAIL download: HTTP Error 403: Forbidden
+Match 55/70… FAIL download: HTTP Error 403: Forbidden
+Match 56/70… FAIL download: HTTP Error 403: Forbidden
+Match 57/70… FAIL download: HTTP Error 403: Forbidden
+Match 58/70… FAIL download: HTTP Error 403: Forbidden
+Match 59/70… FAIL download: HTTP Error 403: Forbidden
+Match 60/70… FAIL download: HTTP Error 403: Forbidden
+Match 61/70… FAIL download: HTTP Error 403: Forbidden
+Match 62/70… FAIL download: HTTP Error 403: Forbidden
+Match 63/70… FAIL download: HTTP Error 403: Forbidden
+Match 64/70… FAIL download: HTTP Error 403: Forbidden
+Match 65/70… FAIL download: HTTP Error 403: Forbidden
+Match 66/70… FAIL download: HTTP Error 403: Forbidden
+Match 67/70… FAIL download: HTTP Error 403: Forbidden
+Match 68/70… FAIL download: HTTP Error 403: Forbidden
+Match 69/70… FAIL download: HTTP Error 403: Forbidden
+Match 70/70… FAIL download: HTTP Error 403: Forbidden
+
+Done: 0/70 matched -> C:\Users\BSira\Documents\GitHub\DAAB-WAAS web site\images\photos-gallery\AlleyOfHonor
+Manifest: C:\Users\BSira\Documents\GitHub\DAAB-WAAS web site\images\photos-gallery\AlleyOfHonor\_match-manifest.json

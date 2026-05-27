@@ -72,10 +72,10 @@ def shell_head() -> str:
 <link href="{ASSET}css/daab-membership-application.css?v=2" rel="stylesheet"/>
 <script src="{ASSET}js/daab-mobile.js?v=1" defer></script>
 <script src="{ASSET}js/daab-back-to-top.js?v=2" defer></script>
-<script src="{ASSET}js/daab-i18n.js?v=12" defer></script>
+<script src="{ASSET}js/daab-i18n.js?v=13" defer></script>
 <script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
-<script src="{ASSET}js/daab-nav.js?v=13" defer></script>
-<script src="{ASSET}js/daab-primary-nav.js?v=13" defer></script>
+<script src="{ASSET}js/daab-nav.js?v=16" defer></script>
+<script src="{ASSET}js/daab-primary-nav.js?v=14" defer></script>
 <script src="{ASSET}js/daab-breadcrumbs.js?v=6" defer></script>
 <script src="{ASSET}js/daab-section-nav.js?v=7" defer></script>
 <script src="{ASSET}js/daab-shell.js?v=11" defer></script>
@@ -93,7 +93,6 @@ NAV_PLACEHOLDER
 <div class="hero-wrap shell">
 <section>
 <h1>Membership <span>Application</span></h1>
-<p class="hero-text">Complete the step-by-step form below to apply for WAAS membership. We will contact you after your application is received.</p>
 </section>
 <aside aria-label="Application overview" class="hero-panel">
 <div class="panel-card">

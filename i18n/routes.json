@@ -97,6 +97,16 @@
       "en": "en/forum/2024/impressions.html"
     },
     {
+      "id": "forum-photos-gallery",
+      "navId": "forum-photos-gallery",
+      "navGroup": "forum",
+      "navParent": "forum",
+      "navOrder": 7,
+      "legacy": null,
+      "az": "az/forum/2024/photos_gallery.html",
+      "en": "en/forum/2024/photos_gallery.html"
+    },
+    {
       "id": "scientists-list",
       "navId": "scientists-list",
       "navGroup": "scientists",
@@ -138,7 +148,7 @@
     },
     {
       "id": "membership-value",
-      "navId": "membership",
+      "navId": "membership-value",
       "navGroup": "membership",
       "navParent": "membership",
       "navOrder": 1,
@@ -148,7 +158,7 @@
     },
     {
       "id": "membership-application",
-      "navId": "membership",
+      "navId": "membership-application",
       "navGroup": "membership",
       "navParent": "membership",
       "navOrder": 3,
@@ -170,7 +180,7 @@
       "navId": "forum-roadmap",
       "navGroup": "forum",
       "navParent": "forum",
-      "navOrder": 7,
+      "navOrder": 8,
       "legacy": null,
       "az": "az/forum/2024/roadmap.html",
       "en": "en/forum/2024/roadmap.html"
@@ -180,7 +190,7 @@
       "navId": "forum-bagli-hekayeler",
       "navGroup": "forum",
       "navParent": "forum",
-      "navOrder": 8,
+      "navOrder": 9,
       "legacy": null,
       "az": "az/forum/2024/stories.html",
       "en": "en/forum/2024/stories.html"
@@ -190,7 +200,7 @@
       "navId": "forum-cooperation",
       "navGroup": "forum",
       "navParent": "forum",
-      "navOrder": 9,
+      "navOrder": 10,
       "legacy": null,
       "az": "az/forum/2024/cooperation.html",
       "en": "en/forum/2024/cooperation.html"

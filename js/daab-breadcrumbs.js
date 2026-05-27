@@ -122,7 +122,7 @@
       en: {
         aria: "Breadcrumb",
         home: "Home",
-        about: "About",
+        about: "About us",
         scientists: "Scientists",
         activities: "Activities"
       }

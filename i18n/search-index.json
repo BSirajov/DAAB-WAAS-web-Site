@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated": "2026-05-26",
-  "entryCount": 472,
+  "generated": "2026-05-27",
+  "entryCount": 474,
   "entries": [
     {
       "id": "page-home-az",
@@ -236,6 +236,32 @@
       "icon": "💬",
       "boost": 12,
       "norm": "forum impressions waas participant impressions from the first forum of azerbaijani scientists living abroad."
+    },
+    {
+      "id": "page-forum-photos-gallery-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "forum-photos-gallery",
+      "anchor": "",
+      "title": "Foto qalereya — DAAB",
+      "summary": "Xaricdə yaşayan azərbaycanlı alimlərin I Forumundan foto qalereya, sentyabr 2024.",
+      "tag": "Səhifə",
+      "icon": "📷",
+      "boost": 12,
+      "norm": "foto qalereya daab xaricde yas ayan azerbaycanli alimlerin i forumundan foto qalereya sentyabr 2024."
+    },
+    {
+      "id": "page-forum-photos-gallery-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "forum-photos-gallery",
+      "anchor": "",
+      "title": "Photos gallery — WAAS",
+      "summary": "Photo gallery from the First Forum of Azerbaijani Scientists Living Abroad, September 2024.",
+      "tag": "Page",
+      "icon": "📷",
+      "boost": 12,
+      "norm": "photos gallery waas photo gallery from the first forum of azerbaijani scientists living abroad september 2024."
     },
     {
       "id": "page-scientists-list-az",
@@ -530,11 +556,11 @@
       "pageId": "forum-2024",
       "anchor": "",
       "title": "Forum 2024",
-      "summary": "Forum 2024-ü kəşf edin",
+      "summary": "Forum 2024 haqqında",
       "tag": "Naviqasiya",
       "icon": "📰",
       "boost": 11,
-      "norm": "forum 2024 forum 2024-u kes f edin fealiyyetimiz"
+      "norm": "forum 2024 forum 2024 haqqinda fealiyyetimiz"
     },
     {
       "id": "nav-scientists-list-az",
@@ -625,7 +651,7 @@
       "tag": "Naviqasiya",
       "icon": "✒️",
       "boost": 11,
-      "norm": "niye u zv olmali u zvlu yu n faydalari ve deyer teklifi u zvlu k"
+      "norm": "niye u zv olmalisiniz u zvlu yu n faydalari ve deyer teklifi u zvlu k"
     },
     {
       "id": "nav-membership-az",
@@ -729,7 +755,7 @@
       "tag": "Navigation",
       "icon": "🏛️",
       "boost": 11,
-      "norm": "foundation history and founding process about"
+      "norm": "foundation history and founding process about us"
     },
     {
       "id": "nav-mission-en",
@@ -742,7 +768,7 @@
       "tag": "Navigation",
       "icon": "💎",
       "boost": 11,
-      "norm": "mission values mission vision and academic values about"
+      "norm": "mission values mission vision and academic values about us"
     },
     {
       "id": "nav-executive-board-en",
@@ -755,7 +781,7 @@
       "tag": "Navigation",
       "icon": "🎓",
       "boost": 11,
-      "norm": "board of directors leadership and governance structure about"
+      "norm": "board of directors leadership and governance structure about us"
     },
     {
       "id": "nav-charter-en",
@@ -768,7 +794,7 @@
       "tag": "Navigation",
       "icon": "📜",
       "boost": 11,
-      "norm": "charter charter and governance rules about"
+      "norm": "charter charter and governance rules about us"
     },
     {
       "id": "nav-membership-value-en",
@@ -2825,7 +2851,7 @@
       "norm": "emil ahmadov prof. dr. executive board"
     },
     {
-      "id": "person-board-nigar-masimova-dr.-en",
+      "id": "person-board-nigar-masumova-dr.-en",
       "lang": "en",
       "type": "person",
       "pageId": "executive-board",
@@ -2835,7 +2861,7 @@
       "tag": "Person",
       "icon": "🎓",
       "boost": 7,
-      "norm": "nigar masimova dr. executive board"
+      "norm": "nigar masumova dr. executive board"
     },
     {
       "id": "person-board-sevinj-mammadova-dr.-en",
@@ -4837,7 +4863,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "riza moridi senior fellow massey college university of toronto physics canada reza@rezamoridi.com canadian radiation safety institute chair of the board of directors sir neville mott nobel laureate was awarded a fellowship by the institute of physics in great britain in 1986 for his research on the experimental verification of the theory of non-crystalline semiconductors. in 1992 receiving a scholarship from th phd"
+      "norm": "reza moridi senior fellow massey college university of toronto physics canada reza@rezamoridi.com canadian radiation safety institute chair of the board of directors sir neville mott nobel laureate was awarded a fellowship by the institute of physics in great britain in 1986 for his research on the experimental verification of the theory of non-crystalline semiconductors. in 1992 receiving a scholarship from th phd"
     },
     {
       "id": "scientist-sebine-isgenderova-az",
@@ -5331,7 +5357,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "nigar masimova candidate of economic sciences associate professor head of the department of advertising and public relations deputy dean of the international journalism faculty of the moscow state institute of international relations of the ministry of foreign affairs of the russian federation economics russia masumova@mail.ru she is an expert on turkish economy. she is the author of the monograph features of modernization of the turkish economy at the turn of the 20th-21st centuries and the co-author of the textbook turkey s economy . in addition she is the co-author of the monographs industrial policy and world economy and internati phd"
+      "norm": "nigar masumova candidate of economic sciences associate professor head of the department of advertising and public relations deputy dean of the international journalism faculty of the moscow state institute of international relations of the ministry of foreign affairs of the russian federation economics russia masumova@mail.ru she is an expert on turkish economy. she is the author of the monograph features of modernization of the turkish economy at the turn of the 20th-21st centuries and the co-author of the textbook turkey s economy . in addition she is the co-author of the monographs industrial policy and world economy and internati phd"
     },
     {
       "id": "scientist-nizami-memmedov-az",
@@ -5461,7 +5487,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "zahid gocayev deputy director for innovation and implementation of the federal scientific agrotechnical center vim fgbnu professor of moscow polytechnic university and n.e. bauman moscow state technical university doctor of technical sciences professor corresponding member of the russian academy of sciences engineering russia fic51@mail.ru he has more than 150 scientific works monographs and inventions. he is the author of a number of textbooks in the fields of mechanical engineering applied mathematics and informatics. in recent years he has been leading scientific projects on the creation of intelligent machine technologies and the application of prof.dr."
+      "norm": "zahid gojayev deputy director for innovation and implementation of the federal scientific agrotechnical center vim fgbnu professor of moscow polytechnic university and n.e. bauman moscow state technical university doctor of technical sciences professor corresponding member of the russian academy of sciences engineering russia fic51@mail.ru he has more than 150 scientific works monographs and inventions. he is the author of a number of textbooks in the fields of mechanical engineering applied mathematics and informatics. in recent years he has been leading scientific projects on the creation of intelligent machine technologies and the application of prof.dr."
     },
     {
       "id": "scientist-azer-abdullayev-az",
@@ -5669,7 +5695,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "hajali nejefoglu kars city head of the foreign relations office of the caucasus university member of the university board head of the caucasus and central asia research center head of the department of inorganic chemistry chemistry tu rkiye alinecef@hotmail.com professor hajali nejefoglu received his higher education in chemistry at azerbaijan state university and then received his doctorate in inorganic chemistry at the azerbaijan national academy of sciences. since the 1990s he has worked academically as an associate professor and professor at various universities in turk prof.dr."
+      "norm": "hajali najafoglu kars city head of the foreign relations office of the caucasus university member of the university board head of the caucasus and central asia research center head of the department of inorganic chemistry chemistry tu rkiye alinecef@hotmail.com professor hajali najafoglu received his higher education in chemistry at azerbaijan state university and then received his doctorate in inorganic chemistry at the azerbaijan national academy of sciences. since the 1990s he has worked academically as an associate professor and professor at various universities in turk prof.dr."
     },
     {
       "id": "scientist-ilkin-qulusoy-az",
@@ -6033,7 +6059,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "vefa gurban ege university institute of turkish world studies economics tu rkiye vefa.kurban@ege.edu.tr head of the department of social economic and political relations she participated in scientific conferences and symposiums in turkey and other countries. she worked in scientific positions as a docent and professor. she has been awarded various prizes in turkey. she was the editor of 86 scientific publications. artic prof.dr."
+      "norm": "vefa kurban ege university institute of turkish world studies economics tu rkiye vefa.kurban@ege.edu.tr head of the department of social economic and political relations she participated in scientific conferences and symposiums in turkey and other countries. she worked in scientific positions as a docent and professor. she has been awarded various prizes in turkey. she was the editor of 86 scientific publications. artic prof.dr."
     },
     {
       "id": "scientist-arif-quliyev-az",
@@ -6111,7 +6137,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "murad omerov vice-rector for international cooperation kharkiv national university of radioelectronics academician of the ukrainian academy of applied radioelectronic sciences engineering ukraine murad.omarov@nure.ua he is the co-author of more than 150 scientific works 17 of them are indexed in scopus 3 monographs and 11 textbooks. he has 12 copyright certificates and invention patents of ukraine. he supervised the writing and defense of candidate dissertations of 5 graduate students. he works as vice-rector for international c phd"
+      "norm": "murad omarov vice-rector for international cooperation kharkiv national university of radioelectronics academician of the ukrainian academy of applied radioelectronic sciences engineering ukraine murad.omarov@nure.ua he is the co-author of more than 150 scientific works 17 of them are indexed in scopus 3 monographs and 11 textbooks. he has 12 copyright certificates and invention patents of ukraine. he supervised the writing and defense of candidate dissertations of 5 graduate students. he works as vice-rector for international c phd"
     },
     {
       "id": "scientist-xelil-kelenter-az",
@@ -6137,7 +6163,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "khalil kelenter senior researcher for global optical solutions and kepler projects physics japan gosx2020@gmail.com he received doctorates from both nagoya and tohoku universities. as one of the leading experts in the field of developing and manufacturing electronic displays and sensors he is the author of 105 patents and 28 technical documents in various countries including japan usa canada europe south korea and taiwan. 35 a phd"
+      "norm": "khalil kalantar senior researcher for global optical solutions and kepler projects physics japan gosx2020@gmail.com he received doctorates from both nagoya and tohoku universities. as one of the leading experts in the field of developing and manufacturing electronic displays and sensors he is the author of 105 patents and 28 technical documents in various countries including japan usa canada europe south korea and taiwan. 35 a phd"
     }
   ]
 }
