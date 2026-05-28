@@ -1,0 +1,61 @@
+# DAAB production deploy exclusions (rsync --exclude-from, lftp, etc.)
+# Run uploads from the repository root. Ship only static site assets.
+#
+# Usage (rsync):
+#   rsync -avz --exclude-from=.deployignore ./ user@host:/var/www/daab-waas/
+
+# --- Never deploy: maintenance & dev ---
+helpers/
+documents/
+sources/
+templates/
+data/
+node_modules/
+__pycache__/
+.cursor/
+.vscode/
+.github/
+.git/
+.gitignore
+.deployignore
+
+# --- Local / editor / OS ---
+*.py
+*.pyc
+*.pyo
+*.md
+README.md
+START-SITE.bat
+scripts/
+_pdf_extract.txt
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# --- Legacy & archive (not linked from live site) ---
+_archive/
+cv/
+
+# --- Build-source HTML (live pages are az/application.html, not az/application/*.html) ---
+az/application/
+en/application/
+
+# --- forum_2024: ship PDF only (linked from forum index) ---
+forum_2024/*
+!forum_2024/*.pdf
+
+# --- Optional helper caches (not loaded at runtime) ---
+i18n/person-names-en.json
+i18n/scientists-profiles-en.json
+
+# --- CSS/JS not referenced by live pages (safe to omit; omit lines to ship full css/js/) ---
+css/daab-forum-book.css
+css/daab-application-embed-az.css
+css/daab-application-embed-en.css
+css/daab-application-membership-value-embed.css
+js/video-gallery-data.json
+js/README.md
+css/README.md
+
+# --- Empty or unused image folders ---
+images/flags/

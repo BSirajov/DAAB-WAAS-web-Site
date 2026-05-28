@@ -125,7 +125,7 @@
     text-decoration:none;
     color:var(--blue-900);
     font-size:12px;
-    font-weight:650;
+    font-weight:600;
     line-height:1.35;
     padding:8px 9px;
     border-radius:8px;
@@ -279,7 +279,6 @@
 
 /* Professional legal-document visual style */
 body{
-    background:#F5F5F5 !important;
     color:#2B2B2B !important;
     font-family: Inter, "Segoe UI", Arial, sans-serif !important;
 }

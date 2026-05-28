@@ -103,7 +103,7 @@ OFFICIAL_EN_SECTIONS = [
         "id": "alimlerimiz",
         "title": "ADDRESS BY OUR SCIENTISTS TO HIS EXCELLENCY MR ILHAM ALIYEV, PRESIDENT OF THE REPUBLIC OF AZERBAIJAN",
         "subtitle": (
-            "The address was delivered by Mesud Afandiyev, Chair of the Executive Board of the World Association of Azerbaijani Scientists."
+            "The address was delivered by Mesud Afandiyev, Chair of the Board of Directors of the World Association of Azerbaijani Scientists."
         ),
         "body": [
             (

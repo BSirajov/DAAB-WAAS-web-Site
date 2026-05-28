@@ -1,10 +1,20 @@
 #!/usr/bin/env python3
-"""Repair forum-bagli-hekayeler selector lines missing descendant suffixes."""
+"""Repair forum CSS selector lists where a page id line is missing the descendant suffix."""
 import re
 from pathlib import Path
 
 p = Path(__file__).resolve().parents[1] / "css" / "daab-forum-content.css"
 text = p.read_text(encoding="utf-8")
+
+# photos-gallery"],\n...video-gallery"]<suffix>{
+text = re.sub(
+    r'html\[data-daab-page-id="forum-photos-gallery"\],\s*\n'
+    r'html\[data-daab-page-id="forum-video-gallery"\]([^\{]*)\{',
+    r'html[data-daab-page-id="forum-photos-gallery"]\1,\n'
+    r'html[data-daab-page-id="forum-video-gallery"]\1{',
+    text,
+    flags=re.S,
+)
 
 # bagli-hekayeler"],\n...cooperation"]<suffix>{
 text = re.sub(

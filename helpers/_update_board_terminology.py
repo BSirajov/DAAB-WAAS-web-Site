@@ -10,6 +10,15 @@ from _paths import ROOT
 BOARD_EN = "Board of Directors"
 
 EN_REPLACEMENTS: list[tuple[str, str]] = [
+    (
+        "Chair of the Executive Board of the World Association of Azerbaijani Scientists",
+        f"Chair of the {BOARD_EN} of the World Association of Azerbaijani Scientists",
+    ),
+    (
+        "member of the Executive Board of the World Association of Azerbaijani Scientists",
+        f"member of the {BOARD_EN} of the World Association of Azerbaijani Scientists",
+    ),
+    (f"Co-Chair of the WAAS Executive Board", f"Co-Chair of the WAAS {BOARD_EN}"),
     ("Chair of the WAAS Executive Board", f"Chair of the WAAS {BOARD_EN}"),
     ("Chair of the Executive Board", "Chair"),
     ("Executive Board Members", "Board Members"),
@@ -27,9 +36,25 @@ EN_REPLACEMENTS: list[tuple[str, str]] = [
     ("Executive Board member", f"{BOARD_EN} member"),
     ("Scientists Executive Board", f"Scientists {BOARD_EN}"),
     ("Executive Board leadership", f"{BOARD_EN} leadership"),
+    ("executive board members", f"{BOARD_EN} members"),
+    ("executive board,", f"{BOARD_EN.lower()},"),
+    ("executive board ", f"{BOARD_EN.lower()} "),
+    ("The executive board ", f"The {BOARD_EN.lower()} "),
+    ("Initial WAAS executive board", f"Initial WAAS {BOARD_EN.lower()}"),
     ("Executive board", BOARD_EN),
     ("Executive Board", BOARD_EN),
 ]
+
+EN_HELPER_FILES_EXTRA = (
+    "helpers/forum_en_common.py",
+    "helpers/forum_en_cooperation.py",
+    "helpers/forum_en_official.py",
+    "helpers/forum_en_program_map.py",
+    "helpers/forum_en_presentations_phrases.py",
+    "helpers/forum_en_impressions_phrases.py",
+    "helpers/_presentations_en_map.json",
+    "helpers/_waas_en_brand.py",
+)
 
 EN_HELPER_FILES = (
     "helpers/i18n_executive_board_en.py",
@@ -70,7 +95,8 @@ def update_en_files() -> int:
 
 
 def update_en_helpers_and_i18n() -> None:
-    for rel in EN_HELPER_FILES:
+    helper_files = EN_HELPER_FILES + EN_HELPER_FILES_EXTRA
+    for rel in helper_files:
         path = ROOT / rel
         if not path.is_file():
             continue

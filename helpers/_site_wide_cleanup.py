@@ -7,25 +7,27 @@ from pathlib import Path
 
 from _paths import ROOT
 
-# Canonical versions from en/application.html (May 2026)
+# Canonical versions from en/application.html (May 2026) — update when bumping ?v= on deploy pages.
 SCRIPT_VERSIONS = {
-    "daab-i18n.js": 12,
+    "daab-i18n.js": 17,
     "daab-lang-position.js": 7,
-    "daab-nav.js": 14,
-    "daab-primary-nav.js": 13,
-    "daab-breadcrumbs.js": 6,
-    "daab-section-nav.js": 7,
-    "daab-shell.js": 11,
-    "daab-search.js": 4,
+    "daab-nav.js": 17,
+    "daab-primary-nav.js": 16,
+    "daab-breadcrumbs.js": 12,
+    "daab-section-nav.js": 10,
+    "daab-shell.js": 12,
+    "daab-search.js": 5,
     "daab-mobile.js": 1,
     "daab-back-to-top.js": 2,
 }
 
 STYLE_VERSIONS = {
-    "daab-common.css": 26,
+    "daab-common.css": 35,
     "daab-mobile.css": 5,
     "daab-lang.css": 10,
-    "daab-nav-mega.css": 13,
+    "daab-nav-mega.css": 15,
+    "daab-forum-content.css": 13,
+    "daab-presentations-toc.css": 7,
 }
 
 DEPLOY_HTML_DIRS = (ROOT / "az", ROOT / "en")

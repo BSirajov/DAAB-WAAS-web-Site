@@ -22,6 +22,8 @@
     "forum-roadmap": "forumRoadmap",
     "forum-bagli-hekayeler": "forumBagliHekayeler",
     "forum-cooperation": "forumCooperation",
+    "forum-photos-gallery": "forumPhotosGallery",
+    "forum-video-gallery": "forumVideoGallery",
     "scientists-list": "scientistsList",
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",
@@ -320,7 +322,7 @@
       '<div class="nav-dropdown-panel" role="menu">' +
       dropLink(staticHref("foundation"), "foundation", "Foundation", "History and founding process", FALLBACK_ICONS.foundation) +
       dropLink(staticHref("mission"), "mission", "Mission &amp; values", "Mission, vision and academic values", FALLBACK_ICONS.mission) +
-      dropLink(staticHref("board"), "executive-board", "Executive board", "Leadership and governance structure", FALLBACK_ICONS["executive-board"]) +
+      dropLink(staticHref("board"), "executive-board", "Board of Directors", "Leadership and governance structure", FALLBACK_ICONS["executive-board"]) +
       dropLink(staticHref("charter"), "charter", "Charter", "Charter and governance rules", FALLBACK_ICONS.charter) +
       '</div></div>' +
       '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("membership") + 'Membership <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +

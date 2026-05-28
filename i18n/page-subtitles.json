@@ -35,20 +35,24 @@
       "az": "İştirakçıların Forum və Qarabağ səfəri ilə bağlı təəssüratları."
     },
     "forum-photos-gallery": {
-      "en": "Moments from the forum — exhibition, discussions, portraits, and the Karabakh visit.",
-      "az": "Forumdan anlar — sərgi, müzakirələr, portretlər və Qarabağ səfəri."
+      "en": "A photographic story of the Forum’s journey—from opening to key encounters.",
+      "az": "Forumun foto-hekayəsi — açılışdan əsas görüşlərə qədər."
+    },
+    "forum-video-gallery": {
+      "en": "Video reports and interviews published in the media on Forum 2024",
+      "az": "Forum 2024-lə bağlı mediada yayımlanan video reportajlar və müsahibələr"
     },
     "scientists-list": {
-      "en": "Quickly search forum participants by country, field, or academic rank.",
-      "az": "Forum iştirakçılarını ölkə, sahə və elmi dərəcəyə görə axtarın."
+      "en": "Explore the list of our scientists who took part in the Forum.",
+      "az": "Forumda iştirak etmiş alimlərimizin siyahısı ilə tanış olun."
     },
     "scientists-profiles": {
-      "en": "Learn more about scientists and their fields of work.",
-      "az": "Alimlər və onların fəaliyyət sahələri haqqında daha ətraflı məlumat əldə edin."
+      "en": "Learn more about our scientists and their fields of work.",
+      "az": "Alimlərimiz və onların fəaliyyət sahələri haqqında daha ətraflı məlumat əldə edin."
     },
     "executive-board": {
-      "en": "Meet the people leading and managing the Association.",
-      "az": "Birliyə rəhbərlik edən və onun fəaliyyətini idarə edən şəxslərlə tanış olun."
+      "en": "Meet the people who coordinate the Association's activities.",
+      "az": "Birliyin fəaliyyətinin koordinasiyasını həyata keçirən şəxslərlə tanış olun."
     },
     "charter": {
       "en": "The main document defining how the Association works.",

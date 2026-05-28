@@ -165,6 +165,16 @@ header.forum-hero + .daab-section-nav {
 }
 
 /* Match .btn / .btn-secondary by default; .active matches .btn-primary. */
+.daab-section-nav-icon {
+  flex-shrink: 0;
+  font-size: 1.05em;
+  line-height: 1;
+}
+
+.daab-section-nav-label {
+  min-width: 0;
+}
+
 .daab-section-nav-list a {
   display: inline-flex !important;
   align-items: center;

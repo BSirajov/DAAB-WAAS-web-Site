@@ -118,9 +118,11 @@ header.page-hero .page-hero-subtitle {
   font-family: var(--font-sans) !important;
   font-size: clamp(1rem, 1.65vw, 1.125rem);
   font-weight: 500;
+  font-style: italic;
   line-height: 1.5;
   letter-spacing: 0.01em;
   color: var(--muted-hero) !important;
+  text-align: left;
   text-wrap: pretty;
 }
 

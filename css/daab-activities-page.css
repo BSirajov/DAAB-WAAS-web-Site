@@ -699,7 +699,6 @@ li {
 
 body {
   color: var(--ink) !important;
-  background: var(--white) url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
 }
 
 .page-hero {

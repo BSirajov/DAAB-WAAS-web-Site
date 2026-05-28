@@ -48,11 +48,11 @@ HOME_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         "Aşağıdakı kartlar vasitəsilə təşkilatın missiyası, fəaliyyəti, alimlər siyahısı, idarə heyəti, nizamnamə və üzvlük şərtlərinə keçid edə bilərsiniz.",
-        "Use the cards below to explore our mission, activities, scientists directory, executive board, charter and membership terms.",
+        "Use the cards below to explore our mission, activities, scientists directory, board of directors, charter and membership terms.",
     ),
     (
         "Aşağıdakı kartlar vasitəsilə təşkilatın missiyası, fəaliyyəti, alimlər kataloqu, idarə heyəti, nizamnamə və üzvlük şərtlərinə keçid edə bilərsiniz.",
-        "Use the cards below to explore our mission, activities, scientists directory, executive board, charter and membership terms.",
+        "Use the cards below to explore our mission, activities, scientists directory, board of directors, charter and membership terms.",
     ),
     ('aria-label="Bölmələrdə axtar"', 'aria-label="Search sections"'),
     ('placeholder="Bölmələrdə axtar..."', 'placeholder="Search sections..."'),
@@ -102,7 +102,7 @@ HOME_REPLACEMENTS: list[tuple[str, str]] = [
     ("İdarə Heyəti", "Board of Directors"),
     (
         "DAAB rəhbərliyi, idarə heyəti üzvləri, bioqrafiyalar, akademik titullar və əlaqə məlumatları.",
-        "WAAS leadership, executive board members, biographies, academic titles and contact details.",
+        "WAAS leadership, Board of Directors members, biographies, academic titles and contact details.",
     ),
     ("Rəhbərlik", "Leadership"),
     ('data-title="Nizamnamə qaydalar hüquqlar vəzifələr"', 'data-title="Charter rules rights duties"'),

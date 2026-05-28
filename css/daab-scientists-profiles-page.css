@@ -13,7 +13,6 @@ html { scroll-behavior: auto; }
 
 body {
   color: var(--ink);
-  background: var(--white) url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat;
   font-family: var(--font-sans);
 }
 
@@ -359,13 +358,16 @@ a.card-name:focus-visible {
 }
 
 .bio,
+.bio-lead,
 .bullets,
 .awards-list {
   color: var(--muted);
   font-size: 13.5px;
   line-height: 1.68;
   overflow-wrap: anywhere;
-  text-align: left;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .card-bio > p.bio:first-child,

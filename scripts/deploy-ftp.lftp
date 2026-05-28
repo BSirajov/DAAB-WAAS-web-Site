@@ -1,0 +1,40 @@
+# LFTP mirror upload (alternative to deploy-ftp.sh).
+# Prefer:  ./scripts/deploy-ftp.sh  (loads scripts/deploy.env automatically)
+#
+# Manual run after editing credentials below:
+#   lftp -f scripts/deploy-ftp.lftp
+
+set cmd:fail-exit true
+set net:timeout 30
+
+# --- Edit these or use deploy-ftp.sh with scripts/deploy.env ---
+set ftp:host ftp.example.com
+set ftp:port 21
+set ftp:user your-user
+set ftp:password your-password
+set ftp:path /public_html
+
+open -u $ftp:user,$ftp:password -p $ftp:port $ftp:host
+lcd .
+cd $ftp:path
+
+mirror -R --verbose --parallel=4 \
+  --exclude-glob helpers/** \
+  --exclude-glob documents/** \
+  --exclude-glob sources/** \
+  --exclude-glob templates/** \
+  --exclude-glob data/** \
+  --exclude-glob node_modules/** \
+  --exclude-glob _archive/** \
+  --exclude-glob cv/** \
+  --exclude-glob az/application/** \
+  --exclude-glob en/application/** \
+  --exclude-glob .git/** \
+  --exclude-glob scripts/** \
+  --exclude-glob '*.py' \
+  --exclude-glob '*.md' \
+  --exclude-glob forum_2024/*.docx \
+  --exclude-glob forum_2024/*.jpg \
+  --exclude-glob images/flags/**
+
+bye

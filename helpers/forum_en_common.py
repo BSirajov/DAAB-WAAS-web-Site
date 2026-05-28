@@ -7,7 +7,7 @@ FORUM_FOOTER_EN = """<footer class="footer-pro">
 <div class="footer-grid">
 <div class="footer-col"><h4 class="footer-title">Contact</h4><div class="footer-item">✉ <a href="mailto:bilik.birlik@gmail.com">bilik.birlik@gmail.com</a></div><div class="footer-item">☎ <span>+90 555 147 46 74</span></div><div class="footer-item">🌐 <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div></div>
 <div class="footer-col"><h4 class="footer-title">Address</h4><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Pasa Sokak No:44<br/>Kadikoy, Istanbul, Turkiye</p></div>
-<div class="footer-col"><h4 class="footer-title">Leadership</h4><p class="footer-leader"><strong>Prof. Dr. Mesud Afandiyev</strong><br/>Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p></div>
+<div class="footer-col"><h4 class="footer-title">Leadership</h4><p class="footer-leader"><strong>Prof. Dr. Mesud Afandiyev</strong><br/>Chair of the WAAS Board of Directors<br/>Germany — James D. Murray Distinguished Professor</p></div>
 </div>
 </div>
 <div class="footer-bottom">© 2026 WAAS — All Rights Reserved</div>
@@ -41,9 +41,9 @@ SHELL_REPLACEMENTS: list[tuple[str, str]] = [
     ("Yaradılma tarixi və təsis prosesi", "History and founding process"),
     ("Missiya və dəyərlər", "Mission &amp; values"),
     ("Missiya, vizyon və akademik dəyərlər", "Mission, vision and academic values"),
-    ("İdarə heyəti", "Executive board"),
+    ("İdarə heyəti", "Board of Directors"),
     ("İdarə heyəti və rəhbərlik", "Leadership and governance structure"),
-    ("Executive board və rəhbərlik", "Leadership and governance structure"),
+    ("Board of Directors və rəhbərlik", "Leadership and governance structure"),
     ("Charter və idarəetmə qaydaları", "Charter and governance rules"),
     ("Nizamnamə", "Charter"),
     ("Nizamnamə və idarəetmə qaydaları", "Charter and governance rules"),
@@ -51,7 +51,7 @@ SHELL_REPLACEMENTS: list[tuple[str, str]] = [
     ('aria-label="Səhifə yolu"', 'aria-label="Breadcrumb"'),
     ("— DAAB", "— WAAS"),
     ("Dünya Azərbaycanlı Alimlər Birliyi", "World Association of Azerbaijani Scientists"),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Board of Directors"),
     ("Prof. Dr. Məsud Əfəndiyev", "Prof. Dr. Mesud Afandiyev"),
     ("Gazi Muhtar Paşa Sokak No:44", "Gazi Muhtar Pasa Sokak No:44"),
     ("Kadıköy, İstanbul, Türkiyə", "Kadikoy, Istanbul, Türkiye"),

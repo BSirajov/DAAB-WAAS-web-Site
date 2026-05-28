@@ -226,7 +226,27 @@ def extract_articles(raw: str) -> list[str]:
     return []
 
 
-def build_toc(articles_html: list[str]) -> str:
+def build_toc(articles_html: list[str], page_id: str = "") -> str:
+    if page_id == "forum-2024-presentations":
+        from _refresh_presentations_toc import photo_src, toc_item
+
+        items: list[str] = []
+        for block in articles_html:
+            m = re.search(r'id="([^"]+)"', block)
+            t = re.search(r'class="card-title">(.*?)</h2>', block, re.S)
+            lead = re.search(r'class="card-lead">(.*?)</p>', block, re.S)
+            if not m or not t:
+                continue
+            aid = m.group(1)
+            author = BeautifulSoup(t.group(1), "html.parser").get_text(" ", strip=True)
+            pres_title = (
+                BeautifulSoup(lead.group(1), "html.parser").get_text(" ", strip=True)
+                if lead
+                else author
+            )
+            items.append(toc_item(aid, author, pres_title, photo_src(aid)))
+        return "\n".join(items)
+
     items: list[str] = []
     for block in articles_html:
         m = re.search(r'id="([^"]+)"', block)
@@ -276,7 +296,7 @@ def build_page(template_path: Path, out_path: Path, meta: dict, page_id: str, ar
     if hero_panel:
         hero_panel["aria-label"] = meta["panel_title"]
 
-    toc_items = build_toc(articles)
+    toc_items = build_toc(articles, page_id=page_id)
     widget_head_span = soup.select_one(".sidebar-widget .widget-head span")
     if widget_head_span:
         widget_head_span.string = meta["sidebar_label"]

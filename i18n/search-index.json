@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated": "2026-05-27",
-  "entryCount": 474,
+  "generated": "2026-05-28",
+  "entryCount": 476,
   "entries": [
     {
       "id": "page-home-az",
@@ -262,6 +262,32 @@
       "icon": "📷",
       "boost": 12,
       "norm": "photos gallery waas photo gallery from the first forum of azerbaijani scientists living abroad september 2024."
+    },
+    {
+      "id": "page-forum-video-gallery-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "forum-video-gallery",
+      "anchor": "",
+      "title": "Video qalereya — DAAB",
+      "summary": "Forum 2024 (Bakı, sentyabr) haqqında 60-dan çox televiziya və internet media reportajı və müsahibəsi — Diaspor TV, AzTV, İctimai və digər kanallar.",
+      "tag": "Səhifə",
+      "icon": "📹",
+      "boost": 12,
+      "norm": "video qalereya daab forum 2024 baki sentyabr haqqinda 60-dan c ox televiziya ve internet media reportaji ve mu sahibesi diaspor tv aztv i ctimai ve diger kanallar."
+    },
+    {
+      "id": "page-forum-video-gallery-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "forum-video-gallery",
+      "anchor": "",
+      "title": "Video gallery — WAAS",
+      "summary": "60+ TV and online reports on Forum 2024 (Baku, September)—coverage from Diaspor TV, AzTV, Public TV, APA and other outlets.",
+      "tag": "Page",
+      "icon": "📹",
+      "boost": 12,
+      "norm": "video gallery waas 60 tv and online reports on forum 2024 baku september coverage from diaspor tv aztv public tv apa and other outlets."
     },
     {
       "id": "page-scientists-list-az",
@@ -651,7 +677,7 @@
       "tag": "Naviqasiya",
       "icon": "✒️",
       "boost": 11,
-      "norm": "niye u zv olmalisiniz u zvlu yu n faydalari ve deyer teklifi u zvlu k"
+      "norm": "niye u zv olmali u zvlu yu n faydalari ve deyer teklifi u zvlu k"
     },
     {
       "id": "nav-membership-az",
@@ -2259,11 +2285,11 @@
       "pageId": "forum-official",
       "anchor": "alimlerimiz",
       "title": "ADDRESS BY OUR SCIENTISTS TO HIS EXCELLENCY MR ILHAM ALIYEV, PRESIDENT OF THE REPUBLIC OF AZERBAIJAN",
-      "summary": "The address was delivered by Mesud Afandiyev, Chair of the Executive Board of the World Association of Azerbaijani Scientists.",
+      "summary": "The address was delivered by Mesud Afandiyev, Chair of the World Association of Azerbaijani Scientists.",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "address by our scientists to his excellency mr ilham aliyev president of the republic of azerbaijan the address was delivered by mesud afandiyev chair of the executive board of the world association of azerbaijani scientists."
+      "norm": "address by our scientists to his excellency mr ilham aliyev president of the republic of azerbaijan the address was delivered by mesud afandiyev chair of the board of directors of the world association of azerbaijani scientists."
     },
     {
       "id": "section-forum-program-gun-9-az",
@@ -2662,11 +2688,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Məsud Əfəndiyev, Prof. Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Şəxs",
       "icon": "🎓",
       "boost": 7,
-      "norm": "mesud efendiyev prof. dr. executive board"
+      "norm": "mesud efendiyev prof. dr. board of directors"
     },
     {
       "id": "person-board-bextiyar-siracov-dr.-az",
@@ -2675,11 +2701,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Bəxtiyar Siracov, Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Şəxs",
       "icon": "🎓",
       "boost": 7,
-      "norm": "bextiyar siracov dr. executive board"
+      "norm": "bextiyar siracov dr. board of directors"
     },
     {
       "id": "person-board-seymur-nesirov-dr.-az",
@@ -2688,11 +2714,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Seymur Nəsirov, Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Şəxs",
       "icon": "🎓",
       "boost": 7,
-      "norm": "seymur nesirov dr. executive board"
+      "norm": "seymur nesirov dr. board of directors"
     },
     {
       "id": "person-board-emil-ehmedov-prof.-dr.-az",
@@ -2701,11 +2727,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Emil Əhmədov, Prof. Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Şəxs",
       "icon": "🎓",
       "boost": 7,
-      "norm": "emil ehmedov prof. dr. executive board"
+      "norm": "emil ehmedov prof. dr. board of directors"
     },
     {
       "id": "person-board-nigar-mesumova-dr.-az",
@@ -2714,11 +2740,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Nigar Məsumova, Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Şəxs",
       "icon": "🎓",
       "boost": 7,
-      "norm": "nigar mesumova dr. executive board"
+      "norm": "nigar mesumova dr. board of directors"
     },
     {
       "id": "person-board-sevinc-memmedova-dr.-az",
@@ -2727,11 +2753,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Sevinc Məmmədova, Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Şəxs",
       "icon": "🎓",
       "boost": 7,
-      "norm": "sevinc memmedova dr. executive board"
+      "norm": "sevinc memmedova dr. board of directors"
     },
     {
       "id": "person-board-seadet-kerimi-prof.-dr.-az",
@@ -2740,11 +2766,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Səadət Kərimi, Prof. Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Şəxs",
       "icon": "🎓",
       "boost": 7,
-      "norm": "seadet kerimi prof. dr. executive board"
+      "norm": "seadet kerimi prof. dr. board of directors"
     },
     {
       "id": "person-board-teymur-rzayev-prof.-dr.-az",
@@ -2753,11 +2779,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Teymur Rzayev, Prof. Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Şəxs",
       "icon": "🎓",
       "boost": 7,
-      "norm": "teymur rzayev prof. dr. executive board"
+      "norm": "teymur rzayev prof. dr. board of directors"
     },
     {
       "id": "person-board-tog-rul-i-smayil-prof.-dr.-az",
@@ -2766,11 +2792,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Toğrul İsmayıl, Prof. Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Şəxs",
       "icon": "🎓",
       "boost": 7,
-      "norm": "tog rul i smayil prof. dr. executive board"
+      "norm": "tog rul i smayil prof. dr. board of directors"
     },
     {
       "id": "person-board-tog-rul-kerimov-dr.-az",
@@ -2779,11 +2805,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Toğrul Kərimov, Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Şəxs",
       "icon": "🎓",
       "boost": 7,
-      "norm": "tog rul kerimov dr. executive board"
+      "norm": "tog rul kerimov dr. board of directors"
     },
     {
       "id": "person-board-yulduz-rehimov-prof.-dr.-az",
@@ -2792,11 +2818,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Yulduz Rəhimov, Prof. Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Şəxs",
       "icon": "🎓",
       "boost": 7,
-      "norm": "yulduz rehimov prof. dr. executive board"
+      "norm": "yulduz rehimov prof. dr. board of directors"
     },
     {
       "id": "person-board-messoud-efendiyev-prof.-dr.-en",
@@ -2805,11 +2831,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Messoud Efendiyev, Prof. Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Person",
       "icon": "🎓",
       "boost": 7,
-      "norm": "messoud efendiyev prof. dr. executive board"
+      "norm": "messoud efendiyev prof. dr. board of directors"
     },
     {
       "id": "person-board-bakhtiyar-sirajov-dr.-en",
@@ -2818,11 +2844,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Bakhtiyar Sirajov, Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Person",
       "icon": "🎓",
       "boost": 7,
-      "norm": "bakhtiyar sirajov dr. executive board"
+      "norm": "bakhtiyar sirajov dr. board of directors"
     },
     {
       "id": "person-board-seymur-nasirov-dr.-en",
@@ -2831,11 +2857,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Seymur Nasirov, Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Person",
       "icon": "🎓",
       "boost": 7,
-      "norm": "seymur nasirov dr. executive board"
+      "norm": "seymur nasirov dr. board of directors"
     },
     {
       "id": "person-board-emil-ahmadov-prof.-dr.-en",
@@ -2844,11 +2870,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Emil Ahmadov, Prof. Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Person",
       "icon": "🎓",
       "boost": 7,
-      "norm": "emil ahmadov prof. dr. executive board"
+      "norm": "emil ahmadov prof. dr. board of directors"
     },
     {
       "id": "person-board-nigar-masumova-dr.-en",
@@ -2857,11 +2883,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Nigar Masumova, Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Person",
       "icon": "🎓",
       "boost": 7,
-      "norm": "nigar masumova dr. executive board"
+      "norm": "nigar masumova dr. board of directors"
     },
     {
       "id": "person-board-sevinj-mammadova-dr.-en",
@@ -2870,11 +2896,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Sevinj Mammadova, Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Person",
       "icon": "🎓",
       "boost": 7,
-      "norm": "sevinj mammadova dr. executive board"
+      "norm": "sevinj mammadova dr. board of directors"
     },
     {
       "id": "person-board-saadat-karimi-prof.-dr.-en",
@@ -2883,11 +2909,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Saadat Karimi, Prof. Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Person",
       "icon": "🎓",
       "boost": 7,
-      "norm": "saadat karimi prof. dr. executive board"
+      "norm": "saadat karimi prof. dr. board of directors"
     },
     {
       "id": "person-board-teymur-rzayev-prof.-dr.-en",
@@ -2896,11 +2922,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Teymur Rzayev, Prof. Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Person",
       "icon": "🎓",
       "boost": 7,
-      "norm": "teymur rzayev prof. dr. executive board"
+      "norm": "teymur rzayev prof. dr. board of directors"
     },
     {
       "id": "person-board-togrul-ismayil-prof.-dr.-en",
@@ -2909,11 +2935,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Togrul Ismayil, Prof. Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Person",
       "icon": "🎓",
       "boost": 7,
-      "norm": "togrul ismayil prof. dr. executive board"
+      "norm": "togrul ismayil prof. dr. board of directors"
     },
     {
       "id": "person-board-togrul-karimov-dr.-en",
@@ -2922,11 +2948,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Togrul Karimov, Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Person",
       "icon": "🎓",
       "boost": 7,
-      "norm": "togrul karimov dr. executive board"
+      "norm": "togrul karimov dr. board of directors"
     },
     {
       "id": "person-board-yulduz-rahimov-prof.-dr.-en",
@@ -2935,11 +2961,11 @@
       "pageId": "executive-board",
       "anchor": "",
       "title": "Yulduz Rahimov, Prof. Dr.",
-      "summary": "Executive Board",
+      "summary": "Board of Directors",
       "tag": "Person",
       "icon": "🎓",
       "boost": 7,
-      "norm": "yulduz rahimov prof. dr. executive board"
+      "norm": "yulduz rahimov prof. dr. board of directors"
     },
     {
       "id": "section-charter-section-01-az",

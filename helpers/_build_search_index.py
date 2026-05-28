@@ -49,6 +49,8 @@ PAGE_LABEL_KEYS = {
     "forum-roadmap": "forumRoadmap",
     "forum-bagli-hekayeler": "forumBagliHekayeler",
     "forum-cooperation": "forumCooperation",
+    "forum-photos-gallery": "forumPhotosGallery",
+    "forum-video-gallery": "forumVideoGallery",
     "scientists-list": "scientistsList",
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",

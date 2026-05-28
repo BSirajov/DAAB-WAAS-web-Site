@@ -18,6 +18,12 @@ MAIN_PAGES: list[str] = []
 # Gateway pages — language picker only; no full nav shell required.
 GATEWAY_PAGES = {"index.html", "404.html"}
 
+# Build sources for application/membership_value embeds — not deployed as-is.
+BUILD_SOURCE_SUFFIXES = (
+    "/application/application.html",
+    "/application/membership_value.html",
+)
+
 REQUIRED_SNIPPETS = {
     "daab-common.css": "css/daab-common.css",
     "daab-mobile.css": "css/daab-mobile.css",
@@ -116,9 +122,12 @@ def main() -> int:
     for page in pages:
         text = page.read_text(encoding="utf-8", errors="replace")
 
+        rel_posix = page.relative_to(ROOT).as_posix()
+        is_build_source = rel_posix.endswith(BUILD_SOURCE_SUFFIXES)
         check_snippets = (
             (page.name in MAIN_PAGES or page in BILINGUAL_PAGES)
             and page.name not in GATEWAY_PAGES
+            and not is_build_source
         )
         if check_snippets:
             for label, snippet in REQUIRED_SNIPPETS.items():

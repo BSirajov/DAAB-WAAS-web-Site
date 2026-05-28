@@ -76,9 +76,9 @@ def shell_head() -> str:
 <script src="{ASSET}js/daab-i18n.js?v=13" defer></script>
 <script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
 <script src="{ASSET}js/daab-nav.js?v=16" defer></script>
-<script src="{ASSET}js/daab-primary-nav.js?v=14" defer></script>
+<script src="{ASSET}js/daab-primary-nav.js?v=16" defer></script>
 <script src="{ASSET}js/daab-breadcrumbs.js?v=6" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v=7" defer></script>
+<script src="{ASSET}js/daab-section-nav.js?v=9" defer></script>
 <script src="{ASSET}js/daab-shell.js?v=11" defer></script>
 <script src="{ASSET}js/daab-search.js?v=4" defer></script>
 <script src="{ASSET}js/daab-membership-application.js?v=1" defer></script>

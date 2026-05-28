@@ -199,7 +199,7 @@ def page_html(data: dict, *, lang: str) -> str:
 <script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
 <script src="{ASSET}js/daab-nav.js?v=10" defer></script>
 <script src="{ASSET}js/daab-primary-nav.js?v=10" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v=7" defer></script>
+<script src="{ASSET}js/daab-section-nav.js?v=9" defer></script>
 <script src="{ASSET}js/daab-shell.js?v=11" defer></script>
 <script src="{ASSET}js/daab-search.js?v=4" defer></script>
 </head>

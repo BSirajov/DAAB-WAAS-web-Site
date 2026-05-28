@@ -15,6 +15,7 @@ desktop.ini
 
 # Local / non-deploy
 _pdf_extract.txt
+scripts/deploy.env
 
 # Accidental duplicates (use css/ and js/ only)
 /daab-common.css

@@ -83,7 +83,7 @@ def patch_publish_py(path: Path) -> bool:
                     line = new_line
         elif "en_nav_html" in "".join(out[-5:]) or "en_footer_html" in line:
             pass
-        if "DAAB home" in line or "DAAB Logo" in line or "DAAB Executive Board" in line or "DAAB / WAAS" in line:
+        if "DAAB home" in line or "DAAB Logo" in line or "DAAB Board of Directors" in line or "DAAB / WAAS" in line:
             new_line = apply_waas(line)
             if new_line != line:
                 changed = True
@@ -106,7 +106,7 @@ def patch_ui_json(path: Path) -> bool:
     # Only patch en gateway title and nav/footer en keys
     updated = text.replace('"title": "DAAB — Choose language"', '"title": "WAAS — Choose language"')
     updated = updated.replace('"ariaHome": "DAAB home"', '"ariaHome": "WAAS home"')
-    updated = updated.replace('"chairRole": "Chair of the DAAB Executive Board"', '"chairRole": "Chair of the WAAS Executive Board"')
+    updated = updated.replace('"chairRole": "Chair of the DAAB Board of Directors"', '"chairRole": "Chair of the WAAS Board of Directors"')
     if updated != text:
         path.write_text(updated, encoding="utf-8", newline="\n")
         return True

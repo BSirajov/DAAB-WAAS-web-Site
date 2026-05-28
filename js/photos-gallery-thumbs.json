@@ -569,6 +569,11 @@
         "w": 420,
         "h": 280
       },
+      "opening-day-18-1.jpg": {
+        "thumb": "_thumbs/2.OpeningDay/opening-day-18-1.jpg",
+        "w": 420,
+        "h": 280
+      },
       "opening-day-18.jpg": {
         "thumb": "_thumbs/2.OpeningDay/opening-day-18.jpg",
         "w": 420,
@@ -577,10 +582,10 @@
       "opening-day-19.jpg": {
         "thumb": "_thumbs/2.OpeningDay/opening-day-19.jpg",
         "w": 420,
-        "h": 280
+        "h": 273
       },
-      "opening-day-20.jpg": {
-        "thumb": "_thumbs/2.OpeningDay/opening-day-20.jpg",
+      "opening-day-20-1.jpg": {
+        "thumb": "_thumbs/2.OpeningDay/opening-day-20-1.jpg",
         "w": 420,
         "h": 280
       },
@@ -736,11 +741,6 @@
       },
       "opening-day-51.jpg": {
         "thumb": "_thumbs/2.OpeningDay/opening-day-51.jpg",
-        "w": 420,
-        "h": 280
-      },
-      "opening-day-52.jpg": {
-        "thumb": "_thumbs/2.OpeningDay/opening-day-52.jpg",
         "w": 420,
         "h": 280
       },

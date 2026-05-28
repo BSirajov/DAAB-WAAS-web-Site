@@ -18,6 +18,8 @@
     "forum-official": "forumOfficial",
     "forum-program": "forumProgram",
     "forum-impressions": "forumImpressions",
+    "forum-photos-gallery": "forumPhotosGallery",
+    "forum-video-gallery": "forumVideoGallery",
     "scientists-list": "scientistsList",
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",
@@ -73,6 +75,18 @@
         id: "forum-impressions",
         az: "az/forum/2024/impressions.html",
         en: "en/forum/2024/impressions.html",
+        navParent: "forum"
+      },
+      {
+        id: "forum-photos-gallery",
+        az: "az/forum/2024/photos_gallery.html",
+        en: "en/forum/2024/photos_gallery.html",
+        navParent: "forum"
+      },
+      {
+        id: "forum-video-gallery",
+        az: "az/forum/2024/video_gallery.html",
+        en: "en/forum/2024/video_gallery.html",
         navParent: "forum"
       },
       {
@@ -137,6 +151,7 @@
         forum2024: "Forum 2024",
         forumOfficial: "Rəsmi müraciətlər",
         forumProgram: "Forumun proqramı",
+        forumPhotosGallery: "Foto qalereya",
         scientistsList: "Siyahı",
         scientistsProfiles: "Profillər",
         executiveBoard: "İdarə heyəti",
@@ -153,9 +168,11 @@
         activities: "Activities",
         activitiesNews: "News",
         forum2024: "Forum 2024",
+        forumPhotosGallery: "Photo gallery",
+        forumVideoGallery: "Video gallery",
         scientistsList: "Directory",
         scientistsProfiles: "Profiles",
-        executiveBoard: "Executive board",
+        executiveBoard: "Board of Directors",
         charter: "Charter",
         membership: "Membership",
         membershipWhy: "Why become a member",
@@ -260,6 +277,36 @@
     }
   }
 
+  function staticBreadcrumbsNode() {
+    // Some pages ship their own breadcrumb markup (e.g. forum pages).
+    // If present, we should not inject a second breadcrumb trail.
+    var el = document.querySelector(".breadcrumbs");
+    if (!el) return null;
+    if (el.id === "daab-breadcrumbs") return null;
+    if (el.classList && el.classList.contains("daab-breadcrumbs")) return null;
+    return el;
+  }
+
+  function adoptStaticBreadcrumbs() {
+    var el = staticBreadcrumbsNode();
+    if (!el) return false;
+    // Remove any previously injected crumbs to avoid duplicates.
+    removeBreadcrumbs();
+    breadcrumbsInserted = true;
+    function sync() {
+      var h = Math.ceil(el.getBoundingClientRect().height);
+      document.documentElement.style.setProperty("--daab-breadcrumbs-height", h > 0 ? h + "px" : "0px");
+    }
+    sync();
+    requestAnimationFrame(sync);
+    if (typeof ResizeObserver !== "undefined") {
+      var ro = new ResizeObserver(sync);
+      ro.observe(el);
+    }
+    window.addEventListener("resize", sync, { passive: true });
+    return true;
+  }
+
   function findCurrentPage(I18N, routes) {
     if (I18N && typeof I18N.findPage === "function") {
       var found = I18N.findPage(routes);
@@ -298,7 +345,9 @@
       });
     }
 
-    if (page.navParent) {
+    // For forum pages we already insert the Forum 2024 hub crumb below; adding a generic
+    // "forum" group label would be redundant and confusing.
+    if (page.navParent && page.navParent !== "forum") {
       var groupKey = GROUP_LABEL_KEYS[page.navParent];
       var landingId = sectionLanding(navDef, page.navParent);
       var landing = landingId ? pageById(routes, landingId) : null;
@@ -394,6 +443,7 @@
   function mount() {
     if (breadcrumbsInserted || mountInFlight) return;
     if (document.body && document.body.classList.contains("daab-gateway")) return;
+    if (adoptStaticBreadcrumbs()) return;
     if (adoptExistingBreadcrumbs()) return;
 
     var I18N = getI18n();
@@ -443,6 +493,7 @@
 
   function boot(attempt) {
     if (breadcrumbsInserted) return;
+    if (adoptStaticBreadcrumbs()) return;
     if (adoptExistingBreadcrumbs()) return;
     if (getI18n()) {
       mount();

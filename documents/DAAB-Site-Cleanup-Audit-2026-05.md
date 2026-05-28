@@ -12,7 +12,8 @@ This document records a full-repository technical review of the static DAAB/WAAS
 | Membership section pills (raw page IDs) | Broken labels on several pages | Fixed via `daab-section-nav.js` + static HTML on membership cluster |
 | Shared JS/CSS cache versions | Mixed `?v=4`–`v=7` across pages | Unified on deployable `az/` and `en/` pages (canonical versions from `en/application.html`) |
 | Site search index nav titles | Raw `membership-value` / `membership-application` | Rebuilt with human labels |
-| Prototype HTML under `*/application/` | Expected warnings (not deployed) | Unchanged (build sources only) |
+| Prototype HTML under `*/application/` | Expected warnings (not deployed) | Excluded from validator shell checks |
+| Forum shared CSS (`daab-forum-content.css`) | Broken selectors for photos/video gallery | **Repaired**; `?v=5` on forum pages |
 
 **Automated validation:** `python helpers/_validate_site.py` → **OK — no broken local paths detected.**
 
@@ -97,14 +98,28 @@ This document records a full-repository technical review of the static DAAB/WAAS
 
 ## Remaining warnings (expected, non-blocking)
 
-`_validate_site.py` reports **16 warnings** for prototype files (not shipped):
+Build-source HTML under `az/application/` and `en/application/` is **excluded** from shell snippet checks in `_validate_site.py` (May 2026). These files are **source/mock** pages for `helpers/_build_*_application_page.py` and `_build_membership_value_page.py`. They intentionally omit the full DAAB shell. **Do not publish** them to production.
 
-- `az/application/application.html`
-- `az/application/membership_value.html`
-- `en/application/application.html`
-- `en/application/membership_value.html`
+---
 
-These are **source/mock** pages for `helpers/_build_*_application_page.py` and `_build_membership_value_page.py`. They intentionally omit the full DAAB shell. **Do not publish** them to production.
+## Full-refactor pass (May 2026 — scoped)
+
+A site-wide “remove every unused CSS class / JS function” pass was **not** automated: the deployable surface is ~200 HTML/CSS/JS files with shared shells, inline legacy styles on some pages, and builder-generated fragments. Doing that safely requires dedicated tooling (coverage against live DOM per page) and risks breaking forum, scientists, and application flows.
+
+**Completed in this pass:**
+
+| Item | Action |
+|------|--------|
+| `css/daab-forum-content.css` | Repaired **51+** broken selector groups where `forum-photos-gallery` / `forum-video-gallery` lacked descendant suffixes; deduplicated corrupted `.widget-head` and `scroll-behavior` blocks (`helpers/_fix_forum_css_pairs.py` + manual edits). Cache bumped to `?v=5` on all `az/forum/` and `en/forum/` pages. |
+| `helpers/_tmp_video_gallery.html` | **Removed** (~305 KB scratch file; not referenced). |
+| `helpers/_validate_site.py` | Skips build sources under `*/application/*.html` so validation reports **0 warnings** for deployable pages only. |
+
+**Still recommended (manual / scripted follow-up):**
+
+- Unused CSS/JS audit per page (no project-wide dead-code scanner yet).
+- `_archive/`, `sources/` — keep out of deploy; prune only after confirming no external links.
+- Harmonize mixed `?v=` on non-forum pages when those assets change.
+- Keyboard + mobile QA checklist below (unchanged).
 
 ---
 
@@ -187,6 +202,7 @@ Not executed in this automated pass. Before release, verify on:
 | `helpers/_build_search_index.py` | Rebuild search after route/label changes |
 | `helpers/_sync_primary_nav.py` | Updated version constants |
 | `helpers/_build_membership_value_page.py` | Emits section nav + `?v=7` |
+| `helpers/_fix_forum_css_pairs.py` | Repair `forum-photos-gallery` / `forum-video-gallery` selector suffixes in `daab-forum-content.css` |
 
 **Standard post-change workflow:**
 
@@ -221,5 +237,7 @@ python helpers/_build_search_index.py   # if routes/titles changed
 ## Summary for stakeholders
 
 The site is **structurally sound** for static hosting: broken image links on Foundation pages are repaired, membership navigation is labeled correctly in both languages, and shared scripts use consistent cache versions so browsers load the latest nav behavior. Remaining work is primarily **manual cross-device QA** and optional copy harmonization—not blocking technical debt for deployment.
+
+**Work order:** See `documents/DAAB-Site-Next-Steps.md` for the phased plan (baseline → smoke test → copy → scripts → CSS → dead code → release).
 
 *Audit and fixes: May 2026. Re-validate with `python helpers/_validate_site.py` after any HTML/asset change.*

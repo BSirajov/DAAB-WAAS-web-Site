@@ -1,5 +1,6 @@
 /* === DAAB SHARED DESIGN SYSTEM === */
 @import url("daab-tokens.css");
+@import url("daab-site-background.css");
 
 * {
   box-sizing: border-box;
@@ -15,7 +16,6 @@ body {
   min-height: 100vh;
   overflow-x: clip;
   color: var(--ink);
-  background: var(--white) url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat;
   font-family: var(--font-sans);
   line-height: 1.62;
 }
@@ -73,6 +73,21 @@ h3,
   font-weight: 400;
   line-height: 1.42;
   color: var(--muted-hero) !important;
+}
+
+/* Page subtitle under the main hero title (shared across all pages) */
+.page-hero-subtitle {
+  margin: 0.35rem 0 0.85rem;
+  max-width: 36rem;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(1rem, 1.65vw, 1.125rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--muted-hero) !important;
+  text-align: left;
+  text-wrap: pretty;
 }
 
 .shell,

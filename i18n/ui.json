@@ -91,7 +91,8 @@
       "forumRoadmap": "Strateji yol xəritəsi",
       "forumBagliHekayeler": "Forumla bağlı hekayələr",
       "forumCooperation": "Töhfələr və əməkdaşlıq",
-      "forumPhotosGallery": "Foto qalereya"
+      "forumPhotosGallery": "Foto qalereya",
+      "forumVideoGallery": "Video qalereya"
     },
     "en": {
       "ariaMain": "Main navigation",
@@ -133,7 +134,8 @@
       "forumRoadmap": "Strategic roadmap",
       "forumBagliHekayeler": "Stories of the forum",
       "forumCooperation": "Contributions and cooperation",
-      "forumPhotosGallery": "Photos gallery"
+      "forumPhotosGallery": "Photo gallery",
+      "forumVideoGallery": "Video gallery"
     }
   },
   "navIcons": {
@@ -141,6 +143,7 @@
     "activities": "📰",
     "activitiesNews": "📰",
     "forum2024": "🎤",
+    "forum-2024": "🎤",
     "forum-official": "🏛️",
     "forum-program": "📅",
     "forum-2024-presentations": "📊",
@@ -160,7 +163,8 @@
     "forum-roadmap": "🗺️",
     "forum-bagli-hekayeler": "📖",
     "forum-cooperation": "🤝",
-    "forum-photos-gallery": "📷"
+    "forum-photos-gallery": "📷",
+    "forum-video-gallery": "📹"
   },
   "breadcrumbs": {
     "az": {

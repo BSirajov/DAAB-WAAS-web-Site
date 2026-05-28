@@ -24,6 +24,7 @@
     "forum-bagli-hekayeler": "forumBagliHekayeler",
     "forum-cooperation": "forumCooperation",
     "forum-photos-gallery": "forumPhotosGallery",
+    "forum-video-gallery": "forumVideoGallery",
     "scientists-list": "scientistsList",
     "scientists-profiles": "scientistsProfiles",
     membership: "membershipTerms",
@@ -98,6 +99,13 @@
         navParent: "forum"
       },
       {
+        id: "forum-video-gallery",
+        az: "az/forum/2024/video_gallery.html",
+        en: "en/forum/2024/video_gallery.html",
+        navGroup: "forum",
+        navParent: "forum"
+      },
+      {
         id: "forum-roadmap",
         az: "az/forum/2024/roadmap.html",
         en: "en/forum/2024/roadmap.html",
@@ -163,14 +171,41 @@
         aria: "Bu bölmədə",
         aboutTitle: "Haqqımızda",
         scientistsTitle: "Alimlərimiz",
+        activitiesTitle: "Fəaliyyətimiz",
+        forumTitle: "Forum 2024",
         membershipTitle: "Üzvlük"
       },
       en: {
         aria: "In this section",
         aboutTitle: "About us",
         scientistsTitle: "Scientists",
+        activitiesTitle: "Activities",
+        forumTitle: "Forum 2024",
         membershipTitle: "Membership"
       }
+    },
+    navIcons: {
+      "forum-2024": "🎤",
+      "forum-official": "🏛️",
+      "forum-program": "📅",
+      "forum-2024-presentations": "📊",
+      "forum-impressions": "💬",
+      "forum-roadmap": "🗺️",
+      "forum-bagli-hekayeler": "📖",
+      "forum-cooperation": "🤝",
+      "forum-photos-gallery": "📷",
+      "forum-video-gallery": "📹",
+      activities: "📰",
+      activitiesNews: "📰",
+      foundation: "🏛️",
+      mission: "💎",
+      "executive-board": "🎓",
+      charter: "📜",
+      "scientists-list": "📋",
+      "scientists-profiles": "👤",
+      membershipWhy: "💡",
+      membershipTerms: "✒️",
+      membershipJoin: "📝"
     },
     nav: {
       az: {
@@ -188,6 +223,7 @@
         forumBagliHekayeler: "Forumla bağlı hekayələr",
         forumCooperation: "Töhfələr və əməkdaşlıq",
         forumPhotosGallery: "Foto qalereya",
+        forumVideoGallery: "Video qalereya",
         scientistsList: "Siyahı",
         scientistsProfiles: "Profillər",
         membershipWhy: "Niyə üzv olmalı",
@@ -197,7 +233,7 @@
       en: {
         foundation: "Foundation",
         mission: "Mission & values",
-        executiveBoard: "Executive board",
+        executiveBoard: "Board of Directors",
         charter: "Charter",
         activitiesNews: "News",
         forum2024: "Forum 2024",
@@ -208,7 +244,8 @@
         forumRoadmap: "Strategic roadmap",
         forumBagliHekayeler: "Stories of the forum",
         forumCooperation: "Contributions and cooperation",
-        forumPhotosGallery: "Photos gallery",
+        forumPhotosGallery: "Photo gallery",
+        forumVideoGallery: "Video gallery",
         scientistsList: "Directory",
         scientistsProfiles: "Profiles",
         membershipWhy: "Why become a member",
@@ -241,6 +278,7 @@
           "forum-2024-presentations",
           "forum-impressions",
           "forum-photos-gallery",
+          "forum-video-gallery",
           "forum-roadmap",
           "forum-bagli-hekayeler",
           "forum-cooperation"
@@ -276,6 +314,14 @@
       target = target.slice(prefix.length);
     }
     return target;
+  }
+
+  function sectionNavIcon(ui, pageId) {
+    var icons = (ui && ui.navIcons) || {};
+    if (icons[pageId]) return icons[pageId];
+    var labelKey = PAGE_LABEL_KEYS[pageId];
+    if (labelKey && icons[labelKey]) return icons[labelKey];
+    return "";
   }
 
   function findCurrentPage(I18N, routes) {
@@ -397,10 +443,22 @@
           a.href = pageHref(I18N, p, lang);
           var key = PAGE_LABEL_KEYS[pid];
           var fallbackNav = FALLBACK_UI.nav[lang] || {};
-          a.textContent =
+          var label =
             (key && navLabels[key]) ||
             (key && fallbackNav[key]) ||
             pid;
+          var icon = sectionNavIcon(ui, pid);
+          if (icon) {
+            var iconEl = document.createElement("span");
+            iconEl.className = "daab-section-nav-icon";
+            iconEl.setAttribute("aria-hidden", "true");
+            iconEl.textContent = icon;
+            a.appendChild(iconEl);
+          }
+          var labelEl = document.createElement("span");
+          labelEl.className = "daab-section-nav-label";
+          labelEl.textContent = label;
+          a.appendChild(labelEl);
           if (p.id === page.id) {
             a.classList.add("active");
             a.setAttribute("aria-current", "page");
