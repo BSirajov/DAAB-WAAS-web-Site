@@ -61,6 +61,7 @@ NAV_AZ = (
         ("membership_value.html", "membership-value", "Niyə üzv olmalı", "Üzvlüyün faydaları və dəyər təklifi"),
         ("membership.html", "membership", "Üzvlük şərtləri", "Üzvlük qaydaları, ödəniş və müraciət məlumatları"),
         ("application.html", "membership-application", "Bizə qoşulun", "Onlayn üzvlük müraciət forması"),
+        ("membership_flyer.html", "membership-flyer", "Flyer paylaş", "Potensial üzvlər üçün çap oluna bilən flyer"),
     ])
     + "</div></div>"
 )
@@ -105,6 +106,7 @@ NAV_EN = (
         ("membership_value.html", "membership-value", "Why become a member", "Benefits and value of WAAS membership"),
         ("membership.html", "membership", "Membership terms", "Membership rules, fees and application information"),
         ("application.html", "membership-application", "Join us", "Online membership application form"),
+        ("membership_flyer.html", "membership-flyer", "Share Flyer", "Printable flyer to share with potential members"),
     ])
     + "</div></div>"
 )
@@ -121,7 +123,9 @@ NAV_SCI_AZ = NAV_AZ.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="forum/2024/index.html"', 'href="../forum/2024/index.html"'
 ).replace('href="membership.html"', 'href="../membership.html"').replace(
     'href="membership_value.html"', 'href="../membership_value.html"'
-).replace('href="application.html"', 'href="../application.html"')
+).replace('href="application.html"', 'href="../application.html"').replace(
+    'href="membership_flyer.html"', 'href="../membership_flyer.html"'
+)
 
 FORUM_PREFIX_REPLACES = [
     ('href="index.html"', 'href="../../index.html"'),
@@ -135,6 +139,7 @@ FORUM_PREFIX_REPLACES = [
     ('href="membership.html"', 'href="../../membership.html"'),
     ('href="membership_value.html"', 'href="../../membership_value.html"'),
     ('href="application.html"', 'href="../../application.html"'),
+    ('href="membership_flyer.html"', 'href="../../membership_flyer.html"'),
 ]
 
 
@@ -195,7 +200,9 @@ NAV_SCI_EN = NAV_EN.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="forum/2024/index.html"', 'href="../forum/2024/index.html"'
 ).replace('href="membership.html"', 'href="../membership.html"').replace(
     'href="membership_value.html"', 'href="../membership_value.html"'
-).replace('href="application.html"', 'href="../application.html"')
+).replace('href="application.html"', 'href="../application.html"').replace(
+    'href="membership_flyer.html"', 'href="../membership_flyer.html"'
+)
 
 PLACEHOLDER_RE = re.compile(
     r'(<div class="nav-menu" id="primaryNavMenu"[^>]*>)(.*?)(</div>\s*</div>\s*</nav>)',

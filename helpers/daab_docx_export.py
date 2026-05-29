@@ -148,6 +148,92 @@ def shade_cell(cell, fill_hex: str) -> None:
     cell._tc.get_or_add_tcPr().append(shading)
 
 
+def add_floating_picture(
+    paragraph,
+    image_path: Path | str,
+    width,
+    height,
+    *,
+    side: str = "left",
+    dist_emu: int = 91440,
+) -> None:
+    """Insert a picture with square text wrap (left or right column edge)."""
+    from copy import deepcopy
+
+    run = paragraph.add_run()
+    run.add_picture(str(image_path), width=width, height=height)
+    drawing = run._r.find(qn("w:drawing"))
+    inline = drawing.find(qn("wp:inline"))
+    if inline is None:
+        return
+
+    dist = str(dist_emu)
+    anchor = OxmlElement("wp:anchor")
+    for key, val in (
+        ("distT", "0"),
+        ("distB", "0"),
+        ("distL", dist),
+        ("distR", dist),
+        ("simplePos", "0"),
+        ("relativeHeight", "251658240"),
+        ("behindDoc", "0"),
+        ("locked", "0"),
+        ("layoutInCell", "1"),
+        ("allowOverlap", "1"),
+    ):
+        anchor.set(key, val)
+
+    simple_pos = OxmlElement("wp:simplePos")
+    simple_pos.set("x", "0")
+    simple_pos.set("y", "0")
+    anchor.append(simple_pos)
+
+    pos_h = OxmlElement("wp:positionH")
+    pos_h.set("relativeFrom", "column")
+    align = OxmlElement("wp:align")
+    align.text = side
+    pos_h.append(align)
+    anchor.append(pos_h)
+
+    pos_v = OxmlElement("wp:positionV")
+    pos_v.set("relativeFrom", "paragraph")
+    pos_offset = OxmlElement("wp:posOffset")
+    pos_offset.text = "0"
+    pos_v.append(pos_offset)
+    anchor.append(pos_v)
+
+    wrap = OxmlElement("wp:wrapSquare")
+    wrap.set("wrapText", "bothSides")
+    for key in ("distT", "distB", "distL", "distR"):
+        wrap.set(key, dist)
+    anchor.append(wrap)
+
+    for tag in ("extent", "effectExtent", "docPr", "cNvGraphicFramePr"):
+        el = inline.find(qn(f"wp:{tag}"))
+        if el is not None:
+            anchor.append(deepcopy(el))
+
+    graphic = inline.find(qn("a:graphic"))
+    if graphic is not None:
+        anchor.append(deepcopy(graphic))
+
+    drawing.remove(inline)
+    drawing.append(anchor)
+
+
+def add_paragraph_box_border(paragraph, color_hex: str = "D4E6F2", size: int = 4) -> None:
+    p_pr = paragraph._p.get_or_add_pPr()
+    p_bdr = OxmlElement("w:pBdr")
+    for side in ("top", "left", "bottom", "right"):
+        edge = OxmlElement(f"w:{side}")
+        edge.set(qn("w:val"), "single")
+        edge.set(qn("w:sz"), str(size))
+        edge.set(qn("w:space"), "1")
+        edge.set(qn("w:color"), color_hex)
+        p_bdr.append(edge)
+    p_pr.append(p_bdr)
+
+
 def add_hyperlink(paragraph, text: str, url: str) -> None:
     part = paragraph.part
     r_id = part.relate_to(

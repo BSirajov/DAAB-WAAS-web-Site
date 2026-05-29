@@ -43,35 +43,47 @@ python helpers/_check_name_order.py
 
 ---
 
-## Phase 4 — CSS consolidation (partial)
+## Phase 4 — CSS consolidation
 
-**Done:** unified justified forum prose in `daab-forum-content.css`; no `<style>` blocks in deployable AZ/EN HTML.
+**Status:** Done (May 2026).
 
-**Deferred:** activities `.inline-style-*` rename (large, non-blocking).
+| Task | Status |
+|------|--------|
+| Forum justified prose in `daab-forum-content.css` | Done |
+| No `<style>` blocks in deployable AZ/EN HTML | Done |
+| Activities `.inline-style-*` → semantic `act-*` classes | Done (`helpers/_rename_activities_inline_styles.py`) |
+| Forum `daab-activities-layout.css` `?v=13` harmonized | Done (`_site_wide_cleanup.py`) |
+| Duplicate sidebar timeline inline JS | Removed from 9 pages; uses `daab-sidebar-timeline.js` |
 
-**Gate:** Spot-check + `_validate_site.py` — pass (May 2026).
-
----
-
-## Phase 5 — Dead code audit (high effort, subsystem-scoped)
-
-Do **not** delete classes site-wide in one pass.
-
-| Subsystem | Start with | Method |
-|-----------|------------|--------|
-| Forum | `css/daab-forum-content.css` | Grep class names against `az/forum/`, `en/forum/` HTML |
-| Scientists | `css/scientists-*.css`, `js/scientists-*.js` | Run CV validators after any data/CSS change |
-| Application | `css/daab-membership-application.css` | Match embed + `application.html` only |
-
-**Gate:** Phase 1 + scientists validators.
+**Gate:** Spot-check activities + one forum page; `_validate_site.py` — pass.
 
 ---
 
-## Phase 6 — Repo hygiene (optional)
+## Phase 5 — Dead code audit
 
-- Keep `_archive/`, `sources/`, `helpers/`, `documents/` out of deploy.
-- Remove `_archive` entries only after confirming no external links.
-- Do not commit `node_modules/` (Playwright for PDF export).
+**Status:** Done (May 2026).
+
+Do **not** delete classes site-wide in one pass. `daab-forum-content.css` is clean (all classes used or JS-toggled). Build-only sheets marked in `css/` headers.
+
+| Subsystem | Result |
+|-----------|--------|
+| Forum | `daab-forum-content.css` — all classes used on live forum pages |
+| Build-only CSS | `daab-forum-book.css`, `daab-application-embed-*.css` — BUILD-ONLY headers; omitted via `.deployignore` |
+| Scientists profiles | Removed legacy `.card-org`, `.hero-actions`, `.awards-label`; Eldar photo crop via `#eldar-ehedov`; kept `.card-email--empty` for TTS |
+| Scientists toolbar | `.org` / `.w3` are false positives (URL fragments in `data:image` CSS) |
+| Application | Removed unused hero `.eyebrow`, `.dot`, `.hero-text`, `.hero-actions` from `daab-membership-application.css` |
+
+**Gate:** `python helpers/_deploy_preflight.py` — pass.
+
+---
+
+## Phase 6 — Repo hygiene
+
+**Status:** Done (May 2026).
+
+- `_archive/`, `sources/`, `helpers/`, `documents/` excluded from deploy (`.deployignore`).
+- `node_modules/` added to `.gitignore` (Playwright for PDF export).
+- `_archive` prune deferred — no live site links found in routine checks; remove only after external-link audit.
 
 ---
 
@@ -89,6 +101,7 @@ Automated gate: see `documents/DAAB-Pre-Release-Status-2026-05.md`.
 
 | Need | Command / doc |
 |------|----------------|
+| Pre-deploy (all checks) | `python helpers/_deploy_preflight.py` |
 | Broken links | `python helpers/_validate_site.py` |
 | Forum CSS pairs | `python helpers/_fix_forum_css_pairs.py` |
 | Full audit history | `documents/DAAB-Site-Cleanup-Audit-2026-05.md` |

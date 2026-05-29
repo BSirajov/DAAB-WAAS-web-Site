@@ -25,8 +25,7 @@
 
 ## Deferred (not blocking deploy)
 
-- Activities `.inline-style-*` class rename (large diff, cosmetic)
-- Full unused CSS/JS audit (Phase 5)
+- Full unused CSS/JS audit (Phase 5 — use `helpers/_audit_css_usage.py`)
 - `_archive/` / `sources/` pruning
 
 ## Deploy bundle

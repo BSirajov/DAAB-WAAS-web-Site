@@ -58,6 +58,7 @@ PAGE_LABEL_KEYS = {
     "membership": "membershipTerms",
     "membership-value": "membershipWhy",
     "membership-application": "membershipJoin",
+    "membership-flyer": "membershipFlyer",
 }
 
 TYPE_BOOST = {

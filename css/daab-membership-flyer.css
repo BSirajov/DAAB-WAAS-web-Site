@@ -1,0 +1,465 @@
+/**
+ * DAAB / WAAS membership flyer — screen preview + A4 print.
+ * Standalone page: no site nav; use browser Print → Save as PDF.
+ * Requires css/daab-tokens.css linked before this file.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body.membership-flyer-page {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--ink);
+  background: #d8e8f4;
+  line-height: 1.45;
+}
+
+.flyer-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(6, 49, 78, 0.96);
+  color: var(--white);
+  box-shadow: 0 4px 18px rgba(0, 45, 82, 0.22);
+}
+
+.flyer-toolbar p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.92;
+}
+
+.flyer-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.flyer-toolbar .flyer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--blue-700);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.flyer-toolbar .flyer-btn-primary {
+  background: var(--gold);
+  color: var(--blue-900);
+  border-color: var(--gold);
+}
+
+.flyer-toolbar .flyer-btn--busy {
+  opacity: 0.85;
+  cursor: wait;
+}
+
+.flyer-toolbar .flyer-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.flyer-wrap {
+  max-width: 210mm;
+  margin: 24px auto 40px;
+  padding: 0 12px;
+}
+
+.flyer-sheet {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  padding: 10mm 11mm 9mm;
+  background: var(--white);
+  box-shadow: 0 18px 48px rgba(0, 45, 82, 0.18);
+  overflow: hidden;
+}
+
+.flyer-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px 18px;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--gold);
+  margin-bottom: 10px;
+}
+
+.flyer-logo {
+  width: 72px;
+  height: 72px;
+  padding: 8px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0, 45, 82, 0.1);
+}
+
+.flyer-brand-block h1 {
+  margin: 0 0 4px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--blue-900);
+}
+
+.flyer-brand-block .flyer-org {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue-700);
+}
+
+.flyer-hero {
+  margin: 0 0 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--blue-900), var(--blue-700));
+  color: var(--white);
+}
+
+.flyer-hero h2 {
+  margin: 0 0 6px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 22px;
+  line-height: 1.12;
+  font-weight: 800;
+}
+
+.flyer-hero h2 span {
+  color: var(--gold-soft);
+}
+
+.flyer-hero p {
+  margin: 0;
+  font-size: 11.5px;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+.flyer-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.flyer-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.flyer-section-title {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue-700);
+}
+
+.flyer-pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.flyer-pillar {
+  padding: 8px 9px;
+  border: 1px solid var(--color-border-blue-muted);
+  border-radius: 12px;
+  background: var(--color-panel-blue);
+}
+
+.flyer-pillar strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 10.5px;
+  line-height: 1.25;
+  color: var(--blue-900);
+}
+
+.flyer-pillar span {
+  display: block;
+  font-size: 9.5px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.flyer-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.flyer-benefit {
+  padding: 8px 9px 7px;
+  border: 1px solid var(--color-border-blue-muted);
+  border-radius: 12px;
+  background: var(--white);
+}
+
+.flyer-benefit-icon {
+  font-size: 16px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.flyer-benefit-icon--flag {
+  font-size: 0;
+  line-height: 0;
+}
+
+.flyer-benefit-icon--flag .daab-az-flag {
+  display: block;
+  width: 28px;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .12);
+}
+
+.flyer-benefit h3 {
+  margin: 0 0 4px;
+  font-size: 10.5px;
+  line-height: 1.25;
+  color: var(--blue-900);
+}
+
+.flyer-benefit p {
+  margin: 0;
+  font-size: 9px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.flyer-benefit ul {
+  margin: 4px 0 0;
+  padding-left: 14px;
+  font-size: 8.5px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.flyer-youth {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: var(--soft);
+  border: 1px solid var(--color-border-blue-muted);
+}
+
+.flyer-youth-lead {
+  font-size: 9.5px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.flyer-youth-lead strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 10px;
+  color: var(--blue-900);
+}
+
+.flyer-youth-item {
+  font-size: 9px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.flyer-youth-item strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--blue-800);
+  font-size: 9.5px;
+}
+
+.flyer-footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: end;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fff8e5, var(--color-panel-blue));
+  border: 1px solid rgba(200, 155, 56, 0.35);
+}
+
+.flyer-cta h3 {
+  margin: 0 0 4px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 15px;
+  line-height: 1.2;
+  color: var(--blue-900);
+}
+
+.flyer-cta p {
+  margin: 0 0 8px;
+  font-size: 10px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.flyer-cta-link {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--blue-700);
+  color: var(--white) !important;
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.flyer-meta {
+  font-size: 9px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.flyer-meta strong {
+  color: var(--blue-900);
+}
+
+.flyer-meta a {
+  color: var(--blue-700);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.flyer-qr {
+  text-align: center;
+}
+
+.flyer-qr img {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.flyer-qr span {
+  display: block;
+  font-size: 8px;
+  color: var(--muted);
+  max-width: 88px;
+  line-height: 1.3;
+}
+
+.flyer-tagline {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--line);
+  font-size: 8.5px;
+  text-align: center;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  body.membership-flyer-page {
+    background: var(--white);
+  }
+
+  .flyer-toolbar {
+    display: none !important;
+  }
+
+  .flyer-wrap {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .flyer-sheet {
+    width: 210mm;
+    min-height: 297mm;
+    box-shadow: none;
+    page-break-after: avoid;
+  }
+
+  .flyer-cta-link {
+    color: var(--white) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .flyer-hero,
+  .flyer-footer,
+  .flyer-pillar,
+  .flyer-youth {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+@media (max-width: 760px) {
+  .flyer-sheet {
+    width: 100%;
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .flyer-pillars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .flyer-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .flyer-youth {
+    grid-template-columns: 1fr;
+  }
+
+  .flyer-footer {
+    grid-template-columns: 1fr;
+  }
+}

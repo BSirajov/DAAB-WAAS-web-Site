@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Build az/en forum/2024/stories.html from forum_2024/Hekayələr.docx."""
+"""Build az/en forum/2024/stories.html from forum_2024 story Word documents."""
 from __future__ import annotations
 
 import html
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 from docx import Document
@@ -17,24 +18,82 @@ from _embed_static_nav import forum_nav_strip  # noqa: E402
 from forum_en_common import FORUM_FOOTER_EN  # noqa: E402
 from forum_en_stories import STORIES_EN  # noqa: E402
 
-DOCX = ROOT / "forum_2024" / "Hekayələr.docx"
+DOCX_AZ = ROOT / "forum_2024" / "Forum_haqqinda_hekayələr_AZ.docx"
+DOCX_EN = ROOT / "forum_2024" / "Stories_about_the_Forum_EN.docx"
+DOCX_LEGACY = ROOT / "forum_2024" / "Hekayələr.docx"
 OUT_AZ = ROOT / "az" / "forum" / "2024" / "stories.html"
 OUT_EN = ROOT / "en" / "forum" / "2024" / "stories.html"
 ASSET = "../../../"
 PAGE_ID = "forum-bagli-hekayeler"
 
-SECTION_HEADERS = ("NUR", "VƏTƏN HİSSLƏRİ", "CIDIR DÜZÜ", "XƏDİCƏ")
-SECTION_IDS = {
-    "NUR": "nur",
-    "VƏTƏN HİSSLƏRİ": "veten-hissleri",
-    "CIDIR DÜZÜ": "cidir-duzu",
-    "XƏDİCƏ": "xedice",
-}
 SECTION_IMAGES = {
     "nur": "NUR.jpg",
     "veten-hissleri": "VƏTƏN HİSSLƏRİ.jpg",
     "cidir-duzu": "CIDIR DÜZÜ.jpg",
     "xedice": "XƏDİCƏ.jpg",
+}
+
+# Sidebar icons — matched to each story’s theme (light, homeland, plateau, piano).
+SECTION_ICONS = {
+    "nur": "✨",
+    "veten-hissleri": "❤️",
+    "cidir-duzu": "🏇",
+    "xedice": "🎹",
+}
+
+_AZ_TRANS = str.maketrans(
+    {
+        "İ": "i",
+        "I": "i",
+        "ı": "i",
+        "Ə": "e",
+        "ə": "e",
+        "Ü": "u",
+        "ü": "u",
+        "Ö": "o",
+        "ö": "o",
+        "Ş": "s",
+        "ş": "s",
+        "Ç": "c",
+        "ç": "c",
+        "Ğ": "g",
+        "ğ": "g",
+    }
+)
+
+AZ_HEADERS: dict[str, tuple[str, str]] = {
+    "nur": ("nur", "NUR"),
+    "veten hissleri": ("veten-hissleri", "VƏTƏN HİSSLƏRİ"),
+    "veten duygusu": ("veten-hissleri", "VƏTƏN HİSSLƏRİ"),
+    "cidir duzu": ("cidir-duzu", "CIDIR DÜZÜ"),
+    "xedice": ("xedice", "XƏDİCƏ"),
+}
+
+# How many paragraphs stay beside the floated image (char budget + min/max per story).
+SECTION_WRAP_TARGET_CHARS: dict[str, int] = {
+    "nur": 2600,
+    "veten-hissleri": 2100,
+    "cidir-duzu": 3600,
+    "xedice": 1700,
+}
+SECTION_WRAP_MIN_PARAS: dict[str, int] = {
+    "nur": 3,
+    "veten-hissleri": 3,
+    "cidir-duzu": 4,
+    "xedice": 3,
+}
+SECTION_WRAP_MAX_PARAS: dict[str, int] = {
+    "nur": 5,
+    "veten-hissleri": 5,
+    "cidir-duzu": 7,
+    "xedice": 5,
+}
+
+EN_HEADERS: dict[str, tuple[str, str]] = {
+    "NUR": ("nur", "NUR (LIGHT)"),
+    "A SENSE OF HOMELAND": ("veten-hissleri", "FEELINGS FOR THE HOMELAND"),
+    "JIDIR DUZU": ("cidir-duzu", "JIDIR PLAIN"),
+    "KHADIJA": ("xedice", "KHADIJA"),
 }
 
 SIDEBAR_SCRIPT = f'<script src="{ASSET}js/daab-sidebar-timeline.js?v=1" defer></script>'
@@ -48,21 +107,24 @@ def norm(text: str) -> str:
     return text.replace("\r", "").replace("\xa0", " ").strip()
 
 
-def parse_docx(doc: Document) -> dict:
+def header_key_az(text: str) -> str:
+    folded = unicodedata.normalize("NFKC", text.strip()).translate(_AZ_TRANS).casefold()
+    return folded.replace("ğ", "g").replace("ı", "i")
+
+
+def parse_az_docx(doc: Document) -> dict:
     lines = [norm(p.text) for p in doc.paragraphs if norm(p.text)]
     title = lines[0] if lines else ""
     sections: list[dict] = []
     current: dict | None = None
 
     for line in lines[1:]:
-        if line in SECTION_HEADERS:
+        hk = header_key_az(line)
+        if hk in AZ_HEADERS:
             if current:
                 sections.append(current)
-            current = {
-                "title": line,
-                "id": SECTION_IDS[line],
-                "paragraphs": [],
-            }
+            sid, display = AZ_HEADERS[hk]
+            current = {"id": sid, "title": display, "paragraphs": []}
             continue
         if current is not None:
             current["paragraphs"].append(line)
@@ -73,15 +135,93 @@ def parse_docx(doc: Document) -> dict:
     return {"title": title, "sections": sections}
 
 
+def parse_en_docx(doc: Document) -> dict:
+    lines = [norm(p.text) for p in doc.paragraphs if norm(p.text)]
+    title = lines[0] if lines else ""
+    sections: list[dict] = []
+    current: dict | None = None
+
+    for line in lines[1:]:
+        key = line.strip().upper()
+        if key in EN_HEADERS:
+            if current:
+                sections.append(current)
+            sid, display = EN_HEADERS[key]
+            current = {"id": sid, "title": display, "paragraphs": []}
+            continue
+        if current is not None:
+            current["paragraphs"].append(line)
+
+    if current:
+        sections.append(current)
+
+    return {"title": title, "sections": sections}
+
+
+def parse_docx(doc: Document) -> dict:
+    """Legacy parser for Hekayələr.docx (uppercase section headers)."""
+    legacy_headers = {
+        "NUR": ("nur", "NUR"),
+        "VƏTƏN HİSSLƏRİ": ("veten-hissleri", "VƏTƏN HİSSLƏRİ"),
+        "CIDIR DÜZÜ": ("cidir-duzu", "CIDIR DÜZÜ"),
+        "XƏDİCƏ": ("xedice", "XƏDİCƏ"),
+    }
+    lines = [norm(p.text) for p in doc.paragraphs if norm(p.text)]
+    title = lines[0] if lines else ""
+    sections: list[dict] = []
+    current: dict | None = None
+
+    for line in lines[1:]:
+        if line in legacy_headers:
+            if current:
+                sections.append(current)
+            sid, display = legacy_headers[line]
+            current = {"id": sid, "title": display, "paragraphs": []}
+            continue
+        if current is not None:
+            current["paragraphs"].append(line)
+
+    if current:
+        sections.append(current)
+
+    return {"title": title, "sections": sections}
+
+
+def first_sentence(text: str) -> str:
+    """First sentence of body copy for sidebar teasers."""
+    t = text.strip()
+    if not t:
+        return ""
+    m = re.match(r"^(.+?[.!?…])(?:\s|$)", t)
+    return (m.group(1) if m else t).strip()
+
+
+def story_teaser(section: dict) -> str:
+    paras = section.get("paragraphs") or []
+    i = 0
+    while i < len(paras):
+        line = paras[i]
+        nxt = paras[i + 1] if i + 1 < len(paras) else None
+        if is_pull_quote(line, nxt):
+            i += 2
+            continue
+        return first_sentence(line)
+    return ""
+
+
 def is_pull_quote(line: str, next_line: str | None) -> bool:
-    """Blockquote only for a quoted passage with a separate — attribution line."""
-    if not line.startswith('"'):
+    """Blockquote for a quoted passage with a separate — attribution line."""
+    t = line.strip()
+    if not (t.startswith('"') or t.startswith("\u201c") or t.startswith("'")):
         return False
-    if re.search(r'["\u201d],\s*[-–]\s*dey', line, re.I):
+    if re.search(r'["\u201d],\s*[-–]\s*dey', t, re.I):
         return False
-    if " – deyə" in line or " - deyə" in line.lower():
+    if " – deyə" in t or " - deyə" in t.lower():
         return False
-    return bool(next_line and next_line.startswith("— "))
+    if not next_line:
+        return False
+    n = next_line.strip()
+    return n.startswith("— ") or n.startswith("– ") or n.startswith("- ")
 
 
 def paras_to_html(paragraphs: list[str]) -> str:
@@ -91,7 +231,7 @@ def paras_to_html(paragraphs: list[str]) -> str:
         line = paragraphs[i]
         nxt = paragraphs[i + 1] if i + 1 < len(paragraphs) else None
         if is_pull_quote(line, nxt):
-            quote_text = line.strip().strip('"').strip()
+            quote_text = line.strip().strip('"').strip("\u201c\u201d").strip()
             cite = nxt or ""
             i += 2
             block = f'<blockquote class="card-quote"><p>{esc(quote_text)}</p>'
@@ -123,33 +263,114 @@ def figure_html(section_id: str, alt: str) -> str:
     img = SECTION_IMAGES.get(section_id)
     if not img:
         return ""
-    compact = " forum-story-figure--half" if section_id == "veten-hissleri" else ""
+    size_class = {
+        "nur": "forum-story-figure--wide",
+        "veten-hissleri": "forum-story-figure--compact",
+        "cidir-duzu": "forum-story-figure--portrait",
+        "xedice": "forum-story-figure--xedice",
+    }.get(section_id, "")
+    classes = " ".join(
+        part
+        for part in ("card-gallery", "single", "forum-story-figure", "forum-story-figure--float", size_class)
+        if part
+    )
     return (
-        f'<figure class="card-gallery single forum-story-figure{compact}">'
+        f'<figure class="{classes}">'
         f'<img src="{ASSET}images/forum/{esc(img)}" alt="{esc(alt)}" width="900" height="520" '
         f'loading="lazy" decoding="async"/>'
-        f'<figcaption class="forum-story-caption">{esc(alt)}</figcaption>'
         f"</figure>"
     )
 
 
-def story_card(section: dict, *, lang: str) -> str:
-    if lang == "en":
-        en_sec = next(s for s in STORIES_EN["sections"] if s["id"] == section["id"])
-        title = en_sec["title"]
-        body = en_paras_to_html(en_sec["paragraphs"])
-    else:
-        title = section["title"]
-        body = paras_to_html(section["paragraphs"])
+def split_paragraphs_for_wrap(section_id: str, paragraphs: list[str]) -> tuple[list[str], list[str]]:
+    """Keep enough opening paragraphs beside the image to avoid empty side gaps."""
+    if not paragraphs:
+        return [], []
 
-    fig = figure_html(section["id"], title)
+    min_paras = SECTION_WRAP_MIN_PARAS.get(section_id, 2)
+    max_paras = SECTION_WRAP_MAX_PARAS.get(section_id, 5)
+    target_chars = SECTION_WRAP_TARGET_CHARS.get(section_id, 2200)
+
+    wrapped: list[str] = []
+    char_total = 0
+    para_count = 0
+    i = 0
+
+    while i < len(paragraphs):
+        if para_count >= max_paras:
+            break
+
+        line = paragraphs[i]
+        nxt = paragraphs[i + 1] if i + 1 < len(paragraphs) else None
+
+        if is_pull_quote(line, nxt):
+            block_len = len(line) + len(nxt or "")
+            if wrapped and char_total + block_len > target_chars and para_count >= min_paras:
+                break
+            wrapped.append(line)
+            if nxt:
+                wrapped.append(nxt)
+            char_total += block_len
+            para_count += 1
+            i += 2
+            continue
+
+        if wrapped and char_total + len(line) > target_chars and para_count >= min_paras:
+            break
+
+        wrapped.append(line)
+        char_total += len(line)
+        para_count += 1
+        i += 1
+
+    while i < len(paragraphs) and para_count < min_paras:
+        line = paragraphs[i]
+        nxt = paragraphs[i + 1] if i + 1 < len(paragraphs) else None
+        if is_pull_quote(line, nxt):
+            wrapped.append(line)
+            if nxt:
+                wrapped.append(nxt)
+            char_total += len(line) + len(nxt or "")
+            para_count += 1
+            i += 2
+            continue
+        wrapped.append(line)
+        char_total += len(line)
+        para_count += 1
+        i += 1
+
+    return wrapped, paragraphs[i:]
+
+
+def story_body_html(section: dict) -> str:
+    paragraphs = list(section.get("paragraphs") or [])
+    if not paragraphs:
+        return figure_html(section["id"], section["title"])
+
+    sid = section["id"]
+    fig = figure_html(sid, section["title"])
+    wrap_paras, rest_paras = split_paragraphs_for_wrap(sid, paragraphs)
+
+    if not wrap_paras:
+        return f"{fig}\n{paras_to_html(paragraphs)}"
+
+    lead = f'<div class="forum-story-lead">\n{fig}\n{paras_to_html(wrap_paras)}\n</div>'
+    rest_html = paras_to_html(rest_paras) if rest_paras else ""
+    if rest_html:
+        return f"{lead}\n{rest_html}"
+    return lead
+
+
+def story_card(section: dict, *, lang: str) -> str:
+    title = section["title"]
+    icon = SECTION_ICONS.get(section["id"], "📖")
+    body = story_body_html(section)
     return f"""
 <article class="news-card forum-story-card" id="{esc(section["id"])}">
 <div class="card-header">
-<h2 class="card-title">{esc(title)}</h2>
+<h2 class="card-title"><span class="card-title-icon" aria-hidden="true">{icon}</span><span class="card-title-text">{esc(title)}</span></h2>
 </div>
 <div class="card-body">
-{fig}
 {body}
 </div>
 </article>"""
@@ -158,11 +379,18 @@ def story_card(section: dict, *, lang: str) -> str:
 def toc_items(sections: list[dict], *, lang: str) -> str:
     parts: list[str] = []
     for sec in sections:
-        if lang == "en":
-            title = next(s["title"] for s in STORIES_EN["sections"] if s["id"] == sec["id"])
-        else:
-            title = sec["title"]
-        parts.append(f'<li><a href="#{esc(sec["id"])}">{esc(title)}</a></li>')
+        teaser = story_teaser(sec)
+        icon = SECTION_ICONS.get(sec["id"], "📖")
+        teaser_html = (
+            f'<span class="timeline-link-teaser">{esc(teaser)}</span>' if teaser else ""
+        )
+        parts.append(
+            f'<li><a href="#{esc(sec["id"])}">'
+            f'<span class="tl-icon" aria-hidden="true">{icon}</span>'
+            f'<span class="timeline-link-body">'
+            f'<span class="timeline-link-title">{esc(sec["title"])}</span>'
+            f"{teaser_html}</span></a></li>"
+        )
     return "\n".join(parts)
 
 
@@ -308,12 +536,15 @@ def page_html(data: dict, *, lang: str) -> str:
 
 
 def main() -> None:
-    data = parse_docx(Document(DOCX))
+    az_path = DOCX_AZ if DOCX_AZ.is_file() else DOCX_LEGACY
+    en_path = DOCX_EN if DOCX_EN.is_file() else DOCX_LEGACY
+    az_data = parse_az_docx(Document(str(az_path))) if az_path == DOCX_AZ else parse_docx(Document(str(az_path)))
+    en_data = parse_en_docx(Document(str(en_path))) if en_path == DOCX_EN else parse_docx(Document(str(en_path)))
     OUT_AZ.parent.mkdir(parents=True, exist_ok=True)
-    OUT_AZ.write_text(page_html(data, lang="az"), encoding="utf-8", newline="\n")
-    OUT_EN.write_text(page_html(data, lang="en"), encoding="utf-8", newline="\n")
-    print(f"wrote {OUT_AZ.relative_to(ROOT)}")
-    print(f"wrote {OUT_EN.relative_to(ROOT)} ({len(data['sections'])} stories)")
+    OUT_AZ.write_text(page_html(az_data, lang="az"), encoding="utf-8", newline="\n")
+    OUT_EN.write_text(page_html(en_data, lang="en"), encoding="utf-8", newline="\n")
+    print(f"wrote {OUT_AZ.relative_to(ROOT)} ({len(az_data['sections'])} stories)")
+    print(f"wrote {OUT_EN.relative_to(ROOT)} ({len(en_data['sections'])} stories)")
 
 
 if __name__ == "__main__":

@@ -1,4 +1,6 @@
-/* Forum 2024 book sections — shared with forum_2024 legacy pages */
+/* BUILD-ONLY — not linked from live az/en pages. Used by helpers/_build_forum_2024_site.py.
+ * Safe to omit from production deploy (.deployignore). Do not delete without updating builder.
+ * Forum 2024 book sections — shared with forum_2024 legacy pages */
 
 html[data-daab-page-id^="forum-"] {
   --forum-max: 1180px;

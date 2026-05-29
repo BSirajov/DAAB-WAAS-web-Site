@@ -11,23 +11,36 @@ from _paths import ROOT
 SCRIPT_VERSIONS = {
     "daab-i18n.js": 17,
     "daab-lang-position.js": 7,
-    "daab-nav.js": 17,
+    "daab-nav.js": 18,
     "daab-primary-nav.js": 16,
     "daab-breadcrumbs.js": 12,
     "daab-section-nav.js": 10,
     "daab-shell.js": 12,
-    "daab-search.js": 5,
-    "daab-mobile.js": 1,
-    "daab-back-to-top.js": 2,
+    "daab-search.js": 6,
+    "daab-mobile.js": 3,
+    "daab-back-to-top.js": 3,
+    "daab-sidebar-timeline.js": 2,
 }
 
 STYLE_VERSIONS = {
-    "daab-common.css": 35,
-    "daab-mobile.css": 5,
+    "daab-common.css": 37,
+    "daab-mobile.css": 8,
     "daab-lang.css": 10,
-    "daab-nav-mega.css": 15,
-    "daab-forum-content.css": 13,
+    "daab-nav-mega.css": 17,
+    "daab-search.css": 4,
+    "daab-back-to-top.css": 2,
+    "daab-hero-summary.css": 7,
+    "daab-forum-content.css": 17,
+    "daab-hub-cards.css": 14,
     "daab-presentations-toc.css": 7,
+    "daab-activities-layout.css": 13,
+    "daab-activities-page.css": 3,
+    "daab-executive-board.css": 2,
+    "daab-scientists-profiles-page.css": 4,
+    "scientists-catalog-toolbar.css": 2,
+    "scientists-profile-tts.css": 3,
+    "scientists-profile-deep-link.css": 4,
+    "scientists-profile-qr.css": 13,
 }
 
 DEPLOY_HTML_DIRS = (ROOT / "az", ROOT / "en")
@@ -38,6 +51,7 @@ SECTION_NAV_EN = """<nav class="daab-section-nav" id="daab-section-nav" aria-lab
 <li><a href="membership_value.html">Why become a member</a></li>
 <li><a class="active" href="membership.html" aria-current="page">Membership terms</a></li>
 <li><a href="application.html">Join us</a></li>
+<li><a href="membership_flyer.html">Share Flyer</a></li>
 </ul>
 </nav>
 """
@@ -48,6 +62,7 @@ SECTION_NAV_EN_VALUE = """<nav class="daab-section-nav" id="daab-section-nav" ar
 <li><a class="active" href="membership_value.html" aria-current="page">Why become a member</a></li>
 <li><a href="membership.html">Membership terms</a></li>
 <li><a href="application.html">Join us</a></li>
+<li><a href="membership_flyer.html">Share Flyer</a></li>
 </ul>
 </nav>
 """
@@ -58,6 +73,7 @@ SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-lab
 <li><a href="membership_value.html">Niyə üzv olmalı</a></li>
 <li><a class="active" href="membership.html" aria-current="page">Üzvlük şərtləri</a></li>
 <li><a href="application.html">Bizə qoşulun</a></li>
+<li><a href="membership_flyer.html">Flyer paylaş</a></li>
 </ul>
 </nav>
 """
@@ -68,6 +84,7 @@ SECTION_NAV_AZ_VALUE = """<nav class="daab-section-nav" id="daab-section-nav" ar
 <li><a class="active" href="membership_value.html" aria-current="page">Niyə üzv olmalı</a></li>
 <li><a href="membership.html">Üzvlük şərtləri</a></li>
 <li><a href="application.html">Bizə qoşulun</a></li>
+<li><a href="membership_flyer.html">Flyer paylaş</a></li>
 </ul>
 </nav>
 """

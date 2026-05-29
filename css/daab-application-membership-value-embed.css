@@ -1,6 +1,7 @@
 /**
+ * BUILD-ONLY — linked from */application/membership_value.html build sources only.
+ * Live pages use daab-membership-value.css on az/membership_value.html.
  * Extracted from inline <style> on en/application/membership_value.html.
- * Shared by AZ/EN locale pages — do not duplicate in HTML.
  */
 
 :root{--bg:#f6fafd;--ink:var(--ink);--muted:var(--muted-hero);--blue:#1a6fa8;--blue2:#2e9fd4;--light:var(--soft-alt);--border:var(--blue-soft);--gold:#c89b38;--shadow:0 16px 42px rgba(0,45,82,.12);--max:1180px;--r:26px}
@@ -21,3 +22,4 @@ ul.clean{display:grid;gap:10px;margin:16px 0 0;padding:0;list-style:none}ul.clea
 footer{background:var(--white);border-top:1px solid rgba(158,214,245,.7)}.foot{max-width:var(--max);margin:auto;padding:30px 24px}.foot h3{margin:0 0 20px;font-family:'Playfair Display',Georgia,serif;color:var(--color-heading-blue)}.foot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.foot h4{margin:0 0 10px;color:var(--blue-dark)}.foot p,.foot div{color:var(--muted);font-size:14px}.bottom{padding:14px;text-align:center;color:#7891a1;font-size:12px;border-top:1px solid rgba(158,214,245,.5)}
 @media(max-width:1000px){.hero-in{grid-template-columns:1fr}.grid3,.grid2{grid-template-columns:1fr 1fr}.value-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.nav-in,.hero-in,main,.breadcrumbs{padding-left:18px;padding-right:18px}.menu{display:none}.actions{display:grid}.btn{width:100%}.stats,.grid3,.grid2,.value-grid,.foot-grid{grid-template-columns:1fr}.card,.panel-card{padding:20px}}
+.icon--flag{font-size:0;padding:10px 8px}.icon--flag .daab-az-flag{display:block;width:100%;height:auto;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.12)}

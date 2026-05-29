@@ -10,7 +10,7 @@
 | Step | Action | Pass? |
 |------|--------|:-----:|
 | 1 | `git status` — know what changed; tag release if needed (`deploy-YYYY-MM-DD`) | ☐ |
-| 2 | `python helpers/_validate_site.py` — **must be OK** (no broken paths) | ☐ |
+| 2 | `python helpers/_deploy_preflight.py` — **must be OK** (links + scientists) | ☐ |
 | 3 | If scientists changed: `_validate_cv_cards.py` + `_check_name_order.py` | ☐ |
 | 4 | If shared CSS/JS changed: bump `?v=` on affected HTML and include **both** in upload | ☐ |
 | 5 | Local smoke test: `START-SITE.bat` → `http://localhost:8010/az/index.html` + one EN page | ☐ |

@@ -9,7 +9,7 @@ from pathlib import Path
 from _paths import ROOT
 
 ASSET = "../"
-CSS_V = "1"
+CSS_V = "4"
 
 LOCALES = {
     "az": {
@@ -24,7 +24,7 @@ LOCALES = {
         "skip": "Məzmuna keç",
         "nav_aria": "Əsas naviqasiya",
         "hero_h1": "DAAB mənə nə verəcək? <span>Niyə üzv olmalıyam?</span>",
-        "hero_primary": "Cavablara bax →",
+        "hero_primary": "Cavablara bax",
         "hero_primary_href": "#answers",
         "hero_secondary": "Üstünlüklər",
         "hero_secondary_href": "#benefits",
@@ -53,7 +53,7 @@ LOCALES = {
         "skip": "Skip to content",
         "nav_aria": "Main navigation",
         "hero_h1": "What does WAAS offer me? <span>Why should I join?</span>",
-        "hero_primary": "See the answers →",
+        "hero_primary": "See the answers",
         "hero_primary_href": "#answers",
         "hero_secondary": "Benefits",
         "hero_secondary_href": "#benefits",
@@ -101,6 +101,7 @@ def extract_main(src: str) -> str:
         ('class="grid grid3"', 'class="mv-grid mv-grid-3"'),
         ('class="grid grid2"', 'class="mv-grid mv-grid-2"'),
         ('class="card"', 'class="mv-card"'),
+        ('class="icon icon--flag"', 'class="mv-icon mv-icon--flag"'),
         ('class="icon"', 'class="mv-icon"'),
         ('class="clean"', 'class="mv-clean"'),
         ('class="qa"', 'class="mv-qa"'),
@@ -173,7 +174,7 @@ NAV_PLACEHOLDER
 <h2 class="panel-title">{cfg["panel_title"]}</h2>
 <p class="panel-copy">{cfg["panel_copy"]}</p>
 <div class="mv-stats">
-<div class="mv-stat"><strong>🌍</strong><span>{"Görünürlük" if cfg["lang"] == "az" else "Visibility"}</span></div>
+<div class="mv-stat"><strong>🌍</strong><span>{"Tanınma" if cfg["lang"] == "az" else "Visibility"}</span></div>
 <div class="mv-stat"><strong>🤝</strong><span>{"Əlaqələr" if cfg["lang"] == "az" else "Connections"}</span></div>
 <div class="mv-stat"><strong>🚀</strong><span>{"İnkişaf" if cfg["lang"] == "az" else "Growth"}</span></div>
 </div>
@@ -185,22 +186,24 @@ MEMBERSHIP_SECTION_NAV
 <main class="main membership-value-main" id="content">
 """
 
-SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə">
+SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə" data-daab-section-nav-enhanced="1">
 <p class="daab-section-nav-title">Üzvlük</p>
 <ul class="daab-section-nav-list">
-<li><a class="active" href="membership_value.html" aria-current="page">Niyə üzv olmalı</a></li>
-<li><a href="membership.html">Üzvlük şərtləri</a></li>
-<li><a href="application.html">Bizə qoşulun</a></li>
+<li><a class="active" href="membership_value.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Niyə üzv olmalı</span></a></li>
+<li><a href="membership.html"><span class="daab-section-nav-icon" aria-hidden="true">✒️</span><span class="daab-section-nav-label">Üzvlük şərtləri</span></a></li>
+<li><a href="application.html"><span class="daab-section-nav-icon" aria-hidden="true">📝</span><span class="daab-section-nav-label">Bizə qoşulun</span></a></li>
+<li><a href="membership_flyer.html"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Flyer paylaş</span></a></li>
 </ul>
 </nav>
 """
 
-SECTION_NAV_EN = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section">
+SECTION_NAV_EN = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section" data-daab-section-nav-enhanced="1">
 <p class="daab-section-nav-title">Membership</p>
 <ul class="daab-section-nav-list">
-<li><a class="active" href="membership_value.html" aria-current="page">Why become a member</a></li>
-<li><a href="membership.html">Membership terms</a></li>
-<li><a href="application.html">Join us</a></li>
+<li><a class="active" href="membership_value.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Why become a member</span></a></li>
+<li><a href="membership.html"><span class="daab-section-nav-icon" aria-hidden="true">✒️</span><span class="daab-section-nav-label">Membership terms</span></a></li>
+<li><a href="application.html"><span class="daab-section-nav-icon" aria-hidden="true">📝</span><span class="daab-section-nav-label">Join us</span></a></li>
+<li><a href="membership_flyer.html"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Share Flyer</span></a></li>
 </ul>
 </nav>
 """

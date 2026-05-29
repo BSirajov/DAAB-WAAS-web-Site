@@ -407,7 +407,7 @@ def patch_hub_cards() -> None:
 <div class="card-body">
 <h3 class="card-title">{esc(title)}</h3>
 <div class="card-desc">{esc(desc)}</div>
-<div class="card-footer"><span class="card-tag">{"Oxu" if lang == "az" else "Read"}</span><span class="card-arrow">→</span></div>
+<div class="card-footer"><span class="card-tag">{"Oxu" if lang == "az" else "Read"}</span><span class="card-arrow">↗</span></div>
 </div>
 </a>
 """
