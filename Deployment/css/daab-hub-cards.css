@@ -8,10 +8,6 @@ html.daab-hub-page .forum-breadcrumbs,
 html.daab-hub-page .breadcrumbs.forum-breadcrumbs {
   display: block !important;
   visibility: visible !important;
-  position: -webkit-sticky !important;
-  position: sticky !important;
-  top: var(--daab-nav-height, 86px) !important;
-  z-index: var(--z-breadcrumbs, 9998) !important;
   flex-shrink: 0;
   min-height: var(--daab-breadcrumbs-min-height);
 }
@@ -310,8 +306,66 @@ html[data-daab-page-id="forum-2024"] .forum-partner-name-line {
 }
 
 html[data-daab-page-id="home"] .daab-hub-page .cards-grid,
-html[data-daab-page-id="home"] .cards-grid {
-  grid-auto-rows: minmax(260px, auto);
+html[data-daab-page-id="home"] .cards-grid,
+html[data-daab-page-id="forum-2024"] .daab-hub-page .cards-grid,
+html[data-daab-page-id="forum-2024"] .cards-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  grid-auto-rows: minmax(200px, auto);
+}
+
+html[data-daab-page-id="home"] .daab-hub-page .page-card,
+html[data-daab-page-id="home"] .page-card,
+html[data-daab-page-id="forum-2024"] .daab-hub-page .page-card,
+html[data-daab-page-id="forum-2024"] .page-card {
+  min-height: 200px;
+  padding: 16px 16px 14px;
+}
+
+html[data-daab-page-id="home"] .card-icon-wrap,
+html[data-daab-page-id="forum-2024"] .card-icon-wrap {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+html[data-daab-page-id="home"] .card-title,
+html[data-daab-page-id="forum-2024"] .card-title {
+  margin-bottom: 6px;
+  font-size: 15px;
+  line-height: 1.22;
+}
+
+html[data-daab-page-id="home"] .card-desc,
+html[data-daab-page-id="forum-2024"] .card-desc {
+  font-size: 12px;
+  line-height: 1.45;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+}
+
+html[data-daab-page-id="home"] .card-footer,
+html[data-daab-page-id="forum-2024"] .card-footer {
+  padding-top: 10px;
+  gap: 8px;
+}
+
+html[data-daab-page-id="home"] .card-tag,
+html[data-daab-page-id="forum-2024"] .card-tag {
+  padding: 5px 8px;
+  font-size: 9px;
+}
+
+html[data-daab-page-id="home"] .card-arrow,
+html[data-daab-page-id="forum-2024"] .card-arrow {
+  width: 32px;
+  height: 32px;
+}
+
+html[data-daab-page-id="home"] .card-arrow::after,
+html[data-daab-page-id="forum-2024"] .card-arrow::after {
+  font-size: 13px;
 }
 
 .daab-hub-page .page-card {
@@ -328,8 +382,9 @@ html[data-daab-page-id="home"] .cards-grid {
 }
 
 html[data-daab-page-id="home"] .daab-hub-page .page-card,
-html[data-daab-page-id="home"] .page-card {
-  min-height: 260px;
+html[data-daab-page-id="home"] .page-card,
+html[data-daab-page-id="forum-2024"] .daab-hub-page .page-card,
+html[data-daab-page-id="forum-2024"] .page-card {
   height: 100%;
 }
 
@@ -513,10 +568,6 @@ html[data-daab-page-id="home"] .page-card {
   background: #e8f4fb !important;
   border-bottom: 1px solid var(--color-border-blue-subtle) !important;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.65) inset;
-  position: -webkit-sticky !important;
-  position: sticky !important;
-  top: var(--daab-nav-height, 86px) !important;
-  z-index: 9998 !important;
 }
 
 .daab-hub-page .forum-breadcrumbs a {
@@ -546,6 +597,15 @@ html[data-daab-page-id="home"] .page-card {
   }
 }
 
+@media (max-width: 1180px) {
+  html[data-daab-page-id="home"] .daab-hub-page .cards-grid,
+  html[data-daab-page-id="home"] .cards-grid,
+  html[data-daab-page-id="forum-2024"] .daab-hub-page .cards-grid,
+  html[data-daab-page-id="forum-2024"] .cards-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 1060px) {
   .daab-hub-page .hero-wrap {
     grid-template-columns: 1fr;
@@ -560,6 +620,13 @@ html[data-daab-page-id="home"] .page-card {
   .daab-hub-page .cards-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: auto;
+  }
+
+  html[data-daab-page-id="home"] .daab-hub-page .cards-grid,
+  html[data-daab-page-id="home"] .cards-grid,
+  html[data-daab-page-id="forum-2024"] .daab-hub-page .cards-grid,
+  html[data-daab-page-id="forum-2024"] .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

@@ -23,6 +23,8 @@
     "forum-roadmap": "forumRoadmap",
     "forum-bagli-hekayeler": "forumBagliHekayeler",
     "forum-cooperation": "forumCooperation",
+    "forum-rector-speeches": "forumRectorSpeeches",
+    "forum-anas-leadership-speeches": "forumAnasLeadershipSpeeches",
     "forum-photos-gallery": "forumPhotosGallery",
     "forum-video-gallery": "forumVideoGallery",
     "scientists-list": "scientistsList",
@@ -79,6 +81,20 @@
         navParent: "forum"
       },
       {
+        id: "forum-rector-speeches",
+        az: "az/forum/2024/rector_speeches.html",
+        en: "en/forum/2024/rector_speeches.html",
+        navGroup: "forum",
+        navParent: "forum"
+      },
+      {
+        id: "forum-anas-leadership-speeches",
+        az: "az/forum/2024/anas_leadership_speeches.html",
+        en: "en/forum/2024/anas_leadership_speeches.html",
+        navGroup: "forum",
+        navParent: "forum"
+      },
+      {
         id: "forum-program",
         az: "az/forum/2024/program.html",
         en: "en/forum/2024/program.html",
@@ -117,6 +133,13 @@
         id: "forum-bagli-hekayeler",
         az: "az/forum/2024/stories.html",
         en: "en/forum/2024/stories.html",
+        navGroup: "forum",
+        navParent: "forum"
+      },
+      {
+        id: "forum-cooperation",
+        az: "az/forum/2024/cooperation.html",
+        en: "en/forum/2024/cooperation.html",
         navGroup: "forum",
         navParent: "forum"
       },
@@ -201,6 +224,8 @@
       "forum-roadmap": "🗺️",
       "forum-bagli-hekayeler": "📖",
       "forum-cooperation": "🤝",
+      "forum-rector-speeches": "🎓",
+      "forum-anas-leadership-speeches": "🔬",
       "forum-photos-gallery": "📷",
       "forum-video-gallery": "📹",
       activities: "📰",
@@ -231,6 +256,8 @@
         forumRoadmap: "Strateji yol xəritəsi",
         forumBagliHekayeler: "Forumla bağlı hekayələr",
         forumCooperation: "Töhfələr və əməkdaşlıq",
+        forumRectorSpeeches: "Rektorların nitqləri",
+        forumAnasLeadershipSpeeches: "AMEA rəhbərliyinin nitqləri",
         forumPhotosGallery: "Foto qalereya",
         forumVideoGallery: "Video qalereya",
         scientistsList: "Siyahı",
@@ -254,6 +281,8 @@
         forumRoadmap: "Strategic roadmap",
         forumBagliHekayeler: "Stories of the forum",
         forumCooperation: "Contributions and cooperation",
+        forumRectorSpeeches: "Rectors' speeches",
+        forumAnasLeadershipSpeeches: "Speeches by the ANAS Leadership",
         forumPhotosGallery: "Photo gallery",
         forumVideoGallery: "Video gallery",
         scientistsList: "Directory",
@@ -285,6 +314,8 @@
         pages: [
           "forum-2024",
           "forum-official",
+          "forum-rector-speeches",
+          "forum-anas-leadership-speeches",
           "forum-program",
           "forum-2024-presentations",
           "forum-impressions",

@@ -9,11 +9,17 @@
 }
 
 .card-listen-lead {
-  margin: 10px 0 0;
-  color: #1a3d5c;
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 1.45;
+  margin: 8px 0 0;
+  color: #34465a;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Legacy alias — role line is now rendered in HTML as .card-role */
+.card-listen-lead,
+.card-role {
+  overflow-wrap: anywhere;
 }
 
 /* Xaqani Qayibli — bullet lists indented +3ch */

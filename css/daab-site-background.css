@@ -4,8 +4,6 @@
  */
 
 body:not(.daab-gateway) {
-  position: relative;
-  isolation: isolate;
   background-color: var(--color-surface-news, #f5fbff);
 }
 
@@ -44,12 +42,11 @@ body:not(.daab-gateway)::after {
   mask-image: linear-gradient(to bottom, #000 0%, transparent 42%);
 }
 
-body:not(.daab-gateway) > .nav-strip,
-body:not(.daab-gateway) > .breadcrumbs,
 body:not(.daab-gateway) > header,
 body:not(.daab-gateway) > main,
 body:not(.daab-gateway) > footer,
-body:not(.daab-gateway) .content-wrap {
+body:not(.daab-gateway) .content-wrap,
+body:not(.daab-gateway) > #daab-chrome-spacer {
   position: relative;
   z-index: 1;
 }

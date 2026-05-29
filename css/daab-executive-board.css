@@ -261,6 +261,18 @@ html[data-daab-page-id="executive-board"] .person-name {
   line-height: 1.15;
 }
 
+html[data-daab-page-id="executive-board"] .person-name-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+html[data-daab-page-id="executive-board"] .person-name-link:hover,
+html[data-daab-page-id="executive-board"] .person-name-link:focus-visible {
+  color: var(--blue-700);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 html[data-daab-page-id="executive-board"] .person-extra {
   margin-top: 7px;
   color: var(--gold);

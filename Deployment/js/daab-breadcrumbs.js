@@ -274,16 +274,23 @@
     document.documentElement.style.setProperty("--daab-breadcrumbs-height", "0px");
   }
 
+  function breadcrumbsElement() {
+    return (
+      document.getElementById("daab-breadcrumbs") || staticBreadcrumbsNode()
+    );
+  }
+
   function syncBreadcrumbsHeight() {
-    var el = document.getElementById("daab-breadcrumbs");
+    var el = breadcrumbsElement();
     if (!el) {
       document.documentElement.style.setProperty("--daab-breadcrumbs-height", "0px");
       return;
     }
     var h = Math.ceil(el.getBoundingClientRect().height);
-    if (h > 0) {
-      document.documentElement.style.setProperty("--daab-breadcrumbs-height", h + "px");
-    }
+    document.documentElement.style.setProperty(
+      "--daab-breadcrumbs-height",
+      h > 0 ? h + "px" : "0px"
+    );
   }
 
   function staticBreadcrumbsNode() {
@@ -313,6 +320,10 @@
       ro.observe(el);
     }
     window.addEventListener("resize", sync, { passive: true });
+    document.dispatchEvent(new CustomEvent("daab-breadcrumbs-ready"));
+    if (window.DAAB_STICKY_CHROME && typeof window.DAAB_STICKY_CHROME.sync === "function") {
+      window.DAAB_STICKY_CHROME.sync();
+    }
     return true;
   }
 
@@ -441,6 +452,10 @@
     breadcrumbsInserted = true;
     syncBreadcrumbsHeight();
     requestAnimationFrame(syncBreadcrumbsHeight);
+    document.dispatchEvent(new CustomEvent("daab-breadcrumbs-ready"));
+    if (window.DAAB_STICKY_CHROME && typeof window.DAAB_STICKY_CHROME.sync === "function") {
+      window.DAAB_STICKY_CHROME.sync();
+    }
     if (typeof ResizeObserver !== "undefined") {
       var ro = new ResizeObserver(syncBreadcrumbsHeight);
       ro.observe(existing);
@@ -486,11 +501,15 @@
         if (!document.getElementById("daab-breadcrumbs")) return;
         breadcrumbsInserted = true;
         syncBreadcrumbsHeight();
+        document.dispatchEvent(new CustomEvent("daab-breadcrumbs-ready"));
         if (typeof ResizeObserver !== "undefined") {
           var ro = new ResizeObserver(syncBreadcrumbsHeight);
           ro.observe(el);
         }
         window.addEventListener("resize", syncBreadcrumbsHeight, { passive: true });
+        if (window.DAAB_STICKY_CHROME && typeof window.DAAB_STICKY_CHROME.sync === "function") {
+          window.DAAB_STICKY_CHROME.sync();
+        }
       })
       .catch(function (err) {
         console.warn("[daab-breadcrumbs] Mount failed:", err);
@@ -540,4 +559,8 @@
   } else {
     boot(0);
   }
+
+  window.DAAB_BREADCRUMBS = {
+    syncHeight: syncBreadcrumbsHeight
+  };
 })();

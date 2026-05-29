@@ -9,7 +9,7 @@ from pathlib import Path
 from _paths import ROOT
 
 ASSET = "../"
-CSS_V = "4"
+CSS_V = "5"
 
 LOCALES = {
     "az": {
@@ -24,6 +24,7 @@ LOCALES = {
         "skip": "Məzmuna keç",
         "nav_aria": "Əsas naviqasiya",
         "hero_h1": "DAAB mənə nə verəcək? <span>Niyə üzv olmalıyam?</span>",
+        "hero_subtitle": "Üzvlüyün tanınma, əməkdaşlıq və Azərbaycan elminə xidmət baxımından verdiyi dəyəri kəşf edin",
         "hero_primary": "Cavablara bax",
         "hero_primary_href": "#answers",
         "hero_secondary": "Üstünlüklər",
@@ -53,6 +54,7 @@ LOCALES = {
         "skip": "Skip to content",
         "nav_aria": "Main navigation",
         "hero_h1": "What does WAAS offer me? <span>Why should I join?</span>",
+        "hero_subtitle": "See how membership connects visibility, collaboration, and service to Azerbaijani science",
         "hero_primary": "See the answers",
         "hero_primary_href": "#answers",
         "hero_secondary": "Benefits",
@@ -140,7 +142,7 @@ def shell_head(cfg: dict) -> str:
 <link href="{ASSET}css/daab-back-to-top.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-lang.css?v=10" rel="stylesheet"/>
 <link href="{ASSET}css/daab-nav-mega.css?v=13" rel="stylesheet"/>
-<link href="{ASSET}css/daab-hero-summary.css?v=1" rel="stylesheet"/>
+<link href="{ASSET}css/daab-hero-summary.css?v=7" rel="stylesheet"/>
 <link href="{ASSET}css/daab-membership-value.css?v={CSS_V}" rel="stylesheet"/>
 <script src="{ASSET}js/daab-mobile.js?v=1" defer></script>
 <script src="{ASSET}js/daab-back-to-top.js?v=2" defer></script>
@@ -151,6 +153,7 @@ def shell_head(cfg: dict) -> str:
 <script src="{ASSET}js/daab-breadcrumbs.js?v=6" defer></script>
 <script src="{ASSET}js/daab-section-nav.js?v=7" defer></script>
 <script src="{ASSET}js/daab-shell.js?v=11" defer></script>
+<script src="{ASSET}js/daab-page-subtitle.js?v=2" defer></script>
 <script src="{ASSET}js/daab-search.js?v=4" defer></script>
 </head>
 """
@@ -163,7 +166,8 @@ NAV_PLACEHOLDER
 <header class="hero">
 <div class="hero-wrap shell">
 <section>
-<h1>{cfg["hero_h1"]}</h1>
+<h1 aria-describedby="page-hero-subtitle">{cfg["hero_h1"]}</h1>
+<p class="page-hero-subtitle" id="page-hero-subtitle" role="doc-subtitle">{cfg["hero_subtitle"]}</p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="{cfg["hero_primary_href"]}">{cfg["hero_primary"]}</a>
 <a class="btn btn-secondary" href="{cfg["hero_secondary_href"]}">{cfg["hero_secondary"]}</a>

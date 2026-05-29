@@ -67,6 +67,26 @@
       "en": "en/forum/2024/presentations.html"
     },
     {
+      "id": "forum-rector-speeches",
+      "navId": "forum-rector-speeches",
+      "navGroup": "forum",
+      "navParent": "forum",
+      "navOrder": 4.5,
+      "legacy": null,
+      "az": "az/forum/2024/rector_speeches.html",
+      "en": "en/forum/2024/rector_speeches.html"
+    },
+    {
+      "id": "forum-anas-leadership-speeches",
+      "navId": "forum-anas-leadership-speeches",
+      "navGroup": "forum",
+      "navParent": "forum",
+      "navOrder": 4.55,
+      "legacy": null,
+      "az": "az/forum/2024/anas_leadership_speeches.html",
+      "en": "en/forum/2024/anas_leadership_speeches.html"
+    },
+    {
       "id": "forum-official",
       "navId": "forum-official",
       "navGroup": "forum",

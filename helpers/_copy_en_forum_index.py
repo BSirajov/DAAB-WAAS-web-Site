@@ -43,6 +43,20 @@ def main() -> None:
     text = text.replace("Kitabı PDF yüklə", "Download book")
     text = text.replace("Kitabı yüklə", "Download book")
     text = text.replace("Rəsmi müraciətlər", "Official addresses")
+    text = text.replace("Rektorların nitqləri", "Rectors' speeches")
+    text = text.replace(
+        "Azərbaycan universitet rektorlarının Forum 2024-dəki nitqləri.",
+        "Speeches by rectors of Azerbaijani universities at Forum 2024.",
+    )
+    text = text.replace("AMEA rəhbərliyinin nitqləri", "Speeches by the ANAS Leadership")
+    text = text.replace(
+        "Azərbaycan Milli Elmlər Akademiyasının rəhbərliyinin Forum 2024-dəki nitqləri.",
+        "Speeches by leaders of the Azerbaijan National Academy of Sciences at Forum 2024.",
+    )
+    text = text.replace(
+        "Aşağıdakı kartlar vasitəsilə rəsmi müraciətlər, rektor və AMEA rəhbərliyinin nitqləri, proqram, strateji yol xəritəsi, məruzələr, təəssüratlar, forumla bağlı hekayələr, töhfələr və əməkdaşlıq və alimlərimizin siyahısına keçid edə bilərsiniz.",
+        "Use the cards below to open official addresses, rectors' and ANAS leadership speeches, the programme, the strategic roadmap, presentations, impressions, stories of the forum, contributions and cooperation, and the scientists directory.",
+    )
     text = text.replace(
         "Prezident, Nobel laureatları və alimlərin müraciəti (kitab səh. 24–28).",
         "President, Nobel laureates and scientists' appeal (book pp. 24–28).",

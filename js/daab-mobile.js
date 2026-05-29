@@ -13,6 +13,30 @@
     }
   }
 
+  function syncBreadcrumbsHeight() {
+    if (window.DAAB_BREADCRUMBS && typeof window.DAAB_BREADCRUMBS.syncHeight === "function") {
+      window.DAAB_BREADCRUMBS.syncHeight();
+      return;
+    }
+    var el =
+      document.querySelector(".breadcrumbs.forum-breadcrumbs") ||
+      document.querySelector(".forum-breadcrumbs");
+    if (!el) {
+      document.documentElement.style.setProperty("--daab-breadcrumbs-height", "0px");
+      return;
+    }
+    var h = Math.ceil(el.getBoundingClientRect().height);
+    document.documentElement.style.setProperty(
+      "--daab-breadcrumbs-height",
+      h > 0 ? h + "px" : "0px"
+    );
+  }
+
+  function syncLayoutHeights() {
+    syncNavHeight();
+    syncBreadcrumbsHeight();
+  }
+
   function applyScrollLock(on) {
     if (on === scrollLocked) return;
     scrollLocked = on;
@@ -42,7 +66,7 @@
       var y = lockedScrollY;
       window.scrollTo(0, y);
     }
-    syncNavHeight();
+    syncLayoutHeights();
   }
 
   function recomputeScrollLock() {
@@ -77,14 +101,16 @@
   };
 
   function initNavHeight() {
-    syncNavHeight();
-    window.addEventListener("resize", syncNavHeight, { passive: true });
+    syncLayoutHeights();
+    window.addEventListener("resize", syncLayoutHeights, { passive: true });
     window.addEventListener("orientationchange", function () {
-      window.setTimeout(syncNavHeight, 100);
+      window.setTimeout(syncLayoutHeights, 100);
     });
     if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(syncNavHeight);
+      document.fonts.ready.then(syncLayoutHeights);
     }
+    document.addEventListener("daab-breadcrumbs-ready", syncLayoutHeights);
+    window.addEventListener("load", syncLayoutHeights, { passive: true });
   }
 
   function initMobileMenuScrollLock() {

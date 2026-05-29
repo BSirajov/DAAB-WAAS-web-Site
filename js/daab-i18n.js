@@ -92,7 +92,7 @@
   function loadUi() {
     if (uiCache) return Promise.resolve(uiCache);
     UI_URL = UI_URL || i18nUrl("ui.json");
-    return fetchJson(UI_URL + "?v=12").then(function (data) {
+    return fetchJson(UI_URL + "?v=13").then(function (data) {
       uiCache = data;
       return data;
     });

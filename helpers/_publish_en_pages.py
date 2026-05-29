@@ -128,7 +128,7 @@ def en_footer_html() -> str:
     <div class="footer-grid">
       <div class="footer-col">
         <h4 class="footer-title">Contact</h4>
-        <div class="footer-item">✉ <a href="mailto:bilik.birlik@gmail.com">bilik.birlik@gmail.com</a></div>
+        <div class="footer-item">✉ <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div>
         <div class="footer-item">☎ <span>+90 555 147 46 74</span></div>
         <div class="footer-item">🌐 <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div>
       </div>

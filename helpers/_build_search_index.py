@@ -43,6 +43,8 @@ PAGE_LABEL_KEYS = {
     "activities": "activities",
     "forum-2024": "forum2024",
     "forum-official": "forumOfficial",
+    "forum-rector-speeches": "forumRectorSpeeches",
+    "forum-anas-leadership-speeches": "forumAnasLeadershipSpeeches",
     "forum-program": "forumProgram",
     "forum-2024-presentations": "forum2024Presentations",
     "forum-impressions": "forumImpressions",
@@ -479,6 +481,12 @@ def build() -> dict:
         "charter": extract_charter_sections,
         "executive-board": extract_board_members,
         "forum-official": lambda raw, lang: extract_forum_sections(raw, lang, "forum-official"),
+        "forum-rector-speeches": lambda raw, lang: extract_forum_sections(
+            raw, lang, "forum-rector-speeches"
+        ),
+        "forum-anas-leadership-speeches": lambda raw, lang: extract_forum_sections(
+            raw, lang, "forum-anas-leadership-speeches"
+        ),
         "forum-program": lambda raw, lang: extract_forum_sections(raw, lang, "forum-program"),
         "forum-impressions": lambda raw, lang: extract_forum_sections(raw, lang, "forum-impressions"),
         "forum-2024-presentations": lambda raw, lang: extract_forum_sections(raw, lang, "forum-2024-presentations"),

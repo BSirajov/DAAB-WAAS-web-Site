@@ -294,31 +294,68 @@
     return actions;
   }
 
-  function mountNavButton(labels) {
-    if (document.getElementById("nav-search-btn")) return;
-    var inner = document.querySelector(".nav-inner");
-    if (!inner) return;
-
-    var btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "nav-search-btn";
-    btn.id = "nav-search-btn";
-    btn.setAttribute("aria-label", labels.open);
-    btn.setAttribute("title", searchButtonTitle(labels));
-    btn.innerHTML =
+  function navSearchButtonHtml(labels) {
+    return (
       '<span class="nav-search-btn-icon" aria-hidden="true">' +
       '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">' +
       '<circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>' +
       "</svg></span>" +
       '<span class="nav-search-btn-label">' + escapeHtml(labels.placeholder) + "</span>" +
-      shortcutKbdHtml("nav-search-kbd", labels);
+      shortcutKbdHtml("nav-search-kbd", labels)
+    );
+  }
 
-    var actions = ensureNavActions(inner);
-    if (actions) {
-      actions.insertBefore(btn, actions.firstChild);
-    } else {
-      inner.appendChild(btn);
+  function refreshNavButtonLabels(labels) {
+    var btn = document.getElementById("nav-search-btn");
+    if (!btn) return;
+    btn.setAttribute("aria-label", labels.open);
+    btn.setAttribute("title", searchButtonTitle(labels));
+    btn.innerHTML = navSearchButtonHtml(labels);
+  }
+
+  function refreshGatewayButtonLabels(labels) {
+    var btn = document.getElementById("gateway-search-btn");
+    if (!btn) return;
+    btn.setAttribute("aria-label", labels.open);
+    btn.setAttribute("title", searchButtonTitle(labels));
+    btn.innerHTML =
+      '<span class="gateway-search-btn-icon" aria-hidden="true">' +
+      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">' +
+      '<circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>' +
+      "</svg></span>" +
+      '<span>' + escapeHtml(labels.open) + "</span>" +
+      shortcutKbdHtml("gateway-search-kbd", labels);
+  }
+
+  function refreshSearchChromeLabels(labels) {
+    var inp = document.getElementById("search-input");
+    var closeBtn = document.getElementById("search-close-btn");
+    var ov = document.getElementById("search-overlay");
+    if (inp) inp.placeholder = labels.placeholder;
+    if (closeBtn) closeBtn.textContent = labels.close;
+    if (ov) ov.setAttribute("aria-label", labels.ariaDialog);
+    refreshNavButtonLabels(labels);
+    refreshGatewayButtonLabels(labels);
+  }
+
+  function mountNavButton(labels) {
+    var inner = document.querySelector(".nav-inner");
+    if (!inner) return;
+
+    var btn = document.getElementById("nav-search-btn");
+    if (!btn) {
+      btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "nav-search-btn";
+      btn.id = "nav-search-btn";
+      var actions = ensureNavActions(inner);
+      if (actions) {
+        actions.insertBefore(btn, actions.firstChild);
+      } else {
+        inner.appendChild(btn);
+      }
     }
+    refreshNavButtonLabels(labels);
 
     if (window.DAAB_NAV && window.DAAB_NAV.syncNavHeight) {
       window.DAAB_NAV.syncNavHeight();
@@ -482,37 +519,71 @@
     });
   }
 
+  var searchUiWired = false;
+
+  function mountSearchChrome(labels) {
+    state.labels = labels;
+    mountOverlay(labels);
+    if (isGateway()) mountGatewayButton(labels);
+    else mountNavButton(labels);
+    refreshSearchChromeLabels(labels);
+    if (!searchUiWired) {
+      wireUi();
+      searchUiWired = true;
+    }
+  }
+
   function boot() {
     state.lang = detectLang();
+    var fallbackLabels = labelsFor(state.lang, null);
+    mountSearchChrome(fallbackLabels);
+
+    var res = document.getElementById("search-results");
+    if (res) {
+      setPrompt(
+        res,
+        fallbackLabels,
+        '<div class="search-prompt">' + escapeHtml(fallbackLabels.loading) + "</div>"
+      );
+    }
+
     var uiPromise = global.DAAB_I18N && global.DAAB_I18N.loadUi
-      ? global.DAAB_I18N.loadUi()
+      ? global.DAAB_I18N.loadUi().catch(function (err) {
+          console.warn("[daab-search] UI labels unavailable; using fallback:", err);
+          return null;
+        })
       : Promise.resolve(null);
 
-    uiPromise.then(function (ui) {
-      state.labels = labelsFor(state.lang, ui);
-      mountOverlay(state.labels);
-      if (isGateway()) mountGatewayButton(state.labels);
-      else mountNavButton(state.labels);
-      wireUi();
-      var res = document.getElementById("search-results");
-      if (res) setPrompt(res, state.labels, '<div class="search-prompt">' + escapeHtml(state.labels.loading) + "</div>");
-      return loadIndex();
-    }).then(function (data) {
-      state.entries = (data && data.entries) || [];
-      state.ready = true;
-      var res = document.getElementById("search-results");
-      if (res) setPrompt(res, state.labels);
-    }).catch(function (err) {
-      console.warn("[daab-search]", err);
-      var res = document.getElementById("search-results");
-      if (res && state.labels) {
-        res.innerHTML = '<div class="search-empty">' + escapeHtml(state.labels.error) + "</div>";
-      }
-    });
+    uiPromise
+      .then(function (ui) {
+        var labels = labelsFor(state.lang, ui);
+        mountSearchChrome(labels);
+        if (res) {
+          setPrompt(
+            res,
+            labels,
+            '<div class="search-prompt">' + escapeHtml(labels.loading) + "</div>"
+          );
+        }
+        return loadIndex();
+      })
+      .then(function (data) {
+        state.entries = (data && data.entries) || [];
+        state.ready = true;
+        if (res) setPrompt(res, state.labels);
+      })
+      .catch(function (err) {
+        console.warn("[daab-search]", err);
+        if (res && state.labels) {
+          res.innerHTML =
+            '<div class="search-empty">' + escapeHtml(state.labels.error) + "</div>";
+        }
+      });
   }
 
   document.addEventListener("daab-primary-nav-ready", function () {
-    if (state.labels) mountNavButton(state.labels);
+    if (isGateway()) return;
+    mountNavButton(state.labels || labelsFor(state.lang, null));
   });
 
   if (document.readyState === "loading") {

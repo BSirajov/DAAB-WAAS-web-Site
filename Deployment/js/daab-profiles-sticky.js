@@ -1,5 +1,5 @@
 /**
- * Scientists profiles — sync sticky chrome heights (nav + breadcrumbs).
+ * Scientists profiles — re-sync chrome after late breadcrumb injection.
  */
 (function () {
   "use strict";
@@ -8,35 +8,17 @@
     return;
   }
 
-  function syncNavHeight() {
+  function syncAll() {
+    if (window.DAAB_STICKY_CHROME && typeof window.DAAB_STICKY_CHROME.sync === "function") {
+      window.DAAB_STICKY_CHROME.sync();
+      return;
+    }
     if (window.DAAB_NAV && typeof window.DAAB_NAV.syncNavHeight === "function") {
       window.DAAB_NAV.syncNavHeight();
-      return;
     }
-    var strip = document.querySelector(".nav-strip");
-    if (!strip) return;
-    var h = Math.ceil(strip.getBoundingClientRect().height);
-    if (h > 0) {
-      document.documentElement.style.setProperty("--daab-nav-height", h + "px");
+    if (window.DAAB_BREADCRUMBS && typeof window.DAAB_BREADCRUMBS.syncHeight === "function") {
+      window.DAAB_BREADCRUMBS.syncHeight();
     }
-  }
-
-  function syncBreadcrumbsHeight() {
-    var el = document.getElementById("daab-breadcrumbs");
-    if (!el) {
-      document.documentElement.style.setProperty("--daab-breadcrumbs-height", "0px");
-      return;
-    }
-    var h = Math.ceil(el.getBoundingClientRect().height);
-    document.documentElement.style.setProperty(
-      "--daab-breadcrumbs-height",
-      (h > 0 ? h : 0) + "px"
-    );
-  }
-
-  function syncAll() {
-    syncNavHeight();
-    syncBreadcrumbsHeight();
   }
 
   function boot() {
@@ -46,6 +28,7 @@
   }
 
   document.addEventListener("daab-primary-nav-ready", syncAll);
+  document.addEventListener("daab-breadcrumbs-ready", syncAll);
   document.addEventListener("DOMContentLoaded", boot);
 
   if (document.readyState !== "loading") {
@@ -54,7 +37,7 @@
 
   var breadcrumbPoll = 0;
   var breadcrumbTimer = window.setInterval(function () {
-    syncBreadcrumbsHeight();
+    syncAll();
     breadcrumbPoll += 1;
     if (document.getElementById("daab-breadcrumbs") || breadcrumbPoll > 80) {
       window.clearInterval(breadcrumbTimer);

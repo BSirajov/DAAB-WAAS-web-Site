@@ -748,10 +748,6 @@ html[data-daab-page-id="forum-video-gallery"] .forum-breadcrumbs {
   margin: 0 !important;
   padding: 12px 24px 12px clamp(132px, 14vw, 156px) !important;
   box-sizing: border-box;
-  position: -webkit-sticky !important;
-  position: sticky !important;
-  top: var(--daab-nav-height, 86px) !important;
-  z-index: 9998 !important;
   color: #55778b !important;
   font-family: Inter, system-ui, "Segoe UI", sans-serif !important;
   font-size: 13px !important;

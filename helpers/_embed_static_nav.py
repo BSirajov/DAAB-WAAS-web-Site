@@ -171,6 +171,7 @@ def forum_nav_strip(lang: str = "az", *, active_nav_id: str | None = None) -> st
             f'<span class="nav-brand-text">World Association of<br class="mobile-hidden-break">'
             f"Azerbaijani Scientists</span></a>"
             f'<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1">{menu}</div>'
+            f'<div class="nav-actions" role="group"></div>'
             f"</div></nav>"
         )
     return (
@@ -184,6 +185,7 @@ def forum_nav_strip(lang: str = "az", *, active_nav_id: str | None = None) -> st
         f'<span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">'
         f"Alimlər Birliyi</span></a>"
         f'<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1">{menu}</div>'
+        f'<div class="nav-actions" role="group"></div>'
         f"</div></nav>"
     )
 

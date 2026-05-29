@@ -200,20 +200,30 @@ def render_card(profile: dict, lang: str, *, asset_prefix: str = "../../") -> st
     profile_href = f"#{html.escape(slug)}"
     qr_src = f"{asset_prefix}images/qr/{lang}/{html.escape(slug)}.png?v=1"
     listen_lead = (profile.get("listen_lead_az") if lang == "az" else profile.get("listen_lead_en")) or ""
-    listen_lead_attr = (
-        f' data-listen-lead="{esc_attr(listen_lead)}"' if listen_lead.strip() else ""
+    title_html = (
+        f'      <p class="card-title">{html.escape(title)}</p>\n'
+        if title.strip()
+        else ""
+    )
+    role_html = (
+        f'      <p class="card-role">{html.escape(listen_lead)}</p>\n'
+        if listen_lead.strip()
+        else ""
     )
 
-    return f'''<div class="card" id="{html.escape(slug)}" tabindex="-1" data-country-name="{esc_attr(country)}" data-country="{esc_attr(code)}" data-search="{esc_attr(search)}" data-email="{esc_attr(email)}" data-ixtilas="{esc_attr(field)}" data-degree="{esc_attr(degree)}"{listen_lead_attr}>
+    return f'''<div class="card" id="{html.escape(slug)}" tabindex="-1" data-country-name="{esc_attr(country)}" data-country="{esc_attr(code)}" data-search="{esc_attr(search)}" data-email="{esc_attr(email)}" data-ixtilas="{esc_attr(field)}" data-degree="{esc_attr(degree)}">
   <div class="card-avatar card-photo"><img src="{asset_prefix}images/scientists-photos/{html.escape(photo)}" alt="{alt}" loading="lazy"/></div>
   <div class="card-body">
-    <div class="card-header">
-      <span class="card-name">{html.escape(name_heading)}{cred_html}</span>
-      <p class="card-country">{html.escape(country)}</p>
-    </div>
-    <p class="card-title">{html.escape(title)}</p>
-    <div class="card-meta">
+    <div class="card-head">
+      <div class="card-profile-header">
+        <div class="card-header">
+          <span class="card-name">{html.escape(name_heading)}{cred_html}</span>
+          <p class="card-country">{html.escape(country)}</p>
+{title_html}        </div>
+{role_html}        <div class="card-meta">
 {email_row}
+        </div>
+      </div>
     </div>
     <div class="card-bio">{bio_html}</div>
   </div>

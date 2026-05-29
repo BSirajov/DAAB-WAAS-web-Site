@@ -62,6 +62,10 @@
   }
 
   function syncNavHeight() {
+    if (window.DAAB_STICKY_CHROME && typeof window.DAAB_STICKY_CHROME.sync === "function") {
+      window.DAAB_STICKY_CHROME.sync();
+      return;
+    }
     var strip = document.querySelector(".nav-strip");
     if (!strip) return;
     var h = Math.ceil(strip.getBoundingClientRect().height);

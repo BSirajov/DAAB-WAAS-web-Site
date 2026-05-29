@@ -4,13 +4,121 @@
   var scrollLocked = false;
   var lockedScrollY = 0;
 
+  function isBreadcrumbNode(el) {
+    if (!el) return false;
+    if (el.id === "daab-breadcrumbs") return true;
+    if (el.classList && el.classList.contains("daab-breadcrumbs")) return true;
+    if (el.classList && el.classList.contains("forum-breadcrumbs")) return true;
+    if (
+      el.classList &&
+      el.classList.contains("breadcrumbs") &&
+      el.classList.contains("forum-breadcrumbs")
+    ) {
+      return true;
+    }
+    return false;
+  }
+
+  function findChromeBreadcrumbs() {
+    var shell = document.getElementById("daab-top-chrome");
+    if (shell) {
+      var inShell = shell.querySelector(
+        "#daab-breadcrumbs, nav.daab-breadcrumbs, .forum-breadcrumbs, .breadcrumbs.forum-breadcrumbs"
+      );
+      if (inShell) return inShell;
+    }
+    return (
+      document.getElementById("daab-breadcrumbs") ||
+      document.querySelector(
+        ".forum-breadcrumbs, .breadcrumbs.forum-breadcrumbs, nav.daab-breadcrumbs"
+      )
+    );
+  }
+
+  function mountTopChrome() {
+    var body = document.body;
+    if (!body || body.classList.contains("daab-gateway")) return;
+
+    var nav = document.querySelector(".nav-strip");
+    if (!nav) return;
+
+    var shell = document.getElementById("daab-top-chrome");
+    if (!shell) {
+      shell = document.createElement("div");
+      shell.id = "daab-top-chrome";
+      shell.setAttribute("data-daab-chrome", "1");
+      var skip = body.querySelector(".skip");
+      if (skip && skip.parentNode === body) {
+        body.insertBefore(shell, skip.nextSibling);
+      } else {
+        body.insertBefore(shell, body.firstChild);
+      }
+    }
+
+    if (nav.parentNode !== shell) {
+      shell.appendChild(nav);
+    }
+
+    var crumbs = findChromeBreadcrumbs();
+    if (crumbs && crumbs.parentNode !== shell) {
+      shell.appendChild(crumbs);
+    }
+
+    var spacer = document.getElementById("daab-chrome-spacer");
+    if (!spacer) {
+      spacer = document.createElement("div");
+      spacer.id = "daab-chrome-spacer";
+      spacer.setAttribute("aria-hidden", "true");
+    }
+    if (spacer.parentNode !== body) {
+      body.insertBefore(spacer, shell.nextSibling);
+    } else if (spacer.previousElementSibling !== shell) {
+      body.insertBefore(spacer, shell.nextSibling);
+    }
+  }
+
   function syncNavHeight() {
-    var strip = document.querySelector(".nav-strip");
-    if (!strip) return;
-    var h = Math.ceil(strip.getBoundingClientRect().height);
+    mountTopChrome();
+    var nav = document.querySelector(".nav-strip");
+    if (!nav) return;
+    var h = Math.ceil(nav.getBoundingClientRect().height);
     if (h > 0) {
       document.documentElement.style.setProperty("--daab-nav-height", h + "px");
     }
+  }
+
+  function syncBreadcrumbsHeightFallback() {
+    var el = findChromeBreadcrumbs();
+    if (!el) {
+      document.documentElement.style.setProperty("--daab-breadcrumbs-height", "0px");
+      return;
+    }
+    var h = Math.ceil(el.getBoundingClientRect().height);
+    document.documentElement.style.setProperty(
+      "--daab-breadcrumbs-height",
+      h > 0 ? h + "px" : "0px"
+    );
+  }
+
+  function syncChromeSpacer() {
+    var shell = document.getElementById("daab-top-chrome");
+    var spacer = document.getElementById("daab-chrome-spacer");
+    if (!shell || !spacer) return;
+    var h = Math.ceil(shell.getBoundingClientRect().height);
+    if (h > 0) {
+      spacer.style.height = h + "px";
+    }
+  }
+
+  function syncStickyChrome() {
+    mountTopChrome();
+    syncNavHeight();
+    if (window.DAAB_BREADCRUMBS && typeof window.DAAB_BREADCRUMBS.syncHeight === "function") {
+      window.DAAB_BREADCRUMBS.syncHeight();
+    } else {
+      syncBreadcrumbsHeightFallback();
+    }
+    syncChromeSpacer();
   }
 
   function applyScrollLock(on) {
@@ -25,24 +133,17 @@
       root.style.setProperty("--daab-scroll-lock-y", lockedScrollY + "px");
       root.classList.add("daab-scroll-lock");
       body.classList.add("daab-scroll-lock");
-      body.style.position = "fixed";
-      body.style.top = "-" + lockedScrollY + "px";
-      body.style.left = "0";
-      body.style.right = "0";
-      body.style.width = "100%";
+      body.style.overflow = "hidden";
+      body.style.touchAction = "none";
     } else {
       root.classList.remove("daab-scroll-lock");
       body.classList.remove("daab-scroll-lock");
       root.style.removeProperty("--daab-scroll-lock-y");
-      body.style.position = "";
-      body.style.top = "";
-      body.style.left = "";
-      body.style.right = "";
-      body.style.width = "";
-      var y = lockedScrollY;
-      window.scrollTo(0, y);
+      body.style.overflow = "";
+      body.style.touchAction = "";
+      window.scrollTo(0, lockedScrollY);
     }
-    syncNavHeight();
+    syncStickyChrome();
   }
 
   function recomputeScrollLock() {
@@ -67,23 +168,36 @@
       if (scrollLocked) return lockedScrollY;
       var root = document.documentElement;
       var body = document.body;
-      return (
-        window.scrollY ||
-        root.scrollTop ||
-        (body && body.scrollTop) ||
-        0
-      );
-    },
+      return window.scrollY || root.scrollTop || (body && body.scrollTop) || 0;
+    }
+  };
+
+  window.DAAB_STICKY_CHROME = {
+    sync: syncStickyChrome,
+    syncNavHeight: syncNavHeight,
+    mount: mountTopChrome
   };
 
   function initNavHeight() {
-    syncNavHeight();
-    window.addEventListener("resize", syncNavHeight, { passive: true });
+    syncStickyChrome();
+    window.addEventListener("resize", syncStickyChrome, { passive: true });
     window.addEventListener("orientationchange", function () {
-      window.setTimeout(syncNavHeight, 100);
+      window.setTimeout(syncStickyChrome, 100);
     });
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", syncStickyChrome, { passive: true });
+      window.visualViewport.addEventListener("scroll", syncStickyChrome, { passive: true });
+    }
     if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(syncNavHeight);
+      document.fonts.ready.then(syncStickyChrome);
+    }
+    if (typeof ResizeObserver !== "undefined") {
+      var shell = document.getElementById("daab-top-chrome");
+      var observeTarget = shell || document.querySelector(".nav-strip");
+      if (observeTarget) {
+        var ro = new ResizeObserver(syncStickyChrome);
+        ro.observe(observeTarget);
+      }
     }
   }
 
@@ -114,7 +228,10 @@
     });
   }
 
+  document.addEventListener("daab-breadcrumbs-ready", syncStickyChrome);
+
   function init() {
+    mountTopChrome();
     initNavHeight();
     initMobileMenuScrollLock();
     initSearchOverlayA11y();
@@ -126,5 +243,5 @@
     init();
   }
 
-  window.addEventListener("load", syncNavHeight, { passive: true });
+  window.addEventListener("load", syncStickyChrome, { passive: true });
 })();

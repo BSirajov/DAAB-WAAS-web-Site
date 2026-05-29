@@ -55,15 +55,11 @@
   color: var(--white) !important;
 }
 
-/* Breadcrumbs — sticky directly under the primary nav */
+/* Breadcrumbs — fixed under nav via daab-sticky-chrome.css */
 .daab-breadcrumbs,
 .forum-breadcrumbs,
 .breadcrumbs.forum-breadcrumbs,
 div.breadcrumbs.forum-breadcrumbs {
-  position: -webkit-sticky;
-  position: sticky;
-  top: var(--daab-nav-height, 86px);
-  z-index: 9998;
   width: 100%;
   margin: 0;
   background: #e8f4fb;

@@ -198,14 +198,14 @@ body {
 }
 
 .card-header {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .card-country {
   margin: 4px 0 0;
   color: var(--muted);
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.35;
   letter-spacing: .04em;
 }
@@ -214,7 +214,7 @@ body {
   display: block;
   color: var(--blue-700);
   font-size: 15px;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.35;
   letter-spacing: .01em;
   overflow-wrap: anywhere;
@@ -239,15 +239,45 @@ a.card-name:focus-visible {
   border: 1px solid var(--color-border-blue-faint);
   border-radius: var(--radius-pill);
   font-size: 11px;
-  font-weight: 900;
+  font-weight: 700;
   vertical-align: middle;
 }
 
-.card-title {
+/* Profile header — all text above the Listen button */
+.card-profile-header .card-name,
+.card-profile-header .card-country,
+.card-profile-header .card-title,
+.card-profile-header .card-role,
+.card-profile-header .card-meta-label,
+.card-profile-header .card-meta-ixtilas,
+.card-profile-header .card-email,
+.card-profile-header .card-email--empty,
+.card-profile-header .cred {
+  font-weight: 700;
+}
+
+.card-post-meta {
+  margin-top: 2px;
+}
+
+.card-header .card-title {
   margin: 6px 0 0;
-  color: #102033;
+}
+
+.card-role {
+  margin: 6px 0 0;
+  color: #1a3d5c;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.card-title {
+  margin: 8px 0 0;
+  color: #34465a;
+  font-size: 13px;
+  font-weight: 700;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
@@ -256,7 +286,7 @@ a.card-name:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin: 10px 0 0;
+  margin: 8px 0 0;
   padding: 10px 12px;
   background: var(--color-surface-news);
   border: 1px solid var(--color-border-blue-muted);
@@ -275,7 +305,7 @@ a.card-name:focus-visible {
   flex: 0 0 auto;
   color: var(--muted);
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.4;
   white-space: nowrap;
 }
@@ -285,7 +315,7 @@ a.card-name:focus-visible {
   min-width: 0;
   color: var(--blue-800);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.4;
   overflow-wrap: anywhere;
 }
@@ -315,7 +345,7 @@ a.card-name:focus-visible {
 /* Used when a profile has no email (TTS checks .card-email--empty in daab-profile-tts.js). */
 .card-email--empty {
   color: var(--muted);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .card-bio {
@@ -323,6 +353,8 @@ a.card-name:focus-visible {
   flex: 1;
   padding-top: 14px;
   border-top: 1px solid var(--color-border-blue-10);
+  color: #000;
+  font-family: var(--font-sans);
 }
 
 .card-bio > *:first-child {
@@ -343,12 +375,18 @@ a.card-name:focus-visible {
   margin-top: 12px;
 }
 
-.bio,
-.bio-lead,
-.bullets,
-.awards-list {
-  color: var(--muted);
+.card-bio .bio,
+.card-bio .bio-lead,
+.card-bio .bio-section-title,
+.card-bio p,
+.card-bio .bullets,
+.card-bio .bullets li,
+.card-bio .awards-list,
+.card-bio .awards-list li {
+  color: #000;
+  font-family: var(--font-sans);
   font-size: 13.5px;
+  font-weight: 400;
   line-height: 1.68;
   overflow-wrap: anywhere;
   text-align: justify;
@@ -356,31 +394,15 @@ a.card-name:focus-visible {
   hyphens: auto;
 }
 
-.card-bio > p.bio:first-child,
-.card-bio > p.bio-lead:first-child {
-  color: #1a3d5c;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.bio-lead {
-  margin-bottom: 4px;
-}
-
-.bullets li,
-.awards-list li {
-  overflow-wrap: anywhere;
-}
-
-.bio-section-title,
-.bio-lead {
+.card-bio .bio-section-title,
+.card-bio .bio-lead {
   margin: 0;
-  color: var(--color-heading-blue);
-  font-family: var(--font-serif);
-  font-size: 13px;
-  font-weight: 800;
-  line-height: 1.35;
-  letter-spacing: .02em;
+  letter-spacing: normal;
+}
+
+.card-bio strong,
+.card-bio b {
+  font-weight: 400;
 }
 
 .bullets,
@@ -417,8 +439,7 @@ a.card-name:focus-visible {
 }
 
 .awards-list li {
-  color: #3d5068;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .no-results {
@@ -504,11 +525,16 @@ a.card-name:focus-visible {
     line-height: 1.55;
   }
 
-  .bio,
-  .bullets,
-  .awards-list {
+  .card-bio .bio,
+  .card-bio .bio-lead,
+  .card-bio .bio-section-title,
+  .card-bio p,
+  .card-bio .bullets,
+  .card-bio .bullets li,
+  .card-bio .awards-list,
+  .card-bio .awards-list li {
     font-size: 14px;
-    line-height: 1.65;
+    line-height: 1.68;
   }
 
   .bullets,
@@ -587,12 +613,21 @@ a.card-name:focus-visible {
     font-size: 14px;
   }
 
-  .card-title,
-  .bio,
-  .bullets,
-  .awards-list {
+  .card-title {
     font-size: 13px;
-    line-height: 1.62;
+    line-height: 1.5;
+  }
+
+  .card-bio .bio,
+  .card-bio .bio-lead,
+  .card-bio .bio-section-title,
+  .card-bio p,
+  .card-bio .bullets,
+  .card-bio .bullets li,
+  .card-bio .awards-list,
+  .card-bio .awards-list li {
+    font-size: 13px;
+    line-height: 1.68;
   }
 
   .card-meta {

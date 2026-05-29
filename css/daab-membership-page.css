@@ -44,13 +44,6 @@
   box-shadow: 0 14px 32px rgba(26, 111, 168, .28) !important;
 }
 
-.membership-page .hero-actions .btn.btn-primary:disabled:hover::after,
-.membership-page .hero-actions .btn.btn-primary:disabled:focus-visible::after,
-.membership-page .hero-actions .btn.btn-primary[aria-disabled="true"]:hover::after,
-.membership-page .hero-actions .btn.btn-primary[aria-disabled="true"]:focus-visible::after {
-  transform: none;
-}
-
 .membership-page .btn-secondary {
   background: rgba(255, 255, 255, .9) !important;
   color: var(--blue-700) !important;
@@ -120,6 +113,131 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .08em;
+}
+
+/* Match Forum 2024 hub card sizing (daab-hub-cards.css) */
+.membership-page .intro-card,
+.membership-page .card {
+  background: var(--color-surface-toolbar) !important;
+  border: 1px solid var(--blue-soft) !important;
+  box-shadow: var(--shadow) !important;
+  border-radius: var(--radius);
+}
+
+.membership-page .intro-card {
+  gap: 24px;
+  padding: 26px 30px;
+  margin-bottom: 24px;
+}
+
+.membership-page .lang-card {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.membership-page .lang-card::before {
+  display: none;
+}
+
+.membership-page .lang-card p {
+  margin-bottom: 12px;
+  font-size: var(--font-size-sm);
+  line-height: 1.45;
+}
+
+.membership-page .section-label {
+  margin: 32px 0 18px;
+}
+
+.membership-page .cards {
+  gap: 14px;
+}
+
+.membership-page .card {
+  min-height: 200px;
+  transition: 0.25s ease;
+}
+
+.membership-page .card:hover {
+  transform: translateY(-7px);
+  border-color: var(--blue-400) !important;
+  box-shadow: var(--shadow-strong) !important;
+}
+
+.membership-page .card-header {
+  padding: 14px 16px;
+  font-size: 15px;
+  line-height: 1.22;
+  letter-spacing: 0.04em;
+}
+
+.membership-page .card-body {
+  padding: 16px 16px 14px;
+}
+
+.membership-page .card-body p {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.membership-page .pricing {
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.membership-page .price-box {
+  padding: 14px 12px;
+  border-radius: var(--radius2);
+}
+
+.membership-page .price-box strong {
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.membership-page .price-box span {
+  font-size: 9px;
+}
+
+.membership-page .bank-table {
+  margin-top: 12px;
+  border-radius: var(--radius2);
+}
+
+.membership-page .bank-table th,
+.membership-page .bank-table td {
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.membership-page .iban-list li {
+  padding: 4px 0 4px 16px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.membership-page .signature {
+  margin-top: 14px !important;
+  padding: 14px 16px;
+  font-size: 12px;
+  line-height: 1.45;
+  border-radius: var(--radius2);
+}
+
+@media (max-width: 760px) {
+  .membership-page .intro-card {
+    padding: 20px 18px;
+  }
+
+  .membership-page .card-body {
+    padding: 16px;
+  }
 }
 
 @media(max-width:1060px){.membership-page .hero-wrap{grid-template-columns:1fr}.membership-page .hero-panel{max-width:640px}.cards,.intro-card{grid-template-columns:1fr}}@media(max-width:760px){.membership-page .hero-wrap{padding:48px 18px 40px}.membership-page .main{padding:28px 16px 48px}.action-row,.pricing,.footer-grid{grid-template-columns:1fr}.hero-actions{flex-direction:column}.membership-page .btn{justify-content:center}.card-body{padding:20px}.bank-table th,.bank-table td{display:block;width:100%}.bank-table th{border-bottom:0}.footer-grid{grid-template-columns:1fr}.footer-brand h3{font-size:20px}.membership-page .panel-title{font-size:clamp(15px,3.8vw,18px)!important}}

@@ -1,0 +1,1662 @@
+[
+  {
+    "id": "afina-memmedli-barmanbay",
+    "photo": {
+      "l": 79,
+      "t": 771.96875,
+      "r": 227,
+      "b": 947.96875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 922.59375,
+      "r": 1107,
+      "b": 960.59375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "agamali-memmedov",
+    "photo": {
+      "l": 79,
+      "t": 1353.484375,
+      "r": 227,
+      "b": 1529.484375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 1504.109375,
+      "r": 1107,
+      "b": 1542.109375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "akif-alaferdov",
+    "photo": {
+      "l": 79,
+      "t": 1817.3125,
+      "r": 227,
+      "b": 1993.3125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 1967.9375,
+      "r": 1107,
+      "b": 2005.9375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "akif-suleymanov",
+    "photo": {
+      "l": 79,
+      "t": 2584.53125,
+      "r": 227,
+      "b": 2760.53125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 2754.65625,
+      "r": 1107,
+      "b": 2792.65625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "arif-quliyev",
+    "photo": {
+      "l": 79,
+      "t": 3267.0625,
+      "r": 227,
+      "b": 3443.0625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 3476.1875,
+      "r": 1107,
+      "b": 3514.1875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "arzu-qurbanova",
+    "photo": {
+      "l": 79,
+      "t": 3834.734375,
+      "r": 227,
+      "b": 4010.734375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 3985.359375,
+      "r": 1107,
+      "b": 4023.359375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "asef-salamov",
+    "photo": {
+      "l": 79,
+      "t": 4775.640625,
+      "r": 227,
+      "b": 4951.640625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 4926.265625,
+      "r": 1107,
+      "b": 4964.265625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "aygul-isayeva",
+    "photo": {
+      "l": 79,
+      "t": 5148.78125,
+      "r": 227,
+      "b": 5324.78125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 5299.40625,
+      "r": 1107,
+      "b": 5337.40625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "aynur-quliyeva",
+    "photo": {
+      "l": 79,
+      "t": 5779.96875,
+      "r": 227,
+      "b": 5955.96875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 5930.59375,
+      "r": 1107,
+      "b": 5968.59375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "aytekin-huseynli",
+    "photo": {
+      "l": 79,
+      "t": 6240.96875,
+      "r": 227,
+      "b": 6416.96875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 6391.59375,
+      "r": 1107,
+      "b": 6429.59375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "azer-abdullayev",
+    "photo": {
+      "l": 79,
+      "t": 6890.5,
+      "r": 227,
+      "b": 7066.5,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 7041.125,
+      "r": 1107,
+      "b": 7079.125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "bakhtiyar-sirajov",
+    "photo": {
+      "l": 79,
+      "t": 7472.015625,
+      "r": 227,
+      "b": 7648.015625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 7622.640625,
+      "r": 1107,
+      "b": 7660.640625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "cavid-qasimov",
+    "photo": {
+      "l": 79,
+      "t": 8077.53125,
+      "r": 227,
+      "b": 8253.53125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 8228.15625,
+      "r": 1107,
+      "b": 8266.15625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "cemile-cavadova-spitzberq",
+    "photo": {
+      "l": 79,
+      "t": 8425.171875,
+      "r": 227,
+      "b": 8601.171875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 8575.796875,
+      "r": 1107,
+      "b": 8613.796875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "dinara-abbasova",
+    "photo": {
+      "l": 79,
+      "t": 9069.859375,
+      "r": 227,
+      "b": 9245.859375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 9239.984375,
+      "r": 1107,
+      "b": 9277.984375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "elcin-bedelov",
+    "photo": {
+      "l": 79,
+      "t": 9550.359375,
+      "r": 227,
+      "b": 9726.359375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 9700.984375,
+      "r": 1107,
+      "b": 9738.984375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "eldar-ehedov",
+    "photo": {
+      "l": 79,
+      "t": 10308.40625,
+      "r": 227,
+      "b": 10484.40625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 10478.53125,
+      "r": 1107,
+      "b": 10516.53125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "eldar-veliyev",
+    "photo": {
+      "l": 79,
+      "t": 10791.734375,
+      "r": 227,
+      "b": 10967.734375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 10942.359375,
+      "r": 1107,
+      "b": 10980.359375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "elsad-allahyarov",
+    "photo": {
+      "l": 79,
+      "t": 11255.5625,
+      "r": 227,
+      "b": 11431.5625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 11406.1875,
+      "r": 1107,
+      "b": 11444.1875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "elvin-efendi",
+    "photo": {
+      "l": 79,
+      "t": 12020.765625,
+      "r": 227,
+      "b": 12196.765625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 12171.390625,
+      "r": 1107,
+      "b": 12209.390625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "emil-ahmadov",
+    "photo": {
+      "l": 79,
+      "t": 12715.640625,
+      "r": 227,
+      "b": 12891.640625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 12866.265625,
+      "r": 1107,
+      "b": 12904.265625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "ebulfez-suleymanov",
+    "photo": {
+      "l": 79,
+      "t": 13147.625,
+      "r": 227,
+      "b": 13323.625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 13317.75,
+      "r": 1107,
+      "b": 13355.75
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "eleddin-allahverdiyev",
+    "photo": {
+      "l": 79,
+      "t": 13612.609375,
+      "r": 227,
+      "b": 13788.609375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 13802.234375,
+      "r": 1107,
+      "b": 13840.234375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "eliheyder-rehimov",
+    "photo": {
+      "l": 79,
+      "t": 14776.21875,
+      "r": 227,
+      "b": 14952.21875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 14946.34375,
+      "r": 1107,
+      "b": 14984.34375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "emirulla-memmedov",
+    "photo": {
+      "l": 79,
+      "t": 15273.046875,
+      "r": 227,
+      "b": 15449.046875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 15423.671875,
+      "r": 1107,
+      "b": 15461.671875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "gunel-seferova",
+    "photo": {
+      "l": 79,
+      "t": 15936.078125,
+      "r": 227,
+      "b": 16112.078125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 16106.203125,
+      "r": 1107,
+      "b": 16144.203125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "hacali-necefoglu",
+    "photo": {
+      "l": 79,
+      "t": 16464.75,
+      "r": 227,
+      "b": 16640.75,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 16634.875,
+      "r": 1107,
+      "b": 16672.875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "xaqani-qayibli",
+    "photo": {
+      "l": 79,
+      "t": 17052.265625,
+      "r": 227,
+      "b": 17228.265625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 17228.390625,
+      "r": 1107,
+      "b": 17266.390625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "xedice-zeynalova",
+    "photo": {
+      "l": 79,
+      "t": 18283.734375,
+      "r": 227,
+      "b": 18459.734375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 18473.359375,
+      "r": 1107,
+      "b": 18511.359375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "xelil-kelenter",
+    "photo": {
+      "l": 79,
+      "t": 19130.453125,
+      "r": 227,
+      "b": 19306.453125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 19281.078125,
+      "r": 1107,
+      "b": 19319.078125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "ilham-axundov",
+    "photo": {
+      "l": 79,
+      "t": 19594.28125,
+      "r": 227,
+      "b": 19770.28125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 19744.90625,
+      "r": 1107,
+      "b": 19782.90625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "ilkin-qulusoy",
+    "photo": {
+      "l": 79,
+      "t": 20075.9375,
+      "r": 227,
+      "b": 20251.9375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 20226.5625,
+      "r": 1107,
+      "b": 20264.5625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "ismayil-eliyev",
+    "photo": {
+      "l": 79,
+      "t": 20680.125,
+      "r": 227,
+      "b": 20856.125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 20850.25,
+      "r": 1107,
+      "b": 20888.25
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "ismixan-bayramov",
+    "photo": {
+      "l": 79,
+      "t": 21421.5,
+      "r": 227,
+      "b": 21597.5,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 21572.125,
+      "r": 1107,
+      "b": 21610.125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "kamal-ekberov",
+    "photo": {
+      "l": 79,
+      "t": 22034.859375,
+      "r": 227,
+      "b": 22210.859375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 22185.484375,
+      "r": 1107,
+      "b": 22223.484375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "kamran-rustemov",
+    "photo": {
+      "l": 79,
+      "t": 22682.375,
+      "r": 227,
+      "b": 22858.375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 22852.5,
+      "r": 1107,
+      "b": 22890.5
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "qafar-caxmaqli-mehdiyev",
+    "photo": {
+      "l": 79,
+      "t": 23192.703125,
+      "r": 227,
+      "b": 23368.703125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 23343.328125,
+      "r": 1107,
+      "b": 23381.328125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "qerib-mursudov",
+    "photo": {
+      "l": 79,
+      "t": 23701.875,
+      "r": 227,
+      "b": 23877.875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 23852.5,
+      "r": 1107,
+      "b": 23890.5
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "lev-v-eppelbaum",
+    "photo": {
+      "l": 79,
+      "t": 24793.296875,
+      "r": 227,
+      "b": 24969.296875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 24943.921875,
+      "r": 1107,
+      "b": 24981.921875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "meqbule-sebziyeva",
+    "photo": {
+      "l": 79,
+      "t": 25574.015625,
+      "r": 227,
+      "b": 25750.015625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 25724.640625,
+      "r": 1107,
+      "b": 25762.640625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "mark-applebaum",
+    "photo": {
+      "l": 79,
+      "t": 26178.203125,
+      "r": 227,
+      "b": 26354.203125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 26328.828125,
+      "r": 1107,
+      "b": 26366.828125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "mehdi-genceli-ismayilov",
+    "photo": {
+      "l": 79,
+      "t": 26723.546875,
+      "r": 227,
+      "b": 26899.546875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 26874.171875,
+      "r": 1107,
+      "b": 26912.171875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "mehmet-riza-heyet",
+    "photo": {
+      "l": 79,
+      "t": 27184.546875,
+      "r": 227,
+      "b": 27360.546875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 27335.171875,
+      "r": 1107,
+      "b": 27373.171875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "messoud-efendiyev",
+    "photo": {
+      "l": 79,
+      "t": 27752.5625,
+      "r": 227,
+      "b": 27928.5625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 27903.1875,
+      "r": 1107,
+      "b": 27941.1875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "mirze-mutellimov",
+    "photo": {
+      "l": 79,
+      "t": 29060.84375,
+      "r": 227,
+      "b": 29236.84375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 29230.96875,
+      "r": 1107,
+      "b": 29268.96875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "murad-abuzerli",
+    "photo": {
+      "l": 79,
+      "t": 29496,
+      "r": 227,
+      "b": 29672,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 29646.625,
+      "r": 1107,
+      "b": 29684.625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "murad-omerov",
+    "photo": {
+      "l": 79,
+      "t": 29843.640625,
+      "r": 227,
+      "b": 30019.640625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 30013.765625,
+      "r": 1107,
+      "b": 30051.765625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "natiq-agakisiyev",
+    "photo": {
+      "l": 79,
+      "t": 30476.5,
+      "r": 227,
+      "b": 30652.5,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 30646.625,
+      "r": 1107,
+      "b": 30684.625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "nigar-masimova",
+    "photo": {
+      "l": 79,
+      "t": 30843.640625,
+      "r": 227,
+      "b": 31019.640625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 31013.765625,
+      "r": 1107,
+      "b": 31051.765625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "nizami-memmedov",
+    "photo": {
+      "l": 79,
+      "t": 31258.953125,
+      "r": 227,
+      "b": 31434.953125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 31429.078125,
+      "r": 1107,
+      "b": 31467.078125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "oruc-allahverdiyev",
+    "photo": {
+      "l": 79,
+      "t": 31626.09375,
+      "r": 227,
+      "b": 31802.09375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 31776.71875,
+      "r": 1107,
+      "b": 31814.71875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "ramin-eliyev",
+    "photo": {
+      "l": 79,
+      "t": 32298.296875,
+      "r": 227,
+      "b": 32474.296875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 32448.921875,
+      "r": 1107,
+      "b": 32486.921875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "rasim-cenneteliyev",
+    "photo": {
+      "l": 79,
+      "t": 32759.296875,
+      "r": 227,
+      "b": 32935.296875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 32909.921875,
+      "r": 1107,
+      "b": 32947.921875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "rauf-abdullayev",
+    "photo": {
+      "l": 79,
+      "t": 33129.609375,
+      "r": 227,
+      "b": 33305.609375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 33280.234375,
+      "r": 1107,
+      "b": 33318.234375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "reyhan-hesenova",
+    "photo": {
+      "l": 79,
+      "t": 33477.25,
+      "r": 227,
+      "b": 33653.25,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 33627.875,
+      "r": 1107,
+      "b": 33665.875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "reza-moridi",
+    "photo": {
+      "l": 79,
+      "t": 33892.90625,
+      "r": 227,
+      "b": 34068.90625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 34043.53125,
+      "r": 1107,
+      "b": 34081.53125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "rovsen-ibrahimov",
+    "photo": {
+      "l": 79,
+      "t": 34383.734375,
+      "r": 227,
+      "b": 34559.734375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 34534.359375,
+      "r": 1107,
+      "b": 34572.359375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "saleh-sultansoy",
+    "photo": {
+      "l": 79,
+      "t": 35096.4375,
+      "r": 227,
+      "b": 35272.4375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 35247.0625,
+      "r": 1107,
+      "b": 35285.0625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "sevda-kerimova",
+    "photo": {
+      "l": 79,
+      "t": 35759.46875,
+      "r": 227,
+      "b": 35935.46875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 35929.59375,
+      "r": 1107,
+      "b": 35967.59375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "sevinc-esgerova",
+    "photo": {
+      "l": 79,
+      "t": 36126.609375,
+      "r": 227,
+      "b": 36302.609375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 36296.734375,
+      "r": 1107,
+      "b": 36334.734375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "sevinj-mammadova",
+    "photo": {
+      "l": 79,
+      "t": 36646.109375,
+      "r": 227,
+      "b": 36822.109375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 36796.734375,
+      "r": 1107,
+      "b": 36834.734375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "seymur-nasirov",
+    "photo": {
+      "l": 79,
+      "t": 37441.328125,
+      "r": 227,
+      "b": 37617.328125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 37591.953125,
+      "r": 1107,
+      "b": 37629.953125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "saadat-karimi",
+    "photo": {
+      "l": 79,
+      "t": 38982.84375,
+      "r": 227,
+      "b": 39158.84375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 39133.46875,
+      "r": 1107,
+      "b": 39171.46875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "sebine-isgenderova",
+    "photo": {
+      "l": 79,
+      "t": 39623.203125,
+      "r": 227,
+      "b": 39799.203125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 39793.328125,
+      "r": 1107,
+      "b": 39831.328125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "seide-xelilova",
+    "photo": {
+      "l": 79,
+      "t": 40013.015625,
+      "r": 227,
+      "b": 40189.015625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 40163.640625,
+      "r": 1107,
+      "b": 40201.640625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "suleyman-allahverdiyev",
+    "photo": {
+      "l": 79,
+      "t": 40517.34375,
+      "r": 227,
+      "b": 40693.34375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 40726.46875,
+      "r": 1107,
+      "b": 40764.46875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "sahin-ehmedoglu",
+    "photo": {
+      "l": 79,
+      "t": 41021.328125,
+      "r": 227,
+      "b": 41197.328125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 41171.953125,
+      "r": 1107,
+      "b": 41209.953125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "sehriyar-muxtarov",
+    "photo": {
+      "l": 79,
+      "t": 41521.328125,
+      "r": 227,
+      "b": 41697.328125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 41691.453125,
+      "r": 1107,
+      "b": 41729.453125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "suay-abdullayev",
+    "photo": {
+      "l": 79,
+      "t": 41995.484375,
+      "r": 227,
+      "b": 42171.484375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 42146.109375,
+      "r": 1107,
+      "b": 42184.109375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "teymur-rzayev",
+    "photo": {
+      "l": 79,
+      "t": 42531.65625,
+      "r": 227,
+      "b": 42707.65625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 42701.78125,
+      "r": 1107,
+      "b": 42739.78125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "tofiq-aydarov",
+    "photo": {
+      "l": 79,
+      "t": 43507.890625,
+      "r": 227,
+      "b": 43683.890625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 43658.515625,
+      "r": 1107,
+      "b": 43696.515625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "togrul-ismayil",
+    "photo": {
+      "l": 79,
+      "t": 43976.046875,
+      "r": 227,
+      "b": 44152.046875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 44126.671875,
+      "r": 1107,
+      "b": 44164.671875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "togrul-karimov",
+    "photo": {
+      "l": 79,
+      "t": 44815.09375,
+      "r": 227,
+      "b": 44991.09375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 44965.71875,
+      "r": 1107,
+      "b": 45003.71875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "togrul-talisinski",
+    "photo": {
+      "l": 79,
+      "t": 45185.40625,
+      "r": 227,
+      "b": 45361.40625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 45355.53125,
+      "r": 1107,
+      "b": 45393.53125
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "vahid-qedimov",
+    "photo": {
+      "l": 79,
+      "t": 45659.5625,
+      "r": 227,
+      "b": 45835.5625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 45810.1875,
+      "r": 1107,
+      "b": 45848.1875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "valeh-rustemov",
+    "photo": {
+      "l": 79,
+      "t": 46114.21875,
+      "r": 227,
+      "b": 46290.21875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 46284.34375,
+      "r": 1107,
+      "b": 46322.34375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "varqa-kelenterov",
+    "photo": {
+      "l": 79,
+      "t": 46549.375,
+      "r": 227,
+      "b": 46725.375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 46700,
+      "r": 1107,
+      "b": 46738
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "vefa-qurban",
+    "photo": {
+      "l": 79,
+      "t": 46942.359375,
+      "r": 227,
+      "b": 47118.359375,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 47092.984375,
+      "r": 1107,
+      "b": 47130.984375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "vehid-geruslu",
+    "photo": {
+      "l": 79,
+      "t": 47338.171875,
+      "r": 227,
+      "b": 47514.171875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 47488.796875,
+      "r": 1107,
+      "b": 47526.796875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "yasar-musayev",
+    "photo": {
+      "l": 79,
+      "t": 47925.015625,
+      "r": 227,
+      "b": 48101.015625,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 48075.640625,
+      "r": 1107,
+      "b": 48113.640625
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "yulduz-rahimov",
+    "photo": {
+      "l": 79,
+      "t": 49193.125,
+      "r": 227,
+      "b": 49369.125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 49343.75,
+      "r": 1107,
+      "b": 49381.75
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "zahid-qocayev",
+    "photo": {
+      "l": 79,
+      "t": 49744.8125,
+      "r": 227,
+      "b": 49920.8125,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 49934.4375,
+      "r": 1107,
+      "b": 49972.4375
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  },
+  {
+    "id": "zerife-osmanli",
+    "photo": {
+      "l": 79,
+      "t": 50202.296875,
+      "r": 227,
+      "b": 50378.296875,
+      "w": 148,
+      "h": 176
+    },
+    "listen": {
+      "l": 249,
+      "t": 50352.921875,
+      "r": 1107,
+      "b": 50390.921875
+    },
+    "besidePhoto": true,
+    "underPhotoLeft": false,
+    "inPhotoColumn": false
+  }
+]

@@ -7,6 +7,8 @@ import shutil
 from pathlib import Path
 
 from _paths import HELPERS, ROOT
+from forum_en_video_gallery import translate_description
+from _embed_static_nav import forum_nav_strip
 
 DATA_IN = HELPERS / "_video_gallery_items.json"
 DATA_JS = ROOT / "js" / "video-gallery-data.json"
@@ -96,6 +98,8 @@ def grid_html_for(lang: str, items: list[dict]) -> str:
         link = esc(item["link"])
         caption = esc(item["caption"])
         desc_raw = (item.get("description") or "").strip()
+        if lang == "en" and desc_raw:
+            desc_raw = translate_description(desc_raw)
         desc_html = (
             f'\n<p class="video-gallery-description">{esc(desc_raw)}</p>'
             if desc_raw
@@ -123,14 +127,28 @@ def grid_html_for(lang: str, items: list[dict]) -> str:
 
 def page_html(lang: str, items: list[dict]) -> str:
     c = COPY[lang]
-    home = "../../index.html"
     grid = grid_html_for(lang, items)
-    brand = (
-        "Dünya Azərbaycanlı<br class=\"mobile-hidden-break\">Alimlər Birliyi"
-        if lang == "az"
-        else "World Association of<br class=\"mobile-hidden-break\">Azerbaijani Scientists"
-    )
-    home_aria = "DAAB ana səhifə" if lang == "az" else "WAAS home"
+    nav = forum_nav_strip(lang, active_nav_id="forum-2024")
+    if lang == "az":
+        crumbs = (
+            '<div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Səhifə yolu">\n'
+            '<a href="../../index.html">Ana səhifə</a><span aria-hidden="true">›</span>'
+            '<a href="../../activities.html">Fəaliyyətimiz</a><span aria-hidden="true">›</span>'
+            '<a href="index.html">Forum 2024</a><span aria-hidden="true">›</span>'
+            '<span class="forum-breadcrumbs-current" aria-current="page">Video qalereya</span>\n'
+            "</div>"
+        )
+        menu_aria = "Menyunu aç"
+    else:
+        crumbs = (
+            '<div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Breadcrumb">\n'
+            '<a href="../../index.html">Home</a><span aria-hidden="true">›</span>'
+            '<a href="../../activities.html">Activities</a><span aria-hidden="true">›</span>'
+            '<a href="index.html">Forum 2024</a><span aria-hidden="true">›</span>'
+            '<span class="forum-breadcrumbs-current" aria-current="page">Video gallery</span>\n'
+            "</div>"
+        )
+        menu_aria = "Open menu"
     return f"""<!DOCTYPE html>
 <html lang="{c["lang"]}" data-daab-lang="{c["lang"]}" data-daab-asset-root="{ASSET}" data-daab-page-id="forum-video-gallery" data-daab-nav-mount="1">
 <head>
@@ -141,36 +159,37 @@ def page_html(lang: str, items: list[dict]) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
-<link href="{ASSET}css/daab-common.css?v=34" rel="stylesheet"/>
-<link href="{ASSET}css/daab-mobile.css?v=5" rel="stylesheet"/>
+<link href="{ASSET}css/daab-common.css?v=40" rel="stylesheet"/>
+<link href="{ASSET}css/daab-mobile.css?v=10" rel="stylesheet"/>
 <link href="{ASSET}css/daab-search.css?v=4" rel="stylesheet"/>
-<link href="{ASSET}css/daab-back-to-top.css?v=1" rel="stylesheet"/>
+<link href="{ASSET}css/daab-back-to-top.css?v=2" rel="stylesheet"/>
 <link href="{ASSET}css/daab-lang.css?v=10" rel="stylesheet"/>
-<link href="{ASSET}css/daab-nav-mega.css?v=14" rel="stylesheet"/>
+<link href="{ASSET}css/daab-nav-mega.css?v=19" rel="stylesheet"/>
 <link href="{ASSET}css/daab-hero-summary.css?v=7" rel="stylesheet"/>
-<link href="{ASSET}css/daab-activities-layout.css?v=11" rel="stylesheet"/>
-<link href="{ASSET}css/daab-forum-content.css?v=4" rel="stylesheet"/>
-<link href="{ASSET}css/daab-video-gallery.css?v=5" rel="stylesheet"/>
-<script src="{ASSET}js/daab-mobile.js?v=1" defer></script>
-<script src="{ASSET}js/daab-back-to-top.js?v=2" defer></script>
-<script src="{ASSET}js/daab-i18n.js?v=16" defer></script>
+<link href="{ASSET}css/daab-activities-layout.css?v=13" rel="stylesheet"/>
+<link href="{ASSET}css/daab-forum-content.css?v=18" rel="stylesheet"/>
+<link href="{ASSET}css/daab-video-gallery.css?v=7" rel="stylesheet"/>
+<script src="{ASSET}js/daab-mobile.js?v=5" defer></script>
+<script src="{ASSET}js/daab-back-to-top.js?v=3" defer></script>
+<script src="{ASSET}js/daab-i18n.js?v=17" defer></script>
 <script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
 <script src="{ASSET}js/daab-design-tokens.js?v=1" defer></script>
-<script src="{ASSET}js/daab-nav.js?v=17" defer></script>
-<script src="{ASSET}js/daab-primary-nav.js?v=15" defer></script>
-<script src="{ASSET}js/daab-breadcrumbs.js?v=11" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v=8" defer></script>
+<script src="{ASSET}js/daab-nav.js?v=19" defer></script>
+<script src="{ASSET}js/daab-primary-nav.js?v=16" defer></script>
+<script src="{ASSET}js/daab-breadcrumbs.js?v=13" defer></script>
+<script src="{ASSET}js/daab-section-nav.js?v=10" defer></script>
 <script src="{ASSET}js/daab-shell.js?v=12" defer></script>
 <script src="{ASSET}js/daab-page-subtitle.js?v=2" defer></script>
-<script src="{ASSET}js/daab-search.js?v=5" defer></script>
+<script src="{ASSET}js/daab-search.js?v=6" defer></script>
 </head>
 <body>
 <a class="skip" href="#content">{esc(c["skip"])}</a>
-<nav aria-label="{esc(c["nav_aria"])}" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a aria-label="{esc(home_aria)}" href="{home}"><img src="{ASSET}images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"></a></div><a aria-label="{esc(home_aria)}" class="nav-brand" href="{home}"><span class="nav-brand-text">{brand}</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"></div></div></nav>
+{nav.replace('aria-label="Open menu"', f'aria-label="{menu_aria}"').replace('aria-label="Menyunu aç"', f'aria-label="{menu_aria}"')}
+{crumbs}
 <header class="page-hero">
 <div class="hero-wrap shell">
 <section class="hero-copy">
-<h1>{esc(c["h1_main"])} <span>{esc(c["h1_span"])}</span></h1>
+<h1 aria-describedby="page-hero-subtitle">{esc(c["h1_main"])} <span>{esc(c["h1_span"])}</span></h1>
 <p class="page-hero-subtitle" id="page-hero-subtitle" role="doc-subtitle">{esc(c["subtitle"])}</p>
 </section>
 <aside aria-label="{esc(c["panel_title"])}" class="hero-panel">

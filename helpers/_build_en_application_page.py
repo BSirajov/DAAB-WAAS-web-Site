@@ -46,8 +46,8 @@ def extract_form_block(src: str) -> str:
     block = block.replace('class="btn btn-secondary"', 'class="app-btn app-btn-secondary"')
     block = block.replace('class="btn btn-submit"', 'class="app-btn app-btn-submit"')
     block = block.replace('<a href="#">Charter</a>', '<a href="charter.html">Charter</a>')
-    block = block.replace("mailto:info@daab.az", "mailto:bilik.birlik@gmail.com")
-    block = block.replace(">info@daab.az</a>", ">bilik.birlik@gmail.com</a>")
+    block = block.replace("mailto:info@daab.az", "mailto:info@daab-waas.com")
+    block = block.replace(">info@daab.az</a>", ">info@daab-waas.com</a>")
     return block
 
 

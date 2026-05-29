@@ -1,6 +1,7 @@
 /* === DAAB SHARED DESIGN SYSTEM === */
 @import url("daab-tokens.css");
 @import url("daab-site-background.css");
+@import url("daab-sticky-chrome.css");
 
 * {
   box-sizing: border-box;
@@ -8,13 +9,13 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  overflow-x: clip;
+  overflow-x: hidden;
   color: var(--ink);
   font-family: var(--font-sans);
   line-height: 1.62;
@@ -116,19 +117,9 @@ h3,
   left: 8px;
 }
 
-/* Sticky primary nav — same rule on all live pages using .nav-strip */
+/* Primary nav — fixed at top via daab-sticky-chrome.css; visual shell here */
 body:not(.daab-gateway) > .nav-strip,
 .nav-strip {
-  position: -webkit-sticky !important;
-  position: sticky !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 9999 !important;
-  overflow: visible !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
   background: var(--blue-700) !important;
   border-bottom: 3px solid var(--blue-dark) !important;
   box-shadow: 0 2px 8px rgba(0, 45, 82, .22) !important;
@@ -947,28 +938,58 @@ main a:not(.btn):not(.nav-link):not(.nav-dropdown-link):not(.page-card):not(.new
     left: max(10px, var(--daab-safe-left, 0px)) !important;
     right: max(10px, var(--daab-safe-right, 0px)) !important;
     z-index: 10001 !important;
-    display: none !important;
+    display: flex !important;
     flex: none !important;
     width: auto !important;
     justify-content: stretch !important;
     min-width: 0 !important;
     max-width: none !important;
-    max-height: min(72dvh, calc(100dvh - var(--daab-nav-height, 72px) - 16px)) !important;
-    overflow: auto !important;
+    max-height: 0;
+    overflow: hidden !important;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch !important;
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 6px !important;
-    padding: 12px !important;
+    padding: 0 12px !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
     background: #ffffff !important;
     border: 1px solid rgba(0, 105, 180, .18) !important;
     border-radius: 16px !important;
     box-shadow: 0 18px 42px rgba(0, 45, 82, .18) !important;
+    transform: translateY(-6px);
+    transition:
+      opacity 0.22s ease,
+      transform 0.22s ease,
+      max-height 0.28s ease,
+      padding 0.22s ease,
+      visibility 0s linear 0.28s;
   }
 
   .nav-menu.open {
-    display: flex !important;
+    max-height: min(72dvh, calc(100dvh - var(--daab-nav-height, 72px) - 16px)) !important;
+    overflow: auto !important;
+    padding: 12px !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition:
+      opacity 0.22s ease,
+      transform 0.22s ease,
+      max-height 0.28s ease,
+      padding 0.22s ease,
+      visibility 0s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-menu,
+    .nav-menu.open {
+      transition: none !important;
+      transform: none !important;
+    }
   }
 
   .nav-menu .nav-link,

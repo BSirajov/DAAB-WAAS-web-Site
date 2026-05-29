@@ -110,7 +110,7 @@
     box-shadow var(--duration-fast) var(--ease-default);
 
   /* —— Z-index stack —— */
-  --z-breadcrumbs: 100;
+  --z-breadcrumbs: 9998;
   --z-hero: 1;
   --z-nav: 9999;
   --z-back-to-top: 10050;

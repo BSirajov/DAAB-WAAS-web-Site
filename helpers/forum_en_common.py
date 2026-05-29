@@ -5,7 +5,7 @@ FORUM_FOOTER_EN = """<footer class="footer-pro">
 <div class="footer-inner">
 <div class="footer-brand"><h3>World Association of Azerbaijani Scientists</h3></div>
 <div class="footer-grid">
-<div class="footer-col"><h4 class="footer-title">Contact</h4><div class="footer-item">✉ <a href="mailto:bilik.birlik@gmail.com">bilik.birlik@gmail.com</a></div><div class="footer-item">☎ <span>+90 555 147 46 74</span></div><div class="footer-item">🌐 <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div></div>
+<div class="footer-col"><h4 class="footer-title">Contact</h4><div class="footer-item">✉ <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item">☎ <span>+90 555 147 46 74</span></div><div class="footer-item">🌐 <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div></div>
 <div class="footer-col"><h4 class="footer-title">Address</h4><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Pasa Sokak No:44<br/>Kadikoy, Istanbul, Turkiye</p></div>
 <div class="footer-col"><h4 class="footer-title">Leadership</h4><p class="footer-leader"><strong>Prof. Dr. Mesud Afandiyev</strong><br/>Chair of the WAAS Board of Directors<br/>Germany — James D. Murray Distinguished Professor</p></div>
 </div>

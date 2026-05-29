@@ -103,6 +103,9 @@ html[data-daab-page-id="forum-video-gallery"] .video-gallery-description {
   line-height: 1.5;
   color: var(--muted, #4a5f73);
   text-decoration: none;
+  text-align: justify;
+  text-wrap: pretty;
+  hyphens: auto;
 }
 
 html[data-daab-page-id="forum-video-gallery"] .video-gallery-caption a {

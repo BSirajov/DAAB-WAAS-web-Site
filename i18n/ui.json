@@ -65,6 +65,8 @@
       "activitiesNews": "Yeniliklər",
       "forum2024": "Forum 2024",
       "forumOfficial": "Rəsmi müraciətlər",
+      "forumRectorSpeeches": "Rektorların nitqləri",
+      "forumAnasLeadershipSpeeches": "AMEA rəhbərliyinin nitqləri",
       "forumProgram": "Forumun proqramı",
       "forumImpressions": "Təəssüratlar",
       "forum2024Presentations": "Məruzələr",
@@ -110,6 +112,8 @@
       "activitiesNews": "News",
       "forum2024": "Forum 2024",
       "forumOfficial": "Official addresses",
+      "forumRectorSpeeches": "Rectors' speeches",
+      "forumAnasLeadershipSpeeches": "Speeches by the ANAS Leadership",
       "forumProgram": "Forum programme",
       "forumImpressions": "Impressions",
       "forum2024Presentations": "Presentations",
@@ -169,7 +173,11 @@
     "forum-bagli-hekayeler": "📖",
     "forum-cooperation": "🤝",
     "forum-photos-gallery": "📷",
-    "forum-video-gallery": "📹"
+    "forum-video-gallery": "📹",
+    "forum-rector-speeches": "🎓",
+    "forum-anas-leadership-speeches": "🔬",
+    "forumRectorSpeeches": "🎓",
+    "forumAnasLeadershipSpeeches": "🔬"
   },
   "breadcrumbs": {
     "az": {

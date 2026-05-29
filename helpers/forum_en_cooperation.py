@@ -18,7 +18,7 @@ COOPERATION_EN = {
     "sidebar_label": "🤝 Contributions",
     "sidebar_aria": "Open contributions menu",
     "doc_title": "CONTRIBUTIONS AND COOPERATION",
-    "section_contributions": "Contributions and partners",
+    "section_contributions": "Contributions and cooperation",
     "section_presenters": "Scientific presentations",
     "section_rectors": "University rectors",
     "table_name": "Name",

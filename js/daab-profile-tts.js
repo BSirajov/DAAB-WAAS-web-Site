@@ -247,6 +247,9 @@
     var title = card.querySelector(".card-title");
     if (title) blocks.push(title.textContent.replace(/\s+/g, " ").trim());
 
+    var role = card.querySelector(".card-role");
+    if (role) blocks.push(role.textContent.replace(/\s+/g, " ").trim());
+
     var rows = card.querySelectorAll(".card-meta-row");
     for (var i = 0; i < rows.length; i++) {
       if (isEmailMetaRow(rows[i])) continue;
@@ -637,26 +640,16 @@
     wrap.appendChild(playBtn);
     wrap.appendChild(stopBtn);
 
-    var listenLead = (card.getAttribute("data-listen-lead") || "").trim();
-    var listenLeadEl = null;
-    if (listenLead) {
-      listenLeadEl = document.createElement("p");
-      listenLeadEl.className = "card-listen-lead";
-      listenLeadEl.textContent = listenLead;
+    var head = card.querySelector(".card-head");
+    if (head) {
+      head.appendChild(wrap);
+      return;
     }
 
+    var body = card.querySelector(".card-body");
     var bio = card.querySelector(".card-bio");
-    var meta = card.querySelector(".card-meta");
-    if (meta && meta.parentNode) {
-      var parent = meta.parentNode;
-      parent.insertBefore(wrap, bio || meta.nextSibling);
-      if (listenLeadEl) parent.insertBefore(listenLeadEl, bio || wrap.nextSibling);
-    } else {
-      var body = card.querySelector(".card-body");
-      if (body) {
-        body.appendChild(wrap);
-        if (listenLeadEl) body.appendChild(listenLeadEl);
-      }
+    if (body) {
+      body.insertBefore(wrap, bio);
     }
   }
 
