@@ -1,5 +1,5 @@
 /* Floating scientist profile preview on list view — fixed layer, no layout shift */
-.scientist-list-preview {
+.scientist-list-preview{
   position: fixed;
   z-index: 9500;
   top: 0;
@@ -16,9 +16,7 @@
     opacity 0.16s ease,
     transform 0.16s ease,
     visibility 0s linear 0.16s;
-}
-
-.scientist-list-preview.is-visible {
+}.scientist-list-preview.is-visible{
   pointer-events: auto;
   opacity: 1;
   visibility: visible;
@@ -27,9 +25,7 @@
     opacity 0.16s ease,
     transform 0.16s ease,
     visibility 0s;
-}
-
-.scientist-preview-card {
+}.scientist-preview-card{
   display: flex;
   flex-direction: column;
   max-height: inherit;
@@ -41,9 +37,7 @@
   box-shadow:
     0 12px 40px rgba(0, 45, 82, 0.16),
     0 2px 8px rgba(0, 45, 82, 0.08);
-}
-
-.scientist-preview-card__inner {
+}.scientist-preview-card__inner{
   display: grid;
   grid-template-columns: 5.5rem 1fr;
   gap: 12px;
@@ -51,34 +45,24 @@
   min-height: 0;
   overflow: auto;
   overscroll-behavior: contain;
-}
-
-.scientist-preview-card__portrait {
+}.scientist-preview-card__portrait{
   flex-shrink: 0;
-}
-
-.scientist-preview-card__avatar {
+}.scientist-preview-card__avatar{
   width: 5.5rem;
   height: 5.5rem;
   overflow: hidden;
   background: #e8f4fc;
   border: 1px solid rgba(0, 105, 180, 0.14);
   border-radius: 12px;
-}
-
-.scientist-preview-card__avatar img {
+}.scientist-preview-card__avatar img{
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 22%;
-}
-
-.scientist-preview-card__body {
+}.scientist-preview-card__body{
   min-width: 0;
-}
-
-.scientist-preview-card__name {
+}.scientist-preview-card__name{
   display: block;
   margin: 0;
   color: var(--blue-700);
@@ -87,9 +71,7 @@
   line-height: 1.35;
   letter-spacing: 0.01em;
   overflow-wrap: anywhere;
-}
-
-.scientist-preview-card__name .cred {
+}.scientist-preview-card__name .cred{
   display: inline-flex;
   margin-left: 4px;
   padding: 2px 6px;
@@ -100,18 +82,14 @@
   font-size: 0.65rem;
   font-weight: 900;
   vertical-align: middle;
-}
-
-.scientist-preview-card__country {
+}.scientist-preview-card__country{
   margin: 4px 0 0;
   color: var(--muted);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   line-height: 1.35;
-}
-
-.scientist-preview-card__title {
+}.scientist-preview-card__title{
   margin: 6px 0 0;
   color: #102033;
   font-size: 0.78rem;
@@ -122,9 +100,7 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.scientist-preview-card__meta {
+}.scientist-preview-card__meta{
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -133,9 +109,7 @@
   background: #f5fbff;
   border: 1px solid rgba(0, 105, 180, 0.14);
   border-radius: 10px;
-}
-
-.scientist-preview-card__meta-row {
+}.scientist-preview-card__meta-row{
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -143,36 +117,26 @@
   min-width: 0;
   font-size: 0.75rem;
   line-height: 1.4;
-}
-
-.scientist-preview-card__meta-label {
+}.scientist-preview-card__meta-label{
   flex: 0 0 auto;
   color: var(--muted);
   font-weight: 800;
   white-space: nowrap;
-}
-
-.scientist-preview-card__meta-value {
+}.scientist-preview-card__meta-value{
   flex: 1 1 auto;
   min-width: 0;
   color: var(--blue-800);
   font-weight: 800;
   overflow-wrap: anywhere;
-}
-
-.scientist-preview-card__email {
+}.scientist-preview-card__email{
   color: var(--blue-700);
   font-weight: 700;
   text-decoration: none;
   word-break: break-word;
-}
-
-.scientist-preview-card__email:hover,
-.scientist-preview-card__email:focus-visible {
+}.scientist-preview-card__email:hover,
+.scientist-preview-card__email:focus-visible{
   text-decoration: underline;
-}
-
-.scientist-preview-card__lead {
+}.scientist-preview-card__lead{
   margin: 8px 0 0;
   padding-top: 8px;
   border-top: 1px solid rgba(0, 105, 180, 0.1);
@@ -185,14 +149,10 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.scientist-preview-card__footer {
+}.scientist-preview-card__footer{
   flex-shrink: 0;
   padding: 0 14px 12px;
-}
-
-.scientist-preview-card__link {
+}.scientist-preview-card__link{
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -204,17 +164,13 @@
   font-weight: 800;
   text-decoration: none;
   transition: background 0.15s ease;
-}
-
-.scientist-preview-card__link:hover,
-.scientist-preview-card__link:focus-visible {
+}.scientist-preview-card__link:hover,
+.scientist-preview-card__link:focus-visible{
   background: var(--blue-800);
   outline: 2px solid var(--blue-700);
   outline-offset: 2px;
-}
-
-/* Name cell trigger — matches list name styling */
-button.scientist-name-trigger {
+}/* Name cell trigger — matches list name styling */
+button.scientist-name-trigger{
   display: inline;
   margin: 0;
   padding: 0;
@@ -230,35 +186,25 @@ button.scientist-name-trigger {
   text-decoration-color: transparent;
   text-underline-offset: 2px;
   transition: text-decoration-color 0.12s ease;
-}
-
-button.scientist-name-trigger:hover,
-button.scientist-name-trigger:focus-visible {
+}button.scientist-name-trigger:hover,
+button.scientist-name-trigger:focus-visible{
   text-decoration-color: currentColor;
   outline: 2px solid rgba(0, 105, 180, 0.35);
   outline-offset: 2px;
-}
-
-button.scientist-name-trigger[aria-expanded="true"] {
+}button.scientist-name-trigger[aria-expanded="true"]{
   text-decoration-color: currentColor;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .scientist-list-preview {
+@media (prefers-reduced-motion: reduce) {.scientist-list-preview{
     transition: none;
   }
 }
 
-@media (max-width: 480px) {
-  .scientist-list-preview {
+@media (max-width: 480px) {.scientist-list-preview{
     width: min(20rem, calc(100vw - 1rem));
-  }
-
-  .scientist-preview-card__inner {
+  }.scientist-preview-card__inner{
     grid-template-columns: 4.5rem 1fr;
-  }
-
-  .scientist-preview-card__avatar {
+  }.scientist-preview-card__avatar{
     width: 4.5rem;
     height: 4.5rem;
   }

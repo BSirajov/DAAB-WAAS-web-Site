@@ -33,6 +33,44 @@
     });
   }
 
+  var EXPORT_CHROME_SELECTORS = [
+    ".flyer-page-controls",
+    "[data-flyer-export-exclude='1']",
+    "#daab-breadcrumbs",
+    "nav.daab-breadcrumbs",
+    ".daab-breadcrumbs"
+  ];
+
+  function getFlyerExportRoot() {
+    return document.querySelector(".flyer-sheet");
+  }
+
+  function isExportChromeNode(node) {
+    if (!node || node.nodeType !== 1) return false;
+    if (node.closest && node.closest("[data-flyer-export-exclude='1']")) return true;
+    if (node.id === "daab-breadcrumbs") return true;
+    if (node.classList && node.classList.contains("daab-breadcrumbs")) return true;
+    if (node.classList && node.classList.contains("flyer-page-controls")) return true;
+    return false;
+  }
+
+  function hideExportChrome() {
+    var hidden = [];
+    EXPORT_CHROME_SELECTORS.forEach(function (selector) {
+      document.querySelectorAll(selector).forEach(function (el) {
+        hidden.push({ el: el, visibility: el.style.visibility });
+        el.style.visibility = "hidden";
+      });
+    });
+    return hidden;
+  }
+
+  function restoreExportChrome(hidden) {
+    hidden.forEach(function (item) {
+      item.el.style.visibility = item.visibility;
+    });
+  }
+
   function generatePdfBlob(sheet, filename) {
     var opt = {
       margin: [8, 8, 8, 8],
@@ -43,7 +81,8 @@
         useCORS: true,
         allowTaint: false,
         logging: false,
-        letterRendering: true
+        letterRendering: true,
+        ignoreElements: isExportChromeNode
       },
       jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
       pagebreak: { mode: ["avoid-all", "css", "legacy"] }
@@ -75,7 +114,7 @@
   async function sendFlyerEmail() {
     var cfg = window.DAAB_FLYER_EMAIL;
     var btn = document.getElementById("flyerSendEmailBtn");
-    var sheet = document.querySelector(".flyer-sheet");
+    var sheet = getFlyerExportRoot();
     if (!cfg || !btn || !sheet) return;
 
     var label = btn.textContent;
@@ -83,6 +122,7 @@
     btn.classList.add("flyer-btn--busy");
     btn.textContent = cfg.busyLabel || label;
 
+    var hiddenChrome = hideExportChrome();
     try {
       await loadHtml2Pdf();
       var pdfBlob = await generatePdfBlob(sheet, cfg.pdfFilename);
@@ -106,6 +146,7 @@
       }
       openMailto(cfg.subject, cfg.body);
     } finally {
+      restoreExportChrome(hiddenChrome);
       btn.disabled = false;
       btn.classList.remove("flyer-btn--busy");
       btn.textContent = label;

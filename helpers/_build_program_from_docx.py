@@ -298,7 +298,7 @@ def build() -> None:
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<title>Forumun proqramı — DAAB</title>
+<title>Proqram — DAAB</title>
 <meta name="description" content="Xaricdə Yaşayan Azərbaycanlı Alimlərin 2024-cü il Forumu — 9–11 sentyabr proqramı (Bakı, Xankəndi, Şuşa)."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -308,7 +308,8 @@ def build() -> None:
 <link href="{ASSET}css/daab-search.css?v=3" rel="stylesheet"/>
 <link href="{ASSET}css/daab-back-to-top.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-lang.css?v=10" rel="stylesheet"/>
-<link href="{ASSET}css/daab-nav-mega.css?v=13" rel="stylesheet"/>
+<link href="{ASSET}css/daab-nav-mega.css?v=23" rel="stylesheet"/>
+<link href="{ASSET}css/daab-forum-section-nav.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-hero-summary.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-sidebar-widget.css?v=3" rel="stylesheet"/>
 <link href="{ASSET}css/daab-activities-layout.css?v=7" rel="stylesheet"/>
@@ -319,7 +320,7 @@ def build() -> None:
 <script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
 <script src="{ASSET}js/daab-nav.js?v=9" defer></script>
 <script src="{ASSET}js/daab-primary-nav.js?v=9" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v=5" defer></script>
+<script src="{ASSET}js/daab-section-nav.js?v=12" defer></script>
 <script src="{ASSET}js/daab-shell.js?v=11" defer></script>
 <script src="{ASSET}js/daab-search.js?v=4" defer></script>
 </head>
@@ -327,16 +328,16 @@ def build() -> None:
 <a class="skip" href="#content">Məzmuna keç</a>
 {nav}
 <div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Səhifə yolu">
-<a href="../../index.html">Ana səhifə</a><span aria-hidden="true">›</span><a href="../../activities.html">Fəaliyyətimiz</a><span aria-hidden="true">›</span><a href="index.html">Forum 2024</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">Forumun proqramı</span>
+<a href="../../index.html">Ana səhifə</a><span aria-hidden="true">›</span><a href="../../activities.html">Fəaliyyətimiz</a><span aria-hidden="true">›</span><a href="index.html">Forum 2024</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">Proqram</span>
 </div>
 <header class="page-hero">
 <div class="hero-wrap shell">
 <section class="hero-copy">
-<h1>Forumun <span>proqramı</span></h1>
+<h1>Proqram</h1>
 </section>
-<aside aria-label="Forumun proqramı haqqında qısa məlumat" class="hero-panel">
+<aside aria-label="Proqram haqqında qısa məlumat" class="hero-panel">
 <div class="panel-card">
-<h2 class="panel-title">Forumun proqramı</h2>
+<h2 class="panel-title">Proqram</h2>
 <div class="panel-copy">9–11 sentyabr 2024-cü il ərzində Bakı, Xankəndi və Şuşa üzrə açılış iclası, plenar sessiyalar, məruzələr və yekun tədbirlərin tam cədvəli.</div>
 </div>
 </aside>

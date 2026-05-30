@@ -171,9 +171,11 @@
         activitiesNews: "Yeniliklər",
         forum2024: "Forum 2024",
         forumOfficial: "Rəsmi müraciətlər",
-        forumRectorSpeeches: "Rektorların nitqləri",
-        forumAnasLeadershipSpeeches: "AMEA rəhbərliyinin nitqləri",
-        forumProgram: "Forumun proqramı",
+        forumRectorSpeeches: "Rektorlar",
+        forumAnasLeadershipSpeeches: "AMEA rəhbərliyi",
+        forumProgram: "Proqram",
+        forumBagliHekayeler: "Hekayələr",
+        forumCooperation: "Töhfələr",
         forumPhotosGallery: "Foto qalereya",
         scientistsList: "Siyahı",
         scientistsProfiles: "Profillər",
@@ -183,7 +185,7 @@
         membershipWhy: "Niyə üzv olmalı",
         membershipTerms: "Üzvlük şərtləri",
         membershipJoin: "Bizə qoşulun",
-        membershipFlyer: "Flyer paylaş"
+        membershipFlyer: "Dəvət göndərin"
       },
       en: {
         home: "Home",
@@ -193,9 +195,11 @@
         activitiesNews: "News",
         forum2024: "Forum 2024",
         forumOfficial: "Official addresses",
-        forumRectorSpeeches: "Rectors' speeches",
-        forumAnasLeadershipSpeeches: "Speeches by the ANAS Leadership",
-        forumProgram: "Forum programme",
+        forumRectorSpeeches: "Rectors",
+        forumAnasLeadershipSpeeches: "ANAS Leadership",
+        forumProgram: "Programme",
+        forumBagliHekayeler: "Stories",
+        forumCooperation: "Contributions",
         forumPhotosGallery: "Photo gallery",
         forumVideoGallery: "Video gallery",
         scientistsList: "Directory",
@@ -206,7 +210,7 @@
         membershipWhy: "Why become a member",
         membershipTerms: "Membership terms",
         membershipJoin: "Join us",
-        membershipFlyer: "Share Flyer"
+        membershipFlyer: "Send invite"
       }
     }
   };

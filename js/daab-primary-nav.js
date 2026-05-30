@@ -307,7 +307,7 @@
       dropLink(staticHref("membership-value"), "membership-value", "Niyə üzv olmalı", "Üzvlüyün faydaları və dəyər təklifi", FALLBACK_ICONS.membershipWhy) +
       dropLink(staticHref("membership"), "membership", "Üzvlük şərtləri", "Üzvlük qaydaları, ödəniş və müraciət məlumatları", FALLBACK_ICONS.membershipTerms) +
       dropLink(staticHref("membership-application"), "membership-application", "Bizə qoşulun", "Onlayn üzvlük müraciət forması", FALLBACK_ICONS.membershipJoin) +
-      dropLink(staticHref("membership-flyer"), "membership-flyer", "Flyer paylaş", "Potensial üzvlər üçün çap oluna bilən flyer", FALLBACK_ICONS.membershipFlyer) +
+      dropLink(staticHref("membership-flyer"), "membership-flyer", "Dəvət göndərin", "Potensial üzvlər üçün çap oluna bilən flyer", FALLBACK_ICONS.membershipFlyer) +
       '</div></div>';
     var en =
       '<div class="nav-divider"></div>' +
@@ -334,7 +334,7 @@
       dropLink(staticHref("membership-value"), "membership-value", "Why become a member", "Benefits and value of WAAS membership", FALLBACK_ICONS.membershipWhy) +
       dropLink(staticHref("membership"), "membership", "Membership terms", "Membership rules, fees and application information", FALLBACK_ICONS.membershipTerms) +
       dropLink(staticHref("membership-application"), "membership-application", "Join us", "Online membership application form", FALLBACK_ICONS.membershipJoin) +
-      dropLink(staticHref("membership-flyer"), "membership-flyer", "Share Flyer", "Printable flyer to share with potential members", FALLBACK_ICONS.membershipFlyer) +
+      dropLink(staticHref("membership-flyer"), "membership-flyer", "Send invite", "Printable flyer to share with potential members", FALLBACK_ICONS.membershipFlyer) +
       '</div></div>';
     menu.innerHTML = lang === "en" ? en : az;
     if (window.DAAB_NAV && typeof window.DAAB_NAV.init === "function") {

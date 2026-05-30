@@ -4,15 +4,42 @@ from __future__ import annotations
 
 import html
 import json
-import sys
+import re
 import urllib.parse
-from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT / "helpers") not in sys.path:
-    sys.path.insert(0, str(ROOT / "helpers"))
+from _paths import ROOT
+from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS
 
 ASSET = "../"
+FLYER_CSS_V = STYLE_VERSIONS["daab-membership-flyer.css"]
+MEMBERSHIP_HTML = {
+    "az": ROOT / "az" / "membership.html",
+    "en": ROOT / "en" / "membership.html",
+}
+NAV_ARIA = {"az": "Əsas naviqasiya", "en": "Main navigation"}
+SKIP = {"az": "Məzmuna keç", "en": "Skip to content"}
+
+SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə" data-daab-section-nav-enhanced="1">
+<p class="daab-section-nav-title">Üzvlük</p>
+<ul class="daab-section-nav-list">
+<li><a href="membership_value.html"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Niyə üzv olmalı</span></a></li>
+<li><a href="membership.html"><span class="daab-section-nav-icon" aria-hidden="true">✒️</span><span class="daab-section-nav-label">Üzvlük şərtləri</span></a></li>
+<li><a href="application.html"><span class="daab-section-nav-icon" aria-hidden="true">📝</span><span class="daab-section-nav-label">Bizə qoşulun</span></a></li>
+<li><a class="active" href="membership_flyer.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Dəvət göndərin</span></a></li>
+</ul>
+</nav>
+"""
+
+SECTION_NAV_EN = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section" data-daab-section-nav-enhanced="1">
+<p class="daab-section-nav-title">Membership</p>
+<ul class="daab-section-nav-list">
+<li><a href="membership_value.html"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Why become a member</span></a></li>
+<li><a href="membership.html"><span class="daab-section-nav-icon" aria-hidden="true">✒️</span><span class="daab-section-nav-label">Membership terms</span></a></li>
+<li><a href="application.html"><span class="daab-section-nav-icon" aria-hidden="true">📝</span><span class="daab-section-nav-label">Join us</span></a></li>
+<li><a class="active" href="membership_flyer.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Send invite</span></a></li>
+</ul>
+</nav>
+"""
 APPLY_URL = {
     "az": "https://daab-waas.com/az/application.html",
     "en": "https://daab-waas.com/en/application.html",
@@ -39,9 +66,19 @@ LOCALES = {
         "lang": "az",
         "title": "DAAB — Üzvlük flyer",
         "description": "DAAB üzvlüyünün dəyəri — potensial üzvlər üçün çap flyer.",
+        "hero_h1": "Üzvlüyə <span>Dəvət göndərin</span>",
+        "hero_subtitle": "Potensial üzvlər üçün çap oluna bilən flyer (PDF formatında) yaradın və paylaşın",
+        "panel_title": "Flyer ilə dəvət edin",
+        "panel_copy": (
+            "Bu səhifədə DAAB üzvlüyünün dəyərini əks etdirən hazır flyer var. Flyerin yuxarı "
+            "sağ küncündəki düymələrlə PDF yaradın, çap edin və ya e-poçt ilə paylaşın."
+        ),
         "toolbar_hint": "Brauzerdə «Çap» → «PDF kimi yadda saxla» seçin.",
+        "controls_aria": "Flyer idarəetməsi",
         "print_btn": "Çap / PDF",
+        "print_tooltip": "Brauzerin çap pəncərəsini açın və «PDF kimi yadda saxla» seçin.",
         "email_btn": "Paylaş",
+        "share_tooltip": "Flyeri PDF kimi yükləyin və hazır e-poçt mesajı ilə paylaşın.",
         "email_subject": "Dünya Azərbaycanlı Alimlər Birliyinə üzv olun",
         "email_pdf_filename": "DAAB-uzvluk-flyeri.pdf",
         "email_busy": "PDF hazırlanır…",
@@ -51,8 +88,6 @@ LOCALES = {
         "email_error": (
             "PDF yaradıla bilmədi. E-poçt açılır; flyerı «Çap / PDF» ilə saxlayıb əlavə edə bilərsiniz."
         ),
-        "web_btn": "Tam səhifə",
-        "web_href": "membership_value.html",
         "org": "Dünya Azərbaycanlı Alimlər Birliyi",
         "brand_short": "DAAB",
         "headline": "Niyə <span>DAAB üzvü</span> olmalısınız?",
@@ -102,9 +137,19 @@ LOCALES = {
         "lang": "en",
         "title": "WAAS — Membership flyer",
         "description": "Value of WAAS membership — printable flyer for potential members.",
+        "hero_h1": "Send invite <span>Membership flyer</span>",
+        "hero_subtitle": "Printable flyer for potential members — save as PDF and share",
+        "panel_title": "Invite colleagues with the flyer",
+        "panel_copy": (
+            "This page provides a ready-to-share flyer summarizing WAAS membership value. Use "
+            "the buttons at the top right of the flyer to save a PDF, print, or share by email."
+        ),
         "toolbar_hint": "Use Print → Save as PDF in your browser.",
+        "controls_aria": "Flyer actions",
         "print_btn": "Print / PDF",
+        "print_tooltip": "Open the browser print dialog and choose Save as PDF.",
         "email_btn": "Share",
+        "share_tooltip": "Download the flyer as a PDF and open an email draft to share it.",
         "email_subject": "Join the World Association of Azerbaijani Scientists (WAAS)",
         "email_pdf_filename": "WAAS-membership-flyer.pdf",
         "email_busy": "Preparing PDF…",
@@ -114,8 +159,6 @@ LOCALES = {
         "email_error": (
             "Could not create the PDF. Opening email — you can save the flyer via Print / PDF and attach it."
         ),
-        "web_btn": "Full page",
-        "web_href": "membership_value.html",
         "org": "World Association of Azerbaijani Scientists",
         "brand_short": "WAAS",
         "headline": "Why <span>become a WAAS</span> member?",
@@ -167,6 +210,73 @@ LOCALES = {
 
 def esc(s: str) -> str:
     return html.escape(s, quote=True)
+
+
+def extract_nav(html_text: str, nav_aria: str) -> str:
+    m = re.search(
+        rf'(<nav aria-label="{re.escape(nav_aria)}" class="nav-strip">.*?</nav>)',
+        html_text,
+        re.DOTALL,
+    )
+    return m.group(1) if m else ""
+
+
+def shell_head(cfg: dict) -> str:
+    sv = SCRIPT_VERSIONS
+    st = STYLE_VERSIONS
+    return f"""<!DOCTYPE html>
+<html lang="{cfg["lang"]}" data-daab-lang="{cfg["lang"]}" data-daab-asset-root="{ASSET}" data-daab-page-id="membership-flyer" data-daab-nav-mount="1">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>{esc(cfg["title"])}</title>
+<meta name="description" content="{esc(cfg["description"])}"/>
+<meta name="robots" content="noindex"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="{ASSET}css/daab-common.css?v={st["daab-common.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-search.css?v={st["daab-search.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-back-to-top.css?v=2" rel="stylesheet"/>
+<link href="{ASSET}css/daab-lang.css?v={st["daab-lang.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-nav-mega.css?v={st["daab-nav-mega.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-content-hero.css?v={st["daab-content-hero.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-hero-summary.css?v={st["daab-hero-summary.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-tokens.css?v=1" rel="stylesheet"/>
+<link href="{ASSET}css/daab-membership-flyer.css?v={FLYER_CSS_V}" rel="stylesheet"/>
+<script src="{ASSET}js/daab-mobile.js?v={sv["daab-mobile.js"]}" defer></script>
+<script src="{ASSET}js/daab-back-to-top.js?v={sv["daab-back-to-top.js"]}" defer></script>
+<script src="{ASSET}js/daab-i18n.js?v={sv["daab-i18n.js"]}" defer></script>
+<script src="{ASSET}js/daab-lang-position.js?v={sv["daab-lang-position.js"]}" defer></script>
+<script src="{ASSET}js/daab-design-tokens.js?v=1" defer></script>
+<script src="{ASSET}js/daab-nav.js?v={sv["daab-nav.js"]}" defer></script>
+<script src="{ASSET}js/daab-primary-nav.js?v={sv["daab-primary-nav.js"]}" defer></script>
+<script src="{ASSET}js/daab-breadcrumbs.js?v={sv["daab-breadcrumbs.js"]}" defer></script>
+<script src="{ASSET}js/daab-section-nav.js?v={sv["daab-section-nav.js"]}" defer></script>
+<script src="{ASSET}js/daab-shell.js?v={sv["daab-shell.js"]}" defer></script>
+<script src="{ASSET}js/daab-page-subtitle.js?v=2" defer></script>
+<script src="{ASSET}js/daab-search.js?v={sv["daab-search.js"]}" defer></script>
+</head>
+"""
+
+
+def hero_block(cfg: dict) -> str:
+    return f"""<header class="hero">
+<div class="hero-wrap shell">
+<section>
+<h1 aria-describedby="page-hero-subtitle">{cfg["hero_h1"]}</h1>
+<p class="page-hero-subtitle" id="page-hero-subtitle" role="doc-subtitle">{esc(cfg["hero_subtitle"])}</p>
+</section>
+<aside aria-label="{esc(cfg["panel_title"])}" class="hero-panel">
+<div class="panel-card">
+<h2 class="panel-title">{esc(cfg["panel_title"])}</h2>
+<p class="panel-copy">{esc(cfg["panel_copy"])}</p>
+</div>
+</aside>
+</div>
+</header>
+"""
 
 
 def benefit_icon_markup(icon: str) -> str:
@@ -234,11 +344,17 @@ def email_page_scripts(cfg: dict, lang: str) -> str:
     }
     data = json.dumps(payload, ensure_ascii=False)
     return f"""<script>window.DAAB_FLYER_EMAIL = {data};</script>
-<script src="{ASSET}js/daab-membership-flyer-email.js?v=1" defer></script>"""
+<script src="{ASSET}js/daab-membership-flyer-email.js?v=3" defer></script>"""
 
 
 def build_locale(key: str) -> None:
     cfg = LOCALES[key]
+    membership_path = MEMBERSHIP_HTML[key]
+    membership_html = membership_path.read_text(encoding="utf-8")
+    nav = extract_nav(membership_html, NAV_ARIA[key])
+    if not nav:
+        raise SystemExit(f"Could not extract nav from {membership_path}")
+    section_nav = SECTION_NAV_AZ if key == "az" else SECTION_NAV_EN
     apply_abs = APPLY_URL[key]
     qr_url = qr_img_url(apply_abs)
 
@@ -264,30 +380,17 @@ def build_locale(key: str) -> None:
         for t, d in cfg["youth_items"]
     )
 
-    page = f"""<!DOCTYPE html>
-<html lang="{cfg["lang"]}">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>{esc(cfg["title"])}</title>
-<meta name="description" content="{esc(cfg["description"])}"/>
-<meta name="robots" content="noindex"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
-<link href="{ASSET}css/daab-tokens.css?v=1" rel="stylesheet"/>
-<link href="{ASSET}css/daab-membership-flyer.css?v=3" rel="stylesheet"/>
-</head>
-<body class="membership-flyer-page">
-<div class="flyer-toolbar">
-<p>{esc(cfg["toolbar_hint"])}</p>
-<div class="flyer-toolbar-actions">
-<button type="button" class="flyer-btn flyer-btn-primary" onclick="window.print()">{esc(cfg["print_btn"])}</button>
-<button type="button" class="flyer-btn" id="flyerSendEmailBtn">{esc(cfg["email_btn"])}</button>
-<a class="flyer-btn" href="{esc(cfg["web_href"])}">{esc(cfg["web_btn"])}</a>
-</div>
-</div>
+    page = shell_head(cfg) + f"""<body class="membership-flyer-page membership-page">
+<a class="skip" href="#content">{SKIP[key]}</a>
+{nav}
+{hero_block(cfg)}
+{section_nav}
+<main class="main membership-flyer-main" id="content">
 <div class="flyer-wrap">
+<div class="flyer-page-controls" role="toolbar" aria-label="{esc(cfg["controls_aria"])}" data-flyer-export-exclude="1">
+<button type="button" class="flyer-btn flyer-btn-primary" onclick="window.print()" title="{esc(cfg["print_tooltip"])}" aria-label="{esc(cfg["print_tooltip"])}">{esc(cfg["print_btn"])}</button>
+<button type="button" class="flyer-btn" id="flyerSendEmailBtn" title="{esc(cfg["share_tooltip"])}" aria-label="{esc(cfg["share_tooltip"])}">{esc(cfg["email_btn"])}</button>
+</div>
 <article class="flyer-sheet" aria-label="{esc(cfg["title"])}">
 <header class="flyer-header">
 <img class="flyer-logo" src="{ASSET}images/daab-logo.svg" alt="" width="72" height="72"/>
@@ -336,6 +439,7 @@ def build_locale(key: str) -> None:
 <p class="flyer-tagline">{esc(cfg["tagline"])}</p>
 </article>
 </div>
+</main>
 {email_page_scripts(cfg, key)}
 </body>
 </html>

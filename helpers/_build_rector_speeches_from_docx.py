@@ -17,11 +17,16 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-DOCX = ROOT / "forum_2024" / "AZƏRBAYCAN UNİVERSİTETLƏRİNİN REKTORLARININ NİTQLƏRİ.docx"
+DOCX_AZ = ROOT / "forum_2024" / "AZƏRBAYCAN UNİVERSİTETLƏRİNİN REKTORLARININ NİTQLƏRİ.docx"
+DOCX_EN = ROOT / "forum_2024" / "Azerbaijani_University_Rectors_Speeches_EN.docx"
 ASSET = "../../../"
 SIDEBAR_SCRIPT = f'<script src="{ASSET}js/daab-sidebar-timeline.js?v=2" defer></script>'
 
 ANAS_SECTION_IDS = frozenset({"isa-hebibbeyli", "rasim-eliquliyev"})
+SLUG_OVERRIDES = {
+    "isa-habibbayli": "isa-hebibbeyli",
+    "rasim-aliguliyev": "rasim-eliquliyev",
+}
 
 from _embed_static_nav import forum_nav_strip  # noqa: E402
 from forum_en_common import FORUM_FOOTER_EN  # noqa: E402
@@ -46,15 +51,67 @@ AZ_SLUG = str.maketrans(
 )
 
 SIGNOFF_RE = re.compile(
-    r"^(Təşəkkür edirəm!|Hörmətlə,?$|Gələn forumda görüşənədək!|P\.S\.)",
+    r"^(Təşəkkür edirəm!|Hörmətlə,?$|Gələn forumda görüşənədək!|"
+    r"Thank you\.?|Until we meet at the next forum!)$",
     re.I,
 )
 
-# Stray roadmap heading sometimes appended after the last rector speech in the docx.
-ROADMAP_LEAK_RE = re.compile(
-    r"^DİASPOR HƏRƏKATINDA MÜHÜM İSTİQAMƏT",
+PS_SKIP_RE = re.compile(r"^P\.S\.", re.I)
+
+ROADMAP_STOP_RE = re.compile(
+    r"(YOL XƏRİTƏSİ|ROADMAP FOR THE DEVELOPMENT)",
     re.I,
 )
+
+# Section headings that must not become speech body text.
+BODY_SKIP_RE = re.compile(
+    r"^(DİASPOR HƏRƏKATINDA MÜHÜM İSTİQAMƏT|"
+    r"AZƏRBAYCANLI ALİMLƏRİN QLOBAL BİRLİYİ|"
+    r"AN IMPORTANT DIRECTION IN THE DIASPORA MOVEMENT|"
+    r"THE GLOBAL UNITY OF AZERBAIJANI SCIENTISTS)",
+    re.I,
+)
+
+EN_SKIP_H1_RE = re.compile(
+    r"^(SPEECHES BY RECTORS|TABLE OF CONTENTS|ENGLISH TRANSLATION|"
+    r"TRANSLATED FROM|AN IMPORTANT DIRECTION|THE GLOBAL UNITY)",
+    re.I,
+)
+
+EN_ANAS_NAME_RE = re.compile(r"^(Isa HABIBBAYLI|Rasim ALIGULIYEV)$", re.I)
+
+# Forum 2024 hub hero panel — match az|en/forum/2024/index.html
+FORUM_HUB_PANEL = {
+    "az": {
+        "aria": "Forum haqqında qısa məlumat",
+        "title": "Forum 2024 haqqında məlumatlar",
+        "lead": (
+            "9–11 sentyabr 2024, Bakı – Xankəndi – Şuşa. Rəsmi çıxışlar, proqram, "
+            "məruzələr və iştirakçı təəssüratları bu bölmədə yerləşdirilib."
+        ),
+        "organizers": (
+            "Forum Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) təşkilatçılığı, "
+            "Azərbaycan Respublikasının Diasporla İş üzrə Dövlət Komitəsi (DİDK) və "
+            "Azərbaycan Respublikasının Elm və Təhsil Nazirliyinin (ETN) dəstəyi ilə "
+            "həyata keçirilmişdir."
+        ),
+    },
+    "en": {
+        "aria": "Forum summary",
+        "title": "Forum 2024 information",
+        "lead": (
+            "9–11 September 2024, Baku – Khankendi – Shusha. Official addresses, the "
+            "programme, presentations and participant impressions are published in "
+            "this section."
+        ),
+        "organizers": (
+            "The Forum was organized by the World Association of Azerbaijani "
+            "Scientists (WAAS), with the support of the State Committee on Diaspora "
+            "Affairs of the Republic of Azerbaijan (SCDA) and the Ministry of Science "
+            "and Education of the Republic of Azerbaijan (MSE)."
+        ),
+    },
+}
 
 PAGE_SPECS = {
     "rector": {
@@ -65,37 +122,24 @@ PAGE_SPECS = {
         "toc_id": "rectorTOC",
         "copy": {
             "az": {
-                "title": "Rektorların nitqləri — DAAB",
+                "title": "Rektorlar — DAAB",
                 "description": (
                     "Forum 2024 — Azərbaycan universitet rektorlarının nitqləri."
                 ),
-                "breadcrumb": "Rektorların nitqləri",
-                "hero_h1": "Rektorların <span>nitqləri</span>",
+                "breadcrumb": "Rektorlar",
+                "hero_h1": "Rektorlar",
                 "hero_subtitle": "Azərbaycan universitet rektorlarının Forum 2024-dəki nitqləri",
-                "panel_aria": "Rektor nitqləri haqqında qısa məlumat",
-                "panel_title": "Rektorların nitqləri",
-                "panel_copy": (
-                    "Bu səhifədə Forum 2024 çərçivəsində Azərbaycan universitet "
-                    "rektorlarının və Rəssamlıq Akademiyası rəhbərinin nitqləri "
-                    "toplanmışdır."
-                ),
                 "sidebar_label": "Rektorlar",
                 "sidebar_toggle": "Rektorlar siyahısını aç",
             },
             "en": {
-                "title": "Rectors' speeches — WAAS",
+                "title": "Rectors — WAAS",
                 "description": (
                     "Forum 2024 — speeches by rectors of Azerbaijani universities."
                 ),
-                "breadcrumb": "Rectors' speeches",
-                "hero_h1": "Rectors' <span>speeches</span>",
+                "breadcrumb": "Rectors",
+                "hero_h1": "Rectors",
                 "hero_subtitle": "Speeches by rectors of Azerbaijani universities at Forum 2024",
-                "panel_aria": "Rectors' speeches summary",
-                "panel_title": "Rectors' speeches",
-                "panel_copy": (
-                    "This page collects speeches delivered at Forum 2024 by rectors of "
-                    "Azerbaijani universities and the Rector of the Academy of Arts."
-                ),
                 "sidebar_label": "Rectors",
                 "sidebar_toggle": "Open rectors list",
             },
@@ -109,42 +153,30 @@ PAGE_SPECS = {
         "toc_id": "anasTOC",
         "copy": {
             "az": {
-                "title": "AMEA rəhbərliyinin nitqləri — DAAB",
+                "title": "AMEA rəhbərliyi — DAAB",
                 "description": (
                     "Forum 2024 — Azərbaycan Milli Elmlər Akademiyasının rəhbərliyinin nitqləri."
                 ),
-                "breadcrumb": "AMEA rəhbərliyinin nitqləri",
-                "hero_h1": "AMEA rəhbərliyinin <span>nitqləri</span>",
+                "breadcrumb": "AMEA rəhbərliyi",
+                "hero_h1": "AMEA <span>rəhbərliyi</span>",
                 "hero_subtitle": (
                     "Azərbaycan Milli Elmlər Akademiyasının rəhbərliyinin Forum 2024-dəki nitqləri"
                 ),
-                "panel_aria": "AMEA rəhbərliyinin nitqləri haqqında qısa məlumat",
-                "panel_title": "AMEA rəhbərliyinin nitqləri",
-                "panel_copy": (
-                    "Bu səhifədə Forum 2024 çərçivəsində Azərbaycan Milli Elmlər "
-                    "Akademiyasının prezidenti və vitse-prezidentinin nitqləri toplanmışdır."
-                ),
-                "sidebar_label": "📋 Nitqlər",
-                "sidebar_toggle": "Nitqlər menyusunu aç",
+                "sidebar_label": "AMEA rəhbərliyi",
+                "sidebar_toggle": "AMEA rəhbərliyi siyahısını aç",
             },
             "en": {
-                "title": "Speeches by the ANAS Leadership — WAAS",
+                "title": "ANAS Leadership — WAAS",
                 "description": (
                     "Forum 2024 — speeches by leaders of the Azerbaijan National Academy of Sciences."
                 ),
-                "breadcrumb": "Speeches by the ANAS Leadership",
-                "hero_h1": "Speeches by the <span>ANAS Leadership</span>",
+                "breadcrumb": "ANAS Leadership",
+                "hero_h1": "ANAS <span>Leadership</span>",
                 "hero_subtitle": (
                     "Speeches by leaders of the Azerbaijan National Academy of Sciences at Forum 2024"
                 ),
-                "panel_aria": "ANAS leadership speeches summary",
-                "panel_title": "Speeches by the ANAS Leadership",
-                "panel_copy": (
-                    "This page collects speeches delivered at Forum 2024 by the President "
-                    "and Vice-President of the Azerbaijan National Academy of Sciences."
-                ),
-                "sidebar_label": "📋 Speeches",
-                "sidebar_toggle": "Open speeches menu",
+                "sidebar_label": "ANAS Leadership",
+                "sidebar_toggle": "Open ANAS leadership list",
             },
         },
     },
@@ -175,17 +207,75 @@ def esc(s: str) -> str:
     return html.escape(s, quote=True)
 
 
+def forum_hub_panel_html(lang: str) -> str:
+    p = FORUM_HUB_PANEL[lang]
+    return (
+        f'<aside aria-label="{esc(p["aria"])}" class="hero-panel">\n'
+        f'<div class="panel-card">\n'
+        f'<h2 class="panel-title">{esc(p["title"])}</h2>\n'
+        f'<div class="panel-copy">\n'
+        f'<p class="panel-copy-lead">{esc(p["lead"])}</p>\n'
+        f'<p class="panel-copy-organizers">{esc(p["organizers"])}</p>\n'
+        f"</div>\n"
+        f"</div>\n"
+        f"</aside>"
+    )
+
+
 def norm(text: str) -> str:
     return text.replace("\r", "").replace("\xa0", " ").strip()
 
 
 def name_slug(name: str) -> str:
     s = name.translate(AZ_SLUG).lower()
-    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    slug = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    return SLUG_OVERRIDES.get(slug, slug)
 
 
-def parse_speeches() -> list[dict]:
-    doc = Document(str(DOCX))
+def new_section(name: str) -> dict:
+    return {
+        "id": name_slug(name),
+        "name": name,
+        "role": "",
+        "blocks": [],
+    }
+
+
+def is_list_paragraph(text: str, style: str) -> bool:
+    if style.startswith("List"):
+        return True
+    return text.startswith("- ") or text.startswith("– ")
+
+
+def is_quote_line(text: str) -> bool:
+    return (
+        text.startswith("Belə bir aforizm var:")
+        or text.startswith("There is an aphorism")
+        or text.startswith('"')
+        or text.startswith("\u201c")
+        or text.startswith("\u2018")
+    )
+
+
+def append_body(cur: dict, text: str, style: str) -> None:
+    if PS_SKIP_RE.match(text):
+        return
+    if BODY_SKIP_RE.match(text):
+        return
+    if style.startswith("Heading 2") and cur.get("role"):
+        cur["blocks"].append({"list": False, "text": text, "subhead": True})
+        return
+    if style.startswith("Heading 3") and cur.get("role"):
+        cur["blocks"].append({"list": False, "text": text, "subhead": True})
+        return
+    list_text = text.lstrip("-– ").strip() if is_list_paragraph(text, style) else text
+    cur["blocks"].append(
+        {"list": is_list_paragraph(text, style), "text": list_text}
+    )
+
+
+def parse_speeches_az() -> list[dict]:
+    doc = Document(str(DOCX_AZ))
     sections: list[dict] = []
     cur: dict | None = None
 
@@ -195,18 +285,13 @@ def parse_speeches() -> list[dict]:
             continue
         style = para.style.name if para.style else ""
 
-        if style == "Heading 1" and "YOL XƏRİTƏSİ" in text.upper():
+        if style == "Heading 1" and ROADMAP_STOP_RE.search(text):
             break
 
         if style.startswith("Heading 2"):
             if cur:
                 sections.append(cur)
-            cur = {
-                "id": name_slug(text),
-                "name": text,
-                "role": "",
-                "blocks": [],
-            }
+            cur = new_section(text)
             continue
 
         if not cur:
@@ -216,11 +301,57 @@ def parse_speeches() -> list[dict]:
             cur["role"] = text
             continue
 
-        if ROADMAP_LEAK_RE.match(text):
+        append_body(cur, text, style)
+
+    if cur:
+        sections.append(cur)
+    return sections
+
+
+def parse_speeches_en() -> list[dict]:
+    doc = Document(str(DOCX_EN))
+    sections: list[dict] = []
+    cur: dict | None = None
+    in_anas_zone = False
+
+    for para in doc.paragraphs:
+        text = norm(para.text)
+        if not text:
+            continue
+        style = para.style.name if para.style else ""
+
+        if style == "Heading 1" and ROADMAP_STOP_RE.search(text):
+            break
+
+        if style == "Heading 1":
+            if EN_SKIP_H1_RE.match(text):
+                in_anas_zone = "AN IMPORTANT DIRECTION" in text.upper()
+                continue
+            if cur:
+                sections.append(cur)
+            cur = new_section(text)
+            in_anas_zone = False
             continue
 
-        is_list = style.startswith("List")
-        cur["blocks"].append({"list": is_list, "text": text})
+        if style.startswith("Heading 2"):
+            if EN_ANAS_NAME_RE.match(text) or (
+                in_anas_zone and not cur
+            ):
+                if cur:
+                    sections.append(cur)
+                cur = new_section(text)
+                continue
+            if cur and not cur["role"]:
+                cur["role"] = text
+                continue
+            if cur:
+                append_body(cur, text, style)
+            continue
+
+        if not cur:
+            continue
+
+        append_body(cur, text, style)
 
     if cur:
         sections.append(cur)
@@ -230,8 +361,6 @@ def parse_speeches() -> list[dict]:
 def toc_item_html(section: dict, page_key: str) -> str:
     sid = esc(section["id"])
     name = esc(section["name"])
-    if page_key != "rector":
-        return f'<li><a href="#{sid}">{name}</a></li>'
     titles = (section.get("role") or "").strip()
     titles_html = (
         f'<span class="rector-toc-titles">{esc(titles)}</span>' if titles else ""
@@ -272,9 +401,11 @@ def blocks_to_html(blocks: list[dict]) -> str:
             list_buf.append(text)
             continue
         flush_list()
-        if SIGNOFF_RE.match(text):
+        if block.get("subhead"):
+            parts.append(f'<p class="card-text"><strong>{esc(text)}</strong></p>')
+        elif SIGNOFF_RE.match(text):
             parts.append(f'<p class="card-signoff">{esc(text)}</p>')
-        elif text.startswith("Belə bir aforizm var:") or text.startswith('"') or text.startswith("“"):
+        elif is_quote_line(text):
             parts.append(f'<p class="card-quote">{esc(text)}</p>')
         else:
             parts.append(f'<p class="card-text">{esc(text)}</p>')
@@ -322,6 +453,11 @@ def build_html(lang: str, sections: list[dict], spec: dict, page_key: str) -> st
     c = {**spec["copy"][lang], **(FOOTER_EN if lang == "en" else FOOTER_AZ)}
     page_id = spec["page_id"]
     toc_id = spec["toc_id"]
+    speech_photos_css = ""
+    if page_id in ("forum-anas-leadership-speeches", "forum-rector-speeches"):
+        speech_photos_css = (
+            f'<link href="{ASSET}css/daab-speech-photos.css?v=2" rel="stylesheet"/>\n'
+        )
     nav = forum_nav_strip(lang, active_nav_id="forum-2024")
     toc_items = "".join(toc_item_html(s, page_key) for s in sections)
     cards = "\n".join(speech_card(s) for s in sections)
@@ -345,8 +481,9 @@ def build_html(lang: str, sections: list[dict], spec: dict, page_key: str) -> st
         skip = "Skip to content"
         crumb_aria = "Breadcrumb"
 
+    hub_panel = forum_hub_panel_html(lang)
     return f"""<!DOCTYPE html>
-<html lang="{lang}" data-daab-lang="{lang}" data-daab-asset-root="{ASSET}" data-daab-page-id="{page_id}" data-daab-nav-mount="1">
+<html lang="{lang}" class="daab-hub-page" data-daab-lang="{lang}" data-daab-asset-root="{ASSET}" data-daab-page-id="{page_id}" data-daab-nav-mount="1">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
@@ -355,47 +492,44 @@ def build_html(lang: str, sections: list[dict], spec: dict, page_key: str) -> st
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
-<link href="{ASSET}css/daab-common.css?v=40" rel="stylesheet"/>
-<link href="{ASSET}css/daab-mobile.css?v=10" rel="stylesheet"/>
+<link href="{ASSET}css/daab-common.css?v=44" rel="stylesheet"/>
+<link href="{ASSET}css/daab-mobile.css?v=11" rel="stylesheet"/>
 <link href="{ASSET}css/daab-search.css?v=4" rel="stylesheet"/>
 <link href="{ASSET}css/daab-back-to-top.css?v=2" rel="stylesheet"/>
-<link href="{ASSET}css/daab-lang.css?v=10" rel="stylesheet"/>
-<link href="{ASSET}css/daab-nav-mega.css?v=19" rel="stylesheet"/>
-<link href="{ASSET}css/daab-hero-summary.css?v=7" rel="stylesheet"/>
+<link href="{ASSET}css/daab-lang.css?v=11" rel="stylesheet"/>
+<link href="{ASSET}css/daab-nav-mega.css?v=23" rel="stylesheet"/>
+<link href="{ASSET}css/daab-forum-section-nav.css?v=1" rel="stylesheet"/>
+<link href="{ASSET}css/daab-hero-summary.css?v=9" rel="stylesheet"/>
+<link href="{ASSET}css/daab-hub-cards.css?v=25" rel="stylesheet"/>
 <link href="{ASSET}css/daab-sidebar-widget.css?v=4" rel="stylesheet"/>
 <link href="{ASSET}css/daab-activities-layout.css?v=14" rel="stylesheet"/>
-<link href="{ASSET}css/daab-forum-content.css?v=24" rel="stylesheet"/>
-<link href="{ASSET}css/daab-activities-page.css?v=3" rel="stylesheet"/>
-<script src="{ASSET}js/daab-mobile.js?v=7" defer></script>
+<link href="{ASSET}css/daab-forum-content.css?v=26" rel="stylesheet"/>
+{speech_photos_css}<link href="{ASSET}css/daab-activities-page.css?v=3" rel="stylesheet"/>
+<script src="{ASSET}js/daab-mobile.js?v=5" defer></script>
 <script src="{ASSET}js/daab-back-to-top.js?v=3" defer></script>
-<script src="{ASSET}js/daab-i18n.js?v=17" defer></script>
+<script src="{ASSET}js/daab-i18n.js?v=18" defer></script>
 <script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
 <script src="{ASSET}js/daab-design-tokens.js?v=1" defer></script>
-<script src="{ASSET}js/daab-nav.js?v=19" defer></script>
-<script src="{ASSET}js/daab-primary-nav.js?v=16" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v=10" defer></script>
+<script src="{ASSET}js/daab-nav.js?v=20" defer></script>
+<script src="{ASSET}js/daab-primary-nav.js?v=17" defer></script>
+<script src="{ASSET}js/daab-section-nav.js?v=12" defer></script>
 <script src="{ASSET}js/daab-shell.js?v=12" defer></script>
 <script src="{ASSET}js/daab-page-subtitle.js?v=2" defer></script>
 <script src="{ASSET}js/daab-search.js?v=7" defer></script>
 </head>
-<body>
+<body class="daab-hub-page">
 <a class="skip" href="#content">{skip}</a>
 {nav}
 <div class="breadcrumbs forum-breadcrumbs" data-daab-breadcrumbs-static="1" role="navigation" aria-label="{crumb_aria}">
 {crumbs}
 </div>
-<header class="page-hero">
+<header class="hero">
 <div class="hero-wrap shell">
 <section class="hero-copy">
 <h1 aria-describedby="page-hero-subtitle">{c["hero_h1"]}</h1>
 <p class="page-hero-subtitle" id="page-hero-subtitle" role="doc-subtitle">{esc(c["hero_subtitle"])}</p>
 </section>
-<aside aria-label="{esc(c["panel_aria"])}" class="hero-panel">
-<div class="panel-card">
-<h2 class="panel-title">{esc(c["panel_title"])}</h2>
-<div class="panel-copy">{esc(c["panel_copy"])}</div>
-</div>
-</aside>
+{hub_panel}
 </div>
 </header>
 <div class="content-wrap">
@@ -421,29 +555,37 @@ def build_html(lang: str, sections: list[dict], spec: dict, page_key: str) -> st
 
 
 def build() -> None:
-    if not DOCX.is_file():
-        raise SystemExit(f"Missing source: {DOCX}")
-    all_sections = parse_speeches()
-    if not all_sections:
-        raise SystemExit("No speech sections parsed from docx")
+    if not DOCX_AZ.is_file():
+        raise SystemExit(f"Missing source: {DOCX_AZ}")
+    if not DOCX_EN.is_file():
+        raise SystemExit(f"Missing source: {DOCX_EN}")
+
+    by_lang = {
+        "az": parse_speeches_az(),
+        "en": parse_speeches_en(),
+    }
+    for lang, sections in by_lang.items():
+        if not sections:
+            raise SystemExit(f"No speech sections parsed from {lang} docx")
 
     for key, spec in PAGE_SPECS.items():
-        sections = [s for s in all_sections if spec["filter"](s["id"])]
-        if not sections:
-            raise SystemExit(f"No sections for page {key}")
-        for section in sections:
-            strip_duplicate_role_blocks(section)
+        for lang in ("az", "en"):
+            sections = [s for s in by_lang[lang] if spec["filter"](s["id"])]
+            if not sections:
+                raise SystemExit(f"No sections for page {key} ({lang})")
+            for section in sections:
+                strip_duplicate_role_blocks(section)
 
-        spec["out_az"].parent.mkdir(parents=True, exist_ok=True)
-        spec["out_az"].write_text(
-            build_html("az", sections, spec, key), encoding="utf-8", newline="\n"
-        )
-        print(f"wrote {spec['out_az'].relative_to(ROOT)} ({len(sections)} speeches)")
+            out = spec["out_az"] if lang == "az" else spec["out_en"]
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(
+                build_html(lang, sections, spec, key), encoding="utf-8", newline="\n"
+            )
+            print(f"wrote {out.relative_to(ROOT)} ({len(sections)} speeches)")
+            if key in ("anas", "rector"):
+                from _speech_photos_lib import refresh_page
 
-        spec["out_en"].write_text(
-            build_html("en", sections, spec, key), encoding="utf-8", newline="\n"
-        )
-        print(f"wrote {spec['out_en'].relative_to(ROOT)} ({len(sections)} speeches)")
+                refresh_page(out, spec["toc_id"])
 
 
 if __name__ == "__main__":

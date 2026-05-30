@@ -9,31 +9,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 
 from _paths import ROOT
-
-ASSET = "../../../"
-PHOTO_DIRS = (
-    ROOT / "images" / "scientists-photos",
-    ROOT / "images" / "board-members-photos",
-)
-
-PHOTO_ALIASES: dict[str, str] = {
-    "togrul-kerimov": "togrul-karimov",
-    "bextiyar-siracov": "bakhtiyar-sirajov",
-    "nigar-mesumova": "nigar-masimova",
-    "seadet-kerimi": "saadat-karimi",
-    "seymur-nesirov": "seymur-nasirov",
-    "yulduz-rehimov": "yulduz-rahimov",
-    "mehdi-genceli": "mehdi-genceli-ismayilov",
-}
-
-
-def photo_src(slug: str) -> str:
-    for base in (PHOTO_ALIASES.get(slug, slug), slug):
-        for folder in PHOTO_DIRS:
-            if (folder / f"{base}.png").is_file():
-                rel = folder.relative_to(ROOT).as_posix()
-                return f"{ASSET}{rel}/{base}.png"
-    return ""
+from _speech_photos_lib import photo_src
 
 
 def toc_item(article_id: str, author: str, title: str, photo: str) -> str:
@@ -60,7 +36,7 @@ def toc_item(article_id: str, author: str, title: str, photo: str) -> str:
 
 
 def inject_main_feed_photos(soup: BeautifulSoup) -> int:
-    """Wrap each article's first card-lead with author photo (when available)."""
+    """Wrap each article's presentation title (card-lead) with author photo when available."""
     count = 0
     for article in soup.select("main.news-feed article.news-card"):
         aid = article.get("id", "")

@@ -309,6 +309,48 @@
     }
   }
 
+  function injectNavBrandQr() {
+    if (document.body && document.body.classList.contains("daab-gateway")) return;
+    var brand = document.querySelector("a.nav-brand");
+    if (!brand || document.querySelector(".nav-brand-qr-link")) return;
+
+    var root = document.documentElement.getAttribute("data-daab-asset-root") || "";
+    var lang = document.documentElement.getAttribute("data-daab-lang");
+    if (lang !== "en") lang = "az";
+    var isEn = lang === "en";
+    var imgSrc = root + "images/qr/home-" + (isEn ? "en" : "az") + ".png";
+    var href = isEn ? "https://daab-waas.com/en/" : "https://daab-waas.com/az/";
+    var label = isEn
+      ? "QR code for the WAAS home page — daab-waas.com"
+      : "DAAB ana səhifəsi üçün QR kod — daab-waas.com";
+
+    var block = document.createElement("div");
+    block.className = "nav-brand-block";
+    var parent = brand.parentNode;
+    if (!parent) return;
+    parent.insertBefore(block, brand);
+    block.appendChild(brand);
+
+    var qrLink = document.createElement("a");
+    qrLink.className = "nav-brand-qr-link";
+    qrLink.href = href;
+    qrLink.rel = "noopener noreferrer";
+    qrLink.setAttribute("aria-label", label);
+    qrLink.title = "daab-waas.com";
+
+    var img = document.createElement("img");
+    img.className = "nav-brand-qr-img";
+    img.src = imgSrc;
+    img.alt = "";
+    img.width = 44;
+    img.height = 44;
+    img.loading = "lazy";
+    img.decoding = "async";
+    qrLink.appendChild(img);
+    block.appendChild(qrLink);
+    scheduleNavHeightSync();
+  }
+
   function init() {
     if (!mobileInitialized) {
       mobileInitialized = initMobileNavOnce();
@@ -318,6 +360,7 @@
     initNavDropdowns();
     attachGlobalDropdownHandlers();
     attachViewportListeners();
+    injectNavBrandQr();
     scheduleNavHeightSync();
   }
 
@@ -367,6 +410,7 @@
 
   window.DAAB_NAV = {
     init: init,
+    injectNavBrandQr: injectNavBrandQr,
     closeMobileMenu: closeMobileMenu,
     syncNavHeight: syncNavHeight,
     currentNavKey: currentNavKey,
@@ -390,8 +434,19 @@
   window.addEventListener("load", scheduleNavHeightSync, { once: true });
   document.addEventListener("daab-primary-nav-ready", function () {
     initNavDropdowns();
+    injectNavBrandQr();
     scheduleNavHeightSync();
   });
+
+  function bootNavBrandQr() {
+    injectNavBrandQr();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootNavBrandQr);
+  } else {
+    bootNavBrandQr();
+  }
 
   window.addEventListener("pageshow", function (ev) {
     if (ev.persisted) {

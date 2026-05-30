@@ -21,6 +21,10 @@ OUT_AZ = ROOT / "az" / "forum" / "2024" / "cooperation.html"
 OUT_EN = ROOT / "en" / "forum" / "2024" / "cooperation.html"
 ASSET = "../../../"
 PAGE_ID = "forum-cooperation"
+HERO_SUBTITLE = {
+    "az": "Forumun təşkilinə dəstək verən tərəfdaşlarla tanış olun",
+    "en": "Recognising the partners who supported the Forum",
+}
 SIDEBAR_SCRIPT = f'<script src="{ASSET}js/daab-sidebar-timeline.js?v=1" defer></script>'
 
 SECTIONS = ({"id": "contributions", "az_title": "Töhfələr və tərəfdaşlar"},)
@@ -132,20 +136,22 @@ def page_html(data: dict, *, lang: str) -> str:
         bc_forum = "Forum 2024"
         footer_brand = "World Association of Azerbaijani Scientists"
         bc_aria = "Breadcrumb"
-        panel_aria = "Contributions and cooperation summary"
+        panel_aria = "Contributions summary"
         doc_lead = meta["doc_title"]
+        hero_subtitle = HERO_SUBTITLE["en"]
         footer_html = FORUM_FOOTER_EN
     else:
-        hero_h1 = "Töhfələr <span>və əməkdaşlıq</span>"
+        hero_h1 = "Töhfələr"
+        hero_subtitle = HERO_SUBTITLE["az"]
         panel_title = "Tərəfdaşlar və töhfə verənlər"
         panel_copy = (
             "Dövlət qurumları, media, DAAB rəhbərliyi, universitetlər və alimlər — "
             "forumun reallaşmasına dəstək olanlar."
         )
-        breadcrumb = "Töhfələr və əməkdaşlıq"
-        sidebar_label = "🤝 Töhfələr və əməkdaşlıq"
+        breadcrumb = "Töhfələr"
+        sidebar_label = "Töhfələr"
         sidebar_aria = "Töhfələr menyusunu aç"
-        page_title = "Töhfələr və əməkdaşlıq — DAAB"
+        page_title = "Töhfələr — DAAB"
         meta_desc = (
             "Xaricdə yaşayan azərbaycanlı alimlərin I Forumuna töhfə verən qurumlar və tərəfdaşlar."
         )
@@ -155,7 +161,7 @@ def page_html(data: dict, *, lang: str) -> str:
         bc_forum = "Forum 2024"
         footer_brand = "Dünya Azərbaycanlı Alimlər Birliyi"
         bc_aria = "Səhifə yolu"
-        panel_aria = "Töhfələr və əməkdaşlıq haqqında qısa məlumat"
+        panel_aria = "Töhfələr haqqında qısa məlumat"
         doc_lead = data["title"]
         footer_html = f"""<footer class="footer-pro">
 <div class="footer-inner">
@@ -188,7 +194,8 @@ def page_html(data: dict, *, lang: str) -> str:
 <link href="{ASSET}css/daab-search.css?v=3" rel="stylesheet"/>
 <link href="{ASSET}css/daab-back-to-top.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-lang.css?v=10" rel="stylesheet"/>
-<link href="{ASSET}css/daab-nav-mega.css?v=13" rel="stylesheet"/>
+<link href="{ASSET}css/daab-nav-mega.css?v=23" rel="stylesheet"/>
+<link href="{ASSET}css/daab-forum-section-nav.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-hero-summary.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-sidebar-widget.css?v=3" rel="stylesheet"/>
 <link href="{ASSET}css/daab-activities-layout.css?v=12" rel="stylesheet"/>
@@ -199,9 +206,10 @@ def page_html(data: dict, *, lang: str) -> str:
 <script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
 <script src="{ASSET}js/daab-nav.js?v=10" defer></script>
 <script src="{ASSET}js/daab-primary-nav.js?v=10" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v=9" defer></script>
+<script src="{ASSET}js/daab-section-nav.js?v=12" defer></script>
 <script src="{ASSET}js/daab-shell.js?v=11" defer></script>
 <script src="{ASSET}js/daab-search.js?v=4" defer></script>
+<script defer src="{ASSET}js/daab-page-subtitle.js?v=2"></script>
 </head>
 <body>
 <a class="skip" href="#content">{esc(skip)}</a>
@@ -212,7 +220,8 @@ def page_html(data: dict, *, lang: str) -> str:
 <header class="page-hero">
 <div class="hero-wrap shell">
 <section class="hero-copy">
-<h1>{hero_h1}</h1>
+<h1 aria-describedby="page-hero-subtitle">{hero_h1}</h1>
+<p class="page-hero-subtitle" id="page-hero-subtitle" role="doc-subtitle">{esc(hero_subtitle)}</p>
 </section>
 <aside aria-label="{esc(panel_aria)}" class="hero-panel">
 <div class="panel-card">

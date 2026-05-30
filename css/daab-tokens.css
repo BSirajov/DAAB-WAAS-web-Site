@@ -61,11 +61,28 @@
   --font-serif: "Playfair Display", Georgia, serif;
   --font-size-xs: 12px;
   --font-size-sm: 13px;
+  --font-size-breadcrumb: 16.9px;
+  --font-size-breadcrumb-compact: 15.6px;
+  --font-size-breadcrumb-mobile: 14.95px;
+  --font-size-summary-panel-title: 15.47px;
+  --font-size-summary-panel-title-md: 16.38px;
+  --font-size-summary-panel-title-lg: 20.02px;
+  --font-size-summary-panel-title-forum: 19.11px;
+  --font-size-summary-panel-title-mobile: 14.56px;
   --font-size-base: 16px;
   --font-weight-bold: 800;
   --line-height-body: 1.62;
   --line-height-tight: 1.42;
   --letter-spacing-caps: 0.06em;
+
+  /* Title scale (1 = design default; 0.7 = 30% smaller) */
+  --daab-title-scale: 0.7;
+  --font-size-title-hero: clamp(21.28px, 3.36vw, 40.32px);
+  --font-size-title-hero-mobile: clamp(21px, 7.35vw, 29.4px);
+  --font-size-title-section: clamp(19.6px, 2.1vw, 29.4px);
+  --font-size-title-panel: 12.6px;
+  --font-size-title-card: 15.4px;
+  --font-size-title-footer: 16.8px;
 
   /* —— Spacing scale —— */
   --space-1: 4px;

@@ -108,7 +108,7 @@ NAV_PLACEHOLDER
 <li><a href="membership_value.html">Why become a member</a></li>
 <li><a href="membership.html">Membership terms</a></li>
 <li><a class="active" href="application.html" aria-current="page">Join us</a></li>
-<li><a href="membership_flyer.html">Share Flyer</a></li>
+<li><a href="membership_flyer.html">Send invite</a></li>
 </ul>
 </nav>
 <main class="main application-main" id="content">

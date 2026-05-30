@@ -3,22 +3,22 @@
 from __future__ import annotations
 
 COOPERATION_EN = {
-    "page_title": "Contributions and cooperation — WAAS",
+    "page_title": "Contributions — WAAS",
     "meta_description": (
         "Acknowledgements and institutional partners who supported the First Forum of "
         "Azerbaijani Scientists Living Abroad."
     ),
-    "breadcrumb": "Contributions and cooperation",
-    "hero_h1": "Contributions <span>and cooperation</span>",
+    "breadcrumb": "Contributions",
+    "hero_h1": "Contributions",
     "panel_title": "Partners and contributors",
     "panel_copy": (
         "Gratitude to state institutions, media, DAAB leadership, universities and "
         "scientists who made the forum possible."
     ),
-    "sidebar_label": "🤝 Contributions",
+    "sidebar_label": "Contributions",
     "sidebar_aria": "Open contributions menu",
     "doc_title": "CONTRIBUTIONS AND COOPERATION",
-    "section_contributions": "Contributions and cooperation",
+    "section_contributions": "Contributions",
     "section_presenters": "Scientific presentations",
     "section_rectors": "University rectors",
     "table_name": "Name",

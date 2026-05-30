@@ -164,7 +164,8 @@ def page_html(lang: str, items: list[dict]) -> str:
 <link href="{ASSET}css/daab-search.css?v=4" rel="stylesheet"/>
 <link href="{ASSET}css/daab-back-to-top.css?v=2" rel="stylesheet"/>
 <link href="{ASSET}css/daab-lang.css?v=10" rel="stylesheet"/>
-<link href="{ASSET}css/daab-nav-mega.css?v=19" rel="stylesheet"/>
+<link href="{ASSET}css/daab-nav-mega.css?v=23" rel="stylesheet"/>
+<link href="{ASSET}css/daab-forum-section-nav.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-hero-summary.css?v=7" rel="stylesheet"/>
 <link href="{ASSET}css/daab-activities-layout.css?v=13" rel="stylesheet"/>
 <link href="{ASSET}css/daab-forum-content.css?v=18" rel="stylesheet"/>
@@ -177,7 +178,7 @@ def page_html(lang: str, items: list[dict]) -> str:
 <script src="{ASSET}js/daab-nav.js?v=19" defer></script>
 <script src="{ASSET}js/daab-primary-nav.js?v=16" defer></script>
 <script src="{ASSET}js/daab-breadcrumbs.js?v=13" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v=10" defer></script>
+<script src="{ASSET}js/daab-section-nav.js?v=12" defer></script>
 <script src="{ASSET}js/daab-shell.js?v=12" defer></script>
 <script src="{ASSET}js/daab-page-subtitle.js?v=2" defer></script>
 <script src="{ASSET}js/daab-search.js?v=6" defer></script>

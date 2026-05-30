@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-05-29",
+  "generated": "2026-05-30",
   "entryCount": 512,
   "entries": [
     {
@@ -165,12 +165,12 @@
       "type": "page",
       "pageId": "forum-rector-speeches",
       "anchor": "",
-      "title": "Rektorların nitqləri — DAAB",
+      "title": "Rektorlar — DAAB",
       "summary": "Forum 2024 — Azərbaycan universitet rektorlarının nitqləri.",
       "tag": "Səhifə",
-      "icon": "📄",
+      "icon": "🎓",
       "boost": 12,
-      "norm": "rektorlarin nitqleri daab forum 2024 azerbaycan universitet rektorlarinin nitqleri."
+      "norm": "rektorlar daab forum 2024 azerbaycan universitet rektorlarinin nitqleri."
     },
     {
       "id": "page-forum-rector-speeches-en",
@@ -178,12 +178,12 @@
       "type": "page",
       "pageId": "forum-rector-speeches",
       "anchor": "",
-      "title": "Rectors' speeches — WAAS",
+      "title": "Rectors — WAAS",
       "summary": "Forum 2024 — speeches by rectors of Azerbaijani universities.",
       "tag": "Page",
-      "icon": "📄",
+      "icon": "🎓",
       "boost": 12,
-      "norm": "rectors speeches waas forum 2024 speeches by rectors of azerbaijani universities."
+      "norm": "rectors waas forum 2024 speeches by rectors of azerbaijani universities."
     },
     {
       "id": "page-forum-anas-leadership-speeches-az",
@@ -191,12 +191,12 @@
       "type": "page",
       "pageId": "forum-anas-leadership-speeches",
       "anchor": "",
-      "title": "AMEA rəhbərliyinin nitqləri — DAAB",
+      "title": "AMEA rəhbərliyi — DAAB",
       "summary": "Forum 2024 — Azərbaycan Milli Elmlər Akademiyasının rəhbərliyinin nitqləri.",
       "tag": "Səhifə",
-      "icon": "📄",
+      "icon": "🔬",
       "boost": 12,
-      "norm": "amea rehberliyinin nitqleri daab forum 2024 azerbaycan milli elmler akademiyasinin rehberliyinin nitqleri."
+      "norm": "amea rehberliyi daab forum 2024 azerbaycan milli elmler akademiyasinin rehberliyinin nitqleri."
     },
     {
       "id": "page-forum-anas-leadership-speeches-en",
@@ -204,12 +204,12 @@
       "type": "page",
       "pageId": "forum-anas-leadership-speeches",
       "anchor": "",
-      "title": "Speeches by the ANAS Leadership — WAAS",
+      "title": "ANAS Leadership — WAAS",
       "summary": "Forum 2024 — speeches by leaders of the Azerbaijan National Academy of Sciences.",
       "tag": "Page",
-      "icon": "📄",
+      "icon": "🔬",
       "boost": 12,
-      "norm": "speeches by the anas leadership waas forum 2024 speeches by leaders of the azerbaijan national academy of sciences."
+      "norm": "anas leadership waas forum 2024 speeches by leaders of the azerbaijan national academy of sciences."
     },
     {
       "id": "page-forum-official-az",
@@ -243,12 +243,12 @@
       "type": "page",
       "pageId": "forum-program",
       "anchor": "",
-      "title": "Forumun proqramı — DAAB",
+      "title": "Proqram — DAAB",
       "summary": "Xaricdə Yaşayan Azərbaycanlı Alimlərin 2024-cü il Forumu — 9–11 sentyabr proqramı (Bakı, Xankəndi, Şuşa).",
       "tag": "Səhifə",
       "icon": "📅",
       "boost": 12,
-      "norm": "forumun proqrami daab xaricde yas ayan azerbaycanli alimlerin 2024-cu il forumu 9 11 sentyabr proqrami baki xankendi s us a ."
+      "norm": "proqram daab xaricde yas ayan azerbaycanli alimlerin 2024-cu il forumu 9 11 sentyabr proqrami baki xankendi s us a ."
     },
     {
       "id": "page-forum-program-en",
@@ -256,12 +256,12 @@
       "type": "page",
       "pageId": "forum-program",
       "anchor": "",
-      "title": "Forum programme — WAAS",
+      "title": "Programme — WAAS",
       "summary": "2024 Forum of Azerbaijani Scientists Living Abroad — programme for 9–11 September (Baku, Khankendi, Shusha).",
       "tag": "Page",
       "icon": "📅",
       "boost": 12,
-      "norm": "forum programme waas 2024 forum of azerbaijani scientists living abroad programme for 9 11 september baku khankendi shusha ."
+      "norm": "programme waas 2024 forum of azerbaijani scientists living abroad programme for 9 11 september baku khankendi shusha ."
     },
     {
       "id": "page-forum-impressions-az",
@@ -581,12 +581,12 @@
       "type": "page",
       "pageId": "forum-bagli-hekayeler",
       "anchor": "",
-      "title": "Forumla bağlı hekayələr — DAAB",
+      "title": "Hekayələr — DAAB",
       "summary": "Eldar Əhədovun Xaricdə Yaşayan Azərbaycanlı Alimlərin I Forumu haqqında ədəbi yazıları.",
       "tag": "Səhifə",
       "icon": "📖",
       "boost": 12,
-      "norm": "forumla bag li hekayeler daab eldar ehedovun xaricde yas ayan azerbaycanli alimlerin i forumu haqqinda edebi yazilari."
+      "norm": "hekayeler daab eldar ehedovun xaricde yas ayan azerbaycanli alimlerin i forumu haqqinda edebi yazilari."
     },
     {
       "id": "page-forum-bagli-hekayeler-en",
@@ -594,12 +594,12 @@
       "type": "page",
       "pageId": "forum-bagli-hekayeler",
       "anchor": "",
-      "title": "Stories of the forum — WAAS",
+      "title": "Stories — WAAS",
       "summary": "Literary reflections by Eldar Akhadov on the First Forum of Azerbaijani Scientists Living Abroad.",
       "tag": "Page",
       "icon": "📖",
       "boost": 12,
-      "norm": "stories of the forum waas literary reflections by eldar akhadov on the first forum of azerbaijani scientists living abroad."
+      "norm": "stories waas literary reflections by eldar akhadov on the first forum of azerbaijani scientists living abroad."
     },
     {
       "id": "page-forum-cooperation-az",
@@ -607,12 +607,12 @@
       "type": "page",
       "pageId": "forum-cooperation",
       "anchor": "",
-      "title": "Töhfələr və əməkdaşlıq — DAAB",
+      "title": "Töhfələr — DAAB",
       "summary": "Xaricdə yaşayan azərbaycanlı alimlərin I Forumuna töhfə verən qurumlar və tərəfdaşlar.",
       "tag": "Səhifə",
       "icon": "🤝",
       "boost": 12,
-      "norm": "to hfeler ve emekdas liq daab xaricde yas ayan azerbaycanli alimlerin i forumuna to hfe veren qurumlar ve terefdas lar."
+      "norm": "to hfeler daab xaricde yas ayan azerbaycanli alimlerin i forumuna to hfe veren qurumlar ve terefdas lar."
     },
     {
       "id": "page-forum-cooperation-en",
@@ -620,12 +620,12 @@
       "type": "page",
       "pageId": "forum-cooperation",
       "anchor": "",
-      "title": "Contributions and cooperation — WAAS",
+      "title": "Contributions — WAAS",
       "summary": "Acknowledgements and institutional partners who supported the First Forum of Azerbaijani Scientists Living Abroad.",
       "tag": "Page",
       "icon": "🤝",
       "boost": 12,
-      "norm": "contributions and cooperation waas acknowledgements and institutional partners who supported the first forum of azerbaijani scientists living abroad."
+      "norm": "contributions waas acknowledgements and institutional partners who supported the first forum of azerbaijani scientists living abroad."
     },
     {
       "id": "nav-home-az",
@@ -789,12 +789,12 @@
       "type": "nav",
       "pageId": "membership-flyer",
       "anchor": "",
-      "title": "Flyer paylaş",
+      "title": "Dəvət göndərin",
       "summary": "Potensial üzvlər üçün çap oluna bilən flyer",
       "tag": "Naviqasiya",
       "icon": "✒️",
       "boost": 11,
-      "norm": "flyer paylas potensial u zvler u c u n c ap oluna bilen flyer u zvlu k"
+      "norm": "devet go nder potensial u zvler u c u n c ap oluna bilen flyer u zvlu k"
     },
     {
       "id": "nav-home-en",
@@ -958,12 +958,12 @@
       "type": "nav",
       "pageId": "membership-flyer",
       "anchor": "",
-      "title": "Share Flyer",
+      "title": "Send invite",
       "summary": "Printable flyer to share with potential members",
       "tag": "Navigation",
       "icon": "✒️",
       "boost": 11,
-      "norm": "share flyer printable flyer to share with potential members membership"
+      "norm": "send invite printable flyer to share with potential members membership"
     },
     {
       "id": "section-foundation-necessity-az",
@@ -2298,11 +2298,11 @@
       "pageId": "forum-rector-speeches",
       "anchor": "ceyran-mahmudova",
       "title": "Ceyran MAHMUDOVA",
-      "summary": "Azərbaycan Dövlət Mədəniyyət və İncəsənət Universitetinin rektoru, Əməkdar incəsənət xadimi, sənətşünaslıq üzrə elmlər doktoru, professor",
+      "summary": "2001-ci ildə Ulu öndərimiz Heydər Əliyevin təşəbbüsü ilə Dünya Azərbaycanlılarının I qurultayı keçirildi. Sonrakı illərdə Prezident İlham Əliyev cənablarının sərəncamları və dəstəyi ilə bu qurultaylar davam etdirildi. Artıq 2022-ci ildə Dün",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "ceyran mahmudova azerbaycan do vlet medeniyyet ve i ncesenet universitetinin rektoru emekdar incesenet xadimi senets u nasliq u zre elmler doktoru professor"
+      "norm": "ceyran mahmudova 2001-ci ilde ulu o nderimiz heyder eliyevin tes ebbu su ile du nya azerbaycanlilarinin i qurultayi kec irildi. sonraki illerde prezident i lham eliyev cenablarinin serencamlari ve desteyi ile bu qurultaylar davam etdirildi. artiq 2022-ci ilde du n"
     },
     {
       "id": "section-forum-rector-speeches-edalet-muradov-az",
@@ -2311,11 +2311,11 @@
       "pageId": "forum-rector-speeches",
       "anchor": "edalet-muradov",
       "title": "Ədalət MURADOV",
-      "summary": "Azərbaycan Dövlət İqtisad Universitetinin rektoru, professor",
+      "summary": "Hörmətli həmkarlar, dəyərli alimlər, möhtərəm qonaqlar!",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "edalet muradov azerbaycan do vlet i qtisad universitetinin rektoru professor"
+      "norm": "edalet muradov ho rmetli hemkarlar deyerli alimler mo hterem qonaqlar"
     },
     {
       "id": "section-forum-rector-speeches-elbrus-isayev-az",
@@ -2324,11 +2324,11 @@
       "pageId": "forum-rector-speeches",
       "anchor": "elbrus-isayev",
       "title": "Elbrus İSAYEV",
-      "summary": "Naxçıvan Dövlət Universitetinin rektoru, tarix üzrə fəlsəfə doktoru, dosent",
+      "summary": "Elm və təhsil hər bir xalqın inkişafının təməl daşı, gələcəyə gedən yolun ən etibarlı bələdçisidir. Bu yolun yolçuları olan alimlər cəmiyyətin düşüncə sərhədlərini genişləndirən, elmi yeniliklərə imza atan, dünyanı dəyişdirən insanlardır. A",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "elbrus i sayev naxc ivan do vlet universitetinin rektoru tarix u zre felsefe doktoru dosent"
+      "norm": "elbrus i sayev elm ve tehsil her bir xalqin inkis afinin temel das i geleceye geden yolun en etibarli beledc isidir. bu yolun yolc ulari olan alimler cemiyyetin du s u nce serhedlerini genis lendiren elmi yeniliklere imza atan du nyani deyis diren insanlardir. a"
     },
     {
       "id": "section-forum-rector-speeches-elcin-babayev-az",
@@ -2337,11 +2337,11 @@
       "pageId": "forum-rector-speeches",
       "anchor": "elcin-babayev",
       "title": "Elçin BABAYEV",
-      "summary": "Bakı Dövlət Universitetinin rektoru, fizika-riyaziyyat elmləri üzrə fəlsəfə doktoru, dosent",
+      "summary": "Hazırda xarici ölkələrdə yaşayan, dünya elminin inkişafına əhəmiyyətli töhfələr verən azərbaycanlı alimlərlə əlaqələrin gücləndirilməsi, bir tərəfdən, elm, təhsil, təcrübə mübadiləsi platformalarının qurulması, diaspor təşkilatlarının daha ",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "elc in babayev baki do vlet universitetinin rektoru fizika-riyaziyyat elmleri u zre felsefe doktoru dosent"
+      "norm": "elc in babayev hazirda xarici o lkelerde yas ayan du nya elminin inkis afina ehemiyyetli to hfeler veren azerbaycanli alimlerle elaqelerin gu clendirilmesi bir terefden elm tehsil tecru be mu badilesi platformalarinin qurulmasi diaspor tes kilatlarinin daha"
     },
     {
       "id": "section-forum-rector-speeches-gulcohre-memmedova-az",
@@ -2350,11 +2350,11 @@
       "pageId": "forum-rector-speeches",
       "anchor": "gulcohre-memmedova",
       "title": "Gülçöhrə MƏMMƏDOVA",
-      "summary": "Azərbaycan Dövlət Memarlıq və İnşaat Universitetinin rektoru, professor",
+      "summary": "Hörmətli həmkarlar, əziz alimlər və forum iştirakçıları!",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "gu lc o hre memmedova azerbaycan do vlet memarliq ve i ns aat universitetinin rektoru professor"
+      "norm": "gu lc o hre memmedova ho rmetli hemkarlar eziz alimler ve forum is tirakc ilari"
     },
     {
       "id": "section-forum-rector-speeches-hamlet-isaxanli-az",
@@ -2363,11 +2363,11 @@
       "pageId": "forum-rector-speeches",
       "anchor": "hamlet-isaxanli",
       "title": "Hamlet İSAXANLI",
-      "summary": "Xəzər Universitetinin rektoru, professor",
+      "summary": "Azərbaycan Respublikasında, paytaxt Bakı şəhərində baş tutan Xaricdə Yaşayan Azərbaycanlı Alimlərin forumu Azərbaycan elmi və ali təhsili üçün ən əlamətdar hadisələrdən biridir. Çağdaş dünyamızda ölkələrin yarışında ön plana iqtisadiyyat de",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "hamlet i saxanli xezer universitetinin rektoru professor"
+      "norm": "hamlet i saxanli azerbaycan respublikasinda paytaxt baki s eherinde bas tutan xaricde yas ayan azerbaycanli alimlerin forumu azerbaycan elmi ve ali tehsili u c u n en elametdar hadiselerden biridir. c ag das du nyamizda o lkelerin yaris inda o n plana iqtisadiyyat de"
     },
     {
       "id": "section-forum-rector-speeches-natiq-eliyev-az",
@@ -2376,11 +2376,11 @@
       "pageId": "forum-rector-speeches",
       "anchor": "natiq-eliyev",
       "title": "Natiq ƏLİYEV",
-      "summary": "Azərbaycan Rəssamlıq Akademiyasının rektoru, Azərbaycan Respublikasının Xalq rəssamı, professor",
+      "summary": "Bu baxımdan, dünyanın müxtəlif ölkələrində yaşayan azərbaycanlı alimləri bir araya toplayaraq onların elmi bilik və təcrübələrinin əsaslandığı qlobal elmi nailiyyətləri yerli elmi müstəvidə təqdim etmək və bu sahədə beynəlxalq əməkdaşlıqlar",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "natiq eli yev azerbaycan ressamliq akademiyasinin rektoru azerbaycan respublikasinin xalq ressami professor"
+      "norm": "natiq eli yev bu baximdan du nyanin mu xtelif o lkelerinde yas ayan azerbaycanli alimleri bir araya toplayaraq onlarin elmi bilik ve tecru belerinin esaslandig i qlobal elmi nailiyyetleri yerli elmi mu stevide teqdim etmek ve bu sahede beynelxalq emekdas liqlar"
     },
     {
       "id": "section-forum-rector-speeches-rufet-ezizov-az",
@@ -2389,11 +2389,11 @@
       "pageId": "forum-rector-speeches",
       "anchor": "rufet-ezizov",
       "title": "Rüfət ƏZİZOV",
-      "summary": "Forum keçirildiyi dövrdə Sumqayıt Dövlət Universitetinin rektoru, 2025-ci ildən Azərbaycan Dövlət Neft və Sənaye Universitetinin rektoru, kimya üzrə fəlsəfə doktoru",
+      "summary": "Forum haqqında təəssüratlarım",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "ru fet ezi zov forum kec irildiyi do vrde sumqayit do vlet universitetinin rektoru 2025-ci ilden azerbaycan do vlet neft ve senaye universitetinin rektoru kimya u zre felsefe doktoru"
+      "norm": "ru fet ezi zov forum haqqinda teessu ratlarim"
     },
     {
       "id": "section-forum-rector-speeches-sahin-bayramov-az",
@@ -2402,11 +2402,11 @@
       "pageId": "forum-rector-speeches",
       "anchor": "sahin-bayramov",
       "title": "Şahin BAYRAMOV",
-      "summary": "Qarabağ Universitetinin rektoru, iqtisad üzrə fəlsəfə doktoru, dosent",
+      "summary": "9–11 sentyabr 2024-cü il tarixlərində Xaricdə Yaşayan Azərbaycanlı Alimlərin Bakı forumu keçirildi. Bu forum çərçivəsində xaricdə yaşayan azərbaycanlı alimlərin işğaldan azad olunmuş ərazilərə – Xankəndi və Şuşa şəhərlərinə səfəri son dərəc",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "s ahin bayramov qarabag universitetinin rektoru iqtisad u zre felsefe doktoru dosent"
+      "norm": "s ahin bayramov 9 11 sentyabr 2024-cu il tarixlerinde xaricde yas ayan azerbaycanli alimlerin baki forumu kec irildi. bu forum c erc ivesinde xaricde yas ayan azerbaycanli alimlerin is g aldan azad olunmus erazilere xankendi ve s us a s eherlerine seferi son derec"
     },
     {
       "id": "section-forum-rector-speeches-vazeh-eskerov-az",
@@ -2415,11 +2415,11 @@
       "pageId": "forum-rector-speeches",
       "anchor": "vazeh-eskerov",
       "title": "Vazeh ƏSKƏROV",
-      "summary": "Forum keçirildiyi dövrdə Azərbaycan Dövlət Neft və Sənaye Universitetinin rektoru vəzifəsini müvəqqəti icra edən, dosent",
+      "summary": "Öncə uzun müddət xaricdə yaşamış diaspor üzvü olan biri kimi qeyd etmək istərdim ki, Azərbaycanda ilk dəfə Xaricdə Yaşayan Azərbaycanlı Alimlərin forumunun Bakı, Xankəndi və Şuşada keçirilməsi çox böyük tarixi əhəmiyyət kəsb edən hadisəyə ç",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "vazeh eskerov forum kec irildiyi do vrde azerbaycan do vlet neft ve senaye universitetinin rektoru vezifesini mu veqqeti icra eden dosent"
+      "norm": "vazeh eskerov o nce uzun mu ddet xaricde yas amis diaspor u zvu olan biri kimi qeyd etmek isterdim ki azerbaycanda ilk defe xaricde yas ayan azerbaycanli alimlerin forumunun baki xankendi ve s us ada kec irilmesi c ox bo yu k tarixi ehemiyyet kesb eden hadiseye c"
     },
     {
       "id": "section-forum-rector-speeches-vilayet-veliyev-az",
@@ -2428,11 +2428,11 @@
       "pageId": "forum-rector-speeches",
       "anchor": "vilayet-veliyev",
       "title": "Vilayət VƏLİYEV",
-      "summary": "Azərbaycan Texniki Universitetinin rektoru, professor",
+      "summary": "9–11 sentyabr 2024-cü il Azərbaycan tarixində unudulmaz və strateji əhəmiyyətli bir hadisə baş verdi – Xaricdə Yaşayan Azərbaycanlı Alimlərin I forumu keçirildi. Bakı, Xankəndi və Şuşanı əhatə edən bu forum yalnız bir elmi tədbir deyildi. B",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "vilayet veli yev azerbaycan texniki universitetinin rektoru professor"
+      "norm": "vilayet veli yev 9 11 sentyabr 2024-cu il azerbaycan tarixinde unudulmaz ve strateji ehemiyyetli bir hadise bas verdi xaricde yas ayan azerbaycanli alimlerin i forumu kec irildi. baki xankendi ve s us ani ehate eden bu forum yalniz bir elmi tedbir deyildi. b"
     },
     {
       "id": "section-forum-rector-speeches-yaqub-piriyev-az",
@@ -2441,11 +2441,11 @@
       "pageId": "forum-rector-speeches",
       "anchor": "yaqub-piriyev",
       "title": "Yaqub PİRİYEV",
-      "summary": "Bakı Mühəndislik Universitetinin rektoru, texnika elmləri üzrə fəlsəfə doktoru",
+      "summary": "Bakı Mühəndislik Universiteti olaraq 2024-cü ilin 9–11 sentyabr tarixlərində Bakıda, Xankəndidə və Şuşada keçirilmiş Xaricdə Yaşayan Azərbaycanlı Alimlərin forumunu Azərbaycanın elmi və milli-mənəvi həyatında mühüm əhəmiyyət kəsb edən tarix",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "yaqub pi ri yev baki mu hendislik universitetinin rektoru texnika elmleri u zre felsefe doktoru"
+      "norm": "yaqub pi ri yev baki mu hendislik universiteti olaraq 2024-cu ilin 9 11 sentyabr tarixlerinde bakida xankendide ve s us ada kec irilmis xaricde yas ayan azerbaycanli alimlerin forumunu azerbaycanin elmi ve milli-menevi heyatinda mu hu m ehemiyyet kesb eden tarix"
     },
     {
       "id": "section-forum-rector-speeches-ceyran-mahmudova-en",
@@ -2454,24 +2454,24 @@
       "pageId": "forum-rector-speeches",
       "anchor": "ceyran-mahmudova",
       "title": "Ceyran MAHMUDOVA",
-      "summary": "Azərbaycan Dövlət Mədəniyyət və İncəsənət Universitetinin rektoru, Əməkdar incəsənət xadimi, sənətşünaslıq üzrə elmlər doktoru, professor",
+      "summary": "In 2001, at the initiative of our National Leader Heydar Aliyev, the First Congress of World Azerbaijanis was held. In subsequent years, these congresses continued by the orders and with the support of President Ilham Aliyev. In 2022, the F",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "ceyran mahmudova azerbaycan do vlet medeniyyet ve i ncesenet universitetinin rektoru emekdar incesenet xadimi senets u nasliq u zre elmler doktoru professor"
+      "norm": "ceyran mahmudova in 2001 at the initiative of our national leader heydar aliyev the first congress of world azerbaijanis was held. in subsequent years these congresses continued by the orders and with the support of president ilham aliyev. in 2022 the f"
     },
     {
-      "id": "section-forum-rector-speeches-edalet-muradov-en",
+      "id": "section-forum-rector-speeches-adalat-muradov-en",
       "lang": "en",
       "type": "section",
       "pageId": "forum-rector-speeches",
-      "anchor": "edalet-muradov",
-      "title": "Ədalət MURADOV",
-      "summary": "Azərbaycan Dövlət İqtisad Universitetinin rektoru, professor",
+      "anchor": "adalat-muradov",
+      "title": "Adalat MURADOV",
+      "summary": "Dear colleagues, distinguished scientists, honored guests!",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "edalet muradov azerbaycan do vlet i qtisad universitetinin rektoru professor"
+      "norm": "adalat muradov dear colleagues distinguished scientists honored guests"
     },
     {
       "id": "section-forum-rector-speeches-elbrus-isayev-en",
@@ -2479,116 +2479,116 @@
       "type": "section",
       "pageId": "forum-rector-speeches",
       "anchor": "elbrus-isayev",
-      "title": "Elbrus İSAYEV",
-      "summary": "Naxçıvan Dövlət Universitetinin rektoru, tarix üzrə fəlsəfə doktoru, dosent",
+      "title": "Elbrus ISAYEV",
+      "summary": "Science and education are the foundation of every nation's development and the most reliable guide on the road to the future. Scientists, who travel this road, are people who expand the boundaries of society's thinking, create scientific in",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "elbrus i sayev naxc ivan do vlet universitetinin rektoru tarix u zre felsefe doktoru dosent"
+      "norm": "elbrus isayev science and education are the foundation of every nation s development and the most reliable guide on the road to the future. scientists who travel this road are people who expand the boundaries of society s thinking create scientific in"
     },
     {
-      "id": "section-forum-rector-speeches-elcin-babayev-en",
+      "id": "section-forum-rector-speeches-elchin-babayev-en",
       "lang": "en",
       "type": "section",
       "pageId": "forum-rector-speeches",
-      "anchor": "elcin-babayev",
-      "title": "Elçin BABAYEV",
-      "summary": "Bakı Dövlət Universitetinin rektoru, fizika-riyaziyyat elmləri üzrə fəlsəfə doktoru, dosent",
+      "anchor": "elchin-babayev",
+      "title": "Elchin BABAYEV",
+      "summary": "Strengthening ties with Azerbaijani scientists currently living abroad and making significant contributions to the development of world science is of great importance. On the one hand, it enables the creation of platforms for science, educa",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "elc in babayev baki do vlet universitetinin rektoru fizika-riyaziyyat elmleri u zre felsefe doktoru dosent"
+      "norm": "elchin babayev strengthening ties with azerbaijani scientists currently living abroad and making significant contributions to the development of world science is of great importance. on the one hand it enables the creation of platforms for science educa"
     },
     {
-      "id": "section-forum-rector-speeches-gulcohre-memmedova-en",
+      "id": "section-forum-rector-speeches-gulchora-mammadova-en",
       "lang": "en",
       "type": "section",
       "pageId": "forum-rector-speeches",
-      "anchor": "gulcohre-memmedova",
-      "title": "Gülçöhrə MƏMMƏDOVA",
-      "summary": "Azərbaycan Dövlət Memarlıq və İnşaat Universitetinin rektoru, professor",
+      "anchor": "gulchora-mammadova",
+      "title": "Gulchora MAMMADOVA",
+      "summary": "Dear colleagues, distinguished scientists and forum participants!",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "gu lc o hre memmedova azerbaycan do vlet memarliq ve i ns aat universitetinin rektoru professor"
+      "norm": "gulchora mammadova dear colleagues distinguished scientists and forum participants"
     },
     {
-      "id": "section-forum-rector-speeches-hamlet-isaxanli-en",
+      "id": "section-forum-rector-speeches-hamlet-isakhanli-en",
       "lang": "en",
       "type": "section",
       "pageId": "forum-rector-speeches",
-      "anchor": "hamlet-isaxanli",
-      "title": "Hamlet İSAXANLI",
-      "summary": "Xəzər Universitetinin rektoru, professor",
+      "anchor": "hamlet-isakhanli",
+      "title": "Hamlet ISAKHANLI",
+      "summary": "The Forum of Azerbaijani Scientists Living Abroad, held in the capital city of Baku, is one of the most remarkable events for Azerbaijani science and higher education. In today's world, science and technology, rather than the economy alone,",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "hamlet i saxanli xezer universitetinin rektoru professor"
+      "norm": "hamlet isakhanli the forum of azerbaijani scientists living abroad held in the capital city of baku is one of the most remarkable events for azerbaijani science and higher education. in today s world science and technology rather than the economy alone"
     },
     {
-      "id": "section-forum-rector-speeches-natiq-eliyev-en",
+      "id": "section-forum-rector-speeches-natiq-aliyev-en",
       "lang": "en",
       "type": "section",
       "pageId": "forum-rector-speeches",
-      "anchor": "natiq-eliyev",
-      "title": "Natiq ƏLİYEV",
-      "summary": "Azərbaycan Rəssamlıq Akademiyasının rektoru, Azərbaycan Respublikasının Xalq rəssamı, professor",
+      "anchor": "natiq-aliyev",
+      "title": "Natiq ALIYEV",
+      "summary": "'A nation is always known by its intellectuals, its culture and its science' - this profound statement by National Leader Heydar Aliyev expresses how important the achievements of every nation in science and culture are for its internationa",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "natiq eli yev azerbaycan ressamliq akademiyasinin rektoru azerbaycan respublikasinin xalq ressami professor"
+      "norm": "natiq aliyev a nation is always known by its intellectuals its culture and its science - this profound statement by national leader heydar aliyev expresses how important the achievements of every nation in science and culture are for its internationa"
     },
     {
-      "id": "section-forum-rector-speeches-rufet-ezizov-en",
+      "id": "section-forum-rector-speeches-rufat-azizov-en",
       "lang": "en",
       "type": "section",
       "pageId": "forum-rector-speeches",
-      "anchor": "rufet-ezizov",
-      "title": "Rüfət ƏZİZOV",
-      "summary": "Forum keçirildiyi dövrdə Sumqayıt Dövlət Universitetinin rektoru, 2025-ci ildən Azərbaycan Dövlət Neft və Sənaye Universitetinin rektoru, kimya üzrə fəlsəfə doktoru",
+      "anchor": "rufat-azizov",
+      "title": "Rufat AZIZOV",
+      "summary": "My impressions of the Forum",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "ru fet ezi zov forum kec irildiyi do vrde sumqayit do vlet universitetinin rektoru 2025-ci ilden azerbaycan do vlet neft ve senaye universitetinin rektoru kimya u zre felsefe doktoru"
+      "norm": "rufat azizov my impressions of the forum"
     },
     {
-      "id": "section-forum-rector-speeches-sahin-bayramov-en",
+      "id": "section-forum-rector-speeches-shahin-bayramov-en",
       "lang": "en",
       "type": "section",
       "pageId": "forum-rector-speeches",
-      "anchor": "sahin-bayramov",
-      "title": "Şahin BAYRAMOV",
-      "summary": "Qarabağ Universitetinin rektoru, iqtisad üzrə fəlsəfə doktoru, dosent",
+      "anchor": "shahin-bayramov",
+      "title": "Shahin BAYRAMOV",
+      "summary": "On 9-11 September 2024, the Baku Forum of Azerbaijani Scientists Living Abroad was held. Within the framework of this forum, the visit of Azerbaijani scientists living abroad to the liberated territories - the cities of Khankendi and Shusha",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "s ahin bayramov qarabag universitetinin rektoru iqtisad u zre felsefe doktoru dosent"
+      "norm": "shahin bayramov on 9-11 september 2024 the baku forum of azerbaijani scientists living abroad was held. within the framework of this forum the visit of azerbaijani scientists living abroad to the liberated territories - the cities of khankendi and shusha"
     },
     {
-      "id": "section-forum-rector-speeches-vazeh-eskerov-en",
+      "id": "section-forum-rector-speeches-vazeh-askarov-en",
       "lang": "en",
       "type": "section",
       "pageId": "forum-rector-speeches",
-      "anchor": "vazeh-eskerov",
-      "title": "Vazeh ƏSKƏROV",
-      "summary": "Forum keçirildiyi dövrdə Azərbaycan Dövlət Neft və Sənaye Universitetinin rektoru vəzifəsini müvəqqəti icra edən, dosent",
+      "anchor": "vazeh-askarov",
+      "title": "Vazeh ASKAROV",
+      "summary": "First of all, as a member of the diaspora who lived abroad for a long time, I would like to note that the holding for the first time in Azerbaijan of the Forum of Azerbaijani Scientists Living Abroad in Baku, Khankendi and Shusha became an ",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "vazeh eskerov forum kec irildiyi do vrde azerbaycan do vlet neft ve senaye universitetinin rektoru vezifesini mu veqqeti icra eden dosent"
+      "norm": "vazeh askarov first of all as a member of the diaspora who lived abroad for a long time i would like to note that the holding for the first time in azerbaijan of the forum of azerbaijani scientists living abroad in baku khankendi and shusha became an"
     },
     {
-      "id": "section-forum-rector-speeches-vilayet-veliyev-en",
+      "id": "section-forum-rector-speeches-vilayat-valiyev-en",
       "lang": "en",
       "type": "section",
       "pageId": "forum-rector-speeches",
-      "anchor": "vilayet-veliyev",
-      "title": "Vilayət VƏLİYEV",
-      "summary": "Azərbaycan Texniki Universitetinin rektoru, professor",
+      "anchor": "vilayat-valiyev",
+      "title": "Vilayat VALIYEV",
+      "summary": "On 9-11 September 2024, an unforgettable and strategically important event took place in the history of Azerbaijan - the First Forum of Azerbaijani Scientists Living Abroad was held. Covering Baku, Khankendi and Shusha, this forum was not m",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "vilayet veli yev azerbaycan texniki universitetinin rektoru professor"
+      "norm": "vilayat valiyev on 9-11 september 2024 an unforgettable and strategically important event took place in the history of azerbaijan - the first forum of azerbaijani scientists living abroad was held. covering baku khankendi and shusha this forum was not m"
     },
     {
       "id": "section-forum-rector-speeches-yaqub-piriyev-en",
@@ -2596,12 +2596,12 @@
       "type": "section",
       "pageId": "forum-rector-speeches",
       "anchor": "yaqub-piriyev",
-      "title": "Yaqub PİRİYEV",
-      "summary": "Bakı Mühəndislik Universitetinin rektoru, texnika elmləri üzrə fəlsəfə doktoru",
+      "title": "Yaqub PIRIYEV",
+      "summary": "As Baku Engineering University, we highly value the Forum of Azerbaijani Scientists Living Abroad, held on 9-11 September 2024 in Baku, Khankendi and Shusha, as a historic event of great importance in the scientific and national-spiritual l",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "yaqub pi ri yev baki mu hendislik universitetinin rektoru texnika elmleri u zre felsefe doktoru"
+      "norm": "yaqub piriyev as baku engineering university we highly value the forum of azerbaijani scientists living abroad held on 9-11 september 2024 in baku khankendi and shusha as a historic event of great importance in the scientific and national-spiritual l"
     },
     {
       "id": "section-forum-anas-leadership-speeches-isa-hebibbeyli-az",
@@ -2610,11 +2610,11 @@
       "pageId": "forum-anas-leadership-speeches",
       "anchor": "isa-hebibbeyli",
       "title": "İsa HƏBİBBƏYLİ",
-      "summary": "Azərbaycan Milli Elmlər Akademiyasının prezidenti, akademik",
+      "summary": "Azərbaycanda diaspor hərəkatı hələ XX əsrin 80-ci illərindən, sovet siyasi rejimində aşkarlıq və demokratiya meyilləri başlandığı dövrdən ilk addımlarını atmışdır. Həmin dövrdə “Vətən” Cəmiyyətinin yaradılması dünyanın müxtəlif ölkələrində ",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "i sa hebi bbeyli azerbaycan milli elmler akademiyasinin prezidenti akademik"
+      "norm": "i sa hebi bbeyli azerbaycanda diaspor herekati hele xx esrin 80-ci illerinden sovet siyasi rejiminde as karliq ve demokratiya meyilleri bas landig i do vrden ilk addimlarini atmis dir. hemin do vrde veten cemiyyetinin yaradilmasi du nyanin mu xtelif o lkelerinde"
     },
     {
       "id": "section-forum-anas-leadership-speeches-rasim-eliquliyev-az",
@@ -2623,11 +2623,11 @@
       "pageId": "forum-anas-leadership-speeches",
       "anchor": "rasim-eliquliyev",
       "title": "Rasim ƏLİQULİYEV",
-      "summary": "Azərbaycan Milli Elmlər Akademiyasının vitse-prezidenti, akademik",
+      "summary": "Mən həmişə Azərbaycandan kənarda elmi fəaliyyət göstərən həmvətənlərimlə yaxından maraqlanmış və onlarla qürur duymuşam. Bu səbəbdən hələ 2017-ci ildən xaricdə yaşayan 530 alim haqqında zəruri məlumatların toplanması ilə bağlı müəyyən işlər",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "rasim eli quli yev azerbaycan milli elmler akademiyasinin vitse-prezidenti akademik"
+      "norm": "rasim eli quli yev men hemis e azerbaycandan kenarda elmi fealiyyet go steren hemvetenlerimle yaxindan maraqlanmis ve onlarla qu rur duymus am. bu sebebden hele 2017-ci ilden xaricde yas ayan 530 alim haqqinda zeruri melumatlarin toplanmasi ile bag li mu eyyen is ler"
     },
     {
       "id": "section-forum-anas-leadership-speeches-isa-hebibbeyli-en",
@@ -2635,12 +2635,12 @@
       "type": "section",
       "pageId": "forum-anas-leadership-speeches",
       "anchor": "isa-hebibbeyli",
-      "title": "İsa HƏBİBBƏYLİ",
-      "summary": "Azərbaycan Milli Elmlər Akademiyasının prezidenti, akademik",
+      "title": "Isa HABIBBAYLI",
+      "summary": "The diaspora movement in Azerbaijan took its first steps back in the 1980s, when tendencies toward openness and democracy began under the Soviet political regime. The creation of the 'Vatan' Society at that time created conditions for well-",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "i sa hebi bbeyli azerbaycan milli elmler akademiyasinin prezidenti akademik"
+      "norm": "isa habibbayli the diaspora movement in azerbaijan took its first steps back in the 1980s when tendencies toward openness and democracy began under the soviet political regime. the creation of the vatan society at that time created conditions for well-"
     },
     {
       "id": "section-forum-anas-leadership-speeches-rasim-eliquliyev-en",
@@ -2648,12 +2648,12 @@
       "type": "section",
       "pageId": "forum-anas-leadership-speeches",
       "anchor": "rasim-eliquliyev",
-      "title": "Rasim ƏLİQULİYEV",
-      "summary": "Azərbaycan Milli Elmlər Akademiyasının vitse-prezidenti, akademik",
+      "title": "Rasim ALIGULIYEV",
+      "summary": "I have always taken a close interest in my compatriots engaged in scientific activity outside Azerbaijan and have been proud of them. For this reason, as early as 2017, we carried out certain work to collect necessary information about 530 ",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "rasim eli quli yev azerbaycan milli elmler akademiyasinin vitse-prezidenti akademik"
+      "norm": "rasim aliguliyev i have always taken a close interest in my compatriots engaged in scientific activity outside azerbaijan and have been proud of them. for this reason as early as 2017 we carried out certain work to collect necessary information about 530"
     },
     {
       "id": "section-forum-official-ilham-eliyev-az",
@@ -4494,12 +4494,12 @@
       "type": "section",
       "pageId": "forum-cooperation",
       "anchor": "contributions",
-      "title": "Contributions and cooperation",
+      "title": "Contributions",
       "summary": "Under the leadership of Mr Fuad Muradov, Chair of the State Committee on Diaspora Affairs of the Republic of Azerbaijan, committee staff Shahin Jamalov, Leyla Hamzayeva, Halima Fatullazade, Jahid Ismayilov, Mehriban Sultanova, Tural Safarov",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "contributions and cooperation under the leadership of mr fuad muradov chair of the state committee on diaspora affairs of the republic of azerbaijan committee staff shahin jamalov leyla hamzayeva halima fatullazade jahid ismayilov mehriban sultanova tural safarov"
+      "norm": "contributions under the leadership of mr fuad muradov chair of the state committee on diaspora affairs of the republic of azerbaijan committee staff shahin jamalov leyla hamzayeva halima fatullazade jahid ismayilov mehriban sultanova tural safarov"
     },
     {
       "id": "scientist-asef-salamov-az",

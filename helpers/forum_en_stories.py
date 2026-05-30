@@ -20,19 +20,19 @@ def _en_sections() -> list[dict]:
 
 
 STORIES_EN = {
-    "page_title": "Stories of the forum — WAAS",
+    "page_title": "Stories — WAAS",
     "meta_description": (
         "Literary reflections by Eldar Akhadov on the First Forum of Azerbaijani Scientists Living Abroad."
     ),
-    "breadcrumb": "Stories of the forum",
-    "hero_h1": "Stories <span>of the forum</span>",
+    "breadcrumb": "Stories",
+    "hero_h1": "Stories",
     "panel_title": "Light, homeland and memory",
     "panel_copy": (
         "Personal literary essays by Eldar Akhadov — impressions of the forum, the journey to "
         "Karabakh and meetings that became lifelong memories."
     ),
-    "sidebar_label": "📖 Stories of the forum",
-    "sidebar_aria": "Open stories of the forum menu",
+    "sidebar_label": "Stories",
+    "sidebar_aria": "Open stories menu",
     "doc_title": "ELDAR AKHADOV'S STORIES OF THE FORUM",
     "sections": _en_sections(),
 }

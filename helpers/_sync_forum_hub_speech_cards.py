@@ -13,35 +13,35 @@ HUB_PAGES = (
 
 CARDS = {
     "az": """
-<a class="page-card" data-title="Rektorların nitqləri universitet" href="rector_speeches.html">
+<a class="page-card" data-title="Rektorlar nitqləri" href="rector_speeches.html">
 <div class="card-icon-wrap">🎓</div>
 <div class="card-body">
-<h3 class="card-title">Rektorların nitqləri</h3>
+<h3 class="card-title">Rektorlar</h3>
 <div class="card-desc">Azərbaycan universitet rektorlarının Forum 2024-dəki nitqləri.</div>
 <div class="card-footer"><span class="card-tag">Oxu</span><span class="card-arrow">↗</span></div>
 </div>
 </a>
-<a class="page-card" data-title="AMEA rəhbərliyinin nitqləri akademiya" href="anas_leadership_speeches.html">
+<a class="page-card" data-title="AMEA rəhbərliyi nitqləri" href="anas_leadership_speeches.html">
 <div class="card-icon-wrap">🔬</div>
 <div class="card-body">
-<h3 class="card-title">AMEA rəhbərliyinin nitqləri</h3>
+<h3 class="card-title">AMEA rəhbərliyi</h3>
 <div class="card-desc">Azərbaycan Milli Elmlər Akademiyasının rəhbərliyinin Forum 2024-dəki nitqləri.</div>
 <div class="card-footer"><span class="card-tag">Oxu</span><span class="card-arrow">↗</span></div>
 </div>
 </a>""".strip(),
     "en": """
-<a class="page-card" data-title="Rectors speeches universities" href="rector_speeches.html">
+<a class="page-card" data-title="Rectors speeches" href="rector_speeches.html">
 <div class="card-icon-wrap">🎓</div>
 <div class="card-body">
-<h3 class="card-title">Rectors' speeches</h3>
+<h3 class="card-title">Rectors</h3>
 <div class="card-desc">Speeches by rectors of Azerbaijani universities at Forum 2024.</div>
 <div class="card-footer"><span class="card-tag">Read</span><span class="card-arrow">↗</span></div>
 </div>
 </a>
-<a class="page-card" data-title="ANAS leadership speeches academy" href="anas_leadership_speeches.html">
+<a class="page-card" data-title="ANAS Leadership speeches" href="anas_leadership_speeches.html">
 <div class="card-icon-wrap">🔬</div>
 <div class="card-body">
-<h3 class="card-title">Speeches by the ANAS Leadership</h3>
+<h3 class="card-title">ANAS Leadership</h3>
 <div class="card-desc">Speeches by leaders of the Azerbaijan National Academy of Sciences at Forum 2024.</div>
 <div class="card-footer"><span class="card-tag">Read</span><span class="card-arrow">↗</span></div>
 </div>
@@ -49,20 +49,20 @@ CARDS = {
 }
 
 PROGRAM_CARD = {
-    "az": '<a class="page-card" data-title="Forumun proqramı',
-    "en": '<a class="page-card" data-title="Forum programme',
+    "az": '<a class="page-card" data-title="Proqram sentyabr cədvəl',
+    "en": '<a class="page-card" data-title="Programme schedule September',
 }
 
 INTRO = {
     "az": (
-        "Aşağıdakı kartlar vasitəsilə rəsmi müraciətlər, rektor və AMEA rəhbərliyinin nitqləri, "
-        "proqram, strateji yol xəritəsi, məruzələr, təəssüratlar, forumla bağlı hekayələr, "
-        "töhfələr və əməkdaşlıq və alimlərimizin siyahısına keçid edə bilərsiniz."
+        "Aşağıdakı kartlar vasitəsilə rəsmi müraciətlər, rektorlar, AMEA rəhbərliyi, "
+        "proqram, strateji yol xəritəsi, məruzələr, təəssüratlar, hekayələr, "
+        "töhfələr və alimlərimizin siyahısına keçid edə bilərsiniz."
     ),
     "en": (
-        "Use the cards below to open official addresses, rectors' and ANAS leadership speeches, "
-        "the programme, the strategic roadmap, presentations, impressions, stories of the forum, "
-        "contributions and cooperation, and the scientists directory."
+        "Use the cards below to open official addresses, rectors, ANAS leadership, "
+        "the programme, the strategic roadmap, presentations, impressions, stories, "
+        "contributions, and the scientists directory."
     ),
 }
 

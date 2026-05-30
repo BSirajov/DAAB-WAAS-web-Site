@@ -109,7 +109,7 @@ NAV_PLACEHOLDER
 <li><a href="membership_value.html">Niyə üzv olmalı</a></li>
 <li><a href="membership.html">Üzvlük şərtləri</a></li>
 <li><a class="active" href="application.html" aria-current="page">Bizə qoşulun</a></li>
-<li><a href="membership_flyer.html">Flyer paylaş</a></li>
+<li><a href="membership_flyer.html">Dəvət göndərin</a></li>
 </ul>
 </nav>
 <main class="main application-main" id="content">

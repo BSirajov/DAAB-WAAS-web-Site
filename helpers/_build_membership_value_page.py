@@ -9,7 +9,7 @@ from pathlib import Path
 from _paths import ROOT
 
 ASSET = "../"
-CSS_V = "5"
+CSS_V = "13"
 
 LOCALES = {
     "az": {
@@ -25,10 +25,6 @@ LOCALES = {
         "nav_aria": "Əsas naviqasiya",
         "hero_h1": "DAAB mənə nə verəcək? <span>Niyə üzv olmalıyam?</span>",
         "hero_subtitle": "Üzvlüyün tanınma, əməkdaşlıq və Azərbaycan elminə xidmət baxımından verdiyi dəyəri kəşf edin",
-        "hero_primary": "Cavablara bax",
-        "hero_primary_href": "#answers",
-        "hero_secondary": "Üstünlüklər",
-        "hero_secondary_href": "#benefits",
         "panel_title": "Üzvlük şəxsi fayda ilə ictimai missiyanın kəsişməsidir",
         "panel_copy": (
             "DAAB üzvlüyü sadəcə bir təşkilata qoşulmaq deyil; bu, peşəkar nüfuzunuzu artıran, "
@@ -55,10 +51,6 @@ LOCALES = {
         "nav_aria": "Main navigation",
         "hero_h1": "What does WAAS offer me? <span>Why should I join?</span>",
         "hero_subtitle": "See how membership connects visibility, collaboration, and service to Azerbaijani science",
-        "hero_primary": "See the answers",
-        "hero_primary_href": "#answers",
-        "hero_secondary": "Benefits",
-        "hero_secondary_href": "#benefits",
         "panel_title": "Membership connects personal benefit with public mission",
         "panel_copy": (
             "WAAS membership is not simply joining an association; it means becoming part of a "
@@ -168,20 +160,11 @@ NAV_PLACEHOLDER
 <section>
 <h1 aria-describedby="page-hero-subtitle">{cfg["hero_h1"]}</h1>
 <p class="page-hero-subtitle" id="page-hero-subtitle" role="doc-subtitle">{cfg["hero_subtitle"]}</p>
-<div class="hero-actions">
-<a class="btn btn-primary" href="{cfg["hero_primary_href"]}">{cfg["hero_primary"]}</a>
-<a class="btn btn-secondary" href="{cfg["hero_secondary_href"]}">{cfg["hero_secondary"]}</a>
-</div>
 </section>
 <aside aria-label="{cfg["panel_title"]}" class="hero-panel">
 <div class="panel-card">
 <h2 class="panel-title">{cfg["panel_title"]}</h2>
 <p class="panel-copy">{cfg["panel_copy"]}</p>
-<div class="mv-stats">
-<div class="mv-stat"><strong>🌍</strong><span>{"Tanınma" if cfg["lang"] == "az" else "Visibility"}</span></div>
-<div class="mv-stat"><strong>🤝</strong><span>{"Əlaqələr" if cfg["lang"] == "az" else "Connections"}</span></div>
-<div class="mv-stat"><strong>🚀</strong><span>{"İnkişaf" if cfg["lang"] == "az" else "Growth"}</span></div>
-</div>
 </div>
 </aside>
 </div>
@@ -196,7 +179,7 @@ SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-lab
 <li><a class="active" href="membership_value.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Niyə üzv olmalı</span></a></li>
 <li><a href="membership.html"><span class="daab-section-nav-icon" aria-hidden="true">✒️</span><span class="daab-section-nav-label">Üzvlük şərtləri</span></a></li>
 <li><a href="application.html"><span class="daab-section-nav-icon" aria-hidden="true">📝</span><span class="daab-section-nav-label">Bizə qoşulun</span></a></li>
-<li><a href="membership_flyer.html"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Flyer paylaş</span></a></li>
+<li><a href="membership_flyer.html"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Dəvət göndərin</span></a></li>
 </ul>
 </nav>
 """
@@ -207,7 +190,7 @@ SECTION_NAV_EN = """<nav class="daab-section-nav" id="daab-section-nav" aria-lab
 <li><a class="active" href="membership_value.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Why become a member</span></a></li>
 <li><a href="membership.html"><span class="daab-section-nav-icon" aria-hidden="true">✒️</span><span class="daab-section-nav-label">Membership terms</span></a></li>
 <li><a href="application.html"><span class="daab-section-nav-icon" aria-hidden="true">📝</span><span class="daab-section-nav-label">Join us</span></a></li>
-<li><a href="membership_flyer.html"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Share Flyer</span></a></li>
+<li><a href="membership_flyer.html"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Send invite</span></a></li>
 </ul>
 </nav>
 """

@@ -61,7 +61,7 @@ NAV_AZ = (
         ("membership_value.html", "membership-value", "Niyə üzv olmalı", "Üzvlüyün faydaları və dəyər təklifi"),
         ("membership.html", "membership", "Üzvlük şərtləri", "Üzvlük qaydaları, ödəniş və müraciət məlumatları"),
         ("application.html", "membership-application", "Bizə qoşulun", "Onlayn üzvlük müraciət forması"),
-        ("membership_flyer.html", "membership-flyer", "Flyer paylaş", "Potensial üzvlər üçün çap oluna bilən flyer"),
+        ("membership_flyer.html", "membership-flyer", "Dəvət göndərin", "Potensial üzvlər üçün çap oluna bilən flyer"),
     ])
     + "</div></div>"
 )
@@ -106,7 +106,7 @@ NAV_EN = (
         ("membership_value.html", "membership-value", "Why become a member", "Benefits and value of WAAS membership"),
         ("membership.html", "membership", "Membership terms", "Membership rules, fees and application information"),
         ("application.html", "membership-application", "Join us", "Online membership application form"),
-        ("membership_flyer.html", "membership-flyer", "Share Flyer", "Printable flyer to share with potential members"),
+        ("membership_flyer.html", "membership-flyer", "Send invite", "Printable flyer to share with potential members"),
     ])
     + "</div></div>"
 )

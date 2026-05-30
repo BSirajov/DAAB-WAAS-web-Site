@@ -1,34 +1,26 @@
 /* Scientist profile card — text-to-speech controls */
 
-.card-tts {
+.card-tts{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   margin: 12px 0 0;
-}
-
-.card-listen-lead {
+}.card-listen-lead{
   margin: 8px 0 0;
   color: #34465a;
   font-size: 13px;
   font-weight: 400;
   line-height: 1.5;
-}
-
-/* Legacy alias — role line is now rendered in HTML as .card-role */
+}/* Legacy alias — role line is now rendered in HTML as .card-role */
 .card-listen-lead,
-.card-role {
+.card-role{
   overflow-wrap: anywhere;
-}
-
-/* Xaqani Qayibli — bullet lists indented +3ch */
-#xaqani-qayibli .card-bio .awards-list {
+}/* Xaqani Qayibli — bullet lists indented +3ch */
+#xaqani-qayibli .card-bio .awards-list{
   padding-left: calc(1.15em + 3ch);
-}
-
-.card-tts-btn,
-.card-tts-stop {
+}.card-tts-btn,
+.card-tts-stop{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -46,57 +38,39 @@
   white-space: nowrap;
   cursor: pointer;
   transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease, border-color .18s ease;
-}
-
-.card-tts-btn:hover,
-.card-tts-stop:hover {
+}.card-tts-btn:hover,
+.card-tts-stop:hover{
   color: #fff;
   background: var(--blue-700, #0069b4);
   border-color: var(--blue-700, #0069b4);
   box-shadow: 0 10px 22px rgba(0, 78, 140, .18);
   transform: translateY(-1px);
-}
-
-.card-tts-btn:focus-visible,
-.card-tts-stop:focus-visible {
+}.card-tts-btn:focus-visible,
+.card-tts-stop:focus-visible{
   outline: 2px solid var(--blue-700, #0069b4);
   outline-offset: 2px;
-}
-
-.card-tts-btn.is-playing {
+}.card-tts-btn.is-playing{
   color: #fff;
   background: var(--blue-700, #0069b4);
   border-color: var(--blue-700, #0069b4);
   box-shadow: 0 8px 18px rgba(0, 78, 140, .16);
-}
-
-.card-tts-btn.is-paused {
+}.card-tts-btn.is-paused{
   color: var(--blue-700, #0069b4);
   background: #e8f4fc;
   border-color: rgba(0, 105, 180, .34);
-}
-
-.card-tts-stop {
+}.card-tts-stop{
   min-width: 38px;
   padding: 9px 11px;
-}
-
-.card-tts-stop[hidden] {
+}.card-tts-stop[hidden]{
   display: none !important;
-}
-
-.card-tts-icon {
+}.card-tts-icon{
   display: block;
   flex: 0 0 auto;
   width: 16px;
   height: 16px;
-}
-
-.card.is-tts-active {
+}.card.is-tts-active{
   box-shadow: 0 0 0 2px rgba(0, 105, 180, .22), 0 16px 36px rgba(0, 78, 140, .12);
-}
-
-.card-tts-status {
+}.card-tts-status{
   position: fixed;
   left: 50%;
   bottom: max(18px, env(safe-area-inset-bottom, 18px));
@@ -116,46 +90,34 @@
   opacity: 0;
   transform: translate(-50%, 8px);
   transition: opacity .2s ease, transform .2s ease;
-}
-
-.card-tts-status.is-visible {
+}.card-tts-status.is-visible{
   opacity: 1;
   transform: translate(-50%, 0);
-}
-
-.card-tts-status.is-error {
+}.card-tts-status.is-error{
   color: #8a1c1c;
   border-color: rgba(180, 40, 40, .28);
   background: #fff5f5;
 }
 
-@media (max-width: 640px) {
-  .card-tts {
+@media (max-width: 640px) {.card-tts{
     gap: 6px;
-  }
-
-  .card-tts-btn,
-  .card-tts-stop {
+  }.card-tts-btn,
+  .card-tts-stop{
     min-height: 36px;
     padding: 8px 12px;
     font-size: 12px;
-  }
-
-  .card-tts-label {
+  }.card-tts-label{
     max-width: 9rem;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .card-tts-btn,
-  .card-tts-stop {
+@media (prefers-reduced-motion: reduce) {.card-tts-btn,
+  .card-tts-stop{
     transition: background-color .12s ease, color .12s ease, border-color .12s ease;
-  }
-
-  .card-tts-btn:hover,
-  .card-tts-stop:hover {
+  }.card-tts-btn:hover,
+  .card-tts-stop:hover{
     transform: none;
   }
 }

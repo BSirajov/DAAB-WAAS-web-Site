@@ -25,6 +25,7 @@ OUT_AZ = ROOT / "az" / "forum" / "2024" / "stories.html"
 OUT_EN = ROOT / "en" / "forum" / "2024" / "stories.html"
 ASSET = "../../../"
 PAGE_ID = "forum-bagli-hekayeler"
+ELDAR_PHOTO_SRC = f"{ASSET}images/scientists-photos/eldar-ehedov.png"
 
 SECTION_IMAGES = {
     "nur": "NUR.jpg",
@@ -361,14 +362,29 @@ def story_body_html(section: dict) -> str:
     return lead
 
 
+def eldar_title_photo_html(lang: str) -> str:
+    alt = "Eldar Ahadov" if lang == "en" else "Eldar Əhədov"
+    return (
+        '<span class="story-title-photo-corner" aria-hidden="true">'
+        f'<span class="story-title-photo-frame">'
+        f'<img src="{ELDAR_PHOTO_SRC}" alt="{esc(alt)}" class="story-title-photo" '
+        f'width="52" height="52" loading="lazy" decoding="async"/>'
+        f"</span></span>"
+    )
+
+
 def story_card(section: dict, *, lang: str) -> str:
     title = section["title"]
     icon = SECTION_ICONS.get(section["id"], "📖")
     body = story_body_html(section)
+    title_photo = eldar_title_photo_html(lang)
     return f"""
 <article class="news-card forum-story-card" id="{esc(section["id"])}">
 <div class="card-header">
+<div class="story-card-title-block">
+{title_photo}
 <h2 class="card-title"><span class="card-title-icon" aria-hidden="true">{icon}</span><span class="card-title-text">{esc(title)}</span></h2>
+</div>
 </div>
 <div class="card-body">
 {body}
@@ -418,16 +434,16 @@ def page_html(data: dict, *, lang: str) -> str:
         panel_aria = "Forum-related stories summary"
         doc_lead = meta["doc_title"]
     else:
-        hero_h1 = "Forumla <span>bağlı hekayələr</span>"
+        hero_h1 = "Hekayələr"
         panel_title = "Nur, vətən və yaddaş"
         panel_copy = (
             "Eldar Əhədovun şəxsi ədəbi yazıları — forum təəssüratları, Qarabağ səfəri və "
             "ömürlük xatirəyə çevrilən görüşlər."
         )
-        breadcrumb = "Forumla bağlı hekayələr"
-        sidebar_label = "📖 Forumla bağlı hekayələr"
-        sidebar_aria = "Forumla bağlı hekayələr menyusunu aç"
-        page_title = "Forumla bağlı hekayələr — DAAB"
+        breadcrumb = "Hekayələr"
+        sidebar_label = "Hekayələr"
+        sidebar_aria = "Hekayələr menyusunu aç"
+        page_title = "Hekayələr — DAAB"
         meta_desc = (
             "Eldar Əhədovun Xaricdə Yaşayan Azərbaycanlı Alimlərin I Forumu haqqında ədəbi yazıları."
         )
@@ -441,7 +457,7 @@ def page_html(data: dict, *, lang: str) -> str:
         footer_leadership = "Rəhbərlik"
         footer_rights = "© 2026 DAAB / WAAS — All Rights Reserved"
         bc_aria = "Səhifə yolu"
-        panel_aria = "Forumla bağlı hekayələr haqqında qısa məlumat"
+        panel_aria = "Hekayələr haqqında qısa məlumat"
         doc_lead = data["title"]
 
     cards = "".join(story_card(s, lang=lang) for s in data["sections"])
@@ -473,25 +489,28 @@ def page_html(data: dict, *, lang: str) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
-<link href="{ASSET}css/daab-common.css?v=24" rel="stylesheet"/>
-<link href="{ASSET}css/daab-mobile.css?v=5" rel="stylesheet"/>
-<link href="{ASSET}css/daab-search.css?v=3" rel="stylesheet"/>
-<link href="{ASSET}css/daab-back-to-top.css?v=1" rel="stylesheet"/>
-<link href="{ASSET}css/daab-lang.css?v=10" rel="stylesheet"/>
-<link href="{ASSET}css/daab-nav-mega.css?v=13" rel="stylesheet"/>
-<link href="{ASSET}css/daab-hero-summary.css?v=1" rel="stylesheet"/>
-<link href="{ASSET}css/daab-sidebar-widget.css?v=3" rel="stylesheet"/>
-<link href="{ASSET}css/daab-activities-layout.css?v=13" rel="stylesheet"/>
-<link href="{ASSET}css/daab-forum-content.css?v=18" rel="stylesheet"/>
-<script src="{ASSET}js/daab-mobile.js?v=1" defer></script>
-<script src="{ASSET}js/daab-back-to-top.js?v=2" defer></script>
-<script src="{ASSET}js/daab-i18n.js?v=12" defer></script>
+<link href="{ASSET}css/daab-common.css?v=44" rel="stylesheet"/>
+<link href="{ASSET}css/daab-mobile.css?v=11" rel="stylesheet"/>
+<link href="{ASSET}css/daab-search.css?v=4" rel="stylesheet"/>
+<link href="{ASSET}css/daab-back-to-top.css?v=2" rel="stylesheet"/>
+<link href="{ASSET}css/daab-lang.css?v=11" rel="stylesheet"/>
+<link href="{ASSET}css/daab-nav-mega.css?v=23" rel="stylesheet"/>
+<link href="{ASSET}css/daab-forum-section-nav.css?v=1" rel="stylesheet"/>
+<link href="{ASSET}css/daab-hero-summary.css?v=9" rel="stylesheet"/>
+<link href="{ASSET}css/daab-sidebar-widget.css?v=4" rel="stylesheet"/>
+<link href="{ASSET}css/daab-activities-layout.css?v=14" rel="stylesheet"/>
+<link href="{ASSET}css/daab-forum-content.css?v=28" rel="stylesheet"/>
+<script src="{ASSET}js/daab-mobile.js?v=5" defer></script>
+<script src="{ASSET}js/daab-back-to-top.js?v=3" defer></script>
+<script src="{ASSET}js/daab-i18n.js?v=18" defer></script>
 <script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
-<script src="{ASSET}js/daab-nav.js?v=10" defer></script>
-<script src="{ASSET}js/daab-primary-nav.js?v=10" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v=6" defer></script>
-<script src="{ASSET}js/daab-shell.js?v=11" defer></script>
-<script src="{ASSET}js/daab-search.js?v=4" defer></script>
+<script src="{ASSET}js/daab-design-tokens.js?v=1" defer></script>
+<script src="{ASSET}js/daab-nav.js?v=20" defer></script>
+<script src="{ASSET}js/daab-primary-nav.js?v=17" defer></script>
+<script src="{ASSET}js/daab-section-nav.js?v=12" defer></script>
+<script src="{ASSET}js/daab-shell.js?v=12" defer></script>
+<script src="{ASSET}js/daab-page-subtitle.js?v=2" defer></script>
+<script src="{ASSET}js/daab-search.js?v=7" defer></script>
 </head>
 <body>
 <a class="skip" href="#content">{esc(skip)}</a>

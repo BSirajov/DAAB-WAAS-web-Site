@@ -250,14 +250,14 @@
         activitiesNews: "Yeniliklər",
         forum2024: "Forum 2024",
         forumOfficial: "Rəsmi müraciətlər",
-        forumProgram: "Forumun proqramı",
+        forumProgram: "Proqram",
         forum2024Presentations: "Məruzələr",
         forumImpressions: "Təəssüratlar",
         forumRoadmap: "Strateji yol xəritəsi",
-        forumBagliHekayeler: "Forumla bağlı hekayələr",
-        forumCooperation: "Töhfələr və əməkdaşlıq",
-        forumRectorSpeeches: "Rektorların nitqləri",
-        forumAnasLeadershipSpeeches: "AMEA rəhbərliyinin nitqləri",
+        forumBagliHekayeler: "Hekayələr",
+        forumCooperation: "Töhfələr",
+        forumRectorSpeeches: "Rektorlar",
+        forumAnasLeadershipSpeeches: "AMEA rəhbərliyi",
         forumPhotosGallery: "Foto qalereya",
         forumVideoGallery: "Video qalereya",
         scientistsList: "Siyahı",
@@ -265,7 +265,7 @@
         membershipWhy: "Niyə üzv olmalı",
         membershipTerms: "Üzvlük şərtləri",
         membershipJoin: "Bizə qoşulun",
-        membershipFlyer: "Flyer paylaş"
+        membershipFlyer: "Dəvət göndərin"
       },
       en: {
         foundation: "Foundation",
@@ -275,14 +275,14 @@
         activitiesNews: "News",
         forum2024: "Forum 2024",
         forumOfficial: "Official addresses",
-        forumProgram: "Forum programme",
+        forumProgram: "Programme",
         forum2024Presentations: "Presentations",
         forumImpressions: "Impressions",
         forumRoadmap: "Strategic roadmap",
-        forumBagliHekayeler: "Stories of the forum",
-        forumCooperation: "Contributions and cooperation",
-        forumRectorSpeeches: "Rectors' speeches",
-        forumAnasLeadershipSpeeches: "Speeches by the ANAS Leadership",
+        forumBagliHekayeler: "Stories",
+        forumCooperation: "Contributions",
+        forumRectorSpeeches: "Rectors",
+        forumAnasLeadershipSpeeches: "ANAS Leadership",
         forumPhotosGallery: "Photo gallery",
         forumVideoGallery: "Video gallery",
         scientistsList: "Directory",
@@ -290,7 +290,7 @@
         membershipWhy: "Why become a member",
         membershipTerms: "Membership terms",
         membershipJoin: "Join us",
-        membershipFlyer: "Share Flyer"
+        membershipFlyer: "Send invite"
       }
     }
   };
