@@ -296,6 +296,16 @@ html[data-daab-page-id="executive-board"] .person-name-link:focus-visible{
   }
 }
 
+@media (max-width: 640px) {
+  html[data-daab-page-id="executive-board"] .board-card-qr-link {
+    display: none !important;
+  }
+
+  html[data-daab-page-id="executive-board"] .person-body {
+    padding-right: 14px !important;
+  }
+}
+
 @media (max-width: 420px) {html[data-daab-page-id="executive-board"] .main{
     padding-left: 14px;
     padding-right: 14px;

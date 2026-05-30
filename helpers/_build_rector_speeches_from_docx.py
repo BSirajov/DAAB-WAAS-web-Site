@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import html
+import json
 import re
 import sys
 from pathlib import Path
@@ -16,6 +17,8 @@ from docx import Document
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+
+PANEL_SUMMARIES_PATH = ROOT / "i18n" / "page-panel-summaries.json"
 
 DOCX_AZ = ROOT / "forum_2024" / "AZƏRBAYCAN UNİVERSİTETLƏRİNİN REKTORLARININ NİTQLƏRİ.docx"
 DOCX_EN = ROOT / "forum_2024" / "Azerbaijani_University_Rectors_Speeches_EN.docx"
@@ -29,6 +32,7 @@ SLUG_OVERRIDES = {
 }
 
 from _embed_static_nav import forum_nav_strip  # noqa: E402
+from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS  # noqa: E402
 from forum_en_common import FORUM_FOOTER_EN  # noqa: E402
 
 AZ_SLUG = str.maketrans(
@@ -79,39 +83,6 @@ EN_SKIP_H1_RE = re.compile(
 )
 
 EN_ANAS_NAME_RE = re.compile(r"^(Isa HABIBBAYLI|Rasim ALIGULIYEV)$", re.I)
-
-# Forum 2024 hub hero panel — match az|en/forum/2024/index.html
-FORUM_HUB_PANEL = {
-    "az": {
-        "aria": "Forum haqqında qısa məlumat",
-        "title": "Forum 2024 haqqında məlumatlar",
-        "lead": (
-            "9–11 sentyabr 2024, Bakı – Xankəndi – Şuşa. Rəsmi çıxışlar, proqram, "
-            "məruzələr və iştirakçı təəssüratları bu bölmədə yerləşdirilib."
-        ),
-        "organizers": (
-            "Forum Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) təşkilatçılığı, "
-            "Azərbaycan Respublikasının Diasporla İş üzrə Dövlət Komitəsi (DİDK) və "
-            "Azərbaycan Respublikasının Elm və Təhsil Nazirliyinin (ETN) dəstəyi ilə "
-            "həyata keçirilmişdir."
-        ),
-    },
-    "en": {
-        "aria": "Forum summary",
-        "title": "Forum 2024 information",
-        "lead": (
-            "9–11 September 2024, Baku – Khankendi – Shusha. Official addresses, the "
-            "programme, presentations and participant impressions are published in "
-            "this section."
-        ),
-        "organizers": (
-            "The Forum was organized by the World Association of Azerbaijani "
-            "Scientists (WAAS), with the support of the State Committee on Diaspora "
-            "Affairs of the Republic of Azerbaijan (SCDA) and the Ministry of Science "
-            "and Education of the Republic of Azerbaijan (MSE)."
-        ),
-    },
-}
 
 PAGE_SPECS = {
     "rector": {
@@ -207,15 +178,25 @@ def esc(s: str) -> str:
     return html.escape(s, quote=True)
 
 
-def forum_hub_panel_html(lang: str) -> str:
-    p = FORUM_HUB_PANEL[lang]
+def _panel_summaries() -> dict:
+    return json.loads(PANEL_SUMMARIES_PATH.read_text(encoding="utf-8")).get("pages") or {}
+
+
+def speech_hero_panel_html(page_id: str, lang: str) -> str:
+    entry = _panel_summaries().get(page_id) or {}
+    text = entry.get(lang) or entry.get("en") or ""
+    if isinstance(text, list):
+        text = " ".join(str(part).strip() for part in text if str(part).strip())
+    titles = entry.get("panelTitle") or {}
+    arias = entry.get("panelAria") or {}
+    title = titles.get(lang) or titles.get("en") or ""
+    aria = arias.get(lang) or arias.get("en") or title
     return (
-        f'<aside aria-label="{esc(p["aria"])}" class="hero-panel">\n'
+        f'<aside aria-label="{esc(aria)}" class="hero-panel">\n'
         f'<div class="panel-card">\n'
-        f'<h2 class="panel-title">{esc(p["title"])}</h2>\n'
+        f'<h2 class="panel-title">{esc(title)}</h2>\n'
         f'<div class="panel-copy">\n'
-        f'<p class="panel-copy-lead">{esc(p["lead"])}</p>\n'
-        f'<p class="panel-copy-organizers">{esc(p["organizers"])}</p>\n'
+        f'<p class="panel-copy-lead">{esc(text)}</p>\n'
         f"</div>\n"
         f"</div>\n"
         f"</aside>"
@@ -481,9 +462,11 @@ def build_html(lang: str, sections: list[dict], spec: dict, page_key: str) -> st
         skip = "Skip to content"
         crumb_aria = "Breadcrumb"
 
-    hub_panel = forum_hub_panel_html(lang)
+    hub_panel = speech_hero_panel_html(page_id, lang)
+    sv = SCRIPT_VERSIONS
+    st = STYLE_VERSIONS
     return f"""<!DOCTYPE html>
-<html lang="{lang}" class="daab-hub-page" data-daab-lang="{lang}" data-daab-asset-root="{ASSET}" data-daab-page-id="{page_id}" data-daab-nav-mount="1">
+<html lang="{lang}" data-daab-lang="{lang}" data-daab-asset-root="{ASSET}" data-daab-page-id="{page_id}" data-daab-nav-mount="1">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
@@ -492,38 +475,38 @@ def build_html(lang: str, sections: list[dict], spec: dict, page_key: str) -> st
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
-<link href="{ASSET}css/daab-common.css?v=44" rel="stylesheet"/>
-<link href="{ASSET}css/daab-mobile.css?v=11" rel="stylesheet"/>
-<link href="{ASSET}css/daab-search.css?v=4" rel="stylesheet"/>
-<link href="{ASSET}css/daab-back-to-top.css?v=2" rel="stylesheet"/>
-<link href="{ASSET}css/daab-lang.css?v=11" rel="stylesheet"/>
-<link href="{ASSET}css/daab-nav-mega.css?v=23" rel="stylesheet"/>
-<link href="{ASSET}css/daab-forum-section-nav.css?v=1" rel="stylesheet"/>
-<link href="{ASSET}css/daab-hero-summary.css?v=9" rel="stylesheet"/>
-<link href="{ASSET}css/daab-hub-cards.css?v=25" rel="stylesheet"/>
-<link href="{ASSET}css/daab-sidebar-widget.css?v=4" rel="stylesheet"/>
-<link href="{ASSET}css/daab-activities-layout.css?v=14" rel="stylesheet"/>
-<link href="{ASSET}css/daab-forum-content.css?v=26" rel="stylesheet"/>
-{speech_photos_css}<link href="{ASSET}css/daab-activities-page.css?v=3" rel="stylesheet"/>
-<script src="{ASSET}js/daab-mobile.js?v=5" defer></script>
-<script src="{ASSET}js/daab-back-to-top.js?v=3" defer></script>
-<script src="{ASSET}js/daab-i18n.js?v=18" defer></script>
-<script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
-<script src="{ASSET}js/daab-design-tokens.js?v=1" defer></script>
-<script src="{ASSET}js/daab-nav.js?v=20" defer></script>
-<script src="{ASSET}js/daab-primary-nav.js?v=17" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v=12" defer></script>
-<script src="{ASSET}js/daab-shell.js?v=12" defer></script>
-<script src="{ASSET}js/daab-page-subtitle.js?v=2" defer></script>
-<script src="{ASSET}js/daab-search.js?v=7" defer></script>
+<link href="{ASSET}css/daab-common.css?v={st["daab-common.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-sticky-chrome.css?v={st["daab-sticky-chrome.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-search.css?v={st["daab-search.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-back-to-top.css?v={st["daab-back-to-top.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-lang.css?v={st["daab-lang.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-nav-mega.css?v={st["daab-nav-mega.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-forum-section-nav.css?v={st["daab-forum-section-nav.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-hero-summary.css?v={st["daab-hero-summary.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-sidebar-widget.css?v={st["daab-sidebar-widget.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-activities-layout.css?v={st["daab-activities-layout.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-forum-content.css?v={st["daab-forum-content.css"]}" rel="stylesheet"/>
+{speech_photos_css}<script src="{ASSET}js/daab-mobile.js?v={sv["daab-mobile.js"]}" defer></script>
+<script src="{ASSET}js/daab-sticky-chrome.js?v={sv["daab-sticky-chrome.js"]}" defer></script>
+<script src="{ASSET}js/daab-back-to-top.js?v={sv["daab-back-to-top.js"]}" defer></script>
+<script src="{ASSET}js/daab-i18n.js?v={sv["daab-i18n.js"]}" defer></script>
+<script src="{ASSET}js/daab-lang-position.js?v={sv["daab-lang-position.js"]}" defer></script>
+<script src="{ASSET}js/daab-design-tokens.js?v={sv["daab-design-tokens.js"]}" defer></script>
+<script src="{ASSET}js/daab-nav.js?v={sv["daab-nav.js"]}" defer></script>
+<script src="{ASSET}js/daab-primary-nav.js?v={sv["daab-primary-nav.js"]}" defer></script>
+<script src="{ASSET}js/daab-section-nav.js?v={sv["daab-section-nav.js"]}" defer></script>
+<script src="{ASSET}js/daab-shell.js?v={sv["daab-shell.js"]}" defer></script>
+<script src="{ASSET}js/daab-page-subtitle.js?v={sv["daab-page-subtitle.js"]}" defer></script>
+<script src="{ASSET}js/daab-search.js?v={sv["daab-search.js"]}" defer></script>
 </head>
-<body class="daab-hub-page">
+<body>
 <a class="skip" href="#content">{skip}</a>
 {nav}
-<div class="breadcrumbs forum-breadcrumbs" data-daab-breadcrumbs-static="1" role="navigation" aria-label="{crumb_aria}">
+<div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="{crumb_aria}">
 {crumbs}
 </div>
-<header class="hero">
+<header class="page-hero">
 <div class="hero-wrap shell">
 <section class="hero-copy">
 <h1 aria-describedby="page-hero-subtitle">{c["hero_h1"]}</h1>

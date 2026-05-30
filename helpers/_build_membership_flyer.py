@@ -344,7 +344,7 @@ def email_page_scripts(cfg: dict, lang: str) -> str:
     }
     data = json.dumps(payload, ensure_ascii=False)
     return f"""<script>window.DAAB_FLYER_EMAIL = {data};</script>
-<script src="{ASSET}js/daab-membership-flyer-email.js?v=3" defer></script>"""
+<script src="{ASSET}js/daab-membership-flyer-email.js?v=6" defer></script>"""
 
 
 def build_locale(key: str) -> None:
@@ -388,7 +388,7 @@ def build_locale(key: str) -> None:
 <main class="main membership-flyer-main" id="content">
 <div class="flyer-wrap">
 <div class="flyer-page-controls" role="toolbar" aria-label="{esc(cfg["controls_aria"])}" data-flyer-export-exclude="1">
-<button type="button" class="flyer-btn flyer-btn-primary" onclick="window.print()" title="{esc(cfg["print_tooltip"])}" aria-label="{esc(cfg["print_tooltip"])}">{esc(cfg["print_btn"])}</button>
+<button type="button" class="flyer-btn flyer-btn-primary" id="flyerPrintPdfBtn" title="{esc(cfg["print_tooltip"])}" aria-label="{esc(cfg["print_tooltip"])}">{esc(cfg["print_btn"])}</button>
 <button type="button" class="flyer-btn" id="flyerSendEmailBtn" title="{esc(cfg["share_tooltip"])}" aria-label="{esc(cfg["share_tooltip"])}">{esc(cfg["email_btn"])}</button>
 </div>
 <article class="flyer-sheet" aria-label="{esc(cfg["title"])}">

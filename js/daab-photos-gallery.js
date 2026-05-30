@@ -23,6 +23,11 @@
 
   if (!grid || !catList) return;
 
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+  window.scrollTo(0, 0);
+
   var assetRoot =
     (window.DAAB_I18N && typeof window.DAAB_I18N.assetRoot === "function" && window.DAAB_I18N.assetRoot()) ||
     document.documentElement.getAttribute("data-daab-asset-root") ||
@@ -177,15 +182,30 @@
     if (link) link.classList.add("tl-active");
   }
 
-  function updateUrl(id) {
+  function updateUrl(id, opts) {
+    opts = opts || {};
     try {
       var url = new URL(window.location.href);
       url.searchParams.set("category", id);
-      url.hash = id;
+      if (opts.syncHash) {
+        url.hash = id;
+      } else if (opts.clearHash) {
+        url.hash = "";
+      }
       history.replaceState(null, "", url.toString());
     } catch (e) {
       /* ignore */
     }
+  }
+
+  function restorePageTop() {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+    requestAnimationFrame(function () {
+      window.scrollTo(0, 0);
+    });
   }
 
   function ensureLazyObserver() {
@@ -407,14 +427,18 @@
     grid.appendChild(frag);
   }
 
-  function renderCategory(cat, link) {
+  function renderCategory(cat, link, opts) {
+    opts = opts || {};
     if (!cat) return;
     renderId += 1;
     var activeRenderId = renderId;
     disconnectLazyObserver();
     lazyObserver = null;
     activateLink(link);
-    updateUrl(cat.id);
+    updateUrl(cat.id, {
+      syncHash: !!opts.syncHash,
+      clearHash: !opts.syncHash
+    });
 
     if (titleEl) titleEl.textContent = titleFor(cat);
     var images = imagesForCategory(cat);
@@ -437,19 +461,14 @@
     if (closeSidebarMenu && mobileQuery().matches) {
       closeSidebarMenu();
     }
-
-    var panel = document.getElementById("photos-gallery-panel");
-    if (panel) {
-      panel.scrollIntoView({ block: "start", behavior: "smooth" });
-    }
   }
 
-  function selectCategory(id) {
+  function selectCategory(id, opts) {
     var cat = categories.find(function (c) {
       return c.id === id;
     });
     var link = catList.querySelector('a[href="#' + id + '"]');
-    if (cat) renderCategory(cat, link);
+    if (cat) renderCategory(cat, link, opts);
   }
 
   function buildSidebar() {
@@ -462,7 +481,7 @@
 
       a.addEventListener("click", function (e) {
         e.preventDefault();
-        renderCategory(cat, a);
+        renderCategory(cat, a, { syncHash: true });
       });
 
       li.appendChild(a);
@@ -579,10 +598,12 @@
       initLightbox();
       closeSidebarMenu = bindSidebarMobile();
       var start = initialCategoryId();
-      if (start) selectCategory(start);
+      if (start) selectCategory(start, { syncHash: false });
+      restorePageTop();
+      window.addEventListener("load", restorePageTop, { once: true });
       window.addEventListener("hashchange", function () {
         var id = categoryIdFromHash();
-        if (id) selectCategory(id);
+        if (id) selectCategory(id, { syncHash: true });
       });
       setStatus("", true);
     })

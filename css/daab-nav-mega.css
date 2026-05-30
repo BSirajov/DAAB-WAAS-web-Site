@@ -185,9 +185,9 @@ header.forum-hero + .daab-section-nav{
 
 @media (max-width: 720px) {.daab-section-nav{
     padding: 14px 14px;
-  }.daab-section-nav-list{
+  }.daab-section-nav-list:not(.daab-section-nav-list--forum-pairs){
     gap: 8px;
-  }.daab-section-nav-list a{
+  }.daab-section-nav-list:not(.daab-section-nav-list--forum-pairs) a{
     flex: 1 1 auto;
     min-height: 44px;
     padding: 12px 16px;
@@ -240,10 +240,10 @@ header.forum-hero + .daab-section-nav{
   }
 }
 
-@media (max-width: 760px) {.daab-section-nav-list{
+@media (max-width: 760px) {.daab-section-nav-list:not(.daab-section-nav-list--forum-pairs){
     flex-direction: column;
     align-items: stretch;
-  }.daab-section-nav-list a{
+  }.daab-section-nav-list:not(.daab-section-nav-list--forum-pairs) a{
     justify-content: center;
     border-radius: 10px;
   }

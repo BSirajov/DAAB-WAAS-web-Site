@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "note": "Hero panel summary prose (panel-copy-lead). Keys match data-daab-page-id / routes.json page id.",
+  "pages": {
+    "home": {
+      "en": "WAAS unites Azerbaijani scholars worldwide in one international network, building lasting cooperation with universities, research centres and partners. Use the cards below to explore our mission, activities, scientists directory and membership.",
+      "az": "DAAB dünyanın müxtəlif ölkələrində yaşayan azərbaycanlı alimləri vahid beynəlxalq şəbəkədə birləşdirir və universitetlər, tədqiqat mərkəzləri ilə davamlı elmi əməkdaşlıq qurur. Aşağıdakı kartlar vasitəsilə missiya, fəaliyyət, alimlər və üzvlük bölmələrinə keçid edə bilərsiniz."
+    },
+    "foundation": {
+      "en": "This page presents the rationale for establishing WAAS, from the Shusha Congress through the Istanbul founding meeting of 9 December 2022, including objectives, participants, discussions, and photo and video materials in one chronological account.",
+      "az": "Bu səhifə DAAB-ın yaradılması ideyasını, Şuşa Qurultayından İstanbul təsis görüşünə qədər inkişaf xəttini, iştirakçıları, məqsədləri və foto-video materialları vahid ardıcıllıqla təqdim edir."
+    },
+    "mission": {
+      "en": "WAAS mission, vision and academic values are presented here on the basis of academic freedom, transparency, quality and responsibility, with a focus on advancing the international integration of Azerbaijani science.",
+      "az": "Bu səhifədə DAAB-ın missiyası, vizyonu və akademik dəyərləri akademik azadlıq, şəffaflıq, keyfiyyət və məsuliyyət prinsipləri üzrə, Azərbaycan elminin beynəlxalq inteqrasiyasına yönəlmiş şəkildə verilir."
+    },
+    "activities": {
+      "en": "This page presents the scientific and public activities of WAAS, including cooperation initiatives, international meetings and events involving our scholars, updated in chronological order.",
+      "az": "Bu səhifədə DAAB-ın elmi və ictimai fəaliyyəti, əməkdaşlıq təşəbbüsləri, beynəlxalq görüşlər və alimlərimizin iştirak etdiyi tədbirlər xronoloji ardıcıllıqla təqdim olunur."
+    },
+    "forum-2024": {
+      "en": "The First Forum of Azerbaijani Scientists Living Abroad was held on 9–11 September 2024 in Baku, Khankendi and Shusha. This section publishes official addresses, the programme, presentations and participant impressions, organized by WAAS with support from SCDA and MSE.",
+      "az": "Xaricdə Yaşayan Azərbaycanlı Alimlərin I Forumu 9–11 sentyabr 2024-cü il tarixlərində Bakı, Xankəndi və Şuşa şəhərlərində keçirilib. Bu bölmədə rəsmi çıxışlar, proqram, məruzələr və iştirakçı təəssüratları yerləşdirilib."
+    },
+    "forum-rector-speeches": {
+      "panelTitle": {
+        "en": "Rectors",
+        "az": "Rektorlar"
+      },
+      "panelAria": {
+        "en": "Summary of rectors' speeches",
+        "az": "Rektorlar haqqında qısa məlumat"
+      },
+      "en": "This page publishes the speeches delivered at Forum 2024 by rectors of Azerbaijani universities, covering science, higher education, international cooperation and proposals for university development from plenary sessions. Select a speaker from the sidebar to read each address in full.",
+      "az": "Bu səhifədə Forum 2024-də Azərbaycan universitet rektorlarının nitqləri — elm, ali təhsil, beynəlxalq əməkdaşlıq və plenar sessiyalarda universitet inkişafına dair təkliflər — təqdim olunur. Sol paneldən nitq seçərək tam mətni oxuya bilərsiniz."
+    },
+    "forum-anas-leadership-speeches": {
+      "panelTitle": {
+        "en": "ANAS Leadership",
+        "az": "AMEA rəhbərliyi"
+      },
+      "panelAria": {
+        "en": "Summary of ANAS leadership speeches",
+        "az": "AMEA rəhbərliyi haqqında qısa məlumat"
+      },
+      "en": "This page presents speeches by the leadership of the Azerbaijan National Academy of Sciences at Forum 2024, including addresses by President Isa Habibbayli and Vice-President Rasim Aliquliyev on organising the scientific diaspora and cooperation with WAAS.",
+      "az": "Bu səhifədə AMEA rəhbərliyinin — prezident İsa Həbibbəyli və vitse-prezident Rasim Əliquliyevin — Forum 2024-dəki nitqləri, elmi diasporun təşkilatlanması və DAAB ilə əməkdaşlıq mövzularında yerləşdirilib."
+    },
+    "forum-official": {
+      "en": "President Ilham Aliyev's message, letters from Nobel laureates, our scientists' appeal to the President, and speeches by Fuad Muradov and Messoud Efendiyev — the official addresses that shaped the Forum's direction.",
+      "az": "Prezident İlham Əliyevin təbriki, Nobel laureatlarının müraciətləri, alimlərimizin prezidentə müraciəti, Fuad Muradov və Məsud Əfəndiyevin nitqləri — Forumun istiqamətini müəyyən edən rəsmi sənədlər bu səhifədədir."
+    },
+    "forum-program": {
+      "en": "The full day-by-day schedule of Forum 2024, 9–11 September, in Baku, Khankendi and Shusha: opening session, plenary meetings, presentations, strategic sessions and closing events.",
+      "az": "9–11 sentyabr 2024-cü il tarixlərində Bakı, Xankəndi və Şuşa üzrə forumun tam cədvəli: açılış iclası, plenar sessiyalar, məruzələr, strateji sessiyalar və yekun tədbirlər."
+    },
+    "forum-2024-presentations": {
+      "en": "Scientific presentations by Forum participants on bioinformatics, artificial intelligence, education, ecology, culture, international cooperation and related fields, in a unified browsable structure.",
+      "az": "Forum iştirakçılarının bioinformatika, süni intellekt, təhsil, ekologiya, mədəniyyət, beynəlxalq əməkdaşlıq və digər sahələr üzrə elmi məruzələri vahid strukturda təqdim olunur."
+    },
+    "forum-impressions": {
+      "en": "Personal impressions from Forum participants on scientific cooperation, diaspora solidarity and the Karabakh visit, presented in a unified, readable format.",
+      "az": "Forum iştirakçılarının elmi əməkdaşlıq, diaspor həmrəyliyi və Qarabağ səfəri barədə təəssüratları vahid, oxunaqlı formatda burada yer alır."
+    },
+    "forum-photos-gallery": {
+      "en": "Photographs from the Forum — opening events, discussions, portraits and the Karabakh visit — arranged in curated collections by category. Choose a category from the sidebar to browse.",
+      "az": "Açılış, müzakirələr, portretlər və Qarabağ səfəri daxil olmaqla forumun yaddaqalan anları fotoşəkillərdə, kateqoriyalar üzrə təqdim olunur. Sol paneldən kateqoriya seçin."
+    },
+    "forum-video-gallery": {
+      "en": "Video reports and interviews on Forum 2024 from Diaspor TV, AzTV, Public TV and other outlets, covering the opening ceremony, official meetings and plenary sessions; each card shows the topic and source.",
+      "az": "Forum 2024 haqqında Diaspor TV, AzTV, İctimai TV və digər mənbələrdə yayımlanmış video reportajlar və müsahibələr; açılış, rəsmi görüşlər və plenar sessiyalar. Hər kartda mövzu və mənbə göstərilir."
+    },
+    "forum-roadmap": {
+      "en": "Strategic goals for Azerbaijani science and education, drawn from proposals by participants in the First Forum, with short-, medium- and long-term directions.",
+      "az": "I Forum iştirakçılarının təklifləri əsasında Azərbaycan elmi və təhsilinin inkişafı üçün qısa, orta və uzunmüddətli strateji hədəflər bu səhifədə verilir."
+    },
+    "forum-bagli-hekayeler": {
+      "en": "Personal literary essays by Eldar Akhadov capturing impressions of the Forum, the journey to Karabakh and encounters that became lifelong memories.",
+      "az": "Eldar Əhədovun forum təəssüratları, Qarabağ səfəri və ömürlük xatirəyə çevrilən görüşləri əks etdirən şəxsi ədəbi yazıları."
+    },
+    "forum-cooperation": {
+      "en": "Gratitude to state institutions, media, WAAS leadership, universities and scholars whose support made Forum 2024 possible.",
+      "az": "Forumun reallaşmasına dəstək verən dövlət qurumları, media, DAAB rəhbərliyi, universitetlər və alimlərə minnətdarlıqla."
+    },
+    "scientists-list": {
+      "en": "A directory of scientists who took part in the September 2024 forum in Baku, with search and filter by country, field, academic degree and other criteria.",
+      "az": "2024-cü ilin sentyabrında Bakıda keçirilmiş forumda iştirak etmiş alimlərin siyahısı; ölkə, ixtisas, elmi dərəcə və digər meyarlar üzrə axtarış və filtr imkanı verilir."
+    },
+    "scientists-profiles": {
+      "en": "Academic profiles of Azerbaijani scholars active worldwide in science, technology, medicine, arts and humanities, with search, sort and filter by country, field and degree.",
+      "az": "Dünyanın müxtəlif ölkələrində fəaliyyət göstərən azərbaycanlı alimlərin elm, texnologiya, tibb, incəsənət və humanitar sahələr üzrə akademik profilləri; axtarış, sıralama və filtr imkanları ilə."
+    },
+    "executive-board": {
+      "en": "The Chair, Co-Chairs and members of the WAAS Board of Directors, who shape the Association's strategy, coordinate scientific programmes and advance international academic cooperation.",
+      "az": "DAAB İdarə Heyətinin sədri, həmsədrləri və üzvləri — birliyin strategiyasının formalaşdırılması, elmi proqramların koordinasiyası və beynəlxalq akademik əməkdaşlığın inkişafında mərkəzi rol oynayan rəhbərlik."
+    },
+    "charter": {
+      "en": "The 26-article charter of WAAS covering the Association's name, purpose, membership, governing bodies, financial procedures, branches and dissolution — its legal basis and governance structure.",
+      "az": "DAAB-ın adını, məqsədini, üzvlük qaydalarını, idarəetmə orqanlarını, maliyyə prosedurlarını, filial fəaliyyətini və ləğvetməni əhatə edən 26 maddədən ibarət nizamnamə — birliyin hüquqi əsasları və strukturu."
+    },
+    "membership-value": {
+      "en": "WAAS membership enhances professional visibility and global connections, opens opportunities for academic cooperation and enables meaningful contribution to Azerbaijani science.",
+      "az": "DAAB üzvlüyü peşəkar nüfuz və beynəlxalq əlaqələr yaradır, akademik əməkdaşlıq imkanlarını genişləndirir və Azərbaycan elminə mənalı töhfə verməyə imkan verir."
+    },
+    "membership": {
+      "en": "Membership rules and application procedures for WAAS, covering scientific cooperation, mentoring, international connections and opportunities to support Azerbaijan's scientific development.",
+      "az": "DAAB üzvlük qaydaları və müraciət prosedurları; elmi əməkdaşlıq, mentorluq, beynəlxalq əlaqələr və Azərbaycanın elmi inkişafına töhfə imkanları burada izah olunur."
+    },
+    "membership-application": {
+      "en": "Complete this step-by-step online membership application in order — introduction, personal details, scientific fields and additional information — and submit your CV and photo by email as indicated.",
+      "az": "Giriş, şəxsi məlumatlar, elm sahələri və əlavə məlumat bölmələrini ardıcıl doldurun; CV və fotoşəkli göstərilən e-poçt ünvanına göndərin."
+    },
+    "membership-flyer": {
+      "en": "A ready-to-share flyer summarizing the value of WAAS membership; save as PDF, print or share by email using the buttons at the top right of the flyer.",
+      "az": "DAAB üzvlüyünün dəyərini əks etdirən hazır flyer; yuxarı sağ küncdəki düymələrlə PDF yaradın, çap edin və ya e-poçtla paylaşın."
+    }
+  }
+}

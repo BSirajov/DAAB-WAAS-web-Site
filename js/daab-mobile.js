@@ -33,6 +33,10 @@
   }
 
   function syncLayoutHeights() {
+    if (window.DAAB_STICKY_CHROME && typeof window.DAAB_STICKY_CHROME.sync === "function") {
+      window.DAAB_STICKY_CHROME.sync();
+      return;
+    }
     syncNavHeight();
     syncBreadcrumbsHeight();
   }

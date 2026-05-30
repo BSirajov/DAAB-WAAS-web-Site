@@ -333,6 +333,47 @@
     }
   };
 
+  /** Forum 2024 panel — two horizontal rows of six pills (see daab-forum-section-nav.css). */
+  var FORUM_PANEL_ROWS = [
+    [
+      "forum-2024",
+      "forum-official",
+      "forum-rector-speeches",
+      "forum-anas-leadership-speeches",
+      "forum-program",
+      "forum-2024-presentations"
+    ],
+    [
+      "forum-impressions",
+      "forum-photos-gallery",
+      "forum-video-gallery",
+      "forum-roadmap",
+      "forum-bagli-hekayeler",
+      "forum-cooperation"
+    ]
+  ];
+
+  /** Shared min-width groups for paired Forum 2024 pills. */
+  var FORUM_PANEL_WIDTH_GROUPS = [
+    ["forum-2024", "forum-official", "forum-photos-gallery"],
+    ["forum-rector-speeches", "forum-video-gallery"],
+    ["forum-anas-leadership-speeches", "forum-roadmap"],
+    ["forum-program", "forum-bagli-hekayeler"],
+    ["forum-cooperation", "forum-2024-presentations"]
+  ];
+
+  function forumPanelColumnWidthGroups() {
+    var groups = [];
+    var topRow = FORUM_PANEL_ROWS[0] || [];
+    var bottomRow = FORUM_PANEL_ROWS[1] || [];
+    topRow.forEach(function (topId, index) {
+      var bottomId = bottomRow[index];
+      if (!bottomId) return;
+      groups.push([topId, bottomId]);
+    });
+    return groups;
+  }
+
   function getI18n() {
     return window.DAAB_I18N || null;
   }
@@ -364,6 +405,143 @@
     var labelKey = PAGE_LABEL_KEYS[pageId];
     if (labelKey && icons[labelKey]) return icons[labelKey];
     return "";
+  }
+
+  function createSectionNavAnchor(p, currentPage, I18N, lang, ui, navLabels) {
+    var a = document.createElement("a");
+    a.href = pageHref(I18N, p, lang);
+    a.setAttribute("data-section-nav-page", p.id);
+    var key = PAGE_LABEL_KEYS[p.id];
+    var fallbackNav = FALLBACK_UI.nav[lang] || {};
+    var label =
+      (key && navLabels[key]) ||
+      (key && fallbackNav[key]) ||
+      p.id;
+    var icon = sectionNavIcon(ui, p.id);
+    if (icon) {
+      var iconEl = document.createElement("span");
+      iconEl.className = "daab-section-nav-icon";
+      iconEl.setAttribute("aria-hidden", "true");
+      iconEl.textContent = icon;
+      a.appendChild(iconEl);
+    }
+    var labelEl = document.createElement("span");
+    labelEl.className = "daab-section-nav-label";
+    labelEl.textContent = label;
+    a.appendChild(labelEl);
+    if (p.id === currentPage.id) {
+      a.classList.add("active");
+      a.setAttribute("aria-current", "page");
+    }
+    return a;
+  }
+
+  function buildForumPairedList(section, routes, currentPage, I18N, lang, ui, navLabels) {
+    var list = document.createElement("ul");
+    list.className = "daab-section-nav-list daab-section-nav-list--forum-pairs";
+
+    FORUM_PANEL_ROWS.forEach(function (rowIds, rowIndex) {
+      var rowLi = document.createElement("li");
+      rowLi.className = "daab-section-nav-row";
+      rowIds.forEach(function (pid, colIndex) {
+        if (section.pages.indexOf(pid) === -1) return;
+        var p = pageById(routes, pid);
+        if (!p) return;
+        var a = createSectionNavAnchor(p, currentPage, I18N, lang, ui, navLabels);
+        a.style.gridRow = String(rowIndex + 1);
+        a.style.gridColumn = String(colIndex + 1);
+        rowLi.appendChild(a);
+      });
+      if (rowLi.children.length) {
+        list.appendChild(rowLi);
+      }
+    });
+
+    return list;
+  }
+
+  function buildSectionNavList(section, routes, currentPage, I18N, lang, ui, navLabels, navGroup) {
+    if (navGroup === "forum") {
+      return buildForumPairedList(section, routes, currentPage, I18N, lang, ui, navLabels);
+    }
+
+    var list = document.createElement("ul");
+    list.className = "daab-section-nav-list";
+
+    section.pages.forEach(function (pid) {
+      var p = pageById(routes, pid);
+      if (!p) return;
+      var li = document.createElement("li");
+      li.appendChild(createSectionNavAnchor(p, currentPage, I18N, lang, ui, navLabels));
+      list.appendChild(li);
+    });
+
+    return list;
+  }
+
+  var FORUM_PANEL_DESKTOP_MIN = 1080;
+
+  function syncForumNavButtonWidths() {
+    var list = document.querySelector(
+      'html[data-daab-page-id^="forum-"] .daab-section-nav-list--forum-pairs'
+    );
+    if (!list) return;
+
+    var links = list.querySelectorAll("a[data-section-nav-page]");
+    var useDesktopWidths = window.innerWidth >= FORUM_PANEL_DESKTOP_MIN;
+
+    links.forEach(function (a) {
+      a.style.minWidth = "";
+    });
+
+    if (!useDesktopWidths) return;
+
+    var minById = {};
+    links.forEach(function (a) {
+      minById[a.getAttribute("data-section-nav-page")] = 0;
+    });
+
+    function applyGroup(ids) {
+      var groupLinks = ids
+        .map(function (id) {
+          return list.querySelector('a[data-section-nav-page="' + id + '"]');
+        })
+        .filter(Boolean);
+      if (!groupLinks.length) return;
+
+      var max = 0;
+      groupLinks.forEach(function (a) {
+        max = Math.max(max, Math.ceil(a.getBoundingClientRect().width));
+      });
+      if (max <= 0) return;
+      ids.forEach(function (id) {
+        if (minById[id] !== undefined) {
+          minById[id] = Math.max(minById[id], max);
+        }
+      });
+    }
+
+    forumPanelColumnWidthGroups().forEach(applyGroup);
+    FORUM_PANEL_WIDTH_GROUPS.forEach(applyGroup);
+
+    links.forEach(function (a) {
+      var id = a.getAttribute("data-section-nav-page");
+      var min = minById[id];
+      if (min > 0) {
+        a.style.minWidth = min + "px";
+      }
+    });
+  }
+
+  var forumNavSyncTimer = 0;
+  function scheduleForumNavSync() {
+    if (forumNavSyncTimer) {
+      window.clearTimeout(forumNavSyncTimer);
+    }
+    forumNavSyncTimer = window.setTimeout(function () {
+      forumNavSyncTimer = 0;
+      syncForumNavButtonWidths();
+    }, 50);
   }
 
   function pageIdFromHref(href, routes) {
@@ -410,6 +588,9 @@
     if (!a.getAttribute("data-nav-id")) {
       a.setAttribute("data-nav-id", pid);
     }
+    if (!a.getAttribute("data-section-nav-page")) {
+      a.setAttribute("data-section-nav-page", pid);
+    }
   }
 
   function decorateEmbeddedSectionNav(ui, routes) {
@@ -419,6 +600,7 @@
       enhanceSectionNavLink(a, ui, routes);
     });
     nav.setAttribute("data-daab-section-nav-enhanced", "1");
+    scheduleForumNavSync();
   }
 
   function findCurrentPage(I18N, routes) {
@@ -529,41 +711,7 @@
           sectionUi[page.navGroup + "Title"] || sectionUi.aboutTitle || page.navGroup;
         nav.appendChild(title);
 
-        var list = document.createElement("ul");
-        list.className = "daab-section-nav-list";
-
-        section.pages.forEach(function (pid) {
-          var p = pageById(routes, pid);
-          if (!p) return;
-          var li = document.createElement("li");
-          var a = document.createElement("a");
-          a.href = pageHref(I18N, p, lang);
-          var key = PAGE_LABEL_KEYS[pid];
-          var fallbackNav = FALLBACK_UI.nav[lang] || {};
-          var label =
-            (key && navLabels[key]) ||
-            (key && fallbackNav[key]) ||
-            pid;
-          var icon = sectionNavIcon(ui, pid);
-          if (icon) {
-            var iconEl = document.createElement("span");
-            iconEl.className = "daab-section-nav-icon";
-            iconEl.setAttribute("aria-hidden", "true");
-            iconEl.textContent = icon;
-            a.appendChild(iconEl);
-          }
-          var labelEl = document.createElement("span");
-          labelEl.className = "daab-section-nav-label";
-          labelEl.textContent = label;
-          a.appendChild(labelEl);
-          if (p.id === page.id) {
-            a.classList.add("active");
-            a.setAttribute("aria-current", "page");
-          }
-          li.appendChild(a);
-          list.appendChild(li);
-        });
-
+        var list = buildSectionNavList(section, routes, page, I18N, lang, ui, navLabels, page.navGroup);
         nav.appendChild(list);
         if (insertPoint.before) {
           insertPoint.parent.insertBefore(nav, insertPoint.before);
@@ -571,6 +719,7 @@
           insertPoint.parent.appendChild(nav);
         }
         sectionNavInserted = true;
+        scheduleForumNavSync();
       })
       .catch(function (err) {
         console.warn("[daab-section-nav] Mount failed:", err);
@@ -614,15 +763,20 @@
     "load",
     function () {
       boot(0);
+      scheduleForumNavSync();
       setTimeout(function () {
         if (!sectionNavInserted) boot(0);
       }, 200);
       setTimeout(function () {
         if (!sectionNavInserted) boot(0);
+        scheduleForumNavSync();
       }, 800);
     },
     { once: true }
   );
+
+  window.addEventListener("resize", scheduleForumNavSync, { passive: true });
+  window.addEventListener("orientationchange", scheduleForumNavSync, { passive: true });
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {

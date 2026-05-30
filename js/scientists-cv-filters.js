@@ -179,6 +179,15 @@
     if (filterDegree) filterDegree.value = "";
   }
 
+  function syncToolbarFilterBadge() {
+    if (
+      window.DAAB_SCIENTISTS_TOOLBAR &&
+      typeof window.DAAB_SCIENTISTS_TOOLBAR.syncAll === "function"
+    ) {
+      window.DAAB_SCIENTISTS_TOOLBAR.syncAll();
+    }
+  }
+
   function hashProfileId() {
     if (window.DAAB_PROFILE_DEEPLINK && window.DAAB_PROFILE_DEEPLINK.hashId) {
       return window.DAAB_PROFILE_DEEPLINK.hashId();
@@ -438,6 +447,7 @@
         showAllCards(cards, resultCount, noResults, countLabels);
         updateFilterStyles();
         reorderCards();
+        syncToolbarFilterBadge();
         return;
       }
 
@@ -455,6 +465,7 @@
       }
       updateFilterStyles();
       reorderCards();
+      syncToolbarFilterBadge();
     }
 
     function scrollToFirstVisible(countryCode) {
@@ -508,7 +519,10 @@
     document.querySelectorAll(".sel-clear").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var el = document.getElementById(btn.dataset.for);
-        if (el) el.value = "";
+        if (el) {
+          el.value = "";
+          el.dispatchEvent(new Event("change", { bubbles: true }));
+        }
         applyFilters();
       });
     });
@@ -522,10 +536,7 @@
     }
 
     updateFilterStyles();
-
-    if (window.DAAB_SCIENTISTS_TOOLBAR && window.DAAB_SCIENTISTS_TOOLBAR.syncAll) {
-      window.DAAB_SCIENTISTS_TOOLBAR.syncAll();
-    }
+    syncToolbarFilterBadge();
     document.dispatchEvent(new CustomEvent("daab-scientists-catalog-ready"));
   }
 

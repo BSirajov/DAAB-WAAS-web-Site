@@ -54,6 +54,12 @@
 .panel-card .hero-text{
   font-size: 13px !important;
   line-height: 1.42 !important;
+}.panel-copy-lead,
+.hero-text.panel-copy-lead{
+  margin: 0;
+  font-size: 13px !important;
+  line-height: 1.48 !important;
+  text-wrap: pretty;
 }.hero-wrap,
 .activities-hero-wrap{
   gap: 24px !important;

@@ -342,8 +342,6 @@
     img.className = "nav-brand-qr-img";
     img.src = imgSrc;
     img.alt = "";
-    img.width = 44;
-    img.height = 44;
     img.loading = "lazy";
     img.decoding = "async";
     qrLink.appendChild(img);

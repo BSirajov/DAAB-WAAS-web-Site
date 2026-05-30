@@ -165,6 +165,7 @@ html[data-daab-page-id="forum-2024"] .forum-partner-logos{
 }.daab-hub-page .panel-card .panel-copy-lead{
   font-size: 14px !important;
   line-height: 1.55 !important;
+  text-wrap: pretty;
 }.daab-hub-page .panel-card .panel-copy-organizers{
   padding-top: 10px;
   border-top: 1px solid var(--color-border-blue-muted);

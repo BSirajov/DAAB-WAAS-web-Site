@@ -79,7 +79,7 @@ html[data-daab-page-id^="forum-"]{
 }html[data-daab-page-id^="forum-"] .daab-hub-page header.hero + .daab-section-nav{
   max-width: var(--max);
   margin: 0 auto 20px;
-  padding: 0 24px;
+  padding: 16px 24px;
   box-sizing: border-box;
 }html[data-daab-page-id^="forum-"] .forum-main{
   max-width: var(--forum-max);

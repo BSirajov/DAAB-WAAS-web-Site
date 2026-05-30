@@ -257,6 +257,8 @@ a.card-name:focus-visible{
   flex: 1;
   padding-top: 14px;
   border-top: 1px solid var(--color-border-blue-10);
+  text-align: justify;
+  hyphens: auto;
 }.card-bio > *:first-child{
   margin-top: 0;
 }.card-bio p.bio + p.bio,
@@ -281,6 +283,8 @@ a.card-name:focus-visible{
   font-size: 13.5px;
   line-height: 1.68;
   overflow-wrap: anywhere;
+}.card-bio .bio-section-title,
+.card-bio .awards-label{
   text-align: left;
 }.card-bio > p.bio:first-child,
 .card-bio > p.bio-lead:first-child{

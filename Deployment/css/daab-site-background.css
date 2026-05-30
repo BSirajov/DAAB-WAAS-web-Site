@@ -1,0 +1,75 @@
+/**
+ * Site-wide page background — same diaspora image + light scrim as hero headers.
+ * Applied on body (all shell pages). Language gateway (.daab-gateway) is excluded.
+ */
+
+body:not(.daab-gateway) {
+  background-color: var(--color-surface-news, #f5fbff);
+}
+
+/* Fixed layer: photo pattern + soft vertical wash for readable body text */
+body:not(.daab-gateway)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-color: var(--color-surface-news, #f5fbff);
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.68) 32%,
+      rgba(245, 251, 255, 0.86) 62%,
+      rgba(238, 248, 255, 0.94) 100%
+    ),
+    var(--site-bg-image, url("../images/diaspor-body-top-bg.jpg"));
+  background-position: top center, top center;
+  background-size: 100% auto, 100% auto;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+}
+
+/* Top fade — matches hero ::after treatment */
+body:not(.daab-gateway)::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+  opacity: 0.65;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 42%);
+}
+
+body:not(.daab-gateway) > header,
+body:not(.daab-gateway) > main,
+body:not(.daab-gateway) > footer,
+body:not(.daab-gateway) .content-wrap,
+body:not(.daab-gateway) > #daab-chrome-spacer {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  body:not(.daab-gateway)::before,
+  body:not(.daab-gateway)::after {
+    position: absolute;
+    min-height: 100%;
+    background-attachment: scroll, scroll;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  body:not(.daab-gateway)::before {
+    background-image: linear-gradient(
+      180deg,
+      #f8fcff 0%,
+      var(--color-surface-news, #f5fbff) 100%
+    );
+  }
+
+  body:not(.daab-gateway)::after {
+    display: none;
+  }
+}

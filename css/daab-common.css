@@ -7,6 +7,9 @@
 }html{
   scroll-behavior: smooth;
   overflow-x: clip;
+  --daab-nav-logo-diameter: 68px;
+  /* Home nav QR: 90% of circular logo image diameter */
+  --daab-nav-qr-side: calc(var(--daab-nav-logo-diameter) * 0.9);
 }body{
   margin: 0;
   min-height: 100vh;
@@ -199,8 +202,9 @@ article.charter-card[id],
   outline-offset: 2px;
 }.nav-brand-qr-img{
   display: block;
-  width: 44px;
-  height: 44px;
+  width: var(--daab-nav-qr-side);
+  height: var(--daab-nav-qr-side);
+  object-fit: contain;
   border-radius: 4px;
 }.nav-divider{
   flex: 0 0 auto !important;
@@ -699,7 +703,9 @@ button,
   }
 }
 
-@media (max-width: 1180px) {.nav-strip{
+@media (max-width: 1180px) {html{
+    --daab-nav-logo-diameter: 44px;
+  }.nav-strip{
     overflow: visible !important;
   }.nav-actions{
     display: contents;
@@ -909,9 +915,6 @@ button,
   }.nav-brand-qr-link{
     padding: 2px;
     border-radius: 6px;
-  }.nav-brand-qr-img{
-    width: 36px;
-    height: 36px;
   }.nav-brand-text{
     display: block !important;
     overflow: hidden !important;
@@ -945,7 +948,9 @@ button,
   }
 }
 
-@media (max-width: 420px) {.shell,
+@media (max-width: 420px) {html{
+    --daab-nav-logo-diameter: 36px;
+  }.shell,
   .main{
     padding-left: 14px;
     padding-right: 14px;
@@ -960,5 +965,62 @@ button,
     width: 36px !important;
     min-width: 36px !important;
     height: 36px !important;
+  }
+}
+
+/* Home-page nav QR — beside org name on wide screens; under logo on tablet; under hamburger on mobile (js/daab-nav.js) */
+@media (max-width: 1220px) and (min-width: 1181px) {
+  .page-logo.nav-logo-has-qr {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    margin-right: 0 !important;
+  }
+
+  .page-logo.nav-logo-has-qr > a:first-child {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 1180px) {
+  .nav-toggle-stack {
+    grid-area: toggle;
+    grid-row: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    align-self: start;
+    justify-self: start;
+    min-width: 44px;
+  }
+
+  .nav-toggle-stack .mobile-menu-toggle {
+    grid-area: unset !important;
+    grid-row: unset !important;
+    flex: 0 0 auto;
+  }
+
+  .nav-toggle-stack.nav-toggle-has-qr .nav-brand-qr-link {
+    flex: 0 0 auto;
+    padding: 2px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-brand-qr-link {
+    display: none !important;
+  }
+}
+
+/* Profile/board QR — hide on narrow viewports where they crowd card layout */
+@media (max-width: 640px) {
+  .card-qr-link,
+  .board-card-qr-link {
+    display: none !important;
   }
 }

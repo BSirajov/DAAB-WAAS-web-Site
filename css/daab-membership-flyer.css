@@ -266,6 +266,10 @@
   font-size: calc(9px * var(--flyer-fs));
   line-height: 1.5;
   color: var(--ink);
+}.flyer-meta p,
+.flyer-meta a{
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }.flyer-meta strong{
   color: var(--blue-900);
 }.flyer-meta a{
@@ -303,36 +307,138 @@
   margin: 0;
 }
 
-@media print {body.membership-flyer-page{
-    background: var(--white);
-  }.skip,
-  .nav-strip,
-  #daab-breadcrumbs,
-  nav.daab-breadcrumbs,
-  .daab-breadcrumbs,
-  header.hero,
-  .daab-section-nav{
+/*
+ * Off-screen PDF export clone — fixed A4 width in px (210 mm @ 96 dpi).
+ * Never affects the responsive on-screen flyer.
+ */
+#daab-flyer-export-stage{
+  position: fixed;
+  left: -12000px;
+  top: 0;
+  width: 794px;
+  z-index: -1;
+  pointer-events: none;
+  overflow: visible;
+  opacity: 1;
+  background: #fff;
+}#daab-flyer-export-stage .flyer-sheet--pdf-export{
+  --flyer-fs: 1.26;
+  --flyer-space: 1.14;
+  width: 794px !important;
+  max-width: 794px !important;
+  min-width: 794px !important;
+  min-height: auto !important;
+  margin: 0 !important;
+  padding: 38px 42px 38px !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+  background: #fff !important;
+  box-sizing: border-box !important;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}#daab-flyer-export-stage .flyer-pillars{
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}#daab-flyer-export-stage .flyer-benefits{
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}#daab-flyer-export-stage .flyer-youth{
+  grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 1fr)) !important;
+}#daab-flyer-export-stage .flyer-footer{
+  grid-template-columns: minmax(0, 1fr) auto !important;
+}#daab-flyer-export-stage .flyer-pillar,
+#daab-flyer-export-stage .flyer-benefit,
+#daab-flyer-export-stage .flyer-youth-item,
+#daab-flyer-export-stage .flyer-youth-lead,
+#daab-flyer-export-stage .flyer-brand-block,
+#daab-flyer-export-stage .flyer-cta,
+#daab-flyer-export-stage .flyer-meta,
+#daab-flyer-export-stage .flyer-qr{
+  min-width: 0;
+}#daab-flyer-export-stage .flyer-hero,
+#daab-flyer-export-stage .flyer-footer,
+#daab-flyer-export-stage .flyer-pillar,
+#daab-flyer-export-stage .flyer-youth{
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@media print {html.membership-flyer-page,
+  body.membership-flyer-page{
+    background: #fff !important;
+    margin: 0 !important;
+  }body.membership-flyer-page #daab-top-chrome,
+  body.membership-flyer-page #daab-chrome-spacer,
+  body.membership-flyer-page .skip,
+  body.membership-flyer-page .nav-strip,
+  body.membership-flyer-page #daab-breadcrumbs,
+  body.membership-flyer-page nav.daab-breadcrumbs,
+  body.membership-flyer-page .daab-breadcrumbs,
+  body.membership-flyer-page header.hero,
+  body.membership-flyer-page .daab-section-nav,
+  body.membership-flyer-page .footer-pro,
+  body.membership-flyer-page .daab-back-to-top,
+  body.membership-flyer-page #search-overlay,
+  body.membership-flyer-page #daab-flyer-export-stage,
+  body.membership-flyer-page .flyer-page-controls,
+  body.membership-flyer-page [data-flyer-export-exclude="1"]{
     display: none !important;
-  }.flyer-page-controls,
-  [data-flyer-export-exclude="1"]{
-    display: none !important;
-  }.flyer-wrap{
-    max-width: none;
-    margin: 0;
-    padding: 0;
-  }.flyer-sheet{
-    width: 210mm;
-    min-height: 297mm;
-    box-shadow: none;
+  }body.membership-flyer-page .membership-flyer-main,
+  body.membership-flyer-page .flyer-wrap{
+    display: block !important;
+    max-width: none !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }body.membership-flyer-page .flyer-sheet{
+    --flyer-fs: 1.26;
+    --flyer-space: 1.14;
+    width: 210mm !important;
+    max-width: 210mm !important;
+    min-width: 210mm !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 10mm 11mm !important;
+    box-shadow: none !important;
+    overflow: visible !important;
     page-break-after: avoid;
-  }.flyer-cta-link{
-    color: var(--white) !important;
+    break-after: avoid-page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }body.membership-flyer-page .flyer-pillars{
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }body.membership-flyer-page .flyer-benefits{
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }body.membership-flyer-page .flyer-youth{
+    grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 1fr)) !important;
+  }body.membership-flyer-page .flyer-footer{
+    grid-template-columns: minmax(0, 1fr) auto !important;
+  }body.membership-flyer-page .flyer-pillar,
+  body.membership-flyer-page .flyer-benefit,
+  body.membership-flyer-page .flyer-youth-item,
+  body.membership-flyer-page .flyer-youth-lead,
+  body.membership-flyer-page .flyer-brand-block,
+  body.membership-flyer-page .flyer-cta,
+  body.membership-flyer-page .flyer-meta,
+  body.membership-flyer-page .flyer-qr{
+    min-width: 0;
+  }body.membership-flyer-page .flyer-header,
+  body.membership-flyer-page .flyer-hero,
+  body.membership-flyer-page .flyer-footer,
+  body.membership-flyer-page .flyer-pillar,
+  body.membership-flyer-page .flyer-youth,
+  body.membership-flyer-page .flyer-benefit,
+  body.membership-flyer-page .flyer-tagline{
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }body.membership-flyer-page .flyer-cta-link{
+    color: #fff !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-  }.flyer-hero,
-  .flyer-footer,
-  .flyer-pillar,
-  .flyer-youth{
+  }body.membership-flyer-page .flyer-hero,
+  body.membership-flyer-page .flyer-footer,
+  body.membership-flyer-page .flyer-pillar,
+  body.membership-flyer-page .flyer-youth,
+  body.membership-flyer-page .flyer-benefit{
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }

@@ -44,8 +44,13 @@
   function updateBadge(toolbar, badge) {
     if (!badge) return;
     var n = activeFilterCount(toolbar);
-    badge.textContent = n > 0 ? String(n) : "";
-    badge.hidden = n === 0;
+    if (n > 0) {
+      badge.textContent = String(n);
+      badge.removeAttribute("hidden");
+    } else {
+      badge.textContent = "";
+      badge.setAttribute("hidden", "");
+    }
     toolbar.classList.toggle("has-active-filters", n > 0);
   }
 
@@ -112,12 +117,13 @@
       );
     });
 
-    var clearBtn = toolbar.querySelector("#clearFilters");
-    if (clearBtn) {
-      clearBtn.addEventListener("click", function () {
+    toolbar.addEventListener("click", function (e) {
+      var target = e.target;
+      if (!target || !target.closest) return;
+      if (target.closest(".sel-clear") || target.closest("#clearFilters")) {
         window.setTimeout(syncBadge, 0);
-      });
-    }
+      }
+    });
 
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && toolbar.classList.contains("is-filters-open")) {
