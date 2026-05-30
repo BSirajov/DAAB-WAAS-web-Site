@@ -14,7 +14,7 @@
   position: relative;
   overflow: hidden;
   color: var(--ink) !important;
-  background: var(--white) url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
+  background: var(--white) var(--site-bg-image) top center / 100% auto no-repeat !important;
 }.hero::before{
   content: "";
   position: absolute;

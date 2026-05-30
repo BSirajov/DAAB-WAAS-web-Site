@@ -479,7 +479,7 @@ def build_en_home() -> None:
 <link href="../css/daab-lang.css?v=1" rel="stylesheet"/>
 <style>
 .hero {{ position:relative; overflow:hidden; color:var(--ink)!important;
-  background:#fff url("../images/diaspor-body-top-bg.jpg") top center/100% auto no-repeat!important; }}
+  background:#fff var(--site-bg-image) top center/100% auto no-repeat!important; }}
 .hero-wrap {{ display:grid; grid-template-columns:1fr; gap:20px; padding:28px 24px 36px; }}
 .hero h1 {{ margin:0; font-family:"Playfair Display",Georgia,serif; font-size:clamp(28px,4vw,48px); color:#08263b; }}
 .cards-grid {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:18px; }}

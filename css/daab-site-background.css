@@ -1,14 +1,14 @@
 /**
  * Site-wide page background — same diaspora image + light scrim as hero headers.
- * Applied on body (all shell pages). Language gateway (.daab-gateway) is excluded.
+ * Applied on body for all pages (including language gateway).
  */
 
-body:not(.daab-gateway) {
+body {
   background-color: var(--color-surface-news, #f5fbff);
 }
 
 /* Fixed layer: photo pattern + soft vertical wash for readable body text */
-body:not(.daab-gateway)::before {
+body::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -23,7 +23,7 @@ body:not(.daab-gateway)::before {
       rgba(245, 251, 255, 0.86) 62%,
       rgba(238, 248, 255, 0.94) 100%
     ),
-    var(--site-bg-image, url("../images/diaspor-body-top-bg.jpg"));
+    var(--site-bg-image, url("../images/diaspor-body-top-bg.png"));
   background-position: top center, top center;
   background-size: 100% auto, 100% auto;
   background-repeat: no-repeat, no-repeat;
@@ -31,7 +31,7 @@ body:not(.daab-gateway)::before {
 }
 
 /* Top fade — matches hero ::after treatment */
-body:not(.daab-gateway)::after {
+body::after {
   content: "";
   position: fixed;
   inset: 0;
@@ -42,18 +42,18 @@ body:not(.daab-gateway)::after {
   mask-image: linear-gradient(to bottom, #000 0%, transparent 42%);
 }
 
-body:not(.daab-gateway) > header,
-body:not(.daab-gateway) > main,
-body:not(.daab-gateway) > footer,
-body:not(.daab-gateway) .content-wrap,
-body:not(.daab-gateway) > #daab-chrome-spacer {
+body > header,
+body > main,
+body > footer,
+body .content-wrap,
+body > #daab-chrome-spacer {
   position: relative;
   z-index: 1;
 }
 
 @media (max-width: 900px) {
-  body:not(.daab-gateway)::before,
-  body:not(.daab-gateway)::after {
+  body::before,
+  body::after {
     position: absolute;
     min-height: 100%;
     background-attachment: scroll, scroll;
@@ -61,7 +61,7 @@ body:not(.daab-gateway) > #daab-chrome-spacer {
 }
 
 @media (prefers-reduced-transparency: reduce) {
-  body:not(.daab-gateway)::before {
+  body::before {
     background-image: linear-gradient(
       180deg,
       #f8fcff 0%,
@@ -69,7 +69,7 @@ body:not(.daab-gateway) > #daab-chrome-spacer {
     );
   }
 
-  body:not(.daab-gateway)::after {
+  body::after {
     display: none;
   }
 }

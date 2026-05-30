@@ -14,7 +14,7 @@ html[data-daab-page-id^="forum-"]{
 }html[data-daab-page-id^="forum-"] .forum-hero{
   position: relative;
   overflow: hidden;
-  background: var(--white) url("../images/diaspor-body-top-bg.jpg") top center/100% auto no-repeat;
+  background: var(--white) var(--site-bg-image) top center/100% auto no-repeat;
   color: var(--forum-ink);
 }html[data-daab-page-id^="forum-"] .forum-hero::before{
   content: "";

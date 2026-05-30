@@ -8,7 +8,7 @@ html[data-daab-page-id="mission"] .hero,
   position: relative;
   overflow: hidden;
   color: var(--ink) !important;
-  background: var(--white) url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
+  background: var(--white) var(--site-bg-image) top center / 100% auto no-repeat !important;
 }html[data-daab-page-id="foundation"] .hero::before,
 html[data-daab-page-id="mission"] .hero::before,
 .membership-page .hero::before{

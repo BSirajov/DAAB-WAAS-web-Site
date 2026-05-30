@@ -13,7 +13,7 @@ html[data-daab-page-id="executive-board"]{
   position: relative;
   overflow: hidden;
   color: var(--ink);
-  background: var(--white) url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat;
+  background: var(--white) var(--site-bg-image) top center / 100% auto no-repeat;
 }html[data-daab-page-id="executive-board"] .hero::before{
   content: "";
   position: absolute;

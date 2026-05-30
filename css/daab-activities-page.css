@@ -497,7 +497,7 @@ li{
   color: var(--ink) !important;
 }.page-hero{
   color: var(--ink) !important;
-  background: var(--white) url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
+  background: var(--white) var(--site-bg-image) top center / 100% auto no-repeat !important;
   border-bottom: 1px solid var(--color-border-blue-10) !important;
 }.page-hero::before{
   background: var(--color-hero-scrim) !important;
@@ -613,7 +613,7 @@ li{
   overflow: hidden !important;
   color: var(--ink) !important;
   text-align: left !important;
-  background: var(--white) url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
+  background: var(--white) var(--site-bg-image) top center / 100% auto no-repeat !important;
   border-bottom: 0 !important;
   box-shadow: none !important;
 }.page-hero::before{

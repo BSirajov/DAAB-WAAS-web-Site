@@ -15,7 +15,7 @@
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
   color: var(--ink);
-  background: #d8e8f4;
+  background: transparent;
   line-height: 1.45;
 }.membership-flyer-main{
   padding: 0;

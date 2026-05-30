@@ -31,7 +31,7 @@ html[data-daab-page-id="forum-video-gallery"] body,
 html[data-daab-page-id="forum-rector-speeches"] body,
 html[data-daab-page-id="forum-anas-leadership-speeches"] body{
   color: var(--ink) !important;
-  background: #fff url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
+  background: #fff var(--site-bg-image) top center / 100% auto no-repeat !important;
 }html[data-daab-page-id="forum-official"] .page-hero,
 html[data-daab-page-id="forum-2024-presentations"] .page-hero,
 html[data-daab-page-id="forum-program"] .page-hero,
@@ -46,7 +46,7 @@ html[data-daab-page-id="forum-anas-leadership-speeches"] .page-hero{
   position: relative;
   overflow: hidden;
   color: var(--ink) !important;
-  background: #fff url("../images/diaspor-body-top-bg.jpg") top center / 100% auto no-repeat !important;
+  background: #fff var(--site-bg-image) top center / 100% auto no-repeat !important;
   border-bottom: 1px solid rgba(0, 105, 180, 0.1) !important;
 }html[data-daab-page-id="forum-official"] .page-hero::before,
 html[data-daab-page-id="forum-2024-presentations"] .page-hero::before,
