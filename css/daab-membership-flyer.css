@@ -313,13 +313,14 @@
  */
 #daab-flyer-export-stage{
   position: fixed;
-  left: -12000px;
+  left: 0;
   top: 0;
   width: 794px;
-  z-index: -1;
+  max-width: 794px;
+  z-index: 2147483000;
   pointer-events: none;
   overflow: visible;
-  opacity: 1;
+  opacity: 0.01;
   background: #fff;
 }#daab-flyer-export-stage .flyer-sheet--pdf-export{
   --flyer-fs: 1.26;

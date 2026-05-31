@@ -9,9 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
-<link href="../css/daab-common.css?v=53" rel="stylesheet"/>
+<link href="../css/daab-common.css?v=55" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=12" rel="stylesheet"/>
-<link href="../css/daab-sticky-chrome.css?v=1" rel="stylesheet"/>
 <link href="../css/daab-search.css?v=4" rel="stylesheet"/>
 <link href="../css/daab-back-to-top.css?v=2" rel="stylesheet"/>
 <link href="../css/daab-lang.css?v=12" rel="stylesheet"/>
@@ -19,14 +18,13 @@
 <link href="../css/daab-content-hero.css?v=4" rel="stylesheet"/>
 <link href="../css/daab-hero-summary.css?v=11" rel="stylesheet"/>
 <link href="../css/daab-tokens.css?v=1" rel="stylesheet"/>
-<link href="../css/daab-membership-flyer.css?v=17" rel="stylesheet"/>
+<link href="../css/daab-membership-flyer.css?v=26" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
-<script src="../js/daab-sticky-chrome.js?v=1" defer></script>
 <script src="../js/daab-back-to-top.js?v=3" defer></script>
 <script src="../js/daab-i18n.js?v=18" defer></script>
 <script src="../js/daab-lang-position.js?v=7" defer></script>
 <script src="../js/daab-design-tokens.js?v=1" defer></script>
-<script src="../js/daab-nav.js?v=21" defer></script>
+<script src="../js/daab-nav.js?v=23" defer></script>
 <script src="../js/daab-primary-nav.js?v=17" defer></script>
 <script src="../js/daab-breadcrumbs.js?v=14" defer></script>
 <script src="../js/daab-section-nav.js?v=18" defer></script>
@@ -53,9 +51,7 @@
 <aside aria-label="Invite colleagues with the flyer" class="hero-panel">
 <div class="panel-card">
 <h2 class="panel-title">Invite colleagues with the flyer</h2>
-<div class="panel-copy">
-<p class="panel-copy-lead">A ready-to-share flyer summarizing the value of WAAS membership; save as PDF, print or share by email using the buttons at the top right of the flyer.</p>
-</div>
+<p class="panel-copy">This page provides a ready-to-share flyer summarizing WAAS membership value. Use the buttons at the top right of the flyer to save a PDF, print, or share by email.</p>
 </div>
 </aside>
 </div>
@@ -75,7 +71,6 @@
 <div class="flyer-wrap">
 <div class="flyer-page-controls" role="toolbar" aria-label="Flyer actions" data-flyer-export-exclude="1">
 <button type="button" class="flyer-btn flyer-btn-primary" id="flyerPrintPdfBtn" title="Open the browser print dialog and choose Save as PDF." aria-label="Open the browser print dialog and choose Save as PDF.">Print / PDF</button>
-<button type="button" class="flyer-btn" id="flyerSendEmailBtn" title="Download the flyer as a PDF and open an email draft to share it." aria-label="Download the flyer as a PDF and open an email draft to share it.">Share</button>
 </div>
 <article class="flyer-sheet" aria-label="WAAS — Membership flyer">
 <header class="flyer-header">
@@ -126,7 +121,9 @@ WAAS offers young scientists access to an international academic environment.
 </article>
 </div>
 </main>
-<script>window.DAAB_FLYER_EMAIL = {"subject": "Join the World Association of Azerbaijani Scientists (WAAS)", "body": "Dear colleague,\n\nI would like to invite you to join the World Association of Azerbaijani Scientists (WAAS).\n\nLearn more: https://daab-waas.com/en/membership_value.html\nApply online: https://daab-waas.com/en/application.html\n\nPlease attach the membership flyer PDF that was just downloaded to this email.\n\nBest regards,\n[Your name]", "pdfFilename": "WAAS-membership-flyer.pdf", "busyLabel": "Preparing PDF…", "errorAlert": "Could not create the PDF. Opening email — you can save the flyer via Print / PDF and attach it."};</script>
-<script src="../js/daab-membership-flyer-email.js?v=1" defer></script>
+<script src="../js/vendor/html2canvas.min.js"></script>
+<script src="../js/vendor/jspdf.umd.min.js"></script>
+<script>window.DAAB_FLYER_EMAIL = {"subject": "Join the World Association of Azerbaijani Scientists (WAAS)", "body": "Dear colleague,\n\nI would like to invite you to join the World Association of Azerbaijani Scientists (WAAS).\n\nLearn more: https://daab-waas.com/en/membership_value.html\nApply online: https://daab-waas.com/en/application.html\n\nPlease attach the membership flyer PDF that was just downloaded to this email.\n\nBest regards,\n[Your name]", "pdfFilename": "WAAS-membership-flyer.pdf", "busyLabel": "Preparing PDF…", "errorAlert": "Could not create the PDF. Please try again.", "printFallbackAlert": "The PDF was downloaded. Open it and choose Print, or Save as PDF in the print dialog.", "printErrorAlert": "Could not prepare the flyer PDF for printing.", "shareReadyConfirm": "PDF ready. Open the system sharing menu?", "shareSecureContextAlert": "Sharing requires a secure connection (HTTPS). The PDF was downloaded instead.", "shareFallbackAlert": "The PDF was downloaded. Share it from your Files or Downloads folder via WhatsApp, email, or another app."};</script>
+<script src="../js/daab-membership-flyer-email.js?v=27" defer></script>
 </body>
 </html>

@@ -8,8 +8,7 @@
   scroll-behavior: smooth;
   overflow-x: clip;
   --daab-nav-logo-diameter: 68px;
-  /* Home nav QR: 90% of circular logo image diameter */
-  --daab-nav-qr-side: calc(var(--daab-nav-logo-diameter) * 0.9);
+  --daab-footer-qr-side: 56px;
 }body{
   margin: 0;
   min-height: 100vh;
@@ -179,33 +178,6 @@ article.charter-card[id],
   line-height: 1.2 !important;
   letter-spacing: .015em !important;
   text-align: center !important;
-}.nav-brand-block{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
-  flex: 0 1 auto;
-}.nav-brand-block > .nav-brand{
-  flex: 1 1 auto;
-  min-width: 0;
-}.nav-brand-qr-link{
-  display: block;
-  flex: 0 0 auto;
-  line-height: 0;
-  padding: 3px;
-  background: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 45, 82, .18);
-  text-decoration: none;
-}.nav-brand-qr-link:focus-visible{
-  outline: 2px solid rgba(255, 255, 255, .95);
-  outline-offset: 2px;
-}.nav-brand-qr-img{
-  display: block;
-  width: var(--daab-nav-qr-side);
-  height: var(--daab-nav-qr-side);
-  object-fit: contain;
-  border-radius: 4px;
 }.nav-divider{
   flex: 0 0 auto !important;
   width: 1px !important;
@@ -643,6 +615,42 @@ button,
   color: rgba(255, 255, 255, .84) !important;
   font-size: 13px !important;
   text-align: center !important;
+}.footer-col--contact{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}.footer-contact-layout{
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px 14px;
+  max-width: 100%;
+  transform: translateX(-6px);
+}.footer-contact-details{
+  flex: 0 1 auto;
+  min-width: 0;
+  text-align: center;
+}.footer-home-qr{
+  flex: 0 0 auto;
+  margin: 0 !important;
+  align-self: center;
+}.footer-home-qr-link{
+  display: block;
+  line-height: 0;
+  padding: 2px;
+  background: var(--white);
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 45, 82, .16);
+  text-decoration: none;
+}.footer-home-qr-link:focus-visible{
+  outline: 2px solid rgba(255, 255, 255, .95);
+  outline-offset: 2px;
+}.footer-home-qr-img{
+  display: block;
+  width: var(--daab-footer-qr-side, 56px);
+  height: var(--daab-footer-qr-side, 56px);
+  object-fit: contain;
+  border-radius: 3px;
 }.footer-item a,
 .footer-address a{
   color: var(--white) !important;
@@ -694,13 +702,6 @@ button,
   }
 
   /* Label/kbd + compact pill: css/daab-search.css */
-}
-
-@media (max-width: 1220px) and (min-width: 1181px) {.nav-brand-block{
-    display: none !important;
-  }.nav-menu{
-    justify-content: center !important;
-  }
 }
 
 @media (max-width: 1180px) {html{
@@ -886,7 +887,8 @@ button,
     width: 44px !important;
     min-width: 44px !important;
     height: 44px !important;
-  }.nav-brand-block{
+  }.nav-brand-block,
+  .nav-inner > .nav-brand{
     grid-area: title;
     justify-self: center;
     align-self: start;
@@ -898,7 +900,8 @@ button,
     gap: 8px;
     padding: 0 4px;
     box-sizing: border-box;
-  }.nav-brand{
+  }.nav-brand-block > .nav-brand,
+  .nav-inner > .nav-brand{
     position: static !important;
     display: flex !important;
     flex-direction: column !important;
@@ -912,9 +915,6 @@ button,
     box-sizing: border-box !important;
     transform: none !important;
     text-decoration: none !important;
-  }.nav-brand-qr-link{
-    padding: 2px;
-    border-radius: 6px;
   }.nav-brand-text{
     display: block !important;
     overflow: hidden !important;
@@ -948,8 +948,19 @@ button,
   }
 }
 
+@media (max-width: 520px) {
+  .footer-contact-layout{
+    transform: none;
+    flex-direction: column;
+    gap: 10px;
+  }.footer-home-qr{
+    transform: translateX(-8px);
+  }
+}
+
 @media (max-width: 420px) {html{
     --daab-nav-logo-diameter: 36px;
+    --daab-footer-qr-side: 48px;
   }.shell,
   .main{
     padding-left: 14px;
@@ -965,55 +976,6 @@ button,
     width: 36px !important;
     min-width: 36px !important;
     height: 36px !important;
-  }
-}
-
-/* Home-page nav QR — beside org name on wide screens; under logo on tablet; under hamburger on mobile (js/daab-nav.js) */
-@media (max-width: 1220px) and (min-width: 1181px) {
-  .page-logo.nav-logo-has-qr {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 4px;
-    margin-right: 0 !important;
-  }
-
-  .page-logo.nav-logo-has-qr > a:first-child {
-    flex: 0 0 auto;
-  }
-}
-
-@media (max-width: 1180px) {
-  .nav-toggle-stack {
-    grid-area: toggle;
-    grid-row: 1 / -1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 4px;
-    align-self: start;
-    justify-self: start;
-    min-width: 44px;
-  }
-
-  .nav-toggle-stack .mobile-menu-toggle {
-    grid-area: unset !important;
-    grid-row: unset !important;
-    flex: 0 0 auto;
-  }
-
-  .nav-toggle-stack.nav-toggle-has-qr .nav-brand-qr-link {
-    flex: 0 0 auto;
-    padding: 2px;
-    border-radius: 6px;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-brand-qr-link {
-    display: none !important;
   }
 }
 

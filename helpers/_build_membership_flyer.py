@@ -78,15 +78,25 @@ LOCALES = {
         "print_btn": "Çap / PDF",
         "print_tooltip": "Brauzerin çap pəncərəsini açın və «PDF kimi yadda saxla» seçin.",
         "email_btn": "Paylaş",
-        "share_tooltip": "Flyeri PDF kimi yükləyin və hazır e-poçt mesajı ilə paylaşın.",
+        "share_tooltip": "PDF yaradın və cihazın sistem paylaşma menyusunda tətbiq seçərək paylaşın.",
         "email_subject": "Dünya Azərbaycanlı Alimlər Birliyinə üzv olun",
         "email_pdf_filename": "DAAB-uzvluk-flyeri.pdf",
         "email_busy": "PDF hazırlanır…",
         "email_attach_note": (
             "Bu e-poçta yüklənmiş PDF flyer faylını əlavə edin."
         ),
-        "email_error": (
-            "PDF yaradıla bilmədi. E-poçt açılır; flyerı «Çap / PDF» ilə saxlayıb əlavə edə bilərsiniz."
+        "email_error": "PDF yaradıla bilmədi. Yenidən cəhd edin.",
+        "print_fallback_alert": (
+            "PDF yükləndi. Faylı açın və «Çap» → «PDF kimi yadda saxla» seçin."
+        ),
+        "print_error_alert": "Flyer PDF-i çap üçün hazırlanmadı.",
+        "share_fallback_alert": (
+            "PDF yükləndi. Faylı «Fayllar» və ya «Endirmələr» qovluğundan WhatsApp, e-poçt və "
+            "digər tətbiqlərlə paylaşa bilərsiniz."
+        ),
+        "share_ready_confirm": "PDF hazırdır. Sistem paylaşma menyusunu açmaq istəyirsiniz?",
+        "share_secure_context_alert": (
+            "Paylaşma təhlükəsiz bağlantı (HTTPS) tələb edir. PDF endirildi."
         ),
         "org": "Dünya Azərbaycanlı Alimlər Birliyi",
         "brand_short": "DAAB",
@@ -149,15 +159,25 @@ LOCALES = {
         "print_btn": "Print / PDF",
         "print_tooltip": "Open the browser print dialog and choose Save as PDF.",
         "email_btn": "Share",
-        "share_tooltip": "Download the flyer as a PDF and open an email draft to share it.",
+        "share_tooltip": "Generate PDF and share via your device's native sharing apps.",
         "email_subject": "Join the World Association of Azerbaijani Scientists (WAAS)",
         "email_pdf_filename": "WAAS-membership-flyer.pdf",
         "email_busy": "Preparing PDF…",
         "email_attach_note": (
             "Please attach the membership flyer PDF that was just downloaded to this email."
         ),
-        "email_error": (
-            "Could not create the PDF. Opening email — you can save the flyer via Print / PDF and attach it."
+        "email_error": "Could not create the PDF. Please try again.",
+        "print_fallback_alert": (
+            "The PDF was downloaded. Open it and choose Print, or Save as PDF in the print dialog."
+        ),
+        "print_error_alert": "Could not prepare the flyer PDF for printing.",
+        "share_fallback_alert": (
+            "The PDF was downloaded. Share it from your Files or Downloads folder via WhatsApp, "
+            "email, or another app."
+        ),
+        "share_ready_confirm": "PDF ready. Open the system sharing menu?",
+        "share_secure_context_alert": (
+            "Sharing requires a secure connection (HTTPS). The PDF was downloaded instead."
         ),
         "org": "World Association of Azerbaijani Scientists",
         "brand_short": "WAAS",
@@ -341,10 +361,19 @@ def email_page_scripts(cfg: dict, lang: str) -> str:
         "pdfFilename": cfg["email_pdf_filename"],
         "busyLabel": cfg["email_busy"],
         "errorAlert": cfg["email_error"],
+        "printFallbackAlert": cfg["print_fallback_alert"],
+        "printErrorAlert": cfg["print_error_alert"],
+        "shareReadyConfirm": cfg["share_ready_confirm"],
+        "shareSecureContextAlert": cfg["share_secure_context_alert"],
+        "shareFallbackAlert": cfg["share_fallback_alert"],
     }
     data = json.dumps(payload, ensure_ascii=False)
-    return f"""<script>window.DAAB_FLYER_EMAIL = {data};</script>
-<script src="{ASSET}js/daab-membership-flyer-email.js?v=6" defer></script>"""
+    js_v = SCRIPT_VERSIONS["daab-membership-flyer-email.js"]
+    vendor = f'{ASSET}js/vendor'
+    return f"""<script src="{vendor}/html2canvas.min.js"></script>
+<script src="{vendor}/jspdf.umd.min.js"></script>
+<script>window.DAAB_FLYER_EMAIL = {data};</script>
+<script src="{ASSET}js/daab-membership-flyer-email.js?v={js_v}" defer></script>"""
 
 
 def build_locale(key: str) -> None:
@@ -389,7 +418,6 @@ def build_locale(key: str) -> None:
 <div class="flyer-wrap">
 <div class="flyer-page-controls" role="toolbar" aria-label="{esc(cfg["controls_aria"])}" data-flyer-export-exclude="1">
 <button type="button" class="flyer-btn flyer-btn-primary" id="flyerPrintPdfBtn" title="{esc(cfg["print_tooltip"])}" aria-label="{esc(cfg["print_tooltip"])}">{esc(cfg["print_btn"])}</button>
-<button type="button" class="flyer-btn" id="flyerSendEmailBtn" title="{esc(cfg["share_tooltip"])}" aria-label="{esc(cfg["share_tooltip"])}">{esc(cfg["email_btn"])}</button>
 </div>
 <article class="flyer-sheet" aria-label="{esc(cfg["title"])}">
 <header class="flyer-header">

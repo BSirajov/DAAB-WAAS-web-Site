@@ -1,56 +1,22 @@
 /**
- * Membership flyer — generate PDF and open email client with invitation text.
- * PDF: off-screen A4 clone → html2canvas → jsPDF (fit entire page, no crop).
+ * Membership flyer — PDF export (Print/Share).
+ * Requires html2canvas + jsPDF loaded via static <script> tags in membership_flyer.html.
  */
 (function () {
   "use strict";
 
-  var HTML2CANVAS_URL =
-    "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
-  var JSPDF_URL =
-    "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
-
-  /* 210 mm at 96 CSS px/in — stable capture width across browsers */
   var A4_WIDTH_PX = Math.round((210 / 25.4) * 96);
-  var A4_HEIGHT_PX = Math.round((297 / 25.4) * 96);
   var PDF_CAPTURE_SCALE = 2;
+  var EXPORT_CLASS = "flyer-sheet--pdf-export";
+  var exportBusy = false;
+  var pendingShareBlob = null;
 
-  function loadScript(url, id) {
-    return new Promise(function (resolve, reject) {
-      var existing = document.querySelector('script[data-daab-lib="' + id + '"]');
-      if (existing) {
-        if (existing.getAttribute("data-daab-loaded") === "1") {
-          resolve();
-          return;
-        }
-        existing.addEventListener("load", function () {
-          resolve();
-        });
-        existing.addEventListener("error", reject);
-        return;
-      }
-      var script = document.createElement("script");
-      script.src = url;
-      script.defer = true;
-      script.setAttribute("data-daab-lib", id);
-      script.onload = function () {
-        script.setAttribute("data-daab-loaded", "1");
-        resolve();
-      };
-      script.onerror = function () {
-        reject(new Error("Could not load " + id));
-      };
-      document.head.appendChild(script);
-    });
+  function getFlyerCfg() {
+    return window.DAAB_FLYER_EMAIL || {};
   }
 
-  function loadPdfLibs() {
-    if (window.html2canvas && getJsPDFConstructor()) {
-      return Promise.resolve();
-    }
-    return loadScript(HTML2CANVAS_URL, "html2canvas").then(function () {
-      return loadScript(JSPDF_URL, "jspdf");
-    });
+  function getFlyerExportRoot() {
+    return document.querySelector(".flyer-sheet");
   }
 
   function getJsPDFConstructor() {
@@ -59,61 +25,31 @@
     return null;
   }
 
-  var EXPORT_CHROME_SELECTORS = [
-    ".flyer-page-controls",
-    "[data-flyer-export-exclude='1']",
-    "#daab-breadcrumbs",
-    "nav.daab-breadcrumbs",
-    ".daab-breadcrumbs"
-  ];
-
-  function getFlyerExportRoot() {
-    return document.querySelector(".flyer-sheet");
+  function libsReady() {
+    return !!(window.html2canvas && getJsPDFConstructor());
   }
 
-  function hideExportChrome() {
-    var hidden = [];
-    var seen = new Set();
-    EXPORT_CHROME_SELECTORS.forEach(function (selector) {
-      document.querySelectorAll(selector).forEach(function (el) {
-        if (seen.has(el)) return;
-        seen.add(el);
-        hidden.push({ el: el, visibility: el.style.getPropertyValue("visibility") });
-        el.style.setProperty("visibility", "hidden");
+  function fail(message) {
+    return new Error(message);
+  }
+
+  function wait(ms) {
+    return new Promise(function (resolve) {
+      window.setTimeout(resolve, ms);
+    });
+  }
+
+  function waitForLayout() {
+    return new Promise(function (resolve) {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(resolve);
       });
     });
-    return hidden;
-  }
-
-  function restoreExportChrome(hidden) {
-    if (!hidden || !hidden.length) return;
-    hidden.forEach(function (item) {
-      if (!item.el) return;
-      if (item.visibility) {
-        item.el.style.setProperty("visibility", item.visibility);
-      } else {
-        item.el.style.removeProperty("visibility");
-      }
-    });
-  }
-
-  var activeExportChromeHide = null;
-
-  function beginExportChromeHide() {
-    if (activeExportChromeHide) return activeExportChromeHide;
-    activeExportChromeHide = hideExportChrome();
-    return activeExportChromeHide;
-  }
-
-  function endExportChromeHide() {
-    if (!activeExportChromeHide) return;
-    restoreExportChrome(activeExportChromeHide);
-    activeExportChromeHide = null;
   }
 
   function waitForFonts() {
     if (document.fonts && document.fonts.ready) {
-      return document.fonts.ready;
+      return Promise.race([document.fonts.ready, wait(8000)]);
     }
     return Promise.resolve();
   }
@@ -131,47 +67,48 @@
     );
   }
 
-  function waitForLayout() {
-    return new Promise(function (resolve) {
-      requestAnimationFrame(function () {
-        requestAnimationFrame(resolve);
+  var EXPORT_CHROME_SELECTORS = [
+    "#daab-breadcrumbs",
+    "nav.daab-breadcrumbs",
+    ".daab-breadcrumbs"
+  ];
+
+  var activeExportChromeHide = null;
+
+  function hideExportChrome() {
+    var hidden = [];
+    var seen = new Set();
+    EXPORT_CHROME_SELECTORS.forEach(function (selector) {
+      document.querySelectorAll(selector).forEach(function (el) {
+        if (seen.has(el)) return;
+        seen.add(el);
+        hidden.push({ el: el, visibility: el.style.getPropertyValue("visibility") });
+        el.style.setProperty("visibility", "hidden");
       });
     });
+    return hidden;
   }
 
-  function createExportStage(sourceSheet) {
-    var existing = document.getElementById("daab-flyer-export-stage");
-    if (existing) existing.remove();
-
-    var stage = document.createElement("div");
-    stage.id = "daab-flyer-export-stage";
-    stage.setAttribute("aria-hidden", "true");
-
-    var clone = sourceSheet.cloneNode(true);
-    clone.removeAttribute("id");
-    clone.classList.add("flyer-sheet--pdf-export");
-    stage.appendChild(clone);
-    document.body.appendChild(stage);
-
-    return { stage: stage, sheet: clone };
-  }
-
-  function removeExportStage(stage) {
-    if (stage && stage.parentNode) stage.parentNode.removeChild(stage);
-  }
-
-  function readBlobAsDataUrl(blob) {
-    return new Promise(function (resolve, reject) {
-      var reader = new FileReader();
-      reader.onload = function () {
-        resolve(reader.result);
-      };
-      reader.onerror = reject;
-      reader.readAsDataURL(blob);
+  function restoreExportChrome(hidden) {
+    if (!hidden) return;
+    hidden.forEach(function (item) {
+      if (!item.el) return;
+      if (item.visibility) item.el.style.setProperty("visibility", item.visibility);
+      else item.el.style.removeProperty("visibility");
     });
   }
 
-  /** Copy pixels from the on-screen flyer (works when CORS was satisfied at load time). */
+  function beginExportChromeHide() {
+    if (!activeExportChromeHide) activeExportChromeHide = hideExportChrome();
+    return activeExportChromeHide;
+  }
+
+  function endExportChromeHide() {
+    if (!activeExportChromeHide) return;
+    restoreExportChrome(activeExportChromeHide);
+    activeExportChromeHide = null;
+  }
+
   function copyLoadedImagesFromSource(cloneRoot, sourceRoot) {
     var cloneImgs = cloneRoot.querySelectorAll("img");
     var sourceImgs = sourceRoot.querySelectorAll("img");
@@ -186,56 +123,72 @@
         cloneImg.src = canvas.toDataURL("image/png");
         cloneImg.removeAttribute("crossorigin");
       } catch (err) {
-        console.warn("[daab-membership-flyer-email] copyLoadedImagesFromSource:", err);
+        console.warn("[daab-membership-flyer-email] image copy:", err);
       }
     });
   }
 
-  /** Inline cross-origin images so html2canvas can paint them without tainting. */
-  async function inlineExternalImages(root) {
-    var imgs = root.querySelectorAll("img");
-    var tasks = Array.prototype.map.call(imgs, async function (img) {
-      var src = img.getAttribute("src") || "";
-      if (!src || src.indexOf("data:") === 0) return;
+  function createExportClone(sourceSheet) {
+    var existing = document.getElementById("daab-flyer-export-stage");
+    if (existing) existing.remove();
 
-      try {
-        var response = await fetch(src, { mode: "cors", credentials: "omit" });
-        if (!response.ok) throw new Error("HTTP " + response.status);
-        var blob = await response.blob();
-        img.src = await readBlobAsDataUrl(blob);
-        img.removeAttribute("crossorigin");
-      } catch (err) {
-        console.warn("[daab-membership-flyer-email] Could not inline image:", src, err);
-      }
-    });
-    await Promise.all(tasks);
+    var stage = document.createElement("div");
+    stage.id = "daab-flyer-export-stage";
+    stage.setAttribute("aria-hidden", "true");
+
+    var clone = sourceSheet.cloneNode(true);
+    clone.removeAttribute("id");
+    clone.classList.add(EXPORT_CLASS);
+    copyLoadedImagesFromSource(clone, sourceSheet);
+    stage.appendChild(clone);
+    document.body.appendChild(stage);
+    return { stage: stage, sheet: clone };
   }
 
-  async function captureExportCanvas(exportSheet) {
-    if (!window.html2canvas) {
-      throw new Error("html2canvas not available after library load");
-    }
+  function removeExportStage(stage) {
+    if (stage && stage.parentNode) stage.parentNode.removeChild(stage);
+  }
 
-    var captureHeight = Math.max(exportSheet.scrollHeight, exportSheet.offsetHeight, 1);
+  function measureSheet(sheet) {
+    sheet.style.setProperty("height", "auto", "important");
+    sheet.style.setProperty("overflow", "visible", "important");
+    return {
+      width: Math.max(sheet.offsetWidth, sheet.scrollWidth, A4_WIDTH_PX),
+      height: Math.max(sheet.scrollHeight, sheet.offsetHeight, sheet.getBoundingClientRect().height, 1)
+    };
+  }
 
-    return window.html2canvas(exportSheet, {
+  function captureSheet(sheet, opts) {
+    var dims = measureSheet(sheet);
+    return window.html2canvas(sheet, {
       scale: PDF_CAPTURE_SCALE,
       useCORS: true,
-      allowTaint: false,
+      allowTaint: !!(opts && opts.allowTaint),
       logging: false,
       backgroundColor: "#ffffff",
       scrollX: 0,
       scrollY: 0,
-      windowWidth: Math.max(A4_WIDTH_PX + 160, 1200),
-      windowHeight: Math.max(captureHeight + 200, A4_HEIGHT_PX)
+      width: dims.width,
+      height: dims.height,
+      windowWidth: dims.width,
+      windowHeight: dims.height + 32,
+      x: 0,
+      y: 0
     });
+  }
+
+  async function captureExportCanvas(exportSheet) {
+    try {
+      return await captureSheet(exportSheet, { allowTaint: false });
+    } catch (err) {
+      console.warn("[daab-membership-flyer-email] strict capture failed, retrying:", err);
+      return captureSheet(exportSheet, { allowTaint: true });
+    }
   }
 
   function canvasToA4PdfBlob(canvas) {
     var JsPDF = getJsPDFConstructor();
-    if (!JsPDF) {
-      throw new Error("jsPDF not available after library load");
-    }
+    if (!JsPDF) throw fail("jsPDF library is not loaded.");
 
     var pdf = new JsPDF({
       unit: "mm",
@@ -246,37 +199,52 @@
 
     var pageW = pdf.internal.pageSize.getWidth();
     var pageH = pdf.internal.pageSize.getHeight();
-
     var cssW = canvas.width / PDF_CAPTURE_SCALE;
     var cssH = canvas.height / PDF_CAPTURE_SCALE;
     var imgWmm = (cssW * 25.4) / 96;
     var imgHmm = (cssH * 25.4) / 96;
-
-    /* Fit entire capture on one A4 page (contain — never crop sides or bottom) */
     var fit = Math.min(pageW / imgWmm, pageH / imgHmm);
     var drawW = imgWmm * fit;
     var drawH = imgHmm * fit;
-    var offsetX = (pageW - drawW) / 2;
-    var offsetY = (pageH - drawH) / 2;
 
-    var imgData = canvas.toDataURL("image/jpeg", 0.98);
-    pdf.addImage(imgData, "JPEG", offsetX, offsetY, drawW, drawH, undefined, "FAST");
+    pdf.addImage(
+      canvas.toDataURL("image/jpeg", 0.98),
+      "JPEG",
+      (pageW - drawW) / 2,
+      (pageH - drawH) / 2,
+      drawW,
+      drawH,
+      undefined,
+      "FAST"
+    );
 
     return pdf.output("blob");
   }
 
   async function generatePdfBlob(sourceSheet) {
-    await loadPdfLibs();
-    await waitForFonts();
+    if (!libsReady()) {
+      throw fail(
+        "PDF libraries failed to load. Check that js/vendor/html2canvas.min.js and js/vendor/jspdf.umd.min.js are deployed."
+      );
+    }
 
-    var stageRef = createExportStage(sourceSheet);
+    await waitForFonts();
+    var stageRef = createExportClone(sourceSheet);
     try {
-      copyLoadedImagesFromSource(stageRef.sheet, sourceSheet);
-      await inlineExternalImages(stageRef.sheet);
       await waitForImages(stageRef.sheet);
       await waitForLayout();
+      await wait(150);
+      await waitForLayout();
+
+      var dims = measureSheet(stageRef.sheet);
+      if (dims.height < 200) {
+        throw fail("Flyer layout was not ready for export (height=" + dims.height + ").");
+      }
 
       var canvas = await captureExportCanvas(stageRef.sheet);
+      if (!canvas || canvas.width < 10 || canvas.height < 10) {
+        throw fail("PDF capture returned an empty image.");
+      }
       return canvasToA4PdfBlob(canvas);
     } finally {
       removeExportStage(stageRef.stage);
@@ -287,80 +255,194 @@
     var url = URL.createObjectURL(blob);
     var link = document.createElement("a");
     link.href = url;
-    link.download = filename;
+    link.download = filename || "flyer.pdf";
+    link.style.display = "none";
     document.body.appendChild(link);
     link.click();
     link.remove();
-    setTimeout(function () {
+    window.setTimeout(function () {
       URL.revokeObjectURL(url);
-    }, 120000);
+    }, 180000);
+    return url;
   }
 
-  function printPdfBlob(blob, filename) {
-    return new Promise(function (resolve, reject) {
-      var url = URL.createObjectURL(blob);
-      var iframe = document.createElement("iframe");
-      iframe.setAttribute("title", filename || "Flyer PDF");
-      iframe.style.cssText =
-        "position:fixed;right:0;bottom:0;width:0;height:0;border:0;visibility:hidden;";
-      iframe.src = url;
+  function preparePrintWindow() {
+    var win = window.open("", "_blank");
+    if (!win) return null;
+    try {
+      win.document.title = "Preparing PDF…";
+      win.document.body.style.cssText = "font-family:Arial,sans-serif;padding:24px;";
+      win.document.body.innerHTML = "<p>Preparing flyer PDF for print…</p>";
+    } catch (err) {
+      // Ignore cross-window write issues and continue.
+    }
+    return win;
+  }
 
-      var cleaned = false;
-      function cleanup() {
-        if (cleaned) return;
-        cleaned = true;
-        window.setTimeout(function () {
-          if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
-          URL.revokeObjectURL(url);
-        }, 120000);
-      }
+  function openPdfInPrintWindow(printWin, blob) {
+    if (!printWin || printWin.closed) return false;
+    var url = URL.createObjectURL(blob);
+    try {
+      var doc = printWin.document;
+      doc.open();
+      doc.write(
+        "<!doctype html><html><head><meta charset=\"utf-8\"><title>Flyer PDF</title>" +
+          "<style>html,body{height:100%;margin:0;background:#111}#pdf{width:100%;height:100%;border:0}</style>" +
+          "</head><body><iframe id=\"pdf\" src=\"" +
+          url +
+          "\" title=\"Flyer PDF\"></iframe></body></html>"
+      );
+      doc.close();
 
-      iframe.onload = function () {
+      var printed = false;
+      var triggerPrint = function () {
+        if (printed || printWin.closed) return;
+        printed = true;
         try {
-          var win = iframe.contentWindow;
-          if (!win) throw new Error("Print frame unavailable");
-          win.focus();
-          win.print();
-          resolve();
-          cleanup();
-        } catch (err) {
-          cleanup();
-          var popup = window.open(url, "_blank");
-          if (!popup) {
-            reject(err);
+          var frameWin = frame && frame.contentWindow ? frame.contentWindow : null;
+          if (frameWin) {
+            frameWin.focus();
+            frameWin.print();
             return;
           }
-          popup.onload = function () {
-            popup.focus();
-            popup.print();
-            resolve();
-          };
+          printWin.focus();
+          printWin.print();
+        } catch (err) {
+          console.warn("[daab-membership-flyer-email] print:", err);
         }
       };
+      var frame = doc.getElementById("pdf");
+      if (frame && typeof frame.addEventListener === "function") {
+        frame.addEventListener(
+          "load",
+          function () {
+            // Let built-in PDF viewer settle before opening print dialog.
+            window.setTimeout(triggerPrint, 400);
+          },
+          { once: true }
+        );
+      }
+      // Fallback for browsers where iframe load isn't fired for PDF viewers.
+      window.setTimeout(triggerPrint, 2500);
+      window.setTimeout(function () {
+        URL.revokeObjectURL(url);
+      }, 300000);
+      return true;
+    } catch (err) {
+      console.warn("[daab-membership-flyer-email] print window:", err);
+      try {
+        printWin.close();
+      } catch (closeErr) {
+        // Ignore close failures.
+      }
+      URL.revokeObjectURL(url);
+      return false;
+    }
+  }
 
-      iframe.onerror = function () {
-        cleanup();
-        reject(new Error("Could not load PDF for printing"));
-      };
+  function buildPdfFile(pdfBlob, cfg) {
+    var filename = cfg.pdfFilename || "flyer.pdf";
+    return new File([pdfBlob], filename, { type: "application/pdf" });
+  }
 
-      document.body.appendChild(iframe);
+  function isShareContextSecure() {
+    if (window.isSecureContext) return true;
+    var host = (window.location && window.location.hostname) || "";
+    return host === "localhost" || host === "127.0.0.1" || host === "::1";
+  }
+
+  function canSharePdfFile(pdfFile) {
+    if (!navigator.share || !pdfFile || !isShareContextSecure()) return false;
+    if (typeof navigator.canShare !== "function") return true;
+    try {
+      // Some browsers return false negatives here; we still try navigator.share() next.
+      return navigator.canShare({ files: [pdfFile] });
+    } catch (err) {
+      return true;
+    }
+  }
+
+  async function openNativeShareSheet(pdfFile, cfg) {
+    return navigator.share({
+      title: cfg.subject || "",
+      text: cfg.body || "",
+      files: [pdfFile]
     });
   }
 
-  function openMailto(subject, body) {
-    window.location.href =
-      "mailto:?subject=" +
-      encodeURIComponent(subject) +
-      "&body=" +
-      encodeURIComponent(body);
+  async function sharePdfNative(pdfBlob, cfg) {
+    var filename = cfg.pdfFilename || "flyer.pdf";
+    var pdfFile = buildPdfFile(pdfBlob, cfg);
+    var fallbackMsg =
+      cfg.shareFallbackAlert ||
+      cfg.printFallbackAlert ||
+      "Sharing is not available here. The PDF was downloaded instead.";
+
+    if (!navigator.share) {
+      downloadBlob(pdfBlob, filename);
+      window.alert(fallbackMsg);
+      return;
+    }
+
+    if (!isShareContextSecure()) {
+      downloadBlob(pdfBlob, filename);
+      window.alert(
+        cfg.shareSecureContextAlert ||
+          "Sharing requires a secure connection (HTTPS). The PDF was downloaded instead."
+      );
+      return;
+    }
+
+    try {
+      var shareStarted = Date.now();
+      await openNativeShareSheet(pdfFile, cfg);
+      pendingShareBlob = null;
+      return;
+    } catch (err) {
+      if (err && err.name === "AbortError") {
+        // If sheet opened and user cancelled, stop quietly.
+        if (Date.now() - shareStarted > 500) {
+          pendingShareBlob = null;
+          return;
+        }
+        // Quick AbortError often means user activation expired before sheet opened.
+        pendingShareBlob = pdfBlob;
+        window.alert(
+          cfg.shareReadyConfirm ||
+            "PDF is ready. Tap Share once more to open the system sharing menu."
+        );
+        return;
+      }
+
+      if (err && err.name === "NotAllowedError") {
+        pendingShareBlob = pdfBlob;
+        window.alert(
+          cfg.shareReadyConfirm ||
+            "PDF is ready. Tap Share once more to open the system sharing menu."
+        );
+        return;
+      }
+
+      // canShare false or TypeError may still indicate unsupported file sharing.
+      if (
+        (typeof navigator.canShare === "function" && !canSharePdfFile(pdfFile)) ||
+        (err && (err.name === "TypeError" || err.name === "DataError"))
+      ) {
+        pendingShareBlob = null;
+        downloadBlob(pdfBlob, filename);
+        window.alert(fallbackMsg);
+        return;
+      }
+
+      console.warn("[daab-membership-flyer-email] share:", err);
+      throw err;
+    }
   }
 
   function setButtonBusy(btn, busy, busyLabel) {
     if (!btn) return;
     if (busy) {
-      if (!btn.dataset.daabFlyerLabel) {
-        btn.dataset.daabFlyerLabel = btn.textContent;
-      }
+      if (!btn.dataset.daabFlyerLabel) btn.dataset.daabFlyerLabel = btn.textContent;
       btn.disabled = true;
       btn.classList.add("flyer-btn--busy");
       btn.textContent = busyLabel || btn.dataset.daabFlyerLabel;
@@ -368,120 +450,116 @@
     }
     btn.disabled = false;
     btn.classList.remove("flyer-btn--busy");
-    if (btn.dataset.daabFlyerLabel) {
-      btn.textContent = btn.dataset.daabFlyerLabel;
+    if (btn.dataset.daabFlyerLabel) btn.textContent = btn.dataset.daabFlyerLabel;
+  }
+
+  function showError(cfg, key, err) {
+    console.error("[daab-membership-flyer-email]", err);
+    var msg =
+      cfg[key] ||
+      cfg.errorAlert ||
+      (err && err.message) ||
+      "Could not create the flyer PDF.";
+    window.alert(msg);
+  }
+
+  async function withExportLock(fn) {
+    if (exportBusy) return;
+    exportBusy = true;
+    try {
+      return await fn();
+    } finally {
+      exportBusy = false;
     }
   }
 
   async function sendFlyerEmail() {
-    var cfg = window.DAAB_FLYER_EMAIL;
+    var cfg = getFlyerCfg();
     var btn = document.getElementById("flyerSendEmailBtn");
     var sheet = getFlyerExportRoot();
-    if (!cfg || !btn || !sheet) return;
+    if (!btn || !sheet) return;
 
-    setButtonBusy(btn, true, cfg.busyLabel);
+    if (pendingShareBlob) {
+      var retryBlob = pendingShareBlob;
+      try {
+        await sharePdfNative(retryBlob, cfg);
+      } catch (retryErr) {
+        showError(cfg, "errorAlert", retryErr);
+      }
+      return;
+    }
 
-    beginExportChromeHide();
+    var pdfBlob = null;
+    await withExportLock(async function () {
+      setButtonBusy(btn, true, cfg.busyLabel);
+      try {
+        pdfBlob = await generatePdfBlob(sheet);
+      } catch (err) {
+        showError(cfg, "errorAlert", err);
+      } finally {
+        setButtonBusy(btn, false);
+      }
+    });
+
+    if (!pdfBlob) return;
+
     try {
-      var pdfBlob = await generatePdfBlob(sheet);
-      var pdfFile = new File([pdfBlob], cfg.pdfFilename, { type: "application/pdf" });
-
-      if (navigator.share && navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
-        try {
-          await navigator.share({
-            title: cfg.subject,
-            text: cfg.body,
-            files: [pdfFile]
-          });
-        } catch (shareErr) {
-          if (shareErr && shareErr.name === "AbortError") {
-            return;
-          }
-          throw shareErr;
-        }
-        return;
-      }
-
-      downloadBlob(pdfBlob, cfg.pdfFilename);
-      openMailto(cfg.subject, cfg.body);
+      await sharePdfNative(pdfBlob, cfg);
     } catch (err) {
-      console.error("[daab-membership-flyer-email]", err);
-      if (cfg.errorAlert) {
-        window.alert(cfg.errorAlert);
-      }
-      openMailto(cfg.subject, cfg.body);
-    } finally {
-      endExportChromeHide();
-      setButtonBusy(btn, false);
+      showError(cfg, "errorAlert", err);
     }
   }
 
   async function printFlyerPdf() {
-    var cfg = window.DAAB_FLYER_EMAIL || {};
+    var cfg = getFlyerCfg();
     var btn = document.getElementById("flyerPrintPdfBtn");
     var sheet = getFlyerExportRoot();
     if (!btn || !sheet) return;
 
-    setButtonBusy(btn, true, cfg.busyLabel);
-
-    beginExportChromeHide();
-    try {
-      var pdfBlob = await generatePdfBlob(sheet);
-      await printPdfBlob(pdfBlob, cfg.pdfFilename);
-    } catch (err) {
-      console.error("[daab-membership-flyer-email]", err);
-      window.alert(
-        cfg.printErrorAlert ||
-          cfg.errorAlert ||
-          "Could not prepare the flyer PDF for printing."
-      );
-    } finally {
-      endExportChromeHide();
-      setButtonBusy(btn, false);
-    }
-  }
-
-  function initPrintChromeHandlers() {
-    if (!document.querySelector(".flyer-sheet")) return;
-    if (window.__daabFlyerPrintHandlersInit) return;
-    window.__daabFlyerPrintHandlersInit = true;
-
-    function onBeforePrint() {
+    await withExportLock(async function () {
+      setButtonBusy(btn, true, cfg.busyLabel);
       beginExportChromeHide();
-    }
-
-    function onAfterPrint() {
-      endExportChromeHide();
-    }
-
-    window.addEventListener("beforeprint", onBeforePrint);
-    window.addEventListener("afterprint", onAfterPrint);
-
-    if (window.matchMedia) {
-      var printMq = window.matchMedia("print");
-      var onPrintMq = function (event) {
-        if (event.matches) {
-          onBeforePrint();
-        } else {
-          onAfterPrint();
-        }
+      var cleaned = false;
+      var cleanup = function () {
+        if (cleaned) return;
+        cleaned = true;
+        endExportChromeHide();
+        setButtonBusy(btn, false);
       };
-      if (typeof printMq.addEventListener === "function") {
-        printMq.addEventListener("change", onPrintMq);
-      } else if (typeof printMq.addListener === "function") {
-        printMq.addListener(onPrintMq);
+      var onAfterPrint = function () {
+        window.removeEventListener("afterprint", onAfterPrint);
+        cleanup();
+      };
+      window.addEventListener("afterprint", onAfterPrint);
+
+      try {
+        // Single, consistent cross-browser action: open native print dialog.
+        window.print();
+      } catch (err) {
+        window.removeEventListener("afterprint", onAfterPrint);
+        cleanup();
+        showError(cfg, "printErrorAlert", err);
+        return;
       }
-    }
+
+      // Some browsers may skip afterprint; ensure UI state always recovers.
+      window.setTimeout(function () {
+        window.removeEventListener("afterprint", onAfterPrint);
+        cleanup();
+      }, 2000);
+    });
   }
 
   function init() {
-    initPrintChromeHandlers();
+    if (!document.querySelector(".flyer-sheet")) return;
 
     var shareBtn = document.getElementById("flyerSendEmailBtn");
     if (shareBtn && shareBtn.getAttribute("data-daab-flyer-email-init") !== "1") {
       shareBtn.setAttribute("data-daab-flyer-email-init", "1");
       shareBtn.addEventListener("click", function () {
-        sendFlyerEmail();
+        sendFlyerEmail().catch(function (err) {
+          showError(getFlyerCfg(), "errorAlert", err);
+        });
       });
     }
 
@@ -489,8 +567,16 @@
     if (printBtn && printBtn.getAttribute("data-daab-flyer-print-init") !== "1") {
       printBtn.setAttribute("data-daab-flyer-print-init", "1");
       printBtn.addEventListener("click", function () {
-        printFlyerPdf();
+        printFlyerPdf().catch(function (err) {
+          showError(getFlyerCfg(), "printErrorAlert", err);
+        });
       });
+    }
+
+    if (!libsReady()) {
+      console.error(
+        "[daab-membership-flyer-email] Missing html2canvas or jsPDF. Include js/vendor/*.min.js before this file."
+      );
     }
   }
 

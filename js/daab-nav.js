@@ -309,10 +309,37 @@
     }
   }
 
-  function injectNavBrandQr() {
+  function wrapFooterContactColumn(contactCol) {
+    if (!contactCol || contactCol.querySelector(".footer-contact-layout")) return;
+    contactCol.classList.add("footer-col--contact");
+    var nodes = Array.prototype.slice.call(contactCol.childNodes);
+    var existingQr = contactCol.querySelector(".footer-home-qr");
+    var layout = document.createElement("div");
+    layout.className = "footer-contact-layout";
+    var details = document.createElement("div");
+    details.className = "footer-contact-details";
+    nodes.forEach(function (node) {
+      if (node.nodeType === 1 && node.classList && node.classList.contains("footer-home-qr")) return;
+      details.appendChild(node);
+    });
+    layout.appendChild(details);
+    if (existingQr) layout.insertBefore(existingQr, details);
+    contactCol.appendChild(layout);
+  }
+
+  function injectFooterHomeQr() {
     if (document.body && document.body.classList.contains("daab-gateway")) return;
-    var brand = document.querySelector("a.nav-brand");
-    if (!brand || document.querySelector(".nav-brand-qr-link")) return;
+    var footer = document.querySelector("footer.footer-pro");
+    if (!footer) return;
+    var contactCol = footer.querySelector(".footer-grid > .footer-col:first-child");
+    if (!contactCol) return;
+
+    wrapFooterContactColumn(contactCol);
+
+    var layout = contactCol.querySelector(".footer-contact-layout");
+    if (!layout || layout.querySelector(".footer-home-qr")) return;
+    var details = layout.querySelector(".footer-contact-details");
+    if (!details) return;
 
     var root = document.documentElement.getAttribute("data-daab-asset-root") || "";
     var lang = document.documentElement.getAttribute("data-daab-lang");
@@ -324,29 +351,26 @@
       ? "QR code for the WAAS home page — daab-waas.com"
       : "DAAB ana səhifəsi üçün QR kod — daab-waas.com";
 
-    var block = document.createElement("div");
-    block.className = "nav-brand-block";
-    var parent = brand.parentNode;
-    if (!parent) return;
-    parent.insertBefore(block, brand);
-    block.appendChild(brand);
+    var wrap = document.createElement("div");
+    wrap.className = "footer-home-qr";
 
     var qrLink = document.createElement("a");
-    qrLink.className = "nav-brand-qr-link";
+    qrLink.className = "footer-home-qr-link";
     qrLink.href = href;
     qrLink.rel = "noopener noreferrer";
+    qrLink.target = "_blank";
     qrLink.setAttribute("aria-label", label);
     qrLink.title = "daab-waas.com";
 
     var img = document.createElement("img");
-    img.className = "nav-brand-qr-img";
+    img.className = "footer-home-qr-img";
     img.src = imgSrc;
     img.alt = "";
     img.loading = "lazy";
     img.decoding = "async";
     qrLink.appendChild(img);
-    block.appendChild(qrLink);
-    scheduleNavHeightSync();
+    wrap.appendChild(qrLink);
+    layout.insertBefore(wrap, details);
   }
 
   function init() {
@@ -358,7 +382,7 @@
     initNavDropdowns();
     attachGlobalDropdownHandlers();
     attachViewportListeners();
-    injectNavBrandQr();
+    injectFooterHomeQr();
     scheduleNavHeightSync();
   }
 
@@ -408,7 +432,7 @@
 
   window.DAAB_NAV = {
     init: init,
-    injectNavBrandQr: injectNavBrandQr,
+    injectFooterHomeQr: injectFooterHomeQr,
     closeMobileMenu: closeMobileMenu,
     syncNavHeight: syncNavHeight,
     currentNavKey: currentNavKey,
@@ -432,18 +456,18 @@
   window.addEventListener("load", scheduleNavHeightSync, { once: true });
   document.addEventListener("daab-primary-nav-ready", function () {
     initNavDropdowns();
-    injectNavBrandQr();
+    injectFooterHomeQr();
     scheduleNavHeightSync();
   });
 
-  function bootNavBrandQr() {
-    injectNavBrandQr();
+  function bootFooterHomeQr() {
+    injectFooterHomeQr();
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", bootNavBrandQr);
+    document.addEventListener("DOMContentLoaded", bootFooterHomeQr);
   } else {
-    bootNavBrandQr();
+    bootFooterHomeQr();
   }
 
   window.addEventListener("pageshow", function (ev) {

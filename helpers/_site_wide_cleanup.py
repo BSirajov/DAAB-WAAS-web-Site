@@ -12,7 +12,7 @@ SCRIPT_VERSIONS = {
     "daab-i18n.js": 18,
     "daab-lang-position.js": 7,
     "daab-design-tokens.js": 1,
-    "daab-nav.js": 21,
+    "daab-nav.js": 23,
     "daab-primary-nav.js": 17,
     "daab-breadcrumbs.js": 14,
     "daab-section-nav.js": 18,
@@ -27,7 +27,7 @@ SCRIPT_VERSIONS = {
     "daab-profile-tts.js": 3,
     "daab-profile-deep-link.js": 2,
     "daab-membership-application.js": 1,
-    "daab-membership-flyer-email.js": 1,
+    "daab-membership-flyer-email.js": 27,
     "daab-collation.js": 1,
     "daab-table-resize.js": 1,
     "daab-scientists-toolbar-mobile.js": 1,
@@ -39,7 +39,7 @@ SCRIPT_VERSIONS = {
 }
 
 STYLE_VERSIONS = {
-    "daab-common.css": 53,
+    "daab-common.css": 55,
     "daab-mobile.css": 12,
     "daab-sticky-chrome.css": 1,
     "daab-lang.css": 12,
@@ -71,7 +71,7 @@ STYLE_VERSIONS = {
     "daab-scientists-list-page.css": 5,
     "daab-photos-gallery.css": 8,
     "daab-forum-book.css": 5,
-    "daab-membership-flyer.css": 17,
+    "daab-membership-flyer.css": 26,
     "daab-sidebar-widget.css": 4,
     "daab-table-resize.css": 2,
     "scientists-catalog-toolbar.css": 2,
