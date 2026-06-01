@@ -25,6 +25,7 @@ DEPLOYIGNORE = ROOT / ".deployignore"
 # Always exclude (even if not listed in .deployignore)
 HARD_EXCLUDES = {
     "Deployment",
+    "deployment",
     ".deployment-staging",
     ".git",
     "node_modules",
@@ -86,7 +87,12 @@ def should_exclude(
     if skip_images and (rel_posix == "images" or rel_posix.startswith("images/")):
         return True
     parts = rel_posix.split("/")
-    if parts[0] in HARD_EXCLUDES or any(p in EXTRA_DIR_NAMES for p in parts):
+    parts_lower = [p.lower() for p in parts]
+    hard_excludes_lower = {name.lower() for name in HARD_EXCLUDES}
+    extra_dir_names_lower = {name.lower() for name in EXTRA_DIR_NAMES}
+    if parts_lower[0] in hard_excludes_lower or any(
+        p in extra_dir_names_lower for p in parts_lower
+    ):
         return True
     name = parts[-1]
     for pat in EXTRA_FILE_GLOBS:

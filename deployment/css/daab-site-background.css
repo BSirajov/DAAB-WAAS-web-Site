@@ -1,0 +1,75 @@
+/**
+ * Site-wide page background — same diaspora image + light scrim as hero headers.
+ * Applied on body for all pages (including language gateway).
+ */
+
+body {
+  background-color: var(--color-surface-news, #f5fbff);
+}
+
+/* Fixed layer: photo pattern + soft vertical wash for readable body text */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-color: var(--color-surface-news, #f5fbff);
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.68) 32%,
+      rgba(245, 251, 255, 0.86) 62%,
+      rgba(238, 248, 255, 0.94) 100%
+    ),
+    var(--site-bg-image, url("../images/diaspor-body-top-bg.png"));
+  background-position: top center, top center;
+  background-size: 100% auto, 100% auto;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+}
+
+/* Top fade — matches hero ::after treatment */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+  opacity: 0.65;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 42%);
+}
+
+body > header,
+body > main,
+body > footer,
+body .content-wrap,
+body > #daab-chrome-spacer {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  body::before,
+  body::after {
+    position: absolute;
+    min-height: 100%;
+    background-attachment: scroll, scroll;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  body::before {
+    background-image: linear-gradient(
+      180deg,
+      #f8fcff 0%,
+      var(--color-surface-news, #f5fbff) 100%
+    );
+  }
+
+  body::after {
+    display: none;
+  }
+}

@@ -1,0 +1,222 @@
+/**
+ * Forum 2024 — in-section navigation panel (12 pill links).
+ * Reference: az|en/forum/2024/index.html (JS-mounted .daab-section-nav).
+ * Load after daab-nav-mega.css on all html[data-daab-page-id^="forum-"] pages.
+ */
+
+html[data-daab-page-id^="forum-"] header.page-hero + .daab-section-nav,
+html[data-daab-page-id^="forum-"] header.hero + .daab-section-nav,
+html[data-daab-page-id^="forum-"] header.forum-hero + .daab-section-nav{
+  display: block;
+  width: 100%;
+  max-width: var(--max, 1180px);
+  margin: 0 auto 20px;
+  padding: 16px 24px;
+  box-sizing: border-box;
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav{
+  margin: 0 0 24px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--color-border-blue-muted);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 45, 82, 0.06);
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-title{
+  margin: 0 0 12px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5a7f94;
+  line-height: 1.25;
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-icon{
+  flex-shrink: 0;
+  font-size: 1.05em;
+  line-height: 1;
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-label{
+  min-width: 0;
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-list a{
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  color: var(--blue-700) !important;
+  background: var(--white) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius-pill) !important;
+  box-shadow: 0 10px 24px rgba(0, 45, 82, 0.12) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: transform 0.22s ease, filter 0.18s ease, box-shadow 0.18s ease,
+    background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-list a .daab-section-nav-label{
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  letter-spacing: inherit !important;
+  line-height: inherit !important;
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-list a::after{
+  content: "↗";
+  display: inline-block;
+  margin-left: 0.15em;
+  font-weight: 900;
+  transition: transform 0.18s ease;
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-list a:hover::after,
+html[data-daab-page-id^="forum-"] .daab-section-nav-list a:focus-visible::after{
+  transform: translate(2px, -2px);
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-list a:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.02);
+  box-shadow: 0 14px 30px rgba(0, 45, 82, 0.18) !important;
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-list a:focus-visible{
+  outline: 3px solid rgba(255, 240, 191, 0.95);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--color-border-blue-light) !important;
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-list a.active,
+html[data-daab-page-id^="forum-"] .daab-section-nav-list a[aria-current="page"]{
+  color: var(--white) !important;
+  background: var(--blue-700) !important;
+  border-color: var(--blue-700) !important;
+  box-shadow: 0 14px 30px rgba(0, 45, 82, 0.22) !important;
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-list a.active:hover,
+html[data-daab-page-id^="forum-"] .daab-section-nav-list a[aria-current="page"]:hover{
+  box-shadow: 0 18px 36px rgba(0, 45, 82, 0.28) !important;
+}
+
+/* Forum 2024 — 6×2 grid; stacked buttons share column width (js sync + grid) */
+html[data-daab-page-id^="forum-"] .daab-section-nav-list--forum-pairs{
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, max-content));
+  grid-template-rows: auto auto;
+  gap: 10px;
+  justify-content: start;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-list--forum-pairs .daab-section-nav-row{
+  display: contents;
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-list--forum-pairs .daab-section-nav-row > a{
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  justify-self: stretch;
+  text-align: center;
+}
+
+html[data-daab-page-id^="forum-"] .daab-section-nav-list--forum-pairs .daab-section-nav-label{
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+/* Tablet — 3 equal columns; auto-flow (drop explicit 6-col placement) */
+@media (max-width: 1079px){
+  html[data-daab-page-id^="forum-"] .daab-section-nav-list--forum-pairs{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: auto;
+    justify-content: stretch;
+    gap: 10px;
+  }
+
+  html[data-daab-page-id^="forum-"] .daab-section-nav-list--forum-pairs .daab-section-nav-row > a{
+    grid-row: auto !important;
+    grid-column: auto !important;
+    min-height: 44px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 900px){
+  html[data-daab-page-id^="forum-"] header.page-hero + .daab-section-nav,
+  html[data-daab-page-id^="forum-"] header.hero + .daab-section-nav,
+  html[data-daab-page-id^="forum-"] header.forum-hero + .daab-section-nav{
+    padding: 16px 18px;
+  }
+}
+
+@media (max-width: 720px){
+  html[data-daab-page-id^="forum-"] .daab-section-nav{
+    padding: 14px 14px;
+  }
+
+  html[data-daab-page-id^="forum-"] header.page-hero + .daab-section-nav,
+  html[data-daab-page-id^="forum-"] header.hero + .daab-section-nav,
+  html[data-daab-page-id^="forum-"] header.forum-hero + .daab-section-nav{
+    padding: 14px 14px;
+    margin-bottom: 16px;
+  }
+}
+
+/* Small tablet / large phone — 2 equal columns */
+@media (max-width: 767px){
+  html[data-daab-page-id^="forum-"] .daab-section-nav-list--forum-pairs{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+}
+
+/* Mobile — single column, equal full-width pills */
+@media (max-width: 479px){
+  html[data-daab-page-id^="forum-"] .daab-section-nav-list--forum-pairs{
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  html[data-daab-page-id^="forum-"] .daab-section-nav-list--forum-pairs .daab-section-nav-row > a{
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 16px;
+  }
+
+  html[data-daab-page-id^="forum-"] .daab-section-nav-title{
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+}

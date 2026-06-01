@@ -1,0 +1,189 @@
+/**
+ * Global top chrome — single fixed shell (reliable in Chrome / Safari / Firefox).
+ * Nav + breadcrumbs live inside #daab-top-chrome; #daab-chrome-spacer reserves flow space.
+ * Heights: --daab-nav-height, --daab-breadcrumbs-height, --daab-sticky-top-stack (JS).
+ */
+
+:root {
+  --z-breadcrumbs: 9998;
+}
+
+body:not(.daab-gateway) {
+  padding-top: 0 !important;
+}
+
+#daab-top-chrome {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  z-index: var(--z-nav, 9999) !important;
+  overflow: visible !important;
+  transform: none !important;
+  will-change: transform;
+  pointer-events: none;
+  background: transparent;
+}
+
+#daab-top-chrome > * {
+  pointer-events: auto;
+}
+
+/* Inside fixed chrome, children stack vertically — no nested sticky offsets */
+#daab-top-chrome .nav-strip,
+html.daab-chrome-ready body:not(.daab-gateway) > .nav-strip,
+html.daab-chrome-ready .nav-strip {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+#daab-top-chrome #daab-breadcrumbs,
+#daab-top-chrome nav.daab-breadcrumbs,
+#daab-top-chrome .forum-breadcrumbs,
+#daab-top-chrome .breadcrumbs.forum-breadcrumbs,
+#daab-top-chrome .breadcrumbs,
+html.daab-chrome-ready .daab-breadcrumbs,
+html.daab-chrome-ready .forum-breadcrumbs,
+html.daab-chrome-ready .breadcrumbs.forum-breadcrumbs {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  transform: none !important;
+  z-index: var(--z-breadcrumbs, 9998) !important;
+}
+
+/* Fallback before JS mounts #daab-top-chrome */
+body:not(.daab-gateway):not(.daab-chrome-ready) > .nav-strip {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  z-index: var(--z-nav, 9999) !important;
+  overflow: visible !important;
+  transform: none !important;
+}
+
+body:not(.daab-gateway):not(.daab-chrome-ready) > #daab-breadcrumbs,
+body:not(.daab-gateway):not(.daab-chrome-ready) > nav.daab-breadcrumbs,
+body:not(.daab-gateway):not(.daab-chrome-ready) > .forum-breadcrumbs,
+body:not(.daab-gateway):not(.daab-chrome-ready) > .breadcrumbs.forum-breadcrumbs {
+  position: fixed !important;
+  top: var(--daab-nav-height, 86px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  z-index: var(--z-breadcrumbs, 9998) !important;
+  transform: none !important;
+}
+
+#daab-chrome-spacer {
+  display: block;
+  width: 100%;
+  height: var(--daab-sticky-top-stack, var(--daab-nav-height, 86px));
+  margin: 0;
+  padding: 0;
+  border: 0;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* Scroll lock (mobile menu / search): keep chrome pinned */
+html.daab-scroll-lock #daab-top-chrome,
+body.daab-scroll-lock #daab-top-chrome,
+html.daab-scroll-lock .nav-strip,
+body.daab-scroll-lock .nav-strip,
+html.daab-scroll-lock #daab-top-chrome .nav-strip {
+  position: fixed !important;
+  top: 0 !important;
+  transform: none !important;
+}
+
+html.daab-scroll-lock,
+body.daab-scroll-lock {
+  overflow: hidden !important;
+  height: 100% !important;
+}
+
+/* Mobile hamburger panel — fixed below nav + breadcrumbs; white panel distinct from blue nav */
+@media (max-width: 1180px) {
+  html.daab-chrome-ready .nav-strip {
+    overflow: visible !important;
+  }
+
+  html.daab-chrome-ready .nav-menu,
+  html.daab-chrome-ready .nav-menu.open {
+    position: fixed !important;
+    top: calc(
+      var(--daab-nav-height, 72px) + var(--daab-breadcrumbs-height, 0px) + 6px
+    ) !important;
+    left: max(10px, var(--daab-safe-left, 0px)) !important;
+    right: max(10px, var(--daab-safe-right, 0px)) !important;
+    bottom: auto !important;
+    z-index: 10002 !important;
+    max-height: min(
+      72dvh,
+      calc(100dvh - var(--daab-sticky-top-stack, var(--daab-nav-height, 72px)) - 16px)
+    ) !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 105, 180, 0.2) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 48px rgba(0, 45, 82, 0.22) !important;
+  }
+
+  html.daab-chrome-ready .nav-menu .nav-dropdown-panel {
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 105, 180, 0.14) !important;
+  }
+
+  html.daab-chrome-ready .nav-menu .nav-link,
+  html.daab-chrome-ready .nav-menu .nav-dropdown-toggle {
+    color: #1e3d54 !important;
+  }
+
+  html.daab-chrome-ready .nav-menu .nav-link:hover,
+  html.daab-chrome-ready .nav-menu .nav-link:focus-visible,
+  html.daab-chrome-ready .nav-menu .nav-dropdown-toggle:hover,
+  html.daab-chrome-ready .nav-menu .nav-dropdown-toggle:focus-visible {
+    color: var(--blue-700) !important;
+    background: rgba(0, 105, 180, 0.08) !important;
+  }
+
+  html.daab-chrome-ready .nav-menu .nav-link.active,
+  html.daab-chrome-ready .nav-menu .nav-dropdown-link.active {
+    color: var(--blue-700) !important;
+    background: rgba(0, 105, 180, 0.12) !important;
+  }
+}
+
+@media print {
+  #daab-top-chrome,
+  body:not(.daab-gateway) > .nav-strip,
+  #daab-breadcrumbs,
+  nav.daab-breadcrumbs,
+  .forum-breadcrumbs {
+    position: static !important;
+  }
+
+  #daab-chrome-spacer {
+    display: none !important;
+    height: 0 !important;
+  }
+}
