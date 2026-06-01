@@ -16,7 +16,7 @@
 <link href="../css/daab-lang.css?v=12" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=25" rel="stylesheet"/>
 <link href="../css/daab-hero-summary.css?v=11" rel="stylesheet"/>
-<link href="../css/daab-membership-application.css?v=14" rel="stylesheet"/>
+<link href="../css/daab-membership-application.css?v=18" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
 <script src="../js/daab-sticky-chrome.js?v=1" defer></script>
 <script src="../js/daab-back-to-top.js?v=3" defer></script>
@@ -28,7 +28,7 @@
 <script src="../js/daab-section-nav.js?v=18" defer></script>
 <script src="../js/daab-shell.js?v=12" defer></script>
 <script src="../js/daab-search.js?v=7" defer></script>
-<script src="../js/daab-membership-application.js?v=5" defer></script>
+<script src="../js/daab-membership-application.js?v=8" defer></script>
 </head>
 <body class="application-page membership-page application-page--single">
 <a class="skip" href="#content">Məzmuna keç</a>
@@ -123,7 +123,7 @@
         <div class="section-num">1</div>
         <div class="section-title">
           Giriş
-          <small>Section 1 of 4 — Introduction</small>
+          <small>4 bölmədən 1-ci bölmə — Giriş</small>
         </div>
         <button type="button" class="app-step-top" data-target="app-steps-nav" aria-label="Müraciət addımlarına qayıt">↑</button>
       </div>
@@ -136,7 +136,6 @@
         <div class="field-group">
           <label class="field-label" for="email">
             E-poçt <span class="req">*</span>
-            <span class="field-label-en">— Email address</span>
           </label>
           <input type="email" id="email" name="email" placeholder="nümunə@email.com" required>
         </div>
@@ -150,122 +149,142 @@
         <div class="section-num">2</div>
         <div class="section-title">
           Şəxsi Məlumatlar
-          <small>Section 2 of 4 — Personal Information</small>
+          <small>4 bölmədən 2-ci bölmə — Şəxsi məlumatlar</small>
         </div>
         <button type="button" class="app-step-top" data-target="app-steps-nav" aria-label="Müraciət addımlarına qayıt">↑</button>
       </div>
       <div class="section-body">
 
         <div class="field-group">
-          <label class="field-label" for="name">Adınız <span class="req">*</span> <span class="field-label-en">— Name</span></label>
+          <label class="field-label" for="name">Adınız <span class="req">*</span></label>
           <input type="text" id="name" name="name" placeholder="Adınızı daxil edin" required>
         </div>
 
         <div class="field-group">
-          <label class="field-label" for="surname">Soyadınız <span class="req">*</span> <span class="field-label-en">— Surname</span></label>
+          <label class="field-label" for="surname">Soyadınız <span class="req">*</span></label>
           <input type="text" id="surname" name="surname" placeholder="Soyadınızı daxil edin" required>
         </div>
 
-        <div class="field-group">
-          <label class="field-label" for="country">Yaşadığınız ölkə və şəhər <span class="req">*</span> <span class="field-label-en">— Country and city of your residence</span></label>
-          <textarea id="country" name="country" placeholder="Məs: Avstriya, Vyana" required></textarea>
+        <div class="form-row residence-row">
+          <div class="field-group">
+            <label class="field-label" for="country">Yaşadığınız ölkə <span class="req">*</span></label>
+            <select id="country" name="country" required data-country-select="1">
+              <option value="">Ölkə seçin</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="city">Yaşadığınız şəhər <span class="req">*</span></label>
+            <select id="city" name="city" required disabled data-city-select="1">
+              <option value="">Əvvəlcə ölkə seçin</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row phone-row">
+          <div class="field-group">
+            <label class="field-label" for="phone_code">Ölkə kodu / Beynəlxalq zəng kodu <span class="req">*</span></label>
+            <select id="phone_code" name="phone_code" required data-phone-code-select="1">
+              <option value="">Kod seçin</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="phone">Telefon nömrəsi <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone_number" placeholder="Məs: 55 123 45 67" required inputmode="tel" autocomplete="tel-national" pattern="[0-9][0-9\\s()\\-]{4,20}" title="Ölkə kodu olmadan yerli telefon nömrəsi daxil edin">
+          </div>
         </div>
 
         <div class="field-group">
-          <label class="field-label" for="phone">Telefonunuz <span class="req">*</span> <span class="field-label-en">— Phone number</span></label>
-          <input type="tel" id="phone" name="phone" placeholder="+994 XX XXX XX XX">
-        </div>
-
-        <div class="field-group">
-          <label class="field-label" for="university">Bitirdiyiniz universitet <span class="req">*</span> <span class="field-label-en">— University you graduated from</span></label>
+          <label class="field-label" for="university">Bitirdiyiniz universitet <span class="req">*</span></label>
           <textarea id="university" name="university" placeholder="Universiteti və ilini göstərin" required></textarea>
         </div>
 
         <div class="field-group">
-          <label class="field-label" for="fieldofstudy">İxtisasınız <span class="req">*</span> <span class="field-label-en">— Field of study</span></label>
+          <label class="field-label" for="fieldofstudy">İxtisasınız <span class="req">*</span></label>
           <textarea id="fieldofstudy" name="fieldofstudy" placeholder="Məs: Kompüter elmləri" required></textarea>
         </div>
 
         <!-- Academic Degree -->
         <div class="field-group">
-          <div class="field-label">Akademik dərəcəniz <span class="req">*</span> <span class="field-label-en">— Academic degree</span></div>
+          <div class="field-label">Akademik dərəcəniz <span class="req">*</span></div>
           <div class="options-list">
             <div class="opt-item">
               <input type="radio" name="degree" id="deg1" value="bachelor">
-              <label for="deg1">Bakalavr (Bachelor's degree) – BA (Bachelor of Arts), BSc (Bachelor of Science), BEng (Bachelor of Engineering)</label>
+              <label for="deg1">Bakalavr — BA, BSc, BEng</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="degree" id="deg2" value="master">
-              <label for="deg2">Magistr (Master's degree) – MA (Master of Arts), MSc (Master of Science), MEng (Master of Engineering)</label>
+              <label for="deg2">Magistr — MA, MSc, MEng</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="degree" id="deg3" value="phd">
-              <label for="deg3">PhD (Doctor of Philosophy) — Elmlər üzrə Fəlsəfə Doktoru</label>
+              <label for="deg3">PhD — Elmlər üzrə fəlsəfə doktoru</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="degree" id="deg4" value="dsc">
-              <label for="deg4">DSc (Doctor of Science), Dr. Habil. (Habilitation) — Postdoktorantura</label>
+              <label for="deg4">DSc, Dr. Habil. — Postdoktorantura</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="degree" id="deg5" value="md">
-              <label for="deg5">MD (Doctor of Medicine) — Tibb üzrə doktorluq dərəcəsi</label>
+              <label for="deg5">MD — Tibb üzrə doktorluq dərəcəsi</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="degree" id="deg6" value="jd">
-              <label for="deg6">JD (Juris Doctor) — Hüquq doktoru</label>
+              <label for="deg6">JD — Hüquq doktoru</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="degree" id="deg7" value="other">
-              <label for="deg7">Digər / Other</label>
+              <label for="deg7">Digər</label>
             </div>
           </div>
         </div>
 
         <div class="field-group">
-          <label class="field-label" for="deginst">Akademik dərəcənizi aldığınız müəssisə <span class="req">*</span> <span class="field-label-en">— Institution where you earned your academic degree</span></label>
+          <label class="field-label" for="deginst">Akademik dərəcənizi aldığınız müəssisə <span class="req">*</span></label>
           <textarea id="deginst" name="deginst" placeholder="Müəssisənin adı, ölkəsi, ili" required></textarea>
         </div>
 
         <!-- Academic Title -->
         <div class="field-group">
-          <div class="field-label">Akademik rütbəniz <span class="req">*</span> <span class="field-label-en">— Academic title</span></div>
+          <div class="field-label">Akademik rütbəniz <span class="req">*</span></div>
           <div class="options-list">
             <div class="opt-item">
               <input type="radio" name="title" id="tit1" value="docent">
-              <label for="tit1">Dosent (Associate Professor) – PhD və müəyyən akademik nailiyyətlərə malik alimlər üçün.</label>
+              <label for="tit1">Dosent — PhD və müəyyən akademik nailiyyətlərə malik alimlər üçün.</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="title" id="tit2" value="professor">
-              <label for="tit2">Professor (Full Professor) – Ali akademik rütbə, adətən DSc və ya habilitasiyadan sonra verilir.</label>
+              <label for="tit2">Professor — Ali akademik rütbə, adətən DSc və ya habilitasiyadan sonra verilir.</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="title" id="tit3" value="honorary">
-              <label for="tit3">Fəxri doktor (Honorary Doctor — Dr. h.c.) – Universitet və ya akademiya tərəfindən verilən fəxri elmi dərəcə.</label>
+              <label for="tit3">Fəxri doktor (Dr. h.c.) — Universitet və ya akademiya tərəfindən verilən fəxri elmi dərəcə.</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="title" id="tit4" value="other">
-              <label for="tit4">Digər / Other</label>
+              <label for="tit4">Digər</label>
             </div>
           </div>
         </div>
 
         <div class="field-group">
-          <label class="field-label" for="titinst">Akademik rütbənizi aldığınız müəssisə <span class="req">*</span> <span class="field-label-en">— Institution where you earned your academic title</span></label>
+          <label class="field-label" for="titinst">Akademik rütbənizi aldığınız müəssisə <span class="req">*</span></label>
           <textarea id="titinst" name="titinst" placeholder="Müəssisənin adı, ölkəsi, ili" required></textarea>
         </div>
 
         <div class="field-group">
-          <label class="field-label" for="currentjob">Hazırkı iş yeriniz, vəzifəniz <span class="req">*</span> <span class="field-label-en">— Current job, position</span></label>
+          <label class="field-label" for="currentjob">Hazırkı iş yeriniz, vəzifəniz <span class="req">*</span></label>
           <textarea id="currentjob" name="currentjob" placeholder="Müəssisə, vəzifə, ölkə" required></textarea>
         </div>
 
         <div class="field-group">
-          <label class="field-label" for="prevjobs">Əvvəlki iş yerləriniz, vəzifələriniz <span class="field-label-en">— Previous jobs, positions (optional)</span></label>
+          <label class="field-label" for="prevjobs">Əvvəlki iş yerləriniz, vəzifələriniz (istəyə bağlı)</label>
           <textarea id="prevjobs" name="prevjobs" placeholder="Keçmiş iş yerlərini sadalayın"></textarea>
         </div>
 
         <div class="field-group">
-          <label class="field-label" for="contributions">DAAB-ın fəaliyyətinə verə biləcəyiniz töhfələr <span class="req">*</span> <span class="field-label-en">— Contributions you can make to the activities of WAAS</span></label>
+          <label class="field-label" for="contributions">DAAB-ın fəaliyyətinə verə biləcəyiniz töhfələr <span class="req">*</span></label>
           <textarea id="contributions" name="contributions" placeholder="DAAB-a verə biləcəyiniz töhfələri izah edin..." required style="min-height:110px;"></textarea>
         </div>
 
@@ -278,7 +297,7 @@
         <div class="section-num">3</div>
         <div class="section-title">
           Məşğul Olduğunuz Elm Sahələri
-          <small>Section 3 of 4 — Scientific Fields You Are Engaged In</small>
+          <small>4 bölmədən 3-cü bölmə — Elmi fəaliyyət sahələri</small>
         </div>
         <button type="button" class="app-step-top" data-target="app-steps-nav" aria-label="Müraciət addımlarına qayıt">↑</button>
       </div>
@@ -384,30 +403,29 @@
         <div class="section-num">4</div>
         <div class="section-title">
           Əlavə Məlumatlar
-          <small>Section 4 of 4 — Additional Information</small>
+          <small>4 bölmədən 4-cü bölmə — Əlavə məlumatlar</small>
         </div>
         <button type="button" class="app-step-top" data-target="app-steps-nav" aria-label="Müraciət addımlarına qayıt">↑</button>
       </div>
       <div class="section-body">
 
         <div class="field-group">
-          <label class="field-label" for="addinfo">Əlavə olaraq paylaşmaq istədiyiniz məlumatlar <span class="field-label-en">— Additional information you would like to share (optional)</span></label>
+          <label class="field-label" for="addinfo">Əlavə olaraq paylaşmaq istədiyiniz məlumatlar (istəyə bağlı)</label>
           <textarea id="addinfo" name="addinfo" placeholder="İstəsəniz əlavə məlumat bildirə bilərsiniz..." style="min-height:110px;"></textarea>
         </div>
 
         <div class="intro-box">
-          <strong>📎 Foto və CV (Photo and CV)</strong><br>
+          <strong>📎 Foto və CV</strong><br>
           Lütfən şəxsi foto və CV-nizi <a href="mailto:info@daab-waas.com">e-poçt ünvanımıza</a> göndərin.<br>
-          <span class="intro-en">Please send your photo and CV to our email address: <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></span>
         </div>
 
         <div class="field-group">
-          <label class="field-label" for="cvconfirm">CV-ni göndərdiyimi təsdiqləyirəm <span class="field-label-en">— I confirm I have sent / will send my CV and photo</span></label>
-          <input type="text" id="cvconfirm" name="cvconfirm" placeholder="Bəli / Yes">
+          <label class="field-label" for="cvconfirm">CV-ni göndərdiyimi təsdiqləyirəm</label>
+          <input type="text" id="cvconfirm" name="cvconfirm" placeholder="Bəli">
         </div>
 
         <div class="app-btn-row">
-          <button type="button" class="app-btn app-btn-submit" onclick="daabApplicationSubmit()">✓ Göndər — Submit</button>
+          <button type="button" class="app-btn app-btn-submit" onclick="daabApplicationSubmit()">✓ Göndər</button>
         </div>
       </div>
     </div>
@@ -418,10 +436,9 @@
       <h2>Müraciətiniz qəbul olundu!</h2>
       <p>
         DAAB-a üzvlük müraciətiniz uğurla göndərildi. Tezliklə sizinlə əlaqə saxlanılacaq.<br><br>
-        <em>Your membership application has been submitted successfully. We will contact you shortly.</em>
       </p>
 <div class="app-btn-row">
-        <a class="app-btn app-btn-primary" href="membership.html">Üzvlük səhifəsinə qayıt</a>
+        <a class="app-btn app-btn-primary" href="membership_value.html">Üzvlük səhifəsinə qayıt</a>
         <a class="app-btn app-btn-primary" href="membership_flyer.html">Dəvət göndərin</a>
       </div>
     </div>

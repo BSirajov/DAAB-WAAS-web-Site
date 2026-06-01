@@ -16,7 +16,7 @@
 <link href="../css/daab-lang.css?v=12" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=25" rel="stylesheet"/>
 <link href="../css/daab-hero-summary.css?v=11" rel="stylesheet"/>
-<link href="../css/daab-membership-application.css?v=14" rel="stylesheet"/>
+<link href="../css/daab-membership-application.css?v=18" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
 <script src="../js/daab-sticky-chrome.js?v=1" defer></script>
 <script src="../js/daab-back-to-top.js?v=3" defer></script>
@@ -28,7 +28,7 @@
 <script src="../js/daab-section-nav.js?v=18" defer></script>
 <script src="../js/daab-shell.js?v=12" defer></script>
 <script src="../js/daab-search.js?v=7" defer></script>
-<script src="../js/daab-membership-application.js?v=5" defer></script>
+<script src="../js/daab-membership-application.js?v=8" defer></script>
 </head>
 <body class="application-page membership-page application-page--single">
 <a class="skip" href="#content">Skip to content</a>
@@ -174,15 +174,34 @@
           <input type="text" id="surname" name="surname" placeholder="Enter your last name" required>
         </div>
 
-        <div class="field-group">
-          <label class="field-label" for="country">Country and City of Residence <span class="req">*</span></label>
-          <span class="field-hint">Please specify your current country and city of residence.</span>
-          <textarea id="country" name="country" placeholder="e.g. Austria, Vienna" required></textarea>
+        <div class="form-row residence-row">
+          <div class="field-group">
+            <label class="field-label" for="country">Country of Residence <span class="req">*</span></label>
+            <select id="country" name="country" required data-country-select="1">
+              <option value="">Select country</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="city">City of Residence <span class="req">*</span></label>
+            <select id="city" name="city" required disabled data-city-select="1">
+              <option value="">Select country first</option>
+            </select>
+          </div>
         </div>
 
-        <div class="field-group">
-          <label class="field-label" for="phone">Phone Number <span class="req">*</span></label>
-          <input type="tel" id="phone" name="phone" placeholder="+43 XXX XXX XXXX">
+        <div class="form-row phone-row">
+          <div class="field-group">
+            <label class="field-label" for="phone_code">Area Code / Country Calling Code <span class="req">*</span></label>
+            <select id="phone_code" name="phone_code" required data-phone-code-select="1">
+              <option value="">Select area code</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone_number" placeholder="e.g. 555 123 45 67" required inputmode="tel" autocomplete="tel-national" pattern="[0-9][0-9\\s()\\-]{4,20}" title="Enter local phone number without country code">
+          </div>
         </div>
 
         <div class="field-group">
@@ -450,7 +469,7 @@
         <a href="mailto:info@daab-waas.com" style="color:var(--blue-700);">info@daab-waas.com</a>.
       </p>
 <div class="app-btn-row">
-        <a class="app-btn app-btn-primary" href="membership.html">Return to membership page</a>
+        <a class="app-btn app-btn-primary" href="membership_value.html">Return to membership page</a>
         <a class="app-btn app-btn-primary" href="membership_flyer.html">Send Invitation</a>
       </div>
     </div>

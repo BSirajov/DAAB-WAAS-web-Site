@@ -340,6 +340,8 @@
   color: rgba(255, 255, 255, 0.9);
 }.membership-value-page .mv-cta .btn{
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 22px;
   padding: 13px 22px;
   border-radius: var(--radius-pill);
@@ -461,5 +463,7 @@
   }.membership-value-page .mv-cta-note .invite-link{
     grid-column: 1 / -1;
     justify-self: start;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 }

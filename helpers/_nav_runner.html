@@ -3,7 +3,7 @@
 
 (async () => {
   const out = {};
-  const urls = ["http://127.0.0.1:8010/en/membership.html","http://127.0.0.1:8010/en/application.html","http://127.0.0.1:8010/en/membership_value.html","http://127.0.0.1:8010/az/membership.html","http://127.0.0.1:8010/az/application.html"];
+  const urls = ["http://127.0.0.1:8010/en/membership_value.html","http://127.0.0.1:8010/en/application.html","http://127.0.0.1:8010/en/membership_flyer.html","http://127.0.0.1:8010/az/membership_value.html","http://127.0.0.1:8010/az/application.html"];
   for (const url of urls) {
     await new Promise((r) => setTimeout(r, 1200));
     const links = [...document.querySelectorAll("#primaryNavMenu .nav-dropdown-link")];

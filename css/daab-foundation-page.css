@@ -443,6 +443,9 @@
   .ist-inline-026,
   .strategy-grid{
     grid-template-columns: 1fr !important;
+  }.section-heading h2{
+    white-space: normal;
+    overflow-wrap: anywhere;
   }.strategy-card-wide{
     grid-column: auto;
   }.footer-inner{

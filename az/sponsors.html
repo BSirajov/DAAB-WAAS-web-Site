@@ -91,6 +91,7 @@
     letter-spacing: -0.02em;
     max-width: 18ch;
   }
+  .hero-title .hero-title-accent { color: #0a6ec1 !important; }
 
   .hero-subtitle {
     margin: 6px 0 0;
@@ -284,6 +285,23 @@
     max-width: 640px;
     margin-bottom: 6px;
   }
+  .section-title-reduced {
+    font-size: clamp(19.6px, 2.8vw, 32.2px);
+    line-height: 1.22;
+  }
+  @media (min-width: 1200px) {
+    .section-title-reduced {
+      white-space: nowrap;
+      max-width: none;
+    }
+  }
+  @media (max-width: 1199px) {
+    .section-title-reduced {
+      white-space: normal;
+      max-width: 640px;
+      overflow-wrap: anywhere;
+    }
+  }
   .section-lead {
     font-size: 17px;
     font-weight: 300;
@@ -291,6 +309,23 @@
     color: var(--muted);
     max-width: 600px;
     margin-bottom: 10px;
+  }
+  .section-subtitle-one-line {
+    white-space: normal;
+    max-width: 600px;
+  }
+  @media (min-width: 1200px) {
+    .section-subtitle-one-line {
+      white-space: nowrap;
+      max-width: none;
+    }
+  }
+  @media (max-width: 1199px) {
+    .section-subtitle-one-line {
+      white-space: normal;
+      max-width: 600px;
+      overflow-wrap: anywhere;
+    }
   }
 
   /* ── WHY SUPPORT ─────────────────────────────── */
@@ -691,6 +726,18 @@
     background: #fff;
   }
   .field-group textarea { resize: vertical; min-height: 110px; }
+  .field-group .field-error {
+    display: block;
+    margin-top: 6px;
+    color: #b42318;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .field-group input[aria-invalid="true"] {
+    border-color: #b42318;
+    box-shadow: 0 0 0 2px rgba(180, 35, 24, 0.12);
+  }
 
   .form-submit {
     display: flex;
@@ -756,6 +803,13 @@
   }
   @media (max-width: 420px) {
     .stats-inner { grid-template-columns: 1fr 1fr; }
+    .btn-submit {
+      width: 100%;
+      justify-content: center;
+      white-space: normal;
+      min-height: 44px;
+      text-align: center;
+    }
   }
 
   /* ── SCROLL REVEAL ────────────────────────────── */
@@ -772,9 +826,11 @@
 <link href="../css/daab-common.css?v=55" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=12" rel="stylesheet"/>
 <link href="../css/daab-search.css?v=4" rel="stylesheet"/>
+<link href="../css/daab-back-to-top.css?v=2" rel="stylesheet"/>
 <link href="../css/daab-lang.css?v=12" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=25" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
+<script src="../js/daab-back-to-top.js?v=3" defer></script>
 <script src="../js/daab-i18n.js?v=18" defer></script>
 <script src="../js/daab-lang-position.js?v=7" defer></script>
 <script src="../js/daab-design-tokens.js?v=1" defer></script>
@@ -800,7 +856,7 @@
 <section class="hero" id="content">
   <div class="hero-wrap">
     <section class="hero-copy">
-      <h1 aria-describedby="page-hero-subtitle" class="hero-title">Azərbaycan elminə sərmayə qoyun</h1>
+      <h1 aria-describedby="page-hero-subtitle" class="hero-title">Azərbaycan elminə <span class="hero-title-accent">sərmayə qoyun</span></h1>
       <p class="hero-subtitle page-hero-subtitle" id="page-hero-subtitle">
         DAAB bütün dünyada fəaliyyət göstərən azərbaycanlı alimləri birləşdirir. Sizin dəstəyiniz
         təqaüd proqramlarına, elmi əməkdaşlıqlara və ölkəmizin bilik iqtisadiyyatının gələcəyinə töhfə verir
@@ -830,10 +886,9 @@
   <div class="container">
     <div class="reveal">
       <p class="section-eyebrow">Niyə DAAB-a dəstək verməli?</p>
-      <h2 class="section-title">Sizin tərəfdaşlığınız real və davamlı təsir yaradır</h2>
-      <p class="section-lead">
-        DAAB hər bir töhfəni elmi inkişafı sürətləndirən, diaspora əlaqələrini gücləndirən
-        və Azərbaycan üçün uzunmüddətli intellektual potensial yaradan proqramlara yönəldir.
+      <h2 class="section-title section-title-reduced">Sizin dəstəyiniz dayanıqlı dəyişikliklərə yol açır.</h2>
+      <p class="section-lead section-subtitle-one-line">
+        DAAB hər bir töhfəni Azərbaycanın elmi tərəqqisinə və uzunmüddətli inkişaf potensialına çevirir.
       </p>
     </div>
 
@@ -861,7 +916,7 @@
       <div class="why-card reveal">
         <div class="why-icon">📚</div>
         <h3>Nəşrlər və açıq çıxış</h3>
-        <p>Azərbaycan və ingilis dillərində rəyli elmi jurnalların, analitik sənədlərin və açıq çıxışlı resursların hazırlanması.</p>
+        <p>Azərbaycan və ingilis dillərində elmi jurnallar, ekspert hesabatları və açıq girişli materiallar vasitəsilə bilik mübadiləsinin təşviqi.</p>
       </div>
       <div class="why-card reveal">
         <div class="why-icon">🤝</div>
@@ -877,10 +932,9 @@
   <div class="container">
     <div class="reveal">
       <p class="section-eyebrow">Sponsorluq səviyyələri</p>
-      <h2 class="section-title">Sizə uyğun tərəfdaşlıq səviyyəsini seçin</h2>
-      <p class="section-lead">
-        Bütün səviyyələr rəsmi təşəkkür, hesabatlılıq və DAAB rəhbərliyi ilə birbaşa əlaqəni nəzərdə tutur.
-        Fərdi tərəfdaşlıq paketləri də razılaşma əsasında hazırlana bilər.
+      <h2 class="section-title section-title-reduced">Sizə uyğun tərəfdaşlıq səviyyəsini seçin</h2>
+      <p class="section-lead section-subtitle-one-line">
+        Bütün dəstək səviyyələri rəsmi təşəkkür, hesabatlılıq və DAAb İdarə Heyəti ilə birbaşa əlaqə imkanını əhatə edir.
       </p>
     </div>
 
@@ -908,10 +962,10 @@
         <div class="tier-period">ildə</div>
         <div class="tier-divider"></div>
         <ul class="tier-perks">
-          <li>All Bürünc benefits</li>
+          <li>Bürünc səviyyəsinin bütün üstünlükləri</li>
           <li>Loqonun DAAB saytında və materiallarında yerləşdirilməsi</li>
           <li>Forum üçün 2 iştirakçı dəvəti</li>
-          <li>Rüblük təsir hesabatları</li>
+          <li>Görülən işlərin və alınan nəticələrin təsirini əks etdirən illik hesabatlar.</li>
           <li>Adlı təqaüd fondunun yaradılması (istəyə görə)</li>
         </ul>
         <a href="#contact" class="tier-btn">Başlayın</a>
@@ -924,12 +978,12 @@
         <div class="tier-period">ildə</div>
         <div class="tier-divider"></div>
         <ul class="tier-perks">
-          <li>All Gümüş benefits</li>
-          <li>İllik Forumda öncül brend görünürlüğü</li>
+          <li>Gümüş səviyyəsinin bütün üstünlükləri</li>
+          <li>Forumlarımızda sponsor brendinin xüsusi şəkildə təqdim olunması</li>
           <li>Forum üçün 5 VIP iştirakçı dəvəti</li>
           <li>Məşvərət Şurasında müşahidəçi statusu</li>
           <li>Birgə brendləşdirilmiş elmi əməkdaşlıq</li>
-          <li>Press-reliz və media işıqlandırılması</li>
+          <li>Mətbuat açıqlaması və media işıqlandırılması</li>
         </ul>
         <a href="#contact" class="tier-btn">Başlayın</a>
       </div>
@@ -941,11 +995,11 @@
         <div class="tier-period">ildə</div>
         <div class="tier-divider"></div>
         <ul class="tier-perks">
-          <li>All Qızıl benefits</li>
+          <li>Qızıl səviyyəsinin bütün üstünlükləri</li>
           <li>Proqrama eksklüziv advermə hüququ</li>
           <li>DAAB Strateji Komitəsində yer</li>
-          <li>İllik Forumda əsas çıxış imkanı</li>
-          <li>Fərdi elmi tərəfdaşlıq memorandumu</li>
+          <li>Forumlarımızda keynote təqdimatçısı statusu</li>
+          <li>Xüsusi tədqiqat tərəfdaşlığına dair Anlaşma Memorandumu</li>
           <li>Fərdi əlaqələndirici şəxs</li>
         </ul>
         <a href="#contact" class="tier-btn">Başlayın</a>
@@ -960,7 +1014,8 @@
   <div class="container">
     <div class="reveal">
       <p class="section-eyebrow">Dəstək göstərməyin digər yolları</p>
-      <h2 class="section-title">Maliyyə töhfəsindən kənar dəstək imkanları</h2>
+      <h2 class="section-title section-title-reduced">Maliyyə töhfəsindən fərqli dəstək imkanları</h2>
+      <p class="section-lead section-subtitle-one-line">Fərdi ianəçilərin şəxsi töhfələri ilə dəstəklənən praktiki resurslar və peşəkar xidmətlər.</p>
     </div>
 
     <div class="inkind-grid">
@@ -981,7 +1036,7 @@
 
       <div class="inkind-card reveal">
         <h3>Fərdi ianəçilər</h3>
-        <p>Hər bir fərdi töhfə — məbləğindən asılı olmayaraq — tələbənin tədqiqat səfərinə, nəşrə və ya mentorluq sessiyasına birbaşa dəstək verir. DAAB qeydiyyatdan keçmiş qeyri-kommersiya təşkilatıdır; ianələr yaşadığınız ölkənin qanunvericiliyinə uyğun olaraq vergi güzəştləri ilə əlaqələndirilə bilər.</p>
+        <p>Hər bir fərdi töhfə — məbləğindən asılı olmayaraq — tələbənin tədqiqat səfərinə, nəşrə və ya mentorluq sessiyasına birbaşa dəstək verir.</p>
         <div class="tag-list">
           <span class="tag">Birdəfəlik ianə</span>
           <span class="tag">Aylıq dəstək</span>
@@ -1001,7 +1056,7 @@
 
       <div class="form-info reveal">
         <p class="section-eyebrow">Əlaqə saxlayın</p>
-        <h2>Gəlin birlikdə mənalı bir iş quraq</h2>
+        <h2>Gəlin dəyərli iş birliyi quraq</h2>
         <p>
           İstər şirkəti, fondu və ya təşkilatı təmsil edin, istərsə də şəxsi təşəbbüsünüzlə dəstək vermək istəyin,
           komandamız töhfənizin ən böyük təsiri necə yarada biləcəyini müzakirə etməyə hazırdır.
@@ -1038,7 +1093,7 @@
           </div>
 
           <div class="field-group">
-            <label>E-poçt Address</label>
+            <label>E-poçt ünvanı</label>
             <input type="email">
           </div>
 
@@ -1047,10 +1102,10 @@
               <label>Töhfə növü</label>
               <select>
                 <option value=""></option>
-                <option>Corporate Sponsor — Bürünc</option>
-                <option>Corporate Sponsor — Gümüş</option>
-                <option>Corporate Sponsor — Qızıl</option>
-                <option>Corporate Sponsor — Platin</option>
+                <option>Korporativ sponsor — Bürünc</option>
+                <option>Korporativ sponsor — Gümüş</option>
+                <option>Korporativ sponsor — Qızıl</option>
+                <option>Korporativ sponsor — Platin</option>
                 <option>Qeyri-maddi töhfə</option>
                 <option>Fərdi ianəçi</option>
                 <option>Fond / miras ianəsi</option>
@@ -1059,7 +1114,9 @@
             </div>
             <div class="field-group">
               <label>Ölkə</label>
-              <input type="text">
+              <select data-country-list="1" data-locale="az">
+                <option value="">Ölkə seçin</option>
+              </select>
             </div>
           </div>
 
@@ -1074,7 +1131,7 @@
               <span>2 iş günü ərzində cavab veririk.</span>
             </p>
             <button class="btn-submit" type="button">
-              Send Mesaj
+              Mesaj göndər
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
           </div>
@@ -1117,6 +1174,79 @@
       const target = document.querySelector(a.getAttribute('href'));
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
+  });
+
+  // Ölkə siyahısını ISO kodları üzrə doldur (səhifə dilinə uyğun lokallaşdırılır)
+  const COUNTRY_CODES = [
+    "AF","AL","DZ","AD","AO","AG","AR","AM","AU","AT","AZ","BS","BH","BD","BB","BY","BE","BZ","BJ","BT","BO","BA","BW","BR","BN","BG","BF","BI","CV","KH","CM","CA","CF","TD","CL","CN","CO","KM","CG","CD","CR","CI","HR","CU","CY","CZ","DK","DJ","DM","DO","EC","EG","SV","GQ","ER","EE","SZ","ET","FJ","FI","FR","GA","GM","GE","DE","GH","GR","GD","GT","GN","GW","GY","HT","HN","HU","IS","IN","ID","IR","IQ","IE","IL","IT","JM","JP","JO","KZ","KE","KI","KP","KR","KW","KG","LA","LV","LB","LS","LR","LY","LI","LT","LU","MG","MW","MY","MV","ML","MT","MH","MR","MU","MX","FM","MD","MC","MN","ME","MA","MZ","MM","NA","NR","NP","NL","NZ","NI","NE","NG","MK","NO","OM","PK","PW","PS","PA","PG","PY","PE","PH","PL","PT","QA","RO","RU","RW","KN","LC","VC","WS","SM","ST","SA","SN","RS","SC","SL","SG","SK","SI","SB","SO","ZA","SS","ES","LK","SD","SR","SE","CH","SY","TJ","TZ","TH","TL","TG","TO","TT","TN","TR","TM","TV","UG","UA","AE","GB","US","UY","UZ","VU","VA","VE","VN","YE","ZM","ZW"
+  ];
+  const countrySelects = document.querySelectorAll('select[data-country-list="1"]');
+  countrySelects.forEach((select) => {
+    const locale = select.dataset.locale || document.documentElement.lang || "az";
+    const formatter = (typeof Intl !== "undefined" && typeof Intl.DisplayNames === "function")
+      ? new Intl.DisplayNames([locale], { type: "region" })
+      : null;
+    const collator = (typeof Intl !== "undefined" && typeof Intl.Collator === "function")
+      ? new Intl.Collator(locale, { sensitivity: "base" })
+      : null;
+    const countryOptions = COUNTRY_CODES.map((code) => ({
+      code,
+      name: formatter ? (formatter.of(code) || code) : code
+    }));
+    countryOptions.sort((a, b) => {
+      if (collator) return collator.compare(a.name, b.name);
+      return String(a.name).localeCompare(String(b.name));
+    });
+    countryOptions.forEach(({ code, name }) => {
+      const option = document.createElement("option");
+      option.value = code;
+      option.textContent = name;
+      select.appendChild(option);
+    });
+  });
+
+  // Əlaqə forması üçün e-poçt doğrulaması
+  const sponsorForm = document.querySelector('.sponsor-form');
+  const emailInput = sponsorForm?.querySelector('input[type="email"]');
+  const submitBtn = sponsorForm?.querySelector('.btn-submit');
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const emailErrorText = 'Zəhmət olmasa düzgün e-poçt ünvanı daxil edin.';
+  function clearEmailError() {
+    if (!emailInput) return;
+    emailInput.removeAttribute('aria-invalid');
+    const existing = sponsorForm?.querySelector('.field-error[data-for="email"]');
+    if (existing) existing.remove();
+  }
+  function showEmailError() {
+    if (!emailInput || !sponsorForm) return;
+    clearEmailError();
+    emailInput.setAttribute('aria-invalid', 'true');
+    const message = document.createElement('small');
+    message.className = 'field-error';
+    message.dataset.for = 'email';
+    message.textContent = emailErrorText;
+    emailInput.insertAdjacentElement('afterend', message);
+  }
+  function isEmailValid() {
+    if (!emailInput) return true;
+    const value = emailInput.value.trim();
+    return emailPattern.test(value);
+  }
+  submitBtn?.addEventListener('click', () => {
+    if (!isEmailValid()) {
+      showEmailError();
+      emailInput?.focus();
+      return;
+    }
+    clearEmailError();
+  });
+  emailInput?.addEventListener('blur', () => {
+    if (!emailInput.value.trim()) return;
+    if (!isEmailValid()) showEmailError();
+    else clearEmailError();
+  });
+  emailInput?.addEventListener('input', () => {
+    if (isEmailValid()) clearEmailError();
   });
 
   // Counter animation for stats

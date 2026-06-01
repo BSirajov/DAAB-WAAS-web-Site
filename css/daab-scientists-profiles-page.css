@@ -464,6 +464,8 @@ a.card-name:focus-visible{
     font-size: 11px;
   }.card-meta-label{
     font-size: 11px;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
 }

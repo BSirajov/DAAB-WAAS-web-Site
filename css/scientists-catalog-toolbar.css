@@ -140,7 +140,7 @@
   align-items: center;
   justify-content: center;
   gap: 7px;
-  min-height: 42px;
+  min-height: 44px;
   padding: 11px 16px;
   color: var(--blue-700);
   background: var(--white);
@@ -220,7 +220,7 @@
   display: flex;
   align-items: center;
   min-width: 96px;
-  min-height: 36px;
+  min-height: 44px;
   background: var(--white);
   border: 1px solid var(--color-border-blue-16);
   border-radius: 11px;

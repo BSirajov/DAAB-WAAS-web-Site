@@ -191,7 +191,7 @@
   display: block;
   line-height: 1.25;
 }
-}.application-page .form-section{
+.application-page .form-section{
   display: none;
   animation: daabAppFadeIn 0.35s ease;
   scroll-margin-top: calc(var(--daab-nav-height, 72px) + 24px);
@@ -226,8 +226,8 @@
   gap: 12px;
 }.application-page .app-step-top{
   margin-left: auto;
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   border-radius: 9px;
   border: 1px solid rgba(255, 255, 255, 0.38);
   background: rgba(255, 255, 255, 0.16);
@@ -445,6 +445,12 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+}.application-page .form-row{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}.application-page .phone-row{
+  align-items: end;
 }.application-page .field-label{
   font-size: 13px;
   font-weight: 600;
@@ -463,6 +469,7 @@
 }.application-page input[type="text"],
 .application-page input[type="email"],
 .application-page input[type="tel"],
+.application-page select,
 .application-page textarea{
   width: 100%;
   border: 1.5px solid #9ed6f5;
@@ -476,10 +483,15 @@
   transition: border-color 0.2s, box-shadow 0.2s;
   resize: vertical;
 }.application-page input:focus,
+.application-page select:focus,
 .application-page textarea:focus{
   border-color: var(--blue-400);
   box-shadow: 0 0 0 3px rgba(77, 182, 240, 0.15);
   background: #fff;
+}.application-page select:disabled{
+  color: #7f9ab0;
+  background: #eef6fb;
+  cursor: not-allowed;
 }.application-page textarea{
   min-height: 80px;
 }.application-page .options-list{
@@ -554,6 +566,7 @@
   flex-wrap: wrap;
 }.application-page .app-btn{
   padding: 12px 28px;
+  min-height: 44px;
   border-radius: 999px;
   border: none;
   font-family: inherit;
@@ -639,8 +652,8 @@
     height: 20px;
     font-size: 10px;
   }.application-page .app-step-top{
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
     font-size: 19px;
   }.application-page .app-progress-bar{
     padding: 10px 12px;
@@ -650,6 +663,8 @@
     padding: 4px 6px;
     font-size: 10px;
   }.application-page .sci-cat-body{
+    grid-template-columns: 1fr;
+  }.application-page .form-row{
     grid-template-columns: 1fr;
   }.application-page .app-terms-pricing{
     grid-template-columns: 1fr;

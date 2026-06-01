@@ -92,7 +92,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
+  min-height: 44px;
   color: var(--blue-700);
   background: var(--white);
   border: 1px solid var(--color-border-blue-light);

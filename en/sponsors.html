@@ -91,6 +91,7 @@
     letter-spacing: -0.02em;
     max-width: 18ch;
   }
+  .hero-title .hero-title-accent { color: #0a6ec1 !important; }
 
   .hero-subtitle {
     margin: 6px 0 0;
@@ -176,6 +177,14 @@
   .btn-gold:hover {
     transform: translateY(-2px);
     box-shadow: 0 14px 28px rgba(200,155,56,.35);
+  }
+  .hero-cta-row .btn-gold {
+    background: linear-gradient(135deg, var(--blue-700) 0%, var(--blue-600) 100%);
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(0, 90, 154, .3);
+  }
+  .hero-cta-row .btn-gold:hover {
+    box-shadow: 0 14px 28px rgba(0, 90, 154, .36);
   }
 
   .btn-outline {
@@ -284,6 +293,23 @@
     max-width: 640px;
     margin-bottom: 6px;
   }
+  .section-title-reduced {
+    font-size: clamp(19.6px, 2.8vw, 32.2px);
+    line-height: 1.22;
+  }
+  @media (min-width: 1200px) {
+    .section-title-reduced {
+      white-space: nowrap;
+      max-width: none;
+    }
+  }
+  @media (max-width: 1199px) {
+    .section-title-reduced {
+      white-space: normal;
+      max-width: 640px;
+      overflow-wrap: anywhere;
+    }
+  }
   .section-lead {
     font-size: 17px;
     font-weight: 300;
@@ -291,6 +317,23 @@
     color: var(--muted);
     max-width: 600px;
     margin-bottom: 10px;
+  }
+  .section-subtitle-one-line {
+    white-space: normal;
+    max-width: 600px;
+  }
+  @media (min-width: 1200px) {
+    .section-subtitle-one-line {
+      white-space: nowrap;
+      max-width: none;
+    }
+  }
+  @media (max-width: 1199px) {
+    .section-subtitle-one-line {
+      white-space: normal;
+      max-width: 600px;
+      overflow-wrap: anywhere;
+    }
   }
 
   /* ── WHY SUPPORT ─────────────────────────────── */
@@ -691,6 +734,18 @@
     background: #fff;
   }
   .field-group textarea { resize: vertical; min-height: 110px; }
+  .field-group .field-error {
+    display: block;
+    margin-top: 6px;
+    color: #b42318;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+  .field-group input[aria-invalid="true"] {
+    border-color: #b42318;
+    box-shadow: 0 0 0 2px rgba(180, 35, 24, 0.12);
+  }
 
   .form-submit {
     display: flex;
@@ -756,6 +811,13 @@
   }
   @media (max-width: 420px) {
     .stats-inner { grid-template-columns: 1fr 1fr; }
+    .btn-submit {
+      width: 100%;
+      justify-content: center;
+      white-space: normal;
+      min-height: 44px;
+      text-align: center;
+    }
   }
 
   /* ── SCROLL REVEAL ────────────────────────────── */
@@ -772,9 +834,11 @@
 <link href="../css/daab-common.css?v=55" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=12" rel="stylesheet"/>
 <link href="../css/daab-search.css?v=4" rel="stylesheet"/>
+<link href="../css/daab-back-to-top.css?v=2" rel="stylesheet"/>
 <link href="../css/daab-lang.css?v=12" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=25" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
+<script src="../js/daab-back-to-top.js?v=3" defer></script>
 <script src="../js/daab-i18n.js?v=18" defer></script>
 <script src="../js/daab-lang-position.js?v=7" defer></script>
 <script src="../js/daab-design-tokens.js?v=1" defer></script>
@@ -800,7 +864,7 @@
 <section class="hero" id="content">
   <div class="hero-wrap">
     <section class="hero-copy">
-      <h1 aria-describedby="page-hero-subtitle" class="hero-title">Invest in Azerbaijani Science</h1>
+      <h1 aria-describedby="page-hero-subtitle" class="hero-title">Invest in <span class="hero-title-accent">Azerbaijani Science</span></h1>
       <p class="hero-subtitle page-hero-subtitle" id="page-hero-subtitle">
         WAAS unites Azerbaijani scientists around the world. Your support helps fund scholarships,
         research collaborations, and the future of Azerbaijan’s knowledge economy
@@ -830,10 +894,9 @@
   <div class="container">
     <div class="reveal">
       <p class="section-eyebrow">Why Support WAAS</p>
-      <h2 class="section-title">Your Partnership Creates Real, Lasting Impact</h2>
-      <p class="section-lead">
-        WAAS channels every contribution directly into programs that accelerate scientific discovery,
-        strengthen diaspora ties, and build long-term capacity for Azerbaijan.
+      <h2 class="section-title section-title-reduced">Your Partnership Creates Real, Lasting Impact</h2>
+      <p class="section-lead section-subtitle-one-line">
+        WAAS turns every contribution into scientific progress and long-term capacity for Azerbaijan.
       </p>
     </div>
 
@@ -846,12 +909,12 @@
       <div class="why-card reveal">
         <div class="why-icon">🔬</div>
         <h3>Research Collaborations</h3>
-        <p>Bridging diaspora experts with Azerbaijani universities and AMEA to co-author publications, share labs, and transfer know-how.</p>
+        <p>Bridging diaspora experts with Azerbaijani universities and Azerbaijani National Academy of Sciences to co-author publications, share labs, and transfer know-how.</p>
       </div>
       <div class="why-card reveal">
         <div class="why-icon">🌐</div>
         <h3>International Forums</h3>
-        <p>Hosting the annual Forum of Azerbaijani Scientists Abroad — a flagship gathering that shapes the national R&amp;D agenda.</p>
+        <p>Hosting the regular Forum of Azerbaijani Scientists Abroad — a flagship gathering that shapes the national R&amp;D agenda.</p>
       </div>
       <div class="why-card reveal">
         <div class="why-icon">🏗️</div>
@@ -861,7 +924,7 @@
       <div class="why-card reveal">
         <div class="why-icon">📚</div>
         <h3>Publications &amp; Open Access</h3>
-        <p>Producing peer-reviewed journals, policy white papers, and open-access resources in Azerbaijani and English.</p>
+        <p>Promoting knowledge sharing through scientific journals, expert reports, and open-access materials in Azerbaijani and English.</p>
       </div>
       <div class="why-card reveal">
         <div class="why-icon">🤝</div>
@@ -877,10 +940,9 @@
   <div class="container">
     <div class="reveal">
       <p class="section-eyebrow">Sponsorship Tiers</p>
-      <h2 class="section-title">Choose the Level of Partnership That Suits You</h2>
-      <p class="section-lead">
-        All tiers include formal acknowledgment, reporting, and a direct relationship
-        with the WAAS Board. Custom packages are available on request.
+      <h2 class="section-title section-title-reduced">Choose the Level of Partnership That Suits You</h2>
+      <p class="section-lead section-subtitle-one-line">
+        All tiers include formal acknowledgment, reporting, and a direct relationship with the WAAS Board. 
       </p>
     </div>
 
@@ -925,7 +987,7 @@
         <div class="tier-divider"></div>
         <ul class="tier-perks">
           <li>All Silver benefits</li>
-          <li>Prominent branding at annual Forum</li>
+          <li>Prominent branding at our Forums</li>
           <li>5 Forum VIP delegate passes</li>
           <li>Advisory Board observer seat</li>
           <li>Co-branded research collaboration</li>
@@ -944,7 +1006,7 @@
           <li>All Gold benefits</li>
           <li>Exclusive naming rights to a programme</li>
           <li>Seat on WAAS Strategic Committee</li>
-          <li>Keynote slot at annual Forum</li>
+          <li>Keynote slot at our Forums</li>
           <li>Custom research partnership MOU</li>
           <li>Dedicated account manager</li>
         </ul>
@@ -960,13 +1022,14 @@
   <div class="container">
     <div class="reveal">
       <p class="section-eyebrow">Other Ways to Give</p>
-      <h2 class="section-title">Support Beyond Financial Contribution</h2>
+      <h2 class="section-title section-title-reduced">Support Options Different from Financial Contribution</h2>
+      <p class="section-lead section-subtitle-one-line">Practical resources and professional services, supported by personal contributions from individual donors.</p>
     </div>
 
     <div class="inkind-grid">
       <div class="inkind-card reveal">
         <h3>In-Kind &amp; Professional Services</h3>
-        <p>Do you offer services, technology, or resources that can help WAAS grow? We gratefully accept in-kind contributions from organisations of all sizes.</p>
+        <p>Do you offer services, technology, or resources that can help WAAS grow? We gratefully accept in-kind contributions from organisations</p>
         <div class="tag-list">
           <span class="tag">Office Space</span>
           <span class="tag">Software Licences</span>
@@ -981,7 +1044,7 @@
 
       <div class="inkind-card reveal">
         <h3>Individual Donors</h3>
-        <p>Every individual contribution — however modest — directly funds a student's research trip, a publication, or a mentoring session. WAAS is a registered non-profit NGO; donations may be tax-deductible in your jurisdiction.</p>
+        <p>Every individual contribution — however modest — directly funds a student's research trip, a publication, or a mentoring session.</p>
         <div class="tag-list">
           <span class="tag">One-Time Gift</span>
           <span class="tag">Monthly Giving</span>
@@ -1059,7 +1122,9 @@
             </div>
             <div class="field-group">
               <label>Country</label>
-              <input type="text">
+              <select data-country-list="1" data-locale="en">
+                <option value="">Select a country</option>
+              </select>
             </div>
           </div>
 
@@ -1131,6 +1196,68 @@
       const target = document.querySelector(a.getAttribute('href'));
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
+  });
+
+  // Populate country dropdowns with full ISO country list (localized by page language)
+  const COUNTRY_CODES = [
+    "AF","AL","DZ","AD","AO","AG","AR","AM","AU","AT","AZ","BS","BH","BD","BB","BY","BE","BZ","BJ","BT","BO","BA","BW","BR","BN","BG","BF","BI","CV","KH","CM","CA","CF","TD","CL","CN","CO","KM","CG","CD","CR","CI","HR","CU","CY","CZ","DK","DJ","DM","DO","EC","EG","SV","GQ","ER","EE","SZ","ET","FJ","FI","FR","GA","GM","GE","DE","GH","GR","GD","GT","GN","GW","GY","HT","HN","HU","IS","IN","ID","IR","IQ","IE","IL","IT","JM","JP","JO","KZ","KE","KI","KP","KR","KW","KG","LA","LV","LB","LS","LR","LY","LI","LT","LU","MG","MW","MY","MV","ML","MT","MH","MR","MU","MX","FM","MD","MC","MN","ME","MA","MZ","MM","NA","NR","NP","NL","NZ","NI","NE","NG","MK","NO","OM","PK","PW","PS","PA","PG","PY","PE","PH","PL","PT","QA","RO","RU","RW","KN","LC","VC","WS","SM","ST","SA","SN","RS","SC","SL","SG","SK","SI","SB","SO","ZA","SS","ES","LK","SD","SR","SE","CH","SY","TJ","TZ","TH","TL","TG","TO","TT","TN","TR","TM","TV","UG","UA","AE","GB","US","UY","UZ","VU","VA","VE","VN","YE","ZM","ZW"
+  ];
+  const countrySelects = document.querySelectorAll('select[data-country-list="1"]');
+  countrySelects.forEach((select) => {
+    const locale = select.dataset.locale || document.documentElement.lang || "en";
+    const formatter = (typeof Intl !== "undefined" && typeof Intl.DisplayNames === "function")
+      ? new Intl.DisplayNames([locale], { type: "region" })
+      : null;
+    COUNTRY_CODES.forEach((code) => {
+      const option = document.createElement("option");
+      option.value = code;
+      option.textContent = formatter ? (formatter.of(code) || code) : code;
+      select.appendChild(option);
+    });
+  });
+
+  // Email validation for contact form
+  const sponsorForm = document.querySelector('.sponsor-form');
+  const emailInput = sponsorForm?.querySelector('input[type="email"]');
+  const submitBtn = sponsorForm?.querySelector('.btn-submit');
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const emailErrorText = 'Please enter a valid email address.';
+  function clearEmailError() {
+    if (!emailInput) return;
+    emailInput.removeAttribute('aria-invalid');
+    const existing = sponsorForm?.querySelector('.field-error[data-for="email"]');
+    if (existing) existing.remove();
+  }
+  function showEmailError() {
+    if (!emailInput || !sponsorForm) return;
+    clearEmailError();
+    emailInput.setAttribute('aria-invalid', 'true');
+    const message = document.createElement('small');
+    message.className = 'field-error';
+    message.dataset.for = 'email';
+    message.textContent = emailErrorText;
+    emailInput.insertAdjacentElement('afterend', message);
+  }
+  function isEmailValid() {
+    if (!emailInput) return true;
+    const value = emailInput.value.trim();
+    return emailPattern.test(value);
+  }
+  submitBtn?.addEventListener('click', () => {
+    if (!isEmailValid()) {
+      showEmailError();
+      emailInput?.focus();
+      return;
+    }
+    clearEmailError();
+  });
+  emailInput?.addEventListener('blur', () => {
+    if (!emailInput.value.trim()) return;
+    if (!isEmailValid()) showEmailError();
+    else clearEmailError();
+  });
+  emailInput?.addEventListener('input', () => {
+    if (isEmailValid()) clearEmailError();
   });
 
   // Counter animation for stats
