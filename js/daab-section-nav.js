@@ -262,7 +262,7 @@
         forumVideoGallery: "Video qalereya",
         scientistsList: "Siyahı",
         scientistsProfiles: "Profillər",
-        membershipWhy: "Niyə üzv olmalı",
+        membershipWhy: "Niyə DAAB-a qoşulmalı",
         membershipTerms: "Üzvlük şərtləri",
         membershipJoin: "Bizə qoşulun",
         membershipFlyer: "Dəvət göndərin"
@@ -287,10 +287,10 @@
         forumVideoGallery: "Video gallery",
         scientistsList: "Directory",
         scientistsProfiles: "Profiles",
-        membershipWhy: "Why become a member",
+        membershipWhy: "Why join WAAS",
         membershipTerms: "Membership terms",
         membershipJoin: "Join us",
-        membershipFlyer: "Send invite"
+        membershipFlyer: "Send invitation"
       }
     }
   };

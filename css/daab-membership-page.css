@@ -168,3 +168,214 @@
 }
 
 @media(max-width:1060px){.membership-page .hero-wrap{grid-template-columns:1fr}.membership-page .hero-panel{max-width:640px}.cards,.intro-card{grid-template-columns:1fr}}@media(max-width:760px){.membership-page .hero-wrap{padding:48px 18px 40px}.membership-page .main{padding:28px 16px 48px}.action-row,.pricing,.footer-grid{grid-template-columns:1fr}.hero-actions{flex-direction:column}.membership-page .btn{justify-content:center}.card-body{padding:20px}.bank-table th,.bank-table td{display:block;width:100%}.bank-table th{border-bottom:0}.footer-grid{grid-template-columns:1fr}.footer-brand h3{font-size:14px}.membership-page .panel-title{font-size:clamp(19.5px,4.94vw,23.4px)!important}}
+
+/* Membership terms compact layout refresh (AZ/EN) */
+.membership-page .main{
+  display:grid;
+  grid-template-columns:minmax(260px,340px) minmax(0,1fr);
+  column-gap:20px;
+  row-gap:12px;
+  align-items:start;
+}
+.membership-page .intro-card{
+  grid-column:1;
+  grid-row:1 / span 2;
+  margin:0;
+  padding:18px 18px;
+  gap:12px;
+  position:sticky;
+  top:88px;
+}
+.membership-page .section-label{
+  grid-column:2;
+  margin:0 0 2px;
+}
+.membership-page .section-label span{
+  letter-spacing:.1em;
+}
+.membership-page .cards{
+  grid-column:2;
+  margin:0;
+  gap:12px;
+}
+.membership-page .card{
+  min-height:unset;
+  border-radius:16px;
+}
+.membership-page .card-header{
+  padding:12px 14px;
+  font-size:13px;
+}
+.membership-page .card-body{
+  padding:14px 14px 12px;
+}
+.membership-page .card-body p{
+  margin:0 0 7px;
+  font-size:13px;
+  line-height:1.48;
+}
+.membership-page .lang-label{
+  margin-bottom:8px;
+}
+.membership-page .lang-card p{
+  margin:0 0 8px;
+  font-size:13px;
+  line-height:1.46;
+}
+.membership-page .pricing{
+  gap:10px;
+  margin:10px 0;
+}
+.membership-page .price-box{
+  padding:10px 10px;
+}
+.membership-page .price-box strong{
+  font-size:20px;
+}
+.membership-page .bank-table{
+  margin-top:10px;
+}
+.membership-page .bank-table th,
+.membership-page .bank-table td{
+  padding:8px 10px;
+  font-size:12px;
+}
+.membership-page .iban-list li{
+  padding:4px 0 4px 14px;
+  font-size:12px;
+}
+.membership-page .signature{
+  margin-top:10px!important;
+  padding:11px 12px;
+  font-size:12px;
+}
+.membership-page .membership-invite-note{
+  margin: 12px 0 10px;
+  padding: 13px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(18, 94, 141, 0.2);
+  border-left: 4px solid #2d87c7;
+  background: linear-gradient(135deg, #f6fbff 0%, #eef7ff 100%);
+  box-shadow: 0 8px 18px rgba(14, 79, 122, 0.1);
+  color: var(--blue-dark);
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  column-gap: 9px;
+  row-gap: 6px;
+}
+.membership-page .membership-invite-note .invite-badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #e6f3ff;
+  color: #0b5f96;
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-weight: 900;
+  border: 1px solid rgba(11, 95, 150, 0.25);
+}
+.membership-page .membership-invite-note .invite-icon{
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(16, 111, 176, 0.1);
+  color: #0b5f96;
+  font-size: 14px;
+}
+.membership-page .membership-invite-note .invite-text{
+  font-size: 14px;
+  font-weight: 700;
+  color: #0d4e78;
+}
+.membership-page .membership-invite-note .invite-link{
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #0b5f96;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: transform .18s ease, background-color .18s ease;
+}
+.membership-page .membership-invite-note .invite-link:hover{
+  background: #084d79;
+  color: #fff;
+  transform: translateY(-1px);
+}
+@media (max-width:760px){
+  .membership-page .membership-invite-note{
+    grid-template-columns: auto 1fr;
+    padding: 12px;
+    font-size: 13px;
+    row-gap: 8px;
+  }
+  .membership-page .membership-invite-note .invite-badge{
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+  .membership-page .membership-invite-note .invite-text{
+    font-size: 14px;
+  }
+  .membership-page .membership-invite-note .invite-link{
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
+
+@media (max-width:1060px){
+  .membership-page .main{
+    grid-template-columns:1fr;
+    row-gap:12px;
+  }
+  .membership-page .intro-card,
+  .membership-page .section-label,
+  .membership-page .cards{
+    grid-column:1;
+    grid-row:auto;
+  }
+  .membership-page .intro-card{
+    position:static;
+    top:auto;
+  }
+}
+
+@media (max-width:760px){
+  .membership-page .main{
+    row-gap:10px;
+  }
+  .membership-page .intro-card{
+    padding:14px 14px;
+    gap:8px;
+  }
+  .membership-page .card-header{
+    padding:11px 12px;
+    font-size:12px;
+  }
+  .membership-page .card-body{
+    padding:12px;
+  }
+  .membership-page .card-body p,
+  .membership-page .lang-card p{
+    font-size:12px;
+    line-height:1.45;
+  }
+  .membership-page .price-box strong{
+    font-size:18px;
+  }
+}

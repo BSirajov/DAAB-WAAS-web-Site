@@ -31,7 +31,8 @@
     membership: "membershipTerms",
     "membership-value": "membershipWhy",
     "membership-application": "membershipJoin",
-    "membership-flyer": "membershipFlyer"
+    "membership-flyer": "membershipFlyer",
+    sponsors: "sponsors"
   };
 
   function pageById(routes, id) {
@@ -238,7 +239,8 @@
       membership: up + "membership.html",
       "membership-value": up + "membership_value.html",
       "membership-application": up + "application.html",
-      "membership-flyer": up + "membership_flyer.html"
+      "membership-flyer": up + "membership_flyer.html",
+      sponsors: up + "sponsors.html"
     };
     return map[name] || up + "index.html";
   }
@@ -266,6 +268,7 @@
     membershipTerms: "✒️",
     membershipJoin: "📝",
     membershipFlyer: "📤",
+    sponsors: "🤝",
     about: "🏛️",
     scientists: "🌐",
     foundation: "🏛️",
@@ -304,11 +307,12 @@
       '</div></div>' +
       '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("membership") + 'Üzvlük <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
       '<div class="nav-dropdown-panel" role="menu">' +
-      dropLink(staticHref("membership-value"), "membership-value", "Niyə üzv olmalı", "Üzvlüyün faydaları və dəyər təklifi", FALLBACK_ICONS.membershipWhy) +
+      dropLink(staticHref("membership-value"), "membership-value", "Niyə DAAB-a qoşulmalı", "Üzvlüyün faydaları və dəyər təklifi", FALLBACK_ICONS.membershipWhy) +
       dropLink(staticHref("membership"), "membership", "Üzvlük şərtləri", "Üzvlük qaydaları, ödəniş və müraciət məlumatları", FALLBACK_ICONS.membershipTerms) +
       dropLink(staticHref("membership-application"), "membership-application", "Bizə qoşulun", "Onlayn üzvlük müraciət forması", FALLBACK_ICONS.membershipJoin) +
       dropLink(staticHref("membership-flyer"), "membership-flyer", "Dəvət göndərin", "Potensial üzvlər üçün çap oluna bilən flyer", FALLBACK_ICONS.membershipFlyer) +
-      '</div></div>';
+      '</div></div>' +
+      '<a class="nav-link" href="' + staticHref("sponsors") + '" data-nav-id="sponsors">' + fallbackIcon("sponsors") + 'Sponsorluq</a>';
     var en =
       '<div class="nav-divider"></div>' +
       '<a class="nav-link" href="' + staticHref("home") + '" data-nav-id="home">' + fallbackIcon("home") + 'Home</a>' +
@@ -331,11 +335,12 @@
       '</div></div>' +
       '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("membership") + 'Membership <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
       '<div class="nav-dropdown-panel" role="menu">' +
-      dropLink(staticHref("membership-value"), "membership-value", "Why become a member", "Benefits and value of WAAS membership", FALLBACK_ICONS.membershipWhy) +
+      dropLink(staticHref("membership-value"), "membership-value", "Why join WAAS", "Benefits and value of WAAS membership", FALLBACK_ICONS.membershipWhy) +
       dropLink(staticHref("membership"), "membership", "Membership terms", "Membership rules, fees and application information", FALLBACK_ICONS.membershipTerms) +
       dropLink(staticHref("membership-application"), "membership-application", "Join us", "Online membership application form", FALLBACK_ICONS.membershipJoin) +
-      dropLink(staticHref("membership-flyer"), "membership-flyer", "Send invite", "Printable flyer to share with potential members", FALLBACK_ICONS.membershipFlyer) +
-      '</div></div>';
+      dropLink(staticHref("membership-flyer"), "membership-flyer", "Send invitation", "Printable flyer to share with potential members", FALLBACK_ICONS.membershipFlyer) +
+      '</div></div>' +
+      '<a class="nav-link" href="' + staticHref("sponsors") + '" data-nav-id="sponsors">' + fallbackIcon("sponsors") + 'Sponsorship</a>';
     menu.innerHTML = lang === "en" ? en : az;
     if (window.DAAB_NAV && typeof window.DAAB_NAV.init === "function") {
       window.DAAB_NAV.init();

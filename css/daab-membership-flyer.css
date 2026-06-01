@@ -42,7 +42,9 @@
 }.flyer-page-controls .flyer-btn{
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
+  min-width: 128px;
   padding: 8px 14px;
   border: 1px solid var(--color-border-blue-light);
   border-radius: 999px;
@@ -450,6 +452,7 @@
     right: 8px;
     gap: 6px;
   }.flyer-page-controls .flyer-btn{
+    min-width: 116px;
     padding: 7px 11px;
     font-size: 11px;
   }.flyer-sheet{

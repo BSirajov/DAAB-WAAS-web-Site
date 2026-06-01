@@ -106,7 +106,7 @@ NAV_PLACEHOLDER
 <nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə">
 <p class="daab-section-nav-title">Üzvlük</p>
 <ul class="daab-section-nav-list">
-<li><a href="membership_value.html">Niyə üzv olmalı</a></li>
+<li><a href="membership_value.html">Niyə DAAB-a qoşulmalı</a></li>
 <li><a href="membership.html">Üzvlük şərtləri</a></li>
 <li><a class="active" href="application.html" aria-current="page">Bizə qoşulun</a></li>
 <li><a href="membership_flyer.html">Dəvət göndərin</a></li>
@@ -117,9 +117,10 @@ NAV_PLACEHOLDER
 
 
 def success_extra() -> str:
-    return """      <p>
+    return """      <div class="app-btn-row">
         <a class="app-btn app-btn-primary" href="membership.html">Üzvlük səhifəsinə qayıt</a>
-      </p>"""
+        <a class="app-btn app-btn-primary" href="membership_flyer.html">Dəvət göndərin</a>
+      </div>"""
 
 
 def main() -> None:

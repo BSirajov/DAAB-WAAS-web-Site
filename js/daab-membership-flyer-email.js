@@ -519,34 +519,16 @@
     await withExportLock(async function () {
       setButtonBusy(btn, true, cfg.busyLabel);
       beginExportChromeHide();
-      var cleaned = false;
-      var cleanup = function () {
-        if (cleaned) return;
-        cleaned = true;
+      try {
+        var pdfBlob = await generatePdfBlob(sheet);
+        // Deterministic single-page export from jsPDF pipeline.
+        downloadBlob(pdfBlob, cfg.pdfFilename);
+      } catch (err) {
+        showError(cfg, "printErrorAlert", err);
+      } finally {
         endExportChromeHide();
         setButtonBusy(btn, false);
-      };
-      var onAfterPrint = function () {
-        window.removeEventListener("afterprint", onAfterPrint);
-        cleanup();
-      };
-      window.addEventListener("afterprint", onAfterPrint);
-
-      try {
-        // Single, consistent cross-browser action: open native print dialog.
-        window.print();
-      } catch (err) {
-        window.removeEventListener("afterprint", onAfterPrint);
-        cleanup();
-        showError(cfg, "printErrorAlert", err);
-        return;
       }
-
-      // Some browsers may skip afterprint; ensure UI state always recovers.
-      window.setTimeout(function () {
-        window.removeEventListener("afterprint", onAfterPrint);
-        cleanup();
-      }, 2000);
     });
   }
 

@@ -79,11 +79,6 @@
           "descKey": "membershipWhyDesc"
         },
         {
-          "id": "membership",
-          "labelKey": "membershipTerms",
-          "descKey": "membershipTermsDesc"
-        },
-        {
           "id": "membership-application",
           "labelKey": "membershipJoin",
           "descKey": "membershipJoinDesc"
@@ -94,6 +89,10 @@
           "descKey": "membershipFlyerDesc"
         }
       ]
+    },
+    {
+      "type": "page",
+      "id": "sponsors"
     }
   ],
   "sections": {
@@ -141,7 +140,6 @@
       "landingId": "membership-value",
       "pages": [
         "membership-value",
-        "membership",
         "membership-application",
         "membership-flyer"
       ]

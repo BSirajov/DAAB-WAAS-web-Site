@@ -176,8 +176,7 @@ MEMBERSHIP_SECTION_NAV
 SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə" data-daab-section-nav-enhanced="1">
 <p class="daab-section-nav-title">Üzvlük</p>
 <ul class="daab-section-nav-list">
-<li><a class="active" href="membership_value.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Niyə üzv olmalı</span></a></li>
-<li><a href="membership.html"><span class="daab-section-nav-icon" aria-hidden="true">✒️</span><span class="daab-section-nav-label">Üzvlük şərtləri</span></a></li>
+<li><a class="active" href="membership_value.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Niyə DAAB-a qoşulmalı</span></a></li>
 <li><a href="application.html"><span class="daab-section-nav-icon" aria-hidden="true">📝</span><span class="daab-section-nav-label">Bizə qoşulun</span></a></li>
 <li><a href="membership_flyer.html"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Dəvət göndərin</span></a></li>
 </ul>
@@ -187,10 +186,9 @@ SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-lab
 SECTION_NAV_EN = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section" data-daab-section-nav-enhanced="1">
 <p class="daab-section-nav-title">Membership</p>
 <ul class="daab-section-nav-list">
-<li><a class="active" href="membership_value.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Why become a member</span></a></li>
-<li><a href="membership.html"><span class="daab-section-nav-icon" aria-hidden="true">✒️</span><span class="daab-section-nav-label">Membership terms</span></a></li>
+<li><a class="active" href="membership_value.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Why join WAAS</span></a></li>
 <li><a href="application.html"><span class="daab-section-nav-icon" aria-hidden="true">📝</span><span class="daab-section-nav-label">Join us</span></a></li>
-<li><a href="membership_flyer.html"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Send invite</span></a></li>
+<li><a href="membership_flyer.html"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Send invitation</span></a></li>
 </ul>
 </nav>
 """

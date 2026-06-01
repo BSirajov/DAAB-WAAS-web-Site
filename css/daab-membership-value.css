@@ -351,6 +351,75 @@
 }.membership-value-page .mv-cta .btn:hover{
   transform: translateY(-2px);
 }
+.membership-value-page .mv-cta-note{
+  margin: 14px auto 0;
+  max-width: 840px;
+  padding: 13px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-left: 4px solid #88d1ff;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.1));
+  box-shadow: 0 8px 20px rgba(0, 39, 72, 0.16);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  column-gap: 9px;
+  row-gap: 6px;
+}
+.membership-value-page .mv-cta-note .invite-badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-weight: 900;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+.membership-value-page .mv-cta-note .invite-icon{
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 14px;
+}
+.membership-value-page .mv-cta-note .invite-text{
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+.membership-value-page .mv-cta-note .invite-link{
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0b5f96;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: transform .18s ease, background-color .18s ease, color .18s ease;
+}
+.membership-value-page .mv-cta-note .invite-link:hover{
+  background: #fff;
+  color: #084d79;
+  transform: translateY(-1px);
+}
 
 @media (max-width: 1060px) {.membership-value-page .hero-wrap{
     grid-template-columns: 1fr;
@@ -379,5 +448,18 @@
     grid-template-columns: 1fr;
   }.membership-value-page .mv-card{
     padding: 16px;
+  }.membership-value-page .mv-cta-note{
+    grid-template-columns: auto 1fr;
+    padding: 12px;
+    font-size: 13px;
+    row-gap: 8px;
+  }.membership-value-page .mv-cta-note .invite-badge{
+    grid-column: 1 / -1;
+    justify-self: start;
+  }.membership-value-page .mv-cta-note .invite-text{
+    font-size: 14px;
+  }.membership-value-page .mv-cta-note .invite-link{
+    grid-column: 1 / -1;
+    justify-self: start;
   }
 }

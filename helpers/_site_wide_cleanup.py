@@ -13,7 +13,7 @@ SCRIPT_VERSIONS = {
     "daab-lang-position.js": 7,
     "daab-design-tokens.js": 1,
     "daab-nav.js": 23,
-    "daab-primary-nav.js": 17,
+    "daab-primary-nav.js": 19,
     "daab-breadcrumbs.js": 14,
     "daab-section-nav.js": 18,
     "daab-shell.js": 12,
@@ -26,8 +26,8 @@ SCRIPT_VERSIONS = {
     "daab-photos-gallery.js": 3,
     "daab-profile-tts.js": 3,
     "daab-profile-deep-link.js": 2,
-    "daab-membership-application.js": 1,
-    "daab-membership-flyer-email.js": 27,
+    "daab-membership-application.js": 5,
+    "daab-membership-flyer-email.js": 28,
     "daab-collation.js": 1,
     "daab-table-resize.js": 1,
     "daab-scientists-toolbar-mobile.js": 1,
@@ -57,21 +57,21 @@ STYLE_VERSIONS = {
     "daab-activities-layout.css": 14,
     "daab-activities-page.css": 6,
     "daab-executive-board.css": 6,
-    "daab-membership-page.css": 8,
-    "daab-membership-value.css": 14,
+    "daab-membership-page.css": 12,
+    "daab-membership-value.css": 17,
     "daab-scientists-profiles-page.css": 13,
     "daab-content-hero.css": 4,
     "daab-charter-page.css": 5,
     "daab-foundation-page.css": 4,
     "daab-mission-page.css": 4,
-    "daab-membership-application.css": 5,
+    "daab-membership-application.css": 14,
     "daab-application-membership-value-embed.css": 2,
     "daab-application-embed-az.css": 2,
     "daab-application-embed-en.css": 2,
     "daab-scientists-list-page.css": 5,
     "daab-photos-gallery.css": 8,
     "daab-forum-book.css": 5,
-    "daab-membership-flyer.css": 26,
+    "daab-membership-flyer.css": 27,
     "daab-sidebar-widget.css": 4,
     "daab-table-resize.css": 2,
     "scientists-catalog-toolbar.css": 2,
@@ -87,10 +87,10 @@ DEPLOY_HTML_DIRS = (ROOT / "az", ROOT / "en")
 SECTION_NAV_EN = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section">
 <p class="daab-section-nav-title">Membership</p>
 <ul class="daab-section-nav-list">
-<li><a href="membership_value.html">Why become a member</a></li>
+<li><a href="membership_value.html">Why join WAAS</a></li>
 <li><a class="active" href="membership.html" aria-current="page">Membership terms</a></li>
 <li><a href="application.html">Join us</a></li>
-<li><a href="membership_flyer.html">Send invite</a></li>
+<li><a href="membership_flyer.html">Send invitation</a></li>
 </ul>
 </nav>
 """
@@ -98,10 +98,10 @@ SECTION_NAV_EN = """<nav class="daab-section-nav" id="daab-section-nav" aria-lab
 SECTION_NAV_EN_VALUE = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section">
 <p class="daab-section-nav-title">Membership</p>
 <ul class="daab-section-nav-list">
-<li><a class="active" href="membership_value.html" aria-current="page">Why become a member</a></li>
+<li><a class="active" href="membership_value.html" aria-current="page">Why join WAAS</a></li>
 <li><a href="membership.html">Membership terms</a></li>
 <li><a href="application.html">Join us</a></li>
-<li><a href="membership_flyer.html">Send invite</a></li>
+<li><a href="membership_flyer.html">Send invitation</a></li>
 </ul>
 </nav>
 """
@@ -109,7 +109,7 @@ SECTION_NAV_EN_VALUE = """<nav class="daab-section-nav" id="daab-section-nav" ar
 SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə">
 <p class="daab-section-nav-title">Üzvlük</p>
 <ul class="daab-section-nav-list">
-<li><a href="membership_value.html">Niyə üzv olmalı</a></li>
+<li><a href="membership_value.html">Niyə DAAB-a qoşulmalı</a></li>
 <li><a class="active" href="membership.html" aria-current="page">Üzvlük şərtləri</a></li>
 <li><a href="application.html">Bizə qoşulun</a></li>
 <li><a href="membership_flyer.html">Dəvət göndərin</a></li>
@@ -120,7 +120,7 @@ SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-lab
 SECTION_NAV_AZ_VALUE = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə">
 <p class="daab-section-nav-title">Üzvlük</p>
 <ul class="daab-section-nav-list">
-<li><a class="active" href="membership_value.html" aria-current="page">Niyə üzv olmalı</a></li>
+<li><a class="active" href="membership_value.html" aria-current="page">Niyə DAAB-a qoşulmalı</a></li>
 <li><a href="membership.html">Üzvlük şərtləri</a></li>
 <li><a href="application.html">Bizə qoşulun</a></li>
 <li><a href="membership_flyer.html">Dəvət göndərin</a></li>

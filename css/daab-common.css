@@ -858,6 +858,9 @@ button,
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 2px !important;
+  }.nav-dropdown-panel .nav-dropdown-link{
+    /* subtle one-character indent for submenu items on mobile */
+    padding-left: calc(14px + 1ch) !important;
   }.nav-dropdown-panel .nav-dropdown-link-title{
     font-size: 15px !important;
     color: #1e3d54 !important;

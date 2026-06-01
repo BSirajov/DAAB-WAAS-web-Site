@@ -182,7 +182,7 @@
         executiveBoard: "İdarə heyəti",
         charter: "Nizamnamə",
         membership: "Üzvlük",
-        membershipWhy: "Niyə üzv olmalı",
+        membershipWhy: "Niyə DAAB-a qoşulmalı",
         membershipTerms: "Üzvlük şərtləri",
         membershipJoin: "Bizə qoşulun",
         membershipFlyer: "Dəvət göndərin"
@@ -207,10 +207,10 @@
         executiveBoard: "Board of Directors",
         charter: "Charter",
         membership: "Membership",
-        membershipWhy: "Why become a member",
+        membershipWhy: "Why join WAAS",
         membershipTerms: "Membership terms",
         membershipJoin: "Join us",
-        membershipFlyer: "Send invite"
+        membershipFlyer: "Send invitation"
       }
     }
   };

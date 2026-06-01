@@ -215,6 +215,15 @@
       "en": "en/membership.html"
     },
     {
+      "id": "sponsors",
+      "navId": "sponsors",
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": 6,
+      "az": "az/sponsors.html",
+      "en": "en/sponsors.html"
+    },
+    {
       "id": "forum-roadmap",
       "navId": "forum-roadmap",
       "navGroup": "forum",

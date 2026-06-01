@@ -58,12 +58,12 @@ NAV_AZ = (
     'Üzvlük <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("membership_value.html", "membership-value", "Niyə üzv olmalı", "Üzvlüyün faydaları və dəyər təklifi"),
-        ("membership.html", "membership", "Üzvlük şərtləri", "Üzvlük qaydaları, ödəniş və müraciət məlumatları"),
+        ("membership_value.html", "membership-value", "Niyə DAAB-a qoşulmalı", "Üzvlüyün dəyəri və əsas faydalar"),
         ("application.html", "membership-application", "Bizə qoşulun", "Onlayn üzvlük müraciət forması"),
         ("membership_flyer.html", "membership-flyer", "Dəvət göndərin", "Potensial üzvlər üçün çap oluna bilən flyer"),
     ])
     + "</div></div>"
+    '<a class="nav-link" href="sponsors.html" data-nav-id="sponsors">Sponsorluq</a>'
 )
 
 NAV_EN = (
@@ -103,12 +103,12 @@ NAV_EN = (
     'Membership <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("membership_value.html", "membership-value", "Why become a member", "Benefits and value of WAAS membership"),
-        ("membership.html", "membership", "Membership terms", "Membership rules, fees and application information"),
+        ("membership_value.html", "membership-value", "Why join WAAS", "Membership value, benefits, and opportunities"),
         ("application.html", "membership-application", "Join us", "Online membership application form"),
-        ("membership_flyer.html", "membership-flyer", "Send invite", "Printable flyer to share with potential members"),
+        ("membership_flyer.html", "membership-flyer", "Send invitation", "Printable flyer to share with potential members"),
     ])
     + "</div></div>"
+    '<a class="nav-link" href="sponsors.html" data-nav-id="sponsors">Sponsorship</a>'
 )
 
 NAV_SCI_AZ = NAV_AZ.replace('href="scientists/list.html"', 'href="list.html"').replace(
@@ -125,6 +125,8 @@ NAV_SCI_AZ = NAV_AZ.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="membership_value.html"', 'href="../membership_value.html"'
 ).replace('href="application.html"', 'href="../application.html"').replace(
     'href="membership_flyer.html"', 'href="../membership_flyer.html"'
+).replace(
+    'href="sponsors.html"', 'href="../sponsors.html"'
 )
 
 FORUM_PREFIX_REPLACES = [
@@ -140,6 +142,7 @@ FORUM_PREFIX_REPLACES = [
     ('href="membership_value.html"', 'href="../../membership_value.html"'),
     ('href="application.html"', 'href="../../application.html"'),
     ('href="membership_flyer.html"', 'href="../../membership_flyer.html"'),
+    ('href="sponsors.html"', 'href="../../sponsors.html"'),
 ]
 
 
@@ -204,10 +207,12 @@ NAV_SCI_EN = NAV_EN.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="membership_value.html"', 'href="../membership_value.html"'
 ).replace('href="application.html"', 'href="../application.html"').replace(
     'href="membership_flyer.html"', 'href="../membership_flyer.html"'
+).replace(
+    'href="sponsors.html"', 'href="../sponsors.html"'
 )
 
 PLACEHOLDER_RE = re.compile(
-    r'(<div class="nav-menu" id="primaryNavMenu"[^>]*>)(.*?)(</div>\s*</div>\s*</nav>)',
+    r'(<div[^>]*class="nav-menu"[^>]*id="primaryNavMenu"[^>]*>)(.*?)(</div>\s*</div>\s*</nav>)',
     re.DOTALL | re.IGNORECASE,
 )
 

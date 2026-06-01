@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en" data-daab-lang="en" data-daab-asset-root="../" data-daab-page-id="sponsors" data-daab-nav-mount="1">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support WAAS — World Association of Azerbaijani Scientists</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:       #08263b;
+    --muted:     #345d76;
+    --blue-700:  #005a9a;
+    --blue-600:  #1a6fa8;
+    --blue-400:  #4db6f0;
+    --blue-200:  #9ed6f5;
+    --blue-50:   #dff2ff;
+    --gold:      #c89b38;
+    --gold-light:#f0c96c;
+    --gold-pale: #fdf3dc;
+    --card-bg:   rgba(245,251,255,.96);
+    --white:     #ffffff;
+    --bg:        #f0f6fb;
+    --page-bg-pattern: url("../images/diaspor-body-top-bg-blue.png");
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--bg);
+    background-image:
+      linear-gradient(rgba(240, 246, 251, 0.82), rgba(240, 246, 251, 0.82)),
+      var(--page-bg-pattern);
+    background-position: top center, top center;
+    background-size: 100% auto, 100% auto;
+    background-repeat: repeat-y, repeat-y;
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ───────────────────────────────────── */
+  .hero {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    color: var(--ink);
+    background-image: var(--page-bg-pattern);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.74) 0%, rgba(255, 255, 255, 0.5) 100%);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+    opacity: .48;
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
+  }
+
+  .hero-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 20px;
+    align-items: start;
+    padding: 14px 24px 16px;
+  }
+
+  .hero-copy { min-width: 0; }
+
+  .hero-title {
+    margin: 0;
+    color: var(--ink);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(33px, 4.2vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    max-width: 18ch;
+  }
+
+  .hero-subtitle {
+    margin: 6px 0 0;
+    max-width: 36rem;
+    color: var(--muted);
+    font-size: clamp(16px, 1.65vw, 18px);
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  .hero-panel {
+    align-self: start;
+    padding: 10px !important;
+    background: rgba(248, 252, 255, 0.9);
+    border: 1px solid rgba(0, 90, 154, 0.14);
+    border-radius: 22px !important;
+    box-shadow: 0 22px 50px rgba(8, 38, 59, 0.12);
+  }
+
+  .panel-card {
+    padding: 12px 14px !important;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0, 90, 154, 0.12);
+    border-radius: 16px !important;
+  }
+
+  .panel-title {
+    margin: 0 0 6px !important;
+    color: var(--blue-700);
+    font-family: 'Playfair Display', serif;
+    font-size: var(--font-size-summary-panel-title) !important;
+    line-height: 1.15 !important;
+    text-align: center;
+    white-space: normal !important;
+  }
+
+  .panel-copy {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px !important;
+    line-height: 1.42 !important;
+  }
+  .panel-source-link {
+    display: block;
+    margin-top: 8px;
+    color: var(--blue-700);
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .panel-source-link:hover,
+  .panel-source-link:focus-visible {
+    color: var(--blue-600);
+  }
+
+  .hero-cta-row {
+    margin-top: 12px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: linear-gradient(135deg, var(--gold) 0%, #e8b84b 100%);
+    color: #1a1000;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgba(200,155,56,.3);
+    transition: all .3s ease;
+    letter-spacing: .02em;
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(200,155,56,.35);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: rgba(255,255,255,.82);
+    border: 1px solid rgba(30,121,183,.24);
+    color: var(--blue-700);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all .3s ease;
+    letter-spacing: .02em;
+  }
+  .btn-outline:hover {
+    background: #fff;
+    transform: translateY(-2px);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── IMPACT NUMBERS ──────────────────────────── */
+  .stats-bar {
+    background: var(--white);
+    box-shadow: 0 2px 24px rgba(8,38,59,.08);
+    padding: 0 24px;
+  }
+  .stats-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .stat-item {
+    padding: 36px 24px;
+    text-align: center;
+    border-right: 1px solid rgba(8,38,59,.07);
+    position: relative;
+    overflow: hidden;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-item::before {
+    content: '';
+    position: absolute; bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 3px;
+    background: linear-gradient(90deg, var(--blue-700), var(--gold));
+    transition: width .4s ease;
+  }
+  .stat-item:hover::before { width: 80%; }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight: 700;
+    color: var(--blue-700);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-number span { color: var(--gold); }
+  .stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION SCAFFOLDING ─────────────────────── */
+  section {
+    padding: 28px 24px;
+  }
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--blue-700);
+    margin-bottom: 18px;
+  }
+  .section-eyebrow::before {
+    content: '';
+    width: 28px; height: 2px;
+    background: linear-gradient(90deg, var(--blue-700), var(--gold));
+    border-radius: 2px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 46px);
+    line-height: 1.18;
+    color: var(--ink);
+    max-width: 640px;
+    margin-bottom: 6px;
+  }
+  .section-lead {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--muted);
+    max-width: 600px;
+    margin-bottom: 10px;
+  }
+
+  /* ── WHY SUPPORT ─────────────────────────────── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 10px;
+  }
+  .why-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(158,214,245,.55);
+    border-radius: 24px;
+    padding: 34px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .why-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 16px 48px rgba(0,90,154,.12);
+  }
+  .why-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--blue-700), var(--gold));
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+  .why-card:hover::before { opacity: 1; }
+
+  .why-icon {
+    width: 56px; height: 56px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #d9f0ff, #fff);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 12px rgba(0,90,154,.1);
+  }
+  .why-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .why-card p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  /* ── TIERS ───────────────────────────────────── */
+  .tiers-section {
+    background: linear-gradient(180deg, #f3f9ff 0%, #e8f4ff 100%);
+    color: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .tiers-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 52% at 90% 14%, rgba(200,155,56,.12) 0%, transparent 62%),
+      radial-gradient(ellipse 40% 58% at 8% 86%, rgba(77,182,240,.15) 0%, transparent 64%);
+    pointer-events: none;
+  }
+  .tiers-section .section-eyebrow { color: var(--blue-700); }
+  .tiers-section .section-title { color: var(--ink); max-width: 520px; }
+  .tiers-section .section-lead { color: var(--muted); }
+
+  .tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .tier-card {
+    border-radius: 24px;
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,.94);
+    border: 1px solid rgba(77,182,240,.35);
+    transition: transform .35s ease, box-shadow .35s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .tier-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 54px rgba(0,90,154,.16);
+    border-color: rgba(0,90,154,.32);
+  }
+
+  .tier-card.featured {
+    background: linear-gradient(160deg, #fffdf8, rgba(253,243,220,.88));
+    border-color: rgba(200,155,56,.62);
+    box-shadow: 0 16px 42px rgba(200,155,56,.2);
+  }
+  .tier-card.featured::before {
+    content: 'Most Impactful';
+    position: absolute;
+    top: 16px; right: 16px;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: #7c5a13;
+    background: rgba(200,155,56,.18);
+    border: 1px solid rgba(200,155,56,.5);
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+
+  .tier-gem {
+    width: 44px; height: 44px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+    background: rgba(223,242,255,.9);
+    border: 1px solid rgba(77,182,240,.42);
+  }
+  .tier-card.featured .tier-gem {
+    background: rgba(253,243,220,.96);
+    border-color: rgba(200,155,56,.52);
+  }
+
+  .tier-name {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(8,38,59,.62);
+    margin-bottom: 8px;
+  }
+  .tier-card.featured .tier-name { color: #8a6620; }
+
+  .tier-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .tier-card.featured .tier-amount { color: #7c5a13; }
+
+  .tier-period {
+    font-size: 12px;
+    color: rgba(8,38,59,.62);
+    margin-bottom: 22px;
+  }
+
+  .tier-divider {
+    height: 1px;
+    background: rgba(0,90,154,.16);
+    margin-bottom: 22px;
+  }
+  .tier-card.featured .tier-divider { background: rgba(200,155,56,.52); }
+
+  .tier-perks {
+    list-style: none;
+    flex: 1;
+    margin-bottom: 28px;
+  }
+  .tier-perks li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-bottom: 11px;
+    line-height: 1.5;
+  }
+  .tier-perks li::before {
+    content: '✓';
+    color: var(--blue-700);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .tier-card.featured .tier-perks li::before { color: #b8861f; }
+
+  .tier-btn {
+    display: block;
+    text-align: center;
+    padding: 13px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all .3s ease;
+    background: rgba(255,255,255,.94);
+    border: 1px solid rgba(0,90,154,.24);
+    color: var(--blue-700);
+    letter-spacing: .02em;
+  }
+  .tier-btn:hover {
+    background: var(--blue-50);
+    border-color: rgba(0,90,154,.34);
+    transform: translateY(-2px);
+  }
+  .tier-card.featured .tier-btn {
+    background: linear-gradient(135deg, var(--gold), #e8b84b);
+    border-color: transparent;
+    color: #1a1000;
+    box-shadow: 0 6px 24px rgba(200,155,56,.35);
+  }
+  .tier-card.featured .tier-btn:hover {
+    box-shadow: 0 10px 36px rgba(200,155,56,.5);
+  }
+
+  /* ── IN-KIND / DONOR ─────────────────────────── */
+  .inkind-section { background: var(--white); }
+
+  .inkind-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 10px;
+  }
+
+  .inkind-card {
+    border: 1px solid rgba(158,214,245,.6);
+    border-radius: 24px;
+    padding: 36px 34px;
+    background: var(--card-bg);
+    position: relative;
+    overflow: hidden;
+    transition: all .35s ease;
+  }
+  .inkind-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 44px rgba(0,90,154,.1);
+    border-color: var(--blue-400);
+  }
+
+  .inkind-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .inkind-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag {
+    background: var(--blue-50);
+    color: var(--blue-700);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 100px;
+    border: 1px solid rgba(0,90,154,.12);
+    letter-spacing: .04em;
+  }
+
+  /* ── QUOTE / MISSION STRIP ───────────────────── */
+  .mission-strip {
+    background: linear-gradient(135deg, var(--blue-700), #1a5f8a);
+    padding: 24px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .mission-strip::before {
+    content: '"';
+    position: absolute;
+    top: -40px; left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 320px;
+    color: rgba(255,255,255,.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .mission-quote {
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 3vw, 34px);
+    font-style: italic;
+    color: #fff;
+    max-width: 820px;
+    margin: 0 auto 6px;
+    line-height: 1.5;
+  }
+  .mission-attribution {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+  }
+
+  /* ── FORM SECTION ────────────────────────────── */
+  .form-section { background: var(--bg); }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 52px;
+    align-items: start;
+  }
+
+  .form-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3vw, 38px);
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .form-info p {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .contact-items { list-style: none; }
+  .contact-items li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(8,38,59,.07);
+    font-size: 14.5px;
+    color: var(--muted);
+  }
+  .contact-items li:last-child { border-bottom: none; }
+  .contact-icon {
+    width: 38px; height: 38px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #d9f0ff, #fff);
+    border: 1px solid rgba(0,90,154,.12);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .contact-items a { color: var(--blue-700); text-decoration: none; font-weight: 500; }
+  .contact-items a:hover { text-decoration: underline; }
+
+  .sponsor-form {
+    background: var(--white);
+    border: 1px solid rgba(158,214,245,.6);
+    border-radius: 28px;
+    padding: 44px 40px;
+    box-shadow: 0 8px 40px rgba(0,90,154,.07);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .field-group {
+    margin-bottom: 10px;
+  }
+  .field-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .field-group input,
+  .field-group select,
+  .field-group textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid rgba(158,214,245,.8);
+    border-radius: 12px;
+    background: #f7fbfe;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color .25s, box-shadow .25s;
+    appearance: none;
+  }
+  .field-group input:focus,
+  .field-group select:focus,
+  .field-group textarea:focus {
+    border-color: var(--blue-400);
+    box-shadow: 0 0 0 4px rgba(77,182,240,.14);
+    background: #fff;
+  }
+  .field-group textarea { resize: vertical; min-height: 110px; }
+
+  .form-submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .form-note {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .form-note span { color: var(--gold); font-weight: 600; }
+
+  .btn-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: linear-gradient(135deg, var(--blue-700), #1a5f8a);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 15px 32px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(0,90,154,.28);
+    transition: all .3s ease;
+    letter-spacing: .02em;
+    white-space: nowrap;
+  }
+  .btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px rgba(0,90,154,.38);
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────── */
+  @media (max-width: 1060px) {
+    .hero-wrap { grid-template-columns: 1fr; }
+    .hero-panel { max-width: 640px; }
+    .tiers-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .stat-item:nth-child(2) { border-right: none; }
+  }
+  @media (max-width: 900px) {
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .inkind-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 760px) {
+    .hero-wrap { gap: 12px; padding: 16px 16px 14px; }
+    .hero-title { max-width: none; font-size: clamp(31px, 8.4vw, 40px); }
+    .hero-subtitle { max-width: none; font-size: 15px; line-height: 1.45; }
+    .hero-cta-row { flex-direction: column; align-items: flex-start; }
+    .btn-gold, .btn-outline { width: 100%; justify-content: center; }
+    .why-grid, .tiers-grid { grid-template-columns: 1fr; }
+    .stats-inner { grid-template-columns: repeat(2,1fr); }
+    .form-row { grid-template-columns: 1fr; }
+    .sponsor-form { padding: 32px 24px; }
+  }
+  @media (max-width: 420px) {
+    .stats-inner { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── SCROLL REVEAL ────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .65s ease, transform .65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+<link href="../css/daab-common.css?v=55" rel="stylesheet"/>
+<link href="../css/daab-mobile.css?v=12" rel="stylesheet"/>
+<link href="../css/daab-search.css?v=4" rel="stylesheet"/>
+<link href="../css/daab-lang.css?v=12" rel="stylesheet"/>
+<link href="../css/daab-nav-mega.css?v=25" rel="stylesheet"/>
+<script src="../js/daab-mobile.js?v=6" defer></script>
+<script src="../js/daab-i18n.js?v=18" defer></script>
+<script src="../js/daab-lang-position.js?v=7" defer></script>
+<script src="../js/daab-design-tokens.js?v=1" defer></script>
+<script src="../js/daab-nav.js?v=23" defer></script>
+<script src="../js/daab-primary-nav.js?v=19" defer></script>
+<script src="../js/daab-shell.js?v=12" defer></script>
+<script src="../js/daab-search.js?v=7" defer></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<nav aria-label="Main navigation" class="nav-strip">
+<div class="nav-inner">
+<button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button>
+<div class="page-logo"><a aria-label="WAAS home" href="index.html">
+<img src="../images/daab-logo.svg" class="nav-brand-logo" alt="WAAS Logo"></a></div>
+<a aria-label="WAAS home" class="nav-brand" href="index.html">
+<span class="nav-brand-text">World Association of<br class="mobile-hidden-break">Azerbaijani Scientists</span></a>
+<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div><a class="nav-link" href="index.html" data-nav-id="home">Home</a><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Activities <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="activities.html" data-nav-id="activities"><span class="nav-dropdown-link-title">News</span><span class="nav-dropdown-link-desc">News and updates</span></a><a class="nav-dropdown-link" role="menuitem" href="forum/2024/index.html" data-nav-id="forum-2024"><span class="nav-dropdown-link-title">Forum 2024</span><span class="nav-dropdown-link-desc">Explore Forum 2024</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Scientists <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="scientists/list.html" data-nav-id="scientists-list"><span class="nav-dropdown-link-title">Directory</span><span class="nav-dropdown-link-desc">Directory of all scientists</span></a><a class="nav-dropdown-link" role="menuitem" href="scientists/profiles.html" data-nav-id="scientists-profiles"><span class="nav-dropdown-link-title">Profiles</span><span class="nav-dropdown-link-desc">Academic profiles of scientists</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">About us <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="foundation.html" data-nav-id="foundation"><span class="nav-dropdown-link-title">Foundation</span><span class="nav-dropdown-link-desc">History and founding process</span></a><a class="nav-dropdown-link" role="menuitem" href="mission.html" data-nav-id="mission"><span class="nav-dropdown-link-title">Mission &amp; values</span><span class="nav-dropdown-link-desc">Mission, vision and academic values</span></a><a class="nav-dropdown-link" role="menuitem" href="executive-board.html" data-nav-id="executive-board"><span class="nav-dropdown-link-title">Executive board</span><span class="nav-dropdown-link-desc">Leadership and governance structure</span></a><a class="nav-dropdown-link" role="menuitem" href="charter.html" data-nav-id="charter"><span class="nav-dropdown-link-title">Charter</span><span class="nav-dropdown-link-desc">Charter and governance rules</span></a></div></div><div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Membership <span class="nav-dropdown-caret" aria-hidden="true"></span></button><div class="nav-dropdown-panel" role="menu"><a class="nav-dropdown-link" role="menuitem" href="membership_value.html" data-nav-id="membership-value"><span class="nav-dropdown-link-title">Why join WAAS</span><span class="nav-dropdown-link-desc">Membership value, benefits, and opportunities</span></a><a class="nav-dropdown-link" role="menuitem" href="application.html" data-nav-id="membership-application"><span class="nav-dropdown-link-title">Join us</span><span class="nav-dropdown-link-desc">Online membership application form</span></a><a class="nav-dropdown-link" role="menuitem" href="membership_flyer.html" data-nav-id="membership-flyer"><span class="nav-dropdown-link-title">Send invitation</span><span class="nav-dropdown-link-desc">Printable flyer to share with potential members</span></a></div></div><a class="nav-link" href="sponsors.html" data-nav-id="sponsors">Sponsorship</a></div>
+</div>
+</nav>
+
+<!-- ═══ HERO ═══════════════════════════════════════════════════════ -->
+<section class="hero" id="content">
+  <div class="hero-wrap">
+    <section class="hero-copy">
+      <h1 aria-describedby="page-hero-subtitle" class="hero-title">Invest in Azerbaijani Science</h1>
+      <p class="hero-subtitle page-hero-subtitle" id="page-hero-subtitle">
+        WAAS unites Azerbaijani scientists around the world. Your support helps fund scholarships,
+        research collaborations, and the future of Azerbaijan’s knowledge economy
+      </p>
+      <div class="hero-cta-row">
+        <a href="#tiers" class="btn-gold">
+          <span>Become a Sponsor</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn-outline">
+          <span>Get in Touch</span>
+        </a>
+      </div>
+    </section>
+    <aside aria-label="Sponsorship overview" class="hero-panel">
+      <div class="panel-card">
+        <h2 class="panel-title">Support Science Through Partnership</h2>
+        <p class="panel-copy">Your sponsorship helps WAAS fund young researcher scholarships, build global research collaborations, and deliver long-term scientific impact for Azerbaijan.</p>
+        <a class="panel-source-link" href="charter.html#section-12">Sources of income of the Association</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ═══ WHY SUPPORT ══════════════════════════════════════════════── -->
+<section>
+  <div class="container">
+    <div class="reveal">
+      <p class="section-eyebrow">Why Support WAAS</p>
+      <h2 class="section-title">Your Partnership Creates Real, Lasting Impact</h2>
+      <p class="section-lead">
+        WAAS channels every contribution directly into programs that accelerate scientific discovery,
+        strengthen diaspora ties, and build long-term capacity for Azerbaijan.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">🎓</div>
+        <h3>Scholarships &amp; Fellowships</h3>
+        <p>Funding early-career Azerbaijani researchers to pursue doctoral and postdoctoral programmes at world-leading institutions.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🔬</div>
+        <h3>Research Collaborations</h3>
+        <p>Bridging diaspora experts with Azerbaijani universities and AMEA to co-author publications, share labs, and transfer know-how.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🌐</div>
+        <h3>International Forums</h3>
+        <p>Hosting the annual Forum of Azerbaijani Scientists Abroad — a flagship gathering that shapes the national R&amp;D agenda.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🏗️</div>
+        <h3>Karabakh Reconstruction</h3>
+        <p>Supporting scientific and technical contributions to the reconstruction of liberated Karabakh territories through expert mobilisation.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">📚</div>
+        <h3>Publications &amp; Open Access</h3>
+        <p>Producing peer-reviewed journals, policy white papers, and open-access resources in Azerbaijani and English.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🤝</div>
+        <h3>Diaspora Network</h3>
+        <p>Maintaining a living registry of Azerbaijani scientists worldwide and facilitating mentorship, mobility, and career pathways.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TIERS ════════════════════════════════════════════════════── -->
+<section class="tiers-section" id="tiers">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-eyebrow">Sponsorship Tiers</p>
+      <h2 class="section-title">Choose the Level of Partnership That Suits You</h2>
+      <p class="section-lead">
+        All tiers include formal acknowledgment, reporting, and a direct relationship
+        with the WAAS Board. Custom packages are available on request.
+      </p>
+    </div>
+
+    <div class="tiers-grid">
+
+      <div class="tier-card reveal">
+        <div class="tier-gem">🥉</div>
+        <div class="tier-name">Bronze</div>
+        <div class="tier-amount">€1 000</div>
+        <div class="tier-period">per year</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-perks">
+          <li>Name listed in annual report</li>
+          <li>Certificate of appreciation</li>
+          <li>WAAS newsletter subscription</li>
+          <li>Social media acknowledgment</li>
+        </ul>
+        <a href="#contact" class="tier-btn">Get Started</a>
+      </div>
+
+      <div class="tier-card reveal">
+        <div class="tier-gem">🥈</div>
+        <div class="tier-name">Silver</div>
+        <div class="tier-amount">€5 000</div>
+        <div class="tier-period">per year</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-perks">
+          <li>All Bronze benefits</li>
+          <li>Logo on WAAS website &amp; materials</li>
+          <li>2 Forum delegate passes</li>
+          <li>Quarterly impact reports</li>
+          <li>Named scholarship fund (optional)</li>
+        </ul>
+        <a href="#contact" class="tier-btn">Get Started</a>
+      </div>
+
+      <div class="tier-card featured reveal">
+        <div class="tier-gem">🥇</div>
+        <div class="tier-name">Gold</div>
+        <div class="tier-amount">€15 000</div>
+        <div class="tier-period">per year</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-perks">
+          <li>All Silver benefits</li>
+          <li>Prominent branding at annual Forum</li>
+          <li>5 Forum VIP delegate passes</li>
+          <li>Advisory Board observer seat</li>
+          <li>Co-branded research collaboration</li>
+          <li>Press release &amp; media coverage</li>
+        </ul>
+        <a href="#contact" class="tier-btn">Get Started</a>
+      </div>
+
+      <div class="tier-card reveal">
+        <div class="tier-gem">💎</div>
+        <div class="tier-name">Platinum</div>
+        <div class="tier-amount">€30 000<span style="font-size:16px;color:rgba(8,38,59,.5)">+</span></div>
+        <div class="tier-period">per year</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-perks">
+          <li>All Gold benefits</li>
+          <li>Exclusive naming rights to a programme</li>
+          <li>Seat on WAAS Strategic Committee</li>
+          <li>Keynote slot at annual Forum</li>
+          <li>Custom research partnership MOU</li>
+          <li>Dedicated account manager</li>
+        </ul>
+        <a href="#contact" class="tier-btn">Get Started</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IN-KIND & INDIVIDUAL ─────────────────────────────────────── -->
+<section class="inkind-section">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-eyebrow">Other Ways to Give</p>
+      <h2 class="section-title">Support Beyond Financial Contribution</h2>
+    </div>
+
+    <div class="inkind-grid">
+      <div class="inkind-card reveal">
+        <h3>In-Kind &amp; Professional Services</h3>
+        <p>Do you offer services, technology, or resources that can help WAAS grow? We gratefully accept in-kind contributions from organisations of all sizes.</p>
+        <div class="tag-list">
+          <span class="tag">Office Space</span>
+          <span class="tag">Software Licences</span>
+          <span class="tag">Legal Services</span>
+          <span class="tag">Translation</span>
+          <span class="tag">Web &amp; Design</span>
+          <span class="tag">Printing</span>
+          <span class="tag">Event Hosting</span>
+          <span class="tag">Travel Support</span>
+        </div>
+      </div>
+
+      <div class="inkind-card reveal">
+        <h3>Individual Donors</h3>
+        <p>Every individual contribution — however modest — directly funds a student's research trip, a publication, or a mentoring session. WAAS is a registered non-profit NGO; donations may be tax-deductible in your jurisdiction.</p>
+        <div class="tag-list">
+          <span class="tag">One-Time Gift</span>
+          <span class="tag">Monthly Giving</span>
+          <span class="tag">Endowment Gift</span>
+          <span class="tag">Memorial Donation</span>
+          <span class="tag">Employer Match</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT FORM ══════════════════════════════════════════════── -->
+<section class="form-section" id="contact">
+  <div class="container">
+    <div class="form-grid">
+
+      <div class="form-info reveal">
+        <p class="section-eyebrow">Get in Touch</p>
+        <h2>Let's Build Something Meaningful Together</h2>
+        <p>
+          Whether you represent a corporation, a foundation, or simply want to give personally,
+          our team is ready to discuss how your contribution can make the greatest difference.
+        </p>
+        <p>
+          Your sponsorship can directly support scholarships for young researchers, international
+          scientific collaborations, and high-impact knowledge exchange between diaspora experts and local institutions.
+        </p>
+        <p>
+          Every partnership helps convert goodwill into measurable outcomes for education, research, and innovation in Azerbaijan.
+          Share your priorities with us and we will shape a sponsorship path aligned with your goals.
+        </p>
+
+      </div>
+
+      <div class="reveal">
+        <div class="sponsor-form">
+          <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--ink);margin-bottom:28px">Express Your Interest</h3>
+
+          <div class="form-row">
+            <div class="field-group">
+              <label>First Name</label>
+              <input type="text">
+            </div>
+            <div class="field-group">
+              <label>Last Name</label>
+              <input type="text">
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label>Organisation (if applicable)</label>
+            <input type="text">
+          </div>
+
+          <div class="field-group">
+            <label>Email Address</label>
+            <input type="email">
+          </div>
+
+          <div class="form-row">
+            <div class="field-group">
+              <label>Contribution Type</label>
+              <select>
+                <option value=""></option>
+                <option>Corporate Sponsor — Bronze</option>
+                <option>Corporate Sponsor — Silver</option>
+                <option>Corporate Sponsor — Gold</option>
+                <option>Corporate Sponsor — Platinum</option>
+                <option>In-Kind Contribution</option>
+                <option>Individual / Personal Donor</option>
+                <option>Endowment / Legacy Gift</option>
+                <option>Other — please specify</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Country</label>
+              <input type="text">
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us about your interests, goals, or any specific programme you'd like to support…"></textarea>
+          </div>
+
+          <div class="form-submit">
+            <p class="form-note">
+              Your data is treated with full confidentiality.<br>
+              <span>We reply as soon as we can.</span>
+            </p>
+            <button class="btn-submit" type="button">
+              Send Message
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══════════════════════════════════════════════════── -->
+<footer class="footer-pro">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>World Association of Azerbaijani Scientists</h3>
+    </div>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="footer-title">Contact</h4>
+        <div class="footer-item">✉ <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div>
+        <div class="footer-item">☎ <span>+90 555 147 46 74</span></div>
+        <div class="footer-item">🌐 <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-title">Address</h4>
+        <p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, Istanbul, Türkiye</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-title">Leadership</h4>
+        <p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>
+        Chair of the WAAS Board of Directors<br/>Germany — James D. Murray Distinguished Professor</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 WAAS — All Rights Reserved</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Smooth anchor scrolls
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  // Counter animation for stats
+  function animateCounter(el, target, suffix='') {
+    let start = 0;
+    const dur = 1800;
+    const step = timestamp => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / dur, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      el.querySelector('.num').textContent = Math.floor(ease * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+</script>
+</body>
+</html>

@@ -105,10 +105,10 @@ NAV_PLACEHOLDER
 <nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section">
 <p class="daab-section-nav-title">Membership</p>
 <ul class="daab-section-nav-list">
-<li><a href="membership_value.html">Why become a member</a></li>
+<li><a href="membership_value.html">Why join WAAS</a></li>
 <li><a href="membership.html">Membership terms</a></li>
 <li><a class="active" href="application.html" aria-current="page">Join us</a></li>
-<li><a href="membership_flyer.html">Send invite</a></li>
+<li><a href="membership_flyer.html">Send invitation</a></li>
 </ul>
 </nav>
 <main class="main application-main" id="content">
@@ -116,9 +116,10 @@ NAV_PLACEHOLDER
 
 
 def success_extra() -> str:
-    return """      <p>
+    return """      <div class="app-btn-row">
         <a class="app-btn app-btn-primary" href="membership.html">Return to membership page</a>
-      </p>"""
+        <a class="app-btn app-btn-primary" href="membership_flyer.html">Send Invitation</a>
+      </div>"""
 
 
 def main() -> None:

@@ -22,7 +22,7 @@ SKIP = {"az": "Məzmuna keç", "en": "Skip to content"}
 SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə" data-daab-section-nav-enhanced="1">
 <p class="daab-section-nav-title">Üzvlük</p>
 <ul class="daab-section-nav-list">
-<li><a href="membership_value.html"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Niyə üzv olmalı</span></a></li>
+<li><a href="membership_value.html"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Niyə DAAB-a qoşulmalı</span></a></li>
 <li><a href="membership.html"><span class="daab-section-nav-icon" aria-hidden="true">✒️</span><span class="daab-section-nav-label">Üzvlük şərtləri</span></a></li>
 <li><a href="application.html"><span class="daab-section-nav-icon" aria-hidden="true">📝</span><span class="daab-section-nav-label">Bizə qoşulun</span></a></li>
 <li><a class="active" href="membership_flyer.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Dəvət göndərin</span></a></li>
@@ -33,10 +33,10 @@ SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-lab
 SECTION_NAV_EN = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section" data-daab-section-nav-enhanced="1">
 <p class="daab-section-nav-title">Membership</p>
 <ul class="daab-section-nav-list">
-<li><a href="membership_value.html"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Why become a member</span></a></li>
+<li><a href="membership_value.html"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Why join WAAS</span></a></li>
 <li><a href="membership.html"><span class="daab-section-nav-icon" aria-hidden="true">✒️</span><span class="daab-section-nav-label">Membership terms</span></a></li>
 <li><a href="application.html"><span class="daab-section-nav-icon" aria-hidden="true">📝</span><span class="daab-section-nav-label">Join us</span></a></li>
-<li><a class="active" href="membership_flyer.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Send invite</span></a></li>
+<li><a class="active" href="membership_flyer.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Send invitation</span></a></li>
 </ul>
 </nav>
 """
@@ -67,11 +67,12 @@ LOCALES = {
         "title": "DAAB — Üzvlük flyer",
         "description": "DAAB üzvlüyünün dəyəri — potensial üzvlər üçün çap flyer.",
         "hero_h1": "Üzvlüyə <span>Dəvət göndərin</span>",
-        "hero_subtitle": "Potensial üzvlər üçün çap oluna bilən flyer (PDF formatında) yaradın və paylaşın",
-        "panel_title": "Flyer ilə dəvət edin",
+        "hero_subtitle": "Potensial üzvlərə dəvət məktubu göndərin",
+        "panel_title": "Həmkarlarınızı məktub vasitəsilə dəvət edin",
         "panel_copy": (
-            "Bu səhifədə DAAB üzvlüyünün dəyərini əks etdirən hazır flyer var. Flyerin yuxarı "
-            "sağ küncündəki düymələrlə PDF yaradın, çap edin və ya e-poçt ilə paylaşın."
+            "Bu səhifədə DAAB üzvlüyünün dəyərini qısa şəkildə təqdim edən və paylaşmağa hazır "
+            "dəvət məktubu yerləşdirilib. Məktubun yuxarı sağ küncündəki Çap/PDF düyməsindən "
+            "istifadə edərək onu PDF formatında yaradın, çap edin və ya e-poçt vasitəsilə paylaşın"
         ),
         "toolbar_hint": "Brauzerdə «Çap» → «PDF kimi yadda saxla» seçin.",
         "controls_aria": "Flyer idarəetməsi",
@@ -147,12 +148,12 @@ LOCALES = {
         "lang": "en",
         "title": "WAAS — Membership flyer",
         "description": "Value of WAAS membership — printable flyer for potential members.",
-        "hero_h1": "Send invite <span>Membership flyer</span>",
-        "hero_subtitle": "Printable flyer for potential members — save as PDF and share",
-        "panel_title": "Invite colleagues with the flyer",
+        "hero_h1": "Send Membership <span>Invitation Letter</span>",
+        "hero_subtitle": "Share invitation letter with potential members",
+        "panel_title": "Invite colleagues with the letter",
         "panel_copy": (
-            "This page provides a ready-to-share flyer summarizing WAAS membership value. Use "
-            "the buttons at the top right of the flyer to save a PDF, print, or share by email."
+            "This page provides a ready-to-share letter summarizing WAAS membership value. Use "
+            "the Print.PDF button at the top right of the letter to create a PDF, print, or share by email."
         ),
         "toolbar_hint": "Use Print → Save as PDF in your browser.",
         "controls_aria": "Flyer actions",
