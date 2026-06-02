@@ -77,7 +77,7 @@
     grid-template-columns: 1.08fr 0.92fr;
     gap: 20px;
     align-items: start;
-    padding: 14px 24px 16px;
+    padding: 8px 24px 16px;
   }
 
   .hero-copy { min-width: 0; }
@@ -94,7 +94,7 @@
   .hero-title .hero-title-accent { color: #0a6ec1 !important; }
 
   .hero-subtitle {
-    margin: 6px 0 0;
+    margin: 0;
     max-width: 36rem;
     color: var(--muted);
     font-size: clamp(16px, 1.65vw, 18px);
@@ -106,7 +106,7 @@
 
   .hero-panel {
     align-self: start;
-    padding: 10px !important;
+    padding: 6px !important;
     background: rgba(248, 252, 255, 0.9);
     border: 1px solid rgba(0, 90, 154, 0.14);
     border-radius: 22px !important;
@@ -114,14 +114,14 @@
   }
 
   .panel-card {
-    padding: 12px 14px !important;
+    padding: 8px 10px !important;
     background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(0, 90, 154, 0.12);
     border-radius: 16px !important;
   }
 
   .panel-title {
-    margin: 0 0 6px !important;
+    margin: 0 !important;
     color: var(--blue-700);
     font-family: 'Playfair Display', serif;
     font-size: var(--font-size-summary-panel-title) !important;
@@ -134,11 +134,11 @@
     margin: 0;
     color: var(--muted);
     font-size: 13px !important;
-    line-height: 1.42 !important;
+    line-height: 1.35 !important;
   }
   .panel-source-link {
     display: block;
-    margin-top: 8px;
+    margin-top: 0;
     color: var(--blue-700);
     font-size: 13px;
     font-weight: 600;
@@ -799,7 +799,7 @@
     .inkind-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 760px) {
-    .hero-wrap { gap: 12px; padding: 16px 16px 14px; }
+    .hero-wrap { gap: 12px; padding: 10px 16px 14px; }
     .hero-title { max-width: none; font-size: clamp(31px, 8.4vw, 40px); }
     .hero-subtitle { max-width: none; font-size: 15px; line-height: 1.45; }
     .hero-cta-row { flex-direction: column; align-items: flex-start; }
@@ -831,7 +831,7 @@
     transform: none;
   }
 </style>
-<link href="../css/daab-common.css?v=55" rel="stylesheet"/>
+<link href="../css/daab-common.css?v=56" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=12" rel="stylesheet"/>
 <link href="../css/daab-search.css?v=4" rel="stylesheet"/>
 <link href="../css/daab-back-to-top.css?v=2" rel="stylesheet"/>
@@ -864,20 +864,11 @@
 <section class="hero" id="content">
   <div class="hero-wrap">
     <section class="hero-copy">
-      <h1 aria-describedby="page-hero-subtitle" class="hero-title">Invest in <span class="hero-title-accent">Azerbaijani Science</span></h1>
+      <h1 aria-describedby="page-hero-subtitle" class="hero-title">Invest in<br/><span class="hero-title-accent">Azerbaijani Science</span></h1>
       <p class="hero-subtitle page-hero-subtitle" id="page-hero-subtitle">
         WAAS unites Azerbaijani scientists around the world. Your support helps fund scholarships,
         research collaborations, and the future of Azerbaijan’s knowledge economy
       </p>
-      <div class="hero-cta-row">
-        <a href="#tiers" class="btn-gold">
-          <span>Become a Sponsor</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#contact" class="btn-outline">
-          <span>Get in Touch</span>
-        </a>
-      </div>
     </section>
     <aside aria-label="Sponsorship overview" class="hero-panel">
       <div class="panel-card">
@@ -894,7 +885,7 @@
   <div class="container">
     <div class="reveal">
       <p class="section-eyebrow">Why Support WAAS</p>
-      <h2 class="section-title section-title-reduced">Your Partnership Creates Real, Lasting Impact</h2>
+      <h2 class="section-title section-title-reduced">Your partnership creates lasting impact</h2>
       <p class="section-lead section-subtitle-one-line">
         WAAS turns every contribution into scientific progress and long-term capacity for Azerbaijan.
       </p>

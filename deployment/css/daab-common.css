@@ -227,6 +227,14 @@ article.charter-card[id],
   text-decoration: none !important;
   white-space: nowrap !important;
   transition: background .18s ease, color .18s ease, border-color .18s ease !important;
+}
+/* Hide Sponsors top-nav item without removing markup */
+.nav-menu [data-nav-id="sponsors"]{
+  display: none !important;
+}
+/* Hide Home top-nav item; logo remains homepage link */
+.nav-menu [data-nav-id="home"]{
+  display: none !important;
 }.nav-link:hover,
 .nav-link:focus-visible{
   color: var(--white) !important;
