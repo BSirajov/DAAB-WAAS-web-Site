@@ -72,6 +72,20 @@
   line-height: 1.65;
   color: #345d76 !important;
   font-size: 14px;
+}
+@media (max-width: 980px){
+  .application-page.membership-page .hero-wrap{
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 22px 16px 24px;
+  }
+  .application-page.membership-page .hero-panel{
+    padding: 0;
+    max-width: 100%;
+  }
+  .application-page.membership-page .panel-card{
+    padding: 16px 18px 18px;
+  }
 }.application-page .application-main{
   position: relative;
   z-index: 2;
