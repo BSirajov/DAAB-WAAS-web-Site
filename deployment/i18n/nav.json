@@ -6,40 +6,12 @@
       "id": "home"
     },
     {
-      "type": "group",
-      "id": "activities",
-      "style": "dropdown",
-      "labelKey": "activities",
-      "landingId": "activities",
-      "children": [
-        {
-          "id": "activities",
-          "labelKey": "activitiesNews",
-          "descKey": "activitiesNewsDesc"
-        },
-        {
-          "id": "forum-2024",
-          "labelKey": "forum2024",
-          "descKey": "forum2024Desc"
-        }
-      ]
+      "type": "page",
+      "id": "activities"
     },
     {
-      "type": "group",
-      "id": "scientists",
-      "style": "dropdown",
-      "labelKey": "scientists",
-      "landingId": "scientists-list",
-      "children": [
-        {
-          "id": "scientists-list",
-          "descKey": "scientistsListDesc"
-        },
-        {
-          "id": "scientists-profiles",
-          "descKey": "scientistsProfilesDesc"
-        }
-      ]
+      "type": "page",
+      "id": "forum-2024"
     },
     {
       "type": "group",
@@ -91,8 +63,47 @@
       ]
     },
     {
-      "type": "page",
-      "id": "sponsors"
+      "type": "group",
+      "id": "sponsorship",
+      "style": "dropdown",
+      "labelKey": "sponsors",
+      "landingId": "sponsors",
+      "children": [
+        {
+          "id": "sponsors",
+          "labelKey": "sponsorsProgram",
+          "descKey": "sponsorsProgramDesc"
+        },
+        {
+          "id": "donate",
+          "labelKey": "donate",
+          "descKey": "donateDesc"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "id": "treasury",
+      "style": "dropdown",
+      "labelKey": "treasury",
+      "landingId": "encyclopedia",
+      "children": [
+        {
+          "id": "encyclopedia",
+          "labelKey": "prominentFigures",
+          "descKey": "prominentFiguresDesc"
+        },
+        {
+          "id": "industrial-revolutions",
+          "labelKey": "industrialRevolutions",
+          "descKey": "industrialRevolutionsDesc"
+        },
+        {
+          "id": "major-scientific-inventions",
+          "labelKey": "majorScientificInventions",
+          "descKey": "majorScientificInventionsDesc"
+        }
+      ]
     }
   ],
   "sections": {
@@ -115,8 +126,7 @@
     "activities": {
       "landingId": "activities",
       "pages": [
-        "activities",
-        "forum-2024"
+        "activities"
       ]
     },
     "forum": {
@@ -133,7 +143,9 @@
         "forum-video-gallery",
         "forum-roadmap",
         "forum-bagli-hekayeler",
-        "forum-cooperation"
+        "forum-cooperation",
+        "scientists-list",
+        "scientists-profiles"
       ]
     },
     "membership": {
@@ -142,6 +154,22 @@
         "membership-value",
         "membership-application",
         "membership-flyer"
+      ]
+    },
+    "sponsorship": {
+      "landingId": "sponsors",
+      "pages": [
+        "sponsors",
+        "donate",
+        "sponsors-flyer"
+      ]
+    },
+    "treasury": {
+      "landingId": "encyclopedia",
+      "pages": [
+        "encyclopedia",
+        "industrial-revolutions",
+        "major-scientific-inventions"
       ]
     }
   }

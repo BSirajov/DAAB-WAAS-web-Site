@@ -133,7 +133,6 @@ def page_html(lang: str, items: list[dict]) -> str:
         crumbs = (
             '<div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Səhifə yolu">\n'
             '<a href="../../index.html">Ana səhifə</a><span aria-hidden="true">›</span>'
-            '<a href="../../activities.html">Fəaliyyətimiz</a><span aria-hidden="true">›</span>'
             '<a href="index.html">Forum 2024</a><span aria-hidden="true">›</span>'
             '<span class="forum-breadcrumbs-current" aria-current="page">Video qalereya</span>\n'
             "</div>"
@@ -143,7 +142,6 @@ def page_html(lang: str, items: list[dict]) -> str:
         crumbs = (
             '<div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Breadcrumb">\n'
             '<a href="../../index.html">Home</a><span aria-hidden="true">›</span>'
-            '<a href="../../activities.html">Activities</a><span aria-hidden="true">›</span>'
             '<a href="index.html">Forum 2024</a><span aria-hidden="true">›</span>'
             '<span class="forum-breadcrumbs-current" aria-current="page">Video gallery</span>\n'
             "</div>"

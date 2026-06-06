@@ -131,10 +131,14 @@ def main() -> int:
         )
         if check_snippets:
             for label, snippet in REQUIRED_SNIPPETS.items():
-                # az/en pages use ../css paths
-                if snippet not in text and snippet.replace("css/", "../css/") not in text:
-                    if snippet.replace("js/", "../js/") not in text:
-                        warnings.append(f"{page.relative_to(ROOT)}: missing {label}")
+                # az/en pages use ../css; prominent_figures/* use ../../../css
+                variants = [
+                    snippet,
+                    snippet.replace("css/", "../css/").replace("js/", "../js/"),
+                    snippet.replace("css/", "../../../css/").replace("js/", "../../../js/"),
+                ]
+                if not any(v in text for v in variants):
+                    warnings.append(f"{page.relative_to(ROOT)}: missing {label}")
 
         for m in HREF_SRC_RE.finditer(text):
             ref = m.group(1)

@@ -8,7 +8,7 @@ from pathlib import Path
 from _paths import ROOT
 
 SRC = ROOT / "en" / "application" / "application.html"
-MEMBERSHIP = ROOT / "en" / "membership.html"
+MEMBERSHIP = ROOT / "en" / "membership_value.html"
 OUT = ROOT / "en" / "application.html"
 ASSET = "../"
 
@@ -106,7 +106,6 @@ NAV_PLACEHOLDER
 <p class="daab-section-nav-title">Membership</p>
 <ul class="daab-section-nav-list">
 <li><a href="membership_value.html">Why join WAAS</a></li>
-<li><a href="membership.html">Membership terms</a></li>
 <li><a class="active" href="application.html" aria-current="page">Join us</a></li>
 <li><a href="membership_flyer.html">Send invitation</a></li>
 </ul>
@@ -117,7 +116,7 @@ NAV_PLACEHOLDER
 
 def success_extra() -> str:
     return """      <div class="app-btn-row">
-        <a class="app-btn app-btn-primary" href="membership.html">Return to membership page</a>
+        <a class="app-btn app-btn-primary" href="membership_value.html">Return to membership page</a>
         <a class="app-btn app-btn-primary" href="membership_flyer.html">Send Invitation</a>
       </div>"""
 
@@ -129,10 +128,10 @@ def main() -> None:
     src = SRC.read_text(encoding="utf-8")
     nav = extract_nav(membership)
     if not nav:
-        raise SystemExit("Could not extract nav from en/membership.html")
+        raise SystemExit("Could not extract nav from en/membership_value.html")
     footer = extract_footer(membership)
     if not footer:
-        raise SystemExit("Could not extract footer from en/membership.html")
+        raise SystemExit("Could not extract footer from en/membership_value.html")
     form = extract_form_block(src)
     form = form.replace(
         "</p>\n    </div>\n\n  </form>",

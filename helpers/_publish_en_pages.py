@@ -83,7 +83,7 @@ def en_nav_html(active_id: str, nav_depth: int = 0) -> str:
         '<div class="nav-inner">',
         '<button class="mobile-menu-toggle" type="button" aria-label="Open menu" '
         'aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button>',
-        f'<div class="page-logo"><a aria-label="WAAS home" href="{home_href}">',
+        f'<div class="page-logo"><a aria-label="WAAS home" title="Home page" href="{home_href}">',
         f'<img src="{img_src}" class="nav-brand-logo" alt="WAAS Logo"></a></div>',
         f'<a aria-label="WAAS home" class="nav-brand" href="{home_href}">',
         '<span class="nav-brand-text">World Association of<br class="mobile-hidden-break">'

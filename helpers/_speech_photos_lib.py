@@ -95,7 +95,24 @@ def photo_src(slug: str) -> str:
     return f"{ASSET}{rel}"
 
 
-def toc_item(section_id: str, name: str, titles: str, photo: str) -> str:
+def speech_title_from_article(article) -> str:
+    """First in-body speech heading (e.g. ANAS leadership speech-body-lead)."""
+    lead = article.select_one(".speech-body-lead strong")
+    if lead:
+        return lead.get_text(" ", strip=True)
+    lead = article.select_one(".speech-body-lead")
+    if lead:
+        return lead.get_text(" ", strip=True)
+    return ""
+
+
+def toc_item(
+    section_id: str,
+    name: str,
+    titles: str,
+    photo: str,
+    speech_title: str = "",
+) -> str:
     if photo:
         img = (
             f'<span class="rector-toc-photo-frame">'
@@ -110,12 +127,17 @@ def toc_item(section_id: str, name: str, titles: str, photo: str) -> str:
         if titles
         else ""
     )
+    speech_html = (
+        f'<span class="rector-toc-speech-title">{html.escape(speech_title)}</span>'
+        if speech_title
+        else ""
+    )
     return (
         f'<li><a class="rector-toc-link" href="#{html.escape(section_id, quote=True)}">'
         f"{img}"
         f'<span class="rector-toc-text">'
         f'<span class="rector-toc-name">{html.escape(name)}</span>'
-        f"{titles_html}</span></a></li>"
+        f"{titles_html}{speech_html}</span></a></li>"
     )
 
 
@@ -204,7 +226,8 @@ def build_toc(soup: BeautifulSoup) -> str:
         name = title_el.get_text(" ", strip=True) if title_el else aid
         sub_el = article.select_one(".card-subtitle")
         titles = sub_el.get_text(" ", strip=True) if sub_el else ""
-        items.append(toc_item(aid, name, titles, photo_src(aid)))
+        speech_title = speech_title_from_article(article)
+        items.append(toc_item(aid, name, titles, photo_src(aid), speech_title))
     return "\n".join(items)
 
 

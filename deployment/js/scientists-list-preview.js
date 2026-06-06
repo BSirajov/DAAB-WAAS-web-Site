@@ -13,8 +13,8 @@
   };
 
   var LABELS = {
-    az: { field: "İxtisas:", email: "E-poçt:", view: "Tam profil ↗", preview: "Profil önizləməsi" },
-    en: { field: "Field:", email: "Email:", view: "View full profile ↗", preview: "Profile preview" },
+    az: { field: "İxtisas:", email: "E-poçt:", view: "Tam profil", preview: "Profil önizləməsi" },
+    en: { field: "Field:", email: "Email:", view: "View full profile", preview: "Profile preview" },
   };
 
   var SHOW_DELAY = 160;

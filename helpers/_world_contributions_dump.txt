@@ -1,0 +1,301 @@
+Found 100 contributions
+    # ada_lovelace
+    ("Analitik maşın üçün alqoritmik təsviri ilə proqramlaşdırma tarixində simvolik fiqura çevrildi olması",
+     ""),
+    # al_jazari
+    ("avtomatik qurğular və su mexanizmləri haqqında əsəri ilə robototexnika tarixində öncü sayılır olması",
+     ""),
+    # al_khwarizmi
+    ("cəbrin klassik əsaslarını sistemləşdirdi və “alqoritm” anlayışının tarixi mənbələrindən biri oldu olması",
+     ""),
+    # al_kindi
+    ("yunan fəlsəfəsi və elmini ərəb elmi mühitinə gətirən əsas mütəfəkkirlərdən biri olması",
+     ""),
+    # al_razi
+    ("klinik müşahidə, xəstəliklərin təsnifi və tibbi ensiklopedik əsərləri ilə məşhurdur olması",
+     ""),
+    # al_zahrawi
+    ("cərrahi alətlər və tibbi praktika haqqında əsəri ilə Avropa tibbinə təsir göstərdi olması",
+     ""),
+    # albert_einstein
+    ("nisbilik nəzəriyyəsi və fotoeffekt izahı ilə müasir fizikanın simvoluna çevrildi olması",
+     ""),
+    # albertus_magnus
+    ("Aristotel irsini orta əsr universitet mədəniyyətinə gətirən böyük alim olması",
+     ""),
+    # alexander_von_humboldt
+    ("təbiəti qarşılıqlı əlaqəli sistem kimi təsvir edən elmi ekspedisiyaları ilə tanınır olması",
+     ""),
+    # alfred_nobel
+    ("dinamitin ixtirası və Nobel mükafatlarının yaradılması ilə tanınır olması",
+     ""),
+    # alfred_russel_wallace
+    ("təbii seçmə ideyasını müstəqil formalaşdırdı və biocoğrafiyanın inkişafına töhfə verdi olması",
+     ""),
+    # anaximander
+    ("kosmos, Yer və canlıların mənşəyi haqqında erkən elmi təsəvvürlər irəli sürən filosof olması",
+     ""),
+    # andre_marie_ampere
+    ("elektrik cərəyanları arasındakı qüvvələri təsvir edərək elektrodinamikanın əsasını qoydu olması",
+     ""),
+    # andreas_vesalius
+    ("“De humani corporis fabrica” əsəri ilə müasir anatomiyanın təməlini qoydu olması",
+     ""),
+    # antoine_lavoisier
+    ("kütlənin saxlanması, oksigen nəzəriyyəsi və kimyəvi nomenklatura ilə müasir kimyanın banilərindən oldu olması",
+     ""),
+    # antonie_van_leeuwenhoek
+    ("mikroskopla mikroorqanizmlərin müşahidəsinə yol açdı olması",
+     ""),
+    # archimedes
+    ("mexanika, hidrostatika və riyazi analizə yaxın metodları ilə qədim elmin zirvələrindən birinə çevrildi olması",
+     ""),
+    # aristarchus_of_samos
+    ("Günəş mərkəzli kosmos modelini erkən formada irəli sürdü olması",
+     ""),
+    # aristotle
+    ("məntiq, təbiətşünaslıq, etika və siyasət haqqında sistemli əsərləri ilə Qərb elminin əsaslarını formalaşdırdı olması",
+     ""),
+    # aryabhata
+    ("trigonometriya, astronomik hesablamalar və yerin fırlanması ideyası ilə seçilir olması",
+     ""),
+    # bernhard_riemann
+    ("Riemann həndəsəsi və kompleks analizdəki ideyaları ilə müasir fizikanın dilinə təsir etdi olması",
+     ""),
+    # bhaskara_ii
+    ("cəbr, analizə yaxın ideyalar və astronomik traktatları ilə tanınır olması",
+     ""),
+    # blaise_pascal
+    ("ehtimal, hidrostatika və hesablayıcı qurğularla bağlı işləri ilə seçilir olması",
+     ""),
+    # brahmagupta
+    ("sıfır və mənfi ədədlərlə əməliyyatların formalaşmasına mühüm töhfə verdi olması",
+     ""),
+    # carl_friedrich_gauss
+    ("ədədlər nəzəriyyəsi, statistika, geodeziya və maqnetizmə fundamental töhfələr verdi olması",
+     ""),
+    # carl_linnaeus
+    ("canlıların ikiadlı nomenklatura ilə təsnif sistemini formalaşdırdı olması",
+     ""),
+    # charaka
+    ("Ayurveda tibbinin əsas klassik mətnləri ilə bağlı ən nüfuzlu həkimlərdən biri olması",
+     ""),
+    # charles_babbage
+    ("mexaniki hesablama maşınları layihələri ilə kompüter tarixinin öncüllərindən biri oldu olması",
+     ""),
+    # charles_darwin
+    ("təbii seçmə yolu ilə təkamül nəzəriyyəsini sistemləşdirdi olması",
+     ""),
+    # christiaan_huygens
+    ("dalğa optikası, saat mexanizmləri və Saturnun peyki Titanın müşahidəsi ilə məşhurdur olması",
+     ""),
+    # democritus
+    ("maddənin bölünməz atomlardan ibarət olması ideyasını irəli sürən erkən atomist olması",
+     ""),
+    # dmitri_mendeleev
+    ("elementlərin dövri sistemini quraraq kimyanın strukturunu dəyişdirdi olması",
+     ""),
+    # edmond_halley
+    ("kometaların orbitlərini hesablaması və Halley kometası ilə məşhurdur olması",
+     ""),
+    # edward_jenner
+    ("çiçək xəstəliyinə qarşı peyvəndin inkişafı ilə immunologiyanın tarixində dönüş yaratdı olması",
+     ""),
+    # eratosthenes
+    ("Yerin çevrəsini heyrətamiz dəqiqliklə hesablaması ilə tanınır olması",
+     ""),
+    # ernest_rutherford
+    ("atom nüvəsi modelini və radioaktiv parçalanma anlayışını formalaşdırdı olması",
+     ""),
+    # erwin_schrodinger
+    ("dalğa mexanikası və məşhur Schrödinger tənliyi ilə kvant mexanikasını formalaşdırdı olması",
+     ""),
+    # euclid
+    ("“Elements” əsəri ilə aksiomatik həndəsənin klassik modelini yaratdı olması",
+     ""),
+    # fibonacci
+    ("hind-ərəb rəqəmlərinin Avropada yayılmasına və riyazi ticarət praktikasına böyük töhfə verdi olması",
+     ""),
+    # galen
+    ("antik tibbin uzun əsrlər boyu Avropa və İslam dünyasında təsirli olmuş böyük sistemləşdiricisi olması",
+     ""),
+    # galileo_galilei
+    ("teleskop müşahidələri və hərəkət tədqiqatları ilə elmi inqilabın əsas simalarından biri oldu olması",
+     ""),
+    # georg_cantor
+    ("çoxluqlar nəzəriyyəsi və sonsuzluqların riyazi iyerarxiyasını yaratdı olması",
+     ""),
+    # georg_ohm
+    ("elektrik dövrələri üçün Ohm qanunu ilə tanınır olması",
+     ""),
+    # georges_cuvier
+    ("müqayisəli anatomiya və nəsli kəsilmiş canlıların elmi izahı ilə məşhurdur olması",
+     ""),
+    # georges_louis_leclerc_comte_de_buffon
+    ("təbii tarix, geologiya və canlıların dəyişkənliyi haqqında geniş təsirli əsərlər yazdı olması",
+     ""),
+    # gerolamo_cardano
+    ("cəbr, ehtimal və mexanika haqqında əsərləri ilə Renessans elminin mühüm siması olması",
+     ""),
+    # gottfried_wilhelm_leibniz
+    ("diferensial və inteqral hesabın yaradıcılarından biri, universal bilik layihələrinin müəllifi olması",
+     ""),
+    # gregor_mendel
+    ("irsi əlamətlərin qanunauyğunluqlarını noxud təcrübələri əsasında kəşf etdi olması",
+     ""),
+    # henri_poincare
+    ("topologiya, səma mexanikası və xaos nəzəriyyəsinin ilkin ideyaları ilə tanınır olması",
+     ""),
+    # heron_of_alexandria
+    ("avtomatlar, buxar qurğusu və tətbiqi həndəsə əsərləri ilə tanınır olması",
+     ""),
+    # hipparchus
+    ("ulduz kataloqu, presessiya kəşfi və trigonometriyanın inkişafı ilə məşhurdur olması",
+     ""),
+    # hippocrates
+    ("təbabəti müşahidə, diaqnoz və etik məsuliyyət prinsipləri ilə əlaqələndirən klassik həkim olması",
+     ""),
+    # hypatia
+    ("antik dünyanın son böyük qadın alim və filosoflarından biri kimi tanınır olması",
+     ""),
+    # ibn_al_haytham
+    ("eksperimentə əsaslanan optika tədqiqatları ilə elmi metod tarixində mühüm yer tutur olması",
+     ""),
+    # ibn_al_nafis
+    ("ağciyər qan dövranını təsvir etməsi ilə tibb tarixində mühüm yer tutur olması",
+     ""),
+    # isaac_newton
+    ("klassik mexanika, ümumdünya cazibə qanunu və riyazi analiz ilə elmi inqilabı tamamladı olması",
+     ""),
+    # jabir_ibn_hayyan
+    ("laboratoriya təcrübələri və maddələr haqqında erkən sistemli təsəvvürlərlə əlaqələndirilir olması",
+     ""),
+    # james_clerk_maxwell
+    ("elektrik və maqnetizmi vahid elektromaqnit sahə nəzəriyyəsində birləşdirdi olması",
+     ""),
+    # johannes_kepler
+    ("planetlərin hərəkət qanunlarını kəşf edərək yeni astronomiyanın əsasını qoydu olması",
+     ""),
+    # john_dalton
+    ("atom nəzəriyyəsini müasir kimyanın mərkəzinə gətirdi olması",
+     ""),
+    # joseph_fourier
+    ("Fourier sıraları və istilik keçiriciliyi nəzəriyyəsi ilə müasir riyazi fizikanı formalaşdırdı olması",
+     ""),
+    # joseph_louis_lagrange
+    ("analitik mexanika və variasiya hesabı ilə nəzəri fizikanın dilini dəyişdi olması",
+     ""),
+    # leonardo_da_vinci
+    ("incəsənət, anatomiya, mexanika və müşahidə mədəniyyətini birləşdirən Renessans dahisi olması",
+     ""),
+    # leonhard_euler
+    ("analiz, qraf nəzəriyyəsi, mexanika və ədədlər nəzəriyyəsinə nəhəng töhfələr verdi olması",
+     ""),
+    # liu_hui
+    ("Çin riyaziyyatında həndəsi sübutlar və π-nin hesablanması ilə məşhurdur olması",
+     ""),
+    # lord_kelvin
+    ("termodinamika, temperatur şkalası və teleqraf mühəndisliyinə töhfələr verdi olması",
+     ""),
+    # louis_pasteur
+    ("mikrob nəzəriyyəsi, pasterizasiya və vaksinlərlə tibb və sənayeni dəyişdirdi olması",
+     ""),
+    # ludwig_boltzmann
+    ("statistik mexanika və entropiyanın atomistik izahı ilə məşhurdur olması",
+     ""),
+    # maimonides
+    ("tibbi və fəlsəfi əsərləri ilə yəhudi, İslam və Avropa düşüncəsinə təsir etdi olması",
+     ""),
+    # marie_curie
+    ("radioaktivlik tədqiqatları və iki Nobel mükafatı ilə elm tarixinin ən böyük simalarından oldu olması",
+     ""),
+    # max_planck
+    ("kvant nəzəriyyəsinin başlanğıcını qoyan enerji kvantı ideyasını irəli sürdü olması",
+     ""),
+    # michael_faraday
+    ("elektromaqnit induksiya və sahə anlayışı ilə müasir elektrik texnologiyalarına yol açdı olması",
+     ""),
+    # nicolaus_copernicus
+    ("Günəş mərkəzli kosmos modelini elmi sistem kimi təqdim etdi olması",
+     ""),
+    # nicole_oresme
+    ("qrafik təsvir, hərəkət və pul nəzəriyyəsi haqqında qabaqcıl ideyalar irəli sürdü olması",
+     ""),
+    # niels_bohr
+    ("atom quruluşu və kvant nəzəriyyəsinin Kopenhagen şərhi ilə məşhurdur olması",
+     ""),
+    # pierre_curie
+    ("piezoelektriklik və radioaktivlik tədqiqatları ilə tanınır olması",
+     ""),
+    # pierre_de_fermat
+    ("ədədlər nəzəriyyəsi, analitik həndəsə və ehtimal nəzəriyyəsinə fundamental töhfələr verdi olması",
+     ""),
+    # pierre_simon_laplace
+    ("ehtimal, səma mexanikası və deterministik kosmos təsəvvürü ilə tanınır olması",
+     ""),
+    # plato
+    ("Akademiyanı quraraq fəlsəfə, riyaziyyat və siyasi düşüncə tarixində uzunmüddətli məktəb yaratdı olması",
+     ""),
+    # ptolemy
+    ("“Almagest” və “Geography” əsərləri ilə astronomiya və xəritəçilik tarixində iz qoydu olması",
+     ""),
+    # pythagoras
+    ("rəqəmlər, nisbətlər və məşhur Pifaqor teoremi ilə bağlı ənənənin mərkəzi siması olması",
+     ""),
+    # rene_descartes
+    ("analitik həndəsə və metodik şübhə ideyası ilə modern düşüncəyə təsir etdi olması",
+     ""),
+    # robert_boyle
+    ("qaz qanunu və eksperimental kimya ənənəsi ilə müasir kimyanın qurucularından biri sayılır olması",
+     ""),
+    # robert_hooke
+    ("elastiklik qanunu və mikroskopik hüceyrə müşahidələri ilə tanınır olması",
+     ""),
+    # robert_koch
+    ("vərəm bakteriyasını müəyyənləşdirdi və infeksion xəstəliklərin laborator diaqnostikasını inkişaf etdirdi olması",
+     ""),
+    # roger_bacon
+    ("təcrübə və müşahidənin bilikdə rolunu vurğulayan orta əsr alimi olması",
+     ""),
+    # sadi_carnot
+    ("istilik maşınlarının nəzəri təhlili ilə termodinamikanın əsasını qoydu olması",
+     ""),
+    # shen_kuo
+    ("“Dream Pool Essays” əsərində geologiya, naviqasiya, astronomiya və texnologiya barədə müşahidələr topladı olması",
+     ""),
+    # sofia_kovalevskaya
+    ("diferensial tənliklər və mexanika sahəsində Avropanın ilk böyük qadın riyaziyyatçılarından biri olması",
+     ""),
+    # sushruta
+    ("cərrahiyyə və tibbi müşahidə haqqında ənənəvi hind elminin böyük simalarından biri olması",
+     ""),
+    # thales_of_miletus
+    ("təbiət hadisələrini mifoloji deyil, rasional izahla anlamağa çalışan ilk yunan mütəfəkkirlərindən biri olması",
+     ""),
+    # theophrastus
+    ("bitkilər haqqında sistemli müşahidələri ilə botanikanın erkən banilərindən biri sayılır olması",
+     ""),
+    # thomas_young
+    ("işığın dalğa təbiətini göstərən interferensiya təcrübələri ilə məşhurdur olması",
+     ""),
+    # tycho_brahe
+    ("dəqiq astronomik müşahidələri ilə Kepler qanunlarının yaranmasına zəmin hazırladı olması",
+     ""),
+    # werner_heisenberg
+    ("qeyri-müəyyənlik prinsipi və matris mexanikası ilə kvant fizikasının əsas siması olması",
+     ""),
+    # william_gilbert
+    ("“De Magnete” əsəri ilə maqnetizmin eksperimental tədqiqini inkişaf etdirdi olması",
+     ""),
+    # william_harvey
+    ("qan dövranını elmi şəkildə izah edən əsas fiqur kimi tanınır olması",
+     ""),
+    # william_herschel
+    ("Uran planetini kəşf etdi və teleskop astronomiyasını genişləndirdi olması",
+     ""),
+    # zhang_heng
+    ("seysmoskop, astronomik modellər və mexaniki qurğularla Çin elminin öncüllərindən biri olması",
+     ""),
+    # zu_chongzhi
+    ("π üçün çox dəqiq yaxınlaşma və təqvim hesablamaları ilə tanınır olması",
+     ""),

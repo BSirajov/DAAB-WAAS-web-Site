@@ -7,6 +7,10 @@ from pathlib import Path
 
 from _paths import ROOT
 
+def _top_link(href: str, nav_id: str, title: str) -> str:
+    return f'<a class="nav-link" href="{href}" data-nav-id="{nav_id}">{title}</a>'
+
+
 def _drop(items: list[tuple[str, str, str, str]]) -> str:
     parts = []
     for href, nav_id, title, desc in items:
@@ -21,31 +25,40 @@ def _drop(items: list[tuple[str, str, str, str]]) -> str:
     return "".join(parts)
 
 
+def _treasury_drop(label: str, items: list[tuple[str, str, str, str]]) -> str:
+    return (
+        '<div class="nav-dropdown" data-nav-dropdown>'
+        + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
+        + label
+        + ' <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+        + '<div class="nav-dropdown-panel" role="menu">'
+        + _drop(items)
+        + "</div></div>"
+    )
+
+
+TREASURY_AZ = _treasury_drop("Xəzinə", [
+    ("encyclopedia.html", "encyclopedia", "Görkəmli şəxsiyyətlər", "Görkəmli şəxsiyyətlər kataloqu"),
+    ("industrial_revolutions.html", "industrial-revolutions", "Sənaye inqilabları", "Tarixi sənaye inqilablarının izləri"),
+    ("major_scientific_inventions.html", "major-scientific-inventions", "Əsas elmi ixtiralar", "Elm tarixinin mühüm ixtiraları"),
+])
+
+TREASURY_EN = _treasury_drop("Treasury", [
+    ("encyclopedia.html", "encyclopedia", "Prominent Figures", "Directory of prominent figures"),
+    ("industrial_revolutions.html", "industrial-revolutions", "Industrial Revolutions", "Landmarks of industrial history"),
+    ("major_scientific_inventions.html", "major-scientific-inventions", "Major Scientific Inventions", "Key inventions that shaped science"),
+])
+
+
 NAV_AZ = (
     '<div class="nav-divider"></div>'
     '<a class="nav-link" href="index.html" data-nav-id="home">Ana səhifə</a>'
-    '<div class="nav-dropdown" data-nav-dropdown>'
-    '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    'Fəaliyyətimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
-    '<div class="nav-dropdown-panel" role="menu">'
-    + _drop([
-        ("activities.html", "activities", "Yeniliklər", "Əsas fəaliyyət və yeniliklər"),
-        ("forum/2024/index.html", "forum-2024", "Forum 2024", "Forum 2024 haqqında"),
-    ])
-    + "</div></div>"
-    '<div class="nav-dropdown" data-nav-dropdown>'
-    '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    'Alimlərimiz <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
-    '<div class="nav-dropdown-panel" role="menu">'
-    + _drop([
-        ("scientists/list.html", "scientists-list", "Siyahı", "Bütün alimlərin siyahısı"),
-        ("scientists/profiles.html", "scientists-profiles", "Profillər", "Alimlərin akademik profilləri"),
-    ])
-    + "</div></div>"
-    '<div class="nav-dropdown" data-nav-dropdown>'
-    '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    'Haqqımızda <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
-    '<div class="nav-dropdown-panel" role="menu">'
+    + _top_link("activities.html", "activities", "Fəaliyyətimiz")
+    + _top_link("forum/2024/index.html", "forum-2024", "Forum 2024")
+    + '<div class="nav-dropdown" data-nav-dropdown>'
+    + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
+    + 'Haqqımızda <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
         ("foundation.html", "foundation", "Birliyin təsisi", "Yaradılma tarixi və təsis prosesi"),
         ("mission.html", "mission", "Missiya və dəyərlər", "Missiya, vizyon və akademik dəyərlər"),
@@ -53,44 +66,29 @@ NAV_AZ = (
         ("charter.html", "charter", "Nizamnamə", "Nizamnamə və idarəetmə qaydaları"),
     ])
     + "</div></div>"
-    '<div class="nav-dropdown" data-nav-dropdown>'
-    '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    'Üzvlük <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
-    '<div class="nav-dropdown-panel" role="menu">'
+    + '<div class="nav-dropdown" data-nav-dropdown>'
+    + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
+    + 'Üzvlük <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
         ("membership_value.html", "membership-value", "Niyə DAAB-a qoşulmalı", "Üzvlüyün dəyəri və əsas faydalar"),
         ("application.html", "membership-application", "Bizə qoşulun", "Onlayn üzvlük müraciət forması"),
-        ("membership_flyer.html", "membership-flyer", "Dəvət göndərin", "Potensial üzvlər üçün çap oluna bilən flyer"),
+        ("membership_flyer.html", "membership-flyer", "Dəvət məktubu", "Potensial üzvlər üçün çap oluna bilən flyer"),
     ])
     + "</div></div>"
-    '<a class="nav-link" href="sponsors.html" data-nav-id="sponsors">Sponsorluq</a>'
+    '<a class="nav-link" href="sponsors.html" data-nav-id="sponsors">Bizi dəstəkləyin</a>'
+    + TREASURY_AZ
 )
 
 NAV_EN = (
     '<div class="nav-divider"></div>'
     '<a class="nav-link" href="index.html" data-nav-id="home">Home</a>'
-    '<div class="nav-dropdown" data-nav-dropdown>'
-    '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    'Activities <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
-    '<div class="nav-dropdown-panel" role="menu">'
-    + _drop([
-        ("activities.html", "activities", "News", "News and updates"),
-        ("forum/2024/index.html", "forum-2024", "Forum 2024", "Explore Forum 2024"),
-    ])
-    + "</div></div>"
-    '<div class="nav-dropdown" data-nav-dropdown>'
-    '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    'Scientists <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
-    '<div class="nav-dropdown-panel" role="menu">'
-    + _drop([
-        ("scientists/list.html", "scientists-list", "Directory", "Directory of all scientists"),
-        ("scientists/profiles.html", "scientists-profiles", "Profiles", "Academic profiles of scientists"),
-    ])
-    + "</div></div>"
-    '<div class="nav-dropdown" data-nav-dropdown>'
-    '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    'About us <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
-    '<div class="nav-dropdown-panel" role="menu">'
+    + _top_link("activities.html", "activities", "Activities")
+    + _top_link("forum/2024/index.html", "forum-2024", "Forum 2024")
+    + '<div class="nav-dropdown" data-nav-dropdown>'
+    + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
+    + 'About us <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
         ("foundation.html", "foundation", "Foundation", "History and founding process"),
         ("mission.html", "mission", "Mission &amp; values", "Mission, vision and academic values"),
@@ -98,17 +96,18 @@ NAV_EN = (
         ("charter.html", "charter", "Charter", "Charter and governance rules"),
     ])
     + "</div></div>"
-    '<div class="nav-dropdown" data-nav-dropdown>'
-    '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    'Membership <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
-    '<div class="nav-dropdown-panel" role="menu">'
+    + '<div class="nav-dropdown" data-nav-dropdown>'
+    + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
+    + 'Membership <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
         ("membership_value.html", "membership-value", "Why join WAAS", "Membership value, benefits, and opportunities"),
         ("application.html", "membership-application", "Join us", "Online membership application form"),
         ("membership_flyer.html", "membership-flyer", "Send invitation", "Printable flyer to share with potential members"),
     ])
     + "</div></div>"
-    '<a class="nav-link" href="sponsors.html" data-nav-id="sponsors">Sponsorship</a>'
+    '<a class="nav-link" href="sponsors.html" data-nav-id="sponsors">Support us</a>'
+    + TREASURY_EN
 )
 
 NAV_SCI_AZ = NAV_AZ.replace('href="scientists/list.html"', 'href="list.html"').replace(
@@ -119,9 +118,7 @@ NAV_SCI_AZ = NAV_AZ.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="executive-board.html"', 'href="../executive-board.html"'
 ).replace('href="charter.html"', 'href="../charter.html"').replace(
     'href="activities.html"', 'href="../activities.html"'
-).replace(
-    'href="forum/2024/index.html"', 'href="../forum/2024/index.html"'
-).replace('href="membership.html"', 'href="../membership.html"').replace(
+).replace('href="forum/2024/', 'href="../forum/2024/').replace('href="encyclopedia.html"', 'href="../encyclopedia.html"').replace('href="industrial_revolutions.html"', 'href="../industrial_revolutions.html"').replace('href="major_scientific_inventions.html"', 'href="../major_scientific_inventions.html"').replace('href="membership.html"', 'href="../membership.html"').replace(
     'href="membership_value.html"', 'href="../membership_value.html"'
 ).replace('href="application.html"', 'href="../application.html"').replace(
     'href="membership_flyer.html"', 'href="../membership_flyer.html"'
@@ -129,10 +126,73 @@ NAV_SCI_AZ = NAV_AZ.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="sponsors.html"', 'href="../sponsors.html"'
 )
 
+PROMINENT_PREFIX_REPLACES = [
+    ('href="index.html"', 'href="../../index.html"'),
+    ('href="activities.html"', 'href="../../activities.html"'),
+    ('href="forum/2024/', 'href="../../forum/2024/'),
+    ('href="encyclopedia.html"', 'href="../../encyclopedia.html"'),
+    ('href="industrial_revolutions.html"', 'href="../../industrial_revolutions.html"'),
+    ('href="major_scientific_inventions.html"', 'href="../../major_scientific_inventions.html"'),
+    ('href="foundation.html"', 'href="../../foundation.html"'),
+    ('href="mission.html"', 'href="../../mission.html"'),
+    ('href="executive-board.html"', 'href="../../executive-board.html"'),
+    ('href="charter.html"', 'href="../../charter.html"'),
+    ('href="membership_value.html"', 'href="../../membership_value.html"'),
+    ('href="application.html"', 'href="../../application.html"'),
+    ('href="membership_flyer.html"', 'href="../../membership_flyer.html"'),
+    ('href="sponsors.html"', 'href="../../sponsors.html"'),
+]
+
+
+def prominent_nav(nav: str) -> str:
+    for old, new in PROMINENT_PREFIX_REPLACES:
+        nav = nav.replace(old, new)
+    return nav
+
+
+def prominent_nav_strip_en(menu_html: str) -> str:
+    """Full nav-strip for pages under en/prominent_figures/{group}/."""
+    return (
+        '<nav aria-label="Main navigation" class="nav-strip"><div class="nav-inner">'
+        '<button class="mobile-menu-toggle" type="button" aria-label="Open menu" '
+        'aria-expanded="false" aria-controls="primaryNavMenu">'
+        "<span></span><span></span><span></span></button>"
+        '<div class="page-logo"><a title="Home page" aria-label="WAAS home" href="../../index.html">'
+        '<img src="../../../images/daab-logo.svg" class="nav-brand-logo" alt="WAAS Logo"></a></div>'
+        '<a aria-label="WAAS home" class="nav-brand" href="../../index.html">'
+        '<span class="nav-brand-text">World Association of<br class="mobile-hidden-break">'
+        "Azerbaijani Scientists</span></a>"
+        f'<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1">{menu_html}</div>'
+        '<div class="nav-actions" role="group"></div>'
+        "</div></nav>"
+    )
+
+
+def prominent_nav_strip(menu_html: str) -> str:
+    """Full nav-strip for pages under az/prominent_figures/{group}/."""
+    return (
+        '<nav aria-label="Əsas naviqasiya" class="nav-strip"><div class="nav-inner">'
+        '<button class="mobile-menu-toggle" type="button" aria-label="Menyunu aç" '
+        'aria-expanded="false" aria-controls="primaryNavMenu">'
+        "<span></span><span></span><span></span></button>"
+        '<div class="page-logo"><a title="Ana səhifə" aria-label="DAAB ana səhifə" href="../../index.html">'
+        '<img src="../../../images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"></a></div>'
+        '<a aria-label="DAAB ana səhifə" class="nav-brand" href="../../index.html">'
+        '<span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">'
+        "Alimlər Birliyi</span></a>"
+        f'<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1">{menu_html}</div>'
+        '<div class="nav-actions" role="group"></div>'
+        "</div></nav>"
+    )
+
+
 FORUM_PREFIX_REPLACES = [
     ('href="index.html"', 'href="../../index.html"'),
     ('href="activities.html"', 'href="../../activities.html"'),
-    ('href="forum/2024/index.html"', 'href="index.html"'),
+    ('href="forum/2024/', 'href="'),
+    ('href="encyclopedia.html"', 'href="../../encyclopedia.html"'),
+    ('href="industrial_revolutions.html"', 'href="../../industrial_revolutions.html"'),
+    ('href="major_scientific_inventions.html"', 'href="../../major_scientific_inventions.html"'),
     ('href="scientists/', 'href="../../scientists/'),
     ('href="foundation.html"', 'href="../../foundation.html"'),
     ('href="mission.html"', 'href="../../mission.html"'),
@@ -168,7 +228,7 @@ def forum_nav_strip(lang: str = "az", *, active_nav_id: str | None = None) -> st
             f'<button class="mobile-menu-toggle" type="button" aria-label="Open menu" '
             f'aria-expanded="false" aria-controls="primaryNavMenu">'
             f"<span></span><span></span><span></span></button>"
-            f'<div class="page-logo"><a aria-label="WAAS home" href="../../index.html">'
+            f'<div class="page-logo"><a aria-label="WAAS home" title="Home page" href="../../index.html">'
             f'<img src="{asset}images/daab-logo.svg" class="nav-brand-logo" alt="WAAS Logo"></a></div>'
             f'<a aria-label="WAAS home" class="nav-brand" href="../../index.html">'
             f'<span class="nav-brand-text">World Association of<br class="mobile-hidden-break">'
@@ -182,7 +242,7 @@ def forum_nav_strip(lang: str = "az", *, active_nav_id: str | None = None) -> st
         f'<button class="mobile-menu-toggle" type="button" aria-label="Menyunu aç" '
         f'aria-expanded="false" aria-controls="primaryNavMenu">'
         f"<span></span><span></span><span></span></button>"
-        f'<div class="page-logo"><a aria-label="DAAB ana səhifə" href="../../index.html">'
+        f'<div class="page-logo"><a aria-label="DAAB ana səhifə" title="Ana səhifə" href="../../index.html">'
         f'<img src="{asset}images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"></a></div>'
         f'<a aria-label="DAAB ana səhifə" class="nav-brand" href="../../index.html">'
         f'<span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">'
@@ -201,9 +261,7 @@ NAV_SCI_EN = NAV_EN.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="executive-board.html"', 'href="../executive-board.html"'
 ).replace('href="charter.html"', 'href="../charter.html"').replace(
     'href="activities.html"', 'href="../activities.html"'
-).replace(
-    'href="forum/2024/index.html"', 'href="../forum/2024/index.html"'
-).replace('href="membership.html"', 'href="../membership.html"').replace(
+).replace('href="forum/2024/', 'href="../forum/2024/').replace('href="encyclopedia.html"', 'href="../encyclopedia.html"').replace('href="industrial_revolutions.html"', 'href="../industrial_revolutions.html"').replace('href="major_scientific_inventions.html"', 'href="../major_scientific_inventions.html"').replace('href="membership.html"', 'href="../membership.html"').replace(
     'href="membership_value.html"', 'href="../membership_value.html"'
 ).replace('href="application.html"', 'href="../application.html"').replace(
     'href="membership_flyer.html"', 'href="../membership_flyer.html"'
@@ -230,6 +288,10 @@ def nav_html(path: Path) -> str:
         return NAV_SCI_EN
     if rel.startswith("az/scientists/"):
         return NAV_SCI_AZ
+    if "/prominent_figures/" in rel and rel.startswith("az/"):
+        return prominent_nav(NAV_AZ)
+    if "/prominent_figures/" in rel and rel.startswith("en/"):
+        return prominent_nav(NAV_EN)
     if "forum/2024/" in rel:
         if rel.startswith("en/"):
             return forum_nav(NAV_EN)

@@ -50,7 +50,7 @@ def main() -> None:
     )
     text = text.replace("AMEA rəhbərliyinin nitqləri", "ANAS Leadership")
     text = text.replace(
-        "Azərbaycan Milli Elmlər Akademiyasının rəhbərliyinin Forum 2024-dəki nitqləri.",
+        "Azərbaycan Milli Elmlər Akademiyası rəhbərlərinin Forumla bağlı görüşləri.",
         "Speeches by leaders of the Azerbaijan National Academy of Sciences at Forum 2024.",
     )
     text = text.replace(

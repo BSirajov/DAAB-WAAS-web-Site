@@ -31,7 +31,6 @@ AZ_DIR = ROOT / "az" / "forum" / "2024"
 FORUM_EN_BREADCRUMB = (
     '<div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Breadcrumb">'
     '<a href="../../index.html">Home</a><span aria-hidden="true">›</span>'
-    '<a href="../../activities.html">Activities</a><span aria-hidden="true">›</span>'
     '<a href="index.html">Forum 2024</a><span aria-hidden="true">›</span>'
     '<span class="forum-breadcrumbs-current" aria-current="page">{current}</span></div>'
 )
@@ -193,7 +192,7 @@ def build_official() -> None:
 <a class="skip" href="#content">Skip to content</a>
 {nav}
 <div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Breadcrumb">
-<a href="../../index.html">Home</a><span aria-hidden="true">›</span><a href="../../activities.html">Activities</a><span aria-hidden="true">›</span><a href="index.html">Forum 2024</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">Official addresses</span>
+<a href="../../index.html">Home</a><span aria-hidden="true">›</span><a href="index.html">Forum 2024</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">Official addresses</span>
 </div>
 <header class="page-hero">
 <div class="hero-wrap shell">

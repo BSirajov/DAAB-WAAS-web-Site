@@ -65,7 +65,7 @@ def build() -> None:
 <a class="skip" href="#content">Məzmuna keç</a>
 {nav}
 <div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Səhifə yolu">
-<a href="../../index.html">Ana səhifə</a><span aria-hidden="true">›</span><a href="../../activities.html">Fəaliyyətimiz</a><span aria-hidden="true">›</span><a href="index.html">Forum 2024</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">Rəsmi müraciətlər</span>
+<a href="../../index.html">Ana səhifə</a><span aria-hidden="true">›</span><a href="index.html">Forum 2024</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">Rəsmi müraciətlər</span>
 </div>
 <header class="page-hero">
 <div class="hero-wrap shell">

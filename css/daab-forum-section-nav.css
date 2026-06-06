@@ -1,5 +1,5 @@
 /**
- * Forum 2024 — in-section navigation panel (12 pill links).
+ * Forum 2024 — in-section navigation panel (14 pill links).
  * Reference: az|en/forum/2024/index.html (JS-mounted .daab-section-nav).
  * Load after daab-nav-mega.css on all html[data-daab-page-id^="forum-"] pages.
  */
@@ -84,19 +84,6 @@ html[data-daab-page-id^="forum-"] .daab-section-nav-list a .daab-section-nav-lab
   line-height: inherit !important;
 }
 
-html[data-daab-page-id^="forum-"] .daab-section-nav-list a::after{
-  content: "↗";
-  display: inline-block;
-  margin-left: 0.15em;
-  font-weight: 900;
-  transition: transform 0.18s ease;
-}
-
-html[data-daab-page-id^="forum-"] .daab-section-nav-list a:hover::after,
-html[data-daab-page-id^="forum-"] .daab-section-nav-list a:focus-visible::after{
-  transform: translate(2px, -2px);
-}
-
 html[data-daab-page-id^="forum-"] .daab-section-nav-list a:hover{
   transform: translateY(-2px);
   filter: brightness(1.02);
@@ -122,11 +109,11 @@ html[data-daab-page-id^="forum-"] .daab-section-nav-list a[aria-current="page"]:
   box-shadow: 0 18px 36px rgba(0, 45, 82, 0.28) !important;
 }
 
-/* Forum 2024 — 6×2 grid; stacked buttons share column width (js sync + grid) */
+/* Forum 2024 — 6-column grid; stacked buttons share column width (js sync + grid) */
 html[data-daab-page-id^="forum-"] .daab-section-nav-list--forum-pairs{
   display: grid;
   grid-template-columns: repeat(6, minmax(0, max-content));
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   gap: 10px;
   justify-content: start;
   align-items: stretch;

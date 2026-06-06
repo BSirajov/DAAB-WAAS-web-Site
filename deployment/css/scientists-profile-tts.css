@@ -99,11 +99,18 @@
   background: #fff5f5;
 }
 
+@media (max-width: 760px) {.card-tts-btn,
+  .card-tts-stop{
+    min-height: var(--daab-touch-min, 44px);
+    padding: 10px 14px;
+  }
+}
+
 @media (max-width: 640px) {.card-tts{
     gap: 6px;
   }.card-tts-btn,
   .card-tts-stop{
-    min-height: 36px;
+    min-height: var(--daab-touch-min, 44px);
     padding: 8px 12px;
     font-size: 12px;
   }.card-tts-label{

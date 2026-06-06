@@ -220,9 +220,7 @@
   function navLinkIsActive(id, href, navKey, pageIdAttr, relPath) {
     if (!navKey) return false;
     if (id && id === navKey) return true;
-    if (id === "forum-2024" && isForumNavPageId(navKey) && navKey !== "activities") {
-      return true;
-    }
+    if (id === "forum-2024" && isForumNavPageId(navKey) && navKey !== "activities") return true;
     /* When data-daab-page-id is set, match by id only (see comment above navLinkIsActive). */
     if (pageIdAttr) return false;
     return hrefMatchesNav(href, relPath);

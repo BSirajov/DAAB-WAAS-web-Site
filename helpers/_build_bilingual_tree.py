@@ -36,7 +36,7 @@ LEGACY_LINK_MAP = {
     "scientists_card_view_az.html": "scientists/profiles.html",
     "executive_board_az.html": "executive-board.html",
     "charter_az.html": "charter.html",
-    "membership_terms_az.html": "membership.html",
+    "membership_terms_az.html": "membership_value.html",
 }
 
 REVERSE_LEGACY = {v: k for k, v in LEGACY_LINK_MAP.items()}
@@ -550,6 +550,8 @@ def write_sitemap(routes: dict) -> None:
         '        xmlns:xhtml="http://www.w3.org/1999/xhtml">',
     ]
     for page in routes["pages"]:
+        if page.get("sitemap") is False:
+            continue
         az = page["az"].replace("\\", "/")
         en = page["en"].replace("\\", "/")
         az_url = f"{SITE_ORIGIN}/{az}"
@@ -614,10 +616,26 @@ def main() -> int:
         dest="redirects",
         help="Skip legacy meta-refresh hints",
     )
+    parser.add_argument(
+        "--seo-only",
+        action="store_true",
+        help="Only regenerate sitemap.xml, robots.txt, and legacy redirect hints",
+    )
     args = parser.parse_args()
 
     routes = load_routes()
     pages = routes["pages"]
+
+    if args.seo_only:
+        if args.sitemap:
+            write_sitemap(routes)
+            write_robots_txt()
+        if args.redirects:
+            print("Adding legacy redirect hints...")
+            write_legacy_redirects(routes)
+        print("Done. Run: python helpers/_validate_bilingual.py")
+        return 0
+
     print("Building Azerbaijani tree (/az/)...")
     for page in pages:
         legacy = page.get("legacy")

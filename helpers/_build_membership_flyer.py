@@ -13,8 +13,8 @@ from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS
 ASSET = "../"
 FLYER_CSS_V = STYLE_VERSIONS["daab-membership-flyer.css"]
 MEMBERSHIP_HTML = {
-    "az": ROOT / "az" / "membership.html",
-    "en": ROOT / "en" / "membership.html",
+    "az": ROOT / "az" / "membership_value.html",
+    "en": ROOT / "en" / "membership_value.html",
 }
 NAV_ARIA = {"az": "Əsas naviqasiya", "en": "Main navigation"}
 SKIP = {"az": "Məzmuna keç", "en": "Skip to content"}
@@ -23,9 +23,8 @@ SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-lab
 <p class="daab-section-nav-title">Üzvlük</p>
 <ul class="daab-section-nav-list">
 <li><a href="membership_value.html"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Niyə DAAB-a qoşulmalı</span></a></li>
-<li><a href="membership.html"><span class="daab-section-nav-icon" aria-hidden="true">✒️</span><span class="daab-section-nav-label">Üzvlük şərtləri</span></a></li>
 <li><a href="application.html"><span class="daab-section-nav-icon" aria-hidden="true">📝</span><span class="daab-section-nav-label">Bizə qoşulun</span></a></li>
-<li><a class="active" href="membership_flyer.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Dəvət göndərin</span></a></li>
+<li><a class="active" href="membership_flyer.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Dəvət məktubu</span></a></li>
 </ul>
 </nav>
 """
@@ -34,7 +33,6 @@ SECTION_NAV_EN = """<nav class="daab-section-nav" id="daab-section-nav" aria-lab
 <p class="daab-section-nav-title">Membership</p>
 <ul class="daab-section-nav-list">
 <li><a href="membership_value.html"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Why join WAAS</span></a></li>
-<li><a href="membership.html"><span class="daab-section-nav-icon" aria-hidden="true">✒️</span><span class="daab-section-nav-label">Membership terms</span></a></li>
 <li><a href="application.html"><span class="daab-section-nav-icon" aria-hidden="true">📝</span><span class="daab-section-nav-label">Join us</span></a></li>
 <li><a class="active" href="membership_flyer.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Send invitation</span></a></li>
 </ul>

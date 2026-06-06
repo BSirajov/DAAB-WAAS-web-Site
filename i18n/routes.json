@@ -57,6 +57,47 @@
       "en": "en/forum/2024/index.html"
     },
     {
+      "id": "encyclopedia",
+      "navId": "encyclopedia",
+      "navGroup": "treasury",
+      "navParent": "treasury",
+      "navOrder": 1,
+      "legacy": null,
+      "az": "az/encyclopedia.html",
+      "en": "en/encyclopedia.html"
+    },
+    {
+      "id": "industrial-revolutions",
+      "navId": "industrial-revolutions",
+      "navGroup": "treasury",
+      "navParent": "treasury",
+      "navOrder": 2,
+      "legacy": null,
+      "az": "az/industrial_revolutions.html",
+      "en": "en/industrial_revolutions.html"
+    },
+    {
+      "id": "major-scientific-inventions",
+      "navId": "major-scientific-inventions",
+      "navGroup": "treasury",
+      "navParent": "treasury",
+      "navOrder": 3,
+      "legacy": null,
+      "az": "az/major_scientific_inventions.html",
+      "en": "en/major_scientific_inventions.html"
+    },
+    {
+      "id": "prominent-figure",
+      "navId": null,
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": null,
+      "legacy": null,
+      "az": "az/encyclopedia.html",
+      "en": "en/encyclopedia.html",
+      "sitemap": false
+    },
+    {
       "id": "forum-2024-presentations",
       "navId": "forum-2024-presentations",
       "navGroup": "forum",
@@ -139,8 +180,8 @@
     {
       "id": "scientists-list",
       "navId": "scientists-list",
-      "navGroup": "scientists",
-      "navParent": "scientists",
+      "navGroup": "forum",
+      "navParent": "forum",
       "navOrder": 1,
       "legacy": "scientists_list_view_az.html",
       "az": "az/scientists/list.html",
@@ -149,8 +190,8 @@
     {
       "id": "scientists-profiles",
       "navId": "scientists-profiles",
-      "navGroup": "scientists",
-      "navParent": "scientists",
+      "navGroup": "forum",
+      "navParent": "forum",
       "navOrder": 2,
       "legacy": "scientists_card_view_az.html",
       "az": "az/scientists/profiles.html",
@@ -205,23 +246,31 @@
       "en": "en/membership_flyer.html"
     },
     {
-      "id": "membership",
-      "navId": "membership",
-      "navGroup": "membership",
-      "navParent": "membership",
-      "navOrder": 2,
-      "legacy": "membership_terms_az.html",
-      "az": "az/membership.html",
-      "en": "en/membership.html"
-    },
-    {
       "id": "sponsors",
       "navId": "sponsors",
-      "navGroup": null,
-      "navParent": null,
-      "navOrder": 6,
+      "navGroup": "sponsorship",
+      "navParent": "sponsorship",
+      "navOrder": 1,
       "az": "az/sponsors.html",
       "en": "en/sponsors.html"
+    },
+    {
+      "id": "donate",
+      "navId": "donate",
+      "navGroup": "sponsorship",
+      "navParent": "sponsorship",
+      "navOrder": 2,
+      "az": "az/donate.html",
+      "en": "en/donate.html"
+    },
+    {
+      "id": "sponsors-flyer",
+      "navId": "sponsors-flyer",
+      "navGroup": "sponsorship",
+      "navParent": "sponsorship",
+      "navOrder": 3,
+      "az": "az/sponsors_flyer.html",
+      "en": "en/sponsors_flyer.html"
     },
     {
       "id": "forum-roadmap",
@@ -263,6 +312,6 @@
     "scientists_card_view_az.html": "az/scientists/profiles.html",
     "executive_board_az.html": "az/executive-board.html",
     "charter_az.html": "az/charter.html",
-    "membership_terms_az.html": "az/membership.html"
+    "membership_terms_az.html": "az/membership_value.html"
   }
 }

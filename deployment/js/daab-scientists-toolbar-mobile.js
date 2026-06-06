@@ -30,11 +30,26 @@
     };
   }
 
+  function filterSelectIds() {
+    var pageId =
+      document.documentElement.getAttribute("data-daab-page-id") || "";
+    if (pageId === "encyclopedia") {
+      return [
+        "filterGroup",
+        "filterPeriod",
+        "filterField",
+        "filterCountry",
+        "filterRegion",
+      ];
+    }
+    return ["filterCountry", "filterIxtilas", "filterDegree"];
+  }
+
   function activeFilterCount(root) {
     var count = 0;
     var search = root.querySelector("#searchInput");
     if (search && search.value.trim()) count += 1;
-    ["filterCountry", "filterIxtilas", "filterDegree"].forEach(function (id) {
+    filterSelectIds().forEach(function (id) {
       var el = root.querySelector("#" + id);
       if (el && el.value) count += 1;
     });
@@ -106,9 +121,7 @@
           if (!e.target || !e.target.id) return;
           if (
             e.target.id === "searchInput" ||
-            e.target.id === "filterCountry" ||
-            e.target.id === "filterIxtilas" ||
-            e.target.id === "filterDegree"
+            filterSelectIds().indexOf(e.target.id) >= 0
           ) {
             syncBadge();
           }
@@ -120,7 +133,11 @@
     toolbar.addEventListener("click", function (e) {
       var target = e.target;
       if (!target || !target.closest) return;
-      if (target.closest(".sel-clear") || target.closest("#clearFilters")) {
+      if (
+        target.closest(".sel-clear") ||
+        target.closest("#clearFilters") ||
+        target.closest("#clearEncyclopediaFilters")
+      ) {
         window.setTimeout(syncBadge, 0);
       }
     });

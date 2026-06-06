@@ -8,7 +8,7 @@ from pathlib import Path
 from _paths import ROOT
 
 SRC = ROOT / "az" / "application" / "application.html"
-MEMBERSHIP = ROOT / "az" / "membership.html"
+MEMBERSHIP = ROOT / "az" / "membership_value.html"
 OUT = ROOT / "az" / "application.html"
 ASSET = "../"
 
@@ -107,7 +107,6 @@ NAV_PLACEHOLDER
 <p class="daab-section-nav-title">Üzvlük</p>
 <ul class="daab-section-nav-list">
 <li><a href="membership_value.html">Niyə DAAB-a qoşulmalı</a></li>
-<li><a href="membership.html">Üzvlük şərtləri</a></li>
 <li><a class="active" href="application.html" aria-current="page">Bizə qoşulun</a></li>
 <li><a href="membership_flyer.html">Dəvət göndərin</a></li>
 </ul>
@@ -118,7 +117,7 @@ NAV_PLACEHOLDER
 
 def success_extra() -> str:
     return """      <div class="app-btn-row">
-        <a class="app-btn app-btn-primary" href="membership.html">Üzvlük səhifəsinə qayıt</a>
+        <a class="app-btn app-btn-primary" href="membership_value.html">Üzvlük səhifəsinə qayıt</a>
         <a class="app-btn app-btn-primary" href="membership_flyer.html">Dəvət göndərin</a>
       </div>"""
 

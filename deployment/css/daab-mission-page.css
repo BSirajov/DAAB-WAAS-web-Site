@@ -137,21 +137,6 @@
   letter-spacing: .04em;
   line-height: 1.25;
   text-transform: uppercase;
-}.value-pill a::after{
-  content: "↓";
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  color: var(--blue-700);
-  background: var(--color-panel-blue);
-  border-radius: 50%;
-  font-size: 12px;
-  font-weight: 900;
-  transition: .2s;
-}.value-pill:hover a::after{
-  color: var(--white);
-  background: var(--blue-700);
 }.values-title{
   display: flex;
   align-items: end;

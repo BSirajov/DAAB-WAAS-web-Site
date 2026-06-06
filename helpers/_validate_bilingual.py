@@ -45,6 +45,8 @@ def check_sitemap(routes: dict) -> list[str]:
     if "xmlns:xhtml" not in text:
         issues.append("sitemap.xml: missing xhtml namespace (hreflang alternates)")
     for page in routes["pages"]:
+        if page.get("sitemap") is False:
+            continue
         for lang in ("az", "en"):
             rel = page[lang].replace("\\", "/")
             if rel not in text:
@@ -73,9 +75,16 @@ def main() -> int:
     issues: list[str] = []
 
     for page in routes["pages"]:
-        issues.extend(check_page(ROOT / page["az"], "az"))
+        az_path = ROOT / page["az"]
+        if az_path.is_file():
+            issues.extend(check_page(az_path, "az"))
+        elif not str(page["az"]).replace("\\", "/").endswith("/"):
+            issues.append(f"missing file: {az_path.relative_to(ROOT)}")
         en_path = ROOT / page["en"]
-        issues.extend(check_page(en_path, "en"))
+        if en_path.is_file():
+            issues.extend(check_page(en_path, "en"))
+        elif not str(page["en"]).replace("\\", "/").endswith("/"):
+            issues.append(f"missing file: {en_path.relative_to(ROOT)}")
         if en_path.is_file():
             en_html = en_path.read_text(encoding="utf-8")
             if "Translation in progress" in en_html and "daab-en-complete" not in en_html:

@@ -92,7 +92,7 @@
   function loadUi() {
     if (uiCache) return Promise.resolve(uiCache);
     UI_URL = UI_URL || i18nUrl("ui.json");
-    return fetchJson(UI_URL + "?v=13").then(function (data) {
+    return fetchJson(UI_URL + "?v=15").then(function (data) {
       uiCache = data;
       return data;
     });
@@ -133,7 +133,18 @@
     return (up ? Array(up + 1).join("../") : "") + target;
   }
 
+  function prominentFigureSuffix(pathKey) {
+    var m = pathKey.match(/^(?:az|en)\/prominent_figures\/(.+)$/);
+    return m ? m[1] : null;
+  }
+
   function findPage(routes, pathKey) {
+    if (prominentFigureSuffix(pathKey)) {
+      var pages = routes.pages || [];
+      for (var j = 0; j < pages.length; j++) {
+        if (pages[j].id === "prominent-figure") return pages[j];
+      }
+    }
     var pages = routes.pages || [];
     for (var i = 0; i < pages.length; i++) {
       var p = pages[i];
@@ -152,7 +163,12 @@
   function getAlternateUrl(lang, routes) {
     routes = routes || routesCache;
     if (!routes) return null;
-    var page = findPage(routes, currentPathKey());
+    var pathKey = currentPathKey();
+    var pf = prominentFigureSuffix(pathKey);
+    if (pf) {
+      return assetRoot() + lang + "/prominent_figures/" + pf;
+    }
+    var page = findPage(routes, pathKey);
     return resolveUrl(lang, page, routes);
   }
 

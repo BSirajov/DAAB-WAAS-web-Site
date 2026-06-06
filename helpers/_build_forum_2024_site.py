@@ -191,7 +191,6 @@ def rewrite_legacy(text: str) -> str:
     text = re.sub(
         r'<div class="breadcrumbs">.*?</div>',
         f'<div class="breadcrumbs"><a href="{AZ}/index.html">Ana səhifə</a><span>›</span>'
-        f'<a href="{AZ}/activities.html">Fəaliyyətimiz</a><span>›</span>'
         f'<a href="index.html">Forum 2024</a><span>›</span><span id="forum-bc-tail"></span></div>',
         text,
         count=1,

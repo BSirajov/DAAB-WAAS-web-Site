@@ -335,9 +335,7 @@ html[data-daab-page-id="forum-2024"] .card-tag{
 }html[data-daab-page-id="forum-2024"] .card-tag{
   font-size: 11px;
   padding: 7px 12px;
-}html[data-daab-page-id="home"] .card-arrow,
-html[data-daab-page-id="forum-2024"] .card-arrow,
-.daab-hub-page .card-arrow{
+}.card-arrow{
   display: none !important;
 }.daab-hub-page .page-card{
   position: relative;

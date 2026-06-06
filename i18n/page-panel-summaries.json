@@ -43,8 +43,8 @@
         "en": "Summary of ANAS leadership speeches",
         "az": "AMEA rəhbərliyi haqqında qısa məlumat"
       },
-      "en": "This page presents speeches by the leadership of the Azerbaijan National Academy of Sciences at Forum 2024, including addresses by President Isa Habibbayli and Vice-President Rasim Aliquliyev on organising the scientific diaspora and cooperation with WAAS.",
-      "az": "Bu səhifədə AMEA rəhbərliyinin — prezident İsa Həbibbəyli və vitse-prezident Rasim Əliquliyevin — Forum 2024-dəki nitqləri, elmi diasporun təşkilatlanması və DAAB ilə əməkdaşlıq mövzularında yerləşdirilib."
+      "en": "This page presents the views of ANAS President Isa Habibbayli and Vice-President Rasim Aliguliyev on the organisation of the scientific diaspora and cooperation with WAAS.",
+      "az": "Bu səhifədə AMEA-nın prezidenti İsa Həbibbəyli və vitse-prezidenti Rasim Əliquliyevin elmi diasporun təşkilatlanması və DAAB ilə əməkdaşlıq mövzularındakı fikirləri yerləşdirilmişdir."
     },
     "forum-official": {
       "en": "President Ilham Aliyev's message, letters from Nobel laureates, our scientists' appeal to the President, and speeches by Fuad Muradov and Messoud Efendiyev — the official addresses that shaped the Forum's direction.",
@@ -113,6 +113,14 @@
     "membership-flyer": {
       "en": "A ready-to-share flyer summarizing the value of WAAS membership; save as PDF, print or share by email using the buttons at the top right of the flyer.",
       "az": "DAAB üzvlüyünün dəyərini əks etdirən hazır flyer; yuxarı sağ küncdəki düymələrlə PDF yaradın, çap edin və ya e-poçtla paylaşın."
+    },
+    "sponsors-flyer": {
+      "en": "A ready-to-share flyer summarizing WAAS sponsorship tiers and impact; save as PDF, print, or share using the button at the top right of the flyer.",
+      "az": "DAAB sponsorluğunun səviyyələrini və təsirini əks etdirən hazır dəvət məktubu; yuxarı sağ küncdəki düymə ilə PDF yaradın, çap edin və ya paylaşın."
+    },
+    "donate": {
+      "en": "Make a gift by bank transfer using the WAAS account details, payment reference, and charter link on this page.",
+      "az": "Bu səhifədəki bank rekvizitləri, ödəniş təyinatı və nizamnamə keçidi ilə bank köçürməsi edərək ianə verin."
     }
   }
 }

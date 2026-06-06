@@ -26,6 +26,16 @@ ASSET = "../../../"
 SIDEBAR_SCRIPT = f'<script src="{ASSET}js/daab-sidebar-timeline.js?v=2" defer></script>'
 
 ANAS_SECTION_IDS = frozenset({"isa-hebibbeyli", "rasim-eliquliyev"})
+
+ISA_SPEECH_BODY_LEAD_AZ = (
+    "DİASPOR HƏRƏKATINDA MÜHÜM İSTİQAMƏT: ELMİ DİASPORUN TƏŞKİLATLANMASI"
+)
+ISA_SPEECH_BODY_LEAD_EN = (
+    "AN IMPORTANT DIRECTION IN THE DIASPORA MOVEMENT: "
+    "ORGANIZATION OF THE SCIENTIFIC DIASPORA"
+)
+RASIM_SPEECH_BODY_LEAD_AZ = "AZƏRBAYCANLI ALİMLƏRİN QLOBAL BİRLİYİ"
+RASIM_SPEECH_BODY_LEAD_EN = "THE GLOBAL UNITY OF AZERBAIJANI SCIENTISTS"
 SLUG_OVERRIDES = {
     "isa-habibbayli": "isa-hebibbeyli",
     "rasim-aliguliyev": "rasim-eliquliyev",
@@ -131,7 +141,7 @@ PAGE_SPECS = {
                 "breadcrumb": "AMEA rəhbərliyi",
                 "hero_h1": "AMEA <span>rəhbərliyi</span>",
                 "hero_subtitle": (
-                    "Azərbaycan Milli Elmlər Akademiyasının rəhbərliyinin Forum 2024-dəki nitqləri"
+                    "Azərbaycan Milli Elmlər Akademiyası rəhbərlərinin Forumla bağlı görüşləri"
                 ),
                 "sidebar_label": "AMEA rəhbərliyi",
                 "sidebar_toggle": "AMEA rəhbərliyi siyahısını aç",
@@ -144,7 +154,7 @@ PAGE_SPECS = {
                 "breadcrumb": "ANAS Leadership",
                 "hero_h1": "ANAS <span>Leadership</span>",
                 "hero_subtitle": (
-                    "Speeches by leaders of the Azerbaijan National Academy of Sciences at Forum 2024"
+                    "Views of the Leadership of the Azerbaijan National Academy of Sciences on the Forum"
                 ),
                 "sidebar_label": "ANAS Leadership",
                 "sidebar_toggle": "Open ANAS leadership list",
@@ -242,6 +252,32 @@ def append_body(cur: dict, text: str, style: str) -> None:
     if PS_SKIP_RE.match(text):
         return
     if BODY_SKIP_RE.match(text):
+        upper = text.strip().upper()
+        sid = cur.get("id")
+        if sid == "isa-hebibbeyli" and (
+            upper.startswith("DİASPOR HƏRƏKATINDA")
+            or upper.startswith("AN IMPORTANT DIRECTION")
+        ):
+            cur["blocks"].append(
+                {
+                    "list": False,
+                    "text": text.strip(),
+                    "subhead": True,
+                    "center_lead": True,
+                }
+            )
+        elif sid == "rasim-eliquliyev" and (
+            upper.startswith("AZƏRBAYCANLI ALİMLƏRİN")
+            or upper.startswith("THE GLOBAL UNITY")
+        ):
+            cur["blocks"].append(
+                {
+                    "list": False,
+                    "text": text.strip(),
+                    "subhead": True,
+                    "center_lead": True,
+                }
+            )
         return
     if style.startswith("Heading 2") and cur.get("role"):
         cur["blocks"].append({"list": False, "text": text, "subhead": True})
@@ -352,6 +388,44 @@ def toc_item_html(section: dict, page_key: str) -> str:
     )
 
 
+def ensure_isa_speech_body_lead(section: dict, lang: str) -> None:
+    """İsa Həbibbəyli / Isa Habibbayli speech body must open with the diaspora heading."""
+    if section.get("id") != "isa-hebibbeyli":
+        return
+    lead = ISA_SPEECH_BODY_LEAD_EN if lang == "en" else ISA_SPEECH_BODY_LEAD_AZ
+    prefix = lead.split(":", 1)[0].strip().upper()
+    blocks = section.get("blocks") or []
+    if blocks and blocks[0].get("subhead"):
+        first = (blocks[0].get("text") or "").strip().upper()
+        if first.startswith(prefix):
+            if not blocks[0].get("center_lead"):
+                blocks[0]["center_lead"] = True
+            return
+    section["blocks"] = [
+        {"list": False, "text": lead, "subhead": True, "center_lead": True},
+        *blocks,
+    ]
+
+
+def ensure_rasim_speech_body_lead(section: dict, lang: str) -> None:
+    """Rasim Əliquliyev / Rasim Aliguliyev speech body must open with the unity heading."""
+    if section.get("id") != "rasim-eliquliyev":
+        return
+    lead = RASIM_SPEECH_BODY_LEAD_EN if lang == "en" else RASIM_SPEECH_BODY_LEAD_AZ
+    prefix = lead.strip().upper()[:24]
+    blocks = section.get("blocks") or []
+    if blocks and blocks[0].get("subhead"):
+        first = (blocks[0].get("text") or "").strip().upper()
+        if first.startswith(prefix):
+            if not blocks[0].get("center_lead"):
+                blocks[0]["center_lead"] = True
+            return
+    section["blocks"] = [
+        {"list": False, "text": lead, "subhead": True, "center_lead": True},
+        *blocks,
+    ]
+
+
 def strip_duplicate_role_blocks(section: dict) -> None:
     """Drop a leading body paragraph that repeats the Heading 3 academic title."""
     role = (section.get("role") or "").strip()
@@ -383,7 +457,12 @@ def blocks_to_html(blocks: list[dict]) -> str:
             continue
         flush_list()
         if block.get("subhead"):
-            parts.append(f'<p class="card-text"><strong>{esc(text)}</strong></p>')
+            cls = (
+                "card-text speech-body-lead"
+                if block.get("center_lead")
+                else "card-text"
+            )
+            parts.append(f'<p class="{cls}"><strong>{esc(text)}</strong></p>')
         elif SIGNOFF_RE.match(text):
             parts.append(f'<p class="card-signoff">{esc(text)}</p>')
         elif is_quote_line(text):
@@ -446,7 +525,6 @@ def build_html(lang: str, sections: list[dict], spec: dict, page_key: str) -> st
     if lang == "az":
         crumbs = (
             '<a href="../../index.html">Ana səhifə</a><span aria-hidden="true">›</span>'
-            '<a href="../../activities.html">Fəaliyyətimiz</a><span aria-hidden="true">›</span>'
             '<a href="index.html">Forum 2024</a><span aria-hidden="true">›</span>'
             f'<span class="forum-breadcrumbs-current" aria-current="page">{c["breadcrumb"]}</span>'
         )
@@ -455,7 +533,6 @@ def build_html(lang: str, sections: list[dict], spec: dict, page_key: str) -> st
     else:
         crumbs = (
             '<a href="../../index.html">Home</a><span aria-hidden="true">›</span>'
-            '<a href="../../activities.html">Activities</a><span aria-hidden="true">›</span>'
             '<a href="index.html">Forum 2024</a><span aria-hidden="true">›</span>'
             f'<span class="forum-breadcrumbs-current" aria-current="page">{c["breadcrumb"]}</span>'
         )
@@ -558,6 +635,8 @@ def build() -> None:
                 raise SystemExit(f"No sections for page {key} ({lang})")
             for section in sections:
                 strip_duplicate_role_blocks(section)
+                ensure_isa_speech_body_lead(section, lang)
+                ensure_rasim_speech_body_lead(section, lang)
 
             out = spec["out_az"] if lang == "az" else spec["out_en"]
             out.parent.mkdir(parents=True, exist_ok=True)

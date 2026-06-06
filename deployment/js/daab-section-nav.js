@@ -32,7 +32,13 @@
     membership: "membershipTerms",
     "membership-value": "membershipWhy",
     "membership-application": "membershipJoin",
-    "membership-flyer": "membershipFlyer"
+    "membership-flyer": "membershipFlyer",
+    sponsors: "sponsorsProgram",
+    donate: "donate",
+    "sponsors-flyer": "sponsorsFlyer",
+    encyclopedia: "prominentFigures",
+    "industrial-revolutions": "industrialRevolutions",
+    "major-scientific-inventions": "majorScientificInventions"
   };
 
   var FALLBACK_ROUTES = {
@@ -147,15 +153,15 @@
         id: "scientists-list",
         az: "az/scientists/list.html",
         en: "en/scientists/list.html",
-        navGroup: "scientists",
-        navParent: "scientists"
+        navGroup: "forum",
+        navParent: "forum"
       },
       {
         id: "scientists-profiles",
         az: "az/scientists/profiles.html",
         en: "en/scientists/profiles.html",
-        navGroup: "scientists",
-        navParent: "scientists"
+        navGroup: "forum",
+        navParent: "forum"
       },
       {
         id: "executive-board",
@@ -178,7 +184,6 @@
         navGroup: "membership",
         navParent: "membership"
       },
-      { id: "membership", az: "az/membership.html", en: "en/membership.html", navGroup: "membership", navParent: "membership" },
       {
         id: "membership-application",
         az: "az/application.html",
@@ -192,6 +197,48 @@
         en: "en/membership_flyer.html",
         navGroup: "membership",
         navParent: "membership"
+      },
+      {
+        id: "sponsors",
+        az: "az/sponsors.html",
+        en: "en/sponsors.html",
+        navGroup: "sponsorship",
+        navParent: "sponsorship"
+      },
+      {
+        id: "donate",
+        az: "az/donate.html",
+        en: "en/donate.html",
+        navGroup: "sponsorship",
+        navParent: "sponsorship"
+      },
+      {
+        id: "sponsors-flyer",
+        az: "az/sponsors_flyer.html",
+        en: "en/sponsors_flyer.html",
+        navGroup: "sponsorship",
+        navParent: "sponsorship"
+      },
+      {
+        id: "encyclopedia",
+        az: "az/encyclopedia.html",
+        en: "en/encyclopedia.html",
+        navGroup: "treasury",
+        navParent: "treasury"
+      },
+      {
+        id: "industrial-revolutions",
+        az: "az/industrial_revolutions.html",
+        en: "en/industrial_revolutions.html",
+        navGroup: "treasury",
+        navParent: "treasury"
+      },
+      {
+        id: "major-scientific-inventions",
+        az: "az/major_scientific_inventions.html",
+        en: "en/major_scientific_inventions.html",
+        navGroup: "treasury",
+        navParent: "treasury"
       }
     ]
   };
@@ -204,7 +251,26 @@
         scientistsTitle: "Alimlərimiz",
         activitiesTitle: "Fəaliyyətimiz",
         forumTitle: "Forum 2024",
-        membershipTitle: "Üzvlük"
+        membershipTitle: "Üzvlük",
+        sponsorshipTitle: "Sponsorluq",
+        treasuryTitle: "Xəzinə",
+        forumPageTooltips: {
+          "forum-2024": "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024",
+          "forum-official": "Forumun istiqamətini müəyyən edən rəsmi çıxış və müraciətlər",
+          "forum-rector-speeches": "Azərbaycan universitet rektorlarının Forum 2024 nitqləri",
+          "forum-anas-leadership-speeches":
+            "AMEA rəhbərliyinin Forumla bağlı görüş və nitqləri",
+          "forum-program": "Bakı–Xankəndi–Şuşa forum proqramı",
+          "forum-2024-presentations": "Elm, təhsil və siyasət mövzularında məruzələr",
+          "forum-impressions": "İştirakçıların Forum və Qarabağ təəssüratları",
+          "forum-photos-gallery": "Forumun foto-hekayəsi — açılışdan əsas görüşlərə",
+          "forum-video-gallery": "Forum 2024 haqqında video reportajlar və müsahibələr",
+          "forum-roadmap": "Elm, təhsil və diaspora əməkdaşlığına dair təkliflər",
+          "forum-bagli-hekayeler": "Forumun ab-havasını əks etdirən ədəbi yazılar",
+          "forum-cooperation": "Forumun təşkilinə dəstək verən tərəfdaşlar",
+          "scientists-list": "Forumda iştirak etmiş alimlərin siyahısı",
+          "scientists-profiles": "Alimlərin akademik profilləri"
+        }
       },
       en: {
         aria: "In this section",
@@ -212,7 +278,28 @@
         scientistsTitle: "Scientists",
         activitiesTitle: "Activities",
         forumTitle: "Forum 2024",
-        membershipTitle: "Membership"
+        membershipTitle: "Membership",
+        sponsorshipTitle: "Sponsorship",
+        treasuryTitle: "Treasury",
+        forumPageTooltips: {
+          "forum-2024":
+            "First Forum of Azerbaijani Scientists Living Abroad — September 2024",
+          "forum-official": "Official speeches and messages that shaped the Forum",
+          "forum-rector-speeches":
+            "Speeches by rectors of Azerbaijani universities at Forum 2024",
+          "forum-anas-leadership-speeches": "Speeches by ANAS leadership at Forum 2024",
+          "forum-program": "Programme of the Baku–Khankendi–Shusha forum journey",
+          "forum-2024-presentations": "Presentations on science, education, policy, and more",
+          "forum-impressions": "Participants' thoughts on the Forum and Karabakh visit",
+          "forum-photos-gallery":
+            "Photographic story of the Forum — opening to key encounters",
+          "forum-video-gallery": "Video reports and interviews on Forum 2024",
+          "forum-roadmap": "Ideas for science, education, and diaspora cooperation",
+          "forum-bagli-hekayeler": "Literary reflections from the Forum",
+          "forum-cooperation": "Partners who supported the Forum",
+          "scientists-list": "Directory of scientists who took part in the Forum",
+          "scientists-profiles": "Academic profiles of participating scientists"
+        }
       }
     },
     navIcons: {
@@ -239,7 +326,10 @@
       membershipWhy: "💡",
       membershipTerms: "✒️",
       membershipJoin: "📝",
-      membershipFlyer: "📤"
+      membershipFlyer: "📤",
+      sponsorsProgram: "🤝",
+      donate: "💝",
+      sponsorsFlyer: "📤"
     },
     nav: {
       az: {
@@ -260,12 +350,18 @@
         forumAnasLeadershipSpeeches: "AMEA rəhbərliyi",
         forumPhotosGallery: "Foto qalereya",
         forumVideoGallery: "Video qalereya",
-        scientistsList: "Siyahı",
-        scientistsProfiles: "Profillər",
+        scientistsList: "Alimlərin siyahısı",
+        scientistsProfiles: "Alimlərin profilləri",
         membershipWhy: "Niyə DAAB-a qoşulmalı",
         membershipTerms: "Üzvlük şərtləri",
         membershipJoin: "Bizə qoşulun",
-        membershipFlyer: "Dəvət göndərin"
+        membershipFlyer: "Dəvət məktubu",
+        sponsorsProgram: "Sponsorluq",
+        donate: "İanə",
+        sponsorsFlyer: "Dəvət məktubu",
+        sponsorsProgramDesc: "Korporativ və proqram tərəfdaşlığı",
+        donateDesc: "Fərdi, fond və xatirə ianələri",
+        sponsorsFlyerDesc: "Potensial tərəfdaşlar üçün paylaşıla bilən dəvət məktubu"
       },
       en: {
         foundation: "Foundation",
@@ -290,7 +386,13 @@
         membershipWhy: "Why join WAAS",
         membershipTerms: "Membership terms",
         membershipJoin: "Join us",
-        membershipFlyer: "Send invitation"
+        membershipFlyer: "Send invitation",
+        sponsorsProgram: "Sponsorship",
+        donate: "Donation",
+        sponsorsFlyer: "Invitation letter",
+        sponsorsProgramDesc: "Corporate and programme partnerships",
+        donateDesc: "Individual, foundation, and memorial gifts",
+        sponsorsFlyerDesc: "Printable invitation letter for potential partners"
       }
     }
   };
@@ -323,17 +425,27 @@
           "forum-video-gallery",
           "forum-roadmap",
           "forum-bagli-hekayeler",
-          "forum-cooperation"
+          "forum-cooperation",
+          "scientists-list",
+          "scientists-profiles"
         ]
       },
       membership: {
         landingId: "membership-value",
-        pages: ["membership-value", "membership", "membership-application", "membership-flyer"]
+        pages: ["membership-value", "membership-application", "membership-flyer"]
+      },
+      sponsorship: {
+        landingId: "sponsors",
+        pages: ["sponsors", "donate", "sponsors-flyer"]
+      },
+      treasury: {
+        landingId: "encyclopedia",
+        pages: ["encyclopedia", "industrial-revolutions", "major-scientific-inventions"]
       }
     }
   };
 
-  /** Forum 2024 panel — two horizontal rows of six pills (see daab-forum-section-nav.css). */
+  /** Forum 2024 panel — three rows of pills (see daab-forum-section-nav.css). */
   var FORUM_PANEL_ROWS = [
     [
       "forum-2024",
@@ -350,7 +462,8 @@
       "forum-roadmap",
       "forum-bagli-hekayeler",
       "forum-cooperation"
-    ]
+    ],
+    ["scientists-list", "scientists-profiles"]
   ];
 
   /** Shared min-width groups for paired Forum 2024 pills. */
@@ -359,7 +472,8 @@
     ["forum-rector-speeches", "forum-video-gallery"],
     ["forum-anas-leadership-speeches", "forum-roadmap"],
     ["forum-program", "forum-bagli-hekayeler"],
-    ["forum-cooperation", "forum-2024-presentations"]
+    ["forum-cooperation", "forum-2024-presentations"],
+    ["scientists-list", "scientists-profiles"]
   ];
 
   function forumPanelColumnWidthGroups() {
@@ -407,6 +521,48 @@
     return "";
   }
 
+  function forumSectionPageIds() {
+    var ids = [];
+    FORUM_PANEL_ROWS.forEach(function (row) {
+      row.forEach(function (id) {
+        if (ids.indexOf(id) === -1) ids.push(id);
+      });
+    });
+    return ids;
+  }
+
+  function isForumSectionPageId(pageId) {
+    return forumSectionPageIds().indexOf(pageId) !== -1;
+  }
+
+  function forumSectionTooltip(ui, lang, pageId) {
+    if (!pageId || !isForumSectionPageId(pageId)) return "";
+    var sectionUi = ui.sectionNav && ui.sectionNav[lang];
+    var tips = sectionUi && sectionUi.forumPageTooltips;
+    return (tips && tips[pageId]) || "";
+  }
+
+  function applyForumNavLinkTooltip(a, ui, lang, pageId) {
+    var tip = forumSectionTooltip(ui, lang, pageId);
+    if (tip) a.setAttribute("title", tip);
+  }
+
+  function sectionNavPageTooltip(navLabels, pageId) {
+    if (!navLabels || !pageId || isForumSectionPageId(pageId)) return "";
+    var key = PAGE_LABEL_KEYS[pageId];
+    if (!key) return "";
+    return navLabels[key + "Desc"] || "";
+  }
+
+  function applySectionNavLinkTooltip(a, ui, lang, pageId, navLabels) {
+    if (isForumSectionPageId(pageId)) {
+      applyForumNavLinkTooltip(a, ui, lang, pageId);
+      return;
+    }
+    var tip = sectionNavPageTooltip(navLabels, pageId);
+    if (tip) a.setAttribute("title", tip);
+  }
+
   function createSectionNavAnchor(p, currentPage, I18N, lang, ui, navLabels) {
     var a = document.createElement("a");
     a.href = pageHref(I18N, p, lang);
@@ -433,6 +589,7 @@
       a.classList.add("active");
       a.setAttribute("aria-current", "page");
     }
+    applySectionNavLinkTooltip(a, ui, lang, p.id, navLabels);
     return a;
   }
 
@@ -593,13 +750,24 @@
     }
   }
 
-  function decorateEmbeddedSectionNav(ui, routes) {
+  function decorateEmbeddedSectionNav(ui, routes, lang) {
     var nav = document.querySelector(".daab-section-nav");
-    if (!nav || nav.getAttribute("data-daab-section-nav-enhanced") === "1") return;
+    if (!nav) return;
+    var navLabels = ui.nav && ui.nav[lang];
+    var alreadyEnhanced = nav.getAttribute("data-daab-section-nav-enhanced") === "1";
     nav.querySelectorAll(".daab-section-nav-list a").forEach(function (a) {
-      enhanceSectionNavLink(a, ui, routes);
+      if (!alreadyEnhanced) {
+        enhanceSectionNavLink(a, ui, routes);
+      }
+      var pid =
+        a.getAttribute("data-section-nav-page") ||
+        a.getAttribute("data-nav-id") ||
+        pageIdFromHref(a.getAttribute("href"), routes);
+      applySectionNavLinkTooltip(a, ui, lang, pid, navLabels);
     });
-    nav.setAttribute("data-daab-section-nav-enhanced", "1");
+    if (!alreadyEnhanced) {
+      nav.setAttribute("data-daab-section-nav-enhanced", "1");
+    }
     scheduleForumNavSync();
   }
 
@@ -632,7 +800,7 @@
     });
   }
 
-  var HERO_HEADER_SEL = "header.forum-hero, header.page-hero, header.hero";
+  var HERO_HEADER_SEL = "header.forum-hero, header.page-hero, header.hero, section.hero";
 
   /**
    * Place section pills below the page title/hero band, not above it (and not under breadcrumbs only).
@@ -735,12 +903,17 @@
     }
     var I18N = getI18n();
     if (I18N && document.querySelector(".daab-section-nav")) {
+      var bootLang = I18N.detectLang();
       loadData(I18N)
         .then(function (results) {
-          decorateEmbeddedSectionNav(results[1] || FALLBACK_UI, results[0] || FALLBACK_ROUTES);
+          decorateEmbeddedSectionNav(
+            results[1] || FALLBACK_UI,
+            results[0] || FALLBACK_ROUTES,
+            bootLang
+          );
         })
         .catch(function () {
-          decorateEmbeddedSectionNav(FALLBACK_UI, FALLBACK_ROUTES);
+          decorateEmbeddedSectionNav(FALLBACK_UI, FALLBACK_ROUTES, bootLang);
         });
     }
     if (sectionNavInserted) return;

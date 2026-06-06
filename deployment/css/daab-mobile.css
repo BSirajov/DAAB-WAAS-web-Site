@@ -185,6 +185,71 @@ body:not(.daab-gateway) > .nav-strip,
   }
 }
 
+/* Cross-page layout: prevent flex/grid overflow on narrow viewports */
+.main,
+.shell,
+.content-grid,
+.main-col,
+.hero-inner,
+.hero-copy,
+.cards-grid > .card,
+.cards-grid > .person-card,
+.page-card{
+  min-width: 0;
+}
+
+/* Long copy, URLs, and subtitles */
+main .prose,
+main .pf-profile-article,
+.page-hero-subtitle,
+.card-desc,
+.card-name,
+.source-links a,
+.daab-breadcrumbs-current{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.daab-breadcrumbs-list{
+  row-gap: 6px;
+}
+
+main iframe,
+main video,
+main embed,
+main object{
+  max-width: 100%;
+}
+
+@media (max-width: 1180px) {
+  .daab-prominent-figure-page .nav-person-link{
+    min-height: var(--daab-touch-min);
+  }
+
+  .daab-prominent-figure-page .info-val{
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 760px) {
+  .daab-prominent-figure-page .section-title{
+    flex-wrap: wrap;
+  }
+
+  .daab-prominent-figure-page .quote-text{
+    font-size: clamp(15px, 4.2vw, 18px);
+  }
+
+  .daab-prominent-figure-page .quote-block{
+    padding: 22px 18px;
+  }
+
+  .toolbar .search-wrap{
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+}
+
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {html{
     scroll-behavior: auto;

@@ -31,8 +31,8 @@
       "az": "Azərbaycan universitet rektorlarının Forum 2024-dəki nitqləri"
     },
     "forum-anas-leadership-speeches": {
-      "en": "Speeches by leaders of the Azerbaijan National Academy of Sciences at Forum 2024",
-      "az": "Azərbaycan Milli Elmlər Akademiyasının rəhbərliyinin Forum 2024-dəki nitqləri"
+      "en": "Views of the Leadership of the Azerbaijan National Academy of Sciences on the Forum",
+      "az": "Azərbaycan Milli Elmlər Akademiyası rəhbərlərinin Forumla bağlı görüşləri"
     },
     "forum-program": {
       "en": "Explore the programme of the Baku–Khankendi–Shusha forum journey",
@@ -81,6 +81,14 @@
     "membership-flyer": {
       "en": "Share invitation letter with potential members",
       "az": "Potensial üzvlərə dəvət məktubu göndərin"
+    },
+    "sponsors-flyer": {
+      "en": "Shareable flyer for potential partners",
+      "az": "Potensial tərəfdaşlar üçün paylaşıla bilən dəvət məktubu"
+    },
+    "donate": {
+      "en": "Support WAAS with a bank transfer — any amount helps",
+      "az": "Bank köçürməsi ilə DAAB-a ianə — hər bir məbləğ dəyərlidir"
     },
     "forum-roadmap": {
       "en": "Ideas and proposals for the future of science, education, and diaspora cooperation",

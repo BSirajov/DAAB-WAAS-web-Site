@@ -17,7 +17,7 @@
 }.search-wrap{
   position: relative;
   flex: 1 1 280px;
-  min-width: 260px;
+  min-width: min(260px, 100%);
 }.search-wrap svg{
   position: absolute;
   left: 15px;
@@ -152,9 +152,6 @@
   white-space: nowrap;
   cursor: pointer;
   transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease;
-}.btn-clear::before{
-  content: "↺";
-  font-size: 15px;
 }.btn-clear:hover{
   color: var(--white);
   background: var(--blue-700);

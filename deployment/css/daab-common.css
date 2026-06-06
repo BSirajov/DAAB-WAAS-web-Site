@@ -188,11 +188,12 @@ article.charter-card[id],
 }.nav-menu{
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
   flex: 1 1 auto;
   min-width: 0;
   justify-content: center;
   flex-wrap: nowrap;
+  row-gap: 0;
 }/* Search + language switcher — grouped so flex does not push search off-screen */
 .nav-actions{
   display: flex;
@@ -228,12 +229,13 @@ article.charter-card[id],
   white-space: nowrap !important;
   transition: background .18s ease, color .18s ease, border-color .18s ease !important;
 }
-/* Hide Sponsors top-nav item without removing markup */
-.nav-menu [data-nav-id="sponsors"]{
-  display: none !important;
-}
 /* Hide Home top-nav item; logo remains homepage link */
 .nav-menu [data-nav-id="home"]{
+  display: none !important;
+}
+/* Hide Scientists top-nav dropdown (pages remain reachable via hub cards) */
+.nav-menu .nav-dropdown:has([data-nav-id="scientists-list"]),
+.nav-menu .nav-dropdown:has([data-nav-id="scientists-profiles"]){
   display: none !important;
 }.nav-link:hover,
 .nav-link:focus-visible{
@@ -401,34 +403,25 @@ article.charter-card[id],
   box-shadow: var(--shadow-btn-secondary) !important;
 }.btn:hover{
   transform: translateY(-2px);
-}a.btn::after,
-.news-link::after{
-  content: "↗";
-  display: inline-block;
-  margin-left: .15em;
-  font-weight: 900;
-  transition: transform .18s ease;
-}a.btn:hover::after,
-a.btn:focus-visible::after,
-.news-link:hover::after,
-.news-link:focus-visible::after{
-  transform: translate(2px, -2px);
+}.card-arrow{
+  display: none !important;
 }a[href],
 button,
 [role="button"]{
   cursor: pointer;
-}main a:not(.btn):not(.nav-link):not(.nav-dropdown-link):not(.page-card):not(.news-link):not(.toc a):not(.value-pill a):not(.ist-inline-004){
+}main a:not(.btn):not(.nav-link):not(.nav-dropdown-link):not(.page-card):not(.person-card):not(.news-link):not(.toc a):not(.value-pill a):not(.ist-inline-004){
   color: var(--blue-700);
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 3px;
-}main a:not(.btn):not(.nav-link):not(.nav-dropdown-link):not(.page-card):not(.news-link):not(.toc a):not(.value-pill a):not(.ist-inline-004):hover{
+}main a:not(.btn):not(.nav-link):not(.nav-dropdown-link):not(.page-card):not(.person-card):not(.news-link):not(.toc a):not(.value-pill a):not(.ist-inline-004):hover{
   color: var(--blue-dark);
   text-decoration-thickness: 2px;
 }.nav-link,
 .nav-dropdown-link,
 .btn,
 .page-card,
+.person-card,
 .news-link,
 .toc a,
 .value-pill a,
@@ -677,10 +670,12 @@ button,
   }.nav-menu{
     display: flex !important;
     flex: 1 1 auto !important;
+    flex-wrap: nowrap !important;
     min-width: 0 !important;
     max-width: none !important;
     justify-content: center !important;
     overflow: visible !important;
+    row-gap: 0 !important;
   }.nav-actions{
     display: flex !important;
     flex: 0 0 auto !important;
@@ -688,7 +683,7 @@ button,
   }
 }
 
-@media (max-width: 1320px) and (min-width: 1181px) {.nav-brand{
+@media (max-width: 1480px) and (min-width: 1181px) {.nav-brand{
     min-width: 0 !important;
     flex: 0 1 auto !important;
     max-width: min(168px, 18vw) !important;
@@ -946,9 +941,18 @@ button,
     width: 100%;
     padding-left: 18px;
     padding-right: 18px;
-  }.btn{
+  }.hero-actions .btn,
+  .join-banner .btn,
+  .intro-card .btn,
+  .daab-gateway-actions .btn,
+  .application-page .form-actions .btn,
+  .application-page .step-actions .btn,
+  .application-page .success-screen .btn,
+  .pf-placeholder-card .btn,
+  .membership-value-page .mv-cta .btn,
+  .flyer-page-controls .flyer-btn{
     width: 100%;
-    min-height: 44px;
+    min-height: var(--daab-touch-min, 44px);
     padding: 12px 16px;
     text-align: center;
     white-space: normal;

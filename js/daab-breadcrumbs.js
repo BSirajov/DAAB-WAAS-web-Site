@@ -8,12 +8,46 @@
   var breadcrumbsInserted = false;
   var mountInFlight = false;
 
+  /** Top-level nav destinations — no parent trail (Activities, Forum 2024 hub). */
+  var SKIP_BREADCRUMB_PAGE_IDS = {
+    activities: true,
+    "forum-2024": true
+  };
+
+  function currentPageId() {
+    return (document.documentElement.getAttribute("data-daab-page-id") || "").trim();
+  }
+
+  function shouldSkipBreadcrumbs() {
+    return !!SKIP_BREADCRUMB_PAGE_IDS[currentPageId()];
+  }
+
+  function clearLandingPageBreadcrumbs() {
+    document.querySelectorAll(".forum-breadcrumbs, .breadcrumbs.forum-breadcrumbs").forEach(function (el) {
+      el.remove();
+    });
+    removeBreadcrumbs();
+    document.documentElement.style.setProperty("--daab-breadcrumbs-height", "0px");
+  }
+
+  function finishWithoutBreadcrumbs() {
+    breadcrumbsInserted = true;
+    clearLandingPageBreadcrumbs();
+    document.dispatchEvent(new CustomEvent("daab-breadcrumbs-ready"));
+    if (window.DAAB_STICKY_CHROME && typeof window.DAAB_STICKY_CHROME.sync === "function") {
+      window.DAAB_STICKY_CHROME.sync();
+    }
+  }
+
   var PAGE_LABEL_KEYS = {
     home: "home",
     foundation: "foundation",
     mission: "mission",
-    activities: "activitiesNews",
+    activities: "activities",
     "forum-2024": "forum2024",
+    encyclopedia: "prominentFigures",
+    "industrial-revolutions": "industrialRevolutions",
+    "major-scientific-inventions": "majorScientificInventions",
     "forum-2024-presentations": "forum2024Presentations",
     "forum-official": "forumOfficial",
     "forum-rector-speeches": "forumRectorSpeeches",
@@ -29,15 +63,36 @@
     membership: "membershipTerms",
     "membership-value": "membershipWhy",
     "membership-application": "membershipJoin",
-    "membership-flyer": "membershipFlyer"
+    "membership-flyer": "membershipFlyer",
+    sponsors: "sponsorsProgram",
+    donate: "donate",
+    "sponsors-flyer": "sponsorsFlyer"
   };
 
   var GROUP_LABEL_KEYS = {
     about: "about",
     scientists: "scientists",
     activities: "activities",
-    membership: "membership"
+    membership: "membership",
+    sponsorship: "sponsors",
+    treasury: "treasury",
+    forum: "forum2024"
   };
+
+  /** Dropdown groups in primary nav (not top-level page links). */
+  var PRIMARY_GROUP_PARENTS = {
+    about: true,
+    membership: true,
+    sponsorship: true,
+    treasury: true
+  };
+
+  function usesForumHubCrumb(page) {
+    if (!page || !page.id) return false;
+    if (page.id === "forum-2024") return false;
+    if (page.id.indexOf("forum-") === 0) return true;
+    return page.id === "scientists-list" || page.id === "scientists-profiles";
+  }
 
   var FALLBACK_ROUTES = {
     pages: [
@@ -108,13 +163,13 @@
         id: "scientists-list",
         az: "az/scientists/list.html",
         en: "en/scientists/list.html",
-        navParent: "scientists"
+        navParent: "forum"
       },
       {
         id: "scientists-profiles",
         az: "az/scientists/profiles.html",
         en: "en/scientists/profiles.html",
-        navParent: "scientists"
+        navParent: "forum"
       },
       {
         id: "executive-board",
@@ -129,7 +184,6 @@
         en: "en/membership_value.html",
         navParent: "membership"
       },
-      { id: "membership", az: "az/membership.html", en: "en/membership.html", navParent: "membership" },
       {
         id: "membership-application",
         az: "az/application.html",
@@ -141,6 +195,48 @@
         az: "az/membership_flyer.html",
         en: "en/membership_flyer.html",
         navParent: "membership"
+      },
+      {
+        id: "sponsors",
+        az: "az/sponsors.html",
+        en: "en/sponsors.html",
+        navParent: "sponsorship"
+      },
+      {
+        id: "donate",
+        az: "az/donate.html",
+        en: "en/donate.html",
+        navParent: "sponsorship"
+      },
+      {
+        id: "sponsors-flyer",
+        az: "az/sponsors_flyer.html",
+        en: "en/sponsors_flyer.html",
+        navParent: "sponsorship"
+      },
+      {
+        id: "encyclopedia",
+        az: "az/encyclopedia.html",
+        en: "en/encyclopedia.html",
+        navParent: "treasury"
+      },
+      {
+        id: "industrial-revolutions",
+        az: "az/industrial_revolutions.html",
+        en: "en/industrial_revolutions.html",
+        navParent: "treasury"
+      },
+      {
+        id: "major-scientific-inventions",
+        az: "az/major_scientific_inventions.html",
+        en: "en/major_scientific_inventions.html",
+        navParent: "treasury"
+      },
+      {
+        id: "prominent-figure",
+        az: "az/encyclopedia.html",
+        en: "en/encyclopedia.html",
+        navParent: null
       }
     ]
   };
@@ -152,14 +248,16 @@
         home: "Ana səhifə",
         about: "Haqqımızda",
         scientists: "Alimlərimiz",
-        activities: "Fəaliyyətimiz"
+        activities: "Fəaliyyətimiz",
+        sponsors: "Bizi dəstəkləyin"
       },
       en: {
         aria: "Breadcrumb",
         home: "Home",
         about: "About us",
         scientists: "Scientists",
-        activities: "Activities"
+        activities: "Activities",
+        sponsors: "Support us"
       }
     },
     nav: {
@@ -177,15 +275,18 @@
         forumBagliHekayeler: "Hekayələr",
         forumCooperation: "Töhfələr",
         forumPhotosGallery: "Foto qalereya",
-        scientistsList: "Siyahı",
-        scientistsProfiles: "Profillər",
+        scientistsList: "Alimlərin siyahısı",
+        scientistsProfiles: "Alimlərin profilləri",
         executiveBoard: "İdarə heyəti",
         charter: "Nizamnamə",
         membership: "Üzvlük",
         membershipWhy: "Niyə DAAB-a qoşulmalı",
         membershipTerms: "Üzvlük şərtləri",
         membershipJoin: "Bizə qoşulun",
-        membershipFlyer: "Dəvət göndərin"
+        membershipFlyer: "Dəvət məktubu",
+        sponsorsProgram: "Sponsorluq",
+        donate: "İanə",
+        sponsorsFlyer: "Dəvət məktubu"
       },
       en: {
         home: "Home",
@@ -210,7 +311,10 @@
         membershipWhy: "Why join WAAS",
         membershipTerms: "Membership terms",
         membershipJoin: "Join us",
-        membershipFlyer: "Send invitation"
+        membershipFlyer: "Send invitation",
+        sponsorsProgram: "Sponsorship",
+        donate: "Donation",
+        sponsorsFlyer: "Invitation letter"
       }
     }
   };
@@ -220,7 +324,9 @@
       about: { landingId: "mission" },
       scientists: { landingId: "scientists-list" },
       activities: { landingId: "activities" },
-      membership: { landingId: "membership-value" }
+      membership: { landingId: "membership-value" },
+      sponsorship: { landingId: "sponsors" },
+      treasury: { landingId: "encyclopedia" }
     }
   };
 
@@ -328,6 +434,10 @@
   }
 
   function adoptStaticBreadcrumbs() {
+    if (shouldSkipBreadcrumbs()) {
+      finishWithoutBreadcrumbs();
+      return true;
+    }
     var el = staticBreadcrumbsNode();
     if (!el) return false;
     // Remove any previously injected crumbs to avoid duplicates.
@@ -377,8 +487,54 @@
     return null;
   }
 
+  function buildProminentFigureTrail(routes, navDef, ui, lang, I18N) {
+    var pageId = document.documentElement.getAttribute("data-daab-page-id");
+    if (pageId !== "prominent-figure") return null;
+
+    var current =
+      document.documentElement.getAttribute("data-daab-profile-name") || "";
+    if (!current) {
+      var h1 = document.querySelector(".pf-hero .hero-name");
+      if (h1) current = h1.textContent.replace(/\s+/g, " ").trim();
+    }
+    if (!current) return null;
+
+    var path = location.pathname.replace(/\\/g, "/");
+    var encHref = /\/prominent_figures\//.test(path) ? "../../encyclopedia.html" : "encyclopedia.html";
+    var landingId = sectionLanding(navDef, "treasury") || "encyclopedia";
+    var landing = pageById(routes, landingId);
+    var treasuryHref = landing ? pageHref(I18N, landing, lang) : encHref;
+
+    var crumbs = [];
+    var home = pageById(routes, "home");
+    if (home) {
+      crumbs.push({
+        href: pageHref(I18N, home, lang),
+        text: t(ui, lang, "breadcrumbs", "home")
+      });
+    }
+    crumbs.push({
+      href: treasuryHref,
+      text: t(ui, lang, "breadcrumbs", "treasury") || pageTitle(ui, lang, "treasury")
+    });
+    crumbs.push({
+      href: encHref,
+      text: pageTitle(ui, lang, "encyclopedia")
+    });
+    crumbs.push({
+      href: null,
+      text: current,
+      current: true
+    });
+    return crumbs;
+  }
+
   function buildTrail(routes, navDef, ui, lang, page, I18N) {
+    var prominentTrail = buildProminentFigureTrail(routes, navDef, ui, lang, I18N);
+    if (prominentTrail) return prominentTrail;
+
     if (!page || page.id === "home") return null;
+    if (SKIP_BREADCRUMB_PAGE_IDS[page.id]) return null;
 
     var crumbs = [];
     var home = pageById(routes, "home");
@@ -389,19 +545,26 @@
       });
     }
 
-    // For forum pages we already insert the Forum 2024 hub crumb below; adding a generic
-    // "forum" group label would be redundant and confusing.
-    if (page.navParent && page.navParent !== "forum") {
+    // About / Membership dropdowns only (Activities & Forum 2024 are top-level nav links).
+    if (
+      page.navParent &&
+      page.navParent !== "forum" &&
+      page.navParent !== "activities" &&
+      PRIMARY_GROUP_PARENTS[page.navParent] &&
+      !usesForumHubCrumb(page)
+    ) {
       var groupKey = GROUP_LABEL_KEYS[page.navParent];
       var landingId = sectionLanding(navDef, page.navParent);
       var landing = landingId ? pageById(routes, landingId) : null;
       crumbs.push({
         href: landing ? pageHref(I18N, landing, lang) : null,
-        text: groupKey ? t(ui, lang, "breadcrumbs", groupKey) : page.navParent
+        text: groupKey
+          ? t(ui, lang, "breadcrumbs", groupKey) || pageTitle(ui, lang, landingId || page.navParent)
+          : page.navParent
       });
     }
 
-    if (page.id && page.id.indexOf("forum-") === 0 && page.id !== "forum-2024") {
+    if (usesForumHubCrumb(page)) {
       var forumHub = pageById(routes, "forum-2024");
       if (forumHub) {
         crumbs.push({
@@ -491,6 +654,10 @@
   function mount() {
     if (breadcrumbsInserted || mountInFlight) return;
     if (document.body && document.body.classList.contains("daab-gateway")) return;
+    if (shouldSkipBreadcrumbs()) {
+      finishWithoutBreadcrumbs();
+      return;
+    }
     if (adoptStaticBreadcrumbs()) return;
     if (adoptExistingBreadcrumbs()) return;
 
@@ -545,6 +712,10 @@
 
   function boot(attempt) {
     if (breadcrumbsInserted) return;
+    if (shouldSkipBreadcrumbs()) {
+      finishWithoutBreadcrumbs();
+      return;
+    }
     if (adoptStaticBreadcrumbs()) return;
     if (adoptExistingBreadcrumbs()) return;
     if (getI18n()) {

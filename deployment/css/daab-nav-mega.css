@@ -73,6 +73,8 @@ div.breadcrumbs.forum-breadcrumbs{
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  max-width: 100%;
+  min-width: 0;
   font-family: var(--font-sans) !important;
   font-size: var(--font-size-breadcrumb) !important;
   font-weight: 600 !important;
@@ -96,10 +98,13 @@ div.breadcrumbs.forum-breadcrumbs{
   text-decoration: underline;
 }.daab-breadcrumbs-current{
   color: var(--muted-hero);
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }/* In-section navigation — pill buttons mirror the project's .btn system. */
 /* Section pills sit below the page hero/title band (see daab-section-nav.js). */
 header.page-hero + .daab-section-nav,
 header.hero + .daab-section-nav,
+section.hero + .daab-section-nav,
 header.forum-hero + .daab-section-nav{
   max-width: 1180px;
   margin: 0 auto 20px;
@@ -154,16 +159,6 @@ header.forum-hero + .daab-section-nav{
   text-decoration: none !important;
   cursor: pointer;
   transition: transform .22s ease, filter .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
-}/* Match the global a.btn::after arrow, including the slide-on-hover transition. */
-.daab-section-nav-list a::after{
-  content: "↗";
-  display: inline-block;
-  margin-left: .15em;
-  font-weight: 900;
-  transition: transform .18s ease;
-}.daab-section-nav-list a:hover::after,
-.daab-section-nav-list a:focus-visible::after{
-  transform: translate(2px, -2px);
 }.daab-section-nav-list a:hover{
   transform: translateY(-2px);
   filter: brightness(1.02);

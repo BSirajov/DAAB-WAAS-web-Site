@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated": "2026-05-30",
-  "entryCount": 512,
+  "generated": "2026-06-06",
+  "entryCount": 532,
   "entries": [
     {
       "id": "page-home-az",
@@ -9,12 +9,12 @@
       "type": "page",
       "pageId": "home",
       "anchor": "",
-      "title": "DAAB — Dünya Azərbaycanlı Alimlər Birliyi",
+      "title": "Dünya Azərbaycanlı Alimlər Birliyi",
       "summary": "Dünya Azərbaycanlı Alimlər Birliyi — xaricdə yaşayan Azərbaycanlı alimləri birləşdirən beynəlxalq elmi platforma.",
       "tag": "Səhifə",
       "icon": "🏠",
       "boost": 12,
-      "norm": "daab du nya azerbaycanli alimler birliyi du nya azerbaycanli alimler birliyi xaricde yas ayan azerbaycanli alimleri birles diren beynelxalq elmi platforma."
+      "norm": "du nya azerbaycanli alimler birliyi du nya azerbaycanli alimler birliyi xaricde yas ayan azerbaycanli alimleri birles diren beynelxalq elmi platforma."
     },
     {
       "id": "page-home-en",
@@ -134,6 +134,110 @@
       "norm": "forum 2024 waas first forum of azerbaijani scientists living abroad book content and archive."
     },
     {
+      "id": "page-encyclopedia-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "encyclopedia",
+      "anchor": "",
+      "title": "DAAB — Ensiklopediya: Görkəmli şəxsiyyətlər",
+      "summary": "Azərbaycan və türk dünyası ilə dünya elminin görkəmli şəxsiyyətləri — tarixi dövr, sahə, ölkə və qrup üzrə axtarış və filtr.",
+      "tag": "Səhifə",
+      "icon": "👤",
+      "boost": 12,
+      "norm": "daab ensiklopediya go rkemli s exsiyyetler azerbaycan ve tu rk du nyasi ile du nya elminin go rkemli s exsiyyetleri tarixi do vr sahe o lke ve qrup u zre axtaris ve filtr."
+    },
+    {
+      "id": "page-encyclopedia-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "encyclopedia",
+      "anchor": "",
+      "title": "WAAS — Encyclopedia: Prominent figures",
+      "summary": "Prominent figures from Azerbaijani and Turkic heritage and world science — search, filter, and sort by period, field, country, and group.",
+      "tag": "Page",
+      "icon": "👤",
+      "boost": 12,
+      "norm": "waas encyclopedia prominent figures prominent figures from azerbaijani and turkic heritage and world science search filter and sort by period field country and group."
+    },
+    {
+      "id": "page-industrial-revolutions-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "industrial-revolutions",
+      "anchor": "",
+      "title": "DAAB — Sənaye inqilabları",
+      "summary": "Xəzinə: tarixi sənaye inqilabları haqqında materiallar hazırlanır.",
+      "tag": "Səhifə",
+      "icon": "⚙️",
+      "boost": 12,
+      "norm": "daab senaye inqilablari xezine tarixi senaye inqilablari haqqinda materiallar hazirlanir."
+    },
+    {
+      "id": "page-industrial-revolutions-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "industrial-revolutions",
+      "anchor": "",
+      "title": "WAAS — Industrial Revolutions",
+      "summary": "Treasury: materials on industrial revolutions are being prepared.",
+      "tag": "Page",
+      "icon": "⚙️",
+      "boost": 12,
+      "norm": "waas industrial revolutions treasury materials on industrial revolutions are being prepared."
+    },
+    {
+      "id": "page-major-scientific-inventions-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "major-scientific-inventions",
+      "anchor": "",
+      "title": "DAAB — Əsas elmi ixtiralar",
+      "summary": "Xəzinə: elm tarixinin mühüm ixtiraları haqqında materiallar hazırlanır.",
+      "tag": "Səhifə",
+      "icon": "💡",
+      "boost": 12,
+      "norm": "daab esas elmi ixtiralar xezine elm tarixinin mu hu m ixtiralari haqqinda materiallar hazirlanir."
+    },
+    {
+      "id": "page-major-scientific-inventions-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "major-scientific-inventions",
+      "anchor": "",
+      "title": "WAAS — Major Scientific Inventions",
+      "summary": "Treasury: materials on major scientific inventions are being prepared.",
+      "tag": "Page",
+      "icon": "💡",
+      "boost": 12,
+      "norm": "waas major scientific inventions treasury materials on major scientific inventions are being prepared."
+    },
+    {
+      "id": "page-prominent-figure-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "prominent-figure",
+      "anchor": "",
+      "title": "DAAB — Ensiklopediya: Görkəmli şəxsiyyətlər",
+      "summary": "Azərbaycan və türk dünyası ilə dünya elminin görkəmli şəxsiyyətləri — tarixi dövr, sahə, ölkə və qrup üzrə axtarış və filtr.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "daab ensiklopediya go rkemli s exsiyyetler azerbaycan ve tu rk du nyasi ile du nya elminin go rkemli s exsiyyetleri tarixi do vr sahe o lke ve qrup u zre axtaris ve filtr."
+    },
+    {
+      "id": "page-prominent-figure-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "prominent-figure",
+      "anchor": "",
+      "title": "WAAS — Encyclopedia: Prominent figures",
+      "summary": "Prominent figures from Azerbaijani and Turkic heritage and world science — search, filter, and sort by period, field, country, and group.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "waas encyclopedia prominent figures prominent figures from azerbaijani and turkic heritage and world science search filter and sort by period field country and group."
+    },
+    {
       "id": "page-forum-2024-presentations-az",
       "lang": "az",
       "type": "page",
@@ -218,11 +322,11 @@
       "pageId": "forum-official",
       "anchor": "",
       "title": "Rəsmi müraciətlər — DAAB",
-      "summary": "Forum 2024 — Prezident və Nobel laureatlarının müraciətləri, alimlərin müraciəti.",
+      "summary": "Forum 2024 — Prezident və Nobel laureatlarının müraciətləri, alimlərin müraciəti, Fuad Muradov və Məsud Əfəndiyev nitqləri.",
       "tag": "Səhifə",
       "icon": "🏛️",
       "boost": 12,
-      "norm": "resmi mu racietler daab forum 2024 prezident ve nobel laureatlarinin mu racietleri alimlerin mu racieti."
+      "norm": "resmi mu racietler daab forum 2024 prezident ve nobel laureatlarinin mu racietleri alimlerin mu racieti fuad muradov ve mesud efendiyev nitqleri."
     },
     {
       "id": "page-forum-official-en",
@@ -231,11 +335,11 @@
       "pageId": "forum-official",
       "anchor": "",
       "title": "Official addresses — WAAS",
-      "summary": "Forum 2024 — addresses by the President, Nobel laureates and scientists.",
+      "summary": "Forum 2024 — addresses by the President and Nobel laureates, scientists",
       "tag": "Page",
       "icon": "🏛️",
       "boost": 12,
-      "norm": "official addresses waas forum 2024 addresses by the president nobel laureates and scientists."
+      "norm": "official addresses waas forum 2024 addresses by the president and nobel laureates scientists"
     },
     {
       "id": "page-forum-program-az",
@@ -524,30 +628,82 @@
       "norm": "waas membership flyer value of waas membership printable flyer for potential members."
     },
     {
-      "id": "page-membership-az",
+      "id": "page-sponsors-az",
       "lang": "az",
       "type": "page",
-      "pageId": "membership",
+      "pageId": "sponsors",
       "anchor": "",
-      "title": "DAAB — Üzvlük Şərtləri",
-      "summary": "Dünya Azərbaycanlı Alimlər Birliyi — üzvlük şərtləri, müraciət forması və ödəniş məlumatları.",
+      "title": "DAAB-a Dəstək — Dünya Azərbaycanlı Alimlər Birliyi",
+      "summary": "Bizi dəstəkləyin",
       "tag": "Səhifə",
-      "icon": "✒️",
+      "icon": "🤝",
       "boost": 12,
-      "norm": "daab u zvlu k s ertleri du nya azerbaycanli alimler birliyi u zvlu k s ertleri mu raciet formasi ve o denis melumatlari."
+      "norm": "daab-a destek du nya azerbaycanli alimler birliyi bizi destekleyin"
     },
     {
-      "id": "page-membership-en",
+      "id": "page-sponsors-en",
       "lang": "en",
       "type": "page",
-      "pageId": "membership",
+      "pageId": "sponsors",
       "anchor": "",
-      "title": "WAAS — Membership Terms",
-      "summary": "Membership terms, application form and payment information — World Association of Azerbaijani Scientists.",
+      "title": "Support WAAS — World Association of Azerbaijani Scientists",
+      "summary": "Support us",
       "tag": "Page",
-      "icon": "✒️",
+      "icon": "🤝",
       "boost": 12,
-      "norm": "waas membership terms membership terms application form and payment information world association of azerbaijani scientists."
+      "norm": "support waas world association of azerbaijani scientists support us"
+    },
+    {
+      "id": "page-donate-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "donate",
+      "anchor": "",
+      "title": "DAAB — İanə",
+      "summary": "DAAB-a fərdi ianə — bank köçürməsi ilə Azərbaycan elminə dəstək.",
+      "tag": "Səhifə",
+      "icon": "💝",
+      "boost": 12,
+      "norm": "daab i ane daab-a ferdi iane bank ko c u rmesi ile azerbaycan elmine destek."
+    },
+    {
+      "id": "page-donate-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "donate",
+      "anchor": "",
+      "title": "WAAS — Donation",
+      "summary": "Support WAAS with an individual donation via bank transfer.",
+      "tag": "Page",
+      "icon": "💝",
+      "boost": 12,
+      "norm": "waas donation support waas with an individual donation via bank transfer."
+    },
+    {
+      "id": "page-sponsors-flyer-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "sponsors-flyer",
+      "anchor": "",
+      "title": "DAAB — Sponsorluq dəvət məktubu",
+      "summary": "DAAB sponsorluğu — potensial tərəfdaşlar üçün çap olunan dəvət məktubu.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "daab sponsorluq devet mektubu daab sponsorlug u potensial terefdas lar u c u n c ap olunan devet mektubu."
+    },
+    {
+      "id": "page-sponsors-flyer-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "sponsors-flyer",
+      "anchor": "",
+      "title": "WAAS — Sponsorship flyer",
+      "summary": "WAAS sponsorship — printable flyer for potential partners.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "waas sponsorship flyer waas sponsorship printable flyer for potential partners."
     },
     {
       "id": "page-forum-roadmap-az",
@@ -647,11 +803,11 @@
       "pageId": "activities",
       "anchor": "",
       "title": "Fəaliyyətimiz",
-      "summary": "Əsas fəaliyyət və yeniliklər",
+      "summary": "Fəaliyyətimiz",
       "tag": "Naviqasiya",
       "icon": "📰",
       "boost": 11,
-      "norm": "fealiyyetimiz esas fealiyyet ve yenilikler fealiyyetimiz"
+      "norm": "fealiyyetimiz fealiyyetimiz"
     },
     {
       "id": "nav-forum-2024-az",
@@ -664,33 +820,7 @@
       "tag": "Naviqasiya",
       "icon": "🎤",
       "boost": 11,
-      "norm": "forum 2024 forum 2024 haqqinda fealiyyetimiz"
-    },
-    {
-      "id": "nav-scientists-list-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "scientists-list",
-      "anchor": "",
-      "title": "Siyahı",
-      "summary": "Bütün alimlərin siyahısı",
-      "tag": "Naviqasiya",
-      "icon": "📋",
-      "boost": 11,
-      "norm": "siyahi bu tu n alimlerin siyahisi alimlerimiz"
-    },
-    {
-      "id": "nav-scientists-profiles-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "scientists-profiles",
-      "anchor": "",
-      "title": "Profillər",
-      "summary": "Alimlərin akademik profilləri",
-      "tag": "Naviqasiya",
-      "icon": "👤",
-      "boost": 11,
-      "norm": "profiller alimlerin akademik profilleri alimlerimiz"
+      "norm": "forum 2024 forum 2024 haqqinda"
     },
     {
       "id": "nav-foundation-az",
@@ -750,25 +880,12 @@
       "type": "nav",
       "pageId": "membership-value",
       "anchor": "",
-      "title": "Niyə üzv olmalı",
-      "summary": "Üzvlüyün faydaları və dəyər təklifi",
+      "title": "Niyə DAAB-a qoşulmalı",
+      "summary": "Üzvlüyün dəyəri və əsas faydalar",
       "tag": "Naviqasiya",
       "icon": "✒️",
       "boost": 11,
-      "norm": "niye u zv olmali u zvlu yu n faydalari ve deyer teklifi u zvlu k"
-    },
-    {
-      "id": "nav-membership-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "membership",
-      "anchor": "",
-      "title": "Üzvlük şərtləri",
-      "summary": "Üzvlük qaydaları, ödəniş və müraciət məlumatları",
-      "tag": "Naviqasiya",
-      "icon": "✒️",
-      "boost": 11,
-      "norm": "u zvlu k s ertleri u zvlu k qaydalari o denis ve mu raciet melumatlari u zvlu k"
+      "norm": "niye daab-a qos ulmali u zvlu yu n deyeri ve esas faydalar u zvlu k"
     },
     {
       "id": "nav-membership-application-az",
@@ -789,12 +906,77 @@
       "type": "nav",
       "pageId": "membership-flyer",
       "anchor": "",
-      "title": "Dəvət göndərin",
+      "title": "Dəvət məktubu",
       "summary": "Potensial üzvlər üçün çap oluna bilən flyer",
       "tag": "Naviqasiya",
       "icon": "✒️",
       "boost": 11,
-      "norm": "devet go nder potensial u zvler u c u n c ap oluna bilen flyer u zvlu k"
+      "norm": "devet mektubu potensial u zvler u c u n c ap oluna bilen flyer u zvlu k"
+    },
+    {
+      "id": "nav-sponsors-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "sponsors",
+      "anchor": "",
+      "title": "Bizi dəstəkləyin",
+      "summary": "Korporativ və proqram tərəfdaşlığı",
+      "tag": "Naviqasiya",
+      "icon": "🤝",
+      "boost": 11,
+      "norm": "bizi destekleyin korporativ ve proqram terefdas lig i bizi destekleyin"
+    },
+    {
+      "id": "nav-donate-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "donate",
+      "anchor": "",
+      "title": "İanə",
+      "summary": "Fərdi, fond və xatirə ianələri",
+      "tag": "Naviqasiya",
+      "icon": "💝",
+      "boost": 11,
+      "norm": "i ane ferdi fond ve xatire ianeleri bizi destekleyin"
+    },
+    {
+      "id": "nav-encyclopedia-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "encyclopedia",
+      "anchor": "",
+      "title": "Görkəmli şəxsiyyətlər",
+      "summary": "Görkəmli şəxsiyyətlər kataloqu",
+      "tag": "Naviqasiya",
+      "icon": "👤",
+      "boost": 11,
+      "norm": "go rkemli s exsiyyetler go rkemli s exsiyyetler kataloqu xezine"
+    },
+    {
+      "id": "nav-industrial-revolutions-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "industrial-revolutions",
+      "anchor": "",
+      "title": "Sənaye inqilabları",
+      "summary": "Tarixi sənaye inqilablarının izləri",
+      "tag": "Naviqasiya",
+      "icon": "⚙️",
+      "boost": 11,
+      "norm": "senaye inqilablari tarixi senaye inqilablarinin izleri xezine"
+    },
+    {
+      "id": "nav-major-scientific-inventions-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "major-scientific-inventions",
+      "anchor": "",
+      "title": "Əsas elmi ixtiralar",
+      "summary": "Elm tarixinin mühüm ixtiraları",
+      "tag": "Naviqasiya",
+      "icon": "💡",
+      "boost": 11,
+      "norm": "esas elmi ixtiralar elm tarixinin mu hu m ixtiralari xezine"
     },
     {
       "id": "nav-home-en",
@@ -816,11 +998,11 @@
       "pageId": "activities",
       "anchor": "",
       "title": "Activities",
-      "summary": "News and updates",
+      "summary": "Activities",
       "tag": "Navigation",
       "icon": "📰",
       "boost": 11,
-      "norm": "activities news and updates activities"
+      "norm": "activities activities"
     },
     {
       "id": "nav-forum-2024-en",
@@ -833,33 +1015,7 @@
       "tag": "Navigation",
       "icon": "🎤",
       "boost": 11,
-      "norm": "forum 2024 explore forum 2024 activities"
-    },
-    {
-      "id": "nav-scientists-list-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "scientists-list",
-      "anchor": "",
-      "title": "Directory",
-      "summary": "Directory of all scientists",
-      "tag": "Navigation",
-      "icon": "📋",
-      "boost": 11,
-      "norm": "directory directory of all scientists scientists"
-    },
-    {
-      "id": "nav-scientists-profiles-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "scientists-profiles",
-      "anchor": "",
-      "title": "Profiles",
-      "summary": "Academic profiles of scientists",
-      "tag": "Navigation",
-      "icon": "👤",
-      "boost": 11,
-      "norm": "profiles academic profiles of scientists scientists"
+      "norm": "forum 2024 explore forum 2024"
     },
     {
       "id": "nav-foundation-en",
@@ -919,25 +1075,12 @@
       "type": "nav",
       "pageId": "membership-value",
       "anchor": "",
-      "title": "Why become a member",
-      "summary": "Benefits and value of WAAS membership",
+      "title": "Why join WAAS",
+      "summary": "Membership value, benefits, and opportunities",
       "tag": "Navigation",
       "icon": "✒️",
       "boost": 11,
-      "norm": "why become a member benefits and value of waas membership membership"
-    },
-    {
-      "id": "nav-membership-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "membership",
-      "anchor": "",
-      "title": "Membership terms",
-      "summary": "Membership rules, fees and application information",
-      "tag": "Navigation",
-      "icon": "✒️",
-      "boost": 11,
-      "norm": "membership terms membership rules fees and application information membership"
+      "norm": "why join waas membership value benefits and opportunities membership"
     },
     {
       "id": "nav-membership-application-en",
@@ -963,7 +1106,72 @@
       "tag": "Navigation",
       "icon": "✒️",
       "boost": 11,
-      "norm": "send invite printable flyer to share with potential members membership"
+      "norm": "send invitation printable flyer to share with potential members membership"
+    },
+    {
+      "id": "nav-sponsors-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "sponsors",
+      "anchor": "",
+      "title": "Support us",
+      "summary": "Corporate and programme partnerships",
+      "tag": "Navigation",
+      "icon": "🤝",
+      "boost": 11,
+      "norm": "support us corporate and programme partnerships support us"
+    },
+    {
+      "id": "nav-donate-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "donate",
+      "anchor": "",
+      "title": "Donation",
+      "summary": "Individual, foundation, and memorial gifts",
+      "tag": "Navigation",
+      "icon": "💝",
+      "boost": 11,
+      "norm": "donation individual foundation and memorial gifts support us"
+    },
+    {
+      "id": "nav-encyclopedia-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "encyclopedia",
+      "anchor": "",
+      "title": "Prominent Figures",
+      "summary": "Directory of prominent figures",
+      "tag": "Navigation",
+      "icon": "👤",
+      "boost": 11,
+      "norm": "prominent figures directory of prominent figures treasury"
+    },
+    {
+      "id": "nav-industrial-revolutions-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "industrial-revolutions",
+      "anchor": "",
+      "title": "Industrial Revolutions",
+      "summary": "Landmarks of industrial history",
+      "tag": "Navigation",
+      "icon": "⚙️",
+      "boost": 11,
+      "norm": "industrial revolutions landmarks of industrial history treasury"
+    },
+    {
+      "id": "nav-major-scientific-inventions-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "major-scientific-inventions",
+      "anchor": "",
+      "title": "Major Scientific Inventions",
+      "summary": "Key inventions that shaped science",
+      "tag": "Navigation",
+      "icon": "💡",
+      "boost": 11,
+      "norm": "major scientific inventions key inventions that shaped science treasury"
     },
     {
       "id": "section-foundation-necessity-az",
@@ -2610,11 +2818,11 @@
       "pageId": "forum-anas-leadership-speeches",
       "anchor": "isa-hebibbeyli",
       "title": "İsa HƏBİBBƏYLİ",
-      "summary": "Azərbaycanda diaspor hərəkatı hələ XX əsrin 80-ci illərindən, sovet siyasi rejimində aşkarlıq və demokratiya meyilləri başlandığı dövrdən ilk addımlarını atmışdır. Həmin dövrdə “Vətən” Cəmiyyətinin yaradılması dünyanın müxtəlif ölkələrində ",
+      "summary": "DİASPOR HƏRƏKATINDA MÜHÜM İSTİQAMƏT: ELMİ DİASPORUN TƏŞKİLATLANMASI",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "i sa hebi bbeyli azerbaycanda diaspor herekati hele xx esrin 80-ci illerinden sovet siyasi rejiminde as karliq ve demokratiya meyilleri bas landig i do vrden ilk addimlarini atmis dir. hemin do vrde veten cemiyyetinin yaradilmasi du nyanin mu xtelif o lkelerinde"
+      "norm": "i sa hebi bbeyli di aspor herekatinda mu hu m i sti qamet elmi di asporun tes ki latlanmasi"
     },
     {
       "id": "section-forum-anas-leadership-speeches-rasim-eliquliyev-az",
@@ -2623,11 +2831,11 @@
       "pageId": "forum-anas-leadership-speeches",
       "anchor": "rasim-eliquliyev",
       "title": "Rasim ƏLİQULİYEV",
-      "summary": "Mən həmişə Azərbaycandan kənarda elmi fəaliyyət göstərən həmvətənlərimlə yaxından maraqlanmış və onlarla qürur duymuşam. Bu səbəbdən hələ 2017-ci ildən xaricdə yaşayan 530 alim haqqında zəruri məlumatların toplanması ilə bağlı müəyyən işlər",
+      "summary": "AZƏRBAYCANLI ALİMLƏRİN QLOBAL BİRLİYİ",
       "tag": "Bölmə",
       "icon": "🎤",
       "boost": 9,
-      "norm": "rasim eli quli yev men hemis e azerbaycandan kenarda elmi fealiyyet go steren hemvetenlerimle yaxindan maraqlanmis ve onlarla qu rur duymus am. bu sebebden hele 2017-ci ilden xaricde yas ayan 530 alim haqqinda zeruri melumatlarin toplanmasi ile bag li mu eyyen is ler"
+      "norm": "rasim eli quli yev azerbaycanli ali mleri n qlobal bi rli yi"
     },
     {
       "id": "section-forum-anas-leadership-speeches-isa-hebibbeyli-en",
@@ -2636,11 +2844,11 @@
       "pageId": "forum-anas-leadership-speeches",
       "anchor": "isa-hebibbeyli",
       "title": "Isa HABIBBAYLI",
-      "summary": "The diaspora movement in Azerbaijan took its first steps back in the 1980s, when tendencies toward openness and democracy began under the Soviet political regime. The creation of the 'Vatan' Society at that time created conditions for well-",
+      "summary": "AN IMPORTANT DIRECTION IN THE DIASPORA MOVEMENT: ORGANIZATION OF THE SCIENTIFIC DIASPORA",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "isa habibbayli the diaspora movement in azerbaijan took its first steps back in the 1980s when tendencies toward openness and democracy began under the soviet political regime. the creation of the vatan society at that time created conditions for well-"
+      "norm": "isa habibbayli an important direction in the diaspora movement organization of the scientific diaspora"
     },
     {
       "id": "section-forum-anas-leadership-speeches-rasim-eliquliyev-en",
@@ -2649,11 +2857,11 @@
       "pageId": "forum-anas-leadership-speeches",
       "anchor": "rasim-eliquliyev",
       "title": "Rasim ALIGULIYEV",
-      "summary": "I have always taken a close interest in my compatriots engaged in scientific activity outside Azerbaijan and have been proud of them. For this reason, as early as 2017, we carried out certain work to collect necessary information about 530 ",
+      "summary": "THE GLOBAL UNITY OF AZERBAIJANI SCIENTISTS",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "rasim aliguliyev i have always taken a close interest in my compatriots engaged in scientific activity outside azerbaijan and have been proud of them. for this reason as early as 2017 we carried out certain work to collect necessary information about 530"
+      "norm": "rasim aliguliyev the global unity of azerbaijani scientists"
     },
     {
       "id": "section-forum-official-ilham-eliyev-az",
@@ -2693,6 +2901,32 @@
       "icon": "🎤",
       "boost": 9,
       "norm": "ki mya u zre nobel mu kafati laureati arye vars eli n i s ti rakc ilara mu raci eti eziz hemkarlar"
+    },
+    {
+      "id": "section-forum-official-fuad-muradov-az",
+      "lang": "az",
+      "type": "section",
+      "pageId": "forum-official",
+      "anchor": "fuad-muradov",
+      "title": "DİASPORLA İŞ ÜZRƏ DÖVLƏT KOMİTƏSİNİN SƏDRİ FUAD MURADOVUN NİTQİ",
+      "summary": "Hörmətli qonaqlar, əziz soydaşlar, dəyərli elm xadimləri,",
+      "tag": "Bölmə",
+      "icon": "🎤",
+      "boost": 9,
+      "norm": "di asporla i s u zre do vlet komi tesi ni n sedri fuad muradovun ni tqi ho rmetli qonaqlar eziz soydas lar deyerli elm xadimleri"
+    },
+    {
+      "id": "section-forum-official-mesud-efendiyev-az",
+      "lang": "az",
+      "type": "section",
+      "pageId": "forum-official",
+      "anchor": "mesud-efendiyev",
+      "title": "DÜNYA AZƏRBAYCANLI ALİMLƏR BİRLİYİNİN İDARƏ HEYƏTİNİN SƏDRİ MƏSUD ƏFƏNDİYEVİN NİTQİ",
+      "summary": "Sizi Bakıda Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) I Forumunda görməkdən böyük məmnunluq duyur və Azərbaycanımızda səmimi qəlbdən salamlayırıq.",
+      "tag": "Bölmə",
+      "icon": "🎤",
+      "boost": 9,
+      "norm": "du nya azerbaycanli ali mler bi rli yi ni n i dare heyeti ni n sedri mesud efendi yevi n ni tqi sizi bakida du nya azerbaycanli alimler birliyinin daab i forumunda go rmekden bo yu k memnunluq duyur ve azerbaycanimizda semimi qelbden salamlayiriq."
     },
     {
       "id": "section-forum-official-alimlerimiz-az",
@@ -2739,12 +2973,38 @@
       "type": "section",
       "pageId": "forum-official",
       "anchor": "arye-varshel",
-      "title": "ADDRESS BY NOBEL LAUREATE IN CHEMISTRY ARYE VARSHAVSKY TO THE PARTICIPANTS",
+      "title": "ADDRESS BY NOBEL LAUREATE IN CHEMISTRY ARYE VARSHEL TO THE PARTICIPANTS",
       "summary": "Dear colleagues,",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "address by nobel laureate in chemistry arye varshavsky to the participants dear colleagues"
+      "norm": "address by nobel laureate in chemistry arye varshel to the participants dear colleagues"
+    },
+    {
+      "id": "section-forum-official-fuad-muradov-en",
+      "lang": "en",
+      "type": "section",
+      "pageId": "forum-official",
+      "anchor": "fuad-muradov",
+      "title": "SPEECH BY FUAD MURADOV, CHAIR OF THE STATE COMMITTEE ON DIASPORA AFFAIRS",
+      "summary": "Dear guests, dear compatriots, esteemed scholars,",
+      "tag": "Section",
+      "icon": "🎤",
+      "boost": 9,
+      "norm": "speech by fuad muradov chair of the state committee on diaspora affairs dear guests dear compatriots esteemed scholars"
+    },
+    {
+      "id": "section-forum-official-mesud-efendiyev-en",
+      "lang": "en",
+      "type": "section",
+      "pageId": "forum-official",
+      "anchor": "mesud-efendiyev",
+      "title": "SPEECH BY MESSOUD EFENDIYEV, CHAIR OF THE BOARD OF DIRECTORS OF THE WORLD ASSOCIATION OF AZERBAIJANI SCIENTISTS",
+      "summary": "It is a great pleasure to see you at the First Forum of the World Association of Azerbaijani Scientists (WAAS) in Baku, and we warmly welcome you to Azerbaijan.",
+      "tag": "Section",
+      "icon": "🎤",
+      "boost": 9,
+      "norm": "speech by messoud efendiyev chair of the board of directors of the world association of azerbaijani scientists it is a great pleasure to see you at the first forum of the world association of azerbaijani scientists waas in baku and we warmly welcome you to azerbaijan."
     },
     {
       "id": "section-forum-official-alimlerimiz-en",
@@ -2753,11 +3013,11 @@
       "pageId": "forum-official",
       "anchor": "alimlerimiz",
       "title": "ADDRESS BY OUR SCIENTISTS TO HIS EXCELLENCY MR ILHAM ALIYEV, PRESIDENT OF THE REPUBLIC OF AZERBAIJAN",
-      "summary": "The address was delivered by Mesud Afandiyev, Chair of the World Association of Azerbaijani Scientists.",
+      "summary": "The address was delivered by Mesud Afandiyev, Chair of the Board of Directors of the World Association of Azerbaijani Scientists.",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "address by our scientists to his excellency mr ilham aliyev president of the republic of azerbaijan the address was delivered by mesud afandiyev chair of the world association of azerbaijani scientists."
+      "norm": "address by our scientists to his excellency mr ilham aliyev president of the republic of azerbaijan the address was delivered by mesud afandiyev chair of the board of directors of the world association of azerbaijani scientists."
     },
     {
       "id": "section-forum-program-gun-9-az",
