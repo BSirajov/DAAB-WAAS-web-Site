@@ -22,7 +22,9 @@
     filtered: [],
     focusIndex: -1,
     debounceTimer: null,
-    ready: false
+    ready: false,
+    indexLoading: false,
+    indexLoadPromise: null
   };
 
   function assetRoot() {
@@ -419,6 +421,22 @@
       state.filtered = [];
       return;
     }
+    if (!state.ready) {
+      setPrompt(
+        res,
+        state.labels,
+        '<div class="search-prompt">' + escapeHtml(state.labels.loading) + "</div>"
+      );
+      ensureIndexLoaded().then(function () {
+        runSearch(query, res);
+      }).catch(function () {
+        if (state.labels) {
+          res.innerHTML =
+            '<div class="search-empty">' + escapeHtml(state.labels.error) + "</div>";
+        }
+      });
+      return;
+    }
     var qNorm = normalizeText(q);
     var tokens = qNorm.split(/\s+/).filter(Boolean);
     state.filtered = state.entries
@@ -451,6 +469,16 @@
       } else {
         document.body.classList.add("daab-scroll-lock");
       }
+      ensureIndexLoaded()
+        .then(function () {
+          if (ov.classList.contains("open")) setPrompt(res, state.labels);
+        })
+        .catch(function () {
+          if (state.labels && ov.classList.contains("open")) {
+            res.innerHTML =
+              '<div class="search-empty">' + escapeHtml(state.labels.error) + "</div>";
+          }
+        });
       global.setTimeout(function () { inp.focus(); }, 40);
     }
 
@@ -513,10 +541,41 @@
       return I18N.loadSearchIndex();
     }
     INDEX_URL = INDEX_URL || assetRoot() + "i18n/search-index.json";
-    return fetch(INDEX_URL + "?v=1").then(function (res) {
+    return fetch(INDEX_URL + "?v=5").then(function (res) {
       if (!res.ok) throw new Error("search index");
       return res.json();
     });
+  }
+
+  function ensureIndexLoaded() {
+    if (state.ready) return Promise.resolve(state.entries);
+    if (state.indexLoadPromise) return state.indexLoadPromise;
+    state.indexLoading = true;
+    state.indexLoadPromise = loadIndex()
+      .then(function (data) {
+        state.entries = (data && data.entries) || [];
+        state.ready = true;
+        state.indexLoading = false;
+        return state.entries;
+      })
+      .catch(function (err) {
+        state.indexLoading = false;
+        state.indexLoadPromise = null;
+        throw err;
+      });
+    return state.indexLoadPromise;
+  }
+
+  function scheduleIdleIndexPreload() {
+    if (state.ready || state.indexLoadPromise) return;
+    var run = function () {
+      ensureIndexLoaded().catch(function () {});
+    };
+    if (global.requestIdleCallback) {
+      global.requestIdleCallback(run, { timeout: 12000 });
+    } else {
+      global.setTimeout(run, 5000);
+    }
   }
 
   var searchUiWired = false;
@@ -538,15 +597,6 @@
     var fallbackLabels = labelsFor(state.lang, null);
     mountSearchChrome(fallbackLabels);
 
-    var res = document.getElementById("search-results");
-    if (res) {
-      setPrompt(
-        res,
-        fallbackLabels,
-        '<div class="search-prompt">' + escapeHtml(fallbackLabels.loading) + "</div>"
-      );
-    }
-
     var uiPromise = global.DAAB_I18N && global.DAAB_I18N.loadUi
       ? global.DAAB_I18N.loadUi().catch(function (err) {
           console.warn("[daab-search] UI labels unavailable; using fallback:", err);
@@ -554,31 +604,11 @@
         })
       : Promise.resolve(null);
 
-    uiPromise
-      .then(function (ui) {
-        var labels = labelsFor(state.lang, ui);
-        mountSearchChrome(labels);
-        if (res) {
-          setPrompt(
-            res,
-            labels,
-            '<div class="search-prompt">' + escapeHtml(labels.loading) + "</div>"
-          );
-        }
-        return loadIndex();
-      })
-      .then(function (data) {
-        state.entries = (data && data.entries) || [];
-        state.ready = true;
-        if (res) setPrompt(res, state.labels);
-      })
-      .catch(function (err) {
-        console.warn("[daab-search]", err);
-        if (res && state.labels) {
-          res.innerHTML =
-            '<div class="search-empty">' + escapeHtml(state.labels.error) + "</div>";
-        }
-      });
+    uiPromise.then(function (ui) {
+      var labels = labelsFor(state.lang, ui);
+      mountSearchChrome(labels);
+      scheduleIdleIndexPreload();
+    });
   }
 
   document.addEventListener("daab-primary-nav-ready", function () {

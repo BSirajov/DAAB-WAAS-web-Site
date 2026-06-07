@@ -74,6 +74,8 @@ html[data-daab-page-id="encyclopedia"] .cards-grid {
 }
 
 html[data-daab-page-id="encyclopedia"] .person-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 220px;
   position: relative;
   display: flex;
   flex-direction: column;

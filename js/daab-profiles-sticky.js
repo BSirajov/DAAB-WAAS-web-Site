@@ -35,12 +35,6 @@
     boot();
   }
 
-  var breadcrumbPoll = 0;
-  var breadcrumbTimer = window.setInterval(function () {
-    syncAll();
-    breadcrumbPoll += 1;
-    if (document.getElementById("daab-breadcrumbs") || breadcrumbPoll > 80) {
-      window.clearInterval(breadcrumbTimer);
-    }
-  }, 50);
+  global.setTimeout(syncAll, 120);
+  global.setTimeout(syncAll, 600);
 })();

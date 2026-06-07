@@ -10,6 +10,7 @@
   }
 
   var DATA = catalogData();
+  var CARD_RENDER_BATCH = 18;
   var collation = window.DAAB_COLLATION || {};
   var localeCompare =
     collation.compare ||
@@ -371,6 +372,30 @@
     }
   }
 
+  function renderCardsBatched(items, grid, ui, done) {
+    var index = 0;
+    function batch() {
+      var end = Math.min(index + CARD_RENDER_BATCH, items.length);
+      for (; index < end; index++) {
+        grid.appendChild(renderCard(items[index], ui));
+      }
+      if (index < items.length) {
+        if (typeof requestAnimationFrame === "function") {
+          requestAnimationFrame(batch);
+        } else {
+          setTimeout(batch, 0);
+        }
+      } else if (done) {
+        done();
+      }
+    }
+    if (typeof requestAnimationFrame === "function") {
+      requestAnimationFrame(batch);
+    } else {
+      batch();
+    }
+  }
+
   function init() {
     var catalog = document.getElementById("encyclopedia-catalog");
     var grid = catalog ? catalog.querySelector(".cards-grid") : null;
@@ -393,10 +418,79 @@
     var savedSort = readSortState() || defaultSortState();
     var sortCol = savedSort.sortCol;
     var sortDir = savedSort.sortDir;
+    var periodOptions = uniqueSorted(
+      DATA.map(function (d) {
+        return d.period;
+      })
+    );
+    var fieldOptions = uniqueSorted(
+      DATA.map(function (d) {
+        return d.field;
+      })
+    );
+    var countryOptions = uniqueSorted(
+      DATA.map(function (d) {
+        return d.country;
+      })
+    );
+    var regionOptions = uniqueSorted(
+      DATA.map(function (d) {
+        return d.region;
+      })
+    );
 
-    DATA.forEach(function (item) {
-      grid.appendChild(renderCard(item, ui));
+    if (catalog) {
+      catalog.setAttribute("aria-busy", "true");
+    }
+
+    renderCardsBatched(DATA, grid, ui, function () {
+      if (catalog) {
+        catalog.removeAttribute("aria-busy");
+      }
+      setupCatalog({
+        grid: grid,
+        ui: ui,
+        countLabels: countLabels,
+        searchInput: searchInput,
+        filterGroup: filterGroup,
+        filterPeriod: filterPeriod,
+        filterField: filterField,
+        filterCountry: filterCountry,
+        filterRegion: filterRegion,
+        clearFilters: clearFilters,
+        resultCount: resultCount,
+        noResults: noResults,
+        sortBy: sortBy,
+        sortAscBtn: sortAscBtn,
+        sortDescBtn: sortDescBtn,
+        sortCol: sortCol,
+        sortDir: sortDir,
+        periodOptions: periodOptions,
+        fieldOptions: fieldOptions,
+        countryOptions: countryOptions,
+        regionOptions: regionOptions
+      });
     });
+  }
+
+  function setupCatalog(ctx) {
+    var grid = ctx.grid;
+    var ui = ctx.ui;
+    var countLabels = ctx.countLabels;
+    var searchInput = ctx.searchInput;
+    var filterGroup = ctx.filterGroup;
+    var filterPeriod = ctx.filterPeriod;
+    var filterField = ctx.filterField;
+    var filterCountry = ctx.filterCountry;
+    var filterRegion = ctx.filterRegion;
+    var clearFilters = ctx.clearFilters;
+    var resultCount = ctx.resultCount;
+    var noResults = ctx.noResults;
+    var sortBy = ctx.sortBy;
+    var sortAscBtn = ctx.sortAscBtn;
+    var sortDescBtn = ctx.sortDescBtn;
+    var sortCol = ctx.sortCol;
+    var sortDir = ctx.sortDir;
 
     var cards = grid.querySelectorAll(".person-card");
     if (!cards.length) return;
@@ -415,42 +509,10 @@
       });
     }
 
-    fillSelect(
-      filterPeriod,
-      ui.period,
-      uniqueSorted(
-        DATA.map(function (d) {
-          return d.period;
-        })
-      )
-    );
-    fillSelect(
-      filterField,
-      ui.field,
-      uniqueSorted(
-        DATA.map(function (d) {
-          return d.field;
-        })
-      )
-    );
-    fillSelect(
-      filterCountry,
-      ui.country,
-      uniqueSorted(
-        DATA.map(function (d) {
-          return d.country;
-        })
-      )
-    );
-    fillSelect(
-      filterRegion,
-      ui.region,
-      uniqueSorted(
-        DATA.map(function (d) {
-          return d.region;
-        })
-      )
-    );
+    fillSelect(filterPeriod, ui.period, ctx.periodOptions);
+    fillSelect(filterField, ui.field, ctx.fieldOptions);
+    fillSelect(filterCountry, ui.country, ctx.countryOptions);
+    fillSelect(filterRegion, ui.region, ctx.regionOptions);
 
     if (searchInput) searchInput.placeholder = ui.searchPlaceholder;
     if (searchInput) searchInput.setAttribute("aria-label", ui.searchAria);

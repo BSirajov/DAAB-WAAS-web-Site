@@ -11,6 +11,10 @@
   var uiCache = null;
   var navCache = null;
   var searchIndexCache = null;
+  var routesInflight = null;
+  var uiInflight = null;
+  var navInflight = null;
+  var searchIndexInflight = null;
 
   function assetRoot() {
     var root = document.documentElement.getAttribute("data-daab-asset-root");
@@ -80,38 +84,65 @@
     });
   }
 
+  function loadCachedJson(url, getCache, setCache, getInflight, setInflight) {
+    var cached = getCache();
+    if (cached) return Promise.resolve(cached);
+    var pending = getInflight();
+    if (pending) return pending;
+    var promise = fetchJson(url)
+      .then(function (data) {
+        setCache(data);
+        setInflight(null);
+        return data;
+      })
+      .catch(function (err) {
+        setInflight(null);
+        throw err;
+      });
+    setInflight(promise);
+    return promise;
+  }
+
   function loadRoutes() {
-    if (routesCache) return Promise.resolve(routesCache);
     ROUTES_URL = ROUTES_URL || i18nUrl("routes.json");
-    return fetchJson(ROUTES_URL + "?v=3").then(function (data) {
-      routesCache = data;
-      return data;
-    });
+    return loadCachedJson(
+      ROUTES_URL + "?v=3",
+      function () { return routesCache; },
+      function (data) { routesCache = data; },
+      function () { return routesInflight; },
+      function (p) { routesInflight = p; }
+    );
   }
 
   function loadUi() {
-    if (uiCache) return Promise.resolve(uiCache);
     UI_URL = UI_URL || i18nUrl("ui.json");
-    return fetchJson(UI_URL + "?v=15").then(function (data) {
-      uiCache = data;
-      return data;
-    });
+    return loadCachedJson(
+      UI_URL + "?v=15",
+      function () { return uiCache; },
+      function (data) { uiCache = data; },
+      function () { return uiInflight; },
+      function (p) { uiInflight = p; }
+    );
   }
 
   function loadSearchIndex() {
-    if (searchIndexCache) return Promise.resolve(searchIndexCache);
-    return fetchJson(i18nUrl("search-index.json") + "?v=5").then(function (data) {
-      searchIndexCache = data;
-      return data;
-    });
+    return loadCachedJson(
+      i18nUrl("search-index.json") + "?v=5",
+      function () { return searchIndexCache; },
+      function (data) { searchIndexCache = data; },
+      function () { return searchIndexInflight; },
+      function (p) { searchIndexInflight = p; }
+    );
   }
 
   function loadNav() {
-    if (navCache) return Promise.resolve(navCache);
-    return fetchJson(i18nUrl("nav.json") + "?v=5").then(function (data) {
-      navCache = data;
-      return data;
-    });
+    return loadCachedJson(
+      i18nUrl("nav.json") + "?v=5",
+      function () { return navCache; },
+      function (data) { navCache = data; },
+      function () { return navInflight; },
+      function (p) { navInflight = p; }
+    );
   }
 
   /** Path relative to current page (e.g. foundation.html, ../mission.html). */

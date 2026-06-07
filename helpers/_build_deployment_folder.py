@@ -280,6 +280,11 @@ def main() -> int:
 
     write_deployment_readme({"files": copied}, DEPLOY_STAGING, skip_images=skip_images)
 
+    htaccess_src = ROOT / "deployment" / ".htaccess"
+    if htaccess_src.is_file():
+        shutil.copy2(htaccess_src, DEPLOY_STAGING / ".htaccess")
+        copied += 1
+
     print(f"→ Staged {copied} files ({bytes_total / (1024 * 1024):.1f} MB)")
     print(f"→ Skipped {len(skipped)} non-deploy paths\n")
 
