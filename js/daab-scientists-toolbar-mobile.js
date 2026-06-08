@@ -35,7 +35,7 @@
       document.documentElement.getAttribute("data-daab-page-id") || "";
     if (pageId === "encyclopedia") {
       return [
-        "filterGroup",
+        "filterCategory",
         "filterPeriod",
         "filterField",
         "filterCountry",

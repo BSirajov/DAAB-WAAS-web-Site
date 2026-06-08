@@ -21,10 +21,10 @@ from _prominent_figure_names_en import apply_english_names, english_name
 from _prominent_figure_pronouns_en import apply_singular_pronouns
 from _prominent_figure_en_strings import (
     FOOTER_EN,
-    GROUP_LABEL_EN,
+    CATEGORY_LABEL_EN,
     translate_country,
     translate_field,
-    translate_group_tag,
+    translate_category_tag,
     translate_period,
     translate_region,
 )
@@ -93,7 +93,7 @@ def en_summary(row: dict) -> str:
     name = row["name"]
     country = translate_country(row.get("country") or row.get("region") or "")
     field = translate_field(row.get("field") or "")
-    if row["group"] == "world":
+    if row["category"] == "world":
         return (
             f"{name} is recognized as a major figure in {field or 'this field'}, "
             "with a legacy that contributed to the development of world science and thought."
@@ -110,12 +110,12 @@ def hero_block(row: dict) -> str:
     name = html.escape(row["name"])
     dates = html.escape(row.get("dates") or "")
     country = html.escape(translate_country(row.get("country") or ""))
-    group_tag = html.escape(translate_group_tag(row.get("groupLabel") or ""))
+    category_tag = html.escape(translate_category_tag(row.get("categoryLabel") or ""))
     tags = ""
     if country:
         tags += f'<span class="hero-tag gold">{country}</span>\n'
-    if group_tag:
-        tags += f'<span class="hero-tag">{group_tag}</span>'
+    if category_tag:
+        tags += f'<span class="hero-tag">{category_tag}</span>'
     return (
         '<header class="hero pf-profile-hero"><div class="hero-inner shell pf-profile-hero__inner">'
         '<section class="hero-copy"><div class="pf-profile-hero__title-row">'
@@ -192,10 +192,10 @@ def sidebar_block(row: dict) -> str:
         if country_val and field_raw
         else translate_field(field_raw) or country_val or ""
     )
-    group_period = html.escape(
-        translate_group_tag(row.get("groupLabel") or "")
-        if row.get("group") == "azturk"
-        else translate_group_tag(GROUP_LABEL_EN.get("world", ""))
+    category_period = html.escape(
+        translate_category_tag(row.get("categoryLabel") or "")
+        if row.get("category") == "azturk"
+        else translate_category_tag(CATEGORY_LABEL_EN.get("world", ""))
     )
     birth = death = ""
     if row.get("dates"):
@@ -205,9 +205,9 @@ def sidebar_block(row: dict) -> str:
         if len(parts) > 1:
             death = html.escape(parts[-1].strip())
     people = html.escape(
-        country if row["group"] == "azturk" else translate_region(row.get("region") or "World science")
+        country if row["category"] == "azturk" else translate_region(row.get("region") or "World science")
     )
-    return f"""<aside class="sidebar"><div class="info-card"><div class="info-title">Personal information</div><div class="info-row"><span class="info-label">Full name</span><span class="info-val">{name}</span></div><div class="info-row"><span class="info-label">Date of birth</span><span class="info-val">{birth}</span></div><div class="info-row"><span class="info-label">Date of death</span><span class="info-val">{death}</span></div><div class="info-row"><span class="info-label">People / origin</span><span class="info-val">{people}</span></div><div class="info-row"><span class="info-label">Period / context</span><span class="info-val">{group_period}</span></div><div class="info-row"><span class="info-label">Field</span><span class="info-val">{field_display}</span></div><div class="info-divider"></div><div class="info-title">Contributions to society</div><ul class="contribution-list"><li class="contribution-item">Made an important contribution in {html.escape(country_val or 'this field')}</li>
+    return f"""<aside class="sidebar"><div class="info-card"><div class="info-title">Personal information</div><div class="info-row"><span class="info-label">Full name</span><span class="info-val">{name}</span></div><div class="info-row"><span class="info-label">Date of birth</span><span class="info-val">{birth}</span></div><div class="info-row"><span class="info-label">Date of death</span><span class="info-val">{death}</span></div><div class="info-row"><span class="info-label">People / origin</span><span class="info-val">{people}</span></div><div class="info-row"><span class="info-label">Period / context</span><span class="info-val">{category_period}</span></div><div class="info-row"><span class="info-label">Field</span><span class="info-val">{field_display}</span></div><div class="info-divider"></div><div class="info-title">Contributions to society</div><ul class="contribution-list"><li class="contribution-item">Made an important contribution in {html.escape(country_val or 'this field')}</li>
 <li class="contribution-item">Enriched the scientific and intellectual heritage</li>
 <li class="contribution-item">Shaped ideas that influenced human progress</li></ul></div>
 <div class="info-card"><div class="info-title">See also</div>RELATED_PLACEHOLDER</div></aside>"""
@@ -243,7 +243,7 @@ def render_profile(row: dict, nav_menu: str) -> str:
     esc_name = html.escape(name, quote=True)
     title = html.escape(f"{name} — Prominent Figures | WAAS")
     desc = html.escape(en_summary(row), quote=True)
-    main_inner = main_col_azturk(row) if row["group"] == "azturk" else main_col_world(row)
+    main_inner = main_col_azturk(row) if row["category"] == "azturk" else main_col_world(row)
     sidebar = sidebar_block(row).replace("RELATED_PLACEHOLDER", "RELATED_PLACEHOLDER")
     body = (
         f'<main class="pf-main" id="content"><div class="content-grid">{main_inner}{sidebar}</div></div></main>'
@@ -290,7 +290,7 @@ def build_file(az_path: Path, group: str, nav_menu: str) -> bool:
     # Parse metadata for fallback / meta tag generation
     row = parse_profile(az_path, group)
     if row:
-        row["groupLabel"] = GROUP_LABEL_EN[group]
+        row["categoryLabel"] = CATEGORY_LABEL_EN[group]
     slug = az_path.stem
     az_name = row["name"] if row else slug.replace("_", " ").title()
     en_name = english_name(slug, az_name)
@@ -378,7 +378,7 @@ def _fix_meta_description(html_text: str, name: str, row: dict | None) -> str:
     country = translate_country(row.get("country") or row.get("region") or "")
     field = translate_field(row.get("field") or "")
     period = translate_period(row.get("period") or "")
-    if row.get("group") == "world":
+    if row.get("category") == "world":
         desc = (
             f"{name} ({period}) — {field}. "
             "Compiled profile on the WAAS Encyclopedia of Prominent Figures."

@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 4,
   "primary": [
     {
       "type": "page",
@@ -10,8 +10,99 @@
       "id": "activities"
     },
     {
-      "type": "page",
-      "id": "forum-2024"
+      "type": "group",
+      "id": "forum",
+      "style": "mega",
+      "labelKey": "forum2024",
+      "landingId": "forum-2024",
+      "children": [
+        {
+          "type": "section",
+          "labelKey": "forumNavOverview",
+          "children": [
+            {
+              "id": "forum-2024"
+            },
+            {
+              "id": "forum-program"
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "labelKey": "forumNavOfficialRecord",
+          "children": [
+            {
+              "id": "forum-official"
+            },
+            {
+              "id": "forum-2024-presentations"
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "labelKey": "forumNavSpeeches",
+          "nested": true,
+          "children": [
+            {
+              "id": "forum-rector-speeches"
+            },
+            {
+              "id": "forum-anas-leadership-speeches"
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "labelKey": "forumNavMedia",
+          "children": [
+            {
+              "id": "forum-photos-gallery"
+            },
+            {
+              "id": "forum-video-gallery"
+            },
+            {
+              "id": "forum-impressions"
+            },
+            {
+              "id": "forum-bagli-hekayeler"
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "labelKey": "forumNavOutcomes",
+          "children": [
+            {
+              "id": "forum-roadmap"
+            },
+            {
+              "id": "forum-cooperation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "id": "scientists",
+      "style": "dropdown",
+      "labelKey": "scientists",
+      "landingId": "scientists-list",
+      "children": [
+        {
+          "id": "scientists-list",
+          "labelKey": "scientistsList",
+          "descKey": "scientistsListDesc"
+        },
+        {
+          "id": "scientists-profiles",
+          "labelKey": "scientistsProfiles",
+          "descKey": "scientistsProfilesDesc"
+        }
+      ]
     },
     {
       "type": "group",
@@ -143,9 +234,7 @@
         "forum-video-gallery",
         "forum-roadmap",
         "forum-bagli-hekayeler",
-        "forum-cooperation",
-        "scientists-list",
-        "scientists-profiles"
+        "forum-cooperation"
       ]
     },
     "membership": {

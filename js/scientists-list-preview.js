@@ -13,8 +13,8 @@
   };
 
   var LABELS = {
-    az: { field: "İxtisas:", email: "E-poçt:", view: "Tam profil", preview: "Profil önizləməsi" },
-    en: { field: "Field:", email: "Email:", view: "View full profile", preview: "Profile preview" },
+    az: { field: "İxtisas:", email: "E-poçt:", view: "Tam profil", preview: "Profil önizləməsi", close: "Bağla" },
+    en: { field: "Field:", email: "Email:", view: "View full profile", preview: "Profile preview", close: "Close" },
   };
 
   var SHOW_DELAY = 160;
@@ -134,15 +134,53 @@
     return loadPromise;
   }
 
-  function lookupProfile(trigger) {
-    var email = (trigger.getAttribute("data-scientist-email") || "").toLowerCase();
-    var say = trigger.getAttribute("data-scientist-say");
-    if (email && byEmail[email]) return byEmail[email];
+  function lookupByKeys(email, say) {
+    var emailKey = (email || "").toLowerCase();
+    if (emailKey && byEmail[emailKey]) return byEmail[emailKey];
     if (say != null && bySay[String(say)]) return bySay[String(say)];
     return null;
   }
 
+  function photoUrlForProfile(profile) {
+    if (!profile || !profile.photo) return "";
+    return assetRoot + "images/scientists-photos/" + profile.photo;
+  }
+
+  function qrUrlForProfile(profile) {
+    if (!profile || !profile.slug) return "";
+    return assetRoot + "images/qr/" + lang + "/" + profile.slug + ".png?v=1";
+  }
+
+  function profileHrefForProfile(profile) {
+    if (!profile || !profile.slug) return "";
+    return "profiles.html#" + profile.slug;
+  }
+
+  function lookupProfile(trigger) {
+    return lookupByKeys(
+      trigger.getAttribute("data-scientist-email"),
+      trigger.getAttribute("data-scientist-say")
+    );
+  }
+
   function fallbackFromRow(trigger) {
+    var card = trigger.closest(".scientist-card");
+    if (card) {
+      var fieldEl = card.querySelector(".scientist-card__field");
+      var countryEl = card.querySelector(".scientist-card__country");
+      return {
+        slug: "",
+        photo: "",
+        email: (trigger.getAttribute("data-scientist-email") || "").trim(),
+        name: trigger.textContent.replace(/\s+/g, " ").trim(),
+        country: countryEl ? countryEl.textContent.trim() : "",
+        field: fieldEl ? fieldEl.textContent.trim() : "",
+        title: "",
+        degree: "",
+        cred: "",
+        bioLead: "",
+      };
+    }
     var tr = trigger.closest("tr");
     if (!tr) return null;
     var cells = tr.querySelectorAll("td");
@@ -193,6 +231,9 @@
 
     htmlCache[key] =
       '<article class="scientist-preview-card">' +
+      '<button type="button" class="scientist-preview-card__close" aria-label="' +
+      esc(labels.close) +
+      '"><span aria-hidden="true">&times;</span></button>' +
       '<div class="scientist-preview-card__inner">' +
       '<div class="scientist-preview-card__portrait">' +
       '<div class="scientist-preview-card__avatar">' +
@@ -244,7 +285,17 @@
     popover.addEventListener("mouseleave", scheduleHide);
     popover.addEventListener("focusin", cancelHide);
     popover.addEventListener("focusout", onPopoverFocusOut);
+    popover.addEventListener("click", onPopoverClick);
     return popover;
+  }
+
+  function onPopoverClick(e) {
+    if (!e.target.closest(".scientist-preview-card__close")) return;
+    e.preventDefault();
+    e.stopPropagation();
+    cancelHide();
+    hide();
+    if (activeTrigger) activeTrigger.focus();
   }
 
   function stickyTopInset() {
@@ -407,19 +458,23 @@
     }
   }
 
-  function bindTable() {
-    var tbody = document.getElementById("tableBody");
-    if (!tbody || tbody.dataset.previewBound === "1") return;
-    tbody.dataset.previewBound = "1";
+  function previewRoot() {
+    return document.getElementById("scientists-catalog") || document.getElementById("tableBody");
+  }
 
-    tbody.addEventListener("pointerover", function (e) {
+  function bindCatalog() {
+    var root = previewRoot();
+    if (!root || root.dataset.previewBound === "1") return;
+    root.dataset.previewBound = "1";
+
+    root.addEventListener("pointerover", function (e) {
       if (!hoverPreview || e.pointerType === "touch") return;
       var trg = e.target.closest(".scientist-name-trigger");
-      if (!trg || !tbody.contains(trg)) return;
+      if (!trg || !root.contains(trg)) return;
       scheduleShow(trg);
     });
 
-    tbody.addEventListener("pointerout", function (e) {
+    root.addEventListener("pointerout", function (e) {
       if (!hoverPreview || e.pointerType === "touch") return;
       var trg = e.target.closest(".scientist-name-trigger");
       if (!trg) return;
@@ -428,17 +483,17 @@
       scheduleHide();
     });
 
-    tbody.addEventListener("focusin", function (e) {
+    root.addEventListener("focusin", function (e) {
       var trg = e.target.closest(".scientist-name-trigger");
-      if (!trg || !tbody.contains(trg)) return;
+      if (!trg || !root.contains(trg)) return;
       scheduleShow(trg);
     });
 
-    tbody.addEventListener("focusout", onTriggerFocusOut);
+    root.addEventListener("focusout", onTriggerFocusOut);
 
-    tbody.addEventListener("click", function (e) {
+    root.addEventListener("click", function (e) {
       var trg = e.target.closest(".scientist-name-trigger");
-      if (!trg || !tbody.contains(trg)) return;
+      if (!trg || !root.contains(trg)) return;
       onTriggerClick(e, trg);
     });
   }
@@ -456,8 +511,8 @@
     } catch (e) {
       /* ignore */
     }
-    loadProfiles().then(bindTable);
-    bindTable();
+    loadProfiles().then(bindCatalog);
+    bindCatalog();
     document.addEventListener("keydown", onKeyDown);
     document.addEventListener("pointerdown", onDocumentPointerDown, true);
     window.addEventListener("resize", onScrollOrResize, { passive: true });
@@ -466,12 +521,21 @@
 
   window.DAABScientistsListPreview = {
     refresh: function () {
-      bindTable();
+      bindCatalog();
       if (activeTrigger && !document.body.contains(activeTrigger)) hide();
       else if (activeTrigger && popover && popover.classList.contains("is-visible")) {
         positionPopover(activeTrigger);
       }
     },
+    whenReady: function (callback) {
+      return loadProfiles().then(function () {
+        if (typeof callback === "function") callback();
+      });
+    },
+    lookupByKeys: lookupByKeys,
+    photoUrl: photoUrlForProfile,
+    qrUrl: qrUrlForProfile,
+    profileHref: profileHrefForProfile,
   };
 
   function boot() {

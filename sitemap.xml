@@ -74,6 +74,30 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/encyclopedia.html"/>
   </url>
   <url>
+    <loc>https://daab-waas.com/az/industrial_revolutions.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/industrial_revolutions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/industrial_revolutions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/industrial_revolutions.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/en/industrial_revolutions.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/industrial_revolutions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/industrial_revolutions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/industrial_revolutions.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/az/major_scientific_inventions.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/major_scientific_inventions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/major_scientific_inventions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/major_scientific_inventions.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/en/major_scientific_inventions.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/major_scientific_inventions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/major_scientific_inventions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/major_scientific_inventions.html"/>
+  </url>
+  <url>
     <loc>https://daab-waas.com/az/forum/2024/presentations.html</loc>
     <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/forum/2024/presentations.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/forum/2024/presentations.html"/>

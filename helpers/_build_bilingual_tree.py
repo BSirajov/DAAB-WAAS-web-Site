@@ -578,6 +578,23 @@ def write_robots_txt() -> None:
     print("  robots: robots.txt")
 
 
+LEGACY_REDIRECT_STUB = """<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta http-equiv="refresh" content="0; url={target}"/>
+<link rel="canonical" href="{target}"/>
+<!-- data-daab-legacy-redirect -->
+<title>DAAB — Redirect</title>
+</head>
+<body>
+<p><a href="{target}">Davam et</a></p>
+</body>
+</html>
+"""
+
+
 def write_legacy_redirects(routes: dict) -> None:
     redirects = routes.get("legacyRedirects", {})
     for legacy, target in redirects.items():
@@ -585,6 +602,8 @@ def write_legacy_redirects(routes: dict) -> None:
             continue
         src = ROOT / legacy
         if not src.is_file():
+            src.write_text(LEGACY_REDIRECT_STUB.format(target=target), encoding="utf-8", newline="\n")
+            print(f"  redirect created: {legacy} -> {target}")
             continue
         html = src.read_text(encoding="utf-8")
         if "data-daab-legacy-redirect" in html:

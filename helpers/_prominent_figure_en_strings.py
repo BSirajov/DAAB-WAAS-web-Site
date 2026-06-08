@@ -1,7 +1,7 @@
 """English UI strings and label maps for prominent-figure profiles."""
 from __future__ import annotations
 
-GROUP_LABEL_EN = {
+CATEGORY_LABEL_EN = {
     "azturk": "Azerbaijani & Turkic heritage",
     "world": "World scientists",
 }
@@ -98,6 +98,20 @@ FIELD_EN = {
     "Xalq şeiri": "Folk poetry",
     "mexanika": "Mechanics",
     "dövlətçilik": "Statecraft",
+    "Məntiq": "Logic",
+    "məntiq": "Logic",
+    "Həndəsə": "Geometry",
+    "həndəsə": "Geometry",
+    "Musiqi nəzəriyyəsi": "Music theory",
+    "musiqi nəzəriyyəsi": "Music theory",
+    "Hikmət": "Wisdom literature",
+    "hikmət": "Wisdom literature",
+    "Biocoğrafiya": "Biogeography",
+    "Biocoqrafiya": "Biogeography",
+    "İmmunologiya": "Immunology",
+    "Əlkimya": "Alchemy",
+    "İqtisadi fikir": "Economic thought",
+    "Fiziologiya": "Physiology",
 }
 
 _FIELD_LOOKUP = {k.lower(): v for k, v in FIELD_EN.items()}
@@ -115,6 +129,29 @@ PHRASE_REPLACEMENTS: list[tuple[str, str]] = [
     ("Görkəmli şəxsiyyətlər", "Prominent figures"),
     ("Ensiklopediya", "Encyclopedia"),
     ("Türkiyə", "Türkiye"),
+    ("Intellectual thought & sənət", "Intellectual thought & art"),
+    ("Intellectual thought & Sənət", "Intellectual thought & art"),
+    ("Literature & müqavimət", "Literature & resistance"),
+    ("Literature & Müqavimət", "Literature & resistance"),
+    ("Literature & i̇ctimai fəaliyyət", "Literature & public life"),
+    ("Literature & İctimai fəaliyyət", "Literature & public life"),
+    ("XV əsr", "15th century"),
+    ("təx. ", "c. "),
+    ("Azadlıq verilmir, qazanılır.", "Freedom is not given; it is won."),
+    ("— Elchibey irsinin ideyası", "— A core idea of Elchibey's legacy"),
+    ("Philosophy & Biology & Məntiq", "Philosophy, Biology & Logic"),
+    ("Mathematics & Həndəsə", "Mathematics & Geometry"),
+    ("Mathematics & Musiqi nəzəriyyəsi", "Mathematics & Music theory"),
+    ("Epic tradition & hikmət", "Epic tradition & wisdom literature"),
+    ("Epic tradition & Hikmət", "Epic tradition & wisdom literature"),
+    ("Biology & Biocoğrafiya", "Biology & Biogeography"),
+    ("Medicine & İmmunologiya", "Medicine & Immunology"),
+    ("Chemistry & Əlkimya", "Chemistry & Alchemy"),
+    ("Mathematics & Physics & İqtisadi fikir", "Mathematics, Physics & Economic thought"),
+    (
+        "Buna görə də Georges-Louis Leclerc, Comte de Buffon dünya elminin görkəmli nümayəndələri sırasında təqdim olunmağa layiqdir.",
+        "For these reasons, Georges-Louis Leclerc, Comte de Buffon merits recognition among the distinguished representatives of world scholarship.",
+    ),
 ]
 
 FOOTER_EN = """<footer class="footer-pro">
@@ -149,12 +186,17 @@ def translate_region(region: str) -> str:
     return REGION_EN.get(region, region)
 
 
-def translate_group_tag(tag: str) -> str:
+def translate_category_tag(tag: str) -> str:
     if tag == "Azərbaycan və türk dünyası":
-        return GROUP_LABEL_EN["azturk"]
+        return CATEGORY_LABEL_EN["azturk"]
     if tag == "Dünya alimləri":
-        return GROUP_LABEL_EN["world"]
+        return CATEGORY_LABEL_EN["world"]
     return tag
+
+
+def translate_group_tag(tag: str) -> str:
+    """Backward-compatible alias."""
+    return translate_category_tag(tag)
 
 
 COUNTRY_PARTS: list[tuple[str, str]] = [

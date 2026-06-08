@@ -259,7 +259,7 @@
           "forum-official": "Forumun istiqamətini müəyyən edən rəsmi çıxış və müraciətlər",
           "forum-rector-speeches": "Azərbaycan universitet rektorlarının Forum 2024 nitqləri",
           "forum-anas-leadership-speeches":
-            "AMEA rəhbərliyinin Forumla bağlı görüş və nitqləri",
+            "Akademiklərin Forumla bağlı görüş və nitqləri",
           "forum-program": "Bakı–Xankəndi–Şuşa forum proqramı",
           "forum-2024-presentations": "Elm, təhsil və siyasət mövzularında məruzələr",
           "forum-impressions": "İştirakçıların Forum və Qarabağ təəssüratları",
@@ -287,7 +287,7 @@
           "forum-official": "Official speeches and messages that shaped the Forum",
           "forum-rector-speeches":
             "Speeches by rectors of Azerbaijani universities at Forum 2024",
-          "forum-anas-leadership-speeches": "Speeches by ANAS leadership at Forum 2024",
+          "forum-anas-leadership-speeches": "Speeches by academicians at Forum 2024",
           "forum-program": "Programme of the Baku–Khankendi–Shusha forum journey",
           "forum-2024-presentations": "Presentations on science, education, policy, and more",
           "forum-impressions": "Participants' thoughts on the Forum and Karabakh visit",
@@ -347,7 +347,7 @@
         forumBagliHekayeler: "Hekayələr",
         forumCooperation: "Töhfələr",
         forumRectorSpeeches: "Rektorlar",
-        forumAnasLeadershipSpeeches: "AMEA rəhbərliyi",
+        forumAnasLeadershipSpeeches: "Akademiklər",
         forumPhotosGallery: "Foto qalereya",
         forumVideoGallery: "Video qalereya",
         scientistsList: "Alimlərin siyahısı",
@@ -378,7 +378,7 @@
         forumBagliHekayeler: "Stories",
         forumCooperation: "Contributions",
         forumRectorSpeeches: "Rectors",
-        forumAnasLeadershipSpeeches: "ANAS Leadership",
+        forumAnasLeadershipSpeeches: "Academicians",
         forumPhotosGallery: "Photo gallery",
         forumVideoGallery: "Video gallery",
         scientistsList: "Directory",
@@ -462,8 +462,7 @@
       "forum-roadmap",
       "forum-bagli-hekayeler",
       "forum-cooperation"
-    ],
-    ["scientists-list", "scientists-profiles"]
+    ]
   ];
 
   /** Shared min-width groups for paired Forum 2024 pills. */
@@ -472,8 +471,7 @@
     ["forum-rector-speeches", "forum-video-gallery"],
     ["forum-anas-leadership-speeches", "forum-roadmap"],
     ["forum-program", "forum-bagli-hekayeler"],
-    ["forum-cooperation", "forum-2024-presentations"],
-    ["scientists-list", "scientists-profiles"]
+    ["forum-cooperation", "forum-2024-presentations"]
   ];
 
   function forumPanelColumnWidthGroups() {
@@ -533,6 +531,12 @@
 
   function isForumSectionPageId(pageId) {
     return forumSectionPageIds().indexOf(pageId) !== -1;
+  }
+
+  /** Forum 2024 HTML pages — in-page pill nav replaced by primary nav mega menu. */
+  function isForum2024ContentPage(page) {
+    if (!page || !page.id) return false;
+    return page.id === "forum-2024" || page.id.indexOf("forum-") === 0;
   }
 
   function forumSectionTooltip(ui, lang, pageId) {
@@ -857,6 +861,7 @@
         var navDef = results[2] || FALLBACK_NAV;
         var page = findCurrentPage(I18N, routes);
         if (!page || !page.navGroup) return;
+        if (isForum2024ContentPage(page)) return;
 
         var section = navDef.sections && navDef.sections[page.navGroup];
         if (!section || !section.pages || section.pages.length < 2) return;

@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "primary": [
     {
       "type": "page",
@@ -12,6 +12,25 @@
     {
       "type": "page",
       "id": "forum-2024"
+    },
+    {
+      "type": "group",
+      "id": "scientists",
+      "style": "dropdown",
+      "labelKey": "scientists",
+      "landingId": "scientists-list",
+      "children": [
+        {
+          "id": "scientists-list",
+          "labelKey": "scientistsList",
+          "descKey": "scientistsListDesc"
+        },
+        {
+          "id": "scientists-profiles",
+          "labelKey": "scientistsProfiles",
+          "descKey": "scientistsProfilesDesc"
+        }
+      ]
     },
     {
       "type": "group",

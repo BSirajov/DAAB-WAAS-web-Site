@@ -1,8 +1,11 @@
 /**
- * Forum 2024 — in-section navigation panel (14 pill links).
- * Reference: az|en/forum/2024/index.html (JS-mounted .daab-section-nav).
+ * Forum 2024 — legacy in-section pill nav (hidden; use primary nav mega menu).
  * Load after daab-nav-mega.css on all html[data-daab-page-id^="forum-"] pages.
  */
+
+html[data-daab-page-id^="forum-"] .daab-section-nav{
+  display: none !important;
+}
 
 html[data-daab-page-id^="forum-"] header.page-hero + .daab-section-nav,
 html[data-daab-page-id^="forum-"] header.hero + .daab-section-nav,

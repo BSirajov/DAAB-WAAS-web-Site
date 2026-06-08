@@ -29,14 +29,14 @@
 
   var STRINGS = {
     az: {
-      searchPlaceholder: "Ad, ölkə, sahə, dövr və ya qrup üzrə axtar…",
+      searchPlaceholder: "Ad, ölkə, sahə, dövr və ya kateqoriya üzrə axtar…",
       searchAria: "Profil axtar",
       filterToggle: "Filtrlər",
       filterToggleAria: "Filtrləri göstər",
       filtersLabel: "Filtrlər",
-      groupAll: "📚 Bütün qruplar",
-      groupAzturk: "Azərbaycan və türk dünyası",
-      groupWorld: "Dünya alimləri",
+      categoryAll: "📚 Bütün kateqoriyalar",
+      categoryAzturk: "Azərbaycan və türk dünyası",
+      categoryWorld: "Dünya alimləri",
       period: "⏳ Tarixi dövr",
       field: "🔬 Sahə",
       country: "🌍 Ölkə / region",
@@ -47,6 +47,7 @@
       sortPeriod: "Tarixi dövr",
       sortField: "Sahə",
       sortCountry: "Ölkə / region",
+      sortCategory: "Kateqoriya",
       sortBirth: "Doğum ili",
       sortAsc: "A→Z",
       sortDesc: "Z→A",
@@ -59,22 +60,34 @@
         if (visible < total) html += " (" + total + " ümumi)";
         return html;
       },
-      cardGroup: "Qrup",
+      cardCategory: "Kateqoriya",
       cardPeriod: "Dövr",
       cardField: "Sahə",
       cardCountry: "Ölkə",
       openProfile: "Profilə keç",
       empty: "Seçilmiş filtrlərə uyğun profil tapılmadı.",
+      viewToggleAria: "Kataloq görünüşü",
+      viewCards: "Kartlar",
+      viewCardsTitle: "Kart görünüşü",
+      viewTable: "Cədvəl",
+      viewTableTitle: "Cədvəl görünüşü",
+      tableName: "Ad",
+      tableDates: "Tarixlər",
+      tableCategory: "Kateqoriya",
+      tablePeriod: "Dövr",
+      tableField: "Sahə",
+      tableCountry: "Ölkə",
+      tableProfile: "Profil",
     },
     en: {
-      searchPlaceholder: "Search by name, country, field, period, or group…",
+      searchPlaceholder: "Search by name, country, field, period, or category…",
       searchAria: "Search profiles",
       filterToggle: "Filters",
       filterToggleAria: "Show filters",
       filtersLabel: "Filters",
-      groupAll: "📚 All groups",
-      groupAzturk: "Azerbaijani & Turkic figures",
-      groupWorld: "World scientists",
+      categoryAll: "📚 All categories",
+      categoryAzturk: "Azerbaijani & Turkic figures",
+      categoryWorld: "World scientists",
       period: "⏳ Historical period",
       field: "🔬 Field",
       country: "🌍 Country / region",
@@ -85,6 +98,7 @@
       sortPeriod: "Period",
       sortField: "Field",
       sortCountry: "Country / region",
+      sortCategory: "Category",
       sortBirth: "Birth year",
       sortAsc: "A→Z",
       sortDesc: "Z→A",
@@ -97,12 +111,24 @@
         if (visible < total) html += " (" + total + " total)";
         return html;
       },
-      cardGroup: "Group",
+      cardCategory: "Category",
       cardPeriod: "Period",
       cardField: "Field",
       cardCountry: "Country",
       openProfile: "View profile",
       empty: "No profiles match the selected filters.",
+      viewToggleAria: "Catalog view",
+      viewCards: "Cards",
+      viewCardsTitle: "Card view",
+      viewTable: "Table",
+      viewTableTitle: "Table view",
+      tableName: "Name",
+      tableDates: "Dates",
+      tableCategory: "Category",
+      tablePeriod: "Period",
+      tableField: "Field",
+      tableCountry: "Country",
+      tableProfile: "Profile",
     },
   };
 
@@ -151,6 +177,7 @@
   }
 
   var SORT_STORAGE_KEY = "daab-encyclopedia-sort";
+  var VIEW_STORAGE_KEY = "daab-encyclopedia-view";
 
   function filterCountLabels() {
     var L = t();
@@ -173,36 +200,98 @@
     return String(field).split("·")[0].trim();
   }
 
+  function itemSearchText(item) {
+    return norm(
+      [
+        item.name,
+        item.dates,
+        item.summary,
+        item.country,
+        item.field,
+        item.period,
+        item.region,
+        item.categoryLabel,
+      ].join(" ")
+    );
+  }
+
+  function applyItemDataset(el, item) {
+    el.id = item.id;
+    el.setAttribute("data-category", item.category || "");
+    el.setAttribute("data-period", item.period || "");
+    el.setAttribute("data-field", item.field || "");
+    el.setAttribute("data-country", item.country || "");
+    el.setAttribute("data-country-name", item.country || "");
+    el.setAttribute("data-region", item.region || "");
+    if (item.birthYear != null) {
+      el.setAttribute("data-birth-year", String(item.birthYear));
+    } else {
+      el.removeAttribute("data-birth-year");
+    }
+    el.setAttribute("data-search", itemSearchText(item));
+  }
+
+  function categoryLabelForItem(item, labels) {
+    if (item.categoryLabel) return item.categoryLabel;
+    if (item.category === "world") return labels.categoryWorld;
+    if (item.category === "azturk") return labels.categoryAzturk;
+    return "";
+  }
+
+  function renderTableCell(text, className) {
+    var td = document.createElement("td");
+    if (className) td.className = className;
+    td.textContent = text || "—";
+    return td;
+  }
+
+  function renderTableRow(item, labels) {
+    var tr = document.createElement("tr");
+    tr.className = "encyclopedia-row";
+    applyItemDataset(tr, item);
+
+    var nameTd = document.createElement("td");
+    nameTd.className = "col-name";
+    var nameLink = document.createElement("a");
+    nameLink.className = "row-name-link";
+    nameLink.href = profileHref(item);
+    nameLink.setAttribute("aria-label", labels.openProfile + ": " + item.name);
+    var emojiSpan = document.createElement("span");
+    emojiSpan.className = "row-emoji";
+    emojiSpan.setAttribute("aria-hidden", "true");
+    emojiSpan.textContent = item.emoji || "⭐";
+    var nameSpan = document.createElement("span");
+    nameSpan.className = "row-name";
+    nameSpan.textContent = item.name;
+    nameLink.appendChild(emojiSpan);
+    nameLink.appendChild(nameSpan);
+    nameTd.appendChild(nameLink);
+    tr.appendChild(nameTd);
+
+    tr.appendChild(renderTableCell(item.dates, "col-dates"));
+    tr.appendChild(renderTableCell(categoryLabelForItem(item, labels), "col-category"));
+    tr.appendChild(renderTableCell(item.period, "col-period"));
+    tr.appendChild(renderTableCell(item.field, "col-field"));
+    tr.appendChild(renderTableCell(item.country, "col-country"));
+
+    var profileTd = document.createElement("td");
+    profileTd.className = "col-profile";
+    var profileLink = document.createElement("a");
+    profileLink.className = "row-profile-link";
+    profileLink.href = profileHref(item);
+    profileLink.textContent = labels.openProfile;
+    profileTd.appendChild(profileLink);
+    tr.appendChild(profileTd);
+
+    return tr;
+  }
+
   function renderCard(item, labels) {
     var card = document.createElement("a");
     card.className = "person-card";
-    card.id = item.id;
+    applyItemDataset(card, item);
     card.href = profileHref(item);
     card.setAttribute("aria-label", labels.openProfile + ": " + item.name);
-    card.setAttribute("data-group", item.group || "");
-    card.setAttribute("data-period", item.period || "");
-    card.setAttribute("data-field", item.field || "");
-    card.setAttribute("data-country", item.country || "");
-    card.setAttribute("data-country-name", item.country || "");
-    card.setAttribute("data-region", item.region || "");
-    if (item.birthYear != null) {
-      card.setAttribute("data-birth-year", String(item.birthYear));
-    }
-    card.setAttribute(
-      "data-search",
-      norm(
-        [
-          item.name,
-          item.dates,
-          item.summary,
-          item.country,
-          item.field,
-          item.period,
-          item.region,
-          item.groupLabel,
-        ].join(" ")
-      )
-    );
 
     var top = document.createElement("div");
     top.className = "card-top";
@@ -275,24 +364,43 @@
     return card;
   }
 
-  function getCardName(card) {
-    var el = card.querySelector(".card-name");
-    return el ? el.textContent.replace(/\s+/g, " ").trim() : "";
+  function getItemName(el) {
+    var nameEl = el.querySelector(".card-name, .row-name");
+    return nameEl ? nameEl.textContent.replace(/\s+/g, " ").trim() : "";
   }
 
-  function getSortValue(card, sortCol) {
+  function getSortValue(el, sortCol) {
     switch (sortCol) {
       case "period":
-        return card.dataset.period || "";
+        return el.dataset.period || "";
       case "field":
-        return card.dataset.field || "";
+        return el.dataset.field || "";
       case "country":
-        return card.dataset.countryName || card.dataset.country || "";
+        return el.dataset.countryName || el.dataset.country || "";
+      case "category":
+        return el.dataset.category || "";
       case "birth":
-        return parseInt(card.dataset.birthYear, 10) || 99999;
+        return parseInt(el.dataset.birthYear, 10) || 99999;
       case "name":
       default:
-        return getCardName(card);
+        return getItemName(el);
+    }
+  }
+
+  function readViewState() {
+    try {
+      var mode = sessionStorage.getItem(VIEW_STORAGE_KEY);
+      return mode === "table" ? "table" : "cards";
+    } catch (e) {
+      return "cards";
+    }
+  }
+
+  function saveViewState(mode) {
+    try {
+      sessionStorage.setItem(VIEW_STORAGE_KEY, mode === "table" ? "table" : "cards");
+    } catch (e) {
+      /* ignore */
     }
   }
 
@@ -303,13 +411,17 @@
       var s = JSON.parse(raw);
       if (!s || typeof s !== "object") return null;
       var col = s.sortCol;
+      if (col === "group") {
+        col = "category";
+      }
       var dir = s.sortDir;
       if (
         col !== "name" &&
         col !== "country" &&
         col !== "field" &&
         col !== "period" &&
-        col !== "birth"
+        col !== "birth" &&
+        col !== "category"
       ) {
         return null;
       }
@@ -335,12 +447,12 @@
     return { sortCol: "name", sortDir: 1 };
   }
 
-  function showAllCards(cards, resultCount, noResults, countLabels) {
-    cards.forEach(function (card) {
-      card.classList.remove("is-filtered-out", "is-match", "is-excluded");
+  function showAllItems(items, resultCount, noResults, countLabels) {
+    items.forEach(function (el) {
+      el.classList.remove("is-filtered-out", "is-match", "is-excluded");
     });
     if (resultCount && countLabels) {
-      resultCount.innerHTML = countLabels.all(cards.length);
+      resultCount.innerHTML = countLabels.all(items.length);
     }
     if (noResults) {
       noResults.classList.remove("visible");
@@ -349,14 +461,14 @@
 
   function clearFilterInputs(
     searchInput,
-    filterGroup,
+    filterCategory,
     filterPeriod,
     filterField,
     filterCountry,
     filterRegion
   ) {
     if (searchInput) searchInput.value = "";
-    if (filterGroup) filterGroup.value = "";
+    if (filterCategory) filterCategory.value = "";
     if (filterPeriod) filterPeriod.value = "";
     if (filterField) filterField.value = "";
     if (filterCountry) filterCountry.value = "";
@@ -372,12 +484,16 @@
     }
   }
 
-  function renderCardsBatched(items, grid, ui, done) {
+  function renderCatalogBatched(items, grid, tableBody, ui, done) {
     var index = 0;
     function batch() {
       var end = Math.min(index + CARD_RENDER_BATCH, items.length);
       for (; index < end; index++) {
-        grid.appendChild(renderCard(items[index], ui));
+        var item = items[index];
+        grid.appendChild(renderCard(item, ui));
+        if (tableBody) {
+          tableBody.appendChild(renderTableRow(item, ui));
+        }
       }
       if (index < items.length) {
         if (typeof requestAnimationFrame === "function") {
@@ -399,12 +515,13 @@
   function init() {
     var catalog = document.getElementById("encyclopedia-catalog");
     var grid = catalog ? catalog.querySelector(".cards-grid") : null;
+    var tableBody = document.getElementById("encyclopediaTableBody");
     if (!grid || !DATA.length) return;
 
     var ui = t();
     var countLabels = filterCountLabels();
     var searchInput = document.getElementById("searchInput");
-    var filterGroup = document.getElementById("filterGroup");
+    var filterCategory = document.getElementById("filterCategory");
     var filterPeriod = document.getElementById("filterPeriod");
     var filterField = document.getElementById("filterField");
     var filterCountry = document.getElementById("filterCountry");
@@ -415,9 +532,12 @@
     var sortBy = document.getElementById("sortBy");
     var sortAscBtn = document.getElementById("sortAscBtn");
     var sortDescBtn = document.getElementById("sortDescBtn");
+    var viewCardsBtn = document.getElementById("viewCardsBtn");
+    var viewTableBtn = document.getElementById("viewTableBtn");
     var savedSort = readSortState() || defaultSortState();
     var sortCol = savedSort.sortCol;
     var sortDir = savedSort.sortDir;
+    var viewMode = readViewState();
     var periodOptions = uniqueSorted(
       DATA.map(function (d) {
         return d.period;
@@ -440,19 +560,22 @@
     );
 
     if (catalog) {
+      catalog.setAttribute("data-catalog-view", viewMode);
       catalog.setAttribute("aria-busy", "true");
     }
 
-    renderCardsBatched(DATA, grid, ui, function () {
+    renderCatalogBatched(DATA, grid, tableBody, ui, function () {
       if (catalog) {
         catalog.removeAttribute("aria-busy");
       }
       setupCatalog({
+        catalog: catalog,
         grid: grid,
+        tableBody: tableBody,
         ui: ui,
         countLabels: countLabels,
         searchInput: searchInput,
-        filterGroup: filterGroup,
+        filterCategory: filterCategory,
         filterPeriod: filterPeriod,
         filterField: filterField,
         filterCountry: filterCountry,
@@ -463,6 +586,9 @@
         sortBy: sortBy,
         sortAscBtn: sortAscBtn,
         sortDescBtn: sortDescBtn,
+        viewCardsBtn: viewCardsBtn,
+        viewTableBtn: viewTableBtn,
+        viewMode: viewMode,
         sortCol: sortCol,
         sortDir: sortDir,
         periodOptions: periodOptions,
@@ -474,11 +600,13 @@
   }
 
   function setupCatalog(ctx) {
+    var catalog = ctx.catalog;
     var grid = ctx.grid;
+    var tableBody = ctx.tableBody;
     var ui = ctx.ui;
     var countLabels = ctx.countLabels;
     var searchInput = ctx.searchInput;
-    var filterGroup = ctx.filterGroup;
+    var filterCategory = ctx.filterCategory;
     var filterPeriod = ctx.filterPeriod;
     var filterField = ctx.filterField;
     var filterCountry = ctx.filterCountry;
@@ -489,23 +617,27 @@
     var sortBy = ctx.sortBy;
     var sortAscBtn = ctx.sortAscBtn;
     var sortDescBtn = ctx.sortDescBtn;
+    var viewCardsBtn = ctx.viewCardsBtn;
+    var viewTableBtn = ctx.viewTableBtn;
     var sortCol = ctx.sortCol;
     var sortDir = ctx.sortDir;
+    var viewMode = ctx.viewMode || "cards";
 
     var cards = grid.querySelectorAll(".person-card");
+    var rows = tableBody ? tableBody.querySelectorAll(".encyclopedia-row") : [];
     if (!cards.length) return;
 
-    if (filterGroup) {
-      filterGroup.innerHTML = "";
+    if (filterCategory) {
+      filterCategory.innerHTML = "";
       var g0 = document.createElement("option");
       g0.value = "";
-      g0.textContent = ui.groupAll;
-      filterGroup.appendChild(g0);
-      [["azturk", ui.groupAzturk], ["world", ui.groupWorld]].forEach(function (pair) {
+      g0.textContent = ui.categoryAll;
+      filterCategory.appendChild(g0);
+      [["azturk", ui.categoryAzturk], ["world", ui.categoryWorld]].forEach(function (pair) {
         var opt = document.createElement("option");
         opt.value = pair[0];
         opt.textContent = pair[1];
-        filterGroup.appendChild(opt);
+        filterCategory.appendChild(opt);
       });
     }
 
@@ -518,7 +650,38 @@
     if (searchInput) searchInput.setAttribute("aria-label", ui.searchAria);
     if (clearFilters) clearFilters.textContent = ui.clear;
 
-    function updateSortDirUi() {
+    function updateViewToggleUi() {
+      var cardsActive = viewMode !== "table";
+      if (catalog) {
+        catalog.setAttribute("data-catalog-view", cardsActive ? "cards" : "table");
+      }
+      if (viewCardsBtn) {
+        viewCardsBtn.classList.toggle("is-active", cardsActive);
+        viewCardsBtn.setAttribute("aria-pressed", cardsActive ? "true" : "false");
+        viewCardsBtn.title = ui.viewCardsTitle;
+        var cardsText = viewCardsBtn.querySelector(".catalog-view-toggle__text");
+        if (cardsText) cardsText.textContent = ui.viewCards;
+      }
+      if (viewTableBtn) {
+        viewTableBtn.classList.toggle("is-active", !cardsActive);
+        viewTableBtn.setAttribute("aria-pressed", cardsActive ? "false" : "true");
+        viewTableBtn.title = ui.viewTableTitle;
+        var tableText = viewTableBtn.querySelector(".catalog-view-toggle__text");
+        if (tableText) tableText.textContent = ui.viewTable;
+      }
+      var viewToggle = document.querySelector(".catalog-view-toggle");
+      if (viewToggle) {
+        viewToggle.setAttribute("aria-label", ui.viewToggleAria);
+      }
+    }
+
+    function setViewMode(mode) {
+      viewMode = mode === "table" ? "table" : "cards";
+      saveViewState(viewMode);
+      updateViewToggleUi();
+    }
+
+    function updateSortUi() {
       var ascending = sortDir === 1;
       if (sortBy && sortBy.value !== sortCol) {
         sortBy.value = sortCol;
@@ -531,14 +694,47 @@
         sortDescBtn.classList.toggle("is-active", !ascending);
         sortDescBtn.setAttribute("aria-pressed", ascending ? "false" : "true");
       }
+      updateTableSortUi();
     }
 
-    function compareCards(a, b) {
+    function updateTableSortUi() {
+      var table = document.querySelector(".encyclopedia-table");
+      if (!table) return;
+      var headers = table.querySelectorAll("thead th[data-col]");
+      Array.prototype.forEach.call(headers, function (th) {
+        var col = th.getAttribute("data-col");
+        var active = col === sortCol;
+        th.classList.toggle("asc", active && sortDir === 1);
+        th.classList.toggle("desc", active && sortDir === -1);
+        th.setAttribute("aria-sort", active ? (sortDir === 1 ? "ascending" : "descending") : "none");
+      });
+    }
+
+    function initTableControls() {
+      var table = document.querySelector(".encyclopedia-table");
+      if (!table) return;
+      Array.prototype.forEach.call(
+        table.querySelectorAll("thead th.sortable[data-col]"),
+        function (th) {
+          th.addEventListener("click", function () {
+            var col = th.getAttribute("data-col");
+            if (!col) return;
+            var nextDir = sortCol === col ? sortDir * -1 : 1;
+            applySortState(col, nextDir, true);
+          });
+        }
+      );
+      if (window.DAAB_TABLE_RESIZE && typeof window.DAAB_TABLE_RESIZE.initTable === "function") {
+        window.DAAB_TABLE_RESIZE.initTable(table);
+      }
+    }
+
+    function compareItems(a, b) {
       if (sortCol === "birth") {
         var av = getSortValue(a, "birth");
         var bv = getSortValue(b, "birth");
         if (av !== bv) return sortDir * (av - bv);
-        return sortDir * localeCompare(getCardName(a), getCardName(b));
+        return sortDir * localeCompare(getItemName(a), getItemName(b));
       }
       var primary =
         sortDir * localeCompare(getSortValue(a, sortCol), getSortValue(b, sortCol));
@@ -546,18 +742,26 @@
       return sortDir * localeCompare(a.id || "", b.id || "");
     }
 
-    function reorderCards() {
+    function reorderCatalog() {
       var cardList = Array.prototype.slice.call(cards);
+      var rowMap = {};
+      Array.prototype.forEach.call(rows, function (row) {
+        rowMap[row.id] = row;
+      });
       var visible = cardList.filter(function (card) {
         return !card.classList.contains("is-filtered-out");
       });
       var hidden = cardList.filter(function (card) {
         return card.classList.contains("is-filtered-out");
       });
-      visible.sort(compareCards);
-      hidden.sort(compareCards);
+      visible.sort(compareItems);
+      hidden.sort(compareItems);
       visible.concat(hidden).forEach(function (card) {
         grid.appendChild(card);
+        var row = rowMap[card.id];
+        if (row && tableBody) {
+          tableBody.appendChild(row);
+        }
       });
     }
 
@@ -567,8 +771,8 @@
       if (persist !== false) {
         saveSortState(sortCol, sortDir);
       }
-      updateSortDirUi();
-      reorderCards();
+      updateSortUi();
+      reorderCatalog();
     }
 
     function setSortDir(dir) {
@@ -580,21 +784,34 @@
       applySortState(defaults.sortCol, defaults.sortDir, true);
     }
 
-    showAllCards(cards, resultCount, noResults, countLabels);
+    showAllItems(cards, resultCount, noResults, countLabels);
     clearFilterInputs(
       searchInput,
-      filterGroup,
+      filterCategory,
       filterPeriod,
       filterField,
       filterCountry,
       filterRegion
     );
     applySortState(sortCol, sortDir, false);
+    updateViewToggleUi();
+    initTableControls();
+
+    if (viewCardsBtn) {
+      viewCardsBtn.addEventListener("click", function () {
+        setViewMode("cards");
+      });
+    }
+    if (viewTableBtn) {
+      viewTableBtn.addEventListener("click", function () {
+        setViewMode("table");
+      });
+    }
 
     if (!searchInput || !filterCountry) return;
 
     function updateFilterStyles() {
-      ["filterGroup", "filterPeriod", "filterField", "filterCountry", "filterRegion"].forEach(
+      ["filterCategory", "filterPeriod", "filterField", "filterCountry", "filterRegion"].forEach(
         function (id) {
           var el = document.getElementById(id);
           if (!el) return;
@@ -604,39 +821,52 @@
       );
     }
 
-    function cardMatches(card, q, group, period, field, country, region) {
-      if (group && card.dataset.group !== group) return false;
-      if (period && card.dataset.period !== period) return false;
-      if (field && card.dataset.field !== field) return false;
-      if (country && card.dataset.country !== country) return false;
-      if (region && card.dataset.region !== region) return false;
-      var hay = card.dataset.search || "";
+    function itemMatches(el, q, category, period, field, country, region) {
+      if (category && el.dataset.category !== category) return false;
+      if (period && el.dataset.period !== period) return false;
+      if (field && el.dataset.field !== field) return false;
+      if (country && el.dataset.country !== country) return false;
+      if (region && el.dataset.region !== region) return false;
+      var hay = el.dataset.search || "";
       if (q && hay.indexOf(q) === -1) return false;
       return true;
     }
 
+    function setFilteredState(el, match) {
+      el.classList.toggle("is-filtered-out", !match);
+    }
+
     function applyFilters() {
       var q = normQuery(searchInput.value);
-      var group = filterGroup ? filterGroup.value : "";
+      var category = filterCategory ? filterCategory.value : "";
       var period = filterPeriod ? filterPeriod.value : "";
       var field = filterField ? filterField.value : "";
       var country = filterCountry.value;
       var region = filterRegion ? filterRegion.value : "";
-      var filtering = !!(q || group || period || field || country || region);
+      var filtering = !!(q || category || period || field || country || region);
       var visible = 0;
 
       if (!filtering) {
-        showAllCards(cards, resultCount, noResults, countLabels);
+        showAllItems(cards, resultCount, noResults, countLabels);
+        Array.prototype.forEach.call(rows, function (row) {
+          setFilteredState(row, true);
+        });
         updateFilterStyles();
-        reorderCards();
+        reorderCatalog();
         syncToolbarFilterBadge();
         return;
       }
 
       cards.forEach(function (card) {
-        var match = cardMatches(card, q, group, period, field, country, region);
-        card.classList.toggle("is-filtered-out", !match);
+        var match = itemMatches(card, q, category, period, field, country, region);
+        setFilteredState(card, match);
         if (match) visible++;
+      });
+      Array.prototype.forEach.call(rows, function (row) {
+        setFilteredState(
+          row,
+          itemMatches(row, q, category, period, field, country, region)
+        );
       });
 
       if (resultCount) {
@@ -646,16 +876,17 @@
         noResults.classList.toggle("visible", visible === 0);
       }
       updateFilterStyles();
-      reorderCards();
+      reorderCatalog();
       syncToolbarFilterBadge();
     }
 
     function scrollToFirstVisible(countryName) {
       if (!countryName) return;
       var target = null;
-      cards.forEach(function (card) {
-        if (target || card.classList.contains("is-filtered-out")) return;
-        if (card.dataset.country === countryName) target = card;
+      var list = viewMode === "table" ? rows : cards;
+      Array.prototype.forEach.call(list, function (el) {
+        if (target || el.classList.contains("is-filtered-out")) return;
+        if (el.dataset.country === countryName) target = el;
       });
       if (target) {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -669,7 +900,7 @@
       scrollToFirstVisible(filterCountry.value);
     });
 
-    if (filterGroup) filterGroup.addEventListener("change", applyFilters);
+    if (filterCategory) filterCategory.addEventListener("change", applyFilters);
     if (filterPeriod) filterPeriod.addEventListener("change", applyFilters);
     if (filterField) filterField.addEventListener("change", applyFilters);
     if (filterRegion) filterRegion.addEventListener("change", applyFilters);
@@ -707,7 +938,7 @@
       clearFilters.addEventListener("click", function () {
         clearFilterInputs(
           searchInput,
-          filterGroup,
+          filterCategory,
           filterPeriod,
           filterField,
           filterCountry,

@@ -7,7 +7,8 @@ from pathlib import Path
 
 from _paths import ROOT
 
-AZ_CHAR = re.compile(r"[əğıöüşçƏĞİÖÜŞÇ]")
+# Distinctive Azerbaijani letters (excludes ü/ö/ş/ç/ğ shared with Turkish prose).
+AZ_CHAR = re.compile(r"[əı]")
 EN_ROOT = ROOT / "en" / "prominent_figures"
 TAG = re.compile(r"<[^>]+>")
 

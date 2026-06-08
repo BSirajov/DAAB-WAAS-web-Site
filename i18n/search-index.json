@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-06-06",
+  "generated": "2026-06-08",
   "entryCount": 532,
   "entries": [
     {
@@ -139,12 +139,12 @@
       "type": "page",
       "pageId": "encyclopedia",
       "anchor": "",
-      "title": "DAAB — Ensiklopediya: Görkəmli şəxsiyyətlər",
-      "summary": "Azərbaycan və türk dünyası ilə dünya elminin görkəmli şəxsiyyətləri — tarixi dövr, sahə, ölkə və qrup üzrə axtarış və filtr.",
+      "title": "DAAB — Xəzinə: Görkəmli şəxsiyyətlər",
+      "summary": "Xəzinə kataloqu: Azərbaycan və türk dünyası ilə dünya elminin görkəmli şəxsiyyətləri — tarixi dövr, sahə, ölkə və kateqoriya üzrə axtarış və filtr.",
       "tag": "Səhifə",
       "icon": "👤",
       "boost": 12,
-      "norm": "daab ensiklopediya go rkemli s exsiyyetler azerbaycan ve tu rk du nyasi ile du nya elminin go rkemli s exsiyyetleri tarixi do vr sahe o lke ve qrup u zre axtaris ve filtr."
+      "norm": "daab xezine go rkemli s exsiyyetler xezine kataloqu azerbaycan ve tu rk du nyasi ile du nya elminin go rkemli s exsiyyetleri tarixi do vr sahe o lke ve kateqoriya u zre axtaris ve filtr."
     },
     {
       "id": "page-encyclopedia-en",
@@ -152,12 +152,12 @@
       "type": "page",
       "pageId": "encyclopedia",
       "anchor": "",
-      "title": "WAAS — Encyclopedia: Prominent figures",
-      "summary": "Prominent figures from Azerbaijani and Turkic heritage and world science — search, filter, and sort by period, field, country, and group.",
+      "title": "WAAS — Treasury: Prominent figures",
+      "summary": "Prominent figures from Azerbaijani and Turkic heritage and world science — search, filter, and sort by period, field, country, and category.",
       "tag": "Page",
       "icon": "👤",
       "boost": 12,
-      "norm": "waas encyclopedia prominent figures prominent figures from azerbaijani and turkic heritage and world science search filter and sort by period field country and group."
+      "norm": "waas treasury prominent figures prominent figures from azerbaijani and turkic heritage and world science search filter and sort by period field country and category."
     },
     {
       "id": "page-industrial-revolutions-az",
@@ -217,12 +217,12 @@
       "type": "page",
       "pageId": "prominent-figure",
       "anchor": "",
-      "title": "DAAB — Ensiklopediya: Görkəmli şəxsiyyətlər",
-      "summary": "Azərbaycan və türk dünyası ilə dünya elminin görkəmli şəxsiyyətləri — tarixi dövr, sahə, ölkə və qrup üzrə axtarış və filtr.",
+      "title": "DAAB — Xəzinə: Görkəmli şəxsiyyətlər",
+      "summary": "Xəzinə kataloqu: Azərbaycan və türk dünyası ilə dünya elminin görkəmli şəxsiyyətləri — tarixi dövr, sahə, ölkə və kateqoriya üzrə axtarış və filtr.",
       "tag": "Səhifə",
       "icon": "📄",
       "boost": 12,
-      "norm": "daab ensiklopediya go rkemli s exsiyyetler azerbaycan ve tu rk du nyasi ile du nya elminin go rkemli s exsiyyetleri tarixi do vr sahe o lke ve qrup u zre axtaris ve filtr."
+      "norm": "daab xezine go rkemli s exsiyyetler xezine kataloqu azerbaycan ve tu rk du nyasi ile du nya elminin go rkemli s exsiyyetleri tarixi do vr sahe o lke ve kateqoriya u zre axtaris ve filtr."
     },
     {
       "id": "page-prominent-figure-en",
@@ -230,12 +230,12 @@
       "type": "page",
       "pageId": "prominent-figure",
       "anchor": "",
-      "title": "WAAS — Encyclopedia: Prominent figures",
-      "summary": "Prominent figures from Azerbaijani and Turkic heritage and world science — search, filter, and sort by period, field, country, and group.",
+      "title": "WAAS — Treasury: Prominent figures",
+      "summary": "Prominent figures from Azerbaijani and Turkic heritage and world science — search, filter, and sort by period, field, country, and category.",
       "tag": "Page",
       "icon": "📄",
       "boost": 12,
-      "norm": "waas encyclopedia prominent figures prominent figures from azerbaijani and turkic heritage and world science search filter and sort by period field country and group."
+      "norm": "waas treasury prominent figures prominent figures from azerbaijani and turkic heritage and world science search filter and sort by period field country and category."
     },
     {
       "id": "page-forum-2024-presentations-az",
@@ -295,12 +295,12 @@
       "type": "page",
       "pageId": "forum-anas-leadership-speeches",
       "anchor": "",
-      "title": "AMEA rəhbərliyi — DAAB",
-      "summary": "Forum 2024 — Azərbaycan Milli Elmlər Akademiyasının rəhbərliyinin nitqləri.",
+      "title": "Akademiklər — DAAB",
+      "summary": "Forum 2024 — AMEA akademiklərinin nitqləri.",
       "tag": "Səhifə",
       "icon": "🔬",
       "boost": 12,
-      "norm": "amea rehberliyi daab forum 2024 azerbaycan milli elmler akademiyasinin rehberliyinin nitqleri."
+      "norm": "akademikler daab forum 2024 amea akademiklerinin nitqleri."
     },
     {
       "id": "page-forum-anas-leadership-speeches-en",
@@ -308,12 +308,12 @@
       "type": "page",
       "pageId": "forum-anas-leadership-speeches",
       "anchor": "",
-      "title": "ANAS Leadership — WAAS",
-      "summary": "Forum 2024 — speeches by leaders of the Azerbaijan National Academy of Sciences.",
+      "title": "Academicians — WAAS",
+      "summary": "Forum 2024 — speeches by ANAS academicians.",
       "tag": "Page",
       "icon": "🔬",
       "boost": 12,
-      "norm": "anas leadership waas forum 2024 speeches by leaders of the azerbaijan national academy of sciences."
+      "norm": "academicians waas forum 2024 speeches by anas academicians."
     },
     {
       "id": "page-forum-official-az",
@@ -412,7 +412,7 @@
       "type": "page",
       "pageId": "forum-photos-gallery",
       "anchor": "",
-      "title": "Photos gallery — WAAS",
+      "title": "Photo gallery — WAAS",
       "summary": "Photo gallery from the First Forum of Azerbaijani Scientists Living Abroad, September 2024.",
       "tag": "Page",
       "icon": "📷",

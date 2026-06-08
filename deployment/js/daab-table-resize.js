@@ -15,6 +15,12 @@
     "col-degree": { min: 72, max: 220, default: 130 },
     "col-email": { min: 140, max: 520, default: 300 },
     "col-cins": { min: 0, max: 120, default: 0 },
+    "col-dates": { min: 88, max: 180, default: 112 },
+    "col-category": { min: 100, max: 280, default: 168 },
+    "col-period": { min: 88, max: 200, default: 128 },
+    "col-field": { min: 100, max: 360, default: 176 },
+    "col-country": { min: 88, max: 220, default: 128 },
+    "col-profile": { min: 72, max: 160, default: 96 },
   };
 
   function colKeyFromTh(th) {
@@ -248,7 +254,7 @@
   function initAll(root) {
     var scope = root || document;
     var tables = scope.querySelectorAll(
-      "table[data-daab-resizable-table], [data-daab-page-id=\"scientists-list\"] .table-scroll > table"
+      "table[data-daab-resizable-table], [data-daab-page-id=\"scientists-list\"] .table-scroll > table, [data-daab-page-id=\"encyclopedia\"] .encyclopedia-table[data-daab-resizable-table]"
     );
     for (var i = 0; i < tables.length; i++) {
       initTable(tables[i]);

@@ -33,7 +33,7 @@ except ImportError:
 
 AZ_CHAR = re.compile(r"[əğıöüşçƏĞİÖÜŞÇ]")
 # Person names and Latin titles (Unicode letters allowed)
-NAME_LIKE = r"[\w\s\.\-\(\)\'’]{2,80}?"
+NAME_LIKE = r"[\w\s\.\-\(\)\'’,,]{2,120}?"  # honorifics may contain commas
 
 # ---------------------------------------------------------------------------
 # 1. UI STRING REPLACEMENTS  (applied to the whole HTML, longest first)
@@ -110,6 +110,8 @@ UI_REPLACEMENTS: list[tuple[str, str]] = [
     ("Məzmuna keç", "Skip to content"),
     ("Onun fəaliyyəti ümumbəşəri tərəqqi tarixində yadda qalan iz buraxmışdır.",
      "This work left a lasting mark in the history of universal human progress."),
+    ('pf-hero-dates">əfsanəvi', 'pf-hero-dates">legendary'),
+    ('info-val">əfsanəvi', 'info-val">legendary'),
 ]
 
 
@@ -126,9 +128,9 @@ def _tf(field_az: str) -> str:
 
 TEMPLATE_PATTERNS: list[tuple[re.Pattern, object]] = [
 
-    # world group – intro (name + optional dates + country/region)
+    # world group – intro (full name with dates + country/region)
     (re.compile(
-        rf'({NAME_LIKE}(?:\s*\([^)]*\))?)\s+([^<]+?) elmi və intellektual ənənəsini dünya miqyasında tanıdan görkəmli şəxsiyyətlərdən biridir\.'
+        r'([^<]+?\([^)]*\))\s+([^<]+?)\s+elmi və intellektual ənənəsini dünya miqyasında tanıdan görkəmli şəxsiyyətlərdən biridir\.'
     ),
      lambda m: (
          f'{m.group(1).strip()} is one of the outstanding figures who brought the scientific and '
@@ -327,19 +329,19 @@ UNIQUE_TRANSLATIONS: list[tuple[str, str]] = [
 
     # === bilge_xaqan ===
     ("Bilgə Xaqan (683–734) — İkinci Göytürk Xaqanlığının ən parlaq hökmdarı; türk yazılı ədəbiyyatının ilk böyük nümayəndəsi.",
-     "Bilge Khagan (683–734) — the most illustrious ruler of the Second Göktürk Khaganate and one of the earliest great representatives of Turkic written literature."),
+     "Bilge Khagan (683–734) — the most illustrious ruler of the Second Gokturk Khaganate and one of the earliest great representatives of Turkic written literature."),
     ("Qardaşı Kül Tiginlə birlikdə Göytürk dövlətini yenidən qurmuş, çökən xaqanlığı dirçəltmişdir.",
-     "Together with his brother Kül Tigin, he rebuilt the Göktürk state and revived a khaganate that had been on the verge of collapse."),
+     "Together with his brother Kul Tigin, he rebuilt the Gokturk state and revived a khaganate that had been on the verge of collapse."),
     ("Onun adından yazılmış Orxon kitabələri türk dilinin ən qədim ədəbi abidələridir — bir hökmdarın öz xalqına vəsiyyəti, xəbərdarlığı və sevgi dolu müraciətidir.",
      "The Orkhon inscriptions composed in his name are among the earliest literary monuments of the Turkic language — a ruler's testament, admonition, and declaration of devotion to his people."),
     ("Bilgə Xaqan — 683-cü ildə dünyaya gəlmiş, İkinci Göytürk Xaqanlığını (682–744) canlandırmış böyük türk dövlət adamı və siyasi mütəfəkkir.",
-     "Bilge Khagan — born in 683, he was the great Turkic statesman and political thinker who revitalized the Second Göktürk Khaganate (682–744)."),
+     "Bilge Khagan — born in 683, he was the great Turkic statesman and political thinker who revitalized the Second Gokturk Khaganate (682–744)."),
     ("\"Bilgə\" sözü türkcədə \"müdrik\", \"bilikli\" mənasını verir — bu ad onun xarakterini dəqiq təsvir edir.",
      "The word 'Bilge' means 'wise' or 'learned' in Turkic — a title that precisely describes his character."),
     ("O, güclü bir sərkərdə olmaqla yanaşı, dövlət idarəçiliyini dərin düşüncəylə aparan bir hökmdar idi.",
      "He was not only a formidable military commander but also a ruler who governed the state with profound deliberation."),
     ("683-cü ildə atası İlteriş Xaqanın vəfatından sonra böyük qardaşı Moxilian xaqan taxtına oturmuş, özü isə \"şad\" (şahzadə) rütbəsini almışdır.",
-     "After the death of his father İlterish Khagan in 683, his elder brother Mochilian ascended the khaganal throne, while Bilge himself received the title of 'shad' (prince)."),
+     "After the death of his father Ilterish Khagan in 683, his elder brother Mochilian ascended the khaganal throne, while Bilge himself received the title of 'shad' (prince)."),
     ("Qardaşı Kül Tiginlə birlikdə onlarla döyüşdə türk xalqlarını aparmış, Çin, Türgiş, Qırgız, Tatabı kimi güclü düşmənlər üzərində qələbələr qazanmışdır.",
      "Together with his brother Kül Tigin, he led the Turkic peoples in dozens of battles, winning victories over powerful adversaries such as China, the Turgesh, the Kyrgyz, and the Tatabi."),
     ("716-cı ildə ağır xəstəlikdən vəfat edən böyük qardaşının ardından \"Bilgə Xaqan\" titulu ilə xaqan olmuşdur.",
@@ -428,6 +430,8 @@ UNIQUE_TRANSLATIONS: list[tuple[str, str]] = [
      "In the 1980s and 1990s, he stood at the forefront of the Azerbaijani national liberation movement."),
     ("1992-ci ildə Azərbaycan Respublikasının prezidenti seçilmiş, türk dünyası birliyi və milli suverenlik ideyalarını müdafiə etmişdir.",
      "In 1992, he was elected President of the Republic of Azerbaijan and championed the ideas of Turkic world unity and national sovereignty."),
+    ("— Elçibəy irsinin ideyası",
+     "— A core idea of Elchibey's legacy"),
 
     # === ehmed_cavad ===
     ("Azərbaycan Dövlət Himninin sözlərinin müəllifi, istiqlal və vətənpərvərlik poeziyasının görkəmli nümayəndəsi.",
@@ -507,9 +511,9 @@ UNIQUE_TRANSLATIONS: list[tuple[str, str]] = [
 
     # === evliya_celebi ===
     ("Evliya Çələbi 40 ildən çox səyahət etmiş Osmanlı səyyahı, on cildlik \"Səyahətnamə\"nin müəllifidir.",
-     "Evliya Çelebi was an Ottoman traveller who journeyed for more than forty years and authored the ten-volume Seyahatname (Book of Travels)."),
+     "Evliya Celebi was an Ottoman traveller who journeyed for more than forty years and authored the ten-volume Seyahatname (Book of Travels)."),
     ("Evliya Çələbi Osmanlı dünyasının ən böyük səyyah-yazıçısıdır.",
-     "Evliya Çelebi is the greatest traveller-writer of the Ottoman world."),
+     "Evliya Celebi is the greatest traveller-writer of the Ottoman world."),
     ("Onun \"Səyahətnamə\"si Balkanlardan Qafqaza, Yaxın Şərqdən Şimali Afrikaya qədər geniş coğrafiyanı əhatə edir.",
      "His Seyahatname encompasses a vast geography stretching from the Balkans to the Caucasus and from the Middle East to North Africa."),
     ("Əsərdə şəhərlər, dillər, adətlər, peşələr, musiqi və gündəlik həyat haqqında zəngin təsvirlər var.",
@@ -529,13 +533,13 @@ UNIQUE_TRANSLATIONS: list[tuple[str, str]] = [
 
     # === fuat_koprulu ===
     ("Türk ədəbiyyatı tarixi və türkologiya sahəsinin ən böyük alimlərindən biri, Köprülü məktəbinin yaradıcısı.",
-     "One of the greatest scholars in the fields of Turkish literary history and Turkology — the founder of the Köprülü school."),
+     "One of the greatest scholars in the fields of Turkish literary history and Turkology — the founder of the Koprulu school."),
     ("Fuat Köprülü türk ədəbiyyatı tarixini elmi metodlarla araşdıran ən böyük tədqiqatçılardan biridir.",
-     "Fuat Köprülü is one of the foremost scholars who investigated the history of Turkish literature with rigorous academic methods."),
+     "Fuat Koprulu is one of the foremost scholars who investigated the history of Turkish literature with rigorous academic methods."),
     ("O, xalq ədəbiyyatı, təsəvvüf, Osmanlı dövlətinin yaranması və türk mədəniyyətinin tarixi kökləri üzrə fundamental əsərlər yazmışdır.",
      "He wrote foundational works on folk literature, Sufism, the origins of the Ottoman state, and the historical roots of Turkic culture."),
     ("Köprülü məktəbi Türkiyədə humanitar elmlərin modernləşməsinə böyük təsir göstərdi.",
-     "The Köprülü school exerted a profound influence on the modernization of the humanities in Türkiye."),
+     "The Koprulu school exerted a profound influence on the modernization of the humanities in Türkiye."),
 
     # === fuzuli ===
     ("Füzuli Azərbaycan ədəbiyyatının ən yüksək zirvələrindən biri, üç dildə yazmış böyük lirik şair və \"Leyli və Məcnun\" poemasının müəllifidir.",
@@ -611,9 +615,9 @@ UNIQUE_TRANSLATIONS: list[tuple[str, str]] = [
 
     # === katib_celebi ===
     ("Katib Çələbi Osmanlı ensiklopedisti, coğrafiyaçı və biblioqrafı, \"Kəşfüz-Zünun\" və \"Cihannüma\" əsərlərinin müəllifidir.",
-     "Katip Çelebi was an Ottoman encyclopedist, geographer, and bibliographer — author of Kashf al-Zunun and Cihannuma."),
+     "Katip Celebi was an Ottoman encyclopedist, geographer, and bibliographer — author of Kashf al-Zunun and Cihannuma."),
     ("Katib Çələbi İslam və Osmanlı elmi ənənəsində bilikləri sistemləşdirən ən mühüm şəxsiyyətlərdən biridir.",
-     "Katip Çelebi is one of the most important figures in the Islamic and Ottoman scholarly tradition for systematizing knowledge."),
+     "Katip Celebi is one of the most important figures in the Islamic and Ottoman scholarly tradition for systematizing knowledge."),
     ("\"Kəşfüz-Zünun\" minlərlə kitab və elm sahəsi haqqında məlumat verən nəhəng biblioqrafik ensiklopediyadır.",
      "Kashf al-Zunun is a vast bibliographic encyclopedia providing information on thousands of books and fields of learning."),
     ("\"Cihannüma\" Osmanlı coğrafiya düşüncəsini dünya coğrafiyası ilə əlaqələndirən mühüm əsərdir.",
@@ -621,13 +625,13 @@ UNIQUE_TRANSLATIONS: list[tuple[str, str]] = [
 
     # === kul_tigin ===
     ("Kül Tigin (684–731) — İkinci Göytürk Xaqanlığının ən böyük sərkərdəsi; qardaşı Bilgə Xaqanın sağ qolu.",
-     "Kül Tigin (684–731) — the greatest military commander of the Second Göktürk Khaganate and the right hand of his brother Bilge Khagan."),
+     "Kul Tigin (684–731) — the greatest military commander of the Second Gokturk Khaganate and the right hand of his brother Bilge Khagan."),
     ("Bütün döyüşlərini qalibliklə bitirmiş, türk xalqlarının azadlığı uğrunda ömrünü sərf etmiş qəhrəman.",
      "A hero who concluded every battle in victory and devoted his life to the freedom of the Turkic peoples."),
     ("Onun şərəfinə qardaşı Bilgə Xaqan tərəfindən yazılmış Orxon kitabəsi türk dilinin ən qədim yazılı abidəsidir — bir hökmdarın böyük qardaşına sonsuz sevgi ilə yazdığı dastanvar mətn.",
      "The Orkhon inscription composed in his honour by his brother Bilge Khagan is one of the earliest written monuments of the Turkic language — an epic text written by a ruler with boundless devotion to his elder brother."),
     ("Kül Tigin — 684-cü ildə İlteriş Xaqanın oğlu olaraq dünyaya gəlmiş, türk tarixinin ən böyük hərbi dahilərindən biri kimi tanınmışdır.",
-     "Kül Tigin was born in 684 as the son of İlterish Khagan and is recognized as one of the greatest military geniuses in Turkic history."),
+     "Kul Tigin was born in 684 as the son of Ilterish Khagan and is recognized as one of the greatest military geniuses in Turkic history."),
     ("Kiçik yaşlarından döyüş meydanlarında böyümüş; at üstündəki ustalığı, cəsarəti və sürəti onu efsanəvi bir şəxsiyyətə çevirmişdir.",
      "He grew up on battlefields from an early age; his mastery on horseback, his courage, and his swiftness turned him into a legendary figure."),
     ("Qardaşı Bilgə Xaqanın siyasi idarəçiliyini hərbi gücü ilə tamamlamışdır.",
@@ -745,9 +749,9 @@ UNIQUE_TRANSLATIONS: list[tuple[str, str]] = [
 
     # === namiq_kamal ===
     ("Namiq Kamal Osmanlı Tanzimat ədəbiyyatının aparıcı siması, vətən, azadlıq və hüquq ideyalarını ədəbiyyata gətirən yazıçı və mütəfəkkirdir.",
-     "Namık Kemal is the leading figure of Ottoman Tanzimat literature — a writer and thinker who introduced the ideas of homeland, freedom, and rights into literature."),
+     "Namik Kemal is the leading figure of Ottoman Tanzimat literature — a writer and thinker who introduced the ideas of homeland, freedom, and rights into literature."),
     ("Namiq Kamal Osmanlı modernləşməsi dövründə ədəbiyyatı ictimai-siyasi fikir meydanına çevirdi.",
-     "Namık Kemal transformed literature into an arena of socio-political thought during the era of Ottoman modernization."),
+     "Namik Kemal transformed literature into an arena of socio-political thought during the era of Ottoman modernization."),
     ("Onun \"Vətən yaxud Silistre\" dramı vətənpərvərlik duyğusunu geniş kütlələrə çatdırdı.",
      "His drama Homeland, or Silistria conveyed the feeling of patriotism to broad audiences."),
     ("O, mətbuat, teatr və poeziya vasitəsilə konstitusiya, azadlıq və vətəndaşlıq ideyalarını müdafiə etdi.",
@@ -859,6 +863,12 @@ UNIQUE_TRANSLATIONS: list[tuple[str, str]] = [
     ("\"Kitab-ı Bahriye\" dənizçilər üçün limanlar, sahillər və marşrutlar haqqında qiymətli məlumat verən ensiklopedik əsərdir.",
      "Kitab-i Bahriye is an encyclopedic work providing valuable information for sailors on harbours, coastlines, and routes."),
 
+    # === qasim_bey_zakir ===
+    ("Qasım bəy Zakir Azərbaycan satirik şeirinin parlaq nümayəndəsi, ictimai qüsurları kəskin dillə ifşa edən şairdir.",
+     "Gasim bey Zakir is a leading figure of Azerbaijani satirical poetry — a poet who sharply exposed social failings."),
+    ("Qasım Bey Zakir Azərbaycan satirik şeirinin parlaq nümayəndəsi, ictimai qüsurları kəskin dillə ifşa edən şairdir.",
+     "Gasim Bey Zakir is a leading figure of Azerbaijani satirical poetry — a poet who sharply exposed social failings."),
+
     # === qara_qarayev ===
     ("Azərbaycan XX əsr bəstəkarlığının ən böyük nümayəndələrindən biri, balet və simfonik musiqi ustası.",
      "One of the greatest representatives of twentieth-century Azerbaijani composition — a master of ballet and symphonic music."),
@@ -875,7 +885,7 @@ UNIQUE_TRANSLATIONS: list[tuple[str, str]] = [
     ("Rəşid Behbudov bənzərsiz səs tembri və səhnə mədəniyyəti ilə Azərbaycan musiqisini beynəlxalq arenada tanıtdı.",
      "Rashid Behbudov introduced Azerbaijani music to the international arena through his incomparable vocal timbre and stage culture."),
     ("O, \"Arşın mal alan\" filmindəki rolu ilə geniş şöhrət qazandı.",
-     "He won wide acclaim for his role in the film Arshın Mal Alan."),
+     "He won wide acclaim for his role in the film Arshin Mal Alan."),
     ("Dünyanın bir çox ölkəsində çıxış edərək Azərbaycan mahnılarını müxtəlif xalqlara sevdirdi.",
      "Performing in many countries of the world, he won the affection of diverse peoples for Azerbaijani songs."),
 
@@ -1017,6 +1027,8 @@ EXTRA_TRANSLATIONS: list[tuple[str, str]] = [
      "The word 'Bilge' means 'wise' or 'learned' in Turkic — a title that precisely describes his character."),
     ("Əl-Biruni — 973-cü ildə Xarəzm şəhərinin Birun (xarici) məhəlləsində anadan olmuş, məhz bu səbəbdən 'Biruni' (xarici məhəlləli) adını almışdır.",
      "Al-Biruni was born in 973 in the Birun (outer) quarter of Khwarezm — a origin reflected in the name Biruni ('from the outer quarter')."),
+    ("Əl-Biruni — 973-cü ildə Xarəzm şəhərinin Birun (xarici) məhəlləsindəyə anadan olmuş, məhz bu səbəbdən 'Biruni' (xarici məhəlləli) adını almışdır.",
+     "Al-Biruni was born in 973 in the Birun (outer) quarter of Khwarezm — a origin reflected in the name Biruni ('from the outer quarter')."),
     ("\"Mən türk dillərini tam araşdırdım, onların düzgününü əyrisindən ayırd etdim. Bütün türk, türkmən, oğuz, çigil, yağma, qırğız tayfalarının dillərini öyrəndim.\" — Kaşğarinin önsözündən",
      "\"I have studied the Turkic languages thoroughly and distinguished their correct forms from incorrect ones. I learned the languages of all Turkic, Turkmen, Oghuz, Chigil, Yaghma, and Kyrgyz tribes.\" — From Kashgari's preface"),
     ("Buxara yaxınlığında Qəsr-i Arifan kəndindənanadan olan bu böyük sufi, 'Dildə xalq ilə, qəlbdə Allah ilə ol' prinsipini yaşayış tərzi halına gətirmiş; işlə, əmə klə, cəmiyyətin içindəolmaqla Allaha yaxınlaşmağı mümkün sayan bir təriqətin banisi olmuşdur.",
@@ -1106,22 +1118,23 @@ def _postprocess_labels_and_tags(html: str) -> str:
 
     def hero_repl(m: re.Match[str]) -> str:
         val = m.group(1).strip()
-        if AZ_CHAR.search(val):
-            val = translate_country(val)
+        tc = translate_country(val)
+        if tc != val:
+            val = tc
+        elif AZ_CHAR.search(val):
+            val = translate_field(val)
         return f'hero-tag gold">{val}</span>'
 
     out = re.sub(r'hero-tag gold">([^<]+)</span>', hero_repl, out)
 
     def info_repl(m: re.Match[str]) -> str:
         val = m.group(1).strip()
-        if not AZ_CHAR.search(val):
-            return m.group(0)
         if ", " in val:
             country, field = val.split(", ", 1)
             val = f"{translate_country(country)}, {translate_field(field)}"
         else:
-            translated = translate_country(val)
-            val = translated if translated != val else translate_field(val)
+            tc = translate_country(val)
+            val = tc if tc != val else translate_field(val)
         return f'info-val">{val}</span>'
 
     out = re.sub(r'info-val">([^<]+)</span>', info_repl, out)
@@ -1135,6 +1148,7 @@ def _postprocess_labels_and_tags(html: str) -> str:
 _ALL_PHRASES: list[tuple[str, str]] = (
     sorted(UNIQUE_TRANSLATIONS + EXTRA_TRANSLATIONS, key=lambda p: -len(p[0]))
     + sorted(UI_REPLACEMENTS, key=lambda p: -len(p[0]))
+    + sorted(PHRASE_REPLACEMENTS, key=lambda p: -len(p[0]))
 )
 
 
@@ -1179,4 +1193,6 @@ def translate_profile_html(html: str, name: str = "", az_source: str | None = No
             )
 
     out = apply_singular_pronouns(out)
+    # Glue fix: template chains sometimes omit a space after a full stop.
+    out = re.sub(r"([\w\)])\.([A-Z])", r"\1. \2", out)
     return out

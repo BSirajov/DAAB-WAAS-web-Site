@@ -9,7 +9,7 @@ from pathlib import Path
 
 from _paths import ROOT
 from _prominent_figure_en_strings import (
-    GROUP_LABEL_EN,
+    CATEGORY_LABEL_EN,
     translate_country,
     translate_field,
     translate_period,
@@ -40,7 +40,7 @@ RE_BIRTH = re.compile(
 )
 RE_YEAR = re.compile(r"(\d{3,4})")
 
-GROUP_LABELS = {
+CATEGORY_LABELS = {
     "azturk": "Azərbaycan və türk dünyası",
     "world": "Dünya alimləri",
 }
@@ -76,7 +76,96 @@ def birth_year(dates: str, birth_val: str) -> int | None:
     return None
 
 
-def parse_profile(path: Path, group: str) -> dict | None:
+RE_ROMAN_CENTURY = re.compile(
+    r"\b([IVXLCDM]{1,4})\s*(?:(?:-ci|-cü|-cu|-cü|-nci|-ncü|-ncu|-ncü)\s*)?əsr\b",
+    re.IGNORECASE,
+)
+RE_ORDINAL_CENTURY = re.compile(
+    r"\b(\d{1,2})(?:st|nd|rd|th)\s*[-–]?\s*(?:\d{1,2})?\s*(?:st|nd|rd|th)?\s*century\b",
+    re.IGNORECASE,
+)
+RE_ARABIC_CENTURY = re.compile(r"\b(\d{1,2})\s*(?:-ci|-cü|-cu|-cü|-nci|-ncü|-ncu|-ncü)\s*əsr\b", re.IGNORECASE)
+
+
+def _roman_to_int(value: str) -> int | None:
+    numerals = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+    text = value.upper()
+    if not text or any(ch not in numerals for ch in text):
+        return None
+    total = 0
+    prev = 0
+    for ch in reversed(text):
+        num = numerals[ch]
+        if num < prev:
+            total -= num
+        else:
+            total += num
+            prev = num
+    return total or None
+
+
+def century_start_year(century: int) -> int:
+    return max(1, (century - 1) * 100 + 1)
+
+
+def parse_century_year(text: str) -> int | None:
+    raw = html.unescape(text or "").strip()
+    if not raw:
+        return None
+    m = RE_ROMAN_CENTURY.search(raw)
+    if m:
+        century = _roman_to_int(m.group(1))
+        return century_start_year(century) if century else None
+    m = RE_ARABIC_CENTURY.search(raw)
+    if m:
+        return century_start_year(int(m.group(1)))
+    m = RE_ORDINAL_CENTURY.search(raw)
+    if m:
+        return century_start_year(int(m.group(1)))
+    if "century" in raw.lower():
+        m = RE_YEAR.search(raw)
+        if m:
+            return century_start_year(int(m.group(1)))
+    return None
+
+
+def fallback_year(text: str) -> int | None:
+    raw = html.unescape(text or "").strip()
+    if not raw:
+        return None
+    m = re.search(r"\b(\d{3,4})\b", raw)
+    if m:
+        return int(m.group(1))
+    m = re.search(r"\b(\d{1,2})\s*[-–]", raw)
+    if m:
+        return int(m.group(1))
+    m = re.search(r"\b(\d{1,2})\s*(?:ce|bce)\b", raw, re.IGNORECASE)
+    if m:
+        return int(m.group(1))
+    return None
+
+
+def infer_period(dates: str, birth_val: str, year: int | None) -> str:
+    """Historical era label for catalogue filters and table view."""
+    combined = f"{dates} {birth_val}".strip()
+    lower = combined.lower()
+    if any(token in lower for token in ("bce", "e.ə", "ə.e", "e.e", "milli", "əfsanəvi", "legendary")):
+        return "Antik dövr"
+    resolved = year if year is not None else fallback_year(combined)
+    if resolved is None:
+        resolved = parse_century_year(combined)
+    if resolved is None:
+        return ""
+    if resolved < 500:
+        return "Antik dövr"
+    if resolved < 1500:
+        return "Orta əsrlər"
+    if resolved < 1800:
+        return "Yeni dövr"
+    return "Müasir dövr"
+
+
+def parse_profile(path: Path, category: str) -> dict | None:
     text = path.read_text(encoding="utf-8", errors="replace")
     name_m = RE_NAME.search(text)
     if not name_m:
@@ -104,7 +193,10 @@ def parse_profile(path: Path, group: str) -> dict | None:
         else ""
     )
     slug = path.stem
-    href = f"prominent_figures/{group}/{slug}.html"
+    href = f"prominent_figures/{category}/{slug}.html"
+    by = birth_year(dates, birth_val)
+    if not period:
+        period = infer_period(dates, birth_val, by)
     return {
         "id": slug,
         "name": name,
@@ -115,10 +207,10 @@ def parse_profile(path: Path, group: str) -> dict | None:
         "field": field,
         "region": region,
         "period": period,
-        "group": group,
-        "groupLabel": GROUP_LABELS[group],
+        "category": category,
+        "categoryLabel": CATEGORY_LABELS[category],
         "href": href,
-        "birthYear": birth_year(dates, birth_val),
+        "birthYear": by,
     }
 
 
@@ -127,14 +219,14 @@ def localize_row_en(row: dict) -> dict:
     slug = row.get("id") or ""
     en_name = english_name(slug, row.get("name") or "")
     out["name"] = en_name
-    out["groupLabel"] = GROUP_LABEL_EN.get(row["group"], row.get("groupLabel", ""))
+    out["categoryLabel"] = CATEGORY_LABEL_EN.get(row["category"], row.get("categoryLabel", ""))
     out["field"] = translate_field(row.get("field") or "")
     out["period"] = translate_period(row.get("period") or "")
     out["region"] = translate_region(row.get("region") or "")
     out["country"] = translate_country(row.get("country") or "")
     if row.get("summary") and re.search(r"[əğıöüşçƏĞİÖÜŞÇ]", row["summary"]):
         field = out["field"]
-        if row["group"] == "world":
+        if row["category"] == "world":
             out["summary"] = (
                 f"{en_name} is among the prominent figures who shaped {field or 'this field'} "
                 "and left a lasting mark on world science."
@@ -153,19 +245,19 @@ def localize_row_en(row: dict) -> dict:
     return out
 
 
-def collect_rows(figures_root: Path, group_labels: dict[str, str], *, en: bool) -> list[dict]:
+def collect_rows(figures_root: Path, category_labels: dict[str, str], *, en: bool) -> list[dict]:
     rows: list[dict] = []
-    for group in ("azturk", "world"):
-        folder = figures_root / group
+    for category in ("azturk", "world"):
+        folder = figures_root / category
         if not folder.is_dir():
             continue
         for path in sorted(folder.glob("*.html")):
             if path.name == "hazirlanir.html" or path.stem.endswith("_EN"):
                 continue
-            row = parse_profile(path, group)
+            row = parse_profile(path, category)
             if not row:
                 continue
-            row["groupLabel"] = group_labels[group]
+            row["categoryLabel"] = category_labels[category]
             if en:
                 row = localize_row_en(row)
             rows.append(row)
@@ -180,10 +272,10 @@ def write_catalog(rows: list[dict], var_name: str, out_path: Path) -> None:
 
 
 def main() -> None:
-    az_rows = collect_rows(FIGURES_ROOT_AZ, GROUP_LABELS, en=False)
+    az_rows = collect_rows(FIGURES_ROOT_AZ, CATEGORY_LABELS, en=False)
     write_catalog(az_rows, "PROMINENT_FIGURES_CATALOG", OUT_AZ)
     if FIGURES_ROOT_EN.is_dir():
-        en_rows = collect_rows(FIGURES_ROOT_EN, GROUP_LABEL_EN, en=True)
+        en_rows = collect_rows(FIGURES_ROOT_EN, CATEGORY_LABEL_EN, en=True)
         write_catalog(en_rows, "PROMINENT_FIGURES_CATALOG_EN", OUT_EN)
     else:
         print(f"Skip EN catalog: {FIGURES_ROOT_EN.relative_to(ROOT)} not found (run _build_en_prominent_figures.py)")

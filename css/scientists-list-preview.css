@@ -26,6 +26,7 @@
     transform 0.16s ease,
     visibility 0s;
 }.scientist-preview-card{
+  position: relative;
   display: flex;
   flex-direction: column;
   max-height: inherit;
@@ -37,11 +38,41 @@
   box-shadow:
     0 12px 40px rgba(0, 45, 82, 0.16),
     0 2px 8px rgba(0, 45, 82, 0.08);
+}.scientist-preview-card__close{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0;
+  padding: 0;
+  color: var(--muted);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 105, 180, 0.18);
+  border-radius: 999px;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
+}.scientist-preview-card__close:hover,
+.scientist-preview-card__close:focus-visible{
+  color: var(--blue-800);
+  background: #e8f4fc;
+  border-color: rgba(0, 105, 180, 0.35);
+  outline: 2px solid rgba(0, 105, 180, 0.35);
+  outline-offset: 1px;
 }.scientist-preview-card__inner{
   display: grid;
   grid-template-columns: 5.5rem 1fr;
   gap: 12px;
-  padding: 14px 14px 10px;
+  padding: 14px 2.25rem 10px 14px;
   min-height: 0;
   overflow: auto;
   overscroll-behavior: contain;

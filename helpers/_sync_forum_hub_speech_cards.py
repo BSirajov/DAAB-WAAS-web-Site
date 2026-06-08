@@ -21,10 +21,10 @@ CARDS = {
 <div class="card-footer"><span class="card-tag">Oxu</span></div>
 </div>
 </a>
-<a class="page-card" data-title="AMEA rəhbərliyi nitqləri" href="anas_leadership_speeches.html">
+<a class="page-card" data-title="Akademiklər nitqləri" href="anas_leadership_speeches.html">
 <div class="card-icon-wrap">🔬</div>
 <div class="card-body">
-<h3 class="card-title">AMEA rəhbərliyi</h3>
+<h3 class="card-title">Akademiklər</h3>
 <div class="card-desc">Azərbaycan Milli Elmlər Akademiyası rəhbərlərinin Forumla bağlı görüşləri.</div>
 <div class="card-footer"><span class="card-tag">Oxu</span></div>
 </div>
@@ -38,10 +38,10 @@ CARDS = {
 <div class="card-footer"><span class="card-tag">Read</span></div>
 </div>
 </a>
-<a class="page-card" data-title="ANAS Leadership speeches" href="anas_leadership_speeches.html">
+<a class="page-card" data-title="Academicians speeches" href="anas_leadership_speeches.html">
 <div class="card-icon-wrap">🔬</div>
 <div class="card-body">
-<h3 class="card-title">ANAS Leadership</h3>
+<h3 class="card-title">Academicians</h3>
 <div class="card-desc">Speeches by leaders of the Azerbaijan National Academy of Sciences at Forum 2024.</div>
 <div class="card-footer"><span class="card-tag">Read</span></div>
 </div>
@@ -55,7 +55,7 @@ PROGRAM_CARD = {
 
 INTRO = {
     "az": (
-        "Aşağıdakı kartlar vasitəsilə rəsmi müraciətlər, rektorlar, AMEA rəhbərliyi, "
+        "Aşağıdakı kartlar vasitəsilə rəsmi müraciətlər, rektorlar, Akademiklər, "
         "proqram, strateji yol xəritəsi, məruzələr, təəssüratlar, hekayələr, "
         "töhfələr və alimlərimizin siyahısına keçid edə bilərsiniz."
     ),

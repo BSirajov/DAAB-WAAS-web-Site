@@ -180,7 +180,7 @@
     {
       "id": "scientists-list",
       "navId": "scientists-list",
-      "navGroup": "forum",
+      "navGroup": "scientists",
       "navParent": "forum",
       "navOrder": 1,
       "legacy": "scientists_list_view_az.html",
@@ -190,7 +190,7 @@
     {
       "id": "scientists-profiles",
       "navId": "scientists-profiles",
-      "navGroup": "forum",
+      "navGroup": "scientists",
       "navParent": "forum",
       "navOrder": 2,
       "legacy": "scientists_card_view_az.html",

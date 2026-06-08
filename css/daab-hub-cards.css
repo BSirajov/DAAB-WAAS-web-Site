@@ -687,3 +687,151 @@ html[data-daab-page-id="forum-2024"] .card-tag{
     max-width: 100%;
   }
 }
+
+/* Forum 2024 hub — card groups aligned with mega menu */
+html[data-daab-page-id="forum-2024"] .forum-hub{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--official-speeches{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--official-speeches .forum-hub-group{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 0;
+  height: 100%;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--official-speeches .forum-hub-group .cards-grid{
+  flex: 1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 14px;
+  align-items: stretch;
+  align-content: stretch;
+  min-height: 0;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--official-speeches .page-card{
+  height: 100%;
+  min-height: 0;
+  align-self: stretch;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel{
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel__lead{
+  display: none;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel__cards.cards-grid{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+  align-content: start;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-hub-group[data-forum-group="overview"] .cards-grid{
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  align-content: start;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .page-card{
+  height: auto;
+  align-self: start;
+  grid-template-rows: auto auto auto;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-participants-panel[hidden]{
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--lead,
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--official-speeches{
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--official-speeches{
+    align-items: start;
+  }
+
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--official-speeches .forum-hub-group{
+    height: auto;
+  }
+
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--official-speeches .forum-hub-group .cards-grid{
+    flex: none;
+    grid-auto-rows: auto;
+    align-items: start;
+    align-content: start;
+  }
+
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--official-speeches .page-card{
+    height: auto;
+    align-self: start;
+    grid-template-rows: auto auto auto;
+  }
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-group{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-group[hidden]{
+  display: none !important;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-group__title{
+  margin: 0;
+  padding-bottom: 8px;
+  color: var(--color-heading-blue);
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 800;
+  line-height: 1.2;
+  border-bottom: 2px solid rgba(0, 105, 180, 0.12);
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-group--nested .forum-hub-group__title::after{
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 8px;
+  vertical-align: middle;
+  background: rgba(0, 105, 180, 0.35);
+  border-radius: 50%;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-group .cards-grid{
+  margin: 0;
+}

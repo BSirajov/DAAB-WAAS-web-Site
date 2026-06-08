@@ -48,8 +48,8 @@ PHOTO_ALIASES: dict[str, str] = {
 }
 
 SPECIAL_PHOTO_FILES: dict[str, str] = {
-    "rufet-ezizov": "rufat azizov.png",
-    "rufat-azizov": "rufat azizov.png",
+    "rufet-ezizov": "rufat-azizov.png",
+    "rufat-azizov": "rufat-azizov.png",
 }
 
 SPEECH_PHOTOS_CSS = (

@@ -17,6 +17,7 @@ __pycache__/
 .github/
 .git/
 .gitignore
+.gitattributes
 .deployignore
 
 # --- Local / editor / OS ---

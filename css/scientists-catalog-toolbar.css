@@ -289,11 +289,16 @@
 }.result-count span{
   color: var(--blue-700);
   font-weight: 900;
-}/* Modern unified sort control (card catalogue) */
-.sort-control{
+}/* Modern unified sort / group controls (card catalogue) */
+.sort-control,
+.group-control{
   flex: 0 1 auto;
   margin-left: auto;
-}.sort-control__shell{
+}
+.group-control{
+  margin-left: 0;
+}.sort-control__shell,
+.group-control__shell{
   display: flex;
   align-items: stretch;
   gap: 0;
@@ -305,7 +310,8 @@
   box-shadow:
     0 1px 0 rgba(255, 255, 255, .9) inset,
     0 10px 28px rgba(0, 78, 140, .08);
-}.sort-control__icon{
+}.sort-control__icon,
+.group-control__icon{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -314,14 +320,16 @@
   color: var(--blue-700);
   background: linear-gradient(160deg, var(--color-border-blue-10), rgba(78, 180, 238, .14));
   border-radius: 12px;
-}.sort-control__field{
+}.sort-control__field,
+.group-control__field{
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 4px;
   min-width: 0;
   padding: 4px 8px 4px 6px;
-}.sort-control__label{
+}.sort-control__label,
+.group-control__label{
   padding-left: 2px;
   color: #5a7f96;
   font-size: 10px;
@@ -329,7 +337,8 @@
   letter-spacing: .1em;
   line-height: 1;
   text-transform: uppercase;
-}.sort-control__select-wrap{
+}.sort-control__select-wrap,
+.group-control__select-wrap{
   position: relative;
   display: flex;
   align-items: center;
@@ -346,19 +355,22 @@
     border-color .22s ease,
     box-shadow .22s ease,
     background-color .22s ease;
-}.sort-control__select-wrap:hover{
+}.sort-control__select-wrap:hover,
+.group-control__select-wrap:hover{
   background: #f8fcff;
   border-color: rgba(0, 105, 180, .34);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, .95) inset,
     0 8px 20px var(--color-border-blue-10);
-}.sort-control__select-wrap:focus-within{
+}.sort-control__select-wrap:focus-within,
+.group-control__select-wrap:focus-within{
   background: var(--white);
   border-color: var(--blue-700);
   box-shadow:
     0 0 0 3px var(--color-border-blue-muted),
     0 8px 22px var(--color-border-blue-12);
-}.sort-control__select{
+}.sort-control__select,
+.group-control__select{
   width: 100%;
   min-width: 0;
   max-width: none;
@@ -376,15 +388,19 @@
   -webkit-appearance: none;
   outline: none;
   transition: color .18s ease;
-}.sort-control__select:hover{
+}.sort-control__select:hover,
+.group-control__select:hover{
   color: var(--blue-700);
-}.sort-control__select:focus{
+}.sort-control__select:focus,
+.group-control__select:focus{
   outline: none;
-}.sort-control__select option{
+}.sort-control__select option,
+.group-control__select option{
   color: var(--ink);
   background: var(--white);
   font-weight: 700;
-}.sort-control__chevron{
+}.sort-control__chevron,
+.group-control__chevron{
   position: absolute;
   top: 50%;
   right: 10px;
@@ -399,9 +415,11 @@
   pointer-events: none;
   transform: translateY(-50%);
   transition: transform .22s ease, background-color .22s ease, color .22s ease;
-}.sort-control__select-wrap:hover .sort-control__chevron{
+}.sort-control__select-wrap:hover .sort-control__chevron,
+.group-control__select-wrap:hover .group-control__chevron{
   background: linear-gradient(160deg, var(--color-border-blue-muted), rgba(78, 180, 238, .2));
-}.sort-control__select-wrap:focus-within .sort-control__chevron{
+}.sort-control__select-wrap:focus-within .sort-control__chevron,
+.group-control__select-wrap:focus-within .group-control__chevron{
   color: var(--white);
   background: linear-gradient(145deg, var(--blue-700), var(--blue-600));
   transform: translateY(-50%) rotate(180deg);
@@ -525,14 +543,18 @@
   }.rows-per-page-control__select-wrap{
     min-width: 0;
     flex: 1 1 auto;
-  }.sort-control{
+  }.sort-control,
+  .group-control{
     width: 100%;
     margin-left: 0;
-  }.sort-control__shell{
+  }.sort-control__shell,
+  .group-control__shell{
     width: 100%;
-  }.sort-control__field{
+  }.sort-control__field,
+  .group-control__field{
     flex: 1 1 auto;
-  }.sort-control__select-wrap{
+  }.sort-control__select-wrap,
+  .group-control__select-wrap{
     max-width: none;
   }.sort-control__dir{
     margin-left: auto;

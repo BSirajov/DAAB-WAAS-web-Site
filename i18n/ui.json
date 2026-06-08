@@ -76,7 +76,7 @@
       "encyclopediaDesc": "Görkəmli şəxsiyyətlər kataloqu",
       "forumOfficial": "Rəsmi müraciətlər",
       "forumRectorSpeeches": "Rektorlar",
-      "forumAnasLeadershipSpeeches": "AMEA rəhbərliyi",
+      "forumAnasLeadershipSpeeches": "Akademiklər",
       "forumProgram": "Proqram",
       "forumImpressions": "Təəssüratlar",
       "forum2024Presentations": "Məruzələr",
@@ -113,7 +113,12 @@
       "forumBagliHekayeler": "Hekayələr",
       "forumCooperation": "Töhfələr",
       "forumPhotosGallery": "Foto qalereya",
-      "forumVideoGallery": "Video qalereya"
+      "forumVideoGallery": "Video qalereya",
+      "forumNavOverview": "Ümumi baxış",
+      "forumNavOfficialRecord": "Rəsmi sənədlər",
+      "forumNavSpeeches": "Nitqlər",
+      "forumNavMedia": "Media və təəssüratlar",
+      "forumNavOutcomes": "Nəticələr və tərəfdaşlar"
     },
     "en": {
       "ariaMain": "Main navigation",
@@ -140,7 +145,7 @@
       "encyclopediaDesc": "Directory of prominent figures",
       "forumOfficial": "Official addresses",
       "forumRectorSpeeches": "Rectors",
-      "forumAnasLeadershipSpeeches": "ANAS Leadership",
+      "forumAnasLeadershipSpeeches": "Academicians",
       "forumProgram": "Programme",
       "forumImpressions": "Impressions",
       "forum2024Presentations": "Presentations",
@@ -177,7 +182,12 @@
       "forumBagliHekayeler": "Stories",
       "forumCooperation": "Contributions",
       "forumPhotosGallery": "Photo gallery",
-      "forumVideoGallery": "Video gallery"
+      "forumVideoGallery": "Video gallery",
+      "forumNavOverview": "Overview",
+      "forumNavOfficialRecord": "Official record",
+      "forumNavSpeeches": "Speeches",
+      "forumNavMedia": "Media & reflections",
+      "forumNavOutcomes": "Outcomes & partners"
     }
   },
   "navIcons": {
@@ -263,7 +273,7 @@
         "forum-2024": "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024",
         "forum-official": "Forumun istiqamətini müəyyən edən rəsmi çıxış və müraciətlər",
         "forum-rector-speeches": "Azərbaycan universitet rektorlarının Forum 2024 nitqləri",
-        "forum-anas-leadership-speeches": "AMEA rəhbərliyinin Forumla bağlı görüş və nitqləri",
+        "forum-anas-leadership-speeches": "Akademiklərin Forumla bağlı görüş və nitqləri",
         "forum-program": "Bakı–Xankəndi–Şuşa forum proqramı",
         "forum-2024-presentations": "Elm, təhsil və siyasət mövzularında məruzələr",
         "forum-impressions": "İştirakçıların Forum və Qarabağ təəssüratları",
@@ -289,7 +299,7 @@
         "forum-2024": "First Forum of Azerbaijani Scientists Living Abroad — September 2024",
         "forum-official": "Official speeches and messages that shaped the Forum",
         "forum-rector-speeches": "Speeches by rectors of Azerbaijani universities at Forum 2024",
-        "forum-anas-leadership-speeches": "Speeches by ANAS leadership at Forum 2024",
+        "forum-anas-leadership-speeches": "Speeches by academicians at Forum 2024",
         "forum-program": "Programme of the Baku–Khankendi–Shusha forum journey",
         "forum-2024-presentations": "Presentations on science, education, policy, and more",
         "forum-impressions": "Participants' thoughts on the Forum and Karabakh visit",

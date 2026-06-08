@@ -25,6 +25,83 @@ def _drop(items: list[tuple[str, str, str, str]]) -> str:
     return "".join(parts)
 
 
+def _mega_col(heading: str, items: list[tuple[str, str, str, str]], *, nested: bool = False) -> str:
+    wrap_class = "nav-mega-nest" if nested else "nav-mega-links"
+    return (
+        '<div class="nav-mega-col">'
+        f'<div class="nav-mega-heading" role="presentation">{heading}</div>'
+        f'<div class="{wrap_class}">'
+        + _drop(items)
+        + "</div></div>"
+    )
+
+
+def _forum_mega_drop(lang: str) -> str:
+    if lang == "en":
+        sections = [
+            ("Overview", False, [
+                ("forum/2024/index.html", "forum-2024", "🎤 Forum 2024", "First Forum of Azerbaijani Scientists Living Abroad — September 2024"),
+                ("forum/2024/program.html", "forum-program", "📅 Programme", "Programme of the Baku–Khankendi–Shusha forum journey"),
+            ]),
+            ("Official record", False, [
+                ("forum/2024/official.html", "forum-official", "🏛️ Official addresses", "Official speeches and messages that shaped the Forum"),
+                ("forum/2024/presentations.html", "forum-2024-presentations", "📊 Presentations", "Presentations on science, education, policy, and more"),
+            ]),
+            ("Speeches", True, [
+                ("forum/2024/rector_speeches.html", "forum-rector-speeches", "🎓 Rectors", "Speeches by rectors of Azerbaijani universities at Forum 2024"),
+                ("forum/2024/anas_leadership_speeches.html", "forum-anas-leadership-speeches", "🔬 Academicians", "Speeches by academicians at Forum 2024"),
+            ]),
+            ("Media &amp; reflections", False, [
+                ("forum/2024/photos_gallery.html", "forum-photos-gallery", "📷 Photo gallery", "Photographic story of the Forum — opening to key encounters"),
+                ("forum/2024/video_gallery.html", "forum-video-gallery", "📹 Video gallery", "Video reports and interviews on Forum 2024"),
+                ("forum/2024/impressions.html", "forum-impressions", "💬 Impressions", "Participants' thoughts on the Forum and Karabakh visit"),
+                ("forum/2024/stories.html", "forum-bagli-hekayeler", "📖 Stories", "Literary reflections from the Forum"),
+            ]),
+            ("Outcomes &amp; partners", False, [
+                ("forum/2024/roadmap.html", "forum-roadmap", "🗺️ Strategic roadmap", "Ideas for science, education, and diaspora cooperation"),
+                ("forum/2024/cooperation.html", "forum-cooperation", "🤝 Contributions", "Partners who supported the Forum"),
+            ]),
+        ]
+        label = "🎤 Forum 2024"
+    else:
+        sections = [
+            ("Ümumi baxış", False, [
+                ("forum/2024/index.html", "forum-2024", "🎤 Forum 2024", "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024"),
+                ("forum/2024/program.html", "forum-program", "📅 Proqram", "Bakı–Xankəndi–Şuşa forum proqramı"),
+            ]),
+            ("Rəsmi sənədlər", False, [
+                ("forum/2024/official.html", "forum-official", "🏛️ Rəsmi müraciətlər", "Forumun istiqamətini müəyyən edən rəsmi çıxış və müraciətlər"),
+                ("forum/2024/presentations.html", "forum-2024-presentations", "📊 Məruzələr", "Elm, təhsil və siyasət mövzularında məruzələr"),
+            ]),
+            ("Nitqlər", True, [
+                ("forum/2024/rector_speeches.html", "forum-rector-speeches", "🎓 Rektorlar", "Azərbaycan universitet rektorlarının Forum 2024 nitqləri"),
+                ("forum/2024/anas_leadership_speeches.html", "forum-anas-leadership-speeches", "🔬 Akademiklər", "Akademiklərin Forumla bağlı görüş və nitqləri"),
+            ]),
+            ("Media və təəssüratlar", False, [
+                ("forum/2024/photos_gallery.html", "forum-photos-gallery", "📷 Foto qalereya", "Forumun foto-hekayəsi — açılışdan əsas görüşlərə"),
+                ("forum/2024/video_gallery.html", "forum-video-gallery", "📹 Video qalereya", "Forum 2024 haqqında video reportajlar və müsahibələr"),
+                ("forum/2024/impressions.html", "forum-impressions", "💬 Təəssüratlar", "İştirakçıların Forum və Qarabağ təəssüratları"),
+                ("forum/2024/stories.html", "forum-bagli-hekayeler", "📖 Hekayələr", "Forumun ab-havasını əks etdirən ədəbi yazılar"),
+            ]),
+            ("Nəticələr və tərəfdaşlar", False, [
+                ("forum/2024/roadmap.html", "forum-roadmap", "🗺️ Strateji yol xəritəsi", "Elm, təhsil və diaspora əməkdaşlığına dair təkliflər"),
+                ("forum/2024/cooperation.html", "forum-cooperation", "🤝 Töhfələr", "Forumun təşkilinə dəstək verən tərəfdaşlar"),
+            ]),
+        ]
+        label = "🎤 Forum 2024"
+    cols = "".join(_mega_col(heading, items, nested=nested) for heading, nested, items in sections)
+    return (
+        '<div class="nav-dropdown nav-dropdown--mega nav-dropdown--forum" data-nav-dropdown data-nav-group="forum">'
+        + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
+        + label
+        + ' <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+        + '<div class="nav-dropdown-panel nav-dropdown-panel--mega" role="menu">'
+        + '<div class="nav-mega-grid">'
+        + cols
+        + "</div></div></div>"
+    )
+
+
 def _treasury_drop(label: str, items: list[tuple[str, str, str, str]]) -> str:
     return (
         '<div class="nav-dropdown" data-nav-dropdown>'
@@ -49,12 +126,47 @@ TREASURY_EN = _treasury_drop("Treasury", [
     ("major_scientific_inventions.html", "major-scientific-inventions", "Major Scientific Inventions", "Key inventions that shaped science"),
 ])
 
+SPONSORSHIP_AZ = (
+    '<div class="nav-dropdown" data-nav-dropdown>'
+    + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
+    + 'Bizi dəstəkləyin <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    + '<div class="nav-dropdown-panel" role="menu">'
+    + _drop([
+        ("sponsors.html", "sponsors", "Sponsorluq", "Korporativ və proqram tərəfdaşlığı"),
+        ("donate.html", "donate", "İanə", "Fərdi, fond və xatirə ianələri"),
+    ])
+    + "</div></div>"
+)
+
+SCIENTISTS_AZ = _treasury_drop("Alimlərimiz", [
+    ("scientists/list.html", "scientists-list", "Alimlərin siyahısı", "Bütün alimlərin siyahısı"),
+    ("scientists/profiles.html", "scientists-profiles", "Alimlərin profilləri", "Alimlərin akademik profilləri"),
+])
+
+SCIENTISTS_EN = _treasury_drop("Scientists", [
+    ("scientists/list.html", "scientists-list", "Directory", "Directory of all scientists"),
+    ("scientists/profiles.html", "scientists-profiles", "Profiles", "Academic profiles of scientists"),
+])
+
+SPONSORSHIP_EN = (
+    '<div class="nav-dropdown" data-nav-dropdown>'
+    + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
+    + 'Support us <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    + '<div class="nav-dropdown-panel" role="menu">'
+    + _drop([
+        ("sponsors.html", "sponsors", "Sponsorship", "Corporate and programme partnerships"),
+        ("donate.html", "donate", "Donate", "Individual, foundation, and memorial gifts"),
+    ])
+    + "</div></div>"
+)
+
 
 NAV_AZ = (
     '<div class="nav-divider"></div>'
     '<a class="nav-link" href="index.html" data-nav-id="home">Ana səhifə</a>'
     + _top_link("activities.html", "activities", "Fəaliyyətimiz")
-    + _top_link("forum/2024/index.html", "forum-2024", "Forum 2024")
+    + _forum_mega_drop("az")
+    + SCIENTISTS_AZ
     + '<div class="nav-dropdown" data-nav-dropdown>'
     + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
     + 'Haqqımızda <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
@@ -76,7 +188,7 @@ NAV_AZ = (
         ("membership_flyer.html", "membership-flyer", "Dəvət məktubu", "Potensial üzvlər üçün çap oluna bilən flyer"),
     ])
     + "</div></div>"
-    '<a class="nav-link" href="sponsors.html" data-nav-id="sponsors">Bizi dəstəkləyin</a>'
+    + SPONSORSHIP_AZ
     + TREASURY_AZ
 )
 
@@ -84,7 +196,8 @@ NAV_EN = (
     '<div class="nav-divider"></div>'
     '<a class="nav-link" href="index.html" data-nav-id="home">Home</a>'
     + _top_link("activities.html", "activities", "Activities")
-    + _top_link("forum/2024/index.html", "forum-2024", "Forum 2024")
+    + _forum_mega_drop("en")
+    + SCIENTISTS_EN
     + '<div class="nav-dropdown" data-nav-dropdown>'
     + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
     + 'About us <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
@@ -106,7 +219,7 @@ NAV_EN = (
         ("membership_flyer.html", "membership-flyer", "Send invitation", "Printable flyer to share with potential members"),
     ])
     + "</div></div>"
-    '<a class="nav-link" href="sponsors.html" data-nav-id="sponsors">Support us</a>'
+    + SPONSORSHIP_EN
     + TREASURY_EN
 )
 
@@ -124,11 +237,13 @@ NAV_SCI_AZ = NAV_AZ.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="membership_flyer.html"', 'href="../membership_flyer.html"'
 ).replace(
     'href="sponsors.html"', 'href="../sponsors.html"'
-)
+).replace('href="donate.html"', 'href="../donate.html"')
 
 PROMINENT_PREFIX_REPLACES = [
     ('href="index.html"', 'href="../../index.html"'),
     ('href="activities.html"', 'href="../../activities.html"'),
+    ('href="scientists/list.html"', 'href="../../scientists/list.html"'),
+    ('href="scientists/profiles.html"', 'href="../../scientists/profiles.html"'),
     ('href="forum/2024/', 'href="../../forum/2024/'),
     ('href="encyclopedia.html"', 'href="../../encyclopedia.html"'),
     ('href="industrial_revolutions.html"', 'href="../../industrial_revolutions.html"'),
@@ -141,6 +256,7 @@ PROMINENT_PREFIX_REPLACES = [
     ('href="application.html"', 'href="../../application.html"'),
     ('href="membership_flyer.html"', 'href="../../membership_flyer.html"'),
     ('href="sponsors.html"', 'href="../../sponsors.html"'),
+    ('href="donate.html"', 'href="../../donate.html"'),
 ]
 
 
@@ -203,6 +319,7 @@ FORUM_PREFIX_REPLACES = [
     ('href="application.html"', 'href="../../application.html"'),
     ('href="membership_flyer.html"', 'href="../../membership_flyer.html"'),
     ('href="sponsors.html"', 'href="../../sponsors.html"'),
+    ('href="donate.html"', 'href="../../donate.html"'),
 ]
 
 
@@ -267,7 +384,7 @@ NAV_SCI_EN = NAV_EN.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="membership_flyer.html"', 'href="../membership_flyer.html"'
 ).replace(
     'href="sponsors.html"', 'href="../sponsors.html"'
-)
+).replace('href="donate.html"', 'href="../donate.html"')
 
 PLACEHOLDER_RE = re.compile(
     r'(<div[^>]*class="nav-menu"[^>]*id="primaryNavMenu"[^>]*>)(.*?)(</div>\s*</div>\s*</nav>)',

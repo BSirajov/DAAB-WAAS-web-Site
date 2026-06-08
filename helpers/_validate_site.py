@@ -124,10 +124,12 @@ def main() -> int:
 
         rel_posix = page.relative_to(ROOT).as_posix()
         is_build_source = rel_posix.endswith(BUILD_SOURCE_SUFFIXES)
+        is_legacy_redirect = "data-daab-legacy-redirect" in text
         check_snippets = (
             (page.name in MAIN_PAGES or page in BILINGUAL_PAGES)
             and page.name not in GATEWAY_PAGES
             and not is_build_source
+            and not is_legacy_redirect
         )
         if check_snippets:
             for label, snippet in REQUIRED_SNIPPETS.items():

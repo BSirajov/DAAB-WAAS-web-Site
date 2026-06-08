@@ -98,6 +98,23 @@
     return false;
   }
 
+  function forumPageNavDesc(ui, lang, pageId) {
+    var sectionUi = ui.sectionNav && ui.sectionNav[lang];
+    var tips = sectionUi && sectionUi.forumPageTooltips;
+    return (tips && tips[pageId]) || "";
+  }
+
+  function linkDescription(ui, lang, childDef, page) {
+    if (childDef.descKey) {
+      var fromKey = label(ui, lang, childDef.descKey);
+      if (fromKey && fromKey !== childDef.descKey) return fromKey;
+    }
+    if (page && isForumNavPageId(page.id)) {
+      return forumPageNavDesc(ui, lang, page.id);
+    }
+    return "";
+  }
+
   function buildLink(page, lang, ui, activeId, className, extra) {
     var a = document.createElement("a");
     a.href = pageHref(page, lang);
@@ -142,6 +159,7 @@
     var children = item.children || [];
     var groupActive = false;
     children.forEach(function (childDef) {
+      if (childDef.type === "section") return;
       var page = pageById(routes, childDef.id);
       if (!page) return;
       var link = document.createElement("a");
@@ -156,14 +174,12 @@
       title.textContent = labelWithIcon(ui, iconKey, childLabel(ui, lang, childDef, page));
       link.appendChild(title);
 
-      if (childDef.descKey) {
-        var descText = label(ui, lang, childDef.descKey);
-        if (descText && descText !== childDef.descKey) {
-          var desc = document.createElement("span");
-          desc.className = "nav-dropdown-link-desc";
-          desc.textContent = descText;
-          link.appendChild(desc);
-        }
+      var descText = linkDescription(ui, lang, childDef, page);
+      if (descText) {
+        var desc = document.createElement("span");
+        desc.className = "nav-dropdown-link-desc";
+        desc.textContent = descText;
+        link.appendChild(desc);
       }
 
       if (childLinkIsActive(page, childDef, activeId)) {
@@ -172,6 +188,98 @@
         groupActive = true;
       }
       panel.appendChild(link);
+    });
+
+    if (groupActive) wrap.classList.add("has-active-child");
+
+    wrap.appendChild(toggle);
+    wrap.appendChild(panel);
+    return wrap;
+  }
+
+  function buildMegaGroup(item, routes, lang, ui, activeId) {
+    var wrap = document.createElement("div");
+    wrap.className = "nav-dropdown nav-dropdown--mega nav-dropdown--forum";
+    wrap.setAttribute("data-nav-dropdown", "");
+    wrap.setAttribute("data-nav-group", item.id || "forum");
+
+    var toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "nav-link nav-dropdown-toggle";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-haspopup", "true");
+    toggle.appendChild(
+      document.createTextNode(labelWithIcon(ui, item.labelKey, label(ui, lang, item.labelKey)))
+    );
+    var caret = document.createElement("span");
+    caret.className = "nav-dropdown-caret";
+    caret.setAttribute("aria-hidden", "true");
+    toggle.appendChild(document.createTextNode(" "));
+    toggle.appendChild(caret);
+
+    var panel = document.createElement("div");
+    panel.className = "nav-dropdown-panel nav-dropdown-panel--mega";
+    panel.setAttribute("role", "menu");
+
+    var grid = document.createElement("div");
+    grid.className = "nav-mega-grid";
+    panel.appendChild(grid);
+
+    var groupActive = false;
+    (item.children || []).forEach(function (sectionDef) {
+      if (sectionDef.type !== "section") return;
+
+      var col = document.createElement("div");
+      col.className = "nav-mega-col";
+
+      if (sectionDef.labelKey) {
+        var heading = document.createElement("div");
+        heading.className = "nav-mega-heading";
+        heading.setAttribute("role", "presentation");
+        heading.textContent = label(ui, lang, sectionDef.labelKey);
+        col.appendChild(heading);
+      }
+
+      var linksWrap = document.createElement("div");
+      linksWrap.className = sectionDef.nested ? "nav-mega-nest" : "nav-mega-links";
+      col.appendChild(linksWrap);
+
+      (sectionDef.children || []).forEach(function (childDef) {
+        var page = pageById(routes, childDef.id);
+        if (!page) return;
+
+        var link = document.createElement("a");
+        link.href = pageHref(page, lang);
+        link.className = "nav-dropdown-link";
+        link.setAttribute("role", "menuitem");
+        link.setAttribute("data-nav-id", childDef.id);
+
+        var iconKey = childDef.labelKey || page.id;
+        var title = document.createElement("span");
+        title.className = "nav-dropdown-link-title";
+        title.textContent = labelWithIcon(ui, iconKey, childLabel(ui, lang, childDef, page));
+        link.appendChild(title);
+
+        var descText = linkDescription(ui, lang, childDef, page);
+        if (descText) {
+          var desc = document.createElement("span");
+          desc.className = "nav-dropdown-link-desc";
+          desc.textContent = descText;
+          link.appendChild(desc);
+        }
+
+        if (childLinkIsActive(page, childDef, activeId)) {
+          link.classList.add("active");
+          link.setAttribute("aria-current", "page");
+          groupActive = true;
+        }
+
+        linksWrap.appendChild(link);
+      });
+
+      if (linksWrap.children.length) {
+        grid.appendChild(col);
+      }
     });
 
     if (groupActive) wrap.classList.add("has-active-child");
@@ -196,7 +304,11 @@
         return;
       }
       if (item.type === "group") {
-        frag.appendChild(buildGroup(item, routes, lang, ui, activeId));
+        if (item.style === "mega") {
+          frag.appendChild(buildMegaGroup(item, routes, lang, ui, activeId));
+        } else {
+          frag.appendChild(buildGroup(item, routes, lang, ui, activeId));
+        }
       }
     });
 
@@ -350,9 +462,150 @@
     return icon ? icon + "\u00a0" : "";
   }
 
+  function forumMegaCol(heading, items, nested) {
+    var wrapClass = nested ? "nav-mega-nest" : "nav-mega-links";
+    var links = items
+      .map(function (item) {
+        return dropLink(item[0], item[1], item[2], item[3], item[4] || "");
+      })
+      .join("");
+    return (
+      '<div class="nav-mega-col">' +
+      '<div class="nav-mega-heading" role="presentation">' +
+      heading +
+      "</div>" +
+      '<div class="' +
+      wrapClass +
+      '">' +
+      links +
+      "</div></div>"
+    );
+  }
+
+  function forumMegaFallback(lang) {
+    var sections;
+    var label;
+    if (lang === "en") {
+      label = fallbackIcon("forum-2024") + "Forum 2024";
+      sections = [
+        [
+          "Overview",
+          false,
+          [
+            ["forum-2024", "forum-2024", "Forum 2024", "First Forum of Azerbaijani Scientists Living Abroad — September 2024", "forum-2024"],
+            ["forum-program", "forum-program", "Programme", "Programme of the Baku–Khankendi–Shusha forum journey", "forum-program"],
+          ],
+        ],
+        [
+          "Official record",
+          false,
+          [
+            ["forum-official", "forum-official", "Official addresses", "Official speeches and messages that shaped the Forum", "forum-official"],
+            ["forum-2024-presentations", "forum-2024-presentations", "Presentations", "Presentations on science, education, policy, and more", "forum-2024-presentations"],
+          ],
+        ],
+        [
+          "Speeches",
+          true,
+          [
+            ["forum-rector-speeches", "forum-rector-speeches", "Rectors", "Speeches by rectors of Azerbaijani universities at Forum 2024", "forum-rector-speeches"],
+            ["forum-anas-leadership-speeches", "forum-anas-leadership-speeches", "Academicians", "Speeches by academicians at Forum 2024", "forum-anas-leadership-speeches"],
+          ],
+        ],
+        [
+          "Media &amp; reflections",
+          false,
+          [
+            ["forum-photos-gallery", "forum-photos-gallery", "Photo gallery", "Photographic story of the Forum — opening to key encounters", "forum-photos-gallery"],
+            ["forum-video-gallery", "forum-video-gallery", "Video gallery", "Video reports and interviews on Forum 2024", "forum-video-gallery"],
+            ["forum-impressions", "forum-impressions", "Impressions", "Participants' thoughts on the Forum and Karabakh visit", "forum-impressions"],
+            ["forum-bagli-hekayeler", "forum-bagli-hekayeler", "Stories", "Literary reflections from the Forum", "forum-bagli-hekayeler"],
+          ],
+        ],
+        [
+          "Outcomes &amp; partners",
+          false,
+          [
+            ["forum-roadmap", "forum-roadmap", "Strategic roadmap", "Ideas for science, education, and diaspora cooperation", "forum-roadmap"],
+            ["forum-cooperation", "forum-cooperation", "Contributions", "Partners who supported the Forum", "forum-cooperation"],
+          ],
+        ],
+      ];
+    } else {
+      label = fallbackIcon("forum-2024") + "Forum 2024";
+      sections = [
+        [
+          "Ümumi baxış",
+          false,
+          [
+            ["forum-2024", "forum-2024", "Forum 2024", "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024", "forum-2024"],
+            ["forum-program", "forum-program", "Proqram", "Bakı–Xankəndi–Şuşa forum proqramı", "forum-program"],
+          ],
+        ],
+        [
+          "Rəsmi sənədlər",
+          false,
+          [
+            ["forum-official", "forum-official", "Rəsmi müraciətlər", "Forumun istiqamətini müəyyən edən rəsmi çıxış və müraciətlər", "forum-official"],
+            ["forum-2024-presentations", "forum-2024-presentations", "Məruzələr", "Elm, təhsil və siyasət mövzularında məruzələr", "forum-2024-presentations"],
+          ],
+        ],
+        [
+          "Nitqlər",
+          true,
+          [
+            ["forum-rector-speeches", "forum-rector-speeches", "Rektorlar", "Azərbaycan universitet rektorlarının Forum 2024 nitqləri", "forum-rector-speeches"],
+            ["forum-anas-leadership-speeches", "forum-anas-leadership-speeches", "Akademiklər", "Akademiklərin Forumla bağlı görüş və nitqləri", "forum-anas-leadership-speeches"],
+          ],
+        ],
+        [
+          "Media və təəssüratlar",
+          false,
+          [
+            ["forum-photos-gallery", "forum-photos-gallery", "Foto qalereya", "Forumun foto-hekayəsi — açılışdan əsas görüşlərə", "forum-photos-gallery"],
+            ["forum-video-gallery", "forum-video-gallery", "Video qalereya", "Forum 2024 haqqında video reportajlar və müsahibələr", "forum-video-gallery"],
+            ["forum-impressions", "forum-impressions", "Təəssüratlar", "İştirakçıların Forum və Qarabağ təəssüratları", "forum-impressions"],
+            ["forum-bagli-hekayeler", "forum-bagli-hekayeler", "Hekayələr", "Forumun ab-havasını əks etdirən ədəbi yazılar", "forum-bagli-hekayeler"],
+          ],
+        ],
+        [
+          "Nəticələr və tərəfdaşlar",
+          false,
+          [
+            ["forum-roadmap", "forum-roadmap", "Strateji yol xəritəsi", "Elm, təhsil və diaspora əməkdaşlığına dair təkliflər", "forum-roadmap"],
+            ["forum-cooperation", "forum-cooperation", "Töhfələr", "Forumun təşkilinə dəstək verən tərəfdaşlar", "forum-cooperation"],
+          ],
+        ],
+      ];
+    }
+    var cols = sections
+      .map(function (section) {
+        var items = section[2].map(function (row) {
+          return [
+            staticHref(row[0]),
+            row[1],
+            fallbackIcon(row[4] || row[0]) + row[2],
+            row[3],
+          ];
+        });
+        return forumMegaCol(section[0], items, section[1]);
+      })
+      .join("");
+    return (
+      '<div class="nav-dropdown nav-dropdown--mega nav-dropdown--forum" data-nav-dropdown data-nav-group="forum">' +
+      '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' +
+      label +
+      ' <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
+      '<div class="nav-dropdown-panel nav-dropdown-panel--mega" role="menu">' +
+      '<div class="nav-mega-grid">' +
+      cols +
+      "</div></div></div>"
+    );
+  }
+
   function renderStaticFallback(menu, lang) {
-    var azForum = topNavLink("forum-2024", "Forum 2024", "forum-2024");
-    var enForum = topNavLink("forum-2024", "Forum 2024", "forum-2024");
+    var azForum = forumMegaFallback("az");
+    var enForum = forumMegaFallback("en");
     var azTreasury =
       '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' +
       fallbackIcon("treasury") +

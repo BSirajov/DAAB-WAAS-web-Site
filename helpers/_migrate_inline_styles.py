@@ -74,6 +74,13 @@ MIGRATIONS: list[dict] = [
             "az/application/membership_value.html",
         ],
     },
+    {
+        "css": "daab-sponsors-page.css",
+        "version": 2,
+        "source": "en/sponsors.html",
+        "pages": ["en/sponsors.html", "az/sponsors.html"],
+        "overwrite": True,
+    },
 ]
 
 
@@ -106,7 +113,7 @@ def main() -> None:
             continue
 
         out = ROOT / "css" / mig["css"]
-        if not out.exists():
+        if mig.get("overwrite") or not out.exists():
             out.write_text(css_banner(mig["css"], mig["source"]) + css_text + "\n", encoding="utf-8")
             print("wrote", out.relative_to(ROOT))
 
