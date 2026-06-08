@@ -49,8 +49,6 @@ mirror -R --verbose --parallel=4 \
   --exclude-glob node_modules/** \
   --exclude-glob _archive/** \
   --exclude-glob cv/** \
-  --exclude-glob az/application/** \
-  --exclude-glob en/application/** \
   --exclude-glob .git/** \
   --exclude-glob .cursor/** \
   --exclude-glob .vscode/** \

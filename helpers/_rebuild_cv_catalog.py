@@ -1,4 +1,4 @@
-"""Rebuild scientists_card_view_az.html catalog (83 cards) from book + catalog data."""
+"""Rebuild az/scientists/profiles.html catalog from book + catalog data."""
 from __future__ import annotations
 
 import html

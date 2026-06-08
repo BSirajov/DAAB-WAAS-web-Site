@@ -1,16 +1,14 @@
-"""Build az/en forum video gallery pages from scraped Google Sites data."""
+"""Build az/en forum video gallery pages from js/video-gallery-data.json."""
 from __future__ import annotations
 
 import html
 import json
-import shutil
 from pathlib import Path
 
-from _paths import HELPERS, ROOT
+from _paths import ROOT
 from forum_en_video_gallery import translate_description
 from _embed_static_nav import forum_nav_strip
 
-DATA_IN = HELPERS / "_video_gallery_items.json"
 DATA_JS = ROOT / "js" / "video-gallery-data.json"
 ASSET = "../../../"
 
@@ -232,20 +230,15 @@ def page_html(lang: str, items: list[dict]) -> str:
 
 
 def main() -> None:
-    data_path = DATA_JS if DATA_JS.is_file() else DATA_IN
-    if not data_path.is_file():
-        raise SystemExit(
-            f"Missing {DATA_JS}; run helpers/_download_video_gallery_images.py first"
-        )
+    if not DATA_JS.is_file():
+        raise SystemExit(f"Missing {DATA_JS}")
 
-    items = json.loads(data_path.read_text(encoding="utf-8"))
+    items = json.loads(DATA_JS.read_text(encoding="utf-8"))
     for item in items:
         if item.get("image", "").startswith("http"):
             raise SystemExit(
-                "Remote image URLs in data; run helpers/_download_video_gallery_images.py"
+                "Remote image URLs in video-gallery-data.json; use local images/ paths"
             )
-    DATA_JS.write_text(json.dumps(items, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"Wrote {len(items)} items to {DATA_JS}")
 
     for lang in ("az", "en"):
         out = ROOT / lang / "forum" / "2024" / "video_gallery.html"

@@ -12,17 +12,13 @@ from pathlib import Path
 
 from _paths import ROOT
 
-# Live pages are under az/ and en/; root *_az.html are thin redirect stubs only.
+# Live pages are under az/ and en/.
 MAIN_PAGES: list[str] = []
 
 # Gateway pages — language picker only; no full nav shell required.
 GATEWAY_PAGES = {"index.html", "404.html"}
 
-# Build sources for application/membership_value embeds — not deployed as-is.
-BUILD_SOURCE_SUFFIXES = (
-    "/application/application.html",
-    "/application/membership_value.html",
-)
+BUILD_SOURCE_SUFFIXES: tuple[str, ...] = ()
 
 REQUIRED_SNIPPETS = {
     "daab-common.css": "css/daab-common.css",

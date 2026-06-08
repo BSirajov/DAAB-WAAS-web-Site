@@ -14,7 +14,7 @@ HTML_ROOTS = (
     ROOT / "sources",
 )
 
-SKIP_PARTS = {"deployment", "helpers", "documents", "cv", ".git", "__pycache__"}
+SKIP_PARTS = {"deployment", "Deployment", "helpers", "documents", "cv", ".git", "__pycache__"}
 
 CARD_ARROW_RE = re.compile(
     r"\s*<span\s+class=\"card-arrow\">\s*[↗→←↓↑↺]\s*</span>\s*",

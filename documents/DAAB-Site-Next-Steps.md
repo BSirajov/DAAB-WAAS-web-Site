@@ -68,7 +68,7 @@ Do **not** delete classes site-wide in one pass. `daab-forum-content.css` is cle
 | Subsystem | Result |
 |-----------|--------|
 | Forum | `daab-forum-content.css` — all classes used on live forum pages |
-| Build-only CSS | `daab-forum-book.css`, `daab-application-embed-*.css` — BUILD-ONLY headers; omitted via `.deployignore` |
+| Build-only CSS | `daab-forum-book.css` — BUILD-ONLY header; omitted via `.deployignore` |
 | Scientists profiles | Removed legacy `.card-org`, `.hero-actions`, `.awards-label`; Eldar photo crop via `#eldar-ehedov`; kept `.card-email--empty` for TTS |
 | Scientists toolbar | `.org` / `.w3` are false positives (URL fragments in `data:image` CSS) |
 | Application | Removed unused hero `.eyebrow`, `.dot`, `.hero-text`, `.hero-actions` from `daab-membership-application.css` |

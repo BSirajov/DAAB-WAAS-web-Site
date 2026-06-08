@@ -48,9 +48,8 @@ The **Dünya Azərbaycanlı Alimlər Birliyi (DAAB)** / **World Association of A
 | Site core | `az/*.html` | `en/*.html` | 10 |
 | Scientists | `az/scientists/` | `en/scientists/` | 2 |
 | Forum 2024 | `az/forum/2024/` | `en/forum/2024/` | 12 |
-| Embeds | `az/application/` | `en/application/` | 2 |
 
-**Total mirrored content pages:** 26 × 2 locales = **52**, plus gateway and embed variants.
+**Total mirrored content pages:** 26 × 2 locales = **52**, plus the language gateway.
 
 ### 2.2 Technology scope
 
@@ -95,7 +94,7 @@ Each row describes one logical page (AZ and EN mirrors share requirements). Path
 | **Membership terms** | `membership.html` / `membership.html` | membership | Define membership categories, fees, rights, and obligations | Hero; terms sections; fee tables; procedural text | Membership dropdown; section nav; breadcrumbs | Links to application and flyer | Minimal | Legal/informational reference for applicants | daab-membership-page.css + content hero |
 | **Presentations and papers** | `forum/2024/presentations.html` / `forum/2024/presentations.html` | forum | Table of contents for forum presentations and paper titles | Hero; TOC sidebar; presentation entries with authors | Forum section nav; sidebar TOC jumps; breadcrumbs | Sidebar widget navigation | Minimal text TOC | Academic reference listing | daab-presentations-toc.css; sidebar widget |
 | **Executive board** | `executive-board.html` / `executive-board.html` | about | Present leadership and board member profiles | Hero; board member cards with photos, roles, affiliations; QR codes on cards | About dropdown; section nav; breadcrumbs | QR scan opens profile or contact context (where configured) | Portrait photos; QR code images | Uses scientists-profile-qr.css patterns | Executive board grid; responsive card stack on mobile |
-| **Membership application** | `application.html` / `application.html` | membership | Collect membership applications via multi-step online form | Hero; 4-step wizard (personal, academic, documents, review); progress indicator | Membership dropdown; section nav; breadcrumbs | Step navigation; field validation UI; progress bar (client-side) | Form UI only | daab-membership-application.js; embed variant at application/application.html for Google Sites | daab-membership-application.css; accessible form controls |
+| **Membership application** | `application.html` / `application.html` | membership | Collect membership applications via multi-step online form | Hero; 4-step wizard (personal, academic, documents, review); progress indicator | Membership dropdown; section nav; breadcrumbs | Step navigation; field validation UI; progress bar (client-side) | Form UI only | daab-membership-application.js | daab-membership-application.css; accessible form controls |
 | **Official addresses** | `forum/2024/official.html` / `forum/2024/official.html` | forum | Publish formal opening addresses and official forum statements | Hero; speech/article cards; long-form justified text | Forum section nav; breadcrumbs; presentations-style TOC where used | In-page anchors; search | Speaker photos in speech layout | Long-form reading; print-friendly | daab-forum-content.css; daab-presentations-toc.css |
 | **Charter (bylaws)** | `charter.html` / `charter.html` | about | Publish official charter articles for legal/governance reference | Hero; table-of-contents sidebar widget; numbered articles; annexes | About dropdown; section nav; in-page TOC links; breadcrumbs | Sidebar TOC jump links; language switch preserves section where possible | Minimal; text-focused legal document styling | Print-friendly article layout; anchor links per article | Legal document typography; daab-charter-page.css; sidebar widget |
 | **Membership invitation flyer** | `membership_flyer.html` / `membership_flyer.html` | membership | Printable/shareable invitation for potential members | A4 flyer sheet (brand, pillars, benefits, youth, CTA, QR); page controls toolbar | Membership dropdown; section nav; standard site chrome above flyer | Print/PDF (single-page jsPDF export); Share (Web Share API or download + mailto); controls hidden from export | Logos; QR code; decorative flyer layout | html2canvas + jsPDF CDN; off-screen A4 clone; generatePdfBlob pipeline | daab-membership-flyer.css; A4 print/PDF fidelity requirements |
@@ -108,8 +107,6 @@ Each row describes one logical page (AZ and EN mirrors share requirements). Path
 | **Strategic roadmap** | `forum/2024/roadmap.html` / `forum/2024/roadmap.html` | forum | Present post-forum strategic priorities and roadmap | Hero; roadmap cards; sidebar widget | Forum section nav; breadcrumbs | Sidebar jumps | Icons in roadmap cards | Policy/strategy communication | Forum content + sidebar widget |
 | **Forum stories** | `forum/2024/stories.html` / `forum/2024/stories.html` | forum | Narrative stories related to Forum 2024 | Hero; story articles; timeline sidebar | Forum section nav; daab-sidebar-timeline.js; breadcrumbs | Timeline sidebar navigation; story TTS script exists but not wired on live page | Story imagery inline | Long-form narrative content | Forum content + timeline sidebar |
 | **Contributions and cooperation** | `forum/2024/cooperation.html` / `forum/2024/cooperation.html` | forum | Document institutional contributions and cooperation outcomes | Hero; cooperation sections; justified long-form text | Forum section nav; breadcrumbs | Search | Optional inline images | Static content | Forum content cards |
-| **Application embed (standalone)** | `application/application.html` / `application/application.html` | — | Embed membership form in external hosts (e.g. Google Sites) without full site chrome | Form wizard only | None (no site nav) | Same 4-step form logic as main application page | None | daab-application-embed-az.css / -en.css; relative asset paths for iframe | Minimal embed styling |
-| **Membership value embed** | `application/membership_value.html` / `application/membership_value.html` | — | Embed membership value content externally | Benefit content without full shell | None | Minimal | Inline icons | daab-application-membership-value-embed.css | Embed-optimized typography |
 
 ### 4.1 Language/version requirements (all pages)
 
@@ -117,7 +114,7 @@ Each row describes one logical page (AZ and EN mirrors share requirements). Path
 - `<html lang>` and `data-daab-lang` MUST match the folder (`az` or `en`).
 - `data-daab-page-id` MUST match `i18n/routes.json` page id for i18n, breadcrumbs, and language pairing.
 - Language switcher MUST open the alternate locale URL from `routes.json`.
-- Legacy filenames MUST redirect via `legacyRedirects` in routes.json.
+- Legacy filenames MUST redirect via `routes.json page pairs` in routes.json.
 
 ## 5. Navigation and information architecture
 
@@ -343,7 +340,7 @@ python helpers/_audit_repo_health.py
 | 7 | Residual legacy URL bookmarks | 404 off-site | Maintain redirects; communicate new `/az/` `/en/` paths |
 | 8 | Full unused CSS/JS audit deferred | Bundle size | Run `_audit_css_usage.py` per stylesheet |
 | 9 | Manual QA checklist incomplete | Release risk | Complete keyboard/tablet QA from pre-release doc |
-| 10 | Google Sites embed constraints | iframe/X-Frame-Options | Test embed URLs after each path change |
+| 10 | iframe/embed constraints | X-Frame-Options | Test embed URLs after path changes |
 
 ---
 

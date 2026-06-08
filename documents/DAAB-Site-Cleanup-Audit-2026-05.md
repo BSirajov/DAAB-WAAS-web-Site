@@ -12,7 +12,6 @@ This document records a full-repository technical review of the static DAAB/WAAS
 | Membership section pills (raw page IDs) | Broken labels on several pages | Fixed via `daab-section-nav.js` + static HTML on membership cluster |
 | Shared JS/CSS cache versions | Mixed `?v=4`–`v=7` across pages | Unified on deployable `az/` and `en/` pages (canonical versions from `en/application.html`) |
 | Site search index nav titles | Raw `membership-value` / `membership-application` | Rebuilt with human labels |
-| Prototype HTML under `*/application/` | Expected warnings (not deployed) | Excluded from validator shell checks |
 | Forum shared CSS (`daab-forum-content.css`) | Broken selectors for photos/video gallery | **Repaired**; `?v=5` on forum pages |
 
 **Automated validation:** `python helpers/_validate_site.py` → **OK — no broken local paths detected.**
@@ -32,7 +31,7 @@ This document records a full-repository technical review of the static DAAB/WAAS
 | Internal docs | `documents/` | Not deployed |
 | Legacy | `_archive/`, `sources/` | Not deployed |
 
-**Do not deploy:** `helpers/`, `documents/`, `az/application/`, `en/application/`, `_archive/`, `sources/`.
+**Do not deploy:** `helpers/`, `documents/`, `_archive/`, `sources/`.
 
 ---
 
@@ -92,13 +91,13 @@ This document records a full-repository technical review of the static DAAB/WAAS
 
 **Issue:** Redundant English paragraph in AZ form intro (removed in prior edit).
 
-**Status:** Retained; build source `az/application/application.html` aligned.
+**Status:** AZ intro copy aligned on live `az/application.html`.
 
 ---
 
 ## Remaining warnings (expected, non-blocking)
 
-Build-source HTML under `az/application/` and `en/application/` is **excluded** from shell snippet checks in `_validate_site.py` (May 2026). These files are **source/mock** pages for `helpers/_build_*_application_page.py` and `_build_membership_value_page.py`. They intentionally omit the full DAAB shell. **Do not publish** them to production.
+None for deployable pages. Run `python helpers/_validate_site.py` after substantive HTML/path changes.
 
 ---
 
@@ -112,7 +111,6 @@ A site-wide “remove every unused CSS class / JS function” pass was **not** a
 |------|--------|
 | `css/daab-forum-content.css` | Repaired **51+** broken selector groups where `forum-photos-gallery` / `forum-video-gallery` lacked descendant suffixes; deduplicated corrupted `.widget-head` and `scroll-behavior` blocks (`helpers/_fix_forum_css_pairs.py` + manual edits). Cache bumped to `?v=5` on all `az/forum/` and `en/forum/` pages. |
 | `helpers/_tmp_video_gallery.html` | **Removed** (~305 KB scratch file; not referenced). |
-| `helpers/_validate_site.py` | Skips build sources under `*/application/*.html` so validation reports **0 warnings** for deployable pages only. |
 
 **Still recommended (manual / scripted follow-up):**
 
@@ -131,7 +129,7 @@ A site-wide “remove every unused CSS class / JS function” pass was **not** a
 |------|----------|------------------|
 | Legacy route names in metadata | `i18n/routes.json` (`legacy` fields) | Keep for redirects/docs only |
 | Archive HTML | `_archive/*.html` | Keep out of deploy; delete only after confirming no external links |
-| `sources/home_az.html` | Obsolete nav targets (`*_az.html`) | Archive or update if used as reference |
+| `sources/home_az.html` | Build source for `az/index.html` — keep in repo |
 | EN membership hero CTA | `en/membership.html` — “Join our Association” | Consider aligning wording with “Join us” for consistency |
 | AZ membership hero CTA | `az/membership.html` — “Birliyimizə üzv olun” | OK; optional align with “Bizə qoşulun” |
 
@@ -201,7 +199,6 @@ Not executed in this automated pass. Before release, verify on:
 | `helpers/_site_wide_cleanup.py` | Re-run: foundation path fix pattern, asset `?v=` bumps, membership_value section nav injection |
 | `helpers/_build_search_index.py` | Rebuild search after route/label changes |
 | `helpers/_sync_primary_nav.py` | Updated version constants |
-| `helpers/_build_membership_value_page.py` | Emits section nav + `?v=7` |
 | `helpers/_fix_forum_css_pairs.py` | Repair `forum-photos-gallery` / `forum-video-gallery` selector suffixes in `daab-forum-content.css` |
 
 **Standard post-change workflow:**

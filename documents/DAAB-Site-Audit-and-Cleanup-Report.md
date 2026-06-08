@@ -50,7 +50,7 @@ Same CSS-before-scripts ordering applied at the bottom of the `<head>` block.
 - **Obsolete root filenames in links:** Validator watches for old `Scientists_AZ.html`-style targets; none in live tree.
 - **Bilingual structure:** Nine mirrored page pairs under `az/` and `en/`; routes in `i18n/routes.json`.
 - **File organization:** Web assets under `css/`, `js/`, `images/`; maintenance under `helpers/`; internal docs under `documents/` (per `.cursor/rules`).
-- **Root `*_az.html` stubs:** Intentional redirects to `az/` tree; not deployed as primary URLs.
+- **Live pages:** `az/` and `en/` trees only; root `index.html` is the language gateway.
 
 ## Known items for future work (not changed in this pass)
 

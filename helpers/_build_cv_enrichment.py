@@ -1,4 +1,4 @@
-"""Match CV cards to scientists_list_view_az.html DATA by name; add email/ixtilas."""
+"""Match CV cards to az/scientists/list.html DATA by name; add email/ixtilas."""
 from __future__ import annotations
 
 import json

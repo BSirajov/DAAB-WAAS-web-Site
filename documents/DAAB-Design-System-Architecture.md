@@ -77,8 +77,8 @@ Run `python helpers/_audit_design_hardcoding.py` — as of the May 2026 cleanup,
 | `activities.html` | `daab-activities-page.css` + `daab-activities-layout.css` |
 | `scientists/list.html` | `daab-scientists-list-page.css` |
 | `scientists/profiles.html` | `daab-scientists-profiles-page.css` |
-| `application/application.html` | `daab-application-embed-en.css` / `daab-application-embed-az.css` |
-| `application/membership_value.html` | `daab-application-membership-value-embed.css` |
+| `application.html` | `daab-membership-application.css` |
+| `membership_value.html` | `daab-membership-page.css` |
 
 Extracted via `helpers/_migrate_inline_styles.py` (re-run only when adding new inline blocks to migrate).
 

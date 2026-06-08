@@ -22,8 +22,8 @@
 | Include | Notes |
 |---------|--------|
 | `index.html` | Language gateway |
-| `az/**/*.html` | **Not** `az/application/` (build sources) |
-| `en/**/*.html` | **Not** `en/application/` |
+| `az/**/*.html` | All locale pages |
+| `en/**/*.html` | All locale pages |
 | `css/` | Full folder recommended |
 | `js/` | Full folder + gallery JSON manifests |
 | `images/` | Full tree (~1500 files) |
@@ -34,7 +34,7 @@
 
 ## Do not upload
 
-`helpers/` · `documents/` · `sources/` · `_archive/` · `node_modules/` · `scripts/` · `az/application/` · `en/application/` · `forum_2024/*.docx` · `.git/` · `.cursor/`
+`helpers/` · `documents/` · `sources/` · `_archive/` · `node_modules/` · `scripts/` · `forum_2024/*.docx` · `.git/` · `.cursor/`
 
 ---
 

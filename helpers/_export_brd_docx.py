@@ -186,7 +186,7 @@ PAGE_SPECS: dict[str, dict] = {
         "navigation": "Membership dropdown; section nav; breadcrumbs",
         "interactive": "Step navigation; field validation UI; progress bar (client-side)",
         "media": "Form UI only",
-        "functional": "daab-membership-application.js; embed variant at application/application.html for Google Sites",
+        "functional": "daab-membership-application.js on az/application.html and en/application.html",
         "design": "daab-membership-application.css; accessible form controls",
     },
     "membership-flyer": {
@@ -332,28 +332,6 @@ PAGE_SPECS: dict[str, dict] = {
         "functional": "Static content",
         "design": "Forum content cards",
     },
-    "embed-application": {
-        "name_en": "Application embed (standalone)",
-        "name_az": "Müraciət embed",
-        "purpose": "Embed membership form in external hosts (e.g. Google Sites) without full site chrome",
-        "content_blocks": "Form wizard only",
-        "navigation": "None (no site nav)",
-        "interactive": "Same 4-step form logic as main application page",
-        "media": "None",
-        "functional": "daab-application-embed-az.css / -en.css; relative asset paths for iframe",
-        "design": "Minimal embed styling",
-    },
-    "embed-membership-value": {
-        "name_en": "Membership value embed",
-        "name_az": "Üzvlük dəyəri embed",
-        "purpose": "Embed membership value content externally",
-        "content_blocks": "Benefit content without full shell",
-        "navigation": "None",
-        "interactive": "Minimal",
-        "media": "Inline icons",
-        "functional": "daab-application-membership-value-embed.css",
-        "design": "Embed-optimized typography",
-    },
 }
 
 
@@ -424,9 +402,8 @@ def build_markdown() -> str:
     append("| Site core | `az/*.html` | `en/*.html` | 10 |")
     append("| Scientists | `az/scientists/` | `en/scientists/` | 2 |")
     append("| Forum 2024 | `az/forum/2024/` | `en/forum/2024/` | 12 |")
-    append("| Embeds | `az/application/` | `en/application/` | 2 |")
     append("")
-    append("**Total mirrored content pages:** 26 × 2 locales = **52**, plus gateway and embed variants.")
+    append("**Total mirrored content pages:** 26 × 2 locales = **52**, plus the language gateway.")
     append("")
     append("### 2.2 Technology scope")
     append("")
@@ -473,10 +450,7 @@ def build_markdown() -> str:
         "---------------------|----------------------|-------|-----------------|-------------|"
     )
 
-    ordered_ids = ["gateway"] + [p["id"] for p in sorted(routes["pages"], key=lambda x: x.get("navOrder", 99))] + [
-        "embed-application",
-        "embed-membership-value",
-    ]
+    ordered_ids = ["gateway"] + [p["id"] for p in sorted(routes["pages"], key=lambda x: x.get("navOrder", 99))]
     seen: set[str] = set()
     for page_id in ordered_ids:
         if page_id in seen:
@@ -491,17 +465,6 @@ def build_markdown() -> str:
                 f"{spec['purpose']} | {spec['content_blocks']} | {spec['navigation']} | "
                 f"{spec['interactive']} | {spec['media']} | {spec['functional']} | {spec['design']} |"
             )
-        elif page_id.startswith("embed-"):
-            embed_paths = {
-                "embed-application": "`application/application.html` / `application/application.html`",
-                "embed-membership-value": "`application/membership_value.html` / `application/membership_value.html`",
-            }
-            paths = embed_paths.get(page_id, "— / —")
-            append(
-                f"| **{spec['name_en']}** | {paths} | — | "
-                f"{spec['purpose']} | {spec['content_blocks']} | {spec['navigation']} | "
-                f"{spec['interactive']} | {spec['media']} | {spec['functional']} | {spec['design']} |"
-            )
         else:
             append(_page_row(page_id, spec, routes, ui))
 
@@ -512,7 +475,7 @@ def build_markdown() -> str:
     append("- `<html lang>` and `data-daab-lang` MUST match the folder (`az` or `en`).")
     append("- `data-daab-page-id` MUST match `i18n/routes.json` page id for i18n, breadcrumbs, and language pairing.")
     append("- Language switcher MUST open the alternate locale URL from `routes.json`.")
-    append("- Legacy filenames MUST redirect via `legacyRedirects` in routes.json.")
+    append("- Public pages live under az/ and en/; use routes.json for language pairs.")
     append("")
 
     # 5 Navigation
@@ -761,7 +724,7 @@ def build_markdown() -> str:
     append("| 7 | Residual legacy URL bookmarks | 404 off-site | Maintain redirects; communicate new `/az/` `/en/` paths |")
     append("| 8 | Full unused CSS/JS audit deferred | Bundle size | Run `_audit_css_usage.py` per stylesheet |")
     append("| 9 | Manual QA checklist incomplete | Release risk | Complete keyboard/tablet QA from pre-release doc |")
-    append("| 10 | Google Sites embed constraints | iframe/X-Frame-Options | Test embed URLs after each path change |")
+    append("| 10 | iframe/embed constraints | X-Frame-Options | Test any third-party embed URLs after path changes |")
     append("")
     append("---")
     append("")

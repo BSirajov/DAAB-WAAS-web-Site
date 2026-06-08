@@ -73,9 +73,6 @@ STYLE_VERSIONS = {
     "daab-foundation-page.css": 4,
     "daab-mission-page.css": 5,
     "daab-membership-application.css": 14,
-    "daab-application-membership-value-embed.css": 2,
-    "daab-application-embed-az.css": 2,
-    "daab-application-embed-en.css": 2,
     "daab-scientists-list-page.css": 10,
     "scientists-list-catalog.js": 5,
     "daab-photos-gallery.css": 8,
@@ -145,9 +142,6 @@ def iter_deploy_html() -> list[Path]:
             continue
         for path in base.rglob("*.html"):
             if not path.is_file():
-                continue
-            # Skip prototype sources: az/application/foo.html, en/application/foo.html
-            if path.parent.name == "application" and path.parent.parent.name in ("az", "en"):
                 continue
             out.append(path)
     return sorted(out)

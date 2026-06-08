@@ -97,8 +97,7 @@ def asset_prefix(path: Path) -> str:
 
 
 def is_live_page(path: Path) -> bool:
-    """Live pages live under /az or /en. Legacy root-level *_az.html files are
-    build sources and must not be touched by the nav patcher."""
+    """Live pages live under /az or /en only."""
     rel = path.relative_to(ROOT).as_posix()
     return rel.startswith("az/") or rel.startswith("en/")
 

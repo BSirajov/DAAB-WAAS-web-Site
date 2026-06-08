@@ -1,4 +1,4 @@
-"""Recover scientists_card_view_az.html card catalog from agent transcript."""
+"""Recover az/scientists/profiles.html card catalog from agent transcript."""
 import json
 import re
 from pathlib import Path

@@ -88,8 +88,6 @@ TARGET_GLOBS = [
     "daab-*-page.css",
     "daab-content-hero.css",
     "daab-hub-cards.css",
-    "daab-application-embed-*.css",
-    "daab-application-membership-value-embed.css",
     "daab-membership-value.css",
     "daab-executive-board.css",
     "daab-nav-mega.css",

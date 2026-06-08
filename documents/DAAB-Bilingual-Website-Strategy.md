@@ -1,6 +1,6 @@
 # DAAB bilingual website strategy (Azerbaijani + English)
 
-This document describes a recommended approach for converting the DAAB website into a professional bilingual platform, initially supporting **Azerbaijani (AZ)** and **English (EN)**. It is tailored to the current stack: static HTML on GitHub Pages / `daab-waas.com`, shared `css/` + `js/`, Python helpers for the scientist catalogue, `*_az.html` naming, and optional **Google Sites** links or embeds.
+This document describes a recommended approach for converting the DAAB website into a professional bilingual platform, initially supporting **Azerbaijani (AZ)** and **English (EN)**. It is tailored to the current stack: static HTML on GitHub Pages / `daab-waas.com`, shared `css/` + `js/`, Python helpers for the scientist catalogue, and bilingual `az/` and `en/` page trees.
 
 ---
 
@@ -44,8 +44,8 @@ daab-waas.com/
 
 ### Why this fits DAAB
 
-- The project already avoids a backend; static hosting stays simple and Google-Sites-friendly.
-- Catalogue content is already regenerated from DOCX via `helpers/` — extend that pipeline for English instead of hand-copying `scientists_card_view_az.html`.
+- The project already avoids a backend; static hosting stays simple and portable.
+- Catalogue content is already regenerated from DOCX via `helpers/` — extend that pipeline for English instead of hand-copying `az/scientists/profiles.html`.
 - CV pages such as `cv/afina_barmanbay.html` already use an **in-page language toggle** — that pattern can remain for deep profiles while the main site uses **URL-based** languages.
 
 ### What to avoid as the primary strategy
@@ -62,8 +62,8 @@ daab-waas.com/
 
 | Approach | Fit for DAAB | Verdict |
 |----------|--------------|---------|
-| **A. Parallel files** (`foundation_az.html` + `foundation_en.html`) | Quick start; matches today | Good **Phase 1**, weak at scale without automation |
-| **B. Language folders** (`/az/...`, `/en/...`) | Clear URLs, SEO, Google Sites links | **Recommended primary structure** |
+| **A. Parallel files** (`az/foundation.html` + `foundation_en.html`) | Quick start; matches today | Good **Phase 1**, weak at scale without automation |
+| **B. Language folders** (`/az/...`, `/en/...`) | Clear URLs, SEO, canonical /az/ and /en/ URLs | **Recommended primary structure** |
 | **C. Templates + build** (Eleventy, Astro, Hugo) | Best long-term; one nav, one layout | **Recommended Phase 2** |
 | **D. Client-side i18n only** (JSON + JS replaces text) | Works for UI labels; weak for long bios & SEO | **UI only**, not whole site |
 | **E. CMS / headless** (Sanity, Strapi) | Useful if many editors | Optional later |
@@ -110,13 +110,13 @@ Place in the **nav strip**, right side (before search if present):
 - Use `aria-current="true"` on the active language.
 - Persist choice in `localStorage` only as a **hint** for `/` redirect; do not rely on it for routing.
 - On first visit to `/`, redirect using:
-  1. `?lang=en` query (for Google Sites campaign links), else
+  1. `?lang=en` query (for marketing campaign links), else
   2. `Accept-Language` (optional, conservative), else
   3. **Default: Azerbaijani** (primary audience).
 
 ### Navigation content
 
-- All `href`s in nav must be **language-prefixed** (`/en/charter.html`, not `/charter_az.html`).
+- All `href`s in nav must be **language-prefixed** (`/en/charter.html`, not `/az/charter.html`).
 - Retire `_az` / `_en` **filename suffixes** when folders carry language (`/az/charter.html` is sufficient).
 - Scientists submenu:
   - AZ: “Siyahı” / “Profil”
@@ -125,7 +125,7 @@ Place in the **nav strip**, right side (before search if present):
 
 ### Compatibility with existing `daab-nav.js`
 
-- Today nav compares `location.pathname` to filenames like `scientists_list_view_az.html`.
+- Today nav compares `location.pathname` to filenames like `az/scientists/list.html`.
 - Refactor to **data attributes**: `data-nav-id="scientists-list"` + `data-lang="az"` so one script works for both trees.
 
 ---
@@ -147,11 +147,11 @@ https://daab-waas.com/en/membership/
 
 | Strategy | Pros | Cons |
 |----------|------|------|
-| **`/` = language picker** (two buttons) | Neutral; good for Google Sites | Extra click |
+| **`/` = language picker** (two buttons) | Neutral; good for neutral entry | Extra click |
 | **`/` → 302 to `/az/`** | Simple default | English users need `/en/` link |
 | **`/` mirrors `/az/`** | No redirect | EN-only URLs less obvious |
 
-**Recommendation:** small gateway at `/` with AZ (primary) + EN, plus **301 redirects** from old URLs (`foundation_az.html` → `/az/foundation/`).
+**Recommendation:** small gateway at `/` with AZ (primary) + EN, plus **301 redirects** from old URLs (`az/foundation.html` → `/az/foundation/`).
 
 ### CV URLs
 
@@ -165,11 +165,6 @@ Keep stable person slugs:
 
 For SEO, **separate URLs per language** are better than toggle-only; toggles are fine for **supplementary** CVs linked from the catalogue.
 
-### Google Sites
-
-- Do **not** embed different languages in one iframe without a clear URL.
-- Use two buttons: “Azərbaycan versiyası” → `https://daab-waas.com/az/`, “English version” → `https://daab-waas.com/en/`.
-- Prefer **open in new tab** over iframe (see `DAAB-Site-Stability-and-Deployment-Guide.md` for iframe/header issues).
 
 ---
 
@@ -200,8 +195,8 @@ For SEO, **separate URLs per language** are better than toggle-only; toggles are
 
 Maintain `_redirects` (Netlify) or `.htaccess` / Cloudflare rules:
 
-- Old `*_az.html` → new `/az/...` (301)
-- Prevents broken bookmarks and Google Sites links
+- Old flat bookmark URLs → `/az/...` or `/en/...` (301) if still linked externally
+- Prevents broken bookmarks and canonical /az/ and /en/ URLs
 
 ---
 
@@ -286,34 +281,14 @@ Load fonts once in shared CSS; subsetting optional for performance.
 
 ---
 
-## 9. Google Sites embedding limitations
-
-| Constraint | Implication for bilingual |
-|------------|---------------------------|
-| Sites cannot host the repo | All languages live on **daab-waas.com** (or GitHub Pages) |
-| iframe may break (X-Frame-Options, scroll) | Prefer **outbound links** per language |
-| Every URL change needs manual Sites update | Stabilize URLs early (`/az/`, `/en/`) |
-| HTTPS required | Both language roots must be HTTPS |
-
-### Practical setup on Google Sites
-
-- Section: “Official website”
-  - Button → `https://daab-waas.com/az/`
-  - Button → `https://daab-waas.com/en/`
-- Avoid embedding the full catalogue iframe; link to list view instead.
-
-See also: `documents/DAAB-Site-Stability-and-Deployment-Guide.md` (§2.6, §10).
-
----
-
-## 10. Static vs dynamic — pros and cons
+## 9. Static vs dynamic — pros and cons
 
 ### Static multilingual (recommended for DAAB)
 
 **Pros**
 
 - Works on GitHub Pages; no server cost
-- Fast, cacheable, reliable with Google Sites links
+- Fast, cacheable, reliable with canonical /az/ and /en/ URLs
 - Predictable SEO (real URLs per language)
 - Aligns with current skills and Python helpers
 
@@ -382,7 +357,7 @@ helpers/
 
 ### Deprecate gradually
 
-- `*_az.html` at root → redirects to `/az/...`
+- Root `index.html` gateway redirects to `/az/` or `/en/`
 - Use **one** lowercase image path convention (`images/scientists-photos/`) — avoid case mismatches on Linux hosting.
 
 ---
@@ -434,7 +409,7 @@ helpers/
 
 | Phase | Deliverable | Effort (indicative) |
 |-------|-------------|---------------------|
-| **0** | URL map, redirects from `*_az.html`, language switcher shell | 1–2 weeks |
+| **0** | URL map, language switcher shell, root gateway | 1–2 weeks |
 | **1** | `/en/` mirror of main pages (professional EN copy) | 4–8 weeks (content-bound) |
 | **2** | Scientist data `scientists.{az,en}.json` + regenerate list/cards | 2–4 weeks dev |
 | **3** | hreflang, sitemap, CI validation | 1 week |
@@ -452,7 +427,7 @@ For DAAB, the **professional and realistic** approach is:
 3. **Scientist catalogue from JSON** per language, regenerated from DOCX/workflows already in use.
 4. **Central i18n** for nav, filters, buttons, metadata.
 5. **hreflang + redirects + sitemap** for SEO.
-6. **Google Sites**: link to `/az/` and `/en/`; avoid fragile iframes.
+6. Promote /az/ and /en/ URLs in all outreach.
 7. **Same typography** (Inter + Playfair) with layout tolerance for longer English strings.
 
 That delivers a **seamless bilingual UX**, scales to more languages, and fits the current repository without requiring a heavy CMS or breaking static hosting.
@@ -466,7 +441,7 @@ When ready to implement in the repository:
 1. Add `documents/DAAB-Bilingual-Website-Strategy.md` (this file) as the reference.
 2. Create `i18n/routes.json` and `js/daab-i18n.js` (language switcher + path helpers).
 3. Add `/en/index.html` skeleton and language gateway at `/`.
-4. Add 301 redirect rules from legacy `*_az.html` paths.
+4. Add 301 redirect rules only if obsolete flat URLs are still linked externally.
 5. Defer full scientist catalogue migration until Phase 2.
 
 ---

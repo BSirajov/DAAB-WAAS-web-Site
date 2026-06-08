@@ -1,7 +1,7 @@
 # DAAB website — Python (`.py`) and JavaScript (`.js`) files
 
 **Project:** DAAB-WAAS web site  
-**Location:** Repository root (same folder as `index.html`, `scientists_card_view_az.html`, etc.)  
+**Location:** Repository root (same folder as `index.html`, `az/scientists/profiles.html`, etc.)  
 **Last updated:** May 2026
 
 This document describes every `.py` (in `helpers/`) and `.js` (in `js/`) file in the project: what each one does, whether it is required for the public website, and how the pieces fit together.
@@ -40,7 +40,7 @@ These files are **loaded by HTML pages** via `<script src="...">` and run in the
 
 | | |
 |---|---|
-| **Used on** | Most site pages: `index.html`, `scientists_list_view_az.html`, `scientists_card_view_az.html`, `charter_az.html`, `activities_az.html`, `foundation_az.html`, `executive_board_az.html`, `membership_terms_az.html`, `mission_vision_values_az.html` |
+| **Used on** | Most site pages: `index.html`, `az/scientists/list.html`, `az/scientists/profiles.html`, `az/charter.html`, `az/activities.html`, `az/foundation.html`, `az/executive-board.html`, `az/membership_value.html`, `az/mission.html` |
 | **Typical load** | `<script src="js/daab-nav.js?v=2" defer></script>` |
 | **Purpose** | Shared site navigation behavior |
 
@@ -59,7 +59,7 @@ These files are **loaded by HTML pages** via `<script src="...">` and run in the
 
 | | |
 |---|---|
-| **Used on** | `scientists_card_view_az.html` only |
+| **Used on** | `az/scientists/profiles.html` only |
 | **Typical load** | `<script src="js/scientists-catalog-data.js?v=1"></script>` (no `defer`; loads before filter script) |
 | **Purpose** | Shared scientist catalogue metadata for the CV page |
 
@@ -84,7 +84,7 @@ window.SCIENTISTS_CATALOG_DATA = [ /* 83 records */ ];
 
 **Used by:** `scientists-cv-filters.js` to populate country, ixtisas, and degree dropdowns.
 
-**Note:** The list page `scientists_list_view_az.html` embeds the **same data** as inline `const DATA = [...]` inside the HTML file, not this `.js` file. Keeping both in sync when editing scientists is important.
+**Note:** The list page `az/scientists/list.html` embeds the **same data** as inline `const DATA = [...]` inside the HTML file, not this `.js` file. Keeping both in sync when editing scientists is important.
 
 ---
 
@@ -92,7 +92,7 @@ window.SCIENTISTS_CATALOG_DATA = [ /* 83 records */ ];
 
 | | |
 |---|---|
-| **Used on** | `scientists_card_view_az.html` only |
+| **Used on** | `az/scientists/profiles.html` only |
 | **Typical load** | `<script src="js/scientists-cv-filters.js?v=8" defer></script>` |
 | **Purpose** | Search and filter the 83 CV profile cards |
 
@@ -127,7 +127,7 @@ Much behavior lives in **inline `<script>` blocks** inside HTML:
 
 | Location | Purpose |
 |----------|---------|
-| `scientists_list_view_az.html` | `const DATA = [...]`, table render, sort, pagination, filters |
+| `az/scientists/list.html` | `const DATA = [...]`, table render, sort, pagination, filters |
 | Most pages (footer area) | Site-wide search overlay (`#search-overlay`, Ctrl+K) |
 
 These are part of the `.html` files, not standalone `.js` modules.
@@ -152,7 +152,7 @@ Paths to HTML, `css/`, `js/`, and `images/` are resolved via `helpers/_paths.py`
 | File | Purpose |
 |------|---------|
 | **`helpers/_extract_pdf.py`** | Extracts text from the forum/book PDF (`documents/Forum_haqqinda_kitab_...pdf`) into `_pdf_extract.txt` (repo root) using `pypdf`. |
-| **`helpers/_sync_scientists_from_book.py`** | Parses the book chapter from `_pdf_extract.txt` and updates CV card titles/bios in `scientists_card_view_az.html` (verbatim text, bullets, awards blocks). |
+| **`helpers/_sync_scientists_from_book.py`** | Parses the book chapter from `_pdf_extract.txt` and updates CV card titles/bios in `az/scientists/profiles.html` (verbatim text, bullets, awards blocks). |
 
 ### CV catalogue build & repair
 
@@ -169,18 +169,18 @@ Paths to HTML, `css/`, `js/`, and `images/` are resolved via `helpers/_paths.py`
 
 | File | Purpose |
 |------|---------|
-| **`helpers/_build_cv_enrichment.py`** | Matches CV cards to `scientists_list_view_az.html` DATA by name; adds/updates `data-email`, `data-ixtilas`, `data-degree`, `data-search`, and meta HTML. Can rewrite `js/scientists-catalog-data.js`. |
+| **`helpers/_build_cv_enrichment.py`** | Matches CV cards to `az/scientists/list.html` DATA by name; adds/updates `data-email`, `data-ixtilas`, `data-degree`, `data-search`, and meta HTML. Can rewrite `js/scientists-catalog-data.js`. |
 | **`helpers/_validate_cv_cards.py`** | Validates card HTML (meta rows, header structure, closing tags). |
 | **`helpers/_check_name_order.py`** | Compares scientist name order on CV page vs list page DATA. |
 | **`helpers/_print_norms.py`** | Debug helper: prints normalized names for tricky matches (Barmanbay, Səbziyeva, etc.). |
 
 ### Typical workflow (when updating scientists)
 
-1. Update source data (`scientists_list_view_az.html` DATA and/or `js/scientists-catalog-data.js`).
+1. Update source data (`az/scientists/list.html` DATA and/or `js/scientists-catalog-data.js`).
 2. If bios come from the book: run `helpers/_extract_pdf.py` (if PDF changed) → `helpers/_sync_scientists_from_book.py` or `helpers/_rebuild_cv_catalog.py`.
 3. Run `helpers/_build_cv_enrichment.py` if emails/ixtisas/search attributes need syncing.
 4. Run `helpers/_validate_cv_cards.py` to catch HTML issues.
-5. Open `scientists_card_view_az.html` in a browser and test filters manually.
+5. Open `az/scientists/profiles.html` in a browser and test filters manually.
 
 ---
 
@@ -189,14 +189,14 @@ Paths to HTML, `css/`, `js/`, and `images/` are resolved via `helpers/_paths.py`
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │  MAINTENANCE (your computer) — helpers/*.py                 │
-│  PDF / book text → HTML cards in scientists_card_view_az.html      │
-│  scientists_list_view_az DATA → js/scientists-catalog-data.js       │
+│  PDF / book text → HTML cards in az/scientists/profiles.html      │
+│  az/scientists/list.html DATA → js/scientists-catalog-data.js       │
 └──────────────────────────────┬──────────────────────────────┘
                                │ writes / updates
                                ▼
 ┌─────────────────────────────────────────────────────────────┐
 │  STATIC SITE (hosted files)                                 │
-│  scientists_card_view_az.html  (83 card blocks + inline CSS)       │
+│  az/scientists/profiles.html  (83 card blocks + inline CSS)       │
 │  js/scientists-catalog-data.js  (metadata)                  │
 │  js/scientists-cv-filters.js  (filter UI)                   │
 │  js/daab-nav.js  (navigation)                               │

@@ -8,7 +8,7 @@ Scripts resolve the **repository root** via `helpers/_paths.py`:
 
 - `ROOT` — parent of this folder (contains `index.html`, `az/`, `en/`, `css/`, `js/`, `images/`)
 - `HELPERS` — this directory
-- **Live scientist pages:** `az/scientists/list.html`, `az/scientists/profiles.html` (not root `scientists_*_az.html` stubs)
+- **Live scientist pages:** `az/scientists/list.html`, `az/scientists/profiles.html`
 
 ## Run from repository root
 

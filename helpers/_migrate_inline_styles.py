@@ -54,27 +54,6 @@ MIGRATIONS: list[dict] = [
         "pages": ["en/scientists/profiles.html", "az/scientists/profiles.html"],
     },
     {
-        "css": "daab-application-embed-en.css",
-        "version": 1,
-        "source": "en/application/application.html",
-        "pages": ["en/application/application.html"],
-    },
-    {
-        "css": "daab-application-embed-az.css",
-        "version": 1,
-        "source": "az/application/application.html",
-        "pages": ["az/application/application.html"],
-    },
-    {
-        "css": "daab-application-membership-value-embed.css",
-        "version": 1,
-        "source": "en/application/membership_value.html",
-        "pages": [
-            "en/application/membership_value.html",
-            "az/application/membership_value.html",
-        ],
-    },
-    {
         "css": "daab-sponsors-page.css",
         "version": 2,
         "source": "en/sponsors.html",

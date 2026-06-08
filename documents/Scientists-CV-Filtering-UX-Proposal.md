@@ -1,7 +1,7 @@
 # Scientist profile filtering — UX/UI proposal (DAAB CV catalogue)
 
 **Project:** DAAB-WAAS website  
-**Page:** `scientists_card_view_az.html` (aligned with `scientists_list_view_az.html`)  
+**Page:** `az/scientists/profiles.html` (aligned with `az/scientists/list.html`)  
 **Date:** May 2026  
 **Status:** Proposal — not yet implemented (Phase B/C optional)
 
@@ -224,11 +224,11 @@ When `visible === 0`:
 
 ---
 
-## 11. Alignment with scientists_list_view_az.html (list page)
+## 11. Alignment with az/scientists/list.html (list page)
 
 Keep a **consistent mental model** between list and profile views:
 
-| scientists_list_view_az (table) | scientists_card_view_az (cards) |
+| az/scientists/list.html (table) | az/scientists/profiles.html (cards) |
 |------------------------|---------------------------|
 | Rows removed from table | Cards removed from grid |
 | Same AND filters | Same AND filters |
@@ -259,7 +259,7 @@ Users switching between **Siyahı** and **Profil** should not learn two differen
 - Active select styling + “Hamısını sıfırla”
 - Stable card/grid CSS (avatar min-width, 1/2 column grid)
 
-**Related files:** `scientists_card_view_az.html`, `js/scientists-cv-filters.js`, `css/scientists-catalog-toolbar.css`
+**Related files:** `az/scientists/profiles.html`, `js/scientists-cv-filters.js`, `css/scientists-catalog-toolbar.css`
 
 ### Phase B — UX polish
 

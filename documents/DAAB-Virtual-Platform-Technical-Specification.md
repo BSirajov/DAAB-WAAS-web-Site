@@ -245,7 +245,6 @@ DAAB / WAAS Platform
 | Forum 2024 | `az/forum/2024/` | `en/forum/2024/` | 12 |
 | Encyclopedia hub | `az/encyclopedia.html` | `en/encyclopedia.html` | 1 |
 | Prominent figure profiles | `az/prominent_figures/` | `en/prominent_figures/` | 200+ |
-| Application embeds | `az/application/` | `en/application/` | 2 |
 | Gateway | `index.html` | — | 1 (shared) |
 
 ### 5.4 Planned IA additions (Phases 2–4)
@@ -294,7 +293,7 @@ DAAB / WAAS Platform
 | NAV-03 | Mobile nav MUST use hamburger pattern with focus trap and `scroll-lock` on `body`. |
 | NAV-04 | Maximum 7±2 top-level items; deeper pages use section nav, not additional top-level links. |
 | NAV-05 | Every nav label MUST exist in both `ui.json` → `nav.az` and `nav.en`. |
-| NAV-06 | Legacy URLs MUST redirect via `legacyRedirects` in `routes.json`. |
+| NAV-06 | Legacy URLs MUST redirect via `routes.json page pairs` in `routes.json`. |
 | NAV-07 | Forum and future event microsites MUST use section nav, not top-level proliferation. |
 
 ### 6.4 Proposed navigation (Phase 3)
@@ -361,7 +360,6 @@ Requirements use prefixes: **FR** (functional), **FR-P1** (Phase 1 delivered), *
 | FR-P1-31 | Terms | Categories, fees, rights, obligations | P1 |
 | FR-P1-32 | Application wizard | 4-step form with client validation UI | P1 |
 | FR-P1-33 | Flyer | Print/PDF (jsPDF) and Share (Web Share API) | P1 |
-| FR-P1-34 | Embed variant | Standalone form for Google Sites iframe | P1 |
 | FR-P2-30 | Server submit | POST application JSON to approved backend | P2 |
 | FR-P2-31 | Draft save | Optional `sessionStorage` draft on same device | P2 |
 | FR-P2-32 | Admin notification | Email to board on new submission | P2 |
@@ -705,7 +703,6 @@ Target: **WCAG 2.1 Level AA** for all public pages.
 | LMS (Moodle/Canvas) | Course delivery | P3 | LTI or SSO |
 | Zoom / YouTube Live | Live lectures | P3 | Embed + calendar |
 | Instagram / LinkedIn / Facebook | Social presence | P1–P2 | Outbound links; optional oEmbed |
-| Google Sites | Embedded application form | P1 | iframe to `application/application.html` |
 | GitHub Pages / static host | Production deploy | P1 | Git push / CI |
 
 ### 15.2 API design guidelines (Phase 2+)

@@ -7,7 +7,7 @@ Client-side scripts for the DAAB static site. Loaded from HTML pages in the site
 | `daab-nav.js` | Mobile navigation menu and “Alimlərimiz” dropdown (tap on small screens and touch devices). |
 | `daab-mobile.js` | Nav height CSS variable, body scroll lock for menu/search, search overlay backdrop tap. |
 | `scientists-catalog-data.js` | `window.SCIENTISTS_CATALOG_DATA` — 83 scientists (metadata for CV filters). |
-| `scientists-cv-filters.js` | Search and filter UI on `scientists_card_view_az.html`. |
+| `scientists-cv-filters.js` | Search and filter UI on `az/scientists/profiles.html`. |
 
 **Typical references (root HTML pages):**
 
@@ -25,6 +25,6 @@ Client-side scripts for the DAAB static site. Loaded from HTML pages in the site
 
 `scientists-catalog-data.js` must load before `scientists-cv-filters.js` (no `defer` on the data file).
 
-**Note:** `scientists_list_view_az.html` embeds catalogue data inline as `const DATA = [...]`; only the CV page uses `scientists-catalog-data.js`.
+**Note:** `az/scientists/list.html` embeds catalogue data inline as `const DATA = [...]`; only the CV page uses `scientists-catalog-data.js`.
 
 **Related:** Python maintenance scripts in `../helpers/`.

@@ -18,9 +18,6 @@ IMPORTED_VIA_COMMON = frozenset(
 BUILD_ONLY_CSS = frozenset(
     {
         "daab-forum-book.css",
-        "daab-application-embed-az.css",
-        "daab-application-embed-en.css",
-        "daab-application-membership-value-embed.css",
         "daab-membership-page.css",  # membership.html is a redirect stub; CSS kept for reuse
     }
 )

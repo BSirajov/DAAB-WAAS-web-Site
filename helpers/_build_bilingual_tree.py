@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Build /az/ and /en/ page trees from legacy *_az.html sources.
+"""Build /az/ and /en/ page trees and SEO files (sitemap, gateway).
 
 Usage (from repo root):
     python helpers/_build_bilingual_tree.py
-    python helpers/_build_bilingual_tree.py --patch-legacy
 """
 from __future__ import annotations
 
@@ -26,20 +25,6 @@ I18N_HEAD = """
 <script src="{prefix}js/daab-section-nav.js?v=1" defer></script>
 <script src="{prefix}js/daab-shell.js?v=2" defer></script>
 """
-
-LEGACY_LINK_MAP = {
-    "index.html": "index.html",
-    "foundation_az.html": "foundation.html",
-    "mission_vision_values_az.html": "mission.html",
-    "activities_az.html": "activities.html",
-    "scientists_list_view_az.html": "scientists/list.html",
-    "scientists_card_view_az.html": "scientists/profiles.html",
-    "executive_board_az.html": "executive-board.html",
-    "charter_az.html": "charter.html",
-    "membership_terms_az.html": "membership_value.html",
-}
-
-REVERSE_LEGACY = {v: k for k, v in LEGACY_LINK_MAP.items()}
 
 SEARCH_SCRIPT_RE = re.compile(
     r'<script id="daab-shared-search-script">.*?</script>',
@@ -210,9 +195,6 @@ AZ_ROOT_PAGES = [
 
 
 def rewrite_internal_links(html: str, depth: int) -> str:
-    for legacy, target in LEGACY_LINK_MAP.items():
-        html = html.replace(f'href="{legacy}"', f'href="{target}"')
-        html = html.replace(f"href='{legacy}'", f"href='{target}'")
     if depth >= 2:
         up = "../" * (depth - 1)
         for page in AZ_ROOT_PAGES:
@@ -260,7 +242,7 @@ LEGACY_REDIRECT_RE = re.compile(
 
 
 def strip_legacy_redirect_meta(html: str) -> str:
-    """Remove meta-refresh tags copied from root *_az.html legacy files."""
+    """Remove meta-refresh redirect tags from HTML copied into az/ pages."""
     html = LEGACY_REDIRECT_RE.sub("", html)
     html = re.sub(r"<!-- data-daab-legacy-redirect -->\s*", "", html)
     html = re.sub(
@@ -302,14 +284,6 @@ def add_nav_data_attrs(html: str) -> str:
         ("membership.html", "membership"),
         ("scientists/list.html", "scientists-list"),
         ("scientists/profiles.html", "scientists-profiles"),
-        ("foundation_az.html", "foundation"),
-        ("mission_vision_values_az.html", "mission"),
-        ("activities_az.html", "activities"),
-        ("executive_board_az.html", "executive-board"),
-        ("charter_az.html", "charter"),
-        ("membership_terms_az.html", "membership"),
-        ("scientists_list_view_az.html", "scientists-list"),
-        ("scientists_card_view_az.html", "scientists-profiles"),
     ]
     for href, nav_id in pairs:
         html = re.sub(
@@ -327,10 +301,10 @@ def add_nav_data_attrs(html: str) -> str:
     return html
 
 
-def build_az_page(legacy_name: str, dest: Path, page_id: str) -> None:
-    src = ROOT / legacy_name
+def build_az_page(source_name: str, dest: Path, page_id: str) -> None:
+    src = ROOT / source_name
     if not src.is_file():
-        print(f"  skip missing source: {legacy_name}")
+        print(f"  skip missing source: {source_name}")
         return
     depth = len(dest.relative_to(ROOT).parts) - 1  # az/x.html -> 2, az/scientists/x.html -> 3
     html = src.read_text(encoding="utf-8")
@@ -517,24 +491,6 @@ def build_en_home() -> None:
     print(f"  en: {dest.relative_to(ROOT)}")
 
 
-def patch_legacy(pages: list) -> None:
-    for page in pages:
-        legacy = page.get("legacy")
-        if not legacy or legacy == "index.html":
-            continue
-        path = ROOT / legacy
-        if not path.is_file():
-            continue
-        html = path.read_text(encoding="utf-8")
-        html = inject_i18n_head(html, 0, page["id"], "az")
-        html = add_nav_data_attrs(html)
-        html = replace_inline_search(html, 0)
-        html = bump_nav_script(html)
-        html = strip_locale_hint(html)
-        path.write_text(html, encoding="utf-8", newline="\n")
-        print(f"  legacy patch: {legacy}")
-
-
 def write_gateway_index() -> None:
     (ROOT / "index.html").write_text(GATEWAY_INDEX, encoding="utf-8", newline="\n")
     print("  gateway: index.html -> az/index.html")
@@ -578,67 +534,16 @@ def write_robots_txt() -> None:
     print("  robots: robots.txt")
 
 
-LEGACY_REDIRECT_STUB = """<!DOCTYPE html>
-<html lang="az">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-<meta http-equiv="refresh" content="0; url={target}"/>
-<link rel="canonical" href="{target}"/>
-<!-- data-daab-legacy-redirect -->
-<title>DAAB — Redirect</title>
-</head>
-<body>
-<p><a href="{target}">Davam et</a></p>
-</body>
-</html>
-"""
-
-
-def write_legacy_redirects(routes: dict) -> None:
-    redirects = routes.get("legacyRedirects", {})
-    for legacy, target in redirects.items():
-        if legacy == "index.html":
-            continue
-        src = ROOT / legacy
-        if not src.is_file():
-            src.write_text(LEGACY_REDIRECT_STUB.format(target=target), encoding="utf-8", newline="\n")
-            print(f"  redirect created: {legacy} -> {target}")
-            continue
-        html = src.read_text(encoding="utf-8")
-        if "data-daab-legacy-redirect" in html:
-            continue
-        meta = f'<meta http-equiv="refresh" content="0; url={target}"/>\n<link rel="canonical" href="{target}"/>'
-        if "<head>" in html:
-            html = html.replace("<head>", f'<head>\n{meta}\n<!-- data-daab-legacy-redirect -->', 1)
-        src.write_text(html, encoding="utf-8", newline="\n")
-        print(f"  redirect hint: {legacy} -> {target}")
-
-
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--patch-legacy", action="store_true", default=True, help="Add i18n scripts to root *_az.html files (default: on)")
-    parser.add_argument("--no-patch-legacy", action="store_false", dest="patch_legacy", help="Skip legacy root patches")
     parser.add_argument("--gateway", action="store_true", default=True, help="Replace root index.html with gateway (default: on)")
     parser.add_argument("--no-gateway", action="store_false", dest="gateway", help="Keep existing root index.html")
     parser.add_argument("--sitemap", action="store_true", default=True, help="Write sitemap.xml (default: on)")
     parser.add_argument("--no-sitemap", action="store_false", dest="sitemap", help="Skip sitemap generation")
     parser.add_argument(
-        "--redirects",
-        action="store_true",
-        default=True,
-        help="Add meta refresh from legacy pages to /az/ (default: on)",
-    )
-    parser.add_argument(
-        "--no-redirects",
-        action="store_false",
-        dest="redirects",
-        help="Skip legacy meta-refresh hints",
-    )
-    parser.add_argument(
         "--seo-only",
         action="store_true",
-        help="Only regenerate sitemap.xml, robots.txt, and legacy redirect hints",
+        help="Only regenerate sitemap.xml and robots.txt",
     )
     args = parser.parse_args()
 
@@ -649,19 +554,13 @@ def main() -> int:
         if args.sitemap:
             write_sitemap(routes)
             write_robots_txt()
-        if args.redirects:
-            print("Adding legacy redirect hints...")
-            write_legacy_redirects(routes)
         print("Done. Run: python helpers/_validate_bilingual.py")
         return 0
 
-    print("Building Azerbaijani tree (/az/)...")
+    print("Building Azerbaijani home (/az/index.html)...")
     for page in pages:
-        legacy = page.get("legacy")
         if page["id"] == "home":
             build_az_page(HOME_AZ_SOURCE, ROOT / page["az"], page["id"])
-        elif legacy:
-            build_az_page(legacy, ROOT / page["az"], page["id"])
 
     print("Building English stubs (/en/)...")
     build_en_home()
@@ -669,10 +568,6 @@ def main() -> int:
         if page["id"] == "home":
             continue
         build_en_stub(page)
-
-    if args.patch_legacy:
-        print("Patching legacy root pages...")
-        patch_legacy(pages)
 
     if args.gateway:
         print("Writing root gateway...")
@@ -686,13 +581,7 @@ def main() -> int:
         (ROOT / ".nojekyll").write_text("", encoding="utf-8")
         print("  created: .nojekyll")
 
-    if args.redirects:
-        print("Adding legacy redirect hints...")
-        write_legacy_redirects(routes)
-
     print("Done. Run: python helpers/_validate_bilingual.py")
-
-    print("Done.")
     return 0
 
 

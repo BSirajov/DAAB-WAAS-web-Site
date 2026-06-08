@@ -42,7 +42,7 @@ DAAB-WAAS web site/
 | `.css` | `css/` |
 | `.js` | `js/` |
 | Maintenance `.py` | `helpers/` (use `helpers/_paths.py` for `ROOT`) |
-| `.html` (site pages) | Repository root; **lowercase** only (e.g. `activities_az.html`) |
+| `.html` (site pages) | `az/` and `en/` trees (lowercase filenames); gateway `index.html` at repo root |
 
 See `css/README.md`, `js/README.md`, and `helpers/README.md` for details.
 

@@ -12,9 +12,6 @@ def audit() -> int:
     issues: list[str] = []
     paths = sorted((ROOT / "az").rglob("*.html")) + sorted((ROOT / "en").rglob("*.html"))
     for p in paths:
-        rel_posix = p.relative_to(ROOT).as_posix()
-        if rel_posix.endswith("application/application.html"):
-            continue
         text = p.read_text(encoding="utf-8", errors="replace")
         if "nav-strip" not in text:
             continue

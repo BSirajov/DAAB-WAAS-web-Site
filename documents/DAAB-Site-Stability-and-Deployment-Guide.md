@@ -1,6 +1,6 @@
 # DAAB site — stability, deployment, and long-term maintenance
 
-This guide explains why the site sometimes shows **“This page isn’t working”** (Chrome/Edge) or similar errors, and how to keep the project reliable as files are renamed, refactored, or embedded in Google Sites.
+This guide explains why the site sometimes shows **“This page isn’t working”** (Chrome/Edge) or similar errors, and how to keep the project reliable as files are renamed or refactored.
 
 ---
 
@@ -16,7 +16,7 @@ That browser message is **not** a normal “broken CSS” or “404 image” pro
 | Blank page after deploy | Wrong hosting root (files not at site root), or deploy failed |
 | Works on PC, fails on phone | Cached old HTML pointing to deleted filenames |
 | Worked yesterday, broken today | Renamed HTML without updating links; or embed URL still points to old path |
-| Google Sites embed broken | iframe URL wrong, http/https mix, or host blocking embed |
+| Third-party iframe embed broken | iframe URL wrong, http/https mix, or host blocking embed |
 
 **Important:** Editing HTML/CSS/JS in the repo does **not** by itself cause this error unless you also break **how the site is served** (server down, wrong URL, or hosting misconfiguration).
 
@@ -34,10 +34,10 @@ That browser message is **not** a normal “broken CSS” or “404 image” pro
 
 ### 2.2 Filename and path churn (renames)
 
-The site went through several naming schemes (`Scientists_AZ.html` → `scientists_az.html` → `scientists_list_view_az.html`). Any of these leave breakage if:
+The site went through several naming schemes (`Scientists_AZ.html` → `scientists_az.html` → `az/scientists/list.html`). Any of these leave breakage if:
 
 - Navigation `href`s were not updated everywhere
-- Bookmarks or Google Sites embeds still use old URLs
+- Bookmarks or External bookmarks still use old URLs
 - Git on Windows hid case-only renames (works locally, fails on Linux hosting)
 
 ### 2.3 Case-sensitive paths (Linux hosting)
@@ -60,16 +60,16 @@ Avoid:
 
 ### 2.5 Very large HTML pages
 
-`scientists_card_view_az.html` is thousands of lines. That rarely causes “This page isn’t working”, but it can cause **slow load** or browser tab freeze. Prefer regenerating via `helpers/_rebuild_cv_catalog.py` instead of hand-editing huge blocks.
+`az/scientists/profiles.html` is thousands of lines. That rarely causes “This page isn’t working”, but it can cause **slow load** or browser tab freeze. Prefer regenerating via `helpers/_rebuild_cv_catalog.py` instead of hand-editing huge blocks.
 
-### 2.6 Google Sites embedding
+### 2.6 Third-party iframe embedding
 
 If the public site is an **iframe** to `https://daab-waas.com/...` or GitHub Pages:
 
 - Embed URL must be **exact** (including filename and lowercase)
-- **HTTPS** embed target required for HTTPS Sites
+- **HTTPS** embed target required for HTTPS parent pages
 - Some hosts send `X-Frame-Options: DENY` — page works when opened directly but not in iframe
-- Google Sites cannot host this repo’s files locally; it only **links/embeds** a real URL
+- Third-party hosts cannot serve this repo’s files locally; it only **links/embeds** a real URL
 
 ### 2.7 Cache
 
@@ -89,8 +89,9 @@ Do **not** require `helpers/`, `documents/`, `_pdf_extract.txt` for the live sit
 
 ```
 DAAB-WAAS web site/
-├── index.html                    # Site entry (lowercase names only)
-├── *_az.html                     # Other public pages at repo root
+├── index.html                    # Language gateway
+├── az/                           # Azerbaijani pages
+├── en/                           # English pages
 ├── css/
 │   ├── daab-common.css           # Global design system
 │   ├── daab-mobile.css           # Mobile/touch layer
@@ -129,7 +130,7 @@ DAAB-WAAS web site/
   - `js/daab-nav.js?v=N`
   - `js/daab-mobile.js?v=N`
 - Use **relative** paths from site root: `css/...`, `js/...`, `images/...` (not absolute `C:\...`).
-- Internal links: `href="scientists_list_view_az.html"` (no leading `/` unless you always host at domain root and understand subpaths).
+- Internal links: `href="az/scientists/list.html"` (no leading `/` unless you always host at domain root and understand subpaths).
 - After renames, run **`python helpers/_validate_site.py`**.
 
 ### CSS
@@ -172,8 +173,8 @@ python -m http.server 8010
 Then open:
 
 - http://127.0.0.1:8010/index.html  
-- http://127.0.0.1:8010/scientists_list_view_az.html  
-- http://127.0.0.1:8010/scientists_card_view_az.html  
+- http://127.0.0.1:8010/az/scientists/list.html  
+- http://127.0.0.1:8010/az/scientists/profiles.html  
 
 **Do not** rely on double-clicking HTML files for final testing.
 
@@ -236,12 +237,6 @@ Tell editors to hard-refresh after deploy.
 - Repo name with spaces becomes awkward URLs; custom domain `daab-waas.com` is fine if DNS points correctly.
 - **Case-sensitive paths** — test on Linux CI.
 
-### Google Sites
-
-- Prefer **link** (“Open in new tab”) to full site URL rather than iframe when possible.
-- If embedding: use **HTTPS** URL to the real host; test iframe in incognito.
-- After renames, update **every** embed/link in Google Sites manually.
-- Google Sites cannot run this repo; it only points to your hosted copy.
 
 ---
 
@@ -261,30 +256,30 @@ There is no server-side log for pure static hosting unless you add analytics (Pl
 
 ## 9. Safe refactor and rename procedure
 
-1. **Choose new lowercase name** (e.g. `scientists_list_view_az.html`).
+1. **Choose new lowercase name** (e.g. `az/scientists/list.html`).
 2. **Rename file** (two-step on Windows git: `git mv old tmp && git mv tmp new`).
 3. **Replace references** in all `*.html`, `js/`, `helpers/*.py`, `documents/`, `.cursor/rules/`.
 4. Run **`python helpers/_validate_site.py`**.
 5. Run scientists validators if catalogue touched.
 6. **Bump `?v=`** on shared CSS/JS if behavior changed.
 7. Test on **http://127.0.0.1:8010** (all nav links).
-8. Deploy; update **Google Sites** / bookmarks / printed QR codes.
+8. Deploy; update bookmarks, email signatures, and printed QR codes.
 9. Optional: server **301 redirects** from old names (`.htaccess`, Netlify `_redirects`, Cloudflare rules).
 
 ---
 
-## 10. Google Sites — minimize embedding issues
+## 10. Third-party embedding — minimize issues
 
 | Approach | Pros | Cons |
 |----------|------|------|
-| Link out to `https://daab-waas.com/...` | Most reliable | Leaves Google Sites chrome |
+| Link out to `https://daab-waas.com/...` | Most reliable | Leaves the host site chrome |
 | iframe embed | Looks integrated | Blocked by headers, sizing, mobile scroll |
 | Upload HTML to Sites | — | **Not supported** for this multi-file site |
 
 **Recommendations:**
 
 - Host the full site on **daab-waas.com** or GitHub Pages.
-- On Google Sites, use prominent **buttons/links** to the real site.
+- On partner pages, use prominent **buttons/links** to the real site.
 - If using iframe: test on phone; set width 100%; avoid nested scroll fights.
 - Never point embed at `localhost` or `file://`.
 - Keep one **canonical** home URL and document it in Sites.
@@ -329,7 +324,7 @@ Today the site is **static HTML + CSS + JS** (no bundler). That is fine if disci
 - [ ] Shared CSS/JS `?v=` bumped if those files changed  
 - [ ] No secrets in repo (emails public OK)  
 - [ ] Deploy only: html, css, js, images, cv  
-- [ ] Google Sites / DNS URLs updated after renames  
+- [ ] DNS and external URLs updated after renames  
 - [ ] Hard refresh or incognito check on live URL  
 
 ---

@@ -6,7 +6,7 @@ Shared and page-specific CSS for the DAAB static site.
 |------|---------|
 | `daab-common.css` | Global design system: layout, navigation, footer, typography, search overlay, shared components. |
 | `daab-mobile.css` | Mobile/touch layer: safe areas, scroll lock, sticky offsets, landscape, search overlay on phones. |
-| `scientists-catalog-toolbar.css` | Filter toolbar and result count bar on `scientists_list_view_az.html` and `scientists_card_view_az.html`. |
+| `scientists-catalog-toolbar.css` | Filter toolbar and result count bar on `az/scientists/list.html` and `az/scientists/profiles.html`. |
 
 **HTML reference (pages in site root):**
 

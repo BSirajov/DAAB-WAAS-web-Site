@@ -393,8 +393,7 @@ PLACEHOLDER_RE = re.compile(
 
 
 def is_live_page(path: Path) -> bool:
-    """Only the bilingual pages under /az and /en are live; legacy root *_az.html
-    files are sources used by the build pipeline and should not be patched."""
+    """Only pages under /az and /en are live site pages."""
     rel = path.relative_to(ROOT).as_posix()
     return rel.startswith("az/") or rel.startswith("en/")
 

@@ -8,7 +8,7 @@ This document describes how to **store and manage membership application submiss
 
 | Item | Detail |
 |------|--------|
-| **Pages** | `az/application.html`, `en/application.html` (built from `az/application/application.html`, `en/application/application.html` via `helpers/_build_az_application_page.py`, `helpers/_build_en_application_page.py`) |
+| **Pages** | `az/application.html`, `en/application.html` (edit in place under `az/` and `en/`) |
 | **Submit handler** | `daabApplicationSubmit()` in `js/daab-membership-application.js` |
 | **What happens on submit** | Success screen is shown in the browser only; **no data is sent to a server or database** |
 | **CV / photo** | Applicants are asked to email `bilik.birlik@gmail.com` after submitting the form |
@@ -157,12 +157,7 @@ Route registration for language switching: `i18n/routes.json` → `membership-ap
 | `az/application.html`, `en/application.html` | Ensure field `name` attributes are stable; add privacy notice if storing IP |
 | `documents/DAAB-Membership-Application-Storage-Strategy.md` | This document; update when backend is chosen |
 
-Rebuild application pages after form markup changes:
-
-```bash
-python helpers/_build_az_application_page.py
-python helpers/_build_en_application_page.py
-```
+Edit application pages directly after form markup changes (`az/application.html`, `en/application.html`).
 
 ### 7.2 Configuration
 

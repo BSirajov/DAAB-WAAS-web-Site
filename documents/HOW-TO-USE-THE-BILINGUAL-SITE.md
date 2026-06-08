@@ -14,12 +14,12 @@ On every page, the menu shows **AZ | EN**. Click to open the **same page** in th
 
 The main menu is grouped: **About** (foundation, mission, board, charter), **Scientists** (directory, profiles), plus **Activities** and **Membership**. Menu labels come from `i18n/nav.json` and `i18n/ui.json` (built by `js/daab-primary-nav.js`).
 
-Old bookmarks like `foundation_az.html` still work; they redirect to `/az/foundation.html`.
-
 ## For you (editing the site)
 
+Old bookmarks should use `/az/` or `/en/` URLs directly.
+
 1. **Start the site on your PC:** double-click `START-SITE.bat`.
-2. **Edit Azerbaijani pages** in the `az/` folder (or edit the old `*_az.html` files at the root, then run the build script below).
+2. **Edit pages** in the `az/` and `en/` folders.
 3. **Refresh English** after AZ changes:
    ```bash
    python helpers/_build_bilingual_tree.py

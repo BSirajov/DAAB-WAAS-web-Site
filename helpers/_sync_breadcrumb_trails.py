@@ -15,7 +15,12 @@ ACTIVITIES_CRUMB_RE = re.compile(
 
 def main() -> None:
     updated: list[str] = []
-    for pattern in ("az/forum/2024/*.html", "en/forum/2024/*.html", "deployment/az/forum/2024/*.html", "deployment/en/forum/2024/*.html"):
+    for pattern in (
+        "az/forum/2024/*.html",
+        "en/forum/2024/*.html",
+        "Deployment/az/forum/2024/*.html",
+        "Deployment/en/forum/2024/*.html",
+    ):
         for path in sorted(ROOT.glob(pattern)):
             text = path.read_text(encoding="utf-8")
             new = ACTIVITIES_CRUMB_RE.sub("", text)

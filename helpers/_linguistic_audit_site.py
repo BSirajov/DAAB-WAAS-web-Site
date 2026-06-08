@@ -34,9 +34,6 @@ MUTED = RGBColor(0x34, 0x5D, 0x76)
 HEADER_FILL = "094D78"
 ALT_FILL = "F4F7FA"
 
-# Non-deployable / build-source paths (audited separately with note)
-SKIP_PATH_PARTS = {"/application/application.html", "/application/membership_value.html"}
-
 EN_NAV_BOARD_VARIANTS = ("Executive board", "Board of Directors", "Executive Board")
 AZ_MEMBERSHIP_WHY = "Niyə üzv olmalı"
 
@@ -102,11 +99,6 @@ def page_pairs(routes: dict) -> list[tuple[str, str, str]]:
     return pairs
 
 
-def is_skipped(rel: str) -> bool:
-    rel = "/" + rel.replace("\\", "/").lstrip("/")
-    return any(part in rel for part in SKIP_PATH_PARTS)
-
-
 def visible_text(el) -> str:
     if el is None:
         return ""
@@ -123,7 +115,7 @@ def extract_page(rel_path: str, lang: str, page_id: str = "") -> PageText:
         path=rel_path.replace("\\", "/"),
         lang=lang,
         page_id=page_id,
-        deployable=not is_skipped(rel_path),
+        deployable=True,
     )
 
     if soup.title and soup.title.string:

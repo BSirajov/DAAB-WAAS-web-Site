@@ -1,4 +1,4 @@
-"""Rebuild flat catalog from card blocks in scientists_card_view_az.html."""
+"""Rebuild flat catalog from card blocks in az/scientists/profiles.html."""
 import re
 
 from _paths import AZ_SCIENTISTS_PROFILES, ROOT

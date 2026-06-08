@@ -1,4 +1,4 @@
-"""Sync scientists_card_view_az.html cards with verbatim text from the book chapter."""
+"""Sync az/scientists/profiles.html cards with verbatim text from the book chapter."""
 from __future__ import annotations
 
 import html

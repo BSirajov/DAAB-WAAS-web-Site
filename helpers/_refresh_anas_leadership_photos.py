@@ -8,8 +8,8 @@ from _speech_photos_lib import refresh_page
 ANAS_PAGES = (
     (ROOT / "az" / "forum" / "2024" / "anas_leadership_speeches.html", "anasTOC"),
     (ROOT / "en" / "forum" / "2024" / "anas_leadership_speeches.html", "anasTOC"),
-    (ROOT / "deployment" / "az" / "forum" / "2024" / "anas_leadership_speeches.html", "anasTOC"),
-    (ROOT / "deployment" / "en" / "forum" / "2024" / "anas_leadership_speeches.html", "anasTOC"),
+    (ROOT / "Deployment" / "az" / "forum" / "2024" / "anas_leadership_speeches.html", "anasTOC"),
+    (ROOT / "Deployment" / "en" / "forum" / "2024" / "anas_leadership_speeches.html", "anasTOC"),
 )
 
 

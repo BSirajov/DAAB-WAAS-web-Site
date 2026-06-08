@@ -54,22 +54,6 @@ def check_sitemap(routes: dict) -> list[str]:
     return issues
 
 
-def check_legacy_redirects(routes: dict) -> list[str]:
-    issues: list[str] = []
-    for legacy in routes.get("legacyRedirects", {}):
-        if legacy == "index.html":
-            continue
-        path = ROOT / legacy
-        if not path.is_file():
-            continue
-        html = path.read_text(encoding="utf-8")
-        if "data-daab-legacy-redirect" not in html:
-            issues.append(
-                f"{legacy}: no redirect to /az/ — run _build_bilingual_tree.py (redirects on)"
-            )
-    return issues
-
-
 def main() -> int:
     routes = load_routes()
     issues: list[str] = []
@@ -91,7 +75,6 @@ def main() -> int:
                 issues.append(f"{en_path.relative_to(ROOT)}: still a stub (run _publish_en_pages.py)")
 
     issues.extend(check_sitemap(routes))
-    issues.extend(check_legacy_redirects(routes))
 
     try:
         from _validate_section_anchors import collect_issues as anchor_issues

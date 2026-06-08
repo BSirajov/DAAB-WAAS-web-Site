@@ -163,13 +163,35 @@ def replace_deploy_dir(
             clear_tree(target, preserve_names=preserve_names)
     except OSError:
         pass
+
+    staged_rel_paths: set[str] = set()
     for src in staging.rglob("*"):
         if not src.is_file():
             continue
         rel = src.relative_to(staging)
+        staged_rel_paths.add(rel.as_posix())
         dest = target / rel
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(src, dest)
+
+    # Drop stale files left from older deployment packages.
+    preserve_lower = {name.lower() for name in preserve_names}
+    for existing in list(target.rglob("*")):
+        if not existing.is_file():
+            continue
+        rel = existing.relative_to(target)
+        if rel.as_posix() in staged_rel_paths:
+            continue
+        if any(part.lower() in preserve_lower for part in rel.parts):
+            continue
+        existing.unlink(missing_ok=True)
+    for existing in sorted(target.rglob("*"), key=lambda p: len(p.parts), reverse=True):
+        if existing.is_dir():
+            try:
+                existing.rmdir()
+            except OSError:
+                pass
+
     clear_tree(staging)
     try:
         staging.rmdir()
@@ -234,7 +256,7 @@ def main() -> int:
         copied += 1
         bytes_total += src.stat().st_size
 
-    htaccess_src = ROOT / "deployment" / ".htaccess"
+    htaccess_src = DEPLOY_DIR / ".htaccess"
     if htaccess_src.is_file():
         shutil.copy2(htaccess_src, DEPLOY_STAGING / ".htaccess")
         copied += 1
