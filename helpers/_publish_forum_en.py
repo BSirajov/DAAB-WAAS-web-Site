@@ -85,17 +85,14 @@ def _ensure_forum_en_scripts(text: str) -> str:
             '<script src="../../../js/daab-nav.js?v=10" defer></script>\n'
             '<script src="../../../js/daab-primary-nav.js?v=10" defer></script>',
         )
-    if "daab-section-nav.js" not in text:
         text = text.replace(
             '<script src="../../../js/daab-search.js?v=4" defer></script>',
             '<script src="../../../js/daab-search.js?v=4" defer></script>\n'
-            '<script src="../../../js/daab-section-nav.js?v=6" defer></script>',
         )
     text = text.replace("daab-activities-layout.css?v=7", "daab-activities-layout.css?v=10")
     text = text.replace("daab-forum-content.css?v=12", "daab-forum-content.css?v=15")
     text = text.replace("daab-nav.js?v=9", "daab-nav.js?v=10")
     text = text.replace("daab-primary-nav.js?v=9", "daab-primary-nav.js?v=10")
-    text = text.replace("daab-section-nav.js?v=5", "daab-section-nav.js?v=6")
     return text
 
 
@@ -184,7 +181,6 @@ def build_official() -> None:
 <script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
 <script src="{ASSET}js/daab-nav.js?v=9" defer></script>
 <script src="{ASSET}js/daab-primary-nav.js?v=9" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v=5" defer></script>
 <script src="{ASSET}js/daab-shell.js?v=11" defer></script>
 <script src="{ASSET}js/daab-search.js?v=4" defer></script>
 </head>

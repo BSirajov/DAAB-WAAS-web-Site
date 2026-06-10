@@ -195,7 +195,6 @@ def page_html(data: dict, *, lang: str) -> str:
 <link href="{ASSET}css/daab-back-to-top.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-lang.css?v=10" rel="stylesheet"/>
 <link href="{ASSET}css/daab-nav-mega.css?v=23" rel="stylesheet"/>
-<link href="{ASSET}css/daab-forum-section-nav.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-hero-summary.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-sidebar-widget.css?v=3" rel="stylesheet"/>
 <link href="{ASSET}css/daab-activities-layout.css?v=12" rel="stylesheet"/>
@@ -206,7 +205,6 @@ def page_html(data: dict, *, lang: str) -> str:
 <script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
 <script src="{ASSET}js/daab-nav.js?v=10" defer></script>
 <script src="{ASSET}js/daab-primary-nav.js?v=10" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v=12" defer></script>
 <script src="{ASSET}js/daab-shell.js?v=11" defer></script>
 <script src="{ASSET}js/daab-search.js?v=4" defer></script>
 <script defer src="{ASSET}js/daab-page-subtitle.js?v=2"></script>

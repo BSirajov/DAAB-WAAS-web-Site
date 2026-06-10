@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
-"""Enable dynamic primary nav on DAAB HTML pages."""
+"""Enable dynamic primary nav on DAAB HTML pages.
+
+Prefer ``helpers/_embed_static_nav.py`` for nav HTML sync across the site.
+Asset ``?v=`` numbers are imported from ``_site_wide_cleanup.py`` — do not
+duplicate version constants here.
+"""
 from __future__ import annotations
 
 import re
 from pathlib import Path
 
 from _paths import ROOT
+from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS
 
 NAV_MENU_RE = re.compile(
     r'(<div class="nav-menu" id="primaryNavMenu")[^>]*>.*?</div>(\s*</div>\s*</nav>)',
@@ -20,22 +26,6 @@ NAV_PLACEHOLDER = (
 
 HTML_TAG_RE = re.compile(r"<html([^>]*)>", re.IGNORECASE)
 
-SCRIPT_VERSIONS = {
-    "daab-i18n.js": 12,
-    "daab-lang-position.js": 7,
-    "daab-nav.js": 16,
-    "daab-primary-nav.js": 14,
-    "daab-breadcrumbs.js": 6,
-    "daab-section-nav.js": 7,
-    "daab-shell.js": 11,
-}
-
-STYLE_VERSIONS = {
-    "daab-nav-mega.css": 13,
-    "daab-lang.css": 10,
-    "daab-common.css": 26,
-}
-
 NAV_ASSETS = (
     '\n<link href="{prefix}css/daab-nav-mega.css?v=' + str(STYLE_VERSIONS["daab-nav-mega.css"]) + '" rel="stylesheet"/>'
     '\n<script src="{prefix}js/daab-i18n.js?v=' + str(SCRIPT_VERSIONS["daab-i18n.js"]) + '" defer></script>'
@@ -43,7 +33,6 @@ NAV_ASSETS = (
     '\n<script src="{prefix}js/daab-nav.js?v=' + str(SCRIPT_VERSIONS["daab-nav.js"]) + '" defer></script>'
     '\n<script src="{prefix}js/daab-primary-nav.js?v=' + str(SCRIPT_VERSIONS["daab-primary-nav.js"]) + '" defer></script>'
     '\n<script src="{prefix}js/daab-breadcrumbs.js?v=' + str(SCRIPT_VERSIONS["daab-breadcrumbs.js"]) + '" defer></script>'
-    '\n<script src="{prefix}js/daab-section-nav.js?v=' + str(SCRIPT_VERSIONS["daab-section-nav.js"]) + '" defer></script>'
     '\n<script src="{prefix}js/daab-shell.js?v=' + str(SCRIPT_VERSIONS["daab-shell.js"]) + '" defer></script>'
 ).strip()
 

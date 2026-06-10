@@ -26,11 +26,7 @@ DEPLOY_PACKAGED_CSS = frozenset(
         "daab-sticky-chrome.css",  # optional deploy bundle; not linked per-page
     }
 )
-OPTIONAL_JS = frozenset(
-    {
-        "daab-story-tts.js",  # stories TTS — CSS hooks exist; not linked on live pages
-    }
-)
+OPTIONAL_JS = frozenset()
 
 
 def collect_deploy_html() -> list[Path]:

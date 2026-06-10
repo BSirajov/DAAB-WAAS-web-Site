@@ -1010,16 +1010,6 @@ html[data-daab-page-id="forum-bagli-hekayeler"] .forum-story-lead > .card-quote:
     width: min(78%, 320px);
     margin: 0 auto 1rem;
   }
-}/* Forum stories — listen controls under story image */
-html[data-daab-page-id="forum-bagli-hekayeler"] .forum-story-figure .card-tts{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  margin: 0.75rem auto 0;
-}html[data-daab-page-id="forum-bagli-hekayeler"] .forum-story-card.is-tts-active{
-  box-shadow: 0 0 0 2px rgba(0, 105, 180, .22), 0 16px 36px rgba(0, 78, 140, .12);
 }/* Forum stories — sidebar icon + title + first-sentence teaser */
 html[data-daab-page-id="forum-bagli-hekayeler"] #hekayelerTOC a{
   display: flex !important;

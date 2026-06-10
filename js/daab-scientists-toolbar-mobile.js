@@ -39,7 +39,6 @@
         "filterPeriod",
         "filterField",
         "filterCountry",
-        "filterRegion",
       ];
     }
     return ["filterCountry", "filterIxtilas", "filterDegree"];

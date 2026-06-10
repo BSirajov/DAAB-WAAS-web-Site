@@ -25,7 +25,7 @@ This pass focused on **safe, verifiable maintenance** for the static DAAB/WAAS s
 | `css/daab-forum-book.css` | **Build-only** — used by `helpers/_build_forum_2024_site.py`; omitted from deploy via `.deployignore` |
 | `css/daab-site-background.css` | Loaded via `@import` in `daab-common.css` |
 | `css/daab-sticky-chrome.css` | Used in deployment packaging; profiles use `scientists-profiles-sticky.css` |
-| `js/daab-story-tts.js` | Story read-aloud feature implemented but **not wired** on live `stories.html`; CSS hooks remain in `daab-forum-content.css` |
+| ~~`js/daab-story-tts.js`~~ | Removed June 2026 — story read-aloud feature dropped; CSS hooks removed from `daab-forum-content.css` |
 | `helpers/` Python scripts | Maintenance/build only — never deployed per stability guide |
 
 ## Remaining work (recommended follow-up)
@@ -33,7 +33,7 @@ This pass focused on **safe, verifiable maintenance** for the static DAAB/WAAS s
 1. **CSS dead selectors** — Run `python helpers/_audit_css_usage.py css/<file>.css az en` per stylesheet; remove only classes confirmed unused in HTML **and** JS.
 2. **HTML generators** — Bump `?v=` in `_build_*` templates when editing shared CSS/JS so rebuilds do not reintroduce drift.
 3. **Scientists profiles sticky** — If long profile pages need fixed chrome offsets, run `python helpers/_inject_profiles_sticky.py`.
-4. **Story TTS** — Either link `daab-story-tts.js` on `stories.html` or move script/CSS to `_archive` if the feature is abandoned.
+4. ~~**Story TTS**~~ — Removed June 2026.
 5. **Visual QA** — Desktop, tablet, and mobile spot-check: home, Forum hub, one speech page, scientists list/profiles, membership application.
 
 ## Architecture notes (for maintainers)

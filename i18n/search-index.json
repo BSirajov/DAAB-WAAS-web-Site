@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated": "2026-06-08",
-  "entryCount": 532,
+  "generated": "2026-06-09",
+  "entryCount": 560,
   "entries": [
     {
       "id": "page-home-az",
@@ -113,12 +113,12 @@
       "type": "page",
       "pageId": "forum-2024",
       "anchor": "",
-      "title": "Forum 2024 — DAAB",
+      "title": "Forumun mənzərəsi — DAAB",
       "summary": "Xaricdə Yaşayan Azərbaycanlı Alimlərin I Forumu — kitab məzmunu və arxiv.",
       "tag": "Səhifə",
       "icon": "🎤",
       "boost": 12,
-      "norm": "forum 2024 daab xaricde yas ayan azerbaycanli alimlerin i forumu kitab mezmunu ve arxiv."
+      "norm": "forumun menzeresi daab xaricde yas ayan azerbaycanli alimlerin i forumu kitab mezmunu ve arxiv."
     },
     {
       "id": "page-forum-2024-en",
@@ -126,12 +126,12 @@
       "type": "page",
       "pageId": "forum-2024",
       "anchor": "",
-      "title": "Forum 2024 — WAAS",
+      "title": "Highlights — WAAS",
       "summary": "First Forum of Azerbaijani Scientists Living Abroad — book content and archive.",
       "tag": "Page",
       "icon": "🎤",
       "boost": 12,
-      "norm": "forum 2024 waas first forum of azerbaijani scientists living abroad book content and archive."
+      "norm": "highlights waas first forum of azerbaijani scientists living abroad book content and archive."
     },
     {
       "id": "page-encyclopedia-az",
@@ -296,11 +296,11 @@
       "pageId": "forum-anas-leadership-speeches",
       "anchor": "",
       "title": "Akademiklər — DAAB",
-      "summary": "Forum 2024 — AMEA akademiklərinin nitqləri.",
+      "summary": "Forum 2024 — Azərbaycan Milli Elmlər Akademiyasının rəhbərliyinin nitqləri.",
       "tag": "Səhifə",
       "icon": "🔬",
       "boost": 12,
-      "norm": "akademikler daab forum 2024 amea akademiklerinin nitqleri."
+      "norm": "akademikler daab forum 2024 azerbaycan milli elmler akademiyasinin rehberliyinin nitqleri."
     },
     {
       "id": "page-forum-anas-leadership-speeches-en",
@@ -309,11 +309,11 @@
       "pageId": "forum-anas-leadership-speeches",
       "anchor": "",
       "title": "Academicians — WAAS",
-      "summary": "Forum 2024 — speeches by ANAS academicians.",
+      "summary": "Forum 2024 — speeches by leaders of the Azerbaijan National Academy of Sciences.",
       "tag": "Page",
       "icon": "🔬",
       "boost": 12,
-      "norm": "academicians waas forum 2024 speeches by anas academicians."
+      "norm": "academicians waas forum 2024 speeches by leaders of the azerbaijan national academy of sciences."
     },
     {
       "id": "page-forum-official-az",
@@ -417,7 +417,7 @@
       "tag": "Page",
       "icon": "📷",
       "boost": 12,
-      "norm": "photos gallery waas photo gallery from the first forum of azerbaijani scientists living abroad september 2024."
+      "norm": "photo gallery waas photo gallery from the first forum of azerbaijani scientists living abroad september 2024."
     },
     {
       "id": "page-forum-video-gallery-az",
@@ -634,11 +634,11 @@
       "pageId": "sponsors",
       "anchor": "",
       "title": "DAAB-a Dəstək — Dünya Azərbaycanlı Alimlər Birliyi",
-      "summary": "Bizi dəstəkləyin",
+      "summary": "DAAB ilə korporativ sponsorluq — təqaüdlər, forumlar və elmi əməkdaşlıq.",
       "tag": "Səhifə",
       "icon": "🤝",
       "boost": 12,
-      "norm": "daab-a destek du nya azerbaycanli alimler birliyi bizi destekleyin"
+      "norm": "daab-a destek du nya azerbaycanli alimler birliyi daab ile korporativ sponsorluq teqau dler forumlar ve elmi emekdas liq."
     },
     {
       "id": "page-sponsors-en",
@@ -647,11 +647,11 @@
       "pageId": "sponsors",
       "anchor": "",
       "title": "Support WAAS — World Association of Azerbaijani Scientists",
-      "summary": "Support us",
+      "summary": "Partner with WAAS through corporate sponsorship — scholarships, forums, and research collaboration.",
       "tag": "Page",
       "icon": "🤝",
       "boost": 12,
-      "norm": "support waas world association of azerbaijani scientists support us"
+      "norm": "support waas world association of azerbaijani scientists partner with waas through corporate sponsorship scholarships forums and research collaboration."
     },
     {
       "id": "page-donate-az",
@@ -815,12 +815,181 @@
       "type": "nav",
       "pageId": "forum-2024",
       "anchor": "",
-      "title": "Forum 2024",
-      "summary": "Forum 2024 haqqında",
+      "title": "Forumun mənzərəsi",
+      "summary": "Forum 2024",
       "tag": "Naviqasiya",
       "icon": "🎤",
       "boost": 11,
-      "norm": "forum 2024 forum 2024 haqqinda"
+      "norm": "forumun menzeresi forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-program-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "forum-program",
+      "anchor": "",
+      "title": "Proqram",
+      "summary": "Forum 2024",
+      "tag": "Naviqasiya",
+      "icon": "📅",
+      "boost": 11,
+      "norm": "proqram forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-official-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "forum-official",
+      "anchor": "",
+      "title": "Rəsmi müraciətlər",
+      "summary": "Forum 2024",
+      "tag": "Naviqasiya",
+      "icon": "🏛️",
+      "boost": 11,
+      "norm": "resmi mu racietler forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-2024-presentations-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "forum-2024-presentations",
+      "anchor": "",
+      "title": "Məruzələr",
+      "summary": "Forum 2024",
+      "tag": "Naviqasiya",
+      "icon": "📊",
+      "boost": 11,
+      "norm": "meruzeler forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-rector-speeches-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "forum-rector-speeches",
+      "anchor": "",
+      "title": "Rektorlar",
+      "summary": "Forum 2024",
+      "tag": "Naviqasiya",
+      "icon": "🎓",
+      "boost": 11,
+      "norm": "rektorlar forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-anas-leadership-speeches-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "forum-anas-leadership-speeches",
+      "anchor": "",
+      "title": "Akademiklər",
+      "summary": "Forum 2024",
+      "tag": "Naviqasiya",
+      "icon": "🔬",
+      "boost": 11,
+      "norm": "akademikler forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-photos-gallery-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "forum-photos-gallery",
+      "anchor": "",
+      "title": "Foto qalereya",
+      "summary": "Forum 2024",
+      "tag": "Naviqasiya",
+      "icon": "📷",
+      "boost": 11,
+      "norm": "foto qalereya forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-video-gallery-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "forum-video-gallery",
+      "anchor": "",
+      "title": "Video qalereya",
+      "summary": "Forum 2024",
+      "tag": "Naviqasiya",
+      "icon": "📹",
+      "boost": 11,
+      "norm": "video qalereya forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-impressions-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "forum-impressions",
+      "anchor": "",
+      "title": "Təəssüratlar",
+      "summary": "Forum 2024",
+      "tag": "Naviqasiya",
+      "icon": "💬",
+      "boost": 11,
+      "norm": "teessu ratlar forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-bagli-hekayeler-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "forum-bagli-hekayeler",
+      "anchor": "",
+      "title": "Hekayələr",
+      "summary": "Forum 2024",
+      "tag": "Naviqasiya",
+      "icon": "📖",
+      "boost": 11,
+      "norm": "hekayeler forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-roadmap-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "forum-roadmap",
+      "anchor": "",
+      "title": "Strateji yol xəritəsi",
+      "summary": "Forum 2024",
+      "tag": "Naviqasiya",
+      "icon": "🗺️",
+      "boost": 11,
+      "norm": "strateji yol xeritesi forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-cooperation-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "forum-cooperation",
+      "anchor": "",
+      "title": "Töhfələr",
+      "summary": "Forum 2024",
+      "tag": "Naviqasiya",
+      "icon": "🤝",
+      "boost": 11,
+      "norm": "to hfeler forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-scientists-list-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "scientists-list",
+      "anchor": "",
+      "title": "Alimlərin siyahısı",
+      "summary": "Bütün alimlərin siyahısı",
+      "tag": "Naviqasiya",
+      "icon": "📋",
+      "boost": 11,
+      "norm": "alimlerin siyahisi bu tu n alimlerin siyahisi alimlerimiz"
+    },
+    {
+      "id": "nav-scientists-profiles-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "scientists-profiles",
+      "anchor": "",
+      "title": "Alimlərin profilləri",
+      "summary": "Alimlərin akademik profilləri",
+      "tag": "Naviqasiya",
+      "icon": "👤",
+      "boost": 11,
+      "norm": "alimlerin profilleri alimlerin akademik profilleri alimlerimiz"
     },
     {
       "id": "nav-foundation-az",
@@ -919,12 +1088,12 @@
       "type": "nav",
       "pageId": "sponsors",
       "anchor": "",
-      "title": "Bizi dəstəkləyin",
+      "title": "Sponsorluq",
       "summary": "Korporativ və proqram tərəfdaşlığı",
       "tag": "Naviqasiya",
       "icon": "🤝",
       "boost": 11,
-      "norm": "bizi destekleyin korporativ ve proqram terefdas lig i bizi destekleyin"
+      "norm": "sponsorluq korporativ ve proqram terefdas lig i bizi destekleyin"
     },
     {
       "id": "nav-donate-az",
@@ -938,6 +1107,19 @@
       "icon": "💝",
       "boost": 11,
       "norm": "i ane ferdi fond ve xatire ianeleri bizi destekleyin"
+    },
+    {
+      "id": "nav-sponsors-flyer-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "sponsors-flyer",
+      "anchor": "",
+      "title": "Dəvət məktubu",
+      "summary": "Potensial tərəfdaşlar üçün paylaşıla bilən dəvət məktubu",
+      "tag": "Naviqasiya",
+      "icon": "📄",
+      "boost": 11,
+      "norm": "devet mektubu potensial terefdas lar u c u n paylas ila bilen devet mektubu bizi destekleyin"
     },
     {
       "id": "nav-encyclopedia-az",
@@ -1010,12 +1192,181 @@
       "type": "nav",
       "pageId": "forum-2024",
       "anchor": "",
-      "title": "Forum 2024",
-      "summary": "Explore Forum 2024",
+      "title": "Highlights",
+      "summary": "Forum 2024",
       "tag": "Navigation",
       "icon": "🎤",
       "boost": 11,
-      "norm": "forum 2024 explore forum 2024"
+      "norm": "highlights forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-program-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "forum-program",
+      "anchor": "",
+      "title": "Programme",
+      "summary": "Forum 2024",
+      "tag": "Navigation",
+      "icon": "📅",
+      "boost": 11,
+      "norm": "programme forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-official-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "forum-official",
+      "anchor": "",
+      "title": "Official addresses",
+      "summary": "Forum 2024",
+      "tag": "Navigation",
+      "icon": "🏛️",
+      "boost": 11,
+      "norm": "official addresses forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-2024-presentations-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "forum-2024-presentations",
+      "anchor": "",
+      "title": "Presentations",
+      "summary": "Forum 2024",
+      "tag": "Navigation",
+      "icon": "📊",
+      "boost": 11,
+      "norm": "presentations forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-rector-speeches-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "forum-rector-speeches",
+      "anchor": "",
+      "title": "Rectors",
+      "summary": "Forum 2024",
+      "tag": "Navigation",
+      "icon": "🎓",
+      "boost": 11,
+      "norm": "rectors forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-anas-leadership-speeches-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "forum-anas-leadership-speeches",
+      "anchor": "",
+      "title": "Academicians",
+      "summary": "Forum 2024",
+      "tag": "Navigation",
+      "icon": "🔬",
+      "boost": 11,
+      "norm": "academicians forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-photos-gallery-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "forum-photos-gallery",
+      "anchor": "",
+      "title": "Photo gallery",
+      "summary": "Forum 2024",
+      "tag": "Navigation",
+      "icon": "📷",
+      "boost": 11,
+      "norm": "photo gallery forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-video-gallery-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "forum-video-gallery",
+      "anchor": "",
+      "title": "Video gallery",
+      "summary": "Forum 2024",
+      "tag": "Navigation",
+      "icon": "📹",
+      "boost": 11,
+      "norm": "video gallery forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-impressions-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "forum-impressions",
+      "anchor": "",
+      "title": "Impressions",
+      "summary": "Forum 2024",
+      "tag": "Navigation",
+      "icon": "💬",
+      "boost": 11,
+      "norm": "impressions forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-bagli-hekayeler-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "forum-bagli-hekayeler",
+      "anchor": "",
+      "title": "Stories",
+      "summary": "Forum 2024",
+      "tag": "Navigation",
+      "icon": "📖",
+      "boost": 11,
+      "norm": "stories forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-roadmap-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "forum-roadmap",
+      "anchor": "",
+      "title": "Strategic roadmap",
+      "summary": "Forum 2024",
+      "tag": "Navigation",
+      "icon": "🗺️",
+      "boost": 11,
+      "norm": "strategic roadmap forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-forum-cooperation-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "forum-cooperation",
+      "anchor": "",
+      "title": "Contributions",
+      "summary": "Forum 2024",
+      "tag": "Navigation",
+      "icon": "🤝",
+      "boost": 11,
+      "norm": "contributions forum 2024 forum 2024"
+    },
+    {
+      "id": "nav-scientists-list-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "scientists-list",
+      "anchor": "",
+      "title": "Directory",
+      "summary": "Directory of all scientists",
+      "tag": "Navigation",
+      "icon": "📋",
+      "boost": 11,
+      "norm": "directory directory of all scientists scientists"
+    },
+    {
+      "id": "nav-scientists-profiles-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "scientists-profiles",
+      "anchor": "",
+      "title": "Profiles",
+      "summary": "Academic profiles of scientists",
+      "tag": "Navigation",
+      "icon": "👤",
+      "boost": 11,
+      "norm": "profiles academic profiles of scientists scientists"
     },
     {
       "id": "nav-foundation-en",
@@ -1101,12 +1452,12 @@
       "type": "nav",
       "pageId": "membership-flyer",
       "anchor": "",
-      "title": "Send invitation",
-      "summary": "Printable flyer to share with potential members",
+      "title": "Invitation Letter",
+      "summary": "Printable invitation letter for potential members",
       "tag": "Navigation",
       "icon": "✒️",
       "boost": 11,
-      "norm": "send invitation printable flyer to share with potential members membership"
+      "norm": "invitation letter printable invitation letter for potential members membership"
     },
     {
       "id": "nav-sponsors-en",
@@ -1114,12 +1465,12 @@
       "type": "nav",
       "pageId": "sponsors",
       "anchor": "",
-      "title": "Support us",
+      "title": "Sponsorship",
       "summary": "Corporate and programme partnerships",
       "tag": "Navigation",
       "icon": "🤝",
       "boost": 11,
-      "norm": "support us corporate and programme partnerships support us"
+      "norm": "sponsorship corporate and programme partnerships support us"
     },
     {
       "id": "nav-donate-en",
@@ -1133,6 +1484,19 @@
       "icon": "💝",
       "boost": 11,
       "norm": "donation individual foundation and memorial gifts support us"
+    },
+    {
+      "id": "nav-sponsors-flyer-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "sponsors-flyer",
+      "anchor": "",
+      "title": "Invitation Letter",
+      "summary": "Printable invitation letter for potential partners",
+      "tag": "Navigation",
+      "icon": "📄",
+      "boost": 11,
+      "norm": "invitation letter printable invitation letter for potential partners support us"
     },
     {
       "id": "nav-encyclopedia-en",

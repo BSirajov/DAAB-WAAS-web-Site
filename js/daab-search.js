@@ -566,9 +566,18 @@
     return state.indexLoadPromise;
   }
 
+  function shouldPreloadSearchIndex() {
+    if (global.DAAB_PERF && typeof global.DAAB_PERF.heavyPreloadOk === "function") {
+      return global.DAAB_PERF.heavyPreloadOk();
+    }
+    return true;
+  }
+
   function scheduleIdleIndexPreload() {
     if (state.ready || state.indexLoadPromise) return;
+    if (!shouldPreloadSearchIndex()) return;
     var run = function () {
+      if (!shouldPreloadSearchIndex()) return;
       ensureIndexLoaded().catch(function () {});
     };
     if (global.requestIdleCallback) {

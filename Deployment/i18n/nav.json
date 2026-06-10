@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "primary": [
     {
       "type": "page",
@@ -13,7 +13,7 @@
       "type": "group",
       "id": "forum",
       "style": "mega",
-      "labelKey": "forum2024",
+      "labelKey": "forumTitle",
       "landingId": "forum-2024",
       "children": [
         {
@@ -25,6 +25,23 @@
             },
             {
               "id": "forum-program"
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "labelKey": "forumNavParticipants",
+          "nested": true,
+          "children": [
+            {
+              "id": "scientists-list",
+              "labelKey": "scientistsListForum",
+              "descKey": "scientistsListDesc"
+            },
+            {
+              "id": "scientists-profiles",
+              "labelKey": "scientistsProfilesForum",
+              "descKey": "scientistsProfilesDesc"
             }
           ]
         },
@@ -169,6 +186,11 @@
           "id": "donate",
           "labelKey": "donate",
           "descKey": "donateDesc"
+        },
+        {
+          "id": "sponsors-flyer",
+          "labelKey": "sponsorsFlyer",
+          "descKey": "sponsorsFlyerDesc"
         }
       ]
     },

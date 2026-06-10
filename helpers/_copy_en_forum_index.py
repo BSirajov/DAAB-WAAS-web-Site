@@ -14,12 +14,19 @@ def main() -> None:
     text = SRC.read_text(encoding="utf-8")
     text = text.replace('lang="az"', 'lang="en"', 1)
     text = text.replace('data-daab-lang="az"', 'data-daab-lang="en"')
-    text = text.replace("Forum 2024 — DAAB", "Forum 2024 — WAAS")
+    text = text.replace("Forumun mənzərəsi — DAAB", "Highlights — WAAS")
+    text = text.replace("<h1><span>Forumun mənzərəsi</span></h1>", "<h1><span>Highlights</span></h1>")
+    text = text.replace("<h2>Forumun mənzərəsi</h2>", "<h2>Highlights</h2>")
     text = text.replace(
         "Xaricdə Yaşayan Azərbaycanlı Alimlərin I Forumu — kitab məzmunu və arxiv.",
         "First Forum of Azerbaijani Scientists Living Abroad — book content and archive.",
     )
     text = text.replace("Məzmuna keç", "Skip to content")
+    text = text.replace('aria-label="Səhifə yolu"', 'aria-label="Breadcrumb"')
+    text = text.replace(
+        '<a href="../../index.html">Ana səhifə</a><span aria-hidden="true">›</span><a href="index.html">Forum 2024</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">Forumun mənzərəsi</span>',
+        '<a href="../../index.html">Home</a><span aria-hidden="true">›</span><a href="index.html">Forum 2024</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">Highlights</span>',
+    )
     text = text.replace(
         "Kitabdan seçilmiş rəsmi mətnlər, proqram, məruzələr və iştirakçı təəssüratları.",
         "Selected official texts, programme, presentations and participant impressions from the book.",

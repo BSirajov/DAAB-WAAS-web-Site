@@ -30,14 +30,14 @@ python helpers/_check_name_order.py
 |------|--------|
 | EN membership CTA → “Join us” | Done |
 | AZ membership CTA → “Bizə qoşulun” | Done |
-| Forum section pills + hub card icons | Done (`navIcons` + `daab-section-nav.js`) |
+| Forum mega-menu + hub card icons | Done (`navIcons` + `daab-primary-nav.js`) |
 | Search index | Re-run only when routes/titles change |
 
 ---
 
 ## Phase 3 — Maintenance script alignment
 
-**Status:** Done — `_site_wide_cleanup.py` matches live `?v=` (e.g. `daab-common.css` v35, `daab-section-nav.js` v10).
+**Status:** Done — `_site_wide_cleanup.py` matches live `?v=` (e.g. `daab-common.css` v65). Section nav assets were removed in June 2026.
 
 **Gate:** Diff review only — run `_site_wide_cleanup.py` only when intentionally bumping versions site-wide.
 
@@ -91,7 +91,7 @@ Do **not** delete classes site-wide in one pass. `daab-forum-content.css` is cle
 
 Automated gate: see `documents/DAAB-Pre-Release-Status-2026-05.md`.
 
-- Keyboard-only: nav dropdown, section pills, application steps, gallery lightbox if present.
+- Keyboard-only: nav dropdown, mega-menu panels, search (Ctrl/Cmd+K), application form steps, gallery lightbox if present.
 - Tablet width 768–1024px on forum + scientists profiles.
 - Git commit when you want a snapshot.
 

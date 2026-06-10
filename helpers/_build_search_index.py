@@ -64,6 +64,9 @@ PAGE_LABEL_KEYS = {
     "membership-value": "membershipWhy",
     "membership-application": "membershipJoin",
     "membership-flyer": "membershipFlyer",
+    "sponsors": "sponsorsProgram",
+    "donate": "donate",
+    "sponsors-flyer": "sponsorsFlyer",
 }
 
 TYPE_BOOST = {
@@ -196,6 +199,38 @@ def add_pages(entries: list[dict], routes: dict, ui: dict) -> None:
             )
 
 
+def _append_nav_child(
+    entries: list[dict],
+    ui: dict,
+    lang: str,
+    group_label: str,
+    group_id: str,
+    child: dict,
+    icons: dict,
+) -> None:
+    if child.get("type") == "section":
+        for nested in child.get("children", []):
+            _append_nav_child(entries, ui, lang, group_label, group_id, nested, icons)
+        return
+    pid = child["id"]
+    labels = ui["nav"][lang]
+    key = PAGE_LABEL_KEYS.get(pid, child.get("labelKey", pid))
+    title = labels.get(key, pid)
+    desc = labels.get(child.get("descKey", ""), group_label)
+    entries.append(
+        entry(
+            eid=f"nav-{pid}-{lang}",
+            lang=lang,
+            kind="nav",
+            page_id=pid,
+            title=title,
+            summary=desc,
+            icon=icons.get(pid, icons.get(group_id, "📄")),
+            extra=group_label,
+        )
+    )
+
+
 def add_nav(entries: list[dict], ui: dict, nav_def: dict) -> None:
     icons = ui.get("navIcons") or {}
     for lang in ("az", "en"):
@@ -221,22 +256,7 @@ def add_nav(entries: list[dict], ui: dict, nav_def: dict) -> None:
             elif item["type"] == "group":
                 group_label = labels.get(item.get("labelKey", ""), item["id"])
                 for child in item.get("children", []):
-                    pid = child["id"]
-                    key = PAGE_LABEL_KEYS.get(pid, pid)
-                    title = labels.get(key, pid)
-                    desc = labels.get(child.get("descKey", ""), group_label)
-                    entries.append(
-                        entry(
-                            eid=f"nav-{pid}-{lang}",
-                            lang=lang,
-                            kind="nav",
-                            page_id=pid,
-                            title=title,
-                            summary=desc,
-                            icon=icons.get(pid, icons.get(item["id"], "📄")),
-                            extra=group_label,
-                        )
-                    )
+                    _append_nav_child(entries, ui, lang, group_label, item["id"], child, icons)
 
 
 def extract_forum_sections(raw: str, lang: str, page_id: str) -> list[dict]:

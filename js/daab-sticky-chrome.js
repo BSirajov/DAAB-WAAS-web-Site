@@ -8,6 +8,16 @@
   var chromeEl = null;
   var spacerEl = null;
   var resizeObserver = null;
+  var syncScheduled = false;
+
+  function scheduleSync() {
+    if (syncScheduled) return;
+    syncScheduled = true;
+    window.requestAnimationFrame(function () {
+      syncScheduled = false;
+      sync();
+    });
+  }
 
   function rootEl() {
     return document.documentElement;
@@ -32,7 +42,7 @@
         "#daab-breadcrumbs, nav.daab-breadcrumbs, .forum-breadcrumbs, .breadcrumbs.forum-breadcrumbs, .breadcrumbs"
       )
     ).filter(function (el) {
-      return isBreadcrumbNode(el) && !el.closest(".daab-section-nav");
+      return isBreadcrumbNode(el);
     });
   }
 
@@ -88,9 +98,7 @@
   function observeChrome() {
     if (!chromeEl || typeof ResizeObserver === "undefined") return;
     if (resizeObserver) resizeObserver.disconnect();
-    resizeObserver = new ResizeObserver(function () {
-      sync();
-    });
+    resizeObserver = new ResizeObserver(scheduleSync);
     resizeObserver.observe(chromeEl);
     chromeEl.querySelectorAll(".nav-strip, #daab-breadcrumbs, nav.daab-breadcrumbs, .breadcrumbs, .forum-breadcrumbs").forEach(function (el) {
       resizeObserver.observe(el);
@@ -158,17 +166,17 @@
     boot();
   }
 
-  window.addEventListener("resize", sync, { passive: true });
+  window.addEventListener("resize", scheduleSync, { passive: true });
   window.addEventListener("orientationchange", function () {
-    window.setTimeout(sync, 100);
+    window.setTimeout(scheduleSync, 100);
   });
-  window.addEventListener("load", sync, { passive: true });
+  window.addEventListener("load", scheduleSync, { passive: true });
 
-  document.addEventListener("daab-breadcrumbs-ready", sync);
-  document.addEventListener("daab-primary-nav-ready", sync);
-  document.addEventListener("daab-nav-tools-mounted", sync);
+  document.addEventListener("daab-breadcrumbs-ready", scheduleSync);
+  document.addEventListener("daab-primary-nav-ready", scheduleSync);
+  document.addEventListener("daab-nav-tools-mounted", scheduleSync);
 
   if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(sync);
+    document.fonts.ready.then(scheduleSync);
   }
 })();

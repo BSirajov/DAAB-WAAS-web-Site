@@ -100,95 +100,6 @@ div.breadcrumbs.forum-breadcrumbs{
   color: var(--muted-hero);
   max-width: 100%;
   overflow-wrap: anywhere;
-}/* In-section navigation — pill buttons mirror the project's .btn system. */
-/* Section pills sit below the page hero/title band (see daab-section-nav.js). */
-header.page-hero + .daab-section-nav,
-header.hero + .daab-section-nav,
-section.hero + .daab-section-nav,
-header.forum-hero + .daab-section-nav{
-  max-width: 1180px;
-  margin: 0 auto 20px;
-  padding: 16px 24px;
-  box-sizing: border-box;
-}.daab-section-nav{
-  margin: 0 0 24px;
-  padding: 16px 18px;
-  background: rgba(255, 255, 255, .72);
-  border: 1px solid var(--color-border-blue-muted);
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0, 45, 82, .06);
-}.daab-section-nav-title{
-  margin: 0 0 12px;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: #5a7f94;
-  line-height: 1.25;
-}.daab-section-nav-list{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}/* Match .btn / .btn-secondary by default; .active matches .btn-primary. */
-.daab-section-nav-icon{
-  flex-shrink: 0;
-  font-size: 1.05em;
-  line-height: 1;
-}.daab-section-nav-label{
-  min-width: 0;
-}.daab-section-nav-list a{
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 18px;
-  color: var(--blue-700) !important;
-  background: var(--white) !important;
-  border: 1px solid var(--line) !important;
-  border-radius: var(--radius-pill) !important;
-  box-shadow: 0 10px 24px rgba(0, 45, 82, .12) !important;
-  font-family: var(--font-sans) !important;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: .01em;
-  line-height: 1;
-  text-decoration: none !important;
-  cursor: pointer;
-  transition: transform .22s ease, filter .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
-}.daab-section-nav-list a:hover{
-  transform: translateY(-2px);
-  filter: brightness(1.02);
-  box-shadow: 0 14px 30px rgba(0, 45, 82, .18) !important;
-}.daab-section-nav-list a:focus-visible{
-  outline: 3px solid rgba(255, 240, 191, .95);
-  outline-offset: 3px;
-  box-shadow: 0 0 0 6px var(--color-border-blue-light) !important;
-}.daab-section-nav-list a.active,
-.daab-section-nav-list a[aria-current="page"]{
-  color: var(--white) !important;
-  background: var(--blue-700) !important;
-  border-color: var(--blue-700) !important;
-  box-shadow: 0 14px 30px rgba(0, 45, 82, .22) !important;
-}.daab-section-nav-list a.active:hover,
-.daab-section-nav-list a[aria-current="page"]:hover{
-  box-shadow: 0 18px 36px rgba(0, 45, 82, .28) !important;
-}
-
-@media (max-width: 720px) {.daab-section-nav{
-    padding: 14px 14px;
-  }.daab-section-nav-list:not(.daab-section-nav-list--forum-pairs){
-    gap: 8px;
-  }.daab-section-nav-list:not(.daab-section-nav-list--forum-pairs) a{
-    flex: 1 1 auto;
-    min-height: 44px;
-    padding: 12px 16px;
-    text-align: center;
-    white-space: normal;
-  }
 }
 
 @media (max-width: 1180px) {.nav-menu .nav-mega-link,
@@ -235,17 +146,322 @@ header.forum-hero + .daab-section-nav{
   }
 }
 
-@media (max-width: 760px) {.daab-section-nav-list:not(.daab-section-nav-list--forum-pairs){
-    flex-direction: column;
-    align-items: stretch;
-  }.daab-section-nav-list:not(.daab-section-nav-list--forum-pairs) a{
-    justify-content: center;
-    border-radius: 10px;
+/* Forum 2024 — nested under Forumlar / Forums */
+.nav-dropdown--forums > .nav-dropdown-panel{
+  min-width: 200px;
+  padding: 6px;
+  overflow: visible;
+}
+
+.nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year{
+  width: 100%;
+  margin-top: 2px;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}
+
+.nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown--nested > .nav-dropdown-toggle--forum-year{
+  width: 100%;
+  margin-top: 2px;
+  height: auto !important;
+  white-space: normal !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  gap: 2px !important;
+  padding: 8px 28px 8px 10px !important;
+  position: relative;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+}
+
+.nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown--nested > .nav-dropdown-toggle--forum-year .nav-dropdown-link-title{
+  font-weight: 700 !important;
+}
+
+.nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown--nested > .nav-dropdown-toggle--forum-year .nav-dropdown-link-desc,
+.nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link .nav-dropdown-link-desc{
+  display: block !important;
+  position: static !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+  color: #5a7c93 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: auto !important;
+}
+
+.nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown--nested > .nav-dropdown-toggle--forum-year .nav-dropdown-caret{
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: 0;
+  transform: translateY(-50%);
+}
+
+.nav-dropdown--forums .nav-dropdown--nested.open > .nav-dropdown-toggle--forum-year .nav-dropdown-caret,
+.nav-dropdown--forums .nav-dropdown--nested.is-forum-mega-open > .nav-dropdown-toggle--forum-year .nav-dropdown-caret,
+.nav-dropdown--forums .nav-dropdown--nested:focus-within > .nav-dropdown-toggle--forum-year .nav-dropdown-caret{
+  transform: translateY(-50%) rotate(180deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year{
+    min-height: 36px !important;
+    padding: 8px 10px !important;
+  }
+
+  .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year .nav-dropdown-link-title{
+    font-weight: 700 !important;
   }
 }
 
-/* Forum 2024 — primary nav mega menu (5 thematic columns + nested speeches) */
-.nav-dropdown--forum .nav-dropdown-panel--mega{
+.nav-dropdown--forums .nav-dropdown--nested{
+  position: relative;
+  width: 100%;
+}
+
+/* Consistent left rule on every Forum 2024 submenu section */
+.nav-dropdown--forums .nav-dropdown--nested .nav-mega-links,
+.nav-dropdown--forums .nav-dropdown--nested .nav-mega-nest{
+  margin-top: 0;
+  padding-right: 0;
+  padding-left: 10px;
+  border-right: none;
+  border-left: 2px solid rgba(0, 105, 180, 0.22);
+}
+
+.nav-dropdown--forums .nav-dropdown--nested .nav-dropdown-link-title{
+  font-weight: 400 !important;
+}
+
+/* Forum 2024 mega — typography hierarchy (headings +10%, nested links −10%) */
+.nav-dropdown--forum .nav-dropdown-panel--mega,
+.nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega{
+  --nav-mega-heading-size: 9px;
+  --nav-mega-link-title-size: 12px;
+  --nav-mega-link-desc-size: 11px;
+  --nav-mega-tooltip-size: 12px;
+}
+
+.nav-dropdown--forum .nav-dropdown-panel--mega .nav-mega-heading,
+.nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega .nav-mega-heading{
+  font-size: var(--nav-mega-heading-size) !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0.06em !important;
+}
+
+.nav-dropdown--forum .nav-dropdown-panel--mega .nav-mega-links > .nav-dropdown-link .nav-dropdown-link-title,
+.nav-dropdown--forum .nav-dropdown-panel--mega .nav-mega-nest .nav-dropdown-link-title,
+.nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega .nav-mega-links > .nav-dropdown-link .nav-dropdown-link-title,
+.nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega .nav-mega-nest .nav-dropdown-link-title{
+  font-size: var(--nav-mega-link-title-size) !important;
+  font-weight: 400 !important;
+  line-height: 1.3 !important;
+}
+
+.nav-dropdown--forum .nav-dropdown-panel--mega .nav-dropdown-link-desc,
+.nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega .nav-dropdown-link-desc{
+  font-size: var(--nav-mega-link-desc-size) !important;
+  line-height: 1.35 !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-toggle--forum-year{
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-toggle{
+    width: 100%;
+    justify-content: space-between;
+    height: auto !important;
+    min-height: 36px !important;
+    padding: 8px 10px !important;
+    color: #1e3d54 !important;
+    font-weight: 700 !important;
+    background: transparent !important;
+    border-color: transparent !important;
+    border-radius: 8px !important;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-toggle:hover,
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-toggle:focus-visible,
+  .nav-dropdown--forums .nav-dropdown--nested.has-active-child > .nav-dropdown-toggle,
+  .nav-dropdown--forums .nav-dropdown--nested.open > .nav-dropdown-toggle,
+  .nav-dropdown--forums .nav-dropdown--nested.is-forum-mega-open > .nav-dropdown-toggle{
+    color: var(--blue-700) !important;
+    background: rgba(0, 105, 180, .08) !important;
+    border-color: rgba(0, 105, 180, .14) !important;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested.nav-dropdown--has-mega > .nav-dropdown-panel--mega{
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    right: auto;
+    margin: 0 0 0 -2px;
+    width: max-content;
+    min-width: 0;
+    max-width: min(520px, calc(100vw - 32px));
+    padding: 8px 8px;
+    overflow: visible;
+    transform: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .14s ease, visibility .14s ease;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested.nav-dropdown--has-mega.is-forum-mega-open > .nav-dropdown-panel--mega,
+  .nav-dropdown--forums .nav-dropdown--nested.nav-dropdown--has-mega:focus-within > .nav-dropdown-panel--mega{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    animation: navForumMegaDropIn .16s ease-out;
+  }
+
+  .nav-dropdown--forums > .nav-dropdown-panel:has(> .nav-dropdown-link--forum-year:hover) .nav-dropdown--nested.nav-dropdown--has-mega > .nav-dropdown-panel--mega,
+  .nav-dropdown--forums > .nav-dropdown-panel:has(> .nav-dropdown-link--forum-year:focus-visible) .nav-dropdown--nested.nav-dropdown--has-mega > .nav-dropdown-panel--mega{
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    animation: none !important;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega::before{
+    top: 0;
+    bottom: 0;
+    left: -18px;
+    right: auto;
+    width: 18px;
+    height: auto;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-mega-grid{
+    grid-template-columns: repeat(3, auto);
+    justify-items: start;
+    align-items: start;
+    gap: 6px 10px;
+    width: max-content;
+    max-width: min(504px, calc(100vw - 48px));
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-mega-col{
+    gap: 3px;
+    overflow: visible;
+    width: max-content;
+    max-width: 168px;
+    min-width: 0;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-dropdown-link{
+    position: relative;
+    width: max-content;
+    max-width: 100%;
+    min-height: 0 !important;
+    padding: 6px 7px !important;
+    gap: 0 !important;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-mega-heading{
+    margin: 0;
+    padding: 0 2px 1px;
+    color: #1e3d54;
+    font-weight: 800;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-mega-links,
+  .nav-dropdown--forums .nav-dropdown--nested .nav-mega-nest{
+    gap: 2px;
+    width: max-content;
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 8px;
+    border-right: none;
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-left-color: rgba(0, 105, 180, 0.22);
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-mega-nest .nav-dropdown-link{
+    padding: 6px 7px 6px 8px !important;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-dropdown-link-title{
+    max-width: 24ch;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-dropdown-link .nav-dropdown-link-desc{
+    display: block !important;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 10002;
+    min-width: min(220px, 28vw);
+    max-width: min(280px, 36vw);
+    margin: 0;
+    padding: 7px 9px;
+    font-size: var(--nav-mega-tooltip-size, 12px) !important;
+    font-weight: 400 !important;
+    line-height: 1.35 !important;
+    color: #2c5470 !important;
+    background: #fff;
+    border: 1px solid rgba(0, 105, 180, 0.22);
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(15, 45, 75, 0.14);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .15s ease, visibility .15s ease, transform .15s ease;
+    transform: translateY(-2px);
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-dropdown-link:hover .nav-dropdown-link-desc,
+  .nav-dropdown--forums .nav-dropdown--nested .nav-dropdown-link:focus-visible .nav-dropdown-link-desc{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-dropdown-link.active .nav-dropdown-link-desc{
+    color: #2c5470 !important;
+    background: #fff;
+  }
+}
+
+@keyframes navForumMegaDropIn {
+  from{
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Legacy / standalone Forum 2024 mega (if ever rendered top-level) */
+.nav-dropdown--forum:not(.nav-dropdown--nested) .nav-dropdown-panel--mega{
   left: 50%;
   min-width: min(940px, calc(100vw - 24px));
   max-width: calc(100vw - 24px);
@@ -267,7 +483,7 @@ header.forum-hero + .daab-section-nav{
 
 .nav-mega-grid{
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 10px 12px;
 }
 
@@ -283,7 +499,7 @@ header.forum-hero + .daab-section-nav{
   padding: 0 4px;
   color: #5a7c93;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: var(--nav-mega-heading-size, 9px);
   font-weight: 800;
   letter-spacing: 0.06em;
   line-height: 1.3;
@@ -307,8 +523,8 @@ header.forum-hero + .daab-section-nav{
   padding: 8px 10px !important;
 }
 
-.nav-dropdown--forum .nav-dropdown-link-title{
-  font-size: 13px !important;
+.nav-dropdown--forum .nav-dropdown-panel--mega .nav-dropdown-link-title{
+  font-size: var(--nav-mega-link-title-size, 12px) !important;
   line-height: 1.3 !important;
 }
 
@@ -317,17 +533,79 @@ header.forum-hero + .daab-section-nav{
   line-height: 1.35 !important;
 }
 
+.nav-dropdown--forum .nav-dropdown-panel--mega .nav-dropdown-link-desc{
+  font-size: var(--nav-mega-link-desc-size, 11px) !important;
+  line-height: 1.35 !important;
+}
+
 @media (max-width: 1320px) and (min-width: 1181px) {
-  .nav-dropdown--forum .nav-dropdown-panel--mega{
+  .nav-dropdown--forum:not(.nav-dropdown--nested) .nav-dropdown-panel--mega{
     min-width: min(860px, calc(100vw - 24px));
   }
 
-  .nav-mega-grid{
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega{
+    width: max-content;
+    min-width: 0;
+    max-width: min(480px, calc(100vw - 32px));
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-mega-grid{
+    grid-template-columns: repeat(3, auto);
+    max-width: min(464px, calc(100vw - 48px));
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-mega-col{
+    max-width: 152px;
   }
 }
 
 @media (max-width: 1180px) {
+  .nav-dropdown--forum .nav-dropdown-panel--mega,
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega{
+    --nav-mega-heading-size: 9px;
+    --nav-mega-link-title-size: 13px;
+    --nav-mega-link-desc-size: 12px;
+    --nav-mega-tooltip-size: 12px;
+  }
+
+  .nav-dropdown--forums > .nav-dropdown-panel{
+    padding: 4px;
+    overflow: visible;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-toggle{
+    padding-left: calc(14px + 1.5ch) !important;
+    font-weight: 700 !important;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested:not(.open) > .nav-dropdown-panel--mega{
+    display: none !important;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested.open > .nav-dropdown-panel--mega{
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega{
+    position: static !important;
+    left: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin-top: 4px !important;
+    padding: 6px !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-mega-grid{
+    grid-template-columns: 1fr;
+    gap: 8px;
+    overflow: visible;
+  }
+
   .nav-dropdown--forum .nav-dropdown-panel--mega{
     position: static !important;
     left: auto !important;
@@ -349,8 +627,19 @@ header.forum-hero + .daab-section-nav{
   }
 
   .nav-mega-heading{
-    padding: 4px 6px 2px;
-    font-size: 12px;
+    padding: 3px 6px 1px;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-mega-col{
+    gap: 5px;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested .nav-mega-links,
+  .nav-dropdown--forums .nav-dropdown--nested .nav-mega-nest{
+    padding-right: 0;
+    padding-left: 12px;
+    border-right: none;
+    border-left: 2px solid rgba(0, 105, 180, 0.22);
   }
 
   .nav-mega-nest{
@@ -358,7 +647,19 @@ header.forum-hero + .daab-section-nav{
   }
 
   .nav-dropdown--forum .nav-dropdown-link-desc{
-    display: none !important;
+    display: block !important;
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin-top: 2px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    pointer-events: auto !important;
   }
 
   .nav-dropdown--forum .nav-dropdown-link{

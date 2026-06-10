@@ -36,8 +36,6 @@ Most inner pages follow this vertical stack (home and hub pages omit breadcrumbs
 │    • Page title (h1) + page hero subtitle                   │
 │    • Hero summary panel (.hero-panel / .hero-summary-panel) │
 ├─────────────────────────────────────────────────────────────┤
-│  OPTIONAL: Section navigation strip (.daab-section-nav)     │
-├─────────────────────────────────────────────────────────────┤
 │  MAIN CONTENT (#content)                                    │
 │    • Single column, or content-wrap (sidebar + main)        │
 ├─────────────────────────────────────────────────────────────┤
@@ -86,7 +84,7 @@ Most inner pages follow this vertical stack (home and hub pages omit breadcrumbs
 | **Forum breadcrumbs bar** | `.breadcrumbs.forum-breadcrumbs` | Static or enhanced trail including Activities › Forum 2024 › subpage. | All `forum/2024/*` pages | “Update **Forum breadcrumbs bar** label for Photos gallery (EN).” |
 | **Breadcrumb current page** | `.forum-breadcrumbs-current` | Non-link label for active page. | Last segment of forum breadcrumbs | “Shorten **breadcrumb current page** text on mobile.” |
 
-**Distinction — breadcrumbs vs section nav vs sidebar:** The **breadcrumbs bar** shows *where you are in the site hierarchy* (top, under nav). The **section navigation strip** (`.daab-section-nav`) shows *sibling pages within one section* (e.g. Membership). The **sidebar widget** (`.sidebar` / `.sidebar-widget`) is a *left column tool* (timeline, forum links, photo categories)—not site hierarchy.
+**Distinction — breadcrumbs vs mega-menu vs sidebar:** The **breadcrumbs bar** shows *where you are in the site hierarchy* (top, under nav). **Section siblings** (About, Scientists, Membership, Forum subpages) appear in the **primary nav mega-menu** (`#primaryNavMenu`), not a separate in-page pill strip. The **sidebar widget** (`.sidebar` / `.sidebar-widget`) is a *left column tool* (timeline, forum links, photo categories)—not site hierarchy.
 
 ---
 
@@ -139,16 +137,9 @@ Most inner pages follow this vertical stack (home and hub pages omit breadcrumbs
 
 ---
 
-## 8. Section navigation strip
+## 8. Section navigation strip *(removed June 2026)*
 
-| Official name | CSS / HTML | Purpose | Where | Example instruction |
-| --- | --- | --- | --- | --- |
-| **Section navigation strip** | `nav.daab-section-nav` `#daab-section-nav` | Horizontal sibling links within a site section. | Membership pages (`membership*.html`, `application.html`) | “Add active state to **section navigation strip** on application page.” |
-| **Section nav title** | `.daab-section-nav-title` | Group label (e.g. “Membership” / “Üzvlük”). | Section nav | “Rename **section nav title** in EN.” |
-| **Section nav list** | `.daab-section-nav-list` | List of section subpages with icons. | Section nav | “Reorder **section nav list** to put Application first.” |
-| **Section nav link** | `.daab-section-nav-list a` + `.daab-section-nav-label` | Individual subpage tab; `.active` = current. | Section nav | “Fix **section nav link** icon for ‘Send invite’.” |
-
-**Distinction — section nav vs primary nav:** **Primary navigation bar** covers the whole site. **Section navigation strip** appears *below the hero* and only links between related pages in one area (Membership suite).
+The former **section navigation strip** (`nav.daab-section-nav`, `js/daab-section-nav.js`) was removed. Sibling pages within About, Scientists, Membership, and Forum are reached via the **primary nav mega-menu** (`#primaryNavMenu` / `i18n/nav.json`). Forum pages use static **forum breadcrumbs** (`.forum-breadcrumbs`).
 
 ---
 
@@ -357,7 +348,7 @@ Most inner pages follow this vertical stack (home and hub pages omit breadcrumbs
 | Sticky chrome | `js/daab-sticky-chrome.js`, `css/daab-sticky-chrome.css` |
 | Hero summaries | `i18n/page-panel-summaries.json`, `css/daab-hero-summary.css` |
 | Hub cards | `css/daab-hub-cards.css` |
-| Section nav | `js/daab-section-nav.js`, `css/daab-common.css` |
+| Hub cards / mega-menu | `css/daab-hub-cards.css`, `js/daab-primary-nav.js` |
 | Site search | `js/daab-search.js`, `css/daab-search.css` |
 | Scientists catalog | `css/scientists-catalog-toolbar.css`, `js/scientists-catalog-data.js` |
 | Footer | `css/daab-common.css` (`.footer-pro` block) |

@@ -142,7 +142,7 @@ Each row describes one logical page (AZ and EN mirrors share requirements). Path
 
 ### 5.2 Forum 2024 section navigation
 
-Forum subpages (12) are NOT separate top-level menu items. They appear in the **In this section** pill strip (`daab-section-nav`) and breadcrumbs when browsing `forum/2024/`.
+Forum subpages (12) are NOT separate top-level menu items. They appear under **Forum 2024** in the primary nav mega-menu (Overview, Participants, Official record, Speeches, Media & reflections, Outcomes & partners) and in static **forum breadcrumbs** (`.forum-breadcrumbs`) on each `forum/2024/` page.
 
 | Page ID | AZ label | EN label |
 |---------|----------|----------|
@@ -163,8 +163,8 @@ Forum subpages (12) are NOT separate top-level menu items. They appear in the **
 
 | Mechanism | Implementation | Requirement |
 |-----------|----------------|-------------|
-| Breadcrumbs | `js/daab-breadcrumbs.js` | Show path from Home to current page |
-| Section nav | `js/daab-section-nav.js` | Horizontal pills for About, Scientists, Membership, Forum |
+| Breadcrumbs | Static `.forum-breadcrumbs` on forum pages; `js/daab-breadcrumbs.js` on other sections where configured | Show path from Home to current page |
+| Section siblings | Primary nav mega-menu (`js/daab-primary-nav.js`, `i18n/nav.json`) | About, Scientists, Membership, Forum groups — no separate in-page pill strip |
 | Hub cards | `daab-hub-cards.css` | Home and Forum hub discovery grids |
 | Sidebar widgets | `daab-sidebar-widget.css` | TOC/timeline on charter, presentations, stories, activities |
 | Skip link | First focusable control | Keyboard users skip to `#content` |
@@ -331,7 +331,7 @@ python helpers/_audit_repo_health.py
 
 | # | Issue | Impact | Recommendation |
 |---|-------|--------|----------------|
-| 1 | `daab-story-tts.js` not linked on `stories.html` | Feature incomplete | Wire script or remove unused CSS/JS |
+| 1 | ~~`daab-story-tts.js` not linked on `stories.html`~~ | Removed June 2026 | Story read-aloud feature dropped; CSS hooks removed from `daab-forum-content.css` |
 | 2 | `daab-forum-book.css` unused in live HTML | Dead asset | Keep for build pipeline or archive |
 | 3 | Membership application has no server-side submit | Data not persisted | Implement backend or form service per storage strategy doc |
 | 4 | Large scientists profiles HTML | Maintenance cost | Continue generator-based updates only |

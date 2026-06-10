@@ -344,29 +344,40 @@
     else trigger.removeAttribute("aria-describedby");
   }
 
+  function profilesIndexed() {
+    return Object.keys(byEmail).length > 0 || Object.keys(bySay).length > 0;
+  }
+
   function show(trigger) {
     if (!trigger) return;
-    var profile = lookupProfile(trigger) || fallbackFromRow(trigger);
-    if (!profile) return;
+    var render = function () {
+      var profile = lookupProfile(trigger) || fallbackFromRow(trigger);
+      if (!profile) return;
 
-    cancelTimers();
-    var el = ensurePopover();
-    var key = (trigger.getAttribute("data-scientist-email") || "") + "-" + trigger.getAttribute("data-scientist-say");
-    if (activeKey !== key) {
-      el.innerHTML = buildCardHtml(profile);
-      activeKey = key;
+      cancelTimers();
+      var el = ensurePopover();
+      var key = (trigger.getAttribute("data-scientist-email") || "") + "-" + trigger.getAttribute("data-scientist-say");
+      if (activeKey !== key) {
+        el.innerHTML = buildCardHtml(profile);
+        activeKey = key;
+      }
+
+      if (activeTrigger && activeTrigger !== trigger) setExpanded(activeTrigger, false);
+      activeTrigger = trigger;
+      setExpanded(trigger, true);
+
+      el.hidden = false;
+      el.setAttribute("aria-hidden", "false");
+      el.setAttribute("aria-label", labels.preview + ": " + (profile.name || ""));
+      el.classList.add("is-visible");
+      void el.offsetHeight;
+      positionPopover(trigger);
+    };
+    if (profilesIndexed()) {
+      render();
+      return;
     }
-
-    if (activeTrigger && activeTrigger !== trigger) setExpanded(activeTrigger, false);
-    activeTrigger = trigger;
-    setExpanded(trigger, true);
-
-    el.hidden = false;
-    el.setAttribute("aria-hidden", "false");
-    el.setAttribute("aria-label", labels.preview + ": " + (profile.name || ""));
-    el.classList.add("is-visible");
-    void el.offsetHeight;
-    positionPopover(trigger);
+    loadProfiles().then(render);
   }
 
   function hide() {
@@ -511,7 +522,6 @@
     } catch (e) {
       /* ignore */
     }
-    loadProfiles().then(bindCatalog);
     bindCatalog();
     document.addEventListener("keydown", onKeyDown);
     document.addEventListener("pointerdown", onDocumentPointerDown, true);

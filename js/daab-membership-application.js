@@ -98,8 +98,134 @@
     applyEmailValidity();
   }
 
-  function submitForm() {
-    if (!validateForm()) return;
+  function getFormEndpoint() {
+    var attr = document.documentElement.getAttribute("data-daab-form-endpoint");
+    if (attr && attr.trim()) return attr.trim();
+    var cfg = (typeof window !== "undefined" && window.DAAB_APPLICATION_CONFIG) || {};
+    if (cfg.formspreeEndpoint && String(cfg.formspreeEndpoint).trim()) {
+      return String(cfg.formspreeEndpoint).trim();
+    }
+    return "";
+  }
+
+  function uiText(key) {
+    var lang = detectLang();
+    var strings = {
+      az: {
+        submitting: "Göndərilir…",
+        submit: "✓ Göndər",
+        sciRequired: "Ən azı bir elmi sahə seçin.",
+        noEndpoint:
+          "Müraciət serveri hələ konfiqurasiya edilməyib. Zəhmət olmasa birbaşa info@daab-waas.com ünvanına yazın.",
+        submitFailed: "Müraciət göndərilmədi. Bir az sonra yenidən cəhd edin və ya info@daab-waas.com ünvanına yazın.",
+        networkError: "Şəbəkə xətası. İnternet bağlantınızı yoxlayın və yenidən cəhd edin.",
+      },
+      en: {
+        submitting: "Submitting…",
+        submit: "✓ Submit Application",
+        sciRequired: "Select at least one scientific field.",
+        noEndpoint:
+          "The application backend is not configured yet. Please email info@daab-waas.com directly.",
+        submitFailed: "Could not submit your application. Please try again or email info@daab-waas.com.",
+        networkError: "Network error. Check your connection and try again.",
+      },
+    };
+    return (strings[lang] || strings.en)[key] || key;
+  }
+
+  function showSubmitError(message) {
+    var box = byId("app-submit-status");
+    if (!box) return;
+    box.hidden = false;
+    box.className = "app-submit-status app-submit-status--error";
+    box.textContent = message;
+  }
+
+  function clearSubmitStatus() {
+    var box = byId("app-submit-status");
+    if (!box) return;
+    box.hidden = true;
+    box.textContent = "";
+    box.className = "app-submit-status";
+  }
+
+  function setSubmitting(isSubmitting) {
+    var btn = byId("appSubmitBtn");
+    if (!btn) return;
+    btn.disabled = isSubmitting;
+    btn.classList.toggle("is-loading", isSubmitting);
+    btn.textContent = isSubmitting ? uiText("submitting") : uiText("submit");
+  }
+
+  function getRadioValue(name) {
+    var el = document.querySelector('.application-page input[name="' + name + '"]:checked');
+    return el ? el.value : "";
+  }
+
+  function getSciValues() {
+    return Array.prototype.map.call(
+      document.querySelectorAll('.application-page input[name="sci"]:checked'),
+      function (el) {
+        return el.value;
+      }
+    );
+  }
+
+  function getCvConfirmValue() {
+    var field = byId("cvconfirm");
+    if (!field) return "";
+    if (field.type === "checkbox") return field.checked ? "yes" : "";
+    return String(field.value || "").trim();
+  }
+
+  function validateSciSelection() {
+    if (getSciValues().length > 0) return true;
+    showSubmitError(uiText("sciRequired"));
+    var sec = byId("sec-3");
+    if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+    return false;
+  }
+
+  function buildSubmissionPayload() {
+    var lang = detectLang();
+    var firstName = (byId("name") && byId("name").value.trim()) || "";
+    var lastName = (byId("surname") && byId("surname").value.trim()) || "";
+    var email = (byId("email") && byId("email").value.trim()) || "";
+    var phoneCode = (byId("phone_code") && byId("phone_code").value.trim()) || "";
+    var phoneNumber = (byId("phone") && byId("phone").value.trim()) || "";
+    var fullName = (firstName + " " + lastName).trim();
+
+    return {
+      _subject: (lang === "az" ? "DAAB üzvlük — " : "WAAS Membership — ") + fullName,
+      locale: lang,
+      submitted_at: new Date().toISOString(),
+      page_url: location.href,
+      email: email,
+      first_name: firstName,
+      last_name: lastName,
+      full_name: fullName,
+      country: (byId("country") && byId("country").value.trim()) || "",
+      city: (byId("city") && byId("city").value.trim()) || "",
+      phone_code: phoneCode,
+      phone_number: phoneNumber,
+      phone_full: phoneCode && phoneNumber ? phoneCode + " " + phoneNumber : phoneNumber,
+      university: (byId("university") && byId("university").value.trim()) || "",
+      field_of_study: (byId("fieldofstudy") && byId("fieldofstudy").value.trim()) || "",
+      degree: getRadioValue("degree"),
+      degree_institution: (byId("deginst") && byId("deginst").value.trim()) || "",
+      academic_title: getRadioValue("title"),
+      title_institution: (byId("titinst") && byId("titinst").value.trim()) || "",
+      current_job: (byId("currentjob") && byId("currentjob").value.trim()) || "",
+      previous_jobs: (byId("prevjobs") && byId("prevjobs").value.trim()) || "",
+      contributions: (byId("contributions") && byId("contributions").value.trim()) || "",
+      sci_fields: getSciValues().join(", "),
+      sci_fields_count: String(getSciValues().length),
+      additional_info: (byId("addinfo") && byId("addinfo").value.trim()) || "",
+      cv_confirm: getCvConfirmValue(),
+    };
+  }
+
+  function showSuccessScreen() {
     document.querySelectorAll(".application-page .form-section").forEach(function (s) {
       s.classList.remove("active");
       s.hidden = true;
@@ -115,6 +241,63 @@
       el.classList.add("done");
     });
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function postApplication(payload) {
+    var endpoint = getFormEndpoint();
+    return fetch(endpoint, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    }).then(function (response) {
+      return response
+        .json()
+        .catch(function () {
+          return {};
+        })
+        .then(function (body) {
+          if (!response.ok) {
+            var detail =
+              (body && (body.error || body.message)) ||
+              response.status + " " + response.statusText;
+            throw new Error(String(detail));
+          }
+          return body;
+        });
+    });
+  }
+
+  function submitForm() {
+    clearSubmitStatus();
+    if (!validateForm()) return;
+    if (!validateSciSelection()) return;
+
+    var endpoint = getFormEndpoint();
+    if (!endpoint) {
+      showSubmitError(uiText("noEndpoint"));
+      return;
+    }
+
+    setSubmitting(true);
+    var payload = buildSubmissionPayload();
+
+    postApplication(payload)
+      .then(function () {
+        showSuccessScreen();
+      })
+      .catch(function (err) {
+        var msg = uiText("submitFailed");
+        if (err && err.message && err.message.indexOf("Failed to fetch") >= 0) {
+          msg = uiText("networkError");
+        }
+        showSubmitError(msg);
+      })
+      .finally(function () {
+        setSubmitting(false);
+      });
   }
 
   function initResidenceDropdowns() {
@@ -506,5 +689,9 @@
     initStepNavigation();
     initBackToStepsButtons();
     updateProgress(1);
+    var submitBtn = byId("appSubmitBtn");
+    if (submitBtn && !submitBtn.textContent.trim()) {
+      submitBtn.textContent = uiText("submit");
+    }
   });
 })();

@@ -29,10 +29,8 @@ SCIENTISTS_COMMON_REPLACEMENTS: list[tuple[str, str]] = [
     ('aria-label="Alimlər CV kataloqu haqqında qısa məlumat"', 'aria-label="Academic profiles summary"'),
     ("Alimlərimizin siyahısı", "Scientists directory"),
     (
-        "Siyahıda 2024-cü ilin 9–11 sentyabr tarixlərində Bakıda keçirilmiş forumda iştirak etmiş alimlər təqdim olunur. "
-        "Siyahı alimlərin ölkə, ixtisas, elmi dərəcə və digər meyarlar üzrə axtarışı və filtrlənməsi imkanını təmin edir.",
-        "The directory lists scientists who took part in the Baku forum of 9–11 September 2024. "
-        "You can search and filter by country, field, academic degree and other criteria.",
+        "Burada dünyanın müxtəlif ölkələrində yaşayıb çalışan, 2024-cü ilin sentyabrında Bakıda keçirilmiş Xaricdə yaşayan Azərbaycanlı Alimlərin I Forumunda iştirak etmiş alimlərimizin adları, yaşadıqları ölkələr, ixtisas sahələri və elmi fəaliyyətləri ilə tanış ola bilərsiniz.",
+        "Meet Azerbaijani scholars from across the world who took part in the First Forum of Azerbaijani Scientists Living Abroad in Baku in September 2024 — their names, countries of residence, fields of study and scientific work brought together in one directory.",
     ),
     ("Alimlərimizin akademik profilləri", "Academic profiles"),
     (
@@ -50,6 +48,7 @@ SCIENTISTS_COMMON_REPLACEMENTS: list[tuple[str, str]] = [
     ("aç", "open"),
     ("bağla", "close"),
     ("Ad, ölkə, ixtisas, elmi dərəcə, e-poçt…", "Name, country, field, degree, email…"),
+    ("🌍 Yaşadığı Ölkə", "🌍 Country of residence"),
     ("🌍 Ölkə", "🌍 Country"),
     ("📚 İxtisas", "📚 Field"),
     ("🎓 Elmi dərəcə", "🎓 Degree"),
@@ -60,8 +59,8 @@ SCIENTISTS_COMMON_REPLACEMENTS: list[tuple[str, str]] = [
     ("Hamısı", "All"),
     ("Ad, Soyadı", "Name"),
     ("Yaşadığı Ölkə", "Country of residence"),
-    ("İxtisası", "Field"),
-    ("Elmi<br/>Dərəcəsi", "Academic<br/>degree"),
+    ("İxtisas", "Field"),
+    ("Elmi<br/>Dərəcə", "Academic<br/>degree"),
     ("E-poçt", "Email"),
     ("Heç bir nəticə tapılmadı. Filtri sıfırlayın.", "No results found. Reset your filters."),
     (" nəticə", " results"),
@@ -74,7 +73,7 @@ SCIENTISTS_COMMON_REPLACEMENTS: list[tuple[str, str]] = [
     ("Sıralama", "Sort"),
     ("Sırala", "Sort by"),
     ("Ad, Soyad", "Name"),
-    ("Ölkə", "Country"),
+    ("Ölkə", "Country of residence"),
     ("İxtisas", "Field"),
     ("Elmi dərəcə", "Degree"),
     ("Sıralama istiqaməti", "Sort direction"),

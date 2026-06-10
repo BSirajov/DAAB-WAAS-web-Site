@@ -1,0 +1,24 @@
+/* Performance — defer off-screen paint work on long catalog / gallery pages */
+
+.cards-grid .card,
+.encyclopedia-grid .person-card,
+.photo-gallery-item,
+.activities-photo-grid img,
+.impressions-photo img{
+  content-visibility: auto;
+  contain-intrinsic-size: auto 220px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after{
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

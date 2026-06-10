@@ -105,6 +105,7 @@
 
   function loadRoutes() {
     ROUTES_URL = ROUTES_URL || i18nUrl("routes.json");
+    /* Browser cache bust: bump ?v= below when routes.json content changes (JSON "version" field is documentary). */
     return loadCachedJson(
       ROUTES_URL + "?v=3",
       function () { return routesCache; },

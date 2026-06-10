@@ -12,7 +12,7 @@ This document describes how UI/UX tokens and shared styles are organized on the 
 ## Layer model
 
 ```
-i18n/ui.json              → user-visible strings (nav, breadcrumbs, search, section pills)
+i18n/ui.json              → user-visible strings (nav, breadcrumbs, search, mega-menu labels)
 i18n/nav.json             → nav tree structure
 i18n/routes.json          → page IDs and locale paths
 i18n/design-system.json   → breakpoints, layout numbers, z-index (JS + docs mirror)

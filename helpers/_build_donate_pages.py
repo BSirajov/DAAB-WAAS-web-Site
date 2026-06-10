@@ -13,27 +13,6 @@ DONATE_CSS_V = STYLE_VERSIONS.get("daab-donate-page.css", 1)
 NAV_ARIA = {"az": "Əsas naviqasiya", "en": "Main navigation"}
 SKIP = {"az": "Məzmuna keç", "en": "Skip to content"}
 
-SECTION_NAV = {
-    "az": """<nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə" data-daab-section-nav-enhanced="1">
-<p class="daab-section-nav-title">Sponsorluq</p>
-<ul class="daab-section-nav-list">
-<li><a href="sponsors.html"><span class="daab-section-nav-icon" aria-hidden="true">🤝</span><span class="daab-section-nav-label">Sponsorluq</span></a></li>
-<li><a class="active" href="donate.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">💝</span><span class="daab-section-nav-label">İanə</span></a></li>
-<li><a href="sponsors_flyer.html"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Dəvət məktubu</span></a></li>
-</ul>
-</nav>
-""",
-    "en": """<nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section" data-daab-section-nav-enhanced="1">
-<p class="daab-section-nav-title">Sponsorship</p>
-<ul class="daab-section-nav-list">
-<li><a href="sponsors.html"><span class="daab-section-nav-icon" aria-hidden="true">🤝</span><span class="daab-section-nav-label">Sponsorship</span></a></li>
-<li><a class="active" href="donate.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">💝</span><span class="daab-section-nav-label">Donation</span></a></li>
-<li><a href="sponsors_flyer.html"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Invitation letter</span></a></li>
-</ul>
-</nav>
-""",
-}
-
 LOCALES = {
     "az": {
         "lang": "az",
@@ -192,7 +171,6 @@ def shell_head(cfg: dict) -> str:
 <script src="{ASSET}js/daab-nav.js?v={sv["daab-nav.js"]}" defer></script>
 <script src="{ASSET}js/daab-primary-nav.js?v={sv["daab-primary-nav.js"]}" defer></script>
 <script src="{ASSET}js/daab-breadcrumbs.js?v={sv["daab-breadcrumbs.js"]}" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v={sv["daab-section-nav.js"]}" defer></script>
 <script src="{ASSET}js/daab-shell.js?v={sv["daab-shell.js"]}" defer></script>
 <script src="{ASSET}js/daab-page-subtitle.js?v=2" defer></script>
 <script src="{ASSET}js/daab-search.js?v={sv["daab-search.js"]}" defer></script>
@@ -265,7 +243,6 @@ def build_locale(key: str) -> None:
 </aside>
 </div>
 </header>
-{SECTION_NAV[key]}
 <main class="donate-main" id="content">
 <section class="dn-section" id="impact">
 <div class="dn-section-head"><h2>{esc(cfg["impact_title"])}</h2><p>{esc(cfg["impact_lead"])}</p></div>

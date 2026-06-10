@@ -1,5 +1,7 @@
 # DAAB site — comprehensive cleanup audit (May 2026)
 
+> **Update (June 2026):** The in-page section navigation strip (`daab-section-nav.js`) was later removed. Sibling pages are listed in the primary nav mega-menu; forum pages use static `.forum-breadcrumbs`. Rows below that reference section pills describe May 2026 work only.
+
 This document records a full-repository technical review of the static DAAB/WAAS bilingual site: findings, fixes applied, and recommended follow-up work. It complements `documents/DAAB-Site-Stability-and-Deployment-Guide.md`.
 
 ---

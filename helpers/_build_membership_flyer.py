@@ -19,25 +19,6 @@ MEMBERSHIP_HTML = {
 NAV_ARIA = {"az": "Əsas naviqasiya", "en": "Main navigation"}
 SKIP = {"az": "Məzmuna keç", "en": "Skip to content"}
 
-SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə" data-daab-section-nav-enhanced="1">
-<p class="daab-section-nav-title">Üzvlük</p>
-<ul class="daab-section-nav-list">
-<li><a href="membership_value.html"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Niyə DAAB-a qoşulmalı</span></a></li>
-<li><a href="application.html"><span class="daab-section-nav-icon" aria-hidden="true">📝</span><span class="daab-section-nav-label">Bizə qoşulun</span></a></li>
-<li><a class="active" href="membership_flyer.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Dəvət məktubu</span></a></li>
-</ul>
-</nav>
-"""
-
-SECTION_NAV_EN = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section" data-daab-section-nav-enhanced="1">
-<p class="daab-section-nav-title">Membership</p>
-<ul class="daab-section-nav-list">
-<li><a href="membership_value.html"><span class="daab-section-nav-icon" aria-hidden="true">💡</span><span class="daab-section-nav-label">Why join WAAS</span></a></li>
-<li><a href="application.html"><span class="daab-section-nav-icon" aria-hidden="true">📝</span><span class="daab-section-nav-label">Join us</span></a></li>
-<li><a class="active" href="membership_flyer.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Send invitation</span></a></li>
-</ul>
-</nav>
-"""
 APPLY_URL = {
     "az": "https://daab-waas.com/az/application.html",
     "en": "https://daab-waas.com/en/application.html",
@@ -64,7 +45,7 @@ LOCALES = {
         "lang": "az",
         "title": "DAAB — Üzvlük flyer",
         "description": "DAAB üzvlüyünün dəyəri — potensial üzvlər üçün çap flyer.",
-        "hero_h1": "Üzvlüyə <span>Dəvət göndərin</span>",
+        "hero_h1": "Üzvlüyə <span>Dəvət Məktubu</span>",
         "hero_subtitle": "Potensial üzvlərə dəvət məktubu göndərin",
         "panel_title": "Həmkarlarınızı məktub vasitəsilə dəvət edin",
         "panel_copy": (
@@ -146,7 +127,7 @@ LOCALES = {
         "lang": "en",
         "title": "WAAS — Membership flyer",
         "description": "Value of WAAS membership — printable flyer for potential members.",
-        "hero_h1": "Send Membership <span>Invitation Letter</span>",
+        "hero_h1": "Membership <span>Invitation Letter</span>",
         "hero_subtitle": "Share invitation letter with potential members",
         "panel_title": "Invite colleagues with the letter",
         "panel_copy": (
@@ -272,7 +253,6 @@ def shell_head(cfg: dict) -> str:
 <script src="{ASSET}js/daab-nav.js?v={sv["daab-nav.js"]}" defer></script>
 <script src="{ASSET}js/daab-primary-nav.js?v={sv["daab-primary-nav.js"]}" defer></script>
 <script src="{ASSET}js/daab-breadcrumbs.js?v={sv["daab-breadcrumbs.js"]}" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v={sv["daab-section-nav.js"]}" defer></script>
 <script src="{ASSET}js/daab-shell.js?v={sv["daab-shell.js"]}" defer></script>
 <script src="{ASSET}js/daab-page-subtitle.js?v=2" defer></script>
 <script src="{ASSET}js/daab-search.js?v={sv["daab-search.js"]}" defer></script>
@@ -382,7 +362,6 @@ def build_locale(key: str) -> None:
     nav = extract_nav(membership_html, NAV_ARIA[key])
     if not nav:
         raise SystemExit(f"Could not extract nav from {membership_path}")
-    section_nav = SECTION_NAV_AZ if key == "az" else SECTION_NAV_EN
     apply_abs = APPLY_URL[key]
     qr_url = qr_img_url(apply_abs)
 
@@ -412,7 +391,6 @@ def build_locale(key: str) -> None:
 <a class="skip" href="#content">{SKIP[key]}</a>
 {nav}
 {hero_block(cfg)}
-{section_nav}
 <main class="main membership-flyer-main" id="content">
 <div class="flyer-wrap">
 <div class="flyer-page-controls" role="toolbar" aria-label="{esc(cfg["controls_aria"])}" data-flyer-export-exclude="1">

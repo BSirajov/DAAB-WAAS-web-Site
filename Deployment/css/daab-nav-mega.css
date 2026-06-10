@@ -100,95 +100,6 @@ div.breadcrumbs.forum-breadcrumbs{
   color: var(--muted-hero);
   max-width: 100%;
   overflow-wrap: anywhere;
-}/* In-section navigation — pill buttons mirror the project's .btn system. */
-/* Section pills sit below the page hero/title band (see daab-section-nav.js). */
-header.page-hero + .daab-section-nav,
-header.hero + .daab-section-nav,
-section.hero + .daab-section-nav,
-header.forum-hero + .daab-section-nav{
-  max-width: 1180px;
-  margin: 0 auto 20px;
-  padding: 16px 24px;
-  box-sizing: border-box;
-}.daab-section-nav{
-  margin: 0 0 24px;
-  padding: 16px 18px;
-  background: rgba(255, 255, 255, .72);
-  border: 1px solid var(--color-border-blue-muted);
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0, 45, 82, .06);
-}.daab-section-nav-title{
-  margin: 0 0 12px;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: #5a7f94;
-  line-height: 1.25;
-}.daab-section-nav-list{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}/* Match .btn / .btn-secondary by default; .active matches .btn-primary. */
-.daab-section-nav-icon{
-  flex-shrink: 0;
-  font-size: 1.05em;
-  line-height: 1;
-}.daab-section-nav-label{
-  min-width: 0;
-}.daab-section-nav-list a{
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 18px;
-  color: var(--blue-700) !important;
-  background: var(--white) !important;
-  border: 1px solid var(--line) !important;
-  border-radius: var(--radius-pill) !important;
-  box-shadow: 0 10px 24px rgba(0, 45, 82, .12) !important;
-  font-family: var(--font-sans) !important;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: .01em;
-  line-height: 1;
-  text-decoration: none !important;
-  cursor: pointer;
-  transition: transform .22s ease, filter .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
-}.daab-section-nav-list a:hover{
-  transform: translateY(-2px);
-  filter: brightness(1.02);
-  box-shadow: 0 14px 30px rgba(0, 45, 82, .18) !important;
-}.daab-section-nav-list a:focus-visible{
-  outline: 3px solid rgba(255, 240, 191, .95);
-  outline-offset: 3px;
-  box-shadow: 0 0 0 6px var(--color-border-blue-light) !important;
-}.daab-section-nav-list a.active,
-.daab-section-nav-list a[aria-current="page"]{
-  color: var(--white) !important;
-  background: var(--blue-700) !important;
-  border-color: var(--blue-700) !important;
-  box-shadow: 0 14px 30px rgba(0, 45, 82, .22) !important;
-}.daab-section-nav-list a.active:hover,
-.daab-section-nav-list a[aria-current="page"]:hover{
-  box-shadow: 0 18px 36px rgba(0, 45, 82, .28) !important;
-}
-
-@media (max-width: 720px) {.daab-section-nav{
-    padding: 14px 14px;
-  }.daab-section-nav-list:not(.daab-section-nav-list--forum-pairs){
-    gap: 8px;
-  }.daab-section-nav-list:not(.daab-section-nav-list--forum-pairs) a{
-    flex: 1 1 auto;
-    min-height: 44px;
-    padding: 12px 16px;
-    text-align: center;
-    white-space: normal;
-  }
 }
 
 @media (max-width: 1180px) {.nav-menu .nav-mega-link,
@@ -235,16 +146,7 @@ header.forum-hero + .daab-section-nav{
   }
 }
 
-@media (max-width: 760px) {.daab-section-nav-list:not(.daab-section-nav-list--forum-pairs){
-    flex-direction: column;
-    align-items: stretch;
-  }.daab-section-nav-list:not(.daab-section-nav-list--forum-pairs) a{
-    justify-content: center;
-    border-radius: 10px;
-  }
-}
-
-/* Forum 2024 — primary nav mega menu (5 thematic columns + nested speeches) */
+/* Forum 2024 — primary nav mega menu (6 thematic columns + nested sections) */
 .nav-dropdown--forum .nav-dropdown-panel--mega{
   left: 50%;
   min-width: min(940px, calc(100vw - 24px));
@@ -267,7 +169,7 @@ header.forum-hero + .daab-section-nav{
 
 .nav-mega-grid{
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 10px 12px;
 }
 

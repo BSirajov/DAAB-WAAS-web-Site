@@ -715,7 +715,7 @@ def build_markdown() -> str:
     append("")
     append("| # | Issue | Impact | Recommendation |")
     append("|---|-------|--------|----------------|")
-    append("| 1 | `daab-story-tts.js` not linked on `stories.html` | Feature incomplete | Wire script or remove unused CSS/JS |")
+    append("| 1 | ~~`daab-story-tts.js` not linked on `stories.html`~~ | Removed June 2026 | Story read-aloud feature dropped |")
     append("| 2 | `daab-forum-book.css` unused in live HTML | Dead asset | Keep for build pipeline or archive |")
     append("| 3 | Membership application has no server-side submit | Data not persisted | Implement backend or form service per storage strategy doc |")
     append("| 4 | Large scientists profiles HTML | Maintenance cost | Continue generator-based updates only |")

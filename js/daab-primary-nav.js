@@ -15,6 +15,7 @@
     activitiesNews: "activitiesNews",
     forum2024: "forum2024",
     "forum-2024": "forum2024",
+    "forum-2026": "forum2026Year",
     encyclopedia: "prominentFigures",
     "industrial-revolutions": "industrialRevolutions",
     "major-scientific-inventions": "majorScientificInventions",
@@ -38,7 +39,8 @@
     "membership-application": "membershipJoin",
     "membership-flyer": "membershipFlyer",
     sponsors: "sponsorsProgram",
-    donate: "donate"
+    donate: "donate",
+    "sponsors-flyer": "sponsorsFlyer"
   };
 
   function pageById(routes, id) {
@@ -78,6 +80,10 @@
     return label(ui, lang, key);
   }
 
+  function childIconKey(childDef, page) {
+    return page.id || childDef.labelKey;
+  }
+
   function currentPageId(routes) {
     var explicit = document.documentElement.getAttribute("data-daab-page-id");
     if (explicit) return explicit;
@@ -109,8 +115,9 @@
       var fromKey = label(ui, lang, childDef.descKey);
       if (fromKey && fromKey !== childDef.descKey) return fromKey;
     }
-    if (page && isForumNavPageId(page.id)) {
-      return forumPageNavDesc(ui, lang, page.id);
+    if (page) {
+      var fromTooltip = forumPageNavDesc(ui, lang, page.id);
+      if (fromTooltip) return fromTooltip;
     }
     return "";
   }
@@ -168,7 +175,7 @@
       link.setAttribute("role", "menuitem");
       link.setAttribute("data-nav-id", childDef.id);
 
-      var iconKey = childDef.labelKey || page.id;
+      var iconKey = childIconKey(childDef, page);
       var title = document.createElement("span");
       title.className = "nav-dropdown-link-title";
       title.textContent = labelWithIcon(ui, iconKey, childLabel(ui, lang, childDef, page));
@@ -197,25 +204,57 @@
     return wrap;
   }
 
-  function buildMegaGroup(item, routes, lang, ui, activeId) {
+  function buildForumYearToggle(toggle, item, lang, ui) {
+    toggle.classList.add("nav-dropdown-toggle--forum-year");
+
+    var title = document.createElement("span");
+    title.className = "nav-dropdown-link-title";
+    title.textContent = labelWithIcon(ui, item.labelKey, label(ui, lang, item.labelKey));
+    toggle.appendChild(title);
+
+    if (item.descKey) {
+      var desc = document.createElement("span");
+      desc.className = "nav-dropdown-link-desc";
+      desc.textContent = label(ui, lang, item.descKey);
+      toggle.appendChild(desc);
+    }
+
+    toggle.appendChild(document.createTextNode(" "));
+    var caret = document.createElement("span");
+    caret.className = "nav-dropdown-caret";
+    caret.setAttribute("aria-hidden", "true");
+    toggle.appendChild(caret);
+  }
+
+  function buildMegaGroup(item, routes, lang, ui, activeId, nested) {
+    var isNested = !!nested;
     var wrap = document.createElement("div");
-    wrap.className = "nav-dropdown nav-dropdown--mega nav-dropdown--forum";
+    wrap.className =
+      "nav-dropdown nav-dropdown--mega nav-dropdown--forum" +
+      (isNested ? " nav-dropdown--nested nav-dropdown--has-mega" : "");
     wrap.setAttribute("data-nav-dropdown", "");
     wrap.setAttribute("data-nav-group", item.id || "forum");
+    if (isNested) {
+      wrap.setAttribute("data-has-nested-mega", "1");
+    }
 
     var toggle = document.createElement("button");
     toggle.type = "button";
     toggle.className = "nav-link nav-dropdown-toggle";
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-haspopup", "true");
-    toggle.appendChild(
-      document.createTextNode(labelWithIcon(ui, item.labelKey, label(ui, lang, item.labelKey)))
-    );
-    var caret = document.createElement("span");
-    caret.className = "nav-dropdown-caret";
-    caret.setAttribute("aria-hidden", "true");
-    toggle.appendChild(document.createTextNode(" "));
-    toggle.appendChild(caret);
+    if (isNested && item.descKey) {
+      buildForumYearToggle(toggle, item, lang, ui);
+    } else {
+      toggle.appendChild(
+        document.createTextNode(labelWithIcon(ui, item.labelKey, label(ui, lang, item.labelKey)))
+      );
+      var caret = document.createElement("span");
+      caret.className = "nav-dropdown-caret";
+      caret.setAttribute("aria-hidden", "true");
+      toggle.appendChild(document.createTextNode(" "));
+      toggle.appendChild(caret);
+    }
 
     var panel = document.createElement("div");
     panel.className = "nav-dropdown-panel nav-dropdown-panel--mega";
@@ -254,7 +293,7 @@
         link.setAttribute("role", "menuitem");
         link.setAttribute("data-nav-id", childDef.id);
 
-        var iconKey = childDef.labelKey || page.id;
+        var iconKey = childIconKey(childDef, page);
         var title = document.createElement("span");
         title.className = "nav-dropdown-link-title";
         title.textContent = labelWithIcon(ui, iconKey, childLabel(ui, lang, childDef, page));
@@ -289,6 +328,93 @@
     return wrap;
   }
 
+  function buildForumsPanelLink(panel, childDef, page, lang, ui, activeId) {
+    var link = document.createElement("a");
+    link.href = pageHref(page, lang);
+    link.className = "nav-dropdown-link nav-dropdown-link--forum-year";
+    link.setAttribute("role", "menuitem");
+    link.setAttribute("data-nav-id", childDef.id || page.id);
+
+    var labelKey = childDef.labelKey || page.id;
+    var title = document.createElement("span");
+    title.className = "nav-dropdown-link-title";
+    title.textContent = labelWithIcon(ui, labelKey, label(ui, lang, labelKey));
+    link.appendChild(title);
+
+    var descText = linkDescription(ui, lang, childDef, page);
+    if (descText) {
+      var desc = document.createElement("span");
+      desc.className = "nav-dropdown-link-desc";
+      desc.textContent = descText;
+      link.appendChild(desc);
+    }
+
+    if (childLinkIsActive(page, childDef, activeId)) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
+      panel.appendChild(link);
+      return true;
+    }
+
+    panel.appendChild(link);
+    return false;
+  }
+
+  function buildForumsGroup(item, routes, lang, ui, activeId) {
+    var wrap = document.createElement("div");
+    wrap.className = "nav-dropdown nav-dropdown--forums";
+    wrap.setAttribute("data-nav-dropdown", "");
+    wrap.setAttribute("data-nav-group", item.id || "forums");
+
+    var toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "nav-link nav-dropdown-toggle";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-haspopup", "true");
+    toggle.appendChild(
+      document.createTextNode(labelWithIcon(ui, item.labelKey, label(ui, lang, item.labelKey)))
+    );
+    var caret = document.createElement("span");
+    caret.className = "nav-dropdown-caret";
+    caret.setAttribute("aria-hidden", "true");
+    toggle.appendChild(document.createTextNode(" "));
+    toggle.appendChild(caret);
+
+    var panel = document.createElement("div");
+    panel.className = "nav-dropdown-panel";
+    panel.setAttribute("role", "menu");
+
+    var groupActive = false;
+    (item.children || []).forEach(function (child) {
+      if (child.type === "group" && child.style === "mega") {
+        var nestedMega = buildMegaGroup(child, routes, lang, ui, activeId, true);
+        panel.appendChild(nestedMega);
+        if (nestedMega.classList.contains("has-active-child")) {
+          groupActive = true;
+        }
+        return;
+      }
+      if (!child.id) return;
+      var page = pageById(routes, child.id);
+      if (!page) return;
+      if (buildForumsPanelLink(panel, child, page, lang, ui, activeId)) {
+        groupActive = true;
+      }
+    });
+
+    if (!panel.children.length) {
+      return buildMegaGroup(item, routes, lang, ui, activeId, false);
+    }
+
+    if (groupActive) {
+      wrap.classList.add("has-active-child");
+    }
+
+    wrap.appendChild(toggle);
+    wrap.appendChild(panel);
+    return wrap;
+  }
+
   function buildMenu(navDef, routes, lang, ui, activeId) {
     var frag = document.createDocumentFragment();
     var divider = document.createElement("div");
@@ -304,8 +430,10 @@
         return;
       }
       if (item.type === "group") {
-        if (item.style === "mega") {
-          frag.appendChild(buildMegaGroup(item, routes, lang, ui, activeId));
+        if (item.id === "forums") {
+          frag.appendChild(buildForumsGroup(item, routes, lang, ui, activeId));
+        } else if (item.style === "mega") {
+          frag.appendChild(buildMegaGroup(item, routes, lang, ui, activeId, false));
         } else {
           frag.appendChild(buildGroup(item, routes, lang, ui, activeId));
         }
@@ -358,14 +486,17 @@
 
   function staticHref(name) {
     var path = location.pathname.replace(/\\/g, "/");
-    var inForum = /\/forum\/2024\//.test(path);
+    var inForum2024 = /\/forum\/2024\//.test(path);
+    var inForum2026 = /\/forum\/2026\//.test(path);
+    var inForum = inForum2024 || inForum2026;
     var inSci = /\/scientists\//.test(path);
     var inProminent = /\/prominent_figures\//.test(path);
     var up = inForum ? "../../" : inSci ? "../" : inProminent ? "../../" : "";
     var sci = inSci ? "" : "scientists/";
-    var forum = inForum ? "" : "forum/2024/";
+    var forum2024 = inForum2024 ? "" : "forum/2024/";
+    var forum2026 = inForum2026 ? "" : "forum/2026/";
     if (FORUM_PAGE_FILES[name]) {
-      return up + forum + FORUM_PAGE_FILES[name];
+      return up + (inForum2024 ? "" : "forum/2024/") + FORUM_PAGE_FILES[name];
     }
     var map = {
       home: up + "index.html",
@@ -379,7 +510,8 @@
       encyclopedia: up + "encyclopedia.html",
       "industrial-revolutions": up + "industrial_revolutions.html",
       "major-scientific-inventions": up + "major_scientific_inventions.html",
-      "forum-2024": up + forum + "index.html",
+      "forum-2024": up + forum2024 + "index.html",
+      "forum-2026": up + forum2026 + "index.html",
       "membership-value": up + "membership_value.html",
       "membership-application": up + "application.html",
       "membership-flyer": up + "membership_flyer.html",
@@ -420,7 +552,11 @@
     activities: "📰",
     activitiesNews: "📰",
     forum2024: "🎤",
+    forum2024Year: "🎤",
+    forum2026Year: "🎤",
+    forums: "🎤",
     "forum-2024": "🎤",
+    "forum-2026": "🎤",
     encyclopedia: "👤",
     prominentFigures: "👤",
     treasury: "🏛️",
@@ -486,14 +622,22 @@
     var sections;
     var label;
     if (lang === "en") {
-      label = fallbackIcon("forum-2024") + "Forum 2024";
+      label = fallbackIcon("forum2024Year") + "2024";
       sections = [
         [
           "Overview",
           false,
           [
-            ["forum-2024", "forum-2024", "Forum 2024", "First Forum of Azerbaijani Scientists Living Abroad — September 2024", "forum-2024"],
+            ["forum-2024", "forum-2024", "Highlights", "First Forum of Azerbaijani Scientists Living Abroad — September 2024", "forum-2024"],
             ["forum-program", "forum-program", "Programme", "Programme of the Baku–Khankendi–Shusha forum journey", "forum-program"],
+          ],
+        ],
+        [
+          "Participants",
+          true,
+          [
+            ["list", "scientists-list", "Directory of Scientists", "Directory of all scientists", "scientists-list"],
+            ["profiles", "scientists-profiles", "Profiles of Scientists", "Academic profiles of scientists", "scientists-profiles"],
           ],
         ],
         [
@@ -532,14 +676,22 @@
         ],
       ];
     } else {
-      label = fallbackIcon("forum-2024") + "Forum 2024";
+      label = fallbackIcon("forum2024Year") + "2024";
       sections = [
         [
           "Ümumi baxış",
           false,
           [
-            ["forum-2024", "forum-2024", "Forum 2024", "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024", "forum-2024"],
+            ["forum-2024", "forum-2024", "Forumun mənzərəsi", "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024", "forum-2024"],
             ["forum-program", "forum-program", "Proqram", "Bakı–Xankəndi–Şuşa forum proqramı", "forum-program"],
+          ],
+        ],
+        [
+          "İştirakçılar",
+          true,
+          [
+            ["list", "scientists-list", "Alimlərin siyahısı", "Bütün alimlərin siyahısı", "scientists-list"],
+            ["profiles", "scientists-profiles", "Alimlərin profilləri", "Alimlərin akademik profilləri", "scientists-profiles"],
           ],
         ],
         [
@@ -591,10 +743,19 @@
         return forumMegaCol(section[0], items, section[1]);
       })
       .join("");
+    var yearDesc =
+      lang === "en"
+        ? "First Forum of Azerbaijani Scientists Living Abroad — September 2024"
+        : "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024";
     return (
-      '<div class="nav-dropdown nav-dropdown--mega nav-dropdown--forum" data-nav-dropdown data-nav-group="forum">' +
-      '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' +
+      '<div class="nav-dropdown nav-dropdown--mega nav-dropdown--forum nav-dropdown--nested nav-dropdown--has-mega" data-nav-dropdown data-nav-group="forum" data-has-nested-mega="1">' +
+      '<button type="button" class="nav-link nav-dropdown-toggle nav-dropdown-toggle--forum-year" aria-expanded="false" aria-haspopup="true">' +
+      '<span class="nav-dropdown-link-title">' +
       label +
+      "</span>" +
+      '<span class="nav-dropdown-link-desc">' +
+      yearDesc +
+      "</span>" +
       ' <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
       '<div class="nav-dropdown-panel nav-dropdown-panel--mega" role="menu">' +
       '<div class="nav-mega-grid">' +
@@ -603,9 +764,41 @@
     );
   }
 
+  function forum2026LinkFallback(lang) {
+    var title = "2026";
+    var desc =
+      lang === "en"
+        ? "Second Forum of Azerbaijani Scientists Living Abroad — in preparation"
+        : "Xaricdə yaşayan alimlərin II Forumu — hazırlanır";
+    return dropLink(
+      staticHref("forum-2026"),
+      "forum-2026",
+      fallbackIcon("forum2026Year") + title,
+      desc,
+      ""
+    );
+  }
+
+  function forumsNavFallback(lang) {
+    var forumsLabel =
+      lang === "en"
+        ? fallbackIcon("forums") + "Forums"
+        : fallbackIcon("forums") + "Forumlar";
+    return (
+      '<div class="nav-dropdown nav-dropdown--forums" data-nav-dropdown data-nav-group="forums">' +
+      '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' +
+      forumsLabel +
+      ' <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
+      '<div class="nav-dropdown-panel" role="menu">' +
+      forumMegaFallback(lang) +
+      forum2026LinkFallback(lang) +
+      "</div></div>"
+    );
+  }
+
   function renderStaticFallback(menu, lang) {
-    var azForum = forumMegaFallback("az");
-    var enForum = forumMegaFallback("en");
+    var azForum = forumsNavFallback("az");
+    var enForum = forumsNavFallback("en");
     var azTreasury =
       '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' +
       fallbackIcon("treasury") +
@@ -664,7 +857,7 @@
       '<div class="nav-dropdown-panel" role="menu">' +
       dropLink(staticHref("membership-value"), "membership-value", "Why join WAAS", "Benefits and value of WAAS membership", FALLBACK_ICONS.membershipWhy) +
       dropLink(staticHref("membership-application"), "membership-application", "Join us", "Online membership application form", FALLBACK_ICONS.membershipJoin) +
-      dropLink(staticHref("membership-flyer"), "membership-flyer", "Send invitation", "Printable flyer to share with potential members", FALLBACK_ICONS.membershipFlyer) +
+      dropLink(staticHref("membership-flyer"), "membership-flyer", "Invitation Letter", "Printable invitation letter for potential members", FALLBACK_ICONS.membershipFlyer) +
       '</div></div>' +
       '<div class="nav-dropdown" data-nav-dropdown><button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">' + fallbackIcon("sponsors") + 'Support us <span class="nav-dropdown-caret" aria-hidden="true"></span></button>' +
       '<div class="nav-dropdown-panel" role="menu">' +

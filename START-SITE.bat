@@ -29,7 +29,7 @@ for /f "tokens=5" %%a in ('netstat -ano ^| findstr /R /C:"127\.0\.0\.1:8010 .*LI
   taskkill /PID %%a /F >nul 2>&1
 )
 
-start "DAAB Server (keep open)" cmd /k "cd /d ""%~dp0"" && python -m http.server 8010 --bind 127.0.0.1"
+start "DAAB Server (keep open)" cmd /k "cd /d ""%~dp0"" && python helpers/serve_site.py --bind 127.0.0.1 --port 8010"
 
 echo Waiting for server...
 timeout /t 2 /nobreak >nul

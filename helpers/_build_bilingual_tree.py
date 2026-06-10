@@ -22,7 +22,6 @@ I18N_HEAD = """
 <script src="{prefix}js/daab-nav.js?v=6" defer></script>
 <script src="{prefix}js/daab-primary-nav.js?v=2" defer></script>
 <script src="{prefix}js/daab-breadcrumbs.js?v=1" defer></script>
-<script src="{prefix}js/daab-section-nav.js?v=1" defer></script>
 <script src="{prefix}js/daab-shell.js?v=2" defer></script>
 """
 
@@ -229,7 +228,7 @@ def externalize_scientists_list_data(html: str, depth: int) -> str:
     if "const DATA = [" not in html:
         return html
     block = (
-        f'<script src="{prefix}js/scientists-catalog-data.js?v=1"></script>\n'
+        f'<script src="{prefix}js/scientists-catalog-data.js?v=2"></script>\n'
         "<script>\nconst DATA = window.SCIENTISTS_CATALOG_DATA || [];\n"
     )
     return INLINE_LIST_DATA_RE.sub(block, html, count=1)

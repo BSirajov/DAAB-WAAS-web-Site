@@ -77,6 +77,9 @@
   var resizeTimer = 0;
   function onViewportChange() {
     syncNavHeight();
+    document.querySelectorAll(".nav-dropdown--forums .nav-dropdown--nested.is-forum-mega-open").forEach(function (nested) {
+      nested.classList.remove("is-forum-mega-open");
+    });
     if (!isMobileNav()) {
       closeMobileMenu();
     }
@@ -227,6 +230,136 @@
   }
 
   var dropdownToggleAttached = new WeakSet();
+  var forumsSubmenuAttached = new WeakSet();
+  var FORUM_MEGA_CLOSE_DELAY_MS = 200;
+
+  function setForumMegaOpen(nested, open) {
+    if (!nested) return;
+    nested.classList.toggle("is-forum-mega-open", !!open);
+    if (!needsTapDropdown()) {
+      var btn = nested.querySelector(":scope > .nav-dropdown-toggle");
+      if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+  }
+
+  function closeForumsNestedMega(exceptDropdown) {
+    document.querySelectorAll(".nav-dropdown--forums .nav-dropdown--nested").forEach(function (nested) {
+      if (exceptDropdown && nested === exceptDropdown) return;
+      nested.classList.remove("open");
+      nested.classList.remove("is-forum-mega-open");
+      var btn = nested.querySelector(":scope > .nav-dropdown-toggle");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  /**
+   * Forums submenu: show the 2024 mega panel only while the pointer is on 2024
+   * (or its mega grid). Hide immediately when moving to leaf items such as 2026.
+   */
+  function initForumsSubmenuBehavior() {
+    document.querySelectorAll(".nav-dropdown--forums").forEach(function (forumsDrop) {
+      if (forumsSubmenuAttached.has(forumsDrop)) return;
+
+      var panel = forumsDrop.querySelector(":scope > .nav-dropdown-panel");
+      if (!panel) return;
+
+      var megaNested = panel.querySelector(":scope > .nav-dropdown--nested.nav-dropdown--has-mega");
+      if (!megaNested) return;
+
+      forumsSubmenuAttached.add(forumsDrop);
+
+      var leafLinks = panel.querySelectorAll(":scope > .nav-dropdown-link--forum-year");
+      var closeTimer = 0;
+
+      function cancelCloseTimer() {
+        if (!closeTimer) return;
+        window.clearTimeout(closeTimer);
+        closeTimer = 0;
+      }
+
+      function openMegaNow() {
+        if (needsTapDropdown()) return;
+        cancelCloseTimer();
+        setForumMegaOpen(megaNested, true);
+      }
+
+      function closeMegaNow() {
+        cancelCloseTimer();
+        setForumMegaOpen(megaNested, false);
+        if (needsTapDropdown()) {
+          megaNested.classList.remove("open");
+          var btn = megaNested.querySelector(":scope > .nav-dropdown-toggle");
+          if (btn) btn.setAttribute("aria-expanded", "false");
+        }
+      }
+
+      function scheduleCloseMega() {
+        if (needsTapDropdown()) return;
+        cancelCloseTimer();
+        closeTimer = window.setTimeout(function () {
+          closeTimer = 0;
+          setForumMegaOpen(megaNested, false);
+        }, FORUM_MEGA_CLOSE_DELAY_MS);
+      }
+
+      function isInsideMegaZone(node) {
+        return !!(node && megaNested.contains(node));
+      }
+
+      if (!needsTapDropdown()) {
+        megaNested.addEventListener("mouseenter", openMegaNow);
+
+        var megaPanel = megaNested.querySelector(":scope > .nav-dropdown-panel--mega");
+        if (megaPanel) {
+          megaPanel.addEventListener("mouseenter", openMegaNow);
+        }
+
+        megaNested.addEventListener("mouseleave", function (event) {
+          if (isInsideMegaZone(event.relatedTarget)) return;
+          scheduleCloseMega();
+        });
+
+        panel.addEventListener("mouseleave", function (event) {
+          if (isInsideMegaZone(event.relatedTarget)) return;
+          if (event.relatedTarget && panel.contains(event.relatedTarget)) return;
+          closeMegaNow();
+        });
+      }
+
+      leafLinks.forEach(function (link) {
+        if (dropdownToggleAttached.has(link)) return;
+        dropdownToggleAttached.add(link);
+
+        link.addEventListener("mouseenter", closeMegaNow);
+        link.addEventListener("focus", closeMegaNow);
+        link.addEventListener("click", function () {
+          closeForumsNestedMega(null);
+        });
+      });
+    });
+  }
+
+  function closeSiblingDropdowns(dropdown) {
+    var parent = dropdown.parentElement;
+    if (!parent) return;
+    Array.prototype.forEach.call(parent.children, function (child) {
+      if (child === dropdown || !child.matches || !child.matches("[data-nav-dropdown]")) return;
+      child.classList.remove("open");
+      var btn = child.querySelector(":scope > .nav-dropdown-toggle");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  function markAncestorDropdownsActive(dropdown) {
+    var node = dropdown.parentElement;
+    while (node) {
+      var parentDropdown = node.closest ? node.closest("[data-nav-dropdown]") : null;
+      if (!parentDropdown || parentDropdown === dropdown) break;
+      parentDropdown.classList.add("has-active-child");
+      node = parentDropdown.parentElement;
+      dropdown = parentDropdown;
+    }
+  }
 
   function initNavDropdowns() {
     var pageIdAttr = (document.documentElement.getAttribute("data-daab-page-id") || "").trim() || null;
@@ -248,6 +381,7 @@
           link.classList.add("active");
           link.setAttribute("aria-current", "page");
           dropdown.classList.add("has-active-child");
+          markAncestorDropdownsActive(dropdown);
         }
       });
 
@@ -258,12 +392,7 @@
           event.preventDefault();
           event.stopPropagation();
           var willOpen = !dropdown.classList.contains("open");
-          document.querySelectorAll("[data-nav-dropdown].open").forEach(function (other) {
-            if (other === dropdown) return;
-            other.classList.remove("open");
-            var otherToggle = other.querySelector(".nav-dropdown-toggle");
-            if (otherToggle) otherToggle.setAttribute("aria-expanded", "false");
-          });
+          closeSiblingDropdowns(dropdown);
           dropdown.classList.toggle("open", willOpen);
           toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
         });
@@ -378,6 +507,7 @@
       attachLinkCloseHandlers();
     }
     initNavDropdowns();
+    initForumsSubmenuBehavior();
     attachGlobalDropdownHandlers();
     attachViewportListeners();
     injectFooterHomeQr();
@@ -454,6 +584,7 @@
   window.addEventListener("load", scheduleNavHeightSync, { once: true });
   document.addEventListener("daab-primary-nav-ready", function () {
     initNavDropdowns();
+    initForumsSubmenuBehavior();
     injectFooterHomeQr();
     scheduleNavHeightSync();
   });

@@ -278,7 +278,7 @@ DAAB / WAAS Platform
 | Mechanism | Script / style | When shown |
 |-----------|----------------|------------|
 | Breadcrumbs | `daab-breadcrumbs.js` | All pages except gateway |
-| Section nav (pills) | `daab-section-nav.js` | About, Scientists, Membership, Forum groups |
+| Section siblings | Primary nav mega-menu (`daab-primary-nav.js`, `i18n/nav.json`) | About, Scientists, Membership, Forum groups |
 | Hub cards | `daab-hub-cards.css` | Home, Forum index |
 | Sidebar TOC / timeline | `daab-sidebar-widget.css`, `daab-sidebar-timeline.js` | Charter, presentations, activities, stories |
 | In-page anchors | HTML `id` attributes | Long articles, speeches |
@@ -952,7 +952,7 @@ Each feature lists **given / when / then** criteria testable by QA.
 | WAAS | World Association of Azerbaijani Scientists (English branding) |
 | Gateway | Root `index.html` language router |
 | Hub page | Card-grid landing linking to section subpages |
-| Section nav | Horizontal pill strip for related pages in a group |
+| Mega-menu section | Primary nav dropdown listing sibling pages in a site group (About, Scientists, Membership, Forum) |
 | Profile deep link | URL hash identifying one scientist card |
 | Phase | Delivery tranche (P1 delivered, P2–P4 planned) |
 

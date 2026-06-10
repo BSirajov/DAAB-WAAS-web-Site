@@ -8,9 +8,8 @@
   var breadcrumbsInserted = false;
   var mountInFlight = false;
 
-  /** Top-level nav destinations — no parent trail (Activities, Forum 2024 hub). */
+  /** Hub pages with static breadcrumb markup — skip dynamic injection. */
   var SKIP_BREADCRUMB_PAGE_IDS = {
-    activities: true,
     "forum-2024": true
   };
 
@@ -257,7 +256,9 @@
         about: "About us",
         scientists: "Scientists",
         activities: "Activities",
-        sponsors: "Support us"
+        sponsors: "Support us",
+        scientistsList: "Directory of Scientists",
+        scientistsProfiles: "Profiles of Scientists"
       }
     },
     nav: {
@@ -267,7 +268,7 @@
         mission: "Missiya və dəyərlər",
         activities: "Fəaliyyətimiz",
         activitiesNews: "Yeniliklər",
-        forum2024: "Forum 2024",
+        forum2024: "Forumun mənzərəsi",
         forumOfficial: "Rəsmi müraciətlər",
         forumRectorSpeeches: "Rektorlar",
         forumAnasLeadershipSpeeches: "Akademiklər",
@@ -294,7 +295,7 @@
         mission: "Mission & values",
         activities: "Activities",
         activitiesNews: "News",
-        forum2024: "Forum 2024",
+        forum2024: "Highlights",
         forumOfficial: "Official addresses",
         forumRectorSpeeches: "Rectors",
         forumAnasLeadershipSpeeches: "Academicians",
@@ -311,10 +312,10 @@
         membershipWhy: "Why join WAAS",
         membershipTerms: "Membership terms",
         membershipJoin: "Join us",
-        membershipFlyer: "Send invitation",
+        membershipFlyer: "Invitation Letter",
         sponsorsProgram: "Sponsorship",
         donate: "Donation",
-        sponsorsFlyer: "Invitation letter"
+        sponsorsFlyer: "Invitation Letter"
       }
     }
   };
@@ -363,6 +364,8 @@
   function pageTitle(ui, lang, pageId) {
     var key = PAGE_LABEL_KEYS[pageId];
     if (!key) return pageId;
+    var crumbBlock = ui.breadcrumbs && ui.breadcrumbs[lang];
+    if (crumbBlock && crumbBlock[key]) return crumbBlock[key];
     var navBlock = ui.nav && ui.nav[lang];
     return (navBlock && navBlock[key]) || pageId;
   }
@@ -532,7 +535,16 @@
     var prominentTrail = buildProminentFigureTrail(routes, navDef, ui, lang, I18N);
     if (prominentTrail) return prominentTrail;
 
-    if (!page || page.id === "home") return null;
+    if (!page) return null;
+    if (page.id === "home") {
+      return [
+        {
+          href: null,
+          text: t(ui, lang, "breadcrumbs", "home"),
+          current: true
+        }
+      ];
+    }
     if (SKIP_BREADCRUMB_PAGE_IDS[page.id]) return null;
 
     var crumbs = [];
@@ -675,7 +687,8 @@
         var navDef = results[2] || FALLBACK_NAV;
         var page = findCurrentPage(I18N, routes);
         var crumbs = buildTrail(routes, navDef, ui, lang, page, I18N);
-        if (!crumbs || crumbs.length < 2) return;
+        var minCrumbs = page && page.id === "home" ? 1 : 2;
+        if (!crumbs || crumbs.length < minCrumbs) return;
 
         removeBreadcrumbs();
         var el = render(crumbs, ui, lang);

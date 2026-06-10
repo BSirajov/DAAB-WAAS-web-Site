@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""One-shot site cleanup: foundation image paths, asset cache bumps, membership section nav."""
+"""One-shot site cleanup: foundation image paths, asset cache bumps, legacy nav strip."""
 from __future__ import annotations
 
 import re
@@ -9,53 +9,54 @@ from _paths import ROOT
 
 # Canonical ?v= for deploy HTML — keep in sync with latest page builds (May 2026).
 SCRIPT_VERSIONS = {
-    "daab-i18n.js": 21,
+    "daab-i18n.js": 23,
     "daab-lang-position.js": 7,
     "daab-design-tokens.js": 1,
-    "daab-nav.js": 23,
-    "daab-primary-nav.js": 31,
-    "daab-breadcrumbs.js": 22,
+    "daab-nav.js": 30,
+    "daab-primary-nav.js": 46,
+    "daab-breadcrumbs.js": 28,
     "prominent-figures-catalog-data.js": 4,
     "prominent-figures-catalog-data-en.js": 4,
-    "prominent-figures-catalog.js": 13,
-    "daab-section-nav.js": 31,
+    "prominent-figures-catalog.js": 18,
     "daab-shell.js": 12,
-    "daab-search.js": 8,
+    "daab-search.js": 9,
     "daab-mobile.js": 6,
-    "daab-sticky-chrome.js": 1,
+    "daab-perf.js": 1,
+    "daab-sticky-chrome.js": 3,
     "daab-back-to-top.js": 3,
     "daab-page-subtitle.js": 2,
     "daab-sidebar-timeline.js": 2,
     "daab-photos-gallery.js": 3,
     "daab-profile-tts.js": 3,
     "daab-profile-deep-link.js": 2,
-    "daab-membership-application.js": 5,
+    "daab-membership-application.js": 6,
+    "daab-application-config.js": 1,
     "daab-membership-flyer-email.js": 28,
     "daab-collation.js": 1,
     "daab-table-resize.js": 3,
-    "daab-scientists-toolbar-mobile.js": 3,
+    "daab-scientists-toolbar-mobile.js": 4,
     "daab-profiles-sticky.js": 2,
     "scientists-cv-filters.js": 2,
-    "scientists-list-preview.js": 6,
+    "scientists-list-preview.js": 7,
     "scientists-catalog-data.js": 2,
     "scientists-catalog-data-en.js": 2,
 }
 
 STYLE_VERSIONS = {
-    "daab-common.css": 64,
+    "daab-common.css": 67,
+    "daab-perf.css": 1,
     "daab-mobile.css": 13,
     "daab-sticky-chrome.css": 1,
     "daab-lang.css": 12,
-    "daab-nav-mega.css": 30,
+    "daab-nav-mega.css": 66,
     "daab-search.css": 4,
     "daab-back-to-top.css": 2,
     "daab-hero-summary.css": 11,
-    "daab-forum-content.css": 32,
-    "daab-forum-section-nav.css": 10,
+    "daab-forum-content.css": 33,
     "daab-video-gallery.css": 8,
-    "daab-hub-cards.css": 27,
+    "daab-hub-cards.css": 29,
     "daab-donate-page.css": 2,
-    "daab-sponsors-page.css": 3,
+    "daab-sponsors-page.css": 6,
     "daab-sponsors-page.js": 1,
     "daab-presentations-toc.css": 10,
     "daab-speech-photos.css": 3,
@@ -66,18 +67,18 @@ STYLE_VERSIONS = {
     "daab-membership-page.css": 12,
     "daab-membership-value.css": 17,
     "daab-scientists-profiles-page.css": 13,
-    "daab-encyclopedia-page.css": 11,
+    "daab-encyclopedia-page.css": 14,
     "daab-prominent-figure-profile.css": 3,
     "daab-content-hero.css": 4,
     "daab-charter-page.css": 5,
     "daab-foundation-page.css": 4,
     "daab-mission-page.css": 5,
-    "daab-membership-application.css": 14,
+    "daab-membership-application.css": 15,
     "daab-scientists-list-page.css": 10,
-    "scientists-list-catalog.js": 5,
+    "scientists-list-catalog.js": 7,
     "daab-photos-gallery.css": 8,
     "daab-forum-book.css": 5,
-    "daab-membership-flyer.css": 27,
+    "daab-membership-flyer.css": 28,
     "daab-sidebar-widget.css": 4,
     "daab-table-resize.css": 2,
     "scientists-catalog-toolbar.css": 5,
@@ -90,53 +91,37 @@ STYLE_VERSIONS = {
 
 DEPLOY_HTML_DIRS = (ROOT / "az", ROOT / "en")
 
-SECTION_NAV_EN = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section">
-<p class="daab-section-nav-title">Membership</p>
-<ul class="daab-section-nav-list">
-<li><a href="membership_value.html">Why join WAAS</a></li>
-<li><a class="active" href="membership.html" aria-current="page">Membership terms</a></li>
-<li><a href="application.html">Join us</a></li>
-<li><a href="membership_flyer.html">Send invitation</a></li>
-</ul>
-</nav>
-"""
+SECTION_NAV_RE = re.compile(
+    r'\n<nav class="daab-section-nav"[^>]*>.*?</nav>',
+    re.DOTALL,
+)
+SECTION_NAV_SCRIPT_RE = re.compile(
+    r'\n<script[^>]*daab-section-nav\.js[^>]*>\s*</script>',
+    re.IGNORECASE,
+)
+FORUM_SECTION_NAV_CSS_RE = re.compile(
+    r'\n<link[^>]*daab-forum-section-nav\.css[^>]*>',
+    re.IGNORECASE,
+)
 
-SECTION_NAV_EN_VALUE = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section">
-<p class="daab-section-nav-title">Membership</p>
-<ul class="daab-section-nav-list">
-<li><a class="active" href="membership_value.html" aria-current="page">Why join WAAS</a></li>
-<li><a href="membership.html">Membership terms</a></li>
-<li><a href="application.html">Join us</a></li>
-<li><a href="membership_flyer.html">Send invitation</a></li>
-</ul>
-</nav>
-"""
 
-SECTION_NAV_AZ = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə">
-<p class="daab-section-nav-title">Üzvlük</p>
-<ul class="daab-section-nav-list">
-<li><a href="membership_value.html">Niyə DAAB-a qoşulmalı</a></li>
-<li><a class="active" href="membership.html" aria-current="page">Üzvlük şərtləri</a></li>
-<li><a href="application.html">Bizə qoşulun</a></li>
-<li><a href="membership_flyer.html">Dəvət göndərin</a></li>
-</ul>
-</nav>
-"""
+def strip_legacy_section_nav_assets(html: str) -> str:
+    """Remove unused section-nav JS/CSS (primary nav mega-menu replaced in-page pills)."""
+    html = SECTION_NAV_SCRIPT_RE.sub("", html)
+    html = FORUM_SECTION_NAV_CSS_RE.sub("", html)
+    return html
 
-SECTION_NAV_AZ_VALUE = """<nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə">
-<p class="daab-section-nav-title">Üzvlük</p>
-<ul class="daab-section-nav-list">
-<li><a class="active" href="membership_value.html" aria-current="page">Niyə DAAB-a qoşulmalı</a></li>
-<li><a href="membership.html">Üzvlük şərtləri</a></li>
-<li><a href="application.html">Bizə qoşulun</a></li>
-<li><a href="membership_flyer.html">Dəvət göndərin</a></li>
-</ul>
-</nav>
-"""
+
+def strip_duplicate_section_nav(html: str) -> str:
+    """Remove static in-page section nav; primary mega-menu already lists siblings."""
+    return SECTION_NAV_RE.sub("", html)
 
 
 def iter_deploy_html() -> list[Path]:
     out: list[Path] = []
+    gateway = ROOT / "index.html"
+    if gateway.is_file():
+        out.append(gateway)
     for base in DEPLOY_HTML_DIRS:
         if not base.is_dir():
             continue
@@ -165,30 +150,14 @@ def bump_asset_versions(html: str) -> str:
     return html
 
 
-def inject_membership_section_nav(path: Path, html: str) -> str:
-    if "membership-value-page" not in html:
-        return html
-    if 'class="daab-section-nav"' in html:
-        return html
-    marker = "</header>\n<main"
-    if marker not in html:
-        marker = "</header>\r\n<main"
-    if marker not in html:
-        return html
-    if path.name == "membership_value.html":
-        block = SECTION_NAV_AZ_VALUE if path.parts[-2] == "az" else SECTION_NAV_EN_VALUE
-    else:
-        return html
-    return html.replace(marker, f"</header>\n{block}<main", 1)
-
-
 def process_file(path: Path) -> str | None:
     text = path.read_text(encoding="utf-8")
     original = text
     if path.name == "foundation.html":
         text = fix_foundation_images(text)
+    text = strip_duplicate_section_nav(text)
+    text = strip_legacy_section_nav_assets(text)
     text = bump_asset_versions(text)
-    text = inject_membership_section_nav(path, text)
     if text == original:
         return None
     path.write_text(text, encoding="utf-8", newline="\n")

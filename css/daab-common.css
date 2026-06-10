@@ -233,11 +233,7 @@ article.charter-card[id],
 .nav-menu [data-nav-id="home"]{
   display: none !important;
 }
-/* Hide Scientists top-nav dropdown (pages remain reachable via hub cards) */
-.nav-menu .nav-dropdown:has([data-nav-id="scientists-list"]),
-.nav-menu .nav-dropdown:has([data-nav-id="scientists-profiles"]){
-  display: none !important;
-}.nav-link:hover,
+.nav-link:hover,
 .nav-link:focus-visible{
   color: var(--white) !important;
   background: var(--color-hero-panel-bg) !important;

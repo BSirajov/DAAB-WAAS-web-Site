@@ -559,7 +559,6 @@ def build_html(lang: str, sections: list[dict], spec: dict, page_key: str) -> st
 <link href="{ASSET}css/daab-back-to-top.css?v={st["daab-back-to-top.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-lang.css?v={st["daab-lang.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-nav-mega.css?v={st["daab-nav-mega.css"]}" rel="stylesheet"/>
-<link href="{ASSET}css/daab-forum-section-nav.css?v={st["daab-forum-section-nav.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-hero-summary.css?v={st["daab-hero-summary.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-sidebar-widget.css?v={st["daab-sidebar-widget.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-activities-layout.css?v={st["daab-activities-layout.css"]}" rel="stylesheet"/>
@@ -572,7 +571,6 @@ def build_html(lang: str, sections: list[dict], spec: dict, page_key: str) -> st
 <script src="{ASSET}js/daab-design-tokens.js?v={sv["daab-design-tokens.js"]}" defer></script>
 <script src="{ASSET}js/daab-nav.js?v={sv["daab-nav.js"]}" defer></script>
 <script src="{ASSET}js/daab-primary-nav.js?v={sv["daab-primary-nav.js"]}" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v={sv["daab-section-nav.js"]}" defer></script>
 <script src="{ASSET}js/daab-shell.js?v={sv["daab-shell.js"]}" defer></script>
 <script src="{ASSET}js/daab-page-subtitle.js?v={sv["daab-page-subtitle.js"]}" defer></script>
 <script src="{ASSET}js/daab-search.js?v={sv["daab-search.js"]}" defer></script>

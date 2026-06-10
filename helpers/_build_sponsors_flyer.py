@@ -28,27 +28,6 @@ CONTACT_URL = {
     "en": "https://daab-waas.com/en/sponsors.html#contact",
 }
 
-SECTION_NAV = {
-    "az": """<nav class="daab-section-nav" id="daab-section-nav" aria-label="Bu bölmədə" data-daab-section-nav-enhanced="1">
-<p class="daab-section-nav-title">Sponsorluq</p>
-<ul class="daab-section-nav-list">
-<li><a href="sponsors.html"><span class="daab-section-nav-icon" aria-hidden="true">🤝</span><span class="daab-section-nav-label">Sponsorluq</span></a></li>
-<li><a href="donate.html"><span class="daab-section-nav-icon" aria-hidden="true">💝</span><span class="daab-section-nav-label">İanə</span></a></li>
-<li><a class="active" href="sponsors_flyer.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Dəvət məktubu</span></a></li>
-</ul>
-</nav>
-""",
-    "en": """<nav class="daab-section-nav" id="daab-section-nav" aria-label="In this section" data-daab-section-nav-enhanced="1">
-<p class="daab-section-nav-title">Sponsorship</p>
-<ul class="daab-section-nav-list">
-<li><a href="sponsors.html"><span class="daab-section-nav-icon" aria-hidden="true">🤝</span><span class="daab-section-nav-label">Sponsorship</span></a></li>
-<li><a href="donate.html"><span class="daab-section-nav-icon" aria-hidden="true">💝</span><span class="daab-section-nav-label">Donation</span></a></li>
-<li><a class="active" href="sponsors_flyer.html" aria-current="page"><span class="daab-section-nav-icon" aria-hidden="true">📤</span><span class="daab-section-nav-label">Invitation letter</span></a></li>
-</ul>
-</nav>
-""",
-}
-
 LOCALES = {
     "az": {
         "lang": "az",
@@ -235,7 +214,6 @@ def shell_head(cfg: dict) -> str:
 <script src="{ASSET}js/daab-nav.js?v={sv["daab-nav.js"]}" defer></script>
 <script src="{ASSET}js/daab-primary-nav.js?v={sv["daab-primary-nav.js"]}" defer></script>
 <script src="{ASSET}js/daab-breadcrumbs.js?v={sv["daab-breadcrumbs.js"]}" defer></script>
-<script src="{ASSET}js/daab-section-nav.js?v={sv["daab-section-nav.js"]}" defer></script>
 <script src="{ASSET}js/daab-shell.js?v={sv["daab-shell.js"]}" defer></script>
 <script src="{ASSET}js/daab-page-subtitle.js?v=2" defer></script>
 <script src="{ASSET}js/daab-search.js?v={sv["daab-search.js"]}" defer></script>
@@ -367,7 +345,6 @@ def build_locale(key: str) -> None:
 <a class="skip" href="#content">{SKIP[key]}</a>
 {nav}
 {hero_block(cfg)}
-{SECTION_NAV[key]}
 <main class="main membership-flyer-main" id="content">
 <div class="flyer-wrap">
 <div class="flyer-page-controls" role="toolbar" aria-label="{esc(cfg["controls_aria"])}" data-flyer-export-exclude="1">

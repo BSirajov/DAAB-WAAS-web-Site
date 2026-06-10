@@ -26,7 +26,6 @@ SHELL_SCRIPTS = """
 <script src="{a}js/daab-nav.js?v=8" defer></script>
 <script src="{a}js/daab-primary-nav.js?v=9" defer></script>
 <script src="{a}js/daab-breadcrumbs.js?v=6" defer></script>
-<script src="{a}js/daab-section-nav.js?v=4" defer></script>
 <script src="{a}js/daab-shell.js?v=11" defer></script>
 <script src="{a}js/daab-search.js?v=4" defer></script>
 """

@@ -19,7 +19,7 @@
 
 ## Manual QA still recommended (Phase 7)
 
-- [ ] Keyboard: nav dropdown, section pills, search (Ctrl/Cmd+K), application form steps
+- [ ] Keyboard: nav dropdown, mega-menu, search (Ctrl/Cmd+K), application form steps
 - [ ] Tablet width (~768–1024px): forum sidebar + scientists profile sticky panel
 - [ ] Hard-refresh after deploy (`Ctrl+F5`) so `?v=` caches clear
 

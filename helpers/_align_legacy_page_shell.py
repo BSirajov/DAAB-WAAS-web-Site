@@ -40,7 +40,6 @@ CHARTER_HEAD_TAIL = """<link href="../css/daab-hero-summary.css?v=1" rel="styles
 <script src="../js/daab-nav.js?v=8" defer></script>
 <script src="../js/daab-primary-nav.js?v=8" defer></script>
 <script src="../js/daab-breadcrumbs.js?v=4" defer></script>
-<script src="../js/daab-section-nav.js?v=4" defer></script>
 <script src="../js/daab-shell.js?v=9" defer></script>
 <script src="../js/daab-search.js?v=3" defer></script>
 """

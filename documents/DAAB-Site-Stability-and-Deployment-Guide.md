@@ -159,16 +159,13 @@ DAAB-WAAS web site/
 
 From repository root:
 
-```powershell
-# PowerShell
-.\scripts\serve.ps1
-```
-
-or:
+From repository root, use **`START-SITE.bat`** (recommended on Windows) or:
 
 ```bash
-python -m http.server 8010
+python helpers/serve_site.py --bind 127.0.0.1 --port 8010
 ```
+
+`serve_site.py` enables **gzip** and sensible **cache headers** for local preview. The older `python -m http.server 8010` still works but sends no compression or caching.
 
 Then open:
 

@@ -19,10 +19,6 @@
   line-height: 1.45;
 }.membership-flyer-main{
   padding: 0;
-}.membership-flyer-page header.hero + .daab-section-nav{
-  max-width: 1180px;
-  margin: 0 auto 8px;
-  padding: 16px 24px;
 }.flyer-wrap{
   position: relative;
   max-width: 210mm;
@@ -376,7 +372,6 @@
   body.membership-flyer-page nav.daab-breadcrumbs,
   body.membership-flyer-page .daab-breadcrumbs,
   body.membership-flyer-page header.hero,
-  body.membership-flyer-page .daab-section-nav,
   body.membership-flyer-page .footer-pro,
   body.membership-flyer-page .daab-back-to-top,
   body.membership-flyer-page #search-overlay,

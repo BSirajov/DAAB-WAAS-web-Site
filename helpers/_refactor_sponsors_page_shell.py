@@ -35,7 +35,6 @@ HEAD_EN = """<meta charset="utf-8"/>
 <script src="../js/daab-nav.js?v=23" defer></script>
 <script src="../js/daab-primary-nav.js?v=28" defer></script>
 <script src="../js/daab-breadcrumbs.js?v=20" defer></script>
-<script src="../js/daab-section-nav.js?v=28" defer></script>
 <script src="../js/daab-page-subtitle.js?v=2" defer></script>
 <script src="../js/daab-shell.js?v=12" defer></script>
 <script src="../js/daab-search.js?v=8" defer></script>
@@ -65,7 +64,6 @@ HEAD_AZ = """<meta charset="utf-8"/>
 <script src="../js/daab-nav.js?v=23" defer></script>
 <script src="../js/daab-primary-nav.js?v=28" defer></script>
 <script src="../js/daab-breadcrumbs.js?v=20" defer></script>
-<script src="../js/daab-section-nav.js?v=28" defer></script>
 <script src="../js/daab-page-subtitle.js?v=2" defer></script>
 <script src="../js/daab-shell.js?v=12" defer></script>
 <script src="../js/daab-search.js?v=8" defer></script>

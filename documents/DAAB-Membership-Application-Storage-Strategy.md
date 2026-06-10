@@ -10,7 +10,8 @@ This document describes how to **store and manage membership application submiss
 |------|--------|
 | **Pages** | `az/application.html`, `en/application.html` (edit in place under `az/` and `en/`) |
 | **Submit handler** | `daabApplicationSubmit()` in `js/daab-membership-application.js` |
-| **What happens on submit** | Success screen is shown in the browser only; **no data is sent to a server or database** |
+| **What happens on submit** | Client POSTs JSON to **Formspree** (`js/daab-application-config.js` → `formspreeEndpoint`); success screen only after server OK |
+| **Configuration** | Set `formspreeEndpoint` in `js/daab-application-config.js` (public Formspree form URL) |
 | **CV / photo** | Applicants are asked to email `bilik.birlik@gmail.com` after submitting the form |
 | **Hosting constraint** | The public site ships `*.html`, `css/`, `js/`, `images/` only — **not** `helpers/` or server-side code |
 
@@ -218,4 +219,4 @@ Consult local law (e.g. GDPR if EU applicants) before going live with storage.
 
 ---
 
-*Last updated: May 2026. Update this file when a backend is selected and `daab-membership-application.js` is wired to production.*
+*Last updated: June 2026. Set `formspreeEndpoint` in `js/daab-application-config.js` before go-live.*

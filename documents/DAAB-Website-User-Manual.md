@@ -337,7 +337,7 @@ Fees, rules, payment/bank details, and procedures. Read before applying.
 
 1. Read **Membership terms**.
 2. Open **Join us** / **Bizə qoşulun**.
-3. Use section pills to complete each part of the form.
+3. Use the primary navigation menu (Membership) or in-page links to complete each part of the form.
 4. Submit according to on-page instructions (and send attachments by email if requested).
 5. Keep a copy of any confirmation message or email you receive.
 
