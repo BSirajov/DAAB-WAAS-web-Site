@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated": "2026-06-09",
-  "entryCount": 560,
+  "generated": "2026-06-10",
+  "entryCount": 538,
   "entries": [
     {
       "id": "page-home-az",
@@ -132,6 +132,32 @@
       "icon": "🎤",
       "boost": 12,
       "norm": "highlights waas first forum of azerbaijani scientists living abroad book content and archive."
+    },
+    {
+      "id": "page-forum-2026-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "forum-2026",
+      "anchor": "",
+      "title": "Forum 2026 — DAAB",
+      "summary": "Xaricdə yaşayan alimlərin II Forumu — dekabr 2026, Bakı.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "forum 2026 daab xaricde yas ayan alimlerin ii forumu dekabr 2026 baki."
+    },
+    {
+      "id": "page-forum-2026-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "forum-2026",
+      "anchor": "",
+      "title": "Forum 2026 — WAAS",
+      "summary": "Second Forum of Azerbaijani Scientists Living Abroad — December 2026, Baku.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "forum 2026 waas second forum of azerbaijani scientists living abroad december 2026 baku."
     },
     {
       "id": "page-encyclopedia-az",
@@ -516,12 +542,12 @@
       "type": "page",
       "pageId": "executive-board",
       "anchor": "",
-      "title": "WAAS — Board of Directors",
-      "summary": "Board of Directors and leadership of the World Association of Azerbaijani Scientists.",
+      "title": "WAAS — Executive Board",
+      "summary": "Executive Board and leadership of the World Association of Azerbaijani Scientists.",
       "tag": "Page",
       "icon": "🎓",
       "boost": 12,
-      "norm": "waas board of directors board of directors and leadership of the world association of azerbaijani scientists."
+      "norm": "waas executive board executive board and leadership of the world association of azerbaijani scientists."
     },
     {
       "id": "page-charter-az",
@@ -810,186 +836,30 @@
       "norm": "fealiyyetimiz fealiyyetimiz"
     },
     {
-      "id": "nav-forum-2024-az",
+      "id": "nav-forum-az",
       "lang": "az",
       "type": "nav",
-      "pageId": "forum-2024",
+      "pageId": "forum",
       "anchor": "",
-      "title": "Forumun mənzərəsi",
-      "summary": "Forum 2024",
+      "title": "2024",
+      "summary": "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024",
       "tag": "Naviqasiya",
       "icon": "🎤",
       "boost": 11,
-      "norm": "forumun menzeresi forum 2024 forum 2024"
+      "norm": "2024 xaricde yas ayan alimlerin i forumu sentyabr 2024 forumlar"
     },
     {
-      "id": "nav-forum-program-az",
+      "id": "nav-forum-2026-az",
       "lang": "az",
       "type": "nav",
-      "pageId": "forum-program",
+      "pageId": "forum-2026",
       "anchor": "",
-      "title": "Proqram",
-      "summary": "Forum 2024",
+      "title": "forum-2026",
+      "summary": "Xaricdə yaşayan alimlərin II Forumu — dekabr 2026, konsepsiya layihəsi",
       "tag": "Naviqasiya",
-      "icon": "📅",
+      "icon": "🎤",
       "boost": 11,
-      "norm": "proqram forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-official-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "forum-official",
-      "anchor": "",
-      "title": "Rəsmi müraciətlər",
-      "summary": "Forum 2024",
-      "tag": "Naviqasiya",
-      "icon": "🏛️",
-      "boost": 11,
-      "norm": "resmi mu racietler forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-2024-presentations-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "forum-2024-presentations",
-      "anchor": "",
-      "title": "Məruzələr",
-      "summary": "Forum 2024",
-      "tag": "Naviqasiya",
-      "icon": "📊",
-      "boost": 11,
-      "norm": "meruzeler forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-rector-speeches-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "forum-rector-speeches",
-      "anchor": "",
-      "title": "Rektorlar",
-      "summary": "Forum 2024",
-      "tag": "Naviqasiya",
-      "icon": "🎓",
-      "boost": 11,
-      "norm": "rektorlar forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-anas-leadership-speeches-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "forum-anas-leadership-speeches",
-      "anchor": "",
-      "title": "Akademiklər",
-      "summary": "Forum 2024",
-      "tag": "Naviqasiya",
-      "icon": "🔬",
-      "boost": 11,
-      "norm": "akademikler forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-photos-gallery-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "forum-photos-gallery",
-      "anchor": "",
-      "title": "Foto qalereya",
-      "summary": "Forum 2024",
-      "tag": "Naviqasiya",
-      "icon": "📷",
-      "boost": 11,
-      "norm": "foto qalereya forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-video-gallery-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "forum-video-gallery",
-      "anchor": "",
-      "title": "Video qalereya",
-      "summary": "Forum 2024",
-      "tag": "Naviqasiya",
-      "icon": "📹",
-      "boost": 11,
-      "norm": "video qalereya forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-impressions-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "forum-impressions",
-      "anchor": "",
-      "title": "Təəssüratlar",
-      "summary": "Forum 2024",
-      "tag": "Naviqasiya",
-      "icon": "💬",
-      "boost": 11,
-      "norm": "teessu ratlar forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-bagli-hekayeler-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "forum-bagli-hekayeler",
-      "anchor": "",
-      "title": "Hekayələr",
-      "summary": "Forum 2024",
-      "tag": "Naviqasiya",
-      "icon": "📖",
-      "boost": 11,
-      "norm": "hekayeler forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-roadmap-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "forum-roadmap",
-      "anchor": "",
-      "title": "Strateji yol xəritəsi",
-      "summary": "Forum 2024",
-      "tag": "Naviqasiya",
-      "icon": "🗺️",
-      "boost": 11,
-      "norm": "strateji yol xeritesi forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-cooperation-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "forum-cooperation",
-      "anchor": "",
-      "title": "Töhfələr",
-      "summary": "Forum 2024",
-      "tag": "Naviqasiya",
-      "icon": "🤝",
-      "boost": 11,
-      "norm": "to hfeler forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-scientists-list-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "scientists-list",
-      "anchor": "",
-      "title": "Alimlərin siyahısı",
-      "summary": "Bütün alimlərin siyahısı",
-      "tag": "Naviqasiya",
-      "icon": "📋",
-      "boost": 11,
-      "norm": "alimlerin siyahisi bu tu n alimlerin siyahisi alimlerimiz"
-    },
-    {
-      "id": "nav-scientists-profiles-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "scientists-profiles",
-      "anchor": "",
-      "title": "Alimlərin profilləri",
-      "summary": "Alimlərin akademik profilləri",
-      "tag": "Naviqasiya",
-      "icon": "👤",
-      "boost": 11,
-      "norm": "alimlerin profilleri alimlerin akademik profilleri alimlerimiz"
+      "norm": "forum-2026 xaricde yas ayan alimlerin ii forumu dekabr 2026 konsepsiya layihesi forumlar"
     },
     {
       "id": "nav-foundation-az",
@@ -1187,186 +1057,30 @@
       "norm": "activities activities"
     },
     {
-      "id": "nav-forum-2024-en",
+      "id": "nav-forum-en",
       "lang": "en",
       "type": "nav",
-      "pageId": "forum-2024",
+      "pageId": "forum",
       "anchor": "",
-      "title": "Highlights",
-      "summary": "Forum 2024",
+      "title": "2024",
+      "summary": "First Forum of Azerbaijani Scientists Living Abroad — September 2024",
       "tag": "Navigation",
       "icon": "🎤",
       "boost": 11,
-      "norm": "highlights forum 2024 forum 2024"
+      "norm": "2024 first forum of azerbaijani scientists living abroad september 2024 forums"
     },
     {
-      "id": "nav-forum-program-en",
+      "id": "nav-forum-2026-en",
       "lang": "en",
       "type": "nav",
-      "pageId": "forum-program",
+      "pageId": "forum-2026",
       "anchor": "",
-      "title": "Programme",
-      "summary": "Forum 2024",
+      "title": "forum-2026",
+      "summary": "Second Forum of Azerbaijani Scientists Living Abroad — December 2026, draft concept",
       "tag": "Navigation",
-      "icon": "📅",
+      "icon": "🎤",
       "boost": 11,
-      "norm": "programme forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-official-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "forum-official",
-      "anchor": "",
-      "title": "Official addresses",
-      "summary": "Forum 2024",
-      "tag": "Navigation",
-      "icon": "🏛️",
-      "boost": 11,
-      "norm": "official addresses forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-2024-presentations-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "forum-2024-presentations",
-      "anchor": "",
-      "title": "Presentations",
-      "summary": "Forum 2024",
-      "tag": "Navigation",
-      "icon": "📊",
-      "boost": 11,
-      "norm": "presentations forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-rector-speeches-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "forum-rector-speeches",
-      "anchor": "",
-      "title": "Rectors",
-      "summary": "Forum 2024",
-      "tag": "Navigation",
-      "icon": "🎓",
-      "boost": 11,
-      "norm": "rectors forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-anas-leadership-speeches-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "forum-anas-leadership-speeches",
-      "anchor": "",
-      "title": "Academicians",
-      "summary": "Forum 2024",
-      "tag": "Navigation",
-      "icon": "🔬",
-      "boost": 11,
-      "norm": "academicians forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-photos-gallery-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "forum-photos-gallery",
-      "anchor": "",
-      "title": "Photo gallery",
-      "summary": "Forum 2024",
-      "tag": "Navigation",
-      "icon": "📷",
-      "boost": 11,
-      "norm": "photo gallery forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-video-gallery-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "forum-video-gallery",
-      "anchor": "",
-      "title": "Video gallery",
-      "summary": "Forum 2024",
-      "tag": "Navigation",
-      "icon": "📹",
-      "boost": 11,
-      "norm": "video gallery forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-impressions-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "forum-impressions",
-      "anchor": "",
-      "title": "Impressions",
-      "summary": "Forum 2024",
-      "tag": "Navigation",
-      "icon": "💬",
-      "boost": 11,
-      "norm": "impressions forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-bagli-hekayeler-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "forum-bagli-hekayeler",
-      "anchor": "",
-      "title": "Stories",
-      "summary": "Forum 2024",
-      "tag": "Navigation",
-      "icon": "📖",
-      "boost": 11,
-      "norm": "stories forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-roadmap-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "forum-roadmap",
-      "anchor": "",
-      "title": "Strategic roadmap",
-      "summary": "Forum 2024",
-      "tag": "Navigation",
-      "icon": "🗺️",
-      "boost": 11,
-      "norm": "strategic roadmap forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-forum-cooperation-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "forum-cooperation",
-      "anchor": "",
-      "title": "Contributions",
-      "summary": "Forum 2024",
-      "tag": "Navigation",
-      "icon": "🤝",
-      "boost": 11,
-      "norm": "contributions forum 2024 forum 2024"
-    },
-    {
-      "id": "nav-scientists-list-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "scientists-list",
-      "anchor": "",
-      "title": "Directory",
-      "summary": "Directory of all scientists",
-      "tag": "Navigation",
-      "icon": "📋",
-      "boost": 11,
-      "norm": "directory directory of all scientists scientists"
-    },
-    {
-      "id": "nav-scientists-profiles-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "scientists-profiles",
-      "anchor": "",
-      "title": "Profiles",
-      "summary": "Academic profiles of scientists",
-      "tag": "Navigation",
-      "icon": "👤",
-      "boost": 11,
-      "norm": "profiles academic profiles of scientists scientists"
+      "norm": "forum-2026 second forum of azerbaijani scientists living abroad december 2026 draft concept forums"
     },
     {
       "id": "nav-foundation-en",
@@ -1400,12 +1114,12 @@
       "type": "nav",
       "pageId": "executive-board",
       "anchor": "",
-      "title": "Board of Directors",
+      "title": "Executive Board",
       "summary": "Leadership and governance structure",
       "tag": "Navigation",
       "icon": "🎓",
       "boost": 11,
-      "norm": "board of directors leadership and governance structure about us"
+      "norm": "executive board leadership and governance structure about us"
     },
     {
       "id": "nav-charter-en",
@@ -2220,11 +1934,11 @@
       "pageId": "activities",
       "anchor": "baxtiyar-187-2026",
       "title": "WAAS Co-Chair Bakhtiyar Sirajov joins online meeting with teachers and pupils of Baku School No. 187",
-      "summary": "WAAS Board of Directors Co-Chair Dr. Bakhtiyar Sirajov held an online meeting with the teachers and pupils of Baku General Education School No. 187. The meeting discussed the importance of science, the role of Azerbaijani scholars on the in",
+      "summary": "WAAS Executive Board Co-Chair Dr. Bakhtiyar Sirajov held an online meeting with the teachers and pupils of Baku General Education School No. 187. The meeting discussed the importance of science, the role of Azerbaijani scholars on the inter",
       "tag": "Activity",
       "icon": "📰",
       "boost": 8,
-      "norm": "waas co-chair bakhtiyar sirajov joins online meeting with teachers and pupils of baku school no. 187 waas board of directors co-chair dr. bakhtiyar sirajov held an online meeting with the teachers and pupils of baku general education school no. 187. the meeting discussed the importance of science the role of azerbaijani scholars on the in"
+      "norm": "waas co-chair bakhtiyar sirajov joins online meeting with teachers and pupils of baku school no. 187 waas executive board co-chair dr. bakhtiyar sirajov held an online meeting with the teachers and pupils of baku general education school no. 187. the meeting discussed the importance of science the role of azerbaijani scholars on the inter"
     },
     {
       "id": "activity-maa-2026-en",
@@ -2259,11 +1973,11 @@
       "pageId": "activities",
       "anchor": "azmiu-2025",
       "title": "Humboldt laureate Prof. Messoud Efendiyev attends AzMIU 50th anniversary and meets young scientists",
-      "summary": "On 18 December, a ceremonial gathering was held to mark the 50th anniversary of the founding of Azerbaijan University of Architecture and Construction (AzMIU). World-renowned scholar, WAAS Board of Directors Chair and Adviser to the AzMIU R",
+      "summary": "On 18 December, a ceremonial gathering was held to mark the 50th anniversary of the founding of Azerbaijan University of Architecture and Construction (AzMIU). World-renowned scholar, WAAS Executive Board Chair and Adviser to the AzMIU Rect",
       "tag": "Activity",
       "icon": "📰",
       "boost": 8,
-      "norm": "humboldt laureate prof. messoud efendiyev attends azmiu 50th anniversary and meets young scientists on 18 december a ceremonial gathering was held to mark the 50th anniversary of the founding of azerbaijan university of architecture and construction azmiu . world-renowned scholar waas board of directors chair and adviser to the azmiu r"
+      "norm": "humboldt laureate prof. messoud efendiyev attends azmiu 50th anniversary and meets young scientists on 18 december a ceremonial gathering was held to mark the 50th anniversary of the founding of azerbaijan university of architecture and construction azmiu . world-renowned scholar waas executive board chair and adviser to the azmiu rect"
     },
     {
       "id": "activity-seymur-qahire-2025-en",
@@ -2324,11 +2038,11 @@
       "pageId": "activities",
       "anchor": "yulduz-bdu-2025",
       "title": "Prof. Dr. Yulduz Rahimov delivers master class at BDU Faculty of Applied Mathematics and Cybernetics",
-      "summary": "A meeting was held with Yulduz Rahimov, a graduate of Baku State University (BDU), Professor at York University in Canada and WAAS Board of Directors member. Professor Yulduz Rahimov delivered a master class on \"Number Theory and Cryptograp",
+      "summary": "A meeting was held with Yulduz Rahimov, a graduate of Baku State University (BDU), Professor at York University in Canada and WAAS Executive Board member. Professor Yulduz Rahimov delivered a master class on \"Number Theory and Cryptography\"",
       "tag": "Activity",
       "icon": "📰",
       "boost": 8,
-      "norm": "prof. dr. yulduz rahimov delivers master class at bdu faculty of applied mathematics and cybernetics a meeting was held with yulduz rahimov a graduate of baku state university bdu professor at york university in canada and waas board of directors member. professor yulduz rahimov delivered a master class on number theory and cryptograp"
+      "norm": "prof. dr. yulduz rahimov delivers master class at bdu faculty of applied mathematics and cybernetics a meeting was held with yulduz rahimov a graduate of baku state university bdu professor at york university in canada and waas executive board member. professor yulduz rahimov delivered a master class on number theory and cryptography"
     },
     {
       "id": "activity-baxtiyar-bdu-2025-en",
@@ -2376,11 +2090,11 @@
       "pageId": "activities",
       "anchor": "qarabag-uni-2025",
       "title": "WAAS and Karabakh University deliver \"PRIMARY SCHOOL PEDAGOGY\" course under cooperation framework",
-      "summary": "Since May 2025, WAAS Board of Directors member and press secretary Dr. Saadat Karimi, Associate Professor at the University of Gothenburg in Sweden, has been teaching a comprehensive course on \"HIGHER EDUCATION PEDAGOGY\" (TEACHING AND LEARN",
+      "summary": "Since May 2025, WAAS Executive Board member and press secretary Dr. Saadat Karimi, Associate Professor at the University of Gothenburg in Sweden, has been teaching a comprehensive course on \"HIGHER EDUCATION PEDAGOGY\" (TEACHING AND LEARNING",
       "tag": "Activity",
       "icon": "📰",
       "boost": 8,
-      "norm": "waas and karabakh university deliver primary school pedagogy course under cooperation framework since may 2025 waas board of directors member and press secretary dr. saadat karimi associate professor at the university of gothenburg in sweden has been teaching a comprehensive course on higher education pedagogy teaching and learn"
+      "norm": "waas and karabakh university deliver primary school pedagogy course under cooperation framework since may 2025 waas executive board member and press secretary dr. saadat karimi associate professor at the university of gothenburg in sweden has been teaching a comprehensive course on higher education pedagogy teaching and learning"
     },
     {
       "id": "activity-telman-90-2025-en",
@@ -2388,12 +2102,12 @@
       "type": "activity",
       "pageId": "activities",
       "anchor": "telman-90-2025",
-      "title": "WAAS Board of Directors sends congratulatory letter on 90th anniversary of Academician Telman Aliyev",
+      "title": "WAAS Executive Board sends congratulatory letter on 90th anniversary of Academician Telman Aliyev",
       "summary": "",
       "tag": "Activity",
       "icon": "📰",
       "boost": 8,
-      "norm": "waas board of directors sends congratulatory letter on 90th anniversary of academician telman aliyev"
+      "norm": "waas executive board sends congratulatory letter on 90th anniversary of academician telman aliyev"
     },
     {
       "id": "activity-fevral-2025-en",
@@ -2493,11 +2207,11 @@
       "pageId": "activities",
       "anchor": "qarabag-online-2024",
       "title": "Online meeting with Karabakh University",
-      "summary": "On 15 October 2024, a meeting was held between members of the WAAS Board of Directors and the leadership of Karabakh University. Initiated by WAAS and held online, the meeting aimed to discuss cooperation opportunities in teaching, research",
+      "summary": "On 15 October 2024, a meeting was held between members of the WAAS Executive Board and the leadership of Karabakh University. Initiated by WAAS and held online, the meeting aimed to discuss cooperation opportunities in teaching, research an",
       "tag": "Activity",
       "icon": "📰",
       "boost": 8,
-      "norm": "online meeting with karabakh university on 15 october 2024 a meeting was held between members of the waas board of directors and the leadership of karabakh university. initiated by waas and held online the meeting aimed to discuss cooperation opportunities in teaching research"
+      "norm": "online meeting with karabakh university on 15 october 2024 a meeting was held between members of the waas executive board and the leadership of karabakh university. initiated by waas and held online the meeting aimed to discuss cooperation opportunities in teaching research an"
     },
     {
       "id": "section-forum-2024-presentations-asef-salamov-az",
@@ -3377,11 +3091,11 @@
       "pageId": "forum-official",
       "anchor": "alimlerimiz",
       "title": "ADDRESS BY OUR SCIENTISTS TO HIS EXCELLENCY MR ILHAM ALIYEV, PRESIDENT OF THE REPUBLIC OF AZERBAIJAN",
-      "summary": "The address was delivered by Mesud Afandiyev, Chair of the Board of Directors of the World Association of Azerbaijani Scientists.",
+      "summary": "The address was delivered by Mesud Afandiyev, Chair of the WAAS Executive Board.",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "address by our scientists to his excellency mr ilham aliyev president of the republic of azerbaijan the address was delivered by mesud afandiyev chair of the board of directors of the world association of azerbaijani scientists."
+      "norm": "address by our scientists to his excellency mr ilham aliyev president of the republic of azerbaijan the address was delivered by mesud afandiyev chair of the waas executive board."
     },
     {
       "id": "section-forum-program-gun-9-az",

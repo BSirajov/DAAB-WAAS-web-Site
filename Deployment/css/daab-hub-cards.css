@@ -3,7 +3,9 @@
  * Used by az/index.html (inline duplicate) and forum/2024/index.html.
  */
 
-/* Breadcrumb bar — between nav and hero (forum hub uses .forum-breadcrumbs + page inline CSS) */
+/* Breadcrumb bar — between nav and hero (home uses .daab-breadcrumbs; forum hub uses .forum-breadcrumbs) */
+html.daab-hub-page #daab-breadcrumbs,
+html.daab-hub-page nav.daab-breadcrumbs,
 html.daab-hub-page .forum-breadcrumbs,
 html.daab-hub-page .breadcrumbs.forum-breadcrumbs{
   display: block !important;

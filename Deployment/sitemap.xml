@@ -62,6 +62,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/forum/2024/index.html"/>
   </url>
   <url>
+    <loc>https://daab-waas.com/az/forum/2026/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/forum/2026/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/forum/2026/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/forum/2026/index.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/en/forum/2026/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/forum/2026/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/forum/2026/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/forum/2026/index.html"/>
+  </url>
+  <url>
     <loc>https://daab-waas.com/az/encyclopedia.html</loc>
     <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/encyclopedia.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/encyclopedia.html"/>

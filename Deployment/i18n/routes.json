@@ -52,6 +52,15 @@
       "en": "en/forum/2024/index.html"
     },
     {
+      "id": "forum-2026",
+      "navId": "forum-2026",
+      "navGroup": "forums",
+      "navParent": "forums",
+      "navOrder": 2,
+      "az": "az/forum/2026/index.html",
+      "en": "en/forum/2026/index.html"
+    },
+    {
       "id": "encyclopedia",
       "navId": "encyclopedia",
       "navGroup": "treasury",

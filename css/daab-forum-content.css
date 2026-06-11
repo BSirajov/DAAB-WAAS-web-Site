@@ -11,6 +11,7 @@ html[data-daab-page-id="forum-photos-gallery"],
 html[data-daab-page-id="forum-video-gallery"],
 html[data-daab-page-id="forum-rector-speeches"],
 html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"],
 html[data-daab-page-id="forum-cooperation"]{
   --navy: var(--blue-900);
   --teal: var(--blue-700);
@@ -29,7 +30,8 @@ html[data-daab-page-id="forum-cooperation"] body,
 html[data-daab-page-id="forum-photos-gallery"] body,
 html[data-daab-page-id="forum-video-gallery"] body,
 html[data-daab-page-id="forum-rector-speeches"] body,
-html[data-daab-page-id="forum-anas-leadership-speeches"] body{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] body{
   color: var(--ink) !important;
   background: #fff var(--site-bg-image) top center / 100% auto no-repeat !important;
 }html[data-daab-page-id="forum-official"] .page-hero,
@@ -42,7 +44,8 @@ html[data-daab-page-id="forum-cooperation"] .page-hero,
 html[data-daab-page-id="forum-photos-gallery"] .page-hero,
 html[data-daab-page-id="forum-video-gallery"] .page-hero,
 html[data-daab-page-id="forum-rector-speeches"] .page-hero,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .page-hero{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .page-hero{
   position: relative;
   overflow: hidden;
   color: var(--ink) !important;
@@ -58,7 +61,8 @@ html[data-daab-page-id="forum-cooperation"] .page-hero::before,
 html[data-daab-page-id="forum-photos-gallery"] .page-hero::before,
 html[data-daab-page-id="forum-video-gallery"] .page-hero::before,
 html[data-daab-page-id="forum-rector-speeches"] .page-hero::before,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .page-hero::before{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .page-hero::before{
   content: "";
   position: absolute;
   inset: 0;
@@ -74,7 +78,8 @@ html[data-daab-page-id="forum-cooperation"] .page-hero::after,
 html[data-daab-page-id="forum-photos-gallery"] .page-hero::after,
 html[data-daab-page-id="forum-video-gallery"] .page-hero::after,
 html[data-daab-page-id="forum-rector-speeches"] .page-hero::after,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .page-hero::after{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .page-hero::after{
   content: "";
   position: absolute;
   inset: 0;
@@ -93,7 +98,8 @@ html[data-daab-page-id="forum-cooperation"] .page-hero h1,
 html[data-daab-page-id="forum-photos-gallery"] .page-hero h1,
 html[data-daab-page-id="forum-video-gallery"] .page-hero h1,
 html[data-daab-page-id="forum-rector-speeches"] .page-hero h1,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .page-hero h1{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .page-hero h1{
   position: relative;
   z-index: 1;
   margin: 0;
@@ -113,7 +119,8 @@ html[data-daab-page-id="forum-cooperation"] .page-hero h1 span,
 html[data-daab-page-id="forum-photos-gallery"] .page-hero h1 span,
 html[data-daab-page-id="forum-video-gallery"] .page-hero h1 span,
 html[data-daab-page-id="forum-rector-speeches"] .page-hero h1 span,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .page-hero h1 span{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .page-hero h1 span{
   color: var(--blue-700);
 }html[data-daab-page-id="forum-official"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-2024-presentations"] .page-hero .hero-wrap,
@@ -125,7 +132,8 @@ html[data-daab-page-id="forum-cooperation"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-photos-gallery"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-video-gallery"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-rector-speeches"] .page-hero .hero-wrap,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .page-hero .hero-wrap{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .page-hero .hero-wrap{
   position: relative;
   z-index: 1;
   max-width: var(--max);
@@ -145,7 +153,8 @@ html[data-daab-page-id="forum-cooperation"] .page-hero .hero-panel,
 html[data-daab-page-id="forum-photos-gallery"] .page-hero .hero-panel,
 html[data-daab-page-id="forum-video-gallery"] .page-hero .hero-panel,
 html[data-daab-page-id="forum-rector-speeches"] .page-hero .hero-panel,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .page-hero .hero-panel{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .page-hero .hero-panel{
   align-self: start;
   padding: 0 0 0 4px;
   background: rgba(255, 255, 255, 0.12);
@@ -163,7 +172,8 @@ html[data-daab-page-id="forum-cooperation"] .page-hero .panel-card,
 html[data-daab-page-id="forum-photos-gallery"] .page-hero .panel-card,
 html[data-daab-page-id="forum-video-gallery"] .page-hero .panel-card,
 html[data-daab-page-id="forum-rector-speeches"] .page-hero .panel-card,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .page-hero .panel-card{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .page-hero .panel-card{
   padding: 22px 24px;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.62);
@@ -178,7 +188,8 @@ html[data-daab-page-id="forum-cooperation"] .page-hero .panel-title,
 html[data-daab-page-id="forum-photos-gallery"] .page-hero .panel-title,
 html[data-daab-page-id="forum-video-gallery"] .page-hero .panel-title,
 html[data-daab-page-id="forum-rector-speeches"] .page-hero .panel-title,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .page-hero .panel-title{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .page-hero .panel-title{
   margin: 0 0 10px;
   color: #094d78;
   font-family: "Playfair Display", Georgia, serif;
@@ -196,7 +207,8 @@ html[data-daab-page-id="forum-cooperation"] .page-hero .panel-copy,
 html[data-daab-page-id="forum-photos-gallery"] .page-hero .panel-copy,
 html[data-daab-page-id="forum-video-gallery"] .page-hero .panel-copy,
 html[data-daab-page-id="forum-rector-speeches"] .page-hero .panel-copy,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .page-hero .panel-copy{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .page-hero .panel-copy{
   color: var(--muted);
   font-size: 14px;
   line-height: 1.55;
@@ -209,7 +221,8 @@ html[data-daab-page-id="forum-cooperation"] .timeline-list li,
 html[data-daab-page-id="forum-photos-gallery"] .timeline-list li,
 html[data-daab-page-id="forum-video-gallery"] .timeline-list li,
 html[data-daab-page-id="forum-rector-speeches"] .timeline-list li,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list li{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list li{
   display: block;
 }/* Roadmap sidebar — icon + label rows */
 html[data-daab-page-id="forum-roadmap"] #roadmapTOC a{
@@ -263,7 +276,8 @@ html[data-daab-page-id="forum-cooperation"] .timeline-list a,
 html[data-daab-page-id="forum-photos-gallery"] .timeline-list a,
 html[data-daab-page-id="forum-video-gallery"] .timeline-list a,
 html[data-daab-page-id="forum-rector-speeches"] .timeline-list a,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list a{
   display: block;
   padding: 9px 11px;
   border-radius: 14px;
@@ -279,7 +293,8 @@ html[data-daab-page-id="forum-cooperation"] .content-wrap,
 html[data-daab-page-id="forum-photos-gallery"] .content-wrap,
 html[data-daab-page-id="forum-video-gallery"] .content-wrap,
 html[data-daab-page-id="forum-rector-speeches"] .content-wrap,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .content-wrap{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .content-wrap{
   width: 100% !important;
   max-width: var(--max) !important;
   margin: 32px auto 0 !important;
@@ -296,7 +311,8 @@ html[data-daab-page-id="forum-cooperation"] .content-wrap.content-wrap--single,
 html[data-daab-page-id="forum-photos-gallery"] .content-wrap.content-wrap--single,
 html[data-daab-page-id="forum-video-gallery"] .content-wrap.content-wrap--single,
 html[data-daab-page-id="forum-rector-speeches"] .content-wrap.content-wrap--single,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .content-wrap.content-wrap--single{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .content-wrap.content-wrap--single{
   grid-template-columns: minmax(0, 1fr) !important;
   gap: 0 !important;
 }html[data-daab-page-id="forum-official"] .news-feed,
@@ -309,7 +325,8 @@ html[data-daab-page-id="forum-cooperation"] .news-feed,
 html[data-daab-page-id="forum-photos-gallery"] .news-feed,
 html[data-daab-page-id="forum-video-gallery"] .news-feed,
 html[data-daab-page-id="forum-rector-speeches"] .news-feed,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .news-feed{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .news-feed{
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -324,7 +341,8 @@ html[data-daab-page-id="forum-cooperation"] .news-card,
 html[data-daab-page-id="forum-photos-gallery"] .news-card,
 html[data-daab-page-id="forum-video-gallery"] .news-card,
 html[data-daab-page-id="forum-rector-speeches"] .news-card,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .news-card{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .news-card{
   background: var(--card-bg) !important;
   border-radius: var(--radius) !important;
   overflow: hidden;
@@ -343,7 +361,8 @@ html[data-daab-page-id="forum-cooperation"] .news-card:hover,
 html[data-daab-page-id="forum-photos-gallery"] .news-card:hover,
 html[data-daab-page-id="forum-video-gallery"] .news-card:hover,
 html[data-daab-page-id="forum-rector-speeches"] .news-card:hover,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .news-card:hover{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .news-card:hover{
   transform: translateY(-5px) !important;
   box-shadow: var(--shadow-strong) !important;
   border-color: rgba(78, 180, 238, 0.42) !important;
@@ -357,7 +376,8 @@ html[data-daab-page-id="forum-cooperation"] .widget-head,
 html[data-daab-page-id="forum-photos-gallery"] .widget-head,
 html[data-daab-page-id="forum-video-gallery"] .widget-head,
 html[data-daab-page-id="forum-rector-speeches"] .widget-head,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .widget-head{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .widget-head{
   background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 58%, var(--blue-400) 100%) !important;
 }html[data-daab-page-id="forum-official"] .card-header,
 html[data-daab-page-id="forum-2024-presentations"] .card-header,
@@ -369,7 +389,8 @@ html[data-daab-page-id="forum-cooperation"] .card-header,
 html[data-daab-page-id="forum-photos-gallery"] .card-header,
 html[data-daab-page-id="forum-video-gallery"] .card-header,
 html[data-daab-page-id="forum-rector-speeches"] .card-header,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-header{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-header{
   background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 58%, var(--blue-400) 100%) !important;
   padding: 24px 28px 20px !important;
   text-align: center;
@@ -384,7 +405,8 @@ html[data-daab-page-id="forum-cooperation"] .card-title,
 html[data-daab-page-id="forum-photos-gallery"] .card-title,
 html[data-daab-page-id="forum-video-gallery"] .card-title,
 html[data-daab-page-id="forum-rector-speeches"] .card-title,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-title{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-title{
   margin: 0;
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(14px, 1.6vw, 20px) !important;
@@ -394,7 +416,8 @@ html[data-daab-page-id="forum-anas-leadership-speeches"] .card-title{
   letter-spacing: -0.01em;
   text-align: center !important;
 }html[data-daab-page-id="forum-rector-speeches"] .card-header .card-subtitle,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-header .card-subtitle{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-header .card-subtitle{
   margin: 10px 0 0;
   max-width: 52em;
   margin-left: auto;
@@ -415,7 +438,8 @@ html[data-daab-page-id="forum-cooperation"] .card-body,
 html[data-daab-page-id="forum-photos-gallery"] .card-body,
 html[data-daab-page-id="forum-video-gallery"] .card-body,
 html[data-daab-page-id="forum-rector-speeches"] .card-body,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-body{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-body{
   padding: 24px 28px;
 }html[data-daab-page-id="forum-official"] .card-gallery,
 html[data-daab-page-id="forum-2024-presentations"] .card-gallery,
@@ -427,7 +451,8 @@ html[data-daab-page-id="forum-cooperation"] .card-gallery,
 html[data-daab-page-id="forum-photos-gallery"] .card-gallery,
 html[data-daab-page-id="forum-video-gallery"] .card-gallery,
 html[data-daab-page-id="forum-rector-speeches"] .card-gallery,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-gallery{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-gallery{
   display: grid;
   gap: 12px;
   margin: 0 0 20px;
@@ -441,7 +466,8 @@ html[data-daab-page-id="forum-cooperation"] .card-gallery.single,
 html[data-daab-page-id="forum-photos-gallery"] .card-gallery.single,
 html[data-daab-page-id="forum-video-gallery"] .card-gallery.single,
 html[data-daab-page-id="forum-rector-speeches"] .card-gallery.single,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-gallery.single{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-gallery.single{
   grid-template-columns: 1fr;
 }html[data-daab-page-id="forum-official"] .card-gallery.double,
 html[data-daab-page-id="forum-2024-presentations"] .card-gallery.double,
@@ -453,7 +479,8 @@ html[data-daab-page-id="forum-cooperation"] .card-gallery.double,
 html[data-daab-page-id="forum-photos-gallery"] .card-gallery.double,
 html[data-daab-page-id="forum-video-gallery"] .card-gallery.double,
 html[data-daab-page-id="forum-rector-speeches"] .card-gallery.double,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-gallery.double{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-gallery.double{
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   align-items: stretch;
@@ -467,7 +494,8 @@ html[data-daab-page-id="forum-cooperation"] .card-gallery img,
 html[data-daab-page-id="forum-photos-gallery"] .card-gallery img,
 html[data-daab-page-id="forum-video-gallery"] .card-gallery img,
 html[data-daab-page-id="forum-rector-speeches"] .card-gallery img,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-gallery img{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-gallery img{
   width: 100%;
   height: auto;
   max-height: 420px;
@@ -487,7 +515,8 @@ html[data-daab-page-id="forum-cooperation"] .card-gallery.double img,
 html[data-daab-page-id="forum-photos-gallery"] .card-gallery.double img,
 html[data-daab-page-id="forum-video-gallery"] .card-gallery.double img,
 html[data-daab-page-id="forum-rector-speeches"] .card-gallery.double img,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-gallery.double img{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-gallery.double img{
   width: 100%;
   height: 280px;
   min-height: 280px;
@@ -506,7 +535,8 @@ html[data-daab-page-id="forum-cooperation"] .card-gallery.double,
 html[data-daab-page-id="forum-photos-gallery"] .card-gallery.double,
 html[data-daab-page-id="forum-video-gallery"] .card-gallery.double,
 html[data-daab-page-id="forum-rector-speeches"] .card-gallery.double,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-gallery.double{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-gallery.double{
     grid-template-columns: 1fr;
   }
 }html[data-daab-page-id="forum-official"] .card-lead,
@@ -519,7 +549,8 @@ html[data-daab-page-id="forum-cooperation"] .card-lead,
 html[data-daab-page-id="forum-photos-gallery"] .card-lead,
 html[data-daab-page-id="forum-video-gallery"] .card-lead,
 html[data-daab-page-id="forum-rector-speeches"] .card-lead,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-lead{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-lead{
   font-size: 14px;
   font-weight: 700;
   color: var(--blue-700);
@@ -537,7 +568,8 @@ html[data-daab-page-id="forum-cooperation"] .card-text,
 html[data-daab-page-id="forum-photos-gallery"] .card-text,
 html[data-daab-page-id="forum-video-gallery"] .card-text,
 html[data-daab-page-id="forum-rector-speeches"] .card-text,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-text{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-text{
   font-size: 14.5px;
   color: var(--text-mid);
   line-height: 1.65;
@@ -552,7 +584,8 @@ html[data-daab-page-id="forum-cooperation"] .card-text:last-child,
 html[data-daab-page-id="forum-photos-gallery"] .card-text:last-child,
 html[data-daab-page-id="forum-video-gallery"] .card-text:last-child,
 html[data-daab-page-id="forum-rector-speeches"] .card-text:last-child,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-text:last-child{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-text:last-child{
   margin-bottom: 0;
 }html[data-daab-page-id="forum-official"] .card-signoff,
 html[data-daab-page-id="forum-2024-presentations"] .card-signoff,
@@ -564,12 +597,14 @@ html[data-daab-page-id="forum-cooperation"] .card-signoff,
 html[data-daab-page-id="forum-photos-gallery"] .card-signoff,
 html[data-daab-page-id="forum-video-gallery"] .card-signoff,
 html[data-daab-page-id="forum-rector-speeches"] .card-signoff,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-signoff{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-signoff{
   font-size: 13.5px;
   font-weight: 700;
   color: #345d76;
   margin: 0 0 8px;
-}html[data-daab-page-id="forum-anas-leadership-speeches"] .speech-body-lead{
+}html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .speech-body-lead{
   text-align: center;
   font-weight: 700;
   color: var(--blue-700);
@@ -645,7 +680,22 @@ html[data-daab-page-id^="forum-"] .program-table td{
   top: 1px;
   color: #1a6fa8;
   font-weight: 900;
-}html[data-daab-page-id="forum-official"] .card-quote,
+}
+
+html[data-daab-page-id^="forum-"] .content-list .content-list{
+  margin: 4px 0 2px;
+  gap: 2px;
+}
+
+html[data-daab-page-id^="forum-"] .content-list .content-list li{
+  padding-left: calc(26px + 2ch);
+}
+
+html[data-daab-page-id^="forum-"] .content-list .content-list li::before{
+  left: calc(8px + 2ch);
+}
+
+html[data-daab-page-id="forum-official"] .card-quote,
 html[data-daab-page-id="forum-2024-presentations"] .card-quote,
 html[data-daab-page-id="forum-program"] .card-quote,
 html[data-daab-page-id="forum-impressions"] .card-quote,
@@ -655,7 +705,8 @@ html[data-daab-page-id="forum-cooperation"] .card-quote,
 html[data-daab-page-id="forum-photos-gallery"] .card-quote,
 html[data-daab-page-id="forum-video-gallery"] .card-quote,
 html[data-daab-page-id="forum-rector-speeches"] .card-quote,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-quote{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-quote{
   border-left: 3px solid var(--gold);
   padding: 12px 18px;
   margin: 18px 0;
@@ -671,9 +722,11 @@ html[data-daab-page-id="forum-anas-leadership-speeches"] .card-quote{
 html[data-daab-page-id="forum-rector-speeches"] .card-body .card-text,
 html[data-daab-page-id="forum-rector-speeches"] .card-body .card-quote,
 html[data-daab-page-id="forum-rector-speeches"] .card-body .content-list,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-body .card-text,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-body .card-quote,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .card-body .content-list{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-body .card-text,
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .card-body .card-quote,
+html[data-daab-page-id="forum-anas-leadership-speeches"]{
   text-align: justify;
   text-justify: inter-word;
 }
@@ -688,7 +741,8 @@ html[data-daab-page-id="forum-cooperation"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-photos-gallery"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-video-gallery"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-rector-speeches"] .page-hero .hero-wrap,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .page-hero .hero-wrap{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .page-hero .hero-wrap{
     grid-template-columns: 1fr;
   }
 }
@@ -706,7 +760,8 @@ html[data-daab-page-id="forum-cooperation"] .content-wrap,
 html[data-daab-page-id="forum-photos-gallery"] .content-wrap,
 html[data-daab-page-id="forum-video-gallery"] .content-wrap,
 html[data-daab-page-id="forum-rector-speeches"] .content-wrap,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .content-wrap{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .content-wrap{
     grid-template-columns: 1fr !important;
     padding: 0 18px 64px !important;
     margin-top: 24px !important;
@@ -734,7 +789,8 @@ html[data-daab-page-id="forum-cooperation"] .forum-breadcrumbs ,
 html[data-daab-page-id="forum-photos-gallery"] .forum-breadcrumbs ,
 html[data-daab-page-id="forum-video-gallery"] .forum-breadcrumbs,
 html[data-daab-page-id="forum-rector-speeches"] .forum-breadcrumbs,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .forum-breadcrumbs{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .forum-breadcrumbs{
   display: block !important;
   visibility: visible !important;
   width: 100% !important;
@@ -764,7 +820,8 @@ html[data-daab-page-id="forum-cooperation"] .forum-breadcrumbs a ,
 html[data-daab-page-id="forum-photos-gallery"] .forum-breadcrumbs a ,
 html[data-daab-page-id="forum-video-gallery"] .forum-breadcrumbs a,
 html[data-daab-page-id="forum-rector-speeches"] .forum-breadcrumbs a,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .forum-breadcrumbs a{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .forum-breadcrumbs a{
   color: #2c5470 !important;
   text-decoration: none !important;
 }html[data-daab-page-id="forum-official"] .forum-breadcrumbs a:hover,
@@ -783,7 +840,8 @@ html[data-daab-page-id="forum-cooperation"] .forum-breadcrumbs span[aria-hidden=
 html[data-daab-page-id="forum-photos-gallery"] .forum-breadcrumbs span[aria-hidden="true"] ,
 html[data-daab-page-id="forum-video-gallery"] .forum-breadcrumbs span[aria-hidden="true"],
 html[data-daab-page-id="forum-rector-speeches"] .forum-breadcrumbs span[aria-hidden="true"],
-html[data-daab-page-id="forum-anas-leadership-speeches"] .forum-breadcrumbs span[aria-hidden="true"]{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .forum-breadcrumbs span[aria-hidden="true"]{
   margin: 0 7px;
   color: #9ab2c2;
 }html[data-daab-page-id="forum-official"] .forum-breadcrumbs-current,
@@ -796,7 +854,8 @@ html[data-daab-page-id="forum-cooperation"] .forum-breadcrumbs-current ,
 html[data-daab-page-id="forum-photos-gallery"] .forum-breadcrumbs-current ,
 html[data-daab-page-id="forum-video-gallery"] .forum-breadcrumbs-current,
 html[data-daab-page-id="forum-rector-speeches"] .forum-breadcrumbs-current,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .forum-breadcrumbs-current{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .forum-breadcrumbs-current{
   color: #345d76 !important;
 }
 
@@ -808,7 +867,8 @@ html[data-daab-page-id="forum-anas-leadership-speeches"] .forum-breadcrumbs-curr
   html[data-daab-page-id="forum-bagli-hekayeler"] .forum-breadcrumbs,
   html[data-daab-page-id="forum-cooperation"] .forum-breadcrumbs,
   html[data-daab-page-id="forum-rector-speeches"] .forum-breadcrumbs,
-  html[data-daab-page-id="forum-anas-leadership-speeches"] .forum-breadcrumbs,
+  html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .forum-breadcrumbs,
   html[data-daab-page-id="forum-photos-gallery"] .forum-breadcrumbs,
   html[data-daab-page-id="forum-video-gallery"] .forum-breadcrumbs{
     padding: 10px 16px 10px 56px !important;
@@ -837,7 +897,8 @@ html[data-daab-page-id="forum-cooperation"] ,
 html[data-daab-page-id="forum-photos-gallery"] ,
 html[data-daab-page-id="forum-video-gallery"],
 html[data-daab-page-id="forum-rector-speeches"],
-html[data-daab-page-id="forum-anas-leadership-speeches"]{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"]{
   scroll-behavior: auto !important;
 }html[data-daab-page-id="forum-official"] .timeline-list a,
 html[data-daab-page-id="forum-program"] .timeline-list a,
@@ -849,7 +910,8 @@ html[data-daab-page-id="forum-cooperation"] .timeline-list a,
 html[data-daab-page-id="forum-photos-gallery"] .timeline-list a,
 html[data-daab-page-id="forum-video-gallery"] .timeline-list a,
 html[data-daab-page-id="forum-rector-speeches"] .timeline-list a,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list a{
   scroll-behavior: auto !important;
 }html[data-daab-page-id="forum-official"] .timeline-list a,
 html[data-daab-page-id="forum-program"] .timeline-list a,
@@ -861,7 +923,8 @@ html[data-daab-page-id="forum-cooperation"] .timeline-list a ,
 html[data-daab-page-id="forum-photos-gallery"] .timeline-list a ,
 html[data-daab-page-id="forum-video-gallery"] .timeline-list a,
 html[data-daab-page-id="forum-rector-speeches"] .timeline-list a,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list a{
   flex: 1 1 auto !important;
   min-width: 0 !important;
   min-height: 36px !important;
@@ -870,7 +933,8 @@ html[data-daab-page-id="forum-cooperation"] .forum-story-caption ,
 html[data-daab-page-id="forum-photos-gallery"] .forum-story-caption ,
 html[data-daab-page-id="forum-video-gallery"] .forum-story-caption,
 html[data-daab-page-id="forum-rector-speeches"] .forum-story-caption,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .forum-story-caption{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .forum-story-caption{
   margin-top: 0.5rem;
   font-size: 0.9rem;
   color: var(--muted);
@@ -880,7 +944,8 @@ html[data-daab-page-id="forum-cooperation"] .hero-doc-lead ,
 html[data-daab-page-id="forum-photos-gallery"] .hero-doc-lead ,
 html[data-daab-page-id="forum-video-gallery"] .hero-doc-lead,
 html[data-daab-page-id="forum-rector-speeches"] .hero-doc-lead,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .hero-doc-lead{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .hero-doc-lead{
   margin-top: 0.75rem;
   font-size: clamp(0.95rem, 2vw, 1.1rem);
   font-weight: 600;
@@ -904,11 +969,13 @@ html[data-daab-page-id="forum-rector-speeches"] .news-feed .card-body .card-quot
   hyphens: auto;
 }/* Rector / ANAS speeches — sidebar TOC: name + position and academic rank */
 html[data-daab-page-id="forum-rector-speeches"] .timeline-list li,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list li{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list li{
   display: block;
   overflow: visible;
 }html[data-daab-page-id="forum-rector-speeches"] .timeline-list a.rector-toc-link,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector-toc-link{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -922,20 +989,23 @@ html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector
   min-height: 0;
   overflow: visible;
 }html[data-daab-page-id="forum-rector-speeches"] .rector-toc-name,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .rector-toc-name{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .rector-toc-name{
   font-weight: 800;
   font-size: 13.5px;
   line-height: 1.25;
   letter-spacing: 0.01em;
   color: var(--blue-dark, #1a4a6e);
 }html[data-daab-page-id="forum-rector-speeches"] .rector-toc-titles,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .rector-toc-titles{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .rector-toc-titles{
   display: block;
   font-weight: 400;
   font-size: 9px;
   line-height: 1.42;
   color: var(--muted, #5a7084);
-}html[data-daab-page-id="forum-anas-leadership-speeches"] .rector-toc-speech-title{
+}html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .rector-toc-speech-title{
   display: block;
   margin-top: 0.15rem;
   font-weight: 600;
@@ -943,28 +1013,38 @@ html[data-daab-page-id="forum-anas-leadership-speeches"] .rector-toc-titles{
   line-height: 1.38;
   letter-spacing: 0.02em;
   color: var(--blue-700, #0069b4);
-}html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector-toc-link:hover .rector-toc-speech-title,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector-toc-link:focus-visible .rector-toc-speech-title,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector-toc-link.tl-active .rector-toc-speech-title{
+}html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link:hover .rector-toc-speech-title,
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link:focus-visible .rector-toc-speech-title,
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link.tl-active .rector-toc-speech-title{
   color: inherit;
 }html[data-daab-page-id="forum-rector-speeches"] .timeline-list a.rector-toc-link:hover .rector-toc-name,
 html[data-daab-page-id="forum-rector-speeches"] .timeline-list a.rector-toc-link:focus-visible .rector-toc-name,
 html[data-daab-page-id="forum-rector-speeches"] .timeline-list a.rector-toc-link.tl-active .rector-toc-name,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector-toc-link:hover .rector-toc-name,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector-toc-link:focus-visible .rector-toc-name,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector-toc-link.tl-active .rector-toc-name{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link:hover .rector-toc-name,
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link:focus-visible .rector-toc-name,
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link.tl-active .rector-toc-name{
   color: inherit;
 }html[data-daab-page-id="forum-rector-speeches"] .timeline-list a.rector-toc-link:hover .rector-toc-titles,
 html[data-daab-page-id="forum-rector-speeches"] .timeline-list a.rector-toc-link:focus-visible .rector-toc-titles,
 html[data-daab-page-id="forum-rector-speeches"] .timeline-list a.rector-toc-link.tl-active .rector-toc-titles,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector-toc-link:hover .rector-toc-titles,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector-toc-link:focus-visible .rector-toc-titles,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector-toc-link.tl-active .rector-toc-titles{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link:hover .rector-toc-titles,
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link:focus-visible .rector-toc-titles,
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link.tl-active .rector-toc-titles{
   color: inherit;
 }
 
 @media (max-width: 1060px) {html[data-daab-page-id="forum-rector-speeches"] .timeline-list a.rector-toc-link,
-html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector-toc-link{
+html[data-daab-page-id="forum-anas-leadership-speeches"],
+html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link{
     min-height: 44px;
     padding: 10px 12px;
   }

@@ -156,8 +156,20 @@ div.breadcrumbs.forum-breadcrumbs{
 .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year{
   width: 100%;
   margin-top: 2px;
+  height: auto !important;
+  min-height: 0 !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  gap: 2px !important;
+  padding: 8px 10px !important;
   font-weight: 700 !important;
   border-radius: 8px !important;
+}
+
+.nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year .nav-dropdown-link-title{
+  font-weight: 700 !important;
 }
 
 .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown--nested > .nav-dropdown-toggle--forum-year{
@@ -218,13 +230,17 @@ div.breadcrumbs.forum-breadcrumbs{
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year{
-    min-height: 36px !important;
-    padding: 8px 10px !important;
+  .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year:hover,
+  .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year:focus-visible,
+  .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year.active{
+    color: var(--blue-700) !important;
+    background: rgba(0, 105, 180, .08) !important;
+    border-color: rgba(0, 105, 180, .14) !important;
   }
 
-  .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year .nav-dropdown-link-title{
-    font-weight: 700 !important;
+  .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year.active .nav-dropdown-link-title,
+  .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year.active .nav-dropdown-link-desc{
+    color: var(--blue-700) !important;
   }
 }
 
@@ -302,8 +318,7 @@ div.breadcrumbs.forum-breadcrumbs{
   .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-toggle:hover,
   .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-toggle:focus-visible,
   .nav-dropdown--forums .nav-dropdown--nested.has-active-child > .nav-dropdown-toggle,
-  .nav-dropdown--forums .nav-dropdown--nested.open > .nav-dropdown-toggle,
-  .nav-dropdown--forums .nav-dropdown--nested.is-forum-mega-open > .nav-dropdown-toggle{
+  .nav-dropdown--forums .nav-dropdown--nested.open > .nav-dropdown-toggle{
     color: var(--blue-700) !important;
     background: rgba(0, 105, 180, .08) !important;
     border-color: rgba(0, 105, 180, .14) !important;
@@ -646,7 +661,8 @@ div.breadcrumbs.forum-breadcrumbs{
     padding-left: 12px;
   }
 
-  .nav-dropdown--forum .nav-dropdown-link-desc{
+  .nav-dropdown--forum .nav-dropdown-link-desc,
+  .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year .nav-dropdown-link-desc{
     display: block !important;
     position: static !important;
     opacity: 1 !important;
@@ -660,6 +676,24 @@ div.breadcrumbs.forum-breadcrumbs{
     border: 0 !important;
     box-shadow: none !important;
     pointer-events: auto !important;
+  }
+
+  .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year{
+    min-height: 0 !important;
+    padding: 10px 14px !important;
+    padding-left: calc(14px + 1.5ch) !important;
+    gap: 2px !important;
+  }
+
+  .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year.active{
+    color: var(--blue-700) !important;
+    background: rgba(0, 105, 180, .12) !important;
+    border-color: rgba(0, 105, 180, .22) !important;
+  }
+
+  .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year.active .nav-dropdown-link-title,
+  .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year.active .nav-dropdown-link-desc{
+    color: var(--blue-700) !important;
   }
 
   .nav-dropdown--forum .nav-dropdown-link{

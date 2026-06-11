@@ -69,7 +69,7 @@
       "forum2024Year": "2024",
       "forum2024YearDesc": "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024",
       "forum2026Year": "2026",
-      "forum2026Desc": "Xaricdə yaşayan alimlərin II Forumu — hazırlanır",
+      "forum2026Desc": "Xaricdə yaşayan alimlərin II Forumu — dekabr 2026, konsepsiya layihəsi",
       "forum2024": "Forumun mənzərəsi",
       "treasury": "Xəzinə",
       "prominentFigures": "Görkəmli şəxsiyyətlər",
@@ -147,7 +147,7 @@
       "forum2024Year": "2024",
       "forum2024YearDesc": "First Forum of Azerbaijani Scientists Living Abroad — September 2024",
       "forum2026Year": "2026",
-      "forum2026Desc": "Second Forum of Azerbaijani Scientists Living Abroad — in preparation",
+      "forum2026Desc": "Second Forum of Azerbaijani Scientists Living Abroad — December 2026, draft concept",
       "forum2024": "Highlights",
       "treasury": "Treasury",
       "prominentFigures": "Prominent Figures",
@@ -169,7 +169,7 @@
       "scientists": "Scientists",
       "scientistsList": "Directory",
       "scientistsProfiles": "Profiles",
-      "executiveBoard": "Board of Directors",
+      "executiveBoard": "Executive Board",
       "charter": "Charter",
       "membership": "Membership",
       "membershipWhy": "Why join WAAS",
@@ -268,6 +268,7 @@
       "membership": "Üzvlük",
       "sponsors": "Bizi dəstəkləyin",
       "forum2024": "Forumun mənzərəsi",
+      "forum2026": "Forum 2026",
       "treasury": "Xəzinə",
       "encyclopedia": "Görkəmli şəxsiyyətlər"
     },
@@ -280,6 +281,7 @@
       "membership": "Membership",
       "sponsors": "Support us",
       "forum2024": "Highlights",
+      "forum2026": "Forum 2026",
       "treasury": "Treasury",
       "encyclopedia": "Prominent Figures",
       "scientistsList": "Directory of Scientists",
@@ -311,7 +313,7 @@
         "forum-cooperation": "Forumun təşkilinə dəstək verən tərəfdaşlar",
         "scientists-list": "Forumda iştirak etmiş alimlərin siyahısı",
         "scientists-profiles": "Alimlərin akademik profilləri",
-        "forum-2026": "Xaricdə yaşayan alimlərin II Forumu — hazırlanır"
+        "forum-2026": "Xaricdə yaşayan alimlərin II Forumu — dekabr 2026, konsepsiya layihəsi"
       }
     },
     "en": {
@@ -338,7 +340,7 @@
         "forum-cooperation": "Partners who supported the Forum",
         "scientists-list": "Directory of scientists who took part in the Forum",
         "scientists-profiles": "Academic profiles of participating scientists",
-        "forum-2026": "Second Forum of Azerbaijani Scientists Living Abroad — in preparation"
+        "forum-2026": "Second Forum of Azerbaijani Scientists Living Abroad — December 2026, draft concept"
       }
     }
   },
@@ -400,7 +402,7 @@
       "contact": "Contact",
       "address": "Address",
       "leadership": "Leadership",
-      "chairRole": "Chair of the WAAS Board of Directors"
+      "chairRole": "Chair of the WAAS Executive Board"
     }
   }
 }

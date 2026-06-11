@@ -42,6 +42,7 @@ PAGE_LABEL_KEYS = {
     "mission": "mission",
     "activities": "activities",
     "forum-2024": "forum2024",
+    "forum-2026": "forum2026",
     "encyclopedia": "prominentFigures",
     "industrial-revolutions": "industrialRevolutions",
     "major-scientific-inventions": "majorScientificInventions",

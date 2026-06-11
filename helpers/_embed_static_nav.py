@@ -117,10 +117,10 @@ def _forum_2026_link(lang: str) -> str:
     href = "forum/2026/index.html"
     if lang == "en":
         title = "🎤 2026"
-        desc = "Second Forum of Azerbaijani Scientists Living Abroad — in preparation"
+        desc = "Second Forum of Azerbaijani Scientists Living Abroad — December 2026, draft concept"
     else:
         title = "🎤 2026"
-        desc = "Xaricdə yaşayan alimlərin II Forumu — hazırlanır"
+        desc = "Xaricdə yaşayan alimlərin II Forumu — dekabr 2026, konsepsiya layihəsi"
     return _drop(
         [(href, "forum-2026", title, desc)],
         link_class="nav-dropdown-link nav-dropdown-link--forum-year",
@@ -234,7 +234,7 @@ NAV_EN = (
     + _drop([
         ("foundation.html", "foundation", "Foundation", "History and founding process"),
         ("mission.html", "mission", "Mission &amp; values", "Mission, vision and academic values"),
-        ("executive-board.html", "executive-board", "Executive board", "Leadership and governance structure"),
+        ("executive-board.html", "executive-board", "Executive Board", "Leadership and governance structure"),
         ("charter.html", "charter", "Charter", "Charter and governance rules"),
     ])
     + "</div></div>"
