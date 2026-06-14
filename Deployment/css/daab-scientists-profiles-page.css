@@ -1,0 +1,484 @@
+/**
+ * Extracted from inline <style> on en/scientists/profiles.html.
+ * Shared by AZ/EN locale pages — do not duplicate in HTML.
+ */
+
+/* Scientists CV catalogue page styles */
+:root{
+  --row-hover: rgba(0, 105, 180, .07);
+  --card-line: var(--color-border-blue-faint);
+}html{ scroll-behavior: auto; }body{
+  color: var(--ink);
+  font-family: var(--font-sans);
+}.hero{
+  position: relative;
+  overflow: hidden;
+  color: var(--ink) !important;
+  background: var(--white) var(--site-bg-image) top center / 100% auto no-repeat !important;
+}.hero::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-hero-scrim);
+}.hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, .18), rgba(255, 255, 255, 0));
+  opacity: .72;
+  mix-blend-mode: normal;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
+}.hero-inner{
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.12fr .88fr;
+  gap: 32px;
+  align-items: start;
+  max-width: var(--max);
+  margin: auto;
+  padding: 32px 24px 40px;
+}.hero h1{
+  margin: 0 0 14px;
+  padding-top: .08em;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(21.28px, 3.36vw, 40.32px);
+  line-height: 1.12;
+  letter-spacing: -.035em;
+}.hero h1 em{
+  color: var(--blue-700);
+  font-style: normal;
+}.hero-summary-panel{
+  padding: 22px;
+  background: var(--color-hero-panel-bg) !important;
+  border: 1px solid var(--color-hero-panel-border) !important;
+  border-radius: 30px;
+  box-shadow: var(--shadow-hero-panel) !important;
+  backdrop-filter: blur(18px);
+}.hero-summary-card{
+  padding: 24px;
+  color: var(--ink) !important;
+  background: var(--color-panel-card-bg) !important;
+  border: 1px solid var(--color-panel-card-border) !important;
+  border-radius: var(--radius);
+  box-shadow: 0 18px 50px rgba(0, 45, 82, .16) !important;
+  backdrop-filter: blur(18px);
+}.hero-summary-card .panel-title{
+  margin: 0 0 10px;
+  color: var(--color-heading-blue);
+  font-family: var(--font-serif);
+  font-size: var(--font-size-summary-panel-title-md);
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+}.main{
+  position: relative;
+  z-index: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}.catalog-section{
+  margin-bottom: 52px;
+  scroll-margin-top: calc(var(--daab-nav-height, 86px) + 7.5rem);
+}.cards-grid{
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}.cards-grid > .card{
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}.card.is-filtered-out{
+  display: none !important;
+}.card{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 22px;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 24px;
+  background: var(--color-panel-card-bg);
+  border: 1px solid var(--color-border-blue-muted);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 34px rgba(13, 31, 60, .08);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {.card:hover{
+    border-color: rgba(0, 105, 180, .28);
+    box-shadow: 0 22px 46px rgba(13, 31, 60, .13);
+    transform: translateY(-3px);
+  }
+}.card{
+  --avatar-w: 148px;
+  --avatar-h: 176px;
+}.card-avatar{
+  display: block;
+  flex-shrink: 0;
+  width: var(--avatar-w);
+  min-width: var(--avatar-w);
+  max-width: var(--avatar-w);
+  height: var(--avatar-h);
+  overflow: hidden;
+  background: #f7fbff;
+  border: 1px solid var(--color-border-blue-faint);
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(0, 78, 140, .16);
+}.card-avatar img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+}/* Eldar Ahadov — full-face portrait; avoid cropping forehead */
+#eldar-ehedov .card-avatar img{
+  object-fit: cover;
+  object-position: center top;
+}.card-body{
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+}.card-header{
+  margin-bottom: 8px;
+}.card-country{
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: .04em;
+}.card-name{
+  display: block;
+  color: var(--blue-700);
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.35;
+  letter-spacing: .01em;
+  overflow-wrap: anywhere;
+}a.card-name{
+  text-decoration: none;
+}a.card-name:hover,
+a.card-name:focus-visible{
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}.cred{
+  display: inline-flex;
+  margin-left: 6px;
+  padding: 2px 7px;
+  color: var(--blue-700);
+  background: var(--color-panel-blue);
+  border: 1px solid var(--color-border-blue-faint);
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 900;
+  vertical-align: middle;
+}.card-post-meta{
+  margin-top: 2px;
+}.card-header .card-title{
+  margin: 6px 0 0;
+}.card-role{
+  margin: 6px 0 0;
+  color: #102033;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}.card-title{
+  margin: 6px 0 0;
+  color: #102033;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}.card-meta{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  background: var(--color-surface-news);
+  border: 1px solid var(--color-border-blue-muted);
+  border-radius: 12px;
+}.card-meta-row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+  min-width: 0;
+}.card-meta-label{
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.4;
+  white-space: nowrap;
+}.card-meta-ixtilas{
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--blue-800);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}.card-meta-row .card-email,
+.card-meta-row .card-email--empty{
+  flex: 1 1 auto;
+  min-width: 0;
+}.card-email{
+  color: var(--blue-700);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}.card-email:hover,
+.card-email:focus-visible{
+  color: var(--blue-800);
+  text-decoration: underline;
+}/* Used when a profile has no email (TTS checks .card-email--empty in daab-profile-tts.js). */
+.card-email--empty{
+  color: var(--muted);
+  font-weight: 600;
+}.card-bio{
+  margin-top: 14px;
+  flex: 1;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-border-blue-10);
+  text-align: justify;
+  hyphens: auto;
+}.card-bio > *:first-child{
+  margin-top: 0;
+}.card-bio p.bio + p.bio,
+.card-bio p.bio + ul.bullets,
+.card-bio p.bio + .bio-section-title,
+.card-bio ul.bullets + p.bio,
+.card-bio ul.bullets + ul.bullets,
+.card-bio ul.bullets + .bio-section-title,
+.card-bio .bio-section-title + ul.bullets,
+.bio-section-title + p.bio,
+.card-bio p.bio + .awards-block,
+.card-bio ul.bullets + .awards-block,
+.card-bio .awards-block + p.bio{
+  margin-top: 12px;
+}.card-bio .bio,
+.card-bio .bullets,
+.card-bio .awards-list,
+.cards-grid > .card .bio,
+.cards-grid > .card .bullets,
+.cards-grid > .card .awards-list{
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.68;
+  overflow-wrap: anywhere;
+}.card-bio .bio-section-title,
+.card-bio .awards-label{
+  text-align: left;
+}.card-bio > p.bio:first-child,
+.card-bio > p.bio-lead:first-child{
+  color: #1a3d5c;
+  font-size: 14px;
+  font-weight: 500;
+}.card-bio .bio-section-title,
+.card-bio .bio-lead{
+  margin: 0;
+  color: var(--color-heading-blue);
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: .02em;
+}.bio-lead{
+  margin-bottom: 4px;
+}.bullets li,
+.awards-list li{
+  overflow-wrap: anywhere;
+}.bullets,
+.awards-list{
+  margin: 0;
+  padding-left: 1.15em;
+  list-style: disc;
+}.bullets li,
+.awards-list li{
+  margin-bottom: 7px;
+  padding-left: 2px;
+}.bullets li::marker,
+.awards-list li::marker{
+  color: var(--blue-600);
+}.bullets li:last-child,
+.awards-list li:last-child{
+  margin-bottom: 0;
+}.awards-block{
+  margin-top: 4px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #fffbf0 0%, #f8fbff 100%);
+  border: 1px solid rgba(201, 155, 59, .28);
+  border-left: 4px solid var(--gold);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(201, 155, 59, .08);
+}.awards-label{
+  display: block;
+  margin-bottom: 8px;
+  color: var(--blue-700);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}.awards-list li{
+  color: #3d5068;
+  font-weight: 500;
+}.no-results{
+  display: none;
+  padding: 64px 20px;
+  color: var(--muted);
+  font-size: 16px;
+  text-align: center;
+}.no-results.visible{
+  display: block;
+}
+
+@media (max-width: 1060px) {.hero-inner{
+    grid-template-columns: 1fr;
+  }.cards-grid{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 900px) {.card{
+    --avatar-w: 124px;
+    --avatar-h: 148px;
+  }.card-avatar{
+    border-radius: var(--radius2);
+  }.card{
+    gap: 18px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 760px) {.hero-inner{
+    gap: 22px;
+    padding: 42px max(18px, env(safe-area-inset-right)) 34px max(18px, env(safe-area-inset-left));
+  }.main{
+    padding: 24px max(16px, env(safe-area-inset-right)) 56px max(16px, env(safe-area-inset-left));
+  }.catalog-section{
+    margin-bottom: 40px;
+    scroll-margin-top: calc(var(--daab-nav-height, 60px) + 6.5rem);
+  }.cards-grid{
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }.card{
+    gap: 16px;
+    height: auto;
+    padding: 18px;
+  }.card{
+    --avatar-w: 112px;
+    --avatar-h: 134px;
+  }.card-avatar{
+    border-radius: var(--radius2);
+  }.card-name{
+    font-size: 15px;
+  }.card-title,
+  .card-role{
+    font-size: 14px;
+    line-height: 1.55;
+  }.card-bio .bio,
+  .card-bio .bullets,
+  .card-bio .awards-list{
+    font-size: 14px;
+    line-height: 1.65;
+  }.bullets,
+  .awards-list{
+    padding-inline-start: 20px;
+  }.awards-block{
+    padding: 14px 16px;
+  }
+}
+
+@media (max-width: 760px) {.card{
+    height: auto;
+  }.card-body{
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }.card-bio{
+    margin-top: 12px;
+    width: 100%;
+    max-width: 100%;
+  }.cred{
+    display: inline-flex;
+    margin-top: 4px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 640px) {.card{
+    --avatar-w: 112px;
+    --avatar-h: 134px;
+    padding: 16px;
+  }.card-avatar img{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 37 / 44;
+  }
+}
+
+@media (max-width: 480px) {.main{
+    padding: 20px max(12px, env(safe-area-inset-right)) 48px max(12px, env(safe-area-inset-left));
+  }.cards-grid{
+    gap: 14px;
+  }.card{
+    gap: 12px;
+    padding: 16px;
+    border-radius: calc(var(--radius) - 2px);
+  }.card{
+    --avatar-w: 120px;
+    --avatar-h: 143px;
+  }.card-avatar{
+    border-radius: 16px;
+  }.card-name{
+    font-size: 14px;
+  }.card-title,
+  .card-role,
+  .card-bio .bio,
+  .card-bio .bullets,
+  .card-bio .awards-list{
+    font-size: 13px;
+    line-height: 1.62;
+  }.card-meta{
+    padding: 9px 10px;
+    gap: 7px;
+  }.card-country{
+    font-size: 11px;
+  }.card-meta-label{
+    font-size: 11px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+}
+
+@media (max-width: 360px) {.card{
+    --avatar-w: 112px;
+    --avatar-h: 133px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {html{
+    scroll-behavior: auto;
+  }.card{
+    transition: none;
+  }
+}

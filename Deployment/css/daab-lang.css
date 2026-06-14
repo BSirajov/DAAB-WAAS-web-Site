@@ -1,0 +1,215 @@
+/* Language switcher + gateway (bilingual environment) */
+
+/* Flag-icon language switcher (text labels are kept sr-only for a11y) */
+.daab-lang-switch{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  flex-shrink: 0;
+  margin-left: 10px;
+  padding: 4px;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 999px;
+  position: relative;
+  z-index: 10003;
+}.daab-lang-switch a,
+.daab-lang-switch .daab-lang-link{
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  box-sizing: border-box !important;
+  width: 36px !important;
+  height: 28px !important;
+  min-width: 36px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease;
+}.daab-lang-flag{
+  display: block;
+  width: 26px;
+  height: 16px;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .25);
+  opacity: .55;
+  filter: grayscale(35%);
+  transition: opacity .18s ease, filter .18s ease, transform .18s ease;
+}.daab-lang-code{
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}.daab-lang-switch a:hover .daab-lang-flag,
+.daab-lang-switch a:focus-visible .daab-lang-flag{
+  opacity: 1;
+  filter: none;
+  transform: scale(1.04);
+}.daab-lang-switch a:hover,
+.daab-lang-switch a:focus-visible{
+  background: rgba(255, 255, 255, .14) !important;
+}.daab-lang-switch a:focus-visible{
+  outline: 2px solid rgba(255, 240, 191, .95);
+  outline-offset: 2px;
+}.daab-lang-switch a[aria-current="true"]{
+  background: rgba(255, 255, 255, .22) !important;
+  border-color: rgba(255, 255, 255, .45) !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .15) inset !important;
+}.daab-lang-switch a[aria-current="true"] .daab-lang-flag{
+  opacity: 1;
+  filter: none;
+}/* Legacy separator hidden — flags no longer need a divider */
+.daab-lang-sep{
+  display: none;
+}.daab-gateway-page{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+  background:
+    linear-gradient(160deg, rgba(0, 90, 154, .08), transparent 42%);
+}.daab-gateway-card{
+  width: min(520px, 100%);
+  padding: 36px 32px 32px;
+  text-align: center;
+  background: rgba(255, 255, 255, .96);
+  border: 1px solid #9ed6f5;
+  border-radius: 28px;
+  box-shadow: 0 18px 50px rgba(0, 45, 82, .14);
+}.daab-gateway-logo{
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 18px;
+  object-fit: contain;
+}.daab-gateway-card h1{
+  margin: 0 0 10px;
+  color: #08263b;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(15.4px, 2.8vw, 21px);
+  line-height: 1.2;
+}.daab-gateway-card p{
+  margin: 0 0 24px;
+  color: #345d76;
+  font-size: 15px;
+  line-height: 1.55;
+}.daab-gateway-actions{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}.daab-gateway-actions .btn{
+  justify-content: center;
+  width: 100%;
+}.daab-gateway-note{
+  margin: 18px 0 0;
+  color: #8899aa;
+  font-size: 12px;
+  line-height: 1.45;
+}.daab-stub-banner{
+  max-width: var(--max, 1180px);
+  margin: 0 auto 20px;
+  padding: 18px 22px;
+  background: linear-gradient(135deg, #fff8e8, #fff);
+  border: 1px solid #e8c96a;
+  border-radius: 18px;
+}.daab-stub-banner h2{
+  margin: 0 0 8px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 14px;
+  color: #7a5a00;
+}.daab-stub-banner p{
+  margin: 0 0 14px;
+  color: #5a4a20;
+  font-size: 14px;
+  line-height: 1.5;
+}.daab-stub-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}.daab-locale-hint{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 12px;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: #345d76;
+  background: linear-gradient(90deg, #e8f6ff, #fff8e8);
+  border-bottom: 1px solid #9ed6f5;
+}.daab-locale-hint-label{
+  font-weight: 700;
+  color: #005a9a;
+}.daab-locale-hint a{
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 2px 12px;
+  color: #005a9a;
+  font-weight: 800;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid #9ed6f5;
+  border-radius: 999px;
+}.daab-locale-hint a:hover{
+  border-color: var(--blue-400, #2e9fd4);
+}.daab-locale-hint a[aria-current="true"]{
+  color: #fff;
+  background: var(--blue-700, #005a9a);
+  border-color: var(--blue-700, #005a9a);
+}
+
+/* Compact header: language switcher stacked under search (see daab-shell.js) */
+@media (max-width: 1180px) {.nav-inner > .daab-lang-switch,
+  .nav-actions > .daab-lang-switch,
+  .page-logo .daab-lang-switch{
+    margin: 0;
+    padding: 2px 3px;
+    flex-shrink: 0;
+    overflow: visible;
+    gap: 4px;
+  }.nav-inner > .daab-lang-switch a,
+  .nav-actions > .daab-lang-switch a,
+  .page-logo .daab-lang-switch a{
+    width: 30px !important;
+    min-width: 30px !important;
+    height: 22px !important;
+  }.nav-inner > .daab-lang-switch .daab-lang-flag,
+  .nav-actions > .daab-lang-switch .daab-lang-flag,
+  .page-logo .daab-lang-switch .daab-lang-flag{
+    width: 20px;
+    height: 12px;
+  }
+}
+
+/* Desktop: switcher sits in .nav-actions with search (see daab-shell.js) */
+@media (min-width: 1181px) {.nav-inner > .daab-lang-switch,
+  .nav-actions > .daab-lang-switch{
+    flex-shrink: 0;
+    margin-left: 0;
+  }
+}/* Anchor targets: sticky nav offset for hash links, back/forward, and lang switch */
+main article[id],
+main section[id],
+main .news-card[id],
+main .charter-card[id],
+main [data-daab-section-id]{
+  scroll-margin-top: calc(var(--daab-nav-height, 86px) + 1.25rem);
+}
+
+.daab-lang-switch .daab-lang-link--disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(0.35);
+}

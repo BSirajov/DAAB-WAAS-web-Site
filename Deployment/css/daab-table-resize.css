@@ -1,0 +1,70 @@
+/* Resizable table columns (scientists directory and similar catalogues) */
+
+.daab-resizable-table{
+  table-layout: fixed;
+}.daab-resizable-table.daab-cols-ready th[class*="col-"]{
+  width: auto;
+  padding-right: 18px;
+}.daab-resizable-table.daab-cols-ready th[class*="col-"]:last-child,
+.daab-resizable-table.daab-cols-ready th.col-cins{
+  padding-right: 15px;
+}.daab-resizable-table td{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}.daab-resizable-table td.col-name,
+.daab-resizable-table td.col-spec,
+.daab-resizable-table td.col-cntry{
+  white-space: nowrap;
+}.daab-resizable-table td.col-email{
+  white-space: normal;
+}.daab-resizable-table td.col-email .email-link{
+  max-width: 100%;
+}.daab-col-resize-handle{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 10px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: col-resize;
+  touch-action: none;
+}.daab-col-resize-handle::after{
+  content: "";
+  position: absolute;
+  top: 18%;
+  right: 4px;
+  width: 2px;
+  height: 64%;
+  border-radius: 1px;
+  background: rgba(255, 255, 255, .28);
+  transition: background .15s ease, box-shadow .15s ease;
+}.daab-col-resize-handle:hover::after,
+.daab-col-resize-handle:focus-visible::after{
+  background: var(--gold-soft, #e8c547);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .12);
+}.daab-col-resize-handle:focus-visible{
+  outline: none;
+}.daab-col-resize-handle:focus-visible::after{
+  outline: 2px solid rgba(232, 197, 71, .85);
+  outline-offset: 1px;
+}html.daab-col-resizing,
+html.daab-col-resizing *{
+  cursor: col-resize !important;
+  user-select: none !important;
+}html.daab-col-resizing .daab-col-resize-handle::after{
+  background: var(--gold-soft, #e8c547);
+}
+
+@media (pointer: coarse) {.daab-col-resize-handle{
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {.daab-col-resize-handle::after{
+    transition: none;
+  }
+}

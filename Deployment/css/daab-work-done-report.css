@@ -1,0 +1,234 @@
+/**
+ * DAAB–DİDK work-done report (2024–2026) — scoped content styles.
+ * Source: documents/report_2024-2026/
+ */
+html[data-daab-page-id="work-done-2024-2026"] {
+  scroll-behavior: smooth;
+}
+
+html[data-daab-page-id="work-done-2024-2026"] [id] {
+  scroll-margin-top: calc(var(--daab-nav-height, 64px) + var(--daab-breadcrumbs-height, 0px) + 18px);
+}
+
+.work-done-report .report-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.work-done-report .report-toc {
+  position: sticky;
+  top: calc(var(--daab-nav-height, 64px) + var(--daab-breadcrumbs-height, 0px) + 12px);
+  align-self: start;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  max-height: calc(100vh - var(--daab-nav-height, 64px) - var(--daab-breadcrumbs-height, 0px) - 28px);
+  overflow: auto;
+}
+
+.work-done-report .report-toc strong {
+  display: block;
+  color: var(--blue-700);
+  margin-bottom: 10px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.work-done-report .report-toc .toc-link {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  color: var(--ink);
+  padding: 7px 9px;
+  border-radius: 10px;
+  font-size: 0.94rem;
+  cursor: pointer;
+  line-height: 1.35;
+}
+
+.work-done-report .report-toc .toc-link:hover,
+.work-done-report .report-toc .toc-link:focus {
+  background: var(--blue-50, #eef4fb);
+  color: var(--blue-700);
+  outline: none;
+}
+
+.work-done-report .report-toc .toc-link.sub {
+  padding-left: 22px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.work-done-report .report-toc .toc-link.active {
+  background: var(--blue-50, #e6f0fb);
+  color: var(--blue-700);
+  font-weight: 700;
+}
+
+.work-done-report .report-content {
+  min-width: 0;
+}
+
+.work-done-report .report-section {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow);
+}
+
+.work-done-report .report-section h2 {
+  margin: 0 0 16px;
+  font-family: var(--font-display, "Playfair Display", Georgia, serif);
+  color: var(--blue-700);
+  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+  line-height: 1.25;
+  border-left: 5px solid var(--gold-soft, #c8a24a);
+  padding-left: 14px;
+}
+
+.work-done-report .report-section h3 {
+  margin: 26px 0 10px;
+  color: var(--blue-400, #1f4e79);
+  font-size: 1.12rem;
+}
+
+.work-done-report .report-section p,
+.work-done-report .report-section li {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.work-done-report .report-section p {
+  margin: 0 0 14px;
+}
+
+.work-done-report .doc-list {
+  margin: 0 0 16px 22px;
+  padding: 0;
+}
+
+.work-done-report .doc-list li {
+  margin: 4px 0;
+}
+
+.work-done-report .table-wrap {
+  overflow-x: auto;
+  margin: 18px 0 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.work-done-report table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  min-width: 520px;
+}
+
+.work-done-report th,
+.work-done-report td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  text-align: left;
+}
+
+.work-done-report th {
+  background: var(--blue-50, #eef4fb);
+  color: var(--blue-700);
+  font-weight: 700;
+}
+
+.work-done-report tr:last-child td {
+  border-bottom: none;
+}
+
+.work-done-report .doc-figure {
+  margin: 18px 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.work-done-report .doc-figure img {
+  width: 100%;
+  display: block;
+  max-height: 560px;
+  object-fit: contain;
+  background: var(--white);
+}
+
+.work-done-report .caption {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 8px 0 18px;
+  font-style: italic;
+}
+
+.work-done-report .report-print-btn {
+  position: fixed;
+  right: 22px;
+  bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+  z-index: 40;
+  border: none;
+  border-radius: 999px;
+  background: var(--gold-soft, #c8a24a);
+  color: var(--blue-900, #102a43);
+  padding: 12px 18px;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(16, 42, 67, 0.2);
+  cursor: pointer;
+}
+
+.work-done-report .report-print-btn:hover {
+  filter: brightness(1.03);
+}
+
+@media (max-width: 960px) {
+  .work-done-report .report-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .work-done-report .report-toc {
+    position: relative;
+    top: auto;
+    max-height: none;
+  }
+
+  .work-done-report .report-section {
+    padding: 20px 18px;
+  }
+}
+
+@media print {
+  .work-done-report .report-toc,
+  .work-done-report .report-print-btn,
+  .nav-strip,
+  .daab-breadcrumbs,
+  .daab-lang-switch,
+  .footer-pro {
+    display: none !important;
+  }
+
+  .work-done-report .report-layout {
+    display: block;
+    padding: 0;
+  }
+
+  .work-done-report .report-section {
+    box-shadow: none;
+    border: none;
+    page-break-inside: auto;
+  }
+}
