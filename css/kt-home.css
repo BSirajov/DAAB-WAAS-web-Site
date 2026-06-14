@@ -1,0 +1,159 @@
+/**
+ * Knowledge Treasury homepage — scoped to .kt-home-page / .kt-gateway
+ */
+
+html[data-daab-page-id="home"] .kt-home-hero,
+.kt-home-page .kt-home-hero {
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 2rem;
+  background: linear-gradient(135deg, rgba(0, 105, 180, 0.12), rgba(255, 255, 255, 0.92));
+  border-bottom: 1px solid var(--blue-soft);
+}
+
+.kt-home-hero__inner {
+  max-width: 920px;
+}
+
+.kt-home-hero__eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--blue-dark);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.kt-home-page .kt-home-hero h1 {
+  margin: 0 0 1rem;
+  color: var(--blue-900);
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.12;
+}
+
+.kt-home-hero__lead {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  line-height: 1.65;
+}
+
+.kt-home-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0 2.5rem;
+}
+
+.kt-home-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 1.35rem 1.35rem 1.1rem;
+  background: var(--color-surface-toolbar);
+  border: 1px solid var(--blue-soft);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 32px rgba(0, 78, 140, 0.12);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.kt-home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 78, 140, 0.18);
+}
+
+.kt-home-card__icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.kt-home-card__badge {
+  margin: 0 0 0.35rem;
+  color: var(--blue-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kt-home-card__title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.kt-home-card__title a {
+  color: var(--blue-900);
+  text-decoration: none;
+}
+
+.kt-home-card__title a:hover {
+  color: var(--blue);
+}
+
+.kt-home-card__text {
+  flex: 1;
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.kt-home-card__link {
+  align-self: flex-start;
+}
+
+.kt-section-title {
+  margin: 0 0 1rem;
+  color: var(--blue-900);
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+}
+
+.kt-field-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 2rem;
+}
+
+.kt-field-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  color: var(--blue-dark);
+  background: var(--color-tint-blue);
+  border: 1px solid var(--blue-soft);
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.kt-home-vision {
+  margin-bottom: 2.5rem;
+  padding: 1.35rem 1.5rem;
+}
+
+.kt-home-vision p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.kt-gateway .daab-gateway-card h1 {
+  font-family: var(--font-serif);
+}
+
+@media (max-width: 900px) {
+  .kt-home-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .kt-home-card {
+    padding: 1.1rem;
+  }
+}
