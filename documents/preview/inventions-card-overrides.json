@@ -1,0 +1,87 @@
+{
+  "controlled-use-of-fire": {
+    "summary": "Fire evidence from Wonderwerk Cave, South Africa dates to ~1 million years ago. Deliberate control enabled cooking, warmth, and protection — reshaping human biology and culture."
+  },
+  "the-wheel": {
+    "key_facts": [
+      "First use: pottery wheel (~5500 BCE)",
+      "Transport wheels: ~3500 BCE, Mesopotamia",
+      "Americas and Africa developed without it",
+      "Rotary principle → all modern machinery",
+      "Spindle, lathe, centrifuge all derived"
+    ]
+  },
+  "artificial-intelligence": {
+    "key_figures": "Alan Turing; John McCarthy; Geoffrey Hinton; Yann LeCun; Yoshua Bengio",
+    "summary": "Deep learning's breakthrough (AlexNet, 2012) triggered the modern AI era. AlphaFold (2020) solved the 50-year protein structure problem; LLMs now write, code, and reason.",
+    "key_facts": [
+      "Turing Test proposed: 1950",
+      "'Artificial intelligence' coined: 1956",
+      "AlexNet deep learning: 2012 inflection",
+      "AlphaFold solved protein folding: 2020",
+      "LLMs: GPT, Claude, Gemini (2020s)"
+    ]
+  },
+  "anaesthesia": {
+    "key_figures": "Crawford Long (ether, 1842); William Morton (1846); James Young Simpson (chloroform, 1847)",
+    "summary": "Morton's public demonstration of ether anaesthesia at Massachusetts General Hospital on 16 October 1846 is the conventional start date. Chloroform anaesthesia, introduced by Simpson in 1847, transformed surgery worldwide.",
+    "key_facts": [
+      "First ether use in surgery: Long, 1842",
+      "Public ether demonstration: Morton, 1846",
+      "Chloroform introduced: Simpson, 1847",
+      "Made complex operations possible",
+      "Modern anaesthesia uses sophisticated drug combos"
+    ]
+  },
+  "semiconductor-technology": {
+    "icon": "../../images/inventions/Semiconductor.png"
+  },
+  "gps-global-positioning-system": {
+    "icon": "../../images/inventions/GPS.png"
+  },
+  "satellite-technology": {
+    "icon": "../../images/inventions/Satellite.png"
+  },
+  "search-engines": {
+    "icon": "../../images/inventions/SearchEngine.png"
+  },
+  "world-wide-web": {
+    "icon": "../../images/inventions/www.png"
+  },
+  "internet": {
+    "icon": "../../images/inventions/internet.png"
+  },
+  "integrated-circuit-microchip": {
+    "icon": "../../images/inventions/microchip.png"
+  },
+  "computer": {
+    "icon": "../../images/inventions/computer.png"
+  },
+  "transistor": {
+    "icon": "../../images/inventions/transistor.png"
+  },
+  "radio": {
+    "icon": "../../images/inventions/radio.png"
+  },
+  "telephone": {
+    "icon": "../../images/inventions/telephone.png"
+  },
+  "telegraph": {
+    "icon": "../../images/inventions/telegraph.png"
+  },
+  "fibre-optic-communication": {
+    "icon": "../../images/inventions/fibre-optic.png"
+  },
+  "laser": {
+    "icon": "../../images/inventions/laser.png"
+  },
+  "spaceflight": {
+    "icon": "../../images/inventions/spaceflight.png"
+  },
+  "smartphones": {
+    "icon": "../../images/inventions/smartphone.png"
+  },
+  "social-media-platforms": {
+    "icon": "../../images/inventions/social_media_platforms.png"
+  }
+}

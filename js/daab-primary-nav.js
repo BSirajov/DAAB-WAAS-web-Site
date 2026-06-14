@@ -85,7 +85,10 @@
   }
 
   function childIconKey(childDef, page) {
-    return page.id || childDef.labelKey;
+    if (childDef.labelKey) return childDef.labelKey;
+    if (page && page.id) return page.id;
+    if (childDef.id) return childDef.id;
+    return "";
   }
 
   function currentPageId(routes) {

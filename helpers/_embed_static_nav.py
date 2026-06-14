@@ -141,7 +141,7 @@ def _forum_2026_link(lang: str) -> str:
 
 
 def _forums_drop(lang: str) -> str:
-    label = "Forumlar" if lang == "az" else "Forums"
+    label = "🎤\u00a0Forumlar" if lang == "az" else "🎤\u00a0Forums"
     return (
         '<div class="nav-dropdown nav-dropdown--forums" data-nav-dropdown data-nav-group="forums">'
         + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
@@ -166,27 +166,27 @@ def _treasury_drop(label: str, items: list[tuple[str, str, str, str]]) -> str:
     )
 
 
-TREASURY_AZ = _treasury_drop("Xəzinə", [
-    ("encyclopedia.html", "encyclopedia", "Görkəmli şəxsiyyətlər", "Görkəmli şəxsiyyətlər kataloqu"),
-    ("industrial_revolutions.html", "industrial-revolutions", "Sənaye inqilabları", "Tarixi sənaye inqilablarının izləri"),
-    ("major_scientific_inventions.html", "major-scientific-inventions", "Əsas elmi ixtiralar", "Elm tarixinin mühüm ixtiraları"),
+TREASURY_AZ = _treasury_drop("🏛️\u00a0Xəzinə", [
+    ("encyclopedia.html", "encyclopedia", "👤\u00a0Görkəmli şəxsiyyətlər", "Görkəmli şəxsiyyətlər kataloqu"),
+    ("industrial_revolutions.html", "industrial-revolutions", "⚙️\u00a0Sənaye inqilabları", "Tarixi sənaye inqilablarının izləri"),
+    ("major_scientific_inventions.html", "major-scientific-inventions", "💡\u00a0Əsas elmi ixtiralar", "Elm tarixinin mühüm ixtiraları"),
 ])
 
-TREASURY_EN = _treasury_drop("Treasury", [
-    ("encyclopedia.html", "encyclopedia", "Prominent Figures", "Directory of prominent figures"),
-    ("industrial_revolutions.html", "industrial-revolutions", "Industrial Revolutions", "Landmarks of industrial history"),
-    ("major_scientific_inventions.html", "major-scientific-inventions", "Major Scientific Inventions", "Key inventions that shaped science"),
+TREASURY_EN = _treasury_drop("🏛️\u00a0Treasury", [
+    ("encyclopedia.html", "encyclopedia", "👤\u00a0Prominent Figures", "Directory of prominent figures"),
+    ("industrial_revolutions.html", "industrial-revolutions", "⚙️\u00a0Industrial Revolutions", "Landmarks of industrial history"),
+    ("major_scientific_inventions.html", "major-scientific-inventions", "💡\u00a0Major Scientific Inventions", "Key inventions that shaped science"),
 ])
 
 SPONSORSHIP_AZ = (
     '<div class="nav-dropdown" data-nav-dropdown>'
     + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    + 'Bizi dəstəkləyin <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    + '🤝\u00a0Bizi dəstəkləyin <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("sponsors.html", "sponsors", "Sponsorluq", "Korporativ və proqram tərəfdaşlığı"),
-        ("donate.html", "donate", "İanə", "Fərdi, fond və xatirə ianələri"),
-        ("sponsors_flyer.html", "sponsors-flyer", "Dəvət məktubu", "Potensial tərəfdaşlar üçün paylaşıla bilən dəvət məktubu"),
+        ("sponsors.html", "sponsors", "🤝\u00a0Sponsorluq", "Korporativ və proqram tərəfdaşlığı"),
+        ("donate.html", "donate", "💝\u00a0İanə", "Fərdi, fond və xatirə ianələri"),
+        ("sponsors_flyer.html", "sponsors-flyer", "📤\u00a0Dəvət məktubu", "Potensial tərəfdaşlar üçün paylaşıla bilən dəvət məktubu"),
     ])
     + "</div></div>"
 )
@@ -194,12 +194,12 @@ SPONSORSHIP_AZ = (
 SPONSORSHIP_EN = (
     '<div class="nav-dropdown" data-nav-dropdown>'
     + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    + 'Support us <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    + '🤝\u00a0Support us <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("sponsors.html", "sponsors", "Sponsorship", "Corporate and programme partnerships"),
-        ("donate.html", "donate", "Donate", "Individual, foundation, and memorial gifts"),
-        ("sponsors_flyer.html", "sponsors-flyer", "Invitation Letter", "Printable invitation letter for potential partners"),
+        ("sponsors.html", "sponsors", "🤝\u00a0Sponsorship", "Corporate and programme partnerships"),
+        ("donate.html", "donate", "💝\u00a0Donate", "Individual, foundation, and memorial gifts"),
+        ("sponsors_flyer.html", "sponsors-flyer", "📤\u00a0Invitation Letter", "Printable invitation letter for potential partners"),
     ])
     + "</div></div>"
 )
@@ -207,24 +207,24 @@ SPONSORSHIP_EN = (
 
 def _activities_drop(lang: str) -> str:
     if lang == "en":
-        label = "Activities"
+        label = "📰\u00a0Activities"
         items = [
-            ("activities.html", "activities-news", "📰 News", "News and updates"),
+            ("activities.html", "activities-news", "📰\u00a0News", "News and updates"),
             (
                 "work_done_2024_2026.html",
                 "work-done-2024-2026",
-                "📋 Work Done 2024-2026",
+                "📋\u00a0Work Done 2024-2026",
                 "Association work and outcomes, 2024–2026",
             ),
         ]
     else:
-        label = "Fəaliyyətimiz"
+        label = "📰\u00a0Fəaliyyətimiz"
         items = [
-            ("activities.html", "activities-news", "📰 Yeniliklər", "Əsas fəaliyyət və yeniliklər"),
+            ("activities.html", "activities-news", "📰\u00a0Yeniliklər", "Əsas fəaliyyət və yeniliklər"),
             (
                 "work_done_2024_2026.html",
                 "work-done-2024-2026",
-                "📋 Görülən işlər, 2024-2026",
+                "📋\u00a0Görülən işlər, 2024-2026",
                 "2024-2026-cu illərdə Birliyin fəaliyyəti və nəticələri",
             ),
         ]
@@ -233,28 +233,28 @@ def _activities_drop(lang: str) -> str:
 
 NAV_AZ = (
     '<div class="nav-divider"></div>'
-    '<a class="nav-link" href="index.html" data-nav-id="home">Ana səhifə</a>'
+    '<a class="nav-link" href="index.html" data-nav-id="home">🏠\u00a0Ana səhifə</a>'
     + _activities_drop("az")
     + _forums_drop("az")
     + '<div class="nav-dropdown" data-nav-dropdown>'
     + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    + 'Haqqımızda <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    + '🏛️\u00a0Haqqımızda <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("foundation.html", "foundation", "Birliyin təsisi", "Yaradılma tarixi və təsis prosesi"),
-        ("mission.html", "mission", "Missiya və dəyərlər", "Missiya, vizyon və akademik dəyərlər"),
-        ("executive-board.html", "executive-board", "İdarə heyəti", "İdarə heyəti və rəhbərlik"),
-        ("charter.html", "charter", "Nizamnamə", "Nizamnamə və idarəetmə qaydaları"),
+        ("foundation.html", "foundation", "🏛️\u00a0Birliyin təsisi", "Yaradılma tarixi və təsis prosesi"),
+        ("mission.html", "mission", "💎\u00a0Missiya və dəyərlər", "Missiya, vizyon və akademik dəyərlər"),
+        ("executive-board.html", "executive-board", "🎓\u00a0İdarə heyəti", "İdarə heyəti və rəhbərlik"),
+        ("charter.html", "charter", "📜\u00a0Nizamnamə", "Nizamnamə və idarəetmə qaydaları"),
     ])
     + "</div></div>"
     + '<div class="nav-dropdown" data-nav-dropdown>'
     + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    + 'Üzvlük <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    + '✒️\u00a0Üzvlük <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("membership_value.html", "membership-value", "Niyə DAAB-a qoşulmalı", "Üzvlüyün dəyəri və əsas faydalar"),
-        ("application.html", "membership-application", "Bizə qoşulun", "Onlayn üzvlük müraciət forması"),
-        ("membership_flyer.html", "membership-flyer", "Dəvət məktubu", "Potensial üzvlər üçün çap oluna bilən flyer"),
+        ("membership_value.html", "membership-value", "💡\u00a0Niyə DAAB-a qoşulmalı", "Üzvlüyün dəyəri və əsas faydalar"),
+        ("application.html", "membership-application", "📝\u00a0Bizə qoşulun", "Onlayn üzvlük müraciət forması"),
+        ("membership_flyer.html", "membership-flyer", "📤\u00a0Dəvət məktubu", "Potensial üzvlər üçün çap oluna bilən flyer"),
     ])
     + "</div></div>"
     + SPONSORSHIP_AZ
@@ -263,28 +263,28 @@ NAV_AZ = (
 
 NAV_EN = (
     '<div class="nav-divider"></div>'
-    '<a class="nav-link" href="index.html" data-nav-id="home">Home</a>'
+    '<a class="nav-link" href="index.html" data-nav-id="home">🏠\u00a0Home</a>'
     + _activities_drop("en")
     + _forums_drop("en")
     + '<div class="nav-dropdown" data-nav-dropdown>'
     + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    + 'About us <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    + '🏛️\u00a0About us <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("foundation.html", "foundation", "Foundation", "History and founding process"),
-        ("mission.html", "mission", "Mission &amp; values", "Mission, vision and academic values"),
-        ("executive-board.html", "executive-board", "Executive Board", "Leadership and governance structure"),
-        ("charter.html", "charter", "Charter", "Charter and governance rules"),
+        ("foundation.html", "foundation", "🏛️\u00a0Foundation", "History and founding process"),
+        ("mission.html", "mission", "💎\u00a0Mission &amp; values", "Mission, vision and academic values"),
+        ("executive-board.html", "executive-board", "🎓\u00a0Executive Board", "Leadership and governance structure"),
+        ("charter.html", "charter", "📜\u00a0Charter", "Charter and governance rules"),
     ])
     + "</div></div>"
     + '<div class="nav-dropdown" data-nav-dropdown>'
     + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
-    + 'Membership <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+    + '✒️\u00a0Membership <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("membership_value.html", "membership-value", "Why join WAAS", "Membership value, benefits, and opportunities"),
-        ("application.html", "membership-application", "Join us", "Online membership application form"),
-        ("membership_flyer.html", "membership-flyer", "Invitation Letter", "Printable invitation letter for potential members"),
+        ("membership_value.html", "membership-value", "💡\u00a0Why join WAAS", "Membership value, benefits, and opportunities"),
+        ("application.html", "membership-application", "📝\u00a0Join us", "Online membership application form"),
+        ("membership_flyer.html", "membership-flyer", "📤\u00a0Invitation Letter", "Printable invitation letter for potential members"),
     ])
     + "</div></div>"
     + SPONSORSHIP_EN

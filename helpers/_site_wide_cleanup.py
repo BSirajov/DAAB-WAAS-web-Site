@@ -13,7 +13,7 @@ SCRIPT_VERSIONS = {
     "daab-lang-position.js": 7,
     "daab-design-tokens.js": 2,
     "daab-nav.js": 31,
-    "daab-primary-nav.js": 55,
+    "daab-primary-nav.js": 56,
     "daab-breadcrumbs.js": 34,
     "prominent-figures-catalog-data.js": 4,
     "prominent-figures-catalog-data-en.js": 4,

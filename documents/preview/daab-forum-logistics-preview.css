@@ -1,0 +1,226 @@
+/**
+ * Preview-only copy — production styles: css/daab-forum-logistics.css
+ * Edit production CSS after integration; keep this file for documents/preview/ only.
+ */
+
+.forum-logistics-preview-banner {
+  background: linear-gradient(90deg, var(--blue-900), var(--blue-700));
+  color: var(--white);
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.forum-logistics-preview-banner strong {
+  font-weight: 700;
+}
+
+.forum-logistics-preview-banner code {
+  font-size: 12px;
+  opacity: 0.95;
+}
+
+.forum-logistics-preview-page .logistics-card {
+  scroll-margin-top: calc(var(--daab-nav-height, 68px) + 28px);
+}
+
+.forum-logistics-preview-page .news-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(0, 105, 180, 0.18);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 26px;
+  overflow: hidden;
+}
+
+.forum-logistics-preview-page .news-card .card-header {
+  background: linear-gradient(145deg, #edf6fc, #dceef9);
+  border-bottom: 1px solid rgba(0, 105, 180, 0.12);
+  padding: 16px 20px;
+}
+
+.forum-logistics-preview-page .news-card .card-title {
+  color: var(--blue-900);
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.forum-logistics-preview-page .news-card .card-body {
+  padding: 18px 20px 20px;
+}
+
+.forum-logistics-preview-page .news-card .card-text {
+  margin: 0 0 12px;
+}
+
+.forum-logistics-preview-page .news-card .card-text:last-child {
+  margin-bottom: 0;
+}
+
+.forum-logistics-preview-page .logistics-callout {
+  background: linear-gradient(145deg, #edf6fc, #dceef9);
+  border: 1px solid rgba(0, 105, 180, 0.14);
+  border-radius: 14px;
+  margin: 0 0 18px;
+  padding: 14px 16px;
+}
+
+.forum-logistics-preview-page .logistics-callout p {
+  margin: 0;
+}
+
+.forum-logistics-preview-page .logistics-callout p + p {
+  margin-top: 10px;
+}
+
+.forum-logistics-preview-page .logistics-fact-title {
+  color: var(--blue-700);
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin: 16px 0 8px;
+}
+
+.forum-logistics-preview-page .logistics-fact-title:first-child {
+  margin-top: 0;
+}
+
+.forum-logistics-preview-page .logistics-transport-list {
+  counter-reset: logistics-transport;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.forum-logistics-preview-page .logistics-transport-list > li {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  counter-increment: logistics-transport;
+  margin: 0 0 12px;
+  padding: 14px 16px 14px 52px;
+  position: relative;
+}
+
+.forum-logistics-preview-page .logistics-transport-list > li::before {
+  align-items: center;
+  background: linear-gradient(145deg, var(--blue-700), var(--blue-900));
+  border-radius: 999px;
+  color: var(--white);
+  content: counter(logistics-transport);
+  display: flex;
+  font-size: 13px;
+  font-weight: 800;
+  height: 28px;
+  justify-content: center;
+  left: 14px;
+  position: absolute;
+  top: 14px;
+  width: 28px;
+}
+
+.forum-logistics-preview-page .logistics-transport-list > li strong {
+  color: var(--blue-900);
+  display: block;
+  font-size: 0.98rem;
+  margin-bottom: 6px;
+}
+
+.forum-logistics-preview-page .logistics-meal-table th:first-child,
+.forum-logistics-preview-page .logistics-meal-table td:first-child {
+  min-width: 118px;
+  white-space: nowrap;
+}
+
+.forum-logistics-preview-page .logistics-meal-table .meal-tag {
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  padding: 4px 10px;
+}
+
+.forum-logistics-preview-page .meal-tag--included {
+  background: rgba(34, 139, 34, 0.12);
+  color: #1f6b1f;
+}
+
+.forum-logistics-preview-page .meal-tag--self {
+  background: rgba(180, 83, 9, 0.12);
+  color: #9a3412;
+}
+
+.forum-logistics-preview-page .meal-tag--optional {
+  background: rgba(0, 105, 180, 0.1);
+  color: var(--blue-900);
+}
+
+.forum-logistics-preview-page .sidebar-widget .timeline-list li {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  line-height: 1.25;
+}
+
+.forum-logistics-preview-page .sidebar-widget .timeline-list a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 4px 6px;
+  line-height: 1.25;
+  min-height: 28px;
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .forum-logistics-preview-page .logistics-meal-table th:first-child,
+  .forum-logistics-preview-page .logistics-meal-table td:first-child {
+    white-space: normal;
+  }
+
+  .forum-logistics-preview-page .logistics-map iframe {
+    min-height: 240px;
+  }
+}
+
+.forum-logistics-preview-page .logistics-map {
+  margin: 14px 0 18px;
+  text-align: center;
+}
+
+.forum-logistics-preview-page .logistics-map iframe {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  display: block;
+  height: 360px;
+  margin-inline: auto;
+  max-width: 100%;
+  width: min(100%, 720px);
+}
+
+.forum-logistics-preview-page .logistics-map figcaption {
+  color: var(--muted);
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.forum-logistics-preview-page .logistics-map figcaption a {
+  color: var(--blue-700);
+  font-style: normal;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.forum-logistics-preview-page .logistics-map figcaption a:hover {
+  text-decoration: underline;
+}
