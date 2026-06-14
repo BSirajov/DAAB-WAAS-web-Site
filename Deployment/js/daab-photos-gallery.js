@@ -524,12 +524,36 @@
     return categories.length ? categories[0].id : null;
   }
 
+  function focusableInLightbox() {
+    if (!lightbox) return [];
+    var nodes = lightbox.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+    return Array.prototype.filter.call(nodes, function (el) {
+      return el.offsetParent !== null;
+    });
+  }
+
   function initLightbox() {
     if (!lightbox) return;
     lightbox.setAttribute("aria-hidden", "true");
     if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
     lightbox.addEventListener("click", function (e) {
       if (e.target === lightbox) closeLightbox();
+    });
+    lightbox.addEventListener("keydown", function (e) {
+      if (e.key !== "Tab" || !lightbox.classList.contains("open")) return;
+      var list = focusableInLightbox();
+      if (!list.length) return;
+      var first = list[0];
+      var last = list[list.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && lightbox.classList.contains("open")) {

@@ -1,0 +1,470 @@
+{
+  "strategi-planlasdirma": {
+    "title": "STRATEJİ PLANLAŞDIRMA İSTİQAMƏTLƏRİ",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Dünyanın müxtəlif ölkələrində yaşayan Azərbaycanlı ziyalılar olaraq, forumun təşkili və keçirilməsində məqsədimiz elm və texnologiya, beynəlxalq hüquq və münasibətlər, enerji, təhsil, səhiyyə, sosial elmlər və mədəniyyət sahələrində qısa, orta və uzun vədəli strateji planların hazırlanması və icrası vasitəsilə Azərbaycana töhfə verməkdir."
+      },
+      {
+        "type": "paragraph",
+        "text": "Strateji planların yaradlıması üçün aşağıdakı istiqamətlər nəzərdən keçirilə bilər:"
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "text": "Qısa vədəli strategiyalar (1-2 il):"
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Müvafiq Sahələlər üzrə Məlumat Toplanması və Təhlil Edilməsi",
+            "children": []
+          },
+          {
+            "text": "Hazırki vəziyyətin təhlili və əsas problemlərin müəyyənləşdirilməsi",
+            "children": []
+          },
+          {
+            "text": "Əsas maraqlı tərəflərlə (hökumət, universitetlər, qeyri-hökumət təşkilatları və s.) əməkdaşlıq qurulması",
+            "children": []
+          },
+          {
+            "text": "Şəbəkələşmə və Kommunikasiya",
+            "children": []
+          },
+          {
+            "text": "Ümumi maraqları olan ziyalılar və təşkilatlar ilə əlaqələrin qurulması",
+            "children": []
+          },
+          {
+            "text": "Onlayn platformalar və sosial media vasitəsilə məlumat mübadiləsinin təşkili",
+            "children": []
+          },
+          {
+            "text": "Pilot Layihələr",
+            "children": []
+          },
+          {
+            "text": "Kiçik ölçülü pilot layihələr hazırlanması və icra edilməsi",
+            "children": []
+          },
+          {
+            "text": "Nəticələri qiymətləndirərək geniş miqyaslı layihələr üçün təcrübə əldə edilməsi",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "text": "Orta vədəli strategiyalar (3-5 il)"
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "İnkişaf Proqramları",
+            "children": []
+          },
+          {
+            "text": "Təlim proqramları və seminarların təşkili",
+            "children": []
+          },
+          {
+            "text": "Yerli mütəxəssislər ilə beynəlxalq mütəxəssislər arasında təcrübə mübadiləsinin təşkili",
+            "children": []
+          },
+          {
+            "text": "Tədqiqat və İnnovasiya",
+            "children": []
+          },
+          {
+            "text": "Elmi tədqiqatlar üçün fondlar yaradılması və ya mövcud fondlarla əməkdaşlıq qurulması",
+            "children": []
+          },
+          {
+            "text": "İnnovativ texnologiyaların tətbiqi üçün platformalar yaradılması",
+            "children": []
+          },
+          {
+            "text": "İctimai Tədris və Maarifləndirmə",
+            "children": []
+          },
+          {
+            "text": "Təhsil və səhiyyə sahələrində maarifləndirmə kampaniyalarının təşkili",
+            "children": []
+          },
+          {
+            "text": "Sosial elmlər və mədəniyyət sahəsində yerli əhali ilə əməkdaşlıq quraraq layihələr həyata keçirilməsi",
+            "children": []
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "text": "Uzun vədəli strategiyalar (5 + il)"
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Davamlı İnkişaf",
+            "children": []
+          },
+          {
+            "text": "Davamlı və uzun vədəli layihələrin həyata keçirilməsi",
+            "children": []
+          },
+          {
+            "text": "Regional və qlobal səviyyədə əməkdaşlıqların genişləndirilməsi",
+            "children": []
+          },
+          {
+            "text": "Milli Strategiya və İnstitusional İnkişaf",
+            "children": []
+          },
+          {
+            "text": "Ölkə üzrə strateji inkişaf planlarının hazırlanmasında və icrasında iştirak edilməsi",
+            "children": []
+          },
+          {
+            "text": "Yeni tədqiqat mərkəzləri və institutların yaradılması",
+            "children": []
+          },
+          {
+            "text": "Resursların Cəlb Edilməsi və İdarə Olunması",
+            "children": []
+          },
+          {
+            "text": "Resursların davamlı olaraq cəlb edilməsi və idarə olunması üçün mexanizmlər yaradılması",
+            "children": []
+          },
+          {
+            "text": "Xüsusən enerji və təhsil sahələrində uzun vədəli investisiya proqramlarının hazırlanması",
+            "children": []
+          },
+          {
+            "text": "Nəticələrin Qiymətləndirilməsi",
+            "children": []
+          },
+          {
+            "text": "Görülən işlərin nəticələrinin müntəzəm olaraq qiymətləndirilməsi və hesabatların hazırlanması",
+            "children": []
+          },
+          {
+            "text": "Əldə olunan nəticələr əsasında strategiyaların yenidən nəzərdən keçirilməsi və təkmilləşdirilməsi",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "elm-saheleri-tovsiyeler": {
+    "title": "ELM SAHƏLƏRİ ÜZRƏ TÖVSİYƏ OLUNAN MÜZAKİRƏ MÖVZULARI",
+    "blocks": [
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Ədəbiyyat, Sosial Elmlər, İlahiyyat"
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Rəqəmsal nəşriyyat və ədəbi platformalar",
+            "children": [
+              "Elektron kitabların, dərsliklərin və rəqəmsal nəşriyyat platformalarının inkişafı",
+              "Rəqəmsal müzakirə forumları və ədəbi platformaların yaradılması"
+            ]
+          },
+          {
+            "text": "İnnovasiya platformaları",
+            "children": [
+              "Sosial elmlər üzrə qlobal tədqiqat şəbəkələri ilə əməkdaşlığın təşkil edilməsi",
+              "Sosial sahələrdə innovativ texnologiyaların tətbiqi üçün platformaların yaradılması"
+            ]
+          },
+          {
+            "text": "Sosial İnfrastrukturun gücləndirilməsi",
+            "children": [
+              "Sosial xidmətlərin təkmilləşdirilməsi və onların əhali üçün əlçatma səviyyəsinin genişləndirilməsi",
+              "Vətəndaşların sosial proseslərdə aktiv iştirakının təmin edilməsi üçün rəqəmsal texnologiyaların tətbiqi"
+            ]
+          },
+          {
+            "text": "Koqnitiv Araşdırmalar və Data Elmi",
+            "children": [
+              "İnsan davranışının, qərar qəbuletməsinin və onlarin bir dirindən aslılığının araşdırılması",
+              "Sosial elmlərdə Big  (Huge) Dataların və analitik metodların istifadəsi"
+            ]
+          },
+          {
+            "text": "Rəqəmsal İlahiyyat və Din Araşdırmaları",
+            "children": [
+              "Dini məlumatların rəqəmsallaşdırılması və onlayn müzakirə platformalarının yaradılması",
+              "Müasir dövrdə dinin cəmiyyətdə rolu və təsiri haqqında tədqiqatların genişləndirilməsi"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "İqtisadiyyat və İdarəcilik"
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Data Analitikası və Rəqəmsal İdarəetmə:",
+            "children": [
+              "Big (Huge) Dataların iqtisadi proqnozlar və bazar iqtisadiyyatı təhlilləri üçün istifadəsi",
+              "Dövlət quruculuğu və idarəetməsində rəqəmsal texnologiyaların istifadəsinin təmin edilməsi"
+            ]
+          },
+          {
+            "text": "Rəqəmsal iqtisadiyyat",
+            "children": [
+              "Rəqəmsal ödəniş sistemləri, blockchain texnologiyaları və fintech həllərinin inkişaf etdirilməsi və tətbiqi",
+              "Maliyyə və idarəetmə sahələrində kibertəhlükəsizliyin təmin edilməsi"
+            ]
+          },
+          {
+            "text": "İnnovasiya və Texnologiya",
+            "children": [
+              "Süni intellekt, Big (Huge) Data və kvant hesablamaları kimi texnologiyaların iqtisadiyyat və idarəçilik sahələrində istifadəsinin təmin edilməsi",
+              "Regionların, şəhərlərin idarə edilməsində rəqəmsal və ağıllı texnologiyaların tətbiqi"
+            ]
+          },
+          {
+            "text": "Resursların İdarə Olunması",
+            "children": [
+              "Su və digər məhdud resursların səmərəli idarə olunması və mühafizəsi üçün strategiyaların inkişaf etdirilməsi",
+              "Enerji sektorunda uzunmüddətli yaşıl sənaye investisiya proqramlarının hazırlanması və tətbiq edilməsi"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Humanitar Elmlər, Təhsil, İncəsənət, Tarix"
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Mədəni İrsin Rəqəmsallaşdırılması",
+            "children": [
+              "Mədəni irsin qorunması, tanıdılması və təbliği üçün rəqəmsal layihələrin həyata keçirilməsi",
+              "Sosial tədqiqatlar və sorğular üçün Big (Huge) Data təhlilinin tətbiq edilməsi"
+            ]
+          },
+          {
+            "text": "Rəqəmsal Mədəniyyət Mərkəzləri",
+            "children": [
+              "Rəqəmsal mədəniyyət mərkəzləri yaradaraq yerli və qlobal səviyyədə milli mədəniyyətimizn tanıdılması,  milli-mənəvi dəyərlərimizn aşılanması",
+              "Humanitar elmlər sahəsində rəqəmsal tədqiqat metodlarının inkişaf etdirilməsi"
+            ]
+          },
+          {
+            "text": "Qlobal Mədəni Əlaqələr, Rəqəmsal Tədris Resursları",
+            "children": [
+              "Azərbaycan mədəniyyətinin və tarixinin dünya miqyasında tanıdılması üçün rəqəmsal platformaların yaradılması",
+              "Onlayn təhsil platformalarının yaradılması.",
+              "STEM (Science, Technology, Engineering and Matematics) fənlərinin tədrisinin qabaqcıl beynəlxalq səviyyəyə çatdırılması"
+            ]
+          },
+          {
+            "text": "Rəqəmsal Tədris Proqramları",
+            "children": [
+              "Rəqəmsal texnologiyalar üzrə dərsliklər və tədris materiallarının hazırlanması",
+              "Tədris proqramlarının müasir texnologiyalarla zənginləşdirilməsi",
+              "Müəllimlər üçün rəqəmsal tədris texnologiyaları üzrə təlimlərin təşkili"
+            ]
+          },
+          {
+            "text": "Qlobal Təhsil Əlaqələri",
+            "children": [
+              "Qabaqcıl beynəlxalq universitetlər və tədqiqat mərkəzləri ilə əməkdaşlıq qurulması",
+              "Azərbaycan universitetlərinin dünya reytinq sistemlərində yüksəlməsinin təmin edilməsi",
+              "Xarici universitetlər və tədqiqat mərkəzləri ilə əməkdaşlıq əlaqələrinin qurulması. Orada təhsil alan və tədqiqat aparan azərbaycanlı tələbələrin sayının artırılması və onların Azərbaycanda perspektivlərinin təmin edilməsi"
+            ]
+          },
+          {
+            "text": "Davamlı Tədris İnfrastrukturu",
+            "children": [
+              "Rəqəmsal və fiziki tədris infrastrukturlarının inkişaf etdirilməsi",
+              "Təhsil sahəsində davamlı innovasiya proqramlarının yaradılması"
+            ]
+          },
+          {
+            "text": "Arxeoloji Tədqiqatlar və Rəqəmsal Tarix",
+            "children": [
+              "Yeni arxeoloji tədqiqatların və qazıntıların dəstəklənməsi",
+              "Tarixi məlumatların rəqəmsallaşdırılması və arxivləşdirilməsi"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Hüquqşünaslıq"
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Akademik Əlaqələr:",
+            "children": [
+              "İxtisaslaşmış təhsil proqramlarının qabaqcıl dünya səviyyəsinə gətirilməsi üçün təqaüd proqramlarının təsis edilməsi",
+              "Əhəmiyyətli mövzular üzrə yerli və xarici ekspertləri dəvət edərək seminarlar və konfransların təşkili"
+            ]
+          },
+          {
+            "text": "Tədqiqat Mərkəzləri və İnstitutlar",
+            "children": [
+              "İxtisaslaşmış tədqiqat mərkəzləri və institutların yaradılması və bu mərkəzlərdə Azərbaycanın maraqlarına uyğun tədqiqatların aparılması",
+              "Qlobal problemlərə aid müştərək tədqiqat layihələrində iştirak edilməsi və bu sahədə dərc olunan elmi məqalələrin sayını artırılmasının təmin edilməsi"
+            ]
+          },
+          {
+            "text": "Qanunvericilik və Siyasət Tövsiyələri",
+            "children": [
+              "Ölkənin Hüquqşünaslıq sahəsindəki qanunvericilik bazasının gücləndirilməsi üçün tövsiyələrın hazırlanması və dövlət orqanlarına təqdim edilməsi",
+              "Hüquqşünaslıq sahəsində qanunvericilik aktlarının hazırlanmasına töhfə verilməsi"
+            ]
+          },
+          {
+            "text": "Davamlı İnkişaf və Adaptasiya",
+            "children": [
+              "Hüquqşünaslıq sahəsində dəyişən qlobal şəraitə uyğun olaraq strateji planların daima yeniləməsi və inkişaf etdirilməsi",
+              "Davamlı inkişaf prinsiplərinə uyğun olaraq, uzunmüddətli strategiyaların tətbiqinin təmin edilməsi və bu sahədə yeni innovativ yanaşmaların tətbiqinə dəstək verilməsi"
+            ]
+          },
+          {
+            "text": "Kibertəhlükəsizlik və Rəqəmsal Hüquq",
+            "children": [
+              "Milli təhlükəsizliyin təmin olunması üçün güclü kibertəhlükəsizlik qanunlarının hazırlanması",
+              "Rəqəmsal mülkiyyət və informasiya təhlükəsizliyi ilə bağlı hüquqi bazanın təkmilləşdirilməsi"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Təbabət və əlaqəli sahələr"
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Teletəbabət Xidmətləri",
+            "children": [
+              "Rəqəmsal platformaları vasitəsilə teletəbabət xidmətlərinin təşkil edilməsi",
+              "Elektron tibbi məlumat bazalarının yaradılması"
+            ]
+          },
+          {
+            "text": "Təbabət İnformasiya Sistemləri",
+            "children": [
+              "Elektron sağlamlıq qeydləri və məlumat mübadiləsi sistemlərinin genişləndirilməsi",
+              "Süni intellekt texnologiyalarının diaqnostika və müalicə proseslərində tətbiq edilməsi"
+            ]
+          },
+          {
+            "text": "Davamlı Tibbi İnfrastruktur",
+            "children": [
+              "Rəqəmsal səhiyyə infrastrukturlarının davamlı olaraq təkmilləşdirilməsi",
+              "Alimlərimizin beynəlxalq səhiyyə tədqiqatlarında iştirakının təmin edilməsi"
+            ]
+          },
+          {
+            "text": "Tibbbi tədqiqatlar və texnologiyalar",
+            "children": [
+              "Bioinformatika və Genetik tədqiqatların dəstəklənməsi",
+              "Genetik Analizlər: Genom tədqiqatları və fərdi müalicə proqramlarının inkişafı",
+              "Regenerativ Təbabət: Hüceyrə və toxuma mühəndisliyi sahəsində layihələrin dəstəklənməsi",
+              "Biotəbabət Mühəndisliyi: Sağlamlıq texnologiyalarının inkişafı və tətbiqi"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Təbiət Elmləri, Mühəndislik və əlaqəli sahələr"
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Texnologiya Transferi",
+            "children": [
+              "Beynəlxalq təcrübələri öyrənərək texnologiyaların Azərbaycanda tətbiq edilməsi",
+              "Startaplara dəstək proqramlarının yaradılması"
+            ]
+          },
+          {
+            "text": "İnnovasiya Mərkəzləri",
+            "children": [
+              "Tədqiqat və innovasiya mərkəzlərinin yaradılması (R&D yönümlü)",
+              "İnnovativ layihələrin inkişafı üçün fondlar və qrant proqramlarının hazırlanması"
+            ]
+          },
+          {
+            "text": "Tədqiqat İnfrastrukturunun Yaradılması",
+            "children": [
+              "Süni intellekt, maşın öyrənməsi, dərin öyrənmə və digər qabaqcıl texnologiyalar üzrə tədqiqat laboratoriyalarının yaradılması",
+              "Davamlı tədqiqat, yaşıl sənaye və innovasiya üçün milli strategiya hazırlanması",
+              "Beynəlxalq tədqiqat proqramlarında iştirak və əməkdaşlıqların gücləndirilməsi"
+            ]
+          },
+          {
+            "text": "Rəqəmsal Transformasiya, Monitorinq və İdarəetmə",
+            "children": [
+              "Rəqəmsal transformasiya strategiyalarının icra edilməsi",
+              "Rəqəmsal iqtisadiyyatın inkişafı üçün ekosistem (rəqəmsal texnologiyaların və innovasiyaların geniş yayılmasını və istifadəsini dəstəkləyən bir mühitin) yaradılması",
+              "Əşyaların İnterneti (İoT) və Big (Huge) Data texnologiyaları vasitəsilə enerji istehsalı və istehlakının monitorinqi və idarə edilməsi sistemlərinin qurulması",
+              "Bərpa olunan enerji mənbələri üzrə kiçik pilot layihələrin icra edilməsi"
+            ]
+          },
+          {
+            "text": "Ağıllı Şəbəkələr",
+            "children": [
+              "Enerji paylama sistemlərində ağıllı şəbəkə texnologiyalarının tətbiq edilməsi",
+              "Enerji səmərəliliyini artırmaq məqsədilə rəqəmsal idarəetmə sistemlərinin yaradılması"
+            ]
+          },
+          {
+            "text": "Yaşıl Enerji",
+            "children": [
+              "Bərpa olunan enerji mənbələrindən istifadənin genişləndirilməsi məqsədilə təşviq və təbliğ fəaliyyətinin təşkil edilməsi",
+              "Ağıllı şəhər layihələri çərçivəsində enerjidən səmərəli istifadə sistemlərinin yaradılması"
+            ]
+          },
+          {
+            "text": "İqlim Araşdırmaları və Astrobiologiyanın inkişaf etdirilməsi",
+            "children": [
+              "İqlim dəyişikliyi və dayanıqlı inkişaf üzrə araşdırmaların genişləndirilməsi",
+              "Kosmik tədqiqatlarda iştirak və beynəlxalq əməkdaşlıq"
+            ]
+          },
+          {
+            "text": "Robototexnika və Süni İntellekt",
+            "children": [
+              "İstehsal proseslərində robotların və süni intellektin istifadəsi",
+              "Su, hava və qida məhsullarının keyfiyyətinin nəzarətdə saxlanılamsı üçün rəqəmsal texnologiyaların tətbiqi",
+              "Sağlamlıq texnologiyalarının inkişafı və tətbiqi"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

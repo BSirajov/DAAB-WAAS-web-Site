@@ -1,11 +1,20 @@
 #!/usr/bin/env python3
-"""Embed static fallback nav inside #primaryNavMenu so menu is visible before JS runs."""
+"""Nav HTML helpers for page builders + slim placeholder sync.
+
+Static NAV_AZ / NAV_EN strings remain for reference and legacy tooling only.
+Live pages use a minimal #primaryNavMenu placeholder; daab-primary-nav.js builds
+the menu from i18n/nav.json at runtime.
+
+To slim placeholders across az/en HTML:
+    python helpers/_sync_primary_nav.py
+"""
 from __future__ import annotations
 
 import re
 from pathlib import Path
 
 from _paths import ROOT
+from _sync_primary_nav import MINIMAL_NAV_INNER, needs_slim_nav, patch_file, slim_nav_menu
 
 def _top_link(href: str, nav_id: str, title: str) -> str:
     return f'<a class="nav-link" href="{href}" data-nav-id="{nav_id}">{title}</a>'
@@ -41,7 +50,9 @@ def _forum_mega_drop(lang: str) -> str:
         sections = [
             ("Overview", False, [
                 ("forum/2024/index.html", "forum-2024", "🎤 Highlights", "First Forum of Azerbaijani Scientists Living Abroad — September 2024"),
+                ("forum/2024/logistics.html", "forum-logistics", "🧳 Logistics", "Transport, hotel accommodation, and catering for international participants"),
                 ("forum/2024/program.html", "forum-program", "📅 Programme", "Programme of the Baku–Khankendi–Shusha forum journey"),
+                ("forum/2024/sessions_organization.html", "forum-sessions-organization", "🪑 Sessions", "10 September strategic sessions — mixed and discipline-specific groups"),
             ]),
             ("Participants", True, [
                 ("scientists/list.html", "scientists-list", "📋 Directory of Scientists", "Directory of all scientists"),
@@ -72,10 +83,12 @@ def _forum_mega_drop(lang: str) -> str:
         sections = [
             ("Ümumi baxış", False, [
                 ("forum/2024/index.html", "forum-2024", "🎤 Forumun mənzərəsi", "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024"),
+                ("forum/2024/logistics.html", "forum-logistics", "🧳 Logistika", "Xarici iştirakçılar üçün nəqliyyat, hotel və qidalanma"),
                 ("forum/2024/program.html", "forum-program", "📅 Proqram", "Bakı–Xankəndi–Şuşa forum proqramı"),
+                ("forum/2024/sessions_organization.html", "forum-sessions-organization", "🪑 Sessiyalar", "10 sentyabr strateji sessiyalar — QARIŞIQ və İXTİSAS qrupları"),
             ]),
             ("İştirakçılar", True, [
-                ("scientists/list.html", "scientists-list", "📋 Alimlərin siyahısı", "Bütün alimlərin siyahısı"),
+                ("scientists/list.html", "scientists-list", "📋 Alimlərin siyahısı", "Forumda iştirak edən bütün alimlərin siyahısı"),
                 ("scientists/profiles.html", "scientists-profiles", "👤 Alimlərin profilləri", "Alimlərin akademik profilləri"),
             ]),
             ("Rəsmi sənədlər", False, [
@@ -192,10 +205,36 @@ SPONSORSHIP_EN = (
 )
 
 
+def _activities_drop(lang: str) -> str:
+    if lang == "en":
+        label = "Activities"
+        items = [
+            ("activities.html", "activities-news", "📰 News", "News and updates"),
+            (
+                "work_done_2024_2026.html",
+                "work-done-2024-2026",
+                "📋 Work Done 2024-2026",
+                "Association work and outcomes, 2024–2026",
+            ),
+        ]
+    else:
+        label = "Fəaliyyətimiz"
+        items = [
+            ("activities.html", "activities-news", "📰 Yeniliklər", "Əsas fəaliyyət və yeniliklər"),
+            (
+                "work_done_2024_2026.html",
+                "work-done-2024-2026",
+                "📋 Görülən işlər, 2024-2026",
+                "2024-2026-cu illərdə Birliyin fəaliyyəti və nəticələri",
+            ),
+        ]
+    return _treasury_drop(label, items)
+
+
 NAV_AZ = (
     '<div class="nav-divider"></div>'
     '<a class="nav-link" href="index.html" data-nav-id="home">Ana səhifə</a>'
-    + _top_link("activities.html", "activities", "Fəaliyyətimiz")
+    + _activities_drop("az")
     + _forums_drop("az")
     + '<div class="nav-dropdown" data-nav-dropdown>'
     + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
@@ -225,7 +264,7 @@ NAV_AZ = (
 NAV_EN = (
     '<div class="nav-divider"></div>'
     '<a class="nav-link" href="index.html" data-nav-id="home">Home</a>'
-    + _top_link("activities.html", "activities", "Activities")
+    + _activities_drop("en")
     + _forums_drop("en")
     + '<div class="nav-dropdown" data-nav-dropdown>'
     + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
@@ -260,6 +299,7 @@ NAV_SCI_AZ = NAV_AZ.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="executive-board.html"', 'href="../executive-board.html"'
 ).replace('href="charter.html"', 'href="../charter.html"').replace(
     'href="activities.html"', 'href="../activities.html"'
+).replace('href="work_done_2024_2026.html"', 'href="../work_done_2024_2026.html"'
 ).replace('href="forum/2024/', 'href="../forum/2024/').replace('href="forum/2026/', 'href="../forum/2026/').replace('href="encyclopedia.html"', 'href="../encyclopedia.html"').replace('href="industrial_revolutions.html"', 'href="../industrial_revolutions.html"').replace('href="major_scientific_inventions.html"', 'href="../major_scientific_inventions.html"').replace('href="membership.html"', 'href="../membership.html"').replace(
     'href="membership_value.html"', 'href="../membership_value.html"'
 ).replace('href="application.html"', 'href="../application.html"').replace(
@@ -273,6 +313,7 @@ NAV_SCI_AZ = NAV_AZ.replace('href="scientists/list.html"', 'href="list.html"').r
 PROMINENT_PREFIX_REPLACES = [
     ('href="index.html"', 'href="../../index.html"'),
     ('href="activities.html"', 'href="../../activities.html"'),
+    ('href="work_done_2024_2026.html"', 'href="../../work_done_2024_2026.html"'),
     ('href="scientists/list.html"', 'href="../../scientists/list.html"'),
     ('href="scientists/profiles.html"', 'href="../../scientists/profiles.html"'),
     ('href="forum/2024/', 'href="../../forum/2024/'),
@@ -299,8 +340,9 @@ def prominent_nav(nav: str) -> str:
     return nav
 
 
-def prominent_nav_strip_en(menu_html: str) -> str:
+def prominent_nav_strip_en(menu_html: str = "") -> str:
     """Full nav-strip for pages under en/prominent_figures/{group}/."""
+    inner = MINIMAL_NAV_INNER
     return (
         '<nav aria-label="Main navigation" class="nav-strip"><div class="nav-inner">'
         '<button class="mobile-menu-toggle" type="button" aria-label="Open menu" '
@@ -311,14 +353,15 @@ def prominent_nav_strip_en(menu_html: str) -> str:
         '<a aria-label="WAAS home" class="nav-brand" href="../../index.html">'
         '<span class="nav-brand-text">World Association of<br class="mobile-hidden-break">'
         "Azerbaijani Scientists</span></a>"
-        f'<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1">{menu_html}</div>'
+        f'<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1">{inner}</div>'
         '<div class="nav-actions" role="group"></div>'
         "</div></nav>"
     )
 
 
-def prominent_nav_strip(menu_html: str) -> str:
+def prominent_nav_strip(menu_html: str = "") -> str:
     """Full nav-strip for pages under az/prominent_figures/{group}/."""
+    inner = MINIMAL_NAV_INNER
     return (
         '<nav aria-label="Əsas naviqasiya" class="nav-strip"><div class="nav-inner">'
         '<button class="mobile-menu-toggle" type="button" aria-label="Menyunu aç" '
@@ -329,7 +372,7 @@ def prominent_nav_strip(menu_html: str) -> str:
         '<a aria-label="DAAB ana səhifə" class="nav-brand" href="../../index.html">'
         '<span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">'
         "Alimlər Birliyi</span></a>"
-        f'<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1">{menu_html}</div>'
+        f'<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1">{inner}</div>'
         '<div class="nav-actions" role="group"></div>'
         "</div></nav>"
     )
@@ -338,6 +381,7 @@ def prominent_nav_strip(menu_html: str) -> str:
 FORUM_PREFIX_REPLACES = [
     ('href="index.html"', 'href="../../index.html"'),
     ('href="activities.html"', 'href="../../activities.html"'),
+    ('href="work_done_2024_2026.html"', 'href="../../work_done_2024_2026.html"'),
     ('href="forum/2024/', 'href="'),
     ('href="forum/2026/', 'href="../2026/'),
     ('href="encyclopedia.html"', 'href="../../encyclopedia.html"'),
@@ -361,6 +405,7 @@ FORUM_PREFIX_REPLACES = [
 FORUM_2026_PREFIX_REPLACES = [
     ('href="index.html"', 'href="../../index.html"'),
     ('href="activities.html"', 'href="../../activities.html"'),
+    ('href="work_done_2024_2026.html"', 'href="../../work_done_2024_2026.html"'),
     ('href="forum/2024/', 'href="../2024/'),
     ('href="forum/2026/', 'href="'),
     ('href="encyclopedia.html"', 'href="../../encyclopedia.html"'),
@@ -393,16 +438,39 @@ def forum_nav(nav: str) -> str:
     return nav
 
 
+def mark_active_nav(menu: str, active_nav_id: str) -> str:
+    """Add active class and aria-current to the nav link for active_nav_id."""
+    pattern = re.compile(
+        rf'(<a\b[^>]*\bdata-nav-id="{re.escape(active_nav_id)}"[^>]*>)',
+        re.I,
+    )
+
+    def merge_active(match: re.Match[str]) -> str:
+        tag = match.group(1)
+        if re.search(r'\bclass="', tag, re.I):
+
+            def add_active(m: re.Match[str]) -> str:
+                classes = m.group(1).split()
+                if "active" not in classes:
+                    classes.append("active")
+                return f'class="{" ".join(classes)}"'
+
+            tag = re.sub(r'\bclass="([^"]*)"', add_active, tag, count=1, flags=re.I)
+        else:
+            tag = tag[:-1] + ' class="active"'
+        if "aria-current=" not in tag:
+            tag = tag[:-1] + ' aria-current="page"'
+        return tag
+
+    new_menu, count = pattern.subn(merge_active, menu, count=1)
+    return new_menu if count else menu
+
+
 def forum_nav_strip(lang: str = "az", *, active_nav_id: str | None = None) -> str:
     """Full nav-strip HTML for pages under az|en/forum/2024/ (three levels below locale root)."""
     asset = "../../../"
-    menu = forum_nav(NAV_EN if lang == "en" else NAV_AZ)
-    if active_nav_id:
-        menu = menu.replace(
-            f'data-nav-id="{active_nav_id}"',
-            f'data-nav-id="{active_nav_id}" class="active" aria-current="page"',
-            1,
-        )
+    menu = MINIMAL_NAV_INNER
+    _ = active_nav_id  # active state is applied by daab-primary-nav.js from nav.json
     if lang == "en":
         return (
             f'<nav aria-label="Main navigation" class="nav-strip"><div class="nav-inner">'
@@ -442,6 +510,7 @@ NAV_SCI_EN = NAV_EN.replace('href="scientists/list.html"', 'href="list.html"').r
     'href="executive-board.html"', 'href="../executive-board.html"'
 ).replace('href="charter.html"', 'href="../charter.html"').replace(
     'href="activities.html"', 'href="../activities.html"'
+).replace('href="work_done_2024_2026.html"', 'href="../work_done_2024_2026.html"'
 ).replace('href="forum/2024/', 'href="../forum/2024/').replace('href="forum/2026/', 'href="../forum/2026/').replace('href="encyclopedia.html"', 'href="../encyclopedia.html"').replace('href="industrial_revolutions.html"', 'href="../industrial_revolutions.html"').replace('href="major_scientific_inventions.html"', 'href="../major_scientific_inventions.html"').replace('href="membership.html"', 'href="../membership.html"').replace(
     'href="membership_value.html"', 'href="../membership_value.html"'
 ).replace('href="application.html"', 'href="../application.html"').replace(
@@ -453,7 +522,7 @@ NAV_SCI_EN = NAV_EN.replace('href="scientists/list.html"', 'href="list.html"').r
 )
 
 PLACEHOLDER_RE = re.compile(
-    r'(<div[^>]*class="nav-menu"[^>]*id="primaryNavMenu"[^>]*>)(.*?)(</div>\s*</div>\s*</nav>)',
+    r'(<div[^>]*class="nav-menu"[^>]*id="primaryNavMenu"[^>]*>)(.*?)(</div>\s*(?:<div class="nav-actions"|</div>\s*</nav>))',
     re.DOTALL | re.IGNORECASE,
 )
 
@@ -488,28 +557,20 @@ def nav_html(path: Path) -> str:
 
 
 def patch(path: Path) -> bool:
+    if not is_live_page(path):
+        return False
     text = path.read_text(encoding="utf-8")
     if "primaryNavMenu" not in text:
         return False
-    if not is_live_page(path):
-        return False
-    html = nav_html(path)
-    new_text, _ = PLACEHOLDER_RE.subn(lambda m: m.group(1) + html + m.group(3), text, count=1)
-    if new_text != text:
-        path.write_text(new_text, encoding="utf-8", newline="\n")
-        return True
+    if needs_slim_nav(text):
+        return patch_file(path)
     return False
 
 
 def main() -> None:
-    n = 0
-    for path in sorted(ROOT.rglob("*.html")):
-        if "node_modules" in path.parts:
-            continue
-        if patch(path):
-            n += 1
-            print(path.relative_to(ROOT))
-    print(f"Updated {n} files")
+    from _sync_primary_nav import main as sync_main
+
+    raise SystemExit(sync_main())
 
 
 if __name__ == "__main__":

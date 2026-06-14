@@ -99,7 +99,7 @@ _add(
 )
 _add(
     'DAAB İdarə Heyətinin həmsədri Dr. Bəxtiyar Siracov Bakının 187 saylı ümumtəhsil məktəbinin müəllim və şagirdləri ilə onlayn görüş keçirmişdir. Görüş zamanı elmin önəmi, beynəlxalq elm arenasında azərbaycanlı alimlərin rolu və gənc nəslə tövsiyələr müzakirə olunmuşdur.',
-    'WAAS Board of Directors Co-Chair Dr. Bakhtiyar Sirajov held an online meeting with the teachers and pupils of Baku General Education School No. 187. The meeting discussed the importance of science, the role of Azerbaijani scholars on the international stage and advice for the younger generation.',
+    'WAAS Executive Board Co-Chair Dr. Bakhtiyar Sirajov held an online meeting with the teachers and pupils of Baku General Education School No. 187. The meeting discussed the importance of science, the role of Azerbaijani scholars on the international stage and advice for the younger generation.',
 )
 _add(
     'Milli Aviasiya Akademiyasında "Fevral məruzələri 2026: Aviakosmik məsələlərin həllində gənclərin yaradıcı potensialı" adlı XI beynəlxalq elmi-praktik gənclər konfransının açılışı olub. Plenar iclasda DAAB-ın sədri, professor Məsud Əfəndiyev xaricdə yaşayan azərbaycanlı alimlərin Azərbaycan elm və təhsilinə inteqrasiyasının əhəmiyyətindən danışıb. O, DAAB-ın əsas məqsədlərindən birinin dünya üzrə fəaliyyət göstərən azərbaycanlı alimlər arasında əməkdaşlığı gücləndirmək olduğunu vurğulayıb.',
@@ -111,7 +111,7 @@ _add(
 )
 _add(
     'Dekabrın 18-də Azərbaycan Memarlıq və İnşaat Universitetinin (AzMİU) yaradılmasının 50 illik yubileyi münasibətilə təntənəli yığıncaq keçirilib. Tədbirin iştirakçıları arasında olan dünya şöhrətli alim, DAAB İdarə Heyətinin sədri, AzMİU rektorunun müşaviri professor Məsud Əfəndiyev təəssüratlarını bölüşüb.',
-    'On 18 December, a ceremonial gathering was held to mark the 50th anniversary of the founding of Azerbaijan University of Architecture and Construction (AzMIU). World-renowned scholar, WAAS Board of Directors Chair and Adviser to the AzMIU Rector Professor Messoud Efendiyev shared his impressions as one of the participants.',
+    'On 18 December, a ceremonial gathering was held to mark the 50th anniversary of the founding of Azerbaijan University of Architecture and Construction (AzMIU). World-renowned scholar, WAAS Executive Board Chair and Adviser to the AzMIU Rector Professor Messoud Efendiyev shared his impressions as one of the participants.',
 )
 _add(
     '"Azərbaycan Memarlıq və İnşaat Universitetinin keçdiyi 50 illik yol tədbirdə gözümüzün qarşısında canlandı. AzMİU Azərbaycan üçün önəmli bir universitetdir. Memarlıq və inşaat bizim qalib xalqımıza yaraşan, Azərbaycan üçün vacib olan komponentlərdən biridir. Tədbirdə Memarlıq və İnşaat Universiteti barədə çox gözəl fikirlər səsləndi, onun müstəsna rol oynadığı vurğulandı."',
@@ -139,7 +139,7 @@ _add(
 )
 _add(
     'BDU-nun məzunu, Kanadanın York Universitetinin professoru, DAAB İdarə Heyətinin üzvü Yulduz Rəhimov ilə görüş keçirilib. Professor Yulduz Rəhimov fakültənin professor-müəllim heyəti, tələbə və doktorantları qarşısında "Ədədlər nəzəriyyəsi və kriptoqrafiya" mövzusunda ustad dərsi keçib.',
-    'A meeting was held with Yulduz Rahimov, a graduate of Baku State University (BDU), Professor at York University in Canada and WAAS Board of Directors member. Professor Yulduz Rahimov delivered a master class on "Number Theory and Cryptography" for the faculty\'s academic staff, students and doctoral candidates.',
+    'A meeting was held with Yulduz Rahimov, a graduate of Baku State University (BDU), Professor at York University in Canada and WAAS Executive Board member. Professor Yulduz Rahimov delivered a master class on "Number Theory and Cryptography" for the faculty\'s academic staff, students and doctoral candidates.',
 )
 _add(
     'Tədqiqatçı-alim Seymur Nəsirov Misir Ərəb Respublikası ilə Azərbaycan Respublikası arasında elmi-mədəni əlaqələrin inkişafındakı xidmətlərinə görə Misir Təhsil Nazirliyinin medalı ilə təltif olunub. Mükafatı ona Bakıda Misir Mədəniyyət Mərkəzinin direktoru professor Tariq Əbu Futuh təqdim edib.',
@@ -151,7 +151,7 @@ _add(
 )
 _add(
     '2025-ci ilin May ayından başlayaraq DAAB-ın İdarə Heyətinin üzvü və mətbuat katibi, İsveçin Gothenburg Universitetinin dosenti, elmlər doktoru Səadət Kərimi Qarabağ Universitetinin bir qrupp müəllimlərinə "ALİ MƏKTƏB PEDAQOQİKASI" (TEACHING AND LEARNING IN HIGHER EDUCATION) fənni üzrə əhatəli kursun tədrisinə başlamışdır. Tədris əsasən İngilis dilində və Avropa İttifaqı qaydalarına uyğun olaraq distant formatda həyata keçirilmişdir. İştirak edən müəllimlərin əksəriyyəti xaricdə magister, doktorantura təhsili almış olmasına baxmayaraq, bu kursun əhəmiyyətini dərk etdiklərini və yaranan imkana görə minnətdarlıqlarını bildirirlər.',
-    'Since May 2025, WAAS Board of Directors member and press secretary Dr. Saadat Karimi, Associate Professor at the University of Gothenburg in Sweden, has been teaching a comprehensive course on "HIGHER EDUCATION PEDAGOGY" (TEACHING AND LEARNING IN HIGHER EDUCATION) to a group of teachers at Karabakh University. Instruction has been delivered mainly in English, remotely and in accordance with European Union standards. Although most participating teachers have completed master\'s or doctoral studies abroad, they have expressed appreciation for the opportunity and recognised the importance of the course.',
+    'Since May 2025, WAAS Executive Board member and press secretary Dr. Saadat Karimi, Associate Professor at the University of Gothenburg in Sweden, has been teaching a comprehensive course on "HIGHER EDUCATION PEDAGOGY" (TEACHING AND LEARNING IN HIGHER EDUCATION) to a group of teachers at Karabakh University. Instruction has been delivered mainly in English, remotely and in accordance with European Union standards. Although most participating teachers have completed master\'s or doctoral studies abroad, they have expressed appreciation for the opportunity and recognised the importance of the course.',
 )
 _add(
     'Kursun məqsədi bakalavriat və magistratura pillələrində təhsilin keyfiyyətini gücləndirmək, tələbələrin öyrənilməsi və biliklərinin inkişafı üçün yaxşı şərait yaratmaq üçün ali məktəb müəllimlərini müəllim hazırlığı ilə təmin etməkdir. Kurs həmçinin elmi rəhbərlik (supervisor) işinin keyfiyyətini gücləndirməyi əhatə edir.',
@@ -175,7 +175,7 @@ _add(
 )
 _add(
     'UNEC-in rektoru Prof. Ədalət Muradov:\n\nDünya Azərbaycanlı Alimlər Birliyinin (DAAB) bütün qitələrdən olan üzvləri ilə UNEC-in əməkdaşlıq imkanlarını müzakirə etdik. Ortaq elmi tədqiqatlar və onların nəticələrinin yayılması, gənc alimlərə dəstək, birgə jurnallar, elmi fəaliyyət sahəsində məlumat mübadilə mexanizminin yaradılması və digər məsələləri müzakirə etdik. UNEC-ə ayırdıqları vaxta və göstərdikləri dəstəyə görə DAAB-ın İdarə Heyətinin Sədri professor Məsud müəllim Əfəndiyev başda olmaqla müzakirədə iştirak edən hər bir DAAB üzvünə təşəkkür edirəm.',
-    'UNEC Rector Prof. Adalet Muradov:\n\nWe discussed UNEC\'s cooperation opportunities with WAAS members from all continents. We discussed joint scientific research and dissemination of results, support for young scholars, joint journals, creating a mechanism for exchanging information in scientific activity and other matters. I thank every WAAS member who took part in the discussion, led by WAAS Board of Directors Chair Professor Messoud Efendiyev, for the time and support they devoted to UNEC.',
+    'UNEC Rector Prof. Adalet Muradov:\n\nWe discussed UNEC\'s cooperation opportunities with WAAS members from all continents. We discussed joint scientific research and dissemination of results, support for young scholars, joint journals, creating a mechanism for exchanging information in scientific activity and other matters. I thank every WAAS member who took part in the discussion, led by WAAS Executive Board Chair Professor Messoud Efendiyev, for the time and support they devoted to UNEC.',
 )
 _add("525-ci Qəzet", "525 Newspaper")
 _add("525-ci Qəzet", "525 Newspaper")
@@ -186,7 +186,7 @@ _add(
 )
 _add(
     '15 oktyabr 2024-cü il tarixində Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) İdarə Heyətinin üzvləri və Qarabağ Universitetinin rəhbər heyəti arasında görüş keçirilib. DAAB-ın təşəbbüsü ilə onlayn formatda keçirilən görüş tədris, elmi-tədqiqat, eləcə də Qarabağ Universitetinin beynəlxalq səviyyədə tanınması və nüfuzunun gücləndirilməsi istiqamətlərində əməkdaşlıq imkanlarının müzakirəsi məqsədi daşıyıb.',
-    'On 15 October 2024, a meeting was held between members of the WAAS Board of Directors and the leadership of Karabakh University. Initiated by WAAS and held online, the meeting aimed to discuss cooperation opportunities in teaching, research and strengthening the international recognition and standing of Karabakh University.',
+    'On 15 October 2024, a meeting was held between members of the WAAS Executive Board and the leadership of Karabakh University. Initiated by WAAS and held online, the meeting aimed to discuss cooperation opportunities in teaching, research and strengthening the international recognition and standing of Karabakh University.',
 )
 
 # Yulduz ADA — six paragraphs
@@ -214,7 +214,7 @@ _add(
 # Bakhtiyar BDU — paragraphs
 _add(
     'Bakı Dövlət Universitetinin (BDU) Tətbiqi riyaziyyat və kibernetika fakültəsinin məzunu, DAAB İdarə Heyətinin həmsədri Dr. Bəxtiyar Siracovla görüş keçirilib.',
-    'A meeting was held with Dr. Bakhtiyar Sirajov, a graduate of the Faculty of Applied Mathematics and Cybernetics at Baku State University (BDU) and WAAS Board of Directors Co-Chair.',
+    'A meeting was held with Dr. Bakhtiyar Sirajov, a graduate of the Faculty of Applied Mathematics and Cybernetics at Baku State University (BDU) and WAAS Executive Board Co-Chair.',
 )
 _add(
     'Tədbirdə BDU-nun elm və innovasiyalar üzrə prorektoru Hüseyn Məmmədov, Tətbiqi riyaziyyat və kibernetika fakültəsinin dekanı Ələkbər Əliyev, fakültənin müəllim və tələbələri iştirak ediblər.',
@@ -248,7 +248,7 @@ _add(
 )
 _add(
     'Konfransda DAAB İdarə Heyətinin sədri Professor Məsud Əfəndiyev DAAB-ın fəaliyyətii barədə məruzə ilə çıxış etmişdir.',
-    'At the conference, WAAS Board of Directors Chair Professor Messoud Efendiyev presented on the activities of WAAS.',
+    'At the conference, WAAS Executive Board Chair Professor Messoud Efendiyev presented on the activities of WAAS.',
 )
 
 # Cairo book fair

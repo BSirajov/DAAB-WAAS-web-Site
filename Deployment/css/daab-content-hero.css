@@ -1,7 +1,8 @@
 /**
  * Shared hero + summary panel for About/Membership content pages.
- * Load on foundation, mission, membership (AZ/EN). Page CSS keeps layout-only overrides.
+ * Load on foundation, mission, membership, work-done report (AZ/EN). Page CSS keeps layout-only overrides.
  */
+html[data-daab-page-id="work-done-2024-2026"] .hero,
 html[data-daab-page-id="foundation"] .hero,
 html[data-daab-page-id="mission"] .hero,
 .membership-page .hero{
@@ -9,14 +10,16 @@ html[data-daab-page-id="mission"] .hero,
   overflow: hidden;
   color: var(--ink) !important;
   background: var(--white) var(--site-bg-image) top center / 100% auto no-repeat !important;
-}html[data-daab-page-id="foundation"] .hero::before,
+}html[data-daab-page-id="work-done-2024-2026"] .hero::before,
+html[data-daab-page-id="foundation"] .hero::before,
 html[data-daab-page-id="mission"] .hero::before,
 .membership-page .hero::before{
   content: "";
   position: absolute;
   inset: 0;
   background: var(--color-hero-scrim);
-}html[data-daab-page-id="foundation"] .hero::after,
+}html[data-daab-page-id="work-done-2024-2026"] .hero::after,
+html[data-daab-page-id="foundation"] .hero::after,
 html[data-daab-page-id="mission"] .hero::after,
 .membership-page .hero::after{
   content: "";
@@ -26,7 +29,8 @@ html[data-daab-page-id="mission"] .hero::after,
   opacity: 0.72;
   mix-blend-mode: normal;
   mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
-}html[data-daab-page-id="foundation"] .hero-wrap,
+}html[data-daab-page-id="work-done-2024-2026"] .hero-wrap,
+html[data-daab-page-id="foundation"] .hero-wrap,
 html[data-daab-page-id="mission"] .hero-wrap,
 .membership-page .hero-wrap{
   position: relative;
@@ -41,10 +45,12 @@ html[data-daab-page-id="mission"] .hero-wrap,
 }.membership-page .hero-wrap{
   grid-template-columns: 1.12fr 0.88fr;
   padding: 28px 24px 48px;
-}html[data-daab-page-id="foundation"] .hero-copy,
+}html[data-daab-page-id="work-done-2024-2026"] .hero-copy,
+html[data-daab-page-id="foundation"] .hero-copy,
 .membership-page .hero-copy{
   min-width: 0;
-}html[data-daab-page-id="foundation"] .hero h1,
+}html[data-daab-page-id="work-done-2024-2026"] .hero h1,
+html[data-daab-page-id="foundation"] .hero h1,
 html[data-daab-page-id="mission"] .hero h1,
 .membership-page .hero h1{
   margin: 0;
@@ -57,11 +63,13 @@ html[data-daab-page-id="mission"] .hero h1,
   text-shadow: none !important;
 }.membership-page .hero h1{
   margin: 0 0 14px;
-}html[data-daab-page-id="foundation"] .hero h1 span,
+}html[data-daab-page-id="work-done-2024-2026"] .hero h1 span,
+html[data-daab-page-id="foundation"] .hero h1 span,
 html[data-daab-page-id="mission"] .hero h1 span,
 .membership-page .hero h1 span{
   color: var(--blue-700) !important;
-}html[data-daab-page-id="foundation"] .hero-panel,
+}html[data-daab-page-id="work-done-2024-2026"] .hero-panel,
+html[data-daab-page-id="foundation"] .hero-panel,
 html[data-daab-page-id="mission"] .hero-panel,
 .membership-page .hero-panel{
   align-self: start;
@@ -73,7 +81,8 @@ html[data-daab-page-id="mission"] .hero-panel,
   backdrop-filter: blur(18px);
 }.membership-page .hero-panel{
   padding: 0 0 0 4px;
-}html[data-daab-page-id="foundation"] .panel-card,
+}html[data-daab-page-id="work-done-2024-2026"] .panel-card,
+html[data-daab-page-id="foundation"] .panel-card,
 html[data-daab-page-id="mission"] .panel-card,
 .membership-page .panel-card{
   padding: 20px 24px 22px;
@@ -85,7 +94,8 @@ html[data-daab-page-id="mission"] .panel-card,
   padding: 24px;
 }.membership-page .panel-card{
   margin-bottom: 0;
-}html[data-daab-page-id="foundation"] .panel-title,
+}html[data-daab-page-id="work-done-2024-2026"] .panel-title,
+html[data-daab-page-id="foundation"] .panel-title,
 html[data-daab-page-id="mission"] .panel-title,
 .membership-page .panel-title{
   margin: 0 0 10px;
@@ -99,7 +109,8 @@ html[data-daab-page-id="mission"] .panel-title,
 }html[data-daab-page-id="mission"] .panel-title{
   font-size: var(--font-size-summary-panel-title-lg);
   line-height: 1.18;
-}html[data-daab-page-id="foundation"] .panel-copy,
+}html[data-daab-page-id="work-done-2024-2026"] .panel-copy,
+html[data-daab-page-id="foundation"] .panel-copy,
 html[data-daab-page-id="mission"] .panel-copy,
 .membership-page .panel-copy{
   color: var(--muted-hero) !important;
@@ -107,14 +118,16 @@ html[data-daab-page-id="mission"] .panel-copy,
 }.membership-page .panel-copy{
   text-align: left;
   line-height: 1.65;
-}html[data-daab-page-id="foundation"] .main,
+}html[data-daab-page-id="work-done-2024-2026"] .main,
+html[data-daab-page-id="foundation"] .main,
 html[data-daab-page-id="mission"] .main,
 .membership-page .main{
   position: relative;
   z-index: 2;
   max-width: var(--max);
   margin: 0 auto;
-}html[data-daab-page-id="foundation"] .main{
+}html[data-daab-page-id="foundation"] .main,
+html[data-daab-page-id="work-done-2024-2026"] .main{
   padding: 26px 24px 70px;
 }html[data-daab-page-id="mission"] .main{
   padding: 24px 24px 70px;
@@ -124,7 +137,35 @@ html[data-daab-page-id="mission"] .main,
   margin-top: 0;
 }
 
-@media (max-width: 1060px) {html[data-daab-page-id="foundation"] .hero-wrap,
+/* Treasury placeholder pages (industrial revolutions, major inventions) */
+html[data-daab-page-id="industrial-revolutions"] .main,
+html[data-daab-page-id="major-scientific-inventions"] .main{
+  padding: 28px 24px 70px;
+}.treasury-coming-soon{
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}.treasury-coming-soon__badge{
+  display: inline-block;
+  margin: 0 0 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--blue-700), var(--blue-400));
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}.treasury-coming-soon p{
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.65;
+}.treasury-coming-soon__links{
+  margin-top: 18px;
+}
+
+@media (max-width: 1060px) {html[data-daab-page-id="work-done-2024-2026"] .hero-wrap,
+  html[data-daab-page-id="foundation"] .hero-wrap,
   html[data-daab-page-id="mission"] .hero-wrap,
   .membership-page .hero-wrap{
     grid-template-columns: 1fr;
@@ -133,9 +174,7 @@ html[data-daab-page-id="mission"] .main,
   }
 }
 
-@media (max-width: 760px) {.membership-page .hero-wrap{
-    padding: 48px 18px 40px;
-  }.membership-page .main{
+@media (max-width: 760px) {.membership-page .main{
     padding: 28px 16px 48px;
   }
 }

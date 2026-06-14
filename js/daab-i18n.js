@@ -107,7 +107,7 @@
     ROUTES_URL = ROUTES_URL || i18nUrl("routes.json");
     /* Browser cache bust: bump ?v= below when routes.json content changes (JSON "version" field is documentary). */
     return loadCachedJson(
-      ROUTES_URL + "?v=3",
+      ROUTES_URL + "?v=7",
       function () { return routesCache; },
       function (data) { routesCache = data; },
       function () { return routesInflight; },
@@ -118,7 +118,7 @@
   function loadUi() {
     UI_URL = UI_URL || i18nUrl("ui.json");
     return loadCachedJson(
-      UI_URL + "?v=17",
+      UI_URL + "?v=20",
       function () { return uiCache; },
       function (data) { uiCache = data; },
       function () { return uiInflight; },
@@ -128,7 +128,7 @@
 
   function loadSearchIndex() {
     return loadCachedJson(
-      i18nUrl("search-index.json") + "?v=8",
+      i18nUrl("search-index.json") + "?v=10",
       function () { return searchIndexCache; },
       function (data) { searchIndexCache = data; },
       function () { return searchIndexInflight; },
@@ -138,7 +138,7 @@
 
   function loadNav() {
     return loadCachedJson(
-      i18nUrl("nav.json") + "?v=5",
+      i18nUrl("nav.json") + "?v=11",
       function () { return navCache; },
       function (data) { navCache = data; },
       function () { return navInflight; },
@@ -178,6 +178,18 @@
       }
     }
     var pages = routes.pages || [];
+    var pageId = document.documentElement.getAttribute("data-daab-page-id");
+    if (pageId) {
+      for (var k = 0; k < pages.length; k++) {
+        var byId = pages[k];
+        if (
+          byId.id === pageId &&
+          (normalizePath(byId.az) === pathKey || normalizePath(byId.en) === pathKey)
+        ) {
+          return byId;
+        }
+      }
+    }
     for (var i = 0; i < pages.length; i++) {
       var p = pages[i];
       if (normalizePath(p.az) === pathKey || normalizePath(p.en) === pathKey) return p;

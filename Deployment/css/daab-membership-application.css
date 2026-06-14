@@ -508,6 +508,20 @@
   cursor: not-allowed;
 }.application-page textarea{
   min-height: 80px;
+}.application-page textarea.form-textarea-tall{
+  min-height: 110px;
+}.application-page .app-endpoint-notice{
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1.5px solid #f0c36d;
+  background: #fff8e8;
+  color: #5a4200;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}.application-page .app-endpoint-notice a{
+  color: var(--blue-700);
+  font-weight: 600;
 }.application-page .options-list{
   display: flex;
   flex-direction: column;

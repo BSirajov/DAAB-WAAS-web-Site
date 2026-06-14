@@ -482,6 +482,10 @@ button,
   outline: 0;
   font: inherit;
   font-size: 18px;
+}#search-input:focus-visible{
+  outline: 2px solid var(--blue-700);
+  outline-offset: -4px;
+  border-radius: 6px;
 }.search-close-btn{
   padding: 5px 10px;
   color: var(--muted);
@@ -528,7 +532,8 @@ button,
   min-width: 0;
 }.sri-title{
   font-weight: 800;
-  font-size: 9.8px;
+  font-size: 15px;
+  line-height: 1.35;
 }.sri-desc{
   overflow: hidden;
   color: var(--muted);

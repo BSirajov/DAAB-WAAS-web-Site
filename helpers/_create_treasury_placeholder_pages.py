@@ -116,7 +116,7 @@ def render(lang: str, spec: dict, copy: dict) -> str:
 <a class="skip" href="#content">{skip}</a>
 <nav aria-label="{nav_label}" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="{menu_open}" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a title="{home_title}" aria-label="{home_label}" href="index.html"><img src="../images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"></a></div><a aria-label="{home_label}" class="nav-brand" href="index.html"><span class="nav-brand-text">{brand_line}</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div></div><div class="nav-actions" role="group"></div></div></nav>
 <header class="hero page-hero"><div class="hero-wrap shell"><section><h1 aria-describedby="page-hero-subtitle">{copy["h1"]}</h1><p class="page-hero-subtitle" id="page-hero-subtitle" role="doc-subtitle">{copy["subtitle"]}</p></section></div></header>
-<main class="main" id="content"><section class="intro-card glass-card"><p>{copy["body"]}</p><p><a href="encyclopedia.html">{"Görkəmli şəxsiyyətlər kataloqu" if lang == "az" else "Prominent Figures catalog"}</a></p></section></main>
+<main class="main" id="content"><section class="intro-card glass-card treasury-coming-soon" role="status"><p class="treasury-coming-soon__badge">{"Tezliklə" if lang == "az" else "Coming soon"}</p><p>{copy["body"]}</p><p class="treasury-coming-soon__links"><a class="btn btn-secondary" href="encyclopedia.html">{"Görkəmli şəxsiyyətlər kataloqu" if lang == "az" else "Prominent Figures catalog"}</a></p></section></main>
 {footer}
 </body>
 </html>

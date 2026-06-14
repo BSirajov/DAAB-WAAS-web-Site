@@ -143,7 +143,7 @@ EN_NAV = [
     ("activities", "activities.html", "📰 Activities"),
     ("scientists-list", "scientists/list.html", "📋 Directory"),
     ("scientists-profiles", "scientists/profiles.html", "👤 Profiles"),
-    ("executive-board", "executive-board.html", "🎓 Board of Directors"),
+    ("executive-board", "executive-board.html", "🎓 Executive Board"),
     ("charter", "charter.html", "📜 Charter"),
     ("membership", "membership.html", "✒️ Membership"),
 ]
@@ -420,7 +420,7 @@ def build_en_home() -> None:
         ("foundation.html", "🏛️", "Foundation", "Available in English — Shusha Congress to Istanbul founding meeting."),
         ("scientists/list.html", "📋", "Scientists directory", "Searchable list of member scientists."),
         ("scientists/profiles.html", "👤", "Academic profiles", "Detailed scholar profiles and CV links."),
-        ("executive-board.html", "🎓", "Board of Directors", "Leadership and governance."),
+        ("executive-board.html", "🎓", "Executive Board", "Leadership and governance."),
         ("charter.html", "📜", "Charter", "Statutes and governing documents."),
         ("membership.html", "✒️", "Membership", "How to join WAAS."),
     ]
@@ -428,7 +428,7 @@ def build_en_home() -> None:
     for href, icon, title, desc in cards:
         card_html.append(
             f'<a class="page-card" href="{href}" style="min-height:200px;text-decoration:none;">'
-            f'<div class="card-icon-wrap">{icon}</div>'
+            f'<div class="card-icon-wrap" aria-hidden="true">{icon}</div>'
             f'<div class="card-body"><h3 class="card-title">{title}</h3>'
             f'<div class="card-desc">{desc}</div></div></a>'
         )
@@ -504,23 +504,41 @@ def write_sitemap(routes: dict) -> None:
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
         '        xmlns:xhtml="http://www.w3.org/1999/xhtml">',
     ]
-    for page in routes["pages"]:
-        if page.get("sitemap") is False:
-            continue
-        az = page["az"].replace("\\", "/")
-        en = page["en"].replace("\\", "/")
-        az_url = f"{SITE_ORIGIN}/{az}"
-        en_url = f"{SITE_ORIGIN}/{en}"
-        for loc, lang in ((az_url, "az"), (en_url, "en")):
+    seen_locs: set[str] = set()
+
+    def append_pair(az_rel: str, en_rel: str) -> None:
+        az_url = f"{SITE_ORIGIN}/{az_rel.replace(chr(92), '/')}"
+        en_url = f"{SITE_ORIGIN}/{en_rel.replace(chr(92), '/')}"
+        for loc in (az_url, en_url):
+            if loc in seen_locs:
+                continue
+            seen_locs.add(loc)
             lines.append("  <url>")
             lines.append(f"    <loc>{loc}</loc>")
             lines.append(f'    <xhtml:link rel="alternate" hreflang="az" href="{az_url}"/>')
             lines.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{en_url}"/>')
             lines.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{az_url}"/>')
             lines.append("  </url>")
+
+    for page in routes["pages"]:
+        if page.get("sitemap") is False:
+            continue
+        append_pair(page["az"], page["en"])
+
+    az_pf = ROOT / "az" / "prominent_figures"
+    if az_pf.is_dir():
+        for az_path in sorted(az_pf.rglob("*.html")):
+            if az_path.name == "hazirlanir.html":
+                continue
+            rel = az_path.relative_to(ROOT / "az").as_posix()
+            en_path = ROOT / "en" / rel
+            if not en_path.is_file():
+                continue
+            append_pair(f"az/{rel}", f"en/{rel}")
+
     lines.append("</urlset>")
     (ROOT / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print("  sitemap: sitemap.xml (with hreflang alternates)")
+    print(f"  sitemap: sitemap.xml ({len(seen_locs)} URLs, with hreflang alternates)")
 
 
 def write_robots_txt() -> None:

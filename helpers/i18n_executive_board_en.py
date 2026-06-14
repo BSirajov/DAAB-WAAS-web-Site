@@ -1,18 +1,18 @@
 """English replacements for en/executive-board.html."""
 
 EXECUTIVE_BOARD_REPLACEMENTS: list[tuple[str, str]] = [
-    ("<title>DAAB — İdarə Heyəti</title>", "<title>WAAS — Board of Directors</title>"),
+    ("<title>DAAB — İdarə Heyəti</title>", "<title>WAAS — Executive Board</title>"),
     (
         'content="Dünya Azərbaycanlı Alimlər Birliyi — İdarə Heyəti və rəhbərlik."',
-        'content="Board of Directors and leadership of the World Association of Azerbaijani Scientists."',
+        'content="Executive Board and leadership of the World Association of Azerbaijani Scientists."',
     ),
     ("Məzmuna keç", "Skip to content"),
     ("İdarə Heyətinin Sədri", "Chair"),
     ("İdarə Heyəti Üzvləri", "Board Members"),
     ("İdarə Heyəti Üzvü", "Board Member"),
-    ('aria-label="İdarə Heyəti üzvləri"', 'aria-label="Board of Directors members"'),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Board of Directors"),
-    ("İdarə Heyəti", "Board of Directors"),
+    ('aria-label="İdarə Heyəti üzvləri"', 'aria-label="Executive Board members"'),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
+    ("İdarə Heyəti", "Executive Board"),
     ('aria-label="DAAB rəhbərliyi"', 'aria-label="WAAS leadership"'),
     ("Həmsədr", "Co-Chair"),
     ("Mətbuat Katibi", "Press Secretary"),
@@ -31,11 +31,11 @@ EXECUTIVE_BOARD_REPLACEMENTS: list[tuple[str, str]] = [
     ("Rəhbərlik", "Leadership"),
     (
         'aria-label="İdarə Heyəti haqqında qısa məlumat"',
-        'aria-label="Board of Directors summary"',
+        'aria-label="Executive Board summary"',
     ),
     ("Rəhbərlik və idarəetmə", "Leadership and governance"),
     (
         "Bu səhifədə Dünya Azərbaycanlı Alimlər Birliyinin İdarə Heyətinin sədri, həmsədrləri və üzvləri təqdim olunur. İdarə Heyəti birliyin strategiyasının formalaşdırılması, elmi proqramların koordinasiyası və beynəlxalq akademik əməkdaşlığın inkişafında mərkəzi rol oynayır.",
-        "This page presents the Chair, Co-Chairs and members of the World Association of Azerbaijani Scientists Board of Directors. The Board plays a central role in shaping the Association's strategy, coordinating scientific programmes and advancing international academic cooperation.",
+        "This page presents the Chair, Co-Chairs and members of the WAAS Executive Board. The Executive Board plays a central role in shaping the Association's strategy, coordinating scientific programmes and advancing international academic cooperation.",
     ),
 ]

@@ -37,10 +37,17 @@
 }.charter-sidebar > .sidebar-widget{
   display: flex;
   flex-direction: column;
-  max-height: calc(100vh - var(--daab-nav-height, 86px) - 120px);
+  width: 100%;
 }.charter-sidebar > .sidebar-widget > .widget-body{
   flex: 1 1 auto;
   min-height: 0;
+}
+
+@media (min-width: 1061px) {
+  .charter-sidebar > .sidebar-widget > .widget-body{
+    max-height: none;
+    overflow-y: auto;
+  }
 }/* Card */
 .sidebar-widget{
   background: rgba(255, 255, 255, .96);

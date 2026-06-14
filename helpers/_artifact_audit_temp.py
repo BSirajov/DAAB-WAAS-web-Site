@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import html as html_lib
 import re
+import sys
 from pathlib import Path
 
 from _paths import ROOT
@@ -46,7 +47,18 @@ def audit_routes_nav_ui() -> None:
         if sec.get("landingId"):
             nav_ids.add(sec["landingId"])
 
-    for nid in sorted(nav_ids - route_ids):
+    group_ids: set[str] = set()
+
+    def collect_groups(items):
+        for item in items or []:
+            if not isinstance(item, dict):
+                continue
+            if item.get("type") == "group" and item.get("id"):
+                group_ids.add(item["id"])
+            collect_groups(item.get("children"))
+
+    collect_groups(nav.get("primary"))
+    for nid in sorted(nav_ids - route_ids - group_ids):
         add("warn", "nav", f"nav.json references unknown route id: {nid}")
 
     for item in nav.get("primary", []):
@@ -102,35 +114,45 @@ def audit_search_index() -> None:
                     add("warn", "search", f"Raw id in EN search title for {nav_id}: {title_en!r}")
 
 
-def audit_static_forum_nav() -> None:
-    ui_en = json.loads((ROOT / "i18n/ui.json").read_text(encoding="utf-8"))["nav"]["en"]
-    ui_az = json.loads((ROOT / "i18n/ui.json").read_text(encoding="utf-8"))["nav"]["az"]
-    expected_en = [
-        ui_en["forumNavOverview"],
-        ui_en["forumNavParticipants"],
-        ui_en["forumNavOfficialRecord"],
-        ui_en["forumNavSpeeches"],
-        ui_en["forumNavMedia"],
-        ui_en["forumNavOutcomes"],
-    ]
-    expected_az = [
-        ui_az["forumNavOverview"],
-        ui_az["forumNavParticipants"],
-        ui_az["forumNavOfficialRecord"],
-        ui_az["forumNavSpeeches"],
-        ui_az["forumNavMedia"],
-        ui_az["forumNavOutcomes"],
-    ]
-    for lang, expected in (("en", expected_en), ("az", expected_az)):
+def audit_slim_nav_placeholders() -> None:
+    """Live pages must not embed the mega-menu in #primaryNavMenu (runtime builds from nav.json)."""
+    from _sync_primary_nav import MINIMAL_NAV_INNER, needs_slim_nav, should_patch
+
+    bloated: list[str] = []
+    for path in sorted(ROOT.rglob("*.html")):
+        if not should_patch(path):
+            continue
+        html = path.read_text(encoding="utf-8")
+        if needs_slim_nav(html):
+            bloated.append(path.relative_to(ROOT).as_posix())
+        elif "nav-mega-heading" in html:
+            m = re.search(
+                r'<div class="nav-menu"[^>]*\bid="primaryNavMenu"[^>]*>(.*?)</div>\s*(?:<div class="nav-actions\b|</div>\s*</nav>)',
+                html,
+                re.S | re.I,
+            )
+            if m and "nav-mega-heading" in m.group(1):
+                bloated.append(path.relative_to(ROOT).as_posix())
+    if bloated:
+        add(
+            "error",
+            "static-nav",
+            f"{len(bloated)} page(s) still embed mega-menu in #primaryNavMenu "
+            f"(run python helpers/_sync_primary_nav.py). Examples: {bloated[:5]}",
+        )
+    expected = MINIMAL_NAV_INNER.strip()
+    for lang in ("az", "en"):
         page_html = (ROOT / lang / "index.html").read_text(encoding="utf-8")
-        headings = [html_lib.unescape(h.strip()) for h in re.findall(r'nav-mega-heading[^>]*>([^<]+)<', page_html)]
-        forum_headings = headings[:6] if len(headings) >= 6 else headings
-        if forum_headings != expected:
+        m = re.search(
+            r'id="primaryNavMenu"[^>]*>(.*?)</div>\s*(?:<div class="nav-actions"|</div>\s*</nav>)',
+            page_html,
+            re.S | re.I,
+        )
+        if not m or m.group(1).strip() != expected:
             add(
-                "warn",
+                "error",
                 "static-nav",
-                f"{lang}/index.html forum mega headings differ from ui.json: "
-                f"html={forum_headings} expected={expected}",
+                f"{lang}/index.html #primaryNavMenu is not the slim placeholder",
             )
 
 
@@ -270,7 +292,13 @@ def audit_docs_stale() -> None:
         "section pills",
         ".daab-section-nav",
     ]
+    skip_docs = {
+        "DAAB-Site-Cleanup-Audit-2026-05.md",
+        "DAAB-Website-UI-Terminology-Reference.md",
+    }
     for doc in (ROOT / "documents").glob("*.md"):
+        if doc.name in skip_docs:
+            continue
         text = doc.read_text(encoding="utf-8", errors="replace")
         hits = [p for p in stale_phrases if p in text]
         if hits:
@@ -290,7 +318,7 @@ def audit_sitemap() -> None:
 def main() -> None:
     audit_routes_nav_ui()
     audit_search_index()
-    audit_static_forum_nav()
+    audit_slim_nav_placeholders()
     audit_scientists_list_labels()
     audit_helper_versions()
     audit_orphan_assets()
@@ -312,7 +340,8 @@ def main() -> None:
         print()
 
     print(f"Total findings: {len(FINDINGS)}")
+    return 1 if by_sev["error"] else 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

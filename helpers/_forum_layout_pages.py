@@ -7,10 +7,13 @@ import re
 # Keep in sync with css/daab-activities-layout.css selector lists.
 FORUM_SIDEBAR_LAYOUT_PAGE_IDS: tuple[str, ...] = (
     "activities",
+    "activities-news",
     "forum-official",
     "forum-rector-speeches",
     "forum-anas-leadership-speeches",
     "forum-program",
+    "forum-logistics",
+    "forum-sessions-organization",
     "forum-2024-presentations",
     "forum-impressions",
     "forum-roadmap",
@@ -22,54 +25,63 @@ FORUM_SIDEBAR_LAYOUT_PAGE_IDS: tuple[str, ...] = (
 ANCHOR_PAGE_ID = "forum-cooperation"
 NEW_PAGE_IDS = ("forum-rector-speeches", "forum-anas-leadership-speeches")
 
+# Canonical page-id set/order used inside every `html:is(...)` selector group of
+# css/daab-activities-layout.css. To add a page to the shared sidebar layout,
+# append its id here and run this module.
+LAYOUT_IS_PAGE_IDS: tuple[str, ...] = (
+    "activities-news",
+    "forum-official",
+    "forum-program",
+    "forum-logistics",
+    "forum-sessions-organization",
+    "forum-2024-presentations",
+    "forum-impressions",
+    "forum-roadmap",
+    "forum-bagli-hekayeler",
+    "forum-cooperation",
+    "forum-rector-speeches",
+    "forum-anas-leadership-speeches",
+    "forum-2026",
+)
+
+# Matches the `html:is([data-daab-page-id="..."], ...)` selector head (no suffix).
+_IS_GROUP_RE = re.compile(
+    r'html:is\(\[data-daab-page-id="[^"]+"\]'
+    r'(?:\s*,\s*\[data-daab-page-id="[^"]+"\])*\)'
+)
+
 
 def selector(page_id: str, suffix: str = "") -> str:
     return f'html[data-daab-page-id="{page_id}"]{suffix}'
 
 
+def canonical_is_head() -> str:
+    inner = ", ".join(f'[data-daab-page-id="{pid}"]' for pid in LAYOUT_IS_PAGE_IDS)
+    return f"html:is({inner})"
+
+
 def sync_activities_layout_css() -> int:
-    """Append missing page selectors to comma lists (before the opening brace)."""
+    """Normalize every `html:is(...)` page-id group in daab-activities-layout.css
+    to the canonical LAYOUT_IS_PAGE_IDS set/order. Returns groups changed."""
     from _paths import ROOT
 
     path = ROOT / "css" / "daab-activities-layout.css"
     text = path.read_text(encoding="utf-8")
-    lines = text.splitlines()
-    out: list[str] = []
-    added = 0
-    anchor = f'html[data-daab-page-id="{ANCHOR_PAGE_ID}"]'
+    canonical = canonical_is_head()
+    changed = 0
 
-    for i, line in enumerate(lines):
-        out.append(line)
-        if anchor not in line or not line.strip().startswith("html["):
-            continue
-        if any(pid in line for pid in NEW_PAGE_IDS):
-            continue
-        # Only extend lists that end on this line (comma or opening brace)
-        stripped = line.rstrip()
-        if not (stripped.endswith(",") or stripped.endswith(" {")):
-            continue
-        m = re.search(rf'{re.escape(ANCHOR_PAGE_ID)}"\](.*)$', line)
-        if not m:
-            continue
-        suffix = m.group(1).removesuffix(" {").rstrip()
-        insert_at = len(out)
-        for pid in NEW_PAGE_IDS:
-            sel = selector(pid, suffix)
-            if sel in text:
-                continue
-            out.insert(insert_at, sel)
-            insert_at += 1
-            added += 1
-            text += "\n" + sel
-        # Comma-terminate anchor line when brace was on same line
-        if stripped.endswith(" {"):
-            out[-1] = stripped[:-2] + ","
+    def repl(m: "re.Match[str]") -> str:
+        nonlocal changed
+        if m.group(0) != canonical:
+            changed += 1
+        return canonical
 
-    if added:
-        path.write_text("\n".join(out) + "\n", encoding="utf-8", newline="\n")
-    return added
+    new = _IS_GROUP_RE.sub(repl, text)
+    if new != text:
+        path.write_text(new, encoding="utf-8", newline="\n")
+    return changed
 
 
 if __name__ == "__main__":
     n = sync_activities_layout_css()
-    print(f"Added {n} selector line(s) to css/daab-activities-layout.css")
+    print(f"Normalized {n} :is() selector group(s) in css/daab-activities-layout.css")

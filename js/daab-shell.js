@@ -151,6 +151,7 @@
     var urls = resolveUrls(routes, lang);
     var I18N = getI18n();
     var Pos = window.DAAB_LANG_POSITION;
+    var pairMode = (document.documentElement.getAttribute("data-daab-lang-pair") || "").trim();
 
     var wrap = document.createElement("div");
     wrap.className = "daab-lang-switch";
@@ -159,6 +160,22 @@
 
     var linkAz = buildLangLink("az", urls.az, lang === "az", labels);
     var linkEn = buildLangLink("en", urls.en, lang === "en", labels);
+
+    if (pairMode === "az-only") {
+      linkEn.setAttribute("aria-disabled", "true");
+      linkEn.classList.add("daab-lang-link--disabled");
+      linkEn.removeAttribute("href");
+      linkEn.title = lang === "az" ? "İngilis versiyası hazırlanır" : "English version coming soon";
+      linkEn.setAttribute(
+        "aria-label",
+        lang === "az" ? "İngilis versiyası hazırlanır" : "English version coming soon"
+      );
+    } else if (pairMode === "en-pending" && lang === "en") {
+      linkEn.setAttribute("aria-disabled", "true");
+      linkEn.classList.add("daab-lang-link--disabled");
+      linkEn.removeAttribute("href");
+      linkEn.title = "English version coming soon";
+    }
 
     if (I18N) {
       linkAz.addEventListener("click", function (ev) {
@@ -170,15 +187,25 @@
         ev.preventDefault();
         navigateLangSwitch(urls.az, "az");
       });
-      linkEn.addEventListener("click", function (ev) {
-        if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button !== 0) {
-          I18N.persistLang("en");
-          if (Pos) linkEn.href = Pos.decorateAlternateUrl(urls.en, "en");
-          return;
-        }
-        ev.preventDefault();
-        navigateLangSwitch(urls.en, "en");
-      });
+      if (!(pairMode === "az-only")) {
+        linkEn.addEventListener("click", function (ev) {
+          if (linkEn.classList.contains("daab-lang-link--disabled")) {
+            ev.preventDefault();
+            return;
+          }
+          if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button !== 0) {
+            I18N.persistLang("en");
+            if (Pos) linkEn.href = Pos.decorateAlternateUrl(urls.en, "en");
+            return;
+          }
+          ev.preventDefault();
+          navigateLangSwitch(urls.en, "en");
+        });
+      } else {
+        linkEn.addEventListener("click", function (ev) {
+          ev.preventDefault();
+        });
+      }
     }
 
     wrap.appendChild(linkAz);

@@ -87,7 +87,7 @@
   border: 1px solid var(--line);
   border-radius: 50%;
   box-shadow: 0 4px 14px rgba(0, 45, 82, 0.1);
-}.flyer-brand-block h1{
+}.flyer-brand-block h2{
   margin: 0 0 calc(4px * var(--flyer-space));
   font-family: "Playfair Display", Georgia, serif;
   font-size: calc(14.7px * var(--flyer-fs));

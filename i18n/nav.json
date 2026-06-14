@@ -1,13 +1,28 @@
 {
-  "version": 9,
+  "version": 11,
   "primary": [
     {
       "type": "page",
       "id": "home"
     },
     {
-      "type": "page",
-      "id": "activities"
+      "type": "group",
+      "id": "activities",
+      "style": "dropdown",
+      "labelKey": "activities",
+      "landingId": "activities-news",
+      "children": [
+        {
+          "id": "activities-news",
+          "labelKey": "activitiesNews",
+          "descKey": "activitiesNewsDesc"
+        },
+        {
+          "id": "work-done-2024-2026",
+          "labelKey": "activitiesWorkDone2024",
+          "descKey": "activitiesWorkDone2024Desc"
+        }
+      ]
     },
     {
       "type": "group",
@@ -32,7 +47,13 @@
                   "id": "forum-2024"
                 },
                 {
+                  "id": "forum-logistics"
+                },
+                {
                   "id": "forum-program"
+                },
+                {
+                  "id": "forum-sessions-organization"
                 }
               ]
             },
@@ -44,7 +65,7 @@
                 {
                   "id": "scientists-list",
                   "labelKey": "scientistsListForum",
-                  "descKey": "scientistsListDesc"
+                  "descKey": "scientistsListForumDesc"
                 },
                 {
                   "id": "scientists-profiles",
@@ -233,9 +254,10 @@
       ]
     },
     "activities": {
-      "landingId": "activities",
+      "landingId": "activities-news",
       "pages": [
-        "activities"
+        "activities-news",
+        "work-done-2024-2026"
       ]
     },
     "forums": {
@@ -252,7 +274,9 @@
         "forum-official",
         "forum-rector-speeches",
         "forum-anas-leadership-speeches",
+        "forum-logistics",
         "forum-program",
+        "forum-sessions-organization",
         "forum-2024-presentations",
         "forum-impressions",
         "forum-photos-gallery",

@@ -23,7 +23,7 @@ PROGRAM_PHRASES: dict[str, str] = {
         "Tour of the city of Khankendi"
     ),
     "DAAB İH-nin həmsədri Məsud Əfəndiyev iştirakçıları salamlayır, bu günlə bağlı gözləntilərinin nədən ibarət olduğunu ifadə edir və sessiyaların işində beyin fırtınası üsulundan istifadə olunacağını vurğulayır.": (
-        "Mesud Afandiyev, Co-Chair of the WAAS Board of Directors, welcomes participants, outlines expectations for the day "
+        "Mesud Afandiyev, Co-Chair of the WAAS Executive Board, welcomes participants, outlines expectations for the day "
         "and emphasises that brainstorming methods will be used in the sessions."
     ),
     "Azərbaycanda fəaliyyət göstərən universitet və elmi tədqiqat institutlarının beynəlxalq akademik mühitlə əlaqələndirilməsində xaricdə yaşayan alimlərin rolunu necə inkişaf etdirmək olar?": (
@@ -103,10 +103,10 @@ PROGRAM_PHRASES: dict[str, str] = {
         "Screening of a video on state support for the development of science and education"
     ),
     "Məsud ƏFƏNDİYEV, Dünya Azərbaycanlı Alimlər Birliyinin İdarə Heyətinin sədri": (
-        "Mesud AFANDIYEV, Chair of the Board of Directors of the World Association of Azerbaijani Scientists"
+        "Mesud AFANDIYEV, Chair of the WAAS Executive Board"
     ),
     "Məsud ƏFƏNDİYEV, World Association of Azerbaijani Scientistsnin İdarə Heyətinin sədri": (
-        "Mesud AFANDIYEV, Chair of the Board of Directors of the World Association of Azerbaijani Scientists"
+        "Mesud AFANDIYEV, Chair of the WAAS Executive Board"
     ),
     "Ümummilli lider Heydər Əliyevin məzarının və Şəhidlər xiyabanının ziyarəti": (
         "Visit to the tomb of National Leader Heydar Aliyev and the Alley of Martyrs"

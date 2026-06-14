@@ -517,6 +517,17 @@
     }
 
     document.querySelectorAll(".sel-clear").forEach(function (btn) {
+      if (!btn.getAttribute("aria-label")) {
+        var tgt = document.getElementById(btn.dataset.for);
+        var base = btn.getAttribute("title") || "Clear filter";
+        var fname = "";
+        if (tgt) {
+          if (tgt.options && tgt.options[0]) fname = tgt.options[0].textContent || "";
+          if (!fname) fname = tgt.getAttribute("aria-label") || "";
+        }
+        fname = fname.replace(/^[^\p{L}]+/u, "").trim();
+        btn.setAttribute("aria-label", fname ? base + " — " + fname : base);
+      }
       btn.addEventListener("click", function () {
         var el = document.getElementById(btn.dataset.for);
         if (el) {

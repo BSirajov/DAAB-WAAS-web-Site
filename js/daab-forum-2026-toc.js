@@ -158,6 +158,26 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  function syncFromHash() {
+    var id = location.hash.slice(1);
+    var idx = id ? ids.indexOf(id) : -1;
+    if (idx === -1) {
+      activate(null);
+      return;
+    }
+    var target = document.getElementById(id);
+    if (!target) return;
+    activate(links[idx]);
+    var Pos = window.DAAB_LANG_POSITION;
+    if (Pos && Pos.scrollToAnchor) {
+      Pos.scrollToAnchor(id, false);
+    } else {
+      target.scrollIntoView({ block: "start", behavior: "auto" });
+    }
+  }
+
+  window.addEventListener("popstate", syncFromHash);
+
   if (location.hash) {
     var hashId = location.hash.slice(1);
     var hashLink = links.find(function (a) {

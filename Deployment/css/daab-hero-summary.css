@@ -68,13 +68,38 @@
   align-items: start !important;
   gap: 24px !important;
   padding: 22px 20px 26px !important;
+}/* Outer hero bands: no extra top gap — title spacing lives in .hero-wrap only */
+header.hero,
+.page-hero,
+.hero:has(.hero-wrap),
+.hero:has(.hero-inner),
+.hero:has(.activities-hero-wrap){
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+@media (max-width: 1180px) {.hero-wrap,
+  .activities-hero-wrap,
+  .hero-inner:has(.hero-summary-panel),
+  .charter-page .hero-wrap,
+  .membership-page .hero-wrap,
+  html[data-daab-page-id="foundation"] .hero-wrap,
+  html[data-daab-page-id="mission"] .hero-wrap,
+  html[data-daab-page-id="work-done-2024-2026"] .hero-wrap,
+  .daab-hub-page .hero-wrap{
+    gap: 14px !important;
+    padding-top: 10px !important;
+    padding-bottom: 18px !important;
+  }
 }
 
 @media (max-width: 760px) {.hero-wrap,
   .activities-hero-wrap,
   .hero-inner:has(.hero-summary-panel){
-    gap: 14px !important;
-    padding: 26px 16px 22px !important;
+    gap: 12px !important;
+    padding-top: 8px !important;
+    padding-bottom: 16px !important;
   }.hero-panel,
   .hero-summary-panel,
   .activities-summary-panel{

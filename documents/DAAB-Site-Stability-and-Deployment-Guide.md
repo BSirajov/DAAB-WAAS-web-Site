@@ -79,7 +79,9 @@ Browsers cache HTML/CSS/JS. After renames, users may still request old assets �
 
 Only deploy the **site root** contents:
 
-- `*.html`, `css/`, `js/`, `images/`, `cv/` (if public)
+- `*.html`, `az/`, `en/`, `css/`, `js/`, `images/`, **`i18n/`** (required at runtime for nav, language switcher, and search labels)
+- `sitemap.xml`, `robots.txt`, `404.html`
+- `cv/` only if intentionally public (omitted from default rsync via `.deployignore`)
 
 Do **not** require `helpers/`, `documents/`, `_pdf_extract.txt` for the live site.
 
@@ -90,22 +92,27 @@ Do **not** require `helpers/`, `documents/`, `_pdf_extract.txt` for the live sit
 ```
 DAAB-WAAS web site/
 ├── index.html                    # Language gateway
-├── az/                           # Azerbaijani pages
-├── en/                           # English pages
+├── 404.html                      # Branded not-found page
+├── sitemap.xml, robots.txt
+├── az/                           # Azerbaijani pages (main content tree)
+├── en/                           # English pages (mirror of az/)
+├── i18n/                         # routes.json, nav.json, ui.json, search-index.json — REQUIRED at runtime
 ├── css/
 │   ├── daab-common.css           # Global design system
 │   ├── daab-mobile.css           # Mobile/touch layer
 │   └── scientists-catalog-toolbar.css
 ├── js/
-│   ├── daab-nav.js
+│   ├── daab-i18n.js              # Loads i18n/*.json
+│   ├── daab-primary-nav.js       # Builds nav from nav.json
+│   ├── daab-nav.js               # Nav interaction (dropdowns, mobile menu)
 │   ├── daab-mobile.js
 │   ├── scientists-catalog-data.js
 │   └── scientists-cv-filters.js
 ├── images/                       # Web paths: images/...
-├── cv/                           # Optional standalone CV HTML (lowercase)
+├── cv/                           # Optional standalone CV HTML (lowercase; omitted from default deploy)
 ├── helpers/                      # Python — NOT deployed
 ├── documents/                    # Internal docs — NOT deployed
-└── scripts/                      # serve.ps1, optional tooling
+└── scripts/                      # deploy-rsync.ps1, optional tooling
 ```
 
 **Rules:**
@@ -115,7 +122,8 @@ DAAB-WAAS web site/
 | `.css` | `css/` only |
 | `.js` | `js/` only (never `JS/` on git/Linux) |
 | Maintenance `.py` | `helpers/` |
-| Public `.html` | Repository root, **lowercase** filenames |
+| Public `.html` | `az/`, `en/`, plus root gateway (`index.html`, `404.html`); **lowercase** filenames |
+| i18n JSON | `i18n/` — ship with every deploy |
 | Photos for site | `images/` with stable lowercase path segments where possible |
 
 ---
@@ -127,6 +135,8 @@ DAAB-WAAS web site/
 - One **canonical** shared nav/footer pattern; same asset links on every page:
   - `css/daab-common.css?v=N`
   - `css/daab-mobile.css?v=N`
+  - `js/daab-i18n.js?v=N`
+  - `js/daab-primary-nav.js?v=N`
   - `js/daab-nav.js?v=N`
   - `js/daab-mobile.js?v=N`
 - Use **relative** paths from site root: `css/...`, `js/...`, `images/...` (not absolute `C:\...`).
@@ -193,9 +203,30 @@ Use task **“Start DAAB static server”** before **“Launch Chrome against lo
 Run from repo root:
 
 ```bash
+python helpers/_deploy_preflight.py
+```
+
+Or run individually:
+
+```bash
 python helpers/_validate_site.py
+python helpers/_validate_bilingual.py
+python helpers/_validate_scientists_list.py
 python helpers/_validate_cv_cards.py
 python helpers/_check_name_order.py
+python helpers/_artifact_audit_temp.py
+```
+
+**After editing `i18n/nav.json`:** navigation is built at runtime from JSON (`daab-primary-nav.js`). Regenerate search index and spot-check nav (no full HTML nav embed):
+
+```bash
+python helpers/_build_search_index.py
+```
+
+Optional — ensure slim `#primaryNavMenu` placeholders and script versions on all shell pages:
+
+```bash
+python helpers/_sync_primary_nav.py
 ```
 
 `_validate_site.py` checks:

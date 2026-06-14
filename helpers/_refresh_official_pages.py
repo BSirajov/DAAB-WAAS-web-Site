@@ -44,7 +44,7 @@ OFFICIAL_SPEAKER_TOC: dict[str, dict[str, tuple[str, str]]] = {
     },
     "mesud-efendiyev": {
         "az": ("Məsud Əfəndiyev", "DAAB İdarə Heyətinin sədri"),
-        "en": ("Messoud Efendiyev", "Chair of the Board of Directors of WAAS"),
+        "en": ("Messoud Efendiyev", "Chair of the WAAS Executive Board"),
     },
 }
 

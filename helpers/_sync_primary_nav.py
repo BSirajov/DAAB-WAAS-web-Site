@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-"""Enable dynamic primary nav on DAAB HTML pages.
+"""Slim primary nav placeholders on DAAB HTML pages.
 
-Prefer ``helpers/_embed_static_nav.py`` for nav HTML sync across the site.
-Asset ``?v=`` numbers are imported from ``_site_wide_cleanup.py`` — do not
-duplicate version constants here.
+Live navigation is built at runtime from i18n/nav.json via daab-primary-nav.js.
+HTML pages keep only a minimal #primaryNavMenu placeholder (divider) so we do
+not duplicate the mega-menu in every file.
+
+Run after nav.json changes (optional — placeholder does not need nav labels):
+    python helpers/_sync_primary_nav.py
+
+Also wires required nav scripts/styles and data-daab-nav-mount on shell pages.
 """
 from __future__ import annotations
 
@@ -13,15 +18,11 @@ from pathlib import Path
 from _paths import ROOT
 from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS
 
-NAV_MENU_RE = re.compile(
-    r'(<div class="nav-menu" id="primaryNavMenu")[^>]*>.*?</div>(\s*</div>\s*</nav>)',
-    re.DOTALL | re.IGNORECASE,
-)
+MINIMAL_NAV_INNER = '<div class="nav-divider"></div>'
 
-NAV_PLACEHOLDER = (
-    '<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1">'
-    '<div class="nav-divider"></div>'
-    "</div>\\2"
+NAV_MENU_INNER_RE = re.compile(
+    r'(<div class="nav-menu"[^>]*\bid="primaryNavMenu"[^>]*>)(.*?)(</div>\s*(?:<div class="nav-actions\b|</div>\s*</nav>))',
+    re.DOTALL | re.IGNORECASE,
 )
 
 HTML_TAG_RE = re.compile(r"<html([^>]*)>", re.IGNORECASE)
@@ -36,18 +37,20 @@ NAV_ASSETS = (
     '\n<script src="{prefix}js/daab-shell.js?v=' + str(SCRIPT_VERSIONS["daab-shell.js"]) + '" defer></script>'
 ).strip()
 
+SKIP_PARTS = {"node_modules", ".git"}
+
 
 def bump_versions(html: str) -> str:
     """Bring any existing script/style references up to current versions."""
     for name, ver in SCRIPT_VERSIONS.items():
         html = re.sub(
-            r'(' + re.escape(name) + r')\?v=\d+',
+            r"(" + re.escape(name) + r")\?v=\d+",
             r"\1?v=" + str(ver),
             html,
         )
     for name, ver in STYLE_VERSIONS.items():
         html = re.sub(
-            r'(' + re.escape(name) + r')\?v=\d+',
+            r"(" + re.escape(name) + r")\?v=\d+",
             r"\1?v=" + str(ver),
             html,
         )
@@ -73,8 +76,6 @@ def dedupe_scripts(html: str) -> str:
         flags=re.I,
     )
 
-SKIP_PARTS = {"node_modules", ".git"}
-
 
 def asset_prefix(path: Path) -> str:
     rel = path.relative_to(ROOT).as_posix()
@@ -86,7 +87,6 @@ def asset_prefix(path: Path) -> str:
 
 
 def is_live_page(path: Path) -> bool:
-    """Live pages live under /az or /en only."""
     rel = path.relative_to(ROOT).as_posix()
     return rel.startswith("az/") or rel.startswith("en/")
 
@@ -103,6 +103,26 @@ def should_patch(path: Path) -> bool:
     return True
 
 
+def nav_menu_inner(html: str) -> str | None:
+    match = NAV_MENU_INNER_RE.search(html)
+    return match.group(2) if match else None
+
+
+def needs_slim_nav(html: str) -> bool:
+    inner = nav_menu_inner(html)
+    if inner is None:
+        return False
+    return inner.strip() != MINIMAL_NAV_INNER.strip()
+
+
+def slim_nav_menu(html: str) -> str:
+    return NAV_MENU_INNER_RE.sub(
+        r"\1" + MINIMAL_NAV_INNER + r"\3",
+        html,
+        count=1,
+    )
+
+
 def ensure_nav_mount(html: str) -> str:
     def repl(m: re.Match) -> str:
         attrs = m.group(1)
@@ -113,8 +133,14 @@ def ensure_nav_mount(html: str) -> str:
     return HTML_TAG_RE.sub(repl, html, count=1)
 
 
-def replace_nav_menu(html: str) -> str:
-    return NAV_MENU_RE.sub(NAV_PLACEHOLDER, html, count=1)
+def ensure_nav_placeholder_attr(html: str) -> str:
+    return re.sub(
+        r'(<div class="nav-menu" id="primaryNavMenu")((?![^>]*data-daab-nav-placeholder)[^>]*)>',
+        r'\1 data-daab-nav-placeholder="1"\2>',
+        html,
+        count=1,
+        flags=re.I,
+    )
 
 
 def inject_assets(html: str, prefix: str) -> str:
@@ -155,8 +181,10 @@ def patch_file(path: Path) -> bool:
     original = path.read_text(encoding="utf-8")
     html = original
     html = ensure_nav_mount(html)
-    if 'id="primaryNavMenu"' in html and 'data-daab-nav-placeholder' not in html:
-        html = replace_nav_menu(html)
+    if 'id="primaryNavMenu"' in html:
+        html = ensure_nav_placeholder_attr(html)
+    if needs_slim_nav(html):
+        html = slim_nav_menu(html)
     html = inject_assets(html, asset_prefix(path))
     if html != original:
         path.write_text(html, encoding="utf-8", newline="\n")
@@ -164,17 +192,29 @@ def patch_file(path: Path) -> bool:
     return False
 
 
-def main() -> None:
+def main() -> int:
     updated: list[str] = []
+    bloated: list[str] = []
     for path in sorted(ROOT.rglob("*.html")):
         if not should_patch(path):
             continue
         if patch_file(path):
             updated.append(path.relative_to(ROOT).as_posix())
-    print(f"Patched {len(updated)} file(s)")
-    for name in updated:
+        text = path.read_text(encoding="utf-8")
+        if needs_slim_nav(text):
+            bloated.append(path.relative_to(ROOT).as_posix())
+    print(f"Slim nav placeholder: {len(updated)} file(s) updated")
+    for name in updated[:20]:
         print(f"  {name}")
+    if len(updated) > 20:
+        print(f"  … and {len(updated) - 20} more")
+    if bloated:
+        print(f"WARNING: {len(bloated)} page(s) still have embedded mega-menu")
+        for name in bloated[:10]:
+            print(f"  {name}")
+        return 1
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

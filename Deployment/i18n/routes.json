@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 4,
   "defaultLang": "az",
   "languages": [
     "az",
@@ -34,13 +34,22 @@
       "en": "en/mission.html"
     },
     {
-      "id": "activities",
-      "navId": "activities",
+      "id": "activities-news",
+      "navId": "activities-news",
       "navGroup": "activities",
       "navParent": "activities",
       "navOrder": 1,
       "az": "az/activities.html",
       "en": "en/activities.html"
+    },
+    {
+      "id": "work-done-2024-2026",
+      "navId": "work-done-2024-2026",
+      "navGroup": "activities",
+      "navParent": "activities",
+      "navOrder": 2,
+      "az": "az/work_done_2024_2026.html",
+      "en": "en/work_done_2024_2026.html"
     },
     {
       "id": "forum-2024",
@@ -54,8 +63,8 @@
     {
       "id": "forum-2026",
       "navId": "forum-2026",
-      "navGroup": "forums",
-      "navParent": "forums",
+      "navGroup": "forum",
+      "navParent": "forum",
       "navOrder": 2,
       "az": "az/forum/2026/index.html",
       "en": "en/forum/2026/index.html"
@@ -134,6 +143,15 @@
       "en": "en/forum/2024/official.html"
     },
     {
+      "id": "forum-logistics",
+      "navId": "forum-logistics",
+      "navGroup": "forum",
+      "navParent": "forum",
+      "navOrder": 4.9,
+      "az": "az/forum/2024/logistics.html",
+      "en": "en/forum/2024/logistics.html"
+    },
+    {
       "id": "forum-program",
       "navId": "forum-program",
       "navGroup": "forum",
@@ -141,6 +159,15 @@
       "navOrder": 5,
       "az": "az/forum/2024/program.html",
       "en": "en/forum/2024/program.html"
+    },
+    {
+      "id": "forum-sessions-organization",
+      "navId": "forum-sessions-organization",
+      "navGroup": "forum",
+      "navParent": "forum",
+      "navOrder": 5.05,
+      "az": "az/forum/2024/sessions_organization.html",
+      "en": "en/forum/2024/sessions_organization.html"
     },
     {
       "id": "forum-impressions",

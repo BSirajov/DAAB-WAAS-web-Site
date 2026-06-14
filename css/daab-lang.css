@@ -206,3 +206,10 @@ main .charter-card[id],
 main [data-daab-section-id]{
   scroll-margin-top: calc(var(--daab-nav-height, 86px) + 1.25rem);
 }
+
+.daab-lang-switch .daab-lang-link--disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(0.35);
+}

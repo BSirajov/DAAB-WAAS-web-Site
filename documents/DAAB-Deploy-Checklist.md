@@ -10,10 +10,11 @@
 | Step | Action | Pass? |
 |------|--------|:-----:|
 | 1 | `git status` — know what changed; tag release if needed (`deploy-YYYY-MM-DD`) | ☐ |
-| 2 | `python helpers/_deploy_preflight.py` — **must be OK** (links + scientists) | ☐ |
-| 3 | If scientists changed: `_validate_cv_cards.py` + `_check_name_order.py` | ☐ |
-| 4 | If shared CSS/JS changed: bump `?v=` on affected HTML and include **both** in upload | ☐ |
-| 5 | Local smoke test: `START-SITE.bat` → `http://localhost:8010/az/index.html` + one EN page | ☐ |
+| 2 | `python helpers/_deploy_preflight.py` — **must be OK** (links, sitemap, scientists, artifacts) | ☐ |
+| 3 | If `i18n/nav.json` changed: `python helpers/_build_search_index.py` then spot-check nav (runtime menu from JSON) | ☐ |
+| 4 | If scientists changed: `_validate_cv_cards.py` + `_check_name_order.py` | ☐ |
+| 5 | If shared CSS/JS changed: bump `?v=` on affected HTML and include **both** in upload | ☐ |
+| 6 | Local smoke test: `START-SITE.bat` → `http://localhost:8010/az/index.html` + one EN page | ☐ |
 
 ---
 
@@ -28,6 +29,7 @@
 | `js/` | Full folder + gallery JSON manifests |
 | `images/` | Full tree (~1500 files) |
 | `i18n/` | All JSON (nav, routes, ui, search, subtitles, design-system, profiles) |
+| `sitemap.xml`, `robots.txt`, `404.html` | SEO + branded errors |
 | `forum_2024/*.pdf` | Book download only |
 
 ---

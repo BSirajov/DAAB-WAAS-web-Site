@@ -402,7 +402,7 @@ def patch_hub_cards() -> None:
             continue
         card = f"""
 <a class="page-card" data-title="{esc(tags)}" href="{href}">
-<div class="card-icon-wrap">{icon}</div>
+<div class="card-icon-wrap" aria-hidden="true">{icon}</div>
 <div class="card-body">
 <h3 class="card-title">{esc(title)}</h3>
 <div class="card-desc">{esc(desc)}</div>

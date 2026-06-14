@@ -1,7 +1,7 @@
 /**
  * Scientists profiles — re-sync chrome after late breadcrumb injection.
  */
-(function () {
+(function (global) {
   "use strict";
 
   if (document.documentElement.getAttribute("data-daab-page-id") !== "scientists-profiles") {
@@ -21,7 +21,10 @@
     }
   }
 
+  var booted = false;
   function boot() {
+    if (booted) return;
+    booted = true;
     syncAll();
     window.addEventListener("resize", syncAll, { passive: true });
     window.addEventListener("load", syncAll, { passive: true });
@@ -37,4 +40,4 @@
 
   global.setTimeout(syncAll, 120);
   global.setTimeout(syncAll, 600);
-})();
+})(window);

@@ -105,7 +105,7 @@ _OFFICIAL_EN_SECTIONS_BY_DOC_ORDER = [
         "id": "alimlerimiz",
         "title": "ADDRESS BY OUR SCIENTISTS TO HIS EXCELLENCY MR ILHAM ALIYEV, PRESIDENT OF THE REPUBLIC OF AZERBAIJAN",
         "subtitle": (
-            "The address was delivered by Mesud Afandiyev, Chair of the Board of Directors of the World Association of Azerbaijani Scientists."
+            "The address was delivered by Mesud Afandiyev, Chair of the WAAS Executive Board."
         ),
         "body": [
             (
@@ -310,7 +310,7 @@ _OFFICIAL_EN_SECTIONS_BY_DOC_ORDER = [
         "signoff": [
             "Respectfully,",
             "Messoud Efendiyev",
-            "Chair of the Board of Directors of WAAS",
+            "Chair of the WAAS Executive Board",
         ],
     },
 ]

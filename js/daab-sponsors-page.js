@@ -21,9 +21,8 @@
     });
 
     // Populate country dropdowns with full ISO country list (localized by page language)
-    const COUNTRY_CODES = [
-      "AF","AL","DZ","AD","AO","AG","AR","AM","AU","AT","AZ","BS","BH","BD","BB","BY","BE","BZ","BJ","BT","BO","BA","BW","BR","BN","BG","BF","BI","CV","KH","CM","CA","CF","TD","CL","CN","CO","KM","CG","CD","CR","CI","HR","CU","CY","CZ","DK","DJ","DM","DO","EC","EG","SV","GQ","ER","EE","SZ","ET","FJ","FI","FR","GA","GM","GE","DE","GH","GR","GD","GT","GN","GW","GY","HT","HN","HU","IS","IN","ID","IR","IQ","IE","IL","IT","JM","JP","JO","KZ","KE","KI","KP","KR","KW","KG","LA","LV","LB","LS","LR","LY","LI","LT","LU","MG","MW","MY","MV","ML","MT","MH","MR","MU","MX","FM","MD","MC","MN","ME","MA","MZ","MM","NA","NR","NP","NL","NZ","NI","NE","NG","MK","NO","OM","PK","PW","PS","PA","PG","PY","PE","PH","PL","PT","QA","RO","RU","RW","KN","LC","VC","WS","SM","ST","SA","SN","RS","SC","SL","SG","SK","SI","SB","SO","ZA","SS","ES","LK","SD","SR","SE","CH","SY","TJ","TZ","TH","TL","TG","TO","TT","TN","TR","TM","TV","UG","UA","AE","GB","US","UY","UZ","VU","VA","VE","VN","YE","ZM","ZW"
-    ];
+    // Codes come from the shared js/daab-country-codes.js module.
+    const COUNTRY_CODES = window.DAAB_COUNTRY_CODES || [];
     const countrySelects = document.querySelectorAll('select[data-country-list="1"]');
     countrySelects.forEach((select) => {
       const locale = select.dataset.locale || document.documentElement.lang || "en";
@@ -82,18 +81,4 @@
     emailInput?.addEventListener('input', () => {
       if (isEmailValid()) clearEmailError();
     });
-
-    // Counter animation for stats
-    function animateCounter(el, target, suffix='') {
-      let start = 0;
-      const dur = 1800;
-      const step = timestamp => {
-        if (!start) start = timestamp;
-        const progress = Math.min((timestamp - start) / dur, 1);
-        const ease = 1 - Math.pow(1 - progress, 3);
-        el.querySelector('.num').textContent = Math.floor(ease * target) + suffix;
-        if (progress < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    }
 })();

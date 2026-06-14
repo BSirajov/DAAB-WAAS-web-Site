@@ -106,7 +106,7 @@ def patch_ui_json(path: Path) -> bool:
     # Only patch en gateway title and nav/footer en keys
     updated = text.replace('"title": "DAAB — Choose language"', '"title": "WAAS — Choose language"')
     updated = updated.replace('"ariaHome": "DAAB home"', '"ariaHome": "WAAS home"')
-    updated = updated.replace('"chairRole": "Chair of the DAAB Board of Directors"', '"chairRole": "Chair of the WAAS Board of Directors"')
+    updated = updated.replace('"chairRole": "Chair of the DAAB Board of Directors"', '"chairRole": "Chair of the WAAS Executive Board"')
     if updated != text:
         path.write_text(updated, encoding="utf-8", newline="\n")
         return True

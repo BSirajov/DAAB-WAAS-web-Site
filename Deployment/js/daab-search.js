@@ -249,6 +249,21 @@
     actions.appendChild(btn);
   }
 
+  var SEARCH_ICON_SVG =
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">' +
+    '<circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>';
+  var CLOSE_ICON_SVG =
+    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">' +
+    '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+
+  function searchStateHtml(kind, message) {
+    return (
+      '<div class="search-state search-state--' + kind + '">' +
+      '<div class="search-state__icon" aria-hidden="true">' + SEARCH_ICON_SVG + "</div>" +
+      '<p class="search-state__text">' + escapeHtml(message) + "</p></div>"
+    );
+  }
+
   function mountOverlay(labels) {
     if (document.getElementById("search-overlay")) return;
 
@@ -259,15 +274,17 @@
     ov.setAttribute("aria-label", labels.ariaDialog);
     ov.setAttribute("aria-hidden", "true");
     ov.innerHTML =
-      '<div class="search-modal" role="document">' +
-      '  <div class="search-input-row">' +
-      '    <span class="search-icon-large" aria-hidden="true">' +
-      '      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">' +
-      '        <circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>' +
-      "      </svg>" +
-      "    </span>" +
-      '    <input type="search" id="search-input" autocomplete="off" spellcheck="false" />' +
-      '    <button type="button" class="search-close-btn" id="search-close-btn">' + escapeHtml(labels.close) + "</button>" +
+      '<div class="search-modal">' +
+      '  <div class="search-modal__header">' +
+      '    <div class="search-input-row">' +
+      '      <span class="search-icon-large" aria-hidden="true">' + SEARCH_ICON_SVG + "</span>" +
+      '      <input type="search" id="search-input" autocomplete="off" spellcheck="false" enterkeyhint="search" />' +
+      '      <button type="button" class="search-close-btn" id="search-close-btn" aria-label="' +
+      escapeHtml(labels.close) +
+      '">' +
+      CLOSE_ICON_SVG +
+      '<span class="search-close-btn__label">Esc</span></button>' +
+      "    </div>" +
       "  </div>" +
       '  <div class="search-results" id="search-results" aria-live="polite" aria-relevant="additions text"></div>' +
       '  <div class="search-hint">' +
@@ -277,8 +294,15 @@
       "  </div>" +
       "</div>";
 
-    document.body.insertBefore(ov, document.body.firstChild);
-    document.getElementById("search-input").placeholder = labels.placeholder;
+    var skip = document.querySelector("a.skip");
+    if (skip && skip.parentNode) {
+      skip.parentNode.insertBefore(ov, skip.nextSibling);
+    } else {
+      document.body.appendChild(ov);
+    }
+    var input = document.getElementById("search-input");
+    input.placeholder = labels.placeholder;
+    input.setAttribute("aria-label", labels.placeholder);
   }
 
   function ensureNavActions(inner) {
@@ -333,8 +357,11 @@
     var inp = document.getElementById("search-input");
     var closeBtn = document.getElementById("search-close-btn");
     var ov = document.getElementById("search-overlay");
-    if (inp) inp.placeholder = labels.placeholder;
-    if (closeBtn) closeBtn.textContent = labels.close;
+    if (inp) {
+      inp.placeholder = labels.placeholder;
+      inp.setAttribute("aria-label", labels.placeholder);
+    }
+    if (closeBtn) closeBtn.setAttribute("aria-label", labels.close);
     if (ov) ov.setAttribute("aria-label", labels.ariaDialog);
     refreshNavButtonLabels(labels);
     refreshGatewayButtonLabels(labels);
@@ -369,19 +396,33 @@
   }
 
   function setPrompt(res, labels, html) {
-    res.innerHTML = html || ('<div class="search-prompt">' + escapeHtml(labels.prompt) + "</div>");
+    res.innerHTML = html || searchStateHtml("prompt", labels.prompt);
+  }
+
+  function setEmpty(res, message) {
+    res.innerHTML = searchStateHtml("empty", message);
   }
 
   function renderResults(res, items, query) {
     state.focusIndex = -1;
     if (!items.length) {
-      res.innerHTML = '<div class="search-empty">' + escapeHtml(state.labels.empty) + "</div>";
+      setEmpty(res, state.labels.empty);
       return;
     }
 
-    var html = "";
     var pending = items.length;
     var rows = new Array(items.length);
+
+    function finalize() {
+      if (pending !== 0) return;
+      var built = rows.filter(function (row) { return row; });
+      if (built.length) {
+        res.innerHTML = built.join("");
+        updateFocus(res);
+      } else {
+        setEmpty(res, state.labels.empty);
+      }
+    }
 
     items.forEach(function (item, index) {
       resolveHref(item.entry).then(function (href) {
@@ -396,12 +437,10 @@
           '<span class="sri-tag">' + escapeHtml(e.tag || "") + "</span>" +
           "</a>";
         pending -= 1;
-        if (pending === 0) {
-          res.innerHTML = rows.join("");
-          updateFocus(res);
-        }
+        finalize();
       }).catch(function () {
         pending -= 1;
+        finalize();
       });
     });
   }
@@ -425,14 +464,13 @@
       setPrompt(
         res,
         state.labels,
-        '<div class="search-prompt">' + escapeHtml(state.labels.loading) + "</div>"
+        searchStateHtml("prompt", state.labels.loading)
       );
       ensureIndexLoaded().then(function () {
         runSearch(query, res);
       }).catch(function () {
         if (state.labels) {
-          res.innerHTML =
-            '<div class="search-empty">' + escapeHtml(state.labels.error) + "</div>";
+          setEmpty(res, state.labels.error);
         }
       });
       return;
@@ -475,8 +513,7 @@
         })
         .catch(function () {
           if (state.labels && ov.classList.contains("open")) {
-            res.innerHTML =
-              '<div class="search-empty">' + escapeHtml(state.labels.error) + "</div>";
+            setEmpty(res, state.labels.error);
           }
         });
       global.setTimeout(function () { inp.focus(); }, 40);
@@ -519,6 +556,32 @@
         items[state.focusIndex].click();
       } else if (e.key === "Escape") {
         closeSearch();
+      }
+    });
+
+    function focusableInModal() {
+      var modal = ov.querySelector(".search-modal");
+      if (!modal) return [];
+      var nodes = modal.querySelectorAll(
+        'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      return Array.prototype.filter.call(nodes, function (el) {
+        return el.offsetParent !== null;
+      });
+    }
+
+    ov.addEventListener("keydown", function (e) {
+      if (e.key !== "Tab") return;
+      var list = focusableInModal();
+      if (!list.length) return;
+      var first = list[0];
+      var last = list[list.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
       }
     });
 

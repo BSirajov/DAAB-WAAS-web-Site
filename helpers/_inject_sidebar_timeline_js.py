@@ -15,7 +15,15 @@ INLINE = re.compile(
     re.DOTALL,
 )
 
-SCRIPT_TAG = '<script src="../../../js/daab-sidebar-timeline.js?v=1" defer></script>'
+LOGISTICS_INLINE = re.compile(
+    r"<script>\s*\(function \(\) \{\s*"
+    r"const links = Array\.from\(document\.querySelectorAll\('#logisticsTOC a\[href\^=\"#\"\]'\)\);"
+    r".*?"
+    r"}\)\(\);\s*</script>",
+    re.DOTALL,
+)
+
+SCRIPT_TAG = '<script src="../../../js/daab-sidebar-timeline.js?v=3" defer></script>'
 
 PAGES = [
     * (ROOT / "az" / "forum" / "2024").glob("*.html"),
@@ -32,6 +40,8 @@ def main() -> None:
             print(f"skip {path.relative_to(ROOT)} (already injected)")
             continue
         new, n = INLINE.subn(SCRIPT_TAG, text, count=1)
+        if not n:
+            new, n = LOGISTICS_INLINE.subn(SCRIPT_TAG, text, count=1)
         if n:
             path.write_text(new, encoding="utf-8", newline="\n")
             print(f"updated {path.relative_to(ROOT)}")

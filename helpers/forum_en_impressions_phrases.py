@@ -97,7 +97,7 @@ IMPRESSIONS_PHRASES: dict[str, str] = {
         "The prosperity in Khankendi, the work of Karabakh University and the visit to Shusha aroused a great sense of pride in me. Setting foot on the soil of Shusha for the first time was an unforgettable feeling. It is difficult to put into words the emotions I felt before the memory of Uzeyir Hajibeyli, Bulbul and Khan gizi Natavan."
     ),
     "Birinci forumun belə yüksək səviyyədə təşkil olunması böyük qürur mənbəyidir. DAAB İdarə Heyətinin sədri Məsud Əfəndiyevin təşkilatçılıq qabiliyyəti və yorulmaz fəaliyyəti xüsusi təqdirə layiqdir. Diasporla İş üzrə Dövlət Komitəsinin əməkdaşlarının və bütün təşkilatçıların əməyi forumun uğurunda mühüm rol oynadı.": (
-        "That the first forum was organised at such a high level is a source of great pride. The organisational ability and tireless work of Mesud Afandiyev, Chair of the WAAS Board of Directors, deserve special recognition. The efforts of the staff of the State Committee for Work with Diaspora and of all organisers played an important role in the forum's success."
+        "That the first forum was organised at such a high level is a source of great pride. The organisational ability and tireless work of Mesud Afandiyev, Chair of the WAAS Executive Board, deserve special recognition. The efforts of the staff of the State Committee for Work with Diaspora and of all organisers played an important role in the forum's success."
     ),
     "Biz birlikdə daha güclüyük!": "Together we are stronger!",
     "“Sən bizimsən, bizimsən durduqca bədəndə can, Yaşa, yaşa, çox yaşa, ey şanlı Azərbaycan!”": (

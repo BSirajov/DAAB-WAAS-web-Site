@@ -55,10 +55,12 @@ div.breadcrumbs.forum-breadcrumbs{
   background: #e8f4fb;
   border-bottom: 1px solid rgba(0, 105, 180, .2);
   box-shadow: 0 1px 0 rgba(255, 255, 255, .65) inset;
-}/* Side panels sit below nav + breadcrumbs when both are present */
-.charter-layout > .toc-card,
-.charter-sidebar.toc-card{
-  top: calc(var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) + 12px) !important;
+}/* Charter article list — sticky offset only when side-by-side (desktop) */
+@media (min-width: 1061px) {
+  .charter-layout > .toc-card,
+  .charter-sidebar.toc-card{
+    top: calc(var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) + 12px) !important;
+  }
 }.daab-breadcrumbs-list{
   display: flex;
   flex-wrap: wrap;
@@ -135,14 +137,16 @@ div.breadcrumbs.forum-breadcrumbs{
   .nav-menu .nav-dropdown-link.active .nav-dropdown-link-desc{
     color: var(--blue-700) !important;
   }.daab-breadcrumbs-list{
-    padding: 8px 16px 8px 56px;
+    padding: 4px 16px 4px 56px;
+    min-height: 0;
   }.daab-breadcrumbs-item{
     font-size: var(--font-size-breadcrumb-mobile) !important;
   }
 }
 
 @media (max-width: 720px) {.daab-breadcrumbs-list{
-    padding: 6px 14px !important;
+    padding: 3px 14px !important;
+    min-height: 0 !important;
   }
 }
 

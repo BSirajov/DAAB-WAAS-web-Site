@@ -102,7 +102,7 @@ PAGE_SPECS: dict[str, dict] = {
         "design": "daab-content-hero.css + daab-mission-page.css",
     },
     "executive-board": {
-        "name_en": "Executive board",
+        "name_en": "Executive Board",
         "name_az": "İdarə heyəti",
         "purpose": "Present leadership and board member profiles",
         "content_blocks": "Hero; board member cards with photos, roles, affiliations; QR codes on cards",
@@ -110,7 +110,7 @@ PAGE_SPECS: dict[str, dict] = {
         "interactive": "QR scan opens profile or contact context (where configured)",
         "media": "Portrait photos; QR code images",
         "functional": "Uses scientists-profile-qr.css patterns",
-        "design": "Executive board grid; responsive card stack on mobile",
+        "design": "Executive Board grid; responsive card stack on mobile",
     },
     "charter": {
         "name_en": "Charter (bylaws)",
@@ -426,7 +426,7 @@ def build_markdown() -> str:
     append("| Visitor | Anonymous reader | Clear navigation, readable content, mobile access |")
     append("| Potential member | Prospective applicant | Benefits, terms, application, flyer share/print |")
     append("| Member scientist | Listed in catalogue | Accurate profile, QR/deep link, list + card views |")
-    append("| Executive board | Governance visibility | Board page with photos and roles |")
+    append("| Executive Board | Governance visibility | Board page with photos and roles |")
     append("| Partner / institution | Forum cooperation | Official texts, roadmap, galleries |")
     append("| Content editor | Staff updating HTML/JSON | Consistent templates, rebuild scripts, validation |")
     append("| Web administrator | Deploy & cache | Ship az/, en/, css/, js/, images/, i18n/ only |")

@@ -98,11 +98,11 @@ HOME_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     ("Siyahı", "Directory"),
     ("Kataloq", "Directory"),
-    ('data-title="İdarə Heyəti rəhbərlik"', 'data-title="Board of Directors leadership"'),
-    ("İdarə Heyəti", "Board of Directors"),
+    ('data-title="İdarə Heyəti rəhbərlik"', 'data-title="Executive Board leadership"'),
+    ("İdarə Heyəti", "Executive Board"),
     (
         "DAAB rəhbərliyi, idarə heyəti üzvləri, bioqrafiyalar, akademik titullar və əlaqə məlumatları.",
-        "WAAS leadership, Board of Directors members, biographies, academic titles and contact details.",
+        "WAAS leadership, Executive Board members, biographies, academic titles and contact details.",
     ),
     ("Rəhbərlik", "Leadership"),
     ('data-title="Nizamnamə qaydalar hüquqlar vəzifələr"', 'data-title="Charter rules rights duties"'),
@@ -134,6 +134,6 @@ HOME_REPLACEMENTS: list[tuple[str, str]] = [
     ("Ünvan", "Address"),
     ("Türkiyə", "Türkiye"),
     ("Rəhbərlik", "Leadership"),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Board of Directors"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
     ("Prof. Dr. Məsud Əfəndiyev", "Prof. Dr. Messoud Efendiyev"),
 ]

@@ -42,7 +42,9 @@
     home: "home",
     foundation: "foundation",
     mission: "mission",
-    activities: "activities",
+    activities: "activitiesNews",
+    "activities-news": "activitiesNews",
+    "work-done-2024-2026": "activitiesWorkDone2024",
     "forum-2024": "forum2024",
     "forum-2026": "forum2026",
     encyclopedia: "prominentFigures",
@@ -53,6 +55,8 @@
     "forum-rector-speeches": "forumRectorSpeeches",
     "forum-anas-leadership-speeches": "forumAnasLeadershipSpeeches",
     "forum-program": "forumProgram",
+    "forum-logistics": "forumLogistics",
+    "forum-sessions-organization": "forumSessionsOrganization",
     "forum-impressions": "forumImpressions",
     "forum-photos-gallery": "forumPhotosGallery",
     "forum-video-gallery": "forumVideoGallery",
@@ -82,6 +86,7 @@
   /** Dropdown groups in primary nav (not top-level page links). */
   var PRIMARY_GROUP_PARENTS = {
     about: true,
+    activities: true,
     membership: true,
     sponsorship: true,
     treasury: true
@@ -104,6 +109,18 @@
         id: "activities",
         az: "az/activities.html",
         en: "en/activities.html",
+        navParent: "activities"
+      },
+      {
+        id: "activities-news",
+        az: "az/activities.html",
+        en: "en/activities.html",
+        navParent: "activities"
+      },
+      {
+        id: "work-done-2024-2026",
+        az: "az/work_done_2024_2026.html",
+        en: "en/work_done_2024_2026.html",
         navParent: "activities"
       },
       {
@@ -143,9 +160,21 @@
         navParent: "forum"
       },
       {
+        id: "forum-logistics",
+        az: "az/forum/2024/logistics.html",
+        en: "en/forum/2024/logistics.html",
+        navParent: "forum"
+      },
+      {
         id: "forum-program",
         az: "az/forum/2024/program.html",
         en: "en/forum/2024/program.html",
+        navParent: "forum"
+      },
+      {
+        id: "forum-sessions-organization",
+        az: "az/forum/2024/sessions_organization.html",
+        en: "en/forum/2024/sessions_organization.html",
         navParent: "forum"
       },
       {
@@ -256,6 +285,8 @@
         about: "Haqqımızda",
         scientists: "Alimlərimiz",
         activities: "Fəaliyyətimiz",
+        activitiesNews: "Yeniliklər",
+        activitiesWorkDone2024: "Görülən işlər, 2024-2026",
         sponsors: "Bizi dəstəkləyin",
         forum2026: "Forum 2026"
       },
@@ -265,6 +296,8 @@
         about: "About us",
         scientists: "Scientists",
         activities: "Activities",
+        activitiesNews: "News",
+        activitiesWorkDone2024: "Work Done 2024-2026",
         sponsors: "Support us",
         forum2026: "Forum 2026",
         scientistsList: "Directory of Scientists",
@@ -278,11 +311,13 @@
         mission: "Missiya və dəyərlər",
         activities: "Fəaliyyətimiz",
         activitiesNews: "Yeniliklər",
+        activitiesWorkDone2024: "Görülən işlər, 2024-2026",
         forum2024: "Forumun mənzərəsi",
         forumOfficial: "Rəsmi müraciətlər",
         forumRectorSpeeches: "Rektorlar",
         forumAnasLeadershipSpeeches: "Akademiklər",
         forumProgram: "Proqram",
+        forumSessionsOrganization: "Sessiyalar",
         forumBagliHekayeler: "Hekayələr",
         forumCooperation: "Töhfələr",
         forumPhotosGallery: "Foto qalereya",
@@ -305,18 +340,20 @@
         mission: "Mission & values",
         activities: "Activities",
         activitiesNews: "News",
+        activitiesWorkDone2024: "Work Done 2024-2026",
         forum2024: "Highlights",
         forumOfficial: "Official addresses",
         forumRectorSpeeches: "Rectors",
         forumAnasLeadershipSpeeches: "Academicians",
         forumProgram: "Programme",
+        forumSessionsOrganization: "Sessions",
         forumBagliHekayeler: "Stories",
         forumCooperation: "Contributions",
         forumPhotosGallery: "Photo gallery",
         forumVideoGallery: "Video gallery",
         scientistsList: "Directory",
         scientistsProfiles: "Profiles",
-        executiveBoard: "Board of Directors",
+        executiveBoard: "Executive Board",
         charter: "Charter",
         membership: "Membership",
         membershipWhy: "Why join WAAS",
@@ -334,7 +371,7 @@
     sections: {
       about: { landingId: "mission" },
       scientists: { landingId: "scientists-list" },
-      activities: { landingId: "activities" },
+      activities: { landingId: "activities-news" },
       membership: { landingId: "membership-value" },
       sponsorship: { landingId: "sponsors" },
       treasury: { landingId: "encyclopedia" }
@@ -371,7 +408,14 @@
     return (block && block[key]) || key;
   }
 
+  /** Legacy page id for the News feed (Activities → News submenu). */
+  function breadcrumbPageId(pageId) {
+    if (pageId === "activities") return "activities-news";
+    return pageId;
+  }
+
   function pageTitle(ui, lang, pageId) {
+    pageId = breadcrumbPageId(pageId);
     var key = PAGE_LABEL_KEYS[pageId];
     if (!key) return pageId;
     var crumbBlock = ui.breadcrumbs && ui.breadcrumbs[lang];
@@ -475,15 +519,15 @@
   }
 
   function findCurrentPage(I18N, routes) {
-    if (I18N && typeof I18N.findPage === "function") {
-      var found = I18N.findPage(routes);
-      if (found) return found;
-    }
-
     var pageId = document.documentElement.getAttribute("data-daab-page-id");
     if (pageId) {
       var byId = pageById(routes, pageId);
       if (byId) return byId;
+    }
+
+    if (I18N && typeof I18N.findPage === "function") {
+      var found = I18N.findPage(routes);
+      if (found) return found;
     }
 
     var pathKey = I18N && typeof I18N.currentPathKey === "function" ? I18N.currentPathKey() : "";
@@ -566,11 +610,10 @@
       });
     }
 
-    // About / Membership dropdowns only (Activities & Forum 2024 are top-level nav links).
+    // About / Membership / Activities dropdowns (Forum 2024 uses hub crumb).
     if (
       page.navParent &&
       page.navParent !== "forum" &&
-      page.navParent !== "activities" &&
       PRIMARY_GROUP_PARENTS[page.navParent] &&
       !usesForumHubCrumb(page)
     ) {
@@ -597,7 +640,7 @@
 
     crumbs.push({
       href: null,
-      text: pageTitle(ui, lang, page.id),
+      text: pageTitle(ui, lang, breadcrumbPageId(page.id)),
       current: true
     });
 

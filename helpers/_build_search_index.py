@@ -40,7 +40,8 @@ PAGE_LABEL_KEYS = {
     "home": "home",
     "foundation": "foundation",
     "mission": "mission",
-    "activities": "activities",
+    "activities": "activitiesNews",
+    "activities-news": "activitiesNews",
     "forum-2024": "forum2024",
     "forum-2026": "forum2026",
     "encyclopedia": "prominentFigures",
@@ -50,6 +51,8 @@ PAGE_LABEL_KEYS = {
     "forum-rector-speeches": "forumRectorSpeeches",
     "forum-anas-leadership-speeches": "forumAnasLeadershipSpeeches",
     "forum-program": "forumProgram",
+    "forum-logistics": "forumLogistics",
+    "forum-sessions-organization": "forumSessionsOrganization",
     "forum-2024-presentations": "forum2024Presentations",
     "forum-impressions": "forumImpressions",
     "forum-roadmap": "forumRoadmap",
@@ -338,7 +341,7 @@ def extract_activities(raw: str, lang: str) -> list[dict]:
                 eid=f"activity-{anchor}-{lang}",
                 lang=lang,
                 kind="activity",
-                page_id="activities",
+                page_id="activities-news",
                 title=title,
                 summary=summary,
                 anchor=anchor,
@@ -499,7 +502,7 @@ def build() -> dict:
     add_nav(entries, ui, nav_def)
 
     page_loaders = {
-        "activities": extract_activities,
+        "activities-news": extract_activities,
         "foundation": extract_foundation_sections,
         "mission": extract_mission_sections,
         "charter": extract_charter_sections,

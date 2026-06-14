@@ -34,7 +34,7 @@ MUTED = RGBColor(0x34, 0x5D, 0x76)
 HEADER_FILL = "094D78"
 ALT_FILL = "F4F7FA"
 
-EN_NAV_BOARD_VARIANTS = ("Executive board", "Board of Directors", "Executive Board")
+EN_NAV_BOARD_VARIANTS = ("Executive Board", "Board of Directors", "Executive Board")
 AZ_MEMBERSHIP_WHY = "Niyə üzv olmalı"
 
 CATEGORIES = (
@@ -379,7 +379,7 @@ def audit_page(pt: PageText, findings: list[Finding]) -> None:
                 pt.page_id,
             )
         nav_text = " ".join(pt.nav_labels)
-        if "Executive board" in nav_text and "Board of Directors" in " ".join(
+        if "Executive Board" in nav_text and "Board of Directors" in " ".join(
             pt.headings + pt.sample_paragraphs
         ):
             add_finding(
@@ -387,8 +387,8 @@ def audit_page(pt: PageText, findings: list[Finding]) -> None:
                 page,
                 lang,
                 "Governance terminology",
-                "Executive board (nav) vs Board of Directors (body)",
-                "Choose one term sitewide (e.g. Executive board)",
+                "Executive Board (nav) vs Board of Directors (body)",
+                "Choose one term sitewide (e.g. Executive Board)",
                 "Terminology",
                 "Inconsistent English labels for idarə heyəti.",
                 pt.page_id,
@@ -462,9 +462,9 @@ def audit_ui_json(ui: dict, findings: list[Finding]) -> None:
             "en",
             "nav.executiveBoard",
             "Board of Directors",
-            "Executive board",
+            "Executive Board",
             "Terminology",
-            "Many HTML pages use 'Executive board' in embedded nav.",
+            "Many HTML pages use 'Executive Board' in embedded nav.",
         )
     if en.get("foundation") == "Foundation":
         add_finding(
@@ -607,8 +607,8 @@ def curated_findings() -> list[Finding]:
             "Sitewide",
             "en",
             "Governance (multiple pages)",
-            "Executive board / Board of Directors / Chair of the WAAS Board of Directors",
-            "Single preferred term (recommend: Executive board)",
+            "Executive Board / Board of Directors / Chair of the WAAS Executive Board",
+            "Single preferred term (recommend: Executive Board)",
             "Terminology",
             "Harmonise navigation, cards, signatures, and i18n/ui.json.",
             "",
@@ -783,7 +783,7 @@ def build_docx(findings: list[Finding], pages_audited: list[str]) -> None:
     recurring = [
         ("AZ", "Niyə üzv olmalı", "~18 pages + i18n/ui.json", "Use Niyə üzv olmalısınız? in nav and section pills"),
         ("AZ", "Forum 2024-ü kəşf edin", "~19 pages", "Prefer Forum 2024 haqqında"),
-        ("EN", "Executive board vs Board of Directors", "~20+ pages", "Pick one governance label sitewide"),
+        ("EN", "Executive Board vs Board of Directors", "~20+ pages", "Pick one governance label sitewide"),
         ("AZ", "Section N of M — English", "az/application.html", "Localise step subtitles to Azerbaijani"),
         ("EN", "scholars vs scientists", "en/index.html meta", "Align with WAAS brand wording"),
     ]

@@ -80,6 +80,22 @@
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeEventsMenu();
   });
+  function syncFromHash() {
+    const id = location.hash.slice(1);
+    const idx = id ? ids.indexOf(id) : -1;
+    if (idx === -1) { activate(null); return; }
+    const target = document.getElementById(id);
+    if (!target) return;
+    activate(links[idx]);
+    const Pos = window.DAAB_LANG_POSITION;
+    if (Pos && Pos.scrollToAnchor) {
+      Pos.scrollToAnchor(id, false);
+    } else {
+      target.scrollIntoView({ block: 'start', behavior: 'auto' });
+    }
+  }
+
+  window.addEventListener('popstate', syncFromHash);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();

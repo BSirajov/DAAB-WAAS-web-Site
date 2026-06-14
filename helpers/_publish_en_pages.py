@@ -61,7 +61,7 @@ EN_NAV_ITEMS = [
     ("activities", "activities.html", "📰 Activities"),
     ("scientists-list", "scientists/list.html", "📋 Directory"),
     ("scientists-profiles", "scientists/profiles.html", "👤 Profiles"),
-    ("executive-board", "executive-board.html", "🎓 Board of Directors"),
+    ("executive-board", "executive-board.html", "🎓 Executive Board"),
     ("charter", "charter.html", "📜 Charter"),
     ("membership", "membership.html", "✒️ Membership"),
 ]
@@ -139,7 +139,7 @@ def en_footer_html() -> str:
       <div class="footer-col">
         <h4 class="footer-title">Leadership</h4>
         <p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>
-        Chair of the WAAS Board of Directors<br/>Germany — James D. Murray Distinguished Professor</p>
+        Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p>
       </div>
     </div>
   </div>
@@ -303,7 +303,7 @@ MISSION_REPLACEMENTS: list[tuple[str, str]] = [
     ("Ünvan", "Address"),
     ("Türkiyə", "Türkiye"),
     ("Rəhbərlik", "Leadership"),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Board of Directors"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
 ]
 
 
@@ -333,12 +333,12 @@ def postprocess_activities_en(html: str) -> str:
         flags=re.DOTALL,
     )
     for old, new in (
-        ("Board of Directorsnin həmsədri", "Board of Directors Co-Chair"),
-        ("Board of Directorsnin sədri", "Board of Directors Chair"),
-        ("Board of Directorsnin Sədri", "Board of Directors Chair"),
-        ("Board of Directorsnin üzvü", "Board of Directors member"),
-        ("Board of Directorsnin üzvləri", "Board of Directors members"),
-        ("Board of Directorsnin", "of the Board of Directors"),
+        ("Board of Directorsnin həmsədri", "Executive Board Co-Chair"),
+        ("Board of Directorsnin sədri", "Executive Board Chair"),
+        ("Board of Directorsnin Sədri", "Executive Board Chair"),
+        ("Board of Directorsnin üzvü", "Executive Board member"),
+        ("Board of Directorsnin üzvləri", "Executive Board members"),
+        ("Board of Directorsnin", "of the Executive Board"),
         ("Search üçün yazmağa başlayın…", "Start typing to search…"),
         ("World Association of Azerbaijani Scientistsnin", "World Association of Azerbaijani Scientists'"),
         ("Karabakh Universityndə", "Karabakh University"),

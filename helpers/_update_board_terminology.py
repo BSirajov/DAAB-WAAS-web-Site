@@ -1,4 +1,4 @@
-"""Update Executive Board -> Board of Directors (EN) and shorten AZ role labels."""
+"""DEPRECATED: superseded by _harmonize_governance_terminology.py (Executive Board)."""
 from __future__ import annotations
 
 import re
@@ -7,7 +7,7 @@ from pathlib import Path
 from _paths import ROOT
 
 # User requested "Board of director"; standard EN governing-body term:
-BOARD_EN = "Board of Directors"
+BOARD_EN = "Board of Directors"  # legacy; do not run — use _harmonize_governance_terminology.py
 
 EN_REPLACEMENTS: list[tuple[str, str]] = [
     (
@@ -41,7 +41,7 @@ EN_REPLACEMENTS: list[tuple[str, str]] = [
     ("executive board ", f"{BOARD_EN.lower()} "),
     ("The executive board ", f"The {BOARD_EN.lower()} "),
     ("Initial WAAS executive board", f"Initial WAAS {BOARD_EN.lower()}"),
-    ("Executive board", BOARD_EN),
+    ("Executive Board", BOARD_EN),
     ("Executive Board", BOARD_EN),
 ]
 

@@ -7,17 +7,21 @@
   var totalSections = 4;
   var currentSection = 1;
   var cityCache = Object.create(null);
-  var COUNTRY_CODES = [
-    "AF","AL","DZ","AD","AO","AG","AR","AM","AU","AT","AZ","BS","BH","BD","BB","BY","BE","BZ","BJ","BT","BO","BA","BW","BR","BN","BG","BF","BI","CV","KH","CM","CA","CF","TD","CL","CN","CO","KM","CG","CD","CR","CI","HR","CU","CY","CZ","DK","DJ","DM","DO","EC","EG","SV","GQ","ER","EE","SZ","ET","FJ","FI","FR","GA","GM","GE","DE","GH","GR","GD","GT","GN","GW","GY","HT","HN","HU","IS","IN","ID","IR","IQ","IE","IL","IT","JM","JP","JO","KZ","KE","KI","KP","KR","KW","KG","LA","LV","LB","LS","LR","LY","LI","LT","LU","MG","MW","MY","MV","ML","MT","MH","MR","MU","MX","FM","MD","MC","MN","ME","MA","MZ","MM","NA","NR","NP","NL","NZ","NI","NE","NG","MK","NO","OM","PK","PW","PS","PA","PG","PY","PE","PH","PL","PT","QA","RO","RU","RW","KN","LC","VC","WS","SM","ST","SA","SN","RS","SC","SL","SG","SK","SI","SB","SO","ZA","SS","ES","LK","SD","SR","SE","CH","SY","TJ","TZ","TH","TL","TG","TO","TT","TN","TR","TM","TV","UG","UA","AE","GB","US","UY","UZ","VU","VA","VE","VN","YE","ZM","ZW"
-  ];
+  // Codes come from the shared js/daab-country-codes.js module.
+  var COUNTRY_CODES = window.DAAB_COUNTRY_CODES || [];
 
   function byId(id) {
     return document.getElementById(id);
   }
 
   function detectLang() {
+    // Canonical detection lives in js/daab-i18n.js (DAAB_I18N.detectLang).
+    // Delegate to it when present; the inline fallback only covers the
+    // (unexpected) case where daab-i18n.js failed to load.
+    var I18N = window.DAAB_I18N;
+    if (I18N && I18N.detectLang) return I18N.detectLang();
     var explicit = document.documentElement.getAttribute("data-daab-lang");
-    if (explicit === "en" || explicit === "az") return explicit;
+    if (explicit === "az" || explicit === "en") return explicit;
     return /\/en(\/|$)/.test(String(location.pathname).replace(/\\/g, "/")) ? "en" : "az";
   }
 
@@ -675,6 +679,24 @@
   window.daabApplicationPrev = prev;
   window.daabApplicationSubmit = submitForm;
 
+  function initEndpointNotice() {
+    if (getFormEndpoint()) return;
+    var box = byId("app-endpoint-notice");
+    if (box) {
+      box.hidden = false;
+      var email = "info@daab-waas.com";
+      box.innerHTML =
+        uiText("noEndpoint") +
+        ' <a href="mailto:' +
+        email +
+        '">' +
+        email +
+        "</a>";
+    }
+    var submitBtn = byId("appSubmitBtn");
+    if (submitBtn) submitBtn.disabled = true;
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     if (!document.body.classList.contains("application-page")) return;
     document.querySelectorAll(".application-page .form-section").forEach(function (s) {
@@ -688,6 +710,7 @@
     initPhoneCodeDropdown();
     initStepNavigation();
     initBackToStepsButtons();
+    initEndpointNotice();
     updateProgress(1);
     var submitBtn = byId("appSubmitBtn");
     if (submitBtn && !submitBtn.textContent.trim()) {

@@ -29,7 +29,7 @@ MEMBERSHIP_REPLACEMENTS: list[tuple[str, str]] = [
     ("Ünvan", "Address"),
     ("Türkiyə", "Türkiye"),
     ("Rəhbərlik", "Leadership"),
-    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Board of Directors"),
+    ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
     ("Axtarış üçün yazmağa başlayın…", "Start typing to search…"),
     ("Axtarış", "Search"),
     ("Birliyimizə üzv olun", "Join our Association"),
@@ -69,7 +69,7 @@ MEMBERSHIP_REPLACEMENTS: list[tuple[str, str]] = [
     ),
     (
         '<p class="signature">Sizin dəstəyiniz bizim üçün çox dəyərlidir. Birliyimizə qoşulduğunuza görə təşəkkür edirik.<br/><br/>Hörmətlə və ən xoş arzularla,<br/><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>DAAB İdarə Heyətinin Sədri</p>',
-        '<p class="signature">Your support means a great deal to us. Thank you for joining our association.<br/><br/>With respect and best wishes,<br/><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Board of Directors</p>',
+        '<p class="signature">Your support means a great deal to us. Thank you for joining our association.<br/><br/>With respect and best wishes,<br/><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Executive Board</p>',
     ),
     ("Almaniya — James D. Murray mükafatlı professoru", "Germany — James D. Murray Distinguished Professor"),
     ("© 2026 DAAB — Bütün hüquqlar qorunur", "© 2026 WAAS — All Rights Reserved"),

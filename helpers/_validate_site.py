@@ -27,6 +27,13 @@ REQUIRED_SNIPPETS = {
     "daab-mobile.js": "js/daab-mobile.js",
 }
 
+# Pages with data-daab-nav-mount="1" load nav from i18n/ at runtime.
+NAV_MOUNT_SNIPPETS = {
+    "daab-i18n.js": "js/daab-i18n.js",
+    "daab-primary-nav.js": "js/daab-primary-nav.js",
+    "daab-shell.js": "js/daab-shell.js",
+}
+
 def bilingual_html_files() -> list[Path]:
     out: list[Path] = []
     for folder in ("az", "en"):
@@ -128,15 +135,19 @@ def main() -> int:
             and not is_legacy_redirect
         )
         if check_snippets:
-            for label, snippet in REQUIRED_SNIPPETS.items():
-                # az/en pages use ../css; prominent_figures/* use ../../../css
-                variants = [
-                    snippet,
-                    snippet.replace("css/", "../css/").replace("js/", "../js/"),
-                    snippet.replace("css/", "../../../css/").replace("js/", "../../../js/"),
-                ]
-                if not any(v in text for v in variants):
-                    warnings.append(f"{page.relative_to(ROOT)}: missing {label}")
+            snippet_sets = [REQUIRED_SNIPPETS]
+            if 'data-daab-nav-mount="1"' in text:
+                snippet_sets.append(NAV_MOUNT_SNIPPETS)
+            for snippets in snippet_sets:
+                for label, snippet in snippets.items():
+                    # az/en pages use ../css; prominent_figures/* use ../../../css
+                    variants = [
+                        snippet,
+                        snippet.replace("css/", "../css/").replace("js/", "../js/"),
+                        snippet.replace("css/", "../../../css/").replace("js/", "../../../js/"),
+                    ]
+                    if not any(v in text for v in variants):
+                        warnings.append(f"{page.relative_to(ROOT)}: missing {label}")
 
         for m in HREF_SRC_RE.finditer(text):
             ref = m.group(1)

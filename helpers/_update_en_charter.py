@@ -161,7 +161,7 @@ SECTIONS: list[tuple[str, str, str, list[str]]] = [
             p("The organs of the Association are:"),
             ol([
                 "General Assembly,",
-                "Board of Directors,",
+                "Executive Board,",
                 "Audit Board.",
             ]),
         ],
@@ -326,7 +326,7 @@ SECTIONS: list[tuple[str, str, str, list[str]]] = [
     ),
     (
         "section-10",
-        "Establishment, responsibilities and powers of the Board of Directors",
+        "Establishment, responsibilities and powers of the Executive Board",
         "Article 10.",
         [
             p(
@@ -344,7 +344,7 @@ SECTIONS: list[tuple[str, str, str, list[str]]] = [
                 "called to office in the order of the majority of votes received at the General "
                 "Assembly."
             ),
-            h3("Responsibilities and powers of the Board of Directors"),
+            h3("Responsibilities and powers of the Executive Board"),
             p("The board of directors fulfils the following tasks:"),
             ol([
                 "Representing the Association, or authorising one of its members or a third party in this regard;",
