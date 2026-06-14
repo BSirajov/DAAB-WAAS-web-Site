@@ -22,7 +22,7 @@ META_DESCRIPTION_EN = (
     "discipline-specific groups, moderators, and table participants."
 )
 
-SUMMARY_TITLE_EN = "Report summary"
+SUMMARY_TITLE_EN = "Day summary"
 SUMMARY_EN = (
     "This page provides detailed information on sessions organized on 10 September "
     "within the Forum programme: mixed groups in the morning and discipline-specific groups "

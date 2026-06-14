@@ -79,8 +79,8 @@ SESSION_PHOTO_OVERRIDES = {
 
 TITLE = "Sessiyaların təşkili və yönləndirilməsi"
 SUBTITLE = "10 sentyabr 2024 — strateji sessiyaların QARIŞIQ və İXTİSAS qrupları üzrə təşkili"
-SUMMARY_ARIA = "Hesabatın icmalı"
-SUMMARY_TITLE = "Hesabatın icmalı"
+SUMMARY_ARIA = "Günün icmalı"
+SUMMARY_TITLE = "Günün icmalı"
 SUMMARY = (
     "Bu səhifədə Forumun 10 sentyabr proqramı çərçivəsində səhər saatlarında qarışıq qruplar, "
     "nahardan sonra isə ixtisas qrupları üzrə beyin fırtınası prinsipi əsasında təşkil olunmuş "
@@ -962,8 +962,8 @@ def nav_strip_placeholder(lang: str, asset: str) -> str:
     home_href = "../../index.html"
     logo_src = f"{asset}images/daab-logo.svg"
     if lang == "en":
-        return f"""<nav aria-label="Main navigation" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a title="Home page" aria-label="WAAS home" href="{home_href}"><img src="{logo_src}" class="nav-brand-logo" alt="WAAS Logo"></a></div><a aria-label="WAAS home" class="nav-brand" href="{home_href}"><span class="nav-brand-text">World Association of<br class="mobile-hidden-break">Azerbaijani Scientists</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"></div></div></nav>"""
-    return f"""<nav aria-label="Əsas naviqasiya" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="Menyunu aç" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a title="Ana səhifə" aria-label="DAAB ana səhifə" href="{home_href}"><img src="{logo_src}" class="nav-brand-logo" alt="DAAB Logo"></a></div><a aria-label="DAAB ana səhifə" class="nav-brand" href="{home_href}"><span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">Alimlər Birliyi</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"></div></div></nav>"""
+        return f"""<nav aria-label="Main navigation" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a title="Home page" aria-label="WAAS home" href="{home_href}"><img src="{logo_src}" class="nav-brand-logo" alt="WAAS Logo"></a></div><a aria-label="WAAS home" class="nav-brand" href="{home_href}"><span class="nav-brand-text">World Association of<br class="mobile-hidden-break">Azerbaijani Scientists</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div></div><div class="nav-actions" role="group"></div></div></nav>"""
+    return f"""<nav aria-label="Əsas naviqasiya" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="Menyunu aç" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a title="Ana səhifə" aria-label="DAAB ana səhifə" href="{home_href}"><img src="{logo_src}" class="nav-brand-logo" alt="DAAB Logo"></a></div><a aria-label="DAAB ana səhifə" class="nav-brand" href="{home_href}"><span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">Alimlər Birliyi</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div></div><div class="nav-actions" role="group"></div></div></nav>"""
 
 
 def load_preview_nav_html() -> str:
@@ -1077,7 +1077,7 @@ def build_html(
         skip = '<a class="skip" href="#content">Skip to content</a>'
         hero_h1 = "Sessions <span>organization</span>"
         hero_sub = "10 September 2024 — strategic sessions in mixed and discipline-specific groups"
-        summary_aria = "Page summary"
+        summary_aria = "Day summary"
         toc_label = "📋 Contents"
         toc_toggle = 'aria-label="Open contents menu"'
         activities_v = st.get("daab-activities-layout.css", 17)
@@ -1173,7 +1173,7 @@ def build_html(
 </main>
 </div>
 {footer_html(target.lang)}
-{SIDEBAR_SCRIPT}
+<script src="{asset}js/daab-sidebar-timeline.js?v={sv.get('daab-sidebar-timeline.js', 3)}" defer></script>
 </body>
 </html>"""
 
