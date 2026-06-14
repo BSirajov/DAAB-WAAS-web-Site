@@ -1,7 +1,7 @@
 {
   "version": 1,
   "generated": "2026-06-14",
-  "entryCount": 548,
+  "entryCount": 534,
   "entries": [
     {
       "id": "page-home-az",
@@ -35,12 +35,12 @@
       "type": "page",
       "pageId": "foundation",
       "anchor": "",
-      "title": "DAAB — Foundation",
+      "title": "DAAB — Birliyin təsisi",
       "summary": "Dünya Azərbaycanlı Alimlər Birliyinin təsis zərurəti və İstanbul təsis görüşünü birləşdirən inteqrasiya olunmuş səhifə.",
       "tag": "Səhifə",
       "icon": "🏛️",
       "boost": 12,
-      "norm": "daab foundation du nya azerbaycanli alimler birliyinin tesis zerureti ve i stanbul tesis go ru s u nu birles diren inteqrasiya olunmus sehife."
+      "norm": "daab birliyin tesisi du nya azerbaycanli alimler birliyinin tesis zerureti ve i stanbul tesis go ru s u nu birles diren inteqrasiya olunmus sehife."
     },
     {
       "id": "page-foundation-en",
@@ -90,7 +90,7 @@
       "title": "DAAB — Yeniliklər",
       "summary": "Dünya Azərbaycanlı Alimlər Birliyinin fəaliyyətləri, tədbirləri, görüşləri və təşəbbüsləri.",
       "tag": "Səhifə",
-      "icon": "📄",
+      "icon": "📰",
       "boost": 12,
       "norm": "daab yenilikler du nya azerbaycanli alimler birliyinin fealiyyetleri tedbirleri go ru s leri ve tes ebbu sleri."
     },
@@ -103,7 +103,7 @@
       "title": "WAAS — News",
       "summary": "Activities, events, meetings and initiatives of the World Association of Azerbaijani Scientists.",
       "tag": "Page",
-      "icon": "📄",
+      "icon": "📰",
       "boost": 12,
       "norm": "waas news activities events meetings and initiatives of the world association of azerbaijani scientists."
     },
@@ -168,7 +168,7 @@
       "title": "Forum 2026 — DAAB",
       "summary": "Xaricdə yaşayan alimlərin II Forumu — dekabr 2026, Bakı.",
       "tag": "Səhifə",
-      "icon": "📄",
+      "icon": "🎤",
       "boost": 12,
       "norm": "forum 2026 daab xaricde yas ayan alimlerin ii forumu dekabr 2026 baki."
     },
@@ -181,113 +181,9 @@
       "title": "Forum 2026 — WAAS",
       "summary": "Second Forum of Azerbaijani Scientists Living Abroad — December 2026, Baku.",
       "tag": "Page",
-      "icon": "📄",
+      "icon": "🎤",
       "boost": 12,
       "norm": "forum 2026 waas second forum of azerbaijani scientists living abroad december 2026 baku."
-    },
-    {
-      "id": "page-encyclopedia-az",
-      "lang": "az",
-      "type": "page",
-      "pageId": "encyclopedia",
-      "anchor": "",
-      "title": "DAAB — Xəzinə: Görkəmli şəxsiyyətlər",
-      "summary": "Xəzinə kataloqu: Azərbaycan və türk dünyası ilə dünya elminin görkəmli şəxsiyyətləri — tarixi dövr, sahə, ölkə və kateqoriya üzrə axtarış və filtr.",
-      "tag": "Səhifə",
-      "icon": "👤",
-      "boost": 12,
-      "norm": "daab xezine go rkemli s exsiyyetler xezine kataloqu azerbaycan ve tu rk du nyasi ile du nya elminin go rkemli s exsiyyetleri tarixi do vr sahe o lke ve kateqoriya u zre axtaris ve filtr."
-    },
-    {
-      "id": "page-encyclopedia-en",
-      "lang": "en",
-      "type": "page",
-      "pageId": "encyclopedia",
-      "anchor": "",
-      "title": "WAAS — Treasury: Prominent figures",
-      "summary": "Prominent figures from Azerbaijani and Turkic heritage and world science — search, filter, and sort by period, field, country, and category.",
-      "tag": "Page",
-      "icon": "👤",
-      "boost": 12,
-      "norm": "waas treasury prominent figures prominent figures from azerbaijani and turkic heritage and world science search filter and sort by period field country and category."
-    },
-    {
-      "id": "page-industrial-revolutions-az",
-      "lang": "az",
-      "type": "page",
-      "pageId": "industrial-revolutions",
-      "anchor": "",
-      "title": "DAAB — Sənaye inqilabları",
-      "summary": "Xəzinə: tarixi sənaye inqilabları haqqında materiallar hazırlanır.",
-      "tag": "Səhifə",
-      "icon": "⚙️",
-      "boost": 12,
-      "norm": "daab senaye inqilablari xezine tarixi senaye inqilablari haqqinda materiallar hazirlanir."
-    },
-    {
-      "id": "page-industrial-revolutions-en",
-      "lang": "en",
-      "type": "page",
-      "pageId": "industrial-revolutions",
-      "anchor": "",
-      "title": "WAAS — Industrial Revolutions",
-      "summary": "Treasury: materials on industrial revolutions are being prepared.",
-      "tag": "Page",
-      "icon": "⚙️",
-      "boost": 12,
-      "norm": "waas industrial revolutions treasury materials on industrial revolutions are being prepared."
-    },
-    {
-      "id": "page-major-scientific-inventions-az",
-      "lang": "az",
-      "type": "page",
-      "pageId": "major-scientific-inventions",
-      "anchor": "",
-      "title": "DAAB — Əsas elmi ixtiralar",
-      "summary": "Xəzinə: elm tarixinin mühüm ixtiraları haqqında materiallar hazırlanır.",
-      "tag": "Səhifə",
-      "icon": "💡",
-      "boost": 12,
-      "norm": "daab esas elmi ixtiralar xezine elm tarixinin mu hu m ixtiralari haqqinda materiallar hazirlanir."
-    },
-    {
-      "id": "page-major-scientific-inventions-en",
-      "lang": "en",
-      "type": "page",
-      "pageId": "major-scientific-inventions",
-      "anchor": "",
-      "title": "WAAS — Major Scientific Inventions",
-      "summary": "Treasury: materials on major scientific inventions are being prepared.",
-      "tag": "Page",
-      "icon": "💡",
-      "boost": 12,
-      "norm": "waas major scientific inventions treasury materials on major scientific inventions are being prepared."
-    },
-    {
-      "id": "page-prominent-figure-az",
-      "lang": "az",
-      "type": "page",
-      "pageId": "prominent-figure",
-      "anchor": "",
-      "title": "DAAB — Xəzinə: Görkəmli şəxsiyyətlər",
-      "summary": "Xəzinə kataloqu: Azərbaycan və türk dünyası ilə dünya elminin görkəmli şəxsiyyətləri — tarixi dövr, sahə, ölkə və kateqoriya üzrə axtarış və filtr.",
-      "tag": "Səhifə",
-      "icon": "📄",
-      "boost": 12,
-      "norm": "daab xezine go rkemli s exsiyyetler xezine kataloqu azerbaycan ve tu rk du nyasi ile du nya elminin go rkemli s exsiyyetleri tarixi do vr sahe o lke ve kateqoriya u zre axtaris ve filtr."
-    },
-    {
-      "id": "page-prominent-figure-en",
-      "lang": "en",
-      "type": "page",
-      "pageId": "prominent-figure",
-      "anchor": "",
-      "title": "WAAS — Treasury: Prominent figures",
-      "summary": "Prominent figures from Azerbaijani and Turkic heritage and world science — search, filter, and sort by period, field, country, and category.",
-      "tag": "Page",
-      "icon": "📄",
-      "boost": 12,
-      "norm": "waas treasury prominent figures prominent figures from azerbaijani and turkic heritage and world science search filter and sort by period field country and category."
     },
     {
       "id": "page-forum-2024-presentations-az",
@@ -662,7 +558,7 @@
       "title": "DAAB — Üzvlük sizə nə qazandırır?",
       "summary": "DAAB üzvlüyünün faydaları, əməkdaşlıq imkanları və qlobal elmi şəbəkəyə qoşulma dəyəri.",
       "tag": "Səhifə",
-      "icon": "📄",
+      "icon": "💡",
       "boost": 12,
       "norm": "daab u zvlu k size ne qazandirir daab u zvlu yu nu n faydalari emekdas liq imkanlari ve qlobal elmi s ebekeye qos ulma deyeri."
     },
@@ -675,7 +571,7 @@
       "title": "WAAS — Why become a member?",
       "summary": "Benefits of WAAS membership, collaboration opportunities, and the value of joining the global Azerbaijani scientific network.",
       "tag": "Page",
-      "icon": "📄",
+      "icon": "💡",
       "boost": 12,
       "norm": "waas why become a member benefits of waas membership collaboration opportunities and the value of joining the global azerbaijani scientific network."
     },
@@ -688,7 +584,7 @@
       "title": "DAAB — Üzvlük Müraciət Forması",
       "summary": "Dünya Azərbaycanlı Alimlər Birliyinə üzvlük üçün onlayn müraciət forması.",
       "tag": "Səhifə",
-      "icon": "📄",
+      "icon": "📝",
       "boost": 12,
       "norm": "daab u zvlu k mu raciet formasi du nya azerbaycanli alimler birliyine u zvlu k u c u n onlayn mu raciet formasi."
     },
@@ -701,7 +597,7 @@
       "title": "WAAS — Membership Application Form",
       "summary": "Online membership application form for the World Association of Azerbaijani Scientists (WAAS).",
       "tag": "Page",
-      "icon": "📄",
+      "icon": "📝",
       "boost": 12,
       "norm": "waas membership application form online membership application form for the world association of azerbaijani scientists waas ."
     },
@@ -714,7 +610,7 @@
       "title": "DAAB — Üzvlük flyer",
       "summary": "DAAB üzvlüyünün dəyəri — potensial üzvlər üçün çap flyer.",
       "tag": "Səhifə",
-      "icon": "📄",
+      "icon": "📤",
       "boost": 12,
       "norm": "daab u zvlu k flyer daab u zvlu yu nu n deyeri potensial u zvler u c u n c ap flyer."
     },
@@ -727,7 +623,7 @@
       "title": "WAAS — Membership flyer",
       "summary": "Value of WAAS membership — printable flyer for potential members.",
       "tag": "Page",
-      "icon": "📄",
+      "icon": "📤",
       "boost": 12,
       "norm": "waas membership flyer value of waas membership printable flyer for potential members."
     },
@@ -792,7 +688,7 @@
       "title": "DAAB — Sponsorluq dəvət məktubu",
       "summary": "DAAB sponsorluğu — potensial tərəfdaşlar üçün çap olunan dəvət məktubu.",
       "tag": "Səhifə",
-      "icon": "📄",
+      "icon": "📤",
       "boost": 12,
       "norm": "daab sponsorluq devet mektubu daab sponsorlug u potensial terefdas lar u c u n c ap olunan devet mektubu."
     },
@@ -805,7 +701,7 @@
       "title": "WAAS — Sponsorship flyer",
       "summary": "WAAS sponsorship — printable flyer for potential partners.",
       "tag": "Page",
-      "icon": "📄",
+      "icon": "📤",
       "boost": 12,
       "norm": "waas sponsorship flyer waas sponsorship printable flyer for potential partners."
     },
@@ -1013,7 +909,7 @@
       "title": "Niyə DAAB-a qoşulmalı",
       "summary": "Üzvlüyün dəyəri və əsas faydalar",
       "tag": "Naviqasiya",
-      "icon": "✒️",
+      "icon": "💡",
       "boost": 11,
       "norm": "niye daab-a qos ulmali u zvlu yu n deyeri ve esas faydalar u zvlu k"
     },
@@ -1026,7 +922,7 @@
       "title": "Bizə qoşulun",
       "summary": "Onlayn üzvlük müraciət forması",
       "tag": "Naviqasiya",
-      "icon": "✒️",
+      "icon": "📝",
       "boost": 11,
       "norm": "bize qos ulun onlayn u zvlu k mu raciet formasi u zvlu k"
     },
@@ -1039,7 +935,7 @@
       "title": "Dəvət məktubu",
       "summary": "Potensial üzvlər üçün çap oluna bilən flyer",
       "tag": "Naviqasiya",
-      "icon": "✒️",
+      "icon": "📤",
       "boost": 11,
       "norm": "devet mektubu potensial u zvler u c u n c ap oluna bilen flyer u zvlu k"
     },
@@ -1078,48 +974,9 @@
       "title": "Dəvət məktubu",
       "summary": "Potensial tərəfdaşlar üçün paylaşıla bilən dəvət məktubu",
       "tag": "Naviqasiya",
-      "icon": "📄",
+      "icon": "📤",
       "boost": 11,
       "norm": "devet mektubu potensial terefdas lar u c u n paylas ila bilen devet mektubu bizi destekleyin"
-    },
-    {
-      "id": "nav-encyclopedia-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "encyclopedia",
-      "anchor": "",
-      "title": "Görkəmli şəxsiyyətlər",
-      "summary": "Görkəmli şəxsiyyətlər kataloqu",
-      "tag": "Naviqasiya",
-      "icon": "👤",
-      "boost": 11,
-      "norm": "go rkemli s exsiyyetler go rkemli s exsiyyetler kataloqu xezine"
-    },
-    {
-      "id": "nav-industrial-revolutions-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "industrial-revolutions",
-      "anchor": "",
-      "title": "Sənaye inqilabları",
-      "summary": "Tarixi sənaye inqilablarının izləri",
-      "tag": "Naviqasiya",
-      "icon": "⚙️",
-      "boost": 11,
-      "norm": "senaye inqilablari tarixi senaye inqilablarinin izleri xezine"
-    },
-    {
-      "id": "nav-major-scientific-inventions-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "major-scientific-inventions",
-      "anchor": "",
-      "title": "Əsas elmi ixtiralar",
-      "summary": "Elm tarixinin mühüm ixtiraları",
-      "tag": "Naviqasiya",
-      "icon": "💡",
-      "boost": 11,
-      "norm": "esas elmi ixtiralar elm tarixinin mu hu m ixtiralari xezine"
     },
     {
       "id": "nav-home-en",
@@ -1247,7 +1104,7 @@
       "title": "Why join WAAS",
       "summary": "Membership value, benefits, and opportunities",
       "tag": "Navigation",
-      "icon": "✒️",
+      "icon": "💡",
       "boost": 11,
       "norm": "why join waas membership value benefits and opportunities membership"
     },
@@ -1260,7 +1117,7 @@
       "title": "Join us",
       "summary": "Online membership application form",
       "tag": "Navigation",
-      "icon": "✒️",
+      "icon": "📝",
       "boost": 11,
       "norm": "join us online membership application form membership"
     },
@@ -1273,7 +1130,7 @@
       "title": "Invitation Letter",
       "summary": "Printable invitation letter for potential members",
       "tag": "Navigation",
-      "icon": "✒️",
+      "icon": "📤",
       "boost": 11,
       "norm": "invitation letter printable invitation letter for potential members membership"
     },
@@ -1312,48 +1169,9 @@
       "title": "Invitation Letter",
       "summary": "Printable invitation letter for potential partners",
       "tag": "Navigation",
-      "icon": "📄",
+      "icon": "📤",
       "boost": 11,
       "norm": "invitation letter printable invitation letter for potential partners support us"
-    },
-    {
-      "id": "nav-encyclopedia-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "encyclopedia",
-      "anchor": "",
-      "title": "Prominent Figures",
-      "summary": "Directory of prominent figures",
-      "tag": "Navigation",
-      "icon": "👤",
-      "boost": 11,
-      "norm": "prominent figures directory of prominent figures treasury"
-    },
-    {
-      "id": "nav-industrial-revolutions-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "industrial-revolutions",
-      "anchor": "",
-      "title": "Industrial Revolutions",
-      "summary": "Landmarks of industrial history",
-      "tag": "Navigation",
-      "icon": "⚙️",
-      "boost": 11,
-      "norm": "industrial revolutions landmarks of industrial history treasury"
-    },
-    {
-      "id": "nav-major-scientific-inventions-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "major-scientific-inventions",
-      "anchor": "",
-      "title": "Major Scientific Inventions",
-      "summary": "Key inventions that shaped science",
-      "tag": "Navigation",
-      "icon": "💡",
-      "boost": 11,
-      "norm": "major scientific inventions key inventions that shaped science treasury"
     },
     {
       "id": "section-foundation-necessity-az",

@@ -47,9 +47,6 @@
     "work-done-2024-2026": "activitiesWorkDone2024",
     "forum-2024": "forum2024",
     "forum-2026": "forum2026",
-    encyclopedia: "prominentFigures",
-    "industrial-revolutions": "industrialRevolutions",
-    "major-scientific-inventions": "majorScientificInventions",
     "forum-2024-presentations": "forum2024Presentations",
     "forum-official": "forumOfficial",
     "forum-rector-speeches": "forumRectorSpeeches",
@@ -79,7 +76,6 @@
     activities: "activities",
     membership: "membership",
     sponsorship: "sponsors",
-    treasury: "treasury",
     forum: "forum2024"
   };
 
@@ -88,8 +84,7 @@
     about: true,
     activities: true,
     membership: true,
-    sponsorship: true,
-    treasury: true
+    sponsorship: true
   };
 
   function usesForumHubCrumb(page) {
@@ -249,30 +244,6 @@
         az: "az/sponsors_flyer.html",
         en: "en/sponsors_flyer.html",
         navParent: "sponsorship"
-      },
-      {
-        id: "encyclopedia",
-        az: "az/encyclopedia.html",
-        en: "en/encyclopedia.html",
-        navParent: "treasury"
-      },
-      {
-        id: "industrial-revolutions",
-        az: "az/industrial_revolutions.html",
-        en: "en/industrial_revolutions.html",
-        navParent: "treasury"
-      },
-      {
-        id: "major-scientific-inventions",
-        az: "az/major_scientific_inventions.html",
-        en: "en/major_scientific_inventions.html",
-        navParent: "treasury"
-      },
-      {
-        id: "prominent-figure",
-        az: "az/encyclopedia.html",
-        en: "en/encyclopedia.html",
-        navParent: null
       }
     ]
   };
@@ -373,8 +344,7 @@
       scientists: { landingId: "scientists-list" },
       activities: { landingId: "activities-news" },
       membership: { landingId: "membership-value" },
-      sponsorship: { landingId: "sponsors" },
-      treasury: { landingId: "encyclopedia" }
+      sponsorship: { landingId: "sponsors" }
     }
   };
 
@@ -543,52 +513,7 @@
     return null;
   }
 
-  function buildProminentFigureTrail(routes, navDef, ui, lang, I18N) {
-    var pageId = document.documentElement.getAttribute("data-daab-page-id");
-    if (pageId !== "prominent-figure") return null;
-
-    var current =
-      document.documentElement.getAttribute("data-daab-profile-name") || "";
-    if (!current) {
-      var h1 = document.querySelector(".pf-hero .hero-name");
-      if (h1) current = h1.textContent.replace(/\s+/g, " ").trim();
-    }
-    if (!current) return null;
-
-    var path = location.pathname.replace(/\\/g, "/");
-    var encHref = /\/prominent_figures\//.test(path) ? "../../encyclopedia.html" : "encyclopedia.html";
-    var landingId = sectionLanding(navDef, "treasury") || "encyclopedia";
-    var landing = pageById(routes, landingId);
-    var treasuryHref = landing ? pageHref(I18N, landing, lang) : encHref;
-
-    var crumbs = [];
-    var home = pageById(routes, "home");
-    if (home) {
-      crumbs.push({
-        href: pageHref(I18N, home, lang),
-        text: t(ui, lang, "breadcrumbs", "home")
-      });
-    }
-    crumbs.push({
-      href: treasuryHref,
-      text: t(ui, lang, "breadcrumbs", "treasury") || pageTitle(ui, lang, "treasury")
-    });
-    crumbs.push({
-      href: encHref,
-      text: pageTitle(ui, lang, "encyclopedia")
-    });
-    crumbs.push({
-      href: null,
-      text: current,
-      current: true
-    });
-    return crumbs;
-  }
-
   function buildTrail(routes, navDef, ui, lang, page, I18N) {
-    var prominentTrail = buildProminentFigureTrail(routes, navDef, ui, lang, I18N);
-    if (prominentTrail) return prominentTrail;
-
     if (!page) return null;
     if (page.id === "home") {
       return [

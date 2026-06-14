@@ -525,17 +525,6 @@ def write_sitemap(routes: dict) -> None:
             continue
         append_pair(page["az"], page["en"])
 
-    az_pf = ROOT / "az" / "prominent_figures"
-    if az_pf.is_dir():
-        for az_path in sorted(az_pf.rglob("*.html")):
-            if az_path.name == "hazirlanir.html":
-                continue
-            rel = az_path.relative_to(ROOT / "az").as_posix()
-            en_path = ROOT / "en" / rel
-            if not en_path.is_file():
-                continue
-            append_pair(f"az/{rel}", f"en/{rel}")
-
     lines.append("</urlset>")
     (ROOT / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"  sitemap: sitemap.xml ({len(seen_locs)} URLs, with hreflang alternates)")

@@ -9,12 +9,12 @@ from _paths import ROOT
 
 # Canonical ?v= for deploy HTML — keep in sync with latest page builds (May 2026).
 SCRIPT_VERSIONS = {
-    "daab-i18n.js": 32,
+    "daab-i18n.js": 34,
     "daab-lang-position.js": 7,
     "daab-design-tokens.js": 2,
     "daab-nav.js": 31,
-    "daab-primary-nav.js": 56,
-    "daab-breadcrumbs.js": 34,
+    "daab-primary-nav.js": 57,
+    "daab-breadcrumbs.js": 35,
     "prominent-figures-catalog-data.js": 4,
     "prominent-figures-catalog-data-en.js": 4,
     "prominent-figures-catalog.js": 19,

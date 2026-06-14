@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "primary": [
     {
       "type": "page",
@@ -210,30 +210,6 @@
           "descKey": "sponsorsFlyerDesc"
         }
       ]
-    },
-    {
-      "type": "group",
-      "id": "treasury",
-      "style": "dropdown",
-      "labelKey": "treasury",
-      "landingId": "encyclopedia",
-      "children": [
-        {
-          "id": "encyclopedia",
-          "labelKey": "prominentFigures",
-          "descKey": "prominentFiguresDesc"
-        },
-        {
-          "id": "industrial-revolutions",
-          "labelKey": "industrialRevolutions",
-          "descKey": "industrialRevolutionsDesc"
-        },
-        {
-          "id": "major-scientific-inventions",
-          "labelKey": "majorScientificInventions",
-          "descKey": "majorScientificInventionsDesc"
-        }
-      ]
     }
   ],
   "sections": {
@@ -300,14 +276,6 @@
         "sponsors",
         "donate",
         "sponsors-flyer"
-      ]
-    },
-    "treasury": {
-      "landingId": "encyclopedia",
-      "pages": [
-        "encyclopedia",
-        "industrial-revolutions",
-        "major-scientific-inventions"
       ]
     }
   }

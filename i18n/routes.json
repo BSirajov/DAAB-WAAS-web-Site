@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "defaultLang": "az",
   "languages": [
     "az",
@@ -68,43 +68,6 @@
       "navOrder": 2,
       "az": "az/forum/2026/index.html",
       "en": "en/forum/2026/index.html"
-    },
-    {
-      "id": "encyclopedia",
-      "navId": "encyclopedia",
-      "navGroup": "treasury",
-      "navParent": "treasury",
-      "navOrder": 1,
-      "az": "az/encyclopedia.html",
-      "en": "en/encyclopedia.html"
-    },
-    {
-      "id": "industrial-revolutions",
-      "navId": "industrial-revolutions",
-      "navGroup": "treasury",
-      "navParent": "treasury",
-      "navOrder": 2,
-      "az": "az/industrial_revolutions.html",
-      "en": "en/industrial_revolutions.html"
-    },
-    {
-      "id": "major-scientific-inventions",
-      "navId": "major-scientific-inventions",
-      "navGroup": "treasury",
-      "navParent": "treasury",
-      "navOrder": 3,
-      "az": "az/major_scientific_inventions.html",
-      "en": "en/major_scientific_inventions.html"
-    },
-    {
-      "id": "prominent-figure",
-      "navId": null,
-      "navGroup": null,
-      "navParent": null,
-      "navOrder": null,
-      "az": "az/encyclopedia.html",
-      "en": "en/encyclopedia.html",
-      "sitemap": false
     },
     {
       "id": "forum-2024-presentations",

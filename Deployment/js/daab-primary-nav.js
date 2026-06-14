@@ -18,9 +18,6 @@
     forum2024: "forum2024",
     "forum-2024": "forum2024",
     "forum-2026": "forum2026Year",
-    encyclopedia: "prominentFigures",
-    "industrial-revolutions": "industrialRevolutions",
-    "major-scientific-inventions": "majorScientificInventions",
     "forum-2024-presentations": "forum2024Presentations",
     "forum-official": "forumOfficial",
     "forum-rector-speeches": "forumRectorSpeeches",
@@ -108,7 +105,6 @@
     if (!activeId) return false;
     if (childDef.id === activeId || page.id === activeId) return true;
     if (childDef.id === "activities-news" && activeId === "activities") return true;
-    if (childDef.id === "encyclopedia" && activeId === "prominent-figure") return true;
     return false;
   }
 
@@ -491,7 +487,7 @@
 
   function homeHref() {
     var path = location.pathname.replace(/\\/g, "/");
-    if (/\/forum\/202[46]\//.test(path) || /\/prominent_figures\//.test(path)) {
+    if (/\/forum\/202[46]\//.test(path)) {
       return "../../index.html";
     }
     if (/\/scientists\//.test(path)) {

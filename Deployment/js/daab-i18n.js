@@ -107,7 +107,7 @@
     ROUTES_URL = ROUTES_URL || i18nUrl("routes.json");
     /* Browser cache bust: bump ?v= below when routes.json content changes (JSON "version" field is documentary). */
     return loadCachedJson(
-      ROUTES_URL + "?v=7",
+      ROUTES_URL + "?v=8",
       function () { return routesCache; },
       function (data) { routesCache = data; },
       function () { return routesInflight; },
@@ -118,7 +118,7 @@
   function loadUi() {
     UI_URL = UI_URL || i18nUrl("ui.json");
     return loadCachedJson(
-      UI_URL + "?v=20",
+      UI_URL + "?v=21",
       function () { return uiCache; },
       function (data) { uiCache = data; },
       function () { return uiInflight; },
@@ -128,7 +128,7 @@
 
   function loadSearchIndex() {
     return loadCachedJson(
-      i18nUrl("search-index.json") + "?v=10",
+      i18nUrl("search-index.json") + "?v=11",
       function () { return searchIndexCache; },
       function (data) { searchIndexCache = data; },
       function () { return searchIndexInflight; },
@@ -138,7 +138,7 @@
 
   function loadNav() {
     return loadCachedJson(
-      i18nUrl("nav.json") + "?v=11",
+      i18nUrl("nav.json") + "?v=12",
       function () { return navCache; },
       function (data) { navCache = data; },
       function () { return navInflight; },
@@ -165,18 +165,7 @@
     return (up ? Array(up + 1).join("../") : "") + target;
   }
 
-  function prominentFigureSuffix(pathKey) {
-    var m = pathKey.match(/^(?:az|en)\/prominent_figures\/(.+)$/);
-    return m ? m[1] : null;
-  }
-
   function findPage(routes, pathKey) {
-    if (prominentFigureSuffix(pathKey)) {
-      var pages = routes.pages || [];
-      for (var j = 0; j < pages.length; j++) {
-        if (pages[j].id === "prominent-figure") return pages[j];
-      }
-    }
     var pages = routes.pages || [];
     var pageId = document.documentElement.getAttribute("data-daab-page-id");
     if (pageId) {
@@ -207,10 +196,6 @@
     routes = routes || routesCache;
     if (!routes) return null;
     var pathKey = currentPathKey();
-    var pf = prominentFigureSuffix(pathKey);
-    if (pf) {
-      return assetRoot() + lang + "/prominent_figures/" + pf;
-    }
     var page = findPage(routes, pathKey);
     return resolveUrl(lang, page, routes);
   }
