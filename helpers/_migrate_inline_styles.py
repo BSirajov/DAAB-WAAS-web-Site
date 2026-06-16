@@ -53,13 +53,6 @@ MIGRATIONS: list[dict] = [
         "source": "en/scientists/profiles.html",
         "pages": ["en/scientists/profiles.html", "az/scientists/profiles.html"],
     },
-    {
-        "css": "daab-sponsors-page.css",
-        "version": 2,
-        "source": "en/sponsors.html",
-        "pages": ["en/sponsors.html", "az/sponsors.html"],
-        "overwrite": True,
-    },
 ]
 
 

@@ -12,9 +12,7 @@ assert _spec.loader
 _spec.loader.exec_module(_embed)
 
 HEAD = """\
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="../../../css/daab-fonts.css?v=1" rel="stylesheet"/>
 <link href="../../../css/daab-common.css?v=67" rel="stylesheet"/>
 <link href="../../../css/daab-perf.css?v=1" rel="stylesheet"/>
 <link href="../../../css/daab-mobile.css?v=13" rel="stylesheet"/>

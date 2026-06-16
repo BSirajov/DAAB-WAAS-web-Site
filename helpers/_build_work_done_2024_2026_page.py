@@ -461,9 +461,7 @@ def shell_head() -> str:
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>DAAB — Görülən işlər, 2024-2026</title>
 <meta content="2024-2026-cu illərdə Dünya Azərbaycanlı Alimlər Birliyi (DAAB) fəaliyyətinin DİDK-ya təqdim olunan arayışı." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="{ASSET}css/daab-fonts.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-common.css?v={st["daab-common.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-perf.css?v={st.get("daab-perf.css", 1)}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>
@@ -583,9 +581,7 @@ def shell_head_en() -> str:
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>WAAS — Work Done 2024-2026</title>
 <meta content="Report on World Association of Azerbaijani Scientists (WAAS) activities for 2024–2026, submitted to the State Committee on Work with Diaspora." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="{ASSET}css/daab-fonts.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-common.css?v={st["daab-common.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-perf.css?v={st.get("daab-perf.css", 1)}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>

@@ -115,9 +115,9 @@ def adapt_html(html: str, lang: str) -> str:
             ("Treasury of science", "Knowledge Treasury of science"),
         ]
     pairs += [
-        ("../images/daab-logo.svg", "../images/kt-logo.svg"),
-        ("../../images/daab-logo.svg", "../../images/kt-logo.svg"),
-        ("../../../images/daab-logo.svg", "../../../images/kt-logo.svg"),
+        ("../images/daab-logo.png", "../images/kt-logo.svg"),
+        ("../../images/daab-logo.png", "../../images/kt-logo.svg"),
+        ("../../../images/daab-logo.png", "../../../images/kt-logo.svg"),
         ("https://daab-waas.com", SITE_DOMAIN),
         ("daab-search.js", ""),
         ("daab-search.css", ""),
@@ -380,9 +380,7 @@ def home_shell(lang: str, catalog_count: int) -> str:
 <link rel="alternate" hreflang="az" href="{SITE_DOMAIN}/az/index.html"/>
 <link rel="alternate" hreflang="en" href="{SITE_DOMAIN}/en/index.html"/>
 <link rel="alternate" hreflang="x-default" href="{SITE_DOMAIN}/az/index.html"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../css/daab-fonts.css?v=1" rel="stylesheet"/>
 <link href="../css/daab-common.css?v=1" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=1" rel="stylesheet"/>
 <link href="../css/daab-lang.css?v=1" rel="stylesheet"/>
@@ -446,8 +444,7 @@ def write_gateway() -> None:
   location.replace("az/index.html" + q);
 })();
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/daab-fonts.css?v=1" rel="stylesheet"/>
 <link href="css/daab-common.css?v=1" rel="stylesheet"/>
 <link href="css/daab-lang.css?v=1" rel="stylesheet"/>
 <link href="css/kt-home.css?v=1" rel="stylesheet"/>

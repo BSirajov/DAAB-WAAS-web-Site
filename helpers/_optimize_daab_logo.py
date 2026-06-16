@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Optimize images/daab-logo.svg — replace embedded raster with a small PNG favicon/nav asset."""
+"""Optimize images/daab-logo.png — replace embedded raster with a small PNG favicon/nav asset."""
 from __future__ import annotations
 
 import base64
@@ -13,7 +13,7 @@ from PIL import Image
 
 from _paths import ROOT
 
-SVG = ROOT / "images" / "daab-logo.svg"
+SVG = ROOT / "images" / "daab-logo.png"
 SVG_BACKUP = ROOT / "images" / "daab-logo.source.svg"
 PNG = ROOT / "images" / "daab-logo.png"
 WEBP = ROOT / "images" / "daab-logo.webp"
@@ -70,7 +70,7 @@ def main() -> int:
     print(f"logo source: {before // 1024} KB")
     print(f"daab-logo.png: {PNG.stat().st_size / 1024:.1f} KB")
     print(f"daab-logo.webp: {WEBP.stat().st_size / 1024:.1f} KB")
-    print(f"daab-logo.svg: {SVG.stat().st_size} bytes (wrapper)")
+    print(f"daab-logo.png: {SVG.stat().st_size} bytes (wrapper)")
     return 0
 
 

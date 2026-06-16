@@ -549,9 +549,7 @@ def build_html(lang: str, sections: list[dict], spec: dict, page_key: str) -> st
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>{esc(c["title"])}</title>
 <meta name="description" content="{esc(c["description"])}"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="{ASSET}css/daab-fonts.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-common.css?v={st["daab-common.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-sticky-chrome.css?v={st["daab-sticky-chrome.css"]}" rel="stylesheet"/>

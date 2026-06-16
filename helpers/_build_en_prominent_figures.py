@@ -221,9 +221,7 @@ def placeholder_page(nav_menu: str) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>Profile in preparation — WAAS</title>
 <meta name="description" content="This encyclopedia profile is being prepared."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../css/daab-fonts.css?v=1" rel="stylesheet"/>
 {css_links()}
 {js_scripts()}
 </head>
@@ -255,9 +253,7 @@ def render_profile(row: dict, nav_menu: str) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>{title}</title>
 <meta name="description" content="{desc}"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../css/daab-fonts.css?v=1" rel="stylesheet"/>
 {css_links()}
 {js_scripts()}
 </head>

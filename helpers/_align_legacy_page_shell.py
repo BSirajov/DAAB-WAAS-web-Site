@@ -20,9 +20,7 @@ CHARTER_TOKEN_MAP = {
     "var(--radius-lg)": "var(--radius)",
 }
 
-CHARTER_HEAD_SHELL = """<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+CHARTER_HEAD_SHELL = """<link href="../css/daab-fonts.css?v=1" rel="stylesheet"/>
 <link href="../css/daab-common.css?v=21" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=4" rel="stylesheet"/>
 <link href="../css/daab-search.css?v=3" rel="stylesheet"/>

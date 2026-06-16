@@ -300,9 +300,7 @@ def build() -> None:
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>Proqram — DAAB</title>
 <meta name="description" content="Xaricdə Yaşayan Azərbaycanlı Alimlərin 2024-cü il Forumu — 9–11 sentyabr proqramı (Bakı, Xankəndi, Şuşa)."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="{ASSET}css/daab-fonts.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-common.css?v=24" rel="stylesheet"/>
 <link href="{ASSET}css/daab-mobile.css?v=5" rel="stylesheet"/>
 <link href="{ASSET}css/daab-search.css?v=3" rel="stylesheet"/>

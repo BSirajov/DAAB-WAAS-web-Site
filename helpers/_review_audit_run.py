@@ -62,7 +62,7 @@ def main() -> None:
     pairs = [
         "az/sponsorship_partnership.html",
         "en/sponsorship_partnership.html",
-        "css/daab-forum-sponsorship-page.css",
+        "css/daab-sponsors-page.css",
     ]
     print("DEPLOYMENT_STALE")
     for rel in pairs:
@@ -105,7 +105,7 @@ def main() -> None:
     # Uncommitted sponsorship CSS version in HTML
     for rel in ("az/sponsorship_partnership.html", "en/sponsorship_partnership.html"):
         t = (ROOT / rel).read_text(encoding="utf-8", errors="replace")
-        m = re.search(r"daab-forum-sponsorship-page\.css\?v=(\d+)", t)
+        m = re.search(r"daab-sponsors-page\.css\?v=(\d+)", t)
         if m:
             print(f"SPONSORSHIP_CSS_V {rel} v={m.group(1)}")
 

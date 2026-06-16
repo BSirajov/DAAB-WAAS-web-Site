@@ -12,11 +12,7 @@ from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS
 
 ASSET = "../"
 FLYER_CSS_V = STYLE_VERSIONS["daab-membership-flyer.css"]
-GOOGLE_FONTS_LINK = (
-    '<link href="https://fonts.googleapis.com/css2?'
-    'family=Inter:wght@400;500;600;700;800&amp;'
-    'family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>'
-)
+FONT_LINK = '<link href="{ASSET}css/daab-fonts.css?v=1" rel="stylesheet"/>'
 DESIGN_TOKENS_V = SCRIPT_VERSIONS["daab-design-tokens.js"]
 MEMBERSHIP_HTML = {
     "az": ROOT / "az" / "membership_value.html",
@@ -238,9 +234,7 @@ def shell_head(cfg: dict) -> str:
 <title>{esc(cfg["title"])}</title>
 <meta name="description" content="{esc(cfg["description"])}"/>
 <meta name="robots" content="noindex"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-{GOOGLE_FONTS_LINK}
+{FONT_LINK}
 <link href="{ASSET}css/daab-common.css?v={st["daab-common.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-search.css?v={st["daab-search.css"]}" rel="stylesheet"/>

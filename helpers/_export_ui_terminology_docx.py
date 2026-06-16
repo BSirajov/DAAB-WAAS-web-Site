@@ -74,7 +74,7 @@ def _append_visual_reference_page(docx_path: Path) -> None:
     )
 
     for rel_path, caption in (
-        ("images/daab-logo.svg", "DAAB / WAAS brand logo (.nav-brand-logo)"),
+        ("images/daab-logo.png", "DAAB / WAAS brand logo (.nav-brand-logo)"),
         ("images/didk-logo.svg", "DİDK partner logo (Forum hub)"),
         ("images/etn-logo.svg", "ETN partner logo (Forum hub)"),
     ):

@@ -65,9 +65,7 @@ GATEWAY_INDEX = """<!DOCTYPE html>
   location.replace("az/index.html" + q);
 })();
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="../css/daab-fonts.css?v=1" rel="stylesheet"/>
 <link href="css/daab-common.css?v=8" rel="stylesheet"/>
 <link href="css/daab-lang.css?v=1" rel="stylesheet"/>
 </head>
@@ -98,9 +96,7 @@ STUB_EN_TEMPLATE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>DAAB — {title}</title>
 <meta name="description" content="World Association of Azerbaijani Scientists — {title}."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../css/daab-fonts.css?v=1" rel="stylesheet"/>
 <link href="{asset_root}css/daab-common.css?v=8" rel="stylesheet"/>
 <link href="{asset_root}css/daab-mobile.css?v=3" rel="stylesheet"/>
 <link href="{asset_root}css/daab-lang.css?v=1" rel="stylesheet"/>
@@ -444,9 +440,7 @@ def build_en_home() -> None:
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>WAAS — World Association of Azerbaijani Scientists</title>
 <meta name="description" content="International scientific network of Azerbaijani scholars worldwide."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../css/daab-fonts.css?v=1" rel="stylesheet"/>
 <link href="../css/daab-common.css?v=8" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=3" rel="stylesheet"/>
 <link href="../css/daab-lang.css?v=1" rel="stylesheet"/>

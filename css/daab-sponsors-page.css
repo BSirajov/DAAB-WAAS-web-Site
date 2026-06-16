@@ -1,7 +1,9 @@
 /**
- * Sponsors page — scoped to .sponsors-page (shared AZ/EN).
+ * Sponsorship / partnership page — shared AZ/EN.
+ * Base layout: .sponsors-page; forum proposal extras: .forum-sponsorship-page.
  * Uses design tokens from css/daab-common.css; do not redefine :root here.
  */
+
 
 .sponsors-page {
   --sp-hero-accent: var(--blue-700);
@@ -913,3 +915,506 @@
     opacity: 1;
     transform: none;
   }
+
+.forum-sponsorship-page #benefits .section-lead {
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+.forum-sponsorship-page #benefits .section-lead.section-subtitle-one-line {
+  max-width: none;
+}
+
+@media (min-width: 1200px) {
+  .forum-sponsorship-page #benefits .section-lead.section-subtitle-one-line {
+    white-space: nowrap;
+    text-wrap: nowrap;
+  }
+}
+
+@media (max-width: 1199px) {
+  .forum-sponsorship-page #benefits .section-lead.section-subtitle-one-line {
+    white-space: normal;
+    max-width: 62ch;
+    text-wrap: pretty;
+  }
+}
+
+.forum-sponsorship-page .intro-letter {
+  margin-top: 8px;
+  padding: 28px 32px;
+  background: linear-gradient(165deg, #f8fcff 0%, #ffffff 52%, #f2f8fd 100%);
+  border: 1px solid rgba(158, 214, 245, 0.55);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 90, 154, 0.06);
+}
+
+.forum-sponsorship-page .intro-letter p {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+
+.forum-sponsorship-page .intro-letter p:last-child {
+  margin-bottom: 0;
+}
+
+.forum-sponsorship-page .intro-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin-bottom: 18px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--blue-700);
+}
+
+.forum-sponsorship-page .forum-results-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 30px;
+  background: var(--color-surface-toolbar, rgba(245, 251, 255, 0.96));
+  border: 1px solid rgba(0, 90, 154, 0.12);
+  border-radius: 20px;
+}
+
+.forum-sponsorship-page .forum-results-card > p {
+  align-self: stretch;
+  width: 100%;
+}
+
+.forum-sponsorship-page .forum-results-card > .forum-results-topics {
+  align-self: center;
+  width: min(100%, 680px);
+}
+
+.forum-sponsorship-page .forum-results-card p {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.forum-sponsorship-page .forum-results-topics {
+  list-style: none;
+  margin: 0 0 4px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 40px;
+  text-align: left;
+}
+
+.forum-sponsorship-page .forum-results-topics li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45em;
+  margin: 0;
+  padding: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.forum-sponsorship-page .forum-results-topics li::before {
+  content: "•";
+  flex: 0 0 auto;
+  font-weight: 700;
+  line-height: 1.55;
+  color: var(--blue-700);
+}
+
+@media (max-width: 640px) {
+  .forum-sponsorship-page .forum-results-topics {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Fit pill links to label text (sponsors-page defaults to width: 100%) */
+.forum-sponsorship-page .panel-source-link {
+  display: inline-flex;
+  width: auto;
+  max-width: 100%;
+  padding: 9px 16px;
+  white-space: nowrap;
+}
+
+.forum-sponsorship-page .panel-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forum-sponsorship-page .panel-card .panel-title,
+.forum-sponsorship-page .panel-card .panel-copy {
+  width: 100%;
+}
+
+.forum-sponsorship-page .forum-results-card .panel-source-link,
+.forum-sponsorship-page .forum-goals-card .panel-source-link {
+  margin-top: 20px;
+}
+
+.forum-sponsorship-page .forum-goals-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  background: linear-gradient(165deg, #f8fcff 0%, #f2f8fd 52%, #eef6fc 100%);
+  border: 1px solid rgba(0, 90, 154, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(0, 90, 154, 0.06);
+}
+
+.forum-sponsorship-page .forum-goals-card > .goals-list {
+  align-self: stretch;
+  width: 100%;
+}
+
+.forum-sponsorship-page .goals-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 700px) {
+  .forum-sponsorship-page .forum-goals-card {
+    padding: 18px;
+  }
+
+  .forum-sponsorship-page .goals-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.forum-sponsorship-page .goals-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 90, 154, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 90, 154, 0.05);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.forum-sponsorship-page .goals-list li:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 90, 154, 0.22);
+  box-shadow: 0 8px 22px rgba(0, 90, 154, 0.1);
+}
+
+.forum-sponsorship-page .goals-list li::before {
+  content: "✓";
+  position: static;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-700), #2e9fd4);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 4px 10px rgba(0, 90, 154, 0.22);
+}
+
+.forum-sponsorship-page .project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .forum-sponsorship-page .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.forum-sponsorship-page .project-card h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.forum-sponsorship-page .project-card .project-num {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-700);
+  margin-bottom: 8px;
+}
+
+.forum-sponsorship-page .outcomes-panel {
+  padding: 24px;
+  background: linear-gradient(165deg, #f8fcff 0%, #f2f8fd 52%, #eef6fc 100%);
+  border: 1px solid rgba(0, 90, 154, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(0, 90, 154, 0.06);
+}
+
+.forum-sponsorship-page .outcomes-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 700px) {
+  .forum-sponsorship-page .outcomes-panel {
+    padding: 18px;
+  }
+
+  .forum-sponsorship-page .outcomes-panel ul {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.forum-sponsorship-page .outcomes-panel li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 90, 154, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 90, 154, 0.05);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.forum-sponsorship-page .outcomes-panel li:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 90, 154, 0.22);
+  box-shadow: 0 8px 22px rgba(0, 90, 154, 0.1);
+}
+
+.forum-sponsorship-page .outcomes-panel li::before {
+  content: "✓";
+  position: static;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-700), #2e9fd4);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 4px 10px rgba(0, 90, 154, 0.22);
+}
+
+.forum-sponsorship-page .cta-band {
+  background: linear-gradient(135deg, var(--blue-700), #1a5f8a);
+  border-radius: 28px;
+  padding: 36px 40px;
+  color: #fff;
+  text-align: center;
+}
+
+.forum-sponsorship-page .cta-band h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3vw, 34px);
+  margin: 0 0 14px;
+  color: #fff;
+}
+
+.forum-sponsorship-page .cta-band p {
+  max-width: 62ch;
+  margin: 0 auto 22px;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.forum-sponsorship-page .cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forum-sponsorship-page .cta-band .panel-source-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  padding: 9px 16px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #fff8e5 0%, var(--gold-soft) 100%);
+  border: 2px solid var(--gold);
+  color: var(--blue-900);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(200, 155, 56, 0.28);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.forum-sponsorship-page .cta-band .panel-source-link:hover,
+.forum-sponsorship-page .cta-band .panel-source-link:focus-visible {
+  color: var(--blue-900);
+  background: linear-gradient(135deg, var(--gold-soft) 0%, #fff8e5 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(200, 155, 56, 0.36);
+  outline: 2px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 2px;
+}
+
+.forum-sponsorship-page .cta-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.forum-sponsorship-page .cta-topics span {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.forum-sponsorship-page .tier-amount-range {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 1.5vw, 23px);
+  font-weight: 700;
+  color: var(--blue-700);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.forum-sponsorship-page .tier-card.featured .tier-amount-range {
+  color: #7c5a13;
+}
+
+/* Four package cards in one row on desktop — tighter head, no amount wrap */
+@media (min-width: 1061px) {
+  .forum-sponsorship-page #packages .tiers-grid {
+    gap: 14px;
+  }
+
+  .forum-sponsorship-page #packages .tier-card {
+    padding: 18px 14px;
+  }
+
+  .forum-sponsorship-page #packages .tier-head {
+    gap: 8px;
+  }
+
+  .forum-sponsorship-page #packages .tier-gem {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .forum-sponsorship-page #packages .tier-name {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    line-height: 1.25;
+  }
+
+  .forum-sponsorship-page #packages .tier-amount-range {
+    font-size: clamp(18px, 1.4vw, 22px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .forum-sponsorship-page #packages .tier-amount-range {
+    font-size: 22px;
+  }
+}
+
+/* Tablet / mobile: slightly larger amounts when cards are wider or stacked */
+@media (max-width: 1060px) {
+  .forum-sponsorship-page #packages .tier-amount-range {
+    font-size: clamp(22px, 3.1vw, 29px);
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 760px) {
+  .forum-sponsorship-page #packages .tier-amount-range {
+    white-space: normal;
+    font-size: clamp(23px, 6.5vw, 29px);
+  }
+
+  .forum-sponsorship-page .cta-band {
+    padding: 28px 22px;
+  }
+
+  .forum-sponsorship-page .cta-band .panel-source-link {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+}
+
+.forum-sponsorship-page .tier-subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+  line-height: 1.45;
+}
+
+/* Light blue section bands — match tiers-section / card surfaces */
+.forum-sponsorship-page .inkind-section {
+  background: linear-gradient(180deg, #f3f9ff 0%, #e8f4ff 100%);
+  border-radius: 24px;
+  padding: 28px 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.forum-sponsorship-page .inkind-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 52% at 90% 14%, rgba(200, 155, 56, 0.08) 0%, transparent 62%),
+    radial-gradient(ellipse 40% 58% at 8% 86%, rgba(77, 182, 240, 0.12) 0%, transparent 64%);
+  pointer-events: none;
+}
+
+.forum-sponsorship-page .inkind-section > .container {
+  position: relative;
+  z-index: 1;
+}

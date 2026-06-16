@@ -87,9 +87,7 @@ def render(lang: str, spec: dict, copy: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>{copy["title"]}</title>
 <meta name="description" content="{copy["description"]}"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../css/daab-fonts.css?v=1" rel="stylesheet"/>
 <link href="../css/daab-common.css?v=64" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=13" rel="stylesheet"/>
 <link href="../css/daab-sticky-chrome.css?v=1" rel="stylesheet"/>

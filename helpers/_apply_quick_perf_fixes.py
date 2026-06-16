@@ -21,7 +21,7 @@ PRECONNECT_BLOCK_ALT = re.compile(
 
 def patch_html(text: str) -> tuple[str, bool]:
     new = text
-    new = new.replace("daab-logo.svg", "daab-logo.png")
+    new = new.replace("daab-logo.png", "daab-logo.png")
     new = PRECONNECT_BLOCK.sub("", new)
     new = PRECONNECT_BLOCK_ALT.sub("", new)
     new = new.replace('type="image/svg+xml"', 'type="image/png"')

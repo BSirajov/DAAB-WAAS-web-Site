@@ -556,7 +556,7 @@ def build_markdown() -> str:
     append("")
     append("| Content type | Location | Requirements |")
     append("|--------------|----------|--------------|")
-    append("| Brand logos | `images/daab-logo.svg` | Consistent header/footer usage |")
+    append("| Brand logos | `images/daab-logo.png` | Consistent header/footer usage |")
     append("| Partner logos | Forum hub | DİDK, ETN SVG logos |")
     append("| Scientist portraits | `images/` scientist paths | Used in list preview and profile cards |")
     append("| Forum photos | `images/photos-gallery/` | Categorized; thumbnails in `_thumbs/` |")

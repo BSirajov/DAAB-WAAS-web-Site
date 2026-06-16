@@ -1106,9 +1106,7 @@ def build_html(
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(meta_description)}"/>
 {robots}
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="../css/daab-fonts.css?v=1" rel="stylesheet"/>
 <link href="{asset}css/daab-common.css?v={st["daab-common.css"]}" rel="stylesheet"/>
 <link href="{asset}css/daab-perf.css?v={st.get("daab-perf.css", 1)}" rel="stylesheet"/>
 <link href="{asset}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>
