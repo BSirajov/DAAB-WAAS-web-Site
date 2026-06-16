@@ -275,7 +275,7 @@ def main() -> int:
         "i18n/nav.json",
     ]
     if not skip_images:
-        required.append("images/daab-logo.svg")
+        required.append("images/daab-logo.png")
     missing_roots = [p for p in required if not (DEPLOY_STAGING / p).is_file()]
     if missing_roots:
         print("ERROR — deployment package missing required files:")

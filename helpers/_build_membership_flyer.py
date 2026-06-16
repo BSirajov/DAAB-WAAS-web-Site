@@ -355,9 +355,7 @@ def email_page_scripts(cfg: dict, lang: str) -> str:
     data = json.dumps(payload, ensure_ascii=False)
     js_v = SCRIPT_VERSIONS["daab-membership-flyer-email.js"]
     vendor = f'{ASSET}js/vendor'
-    return f"""<script src="{vendor}/html2canvas.min.js"></script>
-<script src="{vendor}/jspdf.umd.min.js"></script>
-<script>window.DAAB_FLYER_EMAIL = {data};</script>
+    return f"""<script>window.DAAB_FLYER_EMAIL = {data};</script>
 <script src="{ASSET}js/daab-membership-flyer-email.js?v={js_v}" defer></script>"""
 
 
@@ -404,7 +402,7 @@ def build_locale(key: str) -> None:
 </div>
 <article class="flyer-sheet" aria-label="{esc(cfg["title"])}">
 <header class="flyer-header">
-<img class="flyer-logo" src="{ASSET}images/daab-logo.svg" alt="{esc(cfg["brand_short"])}" width="72" height="72"/>
+<img class="flyer-logo" src="{ASSET}images/daab-logo.png" alt="{esc(cfg["brand_short"])}" width="72" height="72"/>
 <div class="flyer-brand-block">
 <p class="flyer-org">{esc(cfg["org"])}</p>
 <h1>{esc(cfg["brand_short"])}</h1>

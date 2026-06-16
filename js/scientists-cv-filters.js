@@ -188,6 +188,97 @@
     }
   }
 
+  function buildFilterOptionsFromCards(cardNodes, filterCountry, filterIxtilas, filterDegree) {
+    var countries = {};
+    var degrees = {};
+    var ixtisaslar = {};
+    cardNodes.forEach(function (card) {
+      var c = (card.dataset.countryName || "").trim();
+      var d = (card.dataset.degree || "").trim();
+      var x = (card.dataset.ixtilas || "").trim();
+      if (c) countries[c] = 1;
+      if (d) degrees[d] = 1;
+      if (x) ixtisaslar[x] = 1;
+    });
+    localeSort(Object.keys(countries)).forEach(function (c) {
+      var o = document.createElement("option");
+      o.value = c;
+      o.textContent = c;
+      filterCountry.appendChild(o);
+    });
+    if (filterDegree) {
+      localeSort(Object.keys(degrees)).forEach(function (d) {
+        var o = document.createElement("option");
+        o.value = d;
+        o.textContent = d;
+        filterDegree.appendChild(o);
+      });
+    }
+    if (filterIxtilas) {
+      localeSort(Object.keys(ixtisaslar)).forEach(function (x) {
+        var o = document.createElement("option");
+        o.value = x;
+        o.textContent = x;
+        filterIxtilas.appendChild(o);
+      });
+    }
+  }
+
+  function buildFilterOptionsFromData(filterCountry, filterIxtilas, filterDegree) {
+    var countries = localeSort(
+      Object.keys(
+        DATA.reduce(function (acc, r) {
+          if (r.yasadigi_olke) acc[r.yasadigi_olke] = 1;
+          return acc;
+        }, {})
+      )
+    );
+    var degrees = localeSort(
+      Array.from(
+        new Set(
+          DATA.map(function (r) {
+            return (r.elmi_derece || "").trim();
+          }).filter(Boolean)
+        )
+      )
+    );
+    var ixtisaslar = localeSort(
+      Array.from(
+        new Set(
+          DATA.map(function (r) {
+            return (r.ixtilas || "").trim();
+          }).filter(Boolean)
+        )
+      )
+    );
+    countries.forEach(function (c) {
+      var o = document.createElement("option");
+      o.value = c;
+      o.textContent = c;
+      filterCountry.appendChild(o);
+    });
+    degrees.forEach(function (d) {
+      var o = document.createElement("option");
+      o.value = d;
+      o.textContent = d;
+      filterDegree.appendChild(o);
+    });
+    ixtisaslar.forEach(function (x) {
+      var o = document.createElement("option");
+      o.value = x;
+      o.textContent = x;
+      filterIxtilas.appendChild(o);
+    });
+  }
+
+  function scheduleIdle(fn, timeoutMs) {
+    if (typeof window.requestIdleCallback === "function") {
+      window.requestIdleCallback(fn, { timeout: timeoutMs || 2000 });
+      return;
+    }
+    window.setTimeout(fn, 0);
+  }
+
   function hashProfileId() {
     if (window.DAAB_PROFILE_DEEPLINK && window.DAAB_PROFILE_DEEPLINK.hashId) {
       return window.DAAB_PROFILE_DEEPLINK.hashId();
@@ -285,9 +376,11 @@
 
       sortList(visible);
       sortList(hidden);
+      var fragment = document.createDocumentFragment();
       visible.concat(hidden).forEach(function (card) {
-        grid.appendChild(card);
+        fragment.appendChild(card);
       });
+      grid.appendChild(fragment);
     }
 
     function applySortState(nextCol, nextDir, persist) {
@@ -304,10 +397,19 @@
       applySortState(sortCol, dir === -1 ? -1 : 1, true);
     }
 
-    /* Restore filters, apply default A→Z (or saved sort), then reveal catalogue */
+    var profileHash = hashProfileId();
+
+    /* Restore filters; reveal catalogue immediately unless hash deep-link boot */
     showAllCards(cards, resultCount, noResults, countLabels);
     clearFilterInputs(searchInput, filterCountry, filterIxtilas, filterDegree);
-    applySortState(sortCol, sortDir, false);
+    if (!profileHash) {
+      markProfilesReady();
+      scheduleIdle(function () {
+        applySortState(sortCol, sortDir, false);
+      });
+    } else {
+      applySortState(sortCol, sortDir, false);
+    }
 
     function revealProfileById(id) {
       if (!id) return false;
@@ -354,63 +456,21 @@
     });
 
     document.dispatchEvent(new CustomEvent("daab-profiles-catalog-ready"));
-    if (window.DAAB_PROFILE_DEEPLINK && window.DAAB_PROFILE_DEEPLINK.scheduleFocus) {
+    if (profileHash && window.DAAB_PROFILE_DEEPLINK && window.DAAB_PROFILE_DEEPLINK.scheduleFocus) {
       window.DAAB_PROFILE_DEEPLINK.scheduleFocus();
-    } else if (handleProfileHash()) {
+    } else if (profileHash && handleProfileHash()) {
       document.dispatchEvent(new CustomEvent("daab-profile-focused"));
       markProfilesReady();
-    } else {
+    } else if (profileHash) {
       markProfilesReady();
     }
 
     if (!searchInput || !filterCountry) return;
 
     if (DATA.length) {
-      var countries = localeSort(
-        Object.keys(
-          DATA.reduce(function (acc, r) {
-            if (r.yasadigi_olke) acc[r.yasadigi_olke] = 1;
-            return acc;
-          }, {})
-        )
-      );
-      var degrees = localeSort(
-        Array.from(
-          new Set(
-            DATA.map(function (r) {
-              return (r.elmi_derece || "").trim();
-            }).filter(Boolean)
-          )
-        )
-      );
-      var ixtisaslar = localeSort(
-        Array.from(
-          new Set(
-            DATA.map(function (r) {
-              return (r.ixtilas || "").trim();
-            }).filter(Boolean)
-          )
-        )
-      );
-
-      countries.forEach(function (c) {
-        var o = document.createElement("option");
-        o.value = c;
-        o.textContent = c;
-        filterCountry.appendChild(o);
-      });
-      degrees.forEach(function (d) {
-        var o = document.createElement("option");
-        o.value = d;
-        o.textContent = d;
-        filterDegree.appendChild(o);
-      });
-      ixtisaslar.forEach(function (x) {
-        var o = document.createElement("option");
-        o.value = x;
-        o.textContent = x;
-        filterIxtilas.appendChild(o);
-      });
+      buildFilterOptionsFromData(filterCountry, filterIxtilas, filterDegree);
+    } else {
+      buildFilterOptionsFromCards(cards, filterCountry, filterIxtilas, filterDegree);
     }
 
     function updateFilterStyles() {

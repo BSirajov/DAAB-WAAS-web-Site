@@ -130,7 +130,7 @@ def build_seo_block(
 
     lines = [
         MARKER_START,
-        f'<link rel="icon" href="{asset}images/daab-logo.svg" type="image/svg+xml"/>',
+        f'<link rel="icon" href="{asset}images/daab-logo.png" type="image/png"/>',
         f'<link rel="canonical" href="{canonical}"/>',
     ]
     if pair:

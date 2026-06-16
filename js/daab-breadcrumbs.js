@@ -57,6 +57,9 @@
     "forum-impressions": "forumImpressions",
     "forum-photos-gallery": "forumPhotosGallery",
     "forum-video-gallery": "forumVideoGallery",
+    "forum-roadmap": "forumRoadmap",
+    "forum-bagli-hekayeler": "forumBagliHekayeler",
+    "forum-cooperation": "forumCooperation",
     "scientists-list": "scientistsList",
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",
@@ -92,8 +95,11 @@
     if (!page || !page.id) return false;
     if (page.id === "forum-2024") return false;
     if (page.id === "forum-2026") return false;
-    if (page.id.indexOf("forum-") === 0) return true;
-    return page.id === "scientists-list" || page.id === "scientists-profiles";
+    if (page.id === "scientists-list" || page.id === "scientists-profiles") return true;
+    if (page.navParent === "forum" || page.navGroup === "forum") {
+      return page.id.indexOf("forum-") === 0;
+    }
+    return false;
   }
 
   var FALLBACK_ROUTES = {

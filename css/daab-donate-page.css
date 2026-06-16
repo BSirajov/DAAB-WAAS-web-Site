@@ -15,7 +15,7 @@
   position: relative;
   overflow: hidden;
   color: var(--ink) !important;
-  background: var(--white) var(--site-bg-image) top center / 100% auto no-repeat !important;
+  background: transparent !important;
 }.donate-page .hero::before{
   content: "";
   position: absolute;
@@ -237,6 +237,8 @@
   flex-wrap: wrap;
   gap: 12px;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 }.donate-page .dn-cta .btn{
   display: inline-flex;
   align-items: center;

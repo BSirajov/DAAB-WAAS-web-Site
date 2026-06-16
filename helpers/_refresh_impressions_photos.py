@@ -38,9 +38,10 @@ IMPRESSIONS_CSS_RE = re.compile(
 def photo_src(slug: str) -> str:
     for base in (PHOTO_ALIASES.get(slug, slug), slug):
         for folder in PHOTO_DIRS:
-            if (folder / f"{base}.png").is_file():
-                rel = folder.relative_to(ROOT).as_posix()
-                return f"{ASSET}{rel}/{base}.png"
+            for ext in (".png", ".jpg", ".jpeg"):
+                if (folder / f"{base}{ext}").is_file():
+                    rel = folder.relative_to(ROOT).as_posix()
+                    return f"{ASSET}{rel}/{base}{ext}"
     return ""
 
 

@@ -1013,7 +1013,12 @@ def fix_footer(text: str) -> str:
     )
     text = text.replace(
         '<div class="footer-bottom">© 2026 DAAB / WAAS — All Rights Reserved</div>',
+        '<div class="footer-bottom">© 2026 DAAB — Bütün hüquqlar qorunur</div>',
+        1,
+    )
+    text = text.replace(
         '<div class="footer-bottom">© 2026 DAAB — All Rights Reserved</div>',
+        '<div class="footer-bottom">© 2026 DAAB — Bütün hüquqlar qorunur</div>',
         1,
     )
     return text

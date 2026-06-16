@@ -9,7 +9,7 @@ html[data-daab-page-id="mission"] .hero,
   position: relative;
   overflow: hidden;
   color: var(--ink) !important;
-  background: var(--white) var(--site-bg-image) top center / 100% auto no-repeat !important;
+  background: transparent !important;
 }html[data-daab-page-id="work-done-2024-2026"] .hero::before,
 html[data-daab-page-id="foundation"] .hero::before,
 html[data-daab-page-id="mission"] .hero::before,

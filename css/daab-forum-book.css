@@ -14,7 +14,7 @@ html[data-daab-page-id^="forum-"]{
 }html[data-daab-page-id^="forum-"] .forum-hero{
   position: relative;
   overflow: hidden;
-  background: var(--white) var(--site-bg-image) top center/100% auto no-repeat;
+  background: transparent;
   color: var(--forum-ink);
 }html[data-daab-page-id^="forum-"] .forum-hero::before{
   content: "";

@@ -19,7 +19,7 @@ html.daab-hub-page .breadcrumbs.forum-breadcrumbs{
   position: relative;
   overflow: hidden;
   color: var(--ink) !important;
-  background: var(--white) var(--site-bg-image) top center / 100% auto no-repeat !important;
+  background: transparent !important;
 }.daab-hub-page .hero::before{
   content: "";
   position: absolute;

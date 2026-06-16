@@ -9,37 +9,46 @@ html[data-daab-page-id="forum-photos-gallery"] .photos-gallery-main{
   border: 1px solid var(--color-border-blue-faint, rgba(0, 45, 82, 0.1));
   border-radius: 14px;
   box-shadow: 0 4px 20px rgba(0, 45, 82, 0.06);
-  padding: 24px 22px 28px;
+  padding: 0;
+  overflow: hidden;
 }html[data-daab-page-id="forum-photos-gallery"] #photos-gallery-panel{
   scroll-margin-top: calc(var(--daab-nav-height, 86px) + 1rem);
-}.photos-gallery-head{
-  margin-bottom: 20px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--color-border-blue-faint);
-}.photos-gallery-head h2{
-  margin: 0 0 8px;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(0.805rem, 1.68vw, 1.015rem);
-  font-weight: 700;
-  line-height: 1.35;
-  letter-spacing: normal;
-  color: var(--ink, #1a2b3c);
-}.photos-gallery-meta{
+}html[data-daab-page-id="forum-photos-gallery"] .photos-gallery-head{
   margin: 0;
-  font-size: 0.95rem;
-  color: var(--muted);
-}.photos-gallery-status{
-  margin: 16px 0;
+  padding: 24px 28px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 58%, var(--blue-400) 100%);
+  border-bottom: 2px solid var(--gold, #f0c75e);
+}html[data-daab-page-id="forum-photos-gallery"] .photos-gallery-head h2{
+  margin: 0;
+  font-family: var(--font-serif, "Playfair Display", Georgia, serif);
+  font-size: clamp(14px, 1.6vw, 20px);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: #fff;
+  text-align: center;
+}html[data-daab-page-id="forum-photos-gallery"] .photos-gallery-meta{
+  margin: 10px 0 0;
+  font-family: var(--font-sans, Inter, system-ui, sans-serif);
+  font-size: clamp(12px, 1.15vw, 15px);
+  font-weight: 600;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.92);
+  text-align: center;
+}html[data-daab-page-id="forum-photos-gallery"] .photos-gallery-status{
+  margin: 16px 22px;
   padding: 14px 18px;
   border-radius: 12px;
   background: rgba(0, 45, 82, 0.06);
   color: var(--ink);
-}.photos-gallery-grid{
+}html[data-daab-page-id="forum-photos-gallery"] .photos-gallery-grid{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 168px), 1fr));
   gap: 14px;
   width: 100%;
   max-width: 100%;
+  padding: 24px 22px 28px;
 }.photos-gallery-item{
   position: relative;
   margin: 0;

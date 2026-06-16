@@ -107,6 +107,11 @@ html[data-daab-page-id="forum-sessions-organization"] .sessions-photo-frame {
   box-sizing: border-box;
 }
 
+html[data-daab-page-id="forum-sessions-organization"] .sessions-masa-block {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 280px;
+}
+
 html[data-daab-page-id="forum-sessions-organization"] .sessions-participant-photo {
   display: block;
   width: 100%;

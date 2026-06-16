@@ -1,12 +1,13 @@
-"""Inject profile TTS assets on az/en scientists/profiles.html."""
+"""Inject profile TTS stylesheet on az/en scientists/profiles.html.
+
+TTS script loads on idle via js/daab-perf.js (deferProfileTts) — do not inject a blocking tag.
+"""
 from __future__ import annotations
 
 from _paths import AZ_SCIENTISTS_PROFILES, EN_SCIENTISTS_PROFILES, ROOT
 
 CSS_MARK = "scientists-profile-tts.css"
 CSS_SNIPPET = '<link href="{prefix}css/scientists-profile-tts.css?v=3" rel="stylesheet"/>'
-JS_MARK = "daab-profile-tts.js"
-JS_SNIPPET = '<script src="{prefix}js/daab-profile-tts.js?v=9" defer></script>'
 
 
 def inject(path, prefix: str) -> list[str]:
@@ -22,16 +23,6 @@ def inject(path, prefix: str) -> list[str]:
                 insert = CSS_SNIPPET.format(prefix=prefix)
                 text = text[: line_end + 1] + insert + "\n" + text[line_end + 1 :]
                 changes.append("css")
-
-    if JS_MARK not in text:
-        anchor = "scientists-cv-filters.js"
-        pos = text.find(anchor)
-        if pos >= 0:
-            line_end = text.find("\n", pos)
-            if line_end >= 0:
-                insert = JS_SNIPPET.format(prefix=prefix)
-                text = text[: line_end + 1] + insert + "\n" + text[line_end + 1 :]
-                changes.append("js")
 
     if changes:
         path.write_text(text, encoding="utf-8", newline="\n")

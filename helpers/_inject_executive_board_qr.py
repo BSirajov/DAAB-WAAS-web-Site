@@ -6,7 +6,7 @@ import re
 from _paths import ROOT
 
 QR_CSS = '<link href="../css/scientists-profile-qr.css?v=1" rel="stylesheet"/>'
-PHOTO_SLUG_RE = re.compile(r"board-members-photos/(?P<slug>[\w-]+)\.png")
+PHOTO_SLUG_RE = re.compile(r"board-members-photos/(?P<slug>[\w-]+)\.(?:png|jpe?g)")
 
 STRINGS = {
     "az": {

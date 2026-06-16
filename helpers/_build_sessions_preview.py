@@ -357,7 +357,7 @@ class ParticipantPhotoIndex:
         alt = alt_name if alt_name is not None else clean
         photo = self.resolve(clean)
         if photo:
-            src = f"{self.asset_prefix}images/scientists-photos/{photo}"
+            src = f"{self.asset_prefix}images/scientists-photos/_thumbs/{Path(photo).stem}.jpg"
             return (
                 f'<td class="sessions-photo-cell">'
                 f'<span class="sessions-photo-frame">'
@@ -960,7 +960,7 @@ class PageTarget:
 
 def nav_strip_placeholder(lang: str, asset: str) -> str:
     home_href = "../../index.html"
-    logo_src = f"{asset}images/daab-logo.svg"
+    logo_src = f"{asset}images/daab-logo.png"
     if lang == "en":
         return f"""<nav aria-label="Main navigation" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a title="Home page" aria-label="WAAS home" href="{home_href}"><img src="{logo_src}" class="nav-brand-logo" alt="WAAS Logo"></a></div><a aria-label="WAAS home" class="nav-brand" href="{home_href}"><span class="nav-brand-text">World Association of<br class="mobile-hidden-break">Azerbaijani Scientists</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div></div><div class="nav-actions" role="group"></div></div></nav>"""
     return f"""<nav aria-label="Əsas naviqasiya" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="Menyunu aç" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a title="Ana səhifə" aria-label="DAAB ana səhifə" href="{home_href}"><img src="{logo_src}" class="nav-brand-logo" alt="DAAB Logo"></a></div><a aria-label="DAAB ana səhifə" class="nav-brand" href="{home_href}"><span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">Alimlər Birliyi</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div></div><div class="nav-actions" role="group"></div></div></nav>"""
@@ -1016,7 +1016,7 @@ def footer_html(lang: str) -> str:
 <div class="footer-col"><h4 class="footer-title">Rəhbərlik</h4><p class="footer-leader"><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>DAAB İdarə Heyətinin Sədri<br/>Germany — James D. Murray Distinguished Professor</p></div>
 </div>
 </div>
-<div class="footer-bottom">© 2026 DAAB / WAAS — All Rights Reserved</div>
+<div class="footer-bottom">© 2026 DAAB — Bütün hüquqlar qorunur</div>
 </footer>"""
 
 

@@ -5,11 +5,12 @@ from __future__ import annotations
 import html
 import re
 
+from _inject_seo_head import build_seo_block
 from _paths import ROOT
 from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS
 
 ASSET = "../"
-DONATE_CSS_V = STYLE_VERSIONS.get("daab-donate-page.css", 1)
+DONATE_ROUTE_PAIR = {"az": "az/donate.html", "en": "en/donate.html"}
 NAV_ARIA = {"az": "Əsas naviqasiya", "en": "Main navigation"}
 SKIP = {"az": "Məzmuna keç", "en": "Skip to content"}
 
@@ -64,10 +65,6 @@ LOCALES = {
         "cta_lead": "İanə, fond və ya xatirə ianəsi barədə komandamızla əlaqə saxlayın.",
         "cta_email": "E-poçt göndərin",
         "cta_email_title": "DAAB komandasına ianə barədə e-poçt yazın",
-        "cta_form": "Sponsorluq forması",
-        "cta_form_title": "Korporativ sponsorluq üçün əlaqə formasına keçin",
-        "cta_sponsors": "Korporativ sponsorluq",
-        "cta_sponsors_title": "Sponsorluq və tərəfdaşlıq səviyyələrinə baxın",
     },
     "en": {
         "lang": "en",
@@ -119,10 +116,6 @@ LOCALES = {
         "cta_lead": "Contact our team about one-time, recurring, memorial, or foundation gifts.",
         "cta_email": "Send email",
         "cta_email_title": "Email the WAAS team about your donation",
-        "cta_form": "Sponsorship form",
-        "cta_form_title": "Open the corporate sponsorship contact form",
-        "cta_sponsors": "Corporate sponsorship",
-        "cta_sponsors_title": "View sponsorship tiers and partnership options",
     },
 }
 
@@ -140,10 +133,17 @@ def extract_nav(html_text: str, nav_aria: str) -> str:
     return m.group(1) if m else ""
 
 
-def shell_head(cfg: dict) -> str:
+def shell_head(cfg: dict, key: str) -> str:
     sv = SCRIPT_VERSIONS
     st = STYLE_VERSIONS
-    donate_v = st.get("daab-donate-page.css", DONATE_CSS_V)
+    seo = build_seo_block(
+        rel_path=DONATE_ROUTE_PAIR[key],
+        lang=key,
+        title=cfg["title"],
+        description=cfg["description"],
+        asset=ASSET,
+        pair=DONATE_ROUTE_PAIR,
+    )
     return f"""<!DOCTYPE html>
 <html lang="{cfg["lang"]}" data-daab-lang="{cfg["lang"]}" data-daab-asset-root="{ASSET}" data-daab-page-id="donate" data-daab-nav-mount="1">
 <head>
@@ -151,20 +151,21 @@ def shell_head(cfg: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>{esc(cfg["title"])}</title>
 <meta name="description" content="{esc(cfg["description"])}"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+{seo}
+<link href="{ASSET}css/daab-fonts.css?v={st["daab-fonts.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-common.css?v={st["daab-common.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-perf.css?v={st["daab-perf.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>
-<link href="{ASSET}css/daab-sticky-chrome.css?v={st.get("daab-sticky-chrome.css", 1)}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-sticky-chrome.css?v={st["daab-sticky-chrome.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-search.css?v={st["daab-search.css"]}" rel="stylesheet"/>
-<link href="{ASSET}css/daab-back-to-top.css?v=2" rel="stylesheet"/>
+<link href="{ASSET}css/daab-back-to-top.css?v={st["daab-back-to-top.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-lang.css?v={st["daab-lang.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-nav-mega.css?v={st["daab-nav-mega.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-hero-summary.css?v={st["daab-hero-summary.css"]}" rel="stylesheet"/>
-<link href="{ASSET}css/daab-donate-page.css?v={donate_v}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-donate-page.css?v={st["daab-donate-page.css"]}" rel="stylesheet"/>
 <script src="{ASSET}js/daab-mobile.js?v={sv["daab-mobile.js"]}" defer></script>
-<script src="{ASSET}js/daab-sticky-chrome.js?v={sv.get("daab-sticky-chrome.js", 1)}" defer></script>
+<script src="{ASSET}js/daab-perf.js?v={sv["daab-perf.js"]}" defer></script>
+<script src="{ASSET}js/daab-sticky-chrome.js?v={sv["daab-sticky-chrome.js"]}" defer></script>
 <script src="{ASSET}js/daab-back-to-top.js?v={sv["daab-back-to-top.js"]}" defer></script>
 <script src="{ASSET}js/daab-i18n.js?v={sv["daab-i18n.js"]}" defer></script>
 <script src="{ASSET}js/daab-lang-position.js?v={sv["daab-lang-position.js"]}" defer></script>
@@ -172,7 +173,7 @@ def shell_head(cfg: dict) -> str:
 <script src="{ASSET}js/daab-primary-nav.js?v={sv["daab-primary-nav.js"]}" defer></script>
 <script src="{ASSET}js/daab-breadcrumbs.js?v={sv["daab-breadcrumbs.js"]}" defer></script>
 <script src="{ASSET}js/daab-shell.js?v={sv["daab-shell.js"]}" defer></script>
-<script src="{ASSET}js/daab-page-subtitle.js?v=2" defer></script>
+<script src="{ASSET}js/daab-page-subtitle.js?v={sv["daab-page-subtitle.js"]}" defer></script>
 <script src="{ASSET}js/daab-search.js?v={sv["daab-search.js"]}" defer></script>
 </head>
 """
@@ -184,7 +185,7 @@ def footer_block(lang: str) -> str:
 <div class="footer-inner">
 <div class="footer-brand"><h3>Dünya Azərbaycanlı Alimlər Birliyi</h3></div>
 <div class="footer-grid">
-<div class="footer-col"><div class="footer-title">Əlaqə</div><div class="footer-item">✉ <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item">☎ <span>+90 555 147 46 74</span></div><div class="footer-item">🌐 <a href="https://daab-waas.com" target="_blank">daab-waas.com</a></div></div>
+<div class="footer-col"><div class="footer-title">Əlaqə</div><div class="footer-item"><span aria-hidden="true">✉</span> <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item"><span aria-hidden="true">☎</span> <span>+90 555 147 46 74</span></div><div class="footer-item"><span aria-hidden="true">🌐</span> <a href="https://daab-waas.com" target="_blank" rel="noopener noreferrer">daab-waas.com</a></div></div>
 <div class="footer-col"><div class="footer-title">Ünvan</div><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, İstanbul, Türkiyə</p></div>
 <div class="footer-col"><div class="footer-title">Rəhbərlik</div><p class="footer-leader"><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>DAAB İdarə Heyətinin Sədri<br/>Almaniya — James D. Murray mükafatlı professoru</p></div>
 </div>
@@ -195,7 +196,7 @@ def footer_block(lang: str) -> str:
 <div class="footer-inner">
 <div class="footer-brand"><h3>World Association of Azerbaijani Scientists</h3></div>
 <div class="footer-grid">
-<div class="footer-col"><div class="footer-title">Contact</div><div class="footer-item">✉ <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item">☎ <span>+90 555 147 46 74</span></div><div class="footer-item">🌐 <a href="https://daab-waas.com" target="_blank">daab-waas.com</a></div></div>
+<div class="footer-col"><div class="footer-title">Contact</div><div class="footer-item"><span aria-hidden="true">✉</span> <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item"><span aria-hidden="true">☎</span> <span>+90 555 147 46 74</span></div><div class="footer-item"><span aria-hidden="true">🌐</span> <a href="https://daab-waas.com" target="_blank" rel="noopener noreferrer">daab-waas.com</a></div></div>
 <div class="footer-col"><div class="footer-title">Address</div><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, Istanbul, Türkiye</p></div>
 <div class="footer-col"><div class="footer-title">Leadership</div><p class="footer-leader"><strong>Prof. Dr. Masud Afandiyev</strong><br/>Chair of the WAAS Executive Board<br/>Germany — James D. Murray Prize laureate</p></div>
 </div>
@@ -226,7 +227,8 @@ def build_locale(key: str) -> None:
         for iban, note in cfg["ibans"]
     )
 
-    page = shell_head(cfg) + f"""<body class="donate-page">
+    mail_subject = "DAAB ianə" if key == "az" else "WAAS donation"
+    page = shell_head(cfg, key) + f"""<body class="donate-page">
 <a class="skip" href="#content">{SKIP[key]}</a>
 {nav}
 <header class="hero">
@@ -243,6 +245,7 @@ def build_locale(key: str) -> None:
 </aside>
 </div>
 </header>
+
 <main class="donate-main" id="content">
 <section class="dn-section" id="impact">
 <div class="dn-section-head"><h2>{esc(cfg["impact_title"])}</h2><p>{esc(cfg["impact_lead"])}</p></div>
@@ -269,9 +272,7 @@ def build_locale(key: str) -> None:
 <h2>{esc(cfg["cta_title"])}</h2>
 <p>{esc(cfg["cta_lead"])}</p>
 <div class="dn-cta-actions">
-<a class="btn btn-primary" href="mailto:info@daab-waas.com?subject={esc("DAAB ianə" if key == "az" else "WAAS donation")}" title="{esc(cfg["cta_email_title"])}">{esc(cfg["cta_email"])}</a>
-<a class="btn btn-secondary" href="sponsors.html#contact" title="{esc(cfg["cta_form_title"])}">{esc(cfg["cta_form"])}</a>
-<a class="btn btn-secondary" href="sponsors.html" title="{esc(cfg["cta_sponsors_title"])}">{esc(cfg["cta_sponsors"])}</a>
+<a class="btn btn-primary" href="mailto:info@daab-waas.com?subject={esc(mail_subject)}" title="{esc(cfg["cta_email_title"])}">{esc(cfg["cta_email"])}</a>
 </div>
 </section>
 </main>

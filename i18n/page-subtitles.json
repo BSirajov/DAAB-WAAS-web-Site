@@ -18,6 +18,10 @@
       "en": "Follow activities, partnerships, and important events across our global network",
       "az": "Qlobal şəbəkəmizdəki fəaliyyətləri, əməkdaşlıqları və mühüm hadisələri izləyin"
     },
+    "activities-news": {
+      "en": "Follow activities, partnerships, and important events across our global network",
+      "az": "Qlobal şəbəkəmizdəki fəaliyyətləri, əməkdaşlıqları və mühüm hadisələri izləyin"
+    },
     "forum-2024-presentations": {
       "en": "Explore presentations on science, education, policy, and more",
       "az": "Elm, təhsil, siyasət və digər mövzular üzrə təqdimatlarla tanış olun"
@@ -117,6 +121,18 @@
     "forum-2024": {
       "en": "First Forum of Azerbaijani Scientists Living Abroad — September 2024",
       "az": "Xaricdə Yaşayan Azərbaycanlı Alimlərin I Forumu — sentyabr 2024"
+    },
+    "forum-2026": {
+      "en": "A results-oriented and strategic cooperation platform based on the principle of “From discussion to commitment, from contact to collaboration”.",
+      "az": "“Müzakirədən öhdəliyə, əlaqədən əməkdaşlığa” prinsipinə əsaslanan, nəticəyönümlü və strateji əməkdaşlıq platforması."
+    },
+    "work-done-2024-2026": {
+      "en": "Report submitted to the State Committee on Work with Diaspora: post-Forum 2024 activities, memoranda of cooperation, advisory councils, and university partnerships.",
+      "az": "Azərbaycan Diasporla İş üzrə Dövlət Komitəsinə təqdim olunur: 2024-cü il forumundan sonrakı fəaliyyətlər, memorandumlar, məşvərət şuraları, universitetlərlə əməkdaşlıq və s."
+    },
+    "sponsors": {
+      "en": "WAAS unites Azerbaijani scientists around the world. Your support helps fund scholarships, research collaborations, and the future of Azerbaijan’s knowledge economy",
+      "az": "DAAB bütün dünyada fəaliyyət göstərən azərbaycanlı alimləri birləşdirir. Sizin dəstəyiniz təqaüd proqramlarına, elmi əməkdaşlıqlara və ölkəmizin bilik iqtisadiyyatının gələcəyinə töhfə verir"
     }
   }
 }

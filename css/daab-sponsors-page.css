@@ -27,7 +27,7 @@
     padding: 0;
     overflow: hidden;
     color: var(--ink) !important;
-    background: var(--white) var(--site-bg-image) top center / 100% auto no-repeat !important;
+    background: transparent !important;
   }
 
   .sponsors-page .hero::before{

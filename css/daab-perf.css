@@ -3,10 +3,21 @@
 .cards-grid .card,
 .encyclopedia-grid .person-card,
 .photo-gallery-item,
-.activities-photo-grid img,
-.impressions-photo img{
+.photos-gallery-item,
+.video-gallery-item,
+.sessions-masa-block,
+.impressions-photo img,
+.activities-photo-grid img{
   content-visibility: auto;
   contain-intrinsic-size: auto 220px;
+}
+
+html[data-daab-page-id="forum-sessions-organization"] .sessions-masa-block{
+  contain-intrinsic-size: auto 320px;
+}
+
+html[data-daab-page-id="forum-video-gallery"] .video-gallery-item{
+  contain-intrinsic-size: auto 180px;
 }
 
 @media (prefers-reduced-motion: reduce){

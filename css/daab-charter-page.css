@@ -315,7 +315,7 @@ html[data-daab-page-id="charter"] body{
   padding: 0 !important;
   margin: 0 !important;
   color: var(--ink) !important;
-  background: var(--white) var(--site-bg-image) top center / 100% auto no-repeat !important;
+  background: transparent !important;
 }.charter-page .hero::before{
   content: "";
   position: absolute;

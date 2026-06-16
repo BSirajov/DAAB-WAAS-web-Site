@@ -172,7 +172,7 @@ def page_html(data: dict, *, lang: str) -> str:
 <div class="footer-col"><h4 class="footer-title">Rəhbərlik</h4><p class="footer-leader"><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>DAAB İdarə Heyətinin Sədri<br/>Germany — James D. Murray Distinguished Professor</p></div>
 </div>
 </div>
-<div class="footer-bottom">© 2026 DAAB / WAAS — All Rights Reserved</div>
+<div class="footer-bottom">© 2026 DAAB — Bütün hüquqlar qorunur</div>
 </footer>"""
 
     contrib_body = contributions_body(data, lang=lang)

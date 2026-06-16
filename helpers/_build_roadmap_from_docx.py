@@ -214,7 +214,7 @@ def page_html(data: dict, *, lang: str) -> str:
         footer_contact = "Əlaqə"
         footer_address_title = "Ünvan"
         footer_leadership = "Rəhbərlik"
-        footer_rights = "© 2026 DAAB / WAAS — All Rights Reserved"
+        footer_rights = "© 2026 DAAB — Bütün hüquqlar qorunur"
         bc_aria = "Səhifə yolu"
         panel_aria = "Strateji yol xəritəsi haqqında qısa məlumat"
 

@@ -74,7 +74,7 @@ GATEWAY_INDEX = """<!DOCTYPE html>
 <body class="daab-gateway">
 <main class="daab-gateway-page">
 <div class="daab-gateway-card">
-<img class="daab-gateway-logo" src="images/daab-logo.svg" alt="DAAB"/>
+<img class="daab-gateway-logo" src="images/daab-logo.png" alt="DAAB"/>
 <h1>Dünya Azərbaycanlı Alimlər Birliyi</h1>
 <p>World Association of Azerbaijani Scientists</p>
 <div class="daab-gateway-actions">
@@ -114,7 +114,7 @@ STUB_EN_TEMPLATE = """<!DOCTYPE html>
 <a class="skip" href="#content">{skip}</a>
 <nav aria-label="Main navigation" class="nav-strip"><div class="nav-inner">
 <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button>
-<div class="page-logo"><a aria-label="DAAB home" href="{home}"><img src="{asset_root}images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"/></a></div>
+<div class="page-logo"><a aria-label="DAAB home" href="{home}"><img src="{asset_root}images/daab-logo.png" class="nav-brand-logo" alt="DAAB Logo"/></a></div>
 <a class="nav-brand" href="{home}"><span class="nav-brand-text">World Association of<br class="mobile-hidden-break">Azerbaijani Scientists</span></a>
 <div class="nav-menu" id="primaryNavMenu"><div class="nav-divider"></div>
 {nav_links}
@@ -466,7 +466,7 @@ def build_en_home() -> None:
 <a class="skip" href="#content">Skip to content</a>
 <nav aria-label="Main navigation" class="nav-strip"><div class="nav-inner">
 <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button>
-<div class="page-logo"><a href="index.html"><img src="../images/daab-logo.svg" class="nav-brand-logo" alt="DAAB"/></a></div>
+<div class="page-logo"><a href="index.html"><img src="../images/daab-logo.png" class="nav-brand-logo" alt="DAAB"/></a></div>
 <a class="nav-brand" href="index.html"><span class="nav-brand-text">World Association of<br class="mobile-hidden-break">Azerbaijani Scientists</span></a>
 <div class="nav-menu" id="primaryNavMenu"><div class="nav-divider"></div>
 {nav}

@@ -1,6 +1,6 @@
 /**
- * Membership flyer — PDF export (Print/Share).
- * Requires html2canvas + jsPDF loaded via static <script> tags in membership_flyer.html.
+ * Membership / sponsorship flyer — PDF export (Print/Share).
+ * html2canvas + jsPDF load on first PDF action (not on page load).
  */
 (function () {
   "use strict";
@@ -10,6 +10,53 @@
   var EXPORT_CLASS = "flyer-sheet--pdf-export";
   var exportBusy = false;
   var pendingShareBlob = null;
+  var pdfLibsPromise = null;
+
+  function assetRoot() {
+    var html = document.documentElement;
+    var fromAttr = html && html.getAttribute("data-daab-asset-root");
+    if (fromAttr) return fromAttr;
+    var path = (location.pathname || "").replace(/\\/g, "/");
+    if (/\/(az|en)\/forum\//.test(path)) return "../../../";
+    if (/\/(az|en)\//.test(path)) return "../";
+    return "";
+  }
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var existing = document.querySelector('script[src="' + src + '"]');
+      if (existing) {
+        if (existing.getAttribute("data-daab-loaded") === "1") {
+          resolve();
+          return;
+        }
+        existing.addEventListener("load", function () { resolve(); }, { once: true });
+        existing.addEventListener("error", function () { reject(fail("Script failed: " + src)); }, { once: true });
+        return;
+      }
+      var script = document.createElement("script");
+      script.src = src;
+      script.async = true;
+      script.onload = function () {
+        script.setAttribute("data-daab-loaded", "1");
+        resolve();
+      };
+      script.onerror = function () {
+        reject(fail("Script failed: " + src));
+      };
+      document.head.appendChild(script);
+    });
+  }
+
+  function ensurePdfLibs() {
+    if (libsReady()) return Promise.resolve();
+    if (pdfLibsPromise) return pdfLibsPromise;
+    var root = assetRoot();
+    pdfLibsPromise = loadScript(root + "js/vendor/html2canvas.min.js").then(function () {
+      return loadScript(root + "js/vendor/jspdf.umd.min.js");
+    });
+    return pdfLibsPromise;
+  }
 
   function getFlyerCfg() {
     return window.DAAB_FLYER_EMAIL || {};
@@ -222,11 +269,7 @@
   }
 
   async function generatePdfBlob(sourceSheet) {
-    if (!libsReady()) {
-      throw fail(
-        "PDF libraries failed to load. Check that js/vendor/html2canvas.min.js and js/vendor/jspdf.umd.min.js are deployed."
-      );
-    }
+    await ensurePdfLibs();
 
     await waitForFonts();
     var stageRef = createExportClone(sourceSheet);
@@ -553,12 +596,6 @@
           showError(getFlyerCfg(), "printErrorAlert", err);
         });
       });
-    }
-
-    if (!libsReady()) {
-      console.error(
-        "[daab-membership-flyer-email] Missing html2canvas or jsPDF. Include js/vendor/*.min.js before this file."
-      );
     }
   }
 

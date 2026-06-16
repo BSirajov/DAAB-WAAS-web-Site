@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "pages": {
+    "forum-rector-speeches": {
+      "az_to_en": {
+        "edalet-muradov": "adalat-muradov",
+        "elcin-babayev": "elchin-babayev",
+        "gulcohre-memmedova": "gulchora-mammadova",
+        "hamlet-isaxanli": "hamlet-isakhanli",
+        "natiq-eliyev": "natiq-aliyev",
+        "rufet-ezizov": "rufat-azizov",
+        "sahin-bayramov": "shahin-bayramov",
+        "vazeh-eskerov": "vazeh-askarov",
+        "vilayet-veliyev": "vilayat-valiyev"
+      }
+    }
+  }
+}

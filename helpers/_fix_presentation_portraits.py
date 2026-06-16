@@ -254,7 +254,7 @@ def main() -> None:
     photos = ROOT / "images" / "scientists-photos"
     board = ROOT / "images" / "board-members-photos"
 
-    # Asaf: use images/scientists-photos/asef-salamov.png as uploaded (do not reprocess).
+    # Asaf: use images/scientists-photos/asef-salamov.jpg as uploaded (do not reprocess).
 
     bakht_src = board / "bakhtiyar-sirajov.png"
     if not bakht_src.is_file():

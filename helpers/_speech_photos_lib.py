@@ -60,6 +60,21 @@ SPEECH_PHOTOS_CSS_RE = re.compile(
 )
 
 
+PHOTO_EXTS = (".png", ".jpg", ".jpeg")
+
+
+def _resolve_photo_name(folder: Path, base: str) -> Path | None:
+    for ext in PHOTO_EXTS:
+        exact = folder / f"{base}{ext}"
+        if exact.is_file():
+            return exact
+    matches: list[Path] = []
+    for ext in PHOTO_EXTS:
+        matches.extend(folder.glob(f"{base}*{ext}"))
+    matches = sorted(matches, key=lambda p: (" 1" in p.stem, p.name))
+    return matches[0] if matches else None
+
+
 def _photo_path(slug: str) -> Path | None:
     if slug in SPECIAL_PHOTO_FILES:
         name = SPECIAL_PHOTO_FILES[slug]
@@ -67,6 +82,9 @@ def _photo_path(slug: str) -> Path | None:
             path = folder / name
             if path.is_file():
                 return path
+            alt = _resolve_photo_name(folder, Path(name).stem)
+            if alt:
+                return alt
 
     bases: list[str] = []
     for candidate in (PHOTO_ALIASES.get(slug, slug), slug):
@@ -75,15 +93,9 @@ def _photo_path(slug: str) -> Path | None:
 
     for base in bases:
         for folder in PHOTO_DIRS:
-            exact = folder / f"{base}.png"
-            if exact.is_file():
-                return exact
-            matches = sorted(
-                folder.glob(f"{base}*.png"),
-                key=lambda p: (" 1" in p.stem, p.name),
-            )
-            if matches:
-                return matches[0]
+            resolved = _resolve_photo_name(folder, base)
+            if resolved:
+                return resolved
     return None
 
 

@@ -14,7 +14,7 @@
   position: relative;
   overflow: hidden;
   color: var(--ink) !important;
-  background: var(--white) var(--site-bg-image) top center / 100% auto no-repeat !important;
+  background: transparent !important;
 }.hero::before{
   content: "";
   position: absolute;
@@ -91,6 +91,7 @@
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  contain-intrinsic-size: auto 420px;
 }.card.is-filtered-out{
   display: none !important;
 }.card{

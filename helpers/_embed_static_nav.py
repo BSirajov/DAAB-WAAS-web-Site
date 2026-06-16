@@ -241,7 +241,6 @@ NAV_AZ = (
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
         ("membership_value.html", "membership-value", "💡\u00a0Niyə DAAB-a qoşulmalı", "Üzvlüyün dəyəri və əsas faydalar"),
-        ("application.html#membership-terms", "membership-terms", "✒️\u00a0Üzvlüyə dəvət və ödəniş", "Qaydalar, üzvlük haqları və təsdiq prosesi"),
         ("application.html", "membership-application", "📝\u00a0Bizə qoşulun", "Onlayn üzvlük müraciət forması"),
         ("membership_flyer.html", "membership-flyer", "📤\u00a0Dəvət məktubu", "Potensial üzvlər üçün çap oluna bilən flyer"),
     ])
@@ -271,7 +270,6 @@ NAV_EN = (
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
         ("membership_value.html", "membership-value", "💡\u00a0Why join WAAS", "Membership value, benefits, and opportunities"),
-        ("application.html#membership-terms", "membership-terms", "✒️\u00a0Invitation to Membership and Fees", "Rules, membership fees, and approval process"),
         ("application.html", "membership-application", "📝\u00a0Join us", "Online membership application form"),
         ("membership_flyer.html", "membership-flyer", "📤\u00a0Invitation Letter", "Printable invitation letter for potential members"),
     ])
@@ -392,7 +390,7 @@ def forum_nav_strip(lang: str = "az", *, active_nav_id: str | None = None) -> st
             f'aria-expanded="false" aria-controls="primaryNavMenu">'
             f"<span></span><span></span><span></span></button>"
             f'<div class="page-logo"><a aria-label="WAAS home" title="Home page" href="../../index.html">'
-            f'<img src="{asset}images/daab-logo.svg" class="nav-brand-logo" alt="WAAS Logo"></a></div>'
+            f'<img src="{asset}images/daab-logo.png" class="nav-brand-logo" alt="WAAS Logo"></a></div>'
             f'<a aria-label="WAAS home" class="nav-brand" href="../../index.html">'
             f'<span class="nav-brand-text">World Association of<br class="mobile-hidden-break">'
             f"Azerbaijani Scientists</span></a>"
@@ -406,7 +404,7 @@ def forum_nav_strip(lang: str = "az", *, active_nav_id: str | None = None) -> st
         f'aria-expanded="false" aria-controls="primaryNavMenu">'
         f"<span></span><span></span><span></span></button>"
         f'<div class="page-logo"><a aria-label="DAAB ana səhifə" title="Ana səhifə" href="../../index.html">'
-        f'<img src="{asset}images/daab-logo.svg" class="nav-brand-logo" alt="DAAB Logo"></a></div>'
+        f'<img src="{asset}images/daab-logo.png" class="nav-brand-logo" alt="DAAB Logo"></a></div>'
         f'<a aria-label="DAAB ana səhifə" class="nav-brand" href="../../index.html">'
         f'<span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">'
         f"Alimlər Birliyi</span></a>"

@@ -7,6 +7,30 @@
   var STORAGE_KEY = "daab-lang-position";
   var HASH_SYNC_PAGES = { activities: 1, charter: 1, foundation: 1 };
 
+  /** AZ ↔ EN article ids that differ on the same logical page (see i18n/anchor-aliases.json). */
+  var ANCHOR_ALIASES = {
+    "forum-rector-speeches": {
+      "edalet-muradov": "adalat-muradov",
+      "elcin-babayev": "elchin-babayev",
+      "gulcohre-memmedova": "gulchora-mammadova",
+      "hamlet-isaxanli": "hamlet-isakhanli",
+      "natiq-eliyev": "natiq-aliyev",
+      "rufet-ezizov": "rufat-azizov",
+      "sahin-bayramov": "shahin-bayramov",
+      "vazeh-eskerov": "vazeh-askarov",
+      "vilayet-veliyev": "vilayat-valiyev",
+      "adalat-muradov": "edalet-muradov",
+      "elchin-babayev": "elcin-babayev",
+      "gulchora-mammadova": "gulcohre-memmedova",
+      "hamlet-isakhanli": "hamlet-isaxanli",
+      "natiq-aliyev": "natiq-eliyev",
+      "rufat-azizov": "rufet-ezizov",
+      "shahin-bayramov": "sahin-bayramov",
+      "vazeh-askarov": "vazeh-eskerov",
+      "vilayat-valiyev": "vilayet-veliyev"
+    }
+  };
+
   var SKIP_IDS = {
     content: 1,
     "search-overlay": 1,
@@ -211,6 +235,13 @@
     return parts.base + parts.search + "#" + encodeURIComponent(anchor);
   }
 
+  function translateAnchor(anchor) {
+    if (!anchor) return anchor;
+    var map = ANCHOR_ALIASES[pageId()];
+    if (!map) return anchor;
+    return map[anchor] || anchor;
+  }
+
   function saveIntent(targetLang, anchor) {
     var atTop = isNearPageTop();
     var payload = {
@@ -244,6 +275,9 @@
 
   function decorateAlternateUrl(url, targetLang) {
     var anchor = getLogicalAnchor();
+    if (anchor) {
+      anchor = translateAnchor(anchor);
+    }
     saveIntent(targetLang, anchor);
     return appendHash(url, anchor);
   }
@@ -275,9 +309,24 @@
     }
 
     var id = hashId();
-    if (id && scrollToAnchor(id, false)) {
-      clearIntent();
-      return true;
+    if (id) {
+      var mappedId = translateAnchor(id);
+      if (mappedId !== id && document.getElementById(mappedId)) {
+        scrollToAnchor(mappedId, false);
+        if (global.history && global.history.replaceState) {
+          global.history.replaceState(
+            null,
+            "",
+            "#" + encodeURIComponent(mappedId)
+          );
+        }
+        clearIntent();
+        return true;
+      }
+      if (scrollToAnchor(id, false)) {
+        clearIntent();
+        return true;
+      }
     }
 
     if (!intent) return false;

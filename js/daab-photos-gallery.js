@@ -6,7 +6,7 @@
 
   var MANIFEST_URL = "photos-gallery-manifest.json";
   var THUMB_INDEX_URL = "photos-gallery-thumbs.json";
-  var EAGER_COUNT = 8;
+  var EAGER_COUNT = 4;
   var IO_ROOT_MARGIN = "280px 0px";
 
   var grid = document.getElementById("photosGalleryGrid");

@@ -679,7 +679,6 @@
     uiPromise.then(function (ui) {
       var labels = labelsFor(state.lang, ui);
       mountSearchChrome(labels);
-      scheduleIdleIndexPreload();
     });
   }
 

@@ -2,8 +2,8 @@
 
 html:has(#scientists-catalog .card[id]){
   scroll-behavior: auto;
-}/* Hide catalogue until sort + hash navigation finish (prevents wrong-card flash) */
-html[data-daab-page-id="scientists-profiles"]:not(.daab-profiles-ready) #scientists-catalog{
+}/* Hide catalogue only during hash deep-link boot (prevents wrong-card flash) */
+html[data-daab-page-id="scientists-profiles"].daab-profiles-boot:not(.daab-profiles-ready) #scientists-catalog{
   visibility: hidden;
 }.cards-grid > .card[id]{
   scroll-margin-top: calc(var(--daab-nav-height, 86px) + 24px);

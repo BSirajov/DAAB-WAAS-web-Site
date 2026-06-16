@@ -269,16 +269,12 @@ def audit_membership_routes() -> None:
     for item in nav["primary"]:
         if item.get("id") == "membership" or item.get("labelKey") == "membership":
             children = item.get("children", [])
-            child_ids = [c.get("navKey") or c.get("id") for c in children if c.get("id")]
-            has_terms = any(
-                c.get("hash") == "membership-terms" or c.get("labelKey") == "membershipTerms"
-                for c in children
-            )
-            if not has_terms:
+            child_ids = [c.get("id") for c in children if c.get("id")]
+            if "membership" not in child_ids and len(children) == 3:
                 add(
                     "info",
                     "nav",
-                    "Membership nav has no terms anchor link (application#membership-terms)",
+                    "Membership nav has 3 items (why, application, flyer) — no standalone terms page",
                 )
 
 
