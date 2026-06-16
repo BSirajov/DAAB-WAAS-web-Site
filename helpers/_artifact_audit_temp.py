@@ -163,15 +163,22 @@ def audit_scientists_list_labels() -> None:
             r'data-col="yasadigi_olke"[^>]*>([^<]+(?:<br[^>]*>[^<]+)?)',
             html,
         )
-        filter_opt = re.search(r'id="filterCountry"[^>]*>.*?value="">([^<]+)', html, re.S)
-        sort_block = re.search(r'id="sortBy"[^>]*>(.*?)</select>', html, re.S)
+        filter_block = re.search(r'<select id="filterCountry"[^>]*>(.*?)</select>', html, re.S)
+        filter_opt = None
+        if filter_block:
+            filter_opt = re.search(
+                r'<option value="">((?:[^<]|<[^/][^>]*>[^<]*)*)</option>',
+                filter_block.group(1),
+                re.S,
+            )
+        sort_block = re.search(r'<select id="sortBy"[^>]*>(.*?)</select>', html, re.S)
         sort_country = None
         if sort_block:
             m = re.search(r'value="yasadigi_olke"[^>]*>([^<]+)', sort_block.group(1))
             if m:
                 sort_country = re.sub(r"<[^>]+>", "", m.group(1)).strip()
         if lang == "en" and filter_opt and sort_country:
-            filter_text = filter_opt.group(1).strip()
+            filter_text = re.sub(r"<[^>]+>", "", filter_opt.group(1)).strip()
             if "Country of residence" in filter_text and sort_country != "Country of residence":
                 add(
                     "warn",
@@ -179,7 +186,7 @@ def audit_scientists_list_labels() -> None:
                     f"EN filter says 'Country of residence' but Sort by option still {sort_country!r}",
                 )
         if lang == "az" and filter_opt and sort_country and th_country:
-            filter_text = filter_opt.group(1).strip()
+            filter_text = re.sub(r"<[^>]+>", "", filter_opt.group(1)).strip()
             th_text = re.sub(r"<[^>]+>", "", th_country.group(1)).strip()
             sort_text = sort_country
             if filter_text != th_text or sort_text != th_text:
@@ -224,7 +231,12 @@ def audit_orphan_assets() -> None:
         name = css.name
         if name in ("daab-tokens.css", "daab-site-background.css"):
             continue
-        if name in ("daab-forum-book.css", "daab-membership-page.css"):
+        if name in (
+            "daab-forum-book.css",
+            "daab-membership-page.css",
+            "daab-encyclopedia-page.css",
+            "daab-prominent-figure-profile.css",
+        ):
             add("info", "assets", f"Build-only/unlinked CSS: {name}")
             continue
         if name not in blob and f"@import" not in (ROOT / "css/daab-common.css").read_text():
@@ -233,7 +245,11 @@ def audit_orphan_assets() -> None:
                 common = (ROOT / "css/daab-common.css").read_text(encoding="utf-8")
                 if name not in common and name not in blob:
                     add("warn", "assets", f"CSS not referenced in az/en HTML: {name}")
-    js_optional: set[str] = set()
+    js_optional = {
+        "prominent-figures-catalog.js",
+        "prominent-figures-catalog-data.js",
+        "prominent-figures-catalog-data-en.js",
+    }
     for js in sorted((ROOT / "js").glob("*.js")):
         if js.name in js_optional:
             add("info", "assets", f"Optional/unlinked JS: {js.name}")

@@ -66,6 +66,7 @@
     "membership-application": "membershipJoin",
     "membership-flyer": "membershipFlyer",
     sponsors: "sponsorsProgram",
+    "forum-2027-sponsorship": "forum2027Sponsorship",
     donate: "donate",
     "sponsors-flyer": "sponsorsFlyer"
   };
@@ -234,6 +235,12 @@
         navParent: "sponsorship"
       },
       {
+        id: "forum-2027-sponsorship",
+        az: "az/sponsorship_partnership.html",
+        en: "en/sponsorship_partnership.html",
+        navParent: "sponsorship"
+      },
+      {
         id: "donate",
         az: "az/donate.html",
         en: "en/donate.html",
@@ -259,7 +266,7 @@
         activitiesNews: "Yeniliklər",
         activitiesWorkDone2024: "Görülən işlər, 2024-2026",
         sponsors: "Bizi dəstəkləyin",
-        forum2026: "Forum 2026"
+        forum2026: "II Forum"
       },
       en: {
         aria: "Breadcrumb",
@@ -270,7 +277,7 @@
         activitiesNews: "News",
         activitiesWorkDone2024: "Work Done 2024-2026",
         sponsors: "Support us",
-        forum2026: "Forum 2026",
+        forum2026: "II Forum",
         scientistsList: "Directory of Scientists",
         scientistsProfiles: "Profiles of Scientists"
       }
@@ -344,7 +351,7 @@
       scientists: { landingId: "scientists-list" },
       activities: { landingId: "activities-news" },
       membership: { landingId: "membership-value" },
-      sponsorship: { landingId: "sponsors" }
+      sponsorship: { landingId: "forum-2027-sponsorship" }
     }
   };
 

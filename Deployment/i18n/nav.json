@@ -1,5 +1,5 @@
 {
-  "version": 12,
+  "version": 13,
   "primary": [
     {
       "type": "page",
@@ -192,12 +192,12 @@
       "id": "sponsorship",
       "style": "dropdown",
       "labelKey": "sponsors",
-      "landingId": "sponsors",
+      "landingId": "forum-2027-sponsorship",
       "children": [
         {
-          "id": "sponsors",
-          "labelKey": "sponsorsProgram",
-          "descKey": "sponsorsProgramDesc"
+          "id": "forum-2027-sponsorship",
+          "labelKey": "forum2027Sponsorship",
+          "descKey": "forum2027SponsorshipDesc"
         },
         {
           "id": "donate",
@@ -271,9 +271,9 @@
       ]
     },
     "sponsorship": {
-      "landingId": "sponsors",
+      "landingId": "forum-2027-sponsorship",
       "pages": [
-        "sponsors",
+        "forum-2027-sponsorship",
         "donate",
         "sponsors-flyer"
       ]

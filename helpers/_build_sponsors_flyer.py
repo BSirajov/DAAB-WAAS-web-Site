@@ -13,39 +13,39 @@ from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS
 ASSET = "../"
 FLYER_CSS_V = STYLE_VERSIONS["daab-membership-flyer.css"]
 SPONSORS_HTML = {
-    "az": ROOT / "az" / "sponsors.html",
-    "en": ROOT / "en" / "sponsors.html",
+    "az": ROOT / "az" / "sponsorship_partnership.html",
+    "en": ROOT / "en" / "sponsorship_partnership.html",
 }
 NAV_ARIA = {"az": "Əsas naviqasiya", "en": "Main navigation"}
 SKIP = {"az": "Məzmuna keç", "en": "Skip to content"}
 
 SPONSORS_URL = {
-    "az": "https://daab-waas.com/az/sponsors.html",
-    "en": "https://daab-waas.com/en/sponsors.html",
+    "az": "https://daab-waas.com/az/sponsorship_partnership.html",
+    "en": "https://daab-waas.com/en/sponsorship_partnership.html",
 }
 CONTACT_URL = {
-    "az": "https://daab-waas.com/az/sponsors.html#contact",
-    "en": "https://daab-waas.com/en/sponsors.html#contact",
+    "az": "https://daab-waas.com/az/sponsorship_partnership.html#contact",
+    "en": "https://daab-waas.com/en/sponsorship_partnership.html#contact",
 }
 
 LOCALES = {
     "az": {
         "lang": "az",
         "title": "DAAB — Sponsorluq dəvət məktubu",
-        "description": "DAAB sponsorluğu — potensial tərəfdaşlar üçün çap olunan dəvət məktubu.",
-        "hero_h1": "Sponsorluğa <span>dəvət</span>",
+        "description": "Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumuna sponsorluq — potensial tərəfdaşlar üçün çap olunan dəvət məktubu.",
+        "hero_h1": "II Forum <span>sponsorluğu</span>",
         "hero_subtitle": "Potensial tərəfdaşlar üçün paylaşıla bilən dəvət məktubu",
         "panel_title": "Tərəfdaşlara dəvət məktubu göndərin",
         "panel_copy": (
-            "Bu səhifədə DAAB sponsorluğunun dəyərini və səviyyələrini qısa şəkildə təqdim edən "
+            "Bu səhifədə II Forum sponsorluğu və DAAB ilə strateji tərəfdaşlıq təklifini qısa şəkildə təqdim edən "
             "paylaşmağa hazır dəvət məktubu yerləşdirilib. Məktubun yuxarı sağ küncündəki Çap/PDF düyməsindən "
-            "istifadə edərək onu PDF formatında yaradın, çap edin və ya e-poçt vasitəsilə paylaşın"
+            "istifadə edərək onu PDF formatında yaradın, çap edin və ya e-poçt vasitəsilə paylaşın."
         ),
         "controls_aria": "Dəvət məktubu idarəetməsi",
         "print_btn": "Çap / PDF",
         "print_tooltip": "Brauzerin çap pəncərəsini açın və «PDF kimi yadda saxla» seçin.",
-        "email_subject": "DAAB sponsorluğuna dəstək verin",
-        "email_pdf_filename": "DAAB-sponsorluq-devet-mektubu.pdf",
+        "email_subject": "II Forum sponsorluğuna dəstək verin",
+        "email_pdf_filename": "DAAB-Forum-II-sponsorluq-devet-mektubu.pdf",
         "email_busy": "PDF hazırlanır…",
         "email_attach_note": "Bu e-poçta yüklənmiş PDF dəvət məktubu faylını əlavə edin.",
         "email_error": "PDF yaradıla bilmədi. Yenidən cəhd edin.",
@@ -63,36 +63,36 @@ LOCALES = {
         ),
         "org": "Dünya Azərbaycanlı Alimlər Birliyi",
         "brand_short": "DAAB",
-        "headline": "Azərbaycan elminə <span>sərmayə yatırın</span>",
+        "headline": "Sponsorluq və <span>tərəfdaşlıq</span>",
         "lead": (
-            "DAAB bütün dünyada fəaliyyət göstərən azərbaycanlı alimləri birləşdirir. Sizin dəstəyiniz "
-            "təqaüd proqramlarına, elmi əməkdaşlıqlara və ölkəmizin bilik iqtisadiyyatının gələcəyinə töhfə verir."
+            "DAAB Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumuna dəstək və strateji tərəfdaşlıq təklif edir — "
+            "elm, təhsil, innovasiya və insan kapitalına sərmayə."
         ),
-        "stats": [("🎓", "Təqaüdlər"), ("🔬", "Əməkdaşlıq"), ("🌐", "Forumlar")],
-        "pillars_title": "Sponsorluq səviyyələri",
+        "stats": [("🌐", "100+ alim"), ("🤝", "20+ ölkə"), ("🎤", "Forum II")],
+        "pillars_title": "Forum II sponsorluq paketləri",
         "pillars": [
-            ("🥉 Bürünc", "€1 000 / il — hesabatda ad, sertifikat"),
-            ("🥈 Gümüş", "€5 000 / il — loqo, Forum dəvətləri"),
-            ("🥇 Qızıl", "€15 000 / il — VIP, media, birgə layihə"),
-            ("💎 Platin", "€30 000+ / il — strategiya, keynote, MoU"),
+            ("💎 Platin / Baş", "€50 000+ — açılış çıxışı, prioritet loqo, media"),
+            ("🥇 Qızıl", "€25 000–49 999 — panel sponsorluğu, loqo, şəbəkələşmə"),
+            ("🥈 Gümüş", "€10 000–24 999 — sponsor siyahısı, loqo, veb-sayt"),
+            ("🥉 Bürünc", "€5 000–9 999 — veb-sayt və Forum materiallarında qeyd"),
         ],
-        "benefits_title": "Niyə DAAB-a dəstək verməli?",
+        "benefits_title": "Sponsor üçün üstünlüklər",
         "benefits": [
-            ("🎓", "Təqaüdlər və proqramlar", "Gənc tədqiqatçıların aparıcı müəssisələrdə iştirakı.", ["Doktorantura", "Postdoktorantura"]),
-            ("🔬", "Elmi əməkdaşlıqlar", "Alimlərimizlə universitetlər və AMEA arasında körpü.", ["Ortaq nəşrlər", "Bilik transferi"]),
-            ("🌐", "Beynəlxalq forumlar", "Xaricdə yaşayan alimlərin illik Forumu.", ["Milli R&D gündəliyi", "Əməkdaşlıq platforması"]),
-            ("🏗️", "Qarabağın bərpası", "Azad edilmiş ərazilərin elmi-texniki bərpasına dəstək.", ["Ekspert potensialı", "Mobilizasiya"]),
-            ("📚", "Nəşrlər və açıq çıxış", "Azərbaycan və ingilis dillərində bilik mübadiləsi.", ["Jurnallar", "Açıq giriş"]),
-            ("🤝", "Diaspora şəbəkəsi", "Alimlər bazası, mentorluq və mobillik.", ["Karyera imkanları", "Canlı reyestr"]),
+            ("🌐", "Brendinizin tanınması", "Forum II materiallarında, mediada və tədbir məkanında tanınma.", ["Loqo yerləşdirməsi", "Beynəlxalq platforma"]),
+            ("🏅", "Nüfuz və KSM", "Elm, təhsil və innovasiyaya sərmayə qoyan etibarlı tərəfdaş imici.", ["Sosial təsir", "İllik hesabat"]),
+            ("🤝", "Diaspora şəbəkəsi", "20-dən çox ölkədən alim və ekspertlərlə birbaşa əlaqə.", ["Mentorluq", "VIP dialoq"]),
+            ("🔬", "Elmi əməkdaşlıq", "Universitetlər və AMEA ilə körpü; ortaq tədqiqat imkanları.", ["Ortaq nəşrlər", "Bilik transferi"]),
+            ("📚", "İnnovasiya və nəşrlər", "Prioritet sahələrdə birgə layihələr və açıq elmi mühit.", ["Ekspert hesabatları", "Açıq giriş"]),
+            ("🎓", "İnsan kapitalı", "Gənc tədqiqatçılar, təqaüdlər və Qarabağ Universiteti dəstəyi.", ["Doktorantura", "Region universitetləri"]),
         ],
-        "cta_title": "Gəlin dəyərli iş birliyi quraq",
+        "cta_title": "Əməkdaşlıq üçün növbəti addım",
         "cta_copy": (
-            "Sponsorluğunuz gənc tədqiqatçılar üçün təqaüd proqramlarını, beynəlxalq elmi əməkdaşlıqları "
-            "və diaspora alimləri ilə yerli qurumlar arasında bilik mübadiləsini birbaşa dəstəkləyə bilər."
+            "DAAB rəhbərlik etdiyiniz şirkətlə təqdimat görüşü keçirməyə və mümkün əməkdaşlıq formatlarını "
+            "müzakirə etməyə hazırdır."
         ),
-        "cta_btn": "Əlaqə saxlayın",
-        "cta_href": "sponsors.html#contact",
-        "fees": "Bütün səviyyələr: rəsmi təşəkkür, hesabatlılıq, İdarə Heyəti ilə birbaşa əlaqə",
+        "cta_btn": "info@daab-waas.com",
+        "cta_href": "sponsorship_partnership.html#contact",
+        "fees": "Bütün paketlər: rəsmi təşəkkür, hesabatlılıq, Forum II tanınması",
         "contact_email": "info@daab-waas.com",
         "contact_site": "daab-waas.com",
         "qr_caption": "Sponsorluq əlaqəsi",
@@ -101,19 +101,20 @@ LOCALES = {
     "en": {
         "lang": "en",
         "title": "WAAS — Sponsorship flyer",
-        "description": "WAAS sponsorship — printable flyer for potential partners.",
-        "hero_h1": "Sponsorship <span>Flyer</span>",
-        "hero_subtitle": "Shareable flyer for potential partners",
-        "panel_title": "Share the flyer with partners",
+        "description": "Forum II sponsorship and strategic partnership with WAAS — printable flyer for potential partners.",
+        "hero_h1": "Forum II <span>sponsorship</span>",
+        "hero_subtitle": "Shareable invitation letter for potential partners",
+        "panel_title": "Share the invitation letter with partners",
         "panel_copy": (
-            "This page provides a ready-to-share flyer summarizing WAAS sponsorship levels and impact. "
-            "Use the Print/PDF button at the top right of the flyer to create a PDF, print, or share by email."
+            "This page provides a ready-to-share flyer summarizing the Forum II sponsorship proposal and "
+            "partnership opportunities with WAAS. Use the Print/PDF button at the top right of the flyer "
+            "to create a PDF, print, or share by email."
         ),
         "controls_aria": "Flyer actions",
         "print_btn": "Print / PDF",
         "print_tooltip": "Open the browser print dialog and choose Save as PDF.",
-        "email_subject": "Support WAAS through sponsorship",
-        "email_pdf_filename": "WAAS-sponsorship-flyer.pdf",
+        "email_subject": "Support Forum II through sponsorship",
+        "email_pdf_filename": "WAAS-Forum-II-sponsorship-flyer.pdf",
         "email_busy": "Preparing PDF…",
         "email_attach_note": "Please attach the sponsorship flyer PDF that was just downloaded to this email.",
         "email_error": "Could not create the PDF. Please try again.",
@@ -131,36 +132,36 @@ LOCALES = {
         ),
         "org": "World Association of Azerbaijani Scientists",
         "brand_short": "WAAS",
-        "headline": "Invest in <span>Azerbaijani science</span>",
+        "headline": "Sponsorship &amp; <span>partnership</span>",
         "lead": (
-            "WAAS unites Azerbaijani scientists around the world. Your support helps fund scholarships, "
-            "research collaborations, and the future of Azerbaijan's knowledge economy."
+            "WAAS invites strategic partners to support the Second Forum of Azerbaijani Scientists Living Abroad — "
+            "a flagship investment in science, education, innovation, and human capital."
         ),
-        "stats": [("🎓", "Scholarships"), ("🔬", "Collaboration"), ("🌐", "Forums")],
-        "pillars_title": "Sponsorship tiers",
+        "stats": [("🌐", "100+ scientists"), ("🤝", "20+ countries"), ("🎤", "Forum II")],
+        "pillars_title": "Forum II sponsorship packages",
         "pillars": [
-            ("🥉 Bronze", "€1,000 / year — report listing, certificate"),
-            ("🥈 Silver", "€5,000 / year — logo, Forum passes"),
-            ("🥇 Gold", "€15,000 / year — VIP, media, co-branded research"),
-            ("💎 Platinum", "€30,000+ / year — strategy seat, keynote, MoU"),
+            ("💎 Title / Platinum", "€50,000+ — opening address, priority logo, media"),
+            ("🥇 Gold", "€25,000–49,999 — panel sponsorship, logo, networking"),
+            ("🥈 Silver", "€10,000–24,999 — sponsor listing, logo, website"),
+            ("🥉 Bronze", "€5,000–9,999 — website and Forum materials listing"),
         ],
-        "benefits_title": "Why support WAAS?",
+        "benefits_title": "Benefits for sponsors",
         "benefits": [
-            ("🎓", "Scholarships & fellowships", "Early-career researchers at leading institutions.", ["Doctoral study", "Postdoctoral programmes"]),
-            ("🔬", "Research collaborations", "Bridging diaspora experts with universities and ANAS.", ["Co-publications", "Know-how transfer"]),
-            ("🌐", "International forums", "The regular Forum of Azerbaijani Scientists Abroad.", ["National R&D agenda", "Collaboration platform"]),
-            ("🏗️", "Karabakh reconstruction", "Scientific support for liberated territories.", ["Expert mobilisation", "Technical contribution"]),
-            ("📚", "Publications & open access", "Knowledge sharing in Azerbaijani and English.", ["Journals", "Open-access materials"]),
-            ("🤝", "Diaspora network", "Living registry, mentorship, and mobility.", ["Career pathways", "Global connections"]),
+            ("🌐", "Brand visibility", "Recognition across Forum II materials, media, and the venue.", ["Logo placement", "International platform"]),
+            ("🏅", "Reputation & CSR", "Trusted partner investing in science, education, and innovation.", ["Social impact", "Annual report"]),
+            ("🤝", "Diaspora network", "Direct links to scientists and experts from 20+ countries.", ["Mentoring", "VIP dialogue"]),
+            ("🔬", "Research collaboration", "Bridges with universities and ANAS; joint research pathways.", ["Co-publications", "Knowledge transfer"]),
+            ("📚", "Innovation & publications", "Joint initiatives and open science in priority fields.", ["Expert reports", "Open access"]),
+            ("🎓", "Human capital", "Young researchers, scholarships, and Karabakh University support.", ["Doctoral pathways", "Regional universities"]),
         ],
-        "cta_title": "Let's build a meaningful partnership",
+        "cta_title": "Next step toward partnership",
         "cta_copy": (
-            "Your sponsorship can directly support scholarships for young researchers, international "
-            "scientific cooperation, and knowledge exchange between diaspora scientists and local institutions."
+            "WAAS is ready to hold a presentation meeting with your company and discuss possible "
+            "formats of cooperation."
         ),
-        "cta_btn": "Get in touch",
-        "cta_href": "sponsors.html#contact",
-        "fees": "All tiers: formal acknowledgment, reporting, direct Board relationship",
+        "cta_btn": "info@daab-waas.com",
+        "cta_href": "sponsorship_partnership.html#contact",
+        "fees": "All packages: formal acknowledgment, reporting, Forum II visibility",
         "contact_email": "info@daab-waas.com",
         "contact_site": "daab-waas.com",
         "qr_caption": "Sponsorship contact",
@@ -259,10 +260,10 @@ def build_email_body(cfg: dict, lang: str) -> str:
             [
                 "Hörmətli tərəfdaş,",
                 "",
-                "Sizi Dünya Azərbaycanlı Alimlər Birliyinə (DAAB) sponsorluq ilə dəstəkləməyə dəvət etmək istəyirəm.",
+                "Sizi Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumuna (DAAB) sponsorluq ilə dəstəkləməyə dəvət etmək istəyirəm.",
                 "",
                 "Ətraflı məlumat: " + sponsors_url,
-                "Əlaqə forması: " + contact_url,
+                "Əlaqə: " + contact_url,
                 "",
                 cfg["email_attach_note"],
                 "",
@@ -275,11 +276,11 @@ def build_email_body(cfg: dict, lang: str) -> str:
         [
             "Dear partner,",
             "",
-            "I would like to invite you to support the World Association of "
-            "Azerbaijani Scientists (WAAS) through sponsorship.",
+            "I would like to invite you to support the Second Forum of Azerbaijani Scientists "
+            "Living Abroad through sponsorship with WAAS.",
             "",
             "Learn more: " + sponsors_url,
-            "Contact form: " + contact_url,
+            "Contact: " + contact_url,
             "",
             cfg["email_attach_note"],
             "",
@@ -355,7 +356,7 @@ def build_locale(key: str) -> None:
 <img class="flyer-logo" src="{ASSET}images/daab-logo.svg" alt="" width="72" height="72"/>
 <div class="flyer-brand-block">
 <p class="flyer-org">{esc(cfg["org"])}</p>
-<h1>{esc(cfg["brand_short"])}</h1>
+<h2 class="flyer-brand-mark">{esc(cfg["brand_short"])}</h2>
 </div>
 </header>
 <section class="flyer-hero">

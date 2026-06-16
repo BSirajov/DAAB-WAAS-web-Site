@@ -25,7 +25,7 @@
 <!-- /daab-seo -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
 <link href="../../css/daab-common.css?v=69" rel="stylesheet"/>
 <link href="../../css/daab-perf.css?v=1" rel="stylesheet"/>
 <link href="../../css/daab-mobile.css?v=13" rel="stylesheet"/>
@@ -43,12 +43,12 @@
 <script src="../../js/daab-back-to-top.js?v=3" defer></script>
 <link href="../../css/daab-lang.css?v=13" rel="stylesheet"/>
 <link href="../../css/daab-nav-mega.css?v=69" rel="stylesheet"/>
-<script src="../../js/daab-i18n.js?v=34" defer></script>
+<script src="../../js/daab-i18n.js?v=37" defer></script>
 <script src="../../js/daab-lang-position.js?v=7" defer></script>
 <script src="../../js/daab-design-tokens.js?v=2" defer></script>
 <script src="../../js/daab-nav.js?v=31" defer></script>
-<script src="../../js/daab-primary-nav.js?v=57" defer></script>
-<script src="../../js/daab-breadcrumbs.js?v=35" defer></script>
+<script src="../../js/daab-primary-nav.js?v=58" defer></script>
+<script src="../../js/daab-breadcrumbs.js?v=39" defer></script>
 <script src="../../js/daab-shell.js?v=13" defer></script>
 <script src="../../js/daab-page-subtitle.js?v=2" defer></script>
 <script src="../../js/daab-search.js?v=12" defer></script>
@@ -86,7 +86,7 @@
 <div class="filter-group">
 <span class="filter-icon-label" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 9v5l-4-2v-3L3 5z"/></svg><span>Filtrlər</span></span>
 <div class="sel-wrap">
-<select id="filterCountry"><option value=""><span aria-hidden="true">🌍</span> Yaşadığı Ölkə</option></select>
+<select id="filterCountry"><option value=""><span aria-hidden="true">🌍</span> Yaşadığı ölkə</option></select>
 <button class="sel-clear" data-for="filterCountry" title="Filtri sil">×</button>
 </div>
 <div class="sel-wrap">
@@ -137,8 +137,8 @@
 <label class="group-control__label" for="groupBy">Qruplaşdır</label>
 <div class="group-control__select-wrap">
 <select class="group-control__select" id="groupBy">
-<option selected value="">Yoxdur</option>
-<option value="yasadigi_olke">Yaşadığı Ölkə</option>
+<option selected value="">Qruplaşdırma yoxdur</option>
+<option value="yasadigi_olke">Yaşadığı ölkə</option>
 <option value="ixtilas">İxtisas</option>
 <option value="elmi_derece">Elmi dərəcə</option>
 <option value="cinsi">Cins</option>
@@ -160,7 +160,7 @@
 <div class="sort-control__select-wrap">
 <select class="sort-control__select" id="sortBy">
 <option selected value="ad_soyad">Ad</option>
-<option value="yasadigi_olke">Yaşadığı Ölkə</option>
+<option value="yasadigi_olke">Yaşadığı ölkə</option>
 <option value="ixtilas">İxtisas</option>
 <option value="elmi_derece">Elmi dərəcə</option>
 <option value="cinsi">Cins</option>
@@ -212,8 +212,8 @@
 <thead>
 <tr>
 <th class="col-no">№</th>
-<th class="sortable col-name" data-col="ad_soyad">Ad, Soyadı</th>
-<th class="sortable col-cntry" data-col="yasadigi_olke">Yaşadığı Ölkə</th>
+<th class="sortable col-name" data-col="ad_soyad">Ad, soyad</th>
+<th class="sortable col-cntry" data-col="yasadigi_olke">Yaşadığı ölkə</th>
 <th class="sortable col-spec" data-col="ixtilas">İxtisas</th>
 <th class="sortable col-degree" data-col="elmi_derece">Elmi<br/>Dərəcə</th>
 <th class="col-email">E-poçt</th>

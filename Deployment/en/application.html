@@ -24,7 +24,7 @@
 <!-- /daab-seo -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
 <link href="../css/daab-common.css?v=69" rel="stylesheet"/>
 <link href="../css/daab-perf.css?v=1" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=13" rel="stylesheet"/>
@@ -34,16 +34,16 @@
 <link href="../css/daab-lang.css?v=13" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=69" rel="stylesheet"/>
 <link href="../css/daab-hero-summary.css?v=13" rel="stylesheet"/>
-<link href="../css/daab-membership-application.css?v=16" rel="stylesheet"/>
+<link href="../css/daab-membership-application.css?v=17" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
 <script src="../js/daab-perf.js?v=1" defer></script>
 <script src="../js/daab-sticky-chrome.js?v=3" defer></script>
 <script src="../js/daab-back-to-top.js?v=3" defer></script>
-<script src="../js/daab-i18n.js?v=34" defer></script>
+<script src="../js/daab-i18n.js?v=37" defer></script>
 <script src="../js/daab-lang-position.js?v=7" defer></script>
 <script src="../js/daab-nav.js?v=31" defer></script>
-<script src="../js/daab-primary-nav.js?v=57" defer></script>
-<script src="../js/daab-breadcrumbs.js?v=35" defer></script>
+<script src="../js/daab-primary-nav.js?v=58" defer></script>
+<script src="../js/daab-breadcrumbs.js?v=39" defer></script>
 <script src="../js/daab-shell.js?v=13" defer></script>
 <script src="../js/daab-search.js?v=12" defer></script>
 <script src="../js/daab-application-config.js?v=1" defer></script>
@@ -151,7 +151,7 @@
         <div class="intro-box">
           To become a member of the <strong>World Association of Azerbaijani Scientists (WAAS)</strong>,
           you are requested to familiarize yourself with our <a href="charter.html">Charter</a> and provide
-          the following information. All fields marked with <span style="color:var(--error)">*</span> are required.
+          the following information. All fields marked with <span class="req">*</span> are required.
         </div>
 
         <div class="field-group">
@@ -308,7 +308,7 @@
         </div>
 
         <div class="field-group">
-          <label class="field-label" for="prevjobs">Previous Jobs and Positions <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+          <label class="field-label" for="prevjobs">Previous Jobs and Positions <span class="field-label-optional">(optional)</span></label>
           <span class="field-hint">List any relevant previous positions you have held.</span>
           <textarea id="prevjobs" name="prevjobs" placeholder="e.g. Postdoctoral Fellow, University of Oxford, UK, 2010–2013"></textarea>
         </div>
@@ -441,7 +441,7 @@
       <div class="section-body">
 
         <div class="field-group">
-          <label class="field-label" for="addinfo">Additional Information You Would Like to Share <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+          <label class="field-label" for="addinfo">Additional Information You Would Like to Share <span class="field-label-optional">(optional)</span></label>
           <span class="field-hint">Any further details you consider relevant to your membership application.</span>
           <textarea id="addinfo" name="addinfo" class="form-textarea-tall" placeholder="e.g. Awards, grants, professional memberships, publications, or any other relevant information..."></textarea>
         </div>
@@ -451,7 +451,7 @@
           Please send your personal photo and CV to our
           <a href="mailto:info@daab-waas.com">email address</a>
           after submitting this form.<br><br>
-          <span style="font-size:12px;color:var(--muted);">
+          <span class="form-note-muted">
             Accepted formats: PDF, DOCX for CV; JPG or PNG for photo.
             Please use the subject line: <em>"WAAS Membership — [Your Full Name]"</em>
           </span>
@@ -459,7 +459,7 @@
 
         <div class="field-group">
           <label class="field-label" for="cvconfirm">I confirm I will send my photo and CV by email</label>
-          <div class="opt-item" style="max-width:360px;">
+          <div class="opt-item opt-item-narrow">
             <input type="checkbox" id="cvconfirm" name="cvconfirm">
             <label for="cvconfirm">Yes, I will send my photo and CV to <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></label>
           </div>
@@ -481,7 +481,7 @@
         Thank you for applying to join the World Association of Azerbaijani Scientists (WAAS).
         Your application has been received and we will be in touch with you shortly.<br><br>
         Please send your <strong>photo and CV</strong> to
-        <a href="mailto:info@daab-waas.com" style="color:var(--blue-700);">info@daab-waas.com</a>
+        <a class="contact-email-link" href="mailto:info@daab-waas.com">info@daab-waas.com</a>
         with the subject line <em>"WAAS Membership — [Your Full Name]"</em>.
       </p>
 <div class="app-btn-row">

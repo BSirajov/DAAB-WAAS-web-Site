@@ -19,6 +19,8 @@ BUILD_ONLY_CSS = frozenset(
     {
         "daab-forum-book.css",
         "daab-membership-page.css",  # membership.html is a redirect stub; CSS kept for reuse
+        "daab-encyclopedia-page.css",  # knowledge treasury / encyclopedia (not yet published)
+        "daab-prominent-figure-profile.css",  # prominent-figure profiles (not yet wired to deploy HTML)
     }
 )
 DEPLOY_PACKAGED_CSS = frozenset(
@@ -26,7 +28,13 @@ DEPLOY_PACKAGED_CSS = frozenset(
         "daab-sticky-chrome.css",  # optional deploy bundle; not linked per-page
     }
 )
-OPTIONAL_JS = frozenset()
+OPTIONAL_JS = frozenset(
+    {
+        "prominent-figures-catalog.js",
+        "prominent-figures-catalog-data.js",
+        "prominent-figures-catalog-data-en.js",
+    }
+)
 
 
 def collect_deploy_html() -> list[Path]:

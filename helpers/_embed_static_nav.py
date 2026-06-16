@@ -77,7 +77,7 @@ def _forum_mega_drop(lang: str) -> str:
                 ("forum/2024/cooperation.html", "forum-cooperation", "🤝 Contributions", "Partners who supported the Forum"),
             ]),
         ]
-        label = "🎤 2024"
+        label = "🎤 I Forum"
         year_desc = "First Forum of Azerbaijani Scientists Living Abroad — September 2024"
     else:
         sections = [
@@ -110,7 +110,7 @@ def _forum_mega_drop(lang: str) -> str:
                 ("forum/2024/cooperation.html", "forum-cooperation", "🤝 Töhfələr", "Forumun təşkilinə dəstək verən tərəfdaşlar"),
             ]),
         ]
-        label = "🎤 2024"
+        label = "🎤 I Forum"
         year_desc = "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024"
     cols = "".join(_mega_col(heading, items, nested=nested) for heading, nested, items in sections)
     return (
@@ -129,10 +129,10 @@ def _forum_mega_drop(lang: str) -> str:
 def _forum_2026_link(lang: str) -> str:
     href = "forum/2026/index.html"
     if lang == "en":
-        title = "🎤 2026"
+        title = "🎤 II Forum"
         desc = "Second Forum of Azerbaijani Scientists Living Abroad — December 2026, draft concept"
     else:
-        title = "🎤 2026"
+        title = "🎤 II Forum"
         desc = "Xaricdə yaşayan alimlərin II Forumu — dekabr 2026, konsepsiya layihəsi"
     return _drop(
         [(href, "forum-2026", title, desc)],
@@ -172,7 +172,7 @@ SPONSORSHIP_AZ = (
     + '🤝\u00a0Bizi dəstəkləyin <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("sponsors.html", "sponsors", "🤝\u00a0Sponsorluq", "Korporativ və proqram tərəfdaşlığı"),
+        ("sponsorship_partnership.html", "forum-2027-sponsorship", "🤝\u00a0Sponsorluq", "Forum II üçün sponsorluq paketləri və tərəfdaşlıq"),
         ("donate.html", "donate", "💝\u00a0İanə", "Fərdi, fond və xatirə ianələri"),
         ("sponsors_flyer.html", "sponsors-flyer", "📤\u00a0Dəvət məktubu", "Potensial tərəfdaşlar üçün paylaşıla bilən dəvət məktubu"),
     ])
@@ -185,7 +185,7 @@ SPONSORSHIP_EN = (
     + '🤝\u00a0Support us <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("sponsors.html", "sponsors", "🤝\u00a0Sponsorship", "Corporate and programme partnerships"),
+        ("sponsorship_partnership.html", "forum-2027-sponsorship", "🤝\u00a0Sponsorship", "Sponsorship packages and partnership for Forum II"),
         ("donate.html", "donate", "💝\u00a0Donate", "Individual, foundation, and memorial gifts"),
         ("sponsors_flyer.html", "sponsors-flyer", "📤\u00a0Invitation Letter", "Printable invitation letter for potential partners"),
     ])

@@ -479,7 +479,17 @@
   color: var(--muted);
   font-style: italic;
 }.application-page .req{
-  color: #c0392b;
+  color: var(--error);
+}.application-page .field-label-optional{
+  font-weight: 400;
+  color: var(--muted);
+}.application-page .form-note-muted{
+  font-size: 12px;
+  color: var(--muted);
+}.application-page .opt-item-narrow{
+  max-width: 360px;
+}.application-page .contact-email-link{
+  color: var(--blue-700);
 }.application-page input[type="text"],
 .application-page input[type="email"],
 .application-page input[type="tel"],

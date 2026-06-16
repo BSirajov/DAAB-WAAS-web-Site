@@ -35,6 +35,7 @@ class Profile:
 PROFILES = {
     "gallery": Profile("gallery", max_edge=1920, jpeg_quality=82, min_bytes=180_000, min_ratio=0.04),
     "activities": Profile("activities", max_edge=1600, jpeg_quality=82, min_bytes=120_000, min_ratio=0.04),
+    "portraits": Profile("portraits", max_edge=960, jpeg_quality=85, min_bytes=350_000, min_ratio=0.05),
 }
 
 
@@ -42,6 +43,8 @@ def profile_for(path: Path) -> Profile:
     parts = {p.lower() for p in path.parts}
     if "activities" in parts:
         return PROFILES["activities"]
+    if "board-members-photos" in parts or "scientists-photos" in parts:
+        return PROFILES["portraits"]
     return PROFILES["gallery"]
 
 

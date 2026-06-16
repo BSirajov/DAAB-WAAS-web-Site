@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated": "2026-06-14",
-  "entryCount": 534,
+  "generated": "2026-06-16",
+  "entryCount": 536,
   "entries": [
     {
       "id": "page-home-az",
@@ -654,6 +654,32 @@
       "norm": "support waas world association of azerbaijani scientists partner with waas through corporate sponsorship scholarships forums and research collaboration."
     },
     {
+      "id": "page-forum-2027-sponsorship-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "forum-2027-sponsorship",
+      "anchor": "",
+      "title": "II Forum sponsorluğu — Dünya Azərbaycanlı Alimlər Birliyi",
+      "summary": "Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumuna sponsorluq və DAAB ilə strateji tərəfdaşlıq təklifi — paketlər, layihələr və əməkdaşlıq imkanları.",
+      "tag": "Səhifə",
+      "icon": "🎤",
+      "boost": 12,
+      "norm": "ii forum sponsorlug u du nya azerbaycanli alimler birliyi xaricde yas ayan azerbaycanli alimlerin ii forumuna sponsorluq ve daab ile strateji terefdas liq teklifi paketler layiheler ve emekdas liq imkanlari."
+    },
+    {
+      "id": "page-forum-2027-sponsorship-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "forum-2027-sponsorship",
+      "anchor": "",
+      "title": "Forum II Sponsorship — World Association of Azerbaijani Scientists",
+      "summary": "Sponsorship and strategic partnership proposal for the Second Forum of Azerbaijani Scientists Living Abroad — packages, projects, and collaboration opportunities with WAAS.",
+      "tag": "Page",
+      "icon": "🎤",
+      "boost": 12,
+      "norm": "forum ii sponsorship world association of azerbaijani scientists sponsorship and strategic partnership proposal for the second forum of azerbaijani scientists living abroad packages projects and collaboration opportunities with waas."
+    },
+    {
       "id": "page-donate-az",
       "lang": "az",
       "type": "page",
@@ -686,11 +712,11 @@
       "pageId": "sponsors-flyer",
       "anchor": "",
       "title": "DAAB — Sponsorluq dəvət məktubu",
-      "summary": "DAAB sponsorluğu — potensial tərəfdaşlar üçün çap olunan dəvət məktubu.",
+      "summary": "Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumuna sponsorluq — potensial tərəfdaşlar üçün çap olunan dəvət məktubu.",
       "tag": "Səhifə",
       "icon": "📤",
       "boost": 12,
-      "norm": "daab sponsorluq devet mektubu daab sponsorlug u potensial terefdas lar u c u n c ap olunan devet mektubu."
+      "norm": "daab sponsorluq devet mektubu xaricde yas ayan azerbaycanli alimlerin ii forumuna sponsorluq potensial terefdas lar u c u n c ap olunan devet mektubu."
     },
     {
       "id": "page-sponsors-flyer-en",
@@ -699,11 +725,11 @@
       "pageId": "sponsors-flyer",
       "anchor": "",
       "title": "WAAS — Sponsorship flyer",
-      "summary": "WAAS sponsorship — printable flyer for potential partners.",
+      "summary": "Forum II sponsorship and strategic partnership with WAAS — printable flyer for potential partners.",
       "tag": "Page",
       "icon": "📤",
       "boost": 12,
-      "norm": "waas sponsorship flyer waas sponsorship printable flyer for potential partners."
+      "norm": "waas sponsorship flyer forum ii sponsorship and strategic partnership with waas printable flyer for potential partners."
     },
     {
       "id": "page-forum-roadmap-az",
@@ -828,12 +854,12 @@
       "type": "nav",
       "pageId": "forum",
       "anchor": "",
-      "title": "2024",
+      "title": "I Forum",
       "summary": "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024",
       "tag": "Naviqasiya",
       "icon": "🎤",
       "boost": 11,
-      "norm": "2024 xaricde yas ayan alimlerin i forumu sentyabr 2024 forumlar"
+      "norm": "i forum xaricde yas ayan alimlerin i forumu sentyabr 2024 forumlar"
     },
     {
       "id": "nav-forum-2026-az",
@@ -940,17 +966,17 @@
       "norm": "devet mektubu potensial u zvler u c u n c ap oluna bilen flyer u zvlu k"
     },
     {
-      "id": "nav-sponsors-az",
+      "id": "nav-forum-2027-sponsorship-az",
       "lang": "az",
       "type": "nav",
-      "pageId": "sponsors",
+      "pageId": "forum-2027-sponsorship",
       "anchor": "",
       "title": "Sponsorluq",
-      "summary": "Korporativ və proqram tərəfdaşlığı",
+      "summary": "Forum II üçün sponsorluq paketləri və tərəfdaşlıq təklifi",
       "tag": "Naviqasiya",
-      "icon": "🤝",
+      "icon": "🎤",
       "boost": 11,
-      "norm": "sponsorluq korporativ ve proqram terefdas lig i bizi destekleyin"
+      "norm": "sponsorluq forum ii u c u n sponsorluq paketleri ve terefdas liq teklifi bizi destekleyin"
     },
     {
       "id": "nav-donate-az",
@@ -1023,12 +1049,12 @@
       "type": "nav",
       "pageId": "forum",
       "anchor": "",
-      "title": "2024",
+      "title": "I Forum",
       "summary": "First Forum of Azerbaijani Scientists Living Abroad — September 2024",
       "tag": "Navigation",
       "icon": "🎤",
       "boost": 11,
-      "norm": "2024 first forum of azerbaijani scientists living abroad september 2024 forums"
+      "norm": "i forum first forum of azerbaijani scientists living abroad september 2024 forums"
     },
     {
       "id": "nav-forum-2026-en",
@@ -1135,17 +1161,17 @@
       "norm": "invitation letter printable invitation letter for potential members membership"
     },
     {
-      "id": "nav-sponsors-en",
+      "id": "nav-forum-2027-sponsorship-en",
       "lang": "en",
       "type": "nav",
-      "pageId": "sponsors",
+      "pageId": "forum-2027-sponsorship",
       "anchor": "",
       "title": "Sponsorship",
-      "summary": "Corporate and programme partnerships",
+      "summary": "Sponsorship packages and partnership proposal for Forum II",
       "tag": "Navigation",
-      "icon": "🤝",
+      "icon": "🎤",
       "boost": 11,
-      "norm": "sponsorship corporate and programme partnerships support us"
+      "norm": "sponsorship sponsorship packages and partnership proposal for forum ii support us"
     },
     {
       "id": "nav-donate-en",
