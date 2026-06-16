@@ -35,7 +35,7 @@ LOCALES = {
         "lang": "az",
         "title": "DAAB — Sponsorluq dəvət məktubu",
         "description": "Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumuna sponsorluq — potensial tərəfdaşlar üçün çap olunan dəvət məktubu.",
-        "hero_h1": "II Forum <span>sponsorluğu</span>",
+        "hero_h1": "Sponsorluq <span>Dəvət Məktubu</span>",
         "hero_subtitle": "Potensial tərəfdaşlar üçün paylaşıla bilən dəvət məktubu",
         "panel_title": "Tərəfdaşlara dəvət məktubu göndərin",
         "panel_copy": (
@@ -71,7 +71,7 @@ LOCALES = {
             "elm, təhsil, innovasiya və insan kapitalına sərmayə."
         ),
         "stats": [("🌐", "100+ alim"), ("🤝", "20+ ölkə"), ("🎤", "Forum II")],
-        "pillars_title": "Forum II sponsorluq paketləri",
+        "pillars_title": "Sponsorluq paketləri",
         "pillars": [
             ("💎 Platin / Baş", "€50 000+ — açılış çıxışı, prioritet loqo, media"),
             ("🥇 Qızıl", "€25 000–49 999 — panel sponsorluğu, loqo, şəbəkələşmə"),
@@ -102,9 +102,9 @@ LOCALES = {
     },
     "en": {
         "lang": "en",
-        "title": "WAAS — Sponsorship flyer",
-        "description": "Forum II sponsorship and strategic partnership with WAAS — printable flyer for potential partners.",
-        "hero_h1": "Forum II <span>sponsorship</span>",
+        "title": "WAAS — Sponsorship Invitation Letter",
+        "description": "Forum II sponsorship and strategic partnership with WAAS — printable invitation letter for potential partners.",
+        "hero_h1": "Sponsorship <span>Invitation Letter</span>",
         "hero_subtitle": "Shareable invitation letter for potential partners",
         "panel_title": "Share the invitation letter with partners",
         "panel_copy": (
@@ -140,7 +140,7 @@ LOCALES = {
             "a flagship investment in science, education, innovation, and human capital."
         ),
         "stats": [("🌐", "100+ scientists"), ("🤝", "20+ countries"), ("🎤", "Forum II")],
-        "pillars_title": "Forum II sponsorship packages",
+        "pillars_title": "Sponsorship packages",
         "pillars": [
             ("💎 Title / Platinum", "€50,000+ — opening address, priority logo, media"),
             ("🥇 Gold", "€25,000–49,999 — panel sponsorship, logo, networking"),

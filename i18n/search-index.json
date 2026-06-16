@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-06-16",
+  "generated": "2026-06-17",
   "entryCount": 534,
   "entries": [
     {
@@ -698,12 +698,12 @@
       "type": "page",
       "pageId": "sponsors-flyer",
       "anchor": "",
-      "title": "WAAS — Sponsorship flyer",
-      "summary": "Forum II sponsorship and strategic partnership with WAAS — printable flyer for potential partners.",
+      "title": "WAAS — Sponsorship Invitation Letter",
+      "summary": "Forum II sponsorship and strategic partnership with WAAS — printable invitation letter for potential partners.",
       "tag": "Page",
       "icon": "📤",
       "boost": 12,
-      "norm": "waas sponsorship flyer forum ii sponsorship and strategic partnership with waas printable flyer for potential partners."
+      "norm": "waas sponsorship invitation letter forum ii sponsorship and strategic partnership with waas printable invitation letter for potential partners."
     },
     {
       "id": "page-forum-roadmap-az",
