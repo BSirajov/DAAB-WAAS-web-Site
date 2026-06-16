@@ -79,7 +79,7 @@ LOCALES = {
         "benefits_title": "Sponsor üçün üstünlüklər",
         "benefits": [
             ("🌐", "Brendinizin tanınması", "Forum II materiallarında, mediada və tədbir məkanında tanınma.", ["Loqo yerləşdirməsi", "Beynəlxalq platforma"]),
-            ("🏅", "Nüfuz və KSM", "Elm, təhsil və innovasiyaya sərmayə qoyan etibarlı tərəfdaş imici.", ["Sosial təsir", "İllik hesabat"]),
+            ("🏅", "Nüfuz və hesabatlılıq", "Elm, təhsil və innovasiyaya sərmayə qoyan etibarlı tərəfdaş imici.", ["Sosial təsir", "İllik hesabat"]),
             ("🤝", "Diaspora şəbəkəsi", "20-dən çox ölkədən alim və ekspertlərlə birbaşa əlaqə.", ["Mentorluq", "VIP dialoq"]),
             ("🔬", "Elmi əməkdaşlıq", "Universitetlər və AMEA ilə körpü; ortaq tədqiqat imkanları.", ["Ortaq nəşrlər", "Bilik transferi"]),
             ("📚", "İnnovasiya və nəşrlər", "Prioritet sahələrdə birgə layihələr və açıq elmi mühit.", ["Ekspert hesabatları", "Açıq giriş"]),
@@ -148,7 +148,7 @@ LOCALES = {
         "benefits_title": "Benefits for sponsors",
         "benefits": [
             ("🌐", "Brand visibility", "Recognition across Forum II materials, media, and the venue.", ["Logo placement", "International platform"]),
-            ("🏅", "Reputation & CSR", "Trusted partner investing in science, education, and innovation.", ["Social impact", "Annual report"]),
+            ("🏅", "Reputation & accountability", "Trusted partner investing in science, education, and innovation.", ["Social impact", "Annual report"]),
             ("🤝", "Diaspora network", "Direct links to scientists and experts from 20+ countries.", ["Mentoring", "VIP dialogue"]),
             ("🔬", "Research collaboration", "Bridges with universities and ANAS; joint research pathways.", ["Co-publications", "Knowledge transfer"]),
             ("📚", "Innovation & publications", "Joint initiatives and open science in priority fields.", ["Expert reports", "Open access"]),
