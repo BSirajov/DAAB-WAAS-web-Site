@@ -196,7 +196,7 @@ def shell_head(cfg: dict) -> str:
 <title>{esc(cfg["title"])}</title>
 <meta name="description" content="{esc(cfg["description"])}"/>
 <meta name="robots" content="noindex"/>
-{FONT_LINK}
+{FONT_LINK.format(ASSET=ASSET)}
 <link href="{ASSET}css/daab-common.css?v={st["daab-common.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-search.css?v={st["daab-search.css"]}" rel="stylesheet"/>
