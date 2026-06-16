@@ -22,7 +22,7 @@ DESCRIPTION_EN: dict[str, str] = {
         "of Chemistry and Biochemistry"
     ),
     "Məsud Əfəndiyev, Əməkdar elm xadimi, Münhen Texniki Universitetinin professoru, Humboldt mükafatı alan ilk azərbaycanlı alim, Dünya Azərbaycanlı Alimlər Birliyinin İdarə Heyətinin sədri, Almaniya": (
-        "Mesud Afandiyev, Honoured Scientist, Professor at the Technical University of Munich, "
+        "Messoud Efendiyev, Honoured Scientist, Professor at the Technical University of Munich, "
         "first Azerbaijani Humboldt Prize laureate, Chair of the WAAS Executive Board, Germany"
     ),
     "Reza Heyəti, Səidə Xəlilova, Kamran Rüstəmov, Ədalət Muradov, Toğrul Talışinski, Bəxtiyar Siracov, Arif Quliyev": (
@@ -58,7 +58,7 @@ DESCRIPTION_EN: dict[str, str] = {
         "Gulchohra Mammadova, Rector of Azerbaijan University of Architecture and Construction"
     ),
     "Məsud Əfəndiyev, Əməkdar elm xadimi, Münhen Texniki Universitetinin professoru, Humboldt mükafatı alan ilk azərbaycanlı alim, Dünya Azərbaycanlı Alimlər Birliyinin İdarə Heyətinin sədri, Almaniya Qərib Mürşüdov, Böyük Britaniyanın York Universitetinin Kimya fakültəsinin Struktural Biologiya Laboratoriyasının professoru, Azərbaycan Respublikasının əməkdar elm xadimi, Birləşmiş Krallıq": (
-        "Mesud Afandiyev, Honoured Scientist, Professor at the Technical University of Munich, "
+        "Messoud Efendiyev, Honoured Scientist, Professor at the Technical University of Munich, "
         "first Azerbaijani Humboldt Prize laureate, Chair of the WAAS Executive Board, Germany; "
         "Gara Mursudov, Professor, Structural Biology Laboratory, Department of Chemistry, "
         "University of York, United Kingdom, Honoured Scientist of the Republic of Azerbaijan"
@@ -191,7 +191,7 @@ DESCRIPTION_EN: dict[str, str] = {
     ),
     "Sevinc Məmmədova, Corc Vaşinqton universitetinin professoru, ABŞ Rauf Abdullayev, İKT üzrə mühəndis, Almaniya Messoud Efendiyev, Chairman, Germany, James D.Murray Distinguished Professor DAAB-ın Türkiyədə qeydiyyatdan keçdiyi ünvan: Feneryolu Mahallesi Gazi Muhtar Paşa Sokak No: 44 Kadıköy, İstanbul, Türkiyə Phone: +905551474674 Email: daad.waas2024@gmail.com Web: https://daab-waas.org": (
         "Sevinj Mammadova, Professor, George Washington University, USA; Rauf Abdullayev, ICT Engineer, "
-        "Germany; Mesud Afandiyev, Chair, Germany, James D. Murray Distinguished Professor. "
+        "Germany; Messoud Efendiyev, Chair, Germany, James D. Murray Distinguished Professor. "
         "WAAS registered address in Türkiye: Feneryolu Mahallesi, Gazi Muhtar Pasa Sokak No. 44, "
         "Kadikoy, Istanbul, Türkiye. Phone: +90 555 147 46 74. Email: daad.waas2024@gmail.com. "
         "Web: https://daab-waas.org"

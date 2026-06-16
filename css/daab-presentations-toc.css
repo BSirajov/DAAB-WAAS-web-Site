@@ -131,7 +131,7 @@ html[data-daab-page-id="forum-2024-presentations"] .news-feed .content-list{
   top: 1px;
 }
 
-/* Official addresses — speaker photos in TOC + profile header (Fuad Muradov, Mesud Efendiyev) */
+/* Official addresses — speaker photos in TOC + profile header (Fuad Muradov, Messoud Efendiyev) */
 html[data-daab-page-id="forum-official"] .timeline-list a.presentation-toc-link{
   display: flex;
   flex-direction: column;

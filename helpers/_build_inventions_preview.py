@@ -673,7 +673,7 @@ def build_html(data: dict) -> str:
 <div class="footer-grid">
 <div class="footer-col"><div class="footer-title">Contact</div><div class="footer-item">✉ <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item">☎ <span>+90 555 147 46 74</span></div><div class="footer-item">🌐 <a href="https://daab-waas.com" target="_blank" rel="noopener">daab-waas.com</a></div></div>
 <div class="footer-col"><div class="footer-title">Address</div><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, Istanbul, Türkiye</p></div>
-<div class="footer-col"><div class="footer-title">Leadership</div><p class="footer-leader"><strong>Prof. Dr. Mesud Afandiyev</strong><br/>Chair of the WAAS Executive Board</p></div>
+<div class="footer-col"><div class="footer-title">Leadership</div><p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Executive Board</p></div>
 </div>
 </div>
 <div class="footer-bottom">© 2026 DAAB / WAAS — All Rights Reserved</div>

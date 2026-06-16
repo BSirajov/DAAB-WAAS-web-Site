@@ -43,7 +43,7 @@ UI_REPLACEMENTS: list[tuple[str, str]] = [
     # --- footer / branding ---
     ("Dünya Azərbaycanlı Alimlər Birliyi", "World Association of Azerbaijani Scientists"),
     ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
-    ("Prof. Dr. Məsud Əfəndiyev", "Prof. Dr. Masud Afandiyev"),
+    ("Prof. Dr. Məsud Əfəndiyev", "Prof. Dr. Messoud Efendiyev"),
     ("Bütün hüquqlar qorunur", "All rights reserved"),
     ("© 2026 DAAB", "© 2026 WAAS"),
     ("Feneryolu Mahallesi", "Feneryolu Mahallesi"),

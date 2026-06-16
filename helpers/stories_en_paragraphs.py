@@ -132,7 +132,7 @@ PARAGRAPHS = {
             "was childlike, pure, unspoiled."
         ),
         (
-            "Girls dancing in the bus aisle, a song sung by Professor Mesud Afandiyev who "
+            "Girls dancing in the bus aisle, a song sung by Professor Messoud Efendiyev who "
             "had come from the heart of Europe to Baku, the flags in our companions' "
             "hands — all of this together created throughout the journey an atmosphere of "
             "unrepeatable joy and spiritual uplift. Akif muallim and I joined everyone in "
@@ -307,7 +307,7 @@ PARAGRAPHS = {
         (
             "Gulxanim stepped back to sketch the slopes and the beauty of Jidir. We may "
             "not meet again — but from now on Shusha will always remind me of her. "
-            "Azerbaijan will remind me of my scholar brothers Mesud Afandiyev, Bakhtiyar "
+            "Azerbaijan will remind me of my scholar brothers Messoud Efendiyev, Bakhtiyar "
             "bey, Emil muallim, Akif muallim and countless beautiful representatives of "
             "our people. This is my native, kind, building, creative people who know how to "
             "love and forgive!"

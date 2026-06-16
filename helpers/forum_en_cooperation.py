@@ -47,7 +47,7 @@ COOPERATION_EN = {
             "the forum's visibility in the public and scientific arena."
         ),
         (
-            "Chair of the WAAS Executive Board Mesud Afandiyev, co-chairs Bakhtiyar Siracov "
+            "Chair of the WAAS Executive Board Messoud Efendiyev, co-chairs Bakhtiyar Siracov "
             "and Seymur Nasirov, board member and press secretary Saadat Karimi, and board "
             "members Emil Ahmadov, Sevinc Mammadova, Teymur Rzayev, Togrul Ismayil, Togrul "
             "Karimov and Yulduz Rahimov — who undertook the forum's conceptual preparation, "

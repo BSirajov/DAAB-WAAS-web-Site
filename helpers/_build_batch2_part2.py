@@ -24,7 +24,7 @@ def std_sections(h, prof_en, prof_az, stats, comps, exp_items, edu_items, extra=
         pubs = b.section("Selected Publications", "Seçilmiş nəşrlər", '<div class="pub-block"><div class="pub-category"><ul>' + pubs_ul + "</ul></div></div>")
     return h + prof + comp + exp + edu + extra + pubs
 
-# 3 Mesud Efendiyev
+# 3 Messoud Efendiyev
 h = b.hero("Messoud A. Efendiyev, Prof. Dr.", "Məsud Əfəndiyev, prof. dr.",
     "Mathematician specializing in infinite-dimensional dynamical systems and mathematical biology. DAAB board chair; Rector's Distinguished Visiting Professor at Marmara University; leading professor at Helmholtz Center Munich / TUM.",
     "Sonsuz ölçülü dinamik sistemlər və riyazi biologiya üzrə riyaziyyatçı. DAAB idarə heyəti sədri; Marmara Universitetində fəxri professor; Helmholtz Münhen / TUM aparıcı professor.",

@@ -67,7 +67,7 @@ COPY = {
         "footer_address": "Address",
         "footer_leadership": "Leadership",
         "footer_leader": (
-            "<strong>Prof. Dr. Mesud Efendiyev</strong><br/>"
+            "<strong>Prof. Dr. Messoud Efendiyev</strong><br/>"
             "Chair of the WAAS Executive Board<br/>"
             "Germany — James D. Murray Distinguished Professor"
         ),
