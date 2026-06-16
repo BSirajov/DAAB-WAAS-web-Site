@@ -179,7 +179,7 @@ FOOTER_EN = {
     "footer_address": "Address",
     "footer_leadership": "Leadership",
     "footer_chair": "Chair of the WAAS Executive Board",
-    "footer_chair_name": "Prof. Dr. Mesud Afandiyev",
+    "footer_chair_name": "Prof. Dr. Messoud Efendiyev",
     "footer_bottom": "© 2026 WAAS — All Rights Reserved",
 }
 

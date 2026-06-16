@@ -7,7 +7,7 @@ FORUM_FOOTER_EN = """<footer class="footer-pro">
 <div class="footer-grid">
 <div class="footer-col"><h4 class="footer-title">Contact</h4><div class="footer-item">✉ <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item">☎ <span>+90 555 147 46 74</span></div><div class="footer-item">🌐 <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div></div>
 <div class="footer-col"><h4 class="footer-title">Address</h4><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Pasa Sokak No:44<br/>Kadikoy, Istanbul, Turkiye</p></div>
-<div class="footer-col"><h4 class="footer-title">Leadership</h4><p class="footer-leader"><strong>Prof. Dr. Mesud Afandiyev</strong><br/>Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p></div>
+<div class="footer-col"><h4 class="footer-title">Leadership</h4><p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p></div>
 </div>
 </div>
 <div class="footer-bottom">© 2026 WAAS — All Rights Reserved</div>
@@ -52,7 +52,7 @@ SHELL_REPLACEMENTS: list[tuple[str, str]] = [
     ("— DAAB", "— WAAS"),
     ("Dünya Azərbaycanlı Alimlər Birliyi", "World Association of Azerbaijani Scientists"),
     ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
-    ("Prof. Dr. Məsud Əfəndiyev", "Prof. Dr. Mesud Afandiyev"),
+    ("Prof. Dr. Məsud Əfəndiyev", "Prof. Dr. Messoud Efendiyev"),
     ("Gazi Muhtar Paşa Sokak No:44", "Gazi Muhtar Pasa Sokak No:44"),
     ("Kadıköy, İstanbul, Türkiyə", "Kadikoy, Istanbul, Türkiye"),
     ("Əlaqə", "Contact"),

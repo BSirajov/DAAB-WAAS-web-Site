@@ -68,7 +68,6 @@
     "membership-value": "membershipWhy",
     "membership-application": "membershipJoin",
     "membership-flyer": "membershipFlyer",
-    sponsors: "sponsorsProgram",
     "forum-2027-sponsorship": "forum2027Sponsorship",
     donate: "donate",
     "sponsors-flyer": "sponsorsFlyer"
@@ -233,12 +232,6 @@
         az: "az/membership_flyer.html",
         en: "en/membership_flyer.html",
         navParent: "membership"
-      },
-      {
-        id: "sponsors",
-        az: "az/sponsors.html",
-        en: "en/sponsors.html",
-        navParent: "sponsorship"
       },
       {
         id: "forum-2027-sponsorship",

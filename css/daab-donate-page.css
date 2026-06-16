@@ -252,10 +252,6 @@
   background: linear-gradient(135deg, var(--gold) 0%, #e8b84b 100%);
   color: #1a1000;
   box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
-}.donate-page .dn-cta .btn-secondary{
-  background: rgba(255, 255, 255, .14);
-  color: var(--white);
-  border: 1px solid rgba(255, 255, 255, .35);
 }.donate-page .dn-cta .btn:hover{
   transform: translateY(-2px);
 }

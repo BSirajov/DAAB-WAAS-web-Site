@@ -290,18 +290,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/membership_flyer.html"/>
   </url>
   <url>
-    <loc>https://daab-waas.com/az/sponsors.html</loc>
-    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/sponsors.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/sponsors.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/sponsors.html"/>
-  </url>
-  <url>
-    <loc>https://daab-waas.com/en/sponsors.html</loc>
-    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/sponsors.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/sponsors.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/sponsors.html"/>
-  </url>
-  <url>
     <loc>https://daab-waas.com/az/sponsorship_partnership.html</loc>
     <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/sponsorship_partnership.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/sponsorship_partnership.html"/>

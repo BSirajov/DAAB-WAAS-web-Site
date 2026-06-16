@@ -291,7 +291,7 @@ NAV_SCI_AZ = NAV_AZ.replace('href="scientists/list.html"', 'href="list.html"').r
 ).replace('href="application.html"', 'href="../application.html"').replace(
     'href="membership_flyer.html"', 'href="../membership_flyer.html"'
 ).replace(
-    'href="sponsors.html"', 'href="../sponsors.html"'
+    'href="sponsorship_partnership.html"', 'href="../sponsorship_partnership.html"'
 ).replace('href="donate.html"', 'href="../donate.html"').replace(
     'href="sponsors_flyer.html"', 'href="../sponsors_flyer.html"'
 )
@@ -311,7 +311,7 @@ FORUM_PREFIX_REPLACES = [
     ('href="membership_value.html"', 'href="../../membership_value.html"'),
     ('href="application.html"', 'href="../../application.html"'),
     ('href="membership_flyer.html"', 'href="../../membership_flyer.html"'),
-    ('href="sponsors.html"', 'href="../../sponsors.html"'),
+    ('href="sponsorship_partnership.html"', 'href="../../sponsorship_partnership.html"'),
     ('href="donate.html"', 'href="../../donate.html"'),
     ('href="sponsors_flyer.html"', 'href="../../sponsors_flyer.html"'),
 ]
@@ -332,7 +332,7 @@ FORUM_2026_PREFIX_REPLACES = [
     ('href="membership_value.html"', 'href="../../membership_value.html"'),
     ('href="application.html"', 'href="../../application.html"'),
     ('href="membership_flyer.html"', 'href="../../membership_flyer.html"'),
-    ('href="sponsors.html"', 'href="../../sponsors.html"'),
+    ('href="sponsorship_partnership.html"', 'href="../../sponsorship_partnership.html"'),
     ('href="donate.html"', 'href="../../donate.html"'),
     ('href="sponsors_flyer.html"', 'href="../../sponsors_flyer.html"'),
 ]
@@ -428,7 +428,7 @@ NAV_SCI_EN = NAV_EN.replace('href="scientists/list.html"', 'href="list.html"').r
 ).replace('href="application.html"', 'href="../application.html"').replace(
     'href="membership_flyer.html"', 'href="../membership_flyer.html"'
 ).replace(
-    'href="sponsors.html"', 'href="../sponsors.html"'
+    'href="sponsorship_partnership.html"', 'href="../sponsorship_partnership.html"'
 ).replace('href="donate.html"', 'href="../donate.html"').replace(
     'href="sponsors_flyer.html"', 'href="../sponsors_flyer.html"'
 )

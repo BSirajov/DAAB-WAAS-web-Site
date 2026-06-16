@@ -14,7 +14,7 @@ SCRIPT_VERSIONS = {
     "daab-design-tokens.js": 2,
     "daab-nav.js": 31,
     "daab-primary-nav.js": 59,
-    "daab-breadcrumbs.js": 40,
+    "daab-breadcrumbs.js": 41,
     "prominent-figures-catalog-data.js": 4,
     "prominent-figures-catalog-data-en.js": 4,
     "prominent-figures-catalog.js": 19,
@@ -43,7 +43,7 @@ SCRIPT_VERSIONS = {
     "scientists-list-preview.js": 7,
     "scientists-catalog-data.js": 2,
     "scientists-catalog-data-en.js": 2,
-    "daab-sponsors-page.js": 3,
+    "daab-sponsors-page.js": 4,
 }
 
 STYLE_VERSIONS = {
@@ -61,7 +61,7 @@ STYLE_VERSIONS = {
     "daab-forum-sessions.css": 14,
     "daab-video-gallery.css": 9,
     "daab-hub-cards.css": 33,
-    "daab-donate-page.css": 3,
+    "daab-donate-page.css": 4,
     "daab-sponsors-page.css": 8,
     "daab-forum-sponsorship-page.css": 18,
     "daab-presentations-toc.css": 10,

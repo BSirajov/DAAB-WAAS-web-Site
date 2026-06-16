@@ -3,4 +3,6 @@
 RewriteEngine On
 RewriteRule ^az/forum_2027_sponsorship\.html$ /az/sponsorship_partnership.html [R=301,L]
 RewriteRule ^en/forum_2027_sponsorship\.html$ /en/sponsorship_partnership.html [R=301,L]
+RewriteRule ^az/sponsors\.html$ /az/sponsorship_partnership.html [R=301,L]
+RewriteRule ^en/sponsors\.html$ /en/sponsorship_partnership.html [R=301,L]
 </IfModule>

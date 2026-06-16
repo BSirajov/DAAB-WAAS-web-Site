@@ -25,7 +25,7 @@ LOCALES = {
         "panel_copy": (
             "Məbləğindən asılı olmayaraq hər bir ianə — təqaüd, mentorluq və bilik mübadiləsi "
             "proqramlarına birbaşa təsir göstərir. Korporativ tərəfdaşlıq üçün "
-            "<a href=\"sponsors.html\">sponsorluq səhifəsinə</a> baxın."
+            "<a href=\"sponsorship_partnership.html\">sponsorluq səhifəsinə</a> baxın."
         ),
         "impact_title": "İanəniz nəyə dəstək verir?",
         "impact_lead": "DAAB hər bir töhfəni Azərbaycanın elmi tərəqqisinə və uzunmüddətli inkişaf potensialına çevirir.",
@@ -76,7 +76,7 @@ LOCALES = {
         "panel_copy": (
             "Every contribution — of any size — directly supports scholarships, mentoring, "
             "and knowledge exchange. For corporate partnership, see our "
-            "<a href=\"sponsors.html\">sponsorship page</a>."
+            "<a href=\"sponsorship_partnership.html\">sponsorship page</a>."
         ),
         "impact_title": "What your gift supports",
         "impact_lead": "WAAS turns every contribution into scientific progress and long-term capacity for Azerbaijan.",
@@ -198,7 +198,7 @@ def footer_block(lang: str) -> str:
 <div class="footer-grid">
 <div class="footer-col"><div class="footer-title">Contact</div><div class="footer-item"><span aria-hidden="true">✉</span> <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item"><span aria-hidden="true">☎</span> <span>+90 555 147 46 74</span></div><div class="footer-item"><span aria-hidden="true">🌐</span> <a href="https://daab-waas.com" target="_blank" rel="noopener noreferrer">daab-waas.com</a></div></div>
 <div class="footer-col"><div class="footer-title">Address</div><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, Istanbul, Türkiye</p></div>
-<div class="footer-col"><div class="footer-title">Leadership</div><p class="footer-leader"><strong>Prof. Dr. Masud Afandiyev</strong><br/>Chair of the WAAS Executive Board<br/>Germany — James D. Murray Prize laureate</p></div>
+<div class="footer-col"><div class="footer-title">Leadership</div><p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Executive Board<br/>Germany — James D. Murray Prize laureate</p></div>
 </div>
 </div>
 <div class="footer-bottom">© 2026 WAAS — All rights reserved</div>

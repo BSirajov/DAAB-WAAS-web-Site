@@ -1,7 +1,7 @@
 {
   "version": 1,
   "generated": "2026-06-16",
-  "entryCount": 536,
+  "entryCount": 534,
   "entries": [
     {
       "id": "page-home-az",
@@ -626,32 +626,6 @@
       "icon": "📤",
       "boost": 12,
       "norm": "waas membership flyer value of waas membership printable flyer for potential members."
-    },
-    {
-      "id": "page-sponsors-az",
-      "lang": "az",
-      "type": "page",
-      "pageId": "sponsors",
-      "anchor": "",
-      "title": "DAAB-a Dəstək — Dünya Azərbaycanlı Alimlər Birliyi",
-      "summary": "DAAB ilə korporativ sponsorluq — təqaüdlər, forumlar və elmi əməkdaşlıq.",
-      "tag": "Səhifə",
-      "icon": "🤝",
-      "boost": 12,
-      "norm": "daab-a destek du nya azerbaycanli alimler birliyi daab ile korporativ sponsorluq teqau dler forumlar ve elmi emekdas liq."
-    },
-    {
-      "id": "page-sponsors-en",
-      "lang": "en",
-      "type": "page",
-      "pageId": "sponsors",
-      "anchor": "",
-      "title": "Support WAAS — World Association of Azerbaijani Scientists",
-      "summary": "Partner with WAAS through corporate sponsorship — scholarships, forums, and research collaboration.",
-      "tag": "Page",
-      "icon": "🤝",
-      "boost": 12,
-      "norm": "support waas world association of azerbaijani scientists partner with waas through corporate sponsorship scholarships forums and research collaboration."
     },
     {
       "id": "page-forum-2027-sponsorship-az",

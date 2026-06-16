@@ -223,20 +223,11 @@
       "en": "en/membership_flyer.html"
     },
     {
-      "id": "sponsors",
-      "navId": "sponsors",
-      "navGroup": "sponsorship",
-      "navParent": "sponsorship",
-      "navOrder": 1,
-      "az": "az/sponsors.html",
-      "en": "en/sponsors.html"
-    },
-    {
       "id": "forum-2027-sponsorship",
       "navId": "forum-2027-sponsorship",
       "navGroup": "sponsorship",
       "navParent": "sponsorship",
-      "navOrder": 2,
+      "navOrder": 1,
       "doc": "Internal page id; public filenames are az|en/sponsorship_partnership.html",
       "az": "az/sponsorship_partnership.html",
       "en": "en/sponsorship_partnership.html"
@@ -246,7 +237,7 @@
       "navId": "donate",
       "navGroup": "sponsorship",
       "navParent": "sponsorship",
-      "navOrder": 3,
+      "navOrder": 2,
       "az": "az/donate.html",
       "en": "en/donate.html"
     },
@@ -255,7 +246,7 @@
       "navId": "sponsors-flyer",
       "navGroup": "sponsorship",
       "navParent": "sponsorship",
-      "navOrder": 4,
+      "navOrder": 3,
       "az": "az/sponsors_flyer.html",
       "en": "en/sponsors_flyer.html"
     },
