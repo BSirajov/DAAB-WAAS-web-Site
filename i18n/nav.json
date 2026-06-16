@@ -177,6 +177,13 @@
         },
         {
           "id": "membership-application",
+          "labelKey": "membershipTerms",
+          "descKey": "membershipTermsDesc",
+          "hash": "membership-terms",
+          "navKey": "membership-terms"
+        },
+        {
+          "id": "membership-application",
           "labelKey": "membershipJoin",
           "descKey": "membershipJoinDesc"
         },

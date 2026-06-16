@@ -13,12 +13,11 @@ from _speech_photos_lib import photo_src
 
 
 def toc_item(article_id: str, author: str, title: str, photo: str) -> str:
-    alt = html.escape(author, quote=True)
     if photo:
         img = (
             f'<span class="presentation-toc-photo-frame">'
             f'<img class="presentation-toc-photo" src="{photo}" alt="" width="44" height="44" '
-            f'loading="lazy" decoding="async"/>'
+            f'loading="lazy" decoding="async" aria-hidden="true"/>'
             f"</span>"
         )
     else:

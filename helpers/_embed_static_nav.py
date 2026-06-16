@@ -241,6 +241,7 @@ NAV_AZ = (
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
         ("membership_value.html", "membership-value", "💡\u00a0Niyə DAAB-a qoşulmalı", "Üzvlüyün dəyəri və əsas faydalar"),
+        ("application.html#membership-terms", "membership-terms", "✒️\u00a0Üzvlüyə dəvət və ödəniş", "Qaydalar, üzvlük haqları və təsdiq prosesi"),
         ("application.html", "membership-application", "📝\u00a0Bizə qoşulun", "Onlayn üzvlük müraciət forması"),
         ("membership_flyer.html", "membership-flyer", "📤\u00a0Dəvət məktubu", "Potensial üzvlər üçün çap oluna bilən flyer"),
     ])
@@ -270,6 +271,7 @@ NAV_EN = (
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
         ("membership_value.html", "membership-value", "💡\u00a0Why join WAAS", "Membership value, benefits, and opportunities"),
+        ("application.html#membership-terms", "membership-terms", "✒️\u00a0Invitation to Membership and Fees", "Rules, membership fees, and approval process"),
         ("application.html", "membership-application", "📝\u00a0Join us", "Online membership application form"),
         ("membership_flyer.html", "membership-flyer", "📤\u00a0Invitation Letter", "Printable invitation letter for potential members"),
     ])

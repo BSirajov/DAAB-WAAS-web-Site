@@ -102,6 +102,18 @@
     return id === "forum-2024" || (typeof id === "string" && id.indexOf("forum-") === 0);
   }
 
+  function childNavId(childDef) {
+    return childDef.navKey || childDef.id;
+  }
+
+  function childPageHref(page, lang, childDef) {
+    var href = pageHref(page, lang);
+    if (childDef.hash) {
+      href += "#" + childDef.hash;
+    }
+    return href;
+  }
+
   function childLinkIsActive(page, childDef, activeId) {
     if (!activeId) return false;
     if (childDef.id === activeId || page.id === activeId) return true;
@@ -181,10 +193,10 @@
       var page = pageById(routes, childDef.id);
       if (!page) return;
       var link = document.createElement("a");
-      link.href = pageHref(page, lang);
+      link.href = childPageHref(page, lang, childDef);
       link.className = "nav-dropdown-link";
       link.setAttribute("role", "menuitem");
-      link.setAttribute("data-nav-id", childDef.id);
+      link.setAttribute("data-nav-id", childNavId(childDef));
 
       var iconKey = childIconKey(childDef, page);
       var title = document.createElement("span");
@@ -300,10 +312,10 @@
         if (!page) return;
 
         var link = document.createElement("a");
-        link.href = pageHref(page, lang);
+        link.href = childPageHref(page, lang, childDef);
         link.className = "nav-dropdown-link";
         link.setAttribute("role", "menuitem");
-        link.setAttribute("data-nav-id", childDef.id);
+        link.setAttribute("data-nav-id", childNavId(childDef));
 
         var iconKey = childIconKey(childDef, page);
         var title = document.createElement("span");
@@ -343,10 +355,10 @@
 
   function buildForumsPanelLink(panel, childDef, page, lang, ui, activeId) {
     var link = document.createElement("a");
-    link.href = pageHref(page, lang);
+    link.href = childPageHref(page, lang, childDef);
     link.className = "nav-dropdown-link nav-dropdown-link--forum-year";
     link.setAttribute("role", "menuitem");
-    link.setAttribute("data-nav-id", childDef.id || page.id);
+    link.setAttribute("data-nav-id", childNavId(childDef) || page.id);
 
     var labelKey = childDef.labelKey || page.id;
     var title = document.createElement("span");

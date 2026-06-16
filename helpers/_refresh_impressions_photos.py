@@ -45,12 +45,11 @@ def photo_src(slug: str) -> str:
 
 
 def toc_item(article_id: str, author: str, photo: str) -> str:
-    alt = html.escape(author, quote=True)
     if photo:
         img = (
             f'<span class="impression-toc-photo-frame">'
             f'<img class="impression-toc-photo" src="{photo}" alt="" width="44" height="44" '
-            f'loading="lazy" decoding="async"/>'
+            f'loading="lazy" decoding="async" aria-hidden="true"/>'
             f"</span>"
         )
     else:

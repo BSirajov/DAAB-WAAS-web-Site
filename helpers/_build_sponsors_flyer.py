@@ -359,7 +359,7 @@ def build_locale(key: str) -> None:
 </div>
 <article class="flyer-sheet" aria-label="{esc(cfg["title"])}">
 <header class="flyer-header">
-<img class="flyer-logo" src="{ASSET}images/daab-logo.svg" alt="" width="72" height="72"/>
+<img class="flyer-logo" src="{ASSET}images/daab-logo.svg" alt="{esc(cfg["brand_short"])}" width="72" height="72"/>
 <div class="flyer-brand-block">
 <p class="flyer-org">{esc(cfg["org"])}</p>
 <h2 class="flyer-brand-mark">{esc(cfg["brand_short"])}</h2>
@@ -391,7 +391,7 @@ def build_locale(key: str) -> None:
 </div>
 </div>
 <div class="flyer-qr">
-<img src="{qr_url}" width="72" height="72" alt="" decoding="async" crossorigin="anonymous"/>
+<img src="{qr_url}" width="72" height="72" alt="{esc(cfg["qr_caption"])}" decoding="async" crossorigin="anonymous"/>
 <span>{esc(cfg["qr_caption"])}</span>
 </div>
 </footer>
