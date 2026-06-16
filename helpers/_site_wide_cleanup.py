@@ -19,7 +19,7 @@ SCRIPT_VERSIONS = {
     "prominent-figures-catalog-data-en.js": 4,
     "prominent-figures-catalog.js": 19,
     "daab-shell.js": 13,
-    "daab-search.js": 12,
+    "daab-search.js": 13,
     "daab-mobile.js": 6,
     "daab-perf.js": 1,
     "daab-sticky-chrome.js": 3,

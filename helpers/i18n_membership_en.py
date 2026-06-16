@@ -32,7 +32,7 @@ MEMBERSHIP_REPLACEMENTS: list[tuple[str, str]] = [
     ("DAAB İdarə Heyətinin Sədri", "Chair of the WAAS Executive Board"),
     ("Axtarış üçün yazmağa başlayın…", "Start typing to search…"),
     ("Axtarış", "Search"),
-    ("Birliyimizə üzv olun", "Join our Association"),
+    ("Birliyimizə üzv olun", "Membership application"),
     ("Axtarmaq üçün yuxarıdakı xanaya mətn daxil edin", "Enter text in the box above to search"),
     ("naviqasiya", "navigate"),
     ("aç", "open"),
@@ -56,8 +56,8 @@ MEMBERSHIP_REPLACEMENTS: list[tuple[str, str]] = [
         "<p>We invite you to become a member of the World Association of Azerbaijani Scientists.</p>",
     ),
     (
-        '<p>Birliyimizə üzv olmaq üçün “Birliyimizə üzv olun” düyməsini klikləyin və növbəti açılan səhifələrdə tələb olunan məlumatları daxil edin.</p>',
-        '<p>To join our association, click the “Join our Association” button and enter the required information on the pages that open next.</p>',
+        '<p>Birliyimizə üzv olmaq üçün “Üzvlük müraciəti” düyməsinə basın və növbəti açılan səhifələrdə tələb olunan məlumatları daxil edin.</p>',
+        '<p>To join WAAS, click the “Membership application” button and enter the required information on the pages that open next.</p>',
     ),
     (
         "<p>DAAB üzvlüyünün təsdiqlənməsi üçün üzvlük haqqının ödənilməsi tələb olunur. Üzvlük haqqı aşağıdakı iki qaydadan biri ilə ödənilə bilər:</p>",

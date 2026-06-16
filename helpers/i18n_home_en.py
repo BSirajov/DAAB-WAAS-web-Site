@@ -28,7 +28,7 @@ HOME_REPLACEMENTS: list[tuple[str, str]] = [
             </span>""",
     ),
     ("Alimlərimizlə tanış olun", "Meet our scientists"),
-    ("Birliyimizə üzv olun", "Join our Association"),
+    ("Birliyimizə üzv olun", "Membership application"),
     ('aria-label="DAAB qısa məlumat"', 'aria-label="WAAS summary"'),
     (
         """              Beynəlxalq Elmi Şəbəkələşmə və Əməkdaşlıq

@@ -23,11 +23,11 @@
       "pageId": "home",
       "anchor": "",
       "title": "WAAS — World Association of Azerbaijani Scientists",
-      "summary": "World Association of Azerbaijani Scientists — an international scientific platform uniting Azerbaijani scholars abroad.",
+      "summary": "World Association of Azerbaijani Scientists — an international scientific platform uniting Azerbaijani scientists abroad.",
       "tag": "Page",
       "icon": "🏠",
       "boost": 12,
-      "norm": "waas world association of azerbaijani scientists world association of azerbaijani scientists an international scientific platform uniting azerbaijani scholars abroad."
+      "norm": "waas world association of azerbaijani scientists world association of azerbaijani scientists an international scientific platform uniting azerbaijani scientists abroad."
     },
     {
       "id": "page-foundation-az",
@@ -660,11 +660,11 @@
       "pageId": "forum-2027-sponsorship",
       "anchor": "",
       "title": "II Forum sponsorluğu — Dünya Azərbaycanlı Alimlər Birliyi",
-      "summary": "Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumuna sponsorluq və DAAB ilə strateji tərəfdaşlıq təklifi — paketlər, layihələr və əməkdaşlıq imkanları.",
+      "summary": "Elm, təhsil, innovasiya və insan kapitalına strateji sərmayə — DAAB ilə sponsorluq və tərəfdaşlıq təklifi, o cümlədən Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumuna dəstək.",
       "tag": "Səhifə",
-      "icon": "🎤",
+      "icon": "🤝",
       "boost": 12,
-      "norm": "ii forum sponsorlug u du nya azerbaycanli alimler birliyi xaricde yas ayan azerbaycanli alimlerin ii forumuna sponsorluq ve daab ile strateji terefdas liq teklifi paketler layiheler ve emekdas liq imkanlari."
+      "norm": "ii forum sponsorlug u du nya azerbaycanli alimler birliyi elm tehsil innovasiya ve insan kapitalina strateji sermaye daab ile sponsorluq ve terefdas liq teklifi o cu mleden xaricde yas ayan azerbaycanli alimlerin ii forumuna destek."
     },
     {
       "id": "page-forum-2027-sponsorship-en",
@@ -673,11 +673,11 @@
       "pageId": "forum-2027-sponsorship",
       "anchor": "",
       "title": "Forum II Sponsorship — World Association of Azerbaijani Scientists",
-      "summary": "Sponsorship and strategic partnership proposal for the Second Forum of Azerbaijani Scientists Living Abroad — packages, projects, and collaboration opportunities with WAAS.",
+      "summary": "Strategic investment in science, education, innovation, and human capital — a sponsorship and partnership proposal for WAAS, including the Second Forum of Azerbaijani Scientists Living Abroad.",
       "tag": "Page",
-      "icon": "🎤",
+      "icon": "🤝",
       "boost": 12,
-      "norm": "forum ii sponsorship world association of azerbaijani scientists sponsorship and strategic partnership proposal for the second forum of azerbaijani scientists living abroad packages projects and collaboration opportunities with waas."
+      "norm": "forum ii sponsorship world association of azerbaijani scientists strategic investment in science education innovation and human capital a sponsorship and partnership proposal for waas including the second forum of azerbaijani scientists living abroad."
     },
     {
       "id": "page-donate-az",
@@ -974,7 +974,7 @@
       "title": "Sponsorluq",
       "summary": "Forum II üçün sponsorluq paketləri və tərəfdaşlıq təklifi",
       "tag": "Naviqasiya",
-      "icon": "🎤",
+      "icon": "🤝",
       "boost": 11,
       "norm": "sponsorluq forum ii u c u n sponsorluq paketleri ve terefdas liq teklifi bizi destekleyin"
     },
@@ -1075,12 +1075,12 @@
       "type": "nav",
       "pageId": "foundation",
       "anchor": "",
-      "title": "Foundation",
+      "title": "Founding",
       "summary": "History and founding process",
       "tag": "Navigation",
       "icon": "🏛️",
       "boost": 11,
-      "norm": "foundation history and founding process about us"
+      "norm": "founding history and founding process about us"
     },
     {
       "id": "nav-mission-en",
@@ -1169,7 +1169,7 @@
       "title": "Sponsorship",
       "summary": "Sponsorship packages and partnership proposal for Forum II",
       "tag": "Navigation",
-      "icon": "🎤",
+      "icon": "🤝",
       "boost": 11,
       "norm": "sponsorship sponsorship packages and partnership proposal for forum ii support us"
     },

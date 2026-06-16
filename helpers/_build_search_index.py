@@ -171,7 +171,13 @@ def entry(
 
 def page_icon(ui: dict, page_id: str) -> str:
     icons = ui.get("navIcons") or {}
-    return icons.get(page_id, "📄")
+    key = PAGE_LABEL_KEYS.get(page_id, page_id)
+    return icons.get(key, icons.get(page_id, "📄"))
+
+
+def nav_icon(icons: dict, page_id: str, fallback: str = "📄") -> str:
+    key = PAGE_LABEL_KEYS.get(page_id, page_id)
+    return icons.get(key, icons.get(page_id, icons.get(fallback, "📄")))
 
 
 def add_pages(entries: list[dict], routes: dict, ui: dict) -> None:
@@ -227,7 +233,7 @@ def _append_nav_child(
             page_id=pid,
             title=title,
             summary=desc,
-            icon=icons.get(pid, icons.get(group_id, "📄")),
+            icon=nav_icon(icons, pid, group_id),
             extra=group_label,
         )
     )
@@ -252,7 +258,7 @@ def add_nav(entries: list[dict], ui: dict, nav_def: dict) -> None:
                         page_id=pid,
                         title=title,
                         summary=desc,
-                        icon=icons.get(pid, "📄"),
+                        icon=nav_icon(icons, pid),
                     )
                 )
             elif item["type"] == "group":

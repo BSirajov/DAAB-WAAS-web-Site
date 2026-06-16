@@ -12,6 +12,12 @@ from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS
 
 ASSET = "../"
 FLYER_CSS_V = STYLE_VERSIONS["daab-membership-flyer.css"]
+GOOGLE_FONTS_LINK = (
+    '<link href="https://fonts.googleapis.com/css2?'
+    'family=Inter:wght@400;500;600;700;800&amp;'
+    'family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>'
+)
+DESIGN_TOKENS_V = SCRIPT_VERSIONS["daab-design-tokens.js"]
 MEMBERSHIP_HTML = {
     "az": ROOT / "az" / "membership_value.html",
     "en": ROOT / "en" / "membership_value.html",
@@ -234,7 +240,7 @@ def shell_head(cfg: dict) -> str:
 <meta name="robots" content="noindex"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet"/>
+{GOOGLE_FONTS_LINK}
 <link href="{ASSET}css/daab-common.css?v={st["daab-common.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-search.css?v={st["daab-search.css"]}" rel="stylesheet"/>
@@ -249,7 +255,7 @@ def shell_head(cfg: dict) -> str:
 <script src="{ASSET}js/daab-back-to-top.js?v={sv["daab-back-to-top.js"]}" defer></script>
 <script src="{ASSET}js/daab-i18n.js?v={sv["daab-i18n.js"]}" defer></script>
 <script src="{ASSET}js/daab-lang-position.js?v={sv["daab-lang-position.js"]}" defer></script>
-<script src="{ASSET}js/daab-design-tokens.js?v=1" defer></script>
+<script src="{ASSET}js/daab-design-tokens.js?v={DESIGN_TOKENS_V}" defer></script>
 <script src="{ASSET}js/daab-nav.js?v={sv["daab-nav.js"]}" defer></script>
 <script src="{ASSET}js/daab-primary-nav.js?v={sv["daab-primary-nav.js"]}" defer></script>
 <script src="{ASSET}js/daab-breadcrumbs.js?v={sv["daab-breadcrumbs.js"]}" defer></script>

@@ -604,7 +604,7 @@
       return I18N.loadSearchIndex();
     }
     INDEX_URL = INDEX_URL || assetRoot() + "i18n/search-index.json";
-    return fetch(INDEX_URL + "?v=5").then(function (res) {
+    return fetch(INDEX_URL + "?v=6").then(function (res) {
       if (!res.ok) throw new Error("search index");
       return res.json();
     });
