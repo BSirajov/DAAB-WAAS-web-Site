@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-06-17",
+  "generated": "2026-06-18",
   "entryCount": 534,
   "entries": [
     {
@@ -628,10 +628,10 @@
       "norm": "waas membership flyer value of waas membership printable flyer for potential members."
     },
     {
-      "id": "page-forum-2027-sponsorship-az",
+      "id": "page-sponsorship-partnership-az",
       "lang": "az",
       "type": "page",
-      "pageId": "forum-2027-sponsorship",
+      "pageId": "sponsorship-partnership",
       "anchor": "",
       "title": "Sponsorluq və tərəfdaşlıq — Dünya Azərbaycanlı Alimlər Birliyi",
       "summary": "Elm, təhsil, innovasiya və insan kapitalına strateji sərmayə — DAAB ilə sponsorluq və tərəfdaşlıq təklifi.",
@@ -641,10 +641,10 @@
       "norm": "sponsorluq ve terefdas liq du nya azerbaycanli alimler birliyi elm tehsil innovasiya ve insan kapitalina strateji sermaye daab ile sponsorluq ve terefdas liq teklifi."
     },
     {
-      "id": "page-forum-2027-sponsorship-en",
+      "id": "page-sponsorship-partnership-en",
       "lang": "en",
       "type": "page",
-      "pageId": "forum-2027-sponsorship",
+      "pageId": "sponsorship-partnership",
       "anchor": "",
       "title": "Sponsorship & Partnership — World Association of Azerbaijani Scientists",
       "summary": "Strategic investment in science, education, innovation, and human capital — a sponsorship and partnership proposal for WAAS.",
@@ -686,11 +686,11 @@
       "pageId": "sponsors-flyer",
       "anchor": "",
       "title": "DAAB — Sponsorluq dəvət məktubu",
-      "summary": "Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumuna sponsorluq — potensial tərəfdaşlar üçün çap olunan dəvət məktubu.",
+      "summary": "DAAB sponsorluğu və strateji tərəfdaşlıq — potensial tərəfdaşlar üçün çap olunan dəvət məktubu.",
       "tag": "Səhifə",
       "icon": "📤",
       "boost": 12,
-      "norm": "daab sponsorluq devet mektubu xaricde yas ayan azerbaycanli alimlerin ii forumuna sponsorluq potensial terefdas lar u c u n c ap olunan devet mektubu."
+      "norm": "daab sponsorluq devet mektubu daab sponsorlug u ve strateji terefdas liq potensial terefdas lar u c u n c ap olunan devet mektubu."
     },
     {
       "id": "page-sponsors-flyer-en",
@@ -699,11 +699,11 @@
       "pageId": "sponsors-flyer",
       "anchor": "",
       "title": "WAAS — Sponsorship Invitation Letter",
-      "summary": "Forum II sponsorship and strategic partnership with WAAS — printable invitation letter for potential partners.",
+      "summary": "WAAS sponsorship and strategic partnership — printable invitation letter for potential partners.",
       "tag": "Page",
       "icon": "📤",
       "boost": 12,
-      "norm": "waas sponsorship invitation letter forum ii sponsorship and strategic partnership with waas printable invitation letter for potential partners."
+      "norm": "waas sponsorship invitation letter waas sponsorship and strategic partnership printable invitation letter for potential partners."
     },
     {
       "id": "page-forum-roadmap-az",
@@ -906,12 +906,12 @@
       "type": "nav",
       "pageId": "membership-value",
       "anchor": "",
-      "title": "Niyə DAAB-a üzv olmalı",
+      "title": "Niyə DAAB-a üzv olmalısınız?",
       "summary": "Üzvlüyün dəyəri və əsas faydalar",
       "tag": "Naviqasiya",
       "icon": "💡",
       "boost": 11,
-      "norm": "niye daab-a u zv olmali u zvlu yu n deyeri ve esas faydalar u zvlu k"
+      "norm": "niye daab-a u zv olmalisiniz u zvlu yu n deyeri ve esas faydalar u zvlu k"
     },
     {
       "id": "nav-membership-application-az",
@@ -940,10 +940,10 @@
       "norm": "devet mektubu potensial u zvler u c u n c ap oluna bilen flyer u zvlu k"
     },
     {
-      "id": "nav-forum-2027-sponsorship-az",
+      "id": "nav-sponsorship-partnership-az",
       "lang": "az",
       "type": "nav",
-      "pageId": "forum-2027-sponsorship",
+      "pageId": "sponsorship-partnership",
       "anchor": "",
       "title": "Niyə DAAB-a dəstək verilməli",
       "summary": "DAAB üçün sponsorluq paketləri və tərəfdaşlıq təklifi",
@@ -1135,10 +1135,10 @@
       "norm": "invitation letter printable invitation letter for potential members membership"
     },
     {
-      "id": "nav-forum-2027-sponsorship-en",
+      "id": "nav-sponsorship-partnership-en",
       "lang": "en",
       "type": "nav",
-      "pageId": "forum-2027-sponsorship",
+      "pageId": "sponsorship-partnership",
       "anchor": "",
       "title": "Why Sponsor WAAS?",
       "summary": "WAAS sponsorship packages and partnership proposal",
@@ -5223,11 +5223,11 @@
       "pageId": "scientists-profiles",
       "anchor": "bakhtiyar-sirajov",
       "title": "Bakhtiyar Sirajov",
-      "summary": "Co-Chairman of the WAAS Executive Board · Computer science · Austria",
+      "summary": "Co-Chair of the WAAS Executive Board · Computer science · Austria",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "bakhtiyar sirajov co-chairman of the waas executive board computer science austria b.sirajov@hotmail.com he was the head of the application development section in the department of safeguards of the international atomic energy agency iaea . during the years 1995-2021 he participated in software development projects implemented in the safeguards department of the international atomic energy agency iaea worked as phd"
+      "norm": "bakhtiyar sirajov co-chair of the waas executive board computer science austria b.sirajov@hotmail.com he was the head of the application development section in the department of safeguards of the international atomic energy agency iaea . during the years 1995-2021 he participated in software development projects implemented in the safeguards department of the international atomic energy agency iaea worked as phd"
     },
     {
       "id": "scientist-dinara-abbasova-az",
@@ -5769,11 +5769,11 @@
       "pageId": "scientists-profiles",
       "anchor": "seymur-nasirov",
       "title": "Seymur Nasirov",
-      "summary": "Co-Chairman of the WAAS Executive Board · Arabic language and literature · Egypt",
+      "summary": "Co-Chair of the WAAS Executive Board · Arabic language and literature · Egypt",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "seymur nasirov co-chairman of the waas executive board arabic language and literature egypt seymur.nasirov@gmail.com a teacher of azerbaijani language and literature at the faculty of literature of cairo university a scientific leader at the department of oriental languages and arabic president of the egypt-azerbaijan peoples friendship academy adviser on foreign relations of the general secretariat of the world fatwa organizat phd"
+      "norm": "seymur nasirov co-chair of the waas executive board arabic language and literature egypt seymur.nasirov@gmail.com a teacher of azerbaijani language and literature at the faculty of literature of cairo university a scientific leader at the department of oriental languages and arabic president of the egypt-azerbaijan peoples friendship academy adviser on foreign relations of the general secretariat of the world fatwa organizat phd"
     },
     {
       "id": "scientist-seide-xelilova-az",
@@ -6770,7 +6770,7 @@
       "pageId": "scientists-profiles",
       "anchor": "togrul-ismayil",
       "title": "Toğrul İsmayıl",
-      "summary": "DAAB İdarə Heyətinin üzvü, · Siyasi tarix · Türkiyə",
+      "summary": "DAAB İdarə Heyətinin üzvü · Siyasi tarix · Türkiyə",
       "tag": "Alim",
       "icon": "👤",
       "boost": 6,
@@ -6783,7 +6783,7 @@
       "pageId": "scientists-profiles",
       "anchor": "togrul-ismayil",
       "title": "Togrul Ismayil",
-      "summary": "Member of the WAAS Executive Board, · Political history · Türkiye",
+      "summary": "Member of the WAAS Executive Board · Political history · Türkiye",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,

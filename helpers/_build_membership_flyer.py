@@ -29,6 +29,10 @@ MEMBERSHIP_URL = {
     "az": "https://daab-waas.com/az/membership_value.html",
     "en": "https://daab-waas.com/en/membership_value.html",
 }
+FLYER_PAGE_URL = {
+    "az": "https://daab-waas.com/az/membership_flyer.html",
+    "en": "https://daab-waas.com/en/membership_flyer.html",
+}
 
 AZ_FLAG_SVG = (
     '<svg class="daab-az-flag" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" '
@@ -80,6 +84,20 @@ LOCALES = {
         "share_secure_context_alert": (
             "Paylaşma təhlükəsiz bağlantı (HTTPS) tələb edir. PDF endirildi."
         ),
+        "share_document_title": "Üzvlük Dəvət Məktubu",
+        "share_dialog_title": "«{title}» paylaşın",
+        "share_invite_placeholder": "Dəvət üçün ad və ya e-poçt daxil edin",
+        "share_whatsapp": "WhatsApp",
+        "share_outlook": "Microsoft Outlook",
+        "share_teams": "Microsoft Teams",
+        "share_gmail": "Gmail",
+        "share_get_link": "Keçidi əldə et",
+        "share_email": "E-poçt",
+        "share_pdf_file": "PDF faylı ilə paylaş",
+        "share_note": "Paylaşarkən dəvət məktubunun PDF surəti cihazınızda hazırlanır.",
+        "share_link_copied": "Keçid mübadilə buferinə kopyalandı.",
+        "share_close": "Bağla",
+        "share_download_first": "PDF endirildi — mesajınıza əlavə edin.",
         "org": "Dünya Azərbaycanlı Alimlər Birliyi",
         "brand_short": "DAAB",
         "headline": "Niyə <span>DAAB üzvü</span> olmalısınız?",
@@ -162,6 +180,20 @@ LOCALES = {
         "share_secure_context_alert": (
             "Sharing requires a secure connection (HTTPS). The PDF was downloaded instead."
         ),
+        "share_document_title": "Membership Invitation Letter",
+        "share_dialog_title": 'Share "{title}"',
+        "share_invite_placeholder": "Add name or email to invite",
+        "share_whatsapp": "WhatsApp",
+        "share_outlook": "Microsoft Outlook",
+        "share_teams": "Microsoft Teams",
+        "share_gmail": "Gmail",
+        "share_get_link": "Get a link",
+        "share_email": "Email",
+        "share_pdf_file": "Share PDF file",
+        "share_note": "A PDF copy of the invitation letter is prepared on your device when you share.",
+        "share_link_copied": "Link copied to clipboard.",
+        "share_close": "Close",
+        "share_download_first": "The PDF was downloaded — attach it to your message.",
         "org": "World Association of Azerbaijani Scientists",
         "brand_short": "WAAS",
         "headline": "Why <span>become a WAAS</span> member?",
@@ -334,24 +366,17 @@ def build_email_body(cfg: dict, lang: str) -> str:
     )
 
 
+def flyer_print_button(cfg: dict) -> str:
+    return (
+        f'<button type="button" class="report-print-btn" id="flyerPrintPdfBtn" '
+        f'title="{esc(cfg["print_tooltip"])}" aria-label="{esc(cfg["print_tooltip"])}">'
+        f'{esc(cfg["print_btn"])}</button>'
+    )
+
+
 def email_page_scripts(cfg: dict, lang: str) -> str:
-    payload = {
-        "subject": cfg["email_subject"],
-        "body": build_email_body(cfg, lang),
-        "pdfFilename": cfg["email_pdf_filename"],
-        "busyLabel": cfg["email_busy"],
-        "errorAlert": cfg["email_error"],
-        "printFallbackAlert": cfg["print_fallback_alert"],
-        "printErrorAlert": cfg["print_error_alert"],
-        "shareReadyConfirm": cfg["share_ready_confirm"],
-        "shareSecureContextAlert": cfg["share_secure_context_alert"],
-        "shareFallbackAlert": cfg["share_fallback_alert"],
-    }
-    data = json.dumps(payload, ensure_ascii=False)
     js_v = SCRIPT_VERSIONS["daab-membership-flyer-email.js"]
-    vendor = f'{ASSET}js/vendor'
-    return f"""<script>window.DAAB_FLYER_EMAIL = {data};</script>
-<script src="{ASSET}js/daab-membership-flyer-email.js?v={js_v}" defer></script>"""
+    return f'<script src="{ASSET}js/daab-membership-flyer-email.js?v={js_v}" defer></script>'
 
 
 def build_locale(key: str) -> None:
@@ -397,7 +422,7 @@ def build_locale(key: str) -> None:
 <img class="flyer-logo" src="{ASSET}images/daab-logo.png" alt="{esc(cfg["brand_short"])}" width="72" height="72"/>
 <div class="flyer-brand-block">
 <p class="flyer-org">{esc(cfg["org"])}</p>
-<h1>{esc(cfg["brand_short"])}</h1>
+<h2 class="flyer-brand-mark">{esc(cfg["brand_short"])}</h2>
 </div>
 </header>
 <section class="flyer-hero">
@@ -440,7 +465,7 @@ def build_locale(key: str) -> None:
 <p class="flyer-tagline">{esc(cfg["tagline"])}</p>
 </article>
 </div>
-<button type="button" class="report-print-btn" id="flyerPrintPdfBtn" title="{esc(cfg["print_tooltip"])}" aria-label="{esc(cfg["print_tooltip"])}">{esc(cfg["print_btn"])}</button>
+{flyer_print_button(cfg)}
 </main>
 {email_page_scripts(cfg, key)}
 </body>

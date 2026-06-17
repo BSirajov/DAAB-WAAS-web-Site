@@ -13,8 +13,8 @@ SCRIPT_VERSIONS = {
     "daab-lang-position.js": 8,
     "daab-design-tokens.js": 2,
     "daab-nav.js": 31,
-    "daab-primary-nav.js": 59,
-    "daab-breadcrumbs.js": 47,
+    "daab-primary-nav.js": 60,
+    "daab-breadcrumbs.js": 48,
     "prominent-figures-catalog-data.js": 4,
     "prominent-figures-catalog-data-en.js": 4,
     "prominent-figures-catalog.js": 19,
@@ -35,7 +35,7 @@ SCRIPT_VERSIONS = {
     "daab-phone-codes.js": 2,
     "daab-application-config.js": 2,
     "daab-country-codes.js": 1,
-    "daab-membership-flyer-email.js": 30,
+    "daab-membership-flyer-email.js": 33,
     "daab-collation.js": 1,
     "daab-table-resize.js": 3,
     "daab-scientists-toolbar-mobile.js": 4,
@@ -48,7 +48,7 @@ SCRIPT_VERSIONS = {
 }
 
 STYLE_VERSIONS = {
-    "daab-common.css": 71,
+    "daab-common.css": 72,
     "daab-perf.css": 2,
     "daab-mobile.css": 13,
     "daab-sticky-chrome.css": 1,
@@ -86,7 +86,7 @@ STYLE_VERSIONS = {
     "scientists-list-catalog.js": 8,
     "daab-photos-gallery.css": 9,
     "daab-forum-book.css": 5,
-    "daab-membership-flyer.css": 31,
+    "daab-membership-flyer.css": 35,
     "daab-forum-2026-page.css": 12,
     "daab-sidebar-widget.css": 6,
     "daab-table-resize.css": 2,

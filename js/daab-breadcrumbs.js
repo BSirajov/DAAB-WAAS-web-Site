@@ -68,7 +68,7 @@
     "membership-value": "membershipWhy",
     "membership-application": "membershipJoin",
     "membership-flyer": "membershipFlyer",
-    "forum-2027-sponsorship": "forum2027Sponsorship",
+    "sponsorship-partnership": "sponsorshipPartnership",
     donate: "donate",
     "sponsors-flyer": "sponsorsFlyer"
   };
@@ -234,7 +234,7 @@
         navParent: "membership"
       },
       {
-        id: "forum-2027-sponsorship",
+        id: "sponsorship-partnership",
         az: "az/sponsorship_partnership.html",
         en: "en/sponsorship_partnership.html",
         navParent: "sponsorship"
@@ -314,11 +314,11 @@
         executiveBoard: "İdarə heyəti",
         charter: "Nizamnamə",
         membership: "Üzvlük",
-        membershipWhy: "Niyə DAAB-a üzv olmalı",
+        membershipWhy: "Niyə DAAB-a üzv olmalısınız?",
         membershipTerms: "Üzvlüyə dəvət və ödəniş",
         membershipJoin: "Bizə qoşulun",
         membershipFlyer: "Dəvət məktubu",
-        forum2027Sponsorship: "Niyə DAAB-a dəstək verilməli",
+        sponsorshipPartnership: "Niyə DAAB-a dəstək verilməli",
         donate: "İanə Edin",
         sponsorsFlyer: "Dəvət məktubu"
       },
@@ -354,7 +354,7 @@
         membershipTerms: "Invitation to Membership and Fees",
         membershipJoin: "Join us",
         membershipFlyer: "Invitation Letter",
-        forum2027Sponsorship: "Why Sponsor WAAS?",
+        sponsorshipPartnership: "Why Sponsor WAAS?",
         donate: "Donate",
         sponsorsFlyer: "Invitation Letter"
       }
@@ -367,7 +367,7 @@
       scientists: { landingId: "scientists-list" },
       activities: { landingId: "activities-news" },
       membership: { landingId: "membership-value" },
-      sponsorship: { landingId: "forum-2027-sponsorship" }
+      sponsorship: { landingId: "sponsorship-partnership" }
     }
   };
 

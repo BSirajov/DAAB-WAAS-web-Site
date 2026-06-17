@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 from _paths import ROOT
+from _footer_leader_snippets import FOOTER_AZ_CREDENTIAL, FOOTER_EN_CREDENTIAL
 from forum_en_video_gallery import translate_description
 from _embed_static_nav import forum_nav_strip
 
@@ -39,7 +40,7 @@ COPY = {
         "footer_leader": (
             "<strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>"
             "DAAB İdarə Heyətinin sədri<br/>"
-            "Almaniya — James D. Murray Distinguished Professor"
+            f"{FOOTER_AZ_CREDENTIAL}"
         ),
         "footer_rights": "© 2026 DAAB — Bütün hüquqlar qorunur",
     },
@@ -69,7 +70,7 @@ COPY = {
         "footer_leader": (
             "<strong>Prof. Dr. Messoud Efendiyev</strong><br/>"
             "Chair of the WAAS Executive Board<br/>"
-            "Germany — James D. Murray Distinguished Professor"
+            f"{FOOTER_EN_CREDENTIAL}"
         ),
         "footer_rights": "© 2026 WAAS — All rights reserved",
     },

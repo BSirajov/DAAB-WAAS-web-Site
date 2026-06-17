@@ -65,7 +65,7 @@ PAGE_LABEL_KEYS = {
     "membership-value": "membershipWhy",
     "membership-application": "membershipJoin",
     "membership-flyer": "membershipFlyer",
-    "forum-2027-sponsorship": "forum2027Sponsorship",
+    "sponsorship-partnership": "sponsorshipPartnership",
     "donate": "donate",
     "sponsors-flyer": "sponsorsFlyer",
 }

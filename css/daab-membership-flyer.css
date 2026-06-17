@@ -104,18 +104,28 @@
   border: 1px solid var(--line);
   border-radius: 50%;
   box-shadow: 0 4px 14px rgba(0, 45, 82, 0.1);
-}.flyer-brand-block h2,
+}.flyer-brand-block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(2px * var(--flyer-space));
+  max-width: 100%;
+  text-align: center;
+}.flyer-brand-block h1,
+.flyer-brand-block h2,
 .flyer-brand-block .flyer-brand-mark{
-  margin: 0 0 calc(4px * var(--flyer-space));
+  margin: 0;
   font-family: "Playfair Display", Georgia, serif;
   font-size: calc(14.7px * var(--flyer-fs));
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.05;
   color: var(--blue-900);
 }.flyer-brand-block .flyer-org{
   margin: 0;
   font-size: calc(11.5px * var(--flyer-fs));
   font-weight: 800;
+  line-height: 1.1;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--blue-700);
@@ -131,6 +141,7 @@
   font-size: calc(15.4px * var(--flyer-fs));
   line-height: 1.12;
   font-weight: 800;
+  text-align: center;
 }.flyer-hero h2 span{
   color: var(--gold-soft);
 }.flyer-hero p{

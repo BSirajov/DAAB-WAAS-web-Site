@@ -44,6 +44,7 @@ SLUG_OVERRIDES = {
 from _embed_static_nav import forum_nav_strip  # noqa: E402
 from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS  # noqa: E402
 from forum_en_common import FORUM_FOOTER_EN  # noqa: E402
+from _footer_leader_snippets import FOOTER_AZ_CREDENTIAL  # noqa: E402
 
 AZ_SLUG = str.maketrans(
     {
@@ -502,7 +503,7 @@ def footer_html(lang: str) -> str:
 <div class="footer-grid">
 <div class="footer-col"><h4 class="footer-title">{c["footer_contact"]}</h4><div class="footer-item">✉ <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item">☎ <span>+90 555 147 46 74</span></div><div class="footer-item">🌐 <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div></div>
 <div class="footer-col"><h4 class="footer-title">{c["footer_address"]}</h4><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, İstanbul, Türkiyə</p></div>
-<div class="footer-col"><h4 class="footer-title">{c["footer_leadership"]}</h4><p class="footer-leader"><strong>{c["footer_chair_name"]}</strong><br/>{c["footer_chair"]}<br/>Germany — James D. Murray Distinguished Professor</p></div>
+<div class="footer-col"><h4 class="footer-title">{c["footer_leadership"]}</h4><p class="footer-leader"><strong>{c["footer_chair_name"]}</strong><br/>{c["footer_chair"]}<br/>{FOOTER_AZ_CREDENTIAL}</p></div>
 </div>
 </div>
 <div class="footer-bottom">{c["footer_bottom"]}</div>

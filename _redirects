@@ -1,4 +1,5 @@
-# Netlify / compatible static host redirects (301)
+/az/membership.html /az/membership_value.html 301
+/en/membership.html /en/membership_value.html 301
 /az/forum_2027_sponsorship.html /az/sponsorship_partnership.html 301
 /en/forum_2027_sponsorship.html /en/sponsorship_partnership.html 301
 /az/sponsors.html /az/sponsorship_partnership.html 301

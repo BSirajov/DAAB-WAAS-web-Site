@@ -1,13 +1,18 @@
 /**
- * Site-wide page background — same diaspora image + light scrim as hero headers.
- * Applied on body for all pages (including language gateway).
+ * Site-wide page background — diaspora embroidery (images/diaspor-body-top-bg.png).
+ * Applied on every page that loads daab-common.css (including the language gateway).
  */
 
+html {
+  min-height: 100%;
+}
+
 body {
+  min-height: 100vh;
   background-color: var(--color-surface-news, #f5fbff);
 }
 
-/* Fixed layer: photo pattern + soft vertical wash for readable body text */
+/* Fixed layer: pattern fills the viewport; hero-matching scrim for readable text */
 body::before {
   content: "";
   position: fixed;
@@ -17,16 +22,14 @@ body::before {
   background-color: var(--color-surface-news, #f5fbff);
   background-image:
     linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.5) 0%,
-      rgba(255, 255, 255, 0.68) 32%,
-      rgba(245, 251, 255, 0.86) 62%,
-      rgba(238, 248, 255, 0.94) 100%
+      0deg,
+      var(--color-hero-scrim, rgba(255, 255, 255, 0.36)),
+      var(--color-hero-scrim, rgba(255, 255, 255, 0.36))
     ),
     var(--site-bg-image, url("../images/diaspor-body-top-bg.png"));
-  background-position: top center, top center;
-  background-size: 100% auto, 100% auto;
-  background-repeat: no-repeat, no-repeat;
+  background-position: center, var(--site-bg-position, top center);
+  background-size: 100% 100%, var(--site-bg-size, cover);
+  background-repeat: no-repeat, var(--site-bg-repeat, no-repeat);
   background-attachment: fixed, fixed;
 }
 
@@ -36,9 +39,10 @@ body::before {
   }
 }
 
-/* Heroes inherit the fixed body embroidery — avoid decoding the PNG twice. */
+/* Heroes inherit the fixed body pattern — avoid decoding the PNG twice */
 .hero,
-.membership-page .hero {
+.membership-page .hero,
+.page-hero {
   background-image: none !important;
   background-color: transparent !important;
 }

@@ -189,12 +189,12 @@ DESCRIPTION_EN: dict[str, str] = {
     "Şuay Abdullayev, Amerikanın Corciya Universitetində postdoktoral tədqiqatçı, ABŞ": (
         "Shuay Abdullayev, Postdoctoral Researcher, University of Georgia, USA"
     ),
-    "Sevinc Məmmədova, Corc Vaşinqton universitetinin professoru, ABŞ Rauf Abdullayev, İKT üzrə mühəndis, Almaniya Messoud Efendiyev, Chairman, Germany, James D.Murray Distinguished Professor DAAB-ın Türkiyədə qeydiyyatdan keçdiyi ünvan: Feneryolu Mahallesi Gazi Muhtar Paşa Sokak No: 44 Kadıköy, İstanbul, Türkiyə Phone: +905551474674 Email: daad.waas2024@gmail.com Web: https://daab-waas.org": (
+    "Sevinc Məmmədova, Corc Vaşinqton universitetinin professoru, ABŞ; Rauf Abdullayev, İKT üzrə mühəndis, Almaniya; Məsud Əfəndiyev, DAAB İdarə Heyətinin sədri, Almaniya — James D. Murray mükafatlı professoru. DAAB-ın Türkiyədə qeydiyyatdan keçdiyi ünvan: Feneryolu Mahallesi, Gazi Muhtar Paşa Sokak No: 44, Kadıköy, İstanbul, Türkiyə. Telefon: +90 555 147 46 74. E-poçt: info@daab-waas.com. Veb: https://daab-waas.com": (
         "Sevinj Mammadova, Professor, George Washington University, USA; Rauf Abdullayev, ICT Engineer, "
-        "Germany; Messoud Efendiyev, Chair, Germany, James D. Murray Distinguished Professor. "
+        "Germany; Messoud Efendiyev, Chair of the WAAS Executive Board, Germany — James D. Murray Distinguished Professor. "
         "WAAS registered address in Türkiye: Feneryolu Mahallesi, Gazi Muhtar Pasa Sokak No. 44, "
-        "Kadikoy, Istanbul, Türkiye. Phone: +90 555 147 46 74. Email: daad.waas2024@gmail.com. "
-        "Web: https://daab-waas.org"
+        "Kadikoy, Istanbul, Türkiye. Phone: +90 555 147 46 74. Email: info@daab-waas.com. "
+        "Web: https://daab-waas.com"
     ),
 }
 

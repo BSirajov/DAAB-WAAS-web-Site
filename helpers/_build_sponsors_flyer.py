@@ -29,25 +29,31 @@ CONTACT_URL = {
     "az": "https://daab-waas.com/az/sponsorship_partnership.html#contact",
     "en": "https://daab-waas.com/en/sponsorship_partnership.html#contact",
 }
+FLYER_PAGE_URL = {
+    "az": "https://daab-waas.com/az/sponsors_flyer.html",
+    "en": "https://daab-waas.com/en/sponsors_flyer.html",
+}
 
 LOCALES = {
     "az": {
         "lang": "az",
         "title": "DAAB — Sponsorluq dəvət məktubu",
-        "description": "Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumuna sponsorluq — potensial tərəfdaşlar üçün çap olunan dəvət məktubu.",
+        "description": "DAAB sponsorluğu və strateji tərəfdaşlıq — potensial tərəfdaşlar üçün çap olunan dəvət məktubu.",
         "hero_h1": "Sponsorluq <span>Dəvət Məktubu</span>",
         "hero_subtitle": "Potensial tərəfdaşlar üçün paylaşıla bilən dəvət məktubu",
         "panel_title": "Tərəfdaşlara dəvət məktubu göndərin",
         "panel_copy": (
-            "Bu səhifədə II Forum sponsorluğu və DAAB ilə strateji tərəfdaşlıq təklifini qısa şəkildə təqdim edən "
-            "paylaşmağa hazır dəvət məktubu yerləşdirilib. Sağ alt küncdəki «Çap et / PDF» düyməsindən istifadə "
-            "edərək brauzerin çap pəncərəsini açın və «PDF kimi yadda saxla» seçin."
+            "Bu səhifədə DAAB sponsorluğu və tərəfdaşlıq təklifini qısa şəkildə təqdim edən "
+            "paylaşmağa hazır dəvət məktubu yerləşdirilib. Sağ alt küncdəki «Çap et / PDF» düyməsindən "
+            "istifadə edərək brauzerin çap pəncərəsini açın və «PDF kimi yadda saxla» seçin."
         ),
         "controls_aria": "Dəvət məktubu idarəetməsi",
         "print_btn": "Çap et / PDF",
         "print_tooltip": "Brauzerin çap pəncərəsini açın və «PDF kimi yadda saxla» seçin.",
-        "email_subject": "II Forum sponsorluğuna dəstək verin",
-        "email_pdf_filename": "DAAB-Forum-II-sponsorluq-devet-mektubu.pdf",
+        "email_btn": "Paylaş",
+        "share_tooltip": "PDF yaradın və paylaşma menyusundan tətbiq seçin.",
+        "email_subject": "DAAB sponsorluğuna dəstək verin",
+        "email_pdf_filename": "DAAB-sponsorluq-devet-mektubu.pdf",
         "email_busy": "PDF hazırlanır…",
         "email_attach_note": "Bu e-poçta yüklənmiş PDF dəvət məktubu faylını əlavə edin.",
         "email_error": "PDF yaradıla bilmədi. Yenidən cəhd edin.",
@@ -63,24 +69,38 @@ LOCALES = {
         "share_secure_context_alert": (
             "Paylaşma təhlükəsiz bağlantı (HTTPS) tələb edir. PDF endirildi."
         ),
+        "share_document_title": "Sponsorluq Dəvət Məktubu",
+        "share_dialog_title": "«{title}» paylaşın",
+        "share_invite_placeholder": "Dəvət üçün ad və ya e-poçt daxil edin",
+        "share_whatsapp": "WhatsApp",
+        "share_outlook": "Microsoft Outlook",
+        "share_teams": "Microsoft Teams",
+        "share_gmail": "Gmail",
+        "share_get_link": "Keçidi əldə et",
+        "share_email": "E-poçt",
+        "share_pdf_file": "PDF faylı ilə paylaş",
+        "share_note": "Paylaşarkən dəvət məktubunun PDF surəti cihazınızda hazırlanır.",
+        "share_link_copied": "Keçid mübadilə buferinə kopyalandı.",
+        "share_close": "Bağla",
+        "share_download_first": "PDF endirildi — mesajınıza əlavə edin.",
         "org": "Dünya Azərbaycanlı Alimlər Birliyi",
         "brand_short": "DAAB",
         "headline": "Sponsorluq və <span>tərəfdaşlıq</span>",
         "lead": (
-            "DAAB Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumuna dəstək və strateji tərəfdaşlıq təklif edir — "
-            "elm, təhsil, innovasiya və insan kapitalına sərmayə."
+            "DAAB strateji tərəfdaşları elm, təhsil, innovasiya və insan kapitalına sərmayə qoymağa dəvət edir — "
+            "təşkilatınız üçün brend tanınması, beynəlxalq alim şəbəkəsinə çıxış və ölçülə bilən sosial təsir."
         ),
-        "stats": [("🌐", "100+ alim"), ("🤝", "20+ ölkə"), ("🎤", "Forum II")],
+        "stats": [("🌐", "Brend tanınması"), ("🤝", "Şəbəkə əlaqəsi"), ("🏅", "Ölçülə bilən təsir")],
         "pillars_title": "Sponsorluq paketləri",
         "pillars": [
             ("💎 Platin / Baş", "€50 000+ — açılış çıxışı, prioritet loqo, media"),
             ("🥇 Qızıl", "€25 000–49 999 — panel sponsorluğu, loqo, şəbəkələşmə"),
             ("🥈 Gümüş", "€10 000–24 999 — sponsor siyahısı, loqo, veb-sayt"),
-            ("🥉 Bürünc", "€5 000–9 999 — veb-sayt və Forum materiallarında qeyd"),
+            ("🥉 Bürünc", "€5 000–9 999 — veb-sayt və WAAS materiallarında qeyd"),
         ],
         "benefits_title": "Sponsor üçün üstünlüklər",
         "benefits": [
-            ("🌐", "Brendinizin tanınması", "Forum II materiallarında, mediada və tədbir məkanında tanınma.", ["Loqo yerləşdirməsi", "Beynəlxalq platforma"]),
+            ("🌐", "Brendinizin tanınması", "WAAS materiallarında, veb-sayt, media və rəsmi tədbirlərdə tanınma.", ["Loqo yerləşdirməsi", "Beynəlxalq platforma"]),
             ("🏅", "Nüfuz və hesabatlılıq", "Elm, təhsil və innovasiyaya sərmayə qoyan etibarlı tərəfdaş imici.", ["Sosial təsir", "İllik hesabat"]),
             ("🤝", "Diaspora şəbəkəsi", "20-dən çox ölkədən alim və ekspertlərlə birbaşa əlaqə.", ["Mentorluq", "VIP dialoq"]),
             ("🔬", "Elmi əməkdaşlıq", "Universitetlər və AMEA ilə körpü; ortaq tədqiqat imkanları.", ["Ortaq nəşrlər", "Bilik transferi"]),
@@ -94,7 +114,7 @@ LOCALES = {
         ),
         "cta_btn": "info@daab-waas.com",
         "cta_href": "sponsorship_partnership.html#contact",
-        "fees": "Bütün paketlər: rəsmi təşəkkür, hesabatlılıq, Forum II tanınması",
+        "fees": "Bütün paketlər: rəsmi təşəkkür, hesabatlılıq və DAAB platformasında tanınma",
         "contact_email": "info@daab-waas.com",
         "contact_site": "daab-waas.com",
         "qr_caption": "Sponsorluq əlaqəsi",
@@ -103,20 +123,22 @@ LOCALES = {
     "en": {
         "lang": "en",
         "title": "WAAS — Sponsorship Invitation Letter",
-        "description": "Forum II sponsorship and strategic partnership with WAAS — printable invitation letter for potential partners.",
+        "description": "WAAS sponsorship and strategic partnership — printable invitation letter for potential partners.",
         "hero_h1": "Sponsorship <span>Invitation Letter</span>",
         "hero_subtitle": "Shareable invitation letter for potential partners",
         "panel_title": "Share the invitation letter with partners",
         "panel_copy": (
-            "This page provides a ready-to-share flyer summarizing the Forum II sponsorship proposal and "
-            "partnership opportunities with WAAS. Use the Print / PDF button at the bottom right to open "
+            "This page provides a ready-to-share invitation letter summarizing WAAS sponsorship and "
+            "partnership opportunities. Use the Print / PDF button at the bottom right to open "
             "the browser print dialog and choose Save as PDF."
         ),
         "controls_aria": "Flyer actions",
         "print_btn": "Print / PDF",
         "print_tooltip": "Open the browser print dialog and choose Save as PDF.",
-        "email_subject": "Support Forum II through sponsorship",
-        "email_pdf_filename": "WAAS-Forum-II-sponsorship-flyer.pdf",
+        "email_btn": "Share",
+        "share_tooltip": "Generate a PDF and share via your device's apps.",
+        "email_subject": "Support WAAS through sponsorship",
+        "email_pdf_filename": "WAAS-sponsorship-invitation-letter.pdf",
         "email_busy": "Preparing PDF…",
         "email_attach_note": "Please attach the sponsorship flyer PDF that was just downloaded to this email.",
         "email_error": "Could not create the PDF. Please try again.",
@@ -132,24 +154,38 @@ LOCALES = {
         "share_secure_context_alert": (
             "Sharing requires a secure connection (HTTPS). The PDF was downloaded instead."
         ),
+        "share_document_title": "Sponsorship Invitation Letter",
+        "share_dialog_title": 'Share "{title}"',
+        "share_invite_placeholder": "Add name or email to invite",
+        "share_whatsapp": "WhatsApp",
+        "share_outlook": "Microsoft Outlook",
+        "share_teams": "Microsoft Teams",
+        "share_gmail": "Gmail",
+        "share_get_link": "Get a link",
+        "share_email": "Email",
+        "share_pdf_file": "Share PDF file",
+        "share_note": "A PDF copy of the invitation letter is prepared on your device when you share.",
+        "share_link_copied": "Link copied to clipboard.",
+        "share_close": "Close",
+        "share_download_first": "The PDF was downloaded — attach it to your message.",
         "org": "World Association of Azerbaijani Scientists",
         "brand_short": "WAAS",
         "headline": "Sponsorship &amp; <span>partnership</span>",
         "lead": (
-            "WAAS invites strategic partners to support the Second Forum of Azerbaijani Scientists Living Abroad — "
-            "a flagship investment in science, education, innovation, and human capital."
+            "WAAS invites strategic partners to invest in science, education, innovation, and human capital — "
+            "with brand visibility, access to an international scientist network, and measurable social impact."
         ),
-        "stats": [("🌐", "100+ scientists"), ("🤝", "20+ countries"), ("🎤", "Forum II")],
+        "stats": [("🌐", "Brand visibility"), ("🤝", "Network access"), ("🏅", "Measurable impact")],
         "pillars_title": "Sponsorship packages",
         "pillars": [
             ("💎 Title / Platinum", "€50,000+ — opening address, priority logo, media"),
             ("🥇 Gold", "€25,000–49,999 — panel sponsorship, logo, networking"),
             ("🥈 Silver", "€10,000–24,999 — sponsor listing, logo, website"),
-            ("🥉 Bronze", "€5,000–9,999 — website and Forum materials listing"),
+            ("🥉 Bronze", "€5,000–9,999 — website and WAAS materials listing"),
         ],
         "benefits_title": "Benefits for sponsors",
         "benefits": [
-            ("🌐", "Brand visibility", "Recognition across Forum II materials, media, and the venue.", ["Logo placement", "International platform"]),
+            ("🌐", "Brand visibility", "Recognition across WAAS materials, the website, media, and official events.", ["Logo placement", "International platform"]),
             ("🏅", "Reputation & accountability", "Trusted partner investing in science, education, and innovation.", ["Social impact", "Annual report"]),
             ("🤝", "Diaspora network", "Direct links to scientists and experts from 20+ countries.", ["Mentoring", "VIP dialogue"]),
             ("🔬", "Research collaboration", "Bridges with universities and ANAS; joint research pathways.", ["Co-publications", "Knowledge transfer"]),
@@ -163,7 +199,7 @@ LOCALES = {
         ),
         "cta_btn": "info@daab-waas.com",
         "cta_href": "sponsorship_partnership.html#contact",
-        "fees": "All packages: formal acknowledgment, reporting, Forum II visibility",
+        "fees": "All packages: formal acknowledgment, impact reporting, and visibility across WAAS channels",
         "contact_email": "info@daab-waas.com",
         "contact_site": "daab-waas.com",
         "qr_caption": "Sponsorship contact",
@@ -260,7 +296,7 @@ def build_email_body(cfg: dict, lang: str) -> str:
             [
                 "Hörmətli tərəfdaş,",
                 "",
-                "Sizi Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumuna (DAAB) sponsorluq ilə dəstəkləməyə dəvət etmək istəyirəm.",
+                "Sizi DAAB ilə sponsorluq və strateji tərəfdaşlıq çərçivəsində əməkdaşlığa dəvət etmək istəyirəm.",
                 "",
                 "Ətraflı məlumat: " + sponsors_url,
                 "Əlaqə: " + contact_url,
@@ -276,8 +312,7 @@ def build_email_body(cfg: dict, lang: str) -> str:
         [
             "Dear partner,",
             "",
-            "I would like to invite you to support the Second Forum of Azerbaijani Scientists "
-            "Living Abroad through sponsorship with WAAS.",
+            "I would like to invite you to support WAAS through sponsorship and strategic partnership.",
             "",
             "Learn more: " + sponsors_url,
             "Contact: " + contact_url,
@@ -290,24 +325,17 @@ def build_email_body(cfg: dict, lang: str) -> str:
     )
 
 
+def flyer_print_button(cfg: dict) -> str:
+    return (
+        f'<button type="button" class="report-print-btn" id="flyerPrintPdfBtn" '
+        f'title="{esc(cfg["print_tooltip"])}" aria-label="{esc(cfg["print_tooltip"])}">'
+        f'{esc(cfg["print_btn"])}</button>'
+    )
+
+
 def email_page_scripts(cfg: dict, lang: str) -> str:
-    payload = {
-        "subject": cfg["email_subject"],
-        "body": build_email_body(cfg, lang),
-        "pdfFilename": cfg["email_pdf_filename"],
-        "busyLabel": cfg["email_busy"],
-        "errorAlert": cfg["email_error"],
-        "printFallbackAlert": cfg["print_fallback_alert"],
-        "printErrorAlert": cfg["print_error_alert"],
-        "shareReadyConfirm": cfg["share_ready_confirm"],
-        "shareSecureContextAlert": cfg["share_secure_context_alert"],
-        "shareFallbackAlert": cfg["share_fallback_alert"],
-    }
-    data = json.dumps(payload, ensure_ascii=False)
     js_v = SCRIPT_VERSIONS["daab-membership-flyer-email.js"]
-    vendor = f"{ASSET}js/vendor"
-    return f"""<script>window.DAAB_FLYER_EMAIL = {data};</script>
-<script src="{ASSET}js/daab-membership-flyer-email.js?v={js_v}" defer></script>"""
+    return f'<script src="{ASSET}js/daab-membership-flyer-email.js?v={js_v}" defer></script>'
 
 
 def build_locale(key: str) -> None:
@@ -387,7 +415,7 @@ def build_locale(key: str) -> None:
 <p class="flyer-tagline">{esc(cfg["tagline"])}</p>
 </article>
 </div>
-<button type="button" class="report-print-btn" id="flyerPrintPdfBtn" title="{esc(cfg["print_tooltip"])}" aria-label="{esc(cfg["print_tooltip"])}">{esc(cfg["print_btn"])}</button>
+{flyer_print_button(cfg)}
 </main>
 {email_page_scripts(cfg, key)}
 </body>

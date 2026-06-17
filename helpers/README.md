@@ -1,43 +1,36 @@
-# Maintenance scripts (Python)
+# DAAB site maintenance helpers
 
-Developer-only tools for updating catalogue HTML, syncing book text, and validating structure. **Not used by the public website.**
+Run all commands from the **repository root**: `python helpers/<script>.py`
+
+## Validate before deploy
+
+| Command | Purpose |
+|---------|---------|
+| `_validate_site.py` | Broken local `href`/`src` paths |
+| `_deploy_preflight.py` | Routes, sitemap, nav/i18n consistency, scientists wiring |
+| `_audit_az_en_parity.py` | AZ/EN page pair structure |
+
+## Build / regenerate pages
+
+| Command | Output |
+|---------|--------|
+| `_build_scientists_profiles.py` | `az/en/scientists/profiles.html` cards from `i18n/scientists-profiles.json` |
+| `_build_search_index.py` | `i18n/search-index.json` |
+| `_embed_static_nav.py` | Slim nav placeholders → full static nav in HTML |
+| `_build_membership_flyer.py` | `az/en/membership_flyer.html` |
+| `_build_sponsors_flyer.py` | `az/en/sponsors_flyer.html` |
+| `_build_work_done_2024_2026_page.py` | `az/en/work_done_2024_2026.html` |
+| `_build_donate_pages.py` | `az/en/donate.html` |
+| `_build_video_gallery_page.py` | `az/en/forum/2024/video_gallery.html` |
+| `_build_deployment_folder.py --include-images` | `Deployment/` upload package |
+
+## One-shot harmonisation
+
+| Command | Purpose |
+|---------|---------|
+| `_harmonize_footer_credentials.py` | Footer credential lines + `div.footer-title` → `h4` |
+| `_site_wide_cleanup.py` | Propagate shared asset `?v=` versions |
 
 ## Paths
 
-Scripts resolve the **repository root** via `helpers/_paths.py`:
-
-- `ROOT` — parent of this folder (contains `index.html`, `az/`, `en/`, `css/`, `js/`, `images/`)
-- `HELPERS` — this directory
-- **Live scientist pages:** `az/scientists/list.html`, `az/scientists/profiles.html`
-
-## Run from repository root
-
-```bash
-cd "path/to/DAAB-WAAS web site"
-python helpers/_validate_site.py
-python helpers/_rebuild_cv_catalog.py
-python helpers/_validate_cv_cards.py
-```
-
-Some scripts need optional dependencies (e.g. `pypdf` for `helpers/_extract_pdf.py`).
-
-## Scripts
-
-| Script | Purpose |
-|--------|---------|
-| `_extract_pdf.py` | PDF → `../_pdf_extract.txt` at repo root |
-| `_sync_scientists_from_book.py` | Update CV bios from book extract |
-| `_rebuild_cv_catalog.py` | Rebuild all 83 CV cards |
-| `_build_cv_enrichment.py` | Sync emails/ixtisas from list page DATA |
-| `_fix_cv_catalog.py` | Repair broken CV grid HTML |
-| `_normalize_cv_cards.py` | Normalize card HTML template |
-| `_restructure_cv_cards.py` | Flatten grid, inline meta rows |
-| `_format_card_bios.py` | Format bio paragraphs and bullets |
-| `_validate_site.py` | Check broken links/paths across all site HTML (run before deploy) |
-| `_validate_cv_cards.py` | Validate card HTML structure |
-| `_check_name_order.py` | Compare profile card vs catalogue name order |
-| `_apply_html_cleanup.py` | Bulk fix duplicate `lang`, align cache-bust versions |
-| `_print_norms.py` | Debug name normalization |
-| `_recover_cv_from_transcript.py` | Emergency recovery (one-off) |
-
-See `../documents/DAAB-Site-Python-and-JavaScript-Files.md` for full documentation.
+Import repo root via `from _paths import ROOT` in new helpers. Do not add `.py` files at repository root.

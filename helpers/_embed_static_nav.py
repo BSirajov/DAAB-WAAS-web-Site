@@ -172,7 +172,7 @@ SPONSORSHIP_AZ = (
     + '🤝\u00a0Bizi dəstəkləyin <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("sponsorship_partnership.html", "forum-2027-sponsorship", "🤝\u00a0Niyə DAAB-a dəstək verilməli", "Forum II üçün sponsorluq paketləri və tərəfdaşlıq"),
+        ("sponsorship_partnership.html", "sponsorship-partnership", "🤝\u00a0Niyə DAAB-a dəstək verilməli", "DAAB üçün sponsorluq paketləri və tərəfdaşlıq təklifi"),
         ("donate.html", "donate", "💝\u00a0İanə Edin", "Fərdi, fond və xatirə ianələri"),
         ("sponsors_flyer.html", "sponsors-flyer", "📤\u00a0Dəvət məktubu", "Potensial tərəfdaşlar üçün paylaşıla bilən dəvət məktubu"),
     ])
@@ -185,7 +185,7 @@ SPONSORSHIP_EN = (
     + '🤝\u00a0Support us <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("sponsorship_partnership.html", "forum-2027-sponsorship", "🤝\u00a0Why Sponsor WAAS?", "Sponsorship packages and partnership for Forum II"),
+        ("sponsorship_partnership.html", "sponsorship-partnership", "🤝\u00a0Why Sponsor WAAS?", "WAAS sponsorship packages and partnership proposal"),
         ("donate.html", "donate", "💝\u00a0Donate", "Individual, foundation, and memorial gifts"),
         ("sponsors_flyer.html", "sponsors-flyer", "📤\u00a0Invitation Letter", "Printable invitation letter for potential partners"),
     ])

@@ -10,6 +10,7 @@
   var EXPORT_CLASS = "flyer-sheet--pdf-export";
   var exportBusy = false;
   var pendingShareBlob = null;
+  var cachedPdfBlob = null;
   var pdfLibsPromise = null;
 
   function assetRoot() {
@@ -171,8 +172,47 @@
         cloneImg.removeAttribute("crossorigin");
       } catch (err) {
         console.warn("[daab-membership-flyer-email] image copy:", err);
+        cloneImg.removeAttribute("src");
+        cloneImg.style.display = "none";
       }
     });
+  }
+
+  async function inlineRemoteImages(root) {
+    var imgs = root.querySelectorAll("img");
+    await Promise.all(
+      Array.prototype.map.call(imgs, function (img) {
+        var src = img.getAttribute("src") || "";
+        if (!src || src.indexOf("data:") === 0) return Promise.resolve();
+        try {
+          var parsed = new URL(src, location.href);
+          if (parsed.origin === location.origin) return Promise.resolve();
+        } catch (urlErr) {
+          return Promise.resolve();
+        }
+        return fetch(src, { mode: "cors", credentials: "omit" })
+          .then(function (resp) {
+            if (!resp.ok) throw new Error("Image fetch failed");
+            return resp.blob();
+          })
+          .then(function (blob) {
+            return new Promise(function (resolve, reject) {
+              var reader = new FileReader();
+              reader.onload = function () {
+                img.src = reader.result;
+                img.removeAttribute("crossorigin");
+                resolve();
+              };
+              reader.onerror = reject;
+              reader.readAsDataURL(blob);
+            });
+          })
+          .catch(function (err) {
+            console.warn("[daab-membership-flyer-email] remote image:", err);
+            img.style.display = "none";
+          });
+      })
+    );
   }
 
   function createExportClone(sourceSheet) {
@@ -254,9 +294,17 @@
     var drawW = imgWmm * fit;
     var drawH = imgHmm * fit;
 
+    var imgData;
+    try {
+      imgData = canvas.toDataURL("image/jpeg", 0.98);
+    } catch (err) {
+      console.warn("[daab-membership-flyer-email] JPEG export failed, retrying PNG:", err);
+      imgData = canvas.toDataURL("image/png");
+    }
+
     pdf.addImage(
-      canvas.toDataURL("image/jpeg", 0.98),
-      "JPEG",
+      imgData,
+      imgData.indexOf("data:image/png") === 0 ? "PNG" : "JPEG",
       (pageW - drawW) / 2,
       (pageH - drawH) / 2,
       drawW,
@@ -275,6 +323,7 @@
     var stageRef = createExportClone(sourceSheet);
     try {
       await waitForImages(stageRef.sheet);
+      await inlineRemoteImages(stageRef.sheet);
       await waitForLayout();
       await wait(150);
       await waitForLayout();
@@ -507,7 +556,23 @@
   }
 
   async function withExportLock(fn) {
-    if (exportBusy) return;
+    if (exportBusy) {
+      return new Promise(function (resolve, reject) {
+        var attempts = 0;
+        (function waitTurn() {
+          if (!exportBusy) {
+            withExportLock(fn).then(resolve, reject);
+            return;
+          }
+          attempts += 1;
+          if (attempts > 120) {
+            reject(fail("PDF export is busy. Please try again."));
+            return;
+          }
+          window.setTimeout(waitTurn, 100);
+        })();
+      });
+    }
     exportBusy = true;
     try {
       return await fn();
@@ -515,6 +580,46 @@
       exportBusy = false;
     }
   }
+
+  async function ensurePdfBlob() {
+    if (cachedPdfBlob) return cachedPdfBlob;
+    var sheet = getFlyerExportRoot();
+    if (!sheet) throw fail("Flyer sheet not found.");
+    cachedPdfBlob = await generatePdfBlob(sheet);
+    return cachedPdfBlob;
+  }
+
+  function downloadCachedPdf() {
+    var cfg = getFlyerCfg();
+    var blob = cachedPdfBlob;
+    if (!blob) throw fail("PDF is not ready yet.");
+    downloadBlob(blob, cfg.pdfFilename || "flyer.pdf");
+    return blob;
+  }
+
+  async function shareCachedPdf() {
+    var cfg = getFlyerCfg();
+    var blob = cachedPdfBlob || (await ensurePdfBlob());
+    await sharePdfNative(blob, cfg);
+  }
+
+  window.DAAB_FlyerExport = {
+    ensurePdfBlob: function () {
+      return withExportLock(function () {
+        return ensurePdfBlob();
+      });
+    },
+    downloadCachedPdf: downloadCachedPdf,
+    shareCachedPdf: function () {
+      return shareCachedPdf().catch(function (err) {
+        showError(getFlyerCfg(), "errorAlert", err);
+      });
+    },
+    downloadBlob: downloadBlob,
+    showError: function (key, err) {
+      showError(getFlyerCfg(), key, err);
+    }
+  };
 
   async function sendFlyerEmail() {
     var cfg = getFlyerCfg();
@@ -537,6 +642,7 @@
       setButtonBusy(btn, true, cfg.busyLabel);
       try {
         pdfBlob = await generatePdfBlob(sheet);
+        if (pdfBlob) cachedPdfBlob = pdfBlob;
       } catch (err) {
         showError(cfg, "errorAlert", err);
       } finally {

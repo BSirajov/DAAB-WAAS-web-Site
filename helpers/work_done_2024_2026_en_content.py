@@ -22,3 +22,44 @@ LAYOUT_EN = f"""<div class="report-layout">
   {TOC_EN}
   {REPORT_CONTENT_EN}
 </div>"""
+
+# Azerbaijani fragment ids from the source report → English slugs for en/work_done_2024_2026.html
+EN_ANCHOR_MAP: dict[str, str] = {
+    "i-daab-nin-1-ci-forumundan-keçən-vaxt-ərzində-görülmüş-işlər": "work-completed-2024-2026",
+    "onlayn-görüşlərin-keçirildiyi-universitetlərin-siyahısı": "universities-online-meetings",
+    "daab-tərəfindən-ayrılmış-koordinatorlar": "waas-appointed-coordinators",
+    "ii-əməkdaşlıq-memorandumları-və-məşvərət-şurası": "cooperation-memoranda-advisory-council",
+    "naxçıvan-dövlət-universiteti-ndu-daab-arasında-əməkdaşlıq-memorandumu": "ndu-waas-cooperation-memorandum",
+    "ada-universiteti-fields-i̇nstitutu-arasında-əməkdaşlıq-memorandumu": "ada-fields-cooperation-memorandum",
+    "azərbaycan-milli-elmlər-akademiyası-amea-daab-arasında-əməkdaşlıq-memorandumu": "anas-waas-cooperation-memorandum",
+    "azmi̇u-şanxay-jiao-tong-universiteti-arasında-əməkdaşlıq-memorandumu": "azmiu-sjtu-cooperation-memorandum",
+    "azərbaycan-tibb-universiteti-atu-daab-arasında-əməkdaşlıq-memorandumu": "atu-waas-cooperation-memorandum",
+    "unec-daab-arasında-məşvərət-şurası": "unec-waas-advisory-council",
+    "iii-daab-üzvlərinin-aktiv-olduğu-azərbaycan-universitetləri-və-onlar-tərəfindən-verilən-seminarlar-təkliflər-və-dərslər": "waas-members-active-at-universities",
+    "qarabağ-universiteti": "karabakh-university",
+    "ada-universiteti": "ada-university",
+    "azərbaycan-dövlət-pedaqoji-universiteti-adpu": "adpu",
+    "azərbaycan-memarlıq-və-i̇nşaat-universiteti-azmi̇u": "azmiu",
+    "naxçıvan-dövlət-universiteti-ndu": "ndu",
+    "azərbaycan-texniki-universiteti-aztu": "aztu",
+    "azərbaycan-tibb-universiteti-atu": "atu",
+    "bakı-dövlət-universiteti-bdu": "bsu",
+    "bakı-mühəndislik-universiteti-bmu": "beu",
+    "milli-aviasiya-akademiyası-maa": "naa",
+    "azərbaycan-dövlət-i̇qtisad-universiteti-unec": "unec",
+    "xaricdə-yaşayan-azərbaycanlı-alimlərin-forumu-haqqında-kitab": "forum-book",
+    "daab-veb-saytı": "waas-website",
+    "unec-vakansiya-elanları": "unec-vacancy-announcements",
+    "bakının-187-saylı-məktəbinin-müəllim-və-şagirdləri-ilə-onlayn-görüş": "school-187-online-meeting",
+    "bakı-avropa-liseyinin-müəllim-və-şagirləri-ilə-görüş": "european-lyceum-meeting",
+    "naxçıvan-məktəbliləri-ilə-keçirilmiş-görüş": "nakhchivan-schools-meeting",
+}
+
+
+def remap_en_anchors(html: str) -> str:
+    """Replace Azerbaijani report fragment ids with English slugs in EN layout HTML."""
+    for az_id, en_id in EN_ANCHOR_MAP.items():
+        html = html.replace(f'id="{az_id}"', f'id="{en_id}"')
+        html = html.replace(f'data-target="{az_id}"', f'data-target="{en_id}"')
+    return html
+

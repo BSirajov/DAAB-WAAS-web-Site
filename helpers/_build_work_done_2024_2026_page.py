@@ -17,7 +17,9 @@ from work_done_2024_2026_en_content import (
     SUMMARY_ARIA_EN,
     SUMMARY_LEAD_EN,
     SUMMARY_TITLE_EN,
+    remap_en_anchors,
 )
+from _footer_leader_snippets import FOOTER_AZ_LEADER_HTML, FOOTER_EN_LEADER_HTML
 
 ASSET = "../"
 PAGE_ID = "work-done-2024-2026"
@@ -493,13 +495,13 @@ def shell_head() -> str:
 
 
 def footer_block() -> str:
-    return """<footer class="footer-pro">
+    return f"""<footer class="footer-pro">
 <div class="footer-inner">
 <div class="footer-brand"><h3>Dünya Azərbaycanlı Alimlər Birliyi</h3></div>
 <div class="footer-grid">
 <div class="footer-col"><div class="footer-title">Əlaqə</div><div class="footer-item">✉ <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item">☎ <span>+90 555 147 46 74</span></div><div class="footer-item">🌐 <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div></div>
 <div class="footer-col"><div class="footer-title">Ünvan</div><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, İstanbul, Türkiyə</p></div>
-<div class="footer-col"><div class="footer-title">Rəhbərlik</div><p class="footer-leader"><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>DAAB İdarə Heyətinin Sədri<br/>Almaniya — James D. Murray mükafatlı professoru</p></div>
+<div class="footer-col"><div class="footer-title">Rəhbərlik</div><p class="footer-leader">{FOOTER_AZ_LEADER_HTML}</p></div>
 </div>
 </div>
 <div class="footer-bottom">© 2026 DAAB — Bütün hüquqlar qorunur</div>
@@ -553,13 +555,13 @@ def build_az_page(source: str, layout_html: str, hero_subtitle: str) -> str:
 
 
 def footer_block_en() -> str:
-    return """<footer class="footer-pro">
+    return f"""<footer class="footer-pro">
 <div class="footer-inner">
 <div class="footer-brand"><h3>World Association of Azerbaijani Scientists</h3></div>
 <div class="footer-grid">
 <div class="footer-col"><div class="footer-title">Contact</div><div class="footer-item">✉ <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item">☎ <span>+90 555 147 46 74</span></div><div class="footer-item">🌐 <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div></div>
 <div class="footer-col"><div class="footer-title">Address</div><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, Istanbul, Türkiye</p></div>
-<div class="footer-col"><div class="footer-title">Leadership</div><p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Executive Board<br/>Germany — James D. Murray Prize laureate</p></div>
+<div class="footer-col"><div class="footer-title">Leadership</div><p class="footer-leader">{FOOTER_EN_LEADER_HTML}</p></div>
 </div>
 </div>
 <div class="footer-bottom">© 2026 WAAS — All rights reserved</div>
@@ -644,7 +646,7 @@ def build_en_page() -> str:
 </header>
 <main class="main shell work-done-report" id="content">
 """
-        + LAYOUT_EN
+        + remap_en_anchors(LAYOUT_EN)
         + """
 <button type="button" class="report-print-btn" onclick="window.print()">Print / PDF</button>
 </main>

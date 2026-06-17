@@ -13,8 +13,7 @@ DEPLOY = (ROOT / "az", ROOT / "en")
 EN_REPLACEMENTS: list[tuple[str, str]] = [
     ("Chair of the WAAS Board of Directors", "Chair of the WAAS Executive Board"),
     ("Co-Chair of the WAAS Board of Directors", "Co-Chair of the WAAS Executive Board"),
-    ("Co-Chairman of the Board of Directors of WAAS", "Co-Chairman of the WAAS Executive Board"),
-    ("Co-Chairman of WAAS Board of Directors", "Co-Chairman of the WAAS Executive Board"),
+    ("Co-Chairman of the WAAS Executive Board", "Co-Chair of the WAAS Executive Board"),
     ("Member of WAAS Board of Directors", "Member of the WAAS Executive Board"),
     ("the WAAS Board of Directors", "the WAAS Executive Board"),
     ("WAAS Board of Directors", "WAAS Executive Board"),

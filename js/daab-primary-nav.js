@@ -40,7 +40,7 @@
     "membership-application": "membershipJoin",
     "membership-flyer": "membershipFlyer",
     sponsors: "sponsorsProgram",
-    "forum-2027-sponsorship": "forum2027Sponsorship",
+    "sponsorship-partnership": "sponsorshipPartnership",
     donate: "donate",
     "sponsors-flyer": "sponsorsFlyer"
   };

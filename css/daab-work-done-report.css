@@ -213,27 +213,12 @@ html[data-daab-page-id="work-done-2024-2026"] [id] {
 
 @media print {
   .work-done-report .report-toc,
+  .work-done-report .report-print-btn,
   .nav-strip,
   .daab-breadcrumbs,
   .daab-lang-switch,
   .footer-pro {
     display: none !important;
-  }
-
-  /* Clip off-page instead of display:none — avoids Chrome/Edge leaving the
-     fixed print button hidden after the print dialog closes. */
-  .work-done-report .report-print-btn {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    clip-path: inset(50%) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
-    box-shadow: none !important;
   }
 
   .work-done-report .report-layout {
