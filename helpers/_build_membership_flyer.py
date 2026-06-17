@@ -52,12 +52,12 @@ LOCALES = {
         "panel_title": "Həmkarlarınızı məktub vasitəsilə dəvət edin",
         "panel_copy": (
             "Bu səhifədə DAAB üzvlüyünün dəyərini qısa şəkildə təqdim edən və paylaşmağa hazır "
-            "dəvət məktubu yerləşdirilib. Məktubun yuxarı sağ küncündəki Çap/PDF düyməsindən "
-            "istifadə edərək onu PDF formatında yaradın, çap edin və ya e-poçt vasitəsilə paylaşın"
+            "dəvət məktubu yerləşdirilib. Sağ alt küncdəki «Çap et / PDF» düyməsindən istifadə edərək "
+            "brauzerin çap pəncərəsini açın və «PDF kimi yadda saxla» seçin."
         ),
         "toolbar_hint": "Brauzerdə «Çap» → «PDF kimi yadda saxla» seçin.",
         "controls_aria": "Flyer idarəetməsi",
-        "print_btn": "Çap / PDF",
+        "print_btn": "Çap et / PDF",
         "print_tooltip": "Brauzerin çap pəncərəsini açın və «PDF kimi yadda saxla» seçin.",
         "email_btn": "Paylaş",
         "share_tooltip": "PDF yaradın və cihazın sistem paylaşma menyusunda tətbiq seçərək paylaşın.",
@@ -133,8 +133,9 @@ LOCALES = {
         "hero_subtitle": "Share invitation letter with potential members",
         "panel_title": "Invite colleagues with the letter",
         "panel_copy": (
-            "This page provides a ready-to-share letter summarizing WAAS membership value. Use "
-            "the Print.PDF button at the top right of the letter to create a PDF, print, or share by email."
+            "This page provides a ready-to-share letter summarizing WAAS membership value. "
+            "Use the Print / PDF button at the bottom right to open the browser print dialog "
+            "and choose Save as PDF."
         ),
         "toolbar_hint": "Use Print → Save as PDF in your browser.",
         "controls_aria": "Flyer actions",
@@ -391,9 +392,6 @@ def build_locale(key: str) -> None:
 {hero_block(cfg)}
 <main class="main membership-flyer-main" id="content">
 <div class="flyer-wrap">
-<div class="flyer-page-controls" role="toolbar" aria-label="{esc(cfg["controls_aria"])}" data-flyer-export-exclude="1">
-<button type="button" class="flyer-btn flyer-btn-primary" id="flyerPrintPdfBtn" title="{esc(cfg["print_tooltip"])}" aria-label="{esc(cfg["print_tooltip"])}">{esc(cfg["print_btn"])}</button>
-</div>
 <article class="flyer-sheet" aria-label="{esc(cfg["title"])}">
 <header class="flyer-header">
 <img class="flyer-logo" src="{ASSET}images/daab-logo.png" alt="{esc(cfg["brand_short"])}" width="72" height="72"/>
@@ -442,6 +440,7 @@ def build_locale(key: str) -> None:
 <p class="flyer-tagline">{esc(cfg["tagline"])}</p>
 </article>
 </div>
+<button type="button" class="report-print-btn" id="flyerPrintPdfBtn" title="{esc(cfg["print_tooltip"])}" aria-label="{esc(cfg["print_tooltip"])}">{esc(cfg["print_btn"])}</button>
 </main>
 {email_page_scripts(cfg, key)}
 </body>

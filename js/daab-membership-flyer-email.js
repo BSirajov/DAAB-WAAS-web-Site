@@ -554,24 +554,53 @@
   }
 
   async function printFlyerPdf() {
-    var cfg = getFlyerCfg();
-    var btn = document.getElementById("flyerPrintPdfBtn");
-    var sheet = getFlyerExportRoot();
-    if (!btn || !sheet) return;
+    window.print();
+  }
 
-    await withExportLock(async function () {
-      setButtonBusy(btn, true, cfg.busyLabel);
-      beginExportChromeHide();
-      try {
-        var pdfBlob = await generatePdfBlob(sheet);
-        // Deterministic single-page export from jsPDF pipeline.
-        downloadBlob(pdfBlob, cfg.pdfFilename);
-      } catch (err) {
-        showError(cfg, "printErrorAlert", err);
-      } finally {
-        endExportChromeHide();
-        setButtonBusy(btn, false);
+  function restorePrintButton(btn) {
+    if (!btn) return;
+    btn.hidden = false;
+    btn.style.removeProperty("display");
+    btn.style.removeProperty("visibility");
+    btn.style.removeProperty("opacity");
+    btn.style.removeProperty("clip");
+    btn.style.removeProperty("clip-path");
+    btn.style.removeProperty("width");
+    btn.style.removeProperty("height");
+    btn.style.removeProperty("position");
+  }
+
+  function initPrintButton() {
+    var btn = document.getElementById("flyerPrintPdfBtn");
+    if (!btn || btn.getAttribute("data-daab-flyer-print-init") === "1") return;
+    btn.setAttribute("data-daab-flyer-print-init", "1");
+
+    function onPrintEnd() {
+      restorePrintButton(btn);
+      window.requestAnimationFrame(function () {
+        restorePrintButton(btn);
+      });
+      window.setTimeout(function () {
+        restorePrintButton(btn);
+      }, 0);
+    }
+
+    window.addEventListener("afterprint", onPrintEnd);
+
+    if (window.matchMedia) {
+      var mql = window.matchMedia("print");
+      var onPrintChange = function (ev) {
+        if (!ev.matches) onPrintEnd();
+      };
+      if (typeof mql.addEventListener === "function") {
+        mql.addEventListener("change", onPrintChange);
+      } else if (typeof mql.addListener === "function") {
+        mql.addListener(onPrintChange);
       }
+    }
+
+    btn.addEventListener("click", function () {
+      printFlyerPdf();
     });
   }
 
@@ -588,15 +617,7 @@
       });
     }
 
-    var printBtn = document.getElementById("flyerPrintPdfBtn");
-    if (printBtn && printBtn.getAttribute("data-daab-flyer-print-init") !== "1") {
-      printBtn.setAttribute("data-daab-flyer-print-init", "1");
-      printBtn.addEventListener("click", function () {
-        printFlyerPdf().catch(function (err) {
-          showError(getFlyerCfg(), "printErrorAlert", err);
-        });
-      });
-    }
+    initPrintButton();
   }
 
   if (document.readyState === "loading") {

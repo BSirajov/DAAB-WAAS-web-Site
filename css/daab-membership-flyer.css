@@ -61,6 +61,23 @@
 }.flyer-page-controls .flyer-btn:disabled{
   opacity: 0.7;
   cursor: wait;
+}body.membership-flyer-page .report-print-btn{
+  position: fixed;
+  right: 22px;
+  bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+  z-index: 40;
+  border: none;
+  border-radius: 999px;
+  background: var(--gold-soft, #c8a24a);
+  color: var(--blue-900, #102a43);
+  padding: 12px 18px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(16, 42, 67, 0.2);
+  cursor: pointer;
+}body.membership-flyer-page .report-print-btn:hover{
+  filter: brightness(1.03);
 }.flyer-sheet{
   --flyer-fs: 1.26;
   --flyer-space: 1.14;
@@ -380,6 +397,18 @@
   body.membership-flyer-page .flyer-page-controls,
   body.membership-flyer-page [data-flyer-export-exclude="1"]{
     display: none !important;
+  }body.membership-flyer-page .report-print-btn{
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+    box-shadow: none !important;
   }body.membership-flyer-page .membership-flyer-main,
   body.membership-flyer-page .flyer-wrap{
     display: block !important;

@@ -77,4 +77,44 @@
       }, 180);
     }
   });
+
+  function initPrintButton() {
+    var btn = document.querySelector(".work-done-report .report-print-btn");
+    if (!btn || btn.getAttribute("data-daab-print-init") === "1") return;
+    btn.setAttribute("data-daab-print-init", "1");
+
+    function restorePrintButton() {
+      btn.hidden = false;
+      btn.style.removeProperty("display");
+      btn.style.removeProperty("visibility");
+      btn.style.removeProperty("opacity");
+      btn.style.removeProperty("clip");
+      btn.style.removeProperty("clip-path");
+      btn.style.removeProperty("width");
+      btn.style.removeProperty("height");
+      btn.style.removeProperty("position");
+    }
+
+    function onPrintEnd() {
+      restorePrintButton();
+      window.requestAnimationFrame(restorePrintButton);
+      window.setTimeout(restorePrintButton, 0);
+    }
+
+    window.addEventListener("afterprint", onPrintEnd);
+
+    if (window.matchMedia) {
+      var mql = window.matchMedia("print");
+      var onPrintChange = function (ev) {
+        if (!ev.matches) onPrintEnd();
+      };
+      if (typeof mql.addEventListener === "function") {
+        mql.addEventListener("change", onPrintChange);
+      } else if (typeof mql.addListener === "function") {
+        mql.addListener(onPrintChange);
+      }
+    }
+  }
+
+  initPrintButton();
 })();

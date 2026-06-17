@@ -16,7 +16,7 @@
 <link href="../css/daab-content-hero.css?v=8" rel="stylesheet"/>
 <link href="../css/daab-hero-summary.css?v=13" rel="stylesheet"/>
 <link href="../css/daab-tokens.css?v=1" rel="stylesheet"/>
-<link href="../css/daab-membership-flyer.css?v=30" rel="stylesheet"/>
+<link href="../css/daab-membership-flyer.css?v=31" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
 <script src="../js/daab-back-to-top.js?v=3" defer></script>
 <script src="../js/daab-i18n.js?v=38" defer></script>
@@ -50,7 +50,7 @@
 <aside aria-label="Share the invitation letter with partners" class="hero-panel">
 <div class="panel-card">
 <h2 class="panel-title">Share the invitation letter with partners</h2>
-<p class="panel-copy">This page provides a ready-to-share flyer summarizing the Forum II sponsorship proposal and partnership opportunities with WAAS. Use the Print/PDF button at the top right of the flyer to create a PDF, print, or share by email.</p>
+<p class="panel-copy">This page provides a ready-to-share flyer summarizing the Forum II sponsorship proposal and partnership opportunities with WAAS. Use the Print / PDF button at the bottom right to open the browser print dialog and choose Save as PDF.</p>
 </div>
 </aside>
 </div>
@@ -58,9 +58,6 @@
 
 <main class="main membership-flyer-main" id="content">
 <div class="flyer-wrap">
-<div class="flyer-page-controls" role="toolbar" aria-label="Flyer actions" data-flyer-export-exclude="1">
-<button type="button" class="flyer-btn flyer-btn-primary" id="flyerPrintPdfBtn" title="Open the browser print dialog and choose Save as PDF." aria-label="Open the browser print dialog and choose Save as PDF.">Print / PDF</button>
-</div>
 <article class="flyer-sheet" aria-label="WAAS — Sponsorship Invitation Letter">
 <header class="flyer-header">
 <img class="flyer-logo" src="../images/daab-logo.png" alt="WAAS" width="72" height="72"/>
@@ -102,8 +99,9 @@
 <p class="flyer-tagline">© 2026 WAAS — World Association of Azerbaijani Scientists</p>
 </article>
 </div>
+<button type="button" class="report-print-btn" id="flyerPrintPdfBtn" title="Open the browser print dialog and choose Save as PDF." aria-label="Open the browser print dialog and choose Save as PDF.">Print / PDF</button>
 </main>
 <script>window.DAAB_FLYER_EMAIL = {"subject": "Support Forum II through sponsorship", "body": "Dear partner,\n\nI would like to invite you to support the Second Forum of Azerbaijani Scientists Living Abroad through sponsorship with WAAS.\n\nLearn more: https://daab-waas.com/en/sponsorship_partnership.html\nContact: https://daab-waas.com/en/sponsorship_partnership.html#contact\n\nPlease attach the sponsorship flyer PDF that was just downloaded to this email.\n\nBest regards,\n[Your name]", "pdfFilename": "WAAS-Forum-II-sponsorship-flyer.pdf", "busyLabel": "Preparing PDF…", "errorAlert": "Could not create the PDF. Please try again.", "printFallbackAlert": "The PDF was downloaded. Open it and choose Print, or Save as PDF in the print dialog.", "printErrorAlert": "Could not prepare the flyer PDF for printing.", "shareReadyConfirm": "PDF ready. Open the system sharing menu?", "shareSecureContextAlert": "Sharing requires a secure connection (HTTPS). The PDF was downloaded instead.", "shareFallbackAlert": "The PDF was downloaded. Share it from your Files or Downloads folder via WhatsApp, email, or another app."};</script>
-<script src="../js/daab-membership-flyer-email.js?v=29" defer></script>
+<script src="../js/daab-membership-flyer-email.js?v=30" defer></script>
 </body>
 </html>
