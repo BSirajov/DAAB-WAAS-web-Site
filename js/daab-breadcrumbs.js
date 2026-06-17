@@ -46,7 +46,7 @@
     "activities-news": "activitiesNews",
     "work-done-2024-2026": "activitiesWorkDone2024",
     "forum-2024": "forum2024",
-    "forum-2026": "forum2026",
+    "forum-2026": "forum2026Year",
     "forum-2024-presentations": "forum2024Presentations",
     "forum-official": "forumOfficial",
     "forum-rector-speeches": "forumRectorSpeeches",
@@ -60,8 +60,8 @@
     "forum-roadmap": "forumRoadmap",
     "forum-bagli-hekayeler": "forumBagliHekayeler",
     "forum-cooperation": "forumCooperation",
-    "scientists-list": "scientistsList",
-    "scientists-profiles": "scientistsProfiles",
+    "scientists-list": "scientistsListForum",
+    "scientists-profiles": "scientistsProfilesForum",
     "executive-board": "executiveBoard",
     charter: "charter",
     membership: "membershipTerms",
@@ -264,8 +264,11 @@
         activities: "Fəaliyyətimiz",
         activitiesNews: "Yeniliklər",
         activitiesWorkDone2024: "Görülən işlər, 2024-2026",
+        membership: "Üzvlük",
         sponsors: "Bizi dəstəkləyin",
-        forum2026: "II Forum"
+        forum2024Hub: "I Forum",
+        forum2024Crumb: "Ümumi Mənzərə",
+        forum2026Year: "II Forum"
       },
       en: {
         aria: "Breadcrumb",
@@ -275,10 +278,11 @@
         activities: "Activities",
         activitiesNews: "News",
         activitiesWorkDone2024: "Work Done 2024-2026",
+        membership: "Membership",
         sponsors: "Support us",
-        forum2026: "II Forum",
-        scientistsList: "Directory of Scientists",
-        scientistsProfiles: "Profiles of Scientists"
+        forum2024Hub: "I Forum",
+        forum2024Crumb: "Highlights",
+        forum2026Year: "II Forum"
       }
     },
     nav: {
@@ -289,56 +293,69 @@
         activities: "Fəaliyyətimiz",
         activitiesNews: "Yeniliklər",
         activitiesWorkDone2024: "Görülən işlər, 2024-2026",
-        forum2024: "Forumun mənzərəsi",
+        forum2024: "Ümumi Mənzərə",
+        forum2024Year: "I Forum",
+        forum2026Year: "II Forum",
         forumOfficial: "Rəsmi müraciətlər",
         forumRectorSpeeches: "Rektorlar",
         forumAnasLeadershipSpeeches: "Akademiklər",
         forumProgram: "Proqram",
+        forumLogistics: "Logistika",
         forumSessionsOrganization: "Sessiyalar",
+        forumImpressions: "Təəssüratlar",
+        forum2024Presentations: "Məruzələr",
         forumBagliHekayeler: "Hekayələr",
         forumCooperation: "Töhfələr",
         forumPhotosGallery: "Foto qalereya",
-        scientistsList: "Alimlərin siyahısı",
-        scientistsProfiles: "Alimlərin profilləri",
+        forumVideoGallery: "Video qalereya",
+        forumRoadmap: "Strateji yol xəritəsi",
+        scientistsListForum: "Alimlərin siyahısı",
+        scientistsProfilesForum: "Alimlərin profilləri",
         executiveBoard: "İdarə heyəti",
         charter: "Nizamnamə",
         membership: "Üzvlük",
-        membershipWhy: "Niyə DAAB-a qoşulmalı",
-        membershipTerms: "Üzvlük şərtləri",
+        membershipWhy: "Niyə DAAB-a üzv olmalı",
+        membershipTerms: "Üzvlüyə dəvət və ödəniş",
         membershipJoin: "Bizə qoşulun",
         membershipFlyer: "Dəvət məktubu",
-        sponsorsProgram: "Sponsorluq",
-        donate: "İanə",
+        forum2027Sponsorship: "Niyə DAAB-a dəstək verilməli",
+        donate: "İanə Edin",
         sponsorsFlyer: "Dəvət məktubu"
       },
       en: {
         home: "Home",
-        foundation: "Foundation",
+        foundation: "Founding",
         mission: "Mission & values",
         activities: "Activities",
         activitiesNews: "News",
         activitiesWorkDone2024: "Work Done 2024-2026",
         forum2024: "Highlights",
+        forum2024Year: "I Forum",
+        forum2026Year: "II Forum",
         forumOfficial: "Official addresses",
         forumRectorSpeeches: "Rectors",
         forumAnasLeadershipSpeeches: "Academicians",
         forumProgram: "Programme",
+        forumLogistics: "Logistics",
         forumSessionsOrganization: "Sessions",
+        forumImpressions: "Impressions",
+        forum2024Presentations: "Presentations",
         forumBagliHekayeler: "Stories",
         forumCooperation: "Contributions",
         forumPhotosGallery: "Photo gallery",
         forumVideoGallery: "Video gallery",
-        scientistsList: "Directory",
-        scientistsProfiles: "Profiles",
+        forumRoadmap: "Strategic roadmap",
+        scientistsListForum: "Directory of Scientists",
+        scientistsProfilesForum: "Profiles of Scientists",
         executiveBoard: "Executive Board",
         charter: "Charter",
         membership: "Membership",
         membershipWhy: "Why join WAAS",
-        membershipTerms: "Membership terms",
+        membershipTerms: "Invitation to Membership and Fees",
         membershipJoin: "Join us",
         membershipFlyer: "Invitation Letter",
-        sponsorsProgram: "Sponsorship",
-        donate: "Donation",
+        forum2027Sponsorship: "Why Sponsor WAAS?",
+        donate: "Donate",
         sponsorsFlyer: "Invitation Letter"
       }
     }
@@ -394,10 +411,18 @@
     pageId = breadcrumbPageId(pageId);
     var key = PAGE_LABEL_KEYS[pageId];
     if (!key) return pageId;
-    var crumbBlock = ui.breadcrumbs && ui.breadcrumbs[lang];
-    if (crumbBlock && crumbBlock[key]) return crumbBlock[key];
     var navBlock = ui.nav && ui.nav[lang];
-    return (navBlock && navBlock[key]) || pageId;
+    if (navBlock && navBlock[key]) return navBlock[key];
+    var crumbBlock = ui.breadcrumbs && ui.breadcrumbs[lang];
+    return (crumbBlock && crumbBlock[key]) || pageId;
+  }
+
+  function forumHubCrumbText(ui, lang) {
+    var crumbBlock = ui.breadcrumbs && ui.breadcrumbs[lang];
+    if (crumbBlock && crumbBlock.forum2024Hub) return crumbBlock.forum2024Hub;
+    var navBlock = ui.nav && ui.nav[lang];
+    if (navBlock && navBlock.forumTitle) return navBlock.forumTitle;
+    return pageTitle(ui, lang, "forum-2024");
   }
 
   function sectionLanding(navDef, groupId) {
@@ -564,7 +589,7 @@
       if (forumHub) {
         crumbs.push({
           href: pageHref(I18N, forumHub, lang),
-          text: pageTitle(ui, lang, "forum-2024")
+          text: forumHubCrumbText(ui, lang)
         });
       }
     }

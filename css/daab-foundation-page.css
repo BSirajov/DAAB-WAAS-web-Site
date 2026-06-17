@@ -382,6 +382,52 @@
   cursor: pointer;
 }
 
+.foundation-logo-panel{
+  margin: 22px 0 0;
+  padding: 20px 22px;
+  color: var(--ink);
+  background: var(--color-panel-card-bg);
+  border: 1px solid var(--color-border-blue-subtle);
+  border-radius: 20px;
+  box-shadow: 0 10px 24px rgba(0, 78, 140, .10);
+}
+
+.foundation-logo-panel-title{
+  margin: 0 0 14px;
+  color: var(--blue-dark);
+  font-family: var(--font-serif);
+  font-size: 16.8px;
+  font-weight: 900 !important;
+}
+
+.foundation-logo-panel-body::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.foundation-logo-panel-img{
+  float: left;
+  width: min(168px, 34%);
+  max-width: 168px;
+  height: auto;
+  margin: 4px 22px 12px 0;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--blue-soft);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 78, 140, .12);
+}
+
+.foundation-logo-panel-body p{
+  margin: 0 0 12px;
+  line-height: 1.65;
+}
+
+.foundation-logo-panel-body p:last-child{
+  margin-bottom: 0;
+}
+
 
 @media (max-width: 900px) {html,
   body{
@@ -441,7 +487,14 @@
   }.section-heading h2{
     white-space: normal;
     overflow-wrap: anywhere;
-  }.strategy-card-wide{
+  }.foundation-logo-panel-img{
+    float: none;
+    display: block;
+    width: 140px;
+    max-width: 55%;
+    margin: 0 auto 16px;
+  }
+  .strategy-card-wide{
     grid-column: auto;
   }.footer-inner{
     padding: 24px 16px;

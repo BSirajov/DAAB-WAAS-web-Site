@@ -9,31 +9,12 @@ from pathlib import Path
 
 from _paths import ROOT
 
-IMPORTED_VIA_COMMON = frozenset(
-    {
-        "daab-tokens.css",
-        "daab-site-background.css",
-    }
-)
-BUILD_ONLY_CSS = frozenset(
-    {
-        "daab-forum-book.css",
-        "daab-membership-page.css",  # membership.html is a redirect stub; CSS kept for reuse
-        "daab-encyclopedia-page.css",  # knowledge treasury / encyclopedia (not yet published)
-        "daab-prominent-figure-profile.css",  # prominent-figure profiles (not yet wired to deploy HTML)
-    }
-)
-DEPLOY_PACKAGED_CSS = frozenset(
-    {
-        "daab-sticky-chrome.css",  # optional deploy bundle; not linked per-page
-    }
-)
-OPTIONAL_JS = frozenset(
-    {
-        "prominent-figures-catalog.js",
-        "prominent-figures-catalog-data.js",
-        "prominent-figures-catalog-data-en.js",
-    }
+from _deploy_assets import (
+    BUILD_ONLY_CSS,
+    DEPLOY_PACKAGED_CSS,
+    DYNAMIC_JS,
+    IMPORTED_VIA_COMMON_CSS,
+    OPTIONAL_JS,
 )
 
 
@@ -58,13 +39,13 @@ def orphan_assets(blob: str) -> tuple[list[str], list[str]]:
     orphan_js: list[str] = []
     for css in sorted((ROOT / "css").glob("*.css")):
         name = css.name
-        if name in IMPORTED_VIA_COMMON or name in BUILD_ONLY_CSS or name in DEPLOY_PACKAGED_CSS:
+        if name in IMPORTED_VIA_COMMON_CSS or name in BUILD_ONLY_CSS or name in DEPLOY_PACKAGED_CSS:
             continue
         if name not in blob:
             orphan_css.append(name)
     for js in sorted((ROOT / "js").glob("*.js")):
         name = js.name
-        if name in OPTIONAL_JS:
+        if name in OPTIONAL_JS or name in DYNAMIC_JS:
             continue
         if name not in blob:
             orphan_js.append(name)
@@ -131,6 +112,11 @@ def main() -> int:
     if OPTIONAL_JS:
         print("\nOptional / inactive JS (documented, not errors):")
         for name in sorted(OPTIONAL_JS):
+            print(f"  - {name}")
+
+    if DYNAMIC_JS:
+        print("\nDynamically loaded JS (via daab-perf.js or similar):")
+        for name in sorted(DYNAMIC_JS):
             print(f"  - {name}")
 
     if dup_lang:

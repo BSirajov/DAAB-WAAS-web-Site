@@ -1,3 +1,4 @@
+/* OPTIONAL / BUILD-ONLY — knowledge-treasury encyclopedia hub (not on live daab-waas.com). */
 (function () {
   "use strict";
 

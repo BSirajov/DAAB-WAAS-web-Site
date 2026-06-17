@@ -9,7 +9,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 
 from _paths import ROOT
-from _speech_photos_lib import photo_src
+from _speech_photos_lib import photo_src, apply_feed_portrait_a11y
 
 
 def toc_item(article_id: str, author: str, title: str, photo: str) -> str:
@@ -138,6 +138,7 @@ def refresh_page(path: Path) -> None:
         raise SystemExit(f"No #presentationsTOC in {path}")
     ul.clear()
     ul.append(BeautifulSoup(toc, "html.parser"))
+    apply_feed_portrait_a11y(soup)
     path.write_text(str(soup), encoding="utf-8", newline="\n")
     print(
         f"  {path.relative_to(ROOT)} "

@@ -82,7 +82,7 @@ def _forum_mega_drop(lang: str) -> str:
     else:
         sections = [
             ("Ümumi baxış", False, [
-                ("forum/2024/index.html", "forum-2024", "🎤 Forumun mənzərəsi", "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024"),
+                ("forum/2024/index.html", "forum-2024", "🎤\u00a0Ümumi Mənzərə", "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024"),
                 ("forum/2024/logistics.html", "forum-logistics", "🧳 Logistika", "Xarici iştirakçılar üçün nəqliyyat, hotel və qidalanma"),
                 ("forum/2024/program.html", "forum-program", "📅 Proqram", "Bakı–Xankəndi–Şuşa forum proqramı"),
                 ("forum/2024/sessions_organization.html", "forum-sessions-organization", "🪑 Sessiyalar", "10 sentyabr strateji sessiyalar — QARIŞIQ və İXTİSAS qrupları"),
@@ -172,8 +172,8 @@ SPONSORSHIP_AZ = (
     + '🤝\u00a0Bizi dəstəkləyin <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("sponsorship_partnership.html", "forum-2027-sponsorship", "🤝\u00a0Sponsorluq", "Forum II üçün sponsorluq paketləri və tərəfdaşlıq"),
-        ("donate.html", "donate", "💝\u00a0İanə", "Fərdi, fond və xatirə ianələri"),
+        ("sponsorship_partnership.html", "forum-2027-sponsorship", "🤝\u00a0Niyə DAAB-a dəstək verilməli", "Forum II üçün sponsorluq paketləri və tərəfdaşlıq"),
+        ("donate.html", "donate", "💝\u00a0İanə Edin", "Fərdi, fond və xatirə ianələri"),
         ("sponsors_flyer.html", "sponsors-flyer", "📤\u00a0Dəvət məktubu", "Potensial tərəfdaşlar üçün paylaşıla bilən dəvət məktubu"),
     ])
     + "</div></div>"
@@ -185,7 +185,7 @@ SPONSORSHIP_EN = (
     + '🤝\u00a0Support us <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("sponsorship_partnership.html", "forum-2027-sponsorship", "🤝\u00a0Sponsorship", "Sponsorship packages and partnership for Forum II"),
+        ("sponsorship_partnership.html", "forum-2027-sponsorship", "🤝\u00a0Why Sponsor WAAS?", "Sponsorship packages and partnership for Forum II"),
         ("donate.html", "donate", "💝\u00a0Donate", "Individual, foundation, and memorial gifts"),
         ("sponsors_flyer.html", "sponsors-flyer", "📤\u00a0Invitation Letter", "Printable invitation letter for potential partners"),
     ])
@@ -240,7 +240,7 @@ NAV_AZ = (
     + '✒️\u00a0Üzvlük <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
     + '<div class="nav-dropdown-panel" role="menu">'
     + _drop([
-        ("membership_value.html", "membership-value", "💡\u00a0Niyə DAAB-a qoşulmalı", "Üzvlüyün dəyəri və əsas faydalar"),
+        ("membership_value.html", "membership-value", "💡\u00a0Niyə DAAB-a üzv olmalı", "Üzvlüyün dəyəri və əsas faydalar"),
         ("application.html", "membership-application", "📝\u00a0Bizə qoşulun", "Onlayn üzvlük müraciət forması"),
         ("membership_flyer.html", "membership-flyer", "📤\u00a0Dəvət məktubu", "Potensial üzvlər üçün çap oluna bilən flyer"),
     ])

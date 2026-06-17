@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 
 from _paths import ROOT
+from _deploy_assets import BUILD_ONLY_CSS, DYNAMIC_JS, OPTIONAL_JS
 
 FINDINGS: list[tuple[str, str, str]] = []  # severity, area, message
 
@@ -231,12 +232,7 @@ def audit_orphan_assets() -> None:
         name = css.name
         if name in ("daab-tokens.css", "daab-site-background.css"):
             continue
-        if name in (
-            "daab-forum-book.css",
-            "daab-membership-page.css",
-            "daab-encyclopedia-page.css",
-            "daab-prominent-figure-profile.css",
-        ):
+        if name in BUILD_ONLY_CSS:
             add("info", "assets", f"Build-only/unlinked CSS: {name}")
             continue
         if name not in blob and f"@import" not in (ROOT / "css/daab-common.css").read_text():
@@ -245,14 +241,12 @@ def audit_orphan_assets() -> None:
                 common = (ROOT / "css/daab-common.css").read_text(encoding="utf-8")
                 if name not in common and name not in blob:
                     add("warn", "assets", f"CSS not referenced in az/en HTML: {name}")
-    js_optional = {
-        "prominent-figures-catalog.js",
-        "prominent-figures-catalog-data.js",
-        "prominent-figures-catalog-data-en.js",
-    }
+    js_optional = OPTIONAL_JS | DYNAMIC_JS
     for js in sorted((ROOT / "js").glob("*.js")):
-        if js.name in js_optional:
+        if js.name in OPTIONAL_JS:
             add("info", "assets", f"Optional/unlinked JS: {js.name}")
+        elif js.name in DYNAMIC_JS:
+            add("info", "assets", f"Dynamically loaded JS: {js.name}")
         elif js.name not in blob and js.parent.name == "js":
             add("warn", "assets", f"JS not referenced in az/en HTML: {js.name}")
 

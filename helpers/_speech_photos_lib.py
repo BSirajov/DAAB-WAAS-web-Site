@@ -63,6 +63,58 @@ SPEECH_PHOTOS_CSS_RE = re.compile(
 PHOTO_EXTS = (".png", ".jpg", ".jpeg")
 
 
+def is_long_speech_heading(title: str) -> bool:
+    """Official-style block titles: portrait alt should name the speaker, not duplicate h2."""
+    t = (title or "").strip()
+    if len(t) >= 80:
+        return True
+    letters = [c for c in t if c.isalpha()]
+    if len(letters) >= 40:
+        upper = sum(1 for c in letters if c.isupper())
+        if upper / len(letters) > 0.85:
+            return True
+    return False
+
+
+def _normalize_name(text: str) -> str:
+    return re.sub(r"\s+", " ", text or "").strip().casefold()
+
+
+def apply_feed_portrait_a11y(soup: BeautifulSoup) -> tuple[int, int]:
+    """Mark name-only portraits decorative; keep informative alts on official addresses."""
+    decorative = 0
+    informative = 0
+    for article in soup.select("main.news-feed article.news-card"):
+        title_el = article.select_one(".card-title")
+        title = title_el.get_text(" ", strip=True) if title_el else ""
+        long_heading = is_long_speech_heading(title)
+        for img in article.select(".speech-card-photo, .presentation-card-photo"):
+            alt = (img.get("alt") or "").strip()
+            if long_heading:
+                img.attrs.pop("aria-hidden", None)
+                if alt:
+                    informative += 1
+                continue
+            if not title:
+                if alt:
+                    informative += 1
+                continue
+            na = _normalize_name(alt)
+            nt = _normalize_name(title)
+            if na and (na == nt or na in nt or nt in na):
+                img["alt"] = ""
+                img["aria-hidden"] = "true"
+                decorative += 1
+            elif alt:
+                img.attrs.pop("aria-hidden", None)
+                informative += 1
+            else:
+                img["alt"] = ""
+                img["aria-hidden"] = "true"
+                decorative += 1
+    return decorative, informative
+
+
 def _resolve_photo_name(folder: Path, base: str) -> Path | None:
     for ext in PHOTO_EXTS:
         exact = folder / f"{base}{ext}"
@@ -129,7 +181,7 @@ def toc_item(
         img = (
             f'<span class="rector-toc-photo-frame">'
             f'<img class="rector-toc-photo" src="{photo}" alt="" width="44" height="44" '
-            f'loading="lazy" decoding="async"/>'
+            f'loading="lazy" decoding="async" aria-hidden="true"/>'
             f"</span>"
         )
     else:
@@ -271,6 +323,7 @@ def refresh_page(path: Path, toc_id: str) -> None:
     ul.clear()
     ul.append(BeautifulSoup(toc, "html.parser"))
     ensure_speech_photos_css(soup)
+    apply_feed_portrait_a11y(soup)
     path.write_text(str(soup), encoding="utf-8", newline="\n")
     missing = sum(
         1

@@ -208,6 +208,29 @@
     });
   }
 
+  function scrollToGalleryPanel(smooth) {
+    var panel = document.getElementById("photos-gallery-panel");
+    if (!panel) return;
+    if (window.DAAB_LANG_POSITION && typeof window.DAAB_LANG_POSITION.scrollToAnchor === "function") {
+      window.DAAB_LANG_POSITION.scrollToAnchor("photos-gallery-panel", !!smooth);
+      return;
+    }
+    var top = panel.getBoundingClientRect().top + window.pageYOffset - 96;
+    window.scrollTo({
+      top: Math.max(0, top),
+      behavior: smooth ? "smooth" : "auto"
+    });
+  }
+
+  function scrollToCategoryStart() {
+    requestAnimationFrame(function () {
+      scrollToGalleryPanel(false);
+      requestAnimationFrame(function () {
+        scrollToGalleryPanel(false);
+      });
+    });
+  }
+
   function ensureLazyObserver() {
     if (lazyObserver || typeof IntersectionObserver === "undefined") return lazyObserver;
     lazyObserver = new IntersectionObserver(
@@ -310,6 +333,7 @@
 
     if (lightboxCaption) lightboxCaption.textContent = alt;
     lightboxImg.alt = alt;
+    lightboxImg.removeAttribute("aria-hidden");
     lightboxImg.classList.add("is-loading");
     lightbox.classList.add("is-loading-view");
 
@@ -370,6 +394,7 @@
     lightboxImg.classList.remove("is-loading");
     lightboxImg.classList.remove("is-transitioning");
     lightboxImg.alt = "";
+    lightboxImg.setAttribute("aria-hidden", "true");
     if (lightboxCaption) lightboxCaption.textContent = "";
     currentIndex = -1;
     if (lastFocus && lastFocus.focus) lastFocus.focus();
@@ -460,6 +485,10 @@
 
     if (closeSidebarMenu && mobileQuery().matches) {
       closeSidebarMenu();
+    }
+
+    if (!opts.skipScroll) {
+      scrollToCategoryStart();
     }
   }
 
@@ -622,7 +651,7 @@
       initLightbox();
       closeSidebarMenu = bindSidebarMobile();
       var start = initialCategoryId();
-      if (start) selectCategory(start, { syncHash: false });
+      if (start) selectCategory(start, { syncHash: false, skipScroll: true });
       restorePageTop();
       window.addEventListener("load", restorePageTop, { once: true });
       window.addEventListener("hashchange", function () {

@@ -8,6 +8,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from _paths import ROOT
+from _deploy_assets import BUILD_ONLY_CSS, DEPLOY_PACKAGED_CSS, DYNAMIC_JS, IMPORTED_VIA_COMMON_CSS, OPTIONAL_JS
 
 ID_ATTR = re.compile(r'(?<![-\w])id="([^"]+)"')
 
@@ -164,8 +165,8 @@ def audit_scientists_data() -> None:
 def audit_css_js_orphans() -> None:
     paths = deploy_html()
     blob = "\n".join(p.read_text(encoding="utf-8", errors="replace") for p in paths)
-    build_only = {"daab-forum-book.css", "daab-membership-page.css", "daab-tokens.css", "daab-site-background.css"}
-    deploy_packaged = {"daab-sticky-chrome.css"}
+    build_only = BUILD_ONLY_CSS | IMPORTED_VIA_COMMON_CSS
+    deploy_packaged = DEPLOY_PACKAGED_CSS
     orphan_css = []
     for css in sorted((ROOT / "css").glob("*.css")):
         if css.name in build_only or css.name in deploy_packaged:
@@ -177,7 +178,10 @@ def audit_css_js_orphans() -> None:
     if orphan_css:
         add("medium", "Dead code", f"CSS not referenced from az/en HTML: {orphan_css[:8]}", "Link, import, mark BUILD-ONLY, or remove")
     orphan_js = []
+    skip_js = OPTIONAL_JS | DYNAMIC_JS
     for js in sorted((ROOT / "js").glob("*.js")):
+        if js.name in skip_js:
+            continue
         if js.name not in blob:
             orphan_js.append(js.name)
     if orphan_js:

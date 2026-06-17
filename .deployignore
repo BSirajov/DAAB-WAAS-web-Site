@@ -46,8 +46,14 @@ forum_2024/*
 i18n/person-names-en.json
 i18n/scientists-profiles-en.json
 
-# --- CSS/JS not referenced by live pages (safe to omit; omit lines to ship full css/js/) ---
+# --- CSS/JS not referenced by live pages (see helpers/_deploy_assets.py) ---
 css/daab-forum-book.css
+css/daab-membership-page.css
+css/daab-encyclopedia-page.css
+css/daab-prominent-figure-profile.css
+js/prominent-figures-catalog.js
+js/prominent-figures-catalog-data.js
+js/prominent-figures-catalog-data-en.js
 js/video-gallery-data.json
 js/README.md
 css/README.md

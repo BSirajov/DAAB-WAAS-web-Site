@@ -14,6 +14,27 @@ ROUTES_PATH = ROOT / "i18n" / "routes.json"
 SUBTITLES_PATH = ROOT / "i18n" / "page-subtitles.json"
 ANCHOR_ALIASES_PATH = ROOT / "i18n" / "anchor-aliases.json"
 
+# Lang-specific asset pairs (AZ vs EN) — compare by canonical key, not filename.
+JS_EQUIV: dict[str, str] = {
+    "scientists-catalog-data-en.js": "scientists-catalog-data.js",
+}
+
+# AZ/EN pages that intentionally use different image files (e.g. localized covers).
+KNOWN_IMAGE_PAIR_DIFFS: dict[str, tuple[frozenset[str], frozenset[str]]] = {
+    "activities-news": (
+        frozenset({"072-garuslu-azerbaycanda-kimlik-cover.jpg"}),
+        frozenset({"071-garuslu-azerbaijan-north-south-cover.jpg"}),
+    ),
+}
+
+
+def canonical_js_versions(js_versions: list[tuple[str, str]]) -> dict[str, str]:
+    out: dict[str, str] = {}
+    for name, ver in js_versions:
+        key = JS_EQUIV.get(name, name)
+        out[key] = ver
+    return out
+
 
 def norm_ws(text: str) -> str:
     return re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", text))).strip()
@@ -90,10 +111,19 @@ def main() -> int:
         if az_m["img_basenames"] != en_m["img_basenames"]:
             az_only = sorted(set(az_m["img_basenames"]) - set(en_m["img_basenames"]))
             en_only = sorted(set(en_m["img_basenames"]) - set(az_m["img_basenames"]))
-            if az_only or en_only:
+            known = KNOWN_IMAGE_PAIR_DIFFS.get(pid)
+            if known and frozenset(az_only) == known[0] and frozenset(en_only) == known[1]:
+                pass
+            elif az_only or en_only:
                 warnings.append(
                     f"{pid}: image basename mismatch az_only={az_only[:6]} en_only={en_only[:6]}"
                 )
+
+        if canonical_js_versions(az_m["js_versions"]) != canonical_js_versions(en_m["js_versions"]):
+            az_js = canonical_js_versions(az_m["js_versions"])
+            en_js = canonical_js_versions(en_m["js_versions"])
+            diff = sorted(set(az_js.items()) ^ set(en_js.items()))
+            warnings.append(f"{pid}: JS version mismatch {diff[:4]}")
 
         if az_m["article_ids"] and en_m["article_ids"]:
             az_set = set(az_m["article_ids"])
@@ -121,10 +151,6 @@ def main() -> int:
         css_diff = set(az_m["css_versions"]).symmetric_difference(set(en_m["css_versions"]))
         if css_diff:
             warnings.append(f"{pid}: CSS version mismatch {sorted(css_diff)[:4]}")
-
-        js_diff = set(az_m["js_versions"]).symmetric_difference(set(en_m["js_versions"]))
-        if js_diff:
-            warnings.append(f"{pid}: JS version mismatch {sorted(js_diff)[:4]}")
 
         if az_m["has_breadcrumbs_js"] != en_m["has_breadcrumbs_js"]:
             warnings.append(

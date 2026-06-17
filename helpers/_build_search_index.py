@@ -43,7 +43,7 @@ PAGE_LABEL_KEYS = {
     "activities": "activitiesNews",
     "activities-news": "activitiesNews",
     "forum-2024": "forum2024",
-    "forum-2026": "forum2026",
+    "forum-2026": "forum2026Year",
     "forum-official": "forumOfficial",
     "forum-rector-speeches": "forumRectorSpeeches",
     "forum-anas-leadership-speeches": "forumAnasLeadershipSpeeches",

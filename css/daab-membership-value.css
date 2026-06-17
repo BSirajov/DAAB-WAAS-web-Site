@@ -236,7 +236,7 @@
   margin: 0 0 6px;
   color: var(--blue-dark) !important;
   font-family: var(--font-serif);
-  font-size: 10.5px;
+  font-size: clamp(14.5px, 1.45vw, 16.5px);
   font-weight: 800;
   line-height: 1.22;
 }.membership-value-page .mv-card p{
@@ -258,7 +258,7 @@
   font-size: 18px;
 }.membership-value-page #youth .mv-card h3{
   margin-bottom: 4px;
-  font-size: 9.8px;
+  font-size: clamp(14.5px, 1.45vw, 16.5px);
 }.membership-value-page #youth .mv-card p{
   font-size: 11.5px;
   line-height: 1.4;
@@ -313,7 +313,7 @@
   margin: 0 0 5px;
   color: var(--color-heading-blue);
   font-family: var(--font-serif);
-  font-size: 10.5px;
+  font-size: clamp(14.5px, 1.45vw, 16.5px);
   font-weight: 800;
   line-height: 1.25;
 }.membership-value-page .mv-qa-item p{

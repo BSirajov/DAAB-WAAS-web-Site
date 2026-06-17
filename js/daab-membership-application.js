@@ -106,10 +106,28 @@
     var attr = document.documentElement.getAttribute("data-daab-form-endpoint");
     if (attr && attr.trim()) return attr.trim();
     var cfg = (typeof window !== "undefined" && window.DAAB_APPLICATION_CONFIG) || {};
+    if (cfg.submitEndpoint && String(cfg.submitEndpoint).trim()) {
+      return String(cfg.submitEndpoint).trim();
+    }
     if (cfg.formspreeEndpoint && String(cfg.formspreeEndpoint).trim()) {
       return String(cfg.formspreeEndpoint).trim();
     }
-    return "";
+    return "mail.php";
+  }
+
+  function isPhpMailEndpoint(endpoint) {
+    return /\.php(\?|#|$)/i.test(String(endpoint || ""));
+  }
+
+  function buildFormDataForPhp(payload) {
+    var fd = new FormData();
+    Object.keys(payload).forEach(function (key) {
+      if (key.charAt(0) === "_") return;
+      var val = payload[key];
+      if (val == null || val === "") return;
+      fd.append(key, String(val));
+    });
+    return fd;
   }
 
   function uiText(key) {
@@ -249,6 +267,23 @@
 
   function postApplication(payload) {
     var endpoint = getFormEndpoint();
+    if (isPhpMailEndpoint(endpoint)) {
+      return fetch(endpoint, {
+        method: "POST",
+        body: buildFormDataForPhp(payload),
+        headers: {
+          Accept: "text/plain, */*",
+        },
+      }).then(function (response) {
+        return response.text().then(function (text) {
+          var status = String(text || "").trim().toLowerCase();
+          if (!response.ok || status !== "success") {
+            throw new Error(status === "error" ? uiText("submitFailed") : text || response.statusText);
+          }
+          return { ok: true };
+        });
+      });
+    }
     return fetch(endpoint, {
       method: "POST",
       headers: {
@@ -278,12 +313,6 @@
     clearSubmitStatus();
     if (!validateForm()) return;
     if (!validateSciSelection()) return;
-
-    var endpoint = getFormEndpoint();
-    if (!endpoint) {
-      showSubmitError(uiText("noEndpoint"));
-      return;
-    }
 
     setSubmitting(true);
     var payload = buildSubmissionPayload();
@@ -680,7 +709,11 @@
   window.daabApplicationSubmit = submitForm;
 
   function initEndpointNotice() {
-    if (getFormEndpoint()) return;
+    if (getFormEndpoint()) {
+      var box = byId("app-endpoint-notice");
+      if (box) box.hidden = true;
+      return;
+    }
     var box = byId("app-endpoint-notice");
     if (box) {
       box.hidden = false;

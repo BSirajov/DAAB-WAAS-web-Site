@@ -1,17 +1,17 @@
 /**
  * Membership application backend config (public — safe to deploy).
  *
- * Setup:
- * 1. Create a form at https://formspree.io (free tier works for testing).
- * 2. Set notification email to info@daab-waas.com (or bilik.birlik@gmail.com).
- * 3. Paste your form URL below, e.g. "https://formspree.io/f/abcxyz".
+ * Default: POST to mail.php in the same folder as application.html (az/ or en/).
+ * Upload mail.php + repo-root mail-application-send.php to the server.
  *
- * Optional override on a single page: <html data-daab-form-endpoint="https://formspree.io/f/...">
+ * Optional Formspree override: set formspreeEndpoint below, or on the page:
+ *   <html data-daab-form-endpoint="https://formspree.io/f/...">
  */
 (function (global) {
   "use strict";
 
   global.DAAB_APPLICATION_CONFIG = {
+    submitEndpoint: "mail.php",
     formspreeEndpoint: "",
   };
 })(typeof window !== "undefined" ? window : global);

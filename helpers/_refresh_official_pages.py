@@ -18,7 +18,7 @@ from _official_content import (
 )
 from _paths import ROOT
 from _refresh_presentations_toc import toc_item as presentation_toc_item
-from _speech_photos_lib import inject_speech_profiles, photo_src
+from _speech_photos_lib import inject_speech_profiles, photo_src, apply_feed_portrait_a11y
 from forum_en_official import META_EN, OFFICIAL_EN_SECTIONS, PANEL_COPY_EN
 
 OFFICIAL_SPEAKER_TOC: dict[str, dict[str, tuple[str, str]]] = {
@@ -145,6 +145,7 @@ def patch_page(path: Path, lang: str) -> None:
 
     profiles = inject_speech_profiles(soup)
     fix_speaker_photo_alts(soup, lang)
+    apply_feed_portrait_a11y(soup)
     toc = build_official_toc(soup, lang)
     ul = soup.select_one("#officialTOC")
     if not ul:

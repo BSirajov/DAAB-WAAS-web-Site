@@ -139,12 +139,12 @@
       "type": "page",
       "pageId": "forum-2024",
       "anchor": "",
-      "title": "Forumun mənzərəsi — DAAB",
+      "title": "I Forum – Ümumi Mənzərə — DAAB",
       "summary": "Xaricdə Yaşayan Azərbaycanlı Alimlərin I Forumu — kitab məzmunu və arxiv.",
       "tag": "Səhifə",
       "icon": "🎤",
       "boost": 12,
-      "norm": "forumun menzeresi daab xaricde yas ayan azerbaycanli alimlerin i forumu kitab mezmunu ve arxiv."
+      "norm": "i forum u mumi menzere daab xaricde yas ayan azerbaycanli alimlerin i forumu kitab mezmunu ve arxiv."
     },
     {
       "id": "page-forum-2024-en",
@@ -152,12 +152,12 @@
       "type": "page",
       "pageId": "forum-2024",
       "anchor": "",
-      "title": "Highlights — WAAS",
+      "title": "I Forum – Highlights — WAAS",
       "summary": "First Forum of Azerbaijani Scientists Living Abroad — book content and archive.",
       "tag": "Page",
       "icon": "🎤",
       "boost": 12,
-      "norm": "highlights waas first forum of azerbaijani scientists living abroad book content and archive."
+      "norm": "i forum highlights waas first forum of azerbaijani scientists living abroad book content and archive."
     },
     {
       "id": "page-forum-2026-az",
@@ -165,12 +165,12 @@
       "type": "page",
       "pageId": "forum-2026",
       "anchor": "",
-      "title": "Forum 2026 — DAAB",
+      "title": "II Forum - Ümumi Mənzərə — DAAB",
       "summary": "Xaricdə yaşayan alimlərin II Forumu — dekabr 2026, Bakı.",
       "tag": "Səhifə",
       "icon": "🎤",
       "boost": 12,
-      "norm": "forum 2026 daab xaricde yas ayan alimlerin ii forumu dekabr 2026 baki."
+      "norm": "ii forum - u mumi menzere daab xaricde yas ayan alimlerin ii forumu dekabr 2026 baki."
     },
     {
       "id": "page-forum-2026-en",
@@ -178,12 +178,12 @@
       "type": "page",
       "pageId": "forum-2026",
       "anchor": "",
-      "title": "Forum 2026 — WAAS",
+      "title": "II Forum - Highlights — WAAS",
       "summary": "Second Forum of Azerbaijani Scientists Living Abroad — December 2026, Baku.",
       "tag": "Page",
       "icon": "🎤",
       "boost": 12,
-      "norm": "forum 2026 waas second forum of azerbaijani scientists living abroad december 2026 baku."
+      "norm": "ii forum - highlights waas second forum of azerbaijani scientists living abroad december 2026 baku."
     },
     {
       "id": "page-forum-2024-presentations-az",
@@ -659,12 +659,12 @@
       "type": "page",
       "pageId": "donate",
       "anchor": "",
-      "title": "DAAB — İanə",
+      "title": "DAAB — İanə Edin",
       "summary": "DAAB-a fərdi ianə — bank köçürməsi ilə Azərbaycan elminə dəstək.",
       "tag": "Səhifə",
       "icon": "💝",
       "boost": 12,
-      "norm": "daab i ane daab-a ferdi iane bank ko c u rmesi ile azerbaycan elmine destek."
+      "norm": "daab i ane edin daab-a ferdi iane bank ko c u rmesi ile azerbaycan elmine destek."
     },
     {
       "id": "page-donate-en",
@@ -672,12 +672,12 @@
       "type": "page",
       "pageId": "donate",
       "anchor": "",
-      "title": "WAAS — Donation",
+      "title": "WAAS — Donate",
       "summary": "Support WAAS with an individual donation via bank transfer.",
       "tag": "Page",
       "icon": "💝",
       "boost": 12,
-      "norm": "waas donation support waas with an individual donation via bank transfer."
+      "norm": "waas donate support waas with an individual donation via bank transfer."
     },
     {
       "id": "page-sponsors-flyer-az",
@@ -841,12 +841,12 @@
       "type": "nav",
       "pageId": "forum-2026",
       "anchor": "",
-      "title": "forum-2026",
+      "title": "II Forum",
       "summary": "Xaricdə yaşayan alimlərin II Forumu — dekabr 2026, konsepsiya layihəsi",
       "tag": "Naviqasiya",
       "icon": "🎤",
       "boost": 11,
-      "norm": "forum-2026 xaricde yas ayan alimlerin ii forumu dekabr 2026 konsepsiya layihesi forumlar"
+      "norm": "ii forum xaricde yas ayan alimlerin ii forumu dekabr 2026 konsepsiya layihesi forumlar"
     },
     {
       "id": "nav-foundation-az",
@@ -906,12 +906,12 @@
       "type": "nav",
       "pageId": "membership-value",
       "anchor": "",
-      "title": "Niyə DAAB-a qoşulmalı",
+      "title": "Niyə DAAB-a üzv olmalı",
       "summary": "Üzvlüyün dəyəri və əsas faydalar",
       "tag": "Naviqasiya",
       "icon": "💡",
       "boost": 11,
-      "norm": "niye daab-a qos ulmali u zvlu yu n deyeri ve esas faydalar u zvlu k"
+      "norm": "niye daab-a u zv olmali u zvlu yu n deyeri ve esas faydalar u zvlu k"
     },
     {
       "id": "nav-membership-application-az",
@@ -945,12 +945,12 @@
       "type": "nav",
       "pageId": "forum-2027-sponsorship",
       "anchor": "",
-      "title": "Sponsorluq",
+      "title": "Niyə DAAB-a dəstək verilməli",
       "summary": "Forum II üçün sponsorluq paketləri və tərəfdaşlıq təklifi",
       "tag": "Naviqasiya",
       "icon": "🤝",
       "boost": 11,
-      "norm": "sponsorluq forum ii u c u n sponsorluq paketleri ve terefdas liq teklifi bizi destekleyin"
+      "norm": "niye daab-a destek verilmeli forum ii u c u n sponsorluq paketleri ve terefdas liq teklifi bizi destekleyin"
     },
     {
       "id": "nav-donate-az",
@@ -958,12 +958,12 @@
       "type": "nav",
       "pageId": "donate",
       "anchor": "",
-      "title": "İanə",
+      "title": "İanə Edin",
       "summary": "Fərdi, fond və xatirə ianələri",
       "tag": "Naviqasiya",
       "icon": "💝",
       "boost": 11,
-      "norm": "i ane ferdi fond ve xatire ianeleri bizi destekleyin"
+      "norm": "i ane edin ferdi fond ve xatire ianeleri bizi destekleyin"
     },
     {
       "id": "nav-sponsors-flyer-az",
@@ -1036,12 +1036,12 @@
       "type": "nav",
       "pageId": "forum-2026",
       "anchor": "",
-      "title": "forum-2026",
+      "title": "II Forum",
       "summary": "Second Forum of Azerbaijani Scientists Living Abroad — December 2026, draft concept",
       "tag": "Navigation",
       "icon": "🎤",
       "boost": 11,
-      "norm": "forum-2026 second forum of azerbaijani scientists living abroad december 2026 draft concept forums"
+      "norm": "ii forum second forum of azerbaijani scientists living abroad december 2026 draft concept forums"
     },
     {
       "id": "nav-foundation-en",
@@ -1140,12 +1140,12 @@
       "type": "nav",
       "pageId": "forum-2027-sponsorship",
       "anchor": "",
-      "title": "Sponsorship",
+      "title": "Why Sponsor WAAS?",
       "summary": "Sponsorship packages and partnership proposal for Forum II",
       "tag": "Navigation",
       "icon": "🤝",
       "boost": 11,
-      "norm": "sponsorship sponsorship packages and partnership proposal for forum ii support us"
+      "norm": "why sponsor waas sponsorship packages and partnership proposal for forum ii support us"
     },
     {
       "id": "nav-donate-en",
@@ -1153,12 +1153,12 @@
       "type": "nav",
       "pageId": "donate",
       "anchor": "",
-      "title": "Donation",
+      "title": "Donate",
       "summary": "Individual, foundation, and memorial gifts",
       "tag": "Navigation",
       "icon": "💝",
       "boost": 11,
-      "norm": "donation individual foundation and memorial gifts support us"
+      "norm": "donate individual foundation and memorial gifts support us"
     },
     {
       "id": "nav-sponsors-flyer-en",
@@ -1465,12 +1465,12 @@
       "type": "activity",
       "pageId": "activities-news",
       "anchor": "garuslu-book-2026",
-      "title": "DAAB üzvü «Azərbaycan, Guzey və Güney» adlı kitab nəşr etdirmişdir",
-      "summary": "Miyanada anadan olmuş Vəhid Gərüslu bu əsərdə həm şəxsi həyat təcrübəsinə, həm də analitik müşahidələrinə əsaslanır. Muğam, qarmon və ləzginka mühitində böyümüş, Azərbaycanın şimalındakı kökləri və cənubda keçən formalaşma illəri ilə yoğrul",
+      "title": "DAAB üzvü «Azərbaycan, Quzey və Güney» adlı kitab nəşr etdirmişdir",
+      "summary": "Miyanada anadan olmuş Vəhid Gəruslu bu əsərdə həm şəxsi həyat təcrübəsinə, həm də analitik müşahidələrinə əsaslanır. Muğam, qarmon və ləzginka mühitində böyümüş, Azərbaycanın şimalındakı kökləri və cənubda keçən formalaşma illəri ilə yoğrul",
       "tag": "Fəaliyyət",
       "icon": "📰",
       "boost": 8,
-      "norm": "daab u zvu azerbaycan guzey ve gu ney adli kitab nes r etdirmis dir miyanada anadan olmus vehid geru slu bu eserde hem s exsi heyat tecru besine hem de analitik mu s ahidelerine esaslanir. mug am qarmon ve lezginka mu hitinde bo yu mu s azerbaycanin s imalindaki ko kleri ve cenubda kec en formalas ma illeri ile yog rul"
+      "norm": "daab u zvu azerbaycan quzey ve gu ney adli kitab nes r etdirmis dir miyanada anadan olmus vehid geruslu bu eserde hem s exsi heyat tecru besine hem de analitik mu s ahidelerine esaslanir. mug am qarmon ve lezginka mu hitinde bo yu mu s azerbaycanin s imalindaki ko kleri ve cenubda kec en formalas ma illeri ile yog rul"
     },
     {
       "id": "activity-ankara-rektor-2026-az",

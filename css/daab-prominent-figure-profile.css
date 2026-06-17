@@ -1,6 +1,8 @@
 /**
+ * BUILD-ONLY — not linked from live az/en pages.
+ * Used by helpers/_build_en_prominent_figures.py and _migrate_prominent_figure_profiles.py.
+ * Safe to omit from production deploy (.deployignore).
  * Prominent figure profile pages (az/prominent_figures/*).
- * Requires daab-common.css for design tokens.
  */
 
 /* Profile header — same light hero band as scientists/mission pages */

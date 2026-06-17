@@ -17,9 +17,9 @@ SKIP = {"az": "Məzmuna keç", "en": "Skip to content"}
 LOCALES = {
     "az": {
         "lang": "az",
-        "title": "DAAB — İanə",
+        "title": "DAAB — İanə Edin",
         "description": "DAAB-a fərdi ianə — bank köçürməsi ilə Azərbaycan elminə dəstək.",
-        "hero_h1": "İanə",
+        "hero_h1": "İanə Edin",
         "hero_subtitle": "Hər bir töhfə təqaüdlər, forumlar və elmi əməkdaşlıqlara dəstək verir",
         "panel_title": "Fərdi ianəçilər üçün",
         "panel_copy": (
@@ -68,9 +68,9 @@ LOCALES = {
     },
     "en": {
         "lang": "en",
-        "title": "WAAS — Donation",
+        "title": "WAAS — Donate",
         "description": "Support WAAS with an individual donation via bank transfer.",
-        "hero_h1": "Donation",
+        "hero_h1": "Donate",
         "hero_subtitle": "Every gift helps fund scholarships, forums, and research collaboration",
         "panel_title": "For individual donors",
         "panel_copy": (

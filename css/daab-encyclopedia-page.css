@@ -1,6 +1,8 @@
 /**
- * Encyclopedia / prominent figures directory (az/encyclopedia.html, en/encyclopedia.html).
- * Person-card layout aligned with gorkemli_shexsiyyetler_AZ.html reference.
+ * BUILD-ONLY — not linked from live az/en pages.
+ * Used by helpers/_bootstrap_knowledge_treasury.py for unpublished encyclopedia hub.
+ * Safe to omit from production deploy (.deployignore).
+ * Encyclopedia / prominent figures directory layout.
  */
 
 html[data-daab-page-id="encyclopedia"] {

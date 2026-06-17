@@ -103,6 +103,37 @@
     eventsToggle.setAttribute("aria-expanded", open ? "true" : "false");
   }
 
+  function sectionScrollId(id) {
+    var el = document.getElementById(id);
+    if (!el) return id;
+    if (el.classList.contains("card-title") && el.tagName === "H2") {
+      var card = el.closest("article.news-card");
+      if (card && card.id) return card.id;
+    }
+    return id;
+  }
+
+  function scrollToSection(id, smooth) {
+    var scrollId = sectionScrollId(id);
+
+    function run() {
+      var Pos = window.DAAB_LANG_POSITION;
+      if (Pos && Pos.scrollToAnchor) {
+        Pos.scrollToAnchor(scrollId, !!smooth);
+        return;
+      }
+      var el = document.getElementById(scrollId);
+      if (el) {
+        el.scrollIntoView({ block: "start", behavior: smooth ? "smooth" : "auto" });
+      }
+    }
+
+    requestAnimationFrame(function () {
+      run();
+      requestAnimationFrame(run);
+    });
+  }
+
   function jumpToTarget(event) {
     var link = event.currentTarget;
     var id = link.getAttribute("href").slice(1);
@@ -110,12 +141,7 @@
     if (!target) return;
     event.preventDefault();
     activate(link);
-    var Pos = window.DAAB_LANG_POSITION;
-    if (Pos && Pos.scrollToAnchor) {
-      Pos.scrollToAnchor(id, false);
-    } else {
-      target.scrollIntoView({ block: "start", behavior: "auto" });
-    }
+    scrollToSection(id, false);
     history.pushState(null, "", link.getAttribute("href"));
     if (mobileQuery.matches) closeEventsMenu();
   }
@@ -168,12 +194,7 @@
     var target = document.getElementById(id);
     if (!target) return;
     activate(links[idx]);
-    var Pos = window.DAAB_LANG_POSITION;
-    if (Pos && Pos.scrollToAnchor) {
-      Pos.scrollToAnchor(id, false);
-    } else {
-      target.scrollIntoView({ block: "start", behavior: "auto" });
-    }
+    scrollToSection(id, false);
   }
 
   window.addEventListener("popstate", syncFromHash);

@@ -940,6 +940,15 @@
   }
 }
 
+/* Numbered section headers (1. Təqdimat / Overview, etc.) */
+.forum-sponsorship-page .section-eyebrow {
+  margin-bottom: 6px;
+}
+
+.forum-sponsorship-page .section-title.section-title-reduced {
+  margin-top: 0;
+}
+
 .forum-sponsorship-page .intro-letter {
   margin-top: 8px;
   padding: 28px 32px;
