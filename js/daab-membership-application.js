@@ -510,17 +510,16 @@
     var lang = detectLang();
     var texts = {
       en: {
-        loading: "Loading area codes...",
         placeholder: "Select area code",
         error: "Enter local phone number only (without country code)."
       },
       az: {
-        loading: "Kodlar yüklənir...",
         placeholder: "Kod seçin",
         error: "Yalnız yerli telefon nömrəsini daxil edin (ölkə kodu olmadan)."
       }
     };
     var t = texts[lang] || texts.en;
+    var phoneCodes = window.DAAB_PHONE_CODES || [];
     var formatter =
       typeof Intl !== "undefined" && typeof Intl.DisplayNames === "function"
         ? new Intl.DisplayNames([lang], { type: "region" })
@@ -535,13 +534,6 @@
       return formatter ? (formatter.of(code) || code) : code;
     }
 
-    function normalizeDialCode(root, suffix) {
-      var merged = String(root || "").trim() + String(suffix || "").trim();
-      if (!merged) return "";
-      if (merged.charAt(0) !== "+") merged = "+" + merged;
-      return merged.replace(/\s+/g, "");
-    }
-
     function validateLocalPhone() {
       var value = String(localPhoneInput.value || "").trim();
       if (value.indexOf("+") === 0) {
@@ -554,74 +546,234 @@
     localPhoneInput.addEventListener("input", validateLocalPhone);
     localPhoneInput.addEventListener("blur", validateLocalPhone);
 
-    phoneCodeSelect.disabled = true;
+    var entries = phoneCodes.map(function (pair) {
+      var code = pair[0];
+      var dialCode = pair[1];
+      return {
+        countryCode: code,
+        countryName: localizedCountryName(code),
+        dialCode: dialCode
+      };
+    });
+
+    entries.sort(function (a, b) {
+      if (a.countryName === b.countryName) {
+        return a.dialCode.localeCompare(b.dialCode);
+      }
+      if (collator) return collator.compare(a.countryName, b.countryName);
+      return a.countryName.localeCompare(b.countryName);
+    });
+
     phoneCodeSelect.innerHTML = "";
-    var loadingOption = document.createElement("option");
-    loadingOption.value = "";
-    loadingOption.textContent = t.loading;
-    phoneCodeSelect.appendChild(loadingOption);
+    var placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = t.placeholder;
+    phoneCodeSelect.appendChild(placeholder);
 
-    fetch("https://restcountries.com/v3.1/all?fields=cca2,idd")
-      .then(function (response) {
-        if (!response.ok) throw new Error("calling-code-fetch-failed");
-        return response.json();
-      })
-      .then(function (rows) {
-        var byCode = Object.create(null);
-        (rows || []).forEach(function (row) {
-          if (!row || !row.cca2) return;
-          byCode[String(row.cca2).toUpperCase()] = row;
-        });
+    entries.forEach(function (entry) {
+      var option = document.createElement("option");
+      option.value = entry.dialCode;
+      option.setAttribute("data-country-code", entry.countryCode);
+      option.textContent = entry.countryName + " (" + entry.dialCode + ")";
+      phoneCodeSelect.appendChild(option);
+    });
+    phoneCodeSelect.disabled = false;
+    enhancePhoneCodePicker(phoneCodeSelect, t.placeholder);
+  }
 
-        var entries = [];
-        COUNTRY_CODES.forEach(function (code) {
-          var row = byCode[code];
-          if (!row || !row.idd || !row.idd.root) return;
-          var root = row.idd.root;
-          var suffixes = Array.isArray(row.idd.suffixes) && row.idd.suffixes.length ? row.idd.suffixes : [""];
-          var countryName = localizedCountryName(code);
-          suffixes.forEach(function (suffix) {
-            var dialCode = normalizeDialCode(root, suffix);
-            if (!dialCode) return;
-            entries.push({
-              countryCode: code,
-              countryName: countryName,
-              dialCode: dialCode
-            });
-          });
-        });
+  function phoneFlagAssetRoot() {
+    var I18N = window.DAAB_I18N;
+    if (I18N && typeof I18N.assetRoot === "function") return I18N.assetRoot();
+    var root = document.documentElement.getAttribute("data-daab-asset-root");
+    if (root != null && root !== "") return root.endsWith("/") ? root : root + "/";
+    return "../";
+  }
 
-        entries.sort(function (a, b) {
-          if (a.countryName === b.countryName) {
-            return a.dialCode.localeCompare(b.dialCode);
-          }
-          if (collator) return collator.compare(a.countryName, b.countryName);
-          return a.countryName.localeCompare(b.countryName);
-        });
+  function phoneFlagSrc(countryCode) {
+    if (typeof window.DAAB_PHONE_FLAG_SRC === "function") {
+      return window.DAAB_PHONE_FLAG_SRC(phoneFlagAssetRoot(), countryCode);
+    }
+    return (
+      phoneFlagAssetRoot() +
+      "images/flags/4x3/" +
+      String(countryCode || "").toLowerCase() +
+      ".svg"
+    );
+  }
 
-        phoneCodeSelect.innerHTML = "";
-        var placeholder = document.createElement("option");
-        placeholder.value = "";
-        placeholder.textContent = t.placeholder;
-        phoneCodeSelect.appendChild(placeholder);
+  function enhancePhoneCodePicker(select, placeholderText) {
+    if (!select || select.getAttribute("data-phone-code-picker-ready") === "1") return;
+    select.setAttribute("data-phone-code-picker-ready", "1");
 
-        entries.forEach(function (entry) {
-          var option = document.createElement("option");
-          option.value = entry.dialCode;
-          option.setAttribute("data-country-code", entry.countryCode);
-          option.textContent = entry.countryName + " (" + entry.dialCode + ")";
-          phoneCodeSelect.appendChild(option);
-        });
-        phoneCodeSelect.disabled = false;
-      })
-      .catch(function () {
-        phoneCodeSelect.innerHTML = "";
-        var fallback = document.createElement("option");
-        fallback.value = "";
-        fallback.textContent = t.placeholder;
-        phoneCodeSelect.appendChild(fallback);
-        phoneCodeSelect.disabled = false;
+    var fieldGroup = select.closest(".field-group");
+    if (!fieldGroup) return;
+
+    var picker = document.createElement("div");
+    picker.className = "phone-code-picker";
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "phone-code-picker-btn";
+    btn.setAttribute("aria-haspopup", "listbox");
+    btn.setAttribute("aria-expanded", "false");
+
+    var valueWrap = document.createElement("span");
+    valueWrap.className = "phone-code-picker-value";
+
+    var flagImg = document.createElement("img");
+    flagImg.className = "phone-code-flag";
+    flagImg.alt = "";
+    flagImg.setAttribute("aria-hidden", "true");
+    flagImg.width = 20;
+    flagImg.height = 15;
+    flagImg.hidden = true;
+
+    var labelSpan = document.createElement("span");
+    labelSpan.className = "phone-code-picker-text";
+    labelSpan.textContent = placeholderText;
+
+    valueWrap.appendChild(flagImg);
+    valueWrap.appendChild(labelSpan);
+    btn.appendChild(valueWrap);
+
+    var chevron = document.createElement("span");
+    chevron.className = "phone-code-picker-chevron";
+    chevron.setAttribute("aria-hidden", "true");
+    btn.appendChild(chevron);
+
+    var panel = document.createElement("div");
+    panel.className = "phone-code-picker-panel";
+    panel.hidden = true;
+    panel.setAttribute("role", "listbox");
+
+    var list = document.createElement("ul");
+    list.className = "phone-code-picker-list";
+
+    Array.prototype.forEach.call(select.options, function (opt) {
+      if (!opt.value) return;
+      var countryCode = opt.getAttribute("data-country-code") || "";
+      var li = document.createElement("li");
+      li.className = "phone-code-picker-option";
+      li.setAttribute("role", "option");
+      li.setAttribute("aria-selected", "false");
+      li.setAttribute("data-value", opt.value);
+      li.setAttribute("data-country-code", countryCode);
+
+      var img = document.createElement("img");
+      img.className = "phone-code-flag";
+      img.src = phoneFlagSrc(countryCode);
+      img.alt = "";
+      img.setAttribute("aria-hidden", "true");
+      img.width = 20;
+      img.height = 15;
+      img.loading = "lazy";
+      img.decoding = "async";
+
+      var text = document.createElement("span");
+      text.className = "phone-code-picker-option-text";
+      text.textContent = opt.textContent;
+
+      li.appendChild(img);
+      li.appendChild(text);
+      list.appendChild(li);
+    });
+
+    panel.appendChild(list);
+
+    select.classList.add("phone-code-picker-native");
+    select.parentNode.insertBefore(picker, select);
+    picker.appendChild(select);
+    picker.appendChild(btn);
+    picker.appendChild(panel);
+
+    var label = fieldGroup.querySelector('label[for="' + select.id + '"]');
+    if (label) {
+      label.setAttribute("for", "");
+      label.addEventListener("click", function (e) {
+        e.preventDefault();
+        btn.focus();
+        if (panel.hidden) openPanel();
       });
+    }
+
+    function syncFromSelect() {
+      var opt = select.options[select.selectedIndex];
+      btn.disabled = select.disabled;
+      if (!opt || !opt.value) {
+        flagImg.hidden = true;
+        labelSpan.textContent = placeholderText;
+        btn.classList.remove("has-value");
+        list.querySelectorAll(".phone-code-picker-option").forEach(function (li) {
+          li.classList.remove("is-selected");
+          li.setAttribute("aria-selected", "false");
+        });
+        return;
+      }
+      btn.classList.add("has-value");
+      var cc = opt.getAttribute("data-country-code");
+      if (cc) {
+        flagImg.src = phoneFlagSrc(cc);
+        flagImg.hidden = false;
+      } else {
+        flagImg.hidden = true;
+      }
+      labelSpan.textContent = opt.textContent;
+      list.querySelectorAll(".phone-code-picker-option").forEach(function (li) {
+        var selected =
+          li.getAttribute("data-value") === opt.value &&
+          li.getAttribute("data-country-code") === cc;
+        li.classList.toggle("is-selected", selected);
+        li.setAttribute("aria-selected", selected ? "true" : "false");
+      });
+    }
+
+    function closePanel() {
+      panel.hidden = true;
+      btn.setAttribute("aria-expanded", "false");
+    }
+
+    function openPanel() {
+      if (select.disabled) return;
+      panel.hidden = false;
+      btn.setAttribute("aria-expanded", "true");
+      var selected = list.querySelector(".phone-code-picker-option.is-selected");
+      if (selected) selected.scrollIntoView({ block: "nearest" });
+    }
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (panel.hidden) openPanel();
+      else closePanel();
+    });
+
+    list.addEventListener("click", function (e) {
+      var li = e.target.closest(".phone-code-picker-option");
+      if (!li) return;
+      var value = li.getAttribute("data-value");
+      var cc = li.getAttribute("data-country-code");
+      var i;
+      for (i = 0; i < select.options.length; i++) {
+        var option = select.options[i];
+        if (option.value === value && option.getAttribute("data-country-code") === cc) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      select.dispatchEvent(new Event("change", { bubbles: true }));
+      syncFromSelect();
+      closePanel();
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!picker.contains(e.target)) closePanel();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closePanel();
+    });
+
+    select.addEventListener("change", syncFromSelect);
+    syncFromSelect();
   }
 
   function bindRadioHighlight() {
