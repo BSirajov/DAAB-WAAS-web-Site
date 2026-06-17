@@ -33,6 +33,5 @@ mirror -R --verbose --parallel=4 \
   --exclude-glob '*.md' \
   --exclude-glob forum_2024/*.docx \
   --exclude-glob forum_2024/*.jpg \
-  --exclude-glob images/flags/**
 
 bye

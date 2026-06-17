@@ -63,7 +63,7 @@ STYLE_VERSIONS = {
     "daab-video-gallery.css": 9,
     "daab-hub-cards.css": 33,
     "daab-donate-page.css": 4,
-    "daab-sponsors-page.css": 10,
+    "daab-sponsors-page.css": 11,
     "daab-presentations-toc.css": 10,
     "daab-speech-photos.css": 3,
     "daab-impressions-photos.css": 2,

@@ -633,12 +633,12 @@
       "type": "page",
       "pageId": "forum-2027-sponsorship",
       "anchor": "",
-      "title": "II Forum sponsorluğu — Dünya Azərbaycanlı Alimlər Birliyi",
-      "summary": "Elm, təhsil, innovasiya və insan kapitalına strateji sərmayə — DAAB ilə sponsorluq və tərəfdaşlıq təklifi, o cümlədən Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumuna dəstək.",
+      "title": "Sponsorluq və tərəfdaşlıq — Dünya Azərbaycanlı Alimlər Birliyi",
+      "summary": "Elm, təhsil, innovasiya və insan kapitalına strateji sərmayə — DAAB ilə sponsorluq və tərəfdaşlıq təklifi.",
       "tag": "Səhifə",
       "icon": "🤝",
       "boost": 12,
-      "norm": "ii forum sponsorlug u du nya azerbaycanli alimler birliyi elm tehsil innovasiya ve insan kapitalina strateji sermaye daab ile sponsorluq ve terefdas liq teklifi o cu mleden xaricde yas ayan azerbaycanli alimlerin ii forumuna destek."
+      "norm": "sponsorluq ve terefdas liq du nya azerbaycanli alimler birliyi elm tehsil innovasiya ve insan kapitalina strateji sermaye daab ile sponsorluq ve terefdas liq teklifi."
     },
     {
       "id": "page-forum-2027-sponsorship-en",
@@ -646,12 +646,12 @@
       "type": "page",
       "pageId": "forum-2027-sponsorship",
       "anchor": "",
-      "title": "Forum II Sponsorship — World Association of Azerbaijani Scientists",
-      "summary": "Strategic investment in science, education, innovation, and human capital — a sponsorship and partnership proposal for WAAS, including the Second Forum of Azerbaijani Scientists Living Abroad.",
+      "title": "Sponsorship & Partnership — World Association of Azerbaijani Scientists",
+      "summary": "Strategic investment in science, education, innovation, and human capital — a sponsorship and partnership proposal for WAAS.",
       "tag": "Page",
       "icon": "🤝",
       "boost": 12,
-      "norm": "forum ii sponsorship world association of azerbaijani scientists strategic investment in science education innovation and human capital a sponsorship and partnership proposal for waas including the second forum of azerbaijani scientists living abroad."
+      "norm": "sponsorship partnership world association of azerbaijani scientists strategic investment in science education innovation and human capital a sponsorship and partnership proposal for waas."
     },
     {
       "id": "page-donate-az",
@@ -946,11 +946,11 @@
       "pageId": "forum-2027-sponsorship",
       "anchor": "",
       "title": "Niyə DAAB-a dəstək verilməli",
-      "summary": "Forum II üçün sponsorluq paketləri və tərəfdaşlıq təklifi",
+      "summary": "DAAB üçün sponsorluq paketləri və tərəfdaşlıq təklifi",
       "tag": "Naviqasiya",
       "icon": "🤝",
       "boost": 11,
-      "norm": "niye daab-a destek verilmeli forum ii u c u n sponsorluq paketleri ve terefdas liq teklifi bizi destekleyin"
+      "norm": "niye daab-a destek verilmeli daab u c u n sponsorluq paketleri ve terefdas liq teklifi bizi destekleyin"
     },
     {
       "id": "nav-donate-az",
@@ -1141,11 +1141,11 @@
       "pageId": "forum-2027-sponsorship",
       "anchor": "",
       "title": "Why Sponsor WAAS?",
-      "summary": "Sponsorship packages and partnership proposal for Forum II",
+      "summary": "WAAS sponsorship packages and partnership proposal",
       "tag": "Navigation",
       "icon": "🤝",
       "boost": 11,
-      "norm": "why sponsor waas sponsorship packages and partnership proposal for forum ii support us"
+      "norm": "why sponsor waas waas sponsorship packages and partnership proposal support us"
     },
     {
       "id": "nav-donate-en",

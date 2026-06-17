@@ -59,7 +59,6 @@ mirror -R --verbose --parallel=4 \
   --exclude-glob 'forum_2024/~\$*' \
   --exclude-glob forum_2024/*.jpg \
   --exclude-glob forum_2024/*.jpeg \
-  --exclude-glob images/flags/**
 .
 bye
 "

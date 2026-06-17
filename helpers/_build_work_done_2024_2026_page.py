@@ -34,24 +34,22 @@ DATA_URI_RE = re.compile(
 )
 
 HERO_SUBTITLE = (
-    "Azərbaycan Diasporla İş üzrə Dövlət Komitəsinə təqdim olunan arayış: "
-    "2024-cü il forumundan sonrakı fəaliyyətlər, memorandumlar, məşvərət şuraları "
-    "və universitetlərlə əməkdaşlıq."
+    "Azərbaycan Diasporla İş üzrə Dövlət Komitəsinə təqdim olunur: "
+    "2024–2026-cı illər ərzindəki fəaliyyətlər, əməkdaşlıq memorandumları, "
+    "məşvərət şuraları və universitetlər ilə tərəfdaşlıq."
 )
 
 SUMMARY_ARIA_AZ = "Hesabatın icmalı"
 SUMMARY_TITLE_AZ = "Hesabatın icmalı"
 SUMMARY_LEAD_AZ = (
-    "DİDK-ya təqdim olunan arayış I Forumdan sonrakı onlayn görüşləri, koordinatorları, "
-    "imzalanmış əməkdaşlıq memorandumlarını, UNEC–DAAB Məşvərət Şurasını və Azərbaycan "
-    "universitetlərində üzvlərin seminar, tədris və layihə fəaliyyətini üç əsas bölmədə "
-    "əks etdirir."
+    "DİDK-ya təqdim olunan bu arayış 2024–2026-cı illər ərzindəki fəaliyyəti, o cümlədən "
+    "onlayn görüşləri, universitet koordinatorlarının təyin edilməsini, əməkdaşlıq "
+    "memorandumlarını, UNEC–DAAB Məşvərət Şurasını və Azərbaycan universitetlərində "
+    "üzvlərin seminar, tədris və layihə fəaliyyətini üç əsas bölmədə ümumiləşdirir."
 )
 
 SECTION_I_TITLE_AZ_OLD = "DAAB-nin 1-ci Forumundan keçən vaxt ərzində görülmüş işlər"
-SECTION_I_TITLE_AZ = (
-    "Xaricdə Yaşayan Azərbaycanlı Alimlərin 1-ci Forumundan keçən vaxt ərzində görülmüş işlər"
-)
+SECTION_I_TITLE_AZ = "2024–2026-cı illər ərzində görülmüş işlər"
 
 
 def esc(text: str) -> str:
