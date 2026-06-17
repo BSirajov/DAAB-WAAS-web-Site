@@ -141,7 +141,7 @@ LOCALES = {
         "contact_email": "info@daab-waas.com",
         "contact_site": "daab-waas.com",
         "qr_caption": "Onlayn müraciət",
-        "tagline": "© 2026 DAAB / WAAS — Dünya Azərbaycanlı Alimlər Birliyi",
+        "tagline": "© 2026 DAAB — Dünya Azərbaycanlı Alimlər Birliyi",
     },
     "en": {
         "lang": "en",

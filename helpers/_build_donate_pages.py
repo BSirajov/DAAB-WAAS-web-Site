@@ -106,7 +106,7 @@ LOCALES = {
         "ref_title": "Payment reference (required)",
         "ref_text": (
             "In the transfer description field, please write: "
-            "<span class=\"dn-code\">DAAB-DONATION-[Your Name]</span>. "
+            "<span class=\"dn-code\">WAAS-DONATION-[Your Name]</span>. "
             "This helps us record your gift correctly."
         ),
         "charter_btn": "Sources of Income of the Association",

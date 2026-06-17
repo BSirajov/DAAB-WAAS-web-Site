@@ -12,6 +12,7 @@ from _paths import ROOT
 from _site_wide_cleanup import iter_deploy_html
 
 SITE_ORIGIN = "https://daab-waas.com"
+SITE_NAME = {"az": "DAAB", "en": "WAAS"}
 MARKER_START = "<!-- daab-seo -->"
 MARKER_END = "<!-- /daab-seo -->"
 
@@ -127,6 +128,7 @@ def build_seo_block(
     esc_desc = html.escape(description, quote=True) if description else esc_title
     og_locale = "az_AZ" if lang == "az" else "en_US"
     alt_locale = "en_US" if lang == "az" else "az_AZ"
+    site_name = SITE_NAME.get(lang, "DAAB")
 
     lines = [
         MARKER_START,
@@ -146,7 +148,7 @@ def build_seo_block(
     lines.extend(
         [
             '<meta property="og:type" content="website"/>',
-            '<meta property="og:site_name" content="DAAB/WAAS"/>',
+            f'<meta property="og:site_name" content="{site_name}"/>',
             f'<meta property="og:title" content="{esc_title}"/>',
             f'<meta property="og:description" content="{esc_desc}"/>',
             f'<meta property="og:url" content="{canonical}"/>',
@@ -176,7 +178,7 @@ def inject_seo(text: str, path: Path, pairs: dict[str, dict[str, str]]) -> str:
     block = build_seo_block(
         rel_path=rel_path,
         lang=lang,
-        title=title or "DAAB/WAAS",
+        title=title or SITE_NAME.get(lang, "DAAB"),
         description=description,
         asset=asset_root(path, text),
         pair=pairs.get(rel_path),

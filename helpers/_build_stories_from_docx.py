@@ -429,7 +429,7 @@ def page_html(data: dict, *, lang: str) -> str:
         footer_contact = "Contact"
         footer_address_title = "Address"
         footer_leadership = "Leadership"
-        footer_rights = "© 2026 DAAB / WAAS — All Rights Reserved"
+        footer_rights = "© 2026 WAAS — All Rights Reserved"
         bc_aria = "Breadcrumb"
         panel_aria = "Forum-related stories summary"
         doc_lead = meta["doc_title"]

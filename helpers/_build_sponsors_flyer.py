@@ -96,11 +96,11 @@ LOCALES = {
             ("💎 Platin / Baş", "€50 000+ — açılış çıxışı, prioritet loqo, media"),
             ("🥇 Qızıl", "€25 000–49 999 — panel sponsorluğu, loqo, şəbəkələşmə"),
             ("🥈 Gümüş", "€10 000–24 999 — sponsor siyahısı, loqo, veb-sayt"),
-            ("🥉 Bürünc", "€5 000–9 999 — veb-sayt və WAAS materiallarında qeyd"),
+            ("🥉 Bürünc", "€5 000–9 999 — veb-sayt və DAAB materiallarında qeyd"),
         ],
         "benefits_title": "Sponsor üçün üstünlüklər",
         "benefits": [
-            ("🌐", "Brendinizin tanınması", "WAAS materiallarında, veb-sayt, media və rəsmi tədbirlərdə tanınma.", ["Loqo yerləşdirməsi", "Beynəlxalq platforma"]),
+            ("🌐", "Brendinizin tanınması", "DAAB materiallarında, veb-sayt, media və rəsmi tədbirlərdə tanınma.", ["Loqo yerləşdirməsi", "Beynəlxalq platforma"]),
             ("🏅", "Nüfuz və hesabatlılıq", "Elm, təhsil və innovasiyaya sərmayə qoyan etibarlı tərəfdaş imici.", ["Sosial təsir", "İllik hesabat"]),
             ("🤝", "Diaspora şəbəkəsi", "20-dən çox ölkədən alim və ekspertlərlə birbaşa əlaqə.", ["Mentorluq", "VIP dialoq"]),
             ("🔬", "Elmi əməkdaşlıq", "Universitetlər və AMEA ilə körpü; ortaq tədqiqat imkanları.", ["Ortaq nəşrlər", "Bilik transferi"]),
@@ -118,7 +118,7 @@ LOCALES = {
         "contact_email": "info@daab-waas.com",
         "contact_site": "daab-waas.com",
         "qr_caption": "Sponsorluq əlaqəsi",
-        "tagline": "© 2026 DAAB / WAAS — Dünya Azərbaycanlı Alimlər Birliyi",
+        "tagline": "© 2026 DAAB — Dünya Azərbaycanlı Alimlər Birliyi",
     },
     "en": {
         "lang": "en",
