@@ -37,7 +37,7 @@ LOCALES = {
         ],
         "amounts_title": "Tövsiyə olunan məbləğlər",
         "amounts_lead": "İstənilən məbləğ qəbul edilir. İllik fərdi dəstəyinizi aşağıdakı nümunələrə uyğun seçə bilərsiniz.",
-        "amounts": ["€25", "€50", "€100", "€250", "İstəyə görə"],
+        "amounts": ["€25", "€50", "€100", "€250", "digər məbləğ"],
         "bank_title": "Bank köçürməsi",
         "bank_lead": "Ödənişi aşağıdakı hesaba edin və ödəniş təyinatında göstərilən istinadı qeyd edin.",
         "bank_name": "Bankın adı",
@@ -54,7 +54,7 @@ LOCALES = {
         ],
         "ref_title": "Ödəniş təyinatı (vacibdir)",
         "ref_text": (
-            "Köçürmə zamanı təyinat sahəsində bunu yazın: "
+            "Köçürmə zamanı ianənin təyinatını belə qeyd edin: "
             "<span class=\"dn-code\">DAAB-IANE-[Ad Soyad]</span>. "
             "Bu, ianənizin düzgün qeydə alınmasına kömək edir."
         ),
@@ -64,8 +64,8 @@ LOCALES = {
         ),
         "cta_title": "Sualınız var?",
         "cta_lead": "İanə, fond və ya xatirə ianəsi barədə komandamızla əlaqə saxlayın.",
-        "cta_email": "E-poçt göndərin",
-        "cta_email_title": "DAAB komandasına ianə barədə e-poçt yazın",
+        "cta_email": "E-məktub göndərin",
+        "cta_email_title": "DAAB komandasına ianə barədə e-məktub yazın",
     },
     "en": {
         "lang": "en",

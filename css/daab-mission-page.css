@@ -138,17 +138,18 @@
   line-height: 1.25;
   text-transform: uppercase;
 }.values-title{
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 22px;
-  margin: 8px 0 18px;
+  display: block;
+  margin: 8px 0 22px;
 }.values-title h2{
   font-size: 23.8px;
   line-height: 1.1;
+  margin: 0 0 12px;
 }.values-title p{
-  max-width: 570px;
-  font-size: 9.8px;
+  max-width: 52rem;
+  color: #33475f;
+  font-size: 15px;
+  line-height: 1.75;
+  text-align: justify;
 }.values-detail{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -279,11 +280,12 @@
   .values-grid,
   .values-detail{
     grid-template-columns: 1fr;
-  }.values-title{
-    display: block;
   }.values-title h2{
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-size: 19.6px;
+  }.values-title p{
+    font-size: 14px;
+    line-height: 1.7;
   }.footer-inner{
     padding: 24px 16px;
   }
