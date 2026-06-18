@@ -314,11 +314,11 @@
         executiveBoard: "İdarə heyəti",
         charter: "Nizamnamə",
         membership: "Üzvlük",
-        membershipWhy: "Niyə DAAB-a üzv olmalısınız?",
+        membershipWhy: "DAAB üzvlüyü Sizə nə qazandırır?",
         membershipTerms: "Üzvlüyə dəvət və ödəniş",
         membershipJoin: "Bizə qoşulun",
         membershipFlyer: "Dəvət məktubu",
-        sponsorshipPartnership: "Niyə DAAB-a dəstək verilməli",
+        sponsorshipPartnership: "DAAB-a dəstək verməyin əhəmiyyəti",
         donate: "İanə Edin",
         sponsorsFlyer: "Dəvət məktubu"
       },

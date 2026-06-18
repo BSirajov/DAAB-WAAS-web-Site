@@ -906,12 +906,12 @@
       "type": "nav",
       "pageId": "membership-value",
       "anchor": "",
-      "title": "Niyə DAAB-a üzv olmalısınız?",
+      "title": "DAAB üzvlüyü Sizə nə qazandırır?",
       "summary": "Üzvlüyün dəyəri və əsas faydalar",
       "tag": "Naviqasiya",
       "icon": "💡",
       "boost": 11,
-      "norm": "niye daab-a u zv olmalisiniz u zvlu yu n deyeri ve esas faydalar u zvlu k"
+      "norm": "daab u zvlu yu size ne qazandirir u zvlu yu n deyeri ve esas faydalar u zvlu k"
     },
     {
       "id": "nav-membership-application-az",
@@ -945,12 +945,12 @@
       "type": "nav",
       "pageId": "sponsorship-partnership",
       "anchor": "",
-      "title": "Niyə DAAB-a dəstək verilməli",
+      "title": "DAAB-a dəstək verməyin əhəmiyyəti",
       "summary": "DAAB üçün sponsorluq paketləri və tərəfdaşlıq təklifi",
       "tag": "Naviqasiya",
       "icon": "🤝",
       "boost": 11,
-      "norm": "niye daab-a destek verilmeli daab u c u n sponsorluq paketleri ve terefdas liq teklifi bizi destekleyin"
+      "norm": "daab-a destek vermeyin ehemiyyeti daab u c u n sponsorluq paketleri ve terefdas liq teklifi bizi destekleyin"
     },
     {
       "id": "nav-donate-az",

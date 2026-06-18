@@ -118,7 +118,7 @@
   function loadUi() {
     UI_URL = UI_URL || i18nUrl("ui.json");
     return loadCachedJson(
-      UI_URL + "?v=23",
+      UI_URL + "?v=24",
       function () { return uiCache; },
       function (data) { uiCache = data; },
       function () { return uiInflight; },
@@ -128,7 +128,7 @@
 
   function loadSearchIndex() {
     return loadCachedJson(
-      i18nUrl("search-index.json") + "?v=12",
+      i18nUrl("search-index.json") + "?v=13",
       function () { return searchIndexCache; },
       function (data) { searchIndexCache = data; },
       function () { return searchIndexInflight; },

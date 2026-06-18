@@ -40,6 +40,7 @@
   --color-overlay-search: rgba(13, 31, 60, 0.72);
   --color-nav-hover-bg: rgba(255, 255, 255, 0.12);
   --color-hero-scrim: rgba(255, 255, 255, 0.36);
+  --color-site-bg-scrim: rgba(255, 255, 255, 0.07);
   --site-bg-image: url("../images/diaspor-body-top-bg.png");
   --site-bg-size: cover;
   --site-bg-position: top center;
