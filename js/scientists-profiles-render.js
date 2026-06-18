@@ -39,7 +39,16 @@
   }
 
   function assetRoot() {
-    return document.documentElement.getAttribute("data-daab-asset-root") || "../../";
+    var i18n = window.DAAB_I18N;
+    if (i18n && typeof i18n.assetRoot === "function") {
+      return i18n.assetRoot();
+    }
+    var root = document.documentElement.getAttribute("data-daab-asset-root") || "../../";
+    return root.endsWith("/") ? root : root + "/";
+  }
+
+  function assetUrl(prefix, relPath) {
+    return prefix + String(relPath || "").replace(/^\//, "");
   }
 
   function escAttr(s) {
@@ -191,7 +200,7 @@
     var credHtml = cred ? ' <span class="cred">' + escHtml(cred) + "</span>" : "";
     var qrLabels = QR_LABELS[lang] || QR_LABELS.en;
     var profileHref = "#" + escAttr(slug);
-    var qrSrc = prefix + "images/qr/" + lang + "/" + escAttr(slug) + ".png?v=1";
+    var qrSrc = assetUrl(prefix, "images/qr/" + lang + "/" + slug + ".png?v=1");
     var listenLead =
       lang === "az"
         ? String(profile.listen_lead_az || "").trim()
@@ -221,12 +230,10 @@
       escAttr(degree) +
       '">\n' +
       '  <div class="card-avatar card-photo"><img src="' +
-      prefix +
-      "images/scientists-photos/" +
-      escAttr(photo) +
+      escAttr(assetUrl(prefix, "images/scientists-photos/" + photo)) +
       '" alt="' +
       escHtml(nameDisplay) +
-      '" loading="lazy"/></div>\n' +
+      '" decoding="async" loading="eager"/></div>\n' +
       '  <div class="card-body">\n' +
       '    <div class="card-head">\n' +
       '      <div class="card-profile-header">\n' +
@@ -259,8 +266,8 @@
       escAttr(qrLabels.aria) +
       '">\n' +
       '    <img class="card-qr" src="' +
-      qrSrc +
-      '" width="80" height="80" alt="" decoding="async" loading="lazy"/>\n' +
+      escAttr(qrSrc) +
+      '" width="80" height="80" alt="" decoding="async" loading="eager"/>\n' +
       "  </a>\n" +
       "</div>"
     );
@@ -319,6 +326,12 @@
           .join("\n\n");
         grid.innerHTML = html;
         grid.removeAttribute("aria-busy");
+        grid.querySelectorAll("img").forEach(function (img) {
+          img.loading = "eager";
+          if (img.dataset.src && !img.getAttribute("src")) {
+            img.setAttribute("src", img.dataset.src);
+          }
+        });
         dispatchRendered(profiles.length);
       })
       .catch(function (err) {

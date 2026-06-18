@@ -265,7 +265,10 @@ def replace_catalog_in_page(page_path: Path, catalog_html: str) -> None:
 
 
 def replace_catalog_in_html(text: str, catalog_html: str) -> str:
-    start_m = re.search(r'<section class="catalog-section" id="scientists-catalog">', text)
+    start_m = re.search(
+        r'<section class="catalog-section" id="scientists-catalog"[^>]*>',
+        text,
+    )
     if not start_m:
         raise SystemExit("catalog section not found")
     start = start_m.start()

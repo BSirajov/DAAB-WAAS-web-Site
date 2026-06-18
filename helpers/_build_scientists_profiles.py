@@ -64,6 +64,7 @@ def ensure_client_render_scripts(page_path, *, prefix: str = "../../") -> list[s
         changes.append("render-js-v")
 
     page_css_ver = STYLE_VERSIONS.get("daab-scientists-profiles-page.css", 16)
+    deep_link_ver = STYLE_VERSIONS.get("scientists-profile-deep-link.css", 6)
     new_text, n = re.subn(
         r"daab-scientists-profiles-page\.css\?v=\d+",
         f"daab-scientists-profiles-page.css?v={page_css_ver}",
@@ -72,6 +73,15 @@ def ensure_client_render_scripts(page_path, *, prefix: str = "../../") -> list[s
     if n:
         text = new_text
         changes.append("page-css-v")
+
+    new_text, n = re.subn(
+        r"scientists-profile-deep-link\.css\?v=\d+",
+        f"scientists-profile-deep-link.css?v={deep_link_ver}",
+        text,
+    )
+    if n:
+        text = new_text
+        changes.append("deep-link-css-v")
 
     if changes:
         page_path.write_text(text, encoding="utf-8", newline="\n")

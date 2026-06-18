@@ -41,7 +41,7 @@ SCRIPT_VERSIONS = {
     "daab-scientists-toolbar-mobile.js": 4,
     "daab-profiles-sticky.js": 4,
     "scientists-cv-filters.js": 5,
-    "scientists-profiles-render.js": 1,
+    "scientists-profiles-render.js": 2,
     "scientists-list-preview.js": 7,
     "scientists-catalog-data.js": 2,
     "scientists-catalog-data-en.js": 2,
@@ -95,7 +95,7 @@ STYLE_VERSIONS = {
     "scientists-list-preview.css": 3,
     "scientists-profiles-sticky.css": 2,
     "scientists-profile-tts.css": 6,
-    "scientists-profile-deep-link.css": 5,
+    "scientists-profile-deep-link.css": 6,
     "scientists-profile-qr.css": 18,
 }
 
