@@ -86,7 +86,7 @@
     var lang = detectLang();
     var invalidMessage =
       lang === "az"
-        ? "Zəhmət olmasa etibarlı e-poçt ünvanı daxil edin."
+        ? "Zəhmət olmasa etibarlı e-məktub ünvanı daxil edin."
         : "Please enter a valid email address.";
 
     function applyEmailValidity() {
@@ -141,6 +141,8 @@
           "Müraciət serveri hələ konfiqurasiya edilməyib. Zəhmət olmasa birbaşa info@daab-waas.com ünvanına yazın.",
         submitFailed: "Müraciət göndərilmədi. Bir az sonra yenidən cəhd edin və ya info@daab-waas.com ünvanına yazın.",
         networkError: "Şəbəkə xətası. İnternet bağlantınızı yoxlayın və yenidən cəhd edin.",
+        phpUnavailable:
+          "Müraciət forması bu serverdə işləmir (PHP dəstəyi lazımdır). Zəhmət olmasa məlumatlarınızı info@daab-waas.com ünvanına e-məktubla göndərin.",
       },
       en: {
         submitting: "Submitting…",
@@ -150,6 +152,8 @@
           "The application backend is not configured yet. Please email info@daab-waas.com directly.",
         submitFailed: "Could not submit your application. Please try again or email info@daab-waas.com.",
         networkError: "Network error. Check your connection and try again.",
+        phpUnavailable:
+          "This server cannot process applications (PHP mail handler required). Please email your details to info@daab-waas.com.",
       },
     };
     return (strings[lang] || strings.en)[key] || key;
@@ -208,6 +212,15 @@
     return false;
   }
 
+  function getCityValue() {
+    var manual = byId("city_manual");
+    if (manual && !manual.hidden) {
+      return String(manual.value || "").trim();
+    }
+    var citySelect = byId("city");
+    return (citySelect && citySelect.value.trim()) || "";
+  }
+
   function buildSubmissionPayload() {
     var lang = detectLang();
     var firstName = (byId("name") && byId("name").value.trim()) || "";
@@ -227,7 +240,7 @@
       last_name: lastName,
       full_name: fullName,
       country: (byId("country") && byId("country").value.trim()) || "",
-      city: (byId("city") && byId("city").value.trim()) || "",
+      city: getCityValue(),
       phone_code: phoneCode,
       phone_number: phoneNumber,
       phone_full: phoneCode && phoneNumber ? phoneCode + " " + phoneNumber : phoneNumber,
@@ -278,6 +291,9 @@
         return response.text().then(function (text) {
           var status = String(text || "").trim().toLowerCase();
           if (!response.ok || status !== "success") {
+            if (response.status === 405) {
+              throw new Error(uiText("phpUnavailable"));
+            }
             throw new Error(status === "error" ? uiText("submitFailed") : text || response.statusText);
           }
           return { ok: true };
@@ -323,8 +339,15 @@
       })
       .catch(function (err) {
         var msg = uiText("submitFailed");
-        if (err && err.message && err.message.indexOf("Failed to fetch") >= 0) {
-          msg = uiText("networkError");
+        if (err && err.message) {
+          if (err.message.indexOf("Failed to fetch") >= 0) {
+            msg = uiText("networkError");
+          } else if (
+            err.message === uiText("phpUnavailable") ||
+            err.message.indexOf("405") >= 0
+          ) {
+            msg = uiText("phpUnavailable");
+          }
         }
         showSubmitError(msg);
       })
@@ -336,8 +359,25 @@
   function initResidenceDropdowns() {
     var countrySelect = byId("country");
     var citySelect = byId("city");
+    var cityManual = byId("city_manual");
     if (!countrySelect || !citySelect) return;
     var cityRequestSeq = 0;
+
+    function hideCityManual() {
+      if (!cityManual) return;
+      cityManual.hidden = true;
+      cityManual.required = false;
+      cityManual.setAttribute("aria-hidden", "true");
+      cityManual.value = "";
+    }
+
+    function showCityManual() {
+      if (!cityManual) return;
+      cityManual.hidden = false;
+      cityManual.required = true;
+      cityManual.removeAttribute("aria-hidden");
+      citySelect.required = false;
+    }
 
     var lang = detectLang();
     var texts = {
@@ -346,14 +386,14 @@
         cityDisabledPlaceholder: "Select country first",
         cityPlaceholder: "Select city",
         cityLoadingPlaceholder: "Loading cities...",
-        cityUnavailablePlaceholder: "No cities available"
+        cityUnavailablePlaceholder: "No cities available — type your city below"
       },
       az: {
         countryPlaceholder: "Ölkə seçin",
         cityDisabledPlaceholder: "Əvvəlcə ölkə seçin",
         cityPlaceholder: "Şəhər seçin",
         cityLoadingPlaceholder: "Şəhərlər yüklənir...",
-        cityUnavailablePlaceholder: "Şəhərlər tapılmadı"
+        cityUnavailablePlaceholder: "Şəhərlər tapılmadı — aşağıda şəhəri yazın"
       }
     };
     var t = texts[lang] || texts.en;
@@ -398,6 +438,8 @@
     });
 
     function resetCitySelect() {
+      hideCityManual();
+      citySelect.required = true;
       citySelect.disabled = true;
       citySelect.innerHTML = "";
       var option = document.createElement("option");
@@ -407,6 +449,8 @@
     }
 
     function showCityLoading() {
+      hideCityManual();
+      citySelect.required = true;
       citySelect.disabled = true;
       citySelect.innerHTML = "";
       var option = document.createElement("option");
@@ -416,13 +460,7 @@
     }
 
     function populateCitySelect(cityList) {
-      citySelect.disabled = false;
       citySelect.innerHTML = "";
-
-      var placeholder = document.createElement("option");
-      placeholder.value = "";
-      placeholder.textContent = t.cityPlaceholder;
-      citySelect.appendChild(placeholder);
 
       if (!Array.isArray(cityList) || cityList.length === 0) {
         var unavailable = document.createElement("option");
@@ -430,8 +468,17 @@
         unavailable.textContent = t.cityUnavailablePlaceholder;
         citySelect.appendChild(unavailable);
         citySelect.disabled = true;
+        showCityManual();
         return;
       }
+
+      hideCityManual();
+      citySelect.disabled = false;
+      citySelect.required = true;
+      var placeholder = document.createElement("option");
+      placeholder.value = "";
+      placeholder.textContent = t.cityPlaceholder;
+      citySelect.appendChild(placeholder);
 
       cityList.forEach(function (cityName) {
         var option = document.createElement("option");

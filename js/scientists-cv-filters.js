@@ -612,8 +612,28 @@
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", boot);
   } else {
+    boot();
+  }
+
+  function boot() {
+    var catalog = document.getElementById("scientists-catalog");
+    if (catalog && catalog.getAttribute("data-daab-profiles-client") === "1") {
+      var grid = catalog.querySelector(".cards-grid");
+      var hasCards = grid && grid.querySelector(".card");
+      if (!hasCards) {
+        document.addEventListener("daab-scientists-profiles-rendered", function onRendered() {
+          document.removeEventListener("daab-scientists-profiles-rendered", onRendered);
+          init();
+        });
+        document.addEventListener("daab-scientists-profiles-render-error", function onErr() {
+          document.removeEventListener("daab-scientists-profiles-render-error", onErr);
+          init();
+        });
+        return;
+      }
+    }
     init();
   }
 })();

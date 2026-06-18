@@ -7,11 +7,18 @@ from pathlib import Path
 
 from _paths import ROOT
 from _footer_leader_snippets import FOOTER_AZ_CREDENTIAL, FOOTER_EN_CREDENTIAL
+from forum_breadcrumbs import forum_breadcrumb_inner
+from _inject_seo_head import build_seo_block
+from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS
 from forum_en_video_gallery import translate_description
 from _embed_static_nav import forum_nav_strip
 
 DATA_JS = ROOT / "js" / "video-gallery-data.json"
 ASSET = "../../../"
+VIDEO_ROUTE_PAIR = {
+    "az": "az/forum/2024/video_gallery.html",
+    "en": "en/forum/2024/video_gallery.html",
+}
 
 COPY = {
     "az": {
@@ -124,28 +131,18 @@ def grid_html_for(lang: str, items: list[dict]) -> str:
 </div>"""
 
 
-def page_html(lang: str, items: list[dict]) -> str:
+def shell_head(lang: str) -> str:
     c = COPY[lang]
-    grid = grid_html_for(lang, items)
-    nav = forum_nav_strip(lang, active_nav_id="forum-2024")
-    if lang == "az":
-        crumbs = (
-            '<div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Səhifə yolu">\n'
-            '<a href="../../index.html">Ana səhifə</a><span aria-hidden="true">›</span>'
-            '<a href="index.html">Forum 2024</a><span aria-hidden="true">›</span>'
-            '<span class="forum-breadcrumbs-current" aria-current="page">Video qalereya</span>\n'
-            "</div>"
-        )
-        menu_aria = "Menyunu aç"
-    else:
-        crumbs = (
-            '<div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Breadcrumb">\n'
-            '<a href="../../index.html">Home</a><span aria-hidden="true">›</span>'
-            '<a href="index.html">Forum 2024</a><span aria-hidden="true">›</span>'
-            '<span class="forum-breadcrumbs-current" aria-current="page">Video gallery</span>\n'
-            "</div>"
-        )
-        menu_aria = "Open menu"
+    sv = SCRIPT_VERSIONS
+    st = STYLE_VERSIONS
+    seo = build_seo_block(
+        rel_path=VIDEO_ROUTE_PAIR[lang],
+        lang=lang,
+        title=c["title"],
+        description=c["description"],
+        asset=ASSET,
+        pair=VIDEO_ROUTE_PAIR,
+    )
     return f"""<!DOCTYPE html>
 <html lang="{c["lang"]}" data-daab-lang="{c["lang"]}" data-daab-asset-root="{ASSET}" data-daab-page-id="forum-video-gallery" data-daab-nav-mount="1">
 <head>
@@ -153,29 +150,53 @@ def page_html(lang: str, items: list[dict]) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>{esc(c["title"])}</title>
 <meta name="description" content="{esc(c["description"])}"/>
-<link href="{ASSET}css/daab-fonts.css?v=1" rel="stylesheet"/>
-<link href="{ASSET}css/daab-common.css?v=40" rel="stylesheet"/>
-<link href="{ASSET}css/daab-mobile.css?v=10" rel="stylesheet"/>
-<link href="{ASSET}css/daab-search.css?v=4" rel="stylesheet"/>
-<link href="{ASSET}css/daab-back-to-top.css?v=2" rel="stylesheet"/>
-<link href="{ASSET}css/daab-lang.css?v=10" rel="stylesheet"/>
-<link href="{ASSET}css/daab-nav-mega.css?v=23" rel="stylesheet"/>
-<link href="{ASSET}css/daab-hero-summary.css?v=7" rel="stylesheet"/>
-<link href="{ASSET}css/daab-activities-layout.css?v=13" rel="stylesheet"/>
-<link href="{ASSET}css/daab-forum-content.css?v=18" rel="stylesheet"/>
-<link href="{ASSET}css/daab-video-gallery.css?v=7" rel="stylesheet"/>
-<script src="{ASSET}js/daab-mobile.js?v=5" defer></script>
-<script src="{ASSET}js/daab-back-to-top.js?v=3" defer></script>
-<script src="{ASSET}js/daab-i18n.js?v=17" defer></script>
-<script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
-<script src="{ASSET}js/daab-design-tokens.js?v=1" defer></script>
-<script src="{ASSET}js/daab-nav.js?v=19" defer></script>
-<script src="{ASSET}js/daab-primary-nav.js?v=16" defer></script>
-<script src="{ASSET}js/daab-breadcrumbs.js?v=13" defer></script>
-<script src="{ASSET}js/daab-shell.js?v=12" defer></script>
-<script src="{ASSET}js/daab-page-subtitle.js?v=2" defer></script>
-<script src="{ASSET}js/daab-search.js?v=6" defer></script>
+{seo}
+<link href="{ASSET}css/daab-fonts.css?v={st["daab-fonts.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-common.css?v={st["daab-common.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-perf.css?v={st["daab-perf.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-sticky-chrome.css?v={st["daab-sticky-chrome.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-search.css?v={st["daab-search.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-back-to-top.css?v={st["daab-back-to-top.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-lang.css?v={st["daab-lang.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-nav-mega.css?v={st["daab-nav-mega.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-hero-summary.css?v={st["daab-hero-summary.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-activities-layout.css?v={st["daab-activities-layout.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-forum-content.css?v={st["daab-forum-content.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-video-gallery.css?v={st["daab-video-gallery.css"]}" rel="stylesheet"/>
+<script src="{ASSET}js/daab-mobile.js?v={sv["daab-mobile.js"]}" defer></script>
+<script src="{ASSET}js/daab-perf.js?v={sv["daab-perf.js"]}" defer></script>
+<script src="{ASSET}js/daab-sticky-chrome.js?v={sv["daab-sticky-chrome.js"]}" defer></script>
+<script src="{ASSET}js/daab-back-to-top.js?v={sv["daab-back-to-top.js"]}" defer></script>
+<script src="{ASSET}js/daab-i18n.js?v={sv["daab-i18n.js"]}" defer></script>
+<script src="{ASSET}js/daab-lang-position.js?v={sv["daab-lang-position.js"]}" defer></script>
+<script src="{ASSET}js/daab-nav.js?v={sv["daab-nav.js"]}" defer></script>
+<script src="{ASSET}js/daab-primary-nav.js?v={sv["daab-primary-nav.js"]}" defer></script>
+<script src="{ASSET}js/daab-shell.js?v={sv["daab-shell.js"]}" defer></script>
+<script src="{ASSET}js/daab-search.js?v={sv["daab-search.js"]}" defer></script>
 </head>
+"""
+
+
+def page_html(lang: str, items: list[dict]) -> str:
+    c = COPY[lang]
+    grid = grid_html_for(lang, items)
+    nav = forum_nav_strip(lang, active_nav_id="forum-2024")
+    if lang == "az":
+        crumbs = (
+            '<div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Səhifə yolu">\n'
+            + forum_breadcrumb_inner("az", "Video qalereya")
+            + "\n</div>"
+        )
+        menu_aria = "Menyunu aç"
+    else:
+        crumbs = (
+            '<div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Breadcrumb">\n'
+            + forum_breadcrumb_inner("en", "Video gallery")
+            + "\n</div>"
+        )
+        menu_aria = "Open menu"
+    return f"""{shell_head(lang)}
 <body>
 <a class="skip" href="#content">{esc(c["skip"])}</a>
 {nav.replace('aria-label="Open menu"', f'aria-label="{menu_aria}"').replace('aria-label="Menyunu aç"', f'aria-label="{menu_aria}"')}

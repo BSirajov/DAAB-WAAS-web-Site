@@ -839,3 +839,12 @@
     flex-direction: column;
   }
 }
+
+.application-page .city-manual-fallback {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.application-page .city-manual-fallback[hidden] {
+  display: none !important;
+}

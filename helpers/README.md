@@ -22,6 +22,7 @@ Run all commands from the **repository root**: `python helpers/<script>.py`
 | `_build_work_done_2024_2026_page.py` | `az/en/work_done_2024_2026.html` |
 | `_build_donate_pages.py` | `az/en/donate.html` |
 | `_build_video_gallery_page.py` | `az/en/forum/2024/video_gallery.html` |
+| `_build_membership_redirect.py` | `az/en/membership.html` legacy redirect stubs |
 | `_build_deployment_folder.py --include-images` | `Deployment/` upload package |
 
 ## One-shot harmonisation
@@ -29,6 +30,8 @@ Run all commands from the **repository root**: `python helpers/<script>.py`
 | Command | Purpose |
 |---------|---------|
 | `_harmonize_footer_credentials.py` | Footer credential lines + `div.footer-title` → `h4` |
+| `_harmonize_forum_breadcrumbs.py` | Forum 2024 crumbs: `I Forum` hub, remove static flag |
+| `_inject_site_footer.py` | Canonical footer on application + mission pages |
 | `_site_wide_cleanup.py` | Propagate shared asset `?v=` versions |
 
 ## Paths

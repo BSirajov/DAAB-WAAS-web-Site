@@ -32,7 +32,7 @@
 <link href="../css/daab-lang.css?v=13" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=69" rel="stylesheet"/>
 <link href="../css/daab-hero-summary.css?v=13" rel="stylesheet"/>
-<link href="../css/daab-membership-application.css?v=20" rel="stylesheet"/>
+<link href="../css/daab-membership-application.css?v=21" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
 <script src="../js/daab-perf.js?v=2" defer></script>
 <script src="../js/daab-sticky-chrome.js?v=3" defer></script>
@@ -47,7 +47,7 @@
 <script src="../js/daab-application-config.js?v=2" defer></script>
 <script src="../js/daab-country-codes.js?v=1" defer></script>
 <script src="../js/daab-phone-codes.js?v=2" defer></script>
-<script src="../js/daab-membership-application.js?v=13" defer></script>
+<script src="../js/daab-membership-application.js?v=14" defer></script>
 </head>
 <body class="application-page membership-page application-page--single">
 <a class="skip" href="#content">Məzmuna keç</a>
@@ -143,12 +143,14 @@
         <div class="intro-box">
           Dünya Azərbaycanlı Alimlər Birliyinə (DAAB) üzv olmaq üçün
           <a href="charter.html">Nizamnamə</a> ilə tanış olmanız və aşağıdakı məlumatları daxil etməniz xahiş olunur.
+          <span class="req">*</span> ilə işarələnmiş sahələr mütləqdir.
         </div>
 
         <div class="field-group">
           <label class="field-label" for="email">
-            E-poçt <span class="req">*</span>
+            E-məktub <span class="req">*</span>
           </label>
+          <span class="field-hint">Üzvlüklə bağlı bütün yazışmalar üçün bu ünvan istifadə olunacaq.</span>
           <input type="email" id="email" name="email" placeholder="misal@email.com" required>
         </div>
 
@@ -190,6 +192,7 @@
             <select id="city" name="city" required disabled data-city-select="1">
               <option value="">Əvvəlcə ölkə seçin</option>
             </select>
+            <input type="text" id="city_manual" name="city_manual" class="city-manual-fallback" hidden placeholder="Şəhərin adını yazın" autocomplete="address-level2">
           </div>
         </div>
 
@@ -209,17 +212,20 @@
 
         <div class="field-group">
           <label class="field-label" for="university">Bitirdiyiniz universitet <span class="req">*</span></label>
+          <span class="field-hint">Müəssisənin adını və bitirmə ilini göstərin.</span>
           <textarea id="university" name="university" placeholder="Universiteti və ilini göstərin" required></textarea>
         </div>
 
         <div class="field-group">
           <label class="field-label" for="fieldofstudy">İxtisasınız <span class="req">*</span></label>
+          <span class="field-hint">Akademik ixtisasınız və ya elmi sahəniz.</span>
           <textarea id="fieldofstudy" name="fieldofstudy" placeholder="Məs: Kompüter elmləri" required></textarea>
         </div>
 
         <!-- Academic Degree -->
         <div class="field-group">
           <div class="field-label">Akademik dərəcəniz <span class="req">*</span></div>
+          <span class="field-hint">Sahib olduğunuz ən yüksək akademik dərəcəni seçin.</span>
           <div class="options-list">
             <div class="opt-item">
               <input type="radio" name="degree" id="deg1" value="bachelor">
@@ -254,12 +260,14 @@
 
         <div class="field-group">
           <label class="field-label" for="deginst">Akademik dərəcənizi aldığınız müəssisə <span class="req">*</span></label>
+          <span class="field-hint">Müəssisənin adını, ölkəsini və verilmə ilini göstərin.</span>
           <textarea id="deginst" name="deginst" placeholder="Müəssisənin adı, ölkəsi, ili" required></textarea>
         </div>
 
         <!-- Academic Title -->
         <div class="field-group">
           <div class="field-label">Akademik titulunuz <span class="req">*</span></div>
+          <span class="field-hint">Hazırda sahib olduğunuz akademik titulu seçin.</span>
           <div class="options-list">
             <div class="opt-item">
               <input type="radio" name="title" id="tit1" value="docent">
@@ -282,21 +290,25 @@
 
         <div class="field-group">
           <label class="field-label" for="titinst">Akademik titulunuzu aldığınız müəssisə <span class="req">*</span></label>
+          <span class="field-hint">Müəssisənin adını, ölkəsini və verilmə ilini göstərin.</span>
           <textarea id="titinst" name="titinst" placeholder="Müəssisənin adı, ölkəsi, ili" required></textarea>
         </div>
 
         <div class="field-group">
           <label class="field-label" for="currentjob">Hazırkı iş yeriniz, vəzifəniz <span class="req">*</span></label>
+          <span class="field-hint">Müəssisəni, vəzifəni və ölkəni göstərin.</span>
           <textarea id="currentjob" name="currentjob" placeholder="Müəssisə, vəzifə, ölkə" required></textarea>
         </div>
 
         <div class="field-group">
           <label class="field-label" for="prevjobs">Əvvəlki iş yerləriniz, vəzifələriniz (istəyə bağlı)</label>
+          <span class="field-hint">Əvvəlki müvafiq vəzifələrinizi sadalayın.</span>
           <textarea id="prevjobs" name="prevjobs" placeholder="Keçmiş iş yerlərini sadalayın"></textarea>
         </div>
 
         <div class="field-group">
           <label class="field-label" for="contributions">DAAB-ın fəaliyyətinə verə biləcəyiniz töhfələr <span class="req">*</span></label>
+          <span class="field-hint">DAAB-ın fəaliyyətinə və məqsədlərinə necə töhfə verməyi planlaşdırdığınızı izah edin.</span>
           <textarea id="contributions" name="contributions" class="form-textarea-tall" placeholder="DAAB-a verə biləcəyiniz töhfələri izah edin..." required></textarea>
         </div>
 
@@ -319,19 +331,19 @@
         <div class="sci-category">
           <div class="sci-cat-header">1. Humanitar və Sosial Elmlər</div>
           <div class="sci-cat-body">
-            <div class="sci-item"><input type="checkbox" id="h1" name="sci" value="filologiya"><label for="h1">Filologiya (Dillər, Ədəbiyyat, Dilçilik)</label></div>
-            <div class="sci-item"><input type="checkbox" id="h2" name="sci" value="felsefe"><label for="h2">Fəlsəfə</label></div>
-            <div class="sci-item"><input type="checkbox" id="h3" name="sci" value="tarix"><label for="h3">Tarix</label></div>
-            <div class="sci-item"><input type="checkbox" id="h4" name="sci" value="arxeologiya"><label for="h4">Arxeologiya</label></div>
-            <div class="sci-item"><input type="checkbox" id="h5" name="sci" value="etnologiya"><label for="h5">Etnologiya və Antropologiya</label></div>
-            <div class="sci-item"><input type="checkbox" id="h6" name="sci" value="siyasi"><label for="h6">Siyasi elmlər</label></div>
-            <div class="sci-item"><input type="checkbox" id="h7" name="sci" value="sosiologiya"><label for="h7">Sosiologiya</label></div>
-            <div class="sci-item"><input type="checkbox" id="h8" name="sci" value="psixologiya"><label for="h8">Psixologiya</label></div>
-            <div class="sci-item"><input type="checkbox" id="h9" name="sci" value="pedoqogika"><label for="h9">Pedoqogika</label></div>
-            <div class="sci-item"><input type="checkbox" id="h10" name="sci" value="jurnalistika"><label for="h10">Jurnalistika və Kütləvi Kommunikasiya</label></div>
-            <div class="sci-item"><input type="checkbox" id="h11" name="sci" value="huquq"><label for="h11">Hüquqşünaslıq</label></div>
-            <div class="sci-item"><input type="checkbox" id="h12" name="sci" value="iqtisadiyyat"><label for="h12">İqtisadiyyat və Menecment</label></div>
-            <div class="sci-item"><input type="checkbox" id="h13" name="sci" value="beynelxalq"><label for="h13">Beynəlxalq Münasibətlər</label></div>
+            <div class="sci-item"><input type="checkbox" id="h1" name="sci" value="philology"><label for="h1">Filologiya (Dillər, Ədəbiyyat, Dilçilik)</label></div>
+            <div class="sci-item"><input type="checkbox" id="h2" name="sci" value="philosophy"><label for="h2">Fəlsəfə</label></div>
+            <div class="sci-item"><input type="checkbox" id="h3" name="sci" value="history"><label for="h3">Tarix</label></div>
+            <div class="sci-item"><input type="checkbox" id="h4" name="sci" value="archaeology"><label for="h4">Arxeologiya</label></div>
+            <div class="sci-item"><input type="checkbox" id="h5" name="sci" value="ethnology"><label for="h5">Etnologiya və Antropologiya</label></div>
+            <div class="sci-item"><input type="checkbox" id="h6" name="sci" value="political"><label for="h6">Siyasi elmlər</label></div>
+            <div class="sci-item"><input type="checkbox" id="h7" name="sci" value="sociology"><label for="h7">Sosiologiya</label></div>
+            <div class="sci-item"><input type="checkbox" id="h8" name="sci" value="psychology"><label for="h8">Psixologiya</label></div>
+            <div class="sci-item"><input type="checkbox" id="h9" name="sci" value="pedagogy"><label for="h9">Pedoqogika</label></div>
+            <div class="sci-item"><input type="checkbox" id="h10" name="sci" value="journalism"><label for="h10">Jurnalistika və Kütləvi Kommunikasiya</label></div>
+            <div class="sci-item"><input type="checkbox" id="h11" name="sci" value="law"><label for="h11">Hüquqşünaslıq</label></div>
+            <div class="sci-item"><input type="checkbox" id="h12" name="sci" value="economics"><label for="h12">İqtisadiyyat və Menecment</label></div>
+            <div class="sci-item"><input type="checkbox" id="h13" name="sci" value="international"><label for="h13">Beynəlxalq Münasibətlər</label></div>
           </div>
         </div>
 
@@ -339,14 +351,14 @@
         <div class="sci-category">
           <div class="sci-cat-header">2. Dəqiq və Tətbiqi Elmlər</div>
           <div class="sci-cat-body">
-            <div class="sci-item"><input type="checkbox" id="d1" name="sci" value="riyaziyyat"><label for="d1">Riyaziyyat (Cəbr, Analiz, Topologiya, Riyazi Statistika)</label></div>
-            <div class="sci-item"><input type="checkbox" id="d2" name="sci" value="mentiq"><label for="d2">Məntiq və Hesablama Riyaziyyatı</label></div>
-            <div class="sci-item"><input type="checkbox" id="d3" name="sci" value="kibernetika"><label for="d3">Kibernetika və Süni İntellekt</label></div>
-            <div class="sci-item"><input type="checkbox" id="d4" name="sci" value="fizika"><label for="d4">Fizika (Kvant, Nüvə, Astrofizika, Optika)</label></div>
-            <div class="sci-item"><input type="checkbox" id="d5" name="sci" value="kimya"><label for="d5">Kimya (Ümumi, Anorganik, Üzvi, Fiziki, Analitik, Biokimya)</label></div>
-            <div class="sci-item"><input type="checkbox" id="d6" name="sci" value="geologiya"><label for="d6">Geologiya və Mineralogiya</label></div>
-            <div class="sci-item"><input type="checkbox" id="d7" name="sci" value="cografiya"><label for="d7">Coğrafiya və Kartoqrafiya</label></div>
-            <div class="sci-item"><input type="checkbox" id="d8" name="sci" value="astronomiya"><label for="d8">Astronomiya</label></div>
+            <div class="sci-item"><input type="checkbox" id="d1" name="sci" value="mathematics"><label for="d1">Riyaziyyat (Cəbr, Analiz, Topologiya, Riyazi Statistika)</label></div>
+            <div class="sci-item"><input type="checkbox" id="d2" name="sci" value="logic"><label for="d2">Məntiq və Hesablama Riyaziyyatı</label></div>
+            <div class="sci-item"><input type="checkbox" id="d3" name="sci" value="cybernetics"><label for="d3">Kibernetika və Süni İntellekt</label></div>
+            <div class="sci-item"><input type="checkbox" id="d4" name="sci" value="physics"><label for="d4">Fizika (Kvant, Nüvə, Astrofizika, Optika)</label></div>
+            <div class="sci-item"><input type="checkbox" id="d5" name="sci" value="chemistry"><label for="d5">Kimya (Ümumi, Anorganik, Üzvi, Fiziki, Analitik, Biokimya)</label></div>
+            <div class="sci-item"><input type="checkbox" id="d6" name="sci" value="geology"><label for="d6">Geologiya və Mineralogiya</label></div>
+            <div class="sci-item"><input type="checkbox" id="d7" name="sci" value="geography"><label for="d7">Coğrafiya və Kartoqrafiya</label></div>
+            <div class="sci-item"><input type="checkbox" id="d8" name="sci" value="astronomy"><label for="d8">Astronomiya</label></div>
           </div>
         </div>
 
@@ -354,16 +366,16 @@
         <div class="sci-category">
           <div class="sci-cat-header">3. Texniki və Mühəndislik Elmləri</div>
           <div class="sci-cat-body">
-            <div class="sci-item"><input type="checkbox" id="t1" name="sci" value="informatika"><label for="t1">İnformatika və Kompüter Elmləri</label></div>
-            <div class="sci-item"><input type="checkbox" id="t2" name="sci" value="elektronika"><label for="t2">Elektronika və Rabitə Texnologiyaları</label></div>
-            <div class="sci-item"><input type="checkbox" id="t3" name="sci" value="avtomatika"><label for="t3">Avtomatika və Robototexnika</label></div>
-            <div class="sci-item"><input type="checkbox" id="t4" name="sci" value="neftqaz"><label for="t4">Neft və Qaz Mühəndisliyi</label></div>
-            <div class="sci-item"><input type="checkbox" id="t5" name="sci" value="tikinti"><label for="t5">Tikinti və Memarlıq</label></div>
-            <div class="sci-item"><input type="checkbox" id="t6" name="sci" value="energetika"><label for="t6">Energetika və Elektrik Mühəndisliyi</label></div>
-            <div class="sci-item"><input type="checkbox" id="t7" name="sci" value="mexanika"><label for="t7">Mexanika və Maşınqayırma</label></div>
-            <div class="sci-item"><input type="checkbox" id="t8" name="sci" value="material"><label for="t8">Materialşünaslıq və Nanotexnologiya</label></div>
-            <div class="sci-item"><input type="checkbox" id="t9" name="sci" value="neqliyyat"><label for="t9">Nəqliyyat və Logistika</label></div>
-            <div class="sci-item"><input type="checkbox" id="t10" name="sci" value="aerokosmik"><label for="t10">Aerokosmik Mühəndislik</label></div>
+            <div class="sci-item"><input type="checkbox" id="t1" name="sci" value="cs"><label for="t1">İnformatika və Kompüter Elmləri</label></div>
+            <div class="sci-item"><input type="checkbox" id="t2" name="sci" value="electronics"><label for="t2">Elektronika və Rabitə Texnologiyaları</label></div>
+            <div class="sci-item"><input type="checkbox" id="t3" name="sci" value="robotics"><label for="t3">Avtomatika və Robototexnika</label></div>
+            <div class="sci-item"><input type="checkbox" id="t4" name="sci" value="petroleum"><label for="t4">Neft və Qaz Mühəndisliyi</label></div>
+            <div class="sci-item"><input type="checkbox" id="t5" name="sci" value="construction"><label for="t5">Tikinti və Memarlıq</label></div>
+            <div class="sci-item"><input type="checkbox" id="t6" name="sci" value="energy"><label for="t6">Energetika və Elektrik Mühəndisliyi</label></div>
+            <div class="sci-item"><input type="checkbox" id="t7" name="sci" value="mechanics"><label for="t7">Mexanika və Maşınqayırma</label></div>
+            <div class="sci-item"><input type="checkbox" id="t8" name="sci" value="materials"><label for="t8">Materialşünaslıq və Nanotexnologiya</label></div>
+            <div class="sci-item"><input type="checkbox" id="t9" name="sci" value="transport"><label for="t9">Nəqliyyat və Logistika</label></div>
+            <div class="sci-item"><input type="checkbox" id="t10" name="sci" value="aerospace"><label for="t10">Aerokosmik Mühəndislik</label></div>
           </div>
         </div>
 
@@ -372,11 +384,11 @@
           <div class="sci-cat-header">4. Bioloji və Tibb Elmləri</div>
           <div class="sci-cat-body">
             <div class="sci-item"><input type="checkbox" id="b1" name="sci" value="biologiya"><label for="b1">Biologiya (Genetika, Molekulyar Biologiya, Botanika, Zoologiya)</label></div>
-            <div class="sci-item"><input type="checkbox" id="b2" name="sci" value="tibb"><label for="b2">Tibb (Ümumi Tibb, Cərrahiyyə, Kardiologiya, Onkologiya, Nevrologiya)</label></div>
-            <div class="sci-item"><input type="checkbox" id="b3" name="sci" value="derman"><label for="b3">Dərmanşünaslıq və Farmakologiya</label></div>
-            <div class="sci-item"><input type="checkbox" id="b4" name="sci" value="baytarlik"><label for="b4">Baytarlıq Elmləri</label></div>
+            <div class="sci-item"><input type="checkbox" id="b2" name="sci" value="medicine"><label for="b2">Tibb (Ümumi Tibb, Cərrahiyyə, Kardiologiya, Onkologiya, Nevrologiya)</label></div>
+            <div class="sci-item"><input type="checkbox" id="b3" name="sci" value="pharmacy"><label for="b3">Dərmanşünaslıq və Farmakologiya</label></div>
+            <div class="sci-item"><input type="checkbox" id="b4" name="sci" value="veterinary"><label for="b4">Baytarlıq Elmləri</label></div>
             <div class="sci-item"><input type="checkbox" id="b5" name="sci" value="ekologiya"><label for="b5">Ekologiya və Ətraf Mühit Elmləri</label></div>
-            <div class="sci-item"><input type="checkbox" id="b6" name="sci" value="biotex"><label for="b6">Biotexnologiya və Biomühəndislik</label></div>
+            <div class="sci-item"><input type="checkbox" id="b6" name="sci" value="biotech"><label for="b6">Biotexnologiya və Biomühəndislik</label></div>
           </div>
         </div>
 
@@ -384,13 +396,13 @@
         <div class="sci-category">
           <div class="sci-cat-header">5. Kənd Təsərrüfatı və Yer Elmləri</div>
           <div class="sci-cat-body">
-            <div class="sci-item"><input type="checkbox" id="k1" name="sci" value="aqronomluq"><label for="k1">Aqronomluq və Bitkiçilik</label></div>
-            <div class="sci-item"><input type="checkbox" id="k2" name="sci" value="torpaq"><label for="k2">Torpaqşünaslıq və Aqrokimya</label></div>
-            <div class="sci-item"><input type="checkbox" id="k3" name="sci" value="meyvecilik"><label for="k3">Meyveçilik və Bağçılıq</label></div>
-            <div class="sci-item"><input type="checkbox" id="k4" name="sci" value="mesecilik"><label for="k4">Meşəçilik və Ağacçılıq</label></div>
-            <div class="sci-item"><input type="checkbox" id="k5" name="sci" value="suteserrufati"><label for="k5">Su Təsərrüfatı və Hidromeliorasiya</label></div>
-            <div class="sci-item"><input type="checkbox" id="k6" name="sci" value="zooinjineriya"><label for="k6">Zooinjineriya və Heyvandarlıq</label></div>
-            <div class="sci-item"><input type="checkbox" id="k7" name="sci" value="baliqcilik"><label for="k7">Balıqçılıq və Akvakultura</label></div>
+            <div class="sci-item"><input type="checkbox" id="k1" name="sci" value="agronomy"><label for="k1">Aqronomluq və Bitkiçilik</label></div>
+            <div class="sci-item"><input type="checkbox" id="k2" name="sci" value="soil"><label for="k2">Torpaqşünaslıq və Aqrokimya</label></div>
+            <div class="sci-item"><input type="checkbox" id="k3" name="sci" value="horticulture"><label for="k3">Meyveçilik və Bağçılıq</label></div>
+            <div class="sci-item"><input type="checkbox" id="k4" name="sci" value="forestry"><label for="k4">Meşəçilik və Ağacçılıq</label></div>
+            <div class="sci-item"><input type="checkbox" id="k5" name="sci" value="water"><label for="k5">Su Təsərrüfatı və Hidromeliorasiya</label></div>
+            <div class="sci-item"><input type="checkbox" id="k6" name="sci" value="animal"><label for="k6">Zooinjineriya və Heyvandarlıq</label></div>
+            <div class="sci-item"><input type="checkbox" id="k7" name="sci" value="fishery"><label for="k7">Balıqçılıq və Akvakultura</label></div>
           </div>
         </div>
 
@@ -398,11 +410,11 @@
         <div class="sci-category">
           <div class="sci-cat-header">6. İncəsənət və Mədəniyyət Elmləri</div>
           <div class="sci-cat-body">
-            <div class="sci-item"><input type="checkbox" id="i1" name="sci" value="musiqisunaslik"><label for="i1">Musiqişünaslıq</label></div>
-            <div class="sci-item"><input type="checkbox" id="i2" name="sci" value="teatr"><label for="i2">Teatr və Kinoşünaslıq</label></div>
-            <div class="sci-item"><input type="checkbox" id="i3" name="sci" value="ressamliq"><label for="i3">Rəssamlıq və Dizayn</label></div>
+            <div class="sci-item"><input type="checkbox" id="i1" name="sci" value="musicology"><label for="i1">Musiqişünaslıq</label></div>
+            <div class="sci-item"><input type="checkbox" id="i2" name="sci" value="theatre"><label for="i2">Teatr və Kinoşünaslıq</label></div>
+            <div class="sci-item"><input type="checkbox" id="i3" name="sci" value="finearts"><label for="i3">Rəssamlıq və Dizayn</label></div>
             <div class="sci-item"><input type="checkbox" id="i4" name="sci" value="folklor"><label for="i4">Xalq Yaradıcılığı və Folklor</label></div>
-            <div class="sci-item"><input type="checkbox" id="i5" name="sci" value="medeniyyet"><label for="i5">Mədəniyyət və Sənət Tarixi</label></div>
+            <div class="sci-item"><input type="checkbox" id="i5" name="sci" value="culturalhistory"><label for="i5">Mədəniyyət və Sənət Tarixi</label></div>
           </div>
         </div>
 
@@ -423,13 +435,14 @@
 
         <div class="field-group">
           <label class="field-label" for="addinfo">Əlavə olaraq paylaşmaq istədiyiniz məlumatlar (istəyə bağlı)</label>
+          <span class="field-hint">Üzvlük müraciətinizlə bağlı hesab etdiyiniz digər məlumatları bildirə bilərsiniz.</span>
           <textarea id="addinfo" name="addinfo" class="form-textarea-tall" placeholder="İstəsəniz əlavə məlumat bildirə bilərsiniz..."></textarea>
         </div>
 
         <div class="intro-box">
           <strong><span aria-hidden="true">📎</span> Foto və CV</strong><br>
           Bu formanı göndərdikdən sonra şəxsi foto və CV-nizi
-          <a href="mailto:info@daab-waas.com">e-poçt ünvanımıza</a> göndərin.<br><br>
+          <a href="mailto:info@daab-waas.com">e-məktub ünvanımıza</a> göndərin.<br><br>
           <span class="form-note-muted">
             Qəbul edilən formatlar: CV üçün PDF, DOCX; foto üçün JPG və ya PNG.
             Mövzu sətirində yazın: <em>«DAAB üzvlük — [Ad Soyad]»</em>
@@ -437,7 +450,7 @@
         </div>
 
         <div class="field-group">
-          <label class="field-label" for="cvconfirm">Foto və CV-ni e-poçtla göndərəcəyimi təsdiqləyirəm</label>
+          <label class="field-label" for="cvconfirm">Foto və CV-ni e-məktubla göndərəcəyimi təsdiqləyirəm</label>
           <div class="opt-item opt-item-cv-confirm">
             <input type="checkbox" id="cvconfirm" name="cvconfirm">
             <label for="cvconfirm">Bəli, foto və CV-ni <a href="mailto:info@daab-waas.com">info@daab-waas.com</a> ünvanına göndərəcəyəm</label>

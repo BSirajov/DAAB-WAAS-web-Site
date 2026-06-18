@@ -32,7 +32,7 @@
 <link href="../css/daab-lang.css?v=13" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=69" rel="stylesheet"/>
 <link href="../css/daab-hero-summary.css?v=13" rel="stylesheet"/>
-<link href="../css/daab-membership-application.css?v=20" rel="stylesheet"/>
+<link href="../css/daab-membership-application.css?v=21" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
 <script src="../js/daab-perf.js?v=2" defer></script>
 <script src="../js/daab-sticky-chrome.js?v=3" defer></script>
@@ -47,7 +47,7 @@
 <script src="../js/daab-application-config.js?v=2" defer></script>
 <script src="../js/daab-country-codes.js?v=1" defer></script>
 <script src="../js/daab-phone-codes.js?v=2" defer></script>
-<script src="../js/daab-membership-application.js?v=13" defer></script>
+<script src="../js/daab-membership-application.js?v=14" defer></script>
 </head>
 <body class="application-page membership-page application-page--single">
 <a class="skip" href="#content">Skip to content</a>
@@ -199,6 +199,7 @@
             <select id="city" name="city" required disabled data-city-select="1">
               <option value="">Select country first</option>
             </select>
+            <input type="text" id="city_manual" name="city_manual" class="city-manual-fallback" hidden placeholder="Enter your city" autocomplete="address-level2">
           </div>
         </div>
 
@@ -510,8 +511,7 @@
       </div>
       <div class="footer-col">
         <h4 class="footer-title">Leadership</h4>
-        <p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>
-        Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p>
+        <p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p>
       </div>
     </div>
   </div>

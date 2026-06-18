@@ -58,7 +58,7 @@ $subject = $subjectPrefix . ($fullName !== '' ? ' — ' . $fullName : '');
 $labels = $isAz
     ? [
         'full_name' => 'Ad, soyad',
-        'email' => 'E-poçt',
+        'email' => 'E-məktub',
         'country' => 'Ölkə',
         'city' => 'Şəhər',
         'phone_full' => 'Telefon',

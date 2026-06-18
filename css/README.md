@@ -32,4 +32,4 @@ These are kept for future pages or legacy layouts; safe to omit from deploy unle
 - `daab-membership-page.css` (legacy membership layout; `membership.html` redirects to `membership_value.html`)
 - `daab-prominent-figure-profile.css`
 
-**Related:** client scripts in `../js/`; maintenance tools in `../helpers/`.
+**Related:** client scripts in `../js/`; maintenance tools in `../helpers/`. Deploy exclusions: see `../.deployignore` and `helpers/_deploy_assets.py`.

@@ -483,3 +483,17 @@ a.card-name:focus-visible{
     transition: none;
   }
 }
+
+html[data-daab-page-id="scientists-profiles"] .profiles-catalog-loading,
+html[data-daab-page-id="scientists-profiles"] .profiles-catalog-error {
+  grid-column: 1 / -1;
+  margin: 2rem auto;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  color: var(--ink-muted, #4a5568);
+  font-size: 1rem;
+}
+
+html[data-daab-page-id="scientists-profiles"] .profiles-catalog-error {
+  color: var(--color-danger, #b42318);
+}

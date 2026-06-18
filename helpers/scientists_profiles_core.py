@@ -52,7 +52,7 @@ CRED_LABEL = {
 }
 
 META_LABELS = {
-    "az": {"field": "İxtisas:", "email": "E-poçt:"},
+    "az": {"field": "İxtisas:", "email": "E-məktub:"},
     "en": {"field": "Field:", "email": "Email:"},
 }
 
@@ -231,6 +231,22 @@ def render_card(profile: dict, lang: str, *, asset_prefix: str = "../../") -> st
     <img class="card-qr" src="{qr_src}" width="80" height="80" alt="" decoding="async" loading="lazy"/>
   </a>
 </div>'''
+
+
+LOADING_TEXT = {
+    "az": "Profillər yüklənir…",
+    "en": "Loading profiles…",
+}
+
+
+def build_catalog_shell(lang: str) -> str:
+    loading = html.escape(LOADING_TEXT[lang])
+    return (
+        '<section class="catalog-section" id="scientists-catalog" data-daab-profiles-client="1">\n'
+        '  <div class="cards-grid" aria-busy="true">\n'
+        f'    <p class="profiles-catalog-loading" id="profiles-catalog-loading">{loading}</p>\n'
+        "  </div>\n</section>\n  "
+    )
 
 
 def build_catalog_section(profiles: list[dict], lang: str, *, asset_prefix: str = "../../") -> str:

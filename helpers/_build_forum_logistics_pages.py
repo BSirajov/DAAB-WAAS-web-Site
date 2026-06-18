@@ -408,7 +408,7 @@ PAGES = {
         "skip": "Məzmuna keç",
         "nav_label": "Əsas naviqasiya",
         "crumb_home": "Ana səhifə",
-        "crumb_forum": "Forum 2024",
+        "crumb_forum": "I Forum",
         "crumb_current": "Logistika",
         "h1": "Nəqliyyat, <span>hotel, qidalanma</span>",
         "subtitle": "Forum 2024 iştirakçıları üçün səyahət, məskunlaşma və yemək təşkili",
@@ -435,7 +435,7 @@ PAGES = {
         "skip": "Skip to content",
         "nav_label": "Main navigation",
         "crumb_home": "Home",
-        "crumb_forum": "Forum 2024",
+        "crumb_forum": "I Forum",
         "crumb_current": "Logistics",
         "h1": "Transport, <span>hotel, catering</span>",
         "subtitle": "Travel, accommodation, and meal arrangements for Forum 2024 participants",
@@ -475,7 +475,7 @@ def build_page(cfg: dict) -> str:
 <body>
 <a class="skip" href="#content">{cfg["skip"]}</a>
 {nav}
-<div class="breadcrumbs forum-breadcrumbs" data-daab-breadcrumbs-static="1" role="navigation" aria-label="{'Səhifə yolu' if lang == 'az' else 'Breadcrumb'}"><a href="../../index.html">{cfg["crumb_home"]}</a><span aria-hidden="true">›</span><a href="index.html">{cfg["crumb_forum"]}</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">{cfg["crumb_current"]}</span></div>
+<div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="{'Səhifə yolu' if lang == 'az' else 'Breadcrumb'}"><a href="../../index.html">{cfg["crumb_home"]}</a><span aria-hidden="true">›</span><a href="index.html">{cfg["crumb_forum"]}</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">{cfg["crumb_current"]}</span></div>
 <header class="page-hero">
 <div class="hero-wrap shell">
 <section class="hero-copy">

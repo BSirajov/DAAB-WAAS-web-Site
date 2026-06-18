@@ -45,6 +45,7 @@ from _embed_static_nav import forum_nav_strip  # noqa: E402
 from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS  # noqa: E402
 from forum_en_common import FORUM_FOOTER_EN  # noqa: E402
 from _footer_leader_snippets import FOOTER_AZ_CREDENTIAL  # noqa: E402
+from forum_breadcrumbs import forum_breadcrumb_inner
 
 AZ_SLUG = str.maketrans(
     {
@@ -524,19 +525,11 @@ def build_html(lang: str, sections: list[dict], spec: dict, page_key: str) -> st
     cards = "\n".join(speech_card(s) for s in sections)
 
     if lang == "az":
-        crumbs = (
-            '<a href="../../index.html">Ana səhifə</a><span aria-hidden="true">›</span>'
-            '<a href="index.html">Forum 2024</a><span aria-hidden="true">›</span>'
-            f'<span class="forum-breadcrumbs-current" aria-current="page">{c["breadcrumb"]}</span>'
-        )
+        crumbs = forum_breadcrumb_inner("az", c["breadcrumb"])
         skip = "Məzmuna keç"
         crumb_aria = "Səhifə yolu"
     else:
-        crumbs = (
-            '<a href="../../index.html">Home</a><span aria-hidden="true">›</span>'
-            '<a href="index.html">Forum 2024</a><span aria-hidden="true">›</span>'
-            f'<span class="forum-breadcrumbs-current" aria-current="page">{c["breadcrumb"]}</span>'
-        )
+        crumbs = forum_breadcrumb_inner("en", c["breadcrumb"])
         skip = "Skip to content"
         crumb_aria = "Breadcrumb"
 
