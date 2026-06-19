@@ -656,6 +656,24 @@
 }.application-page .opt-item.selected{
   border-color: var(--blue-700);
   background: #dff2ff;
+}.application-page .sci-fields-fieldset{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}.application-page .sci-fields-legend{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}.application-page .sci-fields-fieldset[aria-invalid="true"] .sci-category{
+  outline: 2px solid #c62828;
+  outline-offset: 2px;
 }.application-page .sci-category{
   border: 1px solid #9ed6f5;
   border-radius: 12px;

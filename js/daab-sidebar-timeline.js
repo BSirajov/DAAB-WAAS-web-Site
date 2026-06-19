@@ -1,15 +1,15 @@
 /**
- * Sidebar timeline scroll-spy + mobile collapse (Activities Yeniliklər panel).
- * Used on activities and forum content pages with .timeline-list anchors.
+ * Sidebar timeline scroll-spy + mobile collapse (Activities, Charter, forum pages).
+ * Uses js/daab-sidebar-spy.js for shared scroll-spy logic.
  */
 (function () {
   const links = Array.from(document.querySelectorAll('.timeline-list a[href^="#"]'));
   if (!links.length) return;
 
-  const ids = links.map((a) => a.getAttribute('href').slice(1));
-  const cards = ids.map((id) => document.getElementById(id)).filter(Boolean);
   const eventsWidget = document.querySelector('.sidebar-widget');
   const eventsToggle = document.querySelector('.events-menu-toggle');
+  const Spy = window.DAAB_SIDEBAR_SPY;
+
   function sidebarStackMediaQuery() {
     if (window.DAAB_DESIGN && typeof window.DAAB_DESIGN.sidebarStackMq === 'function') {
       return window.DAAB_DESIGN.sidebarStackMq();
@@ -18,6 +18,10 @@
   }
 
   const mobileQuery = sidebarStackMediaQuery();
+  const spy =
+    Spy && typeof Spy.fromTimelineLinks === 'function'
+      ? Spy.fromTimelineLinks(links)
+      : null;
 
   function activate(link) {
     links.forEach((a) => a.classList.remove('tl-active'));
@@ -43,26 +47,28 @@
     if (!target) return;
     event.preventDefault();
     activate(link);
-    const Pos = window.DAAB_LANG_POSITION;
-    if (Pos && Pos.scrollToAnchor) {
-      Pos.scrollToAnchor(id, false);
-    } else {
-      target.scrollIntoView({ block: 'start', behavior: 'auto' });
-    }
+    if (spy) spy.scrollToId(id);
+    else target.scrollIntoView({ block: 'start', behavior: 'auto' });
     history.pushState(null, '', link.getAttribute('href'));
     if (mobileQuery.matches) closeEventsMenu();
   }
 
   function onScroll() {
-    const mid = window.scrollY + window.innerHeight * 0.35;
-    let active = null;
-    for (let i = cards.length - 1; i >= 0; i--) {
-      if (cards[i] && cards[i].offsetTop <= mid) {
-        active = i;
-        break;
+    if (spy) spy.updateActive();
+    else {
+      const mid = window.scrollY + window.innerHeight * 0.35;
+      let active = null;
+      const cards = links
+        .map((a) => document.getElementById(a.getAttribute('href').slice(1)))
+        .filter(Boolean);
+      for (let i = cards.length - 1; i >= 0; i--) {
+        if (cards[i] && cards[i].offsetTop <= mid) {
+          active = links[i];
+          break;
+        }
       }
+      activate(active);
     }
-    activate(active !== null ? links[ids.indexOf(cards[active].id)] : null);
   }
 
   links.forEach((link) => link.addEventListener('click', jumpToTarget));
@@ -80,19 +86,16 @@
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeEventsMenu();
   });
+
   function syncFromHash() {
     const id = location.hash.slice(1);
-    const idx = id ? ids.indexOf(id) : -1;
-    if (idx === -1) { activate(null); return; }
-    const target = document.getElementById(id);
-    if (!target) return;
-    activate(links[idx]);
-    const Pos = window.DAAB_LANG_POSITION;
-    if (Pos && Pos.scrollToAnchor) {
-      Pos.scrollToAnchor(id, false);
-    } else {
-      target.scrollIntoView({ block: 'start', behavior: 'auto' });
+    const idx = id ? links.findIndex((a) => a.getAttribute('href') === '#' + id) : -1;
+    if (idx === -1) {
+      activate(null);
+      return;
     }
+    activate(links[idx]);
+    if (spy) spy.scrollToId(id);
   }
 
   window.addEventListener('popstate', syncFromHash);

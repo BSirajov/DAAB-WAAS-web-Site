@@ -30,6 +30,10 @@ Run all commands from the **repository root**: `python helpers/<script>.py`
 | Command | Purpose |
 |---------|---------|
 | `_harmonize_footer_credentials.py` | Footer credential lines + `div.footer-title` → `h4` |
+| `_inject_seo_head.py` | Canonical, hreflang, Open Graph, and Twitter meta on indexable pages |
+| `_build_flyer_qr.py` | Static QR PNGs for membership/sponsorship flyers |
+| `_split_scientists_profiles_chunks.py` | `i18n/scientists-profiles/chunk-*.json` from monolithic JSON |
+| `_build_favicon.py` | Root `favicon.ico` from `images/daab-logo.png` |
 | `_harmonize_forum_breadcrumbs.py` | Forum 2024 crumbs: `I Forum` hub, remove static flag |
 | `_inject_site_footer.py` | Canonical footer on application + mission pages |
 | `_site_wide_cleanup.py` | Propagate shared asset `?v=` versions |

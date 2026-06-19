@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yeni daab-waas.com saytı / New daab-waas.com Website — DAAB/WAAS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #08263b;
+    --muted: #345d76;
+    --blue-700: #005a9a;
+    --blue-400: #4db6f0;
+    --gold: #c89b38;
+    --card-bg: rgba(245,251,255,.96);
+    --border: #9ed6f5;
+    --tag-bg: #dff2ff;
+    --search: #eef8ff;
+    --white: #ffffff;
+    --hero-overlay: rgba(8,38,59,0.72);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    background: #f0f6fb;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  a { color: var(--blue-700); text-decoration: none; }
+  a:hover { color: var(--gold); }
+
+  /* ── LANG TOGGLE ── */
+  .lang-bar {
+    background: var(--ink);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+  .lang-bar span { color: rgba(255,255,255,0.45); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+  .lang-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.7);
+    font-size: 11px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .lang-btn.active, .lang-btn:hover {
+    background: var(--blue-400);
+    border-color: var(--blue-400);
+    color: #fff;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #08263b 0%, #0a3a5c 50%, #0d4d7a 100%);
+    padding: 36px 40px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(77,182,240,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(200,155,56,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4.2vw, 52px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--blue-400);
+  }
+  .hero-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: .04em;
+    margin-bottom: 28px;
+  }
+  .hero-url {
+    display: inline-block;
+    background: rgba(77,182,240,0.15);
+    border: 1px solid rgba(77,182,240,0.35);
+    color: var(--blue-400);
+    padding: 9px 22px;
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    transition: all .2s;
+  }
+  .hero-url:hover {
+    background: var(--blue-400);
+    color: #fff;
+  }
+  .hero-date {
+    margin-top: 18px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: .06em;
+  }
+
+  /* ── COVER LETTER ── */
+  .cover-section {
+    max-width: 900px;
+    margin: 48px auto 0;
+    padding: 0 24px;
+  }
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label--cover {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  .section-label--cover::after {
+    display: none;
+  }
+  .section-label--prominent {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+    margin-bottom: 28px;
+    justify-content: center;
+  }
+  .section-label--prominent::after {
+    display: none;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .cover-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(8,38,59,0.07);
+  }
+  .cover-lang-block {
+    display: block;
+  }
+  .cover-col {
+    padding: 32px 36px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .cover-col-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--blue-700);
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 3px 10px;
+    margin-bottom: 16px;
+  }
+  .cover-col p {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .cover-col p:last-child { margin-bottom: 0; }
+
+  /* ── FEATURES GRID ── */
+  .features-section {
+    max-width: 1100px;
+    margin: 52px auto 0;
+    padding: 0 24px;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .feat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 26px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+    box-shadow: 0 2px 12px rgba(8,38,59,0.05);
+  }
+  .feat-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--blue-400);
+    box-shadow: 0 10px 32px rgba(8,38,59,0.12);
+  }
+  .feat-card::after {
+    content: '';
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(77,182,240,0.1), rgba(200,155,56,0.05));
+    pointer-events: none;
+  }
+  .feat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #d9f0ff, #fff);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 2px 8px rgba(77,182,240,0.15);
+    float: left;
+    margin: 2px 14px 10px 0;
+    flex-shrink: 0;
+  }
+  .feat-card::before {
+    content: '';
+    display: table;
+  }
+  .feat-card-body::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .feat-title-az {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 3px;
+    line-height: 1.3;
+  }
+  .feat-title-en {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 14px;
+    letter-spacing: .01em;
+  }
+  .feat-divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 14px;
+    opacity: 0.6;
+  }
+  .feat-text {
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+  /* language visibility */
+  .az-text { display: block; }
+  .en-text { display: none; }
+  body.lang-en .az-text { display: none; }
+  body.lang-en .en-text { display: block; }
+  body.lang-en .feat-title-az { display: none; }
+  body.lang-en .feat-title-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    font-style: normal;
+    letter-spacing: 0;
+    margin-bottom: 14px;
+  }
+  body.lang-en .feat-title-en + .feat-divider { display: block; }
+
+  /* cover letter lang */
+  .cover-az { display: block; }
+  .cover-en { display: none; }
+  body.lang-en .cover-az { display: none; }
+  body.lang-en .cover-en { display: block; }
+
+  /* hero lang */
+  .h-az { display: inline; }
+  .h-en { display: none; }
+  body.lang-en .h-az { display: none; }
+  body.lang-en .h-en { display: inline; }
+
+  @media (max-width: 1060px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 760px) {
+    .hero { padding: 44px 20px 40px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .lang-bar { padding: 8px 20px; }
+    .cover-col { padding: 24px 20px; }
+  }
+  @media (max-width: 420px) {
+    .hero h1 { font-size: 26px; }
+    .features-section, .cover-section { padding: 0 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Lang bar -->
+<div class="lang-bar">
+  <span>Dil / Lang:</span>
+  <button class="lang-btn active" onclick="setLang('az')" id="btn-az">AZ</button>
+  <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>
+    <span class="h-az">Yeni <em>daab-waas.com</em> saytı</span>
+    <span class="h-en">New <em>daab-waas.com</em> Website</span>
+  </h1>
+  <div class="hero-sub">
+    <span class="h-az">Dünya Azərbaycanlı Alimlər Birliyi</span>
+    <span class="h-en">World Association of Azerbaijani Scientists</span>
+  </div>
+  <a href="https://daab-waas.com" target="_blank" class="hero-url">🌐 daab-waas.com</a>
+  <div class="hero-date">18 İyun / June 2026</div>
+</section>
+
+<!-- Cover Letter -->
+<section class="cover-section">
+  <div class="section-label section-label--cover">
+    <span class="az-text">YENİLƏNMİŞ SAYTIMIZIN MÜJDƏSİ</span>
+    <span class="en-text">Cover Letter</span>
+  </div>
+  <div class="cover-card">
+    <div class="cover-lang-block">
+
+      <!-- AZ mode: AZ text only -->
+      <div class="cover-col az-text">
+        <p>Hörmətli həmkarlar,</p>
+        <p>Son bir neçə həftə ərzində veb-saytımızın yenilənməsi üzərində çalışıram. Tələbələrimizin həyata keçirdiyi layihə hələ tamamlanmadığından bu işi onlardan asılı olmayaraq, paralel şəkildə özüm yerinə yetirirəm. Düşünürəm ki, saytımız daha müasir dizayn və funksionallıqlara malik olmaqla istifadəçilər üçün daha cəlbedici olmalıdır.</p>
+        <p>Süni intellektin dəstəyindən istifadə etməklə mövcud saytımızı yeni <a href="https://daab-waas.com">daab-waas.com</a> platformasına miqrasiya etmiş, onun strukturunu, dizaynını və məzmununu əsaslı şəkildə yeniləmişəm.</p>
+        <p>Bununla yanaşı, DAAB-ın gələcək fəaliyyətində sponsorluq, ianə və tərəfdaşlıq dəstəyinin mühüm rol oynayacağını nəzərə alaraq, bu istiqamətdə ayrıca səhifələr də hazırlamışam. Hesab edirəm ki, potensial sponsorlar və tərəfdaşlarla əlaqə qurarkən yeni saytımızı, xüsusilə də sponsorluq və ianə dəstəyi ilə bağlı səhifələri onlarla paylaşmağımız vacibdir.</p>
+        <p>Vaxtınız və imkanınız olarsa, lütfən yeni saytı nəzərdən keçirin. Hər hansı uyğunsuzluq, texniki səhv, məzmun çatışmazlığı və ya təklifiniz olarsa, mənə bildirin ki, lazımi düzəlişləri edim.</p>
+        <p style="margin-top:24px;">Hörmətlə,<br><strong>Bəxtiyar Siracov</strong></p>
+      </div>
+
+      <!-- EN mode: EN text only -->
+      <div class="cover-col en-text">
+        <p>Dear colleagues,</p>
+        <p>Over the past few weeks I have been working on updating our website. Because the student project is not yet complete, I am carrying out this work in parallel and independently. I believe the site should be more attractive to users through a more modern design and broader functionality.</p>
+        <p>With the support of artificial intelligence, I have migrated our existing site to the new <a href="https://daab-waas.com">daab-waas.com</a> platform and substantially renewed its structure, design, and content.</p>
+        <p>Bearing in mind that sponsorship, donations, and partnership support will play an important role in DAAB's future activities, I have also prepared dedicated pages in this direction. I believe it is important to share our new site — especially the sponsorship and donation pages — with potential sponsors and partners when we reach out to them.</p>
+        <p>If you have time, please review the new site. If you notice any inconsistency, technical error, missing content, or have suggestions, let me know so I can make the necessary corrections.</p>
+        <p style="margin-top:24px;">Best regards,<br><strong>Bakhtiyar Sirajov</strong></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features-section">
+  <div class="section-label section-label--prominent" style="margin-top:52px;">
+    <span class="az-text">Əsas dəyişikliklər və imkanlar</span>
+    <span class="en-text">Key Changes and Capabilities</span>
+  </div>
+
+  <div class="features-grid">
+
+    <!-- 1 -->
+    <div class="feat-card"><div class="feat-card-body">
+      <div class="feat-icon">📋</div>
+      <div class="feat-title-az">Üzvlük Müraciəti</div>
+      <div class="feat-title-en">Membership Application</div>
+      <div class="feat-divider"></div>
+      <div class="feat-text az-text">Üzvlük Müraciəti funksionallığı DAAB-a qoşulmaq istəyən şəxslər üçün sadə, təhlükəsiz və tam onlayn müraciət prosesini təmin edir. Namizədlər şəxsi, akademik və peşəkar məlumatlarını, fəaliyyət sahələrini, yaşadıqları ölkə və şəhəri, əlaqə məlumatlarını xüsusi hazırlanmış elektron müraciət forması vasitəsilə təqdim edə bilərlər.</div>
+      <div class="feat-text en-text">The Membership Application functionality provides a simple, secure, and fully online process for individuals who wish to join WAAS. Through a dedicated application form, prospective members can submit their personal, academic, and professional information, areas of expertise, country and city of residence, and contact details for review.</div>
+    </div></div>
+
+    <!-- 2 -->
+    <div class="feat-card"><div class="feat-card-body">
+      <div class="feat-icon">🤝</div>
+      <div class="feat-title-az">Sponsorluq İmkanları</div>
+      <div class="feat-title-en">Sponsorship Opportunities</div>
+      <div class="feat-divider"></div>
+      <div class="feat-text az-text">Sponsorluq funksionallığı təşkilatlar, şirkətlər və fərdi dəstəkçilər üçün birliyimizin fəaliyyətlərinə töhfə vermək imkanı yaradır. Potensial sponsorlar müxtəlif sponsorluq paketləri ilə tanış ola və əməkdaşlıq maraqlarını birbaşa DAAB-a çatdıra bilərlər.</div>
+      <div class="feat-text en-text">The Sponsorship functionality gives organizations, companies, and individual supporters an opportunity to contribute to our Association's activities. Potential sponsors can explore various sponsorship packages and express their interest in collaboration directly to WAAS.</div>
+    </div></div>
+
+    <!-- 3 -->
+    <div class="feat-card"><div class="feat-card-body">
+      <div class="feat-icon">💛</div>
+      <div class="feat-title-az">İanə Edin</div>
+      <div class="feat-title-en">Donate</div>
+      <div class="feat-divider"></div>
+      <div class="feat-text az-text">İanə funksionallığı elmə, təhsilə və beynəlxalq elmi əməkdaşlığın inkişafına töhfə vermək istəyən fərdi şəxslər və təşkilatlar üçün nəzərdə tutulmuşdur. Toplanan vəsaitlər Azərbaycan elminin qlobal miqyasda inkişafına xidmət edir.</div>
+      <div class="feat-text en-text">The Donation functionality is designed for individuals and organizations who wish to contribute to the advancement of science, education, and international scientific cooperation. Funds collected are used in accordance with WAAS's mission and objectives.</div>
+    </div></div>
+
+    <!-- 4 -->
+    <div class="feat-card"><div class="feat-card-body">
+      <div class="feat-icon">🔍</div>
+      <div class="feat-title-az">Axtarış və Filtrləmə</div>
+      <div class="feat-title-en">Advanced Search & Filtering</div>
+      <div class="feat-divider"></div>
+      <div class="feat-text az-text">İnkişaf etdirilmiş axtarış və filtrləmə funksionallığı istifadəçilərə geniş həcmdə məlumat arasında lazım olan məzmunu sürətli şəkildə tapmağa imkan verir. Məlumatlar ölkə, şəhər, fəaliyyət sahəsi, elmi istiqamət, təşkilat və digər meyarlar üzrə filtr edilə bilər.</div>
+      <div class="feat-text en-text">The enhanced search and filtering functionality enables users to quickly locate relevant content within the website's extensive repository. Information can be filtered by country, city, field of expertise, scientific discipline, organization, and other criteria.</div>
+    </div></div>
+
+    <!-- 5 -->
+    <div class="feat-card"><div class="feat-card-body">
+      <div class="feat-icon">↕️</div>
+      <div class="feat-title-az">Sıralama Funksionallığı</div>
+      <div class="feat-title-en">Sorting Capabilities</div>
+      <div class="feat-divider"></div>
+      <div class="feat-text az-text">Sıralama funksionallığı məlumatların istifadəçi ehtiyaclarına uyğun şəkildə təşkil edilməsini təmin edir. Siyahılar əlifba sırası, tarix, ölkə, fəaliyyət sahəsi və digər parametrlər üzrə artan və ya azalan qaydada sıralana bilər.</div>
+      <div class="feat-text en-text">The sorting functionality allows users to organize information according to their specific preferences. Content can be sorted alphabetically, by date, country, or field of activity in ascending or descending order, making large datasets far easier to navigate.</div>
+    </div></div>
+
+    <!-- 6 -->
+    <div class="feat-card"><div class="feat-card-body">
+      <div class="feat-icon">🗂️</div>
+      <div class="feat-title-az">Qruplaşdırma İmkanları</div>
+      <div class="feat-title-en">Grouping & Categorization</div>
+      <div class="feat-divider"></div>
+      <div class="feat-text az-text">Qruplaşdırma funksionallığı məlumatların məntiqi və strukturlaşdırılmış şəkildə təqdim olunmasına xidmət edir. Alimlər ölkələr, fəaliyyət sahələri və ya elmi istiqamətlər üzrə qruplaşdırıla bilər.</div>
+      <div class="feat-text en-text">The grouping functionality presents information in a structured manner by organizing related records into meaningful categories. Scientists can be grouped by country, scientific discipline, professional field, or other classification criteria.</div>
+    </div></div>
+
+    <!-- 7 -->
+    <div class="feat-card"><div class="feat-card-body">
+      <div class="feat-icon">🧭</div>
+      <div class="feat-title-az">Təkmilləşdirilmiş Naviqasiya</div>
+      <div class="feat-title-en">Enhanced Navigation System</div>
+      <div class="feat-divider"></div>
+      <div class="feat-text az-text">Yeni naviqasiya sistemi saytın bölmələri arasında daha sürətli və intuitiv keçidləri təmin edir. Təkmilləşdirilmiş menyular, alt menyular, səhifədaxili keçidlər və naviqasiya çığırı (breadcrumbs) istifadəçilərə rahat istiqamətlənməyə kömək edir.</div>
+      <div class="feat-text en-text">The redesigned navigation system provides a more intuitive and user-friendly experience. Improved menus, hierarchical submenus, contextual elements, and breadcrumb trails allow users to move seamlessly between sections and quickly understand their location within the site.</div>
+    </div></div>
+
+    <!-- 8 -->
+    <div class="feat-card"><div class="feat-card-body">
+      <div class="feat-icon">🃏</div>
+      <div class="feat-title-az">Kart və Siyahı Görünüşləri</div>
+      <div class="feat-title-en">Card and List Views</div>
+      <div class="feat-divider"></div>
+      <div class="feat-text az-text">İstifadəçilər məlumatları öz seçimlərinə uyğun olaraq kart və ya siyahı formatında görüntüləyə bilərlər. Kart görünüşü vizual təqdimata, siyahı görünüşü isə daha çox məlumatın eyni anda nəzərdən keçirilməsinə üstünlük verənlər üçündür.</div>
+      <div class="feat-text en-text">Users can choose between card-based and list-based presentation modes. The card view offers a visually engaging layout, while the list view enables users to review larger amounts of information at once. Both modes adapt to different browsing styles.</div>
+    </div></div>
+
+    <!-- 9 -->
+    <div class="feat-card"><div class="feat-card-body">
+      <div class="feat-icon">📱</div>
+      <div class="feat-title-az">Adaptiv Dizayn</div>
+      <div class="feat-title-en">Responsive & Mobile-Friendly Design</div>
+      <div class="feat-divider"></div>
+      <div class="feat-text az-text">Saytın bütün funksionallıqları müxtəlif cihazlarda — kompüter, planşet və mobil telefonlarda tam işlək şəkildə təqdim olunur. Adaptiv dizayn texnologiyaları ekran ölçüsündən asılı olmayaraq məzmunun düzgün göstərilməsini təmin edir.</div>
+      <div class="feat-text en-text">All website features function seamlessly across desktops, tablets, and mobile devices. Responsive design principles ensure that content remains accessible and readable regardless of screen size, allowing access anytime, from anywhere.</div>
+    </div></div>
+
+    <!-- 10 -->
+    <div class="feat-card"><div class="feat-card-body">
+      <div class="feat-icon">🌐</div>
+      <div class="feat-title-az">İkidilli Məzmun Dəstəyi</div>
+      <div class="feat-title-en">Multilingual Content Support</div>
+      <div class="feat-divider"></div>
+      <div class="feat-text az-text">İkidilli dəstək funksionallığı istifadəçilərə məlumatları Azərbaycan və ingilis dillərində əldə etmək imkanı verir. Bu xüsusiyyət dünyanın müxtəlif ölkələrindəki azərbaycanlı alimlər və tərəfdaş təşkilatlar üçün məlumatların daha əlçatan olmasını təmin edir.</div>
+      <div class="feat-text en-text">The multilingual functionality enables users to access information in both Azerbaijani and English, making the platform more accessible to Azerbaijani scientists, researchers, and partners worldwide. This supports international collaboration across diverse audiences.</div>
+    </div></div>
+
+    <!-- 11 -->
+    <div class="feat-card"><div class="feat-card-body">
+      <div class="feat-icon">👨‍🔬</div>
+      <div class="feat-title-az">Alimlər Kataloqu</div>
+      <div class="feat-title-en">Advanced Scientist Directory</div>
+      <div class="feat-divider"></div>
+      <div class="feat-text az-text">Təkmilləşdirilmiş Alimlər kataloqu güclü axtarış, filtrləmə, sıralama və qruplaşdırma imkanları ilə istifadəçilərə azərbaycanlı alimlərin qlobal şəbəkəsini daha effektiv araşdırmağa imkan verir. Şəbəkələşmə, əməkdaşlıq və bilik mübadiləsinə xidmət edir.</div>
+      <div class="feat-text en-text">The enhanced Scientist Directory incorporates powerful search, filtering, sorting, and grouping tools that let users explore the global network of Azerbaijani scientists more effectively. It facilitates networking, collaboration, and knowledge exchange across countries and disciplines.</div>
+    </div></div>
+
+    <!-- 12 -->
+    <div class="feat-card"><div class="feat-card-body">
+      <div class="feat-icon">🔊</div>
+      <div class="feat-title-az">Mətnin Səsləndirilməsi</div>
+      <div class="feat-title-en">Text-to-Speech Functionality</div>
+      <div class="feat-divider"></div>
+      <div class="feat-text az-text">Mətnin səsləndirilməsi funksionallığı istifadəçilərə sayt məzmununu oxumaq əvəzinə dinləmək imkanı yaradır. Məqalələr, elanlar, profillər bir toxunuşla səsləndirilə bilər. Bu funksionallığın işləməsi brauzer və cihaz dəstəyindən asılıdır.</div>
+      <div class="feat-text en-text">The Text-to-Speech functionality allows users to listen to website content instead of reading it, improving accessibility. Articles, announcements, and profiles can be heard directly from the site. Note: availability depends on browser and device support.</div>
+    </div></div>
+
+    <!-- 13 -->
+    <div class="feat-card"><div class="feat-card-body">
+      <div class="feat-icon">📷</div>
+      <div class="feat-title-az">QR Kod Funksionallığı</div>
+      <div class="feat-title-en">QR Code Functionality</div>
+      <div class="feat-divider"></div>
+      <div class="feat-text az-text">QR kod funksionallığı istifadəçilərin saytın məlumatlarına, resurslarına və xidmətlərinə daha sürətli çıxışını təmin edir. Smartfon vasitəsilə QR kodu skan etməklə üzvlük formaları, sponsorluq, ianə bölmələri və digər resurslara dərhal keçid əldə edilir.</div>
+      <div class="feat-text en-text">The QR Code functionality gives users faster access to the website's information and services. By scanning a QR code with a smartphone, users can instantly navigate to membership forms, sponsorship pages, donation sections, or other relevant content — ideal for events and presentations.</div>
+    </div></div>
+
+    <!-- 14 -->
+    <div class="feat-card"><div class="feat-card-body">
+      <div class="feat-icon">📬</div>
+      <div class="feat-title-az">Yeni E-poçt Ünvanı</div>
+      <div class="feat-title-en">New Email Address</div>
+      <div class="feat-divider"></div>
+      <div class="feat-text az-text">DAAB/WAAS-ın rəsmi e-poçt ünvanı <a href="mailto:info@daab-waas.com">info@daab-waas.com</a> olaraq yaradılmışdır. Bu ünvan bundan belə təşkilatın bütün rəsmi yazışmaları, üzvlük müraciətləri və əməkdaşlıq təklifləri üçün əsas əlaqə vasitəsidir.</div>
+      <div class="feat-text en-text">DAAB/WAAS's official email address <a href="mailto:info@daab-waas.com">info@daab-waas.com</a> is now active. This address serves as the primary contact channel for all official correspondence, membership applications, and partnership inquiries going forward.</div>
+    </div></div>
+
+  </div>
+</section>
+
+
+
+<script>
+  function setLang(lang) {
+    const body = document.body;
+    const btnAz = document.getElementById('btn-az');
+    const btnEn = document.getElementById('btn-en');
+    if (lang === 'en') {
+      body.classList.add('lang-en');
+      body.setAttribute('lang', 'en');
+      btnAz.classList.remove('active');
+      btnEn.classList.add('active');
+    } else {
+      body.classList.remove('lang-en');
+      body.setAttribute('lang', 'az');
+      btnEn.classList.remove('active');
+      btnAz.classList.add('active');
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -15,8 +15,6 @@ BUILD_ONLY_CSS = frozenset(
     {
         "daab-forum-book.css",  # helpers/_build_forum_2024_site.py, forum_2024 book HTML
         "daab-membership-page.css",  # legacy membership layout; membership.html redirects
-        "daab-encyclopedia-page.css",  # knowledge treasury / encyclopedia (unpublished)
-        "daab-prominent-figure-profile.css",  # prominent_figures/* (unpublished)
     }
 )
 
@@ -28,13 +26,7 @@ DEPLOY_PACKAGED_CSS = frozenset(
 )
 
 # Future / alternate site modules — safe to omit from deploy until wired.
-OPTIONAL_JS = frozenset(
-    {
-        "prominent-figures-catalog.js",
-        "prominent-figures-catalog-data.js",
-        "prominent-figures-catalog-data-en.js",
-    }
-)
+OPTIONAL_JS: frozenset[str] = frozenset()
 
 # Injected at runtime (see js/daab-perf.js), not a static <script src> in HTML.
 DYNAMIC_JS = frozenset(

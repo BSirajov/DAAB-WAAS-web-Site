@@ -23,8 +23,6 @@ CSS_FILES = [
     "daab-nav-mega.css",
     "daab-hero-summary.css",
     "daab-content-hero.css",
-    "daab-encyclopedia-page.css",
-    "daab-prominent-figure-profile.css",
     "scientists-catalog-toolbar.css",
     "daab-table-resize.css",
     "daab-site-background.css",
@@ -47,36 +45,25 @@ JS_FILES = [
     "daab-collation.js",
     "daab-scientists-toolbar-mobile.js",
     "daab-table-resize.js",
-    "prominent-figures-catalog.js",
-    "prominent-figures-catalog-data.js",
-    "prominent-figures-catalog-data-en.js",
 ]
 
 LOCALE_PAGES = [
-    "encyclopedia.html",
     "industrial_revolutions.html",
     "major_scientific_inventions.html",
 ]
 
 HELPER_FILES = [
     "_paths.py",
-    "_build_prominent_figures_catalog.py",
-    "_build_en_prominent_figures.py",
     "_create_treasury_placeholder_pages.py",
-    "_check_catalog_links.py",
 ]
 
-HELPER_DATA = [
-    "prominent_figure_enrichment_en.json",
-    "prominent_figure_enrichment_azturk.json",
-]
+HELPER_DATA: list[str] = []
 
 SITE_DOMAIN = "https://bilik-xezinesi.az"
 
 
 def count_catalog_entries() -> int:
-    text = (DAAB / "js" / "prominent-figures-catalog-data.js").read_text(encoding="utf-8")
-    return len(re.findall(r'"id"\s*:', text))
+    return 0
 
 
 def adapt_html(html: str, lang: str) -> str:
@@ -475,7 +462,6 @@ Independent bilingual knowledge platform extracted from the DAAB website Treasur
 ## Contents
 
 - **Home** (`az/index.html`, `en/index.html`)
-- **Prominent Figures** — {catalog_count} profiles (`encyclopedia.html`)
 - **Industrial Revolutions** — placeholder
 - **Major Scientific Inventions** — placeholder
 
@@ -492,14 +478,7 @@ Open http://localhost:8020/index.html
 - `az/`, `en/` — locale pages
 - `css/`, `js/`, `images/` — shared assets (DAAB-compatible shell)
 - `i18n/` — navigation and UI strings
-- `helpers/` — catalog build scripts (not deployed)
-
-## Regenerate catalog after profile edits
-
-```bat
-python helpers/_build_prominent_figures_catalog.py
-python helpers/_build_en_prominent_figures.py
-```
+- `helpers/` — placeholder page generator (not deployed)
 """
     (KT_ROOT / "README.md").write_text(text, encoding="utf-8", newline="\n")
 
@@ -531,17 +510,10 @@ def copy_tree() -> int:
     for lang in ("az", "en"):
         for page in LOCALE_PAGES:
             src = DAAB / lang / page
+            if not src.is_file():
+                continue
             dst = KT_ROOT / lang / page
             dst.write_text(adapt_html(src.read_text(encoding="utf-8"), lang), encoding="utf-8", newline="\n")
-            count += 1
-        pf_src = DAAB / lang / "prominent_figures"
-        pf_dst = KT_ROOT / lang / "prominent_figures"
-        if pf_dst.exists():
-            shutil.rmtree(pf_dst)
-        shutil.copytree(pf_src, pf_dst)
-        for path in pf_dst.rglob("*.html"):
-            text = adapt_html(path.read_text(encoding="utf-8"), lang)
-            path.write_text(text, encoding="utf-8", newline="\n")
             count += 1
 
     helpers_dst = KT_ROOT / "helpers"

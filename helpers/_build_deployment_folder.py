@@ -17,6 +17,7 @@ import sys
 from pathlib import Path
 
 from _paths import ROOT
+from _deploy_assets import DEPLOYIGNORE_ASSET_PATHS
 
 DEPLOY_DIR = ROOT / "Deployment"
 DEPLOY_STAGING = ROOT / ".deployment-staging"
@@ -40,6 +41,9 @@ EXTRA_DIR_NAMES = {".git", "__pycache__", "node_modules"}
 
 # Subfolder under Deployment/ left untouched when refreshing the package.
 PRESERVE_DEPLOY_DIRS = frozenset({"images"})
+
+# Build-only assets — must match helpers/_deploy_assets.py + .deployignore.
+DEPLOY_EXCLUDED_ASSETS = frozenset(DEPLOYIGNORE_ASSET_PATHS)
 
 
 def parse_deployignore(path: Path) -> tuple[list[str], list[str]]:
@@ -85,6 +89,8 @@ def should_exclude(
     skip_images: bool,
 ) -> bool:
     if skip_images and (rel_posix == "images" or rel_posix.startswith("images/")):
+        return True
+    if rel_posix in DEPLOY_EXCLUDED_ASSETS:
         return True
     parts = rel_posix.split("/")
     parts_lower = [p.lower() for p in parts]
@@ -210,6 +216,15 @@ def validate_deployment_tree(deploy_root: Path | None = None) -> int:
     return vs.main()
 
 
+def validate_forbidden_assets(deploy_root: Path) -> list[str]:
+    """Return relative paths of build-only assets that must not ship in Deployment/."""
+    found: list[str] = []
+    for rel in sorted(DEPLOY_EXCLUDED_ASSETS):
+        if (deploy_root / rel).is_file():
+            found.append(rel)
+    return found
+
+
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Build production Deployment/ package.")
     p.add_argument(
@@ -264,6 +279,15 @@ def main() -> int:
     print(f"→ Staged {copied} files ({bytes_total / (1024 * 1024):.1f} MB)")
     print(f"→ Skipped {len(skipped)} non-deploy paths\n")
 
+    forbidden = validate_forbidden_assets(DEPLOY_STAGING)
+    if forbidden:
+        print("ERROR — forbidden assets in staging package:")
+        for rel in forbidden[:20]:
+            print(f"  ✗ {rel}")
+        if len(forbidden) > 20:
+            print(f"  … and {len(forbidden) - 20} more")
+        return 1
+
     # Spot-check required roots (staging)
     required = [
         "index.html",
@@ -294,6 +318,13 @@ def main() -> int:
     preserve = PRESERVE_DEPLOY_DIRS if skip_images else frozenset()
     print("→ Publishing to Deployment/ …")
     replace_deploy_dir(DEPLOY_STAGING, DEPLOY_DIR, preserve_names=preserve)
+
+    forbidden_live = validate_forbidden_assets(DEPLOY_DIR)
+    if forbidden_live:
+        print("ERROR — forbidden assets remain in Deployment/:")
+        for rel in forbidden_live[:20]:
+            print(f"  ✗ {rel}")
+        return 1
 
     if skip_images:
         img_dir = DEPLOY_DIR / "images"

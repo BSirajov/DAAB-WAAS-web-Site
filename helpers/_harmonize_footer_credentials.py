@@ -28,6 +28,60 @@ FOOTER_TITLE_RE = re.compile(
     re.IGNORECASE,
 )
 
+TEL_HREF = "tel:+905551474674"
+TEL_DISPLAY = "+90 555 147 46 74"
+
+# Bare emoji in footer contact rows (multiline-friendly).
+FOOTER_EMOJI_RE = re.compile(
+    r'(<div class="footer-item">\s*)([✉☎🌐])(\s*)',
+    re.MULTILINE,
+)
+
+# Phone as plain span → tap-to-call link.
+FOOTER_PHONE_SPAN_RE = re.compile(
+    r'(<span aria-hidden="true">☎</span>\s*)<span>\s*'
+    + re.escape(TEL_DISPLAY)
+    + r'\s*</span>',
+    re.IGNORECASE,
+)
+
+FOOTER_PHONE_BARE_RE = re.compile(
+    r'(<div class="footer-item">\s*)<span aria-hidden="true">☎</span>\s*<span>\s*'
+    + re.escape(TEL_DISPLAY)
+    + r'\s*</span>',
+    re.IGNORECASE,
+)
+
+
+def patch_footer_contact_markup(text: str) -> str:
+    text = FOOTER_EMOJI_RE.sub(r'\1<span aria-hidden="true">\2</span>\3', text)
+    text = FOOTER_PHONE_SPAN_RE.sub(
+        r'\1<a href="' + TEL_HREF + '">' + TEL_DISPLAY + "</a>",
+        text,
+    )
+    text = FOOTER_PHONE_BARE_RE.sub(
+        r'\1<span aria-hidden="true">☎</span> <a href="' + TEL_HREF + '">' + TEL_DISPLAY + "</a>",
+        text,
+    )
+    # Legacy inline rows: ☎ then newline + span phone.
+    text = re.sub(
+        r'(<div class="footer-item">\s*)<span aria-hidden="true">☎</span>\s*<span>\s*'
+        + re.escape(TEL_DISPLAY)
+        + r'\s*</span>',
+        r'\1<span aria-hidden="true">☎</span> <a href="' + TEL_HREF + '">' + TEL_DISPLAY + "</a>",
+        text,
+        flags=re.I | re.S,
+    )
+    text = re.sub(
+        r'(<div class="footer-item">\s*)☎\s*<span>\s*'
+        + re.escape(TEL_DISPLAY)
+        + r'\s*</span>',
+        r'\1<span aria-hidden="true">☎</span> <a href="' + TEL_HREF + '">' + TEL_DISPLAY + "</a>",
+        text,
+        flags=re.I | re.S,
+    )
+    return text
+
 
 def patch_file(path) -> bool:
     text = path.read_text(encoding="utf-8")
@@ -40,6 +94,7 @@ def patch_file(path) -> bool:
         for old, new in REPLACEMENTS_EN:
             text = text.replace(old, new)
     text = FOOTER_TITLE_RE.sub(r'<h4 class="footer-title">\1</h4>', text)
+    text = patch_footer_contact_markup(text)
     if text != original:
         path.write_text(text, encoding="utf-8")
         return True

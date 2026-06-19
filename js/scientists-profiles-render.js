@@ -307,13 +307,18 @@
 
     var lang = pageLang();
     var prefix = assetRoot();
-    var jsonUrl = prefix + "i18n/scientists-profiles.json";
+    var loader = window.DAAB_SCIENTISTS_PROFILES_LOADER;
+    var loadProfiles =
+      loader && typeof loader.load === "function"
+        ? loader.load(prefix)
+        : fetch(prefix + "i18n/scientists-profiles.json", { credentials: "same-origin" }).then(
+            function (res) {
+              if (!res.ok) throw new Error("HTTP " + res.status);
+              return res.json();
+            }
+          );
 
-    fetch(jsonUrl, { credentials: "same-origin" })
-      .then(function (res) {
-        if (!res.ok) throw new Error("HTTP " + res.status);
-        return res.json();
-      })
+    loadProfiles
       .then(function (data) {
         var profiles = (data && data.profiles) || [];
         profiles.sort(function (a, b) {

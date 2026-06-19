@@ -241,7 +241,6 @@ def shell_head(cfg: dict) -> str:
 <link href="{ASSET}css/daab-nav-mega.css?v={st["daab-nav-mega.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-content-hero.css?v={st["daab-content-hero.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-hero-summary.css?v={st["daab-hero-summary.css"]}" rel="stylesheet"/>
-<link href="{ASSET}css/daab-tokens.css?v=1" rel="stylesheet"/>
 <link href="{ASSET}css/daab-membership-flyer.css?v={FLYER_CSS_V}" rel="stylesheet"/>
 <script src="{ASSET}js/daab-mobile.js?v={sv["daab-mobile.js"]}" defer></script>
 <script src="{ASSET}js/daab-back-to-top.js?v={sv["daab-back-to-top.js"]}" defer></script>
@@ -280,11 +279,9 @@ def benefit_icon_markup(icon: str) -> str:
     return f'<div class="flyer-benefit-icon" aria-hidden="true">{icon}</div>'
 
 
-def qr_img_url(target: str) -> str:
-    return (
-        "https://api.qrserver.com/v1/create-qr-code/?size=144x144&margin=0&data="
-        + urllib.parse.quote(target, safe="")
-    )
+def qr_img_path(lang: str, kind: str) -> str:
+    """Local static QR asset (see helpers/_build_flyer_qr.py)."""
+    return f"{ASSET}images/qr/flyer-{kind}-{lang}.png"
 
 
 def build_email_body(cfg: dict, lang: str) -> str:
@@ -348,7 +345,7 @@ def build_locale(key: str) -> None:
     if key == "az":
         nav = nav.replace("çap oluna bilən flyer", "çap oluna bilən dəvət məktubu")
     contact_abs = CONTACT_URL[key]
-    qr_url = qr_img_url(contact_abs)
+    qr_url = qr_img_path(key, "sponsorship")
 
     stats_html = "".join(
         f'<span class="flyer-stat"><strong>{esc(icon)}</strong>{esc(label)}</span>'

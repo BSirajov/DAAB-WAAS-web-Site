@@ -105,12 +105,32 @@
     return STRINGS[lang()] || STRINGS.az;
   }
 
+  function localeCollator() {
+    var pageLang = lang();
+    if (typeof Intl !== "undefined" && typeof Intl.Collator === "function") {
+      return new Intl.Collator(pageLang === "en" ? "en" : "az", { sensitivity: "base" });
+    }
+    return null;
+  }
+
   function compare(a, b) {
-    return window.DAAB_COLLATION.compare(a, b);
+    var coll = window.DAAB_COLLATION;
+    if (coll && typeof coll.compare === "function") {
+      return coll.compare(a, b);
+    }
+    var intl = localeCollator();
+    if (intl) return intl.compare(String(a || ""), String(b || ""));
+    return String(a || "").localeCompare(String(b || ""), undefined, { sensitivity: "base" });
   }
 
   function sortValues(arr) {
-    return window.DAAB_COLLATION.sort(arr);
+    var coll = window.DAAB_COLLATION;
+    if (coll && typeof coll.sort === "function") {
+      return coll.sort(arr);
+    }
+    var copy = arr.slice();
+    copy.sort(compare);
+    return copy;
   }
 
   function esc(s) {

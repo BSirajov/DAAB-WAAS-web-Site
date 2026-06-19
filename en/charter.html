@@ -18,18 +18,20 @@
 <meta property="og:title" content="WAAS — Charter"/>
 <meta property="og:description" content="Charter of the World Association of Azerbaijani Scientists."/>
 <meta property="og:url" content="https://daab-waas.com/en/charter.html"/>
+<meta property="og:image" content="https://daab-waas.com/images/daab-logo.png"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:locale:alternate" content="az_AZ"/>
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="WAAS — Charter"/>
 <meta name="twitter:description" content="Charter of the World Association of Azerbaijani Scientists."/>
+<meta name="twitter:image" content="https://daab-waas.com/images/daab-logo.png"/>
 <!-- /daab-seo -->
 <link href="../css/daab-fonts.css?v=1" rel="stylesheet"/>
 
-<link href="../css/daab-common.css?v=75" rel="stylesheet"/>
+<link href="../css/daab-common.css?v=77" rel="stylesheet"/>
 <link href="../css/daab-perf.css?v=2" rel="stylesheet"/>
-<link href="../css/daab-mobile.css?v=13" rel="stylesheet"/>
-<link href="../css/daab-sticky-chrome.css?v=1" rel="stylesheet"/>
+<link href="../css/daab-mobile.css?v=14" rel="stylesheet"/>
+<link href="../css/daab-sticky-chrome.css?v=2" rel="stylesheet"/>
 <link href="../css/daab-search.css?v=6" rel="stylesheet"/>
 <link href="../css/daab-back-to-top.css?v=2" rel="stylesheet"/>
 <link href="../css/daab-charter-page.css?v=11" rel="stylesheet"/>
@@ -489,7 +491,7 @@
       <div class="footer-col">
         <h4 class="footer-title">Contact</h4>
         <div class="footer-item"><span aria-hidden="true">✉</span> <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div>
-        <div class="footer-item"><span aria-hidden="true">☎</span> <span>+90 555 147 46 74</span></div>
+        <div class="footer-item"><span aria-hidden="true">☎</span> <a href="tel:+905551474674">+90 555 147 46 74</a></div>
         <div class="footer-item"><span aria-hidden="true">🌐</span> <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div>
       </div>
       <div class="footer-col">
@@ -505,50 +507,7 @@
   </div>
   <div class="footer-bottom">© 2026 WAAS — All Rights Reserved</div>
 </footer>
-<script>
-(function () {
-  var widget = document.getElementById('charterArticlesWidget');
-  if (!widget) return;
-  var toggle = widget.querySelector('.events-menu-toggle');
-  var mobileMq = window.matchMedia('(max-width: 1060px)');
-  if (toggle) {
-    toggle.addEventListener('click', function () {
-      var open = widget.classList.toggle('events-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  }
-  widget.querySelectorAll('.timeline-list a[href^="#"]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      if (mobileMq.matches) {
-        widget.classList.remove('events-open');
-        if (toggle) toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-  var links = Array.from(widget.querySelectorAll('.timeline-list a[href^="#"]'));
-  var sections = links.map(function (a) {
-    return document.getElementById(a.getAttribute('href').slice(1));
-  }).filter(Boolean);
-  if (sections.length && 'IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          links.forEach(function (l) { l.classList.remove('tl-active'); });
-          var match = links.find(function (l) {
-            return l.getAttribute('href') === '#' + entry.target.id;
-          });
-          if (match) {
-            match.classList.add('tl-active');
-            if (!mobileMq.matches) {
-              match.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-            }
-          }
-        }
-      });
-    }, { rootMargin: '-30% 0px -55% 0px' });
-    sections.forEach(function (s) { observer.observe(s); });
-  }
-})();
-</script>
+<script defer src="../js/daab-sidebar-spy.js?v=1"></script>
+<script defer src="../js/daab-sidebar-timeline.js?v=4"></script>
 </body>
 </html>

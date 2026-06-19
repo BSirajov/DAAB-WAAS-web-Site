@@ -2,11 +2,8 @@
  * Global top chrome — single fixed shell (reliable in Chrome / Safari / Firefox).
  * Nav + breadcrumbs live inside #daab-top-chrome; #daab-chrome-spacer reserves flow space.
  * Heights: --daab-nav-height, --daab-breadcrumbs-height, --daab-sticky-top-stack (JS).
+ * Z-index tokens: css/daab-tokens.css (--z-nav, --z-breadcrumbs).
  */
-
-:root {
-  --z-breadcrumbs: 9998;
-}
 
 body:not(.daab-gateway) {
   padding-top: 0 !important;

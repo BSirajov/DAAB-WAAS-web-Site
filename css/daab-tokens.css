@@ -132,6 +132,8 @@
 
   /* —— Z-index stack —— */
   --z-breadcrumbs: 100;
+  --z-sidebar-sticky: 20;
+  --z-sidebar-mobile: 4500;
   --z-hero: 1;
   --z-nav: 9999;
   --z-back-to-top: 10050;

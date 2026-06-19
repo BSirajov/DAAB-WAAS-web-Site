@@ -27,14 +27,4 @@ Client-side scripts for the DAAB static site. Loaded from HTML pages under `az/`
 
 `scientists-profiles-render.js` must run before `scientists-cv-filters.js` (filters wait for render event).
 
-## Build-only / not linked from live HTML
-
-Kept for unpublished knowledge-treasury pages and helper pipelines; listed in `.deployignore`:
-
-- `prominent-figures-catalog.js`
-- `prominent-figures-catalog-data.js`
-- `prominent-figures-catalog-data-en.js`
-
-See also build-only CSS in `../css/README.md` and `helpers/_deploy_assets.py`.
-
 **Related:** stylesheets in `../css/`; maintenance tools in `../helpers/`.

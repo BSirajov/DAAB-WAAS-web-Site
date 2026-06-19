@@ -18,18 +18,20 @@
 <meta property="og:title" content="WAAS — Azerbaijani Scientists Abroad"/>
 <meta property="og:description" content="Directory of Azerbaijani scientists abroad — World Association of Azerbaijani Scientists."/>
 <meta property="og:url" content="https://daab-waas.com/en/scientists/list.html"/>
+<meta property="og:image" content="https://daab-waas.com/images/daab-logo.png"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:locale:alternate" content="az_AZ"/>
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="WAAS — Azerbaijani Scientists Abroad"/>
 <meta name="twitter:description" content="Directory of Azerbaijani scientists abroad — World Association of Azerbaijani Scientists."/>
+<meta name="twitter:image" content="https://daab-waas.com/images/daab-logo.png"/>
 <!-- /daab-seo -->
 <link href="../../css/daab-fonts.css?v=1" rel="stylesheet"/>
 
-<link href="../../css/daab-common.css?v=75" rel="stylesheet"/>
+<link href="../../css/daab-common.css?v=77" rel="stylesheet"/>
 <link href="../../css/daab-perf.css?v=2" rel="stylesheet"/>
-<link href="../../css/daab-mobile.css?v=13" rel="stylesheet"/>
-<link href="../../css/daab-sticky-chrome.css?v=1" rel="stylesheet"/>
+<link href="../../css/daab-mobile.css?v=14" rel="stylesheet"/>
+<link href="../../css/daab-sticky-chrome.css?v=2" rel="stylesheet"/>
 <link href="../../css/daab-search.css?v=6" rel="stylesheet"/>
 <link href="../../css/daab-back-to-top.css?v=2" rel="stylesheet"/>
 <link href="../../css/scientists-catalog-toolbar.css?v=5" rel="stylesheet"/>
@@ -93,19 +95,19 @@
 <div class="filter-group">
 <span class="filter-icon-label" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 9v5l-4-2v-3L3 5z"/></svg><span>Filters</span></span>
 <div class="sel-wrap">
-<select id="filterCountry"><option value=""><span aria-hidden="true">🌍</span> Country of residence</option></select>
+<select id="filterCountry" aria-label="Country of residence"><option value=""><span aria-hidden="true">🌍</span> Country of residence</option></select>
 <button class="sel-clear" data-for="filterCountry" title="Clear filter">×</button>
 </div>
 <div class="sel-wrap">
-<select id="filterIxtilas"><option value=""><span aria-hidden="true">📚</span> Field</option></select>
+<select id="filterIxtilas" aria-label="Field"><option value=""><span aria-hidden="true">📚</span> Field</option></select>
 <button class="sel-clear" data-for="filterIxtilas" title="Clear filter">×</button>
 </div>
 <div class="sel-wrap">
-<select id="filterDegree"><option value=""><span aria-hidden="true">🎓</span> Academic degree</option></select>
+<select id="filterDegree" aria-label="Academic degree"><option value=""><span aria-hidden="true">🎓</span> Academic degree</option></select>
 <button class="sel-clear" data-for="filterDegree" title="Clear filter">×</button>
 </div>
 <div class="sel-wrap">
-<select id="filterCins"><option value=""><span aria-hidden="true">⚥</span> Gender</option><option value="male">Male</option><option value="female">Female</option></select>
+<select id="filterCins" aria-label="Gender"><option value=""><span aria-hidden="true">⚥</span> Gender</option><option value="male">Male</option><option value="female">Female</option></select>
 <button class="sel-clear" data-for="filterCins" title="Clear filter">×</button>
 </div>
 <button class="btn-clear" id="clearFilters">Reset all</button>
@@ -243,8 +245,9 @@
 </main>
 <script defer src="../../js/scientists-catalog-data-en.js?v=2"></script>
 <script defer src="../../js/daab-collation.js?v=1"></script>
-<script defer src="../../js/scientists-list-preview.js?v=7"></script>
-<script src="../../js/scientists-list-catalog.js?v=8" defer></script>
+<script defer src="../../js/daab-scientists-profiles-loader.js?v=1"></script>
+<script defer src="../../js/scientists-list-preview.js?v=8"></script>
+<script src="../../js/scientists-list-catalog.js?v=9" defer></script>
 <script src="../../js/daab-table-resize.js?v=3" defer></script>
 <!-- FOOTER -->
 <footer class="footer-pro">
@@ -256,7 +259,7 @@
       <div class="footer-col">
         <h4 class="footer-title">Contact</h4>
         <div class="footer-item"><span aria-hidden="true">✉</span> <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div>
-        <div class="footer-item"><span aria-hidden="true">☎</span> <span>+90 555 147 46 74</span></div>
+        <div class="footer-item"><span aria-hidden="true">☎</span> <a href="tel:+905551474674">+90 555 147 46 74</a></div>
         <div class="footer-item"><span aria-hidden="true">🌐</span> <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div>
       </div>
       <div class="footer-col">

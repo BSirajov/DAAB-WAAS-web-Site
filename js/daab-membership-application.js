@@ -159,12 +159,20 @@
     return (strings[lang] || strings.en)[key] || key;
   }
 
-  function showSubmitError(message) {
+  function showSubmitError(message, options) {
+    var opts = options || {};
     var box = byId("app-submit-status");
     if (!box) return;
     box.hidden = false;
     box.className = "app-submit-status app-submit-status--error";
     box.textContent = message;
+    if (opts.alert) {
+      box.setAttribute("role", "alert");
+      box.setAttribute("aria-live", "assertive");
+    } else {
+      box.setAttribute("role", "status");
+      box.setAttribute("aria-live", "polite");
+    }
   }
 
   function clearSubmitStatus() {
@@ -173,6 +181,10 @@
     box.hidden = true;
     box.textContent = "";
     box.className = "app-submit-status";
+    box.setAttribute("role", "status");
+    box.setAttribute("aria-live", "polite");
+    var sciFieldset = byId("sci-fields");
+    if (sciFieldset) sciFieldset.removeAttribute("aria-invalid");
   }
 
   function setSubmitting(isSubmitting) {
@@ -206,7 +218,9 @@
 
   function validateSciSelection() {
     if (getSciValues().length > 0) return true;
-    showSubmitError(uiText("sciRequired"));
+    var sciFieldset = byId("sci-fields");
+    if (sciFieldset) sciFieldset.setAttribute("aria-invalid", "true");
+    showSubmitError(uiText("sciRequired"), { alert: true });
     var sec = byId("sec-3");
     if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
     return false;
@@ -944,6 +958,18 @@
     initBackToStepsButtons();
     initEndpointNotice();
     updateProgress(1);
+    var sciFieldset = byId("sci-fields");
+    if (sciFieldset) {
+      sciFieldset.addEventListener("change", function () {
+        if (getSciValues().length > 0) {
+          sciFieldset.removeAttribute("aria-invalid");
+          var box = byId("app-submit-status");
+          if (box && box.classList.contains("app-submit-status--error")) {
+            clearSubmitStatus();
+          }
+        }
+      });
+    }
     var submitBtn = byId("appSubmitBtn");
     if (submitBtn && !submitBtn.textContent.trim()) {
       submitBtn.textContent = uiText("submit");

@@ -12,6 +12,7 @@ from _paths import ROOT
 from _site_wide_cleanup import iter_deploy_html
 
 SITE_ORIGIN = "https://daab-waas.com"
+OG_IMAGE = f"{SITE_ORIGIN}/images/daab-logo.png"
 SITE_NAME = {"az": "DAAB", "en": "WAAS"}
 MARKER_START = "<!-- daab-seo -->"
 MARKER_END = "<!-- /daab-seo -->"
@@ -48,19 +49,6 @@ def load_lang_pairs() -> dict[str, dict[str, str]]:
         entry = {"az": az, "en": en}
         pairs[az] = entry
         pairs[en] = entry
-
-    az_root = ROOT / "az" / "prominent_figures"
-    if az_root.is_dir():
-        for az_path in az_root.rglob("*.html"):
-            if az_path.name == "hazirlanir.html":
-                continue
-            rel = az_path.relative_to(ROOT / "az").as_posix()
-            en_rel = f"en/{rel}"
-            if not (ROOT / en_rel).is_file():
-                continue
-            entry = {"az": f"az/{rel}", "en": en_rel}
-            pairs[f"az/{rel}"] = entry
-            pairs[en_rel] = entry
     return pairs
 
 
@@ -152,11 +140,13 @@ def build_seo_block(
             f'<meta property="og:title" content="{esc_title}"/>',
             f'<meta property="og:description" content="{esc_desc}"/>',
             f'<meta property="og:url" content="{canonical}"/>',
+            f'<meta property="og:image" content="{OG_IMAGE}"/>',
             f'<meta property="og:locale" content="{og_locale}"/>',
             f'<meta property="og:locale:alternate" content="{alt_locale}"/>',
-            '<meta name="twitter:card" content="summary"/>',
+            '<meta name="twitter:card" content="summary_large_image"/>',
             f'<meta name="twitter:title" content="{esc_title}"/>',
             f'<meta name="twitter:description" content="{esc_desc}"/>',
+            f'<meta name="twitter:image" content="{OG_IMAGE}"/>',
             MARKER_END,
         ]
     )

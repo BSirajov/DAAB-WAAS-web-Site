@@ -24,7 +24,7 @@ FOOTER_AZ_HTML = f"""<footer class="footer-pro">
 <div class="footer-inner">
 <div class="footer-brand"><h3>Dünya Azərbaycanlı Alimlər Birliyi</h3></div>
 <div class="footer-grid">
-<div class="footer-col"><h4 class="footer-title">Əlaqə</h4><div class="footer-item"><span aria-hidden="true">✉</span> <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item"><span aria-hidden="true">☎</span> <span>+90 555 147 46 74</span></div><div class="footer-item"><span aria-hidden="true">🌐</span> <a href="https://daab-waas.com" target="_blank" rel="noopener noreferrer">daab-waas.com</a></div></div>
+<div class="footer-col"><h4 class="footer-title">Əlaqə</h4><div class="footer-item"><span aria-hidden="true">✉</span> <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item"><span aria-hidden="true">☎</span> <a href="tel:+905551474674">+90 555 147 46 74</a></div><div class="footer-item"><span aria-hidden="true">🌐</span> <a href="https://daab-waas.com" target="_blank" rel="noopener noreferrer">daab-waas.com</a></div></div>
 <div class="footer-col"><h4 class="footer-title">Ünvan</h4><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, İstanbul, Türkiyə</p></div>
 <div class="footer-col"><h4 class="footer-title">Rəhbərlik</h4><p class="footer-leader">{FOOTER_AZ_LEADER_HTML}</p></div>
 </div>
@@ -41,7 +41,7 @@ FOOTER_EN_HTML = f"""<footer class="footer-pro">
       <div class="footer-col">
         <h4 class="footer-title">Contact</h4>
         <div class="footer-item"><span aria-hidden="true">✉</span> <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div>
-        <div class="footer-item"><span aria-hidden="true">☎</span> <span>+90 555 147 46 74</span></div>
+        <div class="footer-item"><span aria-hidden="true">☎</span> <a href="tel:+905551474674">+90 555 147 46 74</a></div>
         <div class="footer-item"><span aria-hidden="true">🌐</span> <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div>
       </div>
       <div class="footer-col">

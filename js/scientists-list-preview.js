@@ -120,6 +120,18 @@
 
   function loadProfiles() {
     if (loadPromise) return loadPromise;
+    var loader = window.DAAB_SCIENTISTS_PROFILES_LOADER;
+    if (loader && typeof loader.load === "function") {
+      loadPromise = loader
+        .load(assetRoot)
+        .then(function (data) {
+          indexProfiles(data.profiles || []);
+        })
+        .catch(function () {
+          /* list still works without previews */
+        });
+      return loadPromise;
+    }
     loadPromise = fetch(profilesUrl, { credentials: "same-origin" })
       .then(function (res) {
         if (!res.ok) throw new Error("profiles fetch failed");
