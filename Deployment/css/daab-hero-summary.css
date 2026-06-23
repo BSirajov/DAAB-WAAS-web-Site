@@ -1,0 +1,148 @@
+/**
+ * Site-wide hero title + summary column: top-aligned, compact summary panels.
+ * Load after page <style> blocks so these rules apply consistently.
+ */
+
+.hero-wrap,
+.activities-hero-wrap,
+.hero-inner,
+.charter-page .hero-wrap,
+.membership-page .hero-wrap{
+  align-items: start !important;
+}.hero-wrap > section,
+.hero-wrap > .hero-copy,
+.activities-hero-wrap > section,
+.hero-inner > section,
+.hero-inner > .hero-copy{
+  align-self: start;
+}.hero-wrap > section > h1,
+.hero-wrap .hero-copy > h1,
+.activities-hero-wrap > section > h1,
+.activities-hero-wrap h1,
+.hero-inner > h1,
+.hero-inner .hero-copy > h1,
+.hero-copy > h1,
+.hero > .hero-wrap h1,
+.hero > .hero-inner h1{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}.hero-panel,
+.hero-summary-panel,
+.activities-summary-panel{
+  align-self: start !important;
+  padding: 10px !important;
+  border-radius: 22px !important;
+}.panel-card,
+.hero-summary-card,
+.activities-summary-card{
+  padding: 12px 14px !important;
+  border-radius: 16px !important;
+}.panel-title,
+.activities-summary-title,
+.hero-summary-card .panel-title{
+  margin: 0 0 6px !important;
+  font-size: var(--font-size-summary-panel-title) !important;
+  line-height: 1.15 !important;
+  white-space: normal !important;
+}.hero .panel-copy,
+.hero .hero-text,
+.hero-summary-card .hero-text,
+.hero-summary-card .hero-sub,
+.hero-summary-card > p,
+.activities-summary-card .hero-text,
+.panel-card .panel-copy,
+.panel-card .hero-text{
+  font-size: 13px !important;
+  line-height: 1.42 !important;
+}.panel-copy-lead,
+.hero-text.panel-copy-lead{
+  margin: 0;
+  font-size: 13px !important;
+  line-height: 1.48 !important;
+  text-wrap: pretty;
+}.hero-wrap,
+.activities-hero-wrap{
+  gap: 24px !important;
+  padding: 22px 20px 26px !important;
+}.hero-inner:has(.hero-summary-panel){
+  align-items: start !important;
+  gap: 24px !important;
+  padding: 22px 20px 26px !important;
+}/* Outer hero bands: no extra top gap — title spacing lives in .hero-wrap only */
+header.hero,
+.page-hero,
+.hero:has(.hero-wrap),
+.hero:has(.hero-inner),
+.hero:has(.activities-hero-wrap){
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+@media (max-width: 1180px) {.hero-wrap,
+  .activities-hero-wrap,
+  .hero-inner:has(.hero-summary-panel),
+  .charter-page .hero-wrap,
+  .membership-page .hero-wrap,
+  html[data-daab-page-id="foundation"] .hero-wrap,
+  html[data-daab-page-id="mission"] .hero-wrap,
+  html[data-daab-page-id="work-done-2024-2026"] .hero-wrap,
+  .daab-hub-page .hero-wrap{
+    gap: 14px !important;
+    padding-top: 10px !important;
+    padding-bottom: 18px !important;
+  }
+}
+
+@media (max-width: 760px) {.hero-wrap,
+  .activities-hero-wrap,
+  .hero-inner:has(.hero-summary-panel){
+    gap: 12px !important;
+    padding-top: 8px !important;
+    padding-bottom: 16px !important;
+  }.hero-panel,
+  .hero-summary-panel,
+  .activities-summary-panel{
+    max-width: 100% !important;
+    padding: 8px !important;
+  }.panel-card,
+  .hero-summary-card,
+  .activities-summary-card{
+    padding: 10px 12px !important;
+  }.panel-title,
+  .activities-summary-title,
+  .hero-summary-card .panel-title{
+    font-size: var(--font-size-summary-panel-title-mobile) !important;
+    margin-bottom: 5px !important;
+  }
+}.hero .page-hero-subtitle,
+.page-hero .page-hero-subtitle,
+header.hero .page-hero-subtitle,
+header.page-hero .page-hero-subtitle{
+  margin: 0.35rem 0 0.85rem;
+  max-width: 36rem;
+  font-family: var(--font-sans) !important;
+  font-size: clamp(1rem, 1.65vw, 1.125rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--muted-hero) !important;
+  text-align: left;
+  text-wrap: pretty;
+}.hero-copy > h1 + .page-hero-subtitle,
+.hero-wrap > section > h1 + .page-hero-subtitle,
+.activities-hero-wrap > section > h1 + .page-hero-subtitle,
+.page-hero h1 + .page-hero-subtitle{
+  margin-bottom: 0.35rem;
+}.hero-copy > .page-hero-subtitle + .hero-actions,
+.hero-wrap > section > .page-hero-subtitle + .hero-actions{
+  margin-top: 1rem;
+}
+
+@media (max-width: 760px) {.page-hero-subtitle{
+    max-width: none;
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+}

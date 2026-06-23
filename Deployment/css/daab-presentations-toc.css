@@ -1,0 +1,204 @@
+/**
+ * Forum 2024 presentations — sidebar TOC + main feed title styling.
+ */
+html[data-daab-page-id="forum-2024-presentations"] .timeline-list li{
+  display: block;
+  overflow: visible;
+}html[data-daab-page-id="forum-2024-presentations"] .timeline-list a.presentation-toc-link{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 10px 11px;
+  border-radius: 14px;
+  font-size: 12px;
+  line-height: 1.35;
+  text-decoration: none;
+  min-height: 0;
+  overflow: visible;
+}html[data-daab-page-id="forum-2024-presentations"] .presentation-toc-author{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  overflow: visible;
+}html[data-daab-page-id="forum-2024-presentations"] .presentation-toc-photo-frame{
+  display: flex;
+  flex: 0 0 44px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  max-width: 44px;
+  max-height: 44px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #e8eef4;
+  box-shadow: inset 0 0 0 1px rgba(0, 45, 82, 0.08);
+}html[data-daab-page-id="forum-2024-presentations"] .presentation-toc-photo-frame--empty{
+  display: inline-block;
+}html[data-daab-page-id="forum-2024-presentations"] .presentation-toc-photo-frame .presentation-toc-photo{
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover;
+  object-position: center top;
+}html[data-daab-page-id="forum-2024-presentations"] .presentation-toc-name{
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.3;
+  color: inherit;
+}html[data-daab-page-id="forum-2024-presentations"] .presentation-toc-title{
+  display: block;
+  font-weight: 400;
+  font-size: 7.7px;
+  line-height: 1.4;
+  color: var(--muted, #4a5f73);
+}html[data-daab-page-id="forum-2024-presentations"] .timeline-list a.presentation-toc-link:hover .presentation-toc-title,
+html[data-daab-page-id="forum-2024-presentations"] .timeline-list a.presentation-toc-link:focus-visible .presentation-toc-title,
+html[data-daab-page-id="forum-2024-presentations"] .timeline-list a.presentation-toc-link.tl-active .presentation-toc-title{
+  color: inherit;
+}
+
+@media (max-width: 1060px) {html[data-daab-page-id="forum-2024-presentations"] .timeline-list a.presentation-toc-link{
+    min-height: 44px;
+    padding: 10px 12px;
+  }
+}/* Main feed (right column) — speaker name + presentation title */
+html[data-daab-page-id="forum-2024-presentations"] .news-feed .card-title{
+  font-size: clamp(12.6px, 1.54vw, 18.2px) !important;
+  text-align: center !important;
+}html[data-daab-page-id="forum-2024-presentations"] .news-feed .presentation-lead-row{
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 0 0 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(0, 105, 180, 0.12);
+}html[data-daab-page-id="forum-2024-presentations"] .news-feed .presentation-card-photo-frame{
+  display: flex;
+  flex: 0 0 72px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  min-height: 72px;
+  max-width: 72px;
+  max-height: 72px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #e8eef4;
+  box-shadow: 0 8px 20px rgba(0, 45, 82, 0.1),
+    inset 0 0 0 1px rgba(0, 105, 180, 0.12);
+}html[data-daab-page-id="forum-2024-presentations"] .news-feed .presentation-card-photo-frame .presentation-card-photo{
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover;
+  object-position: center top;
+}html[data-daab-page-id="forum-2024-presentations"] .news-feed .presentation-lead-row .card-lead,
+html[data-daab-page-id="forum-2024-presentations"] .news-feed .card-body > .card-lead:first-child{
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  text-align: center;
+  text-wrap: balance;
+  font-size: clamp(11.2px, 1.295vw, 14px);
+  line-height: 1.5;
+}/* Tighter spacing between bulleted lines in presentation body text */
+html[data-daab-page-id="forum-2024-presentations"] .news-feed .content-list{
+  margin: 6px 0 12px;
+  gap: 3px;
+}html[data-daab-page-id="forum-2024-presentations"] .news-feed .content-list li{
+  padding: 1px 0 1px calc(34px + 3ch);
+  line-height: 1.4;
+}html[data-daab-page-id="forum-2024-presentations"] .news-feed .content-list li::before{
+  top: 1px;
+}
+
+/* Official addresses — speaker photos in TOC + profile header (Fuad Muradov, Messoud Efendiyev) */
+html[data-daab-page-id="forum-official"] .timeline-list a.presentation-toc-link{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 10px 11px;
+  border-radius: 14px;
+  font-size: 12px;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+html[data-daab-page-id="forum-official"] .presentation-toc-author{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+html[data-daab-page-id="forum-official"] .presentation-toc-photo-frame{
+  display: flex;
+  flex: 0 0 44px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  max-width: 44px;
+  max-height: 44px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #e8eef4;
+  box-shadow: inset 0 0 0 1px rgba(0, 45, 82, 0.08);
+}
+
+html[data-daab-page-id="forum-official"] .presentation-toc-photo-frame .presentation-toc-photo{
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover;
+  object-position: center top;
+}
+
+html[data-daab-page-id="forum-official"] .presentation-toc-name{
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+html[data-daab-page-id="forum-official"] .presentation-toc-title{
+  display: block;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 1.42;
+  color: var(--muted, #5a7084);
+}
+
+html[data-daab-page-id="forum-official"] .news-feed .speech-card-header{
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* Justified body copy — see daab-forum-content.css (long-form forum prose) */

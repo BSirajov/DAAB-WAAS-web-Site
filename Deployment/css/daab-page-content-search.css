@@ -1,0 +1,110 @@
+/**
+ * In-page content search (activities, charter, work-done report) — scoped to supported page ids.
+ * Toolbar chrome reuses scientists-catalog-toolbar.css (.toolbar, .search-wrap).
+ */
+html[data-daab-page-id="activities-news"] .page-content-search-toolbar,
+html[data-daab-page-id="charter"] .page-content-search-toolbar,
+html[data-daab-page-id="work-done-2024-2026"] .page-content-search-toolbar {
+  margin-bottom: 0;
+}
+
+html[data-daab-page-id="activities-news"] .page-content-search-band,
+html[data-daab-page-id="charter"] .page-content-search-band {
+  position: relative;
+  z-index: 2;
+  margin-top: 24px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+html[data-daab-page-id="activities-news"] .page-content-search-band + .content-wrap {
+  margin-top: 20px !important;
+}
+
+html[data-daab-page-id="charter"] .page-content-search-band + .main {
+  margin-top: 20px !important;
+}
+
+html[data-daab-page-id="work-done-2024-2026"] .page-content-search-toolbar,
+html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty {
+  margin-bottom: 16px;
+}
+
+.page-content-search-toolbar__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.page-content-search-toolbar__head .search-wrap {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.page-content-search__hidden {
+  display: none !important;
+}
+
+.page-content-search__match {
+  border-radius: var(--radius);
+  box-shadow:
+    0 0 0 2px rgba(212, 168, 67, 0.65),
+    var(--shadow);
+}
+
+html[data-daab-page-id="activities-news"] .page-content-search__empty,
+html[data-daab-page-id="charter"] .page-content-search__empty,
+html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty {
+  display: none;
+  padding: 48px 20px;
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 15px;
+  text-align: center;
+  background: var(--color-surface-toolbar);
+  border: 1px solid var(--blue-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+html[data-daab-page-id="activities-news"] .page-content-search__empty:not([hidden]),
+html[data-daab-page-id="charter"] .page-content-search__empty:not([hidden]),
+html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty:not([hidden]) {
+  display: block;
+}
+
+html[data-daab-page-id="activities-news"] .page-content-search__empty svg,
+html[data-daab-page-id="charter"] .page-content-search__empty svg,
+html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty svg {
+  display: block;
+  margin: 0 auto 12px;
+  opacity: 0.35;
+}
+
+@media (max-width: 1060px) {
+  html[data-daab-page-id="activities-news"] .page-content-search-band,
+  html[data-daab-page-id="charter"] .page-content-search-band {
+    margin-top: 20px;
+  }
+
+  html[data-daab-page-id="activities-news"] .page-content-search-band + .content-wrap,
+  html[data-daab-page-id="charter"] .page-content-search-band + .main {
+    margin-top: 16px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-content-search-toolbar__head {
+    flex-wrap: wrap;
+  }
+
+  .page-content-search-toolbar__head .btn-clear {
+    width: 100%;
+  }
+
+  html[data-daab-page-id="activities-news"] .page-content-search-band,
+  html[data-daab-page-id="charter"] .page-content-search-band {
+    margin-top: 16px;
+  }
+}

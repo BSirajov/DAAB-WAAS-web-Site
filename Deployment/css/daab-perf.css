@@ -1,0 +1,35 @@
+/* Performance — defer off-screen paint work on long catalog / gallery pages */
+
+.cards-grid .card,
+.encyclopedia-grid .person-card,
+.photo-gallery-item,
+.photos-gallery-item,
+.video-gallery-item,
+.sessions-masa-block,
+.impressions-photo img,
+.activities-photo-grid img{
+  content-visibility: auto;
+  contain-intrinsic-size: auto 220px;
+}
+
+html[data-daab-page-id="forum-sessions-organization"] .sessions-masa-block{
+  contain-intrinsic-size: auto 320px;
+}
+
+html[data-daab-page-id="forum-video-gallery"] .video-gallery-item{
+  contain-intrinsic-size: auto 180px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after{
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -58,6 +58,38 @@ def esc(text: str) -> str:
     return html.escape(text, quote=True)
 
 
+def page_content_search_toolbar(lang: str) -> str:
+    if lang == "en":
+        return """<div class="toolbar page-content-search-toolbar" role="search">
+<div class="page-content-search-toolbar__head">
+<div class="search-wrap">
+<svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<input autocomplete="off" id="pageContentSearch" placeholder="Search this report…" type="search" aria-label="Search report content"/>
+</div>
+<button type="button" class="btn-clear" id="pageContentSearchClear" hidden>Clear</button>
+</div>
+</div>
+<div class="no-results page-content-search__empty" id="pageContentSearchEmpty" hidden>
+<svg fill="none" height="44" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="44"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg>
+No results found.
+</div>
+"""
+    return """<div class="toolbar page-content-search-toolbar" role="search">
+<div class="page-content-search-toolbar__head">
+<div class="search-wrap">
+<svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<input autocomplete="off" id="pageContentSearch" placeholder="Hesabatda axtar…" type="search" aria-label="Hesabat məzmununda axtar"/>
+</div>
+<button type="button" class="btn-clear" id="pageContentSearchClear" hidden>Təmizlə</button>
+</div>
+</div>
+<div class="no-results page-content-search__empty" id="pageContentSearchEmpty" hidden>
+<svg fill="none" height="44" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="44"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg>
+Nəticə tapılmadı.
+</div>
+"""
+
+
 def hero_summary_aside(aria_label: str, title: str, lead: str) -> str:
     return (
         f'<aside class="hero-panel" aria-label="{esc(aria_label)}">\n'
@@ -472,6 +504,8 @@ def shell_head() -> str:
 <link href="{ASSET}css/daab-hero-summary.css?v={st["daab-hero-summary.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-sidebar-widget.css?v={st.get("daab-sidebar-widget.css", 6)}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-work-done-report.css?v={report_css_v}" rel="stylesheet"/>
+<link href="{ASSET}css/scientists-catalog-toolbar.css?v={st["scientists-catalog-toolbar.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-page-content-search.css?v={st.get("daab-page-content-search.css", 1)}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-lang.css?v={st["daab-lang.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-nav-mega.css?v={st["daab-nav-mega.css"]}" rel="stylesheet"/>
 <script src="{ASSET}js/daab-mobile.js?v={sv["daab-mobile.js"]}" defer></script>
@@ -488,6 +522,7 @@ def shell_head() -> str:
 <script src="{ASSET}js/daab-page-subtitle.js?v={sv.get("daab-page-subtitle.js", 2)}" defer></script>
 <script src="{ASSET}js/daab-search.js?v={sv["daab-search.js"]}" defer></script>
 <script src="{ASSET}js/daab-work-done-report.js?v={sv.get("daab-work-done-report.js", 1)}" defer></script>
+<script defer src="{ASSET}js/daab-page-content-search.js?v={sv.get("daab-page-content-search.js", 1)}"></script>
 </head>
 <body class="work-done-page">
 <a class="skip" href="#content">Məzmuna keç</a>
@@ -541,6 +576,7 @@ def build_az_page(source: str, layout_html: str, hero_subtitle: str) -> str:
 </header>
 <main class="main shell work-done-report" id="content">
 """
+        + page_content_search_toolbar("az")
         + layout_html
         + """
 <button type="button" class="report-print-btn" onclick="window.print()">Çap et / PDF</button>
@@ -592,6 +628,8 @@ def shell_head_en() -> str:
 <link href="{ASSET}css/daab-hero-summary.css?v={st["daab-hero-summary.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-sidebar-widget.css?v={st.get("daab-sidebar-widget.css", 6)}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-work-done-report.css?v={report_css_v}" rel="stylesheet"/>
+<link href="{ASSET}css/scientists-catalog-toolbar.css?v={st["scientists-catalog-toolbar.css"]}" rel="stylesheet"/>
+<link href="{ASSET}css/daab-page-content-search.css?v={st.get("daab-page-content-search.css", 1)}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-lang.css?v={st["daab-lang.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-nav-mega.css?v={st["daab-nav-mega.css"]}" rel="stylesheet"/>
 <script src="{ASSET}js/daab-mobile.js?v={sv["daab-mobile.js"]}" defer></script>
@@ -608,6 +646,7 @@ def shell_head_en() -> str:
 <script src="{ASSET}js/daab-page-subtitle.js?v={sv.get("daab-page-subtitle.js", 2)}" defer></script>
 <script src="{ASSET}js/daab-search.js?v={sv["daab-search.js"]}" defer></script>
 <script src="{ASSET}js/daab-work-done-report.js?v={sv.get("daab-work-done-report.js", 1)}" defer></script>
+<script defer src="{ASSET}js/daab-page-content-search.js?v={sv.get("daab-page-content-search.js", 1)}"></script>
 </head>
 <body class="work-done-page">
 <a class="skip" href="#content">Skip to content</a>
@@ -646,6 +685,7 @@ def build_en_page() -> str:
 </header>
 <main class="main shell work-done-report" id="content">
 """
+        + page_content_search_toolbar("en")
         + remap_en_anchors(LAYOUT_EN)
         + """
 <button type="button" class="report-print-btn" onclick="window.print()">Print / PDF</button>

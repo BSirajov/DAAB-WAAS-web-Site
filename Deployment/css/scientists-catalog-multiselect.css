@@ -1,0 +1,193 @@
+/* Excel-style multi-select filter dropdowns (scientists list + profiles) */
+.ms-filter-wrap {
+  position: relative;
+  min-width: 160px;
+}
+
+.ms-filter-native {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.ms-filter-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 34px 11px 14px;
+  color: var(--blue-800);
+  background-color: var(--white);
+  border: 1px solid var(--color-border-blue-light);
+  border-radius: var(--radius-pill);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%230069b4' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 13px center;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.ms-filter-trigger:hover,
+.ms-filter-trigger:focus-visible {
+  border-color: var(--blue-700);
+  box-shadow: var(--shadow-focus);
+  outline: none;
+}
+
+.ms-filter-trigger__label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ms-filter-wrap.active .ms-filter-trigger {
+  background-color: var(--soft);
+  border-color: var(--blue-700);
+}
+
+.ms-filter-wrap.active::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  z-index: 2;
+  width: 9px;
+  height: 9px;
+  background: var(--gold);
+  border: 2px solid var(--white);
+  border-radius: 50%;
+}
+
+.ms-filter-panel {
+  position: fixed;
+  z-index: 10050;
+  display: none;
+  flex-direction: column;
+  min-width: 220px;
+  max-width: min(360px, calc(100vw - 16px));
+  background: var(--white);
+  border: 1px solid var(--color-border-blue-light);
+  border-radius: 12px;
+  box-shadow:
+    0 18px 40px rgba(13, 31, 60, 0.16),
+    0 2px 8px rgba(13, 31, 60, 0.08);
+  overflow: hidden;
+}
+
+.ms-filter-panel.is-open {
+  display: flex;
+}
+
+.ms-filter-panel__search {
+  flex: 0 0 auto;
+  padding: 10px 10px 0;
+}
+
+.ms-filter-panel__search input {
+  width: 100%;
+  min-height: 36px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border-blue-light);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.ms-filter-panel__search input:focus {
+  border-color: var(--blue-700);
+  box-shadow: var(--shadow-focus);
+}
+
+.ms-filter-panel__list {
+  flex: 1 1 auto;
+  max-height: min(280px, 50vh);
+  margin: 8px 0 0;
+  padding: 4px 0 8px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ms-filter-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--ink);
+  cursor: pointer;
+  user-select: none;
+}
+
+.ms-filter-option:hover,
+.ms-filter-option:focus-within {
+  background: var(--blue-50, #eef4fb);
+}
+
+.ms-filter-option--select-all {
+  font-weight: 800;
+  color: var(--blue-700);
+  border-bottom: 1px solid var(--color-border-blue-faint);
+  margin-bottom: 4px;
+  padding-bottom: 10px;
+}
+
+.ms-filter-option input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 2px 0 0;
+  flex: 0 0 auto;
+  accent-color: var(--blue-700);
+  cursor: pointer;
+}
+
+.ms-filter-option__text {
+  flex: 1 1 auto;
+  min-width: 0;
+  word-break: break-word;
+}
+
+.ms-filter-option.is-hidden {
+  display: none !important;
+}
+
+.ms-filter-panel__empty {
+  display: none;
+  padding: 16px 12px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.ms-filter-panel__empty.is-visible {
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .catalog-toolbar__panel .ms-filter-wrap {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .ms-filter-trigger {
+    width: 100%;
+  }
+}
