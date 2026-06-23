@@ -66,13 +66,18 @@
 
   function clearBlockingFilters() {
     var searchInput = document.getElementById("searchInput");
-    var filterCountry = document.getElementById("filterCountry");
-    var filterIxtilas = document.getElementById("filterIxtilas");
-    var filterDegree = document.getElementById("filterDegree");
+    var ms = window.DAABScientistsMultiSelect;
     if (searchInput) searchInput.value = "";
-    if (filterCountry) filterCountry.value = "";
-    if (filterIxtilas) filterIxtilas.value = "";
-    if (filterDegree) filterDegree.value = "";
+    if (ms) {
+      ms.clearAll(["filterCountry", "filterIxtilas", "filterDegree"]);
+    } else {
+      var filterCountry = document.getElementById("filterCountry");
+      var filterIxtilas = document.getElementById("filterIxtilas");
+      var filterDegree = document.getElementById("filterDegree");
+      if (filterCountry) filterCountry.value = "";
+      if (filterIxtilas) filterIxtilas.value = "";
+      if (filterDegree) filterDegree.value = "";
+    }
     document.querySelectorAll(".card.is-filtered-out").forEach(function (card) {
       card.classList.remove("is-filtered-out", "is-match", "is-excluded");
     });

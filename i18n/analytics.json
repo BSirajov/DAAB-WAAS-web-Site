@@ -1,0 +1,6 @@
+{
+  "provider": "ga4",
+  "measurementId": "G-K778896NSH",
+  "productionHosts": ["daab-waas.com", "www.daab-waas.com"],
+  "skipQueryFlags": ["noanalytics", "preview"]
+}

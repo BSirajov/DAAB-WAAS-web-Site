@@ -173,7 +173,12 @@
   }
 
   function clearFilterInputs(searchInput, filterCountry, filterIxtilas, filterDegree) {
+    var ms = window.DAABScientistsMultiSelect;
     if (searchInput) searchInput.value = "";
+    if (ms) {
+      ms.clearAll(["filterCountry", "filterIxtilas", "filterDegree"]);
+      return;
+    }
     if (filterCountry) filterCountry.value = "";
     if (filterIxtilas) filterIxtilas.value = "";
     if (filterDegree) filterDegree.value = "";
@@ -473,34 +478,80 @@
       buildFilterOptionsFromCards(cards, filterCountry, filterIxtilas, filterDegree);
     }
 
-    function updateFilterStyles() {
-      ["filterCountry", "filterIxtilas", "filterDegree"].forEach(function (id) {
+    var ms = window.DAABScientistsMultiSelect;
+    var profileFilterIds = ["filterCountry", "filterIxtilas", "filterDegree"];
+
+    function getMultiFilter(id) {
+      if (ms) return ms.getFilterValues(id);
+      var el = document.getElementById(id);
+      return el && el.value ? [el.value] : null;
+    }
+
+    function mountMultiFilters() {
+      if (!ms) return;
+      profileFilterIds.forEach(function (id) {
         var el = document.getElementById(id);
-        if (!el) return;
-        var wrap = el.closest(".sel-wrap");
-        if (wrap) wrap.classList.toggle("active", el.value !== "");
+        if (el) {
+          ms.mount(el, {
+            onChange: function () {
+              applyFilters();
+            },
+          });
+        }
       });
     }
 
-    function cardMatches(card, q, countryCode, degree, ixtilas) {
+    mountMultiFilters();
+
+    function updateFilterStyles() {
+      profileFilterIds.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var wrap = el.closest(".sel-wrap");
+        if (!wrap) return;
+        var active = ms ? ms.isActive(id) : el.value !== "";
+        wrap.classList.toggle("active", active);
+      });
+    }
+
+    function cardMatches(card, q, countryCodes, degreeFilter, ixtilasFilter) {
       var code = card.dataset.country || "";
       var hay = (card.dataset.search || "").toLowerCase();
       var deg = (card.dataset.degree || "").trim();
       var ixt = (card.dataset.ixtilas || "").trim();
-      if (countryCode && countryCode !== code) return false;
-      if (degree && deg !== degree) return false;
-      if (ixtilas && ixt !== ixtilas) return false;
+      var matchFn = ms ? ms.matches.bind(ms) : function (selected, value) {
+        if (selected === null) return true;
+        if (!selected.length) return false;
+        return selected.indexOf((value == null ? "" : String(value)).trim()) !== -1;
+      };
+      if (countryCodes !== null) {
+        if (!countryCodes.length) return false;
+        if (countryCodes.indexOf(code) === -1) return false;
+      }
+      if (!matchFn(degreeFilter, deg)) return false;
+      if (!matchFn(ixtilasFilter, ixt)) return false;
       if (q && hay.indexOf(q) === -1) return false;
       return true;
     }
 
     function applyFilters() {
       var q = normQuery(searchInput.value);
-      var cntry = filterCountry.value;
-      var degree = filterDegree ? filterDegree.value : "";
-      var ixtilas = filterIxtilas ? filterIxtilas.value : "";
-      var countryCode = cntry ? countryNameToCode[cntry] || "" : "";
-      var filtering = !!(q || cntry || degree || ixtilas);
+      var countryNames = getMultiFilter("filterCountry");
+      var degreeFilter = getMultiFilter("filterDegree");
+      var ixtilasFilter = getMultiFilter("filterIxtilas");
+      var countryCodes = null;
+      if (countryNames !== null) {
+        countryCodes = countryNames
+          .map(function (name) {
+            return countryNameToCode[name] || "";
+          })
+          .filter(Boolean);
+      }
+      var filtering =
+        !!q ||
+        countryNames !== null ||
+        degreeFilter !== null ||
+        ixtilasFilter !== null;
       var visible = 0;
 
       if (!filtering) {
@@ -512,7 +563,7 @@
       }
 
       cards.forEach(function (card) {
-        var match = cardMatches(card, q, countryCode, degree, ixtilas);
+        var match = cardMatches(card, q, countryCodes, degreeFilter, ixtilasFilter);
         card.classList.toggle("is-filtered-out", !match);
         if (match) visible++;
       });
@@ -549,7 +600,10 @@
 
     filterCountry.addEventListener("change", function () {
       applyFilters();
-      scrollToFirstVisible(countryNameToCode[filterCountry.value] || "");
+      var selected = getMultiFilter("filterCountry");
+      if (selected && selected.length === 1) {
+        scrollToFirstVisible(countryNameToCode[selected[0]] || "");
+      }
     });
 
     if (filterIxtilas) {
@@ -589,10 +643,15 @@
         btn.setAttribute("aria-label", fname ? base + " — " + fname : base);
       }
       btn.addEventListener("click", function () {
-        var el = document.getElementById(btn.dataset.for);
-        if (el) {
-          el.value = "";
-          el.dispatchEvent(new Event("change", { bubbles: true }));
+        var targetId = btn.dataset.for;
+        if (ms && targetId) {
+          ms.clear(targetId);
+        } else {
+          var el = document.getElementById(targetId);
+          if (el) {
+            el.value = "";
+            el.dispatchEvent(new Event("change", { bubbles: true }));
+          }
         }
         applyFilters();
       });

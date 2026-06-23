@@ -29,12 +29,14 @@
 <link href="../css/daab-perf.css?v=2" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=14" rel="stylesheet"/>
 <link href="../css/daab-sticky-chrome.css?v=2" rel="stylesheet"/>
-<link href="../css/daab-search.css?v=6" rel="stylesheet"/>
+<link href="../css/daab-search.css?v=7" rel="stylesheet"/>
 <link href="../css/daab-back-to-top.css?v=2" rel="stylesheet"/>
 <link href="../css/daab-activities-page.css?v=12" rel="stylesheet"/>
 <link href="../css/daab-hero-summary.css?v=13" rel="stylesheet"/>
 <link href="../css/daab-sidebar-widget.css?v=6" rel="stylesheet"/>
 <link href="../css/daab-activities-layout.css?v=24" rel="stylesheet"/>
+<link href="../css/scientists-catalog-toolbar.css?v=5" rel="stylesheet"/>
+<link href="../css/daab-page-content-search.css?v=3" rel="stylesheet"/>
 
   <script src="../js/daab-mobile.js?v=6" defer></script>
 <script src="../js/daab-perf.js?v=2" defer></script>
@@ -51,6 +53,7 @@
 <script src="../js/daab-shell.js?v=13" defer></script>
 <script src="../js/daab-page-subtitle.js?v=2" defer></script>
 <script src="../js/daab-search.js?v=14" defer></script>
+<script src="../js/daab-analytics.js?v=1" defer></script>
 </head>
 <body>
 <a class="skip" href="#content">Məzmuna keç</a>
@@ -71,6 +74,21 @@
 </aside>
 </div>
 </header>
+<section class="shell page-content-search-band" aria-label="Yeniliklərdə axtarış">
+<div class="toolbar page-content-search-toolbar" role="search">
+<div class="page-content-search-toolbar__head">
+<div class="search-wrap">
+<svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<input autocomplete="off" id="pageContentSearch" placeholder="Yeniliklərdə axtar…" type="search" aria-label="Yeniliklərdə axtar"/>
+</div>
+<button type="button" class="btn-clear" id="pageContentSearchClear" hidden>Təmizlə</button>
+</div>
+</div>
+<div class="no-results page-content-search__empty" id="pageContentSearchEmpty" hidden>
+<svg fill="none" height="44" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="44"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg>
+Nəticə tapılmadı.
+</div>
+</section>
 <!-- ═══ MAIN CONTENT ══════════════════════════════════════════ -->
 <div class="content-wrap">
 <!-- ─── SIDEBAR ─────────────────────────────────────────── -->
@@ -658,5 +676,6 @@ Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) bütün qitələrdən olan üzv
 <!-- Updated: Xəlil Kələntər portrait replaced and portrait sizing unified -->
 <script defer src="../js/daab-sidebar-spy.js?v=1"></script>
 <script src="../js/daab-sidebar-timeline.js?v=4" defer></script>
+<script defer src="../js/daab-page-content-search.js?v=3"></script>
 </body>
 </html>

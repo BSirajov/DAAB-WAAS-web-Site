@@ -38,8 +38,8 @@
         return n + " alim";
       },
       viewLabel: "Görünüş",
-      viewCards: "Kartlar",
-      viewCardsTitle: "Kart görünüşü",
+      viewCards: "Vərəqələr",
+      viewCardsTitle: "Vərəqə görünüşü",
       viewTable: "Cədvəl",
       viewTableTitle: "Cədvəl görünüşü",
       viewToggleAria: "Kataloq görünüşü",
@@ -302,6 +302,33 @@
       o.textContent = x;
       filterIxtilas.appendChild(o);
     });
+
+    var ms = window.DAABScientistsMultiSelect;
+    var filterIds = ["filterCountry", "filterIxtilas", "filterDegree", "filterCins"];
+
+    function getMultiFilter(id) {
+      if (ms) return ms.getFilterValues(id);
+      var el = document.getElementById(id);
+      return el && el.value ? [el.value] : null;
+    }
+
+    function mountMultiFilters() {
+      if (!ms) return;
+      filterIds.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) {
+          ms.mount(el, {
+            onChange: function () {
+              applyFilters();
+              updateFilterStyles();
+              if (window.DAAB_SCIENTISTS_TOOLBAR) window.DAAB_SCIENTISTS_TOOLBAR.syncAll();
+            },
+          });
+        }
+      });
+    }
+
+    mountMultiFilters();
 
     function sortRows(rows) {
       rows.sort(function (a, b) {
@@ -733,15 +760,20 @@
 
     function applyFilters() {
       var q = searchInput.value.trim().toLowerCase();
-      var cntry = filterCountry.value;
-      var degree = filterDegree.value;
-      var ixtilas = filterIxtilas.value;
-      var cins = filterCins ? filterCins.value : "";
+      var countries = getMultiFilter("filterCountry");
+      var degrees = getMultiFilter("filterDegree");
+      var fieldsFilter = getMultiFilter("filterIxtilas");
+      var genders = getMultiFilter("filterCins");
+      var matchFn = ms ? ms.matches.bind(ms) : function (selected, value) {
+        if (selected === null) return true;
+        if (!selected.length) return false;
+        return selected.indexOf((value == null ? "" : String(value)).trim()) !== -1;
+      };
       filtered = DATA.filter(function (r) {
-        if (cntry && r.yasadigi_olke !== cntry) return false;
-        if (degree && (r.elmi_derece || "").trim() !== degree) return false;
-        if (ixtilas && (r.ixtilas || "").trim() !== ixtilas) return false;
-        if (cins && (r.cinsi || "").trim() !== cins) return false;
+        if (!matchFn(countries, r.yasadigi_olke)) return false;
+        if (!matchFn(degrees, (r.elmi_derece || "").trim())) return false;
+        if (!matchFn(fieldsFilter, (r.ixtilas || "").trim())) return false;
+        if (!matchFn(genders, (r.cinsi || "").trim())) return false;
         if (q) {
           var hay = [r.ad_soyad, r.cinsi, r.yasadigi_olke, r.ixtilas, r.elmi_derece, r.email]
             .join(" ")
@@ -780,11 +812,13 @@
     }
 
     function updateFilterStyles() {
-      ["filterCountry", "filterIxtilas", "filterDegree", "filterCins"].forEach(function (id) {
+      filterIds.forEach(function (id) {
         var el = document.getElementById(id);
         if (!el) return;
         var wrap = el.closest(".sel-wrap");
-        if (wrap) wrap.classList.toggle("active", el.value !== "");
+        if (!wrap) return;
+        var active = ms ? ms.isActive(id) : el.value !== "";
+        wrap.classList.toggle("active", active);
       });
     }
 
@@ -840,10 +874,15 @@
         btn.setAttribute("aria-label", fname ? base + " — " + fname : base);
       }
       btn.addEventListener("click", function () {
-        var el = document.getElementById(btn.dataset.for);
-        if (el) {
-          el.value = "";
-          el.dispatchEvent(new Event("change", { bubbles: true }));
+        var targetId = btn.dataset.for;
+        if (ms && targetId) {
+          ms.clear(targetId);
+        } else {
+          var el = document.getElementById(targetId);
+          if (el) {
+            el.value = "";
+            el.dispatchEvent(new Event("change", { bubbles: true }));
+          }
         }
         updateFilterStyles();
         applyFilters();
@@ -900,10 +939,14 @@
     if (clearFilters) {
       clearFilters.addEventListener("click", function () {
         searchInput.value = "";
-        ["filterCountry", "filterIxtilas", "filterDegree", "filterCins"].forEach(function (id) {
-          var el = document.getElementById(id);
-          if (el) el.value = "";
-        });
+        if (ms) {
+          ms.clearAll(filterIds);
+        } else {
+          filterIds.forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el) el.value = "";
+          });
+        }
         updateFilterStyles();
         applySortState("ad_soyad", 1, true);
         applyGroupState("", true);

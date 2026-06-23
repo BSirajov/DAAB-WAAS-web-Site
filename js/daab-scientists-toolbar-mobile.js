@@ -41,7 +41,17 @@
         "filterCountry",
       ];
     }
+    if (pageId === "scientists-list") {
+      return ["filterCountry", "filterIxtilas", "filterDegree", "filterCins"];
+    }
     return ["filterCountry", "filterIxtilas", "filterDegree"];
+  }
+
+  function isFilterActive(root, id) {
+    var ms = window.DAABScientistsMultiSelect;
+    if (ms) return ms.isActive(id);
+    var el = root.querySelector("#" + id);
+    return !!(el && el.value);
   }
 
   function activeFilterCount(root) {
@@ -49,8 +59,7 @@
     var search = root.querySelector("#searchInput");
     if (search && search.value.trim()) count += 1;
     filterSelectIds().forEach(function (id) {
-      var el = root.querySelector("#" + id);
-      if (el && el.value) count += 1;
+      if (isFilterActive(root, id)) count += 1;
     });
     return count;
   }
