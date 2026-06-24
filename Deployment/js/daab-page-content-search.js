@@ -1,5 +1,5 @@
 /**
- * In-page content search for activities, charter, and work-done report pages.
+ * In-page content search for activities, charter, work-done report, and application pages.
  * Search-only (no filters); styled like scientists/list.html toolbar search.
  */
 (function () {
@@ -36,6 +36,17 @@
       },
       navText: function (el) {
         return el.textContent || "";
+      },
+    },
+    "membership-application": {
+      blocks: ".app-terms-panel, .form-section",
+      navItem: "#appStepsMenu li",
+      navTarget: function (li) {
+        var a = li.querySelector('a[href^="#"]');
+        return a ? a.getAttribute("href").slice(1) : "";
+      },
+      navText: function (li) {
+        return li.textContent || "";
       },
     },
   };

@@ -66,7 +66,6 @@ def page_content_search_toolbar(lang: str) -> str:
 <svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
 <input autocomplete="off" id="pageContentSearch" placeholder="Search this report…" type="search" aria-label="Search report content"/>
 </div>
-<button type="button" class="btn-clear" id="pageContentSearchClear" hidden>Clear</button>
 </div>
 </div>
 <div class="no-results page-content-search__empty" id="pageContentSearchEmpty" hidden>
@@ -80,7 +79,6 @@ No results found.
 <svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
 <input autocomplete="off" id="pageContentSearch" placeholder="Hesabatda axtar…" type="search" aria-label="Hesabat məzmununda axtar"/>
 </div>
-<button type="button" class="btn-clear" id="pageContentSearchClear" hidden>Təmizlə</button>
 </div>
 </div>
 <div class="no-results page-content-search__empty" id="pageContentSearchEmpty" hidden>

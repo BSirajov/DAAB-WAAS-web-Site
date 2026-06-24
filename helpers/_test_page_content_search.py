@@ -32,17 +32,20 @@ def main() -> None:
             page.wait_for_timeout(120)
             visible = visible_count(page, sel)
             empty_shown = page.locator("#pageContentSearchEmpty").is_visible()
-            clear_shown = page.locator("#pageContentSearchClear").is_visible()
+            has_clear = page.locator("#pageContentSearchClear").count() > 0
+            clear_shown = has_clear and page.locator("#pageContentSearchClear").is_visible()
             ok = visible == expect_visible
             if expect_visible == 0:
                 ok = ok and empty_shown
             else:
-                ok = ok and clear_shown and not empty_shown
+                ok = ok and not empty_shown
+                if has_clear:
+                    ok = ok and clear_shown
             label = "PASS" if ok else "FAIL"
             print(f"{label} {url} q={query!r} visible={visible} expect={expect_visible}")
             if not ok:
                 failed += 1
-            page.click("#pageContentSearchClear")
+            page.fill("#pageContentSearch", "")
             page.wait_for_timeout(80)
             restored = visible_count(page, sel)
             if restored != expect_restored:

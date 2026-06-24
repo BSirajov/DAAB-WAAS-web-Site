@@ -141,6 +141,8 @@
           "Müraciət serveri hələ konfiqurasiya edilməyib. Zəhmət olmasa birbaşa info@daab-waas.com ünvanına yazın.",
         submitFailed: "Müraciət göndərilmədi. Bir az sonra yenidən cəhd edin və ya info@daab-waas.com ünvanına yazın.",
         networkError: "Şəbəkə xətası. İnternet bağlantınızı yoxlayın və yenidən cəhd edin.",
+        expandSection: "Bölməni aç",
+        collapseSection: "Bölməni yığ",
         phpUnavailable:
           "Müraciət forması bu serverdə işləmir (PHP dəstəyi lazımdır). Zəhmət olmasa məlumatlarınızı info@daab-waas.com ünvanına e-məktubla göndərin.",
       },
@@ -152,6 +154,8 @@
           "The application backend is not configured yet. Please email info@daab-waas.com directly.",
         submitFailed: "Could not submit your application. Please try again or email info@daab-waas.com.",
         networkError: "Network error. Check your connection and try again.",
+        expandSection: "Expand section",
+        collapseSection: "Collapse section",
         phpUnavailable:
           "This server cannot process applications (PHP mail handler required). Please email your details to info@daab-waas.com.",
       },
@@ -281,10 +285,10 @@
     });
     var success = byId("success");
     var progress = document.querySelector(".application-page .app-progress-bar");
-    var stepNav = document.querySelector(".application-page .app-steps-nav");
+    var sidebar = document.querySelector(".application-page .application-sidebar");
     if (success) success.classList.add("active");
     if (progress) progress.hidden = true;
-    if (stepNav) stepNav.hidden = true;
+    if (sidebar) sidebar.hidden = true;
     document.querySelectorAll(".application-page .prog-step").forEach(function (el) {
       el.classList.remove("active");
       el.classList.add("done");
@@ -851,67 +855,54 @@
     });
   }
 
-  function setActiveStepButton(targetId) {
-    document.querySelectorAll(".application-page .app-step-btn").forEach(function (btn) {
-      var isActive = btn.getAttribute("data-target") === targetId;
-      btn.classList.toggle("active", isActive);
-      if (isActive) btn.setAttribute("aria-current", "step");
-      else btn.removeAttribute("aria-current");
-    });
-  }
+  function initSectionToggles() {
+    var sections = Array.prototype.slice.call(
+      document.querySelectorAll(".application-page .form-section")
+    );
+    if (!sections.length) return;
 
-  function currentVisibleSectionId() {
-    var sections = Array.prototype.slice.call(document.querySelectorAll(".application-page .form-section"));
-    if (!sections.length) return null;
-    var refY = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--daab-nav-height")) || 72) + 120;
-    var active = sections[0];
-    sections.forEach(function (sec) {
-      if (sec.hidden) return;
-      if (sec.getBoundingClientRect().top <= refY) active = sec;
-    });
-    return active ? active.id : null;
-  }
+    sections.forEach(function (section) {
+      var body = section.querySelector(".section-body");
+      if (!body) return;
 
-  function initStepNavigation() {
-    var buttons = Array.prototype.slice.call(document.querySelectorAll(".application-page .app-step-btn"));
-    if (!buttons.length) return;
+      if (!body.id && section.id) body.id = section.id + "-body";
 
-    buttons.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var targetId = btn.getAttribute("data-target");
-        var section = byId(targetId);
-        if (!section) return;
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
-        setActiveStepButton(targetId);
-      });
-    });
+      if (!body.querySelector(":scope > .section-body-inner")) {
+        var inner = document.createElement("div");
+        inner.className = "section-body-inner";
+        while (body.firstChild) inner.appendChild(body.firstChild);
+        body.appendChild(inner);
+      }
 
-    var ticking = false;
-    function syncActiveFromScroll() {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(function () {
-        var id = currentVisibleSectionId();
-        if (id) setActiveStepButton(id);
-        ticking = false;
-      });
-    }
+      var toggle = section.querySelector(".app-section-toggle");
+      if (!toggle) return;
 
-    window.addEventListener("scroll", syncActiveFromScroll, { passive: true });
-    window.addEventListener("resize", syncActiveFromScroll, { passive: true });
-    syncActiveFromScroll();
-  }
+      var sectionLabel =
+        toggle.getAttribute("data-section-label") ||
+        (section.querySelector(".section-title") &&
+          section.querySelector(".section-title").childNodes[0] &&
+          section.querySelector(".section-title").childNodes[0].textContent &&
+          section.querySelector(".section-title").childNodes[0].textContent.trim()) ||
+        section.id;
 
-  function initBackToStepsButtons() {
-    var topButtons = Array.prototype.slice.call(document.querySelectorAll(".application-page .app-step-top"));
-    if (!topButtons.length) return;
+      if (body.id) toggle.setAttribute("aria-controls", body.id);
 
-    topButtons.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var targetId = btn.getAttribute("data-target");
-        var target = byId(targetId);
-        if (!target) return;
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      function syncToggleState(expanded) {
+        toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+        toggle.setAttribute(
+          "aria-label",
+          (expanded ? uiText("collapseSection") : uiText("expandSection")) +
+            (sectionLabel ? ": " + sectionLabel : "")
+        );
+        section.classList.toggle("is-collapsed", !expanded);
+        body.setAttribute("aria-hidden", expanded ? "false" : "true");
+      }
+
+      syncToggleState(true);
+
+      toggle.addEventListener("click", function () {
+        var expanded = toggle.getAttribute("aria-expanded") !== "true";
+        syncToggleState(expanded);
       });
     });
   }
@@ -948,14 +939,11 @@
     document.querySelectorAll(".application-page .form-section").forEach(function (s) {
       s.hidden = false;
     });
-    var stepNav = document.querySelector(".application-page .app-steps-nav");
-    if (stepNav) stepNav.hidden = false;
     bindRadioHighlight();
     initEmailValidation();
     initResidenceDropdowns();
     initPhoneCodeDropdown();
-    initStepNavigation();
-    initBackToStepsButtons();
+    initSectionToggles();
     initEndpointNotice();
     updateProgress(1);
     var sciFieldset = byId("sci-fields");

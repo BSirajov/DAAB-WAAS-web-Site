@@ -89,9 +89,51 @@
 }.application-page .application-main{
   position: relative;
   z-index: 2;
-  max-width: var(--max);
+  max-width: 1220px;
   margin: 0 auto;
   padding: 0 24px 70px;
+}.application-page .application-preamble{
+  margin-bottom: 32px;
+}.application-page .application-preamble .app-terms-panel{
+  margin-bottom: 22px;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 45, 82, 0.12);
+  overflow: hidden;
+}.application-page .application-preamble .app-steps-intro{
+  margin: 0 auto;
+  padding: 4px clamp(12px, 4vw, 32px) 0;
+  max-width: 48rem;
+  text-align: center;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: clamp(15px, 1.9vw, 17.5px);
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: #345d76;
+}.application-page .application-preamble .app-endpoint-notice{
+  margin-top: 14px;
+}.application-page .application-layout{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: start;
+}.application-page .application-layout > .application-sidebar,
+.application-page .application-layout > .application-stack{
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  width: 100%;
+}.application-page .application-sidebar{
+  position: static;
+  top: auto;
+  max-height: none;
+  overflow: visible;
+}.application-page .application-stack.form-wrapper{
+  max-width: none;
+  margin: 0;
+  padding: 0 0 24px;
+}.application-page .form-section{
+  scroll-margin-top: calc(var(--daab-nav-height, 86px) + 20px);
 }.application-page .app-progress-bar{
   background: rgba(245, 251, 255, 0.96);
   border: 1px solid #9ed6f5;
@@ -152,63 +194,10 @@
   max-width: 760px;
   margin: 0 auto;
   padding: 0 0 24px;
-}.application-page .app-steps-nav{
-  margin: 0 0 16px;
-  padding: 10px;
-  border: 1px solid #9ed6f5;
-  border-radius: 14px;
-  background: rgba(245, 251, 255, 0.96);
-  box-shadow: var(--shadow);
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
-}.application-page .app-step-btn{
-  border: 1px solid rgba(30, 121, 183, 0.22);
-  background: #fff;
-  border-radius: 11px;
-  color: #0f547f;
-  min-height: 56px;
-  padding: 8px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
-  text-align: left;
-  font: inherit;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease, background-color .18s ease;
-}.application-page .app-step-btn:hover{
-  border-color: #2d87c7;
-  box-shadow: 0 6px 14px rgba(14, 79, 122, 0.14);
-  transform: translateY(-1px);
-}.application-page .app-step-btn.active{
-  background: linear-gradient(135deg, #1f6fa8, #3592d0);
-  border-color: #1f6fa8;
-  color: #fff;
-  box-shadow: 0 8px 16px rgba(14, 79, 122, 0.22);
-}.application-page .app-step-num{
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 2px solid currentColor;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 800;
-  flex-shrink: 0;
-}.application-page .app-step-btn.active .app-step-num{
-  background: rgba(255, 255, 255, 0.18);
-}.application-page .app-step-label{
-  display: block;
-  line-height: 1.25;
 }
 .application-page .form-section{
   display: none;
   animation: daabAppFadeIn 0.35s ease;
-  scroll-margin-top: calc(var(--daab-nav-height, 72px) + 24px);
 }.application-page .form-section.active{
   display: block;
 }
@@ -238,8 +227,9 @@
   display: flex;
   align-items: center;
   gap: 12px;
-}.application-page .app-step-top{
+}.application-page .app-section-toggle{
   margin-left: auto;
+  flex-shrink: 0;
   width: 44px;
   height: 44px;
   border-radius: 9px;
@@ -250,18 +240,49 @@
   align-items: center;
   justify-content: center;
   font: inherit;
-  font-size: 18px;
-  font-weight: 800;
   line-height: 1;
   cursor: pointer;
   transition: transform .18s ease, background-color .18s ease, border-color .18s ease;
-}.application-page .app-step-top:hover{
+}.application-page .app-section-toggle:hover{
   transform: translateY(-1px);
   background: rgba(255, 255, 255, 0.24);
   border-color: rgba(255, 255, 255, 0.55);
-}.application-page .app-step-top:focus-visible{
+}.application-page .app-section-toggle:focus-visible{
   outline: 2px solid rgba(255, 255, 255, 0.85);
   outline-offset: 2px;
+}.application-page .app-section-toggle__icon{
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}.application-page .form-section.is-collapsed .app-section-toggle__icon{
+  transform: rotate(-90deg);
+}.application-page .form-section .section-body{
+  display: grid;
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transition:
+    grid-template-rows 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.2s ease;
+}.application-page .form-section.is-collapsed .section-body{
+  grid-template-rows: 0fr;
+  opacity: 0;
+}.application-page .form-section .section-body-inner{
+  overflow: hidden;
+  min-height: 0;
+  background: #fff;
+  border: 1px solid #9ed6f5;
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  visibility: visible;
+}.application-page .form-section.is-collapsed .section-body-inner{
+  visibility: hidden;
+}.application-page .form-section.is-collapsed .section-header{
+  border-radius: 16px;
 }.application-page .section-num{
   width: 32px;
   height: 32px;
@@ -289,15 +310,6 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-top: 2px;
-}.application-page .section-body{
-  background: #fff;
-  border: 1px solid #9ed6f5;
-  border-top: none;
-  border-radius: 0 0 16px 16px;
-  padding: 28px 26px;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
 }.application-page .app-terms-panel{
   margin-bottom: 18px;
 }.application-page .app-steps-intro{
@@ -310,6 +322,13 @@
   color: #0f4f7a;
   font-weight: 700;
 }.application-page .app-terms-body{
+  background: #fff;
+  border: 1px solid #9ed6f5;
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }.application-page .app-terms-body p{
   margin: 0;
@@ -572,7 +591,8 @@
   color: var(--muted);
   font-style: italic;
 }.application-page .req{
-  color: var(--error);
+  color: #c62828;
+  font-weight: 700;
 }.application-page .field-label-optional{
   font-weight: 400;
   color: var(--muted);
@@ -804,29 +824,28 @@
 
 @media (max-width: 760px) {.application-page .application-main{
     padding: 0 16px 48px;
-  }.application-page .section-body{
+  }.application-page .form-section .section-body-inner,
+  .application-page .app-terms-body{
     padding: 20px 16px;
+  }.application-page .application-preamble{
+    margin-bottom: 24px;
+  }.application-page .application-preamble .app-terms-panel{
+    margin-bottom: 18px;
+    box-shadow: 0 8px 28px rgba(0, 45, 82, 0.1);
+  }.application-page .application-preamble .app-steps-intro{
+    margin: 0 auto;
+    padding: 2px 4px 0;
+    font-size: clamp(14.5px, 4.2vw, 16.5px);
+    line-height: 1.55;
+    text-wrap: balance;
   }.application-page .app-steps-intro{
     margin: 2px 0 12px;
     font-size: clamp(16px, 4.8vw, 20px);
     line-height: 1.35;
     text-wrap: balance;
-  }.application-page .app-steps-nav{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    padding: 8px;
-    gap: 7px;
-  }.application-page .app-step-btn{
-    min-height: 52px;
-    font-size: 11px;
-    padding: 8px 9px;
-  }.application-page .app-step-num{
-    width: 20px;
-    height: 20px;
-    font-size: 10px;
-  }.application-page .app-step-top{
+  }.application-page .app-section-toggle{
     width: 44px;
     height: 44px;
-    font-size: 19px;
   }.application-page .app-progress-bar{
     padding: 10px 12px;
   }.application-page .prog-sep{
@@ -865,4 +884,59 @@
 
 .application-page .city-manual-fallback[hidden] {
   display: none !important;
+}
+
+@media (min-width: 1061px) {
+  .application-page .application-layout{
+    grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+  }
+  .application-page .application-sidebar{
+    position: sticky !important;
+    top: calc(var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) + 12px) !important;
+    max-height: calc(100vh - var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) - 28px) !important;
+    overflow: visible !important;
+    z-index: 20 !important;
+  }
+  .application-page .application-sidebar > .sidebar-widget{
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-height: calc(100vh - var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) - 28px) !important;
+    overflow: hidden !important;
+  }
+  .application-page .application-sidebar > .sidebar-widget > .widget-head{
+    flex: 0 0 auto !important;
+  }
+  .application-page .application-sidebar > .sidebar-widget > .widget-body{
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 1060px) {
+  .application-page .application-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .application-page .application-sidebar{
+    order: 0;
+    margin-bottom: 4px !important;
+  }
+  .application-page .application-stack{
+    order: 1;
+  }
+  .application-page .application-sidebar > .sidebar-widget{
+    max-height: none !important;
+  }
+  .application-page .application-sidebar .sidebar-widget.events-open .widget-body{
+    max-height: min(78vh, 720px) !important;
+    padding: 16px 20px !important;
+    overflow-y: auto !important;
+  }
 }

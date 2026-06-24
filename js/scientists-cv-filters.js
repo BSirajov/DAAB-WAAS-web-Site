@@ -20,6 +20,8 @@
     };
 
   var SORT_STORAGE_KEY = "daab-profiles-sort";
+  var GROUP_STORAGE_KEY = "daab-profiles-group";
+  var GROUP_COLUMNS = ["country", "ixtilas", "degree"];
 
   var COUNTRY_NAME_TO_CODE_AZ = {
     "ABŞ": "abs",
@@ -83,6 +85,15 @@
           if (visible < total) html += " (" + total + " total)";
           return html;
         },
+        groupLabel: "Group by",
+        groupNone: "-",
+        groupCountry: "Country",
+        groupField: "Field",
+        groupDegree: "Degree",
+        groupOther: "Other",
+        groupCount: function (n) {
+          return n + " profile" + (n === 1 ? "" : "s");
+        },
       };
     }
     return {
@@ -93,6 +104,15 @@
         var html = "<span>" + visible + "</span> uyğun profil";
         if (visible < total) html += " (" + total + " ümumi)";
         return html;
+      },
+      groupLabel: "Qruplaşdır",
+      groupNone: "-",
+      groupCountry: "Ölkə",
+      groupField: "İxtisas",
+      groupDegree: "Elmi dərəcə",
+      groupOther: "Digər",
+      groupCount: function (n) {
+        return n + " profil";
       },
     };
   }
@@ -121,6 +141,41 @@
       case "name":
       default:
         return getCardName(card);
+    }
+  }
+
+  function getGroupValue(card, groupCol) {
+    switch (groupCol) {
+      case "country":
+        return (card.dataset.countryName || "").trim();
+      case "ixtilas":
+        return (card.dataset.ixtilas || "").trim();
+      case "degree":
+        return (card.dataset.degree || "").trim();
+      default:
+        return "";
+    }
+  }
+
+  function groupLabelForValue(key, labels) {
+    return key || labels.groupOther;
+  }
+
+  function readGroupState() {
+    try {
+      var col = sessionStorage.getItem(GROUP_STORAGE_KEY) || "";
+      return GROUP_COLUMNS.indexOf(col) >= 0 ? col : "";
+    } catch (e) {
+      return "";
+    }
+  }
+
+  function saveGroupState(groupCol) {
+    try {
+      if (!groupCol) sessionStorage.removeItem(GROUP_STORAGE_KEY);
+      else sessionStorage.setItem(GROUP_STORAGE_KEY, groupCol);
+    } catch (e) {
+      /* ignore */
     }
   }
 
@@ -325,11 +380,13 @@
       ? grid.querySelectorAll(".card")
       : document.querySelectorAll(".card");
     var sortBy = document.getElementById("sortBy");
+    var groupBy = document.getElementById("groupBy");
     var sortAscBtn = document.getElementById("sortAscBtn");
     var sortDescBtn = document.getElementById("sortDescBtn");
     var savedSort = readSortState() || defaultSortState();
     var sortCol = savedSort.sortCol;
     var sortDir = savedSort.sortDir;
+    var groupCol = readGroupState();
     var countryNameToCode = buildCountryNameToCode(cards);
     var countLabels = filterCountLabels(pageLang());
 
@@ -358,6 +415,16 @@
       }
     }
 
+    function updateGroupUi() {
+      if (groupBy && groupBy.value !== groupCol) {
+        groupBy.value = groupCol;
+      }
+      if (catalog) {
+        if (groupCol) catalog.setAttribute("data-catalog-group", groupCol);
+        else catalog.removeAttribute("data-catalog-group");
+      }
+    }
+
     function compareCards(a, b) {
       var primary =
         sortDir * localeCompare(getSortValue(a, sortCol), getSortValue(b, sortCol));
@@ -365,9 +432,50 @@
       return sortDir * localeCompare(a.id || "", b.id || "");
     }
 
+    function removeGroupHeads() {
+      if (!grid) return;
+      grid.querySelectorAll("[data-catalog-group-head]").forEach(function (el) {
+        el.remove();
+      });
+    }
+
+    function createGroupHead(label, count) {
+      var head = document.createElement("h3");
+      head.className = "catalog-group-head";
+      head.setAttribute("data-catalog-group-head", "1");
+      head.textContent = label;
+      var countEl = document.createElement("span");
+      countEl.className = "catalog-group-head__count";
+      countEl.textContent = countLabels.groupCount(count);
+      head.appendChild(countEl);
+      return head;
+    }
+
+    function buildCardGroups(cardList) {
+      var groups = [];
+      var map = {};
+      cardList.forEach(function (card) {
+        var key = getGroupValue(card, groupCol);
+        if (!map[key]) {
+          map[key] = {
+            key: key,
+            label: groupLabelForValue(key, countLabels),
+            cards: [],
+          };
+          groups.push(map[key]);
+        }
+        map[key].cards.push(card);
+      });
+      groups.sort(function (a, b) {
+        return localeCompare(a.label, b.label);
+      });
+      return groups;
+    }
+
     function reorderCards() {
       if (!grid) return;
-      var cardList = Array.prototype.slice.call(cards);
+      removeGroupHeads();
+      var cardList = Array.prototype.slice.call(grid.querySelectorAll(".card"));
       var visible = cardList.filter(function (card) {
         return !card.classList.contains("is-filtered-out");
       });
@@ -382,10 +490,30 @@
       sortList(visible);
       sortList(hidden);
       var fragment = document.createDocumentFragment();
-      visible.concat(hidden).forEach(function (card) {
+      if (groupCol && visible.length) {
+        buildCardGroups(visible).forEach(function (group) {
+          fragment.appendChild(createGroupHead(group.label, group.cards.length));
+          group.cards.forEach(function (card) {
+            fragment.appendChild(card);
+          });
+        });
+      } else {
+        visible.forEach(function (card) {
+          fragment.appendChild(card);
+        });
+      }
+      hidden.forEach(function (card) {
         fragment.appendChild(card);
       });
       grid.appendChild(fragment);
+      updateGroupUi();
+    }
+
+    function applyGroupState(nextCol, persist) {
+      groupCol = GROUP_COLUMNS.indexOf(nextCol) >= 0 ? nextCol : "";
+      if (persist !== false) saveGroupState(groupCol);
+      updateGroupUi();
+      reorderCards();
     }
 
     function applySortState(nextCol, nextDir, persist) {
@@ -411,9 +539,11 @@
       markProfilesReady();
       scheduleIdle(function () {
         applySortState(sortCol, sortDir, false);
+        updateGroupUi();
       });
     } else {
       applySortState(sortCol, sortDir, false);
+      updateGroupUi();
     }
 
     function revealProfileById(id) {
@@ -617,6 +747,21 @@
       sortBy.addEventListener("change", function () {
         applySortState(sortBy.value, sortDir, true);
       });
+    }
+
+    if (groupBy) {
+      var groupLabel = document.querySelector(".group-control__label");
+      if (groupLabel) groupLabel.textContent = countLabels.groupLabel;
+      Array.prototype.forEach.call(groupBy.options, function (opt) {
+        if (opt.value === "") opt.textContent = countLabels.groupNone;
+        if (opt.value === "country") opt.textContent = countLabels.groupCountry;
+        if (opt.value === "ixtilas") opt.textContent = countLabels.groupField;
+        if (opt.value === "degree") opt.textContent = countLabels.groupDegree;
+      });
+      groupBy.addEventListener("change", function () {
+        applyGroupState(groupBy.value, true);
+      });
+      updateGroupUi();
     }
 
     if (sortAscBtn) {

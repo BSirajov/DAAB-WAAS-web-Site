@@ -1,15 +1,17 @@
 /**
- * In-page content search (activities, charter, work-done report) — scoped to supported page ids.
+ * In-page content search (activities, charter, work-done report, application) — scoped to supported page ids.
  * Toolbar chrome reuses scientists-catalog-toolbar.css (.toolbar, .search-wrap).
  */
 html[data-daab-page-id="activities-news"] .page-content-search-toolbar,
 html[data-daab-page-id="charter"] .page-content-search-toolbar,
-html[data-daab-page-id="work-done-2024-2026"] .page-content-search-toolbar {
+html[data-daab-page-id="work-done-2024-2026"] .page-content-search-toolbar,
+html[data-daab-page-id="membership-application"] .page-content-search-toolbar {
   margin-bottom: 0;
 }
 
 html[data-daab-page-id="activities-news"] .page-content-search-band,
-html[data-daab-page-id="charter"] .page-content-search-band {
+html[data-daab-page-id="charter"] .page-content-search-band,
+html[data-daab-page-id="membership-application"] .page-content-search-band {
   position: relative;
   z-index: 2;
   margin-top: 24px;
@@ -21,7 +23,8 @@ html[data-daab-page-id="activities-news"] .page-content-search-band + .content-w
   margin-top: 20px !important;
 }
 
-html[data-daab-page-id="charter"] .page-content-search-band + .main {
+html[data-daab-page-id="charter"] .page-content-search-band + .main,
+html[data-daab-page-id="membership-application"] .page-content-search-band + .main {
   margin-top: 20px !important;
 }
 
@@ -55,7 +58,8 @@ html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty {
 
 html[data-daab-page-id="activities-news"] .page-content-search__empty,
 html[data-daab-page-id="charter"] .page-content-search__empty,
-html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty {
+html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty,
+html[data-daab-page-id="membership-application"] .page-content-search__empty {
   display: none;
   padding: 48px 20px;
   margin-bottom: 18px;
@@ -70,13 +74,15 @@ html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty {
 
 html[data-daab-page-id="activities-news"] .page-content-search__empty:not([hidden]),
 html[data-daab-page-id="charter"] .page-content-search__empty:not([hidden]),
-html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty:not([hidden]) {
+html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty:not([hidden]),
+html[data-daab-page-id="membership-application"] .page-content-search__empty:not([hidden]) {
   display: block;
 }
 
 html[data-daab-page-id="activities-news"] .page-content-search__empty svg,
 html[data-daab-page-id="charter"] .page-content-search__empty svg,
-html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty svg {
+html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty svg,
+html[data-daab-page-id="membership-application"] .page-content-search__empty svg {
   display: block;
   margin: 0 auto 12px;
   opacity: 0.35;
@@ -84,12 +90,14 @@ html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty svg {
 
 @media (max-width: 1060px) {
   html[data-daab-page-id="activities-news"] .page-content-search-band,
-  html[data-daab-page-id="charter"] .page-content-search-band {
+  html[data-daab-page-id="charter"] .page-content-search-band,
+  html[data-daab-page-id="membership-application"] .page-content-search-band {
     margin-top: 20px;
   }
 
   html[data-daab-page-id="activities-news"] .page-content-search-band + .content-wrap,
-  html[data-daab-page-id="charter"] .page-content-search-band + .main {
+  html[data-daab-page-id="charter"] .page-content-search-band + .main,
+  html[data-daab-page-id="membership-application"] .page-content-search-band + .main {
     margin-top: 16px !important;
   }
 }
@@ -104,7 +112,8 @@ html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty svg {
   }
 
   html[data-daab-page-id="activities-news"] .page-content-search-band,
-  html[data-daab-page-id="charter"] .page-content-search-band {
+  html[data-daab-page-id="charter"] .page-content-search-band,
+  html[data-daab-page-id="membership-application"] .page-content-search-band {
     margin-top: 16px;
   }
 }

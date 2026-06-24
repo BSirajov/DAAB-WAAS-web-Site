@@ -27,7 +27,7 @@
 <!-- /daab-seo -->
 <link href="../../css/daab-fonts.css?v=1" rel="stylesheet"/>
 
-<link href="../../css/daab-common.css?v=77" rel="stylesheet"/>
+<link href="../../css/daab-common.css?v=79" rel="stylesheet"/>
 <link href="../../css/daab-perf.css?v=2" rel="stylesheet"/>
 <link href="../../css/daab-mobile.css?v=14" rel="stylesheet"/>
 <link href="../../css/daab-sticky-chrome.css?v=2" rel="stylesheet"/>
@@ -39,6 +39,7 @@
 <link href="../../css/daab-table-resize.css?v=2" rel="stylesheet"/>
 <link href="../../css/daab-scientists-list-page.css?v=11" rel="stylesheet"/>
 <link href="../../css/daab-hero-summary.css?v=13" rel="stylesheet"/>
+<link href="../../css/daab-scientists-view-switch.css?v=2" rel="stylesheet"/>
   <script src="../../js/daab-mobile.js?v=6" defer></script>
 <script src="../../js/daab-perf.js?v=2" defer></script>
 <script src="../../js/daab-sticky-chrome.js?v=3" defer></script>
@@ -73,6 +74,15 @@
 </aside>
 </div>
 </header>
+<div class="scientists-view-switch shell" role="navigation" aria-label="Alimlər bölməsi görünüşləri">
+<a class="scientists-view-switch__btn" href="profiles.html">
+<span class="scientists-view-switch__icon" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="currentColor" stroke-linecap="round" stroke-width="2"/></svg></span>
+<span class="scientists-view-switch__body">
+<span class="scientists-view-switch__label">Alimlərin profilləri</span>
+</span>
+<span class="scientists-view-switch__chevron" aria-hidden="true"><svg fill="none" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span>
+</a>
+</div>
 <main class="main" id="content">
 <div class="toolbar catalog-toolbar">
 <div class="catalog-toolbar__head">
@@ -140,7 +150,7 @@
 <label class="group-control__label" for="groupBy">Qruplaşdır</label>
 <div class="group-control__select-wrap">
 <select class="group-control__select" id="groupBy">
-<option selected value="">Qruplaşdırma yoxdur</option>
+<option selected value="">-</option>
 <option value="yasadigi_olke">Yaşadığı ölkə</option>
 <option value="ixtilas">İxtisas</option>
 <option value="elmi_derece">Elmi dərəcə</option>
@@ -242,7 +252,7 @@
 <script defer src="../../js/daab-scientists-profiles-loader.js?v=1"></script>
 <script defer src="../../js/scientists-list-preview.js?v=8"></script>
 <script src="../../js/scientists-catalog-multiselect-filters.js?v=1" defer></script>
-<script src="../../js/scientists-list-catalog.js?v=10" defer></script>
+<script src="../../js/scientists-list-catalog.js?v=11" defer></script>
 <script src="../../js/daab-table-resize.js?v=3" defer></script>
 <!-- FOOTER -->
 <footer class="footer-pro">

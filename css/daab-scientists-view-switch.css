@@ -1,0 +1,124 @@
+/**
+ * Prominent list ↔ profiles switcher — scientists/list.html & scientists/profiles.html (AZ/EN).
+ */
+html[data-daab-page-id="scientists-list"] .scientists-view-switch,
+html[data-daab-page-id="scientists-profiles"] .scientists-view-switch {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(12px, 2vw, 20px);
+  margin-bottom: clamp(16px, 2.5vw, 24px);
+}
+
+html[data-daab-page-id="scientists-list"] .scientists-view-switch + .main,
+html[data-daab-page-id="scientists-profiles"] .scientists-view-switch + .main {
+  padding-top: 0;
+}
+
+.scientists-view-switch__btn {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2vw, 18px);
+  width: 100%;
+  min-height: 72px;
+  padding: 14px clamp(16px, 2.5vw, 22px);
+  color: inherit;
+  text-decoration: none !important;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .98) 0%, rgba(243, 249, 253, .96) 100%);
+  border: 1px solid var(--color-border-blue-faint, rgba(26, 111, 168, .16));
+  border-radius: 18px;
+  box-shadow:
+    0 12px 32px rgba(0, 78, 140, .1),
+    inset 0 1px 0 rgba(255, 255, 255, .9);
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    border-color .18s ease,
+    background-color .18s ease;
+}
+
+.scientists-view-switch__btn:hover,
+.scientists-view-switch__btn:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(0, 105, 180, .28);
+  box-shadow:
+    0 16px 36px rgba(0, 78, 140, .16),
+    inset 0 1px 0 rgba(255, 255, 255, .95);
+  outline: none;
+}
+
+.scientists-view-switch__btn:focus-visible {
+  box-shadow:
+    0 16px 36px rgba(0, 78, 140, .16),
+    0 0 0 3px rgba(0, 105, 180, .22);
+}
+
+.scientists-view-switch__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: clamp(44px, 8vw, 52px);
+  height: clamp(44px, 8vw, 52px);
+  color: var(--blue-700);
+  background: linear-gradient(160deg, rgba(0, 105, 180, .12) 0%, rgba(0, 105, 180, .06) 100%);
+  border: 1px solid rgba(0, 105, 180, .14);
+  border-radius: 14px;
+}
+
+.scientists-view-switch__icon svg {
+  width: clamp(22px, 4vw, 26px);
+  height: clamp(22px, 4vw, 26px);
+}
+
+.scientists-view-switch__body {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  min-width: 0;
+}
+
+.scientists-view-switch__label {
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(16px, 2.4vw, 19px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+}
+
+.scientists-view-switch__chevron {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: var(--blue-700);
+  background: rgba(0, 105, 180, .08);
+  border-radius: 50%;
+  transition: transform .18s ease, background-color .18s ease;
+}
+
+.scientists-view-switch__chevron svg {
+  width: 18px;
+  height: 18px;
+}
+
+.scientists-view-switch__btn:hover .scientists-view-switch__chevron,
+.scientists-view-switch__btn:focus-visible .scientists-view-switch__chevron {
+  transform: translateX(2px);
+  background: rgba(0, 105, 180, .14);
+}
+
+@media (max-width: 520px) {
+  .scientists-view-switch__btn {
+    min-height: 64px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .scientists-view-switch__chevron {
+    width: 30px;
+    height: 30px;
+  }
+}
