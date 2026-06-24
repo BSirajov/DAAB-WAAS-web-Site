@@ -129,8 +129,9 @@
     background: linear-gradient(135deg, #fff8e5 0%, var(--gold-soft) 100%);
     border: 2px solid var(--gold);
     color: var(--blue-900);
+    font-family: var(--font-sans);
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.35;
     text-align: center;
     text-decoration: none;
@@ -1059,8 +1060,9 @@
   max-width: 100%;
   padding: 9px 16px;
   white-space: nowrap;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  text-decoration: none;
 }
 
 .forum-sponsorship-page .panel-card {
@@ -1295,11 +1297,11 @@
   background: linear-gradient(135deg, #fff8e5 0%, var(--gold-soft) 100%);
   border: 2px solid var(--gold);
   color: var(--blue-900);
+  font-family: var(--font-sans);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.35;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration: none;
   white-space: nowrap;
   box-shadow: 0 8px 20px rgba(200, 155, 56, 0.28);
   transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;

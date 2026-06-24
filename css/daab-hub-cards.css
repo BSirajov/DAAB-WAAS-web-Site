@@ -249,8 +249,17 @@ html[data-daab-page-id="forum-2024"] .cards-grid{
   gap: 14px;
   align-items: stretch;
 }html[data-daab-page-id="home"] .daab-hub-page .page-card,
-html[data-daab-page-id="home"] .page-card,
-html[data-daab-page-id="forum-2024"] .daab-hub-page .page-card,
+html[data-daab-page-id="home"] .page-card{
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  column-gap: 12px;
+  row-gap: 0;
+  min-height: 0;
+  height: 100%;
+  padding: 16px 16px 12px;
+}html[data-daab-page-id="forum-2024"] .daab-hub-page .page-card,
 html[data-daab-page-id="forum-2024"] .page-card{
   box-sizing: border-box;
   display: grid;
@@ -307,23 +316,20 @@ html[data-daab-page-id="forum-2024"] .card-desc{
   line-height: 1.45;
   line-clamp: 3;
   -webkit-line-clamp: 3;
-}html[data-daab-page-id="home"] .card-footer,
-html[data-daab-page-id="forum-2024"] .card-footer{
+}html[data-daab-page-id="forum-2024"] .card-footer{
   grid-column: 1 / -1;
   grid-row: 3;
   clear: none;
   margin-top: 0;
   padding-top: 8px;
   width: 100%;
-}html[data-daab-page-id="home"] .card-footer,
-html[data-daab-page-id="forum-2024"] .card-footer{
+}html[data-daab-page-id="forum-2024"] .card-footer{
   display: flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
-}html[data-daab-page-id="home"] .card-tag,
-html[data-daab-page-id="forum-2024"] .card-tag{
+}html[data-daab-page-id="forum-2024"] .card-tag{
   box-sizing: border-box;
   display: inline-flex;
   flex: 0 0 auto;

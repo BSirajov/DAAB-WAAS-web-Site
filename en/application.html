@@ -25,7 +25,7 @@
 <meta name="twitter:image" content="https://daab-waas.com/images/daab-logo.png"/>
 <!-- /daab-seo -->
 <link href="../css/daab-fonts.css?v=1" rel="stylesheet"/>
-<link href="../css/daab-common.css?v=77" rel="stylesheet"/>
+<link href="../css/daab-common.css?v=79" rel="stylesheet"/>
 <link href="../css/daab-perf.css?v=2" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=14" rel="stylesheet"/>
 <link href="../css/daab-sticky-chrome.css?v=2" rel="stylesheet"/>
@@ -34,7 +34,10 @@
 <link href="../css/daab-lang.css?v=13" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=69" rel="stylesheet"/>
 <link href="../css/daab-hero-summary.css?v=13" rel="stylesheet"/>
-<link href="../css/daab-membership-application.css?v=22" rel="stylesheet"/>
+<link href="../css/scientists-catalog-toolbar.css?v=5" rel="stylesheet"/>
+<link href="../css/daab-page-content-search.css?v=4" rel="stylesheet"/>
+<link href="../css/daab-sidebar-widget.css?v=6" rel="stylesheet"/>
+<link href="../css/daab-membership-application.css?v=26" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
 <script src="../js/daab-perf.js?v=2" defer></script>
 <script src="../js/daab-sticky-chrome.js?v=3" defer></script>
@@ -50,7 +53,10 @@
 <script src="../js/daab-application-config.js?v=2" defer></script>
 <script src="../js/daab-country-codes.js?v=1" defer></script>
 <script src="../js/daab-phone-codes.js?v=2" defer></script>
-<script src="../js/daab-membership-application.js?v=15" defer></script>
+<script src="../js/daab-membership-application.js?v=17" defer></script>
+<script defer src="../js/daab-sidebar-spy.js?v=1"></script>
+<script defer src="../js/daab-sidebar-timeline.js?v=4"></script>
+<script defer src="../js/daab-page-content-search.js?v=5"></script>
 </head>
 <body class="application-page membership-page application-page--single">
 <a class="skip" href="#content">Skip to content</a>
@@ -78,9 +84,22 @@
 </aside>
 </div>
 </header>
+<section class="shell page-content-search-band" aria-label="Search application form">
+<div class="toolbar page-content-search-toolbar" role="search">
+<div class="page-content-search-toolbar__head">
+<div class="search-wrap">
+<svg fill="none" height="15" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="15"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<input autocomplete="off" id="pageContentSearch" placeholder="Search this form…" type="search" aria-label="Search application form"/>
+</div>
+</div>
+</div>
+<div class="no-results page-content-search__empty" id="pageContentSearchEmpty" hidden>
+<svg fill="none" height="44" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="44"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line><line x1="8" x2="14" y1="11" y2="11"></line></svg>
+No results found.
+</div>
+</section>
 <main class="main application-main" id="content">
-<!-- FORM WRAPPER -->
-<div class="form-wrapper">
+<div class="shell application-preamble">
   <section class="app-terms-panel" id="membership-terms" aria-labelledby="app-terms-title">
     <div class="section-header app-terms-header">
       <div class="section-num" aria-hidden="true">✒</div>
@@ -117,26 +136,27 @@
       <p class="app-terms-signature">Your support means a great deal to us. Thank you for joining our association.<br><br>With respect and best wishes,<br><strong>Prof. Dr. Messoud Efendiyev</strong><br>Chair of the WAAS Executive Board</p>
     </div>
   </section>
-  <p class="app-steps-intro">Please complete the membership application by providing the required information in the following four steps</p>
+  <p class="app-steps-intro" role="doc-subtitle">Please complete the membership application by providing the required information in the following four steps.</p>
   <div class="app-endpoint-notice" id="app-endpoint-notice" role="status" hidden></div>
-  <nav id="app-steps-nav" class="app-steps-nav" aria-label="Application steps">
-    <button type="button" class="app-step-btn active" data-target="sec-1">
-      <span class="app-step-num">1</span>
-      <span class="app-step-label">Introduction</span>
-    </button>
-    <button type="button" class="app-step-btn" data-target="sec-2">
-      <span class="app-step-num">2</span>
-      <span class="app-step-label">Personal information</span>
-    </button>
-    <button type="button" class="app-step-btn" data-target="sec-3">
-      <span class="app-step-num">3</span>
-      <span class="app-step-label">Scientific fields</span>
-    </button>
-    <button type="button" class="app-step-btn" data-target="sec-4">
-      <span class="app-step-num">4</span>
-      <span class="app-step-label">Additional information</span>
-    </button>
-  </nav>
+</div>
+<div class="application-layout">
+<aside class="toc-card application-sidebar sidebar" aria-label="Application steps">
+<div class="sidebar-widget" id="appStepsWidget">
+<div class="widget-head">
+<span aria-hidden="true"><span aria-hidden="true">📝</span> Application steps</span>
+<button aria-controls="appStepsMenu" aria-expanded="false" aria-label="Open application steps menu" class="events-menu-toggle" type="button"><span></span><span></span><span></span></button>
+</div>
+<div class="widget-body">
+<ul class="timeline-list" id="appStepsMenu">
+<li><span class="tl-date">1</span><a href="#sec-1">Introduction</a></li>
+<li><span class="tl-date">2</span><a href="#sec-2">Personal information</a></li>
+<li><span class="tl-date">3</span><a href="#sec-3">Scientific fields</a></li>
+<li><span class="tl-date">4</span><a href="#sec-4">Additional information</a></li>
+</ul>
+</div>
+</div>
+</aside>
+<div class="application-stack form-wrapper">
   <form id="mainForm" novalidate>
 
     <!-- ═══ SECTION 1 — Introduction ═══ -->
@@ -147,7 +167,9 @@
           Introduction
           <small>Section 1 of 4</small>
         </div>
-        <button type="button" class="app-step-top" data-target="app-steps-nav" aria-label="Back to application steps">↑</button>
+        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-1-body" data-section-label="Introduction">
+          <svg class="app-section-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
       </div>
       <div class="section-body">
         <div class="intro-box">
@@ -175,7 +197,9 @@
           Personal Information
           <small>Section 2 of 4</small>
         </div>
-        <button type="button" class="app-step-top" data-target="app-steps-nav" aria-label="Back to application steps">↑</button>
+        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-2-body" data-section-label="Personal information">
+          <svg class="app-section-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
       </div>
       <div class="section-body">
 
@@ -333,7 +357,9 @@
           Scientific Fields You Are Engaged In
           <small>Section 3 of 4 — Select all that apply</small>
         </div>
-        <button type="button" class="app-step-top" data-target="app-steps-nav" aria-label="Back to application steps">↑</button>
+        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-3-body" data-section-label="Scientific fields">
+          <svg class="app-section-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
       </div>
       <div class="section-body">
 
@@ -444,7 +470,9 @@
           Additional Information
           <small>Section 4 of 4</small>
         </div>
-        <button type="button" class="app-step-top" data-target="app-steps-nav" aria-label="Back to application steps">↑</button>
+        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-4-body" data-section-label="Additional information">
+          <svg class="app-section-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
       </div>
       <div class="section-body">
 
@@ -499,6 +527,7 @@
     </div>
 
   </form>
+</div>
 </div>
 </main>
 <footer class="footer-pro">

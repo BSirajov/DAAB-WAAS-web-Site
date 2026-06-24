@@ -92,7 +92,44 @@
   max-width: 100%;
   box-sizing: border-box;
   contain-intrinsic-size: auto 420px;
-}.card.is-filtered-out{
+}
+
+html[data-daab-page-id="scientists-profiles"] .catalog-group-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin: 10px 0 2px;
+  padding: 8px 4px 6px;
+  color: var(--color-heading-blue);
+  font-family: var(--font-serif);
+  font-size: clamp(17px, 1.5vw, 20px);
+  font-weight: 800;
+  line-height: 1.2;
+  border-bottom: 2px solid rgba(0, 90, 154, 0.14);
+}
+
+html[data-daab-page-id="scientists-profiles"] .catalog-group-head__count {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+html[data-daab-page-id="scientists-profiles"] .catalog-sort-group-cluster {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  flex: 0 0 auto;
+}
+
+html[data-daab-page-id="scientists-profiles"] .catalog-sort-group-cluster .group-control,
+html[data-daab-page-id="scientists-profiles"] .catalog-sort-group-cluster .sort-control {
+  margin-left: 0;
+}
+
+.card.is-filtered-out{
   display: none !important;
 }.card{
   position: relative;
@@ -436,7 +473,16 @@ a.card-name:focus-visible{
   }
 }
 
-@media (max-width: 480px) {.main{
+@media (max-width: 480px) {
+  html[data-daab-page-id="scientists-profiles"] .catalog-sort-group-cluster {
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .main{
     padding: 20px max(12px, env(safe-area-inset-right)) 48px max(12px, env(safe-area-inset-left));
   }.cards-grid{
     gap: 14px;
