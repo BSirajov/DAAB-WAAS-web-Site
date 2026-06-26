@@ -590,6 +590,12 @@ html[data-daab-page-id="forum-2024"] .card-desc{
     padding: 16px 14px 12px;
   }html[data-daab-page-id="forum-2024"] .card-title{
     font-size: 14.5px;
+  }html[data-daab-page-id="forum-2024"] .forum-hub-group[data-forum-group="overview"] .card-desc{
+    display: block;
+    overflow: visible;
+    line-clamp: unset;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
   }html[data-daab-page-id="forum-2024"] .card-desc{
     display: -webkit-box;
     overflow: hidden;
@@ -620,6 +626,12 @@ html[data-daab-page-id="forum-2024"] .card-desc{
     gap: 14px;
   }html[data-daab-page-id="forum-2024"] .page-card{
     min-height: 0;
+  }html[data-daab-page-id="forum-2024"] .forum-hub-group[data-forum-group="overview"] .card-desc{
+    display: block;
+    overflow: visible;
+    line-clamp: unset;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
   }html[data-daab-page-id="forum-2024"] .card-desc{
     display: block;
     overflow: visible;
@@ -662,7 +674,19 @@ html[data-daab-page-id="forum-2024"] .forum-hub-row--lead{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 28px;
-  align-items: start;
+  align-items: stretch;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-hub-group__title,
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel__title{
+  margin: 0;
+  padding-bottom: 8px;
+  color: var(--color-heading-blue);
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 800;
+  line-height: 1.2;
+  border-bottom: 2px solid rgba(0, 105, 180, 0.12);
 }
 
 html[data-daab-page-id="forum-2024"] .forum-hub-row--official-speeches{
@@ -711,23 +735,152 @@ html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-pa
   display: none;
 }
 
-html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel__cards.cards-grid{
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-hub-group,
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel{
+  display: flex;
+  flex-direction: column;
   gap: 14px;
-  align-items: start;
-  align-content: start;
+  min-height: 100%;
+  height: auto;
+  justify-content: flex-start;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel__cards.cards-grid{
+  flex: 1 1 auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 14px;
+  align-items: stretch;
+  align-content: stretch;
+  min-height: min-content;
 }
 
 html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-hub-group[data-forum-group="overview"] .cards-grid{
+  flex: 1 1 auto;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: start;
-  align-content: start;
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+  align-content: stretch;
+  min-height: min-content;
+}
+
+/* Overview hub cards — full description, text wraps beside/under icon */
+html[data-daab-page-id="forum-2024"] .forum-hub-group[data-forum-group="overview"] .page-card{
+  display: flow-root;
+  overflow: hidden;
+  height: auto;
+  min-height: min-content;
+  grid-template-columns: unset;
+  grid-template-rows: unset;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-group[data-forum-group="overview"] .card-icon-wrap{
+  float: left;
+  clear: none;
+  grid-column: auto;
+  grid-row: auto;
+  width: 44px;
+  height: 44px;
+  margin: 0 12px 6px 0;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-group[data-forum-group="overview"] .card-body{
+  display: contents;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-group[data-forum-group="overview"] .card-title{
+  display: block;
+  grid-column: auto;
+  grid-row: auto;
+  margin: 0 0 6px;
+  min-height: 0;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  -webkit-box-orient: unset;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-group[data-forum-group="overview"] .card-desc{
+  display: block;
+  grid-column: auto;
+  grid-row: auto;
+  overflow: visible;
+  line-clamp: unset;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-hub-group[data-forum-group="overview"] .page-card{
+  height: 100%;
+  min-height: min-content;
+  align-self: stretch;
+  grid-template-rows: unset;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-hub-group[data-forum-group="overview"] .card-title,
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel__cards .card-title{
+  min-height: calc(2 * 1.3em);
 }
 
 html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .page-card{
-  height: auto;
-  align-self: start;
-  grid-template-rows: auto minmax(0, 1fr);
+  height: 100%;
+  min-height: min-content;
+  align-self: stretch;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .card-title{
+  min-height: calc(2 * 1.3em);
+}
+
+/* Participants hub cards — full description, text wraps beside/under icon */
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel__cards .page-card{
+  display: flow-root;
+  overflow: hidden;
+  height: 100%;
+  min-height: min-content;
+  align-self: stretch;
+  grid-template-columns: unset;
+  grid-template-rows: unset;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel__cards .card-icon-wrap{
+  float: left;
+  clear: none;
+  grid-column: auto;
+  grid-row: auto;
+  width: 44px;
+  height: 44px;
+  margin: 0 12px 6px 0;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel__cards .card-body{
+  display: contents;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel__cards .card-title{
+  display: block;
+  grid-column: auto;
+  grid-row: auto;
+  margin: 0 0 6px;
+  min-height: calc(2 * 1.3em);
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  -webkit-box-orient: unset;
+}
+
+html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel__cards .card-desc{
+  display: block;
+  grid-column: auto;
+  grid-row: auto;
+  overflow: visible;
+  line-clamp: unset;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 html[data-daab-page-id="forum-2024"] .forum-participants-panel[hidden]{
@@ -737,6 +890,9 @@ html[data-daab-page-id="forum-2024"] .forum-participants-panel[hidden]{
 @media (min-width: 901px) and (max-width: 1100px) {
   html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-hub-group[data-forum-group="overview"] .cards-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+    align-content: stretch;
   }
 }
 
@@ -747,8 +903,38 @@ html[data-daab-page-id="forum-2024"] .forum-participants-panel[hidden]{
     gap: 28px;
   }
 
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--lead{
+    align-items: start;
+  }
+
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-hub-group,
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel{
+    height: auto;
+  }
+
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-hub-group[data-forum-group="overview"] .cards-grid,
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel__cards.cards-grid{
+    flex: none;
+    grid-auto-rows: auto;
+    align-items: stretch;
+    align-content: start;
+  }
+
   html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-hub-group[data-forum-group="overview"] .cards-grid{
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .page-card,
+  html[data-daab-page-id="forum-2024"] .forum-hub-group[data-forum-group="overview"] .page-card,
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel__cards .page-card{
+    height: auto;
+    align-self: stretch;
+  }
+
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-hub-group[data-forum-group="overview"] .card-title,
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .forum-participants-panel__cards .card-title,
+  html[data-daab-page-id="forum-2024"] .forum-hub-row--lead .card-title{
+    min-height: 0;
   }
 
   html[data-daab-page-id="forum-2024"] .forum-hub-row--official-speeches{
@@ -792,17 +978,6 @@ html[data-daab-page-id="forum-2024"] .forum-hub-group__title{
   font-weight: 800;
   line-height: 1.2;
   border-bottom: 2px solid rgba(0, 105, 180, 0.12);
-}
-
-html[data-daab-page-id="forum-2024"] .forum-hub-group--nested .forum-hub-group__title::after{
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  margin-left: 8px;
-  vertical-align: middle;
-  background: rgba(0, 105, 180, 0.35);
-  border-radius: 50%;
 }
 
 html[data-daab-page-id="forum-2024"] .forum-hub-group .cards-grid{

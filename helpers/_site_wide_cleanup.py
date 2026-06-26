@@ -67,7 +67,7 @@ STYLE_VERSIONS = {
     "daab-forum-logistics.css": 1,
     "daab-forum-sessions.css": 14,
     "daab-video-gallery.css": 9,
-    "daab-hub-cards.css": 36,
+    "daab-hub-cards.css": 46,
     "daab-forum-participants-panel.css": 3,
     "daab-donate-page.css": 4,
     "daab-sponsors-page.css": 16,
