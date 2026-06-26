@@ -9,7 +9,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from _paths import ROOT
+from _paths import ROOT, FOOTER_COPYRIGHT_AZ, FOOTER_COPYRIGHT_EN
 from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS
 from work_done_2024_2026_en_content import (
     HERO_SUBTITLE_EN,
@@ -537,7 +537,7 @@ def footer_block() -> str:
 <div class="footer-col"><div class="footer-title">Rəhbərlik</div><p class="footer-leader">{FOOTER_AZ_LEADER_HTML}</p></div>
 </div>
 </div>
-<div class="footer-bottom">© 2026 DAAB — Bütün hüquqlar qorunur</div>
+<div class="footer-bottom">{FOOTER_COPYRIGHT_AZ}</div>
 </footer>
 """
 
@@ -598,7 +598,7 @@ def footer_block_en() -> str:
 <div class="footer-col"><div class="footer-title">Leadership</div><p class="footer-leader">{FOOTER_EN_LEADER_HTML}</p></div>
 </div>
 </div>
-<div class="footer-bottom">© 2026 WAAS — All rights reserved</div>
+<div class="footer-bottom">{FOOTER_COPYRIGHT_EN}</div>
 </footer>
 """
 

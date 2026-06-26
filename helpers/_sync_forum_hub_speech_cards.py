@@ -18,7 +18,6 @@ CARDS = {
 <div class="card-body">
 <h3 class="card-title">Rektorlar</h3>
 <div class="card-desc">Azərbaycan universitet rektorlarının Forum 2024-dəki nitqləri.</div>
-<div class="card-footer"><span class="card-tag">Oxu</span></div>
 </div>
 </a>
 <a class="page-card" data-title="Akademiklər nitqləri" href="anas_leadership_speeches.html">
@@ -26,7 +25,6 @@ CARDS = {
 <div class="card-body">
 <h3 class="card-title">Akademiklər</h3>
 <div class="card-desc">Azərbaycan Milli Elmlər Akademiyası rəhbərlərinin Forumla bağlı görüşləri.</div>
-<div class="card-footer"><span class="card-tag">Oxu</span></div>
 </div>
 </a>""".strip(),
     "en": """
@@ -35,7 +33,6 @@ CARDS = {
 <div class="card-body">
 <h3 class="card-title">Rectors</h3>
 <div class="card-desc">Speeches by rectors of Azerbaijani universities at Forum 2024.</div>
-<div class="card-footer"><span class="card-tag">Read</span></div>
 </div>
 </a>
 <a class="page-card" data-title="Academicians speeches" href="anas_leadership_speeches.html">
@@ -43,7 +40,6 @@ CARDS = {
 <div class="card-body">
 <h3 class="card-title">Academicians</h3>
 <div class="card-desc">Speeches by leaders of the Azerbaijan National Academy of Sciences at Forum 2024.</div>
-<div class="card-footer"><span class="card-tag">Read</span></div>
 </div>
 </a>""".strip(),
 }

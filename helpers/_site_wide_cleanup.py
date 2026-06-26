@@ -40,19 +40,21 @@ SCRIPT_VERSIONS = {
     "daab-table-resize.js": 3,
     "daab-scientists-toolbar-mobile.js": 5,
     "daab-profiles-sticky.js": 4,
-    "scientists-cv-filters.js": 8,
+    "scientists-cv-filters.js": 9,
     "scientists-profiles-render.js": 3,
     "scientists-list-preview.js": 8,
     "daab-scientists-profiles-loader.js": 1,
     "scientists-catalog-data.js": 2,
     "scientists-catalog-data-en.js": 2,
-    "daab-sponsors-page.js": 4,
+    "daab-hub-card-search.js": 1,
+    "scientists-catalog-shared.js": 1,
     "scientists-catalog-multiselect-filters.js": 1,
-    "scientists-list-catalog.js": 11,
+    "scientists-list-catalog.js": 12,
+    "daab-sponsors-page.js": 4,
 }
 
 STYLE_VERSIONS = {
-    "daab-common.css": 79,
+    "daab-common.css": 80,
     "daab-perf.css": 2,
     "daab-mobile.css": 14,
     "daab-sticky-chrome.css": 2,
@@ -65,7 +67,8 @@ STYLE_VERSIONS = {
     "daab-forum-logistics.css": 1,
     "daab-forum-sessions.css": 14,
     "daab-video-gallery.css": 9,
-    "daab-hub-cards.css": 34,
+    "daab-hub-cards.css": 36,
+    "daab-forum-participants-panel.css": 3,
     "daab-donate-page.css": 4,
     "daab-sponsors-page.css": 16,
     "daab-presentations-toc.css": 10,
@@ -73,7 +76,7 @@ STYLE_VERSIONS = {
     "daab-impressions-photos.css": 2,
     "daab-activities-layout.css": 24,
     "daab-sticky-sidebar.css": 1,
-    "daab-activities-page.css": 12,
+    "daab-activities-page.css": 14,
     "daab-executive-board.css": 7,
     "daab-membership-page.css": 13,
     "daab-membership-value.css": 19,
@@ -87,7 +90,6 @@ STYLE_VERSIONS = {
     "daab-scientists-list-page.css": 11,
     "daab-scientists-view-switch.css": 2,
     "daab-fonts.css": 1,
-    "scientists-list-catalog.js": 11,
     "daab-photos-gallery.css": 9,
     "daab-forum-book.css": 5,
     "daab-membership-flyer.css": 35,
@@ -149,10 +151,9 @@ def iter_deploy_html() -> list[Path]:
 
 
 def fix_foundation_images(html: str) -> str:
-    if "foundation.html" not in html and "Şuşa qurultayı" not in html and "DAAD, İstanbul" not in html:
+    if "foundation.html" not in html and "Şuşa qurultayı" not in html:
         return html
-    html = html.replace("../images/Şuşa", "../images/activities/Şuşa")
-    html = html.replace("../images/DAAD,", "../images/activities/DAAD,")
+    html = html.replace("../images/Şuşa", "../images/activities/shusha-congress")
     return html
 
 

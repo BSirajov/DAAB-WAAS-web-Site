@@ -31,7 +31,7 @@ AZ_DIR = ROOT / "az" / "forum" / "2024"
 FORUM_EN_BREADCRUMB = (
     '<div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Breadcrumb">'
     '<a href="../../index.html">Home</a><span aria-hidden="true">›</span>'
-    '<a href="index.html">Forum 2024</a><span aria-hidden="true">›</span>'
+    '<a href="index.html">I Forum</a><span aria-hidden="true">›</span>'
     '<span class="forum-breadcrumbs-current" aria-current="page">{current}</span></div>'
 )
 
@@ -121,16 +121,16 @@ def official_card(section: dict) -> str:
     image = ""
     if section.get("image") == "president":
         image = (
-            f'<div class="card-gallery single"><img src="{ASSET}images/forum/Prezidentin_müraciəti.jpg" '
+            f'<div class="card-gallery single"><img src="{ASSET}images/forum/president-address.jpg" '
             'alt="President of the Republic of Azerbaijan Ilham Aliyev" width="900" height="520" '
             'loading="lazy" decoding="async"/></div>'
         )
     elif section.get("image") == "scientists":
         image = (
             f'<div class="card-gallery double">'
-            f'<img src="{ASSET}images/forum/Aimlərimizin_müraciəti_Xankəndi_1.jpg" '
+            f'<img src="{ASSET}images/forum/scientists-address-khankendi-1.jpg" '
             'alt="Scientists\' appeal — Khankendi" loading="lazy" decoding="async"/>'
-            f'<img src="{ASSET}images/forum/Aimlərimizin_müraciəti_Xankəndi_2.jpg" '
+            f'<img src="{ASSET}images/forum/scientists-address-khankendi-2.jpg" '
             'alt="Scientists\' appeal — Khankendi" loading="lazy" decoding="async"/>'
             "</div>"
         )
@@ -186,7 +186,7 @@ def build_official() -> None:
 <a class="skip" href="#content">Skip to content</a>
 {nav}
 <div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="Breadcrumb">
-<a href="../../index.html">Home</a><span aria-hidden="true">›</span><a href="index.html">Forum 2024</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">Official addresses</span>
+<a href="../../index.html">Home</a><span aria-hidden="true">›</span><a href="index.html">I Forum</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">Official addresses</span>
 </div>
 <header class="page-hero">
 <div class="hero-wrap shell">

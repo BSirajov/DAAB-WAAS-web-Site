@@ -263,23 +263,34 @@
         grid-template-columns:1fr !important;
     }.card-gallery.siracov-gallery img{
         height:auto !important;
-    }
-}
-@media(max-width:768px){.card-gallery.siracov-gallery{
-        grid-template-columns:1fr !important;
     }.card-gallery.siracov-gallery img:first-child{
         grid-column:auto !important;
         height:320px !important;
     }
-}/* ===== Global typography normalization ===== */
-body, p, li, a, span, div, .card-text, .timeline-list li, .card-source, .widget-body, .widget-head{
+}/* ===== Global typography normalization (activities page only) ===== */
+html[data-daab-page-id="activities-news"] body,
+html[data-daab-page-id="activities-news"] p,
+html[data-daab-page-id="activities-news"] li,
+html[data-daab-page-id="activities-news"] a,
+html[data-daab-page-id="activities-news"] span,
+html[data-daab-page-id="activities-news"] div,
+html[data-daab-page-id="activities-news"] .card-text,
+html[data-daab-page-id="activities-news"] .timeline-list li,
+html[data-daab-page-id="activities-news"] .card-source,
+html[data-daab-page-id="activities-news"] .widget-body,
+html[data-daab-page-id="activities-news"] .widget-head{
     font-family: Inter,system-ui,-apple-system,Segoe UI,sans-serif !important;
     font-size: 15px !important;
     line-height: 1.45 !important;
     letter-spacing: 0 !important;
 }/* Headings */
-h1, h2, h3, h4, h5, h6,
-.page-hero h1{
+html[data-daab-page-id="activities-news"] h1,
+html[data-daab-page-id="activities-news"] h2,
+html[data-daab-page-id="activities-news"] h3,
+html[data-daab-page-id="activities-news"] h4,
+html[data-daab-page-id="activities-news"] h5,
+html[data-daab-page-id="activities-news"] h6,
+html[data-daab-page-id="activities-news"] .page-hero h1{
     font-family: 'Playfair Display', serif !important;
     line-height: 1.25 !important;
 }.news-card .card-header .card-title{
@@ -289,7 +300,7 @@ h1, h2, h3, h4, h5, h6,
 .card-text{
     margin-bottom: 10px !important;
 }/* Compact lists */
-li{
+html[data-daab-page-id="activities-news"] li{
     margin-bottom: 2px !important;
     padding-top: 2px !important;
     padding-bottom: 2px !important;
@@ -1014,6 +1025,56 @@ html[data-daab-page-id="activities-news"]{
 }
 
 @media (max-width: 760px) {#garuslu-book-2026 .garuslu-book-cover{
+    float: none !important;
+    width: min(280px, 100%) !important;
+    margin: 0 auto 18px !important;
+    text-align: center !important;
+  }
+}
+
+/* First Forum book — float cover, text wrap */
+#forum-book-2026 .forum-book-cover{
+  float: right !important;
+  width: min(260px, 42%) !important;
+  margin: 0 0 16px 22px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+#forum-book-2026 .forum-book-cover img{
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
+  box-shadow: 0 6px 20px rgba(0, 45, 82, 0.14) !important;
+  background: #fff !important;
+}
+#forum-book-2026 .forum-book-credits{
+  font-size: 13.5px !important;
+  line-height: 1.65 !important;
+  color: var(--text-mid) !important;
+}
+#forum-book-2026 .forum-book-contrib{
+  list-style: none !important;
+  margin: 0 0 8px !important;
+  padding: 0 !important;
+}
+#forum-book-2026 .forum-book-contrib li{
+  position: relative !important;
+  padding: 4px 0 4px 18px !important;
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+  color: var(--text-mid) !important;
+}
+#forum-book-2026 .forum-book-contrib li::before{
+  content: "•" !important;
+  position: absolute !important;
+  left: 0 !important;
+  color: var(--teal) !important;
+}
+
+@media (max-width: 760px) {#forum-book-2026 .forum-book-cover{
     float: none !important;
     width: min(280px, 100%) !important;
     margin: 0 auto 18px !important;

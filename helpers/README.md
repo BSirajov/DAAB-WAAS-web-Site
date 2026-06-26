@@ -37,6 +37,12 @@ Run all commands from the **repository root**: `python helpers/<script>.py`
 | `_harmonize_forum_breadcrumbs.py` | Forum 2024 crumbs: `I Forum` hub, remove static flag |
 | `_inject_site_footer.py` | Canonical footer on application + mission pages |
 | `_site_wide_cleanup.py` | Propagate shared asset `?v=` versions |
+| `_audit_page_shell.py` | Standard head script bundle on nav pages (`--fix` to repair) |
+| `_check_external_links.py` | External URLs on activities pages (`--check` for live HTTP) |
+| `_audit_unicode_image_paths.py` | Non-ASCII `/images/` refs in deploy HTML |
+| `_rename_unicode_images.py` | Rename non-ASCII image files to ASCII slugs (`--apply`) |
+| `_audit_page_subtitles.py` | Embedded `#page-hero-subtitle` vs `i18n/page-subtitles.json` |
+| `_forum_page_shell.py` | Shared Forum 2024 inner-page head assets for build helpers |
 
 ## Paths
 

@@ -5,7 +5,7 @@ import html
 import json
 from pathlib import Path
 
-from _paths import ROOT
+from _paths import ROOT, FOOTER_COPYRIGHT_AZ, FOOTER_COPYRIGHT_EN
 from _footer_leader_snippets import FOOTER_AZ_CREDENTIAL, FOOTER_EN_CREDENTIAL
 from forum_breadcrumbs import forum_breadcrumb_inner
 from _inject_seo_head import build_seo_block
@@ -49,7 +49,7 @@ COPY = {
             "DAAB İdarə Heyətinin sədri<br/>"
             f"{FOOTER_AZ_CREDENTIAL}"
         ),
-        "footer_rights": "© 2026 DAAB — Bütün hüquqlar qorunur",
+        "footer_rights": FOOTER_COPYRIGHT_AZ,
     },
     "en": {
         "lang": "en",
@@ -79,7 +79,7 @@ COPY = {
             "Chair of the WAAS Executive Board<br/>"
             f"{FOOTER_EN_CREDENTIAL}"
         ),
-        "footer_rights": "© 2026 WAAS — All rights reserved",
+        "footer_rights": FOOTER_COPYRIGHT_EN,
     },
 }
 

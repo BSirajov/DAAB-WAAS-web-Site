@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from _paths import ROOT
+from _forum_page_shell import forum_inner_shell_scripts, forum_inner_stylesheets
 
 import importlib.util
 
@@ -11,31 +12,25 @@ _embed = importlib.util.module_from_spec(_spec)
 assert _spec.loader
 _spec.loader.exec_module(_embed)
 
-HEAD = """\
-<link href="../../../css/daab-fonts.css?v=1" rel="stylesheet"/>
-<link href="../../../css/daab-common.css?v=67" rel="stylesheet"/>
-<link href="../../../css/daab-perf.css?v=1" rel="stylesheet"/>
-<link href="../../../css/daab-mobile.css?v=13" rel="stylesheet"/>
-<link href="../../../css/daab-sticky-chrome.css?v=1" rel="stylesheet"/>
-<link href="../../../css/daab-search.css?v=4" rel="stylesheet"/>
-<link href="../../../css/daab-back-to-top.css?v=2" rel="stylesheet"/>
-<link href="../../../css/daab-lang.css?v=13" rel="stylesheet"/>
-<link href="../../../css/daab-nav-mega.css?v=69" rel="stylesheet"/>
-<link href="../../../css/daab-hero-summary.css?v=13" rel="stylesheet"/>
-<link href="../../../css/daab-sidebar-widget.css?v=6" rel="stylesheet"/>
-<link href="../../../css/daab-activities-layout.css?v=19" rel="stylesheet"/>
-<link href="../../../css/daab-forum-content.css?v=43" rel="stylesheet"/>
-<link href="../../../css/daab-forum-logistics.css?v=1" rel="stylesheet"/>
-<script src="../../../js/daab-mobile.js?v=6" defer></script>
-<script src="../../../js/daab-perf.js?v=1" defer></script>
-<script src="../../../js/daab-sticky-chrome.js?v=3" defer></script>
-<script src="../../../js/daab-back-to-top.js?v=3" defer></script>
-<script src="../../../js/daab-i18n.js?v=32" defer></script>
-<script src="../../../js/daab-lang-position.js?v=7" defer></script>
-<script src="../../../js/daab-nav.js?v=31" defer></script>
-<script src="../../../js/daab-primary-nav.js?v=52" defer></script>
-<script src="../../../js/daab-shell.js?v=13" defer></script>
-<script src="../../../js/daab-search.js?v=9" defer></script>"""
+_spec_footer = importlib.util.spec_from_file_location(
+    "_footer_leader_snippets", ROOT / "helpers" / "_footer_leader_snippets.py"
+)
+_footer = importlib.util.module_from_spec(_spec_footer)
+assert _spec_footer.loader
+_spec_footer.loader.exec_module(_footer)
+
+SIDEBAR_SCRIPTS = """\
+<script defer src="../../../js/daab-sidebar-spy.js?v=1"></script>
+<script src="../../../js/daab-sidebar-timeline.js?v=4" defer></script>"""
+
+LOGISTICS_ASSET = "../../../"
+HEAD = (
+    forum_inner_stylesheets(LOGISTICS_ASSET, extra=("daab-forum-logistics.css",))
+    + "\n"
+    + forum_inner_shell_scripts(LOGISTICS_ASSET)
+    + "\n"
+    + SIDEBAR_SCRIPTS
+)
 
 TOC_SCRIPT = """\
 <script>
@@ -510,7 +505,8 @@ def build_page(cfg: dict) -> str:
 {cfg["main"].strip()}
 </main>
 </div>
-{TOC_SCRIPT}
+{_footer.FOOTER_AZ_HTML if lang == "az" else _footer.FOOTER_EN_HTML}
+{SIDEBAR_SCRIPTS}
 </body>
 </html>
 """

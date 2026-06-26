@@ -79,6 +79,49 @@ EN_REPLACEMENTS: list[tuple[str, str]] = [
     ("Executive board", "Executive Board"),
 ]
 
+# Charter / foundation legal text (WAAS governance only — longest first).
+CHARTER_LEGAL_REPLACEMENTS: list[tuple[str, str]] = [
+    ("chairman of the board of directors of the legal entity", "chair of the governing body of the legal entity"),
+    ("chairman of the Association's board of directors", "chair of the Association's executive board"),
+    ("chairman of the board of directors", "chair of the executive board"),
+    ("Association's board of directors", "Association's executive board"),
+    ("board of directors of the Association", "executive board of the Association"),
+    ("branch board of directors", "branch executive board"),
+    ("headquarters board of directors", "headquarters executive board"),
+    ("the newly elected board of directors", "the newly elected executive board"),
+    ("members of the board of directors", "members of the executive board"),
+    ("Main members of the board of directors", "Main members of the executive board"),
+    ("board of directors and audit board", "executive board and audit board"),
+    ("board of directors or audit board", "executive board or audit board"),
+    ("The board of directors", "The executive board"),
+    ("the board of directors", "the executive board"),
+    ("Initial WAAS board of directors", "Initial WAAS executive board"),
+    ("The board of directors shall be confirmed", "The executive board shall be confirmed"),
+    ("members elected to the board,", "members elected to the executive board,"),
+    ("accepted by the board constitute", "accepted by the executive board constitute"),
+    ("officers appointed by the board.", "officers appointed by the executive board."),
+    ("a member of the board assigned", "a member of the executive board assigned"),
+    ("submitted to the Association board within", "submitted to the Association executive board within"),
+    ("SPEECH BY MESSOUD EFENDIYEV, CHAIR OF THE BOARD OF DIRECTORS OF THE "
+     "WORLD ASSOCIATION OF AZERBAIJANI SCIENTISTS",
+     "SPEECH BY MESSOUD EFENDIYEV, CHAIR OF THE EXECUTIVE BOARD OF THE "
+     "WORLD ASSOCIATION OF AZERBAIJANI SCIENTISTS"),
+    ("scientists directory, board of directors, charter", "scientists directory, executive board, charter"),
+]
+
+CHARTER_HTML = (
+    ROOT / "en" / "charter.html",
+    ROOT / "en" / "foundation.html",
+    ROOT / "en" / "forum" / "2024" / "official.html",
+)
+
+HELPER_CHARTER_SOURCES = (
+    ROOT / "helpers" / "_update_en_charter.py",
+    ROOT / "helpers" / "i18n_foundation_en.py",
+    ROOT / "helpers" / "forum_en_official.py",
+    ROOT / "helpers" / "i18n_home_en.py",
+)
+
 SOURCE_FILES = (
     ROOT / "i18n" / "ui.json",
     ROOT / "i18n" / "page-panel-summaries.json",
@@ -123,6 +166,31 @@ def patch_file(path: Path) -> bool:
     return False
 
 
+def patch_charter_legal(path: Path) -> bool:
+    if not path.is_file():
+        return False
+    text = path.read_text(encoding="utf-8")
+    new_text = text
+    for old, new in CHARTER_LEGAL_REPLACEMENTS:
+        if old in new_text:
+            new_text = new_text.replace(old, new)
+    if new_text != text:
+        path.write_text(new_text, encoding="utf-8", newline="\n")
+        return True
+    return False
+
+
+def patch_charter_sources() -> list[str]:
+    updated: list[str] = []
+    for path in CHARTER_HTML:
+        if patch_charter_legal(path):
+            updated.append(path.relative_to(ROOT).as_posix())
+    for path in HELPER_CHARTER_SOURCES:
+        if patch_charter_legal(path):
+            updated.append(path.relative_to(ROOT).as_posix())
+    return updated
+
+
 def patch_sources() -> list[str]:
     updated: list[str] = []
     for path in SOURCE_FILES:
@@ -152,11 +220,15 @@ def patch_html() -> list[str]:
 def main() -> None:
     ui = patch_ui_json()
     sources = patch_sources()
+    charter = patch_charter_sources()
     pages = patch_html()
     print(f"ui.json: {'updated' if ui else 'unchanged'}")
     print(f"Source files updated: {len(sources)}")
     for s in sources:
         print(f"  {s}")
+    print(f"Charter/legal files updated: {len(charter)}")
+    for c in charter:
+        print(f"  {c}")
     print(f"EN HTML pages updated: {len(pages)}")
     for p in pages[:20]:
         print(f"  {p}")

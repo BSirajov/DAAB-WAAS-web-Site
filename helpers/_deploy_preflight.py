@@ -16,6 +16,8 @@ CHECKS = [
     ("Scientist name order", ["python", str(HELPERS / "_check_name_order.py")]),
     ("Forum content CSS selectors", ["python", str(HELPERS / "_fix_forum_content_css_selectors.py"), "--audit-only"]),
     ("Artifact consistency (nav/i18n)", ["python", str(HELPERS / "_artifact_audit_temp.py")]),
+    ("Page shell scripts", ["python", str(HELPERS / "_audit_page_shell.py")]),
+    ("Page hero subtitles", ["python", str(HELPERS / "_audit_page_subtitles.py"), "--fail-on-findings"]),
 ]
 
 

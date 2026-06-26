@@ -5,9 +5,9 @@ from __future__ import annotations
 from playwright.sync_api import sync_playwright
 
 TESTS = [
-    ("http://127.0.0.1:8010/en/activities.html", "article.news-card", "Karabakh", 3, 27),
-    ("http://127.0.0.1:8010/en/activities.html", "article.news-card", "zzznomatchxyz", 0, 27),
-    ("http://127.0.0.1:8010/az/activities.html", "article.news-card", "Qarabağ", 3, 27),
+    ("http://127.0.0.1:8010/en/activities.html", "article.news-card", "Karabakh", 3, 28),
+    ("http://127.0.0.1:8010/en/activities.html", "article.news-card", "zzznomatchxyz", 0, 28),
+    ("http://127.0.0.1:8010/az/activities.html", "article.news-card", "Qarabağ", 3, 28),
     ("http://127.0.0.1:8010/en/work_done_2024_2026.html", "section.report-section", "Figure 1. Signing of the NDU", 1, 3),
     ("http://127.0.0.1:8010/en/work_done_2024_2026.html", "section.report-section", "zzznomatchxyz", 0, 3),
     ("http://127.0.0.1:8010/az/work_done_2024_2026.html", "section.report-section", "Şəkil 1.", 1, 3),

@@ -85,7 +85,7 @@ PROGRAM_PHRASES: dict[str, str] = {
         "issues raised in the addresses of state officials and university leaders, and"
     ),
     "Ceyran MAHMUDOVA, Azərbaycan Dövlət Mədəniyyət və İncəsənət Universitetinin rektoru": (
-        "Ceyran MAHMUDOVA, Rector of Azerbaijan State University of Culture and Arts"
+        "Jeyran MAHMUDOVA, Rector of Azerbaijan State University of Culture and Arts"
     ),
     "Fuad MURADOV, Azərbaycan Respublikasının Diasporla İş üzrə Dövlət Komitəsinin sədri": (
         "Fuad MURADOV, Chair of the State Committee on Diaspora Affairs of the Republic of Azerbaijan"

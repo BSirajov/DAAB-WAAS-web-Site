@@ -95,7 +95,7 @@ COOPERATION_EN = {
         ),
     ],
     "rectors": [
-        ("Ceyran MAHMUDOVA", "Rector of the Azerbaijan State University of Culture and Arts"),
+        ("Jeyran MAHMUDOVA", "Rector of the Azerbaijan State University of Culture and Arts"),
         ("Ədalət MURADOV", "Rector of the Azerbaijan State University of Economics"),
         ("Elbrus İSAYEV", "Rector of Nakhchivan State University"),
         ("Elçin BABAYEV", "Rector of Baku State University"),

@@ -15,6 +15,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from _embed_static_nav import forum_nav_strip  # noqa: E402
+from _forum_page_shell import forum_inner_shell_scripts, forum_inner_stylesheets  # noqa: E402
 from forum_en_common import FORUM_FOOTER_EN  # noqa: E402
 from forum_en_stories import STORIES_EN  # noqa: E402
 
@@ -29,9 +30,9 @@ ELDAR_PHOTO_SRC = f"{ASSET}images/scientists-photos/eldar-ehedov.jpg"
 
 SECTION_IMAGES = {
     "nur": "NUR.jpg",
-    "veten-hissleri": "VƏTƏN HİSSLƏRİ.jpg",
-    "cidir-duzu": "CIDIR DÜZÜ.jpg",
-    "xedice": "XƏDİCƏ.jpg",
+    "veten-hissleri": "homeland-feelings.jpg",
+    "cidir-duzu": "jidir-plain.jpg",
+    "xedice": "xedice-story.jpg",
 }
 
 # Sidebar icons — matched to each story’s theme (light, homeland, plateau, piano).
@@ -424,7 +425,7 @@ def page_html(data: dict, *, lang: str) -> str:
         skip = "Skip to content"
         bc_home = "Home"
         bc_activities = "Activities"
-        bc_forum = "Forum 2024"
+        bc_forum = "I Forum"
         footer_brand = "World Association of Azerbaijani Scientists"
         footer_contact = "Contact"
         footer_address_title = "Address"
@@ -450,7 +451,7 @@ def page_html(data: dict, *, lang: str) -> str:
         skip = "Məzmuna keç"
         bc_home = "Ana səhifə"
         bc_activities = "Fəaliyyətimiz"
-        bc_forum = "Forum 2024"
+        bc_forum = "I Forum"
         footer_brand = "Dünya Azərbaycanlı Alimlər Birliyi"
         footer_contact = "Əlaqə"
         footer_address_title = "Ünvan"
@@ -486,33 +487,14 @@ def page_html(data: dict, *, lang: str) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>{esc(page_title)}</title>
 <meta name="description" content="{esc(meta_desc)}"/>
-<link href="{ASSET}css/daab-fonts.css?v=1" rel="stylesheet"/>
-<link href="{ASSET}css/daab-common.css?v=44" rel="stylesheet"/>
-<link href="{ASSET}css/daab-mobile.css?v=11" rel="stylesheet"/>
-<link href="{ASSET}css/daab-search.css?v=4" rel="stylesheet"/>
-<link href="{ASSET}css/daab-back-to-top.css?v=2" rel="stylesheet"/>
-<link href="{ASSET}css/daab-lang.css?v=11" rel="stylesheet"/>
-<link href="{ASSET}css/daab-nav-mega.css?v=23" rel="stylesheet"/>
-<link href="{ASSET}css/daab-hero-summary.css?v=9" rel="stylesheet"/>
-<link href="{ASSET}css/daab-sidebar-widget.css?v=4" rel="stylesheet"/>
-<link href="{ASSET}css/daab-activities-layout.css?v=14" rel="stylesheet"/>
-<link href="{ASSET}css/daab-forum-content.css?v=28" rel="stylesheet"/>
-<script src="{ASSET}js/daab-mobile.js?v=5" defer></script>
-<script src="{ASSET}js/daab-back-to-top.js?v=3" defer></script>
-<script src="{ASSET}js/daab-i18n.js?v=18" defer></script>
-<script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
-<script src="{ASSET}js/daab-design-tokens.js?v=1" defer></script>
-<script src="{ASSET}js/daab-nav.js?v=20" defer></script>
-<script src="{ASSET}js/daab-primary-nav.js?v=17" defer></script>
-<script src="{ASSET}js/daab-shell.js?v=12" defer></script>
-<script src="{ASSET}js/daab-page-subtitle.js?v=2" defer></script>
-<script src="{ASSET}js/daab-search.js?v=7" defer></script>
+{forum_inner_stylesheets(ASSET)}
+{forum_inner_shell_scripts(ASSET)}
 </head>
 <body>
 <a class="skip" href="#content">{esc(skip)}</a>
 {nav}
 <div class="breadcrumbs forum-breadcrumbs" role="navigation" aria-label="{esc(bc_aria)}">
-<a href="../../index.html">{esc(bc_home)}</a><span aria-hidden="true">›</span><a href="../../activities.html">{esc(bc_activities)}</a><span aria-hidden="true">›</span><a href="index.html">{esc(bc_forum)}</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">{esc(breadcrumb)}</span>
+<a href="../../index.html">{esc(bc_home)}</a><span aria-hidden="true">›</span><a href="index.html">{esc(bc_forum)}</a><span aria-hidden="true">›</span><span class="forum-breadcrumbs-current" aria-current="page">{esc(breadcrumb)}</span>
 </div>
 <header class="page-hero">
 <div class="hero-wrap shell">

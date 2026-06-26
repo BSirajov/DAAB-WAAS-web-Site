@@ -9,6 +9,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from _embed_static_nav import forum_nav_strip  # noqa: E402
+from _forum_page_shell import forum_inner_shell_scripts, forum_inner_stylesheets  # noqa: E402
 from _official_content import (  # noqa: E402
     ASSET,
     META_AZ,
@@ -37,25 +38,8 @@ def build() -> None:
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>Rəsmi müraciətlər — DAAB</title>
 <meta name="description" content="{META_AZ}"/>
-<link href="{ASSET}css/daab-fonts.css?v=1" rel="stylesheet"/>
-<link href="{ASSET}css/daab-common.css?v=24" rel="stylesheet"/>
-<link href="{ASSET}css/daab-mobile.css?v=5" rel="stylesheet"/>
-<link href="{ASSET}css/daab-search.css?v=3" rel="stylesheet"/>
-<link href="{ASSET}css/daab-back-to-top.css?v=1" rel="stylesheet"/>
-<link href="{ASSET}css/daab-lang.css?v=10" rel="stylesheet"/>
-<link href="{ASSET}css/daab-nav-mega.css?v=23" rel="stylesheet"/>
-<link href="{ASSET}css/daab-hero-summary.css?v=1" rel="stylesheet"/>
-<link href="{ASSET}css/daab-sidebar-widget.css?v=3" rel="stylesheet"/>
-<link href="{ASSET}css/daab-activities-layout.css?v=7" rel="stylesheet"/>
-<link href="{ASSET}css/daab-forum-content.css?v=12" rel="stylesheet"/>
-<script src="{ASSET}js/daab-mobile.js?v=1" defer></script>
-<script src="{ASSET}js/daab-back-to-top.js?v=2" defer></script>
-<script src="{ASSET}js/daab-i18n.js?v=12" defer></script>
-<script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
-<script src="{ASSET}js/daab-nav.js?v=9" defer></script>
-<script src="{ASSET}js/daab-primary-nav.js?v=9" defer></script>
-<script src="{ASSET}js/daab-shell.js?v=11" defer></script>
-<script src="{ASSET}js/daab-search.js?v=4" defer></script>
+{forum_inner_stylesheets(ASSET, extra=("daab-presentations-toc.css", "daab-speech-photos.css"))}
+{forum_inner_shell_scripts(ASSET)}
 </head>
 <body>
 <a class="skip" href="#content">Məzmuna keç</a>

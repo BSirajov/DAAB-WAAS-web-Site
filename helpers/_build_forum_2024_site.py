@@ -287,6 +287,11 @@ def build_index() -> None:
 
 
 def main() -> None:
+    raise SystemExit(
+        "Retired master builder — use individual helpers "
+        "(_build_official_from_docx, _build_stories_from_docx, …) "
+        "with _forum_page_shell.py for head assets."
+    )
     import _extract_forum_book_pages as extract  # noqa: PLC0415
 
     extract.main()

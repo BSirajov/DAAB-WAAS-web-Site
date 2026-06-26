@@ -476,6 +476,15 @@ def blocks_to_html(blocks: list[dict]) -> str:
     return "\n".join(parts)
 
 
+def en_rector_display_name_sort_key(section: dict) -> str:
+    """English A–Z order for displayed rector names (matches daab-collation.js base)."""
+    return section["name"].casefold()
+
+
+def sort_rector_sections_en(sections: list[dict]) -> list[dict]:
+    return sorted(sections, key=en_rector_display_name_sort_key)
+
+
 def speech_card(section: dict) -> str:
     role_html = ""
     if section["role"]:
@@ -627,6 +636,9 @@ def build() -> None:
                 strip_duplicate_role_blocks(section)
                 ensure_isa_speech_body_lead(section, lang)
                 ensure_rasim_speech_body_lead(section, lang)
+
+            if key == "rector" and lang == "en":
+                sections = sort_rector_sections_en(sections)
 
             out = spec["out_az"] if lang == "az" else spec["out_en"]
             out.parent.mkdir(parents=True, exist_ok=True)

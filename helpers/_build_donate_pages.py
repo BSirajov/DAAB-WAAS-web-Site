@@ -7,7 +7,7 @@ import re
 
 from _inject_seo_head import build_seo_block
 from _footer_leader_snippets import FOOTER_AZ_LEADER_HTML, FOOTER_EN_LEADER_HTML
-from _paths import ROOT
+from _paths import ROOT, FOOTER_COPYRIGHT_EN
 from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS
 
 ASSET = "../"
@@ -21,7 +21,7 @@ LOCALES = {
         "title": "DAAB — İanə Edin",
         "description": "DAAB-a fərdi ianə — bank köçürməsi ilə Azərbaycan elminə dəstək.",
         "hero_h1": "İanə Edin",
-        "hero_subtitle": "Hər bir töhfə təqaüdlər, forumlar və elmi əməkdaşlıqlara dəstək verir",
+        "hero_subtitle": "Bank köçürməsi ilə DAAB-a ianə — hər bir məbləğ dəyərlidir",
         "panel_title": "Fərdi ianəçilər üçün",
         "panel_copy": (
             "Məbləğindən asılı olmayaraq hər bir ianə — təqaüd, mentorluq və bilik mübadiləsi "
@@ -72,7 +72,7 @@ LOCALES = {
         "title": "WAAS — Donate",
         "description": "Support WAAS with an individual donation via bank transfer.",
         "hero_h1": "Donate",
-        "hero_subtitle": "Every gift helps fund scholarships, forums, and research collaboration",
+        "hero_subtitle": "Support WAAS with a bank transfer — any amount helps",
         "panel_title": "For individual donors",
         "panel_copy": (
             "Every contribution — of any size — directly supports scholarships, mentoring, "
@@ -202,7 +202,7 @@ def footer_block(lang: str) -> str:
 <div class="footer-col"><div class="footer-title">Leadership</div><p class="footer-leader">{FOOTER_EN_LEADER_HTML}</p></div>
 </div>
 </div>
-<div class="footer-bottom">© 2026 WAAS — All rights reserved</div>
+<div class="footer-bottom">{FOOTER_COPYRIGHT_EN}</div>
 </footer>"""
 
 

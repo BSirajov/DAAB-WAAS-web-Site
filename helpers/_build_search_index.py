@@ -61,7 +61,6 @@ PAGE_LABEL_KEYS = {
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",
     "charter": "charter",
-    "membership": "membershipTerms",
     "membership-value": "membershipWhy",
     "membership-application": "membershipJoin",
     "membership-flyer": "membershipFlyer",

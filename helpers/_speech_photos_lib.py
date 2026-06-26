@@ -280,6 +280,45 @@ def sync_photo_urls(soup: BeautifulSoup, toc_id: str) -> int:
     return updated
 
 
+def en_display_name_sort_key(name: str) -> str:
+    return _normalize_name(name)
+
+
+def reorder_speech_page_by_display_name(path: Path, toc_id: str, lang: str = "en") -> None:
+    """Reorder speech articles and sidebar TOC by displayed speaker name."""
+    if lang != "en":
+        return
+    text = path.read_text(encoding="utf-8")
+    soup = BeautifulSoup(text, "html.parser")
+    main = soup.select_one("main.news-feed")
+    if not main:
+        raise SystemExit(f"No main.news-feed in {path}")
+    articles = main.select("article.news-card")
+    if not articles:
+        raise SystemExit(f"No speech articles in {path}")
+
+    def article_name(article) -> str:
+        title_el = article.select_one(".card-title")
+        if title_el:
+            return title_el.get_text(" ", strip=True)
+        return article.get("id") or ""
+
+    for article in sorted(articles, key=lambda a: en_display_name_sort_key(article_name(a))):
+        main.append(article)
+
+    toc = build_toc(soup)
+    ul = soup.select_one(f"#{toc_id}")
+    if not ul:
+        raise SystemExit(f"No #{toc_id} in {path}")
+    ul.clear()
+    ul.append(BeautifulSoup(toc, "html.parser"))
+    path.write_text(str(soup), encoding="utf-8", newline="\n")
+    print(
+        f"  sorted {path.relative_to(ROOT)} "
+        f"({len(ul.find_all('li'))} toc items, A–Z by display name)"
+    )
+
+
 def build_toc(soup: BeautifulSoup) -> str:
     items: list[str] = []
     for article in soup.select("main.news-feed article.news-card"):

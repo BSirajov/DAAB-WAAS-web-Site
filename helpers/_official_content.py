@@ -11,9 +11,9 @@ from _paths import ROOT
 
 DOCX = ROOT / "forum_2024" / "Rəsmi_müraciətlər.docx"
 ASSET = "../../../"
-PRESIDENT_IMAGE = f"{ASSET}images/forum/Prezidentin_müraciəti.jpg"
-SCIENTISTS_IMAGE_1 = f"{ASSET}images/forum/Aimlərimizin_müraciəti_Xankəndi_1.jpg"
-SCIENTISTS_IMAGE_2 = f"{ASSET}images/forum/Aimlərimizin_müraciəti_Xankəndi_2.jpg"
+PRESIDENT_IMAGE = f"{ASSET}images/forum/president-address.jpg"
+SCIENTISTS_IMAGE_1 = f"{ASSET}images/forum/scientists-address-khankendi-1.jpg"
+SCIENTISTS_IMAGE_2 = f"{ASSET}images/forum/scientists-address-khankendi-2.jpg"
 
 # Page order (DOCX section order differs: alimlerimiz is parsed 4th, shown last).
 OFFICIAL_SECTION_ORDER: tuple[str, ...] = (

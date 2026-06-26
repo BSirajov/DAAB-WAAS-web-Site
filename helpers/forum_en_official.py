@@ -245,7 +245,7 @@ _OFFICIAL_EN_SECTIONS_BY_DOC_ORDER = [
     {
         "id": "mesud-efendiyev",
         "title": (
-            "SPEECH BY MESSOUD EFENDIYEV, CHAIR OF THE BOARD OF DIRECTORS OF THE "
+            "SPEECH BY MESSOUD EFENDIYEV, CHAIR OF THE EXECUTIVE BOARD OF THE "
             "WORLD ASSOCIATION OF AZERBAIJANI SCIENTISTS"
         ),
         "subtitle": "",
