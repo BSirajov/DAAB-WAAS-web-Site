@@ -3,8 +3,11 @@
 
   var DATA = window.SCIENTISTS_CATALOG_DATA || [];
 
+  var shared = window.DAAB_SCIENTISTS_CATALOG || {};
+
   var collation = window.DAAB_COLLATION || {};
   var localeCompare =
+    shared.compare ||
     collation.compare ||
     function (a, b) {
       return String(a || "").localeCompare(String(b || ""), "en", {
@@ -12,6 +15,7 @@
       });
     };
   var localeSort =
+    shared.sortValues ||
     collation.sort ||
     function (arr) {
       return arr.slice().sort(function (a, b) {
@@ -66,8 +70,7 @@
   }
 
   function pageLang() {
-    var el = document.documentElement;
-    return (el.getAttribute("data-daab-lang") || el.lang || "az").slice(0, 2);
+    return shared.pageLang ? shared.pageLang() : "az";
   }
 
   function filterCountLabels(lang) {
@@ -118,6 +121,7 @@
   }
 
   function normQuery(q) {
+    if (shared.normQuery) return shared.normQuery(q);
     return q.toLowerCase().replace(/\s+/g, " ").trim();
   }
 

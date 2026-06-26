@@ -3,8 +3,8 @@
   "source": "documents/docx/Subtitles by page.docx",
   "pages": {
     "home": {
-      "en": "Connect with Azerbaijani scientists around the world",
-      "az": "Dünyanın müxtəlif ölkələrində yaşayan azərbaycanlı alimlərlə əlaqə qurun"
+      "en": "International network of Azerbaijani scientists living in different countries around the world.",
+      "az": "Dünyanın müxtəlif ölkələrində yaşayan azərbaycanlı alimlərin beynəlxalq şəbəkəsi"
     },
     "foundation": {
       "en": "Follow the journey from the Shusha Congress to the Istanbul founding meeting",
@@ -13,10 +13,6 @@
     "mission": {
       "en": "The values and goals guiding WAAS activities",
       "az": "DAAB-ın fəaliyyətini istiqamətləndirən dəyərlər və məqsədlər"
-    },
-    "activities": {
-      "en": "Follow activities, partnerships, and important events across our global network",
-      "az": "Qlobal şəbəkəmizdəki fəaliyyətləri, əməkdaşlıqları və mühüm hadisələri izləyin"
     },
     "activities-news": {
       "en": "Follow activities, partnerships, and important events across our global network",
@@ -47,8 +43,8 @@
       "az": "Bakı–Xankəndi–Şuşa forum proqramı ilə tanış olun"
     },
     "forum-sessions-organization": {
-      "en": "10 September strategic sessions — mixed and discipline-specific groups, moderators, and table assignments",
-      "az": "10 sentyabr strateji sessiyalar — QARIŞIQ və İXTİSAS qrupları, moderatorlar və masa iştirakçıları"
+      "en": "10 September 2024 — strategic sessions: mixed and discipline-specific groups, moderators, and table assignments",
+      "az": "10 sentyabr 2024 — strateji sessiyalar: QARIŞIQ və İXTİSAS qrupları, moderatorlar və masa iştirakçıları"
     },
     "forum-impressions": {
       "en": "Participants share their thoughts and experiences from the Forum and Karabakh visit",
@@ -82,10 +78,6 @@
       "en": "See how membership connects visibility, collaboration, and service to Azerbaijani science",
       "az": "Üzvlüyün tanınma, əməkdaşlıq və Azərbaycan elminə xidmət baxımından verdiyi dəyəri kəşf edin"
     },
-    "membership": {
-      "en": "Information about membership rules and procedures",
-      "az": "Üzvlük qaydaları və prosedurları haqqında məlumat"
-    },
     "membership-application": {
       "en": "Submit your information step by step and send supporting files by email",
       "az": "Məlumatlarınızı addım-addım təqdim edin və əlavə sənədləri e-poçtla göndərin"
@@ -95,7 +87,7 @@
       "az": "Potensial üzvlərə dəvət məktubu göndərin"
     },
     "sponsors-flyer": {
-      "en": "Shareable flyer for potential partners",
+      "en": "Shareable invitation letter for potential partners",
       "az": "Potensial tərəfdaşlar üçün paylaşıla bilən dəvət məktubu"
     },
     "sponsorship-partnership": {
@@ -128,7 +120,7 @@
     },
     "work-done-2024-2026": {
       "en": "Report submitted to the State Committee on Work with Diaspora: activities during 2024–2026, memoranda of cooperation, advisory councils, and university partnerships.",
-      "az": "Azərbaycan Diasporla İş üzrə Dövlət Komitəsinə təqdim olunur: 2024–2026-cı illər ərzindəki fəaliyyətlər, əməkdaşlıq memorandumları, məşvərət şuraları və universitetlər ilə tərəfdaşlıq."
+      "az": "Azərbaycan Diasporla İş üzrə Dövlət Komitəsinə təqdim olunur: 2024-cü il forumundan sonrakı fəaliyyətlər, memorandumlar, məşvərət şuraları, universitetlərlə əməkdaşlıq və s."
     }
   }
 }

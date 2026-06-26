@@ -96,49 +96,31 @@
     },
   };
 
+  var shared = window.DAAB_SCIENTISTS_CATALOG || {};
+
   function lang() {
-    var el = document.documentElement;
-    return (el.getAttribute("data-daab-lang") || el.lang || "az").slice(0, 2);
+    return shared.pageLang ? shared.pageLang() : "az";
   }
 
   function t() {
     return STRINGS[lang()] || STRINGS.az;
   }
 
-  function localeCollator() {
-    var pageLang = lang();
-    if (typeof Intl !== "undefined" && typeof Intl.Collator === "function") {
-      return new Intl.Collator(pageLang === "en" ? "en" : "az", { sensitivity: "base" });
-    }
-    return null;
-  }
-
   function compare(a, b) {
-    var coll = window.DAAB_COLLATION;
-    if (coll && typeof coll.compare === "function") {
-      return coll.compare(a, b);
-    }
-    var intl = localeCollator();
-    if (intl) return intl.compare(String(a || ""), String(b || ""));
+    if (shared.compare) return shared.compare(a, b);
     return String(a || "").localeCompare(String(b || ""), undefined, { sensitivity: "base" });
   }
 
   function sortValues(arr) {
-    var coll = window.DAAB_COLLATION;
-    if (coll && typeof coll.sort === "function") {
-      return coll.sort(arr);
-    }
+    if (shared.sortValues) return shared.sortValues(arr);
     var copy = arr.slice();
     copy.sort(compare);
     return copy;
   }
 
   function esc(s) {
-    return String(s || "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
+    if (shared.esc) return shared.esc(s);
+    return String(s || "");
   }
 
   function readSortState() {

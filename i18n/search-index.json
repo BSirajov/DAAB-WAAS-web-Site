@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated": "2026-06-18",
-  "entryCount": 534,
+  "generated": "2026-06-25",
+  "entryCount": 536,
   "entries": [
     {
       "id": "page-home-az",
@@ -1473,6 +1473,19 @@
       "norm": "daab u zvu azerbaycan quzey ve gu ney adli kitab nes r etdirmis dir miyanada anadan olmus vehid geruslu bu eserde hem s exsi heyat tecru besine hem de analitik mu s ahidelerine esaslanir. mug am qarmon ve lezginka mu hitinde bo yu mu s azerbaycanin s imalindaki ko kleri ve cenubda kec en formalas ma illeri ile yog rul"
     },
     {
+      "id": "activity-forum-book-2026-az",
+      "lang": "az",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "forum-book-2026",
+      "title": "I Forum haqqında kitab, Zərdabi Nəşr, 2026",
+      "summary": "Xaricdə Yaşayan Azərbaycanlı Alimlərin Forumu. 9–11 sentyabr 2024-cü il. Bakı–Xankəndi–Şuşa. Bakı, «Zərdabi-Nəşr» MMC. 2026. 264 səh.",
+      "tag": "Fəaliyyət",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "i forum haqqinda kitab zerdabi nes r 2026 xaricde yas ayan azerbaycanli alimlerin forumu. 9 11 sentyabr 2024-cu il. baki xankendi s us a. baki zerdabi-nes r mmc. 2026. 264 seh."
+    },
+    {
       "id": "activity-ankara-rektor-2026-az",
       "lang": "az",
       "type": "activity",
@@ -1822,6 +1835,19 @@
       "icon": "📰",
       "boost": 8,
       "norm": "waas member publishes book azerbaijan north and south born in miyana vahid garuslu writes from personal experience as much as from analysis. raised with mugham the qarmon and the lezginka and shaped by roots in northern azerbaijan and formative years in the south he sees azerbaijan as one"
+    },
+    {
+      "id": "activity-forum-book-2026-en",
+      "lang": "en",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "forum-book-2026",
+      "title": "First Forum book, Zardabi Nashr, 2026",
+      "summary": "Forum of Azerbaijani Scientists Living Abroad. 9–11 September 2024. Baku–Khankendi–Shusha. Baku, “Zardabi-Nashr” LLC. 2026. 264 pp.",
+      "tag": "Activity",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "first forum book zardabi nashr 2026 forum of azerbaijani scientists living abroad. 9 11 september 2024. baku khankendi shusha. baku zardabi-nashr llc. 2026. 264 pp."
     },
     {
       "id": "activity-ankara-rektor-2026-en",
@@ -2687,12 +2713,12 @@
       "type": "section",
       "pageId": "forum-rector-speeches",
       "anchor": "ceyran-mahmudova",
-      "title": "Ceyran MAHMUDOVA",
+      "title": "Jeyran MAHMUDOVA",
       "summary": "In 2001, at the initiative of our National Leader Heydar Aliyev, the First Congress of World Azerbaijanis was held. In subsequent years, these congresses continued by the orders and with the support of President Ilham Aliyev. In 2022, the F",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "ceyran mahmudova in 2001 at the initiative of our national leader heydar aliyev the first congress of world azerbaijanis was held. in subsequent years these congresses continued by the orders and with the support of president ilham aliyev. in 2022 the f"
+      "norm": "jeyran mahmudova in 2001 at the initiative of our national leader heydar aliyev the first congress of world azerbaijanis was held. in subsequent years these congresses continued by the orders and with the support of president ilham aliyev. in 2022 the f"
     },
     {
       "id": "section-forum-rector-speeches-adalat-muradov-en",
@@ -3025,12 +3051,12 @@
       "type": "section",
       "pageId": "forum-official",
       "anchor": "mesud-efendiyev",
-      "title": "SPEECH BY MESSOUD EFENDIYEV, CHAIR OF THE BOARD OF DIRECTORS OF THE WORLD ASSOCIATION OF AZERBAIJANI SCIENTISTS",
+      "title": "SPEECH BY MESSOUD EFENDIYEV, CHAIR OF THE EXECUTIVE BOARD OF THE WORLD ASSOCIATION OF AZERBAIJANI SCIENTISTS",
       "summary": "It is a great pleasure to see you at the First Forum of the World Association of Azerbaijani Scientists (WAAS) in Baku, and we warmly welcome you to Azerbaijan.",
       "tag": "Section",
       "icon": "🎤",
       "boost": 9,
-      "norm": "speech by messoud efendiyev chair of the board of directors of the world association of azerbaijani scientists it is a great pleasure to see you at the first forum of the world association of azerbaijani scientists waas in baku and we warmly welcome you to azerbaijan."
+      "norm": "speech by messoud efendiyev chair of the executive board of the world association of azerbaijani scientists it is a great pleasure to see you at the first forum of the world association of azerbaijani scientists waas in baku and we warmly welcome you to azerbaijan."
     },
     {
       "id": "section-forum-official-alimlerimiz-en",
@@ -4105,11 +4131,11 @@
       "pageId": "charter",
       "anchor": "section-04",
       "title": "Article 4.",
-      "summary": "Each member has the right to withdraw from the Association by notifying the board of directors in writing. Exit procedures are deemed completed once the member's resignation petition reaches the board of directors. Resigning from membership",
+      "summary": "Each member has the right to withdraw from the Association by notifying the executive board in writing. Exit procedures are deemed completed once the member's resignation petition reaches the executive board. Resigning from membership does ",
       "tag": "Section",
       "icon": "📜",
       "boost": 9,
-      "norm": "article 4. each member has the right to withdraw from the association by notifying the board of directors in writing. exit procedures are deemed completed once the member s resignation petition reaches the board of directors. resigning from membership"
+      "norm": "article 4. each member has the right to withdraw from the association by notifying the executive board in writing. exit procedures are deemed completed once the member s resignation petition reaches the executive board. resigning from membership does"
     },
     {
       "id": "section-charter-section-05-en",
@@ -4183,11 +4209,11 @@
       "pageId": "charter",
       "anchor": "section-10",
       "title": "Article 10.",
-      "summary": "The board of directors, consisting of five main and five substitute members, is elected by the General Assembly.",
+      "summary": "The executive board, consisting of five main and five substitute members, is elected by the General Assembly.",
       "tag": "Section",
       "icon": "📜",
       "boost": 9,
-      "norm": "article 10. the board of directors consisting of five main and five substitute members is elected by the general assembly."
+      "norm": "article 10. the executive board consisting of five main and five substitute members is elected by the general assembly."
     },
     {
       "id": "section-charter-section-11-en",
@@ -4248,11 +4274,11 @@
       "pageId": "charter",
       "anchor": "section-15",
       "title": "Article 15.",
-      "summary": "The activities of the Association, together with the income and expenses of the previous year, after approval by the board of directors, are recorded in the “Declaration of the Association” on the results of transactions at the end of the y",
+      "summary": "The activities of the Association, together with the income and expenses of the previous year, after approval by the executive board, are recorded in the “Declaration of the Association” on the results of transactions at the end of the year",
       "tag": "Section",
       "icon": "📜",
       "boost": 9,
-      "norm": "article 15. the activities of the association together with the income and expenses of the previous year after approval by the board of directors are recorded in the declaration of the association on the results of transactions at the end of the y"
+      "norm": "article 15. the activities of the association together with the income and expenses of the previous year after approval by the executive board are recorded in the declaration of the association on the results of transactions at the end of the year"
     },
     {
       "id": "section-charter-section-16-en",
@@ -4261,11 +4287,11 @@
       "pageId": "charter",
       "anchor": "section-16",
       "title": "Article 16.",
-      "summary": "Notification of the results of the General Assembly: within thirty days after the regular or extraordinary meeting of the General Assembly, notification of the results — including the main and alternate members elected to the board, the aud",
+      "summary": "Notification of the results of the General Assembly: within thirty days after the regular or extraordinary meeting of the General Assembly, notification of the results — including the main and alternate members elected to the executive boar",
       "tag": "Section",
       "icon": "📜",
       "boost": 9,
-      "norm": "article 16. notification of the results of the general assembly within thirty days after the regular or extraordinary meeting of the general assembly notification of the results including the main and alternate members elected to the board the aud"
+      "norm": "article 16. notification of the results of the general assembly within thirty days after the regular or extraordinary meeting of the general assembly notification of the results including the main and alternate members elected to the executive boar"
     },
     {
       "id": "section-charter-section-17-en",
@@ -4274,11 +4300,11 @@
       "pageId": "charter",
       "anchor": "section-17",
       "title": "Article 17.",
-      "summary": "Just as an internal audit may be carried out by the General Assembly, the board of directors or the audit board of the Association, audits may also be carried out by independent audit organisations. The fact that the audit is conducted by t",
+      "summary": "Just as an internal audit may be carried out by the General Assembly, the executive board or the audit board of the Association, audits may also be carried out by independent audit organisations. The fact that the audit is conducted by the ",
       "tag": "Section",
       "icon": "📜",
       "boost": 9,
-      "norm": "article 17. just as an internal audit may be carried out by the general assembly the board of directors or the audit board of the association audits may also be carried out by independent audit organisations. the fact that the audit is conducted by t"
+      "norm": "article 17. just as an internal audit may be carried out by the general assembly the executive board or the audit board of the association audits may also be carried out by independent audit organisations. the fact that the audit is conducted by the"
     },
     {
       "id": "section-charter-section-18-en",
@@ -4287,11 +4313,11 @@
       "pageId": "charter",
       "anchor": "section-18",
       "title": "Article 18.",
-      "summary": "The Association may borrow money by decision of the board of directors when necessary to achieve its purpose and carry out its activities. This borrowing may be made by purchasing goods and services on credit, or in cash. However, this borr",
+      "summary": "The Association may borrow money by decision of the executive board when necessary to achieve its purpose and carry out its activities. This borrowing may be made by purchasing goods and services on credit, or in cash. However, this borrowi",
       "tag": "Section",
       "icon": "📜",
       "boost": 9,
-      "norm": "article 18. the association may borrow money by decision of the board of directors when necessary to achieve its purpose and carry out its activities. this borrowing may be made by purchasing goods and services on credit or in cash. however this borr"
+      "norm": "article 18. the association may borrow money by decision of the executive board when necessary to achieve its purpose and carry out its activities. this borrowing may be made by purchasing goods and services on credit or in cash. however this borrowi"
     },
     {
       "id": "section-charter-section-19-en",
@@ -4300,11 +4326,11 @@
       "pageId": "charter",
       "anchor": "section-19",
       "title": "Article 19.",
-      "summary": "The Association may open branches in places deemed necessary by decision of the General Assembly. For this purpose, a board of founders of at least three people authorised by the board of directors of the Association submits the branch esta",
+      "summary": "The Association may open branches in places deemed necessary by decision of the General Assembly. For this purpose, a board of founders of at least three people authorised by the executive board of the Association submits the branch establi",
       "tag": "Section",
       "icon": "📜",
       "boost": 9,
-      "norm": "article 19. the association may open branches in places deemed necessary by decision of the general assembly. for this purpose a board of founders of at least three people authorised by the board of directors of the association submits the branch esta"
+      "norm": "article 19. the association may open branches in places deemed necessary by decision of the general assembly. for this purpose a board of founders of at least three people authorised by the executive board of the association submits the branch establi"
     },
     {
       "id": "section-charter-section-20-en",
@@ -4326,11 +4352,11 @@
       "pageId": "charter",
       "anchor": "section-21",
       "title": "Article 21.",
-      "summary": "The organs of a branch are its general assembly, board of directors and audit board. The general assembly is composed of the registered members of the branch. The board of directors is elected by the general assembly of the branch — five ma",
+      "summary": "The organs of a branch are its general assembly, executive board and audit board. The general assembly is composed of the registered members of the branch. The executive board is elected by the general assembly of the branch — five main and",
       "tag": "Section",
       "icon": "📜",
       "boost": 9,
-      "norm": "article 21. the organs of a branch are its general assembly board of directors and audit board. the general assembly is composed of the registered members of the branch. the board of directors is elected by the general assembly of the branch five ma"
+      "norm": "article 21. the organs of a branch are its general assembly executive board and audit board. the general assembly is composed of the registered members of the branch. the executive board is elected by the general assembly of the branch five main and"
     },
     {
       "id": "section-charter-section-22-en",
@@ -4352,11 +4378,11 @@
       "pageId": "charter",
       "anchor": "section-23",
       "title": "Article 23.",
-      "summary": "The Association may, by decision of the board of directors, open representative offices in places that it considers necessary for the implementation of its activities. The address of the representative office is communicated in writing to t",
+      "summary": "The Association may, by decision of the executive board, open representative offices in places that it considers necessary for the implementation of its activities. The address of the representative office is communicated in writing to the ",
       "tag": "Section",
       "icon": "📜",
       "boost": 9,
-      "norm": "article 23. the association may by decision of the board of directors open representative offices in places that it considers necessary for the implementation of its activities. the address of the representative office is communicated in writing to t"
+      "norm": "article 23. the association may by decision of the executive board open representative offices in places that it considers necessary for the implementation of its activities. the address of the representative office is communicated in writing to the"
     },
     {
       "id": "section-charter-section-24-en",

@@ -288,7 +288,6 @@ textarea,
 .hero-text,
 .panel-copy,
 .card-desc,
-.card-tag,
 .footer-item,
 .footer-address,
 .footer-leader{
@@ -656,8 +655,6 @@ article.charter-card[id],
   box-shadow: var(--shadow-btn-secondary) !important;
 }.btn:hover{
   transform: translateY(-2px);
-}.card-arrow{
-  display: none !important;
 }a[href],
 button,
 [role="button"]{

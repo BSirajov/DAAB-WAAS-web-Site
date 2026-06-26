@@ -27,13 +27,13 @@
 <!-- /daab-seo -->
 <link href="../css/daab-fonts.css?v=1" rel="stylesheet"/>
 
-    <link href="../css/daab-common.css?v=79" rel="stylesheet"/>
+    <link href="../css/daab-common.css?v=80" rel="stylesheet"/>
 <link href="../css/daab-perf.css?v=2" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=14" rel="stylesheet"/>
 <link href="../css/daab-sticky-chrome.css?v=2" rel="stylesheet"/>
 <link href="../css/daab-search.css?v=7" rel="stylesheet"/>
 <link href="../css/daab-back-to-top.css?v=2" rel="stylesheet"/>
-<link href="../css/daab-hub-cards.css?v=34" rel="stylesheet"/>
+<link href="../css/daab-hub-cards.css?v=36" rel="stylesheet"/>
 <link href="../css/daab-hero-summary.css?v=13" rel="stylesheet"/>
 
 <script src="../js/daab-mobile.js?v=6" defer></script>
@@ -200,13 +200,13 @@
             </div>
           </div>
 </a>
-<a class="page-card" data-title="Membership application procedure" href="application.html">
+<a class="page-card" data-title="Join us membership application" href="application.html">
           <div class="card-icon-wrap" aria-hidden="true">
             ✒️
           </div>
           <div class="card-body">
             <h3 class="card-title">
-              Membership Terms
+              Join us
             </h3>
             <div class="card-desc">
               Requirements, benefits and application procedure for WAAS membership.
@@ -253,10 +253,6 @@
   </div>
   <div class="footer-bottom">© 2026 WAAS — All Rights Reserved</div>
 </footer>
-<script>
-const input=document.getElementById('cardSearch');
-const cards=[...document.querySelectorAll('.page-card')];
-const emptyState=document.getElementById('cardSearchEmpty');
-input?.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();let visible=0;cards.forEach(card=>{const hay=(card.dataset.title+' '+card.innerText).toLowerCase();const match=hay.includes(q);card.style.display=match?'flex':'none';if(match)visible+=1;});if(emptyState)emptyState.hidden=visible!==0;});</script>
-</body>
+<script src="../js/daab-hub-card-search.js?v=1" defer></script>
+  </body>
 </html>
