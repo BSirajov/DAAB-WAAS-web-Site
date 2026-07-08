@@ -1,11 +1,22 @@
 /* Scientist profile card — text-to-speech controls */
 
+html[data-daab-page-id="scientists-profiles"] .cards-grid > .card {
+  content-visibility: visible;
+  contain-intrinsic-size: unset;
+}
+
+html[data-daab-page-id="scientists-profiles"] .cards-grid > .card > .card-body > .card-head {
+  overflow: visible;
+}
+
 .card-tts{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   margin: 12px 0 0;
+  flex-shrink: 0;
+  visibility: visible;
 }.card-listen-lead{
   margin: 8px 0 0;
   color: #34465a;

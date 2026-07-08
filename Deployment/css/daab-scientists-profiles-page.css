@@ -474,14 +474,6 @@ a.card-name:focus-visible{
 }
 
 @media (max-width: 480px) {
-  html[data-daab-page-id="scientists-profiles"] .catalog-sort-group-cluster {
-    width: 100%;
-    margin-left: 0;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-
   .main{
     padding: 20px max(12px, env(safe-area-inset-right)) 48px max(12px, env(safe-area-inset-left));
   }.cards-grid{

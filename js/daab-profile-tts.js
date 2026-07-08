@@ -71,6 +71,13 @@
     pauseTimer: null,
     voices: null
   };
+  var statusContext = {
+    card: null,
+    isError: false
+  };
+  var statusDismissRaf = 0;
+  var ensureControlsRaf = 0;
+  var catalogLifecycleBound = false;
 
   function lang() {
     var l = document.documentElement.lang || "az";
@@ -382,12 +389,84 @@
     return queue;
   }
 
-  function setStatus(msg, isError) {
+  function setStatus(msg, isError, card) {
     var live = document.getElementById("profile-tts-live");
     if (!live) return;
     live.textContent = msg || "";
     live.classList.toggle("is-error", !!isError);
     live.classList.toggle("is-visible", !!msg);
+    if (!msg) {
+      statusContext.card = null;
+      statusContext.isError = false;
+      return;
+    }
+    if (card) {
+      statusContext.card = card;
+      statusContext.isError = !!isError;
+      return;
+    }
+    statusContext.card = null;
+    statusContext.isError = false;
+  }
+
+  function clearStatus() {
+    setStatus("", false);
+  }
+
+  function cardFocusLine() {
+    return window.innerHeight * 0.32;
+  }
+
+  function isCardInActiveSection(card) {
+    if (!card || card.classList.contains("is-filtered-out")) return false;
+    var rect = card.getBoundingClientRect();
+    var viewH = window.innerHeight;
+    if (rect.bottom <= 0 || rect.top >= viewH) return false;
+
+    var visible = Math.min(rect.bottom, viewH) - Math.max(rect.top, 0);
+    var minVisible = Math.min(Math.max(card.offsetHeight * 0.18, 48), 120);
+    if (visible < minVisible) return false;
+
+    var grid = card.closest(".cards-grid");
+    if (!grid) return true;
+
+    var cards = grid.querySelectorAll(".card:not(.is-filtered-out)");
+    var focusLine = cardFocusLine();
+    var bestCard = null;
+    var bestDist = Infinity;
+    for (var i = 0; i < cards.length; i++) {
+      var candidate = cards[i];
+      var r = candidate.getBoundingClientRect();
+      if (r.bottom <= 0 || r.top >= viewH) continue;
+      var mid = r.top + r.height / 2;
+      var dist = Math.abs(mid - focusLine);
+      if (dist < bestDist) {
+        bestDist = dist;
+        bestCard = candidate;
+      }
+    }
+    return bestCard === card;
+  }
+
+  function maybeDismissStatus() {
+    if (!statusContext.card) return;
+    if (session.state === "playing" || session.state === "paused") return;
+    if (isCardInActiveSection(statusContext.card)) return;
+    clearStatus();
+  }
+
+  function scheduleStatusDismissCheck() {
+    if (statusDismissRaf) return;
+    statusDismissRaf = global.requestAnimationFrame(function () {
+      statusDismissRaf = 0;
+      maybeDismissStatus();
+    });
+  }
+
+  function watchStatusDismiss() {
+    global.addEventListener("scroll", scheduleStatusDismissCheck, { passive: true });
+    global.addEventListener("hashchange", scheduleStatusDismissCheck);
+    global.addEventListener("resize", scheduleStatusDismissCheck, { passive: true });
   }
 
   function updateButtonUi() {
@@ -511,7 +590,7 @@
     utter.lang = code;
     var voice = pickVoice(code, voices);
     if (code.indexOf("az") === 0 && !voice) {
-      setStatus(labels().noAzVoice, true);
+      setStatus(labels().noAzVoice, true, session.card);
       stopAll();
       return;
     }
@@ -531,7 +610,7 @@
     utter.onerror = function (ev) {
       if (session.cancelled) return;
       if (ev && ev.error === "interrupted") return;
-      setStatus(labels().noAzVoice, true);
+      setStatus(labels().noAzVoice, true, session.card);
       stopAll();
     };
 
@@ -542,13 +621,13 @@
   function beginSpeech(card, playBtn, stopBtn, voices) {
     var queue = buildSpeechQueue(card);
     if (!queue.length) {
-      setStatus(labels().empty, true);
+      setStatus(labels().empty, true, card);
       return;
     }
 
     var code = speechLang();
     if (code.indexOf("az") === 0 && !findAzVoice(voices)) {
-      setStatus(labels().noAzVoice, true);
+      setStatus(labels().noAzVoice, true, card);
       return;
     }
 
@@ -563,20 +642,20 @@
     session.index = 0;
     card.classList.add("is-tts-active");
     updateButtonUi();
-    setStatus(labels().playing + ": " + cardName(card), false);
+    setStatus(labels().playing + ": " + cardName(card), false, card);
     speakNext(voices);
   }
 
   function startCard(card, playBtn, stopBtn) {
     if (!supportsTts()) {
-      setStatus(labels().unsupported, true);
+      setStatus(labels().unsupported, true, card);
       return;
     }
-    setStatus(labels().loading, false);
+    setStatus(labels().loading, false, card);
     voiceCache = {};
     waitForVoices(3000).then(function (voices) {
       if (!voices.length && lang() === "az") {
-        setStatus(labels().noAzVoice, true);
+        setStatus(labels().noAzVoice, true, card);
         return;
       }
       beginSpeech(card, playBtn, stopBtn, voices);
@@ -585,7 +664,7 @@
 
   function togglePlay(card, playBtn, stopBtn) {
     if (!supportsTts()) {
-      setStatus(labels().unsupported, true);
+      setStatus(labels().unsupported, true, card);
       return;
     }
     if (session.card === card && session.state === "playing") {
@@ -593,7 +672,7 @@
       global.speechSynthesis.pause();
       session.state = "paused";
       updateButtonUi();
-      setStatus(labels().paused, false);
+      setStatus(labels().paused, false, card);
       return;
     }
     if (session.card === card && session.state === "paused") {
@@ -601,7 +680,7 @@
       global.speechSynthesis.resume();
       session.state = "playing";
       updateButtonUi();
-      setStatus(labels().playing + ": " + cardName(card), false);
+      setStatus(labels().playing + ": " + cardName(card), false, card);
       return;
     }
     if (session.card && session.card !== card) stopAll();
@@ -609,6 +688,7 @@
   }
 
   function buildControls(card) {
+    if (!card || !card.classList.contains("card")) return;
     if (card.querySelector(".card-tts")) return;
     var L = labels();
     var wrap = document.createElement("div");
@@ -660,12 +740,44 @@
     for (var i = 0; i < cards.length; i++) buildControls(cards[i]);
   }
 
+  function scheduleEnsureControls() {
+    if (ensureControlsRaf) return;
+    ensureControlsRaf = global.requestAnimationFrame(function () {
+      ensureControlsRaf = 0;
+      initCards();
+    });
+  }
+
+  function watchCardGrid() {
+    var grid = document.querySelector("#scientists-catalog .cards-grid");
+    if (!grid || !global.MutationObserver) return;
+    var observer = new MutationObserver(function (mutations) {
+      for (var i = 0; i < mutations.length; i++) {
+        if (mutations[i].addedNodes && mutations[i].addedNodes.length) {
+          scheduleEnsureControls();
+          return;
+        }
+      }
+    });
+    observer.observe(grid, { childList: true });
+  }
+
+  function bindCatalogLifecycle() {
+    if (catalogLifecycleBound) return;
+    catalogLifecycleBound = true;
+    document.addEventListener("daab-scientists-profiles-rendered", scheduleEnsureControls);
+    global.addEventListener("resize", scheduleEnsureControls, { passive: true });
+    watchCardGrid();
+  }
+
   function watchFilteredCards() {
     var grid = document.querySelector("#scientists-catalog .cards-grid");
     if (!grid || !global.MutationObserver) return;
     var observer = new MutationObserver(function () {
-      if (!session.card) return;
-      if (session.card.classList.contains("is-filtered-out")) stopAll();
+      if (session.card && session.card.classList.contains("is-filtered-out")) stopAll();
+      if (statusContext.card && statusContext.card.classList.contains("is-filtered-out")) {
+        clearStatus();
+      }
     });
     observer.observe(grid, {
       attributes: true,
@@ -694,7 +806,9 @@
       });
     }
     initCards();
+    bindCatalogLifecycle();
     watchFilteredCards();
+    watchStatusDismiss();
     document.addEventListener("visibilitychange", function () {
       if (document.hidden && session.state === "playing") {
         global.speechSynthesis.pause();
@@ -710,5 +824,5 @@
     init();
   }
 
-  global.DAAB_PROFILE_TTS = { stopAll: stopAll };
+  global.DAAB_PROFILE_TTS = { stopAll: stopAll, ensureControls: scheduleEnsureControls };
 })(typeof window !== "undefined" ? window : this);
