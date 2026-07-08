@@ -52,7 +52,8 @@
   height: 1px;
   background: var(--blue-soft);
 }.content-card{
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
 }.card-header{
   margin: 0;
   padding: 16px 22px;
@@ -64,9 +65,13 @@
   text-transform: uppercase;
 }.card-body{
   padding: 26px 30px;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }.card-body p,
 .card-body li{
   font-weight: 400;
+  overflow-wrap: anywhere;
 }.lead,
 .timeline-content,
 .highlight-box,
@@ -158,6 +163,8 @@
   font-family: var(--font-serif);
   font-size: 16.8px;
   font-weight: 900 !important;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
 }.news-link{
   display: inline-flex;
   align-items: center;
@@ -202,6 +209,8 @@
   margin: 0 0 18px;
   padding: 0;
   list-style: none;
+  width: 100%;
+  min-width: 0;
 }.goals-list li{
   padding: 14px 18px;
   color: var(--ink);
@@ -209,6 +218,14 @@
   border: 1px solid var(--color-border-blue-subtle);
   border-radius: var(--radius2);
   box-shadow: 0 8px 20px rgba(0, 78, 140, .08);
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+}.goals-list li .ist-inline-027{
+  margin-top: 12px;
+  max-width: 100%;
+  min-width: 0;
 }.goals-list li::before{
   content: "✦";
   margin-right: 10px;
@@ -294,6 +311,8 @@
 .ist-inline-018,
 .ist-inline-027{
   margin-bottom: 18px;
+  max-width: 100%;
+  min-width: 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   background: var(--white);
@@ -307,6 +326,7 @@
   min-width: 720px;
   border-collapse: collapse;
   font-size: 14px;
+  table-layout: fixed;
 }.ist-inline-011{
   background: var(--blue);
   border-bottom: 3px solid var(--blue-400);
@@ -337,6 +357,10 @@
 .ist-inline-032{
   padding: 7px 14px;
   color: var(--muted);
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  white-space: normal;
+  vertical-align: top;
 }.ist-inline-015,
 .ist-inline-030{
   color: var(--ink);
@@ -429,6 +453,12 @@
 }
 
 
+html[data-daab-page-id="foundation"] .section-block,
+html[data-daab-page-id="foundation"] .content-card{
+  min-width: 0;
+  max-width: 100%;
+}
+
 @media (max-width: 900px) {html,
   body{
     width: 100%;
@@ -454,6 +484,16 @@
   }.foundation-overview,
   .footer-grid{
     grid-template-columns: 1fr;
+  }
+
+  .ist-inline-010,
+  .ist-inline-019,
+  .ist-inline-028{
+    min-width: 0;
+  }
+
+  .goals-list .ist-inline-027{
+    overflow-x: visible;
   }
 }
 
@@ -487,13 +527,25 @@
   }.section-heading h2{
     white-space: normal;
     overflow-wrap: anywhere;
-  }.foundation-logo-panel-img{
+  }  .foundation-logo-panel-img{
     float: none;
     display: block;
     width: 140px;
     max-width: 55%;
     margin: 0 auto 16px;
   }
+
+  .ist-inline-010,
+  .ist-inline-019,
+  .ist-inline-028{
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  .goals-list .ist-inline-027{
+    overflow-x: visible;
+  }
+
   .strategy-card-wide{
     grid-column: auto;
   }.footer-inner{

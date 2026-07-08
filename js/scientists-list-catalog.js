@@ -23,6 +23,7 @@
       sortCountry: "Yaşadığı Ölkə",
       sortField: "İxtisas",
       sortDegree: "Elmi dərəcə",
+      sortEmail: "E-poçt",
       sortGender: "Cins",
       sortDirAria: "Sıralama istiqaməti",
       sortAsc: "A→Z",
@@ -43,8 +44,8 @@
       viewTable: "Cədvəl",
       viewTableTitle: "Cədvəl görünüşü",
       viewToggleAria: "Kataloq görünüşü",
-      paginationPrev: "Əvvəl",
-      paginationNext: "Sonra",
+      paginationPrev: "Əvvəlki",
+      paginationNext: "Sonrakı",
       genderMale: "Kişi",
       genderFemale: "Qadın",
       qrTitle: "Bu alimin profil səhifəsinə keçid",
@@ -52,6 +53,8 @@
       qrAlt: function (name) {
         return "QR kodu: " + (name || "");
       },
+      tableMobileHint:
+        "İxtisas, elmi dərəcə və e-poçt hər sətirin altında göstərilir. Tam məlumat üçün Vərəqələr görünüşünə keçin və ya ada toxunub profilə baxın.",
     },
     en: {
       result: function (total, all) {
@@ -64,6 +67,7 @@
       sortCountry: "Country of residence",
       sortField: "Field",
       sortDegree: "Degree",
+      sortEmail: "Email",
       sortGender: "Gender",
       sortDirAria: "Sort direction",
       sortAsc: "A→Z",
@@ -93,6 +97,8 @@
       qrAlt: function (name) {
         return "QR code: " + (name || "");
       },
+      tableMobileHint:
+        "Field, degree, and email appear under each row. Switch to Cards view for a fuller layout, or tap a name for the profile preview.",
     },
   };
 
@@ -344,7 +350,7 @@
       return groups;
     }
 
-    function rowHTML(r, idx) {
+    function rowHTML(r, idx, stripeClass) {
       var email = (r.email || "").trim();
       var deg = (r.elmi_derece || "").trim();
       var nameLabel = esc(displayName(r)) || "—";
@@ -360,7 +366,7 @@
             "</button>"
           : nameLabel;
       return (
-        "<tr>" +
+        '<tr class="' + stripeClass + '">' +
         '<td class="col-no">' +
         idx +
         "</td>" +
@@ -386,6 +392,51 @@
         "</td>" +
         "</tr>"
       );
+    }
+
+    function rowDetailsHTML(r, stripeClass) {
+      var field = (r.ixtilas || "").trim();
+      var deg = (r.elmi_derece || "").trim();
+      var email = (r.email || "").trim();
+      var emailHtml = email
+        ? '<a class="email-link" href="mailto:' + esc(email) + '">' + esc(email) + "</a>"
+        : '<span class="empty-email">—</span>';
+      return (
+        '<tr class="scientist-row-details ' + stripeClass + '">' +
+        '<td class="col-no scientist-row-details__spacer" aria-hidden="true"></td>' +
+        '<td class="col-name scientist-row-details__body" colspan="6">' +
+        '<dl class="scientist-row-details__grid">' +
+        '<div class="scientist-row-details__item scientist-row-details__item--field">' +
+        "<dt>" +
+        esc(ui.sortField) +
+        "</dt>" +
+        "<dd>" +
+        (esc(field) || "—") +
+        "</dd>" +
+        "</div>" +
+        '<div class="scientist-row-details__item scientist-row-details__item--degree">' +
+        "<dt>" +
+        esc(ui.sortDegree) +
+        "</dt>" +
+        "<dd>" +
+        (esc(deg) || "—") +
+        "</dd>" +
+        "</div>" +
+        '<div class="scientist-row-details__item scientist-row-details__item--email">' +
+        "<dt>" +
+        esc(ui.sortEmail) +
+        "</dt>" +
+        "<dd>" +
+        emailHtml +
+        "</dd>" +
+        "</div>" +
+        "</dl></td></tr>"
+      );
+    }
+
+    function rowPairHTML(r, idx) {
+      var stripeClass = idx % 2 === 0 ? "scientist-row--even" : "scientist-row--odd";
+      return rowHTML(r, idx, stripeClass) + rowDetailsHTML(r, stripeClass);
     }
 
     function groupRowHTML(label, count) {
@@ -565,6 +616,21 @@
       return viewMode === "table" && !groupCol;
     }
 
+    function updateTableMobileHint() {
+      var wrap = document.querySelector(".scientists-table-wrap");
+      if (!wrap) return;
+      var hint = wrap.querySelector(".scientists-table-mobile-hint");
+      if (!hint) {
+        hint = document.createElement("p");
+        hint.className = "scientists-table-mobile-hint";
+        hint.setAttribute("role", "note");
+        wrap.insertBefore(hint, wrap.firstChild);
+      }
+      var narrow = window.matchMedia("(max-width: 960px)").matches;
+      hint.textContent = ui.tableMobileHint;
+      hint.hidden = viewMode !== "table" || !narrow;
+    }
+
     function updateViewUi() {
       if (catalog) {
         catalog.setAttribute("data-catalog-view", viewMode);
@@ -589,6 +655,7 @@
       if (rowsPerPageControl) {
         rowsPerPageControl.hidden = !usesPagination();
       }
+      updateTableMobileHint();
     }
 
     function updateSortUi() {
@@ -690,7 +757,7 @@
           html += groupRowHTML(group.label, group.rows.length);
           group.rows.forEach(function (row) {
             idx += 1;
-            html += rowHTML(row, idx);
+            html += rowPairHTML(row, idx);
           });
         });
       } else if (usesPagination()) {
@@ -700,16 +767,23 @@
         var start = (page - 1) * perPage;
         var slice = rows.slice(start, start + perPage);
         slice.forEach(function (row, i) {
-          html += rowHTML(row, start + i + 1);
+          html += rowPairHTML(row, start + i + 1);
         });
         renderPagination(pages);
       } else {
         rows.forEach(function (row, i) {
-          html += rowHTML(row, i + 1);
+          html += rowPairHTML(row, i + 1);
         });
         if (pagination) pagination.innerHTML = "";
       }
       tableBody.innerHTML = html;
+      if (
+        window.DAAB_TABLE_RESIZE &&
+        typeof window.DAAB_TABLE_RESIZE.refreshTable === "function"
+      ) {
+        var table = document.querySelector(".scientists-table-wrap table");
+        if (table) window.DAAB_TABLE_RESIZE.refreshTable(table);
+      }
     }
 
     function render() {
@@ -959,6 +1033,14 @@
         window.DAABScientistsListPreview.refresh();
       });
     }
+
+    window.addEventListener(
+      "resize",
+      function () {
+        updateTableMobileHint();
+      },
+      { passive: true }
+    );
   }
 
   if (document.readyState === "loading") {

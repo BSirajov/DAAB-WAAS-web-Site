@@ -302,6 +302,7 @@
   display: flex;
   align-items: stretch;
   gap: 0;
+  min-width: 0;
   min-height: 46px;
   padding: 4px;
   background: linear-gradient(145deg, var(--white) 0%, #f3f9fd 100%);
@@ -520,6 +521,95 @@
   }
 }
 
+@media (max-width: 900px) {
+  .result-info--catalog {
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .result-info--catalog > .result-count {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .result-info--catalog > .catalog-sort-group-cluster {
+    flex: 1 1 100%;
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  html[data-daab-page-id="scientists-profiles"] .catalog-sort-group-cluster {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .result-info--catalog > .group-control,
+  .result-info--catalog > .sort-control,
+  .result-info--catalog > .rows-per-page-control,
+  .catalog-sort-group-cluster > .group-control,
+  .catalog-sort-group-cluster > .sort-control {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .sort-control__shell,
+  .group-control__shell,
+  .rows-per-page-control__shell {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .sort-control__field,
+  .group-control__field,
+  .rows-per-page-control__field {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .sort-control__select-wrap,
+  .group-control__select-wrap {
+    min-width: 0;
+    max-width: none;
+    flex: 1 1 auto;
+  }
+
+  .rows-per-page-control__select-wrap {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .sort-control__dir {
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .result-info--catalog > .group-control,
+  .result-info--catalog > .sort-control,
+  .result-info--catalog > .rows-per-page-control,
+  .catalog-sort-group-cluster > .group-control,
+  .catalog-sort-group-cluster > .sort-control {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .catalog-sort-group-cluster {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
 @media (max-width: 480px) {.catalog-toolbar__panel .sel-wrap{
     flex: 1 1 100%;
     min-width: 0;
@@ -531,7 +621,6 @@
     min-width: 0;
     width: 100%;
   }.result-info--catalog{
-    flex-wrap: wrap;
     align-items: flex-start;
   }.rows-per-page-control{
     width: 100%;
@@ -543,21 +632,6 @@
   }.rows-per-page-control__select-wrap{
     min-width: 0;
     flex: 1 1 auto;
-  }.sort-control,
-  .group-control{
-    width: 100%;
-    margin-left: 0;
-  }.sort-control__shell,
-  .group-control__shell{
-    width: 100%;
-  }.sort-control__field,
-  .group-control__field{
-    flex: 1 1 auto;
-  }.sort-control__select-wrap,
-  .group-control__select-wrap{
-    max-width: none;
-  }.sort-control__dir{
-    margin-left: auto;
   }
 }/* ── Collapsible filter panel (all viewports) ── */
 .catalog-toolbar.catalog-toolbar{

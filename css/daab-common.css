@@ -1251,10 +1251,10 @@ button,
   }
 }
 
-/* Profile/board QR — hide on narrow viewports where they crowd card layout */
+/* Board/list QR — hide on narrow viewports where they crowd card layout (profiles reflow instead) */
 @media (max-width: 640px) {
-  .card-qr-link,
-  .board-card-qr-link {
+  html[data-daab-page-id="executive-board"] .board-card-qr-link,
+  html[data-daab-page-id="scientists-list"] .scientist-card__qr-link {
     display: none !important;
   }
 }

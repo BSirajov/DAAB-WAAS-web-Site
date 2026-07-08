@@ -102,7 +102,61 @@
 
   function syncTableMinWidth(table) {
     var total = sumColWidths(table);
-    if (total > 0) table.style.minWidth = total + "px";
+    if (total > 0) {
+      table.style.minWidth = total + "px";
+    } else {
+      table.style.removeProperty("min-width");
+    }
+  }
+
+  function refreshTableLayout(table) {
+    if (!table || table.getAttribute("data-daab-resize-init") !== "1") return;
+
+    var theadRow = table.querySelector("thead tr");
+    if (!theadRow) return;
+
+    var pageId =
+      table.getAttribute("data-daab-resize-id") ||
+      document.documentElement.getAttribute("data-daab-page-id") ||
+      "table";
+
+    var ths = Array.prototype.slice.call(theadRow.children);
+    ths.forEach(function (th) {
+      var key = colKeyFromTh(th);
+      if (!key) return;
+      var col = colElement(table, key);
+      if (!col) return;
+
+      if (!isVisibleTh(th)) {
+        col.style.width = "0px";
+        return;
+      }
+
+      var current = parseFloat(col.style.width);
+      if (!isFinite(current) || current <= 0) {
+        col.style.width = resolveWidth(pageId, th, key) + "px";
+      }
+    });
+
+    syncTableMinWidth(table);
+  }
+
+  function refreshAllTables(root) {
+    var scope = root || document;
+    var tables = scope.querySelectorAll("table.daab-resizable-table[data-daab-resize-init='1']");
+    for (var i = 0; i < tables.length; i++) {
+      refreshTableLayout(tables[i]);
+    }
+  }
+
+  var refreshScheduled = false;
+  function scheduleRefreshAll() {
+    if (refreshScheduled) return;
+    refreshScheduled = true;
+    window.requestAnimationFrame(function () {
+      refreshScheduled = false;
+      refreshAllTables(document);
+    });
   }
 
   function initTable(table) {
@@ -175,7 +229,7 @@
 
     table.classList.add("daab-resizable-table", "daab-cols-ready");
     table.setAttribute("data-daab-resize-init", "1");
-    syncTableMinWidth(table);
+    refreshTableLayout(table);
   }
 
   function colElement(table, colKey) {
@@ -263,6 +317,8 @@
 
   function boot() {
     initAll(document);
+    window.addEventListener("resize", scheduleRefreshAll, { passive: true });
+    window.addEventListener("orientationchange", scheduleRefreshAll, { passive: true });
   }
 
   if (document.readyState === "loading") {
@@ -274,5 +330,7 @@
   window.DAAB_TABLE_RESIZE = {
     init: initAll,
     initTable: initTable,
+    refresh: refreshAllTables,
+    refreshTable: refreshTableLayout,
   };
 })(window, document);
