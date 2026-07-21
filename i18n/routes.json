@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 9,
   "defaultLang": "az",
   "languages": [
     "az",
@@ -276,6 +276,36 @@
       "navOrder": 11,
       "az": "az/forum/2024/cooperation.html",
       "en": "en/forum/2024/cooperation.html"
+    },
+    {
+      "id": "sirajov-media",
+      "navId": null,
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": null,
+      "doc": "Standalone scientist media/internet-resources page (Bakhtiyar Sirajov); not in primary nav.",
+      "az": "az/scientists/bakhtiyar-sirajov-media.html",
+      "en": "en/scientists/bakhtiyar-sirajov-media.html"
+    },
+    {
+      "id": "teymur-media",
+      "navId": null,
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": null,
+      "doc": "Standalone scientist media/video-resources page (Teymur Rzayev); not in primary nav.",
+      "az": "az/scientists/teymur-rzayev-media.html",
+      "en": "en/scientists/teymur-rzayev-media.html"
+    },
+    {
+      "id": "seymur-media",
+      "navId": null,
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": null,
+      "doc": "Standalone scientist media/press-resources page (Seymur Nasirov); not in primary nav.",
+      "az": "az/scientists/seymur-nasirov-media.html",
+      "en": "en/scientists/seymur-nasirov-media.html"
     }
   ]
 }

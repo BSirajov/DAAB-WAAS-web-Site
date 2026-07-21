@@ -4,10 +4,19 @@
 (function (window) {
   "use strict";
 
+  function dataVersion() {
+    var root = window.document && window.document.documentElement;
+    var v = root && root.getAttribute("data-daab-profiles-data-version");
+    return v ? String(v).trim() : "";
+  }
+
   function joinUrl(prefix, relPath) {
     var base = String(prefix || "");
     if (base && !base.endsWith("/")) base += "/";
-    return base + String(relPath || "").replace(/^\//, "");
+    var url = base + String(relPath || "").replace(/^\//, "");
+    var v = dataVersion();
+    if (v) url += (url.indexOf("?") === -1 ? "?" : "&") + "v=" + encodeURIComponent(v);
+    return url;
   }
 
   function parseProfilesPayload(data) {

@@ -5,6 +5,11 @@
 (function (window, document) {
   "use strict";
 
+  // Bump when scientist portrait files are replaced so browsers fetch the new
+  // images instead of a cached copy (filenames are stable). Keep in sync with
+  // PHOTO_VER in scientists-profiles-render.js.
+  var PHOTO_VER = "2";
+
   var CRED = {
     PhD: "Ph.D.",
     "Prof.Dr.": "Prof. Dr.",
@@ -155,7 +160,7 @@
 
   function photoUrlForProfile(profile) {
     if (!profile || !profile.photo) return "";
-    return assetRoot + "images/scientists-photos/" + profile.photo;
+    return assetRoot + "images/scientists-photos/" + profile.photo + "?v=" + PHOTO_VER;
   }
 
   function qrUrlForProfile(profile) {
@@ -222,7 +227,7 @@
       : "";
     var photoHtml = profile.photo
       ? '<img src="' +
-        esc(assetRoot + "images/scientists-photos/" + profile.photo) +
+        esc(assetRoot + "images/scientists-photos/" + profile.photo + "?v=" + PHOTO_VER) +
         '" alt="' +
         esc(profile.name) +
         '" width="88" height="88" decoding="async" loading="lazy"/>'
