@@ -34,7 +34,6 @@ LONG_CACHE_SUFFIXES = {
     ".ico",
     ".woff",
     ".woff2",
-    ".json",
 }
 
 
@@ -47,7 +46,7 @@ class DAABRequestHandler(SimpleHTTPRequestHandler):
         suffix = Path(path).suffix
         if suffix in LONG_CACHE_SUFFIXES:
             self.send_header("Cache-Control", "public, max-age=604800, immutable")
-        elif suffix == ".html" or path.endswith("/"):
+        elif suffix in (".html", ".json") or path.endswith("/"):
             self.send_header("Cache-Control", "no-cache")
         self.send_header("X-Content-Type-Options", "nosniff")
         super().end_headers()

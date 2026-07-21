@@ -5,6 +5,11 @@
 (function () {
   "use strict";
 
+  // Bump when scientist portrait files are replaced so browsers fetch the new
+  // images instead of a cached copy (filenames are stable, so this is the only
+  // cache-buster the portraits have).
+  var PHOTO_VER = "2";
+
   var CRED_LABEL = {
     PhD: "Ph.D.",
     "Prof.Dr.": "Prof. Dr.",
@@ -230,7 +235,7 @@
       escAttr(degree) +
       '">\n' +
       '  <div class="card-avatar card-photo"><img src="' +
-      escAttr(assetUrl(prefix, "images/scientists-photos/" + photo)) +
+      escAttr(assetUrl(prefix, "images/scientists-photos/" + photo) + "?v=" + PHOTO_VER) +
       '" alt="' +
       escHtml(nameDisplay) +
       '" decoding="async" loading="eager"/></div>\n' +

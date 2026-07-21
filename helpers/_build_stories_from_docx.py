@@ -26,7 +26,7 @@ OUT_AZ = ROOT / "az" / "forum" / "2024" / "stories.html"
 OUT_EN = ROOT / "en" / "forum" / "2024" / "stories.html"
 ASSET = "../../../"
 PAGE_ID = "forum-bagli-hekayeler"
-ELDAR_PHOTO_SRC = f"{ASSET}images/scientists-photos/eldar-ehedov.jpg"
+ELDAR_PHOTO_SRC = f"{ASSET}images/scientists-photos/eldar-ehedov.png"
 
 SECTION_IMAGES = {
     "nur": "NUR.jpg",

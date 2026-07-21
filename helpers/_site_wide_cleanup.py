@@ -42,9 +42,9 @@ SCRIPT_VERSIONS = {
     "daab-scientists-toolbar-mobile.js": 5,
     "daab-profiles-sticky.js": 4,
     "scientists-cv-filters.js": 9,
-    "scientists-profiles-render.js": 3,
-    "scientists-list-preview.js": 8,
-    "daab-scientists-profiles-loader.js": 1,
+    "scientists-profiles-render.js": 4,
+    "scientists-list-preview.js": 9,
+    "daab-scientists-profiles-loader.js": 2,
     "scientists-catalog-data.js": 2,
     "scientists-catalog-data-en.js": 2,
     "daab-hub-card-search.js": 1,
@@ -81,7 +81,7 @@ STYLE_VERSIONS = {
     "daab-executive-board.css": 7,
     "daab-membership-page.css": 13,
     "daab-membership-value.css": 19,
-    "daab-scientists-profiles-page.css": 19,
+    "daab-scientists-profiles-page.css": 24,
     "daab-content-hero.css": 8,
     "daab-charter-page.css": 11,
     "daab-work-done-report.css": 3,
@@ -105,6 +105,7 @@ STYLE_VERSIONS = {
     "scientists-profile-tts.css": 7,
     "scientists-profile-deep-link.css": 6,
     "scientists-profile-qr.css": 19,
+    "daab-media-resources.css": 4,
 }
 
 DEPLOY_HTML_DIRS = (ROOT / "az", ROOT / "en")
