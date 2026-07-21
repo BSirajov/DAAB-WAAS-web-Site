@@ -47,6 +47,13 @@ WORK_MIN_H = 900
 FACE_W_FRAC = 0.46     # face box width relative to frame width
 FACE_CY_FRAC = 0.42    # vertical position of the face centre (eye-line-ish)
 
+# "fill" mode: scale the subject silhouette to occupy the whole frame height
+# (head near the top, shoulders spanning the width) instead of leaving margins.
+# Cutouts still show the card background in the corners beside the head/shoulders.
+FILL_TOP_FRAC = 0.02       # headroom above the top of the head
+FILL_HEIGHT_FRAC = 0.98    # subject height as a fraction of the frame height
+FILL_MODE = False
+
 session = new_session("u2net")
 _CASCADES = [
     cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml"),
@@ -116,6 +123,26 @@ def silhouette_reframe(cut: Image.Image) -> Image.Image:
     return canvas.resize((FRAME_W, FRAME_H), Image.Resampling.LANCZOS)
 
 
+def fill_frame(cut: Image.Image) -> Image.Image:
+    """Scale the subject to fill the frame top-to-bottom, head anchored at top.
+
+    Scales by height so the silhouette spans (almost) the full frame height; the
+    subject is centred horizontally. Broad shoulders that exceed the frame width
+    are clipped at the edges (natural portrait crop); narrow subjects keep small
+    transparent side margins that blend with the card background.
+    """
+    bbox = cut.getchannel("A").getbbox()
+    subj = cut.crop(bbox)
+    scale = (FILL_HEIGHT_FRAC * FRAME_H) / subj.height
+    new_size = (max(1, round(subj.width * scale)), max(1, round(subj.height * scale)))
+    scaled = subj.resize(new_size, Image.Resampling.LANCZOS)
+    off_x = round((FRAME_W - scaled.width) / 2.0)
+    off_y = round(FILL_TOP_FRAC * FRAME_H)
+    canvas = Image.new("RGBA", (FRAME_W, FRAME_H), (0, 0, 0, 0))
+    canvas.alpha_composite(scaled, (off_x, off_y))
+    return canvas
+
+
 def face_frame(cut: Image.Image, face) -> Image.Image:
     x, y, w, h = [float(v) for v in face]
     fcx, fcy = x + w / 2.0, y + h / 2.0
@@ -150,13 +177,17 @@ def process(stem: str) -> str:
         factor = max(1, round(WORK_MIN_H / im.height))
         im = im.resize((im.width * factor, im.height * factor), Image.Resampling.LANCZOS)
     cut = cutout(im)
-    face = detect_face(np.array(cut.convert("RGB")))
-    if face is None:
-        out = silhouette_reframe(cut)
-        tag = "no-face(fallback)"
+    if FILL_MODE:
+        out = fill_frame(cut)
+        tag = "fill"
     else:
-        out = face_frame(cut, face)
-        tag = "face"
+        face = detect_face(np.array(cut.convert("RGB")))
+        if face is None:
+            out = silhouette_reframe(cut)
+            tag = "no-face(fallback)"
+        else:
+            out = face_frame(cut, face)
+            tag = "face"
     dest = PHOTOS / f"{stem}.png"
     out.save(dest, "PNG", optimize=True)
     return tag
@@ -169,10 +200,13 @@ def portrait_stems() -> list[str]:
 
 
 def main() -> int:
+    global FILL_MODE
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     flags = {a for a in sys.argv[1:] if a.startswith("--")}
+    FILL_MODE = "--fill" in flags
     targets = args or portrait_stems()
-    print(f"Normalizing {len(targets)} portrait(s)  (face_w={FACE_W_FRAC}, face_cy={FACE_CY_FRAC})")
+    mode = "fill" if FILL_MODE else f"face_w={FACE_W_FRAC}, face_cy={FACE_CY_FRAC}"
+    print(f"Normalizing {len(targets)} portrait(s)  ({mode})")
     if "--dry" in flags:
         for s in targets:
             print("   ", s, "<-", source_for(s))
