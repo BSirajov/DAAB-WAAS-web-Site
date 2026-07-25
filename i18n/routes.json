@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 11,
   "defaultLang": "az",
   "languages": [
     "az",
@@ -306,6 +306,66 @@
       "doc": "Standalone scientist media/press-resources page (Seymur Nasirov); not in primary nav.",
       "az": "az/scientists/seymur-nasirov-media.html",
       "en": "en/scientists/seymur-nasirov-media.html"
+    },
+    {
+      "id": "akif-media",
+      "navId": null,
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": null,
+      "doc": "Standalone scientist books page (Akif Alaferdov); not in primary nav.",
+      "az": "az/scientists/akif-alaferdov-media.html",
+      "en": "en/scientists/akif-alaferdov-media.html"
+    },
+    {
+      "id": "eldar-ahadov",
+      "navId": null,
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": null,
+      "doc": "Eldar Əhədov literary hub (Özüm haqqında); not in primary nav.",
+      "az": "az/scientists/eldar-ahadov.html",
+      "en": "en/scientists/eldar-ahadov.html"
+    },
+    {
+      "id": "eldar-ahadov-poeziya",
+      "navId": null,
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": null,
+      "doc": "Eldar Əhədov poetry page; not in primary nav.",
+      "az": "az/scientists/eldar-ahadov-poeziya.html",
+      "en": "en/scientists/eldar-ahadov-poeziya.html"
+    },
+    {
+      "id": "eldar-ahadov-poetik-dastanlar",
+      "navId": null,
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": null,
+      "doc": "Eldar Əhədov poetic epics page; not in primary nav.",
+      "az": "az/scientists/eldar-ahadov-poetik-dastanlar.html",
+      "en": "en/scientists/eldar-ahadov-poetik-dastanlar.html"
+    },
+    {
+      "id": "eldar-ahadov-bedii-nesr",
+      "navId": null,
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": null,
+      "doc": "Eldar Əhədov fiction prose page; not in primary nav.",
+      "az": "az/scientists/eldar-ahadov-bedii-nesr.html",
+      "en": "en/scientists/eldar-ahadov-bedii-nesr.html"
+    },
+    {
+      "id": "eldar-ahadov-esse",
+      "navId": null,
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": null,
+      "doc": "Eldar Əhədov essay page; not in primary nav.",
+      "az": "az/scientists/eldar-ahadov-esse.html",
+      "en": "en/scientists/eldar-ahadov-esse.html"
     }
   ]
 }

@@ -1,0 +1,445 @@
+/* Eldar Əhədov literary pages — scoped to data-daab-page-id^="eldar-ahadov" */
+
+/* Title + “About this page” side panel (same pattern as forum / executive board). */
+html[data-daab-page-id^="eldar-ahadov"] .page-hero {
+  position: relative;
+  overflow: hidden;
+  color: var(--ink);
+  background: transparent;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-hero-scrim);
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+  opacity: 0.72;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .page-hero .hero-wrap {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 28px;
+  align-items: start;
+  padding: 28px 24px 36px;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .page-hero .hero-copy {
+  max-width: 720px;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .page-hero h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(17.5px, 2.66vw, 32.2px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  text-align: left;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .page-hero h1 em {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--blue-700);
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .page-hero .hero-panel {
+  align-self: start;
+  padding: 0 18px 18px;
+  background: var(--color-hero-panel-bg);
+  border: 1px solid var(--color-hero-panel-border);
+  border-radius: 26px;
+  box-shadow: var(--shadow-hero-panel);
+  backdrop-filter: blur(18px);
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .page-hero .panel-card {
+  padding: 18px 20px;
+  color: var(--ink);
+  background: var(--color-panel-card-bg);
+  border: 1px solid var(--color-panel-card-border);
+  border-radius: 20px;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .page-hero .panel-title {
+  margin: 0 0 8px;
+  color: var(--color-heading-blue);
+  font-family: var(--font-serif);
+  font-size: var(--font-size-summary-panel-title-mobile);
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .page-hero .panel-copy {
+  margin: 0;
+  color: var(--muted-hero);
+  font-size: 13px;
+  line-height: 1.48;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .page-hero .panel-copy-lead {
+  margin: 0;
+}
+
+@media (max-width: 1000px) {
+  html[data-daab-page-id^="eldar-ahadov"] .page-hero .hero-wrap {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 22px 20px 26px;
+  }
+
+  html[data-daab-page-id^="eldar-ahadov"] .page-hero .hero-panel {
+    max-width: 36rem;
+    padding: 0 10px 10px;
+  }
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.55rem;
+  margin: 0 0 1.6rem;
+  padding: 0.85rem 0 1rem;
+  border-bottom: 1px solid var(--color-border-blue-12);
+  list-style: none;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-section-nav a {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--blue-700);
+  background: var(--color-surface-filter-chip);
+  text-decoration: none !important;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, font-weight 0.15s ease;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-section-nav a:hover,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-section-nav a:focus-visible {
+  background: var(--color-tint-blue);
+  color: var(--blue-dark);
+  border-color: var(--color-border-blue-subtle);
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-section-nav a:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Match forum TOC / chip active: tint surface + brand blue text (not white-on-navy). */
+html[data-daab-page-id^="eldar-ahadov"] .eldar-section-nav a[aria-current="page"] {
+  background: var(--color-tint-blue);
+  color: var(--blue-dark);
+  border-color: var(--color-border-blue-light);
+  box-shadow: inset 0 0 0 1px rgba(0, 105, 180, 0.08);
+  font-weight: 700;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-main {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem 3.5rem;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-literary {
+  color: #1a2433;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Justify prose (about, stories, essays, analyses); keep poems left-aligned. */
+html[data-daab-page-id^="eldar-ahadov"] .eldar-literary > p,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-piece > p,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-analysis-p,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-awards li,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-analysis-list li {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-piece > h2,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-literary > h1,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-index,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-credit,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-analysis-title,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-poem,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-poem p {
+  text-align: left;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-literary > h1 {
+  margin: 0 0 1.1rem;
+  font-size: clamp(1.55rem, 2.4vw, 2rem);
+  line-height: 1.25;
+  color: #12263f;
+  letter-spacing: 0.02em;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-piece {
+  margin: 0 0 2.75rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(30, 58, 95, 0.1);
+  scroll-margin-top: 6rem;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-piece:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-piece > h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  line-height: 1.3;
+  color: #12263f;
+  scroll-margin-top: 6rem;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-index {
+  margin: 0 0 1.75rem;
+  padding: 0.9rem 1rem;
+  background: rgba(30, 58, 95, 0.04);
+  border-left: 3px solid rgba(30, 58, 95, 0.35);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-index-link {
+  color: var(--blue-700);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-index-link:hover,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-index-link:focus-visible {
+  color: var(--blue-dark);
+  text-decoration-thickness: 2px;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-prose p,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-analysis p {
+  margin: 0 0 0.85rem;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-prose p:last-child,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-analysis p:last-child {
+  margin-bottom: 0;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-poem {
+  margin: 0 0 1.15rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-poem p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-poem .eldar-stanza-gap {
+  height: 0.85rem;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-credit {
+  margin: 0.35rem 0 1rem;
+  font-style: italic;
+  color: #44566e;
+  font-size: 0.95rem;
+}
+
+/* Attribution under wiki name link (e.g. Riçard Berengarten → date below). */
+html[data-daab-page-id="eldar-ahadov"] .eldar-ext-link {
+  display: inline-block;
+}
+
+html[data-daab-page-id="eldar-ahadov"] p:has(> .eldar-ext-link:only-child) {
+  margin-bottom: 0.15rem;
+}
+
+html[data-daab-page-id="eldar-ahadov"] p:has(> .eldar-ext-link:only-child) + .eldar-credit {
+  margin-top: 0;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-analysis-title {
+  margin: 1.25rem 0 0.55rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1e3a5f;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-figure {
+  margin: 1rem 0 1.25rem;
+  max-width: 100%;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-figure img {
+  display: block;
+  width: 100%;
+  max-width: 36rem;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Bədii nəsr / Literary prose: centered titles and uniform centered images */
+html[data-daab-page-id="eldar-ahadov-bedii-nesr"] .eldar-piece {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+html[data-daab-page-id="eldar-ahadov-bedii-nesr"] .eldar-piece > h2 {
+  text-align: center;
+  width: 100%;
+}
+
+html[data-daab-page-id="eldar-ahadov-bedii-nesr"] .eldar-figure {
+  display: block;
+  float: none !important;
+  align-self: center;
+  width: min(100%, 36rem);
+  max-width: 36rem;
+  margin: 1rem auto 1.25rem;
+  text-align: center;
+}
+
+html[data-daab-page-id="eldar-ahadov-bedii-nesr"] .eldar-figure img {
+  display: block;
+  width: 100%;
+  max-width: 36rem;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Opening image pair under a story title (e.g. The pistachio tree) */
+html[data-daab-page-id="eldar-ahadov-bedii-nesr"] .eldar-piece > h2 + .eldar-figure,
+html[data-daab-page-id="eldar-ahadov-bedii-nesr"] .eldar-piece > h2 + .eldar-figure + .eldar-figure {
+  align-self: center;
+  width: min(100%, 36rem);
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html[data-daab-page-id="eldar-ahadov-bedii-nesr"] .eldar-piece > h2 + .eldar-figure img,
+html[data-daab-page-id="eldar-ahadov-bedii-nesr"] .eldar-piece > h2 + .eldar-figure + .eldar-figure img {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-figure--float {
+  float: right;
+  width: min(42%, 16rem);
+  margin: 0.15rem 0 1rem 1.25rem;
+}
+
+/* Poem illustrations sit beside the opening lines; clear before analyses. */
+html[data-daab-page-id="eldar-ahadov-poeziya"] .eldar-piece > h2 + .eldar-figure--float {
+  margin-top: 0.1rem;
+}
+
+html[data-daab-page-id="eldar-ahadov-poeziya"] .eldar-analysis-title {
+  clear: both;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-figure--float img {
+  max-width: 100%;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-portrait {
+  float: left;
+  width: min(38%, 14rem);
+  margin: 0.15rem 1.25rem 1rem 0;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-portrait img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-awards,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-analysis-list {
+  margin: 0.5rem 0 1.4rem;
+  padding-left: 1.2rem;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-awards li,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-analysis-list li {
+  margin: 0 0 0.55rem;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-analysis-list {
+  color: #243447;
+  font-size: 0.98rem;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-analysis-p {
+  margin: 0 0 0.75rem;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.35rem 0 1rem;
+  font-weight: 650;
+  color: #b00020;
+  text-decoration: none;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-video-link:hover,
+html[data-daab-page-id^="eldar-ahadov"] .eldar-video-link:focus-visible {
+  text-decoration: underline;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-ext-link {
+  color: #1e3a5f;
+  font-weight: 600;
+}
+
+html[data-daab-page-id^="eldar-ahadov"] .eldar-clear {
+  clear: both;
+}
+
+@media (max-width: 720px) {
+  html[data-daab-page-id^="eldar-ahadov"] .eldar-figure--float,
+  html[data-daab-page-id^="eldar-ahadov"] .eldar-portrait {
+    float: none;
+    width: 100%;
+    max-width: 22rem;
+    margin: 0.5rem 0 1rem;
+  }
+
+  html[data-daab-page-id^="eldar-ahadov"] .eldar-main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

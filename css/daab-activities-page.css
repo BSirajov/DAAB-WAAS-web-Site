@@ -310,6 +310,14 @@ html[data-daab-page-id="activities-news"] li{
 }/* Improve readability of long texts */
 .card-body{
     line-height: 1.45 !important;
+}
+/* Justify news-feed article body (even left and right edges) */
+html[data-daab-page-id="activities-news"] .news-feed .card-body p,
+html[data-daab-page-id="activities-news"] .news-feed .card-text,
+html[data-daab-page-id="activities-news"] .news-feed .card-body li{
+    text-align: justify !important;
+    text-justify: inter-word;
+    hyphens: auto;
 }/* Egypt medal gallery */
 .egypt-medal-gallery{
     display:grid !important;
@@ -393,27 +401,40 @@ html[data-daab-page-id="activities-news"] li{
     }.saadet-gallery img{
         width:240px !important;
     }
-}/* Telman Aliyev 90 gallery */
-.telman-gallery{
-    display:grid !important;
-    grid-template-columns: 0.9fr 1.6fr !important;
-    gap:18px !important;
-    align-items:start !important;
-}.telman-gallery img{
-    width:100% !important;
-    max-height:520px !important;
-    height:auto !important;
-    object-fit:contain !important;
-    background:var(--white) !important;
-    border-radius:12px !important;
-    padding:6px !important;
-    display:block !important;
-    box-shadow:0 2px 14px rgba(13,31,60,.08) !important;
+}/* Telman Aliyev 90 — portrait float, letter as text */
+#telman-90-2025 .telman-jubilee-photo{
+  float: right !important;
+  width: min(260px, 42%) !important;
+  margin: 0 0 16px 22px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
 }
-@media(max-width:768px){.telman-gallery{
-        grid-template-columns:1fr !important;
-    }
-}/* Bilingual open letter columns */
+#telman-90-2025 .telman-jubilee-photo img{
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
+  box-shadow: 0 6px 20px rgba(0, 45, 82, 0.14) !important;
+  background: #fff !important;
+  object-fit: cover !important;
+  aspect-ratio: 3 / 4 !important;
+}
+#telman-90-2025 .card-body::after{
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}
+@media (max-width: 760px) {
+  #telman-90-2025 .telman-jubilee-photo{
+    float: none !important;
+    width: min(100%, 280px) !important;
+    margin: 0 auto 18px !important;
+    text-align: center !important;
+  }
+}
+/* Bilingual open letter columns */
 .open-letter-bilingual{
   display:grid !important;
   grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
@@ -1003,7 +1024,72 @@ html[data-daab-page-id="activities-news"]{
   #baxtiyar-187-2026 .card-gallery.double{
     grid-template-columns: 1fr !important;
   }
-}/* Garuslu book cover — float right, text wrap */
+}/* Summer school photo — float right, text wrap */
+/* Amirulla Mammadov jubilee — float right, text wrap */
+#amirulla-80-2026 .amirulla-jubilee-photo{
+  float: right !important;
+  width: min(260px, 42%) !important;
+  margin: 0 0 16px 22px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+#amirulla-80-2026 .amirulla-jubilee-photo img{
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
+  box-shadow: 0 6px 20px rgba(0, 45, 82, 0.14) !important;
+  background: #fff !important;
+  object-fit: cover !important;
+  aspect-ratio: 3 / 4 !important;
+}
+#amirulla-80-2026 .card-body::after{
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}
+
+#summer-school-2026 .summer-school-photo{
+  float: right !important;
+  width: min(340px, 48%) !important;
+  margin: 0 0 16px 22px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+#summer-school-2026 .summer-school-photo img{
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
+  box-shadow: 0 6px 20px rgba(0, 45, 82, 0.14) !important;
+  background: #fff !important;
+}
+#summer-school-2026 .card-body::after{
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}
+
+@media (max-width: 760px) {
+  #amirulla-80-2026 .amirulla-jubilee-photo{
+    float: none !important;
+    width: min(100%, 280px) !important;
+    margin: 0 auto 18px !important;
+    text-align: center !important;
+  }
+  #summer-school-2026 .summer-school-photo{
+    float: none !important;
+    width: min(100%, 520px) !important;
+    margin: 0 auto 18px !important;
+    text-align: center !important;
+  }
+}
+
+/* Garuslu book cover — float right, text wrap */
 #garuslu-book-2026 .garuslu-book-cover{
   float: right !important;
   width: min(260px, 42%) !important;
