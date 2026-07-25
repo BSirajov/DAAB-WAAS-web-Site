@@ -14,7 +14,7 @@ from pathlib import Path
 
 from _paths import ROOT
 
-MEDIA_CSS_VER = 4  # bump when css/daab-media-resources.css content changes
+MEDIA_CSS_VER = 9  # bump when css/daab-media-resources.css content changes
 
 PLAY_SVG = (
     '<span class="media-card__play" aria-hidden="true">'
@@ -108,12 +108,43 @@ def build_html(cfg: dict, lang: str) -> str:
     # Thumbnails live under az/scientists/; EN pages reach them cross-locale.
     thumb_prefix = f"{thumb_dirname}/" if lang == "az" else f"../../az/scientists/{thumb_dirname}/"
 
-    section_nos = sorted({it["section"] for it in resources})
-    sections = "\n".join(section_html(n, lang, strings, resources, thumb_prefix) for n in section_nos)
+    custom = cfg.get("sections_html") or {}
+    if lang in custom:
+        sections = custom[lang]
+    else:
+        section_nos = sorted({it["section"] for it in resources})
+        sections = "\n".join(
+            section_html(n, lang, strings, resources, thumb_prefix) for n in section_nos
+        )
 
     # Mark EN as a finished translation so _build_bilingual_tree.py never
     # replaces this page with a "Translation in progress" stub.
     en_marker = "\n<!-- daab-en-complete -->" if lang == "en" else ""
+
+    if s.get("hero_html"):
+        hero_block = s["hero_html"]
+    else:
+        subtitle_block = s.get("subtitle_html") or (
+            f'<p class="page-hero-subtitle" id="page-hero-subtitle" '
+            f'role="doc-subtitle">{esc(s["subtitle"])}</p>'
+        )
+        panel_block = s.get("panel_copy_html") or (
+            f'<p class="hero-text panel-copy-lead">{esc(s["panel_copy"])}</p>'
+        )
+        hero_block = (
+            '<div class="hero-inner shell">'
+            "<section>"
+            f"<h1>{esc(s['h1'])}<br><em>{esc(s['h1_em'])}</em></h1>"
+            f"{subtitle_block}"
+            "</section>"
+            f'<aside aria-label="{esc(s["panel_title"])}" class="hero-summary-panel">'
+            '<div class="hero-summary-card">'
+            f'<h2 class="panel-title">{esc(s["panel_title"])}</h2>'
+            f"{panel_block}"
+            "</div>"
+            "</aside>"
+            "</div>"
+        )
 
     return f"""<!DOCTYPE html>
 <html lang="{s['lang']}" data-daab-lang="{s['lang']}" data-daab-asset-root="../../" data-daab-page-id="{page_id}" data-daab-page-kind="scientist-media" data-daab-nav-mount="1">
@@ -172,18 +203,7 @@ def build_html(cfg: dict, lang: str) -> str:
 </ol>
 </nav>
 <header class="page-hero">
-<div class="hero-inner shell">
-<section>
-<h1>{esc(s['h1'])}<br><em>{esc(s['h1_em'])}</em></h1>
-<p class="page-hero-subtitle" id="page-hero-subtitle" role="doc-subtitle">{esc(s['subtitle'])}</p>
-</section>
-<aside aria-label="{esc(s['panel_title'])}" class="hero-summary-panel">
-<div class="hero-summary-card">
-<h2 class="panel-title">{esc(s['panel_title'])}</h2>
-<p class="hero-text panel-copy-lead">{esc(s['panel_copy'])}</p>
-</div>
-</aside>
-</div>
+{hero_block}
 </header>
 <main class="main media-main" id="content">
 {sections}

@@ -1,0 +1,377 @@
+[0] H2: POEZİYA
+[1] INDEX: "AGAC"; "ANLARSAN"; "AZAN"; "BİR DƏ O YERƏ QAYIDARAM MƏN"; "BİR GÜN HAMI SƏNDƏN DÖNSƏ"; "GƏNCLİK VƏ QOCALIQ"; "HƏKİM ÇAĞIRMAQ"; "İNSAN OLAQ"; "İŞIĞIN KÖLGƏSİ YOXDUR"; "KAĞIZDAN ATA"; "MƏNİ TƏRK ELƏMƏ"; "MƏNİM ŞƏHİDLƏRİM"; "MÖCÜZƏ"; "QAR YAĞIR"; "SƏNDƏN SAVAYI"; "XOŞ SÖZ"
+[2] H2: AGAC
+[3] POEM (24 lines) SKIP
+[4] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[5] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[6] ANALYSIS_UL
+  - Alovlu Ağac : Ağac alov içindədir, lakin yanmır, əksinə parlayır. Bu, ağacın həm dözümlülük, həm də tənhalığın simvolu kimi təcəssümüdür. Ç ətinliklərə, dağıntılara baxmayaraq, dayanan və gözləyən ağac təbiətin və insanın mübarizəsini simvolizə edir.
+  - Ay və Yarıqaranlıq : Göydəki alovlu Ay, müharibə və xaosun simvoludur. Şeirdə "çıxan Ay alova bürünmüş" ifadəsi bu obrazı tamamlayır. Yarım Ay isə keçən zamanın və dəyişən dövrlərin rəmzidir.
+  - Pəncərədən Baxan İnsan : Şeirdəki "Sən öz pəncərəndən baxarsan haçan" ifadəsi burada tam mənası ilə əks olunur. İnsan figuru, düşüncələri ilə tənhalıqda olan və ağacın simvolizmini anlayan biri kimi təqdim edilir. Onun uzaqdan baxışı, gözlənti və daxili sükutunu əks etdirir.
+  - Kiçik Şam : İnsanın daxili işığını və ya ümidini simvolizə edir. Qarşısında duran bu kiçik işıq, xaos və zülmət içindəki daxili güc və ümidin simvoludur.
+  - Qırıq Şüşələr : Bu detal dağıntıları və ya keçmişin zədələnmiş xatirələrini göstərə bilər. Şüşələr qırıq olsa da, pəncərədən görünən mənzərəni dəyişmir, çünki gözlənti və tənhalıq hələ də davam edir.
+[7] ANALYSIS_P: Beləliklə,
+[8] ANALYSIS_P: Bu təsvir, şeirdəki tənhalıq, gözlənti və mübarizə mövzularını çox gözəl bir vizual kompozisiya ilə əks etdirir. Ağacın yanması və insanın uzaqdan baxışı insanın daxili dünyası və təbiət arasında əlaqəni gücləndirir, şeirin ruhunu tam şəkildə çatdırır.
+[9] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[10] ANALYSIS_P: Bu şeir, insanın tənhalığını, gözləntisini və daxili mübarizələrini təsvir edir.
+[11] ANALYSIS_P: Fokstrot və topların hayqırması: Bu misralar müharibə və xaos atmosferini təsvir edir. Fokstrot — həyatın davam edən ritmi, topların səsi isə müharibənin gətirdiyi dağıntıları simvollaşdırır.
+[12] ANALYSIS_P: Ağacın gözləməsi: Ağac, dözümlülüyün, sabitliyin və sükutun simvoludur. O, bütün dağıntılara baxmayaraq, hər şeyi görür və gözləyir. Bu, həm də insanın daxili gücünü və dəyişməzliyini simvollaşdırır.
+[13] ANALYSIS_P: Buzun sınması və idrakın işığa ehtiyacı: Daxili mübarizə və anlaşılmazlıq metaforalarıdır. Buzun sınması — insanın sərt xarakterinin parçalanması, idrakın işığa möhtac olması isə anlayış və maariflənməyə ehtiyacını göstərir.
+[14] ANALYSIS_P: Gecənin xışıltısına qarışan not pıçıltısı: Bu, insanın tənhalığının və düşüncələrinin gecə ilə birləşməsini, sükutun dərinliyini simvollaşdırır.
+[15] ANALYSIS_P: Ağacın insana bənzəməsi: Şeirin sonunda ağac ilə insan arasında dərin bir əlaqə qurulur. Ağac, insana bənzəyir — tənha, gözləyən və sükunətdə qalan.
+[16] ANALYSIS_P: Beləliklə,
+[17] ANALYSIS_P: Şeir, insanın müharibə və xaos içindəki tənhalığını və səbrini təsvir edir. Ağac, təbiət və insan arasında bir metafor olaraq istifadə edilir, insanın həm öz iç dünyasında, həm də xarici mühitdə dəyişməz qalmasını göstərir.
+[18] H2: ANLARSAN
+[19] POEM (15 lines) SKIP
+[20] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[21] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[22] ANALYSIS_P: Mərkəzi Şəxsiyyət və Parlayan Ürək
+[23] ANALYSIS_P: Şəxsin parlayan, mərhəmətli ürəyi, daxili gücü və həssaslığı simvolizə edilir. Bu, insanın xarici görünüşdə güclü olmasına baxmayaraq, daxildən kövrək və sevgi dolu bir varlıq olduğunu göstərir.
+[24] ANALYSIS_P: Keçmiş və Gələcək Arasında Körpü
+[25] ANALYSIS_P: Şəxs, keçmişi və gələcəyi birləşdirən bir yolda dayanır. Bu, insanın keçmiş təcrübələrindən dərs çıxarıb, gələcək üçün ümidlə irəliləməsi fikrini əks etdirir. Yolun enişli-yoxuşlu olması, həyatın çətinliklər və nailiyyətlərlə dolu bir səyahət olduğunu simvolizə edir.
+[26] ANALYSIS_P: Çiçəklər və Birlik Rəmzləri
+[27] ANALYSIS_P: Çiçəklər həyatın gözəlliyini, yenilənməsini və sevinci simvolizə edir. Bir-birinə uzanan əllər, birliyin, dəstəyin və həmrəyliyin gücünü göstərir. Bu, insanların bir-birinə dayaq olmaqla, həyatı daha mənalı və asan hala gətirə biləcəyini ifadə edir.
+[28] ANALYSIS_P: Tanrının Qoruyucu İşığı
+[29] ANALYSIS_P: Göydən gələn yumşaq işıq, ilahi rəhbərliyi və qorunmanı simvolizə edir. Bu işıq, insanların çətinliklərlə üzləşərkən belə, Tanrının dəstəyinə güvənərək irəliləməsini ifadə edir.
+[30] ANALYSIS_P: Beləliklə,
+[31] ANALYSIS_P: Bu təsvir həyat yolunda insanın daxili gücünü, sevdiklərinin dəstəyini və Tanrının qoruyuculuğunu əks etdirir. İnsanlara, çətinliklərdən keçərkən həm daxili, həm də xarici dəstək mənbələrinə güvənməyin və bir-birinə yardım etməyin vacibliyini xatırladır.
+[32] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[33] ANALYSIS_P: Bu şeir həyatın müxtəlif aspektlərini əks etdirən bir fəlsəfi düşüncədir. Şeirin əsas mövzusu insanın haqq, ədalət, keçmiş və gələcək, sevinc və kədər kimi anlayışlar arasında balansı tapmaqdır. Şeirin təhlilini aşağıdakı kimi təqdim edə bilərik:
+[34] ANALYSIS_P: Həqiqət və Ədalət: İlk bənddə haqqı və ədaləti gözardı edənlərin çox olduğu vurğulanır. Güclü bədənə malik insanların belə, kövrək bir ürəyə sahib olduğu və bu ürəyin asanlıqla inciyib sına biləcəyi ifadə olunur. Bu, insanların zahiri güclərinə baxmayaraq, daxilən həssas və kövrək olduğunu göstərir.
+[35] ANALYSIS_P: Keçmiş və Gələcək: İkinci bənddə insanın keçmiş və gələcək arasında qaldığı, lakin Tanrının daim bir sığınacaq olduğu bildirilir. Burada insanlara kədərdən uzaq durmağı və boş şeylərə üzülməməyin əhəmiyyəti vurğulanır. Şair, həyatın mənasız dərdlərini çəkməyin günah olduğunu bildirir.
+[36] ANALYSIS_P: Dünyanın Gözəlliyi və Zamanın Axarı: Üçüncü bənddə dünyanın sehrini duymaq, sevinc içində olmaq və əl-ələ verərək zamanın çətinliklərindən keçmək çağırışı edilir. Bu, həm şəxsi, həm də cəmiyyətin ümumi harmoniyası üçün birlikdə olmağın vacibliyini göstərir.
+[37] ANALYSIS_P: Beləliklə,
+[38] ANALYSIS_P: Şeir, insanlara həyatın çətinliklərini bir yerdə, sevinc və anlayışla keçməyə çağırır. Həyatın enişli-yoxuşlu yollarında müsbət yanaşma və Tanrıya güvənərək yaşamaq önəmlidir.
+[39] H2: AZAN
+[40] POEM (12 lines) SKIP
+[41] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[42] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[43] ANALYSIS_P: Qaranlıq, ulduzlu səma
+[44] ANALYSIS_UL
+  - Qaranlıq səma mənəvi və ruhani məkanın sonsuzluğunu, həm də insanın təkliyini və Yaradanla birbaşa əlaqəsini simvolizə edir.
+  - Ulduzlar isə ümid, bələdçilik və işıq gətirən mənəvi nişanələrdir. Onlar qaranlıq gecədə insanın yolunu işıqlandıran simvollardır.
+[45] ANALYSIS_P: Minarədəki tənha fiqur
+[46] ANALYSIS_UL
+  - Minarədəki tənha fiqur azanı çağıran şəxsi təmsil edir. Bu şəxs, mənəvi yüksəlişin və Yaradanla əlaqənin vasitəçisi kimi çıxış edir.
+  - Tənha fiqurun minarədə olması, onun səsi ilə həm insanlara, həm də Allaha müraciət etməsini simvolizə edir.
+[47] ANALYSIS_P: Yumçaq işıq
+[48] ANALYSIS_UL
+  - Fiqurun ətrafında yayılan yumşaq işıq onun ruhi enerjisini və Yaradanla əlaqəsinin güclənməsini simvolizə edir. Bu işıq, mənəvi saflaşmanın və azanın müqəddəsliyinin göstəricisidir.
+  - İşığın səmaya doğru yüksəlməsi, azanın göyə ucalan bir çağırış olduğunu vurğulayır.
+[49] ANALYSIS_P: Sakit və dinc mənzərə
+[50] ANALYSIS_UL
+  - Səssiz və sakit mənzərə azanın sükunət gətirən təsirini və insan ruhuna olan rahatladıcı təsirini ifadə edir. Bu, həm də gecənin sakitliyini, insanın daxili sükunətə və Yaradanla təmasa ehtiyacını simvolizə edir.
+[51] ANALYSIS_P: Beləliklə,
+[52] ANALYSIS_P: Bu təsvir, insanın Yaradanla mənəvi əlaqəsini, azanın ruhani yüksəlişini və tənha bir çağırışın əhəmiyyətini vurğulayır. Tənha fiqur, həm fərdi mənəvi yüksəlişi, həm də bütün insanlara yönəlik bir çağırışı təmsil edir. İşıq, insanın qaranlıqdan işığa, dünyəvilikdən mənəviyyata keçidini simvolizə edir. Təsvir, həm də insanın daxili sükunət tapmaq və mənəvi rahatlıq əldə etmək üçün Yaradanla birbaşa əlaqəyə ehtiyacını önə çıxarır.
+[53] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[54] ANALYSIS_P: Bu şeir, gecənin sakitliyində yaranan bir insanın Yaradanına doğru yüksələn duasını və ya çağırışını təsvir edir. Şeirdə zülmət qaranlıq, sükut və əbədiyyət kimi obrazlar yaradılır ki, bu da varlığın mütləq sakitliyini və mənəvi təkliyi əks etdirir. Lakin bu zülmət və sükut içində bir səs ucalır. Bu səs, insanın ruhunun Yaradanla birbaşa əlaqəsini simvolizə edir, sanki gecənin qaranlığını yararaq yüksəlir.
+[55] ANALYSIS_P: "Zülmət qaranlıqda uyuyur torpaq" - Bu sətir, varlığın sakitlik və qaranlıq içində yatdığını göstərir. Qaranlıq, həm də mənəvi bir vəziyyətin - ruhun təkliyinin simvolu ola bilər.
+[56] ANALYSIS_P: "Әtrafda bir sükut, bir əbədiyyət" - Burada ətraf mühitin tam bir sakitlik içində olduğu, sanki əbədi bir sükutun hökm sürdüyü təsvir olunur.
+[57] ANALYSIS_P: "Işıq tək gecənin köksün yararaq" - Bu sətir, zülmətin içindəki işığı və ya ruhani bir çağırışın qaranlığı yararaq yüksəlməsini göstərir.
+[58] ANALYSIS_P: "Ilk səs asimana qalxır nəhayət" - Gecənin səssizliyində yüksələn ilk insan səsi, bu mənəvi yüksəlişi və Yaradanla birbaşa əlaqəni simvolizə edir.
+[59] ANALYSIS_P: "O, sanki diksinən gözün pərdəsi" - Sanki yuxudan ayılan bir göz kimi, insanın ruhu da oyanır və bu oyanış Yaradanla təmasda öz əksini tapır.
+[60] ANALYSIS_P: "Ucalır tək, tənha bir insan səsi" - Tənha bir insanın səsi, mənəvi yolçuluğun fərdi bir təcrübə olduğunu vurğulayır.
+[61] ANALYSIS_P: "Qalxıb, yaradana doğru yüksəlir" - Bu sətir, insanın Yaradanla əlaqəsini və mənəvi yüksəlişini tamamilə simvolizə edir.
+[62] ANALYSIS_P: Müəllif ağacı möhkəmlik, davamlılıq və kiminləsə görüş ümidi simvolu kimi təsvir edir. Bu ağac obrazı sərt və narahat edən reallığa qarşı qoyulub: müharibə səsləri (“toplar guruldayır”), dağıdılmış kəndlər, “odlu ay” və “dərin sular”. Xaos və ağrı ilə dolu bu dünyada dəyişməyən və səbirlə gözləyən yalnız ağacdır.
+[63] ANALYSIS_P: Şeirin kulminasiyası son sətirdədir, burada müəllif göstərir ki, ağac “sənin kimidir”. Bu, insanla ağac arasında dərin bir əlaqəyə işarə edir: ikisi də bir dünyanın parçasıdır, ortaq hisslər və taleylə bağlanıblar. Bütün bəndləri bürüyən intizar hissi sadəcə ağaca deyil, həm də özünü və ya dəyərli bir şeyə dönüşü gözləyən insana aiddir.
+[64] ANALYSIS_P: Beləlikə,
+[65] ANALYSIS_P: Burada ağac yalnız simvol deyil, həm də dağıdıcı dünyada insanın və təbiətin birliyini, gözlənti və ümid içində güc tapmasını təmsil edən bir metaforadır.
+[66] H2: BİR DƏ O YERƏ QAYIDARAM MƏN
+[67] POEM (21 lines) SKIP
+[68] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[69] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[70] ANALYSIS_P: Bu təsvir müəllifin qayıtmaq istədiyi doğma Bakı şəhərinin qədim və müasir memarlığını bir araya gətirən bir mənzərəni göstərir.
+[71] ANALYSIS_P: Öndə Şirvanşahlar sarayının qədim daş tikililəri və məscidi görünməkdədir. Səmaya ucalan tək minarə sakitlik və əzəmət rəmzidir. Şəkilin mərkəzində Bakı Televiziya Qülləsi də görünür. Arxa planda isə paytaxtın müasir binalarından olan Alov Qüllələri görünür. Bu tarixi və müasir elementlərin bir araya gəlməsi, Bakının həm tarixi zənginliyini, həm də müasir inkişafını əks etdirir. Göy üzü isə günəşin batmasını xatırladan isti tonlarda təsvir edilib.
+[72] ANALYSIS_P: Beləliklə,
+[73] ANALYSIS_P: Bu şəkil Bakı şəhərinin keçmişi ilə gələcəyini, ənənəvi ilə müasiri, tarixi ilə texnolojini bir araya gətirən unikal bir mənzərəni təqdim etməklə şairin vətəninə, sevdiyi yerlərə olan ruh bağlılığına və iç dünyasına bir işarədir.
+[74] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[75] ANALYSIS_P: Bu şeir, təbiətin gözəlliklərini və insanın içindəki duyğularla harmoniya içində yaşadığı bir məkanı təsvir edir. Şairin təsvir etdiyi yerlər, zərif quşların nəğmələr oxuduğu, minarələrin göylərə uzandığı və əks-sədaların dağların qoynunda avazlandığı bir təbiət məkanıdır.
+[76] ANALYSIS_P: Təbiətin gözəlliyi: Quşların zümrüd kimi nəğmələr oxuması, minarələrin yüksəkliyindən səmanın cingilti ilə əks-səda verməsi, ayın nur saçması və səhər erkən bir şanapipiyin insan yanından keçməsi kimi detallar təbiətin poetik gözəlliyini vurğulayır.
+[77] ANALYSIS_P: Duyğusal bağlılıq: Şairin məhəbbət və sevinc hissləri ilə bağlı olan məkan təsvirləri, o yerlərə olan dərin bağlılığını göstərir. "Məhəbbətdir yuxunu pozan" ifadəsi, insanın duyğularının və sevdasının onu narahat etdiyini, lakin bu narahatlığın xoşbəxtliklə dolu olduğunu vurğulayır.
+[78] ANALYSIS_P: Ölümsüzlük arzusu: Şairin "o yerlərə qayıdaram, o yerdə qalaram, heç vaxt ölmərəm" ifadəsi, onun bu təbiət gözəlliklərində və sevdiyi məkanda ölümsüzlük tapmaq istədiyini bildirir. Bu, həm fiziki məkan, həm də ruhi bir yerdə əbədiyyət arzusu kimi görünür.
+[79] ANALYSIS_P: Beləliklə,
+[80] ANALYSIS_P: Bu şeir mənəvi yüksəlişi, təbiətlə və sevgi ilə olan harmoniya içərisində insanın əbədi həyat axtarışını təsvir edir. Təbiət mənzərələri vasitəsilə şair həm də ruhun daxili səyahətini, mənəvi oyanışını və sonda ölməzliyi tapma arzusunu ifadə edir.
+[81] H2: BİR GÜN SƏNDƏN HAMI DÖNSƏ
+[82] POEM (27 lines) SKIP
+[83] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[84] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[85] ANALYSIS_P: Bu təsvir bir kişi ilə bir qadının batmaqda olan günəşin şüaları altında bir uçurumun kənarında dayandığı səhnəni əks etdirir. Kişi hər iki əlini qadına doğru uzadaraq ona bəslədiyi sevgisini və dəstəyini ifadə edir.
+[86] ANALYSIS_P: Günəş səmanı qızılı və isti tonlara bürüyür. Günəş şüaları sevgi və ümidin bir simvolu kimi çıxış edir, səhnəyə sakitlik və dərinlik qatır. Kişi irəliyə doğru addım atır, hər iki əlini qadına uzadaraq ona yaxınlaşmağa çalışır. Bu, onun dəstəkləyici və sevgi dolu bir niyyətini göstərir. Qadın sanki qərarsızlıq içində dayanır, amma diqqətini kişinin uzanan əllərinə yönəldib. Onun bədən dili tərəddüd və eyni zamanda maraq ifadə edir.
+[87] ANALYSIS_P: Beləliklə,
+[88] ANALYSIS_P: Bu təsvir insanın ən ümidsiz anında belə bir ümid işığı tapa biləcəyini göstərir, emosional bağları, həyatın çətinliklərini və onların öhdəsindən gəlmək üçün lazım olan dəstəyi ifadə edir.
+[89] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[90] ANALYSIS_P: Bu şeir dərin emosionallıqla insani əlaqələrin əhəmiyyətini vurğulayan bir əsərdir.
+[91] ANALYSIS_P: Tərkedilmə və tənhalıq
+[92] ANALYSIS_P: "Bir gün səndən hamı dönsə, Desə «Getsin, dalınca daş"
+[93] ANALYSIS_P: Burada şair insanın tərk edilmə və tənhalıq hissi ilə üzləşməsindən danışır. Hamının ona qarşı çevrildiyini və heç kimin yanında olmadığını hiss edən bir şəxs üçün dərin bir üzüntü səhnəsi yaradılır.
+[94] ANALYSIS_P: Ümidsizlik və daxili yanğı
+[95] ANALYSIS_P: "Qəlbindəki atəş sönsə, Tənha qalsan, gözündə yaş…"
+[96] ANALYSIS_P: Bu misralar ümidsizlik və daxili yanğının söndüyü bir anı təsvir edir. İnsan təklik və hüznlə dolu bir vəziyyətə düşür.
+[97] ANALYSIS_P: Çıxılmazlıq və yadlıq
+[98] ANALYSIS_P: "Dünya sənə dar gələndə, Hamı səni yad biləndə,"
+[99] ANALYSIS_P: İnsanın dünyada öz yerini tapa bilməməsi və cəmiyyət tərəfindən qəbul edilməməsi, yadlaşdırılması burada vurğulanır. Bu, dərin psixoloji təzyiqi ifadə edir.
+[100] ANALYSIS_P: Ana səsi və uşaqlıq xatirələri
+[101] ANALYSIS_P: "Unudulsa körpəlikdən Yadda qalan ana səsi…"
+[102] ANALYSIS_P: İnsan ən çətin anlarında belə, uşaqlıq və ana məhəbbəti xatirələrinə sığınır. Ancaq bu xatirələr də unudulduqda, insan tamamilə boşluq içində qalır.
+[103] ANALYSIS_P: Ümidsizliyin sonunda dost əlini uzadır
+[104] ANALYSIS_P: "Bil ki, varam, uzatdığım, Əllərimə əlini ver!"
+[105] ANALYSIS_P: Burada şair bütün bu tənha və ümidsiz vəziyyətlərdə insanın əlindən tutan, onu yenidən həyata bağlayan bir dostun varlığını vurğulayır.
+[106] H2: GƏNCLİK VƏ QOCALIQ
+[107] P: Çılğın gəncliyimi salıram yada.
+[108] POEM (20 lines) SKIP
+[109] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[110] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[111] ANALYSIS_P: Bu təsvir gənclik və qocalıq arasındakı fərqləri əks etdirən iki hissədən ibarətdir, şeirə uyğun şəkildə həyatın keçiciliyini və hər iki mərhələnin fərqli gözəlliklərini vurğulayır:
+[112] ANALYSIS_P: Gənclik
+[113] ANALYSIS_UL
+  - Bir uşaq parlaq bir günəş altında, açıq havada sevinclə qollarını açaraq dayanıb.
+  - Rənglər canlı və işıqlıdır, çiçəklər və kəpənəklər həyatın dinamikliyini və təbiətin gözəlliyini simvolizə edir.
+  - Bu hissə qayğısız, enerjili və heyranlıq dolu gəncliyi təmsil edir, şeirdəki "çılğın gənclik" obrazına uyğun gəlir.
+[114] ANALYSIS_P: Qocalıq
+[115] ANALYSIS_UL
+  - Yaşlı bir insan sakitcə oturub, əlində dəyənək tutaraq təbiətə baxır.
+  - Bu hissənin rəngləri daha yumşaq və sakitdir, ağacların yüngül qarla örtülməsi qocalığın sakitliyini və düşüncəliliyini əks etdirir.
+  - Arxa planda günəşin batması, həyatın axırına işarə edərək, qocalıqda keçmişi düşünmək və həyatın dərin mənasını anlamaq mövzusunu vurğulayır.
+[116] ANALYSIS_P: Beləliklə,
+[117] ANALYSIS_P: Bu təsvir şeirin əsas mövzusunu — həyatın keçiciliyi, gənclikdəki qayğısızlıq və qocalıqda həyatın dərinliyini dərk etmək — çox gözəl bir şəkildə əks etdirir. Hər iki tərəfin fərqli atmosferi həyatın fərqli mərhələlərini təsvir edir, və hər bir anın qiymətini bilməyə çağırır.
+[118] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[119] ANALYSIS_P: Bu şeir, insan ömrünün gənclik illəri və yaşlılıq dövründəki həyatının mənası üzərində düşüncələri əks etdirir.
+[120] ANALYSIS_P: Gəncliyin Qayğısızlığı
+[121] ANALYSIS_UL
+  - "Çılğın gəncliyimi salıram yada." – Şair gənclik illərini xatırlayır və bu dövrün enerjisi, dinamikası vurğulanır.
+  - "Göy səma altında, bu gen dünyada, Necə də qayğısız bir cavan idim." – Bu misralar, geniş və sərhədsiz dünya hissini və qayğısız gənclik dövrünü təsvir edir. Gənclikdə həyatın çətinliklərini və dərin mənasını dərk etməməyi vurğulayır.
+[122] ANALYSIS_P: Zamanın Axıcılığı və Onun Dəyərləndirilməsi
+[123] ANALYSIS_UL
+  - "Həzin bir ahəngi vardı zamanın, Qədrini bilməzdim onda hər anın." – Gənclik illərində zamanın necə sürətlə və sakit axıb keçdiyi, anların qədrinin bilinməməsi üzərində dayanılır.
+  - "Göz yaşı tökmədən köçüb gedərdim..." – Bu misra, gənclik illərində yaşanan dərdsizlik və ölümdən qorxmamağı təsvir edir.
+[124] ANALYSIS_P: Yaşlılıq və Həyatın Mənası Üzərində Düşüncələr
+[125] ANALYSIS_UL
+  - "Indi əldən salıb qocalıq məni, Düşünüb, anıram olub, keçəni." – Qocalıq dövründə keçmişin qiymətini anlamaq və onu xatırlamaq vurğulanır. Yaşlılıq, həyatın keçiciliyini daha aydın dərk etməyə gətirib çıxarır.
+  - "Həyatın mənası nə dərin imiş, O, keçən illərim nə şirin imiş." – Yaşlılıqla birlikdə, keçmişin şirin xatirələrə çevrildiyi və həyatın mənasının daha dərindən başa düşüldüyü qeyd olunur.
+[126] ANALYSIS_P: Həyatın İndiki Anını Qavrama və Qəbul Etmə
+[127] ANALYSIS_UL
+  - "Hər baxış, hər bir an mənə təsəlli, Tuturam həyatdan indi cüt əlli." – Bu misralar, indi həyatın hər anını dəyərləndirməyə və mövcudluqdan təsəlli tapmağa çalışıldığını göstərir. Şair, həyatın indiki anından daha çox yapışdığını və hər bir anın vacibliyini dərk etdiyini vurğulayır.
+[128] ANALYSIS_P: Beləliklə,
+[129] ANALYSIS_P: Bu şeir, insanın gənclik illərində qayğısızlığı və yaşlılıqda həyatın mənası üzərində düşüncələri arasında bir müqayisədir. Həyatın keçici olduğunu və hər mərhələdə onun dəyərləndirilməsinin vacibliyini önə çəkir. Gəncliyin dinamikası və yaşlılığın müdrikliyi arasında bir tarazlıq qurmağa çalışır.
+[130] H2: HƏKİM ÇAĞIRMAQ
+[131] POEM (30 lines) SKIP
+[132] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[133] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[134] ANALYSIS_P: Bu təsvirdə müxtəlif çağırış səhnələri göstərilir: bir tərəfdə təcili yardım, taksi, polis, yağıntı və digər gündəlik çağırışlarla əlaqəli səhnələr.
+[135] ANALYSIS_P: Digər tərəfdə isə səma və bir insanın qəlbindən işıq saçan bir sevgi və mənəviyyat simvolu görünür, bu da Tanrı və məhəbbətin yalnız səmimiyyətlə əldə edilə biləcəyini göstərir.
+[136] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[137] ANALYSIS_P: Bu şeir insanın çağırışla əldə edə biləcəyi müxtəlif şeyləri təsvir edir, amma dərin mənəvi dəyərlərin - Tanrının və məhəbbətin - çağırışla əldə olunmayacağını vurğulayır.
+[138] ANALYSIS_P: Çağırışla əldə edilənlər
+[139] ANALYSIS_P: "Həkim çağırmaq olar, Təcili yardım gələr."
+[140] ANALYSIS_P: İnsanın fiziki problemlərini həll etmək üçün həkim və ya təcili yardım çağırmaq mümkünlüyünü göstərir.
+[141] ANALYSIS_P: "Taksi çağırsan əgər, Gəlib aparar səni."
+[142] ANALYSIS_P: Praktik ehtiyaclar üçün çağırışlarla xidmətlərdən faydalanmaq mümkündür.
+[143] ANALYSIS_P: "Yağış da çağırarsan, Təbiətə can verər."
+[144] ANALYSIS_P: Yağışın çağırılması ilə təbiətin yenidən canlandığı metaforası ilə təbiətin möcüzəsi vurğulanır.
+[145] ANALYSIS_P: "Polis də çağırarsan, Qoymaz çəkəsən zərər."
+[146] ANALYSIS_P: Polis çağıraraq təhlükədən qorunmaq mümkünlüyü qeyd edilir.
+[147] ANALYSIS_P: Çağırışla əldə edilməyənlər
+[148] ANALYSIS_P: "Bir Tanrı, bir məhəbbət, Gəlməz sifariş ilə!"
+[149] ANALYSIS_P: Beləliklə,
+[150] ANALYSIS_P: Şeir ən dərin və ən dəyərli mənəvi təcrübələrin, sevgi və Tanrı ilə olan əlaqənin, sifarişlə və ya çağırışla əldə edilə bilməyəcəyini vurğulayır. Bu dəyərlər səmimi bir qəlbdən və dərin mənəvi bağlılıqdan qaynaqlanır.
+[151] H2: İNSAN OLAQ
+[152] POEM (37 lines) SKIP
+[153] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[154] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[155] ANALYSIS_P: Bu təsvir, nəsillər arasında hörmət və bağlılığı, ailəvi dəyərləri və təbiətlə harmoniyada yaşamağı vurğulayan səmimi və ilham verici bir səhnədir. Təsviri detallarla təhlil edək:
+[156] ANALYSIS_P: Təsvirin mərkəzində gənc bir insanın yaşlı bir şəxsə kömək etməsi göstərilir. Gənc şəxs yaşlı adamın əlindən tutaraq ona yol göstərir, bu isə gənclərin yaşlılara qarşı göstərdiyi hörmət və diqqəti simvolizə edir. Bu mənzərə, nəsillər arasındakı sevgi və qayğının gücünü vurğulayır.
+[157] ANALYSIS_P: Təsvirin sağ və sol tərəfində oturmuş digər ailə üzvləri və dostlar səmimi ünsiyyət halında göstərilib. Bu, ailəvi birlik və yaxın dostluq əlaqələrinin təməlini təşkil edən dəyərləri əks etdirir. İnsanların bir-birilərinə göstərdikləri sevgi və dəstək, cəmiyyətin sağlam və güclü olmasının əsasıdır.
+[158] ANALYSIS_P: Təsvir təbiət içində, ağacların və çiçəklərin əhatəsində yaradılmışdır. Çiçəklər və yaşıllıqlar təbiətin təmizliyini və gözəlliyini simvolizə edir. Quşlar və dovşanlar kimi kiçik heyvanların iştirakı isə səhnəyə harmoniya qatır. Təbiətlə insanın bir-birinə yaxın və ahəngdar bir şəkildə yaşamasını vurğulayan bu mənzərə, sakitlik və rahatlıq hissi yaradır.
+[159] ANALYSIS_P: Günəş işığı ağacların arasından süzülərək təsvirə isti bir parıltı verir. Bu işıq, insanlara və ətrafdakı təbiətə canlılıq və ümidi simvolizə edir. Günəş işığının belə parlaq və isti olması, xoş niyyət və pozitiv dəyərlərin dünyamıza işıq saçdığına dair bir mesaj verir.
+[160] ANALYSIS_P: Təsvir, həm ailə içində, həm də təbiət və insan arasındakı harmoniyanı vurğulayır. Hər kəsin bir-birinə hörmət və sevgi ilə yanaşdığı, təbiətin bu insanlara sakitlik gətirdiyi bir səhnə yaradılmışdır. Bu isə həm insani dəyərləri, həm də təbiətlə dostca yaşamanın əhəmiyyətini göstərir.
+[161] ANALYSIS_P: Gənc insanların yaşlılara göstərdiyi qayğı və ailə münasibətləri, cəmiyyətin dəyərlərinin nəsildən-nəslə ötürülməsinin vacibliyini vurğulayır. Bu təsvir, uşaqlara və gənclərə sevgi, hörmət və qayğı ilə dolu bir dünyanın əsasını qoymağın önəmini göstərir.
+[162] ANALYSIS_P: Beləliklə,
+[163] ANALYSIS_P: Bu təsvir, insanlıq, ailəvi birlik, təbiət sevgisi və yaşlılara hörmət kimi dərin dəyərləri əks etdirir. Təsvir, gəncləri ailə və cəmiyyət içində dəyərlərə sadiq olmağa və nəsillər arasında harmoniyanı qorumağa təşviq edir. Bu, insan olmanın mahiyyətini və həyatda nəcib dəyərlərin nə qədər önəmli olduğunu vurğulayan çox dərin və səmimi bir əsərdir.
+[164] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[165] ANALYSIS_P: Bu şeir yaşlılara hörmətin vacibliyini, nəsildən-nəslə ötürülən dəyərli ənənələri və insan olmağın mahiyyətini vurğulayan bir əsərdir. Şair oxucunu müdriklik, mərhəmət və sevgi kimi dəyərlərə yönəldir və yaşlılara hörmətin insanlığın ən əsas xüsusiyyətlərindən biri olduğunu göstərir.
+[166] ANALYSIS_P: Şeir "Qocalara hörmət elə!" deyimi ilə başlayır və bu ifadə əsərin əsas mövzusunu formalaşdırır. Şair qədimdən gələn bu müdrik kəlamı vurğulayaraq, yaşlılara hörmətin sadəcə bir qayda deyil, dərin bir insanlıq borcu olduğunu ifadə edir. Bu dəyərin əsrlər boyunca nəsildən-nəslə keçdiyi qeyd edilir, bu da hörmətin toplumlarda nə qədər köklü bir ənənə olduğunu göstərir.
+[167] ANALYSIS_P: Şair yaşlı insanların ürəklərinin kövrək olduğunu və onlara acı sözlərlə zərər verilməməsi gərəkdiyini bildirir. Bu, yaşlılara qarşı daha həssas və mərhəmətli davranmağın vacibliyini vurğulayan bir çağırışdır. Şair insanları diqqətli olmağa və yaşlıları incitməməyə təşviq edir.
+[168] ANALYSIS_P: Şeirdə "Öyünmə ki, sən cavansan" misrası ilə gənclərə xatırlatma edilir. Bu misra, gənclərin öz güclərinə və cavanlıqlarına güvənməmələri, çünki zaman keçdikcə onların da qocalacaqlarını xatırladır. Bu, gənclərə müdriklik qazandırmağı və onların yaşlılara hörmətlə yanaşmasını öyrətməyi məqsəd qoyur.
+[169] ANALYSIS_P: Şair, təbiətdə bala və ana arasındakı müqəddəs məhəbbətdən ibrət almağı təklif edir. Təbiətdə olan sevgi və bağlılıq, insanlara təbiətdən bir dərs kimi göstərilir. Bu, sevgi və bağlılığın yalnız insanlar arasında deyil, bütün canlılarda olduğunu və bu dəyərin təbiətin özündə belə müqəddəs bir dəyər kimi qəbul edildiyini ifadə edir.
+[170] ANALYSIS_P: Şair, sevgi və hörmət ənənəsinin uşaqlıqdan gəlməsinin vacibliyini vurğulayır. Uşaqlara kiçik yaşdan yaşlılara hörmət və dəstək göstərməyi öyrətmək, onların böyüyəndə layiqli bir insan olmaları üçün əsasdır. Bu, həm fərdi inkişafı, həm də cəmiyyətin gələcək rifahını təmin edir.
+[171] ANALYSIS_P: Şeir "İnsan olaq!" çağırışı ilə sona çatır. Bu ifadə, sadəcə bioloji olaraq deyil, mənəvi və əxlaqi dəyərlərə sahib bir varlıq olmağı vurğulayır. İnsan olmaq, yalnız yaşlılara hörmət göstərməklə deyil, eyni zamanda cəmiyyətə layiqli bir fərd kimi töhfə verməklə mümkün olur.
+[172] ANALYSIS_P: Beləliklə,
+[173] ANALYSIS_P: Bu şeir, yaşlılara hörmət, sevgi və diqqətin insanlıq borcu olduğunu dərin mənalarla ifadə edir. İnsan olmağın təkcə cismən deyil, əxlaqi dəyərlərlə zənginləşdiyini göstərir. Şair həm gəncləri, həm də bütün insanları müdriklik, mərhəmət və sevgi ilə dolu bir dünya yaratmağa çağırır. Şeir, nəsillər boyu qorunub saxlanılması vacib olan dəyərləri oxuculara xatırladaraq, insanlıq dəyərlərinin əbədi olduğunu vurğulayır.
+[174] H2: İŞIĞIN KÖLGƏSİ YOXDUR
+[175] P: İşığın kölgəsi yoxdur.
+[176] P: Kölgənin kütləsi yoxdur.
+[177] P: Kütlənin işığı yoxdur.
+[178] P: İşığın yoxluğu qaranlıqdır.
+[179] P: İşığın əks olunması - kütlədən kölgə.
+[180] P: Məkan olmadan vaxt da yoxdur.
+[181] P: Zaman olmasa, işıq da olmaz.
+[182] P: Və işığın kölgəsi yoxdur.
+[183] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[184] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[185] ANALYSIS_P: Bu təsvir, işıq, kölgə, kütlə və zaman-məkan arasındakı əlaqəni abstrakt və minimalist bir şəkildə əks etdirir.
+[186] ANALYSIS_P: İşığın Mənbəyi və Yayılması: Təsvirin mərkəzində yumşaq bir işıq mənbəyi var ki, bu işıq ətrafına yayıldıqca tədricən solğunlaşır və yox olur. İşığın kölgə yaratmadan ətrafı işıqlandırması, onun saf təbiətini və kütlənin olmamasını simvolizə edir. Bu, işığın özü ilə gətirdiyi "yoxluq" anlayışını əks etdirir.
+[187] ANALYSIS_P: Şəffaf və Üzən Formalar: Təsvir boyunca şəffaf və üzən formalardan istifadə edilib ki, bu da kütlənin tam bir forma daşımadığını göstərir. Bu formalar, sanki fiziki kütləni və ya məkandakı bir maddəni təmsil edir, lakin onlar tamamlanmamış və qeyri-müəyyəndir. Bu yanaşma kütlənin və zaman-məkanın nisbi olduğunu, konkret bir varlıq və ya forma daşımadığını vurğulayır.
+[188] ANALYSIS_P: İşıqdan Qaranlığa Keçidlər: Təsvir işıqdan qaranlığa doğru gradientlər yaratmaqla tədricən solğunlaşır. İşıqdan uzaqlaşdıqca qaranlıq daha güclü olur, bu da işığın yoxluğunu qaranlıq olaraq təsvir edir. Bu keçid, işıq və kölgənin, varlıq və yoxluğun bir-birindən asılı olduğunu simvolizə edir.
+[189] ANALYSIS_P: Məkansızlıq və Zamansızlıq Hissi: Təsvirin ümumi quruluşu geniş, boş bir məkanı əks etdirir və hər hansı bir müəyyən sərhəd və ya çərçivə yoxdur. Məkansızlıq hissi, zamansızlıqla əlaqəlidir və bu, işıq və kütlənin məkan və zaman olmadan var ola bilməyəcəyini simvolizə edir. Beləliklə, təsvir fəlsəfi bir dərinlik yaratmaq üçün məkansızlıq hissindən istifadə edir.
+[190] ANALYSIS_P: Minimalist və Düşündürən Atmosfer: Təsvirin minimalist tərzi sadəliyə baxmayaraq, fəlsəfi düşüncələrə yönəldir. İşığın, kölgənin və məkansız formaların bir araya gəlməsi düşüncəyə dərinlik qatır. Bu, insanı zaman, məkan, varlıq və yoxluq kimi anlayışları dərk etməyə dəvət edən sakit bir atmosfer yaradır.
+[191] ANALYSIS_P: Beləliklə,
+[192] ANALYSIS_P: Bu təsvir, işığın, kölgənin, kütlənin və zaman-məkan anlayışının bir-birinə bağlılığını və onların abstrakt təbiətini minimalist bir şəkildə təqdim edir. İşıq və kölgə, varlıq və yoxluq arasındakı əlaqəni vurğulayaraq fəlsəfi bir baxış yaradır. Təsvir, düşüncəli bir dərinliklə doludur və insanı varlıq və məkanın sərhədləri haqqında düşünməyə vadar edir.
+[193] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[194] ANALYSIS_P: Bu mətn fiziki və fəlsəfi anlayışlar üzərində qurulmuş bir düşüncə təhlilidir. Mətnin hər bir ifadəsi fizika qanunlarını və metafizik mənaları birləşdirərək, varlıq və yoxluq, işıq və kölgə, məkan və zaman arasındakı əlaqələri dərin fəlsəfi şəkildə tədqiq edir.
+[195] ANALYSIS_P: "İşığın kölgəsi yoxdur." Bu ifadə, işığın təbiətini anlamağa yönəlmişdir. Fiziki mənada, kölgə, bir obyektin işığın qarşısını kəsdiyi zaman yaranır. Lakin işıq özü maddi bir obyekt olmadığı üçün onun kölgəsi də yoxdur. Eyni zamanda, işıq metaforik olaraq həqiqət və bilik mənbəyi kimi qəbul edilir və "həqiqətin kölgəsi yoxdur" ifadəsini simvolizə edir.
+[196] ANALYSIS_P: "Kölgənin kütləsi yoxdur." Kölgə işığın yoxluğudur və maddi deyil, bu səbəbdən onun kütləsi yoxdur. Kölgə, yalnız işığın qarşısının kəsilməsi nəticəsində yaranan bir görüntüdür. Bu ifadə maddi olan və olmayan, real və illüziya arasında olan fərqləri vurğulayır. Eyni zamanda, kölgə hər hansı bir fiziki varlıq kimi qəbul edilə bilməz, çünki onun maddi təbiəti yoxdur.
+[197] ANALYSIS_P: "Kütlənin işığı yoxdur." Kütlə fiziki obyektləri təmsil edir və öz-özlüyündə işıq saçmaz. İşıq, yalnız enerji mənbəyindən gəlir və kütlə yalnız işığın varlığı ilə görünə bilər. Bu ifadə, işığın bilik və anlayış olaraq qəbul edildiyi bir kontekstdə, maddi varlığın öz-özünə həqiqət və ya bilik mənbəyi ola bilmədiyini simvolizə edə bilər.
+[198] ANALYSIS_P: "İşığın yoxluğu qaranlıqdır." İşıq yox olduqda qaranlıq yaranır, çünki qaranlıq, işığın yoxluğu olaraq təyin olunur. Bu ifadə həm də bilik və anlayışın yoxluğunun "qərarsızlıq" və ya "cahillik" olaraq görülə biləcəyini simvolizə edir. Qaranlıq, işığın olmadığı yerdə var olur və işıq gələndə yox olur.
+[199] ANALYSIS_P: "İşığın əks olunması - kütlədən kölgə." İşıq bir kütlə ilə qarşılaşdığında əks olunur və nəticədə kölgə yaranır. Bu ifadə, işıq və kütlə arasındakı əlaqəni fiziki olaraq təsvir edir. Eyni zamanda, işıq bir cisimlə qarşılaşdığında onun yoxluğunu ifadə edən kölgənin yaranmasını vurğulayır.
+[200] ANALYSIS_P: "Məkan olmadan vaxt da yoxdur." Məkan və zaman bir-biri ilə əlaqəli iki anlayışdır. Müasir fizika anlayışında zaman məkanın ayrılmaz bir hissəsidir. Bu ifadə, zamanın varlığının məkanın varlığı ilə bağlı olduğunu vurğulayır və əgər məkan yoxdursa, zamanın da təsiri olmaz.
+[201] ANALYSIS_P: "Zaman olmasa, işıq da olmaz." İşıq zaman və məkan daxilində hərəkət edən bir dalğadır. Zaman olmadan işığın varlığından danışmaq mənasız olur, çünki işıq sürəti ilə müəyyən edilir və zaman anlayışı olmadan bu sürət anlamını itirir.
+[202] ANALYSIS_P: "Və işığın kölgəsi yoxdur." Mətn işıqla başladı və yenidən işığa qayıdır, işığın kölgəsi olmadığı ilə tamamlanır. Bu ifadə, işığın öz-özlüyündə bir mənbə olduğunu, yoxluğunun isə yalnız qaranlıq yarada biləcəyini simvolizə edir. İşıq həqiqət, bilik və varlıq mənbəyidir və ona kölgə düşməz.
+[203] ANALYSIS_P: Beləliklə,
+[204] ANALYSIS_P: Bu mətn fiziki anlayışlarla fəlsəfi düşüncəni birləşdirərək, varlıq və yoxluq, işıq və qaranlıq, məkan və zaman arasındakı əlaqələri araşdırır. İşıq həqiqəti və biliyi, qaranlıq isə onun yoxluğunu simvolizə edir. Məkan və zaman isə varlığın əsas tərkib hissələri kimi təsvir olunur. Mətn, həm fiziki qanunları, həm də həyatın və varlığın mahiyyətini dərindən düşünməyə dəvət edən simvolik bir ifadədir.
+[205] H2: KAĞIZDAN ATA
+[206] POEM (20 lines) SKIP
+[207] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[208] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[209] ANALYSIS_P: Bu təsvir, uşağın atasına olan dərin həsrətini və ananın ürəyindəki kədəri çox təsirli və emosional bir şəkildə əks etdirir. Detalları ilə təhlil edək:
+[210] ANALYSIS_P: Təsvirin mərkəzində, uşaq kağızdan düzəltdiyi ata fiqurunu əlində tutaraq ona baxır. Bu, uşağın atasının fiziki yoxluğunu necə öz təxəyyülü ilə doldurmağa çalışdığını göstərir. Uşaq fiqura həm sevgi, həm də ümidlə baxır, sanki onun atası yanındaymış kimi təsəlli tapır.
+[211] ANALYSIS_P: Anası uşağın yanında oturub, onu səssizcə izləyir. Onun üzündə həm dərin bir kədər, həm də oğluna qarşı incə bir sevgi var. Ana uşağını təsəlli etməyə çalışır, lakin öz içindəki kədəri də gizlədə bilmir. Bu, ananın çətin dövrdə uşağına dəstək olma cəhdini və öz içindəki hissləri boğmağa çalışdığını göstərir.
+[212] ANALYSIS_P: Təsvir, sadə və isti bir otaqda qurulub. Bu sadəlik, ailənin maddi vəziyyətinin çətin ola biləcəyini, lakin içlərindəki sevgi və birlik hissinin onları güclü tutduğunu göstərir. Otaqdakı zəif işıqlandırma, payız axşamının sakit və kədərli atmosferini vurğulayır. İşıq mənbəyi, sanki bu iki insanın ətrafında bir sevgi və isti dairə yaradır.
+[213] ANALYSIS_P: Pəncərədən görünən payız mənzərəsi, qırmızı yarpaqlar və bulanıq hava, qışın yaxınlaşdığını və çətin günlərin gəldiyini bildirir. Payız, həsrət və yoxluğun simvolu olaraq təsvirin atmosferinə dərinlik qatır. Uşağın atasının yoxluğu və evin soyuqluğu bu görüntü ilə əlaqələndirilir.
+[214] ANALYSIS_P: Ümumilikdə, təsvir sevgi, həsrət və kədər hissini bir araya gətirir. Uşaq atasını əvəz edən kağız fiquru ilə təsəlli tapmağa çalışarkən, ana öz kədərini və oğluna olan sevgisini səssizcə ifadə edir. Təsvir çox duyğusal və düşündürücüdür, xüsusilə müharibə və ya çətin zamanlarda uşaqların və ailələrin yaşadığı daxili mübarizələri əks etdirir.
+[215] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[216] ANALYSIS_P: Bu şeir bir uşağın atasına olan həsrətini, qış aylarının soyuq və kədərli atmosferində ananın içindəki acı ilə birlikdə təsvir edir. Şeir uşağın təmiz və saf düşüncələrindən doğan yaradıcı bir çıxış yolunu – kağızdan ata düzəltməyi – önə çıxarır. Bu, eyni zamanda, uşağın öz kiçik dünyasında atasının yoxluğunu necə kompensasiya etməyə çalışdığını və öz təsəllisini necə tapdığını göstərir.
+[217] ANALYSIS_P: Şeirin ilk misralarında uşaq, atasının nə vaxt gələcəyini soruşur. Bu sual, onun atasına olan dərin həsrətini və ümidsiz gözləntisini ifadə edir. Ananın cavabsız qalması və onun içindəki qəhər uşağın məsum sualı qarşısında onun gücsüzlüyünü göstərir.
+[218] ANALYSIS_P: Uşağın sualı qarşısında ananın kövrəlib ağlaması şeirə dramatik bir təsir qatır. Bu, ananın içindəki acını və çətin günlərdə uşağa təsəlli vermək istəyini göstərir. Ana həm uşaq üçün güclü qalmağa çalışır, həm də içindəki qəhəri boğur, bu da şeirin emosional dərinliyini artırır.
+[219] ANALYSIS_P: Uşağın kağızdan ata düzəltmə təklifi, onun sadə, lakin güclü təsəvvür gücünü göstərir. Kağızdan olsa da, onun üçün bu ata həm cəsurdur, həm də pəhləvan. Uşaq atasının fiziki yoxluğunu öz təsəvvürü ilə doldurmağa çalışır və bu kağız ata onun üçün simvolik bir təsəlli rolunu oynayır.
+[220] ANALYSIS_P: Kağızdan düzəldilmiş ata simvolik olaraq, uşağın atasının boşluğunu doldurmaq cəhdini göstərir. Kağızdan atanın da “cəsur” və “pəhləvan” olması fikri, uşağın atasına olan sevgi və hörmətini ifadə edir, onun üçün atasının nə qədər dəyərli olduğunu vurğulayır.
+[221] ANALYSIS_P: Şeir, eyni zamanda, müharibə və ya çətin dövrlərdə atasız böyüyən uşaqların yaşadığı acı və kədəri, onların iç dünyalarını çox incə və təsirli bir dillə əks etdirir. Bu şeir vasitəsilə, uşaq dünyasının sadəliyində gizlənmiş böyük həsrət və sevgi dərindən hiss etdirilir.
+[222] H2: MƏNİ TƏRK ELƏMƏ
+[223] POEM (18 lines) SKIP
+[224] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[225] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[226] ANALYSIS_P: Bu təsvir, mənəvi güc, ümid və ilahi dəstəyi simvolizə edir. İşığın və şəffaf figurların istifadəsi təsvirə dərin mənəvi və ruhani bir məna qatır. Təsviri analiz edərək daha detallı baxaq:
+[227] ANALYSIS_P: Təsvirin mərkəzində, işıqlı pəncərə qarşısında dayanmış bir qadın fiquru var. Qadının yuxarıya baxması, onun ilahi bir qüvvəyə və ya qoruyucu bir mələyə yönəldiyini, daxili güc və dəstək axtardığını göstərir. Bu baxış, insanın həyatının çətin anlarında mənəvi dəstək və rəhbərlik axtarışını simvolizə edir.
+[228] ANALYSIS_P: Pəncərədən yuxarıdan aşağıya yayılan və mələyə bənzər bir şəffaf fiqur işıq saçır. Mələk təsviri, mənəvi qoruma və dəstək kimi qəbul edilir. Bu işıqlı varlıq, qadının qoruyucusu kimi təqdim olunub və ona bir işıq, rahatlıq və ümid bəxş edir. Mələyin qanadları geniş şəkildə açılıb, bu da onun güclü və şəfqətli bir varlıq olduğunu vurğulayır.
+[229] ANALYSIS_P: İşıq təsvirin əsas elementidir və onun mənəvi təsirini artırır. İşığın hər tərəfə yayılması, sanki bütün məkanı əhatə edir və qadının içindəki ümid hissini gücləndirir. Bu işıq, həyatda güclü bir daxili işıq və ümid mənbəyi tapmaq anlamını daşıyır. İşığın istiliyi və parıltısı təsvirə optimist bir atmosfer qatır.
+[230] ANALYSIS_P: Təsvirin arxa planında geniş pəncərələr var, bu da məkana genişlik hissi verir. Geniş pəncərələr, ilahi dünyaya açılan bir qapı kimi təsvir edilir və qadının mənəvi dünyaya daha yaxın olduğu bir məkan yaradır. Bu açıq məkan hissi, qadının içindəki azadlıq və ruhani yüksəlişi simvolizə edir.
+[231] ANALYSIS_P: Təsvir, insanın mənəvi bağlarını və daxili gücünü simvolizə edir. Mələk, yalnız bir qoruyucu qüvvə deyil, həm də daxili təskinlik və sakitlik mənbəyidir. Bu fiqur, çətin anlarda insanın içindəki işığı və mənəvi rəhbərliyi tapmaq istəyini əks etdirir.
+[232] ANALYSIS_P: Təsvir bütövlükdə sülh, ümid və daxili gücün təzahürüdür. İşığın hər tərəfə yayılması və qadının yuxarıya baxışı ilə yaradılan atmosfer, daxili sakitlik və mənəvi yüksəliş hissi verir. Bu, insanın qaranlıqda işığı axtardığını və daxili gücünü bərpa etməyə çalışdığını simvolizə edir.
+[233] ANALYSIS_P: Beləliklə,
+[234] ANALYSIS_P: Bu təsvir, çətin anlarda mənəvi dəstək və rəhbərlik axtaran bir insanın ruh halını gözəl şəkildə ifadə edir. Qoruyucu mələk fiquru və işıq təsviri, ümid, dəstək və ilahi güvən hissini oyadır. İşığın yayıldığı geniş məkan, ruhun azadlığı və mənəvi yüksəlişin mümkünlüyünü vurğulayan optimist və ruhani bir atmosfer yaradır.
+[235] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[236] ANALYSIS_P: Bu şeir, bir insanın həyatın çətinlikləri və uğursuzluqları ilə üzləşərkən daxili dərdlərini və xilaskara (mələyi) olan müraciətini ifadə edir. Şair, özünü xilaskara (bəlkə də, Allah və ya ruhani bir qüvvə) layiq görmədiyini vurğulasa da, onun dəstəyinə ehtiyac duyur. Bu müraciət, insani zəiflik və kömək axtarışının dərinliyini göstərir.
+[237] ANALYSIS_P: Şair şeirin hər bəndində xilaskar mələyə müraciət edir. Bu, onun üçün ümid və təsəlli mənbəyidir. Şair özünü bu mələyə layiq görmür, lakin çətin günlərində ondan ayrılmamağı diləyir. Bu, insanın ən çətin anlarında belə bir ümid axtardığını və yardım dilədiyini göstərir.
+[238] ANALYSIS_P: Şair, uğur qazandığı düşüncələrinin boş çıxdığını, gözləntilərinin yerinə yetmədiyini və qəlbində bir kədər olduğunu etiraf edir. Bu, insani zəifliyi və özünü dərk etmə prosesini göstərir. Şair öz keçmişinə nəzər salır, lovğalanmadığını qeyd edir və daxili hesabat verir.
+[239] ANALYSIS_P: Şair "altıncı hiss" ifadəsini istifadə edərək duyğularının gücünü və önəmini vurğulayır. Bu hiss, dərin instinktlərin, intuisiya və içgüdünün bir simvoludur və insanın daxili təlatümlərini təsvir edir. Leysan və yandırıcı odlar kimi obrazlarla şair duyğularının şiddətini və qarışıqlığını göz önünə sərir.
+[240] ANALYSIS_P: Şairin həyatın zərbələri qarşısında dayanmaq istəyi və bu zərbələri qarşılayarkən kömək axtarması, çətinliklərdən qurtulmaq istəyini ifadə edir. "Ölüm gözləməsin qarşısında mən əyiləm" misrası ilə şairin inadkarlığını və əyilməz ruhunu görürük, amma yenə də kömək axtarır.
+[241] ANALYSIS_P: Hər bəndin sonunda şair, xilaskar mələyə, yəni ümid mənbəyinə tərk edilməməyi xahiş edir. Bu ifadə, həyatın bütün çətinliklərinə baxmayaraq, içində bir umid işığı tapmaq istəyini və həmin xilaskara olan ehtiyacını vurğulayır. Şair xilaskar mələyə səslənərək bir növ təsəlli və dəstək axtarır.
+[242] ANALYSIS_P: Beləliklə,
+[243] ANALYSIS_P: Bu şeir, insanın həyatda yaşadığı çətinliklər, kədər, qorxu və ümid dolu duyğuları gözəl bir şəkildə bir araya gətirir. "Xilaskar mələk" obrazı, sevilən və güclü bir dəstək simvolu olaraq ön plandadır. Şairin duyğusal mübarizəsi, mələyin köməyinə olan ehtiyacı, eyni zamanda, insanların mübarizədəki zəiflikləri və bir-birinə olan bağlılıqları barədə dərindən düşündürür. Bu, sevgi, qayğı və insanlıq dəyərlərinin əhəmiyyətini bir daha vurğulayan bir əsərdir.
+[244] H2: MƏNİM ŞƏHİDLƏRİM
+[245] POEM (23 lines) SKIP
+[246] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[247] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[248] ANALYSIS_P: Bu təsvir, Azərbaycan şəhidlərinin xatirəsinə ehtiram məqsədilə yaradılmış güclü simvolizmlə dolu bir səhnədir.
+[249] ANALYSIS_P: Təsvirin yuxarı hissəsində Azərbaycanın üçrəngli bayrağı dalğalanır və bütün təsvirə qürur hissi verir. Bayraq səhnənin mərkəzindədir və ölkənin birliyini simvolizə edir.
+[250] ANALYSIS_P: Gecə səması və arxada ucalan dağlar Qarabağ bölgəsinin əzəmətini və azadlığını ifadə edir. Ay da Azərbaycan bayrağındakı aypara ilə uyğunluq təşkil edərək, milli simvolizm əlavə edir.
+[251] ANALYSIS_P: Aşağı hissədə qırmızı lalələrdən ibarət bir sahə görünür. Lalələr adətən şəhidlərin qanını və xatirəsini simvolizə edir. Burada lalələr şəhidlərin xatirəsinə hörmət göstərmək məqsədilə təsvir edilib.
+[252] ANALYSIS_P: Lalə tarlasının arxasında siluet formasında dayanmış əsgərlər görünür. Onlar sükut içində bayrağa salam verir və şəhidlərin şücaətini təmsil edirlər. Bu əsgərlər həm itirilən həyatları, həm də ölkə uğrunda verilən qurbanları simvolizə edir.
+[253] ANALYSIS_P: Əsgərlərin arxasında yerləşdirilmiş bir neçə Azərbaycan bayrağı səhnəyə əlavə qürur və milli birlik hissi qatır.
+[254] ANALYSIS_P: Təsvirin rəngləri sakit və ehtiramlıdır. Mavi, qırmızı və yaşıl rənglərin kombinasiyası Azərbaycan bayrağını xatırladır və təsvirə simvolik güc qatır.
+[255] ANALYSIS_P: Bu təsvir Azərbaycan şəhidlərinin xatirəsini yad etməyə və Qarabağın azadlığı üçün verilən qurbanları simvolizə etməyə yönəlmiş dərin və emosional bir əsərdir.
+[256] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[257] ANALYSIS_P: Bu şeir, vətən uğrunda həyatını qurban verən şəhidlərə, azadlıq uğrunda gedən mübarizəyə və torpaq sevgisinə dair dərin və emosional bir ifadədir. Şair bu şeirdə şəhidlərimizin vətən uğrunda göstərdiyi fədakarlığı və onların canlarını fəda etdiyi müqəddəs torpaqları yad edir.
+[258] ANALYSIS_P: Şeir "bu payız müharibə dağlardan daşı tökdü" misrası ilə başlayır və müharibənin yaratdığı sarsıntını və dağıntını təsvir edir. Dağlardan düşən daşlar sanki müharibənin izlərini, onun dəhşətlərini əks etdirir. Savaş sona çatdıqda isə sakitlik çökür, bu da müharibədən sonra yaranan boşluğu, sükut və kədəri simvolizə edir.
+[259] ANALYSIS_P: Şair şəhid olan dostunu xatırlayır və onun nurlu gələcək, azadlıq uğrunda döyüşdüyünü vurğulayır. Bu, şəhidlərin yüksək mənəvi dəyərlər üçün fədakarlıq göstərdiklərini, onlara duyulan dərin hörmət və minnətdarlığı əks etdirir. Şair dostunu vətən torpağı ilə eyniləşdirir, bu da torpağın nə qədər müqəddəs olduğunu göstərir.
+[260] ANALYSIS_P: Şair, azad edilən Ağdam, Şuşa və digər şəhərləri sevinc və qürur hissi ilə anır. Bu yerlərin adları şeirin ruhuna xüsusi coşqu və sevgi qatır. Azad torpaqların geri qaytarılması və orada şəhid olan qardaşların ruhunun ucaldılması ilə qürur duyur. Küləyin və dağların, daşların belə bu sevincə şərik olduğunu ifadə edərək, azadlığın necə dərin hisslər doğurduğunu göstərir.
+[261] ANALYSIS_P: Şair, bu torpaqlar uğrunda öz övladını itirdiyini qeyd edir və digər şəhid olan əziz insanlarını yad edir. Bu, müharibənin ailələr üzərində buraxdığı dərin izləri və qurbanları xatırladır. Şairin içindəki kədər və eyni zamanda bu fədakarlığa duyduğu dərin hörmət ifadə olunur.
+[262] ANALYSIS_P: Şair şəhidlərin ucaldığı zirvəni müqəddəs hesab edir və onların ruhunun bu torpaqlarda əbədi qaldığını vurğulayır. Bu, torpağın insan üçün necə müqəddəs bir dəyər olduğunu və şəhidlərin ruhlarının burada əbədi yaşadığını göstərir.
+[263] ANALYSIS_P: Beləliklə,
+[264] ANALYSIS_P: Bu şeir, torpaq uğrunda verilən qurbanların dəyərini, şəhidlərin məğrur mübarizəsini və azadlığın gətirdiyi sevinci ifadə edir. Şair, bu müqəddəs torpaqların hər qarışının şəhidlərin qanı ilə suvarıldığını və onlara duyulan sonsuz minnətdarlığı dərin və emosional şəkildə çatdırır. Şeir həm itki və kədəri, həm də azadlıq və qüruru bir arada ifadə edərək, vətən sevgisinin gücünü və dərinliyini vurğulayır.
+[265] H2: MÖCÜZƏ
+[266] POEM (24 lines) SKIP
+[267] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[268] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[269] ANALYSIS_P: Bu təsvir ümid və möcüzə mövzusuna uyğun yaradılmışdır. Təsvirdə yaşıl tonlar üstünlük təşkil edir, bu da təbiətin canlılığını və yenilənməsini simvolizə edir.
+[270] ANALYSIS_P: Təsvirin mərkəzində parlaq bir günəş doğur və onun şüaları sanki bütün məkanı işıqlandıraraq möcüzəvi bir atmosfer yaradır. Şüaların gücü, həm möcüzənin simvolu, həm də ümidin işığı kimi təcəssüm olunur.
+[271] ANALYSIS_P: Geniş yaşıl çəmənliklər və tarlalar təbiətin bolluğunu və sülh dolu bir məkanı göstərir. Bu açıq sahələr həm rahatlıq, həm də gələcəyə olan açıq bir yola işarədir.
+[272] ANALYSIS_P: Ön planda bir cütlük əl-ələ dayanaraq gələcəyə doğru baxır. Bu iki nəfərin birlikdə olması dostluq, sevgi və dəstək simvoludur. Onlar işıqlı gələcəyə doğru ümidlə baxır, bu isə birlikdə olan insanların çətinlikləri aşacağına dair bir mesaj verir.
+[273] ANALYSIS_P: Bu təsvir bütövlükdə sülh, təbiət, birlik və gələcəyə olan ümidin vizual təsviridir. Yaşıl rənglərin dominantlığı və işıq şüaları təsviri daha da ruhlandırıcı edir, insanın möcüzələrə olan inamını və gözlənilməz gözəllikləri qarşılamağa hazır olduğunu vurğulayır.
+[274] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[275] ANALYSIS_P: Bu şeir ümid və möcüzə gözləntisi ilə dolu, gələcəyə olan inamı və yaxşı günlərin gəlib çatacağına dair dərin bir inancı əks etdirir. Şair burada çətin günlərin sona çatacağı, şad xəbərlərin hər tərəfi bürüyəcəyi, dostların birlikdə sevinəcəyi bir gələcəyi təsvir edir. Möcüzələr, əlçatmaz görünən ümidlər və Allahın yaratdığı qismət insanlara gözlənilmədən gəlir və heç bir ünvan olmadan həyatı dəyişdirir.
+[276] ANALYSIS_P: Şeir boyunca vurğulanan əsas fikirlər:
+[277] ANALYSIS_P: Bütün həyatın ümidlərlə dolu olduğunu və yaxşı günlərin hələ gələcəyini vurğulayır. “Gözləyirik, olmayanlar olacaq” misrası ilə insanın ən dərin arzularının bir gün gerçəkləşə biləcəyinə işarə edir.
+[278] ANALYSIS_P: Şair, çətin günlərin ömrünün qısa olduğunu və bu günlərin geridə qalacağını, daha xoşbəxt günlərin gələcəyini inamla bildirir. Burada dostluğun önəmi də vurğulanır, yəni dostların birlikdə çətin günləri aşması və gələcəkdə birgə sevinməsi.
+[279] ANALYSIS_P: Möcüzələr həm gözlənilməz, həm də ünvanı olmayan hadisələr kimi təsvir olunur. Möcüzələrin vaxtı yetişdiyi zaman onları qəbul etməyin və onların verdiyi sevinci yaşamağın əhəmiyyəti vurğulanır.
+[280] ANALYSIS_P: “Qədəm qoyaq onda verib əl-ələ” ifadəsi dostların, insanların birlikdə sevinməsi, əl-ələ verərək xoşbəxt gələcəyə addımlaması deməkdir.
+[281] ANALYSIS_P: Beləliklə,
+[282] ANALYSIS_P: Bu şeir insanlara çətin zamanlarda belə ümidli olmağı, birlikdə sevinməyi, gözlənilməz möcüzələrə inanmağı və ən dərin arzuların belə bir gün həyata keçə biləcəyini xatırladır.
+[283] H2: QAR YAĞIR
+[284] POEM (40 lines) SKIP
+[285] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[286] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[287] ANALYSIS_P: Bu təsvir, itirilmiş bir yaxın insanın xatirəsi və qış mövsümünün gətirdiyi nostalji ilə doludur. Bu detallarla onu təhlil edək:
+[288] ANALYSIS_P: Təsvirin mərkəzində pəncərə qarşısında dayanmış insan fiquru, düşüncəyə dalmış və uzaqlara baxır. Bu fiqur, itirilmiş bir sevginin və ya yaxın bir insanın xatirəsinin izlərini daşıyan birini təsvir edir. Onun pəncərədən baxması, keçmişi düşünərək xatirələrə dalmasını və sevdiyi insanla keçirdiyi günləri yad etməsini simvolizə edir.
+[289] ANALYSIS_P: Pəncərənin arxasında sakitcə yağan qar və qarlı mənzərə təbiətin sakitliyini və soyuqluğunu ifadə edir. Qarın yavaş-yavaş yerə enməsi, sanki itirilmiş insanın xatirələrinin hər qış yağan qarla yenidən canlandığını göstərir. Qarın yağışı həm kədəri, həm də xatirələrə olan sevgini təmsil edir.
+[290] ANALYSIS_P: Otaqda yumşaq bir işıqlandırma var ki, bu da ona isti və hüzünlü bir atmosfer verir. Bu işıq, insanın daxilindəki sevgini və xatirələrə duyulan bağlılığı əks etdirir. Yumşaq işıqlandırma və qaranlıq bir atmosfer, qışın sakit və düşündürücü təbiətini tamamlayır.
+[291] ANALYSIS_P: Masanın üstündə yerləşdirilmiş fotoşəkillər və kiçik xatirə əşyaları keçmişi və sevdiyi insanı yad etməyə yardımçı olur. Fotoşəkillər, yaşanmış xoşbəxt anların və unudulmaz xatirələrin simvoludur. Bu əşyalar, itirilmiş yaxın insanın varlığını hiss etdirir və onun hələ də ürəkdə yaşadığını simvolizə edir.
+[292] ANALYSIS_P: Təsvir ümumilikdə dərin bir hüzün və sevgi atmosferi yaradır. İtirilmiş yaxın insanın xatirələri ilə dolu olan bu otaq, qışın gətirdiyi kədərli və eyni zamanda sakit duyğuları gözəl şəkildə əks etdirir. Həm kədər, həm də sevgi hissi təsvir boyunca hiss olunur.
+[293] ANALYSIS_P: Təsvir, insanın keçmişdə yaşadığı gözəl anları yenidən xatırlamasına və bu anların unudulmaz olduğunu qəbul etməsinə səbəb olur. Hər qış gələndə bu xatirələr yenidən canlanır və insana sevdiyi insanın ruhən yanında olduğunu hiss etdirir.
+[294] ANALYSIS_P: Beləlikə,
+[295] ANALYSIS_P: Bu təsvir, kədərli olsa da, sevdiyi insanın xatirəsini qəlbində yaşatmağa çalışan bir insanın daxili dünyasını gözəl şəkildə əks etdirir. Qarın sakit yağışı və otaqdakı isti atmosfer, sevginin və itkinin yaratdığı duyğuları vurğulayır. Bu təsvir, keçmişin unudulmaz xatirələrini və sevdiklərimizin həmişə ürəyimizdə yaşadığını simvolizə edən çox təsirli bir ifadədir.
+[296] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[297] ANALYSIS_P: Bu şeir itirilmiş bir yaxın insana, sevimli bir şəxsə olan dərin həsrəti və onun xatirəsinə duyulan sevgini təsvir edir. Şair, keçmişdə birlikdə yaşadıqları xoşbəxt anları xatırlayır və qarın sakit yağışı ilə keçmişə qayıdır. Qarın yağması bu itkinin kədərini və eyni zamanda həmin insanın ruhunun hər zaman yanında olduğunu simvolizə edir.
+[298] ANALYSIS_P: Şeir, şairin uşaqlıqda sevdiyi bir insanla – böyük ehtimalla bir bacı və ya dostla – keçirdiyi xoşbəxt anları təsvir edir. Onlar birlikdə qarın yağmasını izləyir, uşaq sevinci ilə pəncərənin önündə qışqırırdılar. Bu misralar, keçmişin xoşbəxt anlarını və saf sevincin simvolu olaraq qarı əks etdirir. Həmin anların sadəliyi və uşaqlıq safiyyəti qəlbən bağlılığı ifadə edir.
+[299] ANALYSIS_P: Qarın sakit yağışı, keçmişin xatirələrinin davamlılığını və hər qış gələndə həmin insanın xatirəsinin necə canlandığını simvolizə edir. İllər keçsə də, qar hər dəfə eyni sakitliklə yağır və bu, itirilmiş insanın xatirəsini yenidən canlandırır.
+[300] ANALYSIS_P: Şeirin ortasında, şairə bacısı sevimli insanın vəfatını xəbər verir. Bu xəbər ürəyində dərindən bir sancı yaradır. Qar yağsa da, artıq o sevimli insan yanında deyil. Bu, itkini qəbul etməyin və onun yoxluğuna alışmağın çətinliyini göstərir. Şair, həmin an qışqırmaq istəsə də, kədərin gücündən səsini çıxara bilmir, bu isə kədərin nə qədər ağır olduğunu simvolizə edir.
+[301] ANALYSIS_P: Şair, həmin insanın hər zaman qəlbində yaşadığını və onunla birlikdə olduğunu vurğulayır. “Kim deyir ki, sən yoxsan?” misrası ilə, sevdiyi insanın fiziki olaraq olmasa da, ruhən onunla birlikdə olduğunu göstərir. Qarın yağışı həmin insanın varlığını bir daha hiss etdirir və onun hər zaman qəlbində yaşadığını simvolizə edir.
+[302] ANALYSIS_P: Şair üçün qarın hər dəfə yağması həmin sevimli insanla birlikdə keçirdiyi xoşbəxt anları xatırladır. Qarın sakitcə yerə enməsi, həmin insanın xatirəsinin də eyni sakitliklə yaddaşda qaldığını göstərir. Qar həm itkinin kədərini, həm də keçmişin gözəlliyini simvolizə edir.
+[303] ANALYSIS_P: Beləlikə,
+[304] ANALYSIS_P: Bu şeir, sevimli bir insanın xatirəsinin insanın ruhunda nə qədər dərin iz buraxdığını və onun hər zaman qəlbdə yaşadığını ifadə edir. İtki və xatirələrin bir arada olduğu bu şeir, həm kədərin, həm də unudulmaz sevginin bir vəhdətini yaradır. Qarın yağışı, həm şairin kədərini, həm də sevdiyi insanla bağlı xatirələrin canlılığını ifadə edir. Hər kəsin həyatında belə dərin iz buraxan bir insanın varlığının əhəmiyyətini vurğulayan bu şeir, yaddaşda və qəlbdə yaşayan sevdiklərimizin həmişə bizimlə olduğunu gözəl şəkildə çatdırır.
+[305] H2: SƏNDƏN SAVAYI
+[306] POEM (41 lines) SKIP
+[307] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[308] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[309] ANALYSIS_P: Bu təsvir dərin tənhalığı, keçmişin ağırlığını və unudulmaz xatirələrin qaranlıqda buraxdığı izləri əks etdirir.
+[310] ANALYSIS_P: Pəncərənin yanında oturmuş insan, düşüncəyə dalmış və uzaqlara baxır. Onun silueti qaranlıq və tənhadır. Bu vəziyyət keçmişə olan dərin bağlılığı, unudulmaz xatirələrə duyulan həsrəti və daxili tənhalığı simvolizə edir. Xarici mənzərəyə, gün batımına və ya buludlu bir səmaya baxması zamanın keçidini və keçmişlə əlaqəni qoruma cəhdini göstərir.
+[311] ANALYSIS_P: Divar boyunca asılmış və yerə səpələnmiş şəkillər keçmişin izlərini və unutmaq istənilməyən xatirələri təmsil edir. Bu şəkillər qaranlıqda olduğu üçün təfərrüatları aydın deyil, ancaq onların keçmişdəki insanlara və hadisələrə aid olduğu aydın hiss olunur. Bu, keçmişin həyatımıza necə dərin izlər buraxdığını və onların yaddaşımızdan silinmədiyini göstərir.
+[312] ANALYSIS_P: Masanın üzərində yanmış bir şam və boş bir şüşə var. Şamın işığı zəif və tənhadır, bu, həyatın son dərəcə kövrək olduğunu və keçmişi unutmamaq üçün yandırılmış bir simvolu təmsil edir. Şüşə, keçmişdə unutmağa çalışılan və hər dəfə uğursuz olan cəhdləri simvolizə edə bilər. Bu elementlər insanın dərindən düşüncə və xatirələrlə dolu halını vurğulayır.
+[313] ANALYSIS_P: Otaqdakı zəif işıq və kölgələr, atmosferin hüzünlü və tənha olduğunu göstərir. İşığın pəncərədən yavaşca içəri süzülməsi, sanki keçmişin izlərinin heç vaxt tamamilə yox olmadığını, həmişə bir kölgə kimi qaldığını göstərir. İşıq və kölgələrin bu incə təması, keçmiş və indiki zaman arasındakı əlaqəni, insanın keçmişindən heç vaxt tam qopa bilməyəcəyini simvolizə edir.
+[314] ANALYSIS_P: Pəncərənin arxasındakı bulanıq mənzərə və uzaqdakı işıq, keçmişin uzaqda olduğunu, lakin yenə də insanın baxışlarından qurtula bilmədiyini göstərir. Bu mənzərə, qaranlıq və hüzünlü atmosferlə ahəngdar bir şəkildə təsvir edilmişdir.
+[315] ANALYSIS_P: Ümumilikdə melankolik və nostalji dolu bir mənzərə gözə çarpır. Bu mənzərə insanın keçmiş xatirələrinə olan bağlılığını, onları unutmağa çalışsa da, hər dəfə bu xatirələrin ona daha da yaxınlaşdığını simvolizə edir. Otağın qaranlıq və sakit olması tənhalığı və hüzünü gücləndirir.
+[316] ANALYSIS_P: Beləliklə,
+[317] ANALYSIS_P: Bu təsvir, insanın keçmişdən qaçmaq istədiyi, amma onu hər zaman yanında hiss etdiyi xatirələri və unutma cəhdlərinin nəticəsizliyini gözəl şəkildə əks etdirir. Keçmişə olan dərin bağlılıq və tənhalıq, insanın ruh halını əks etdirən təsirli bir sənət əsəridir.
+[318] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[319] ANALYSIS_P: Bu şeir, unudulmayan bir sevginin və həsrətin ifadəsidir. Şairin keçmişdə qalan, amma heç cür qəlbindən çıxara bilmədiyi bir sevgiliyə duyduğu dərin bağlılığı, keçirdiyi duyğusal sarsıntıları və unutmaq üçün göstərdiyi nəticəsiz səyləri təsvir edir.
+[320] ANALYSIS_P: Şairin bütün şəkilləri cırıb tullaması, keçmişi unutmağa çalışmağın bir simvoludur. Lakin bu fiziki hərəkət onun daxili hisslərini dəyişdirə bilmir. "Bu olmadı imdadım, səni unudammadım" misrası ilə şair, xatirələrin dərinliyini və onlardan qaçmağın qeyri-mümkünlüyünü göstərir.
+[321] ANALYSIS_P: Şair "eldən, obadan qaçması" və "neçə bələnlər aşması" ilə keçmişindən qaçmağa çalışır, amma hər hansı bir məsafə onu unutdura bilmir. Hətta uzaq diyarlara getmək belə bu unutqanlığa kömək etmir, çünki sevgilisi hər yerdə onunla birlikdədir.
+[322] ANALYSIS_P: Şair, onu sevən, kədərini bölüşən və ona dəstək olan yeni insanlarla tanış olur, lakin bu da dərdinin dərmanına çevrilmir. Onun dərdi o qədər dərindədir ki, hər hansı bir sevgi və anlayış belə, keçmişi unutdurmaq üçün kifayət etmir.
+[323] ANALYSIS_P: Şairin içkiyə qurşanması, dərdini boğmağa çalışmasının bir üsuludur. O, sərxoş olur, huşunu itirir, hətta küçədə sərxoş yatmaqla özünü çox aciz bir vəziyyətə salır. Ancaq bu da ona kömək etmir, çünki unudulmaz olan sevgi içkidən daha güclüdür.
+[324] ANALYSIS_P: Şair ailə qurur, uşaqları olur, ev-eşiyə sahib olur. Lakin bütün bu həyat yenilikləri və məsuliyyətləri də onun keçmiş sevgisini unutdura bilmir. Ailə həyatının belə dərdinə dərman olmadığını vurğulaması, sevgisinin nə qədər dərin olduğunu göstərir.
+[325] ANALYSIS_P: Şair qocalır və zamanla hər şeydən uzaqlaşır, xatirələr silinir, amma keçmişdəki bu unudulmaz sevgi qəlbində eyni şəkildə qalır. "Hər şey yadımdan çıxır, hər şey, səndən savayı" misrası ilə şair, bu sevginin onun yaddaşına necə dərinləşdiyini və ömür boyu silinməyəcəyini vurğulayır.
+[326] ANALYSIS_P: Beləliklə,
+[327] ANALYSIS_P: Bu şeir, insanın keçmişə dair unutmaq istədiyi anları, dərin duyğusal bağları və həyat boyunca unutma cəhdlərinin boş yerə olduğunu təsvir edir. Bu, sevginin insanın ruhuna necə dərin kök saldığını, heç bir fiziki və ya emosional dəyişikliklə silinmədiyini göstərən çox təsirli bir əsərdir. Şair, unuda bilmədiyi bu sevgini nə qədər dərindən yaşasa da, onu qəbul etmək məcburiyyətindədir.
+[328] H2: XOŞ SÖZ
+[329] POEM (40 lines) SKIP
+[330] CREDIT: Rus dilindən tərcümə: Əlviz Əliyev
+[331] ANALYSIS_TITLE: TƏSVİRİN TƏHLİLİ
+[332] ANALYSIS_P: Bu təsvir sülh, birlik və təbiətlə ahəngdar yaşamın gözəlliyini vurğulayan, sadə və xoş bir mənzərə yaradır. Detallarla təhlil edək:
+[333] ANALYSIS_P: Təsvirin mərkəzində bir qrup insan əl-ələ verərək dairəvi bir şəkildə dayanıb. Bu, birliyi və qarşılıqlı dəstəyi simvolizə edir.
+[334] ANALYSIS_P: Ailələr və dostlar birlikdə xoşbəxtlik içindədir, bu da harmoniyanın insan əlaqələrində nə qədər vacib olduğunu vurğulayır.
+[335] ANALYSIS_P: Təsvirin müxtəlif yerlərində dovşan, quş, maral və digər heyvanlar yerləşdirilib. Heyvanların sakit və təhlükəsiz şəkildə təbiətlə ahəng içində olması, sülh dolu bir dünyanı simvolizə edir. Bu heyvanlar həm təbiətə, həm də insanlara yaxınlıq hissi yaradır və harmoniyanın yalnız insanlar arasında deyil, təbiətlə də mümkün olduğunu göstərir.
+[336] ANALYSIS_P: Təsvirin əsas rəngi yaşıl və yumşaq günəş işığıdır. Bu rəng tonları sakitlik, təbiətin canlılığı və gözəlliyini əks etdirir. Günəş işığı səhərin təmiz havasını və yenilənmə hissini yaradır, bu da təsviri daha ümidverici edir.
+[337] ANALYSIS_P: Arxa planda açıq yaşıl təpələr, ağaclar və təmiz səma görünür. Bu sadə təbiət mənzərəsi sakitlik və təbiətlə harmoniya içində olma hissini gücləndirir. Açıq məkanın genişliyi, insanların sərbəst və xoşbəxt bir şəkildə yaşadığı bir dünya təəssüratını yaradır.
+[338] ANALYSIS_P: Təsvirin sol tərəfində yerləşən kiçik bir ev, sadə və təvazökar bir yaşayışı simvolizə edir. Evin ətrafındakı göbələklər, çiçəklər və digər bitkilər təbiətin detalları ilə təsvirin canlılığını artırır və insan-təbiət əlaqəsini gücləndirir.
+[339] ANALYSIS_P: Quşların və kəpənəklərin uçarak təsvirin ətrafında dolaşması, azadlıq və sülh hissini gücləndirir. Bu elementlər həm də həyatın dinamikliyini və təbiətdəki balansı simvolizə edir.
+[340] ANALYSIS_P: Beləliklə,
+[341] ANALYSIS_P: Bu təsvir sülh, xoş sözlər və birgəyaşayış mesajı verir. İnsanların və təbiətin ahəngdar bir şəkildə birlikdə olması, dostluq və sevginin hər yerdə hökm sürdüyü bir dünyanı təcəssüm etdirir.
+[342] ANALYSIS_TITLE: ŞEİRİN TƏHLİLİ
+[343] ANALYSIS_P: Bu şeir sülh, dostluq, sevgi və xoş sözlərin gücünə dair bir çağırışdır. Şair, dünyanı gözəlləşdirən və insanları bir araya gətirən əsas dəyərin xoş söz və xoş münasibət olduğunu vurğulayır. Hər bir misrada, insanların bir-birilərinə sevgiylə və hörmətlə yanaşmasının dünyanı daha yaxşı bir yerə çevirəcəyinə dair bir inam hiss olunur.
+[344] ANALYSIS_P: Şair, dünyanın əsasının xoş sözlə qoyulduğunu və insanları birləşdirən ən güclü vasitənin xoş söz olduğunu bildirir. İlk misralardan başlayaraq, xoş sözlərin və təbəssümlərin insanların münasibətlərindəki münaqişələri necə yumşalda biləcəyinə diqqət çəkir.
+[345] ANALYSIS_P: Şair sülh və dostluğun hər kəsə, hətta təbiətdəki canlılara da şamil olmasını arzulayır. İnsanlar arasındakı mübahisələrdən, qardaş və qudalar arasındakı incikliklərdən uzaq durmağı və bir-birinə sevgi və anlayışla yanaşmağı təşviq edir. Şeir boyunca "sülh" sözünün təkrarlanması, şairin sülhə olan güclü arzusunu göstərir.
+[346] ANALYSIS_P: Şair, bir oğulun anasına əl qaldırmasının qeyri-mümkünlüyünü vurğulayır və ailə münasibətlərində hörmətin vacibliyini xatırladır. Bu, cəmiyyətin əsasında ailə dəyərlərinin durduğunu və ailədaxili sülhün ümumi cəmiyyət sülhünə təsir etdiyini göstərir.
+[347] ANALYSIS_P: Şair, yalnız insanlar arasında deyil, həm də təbiətdəki canlılar arasında da sülh və harmoniyanın olmasını arzulayır. "Şahinlər, balıqlar, hətta ayılar" ifadəsi ilə təbiətdəki hər bir canlının sülh içində yaşamasının zəruriliyini vurğulayır.
+[348] ANALYSIS_P: Şair, bu gün doğulanların xoşbəxt olmasını, onların həyatında daim sevgi və rifahın olmasını arzulayır. Bu, gələcək nəsillərin xoşbəxt bir dünyada yaşamasına dair bir ümid və dualarını ifadə edir.
+[349] ANALYSIS_P: Şeir, son misralarda xoş sözlərin həyatın başlanğıcı olduğunu və insanlara sağlamlıq, harmoniya və xoşbəxtlik gətirəcəyini vurğulayır. Xoş sözlərin su, od və hava kimi əvəzolunmaz olduğunu qeyd edir və həyatın davamlılığının xoş münasibətlərdə olduğunu bildirir.
+[350] ANALYSIS_P: Beləlikə,
+[351] ANALYSIS_P: Bu şeir insanlara bir-birilərinə qarşı sevgi, anlayış və hörmətlə yanaşmağa çağırış edir. Şair, sülhün, dostluğun və xoşbəxtliyin həyatımızda əsas rol oynaması gərəkdiyini vurğulayır və bunu təkcə insanlar arasında deyil, təbiət və bütün kainatla əlaqələndirir. Bu şeir, dünyanın hər bir insana, hər bir canlının bir-birinə sevgi və hörmətlə yanaşdığı utopik bir dünyanın təsviridir.

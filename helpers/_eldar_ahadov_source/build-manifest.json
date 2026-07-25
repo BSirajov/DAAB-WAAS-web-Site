@@ -1,0 +1,85 @@
+{
+  "pages": [
+    {
+      "key": "ozum",
+      "slug": "eldar-ahadov",
+      "images": [
+        "ozum-01.jpg"
+      ]
+    },
+    {
+      "key": "poeziya",
+      "slug": "eldar-ahadov-poeziya",
+      "images": [
+        "poeziya-01.jpg",
+        "poeziya-02.jpg",
+        "poeziya-03.jpg",
+        "poeziya-04.jpg",
+        "poeziya-05.jpg",
+        "poeziya-06.jpg",
+        "poeziya-07.jpg",
+        "poeziya-08.jpg",
+        "poeziya-09.jpg",
+        "poeziya-10.jpg",
+        "poeziya-11.jpg",
+        "poeziya-12.jpg",
+        "poeziya-13.jpg",
+        "poeziya-14.jpg",
+        "poeziya-15.jpg",
+        "poeziya-16.jpg",
+        "poeziya-17.jpg"
+      ]
+    },
+    {
+      "key": "poetik",
+      "slug": "eldar-ahadov-poetik-dastanlar",
+      "images": [
+        "poetik-01.jpg"
+      ]
+    },
+    {
+      "key": "bedii",
+      "slug": "eldar-ahadov-bedii-nesr",
+      "images": [
+        "bedii-01.jpg",
+        "bedii-02.jpg",
+        "bedii-03.jpg",
+        "bedii-04.jpg",
+        "bedii-05.jpg",
+        "bedii-06.jpg",
+        "bedii-07.jpg",
+        "bedii-08.jpg",
+        "bedii-09.jpg",
+        "bedii-10.jpg",
+        "bedii-11.jpg",
+        "bedii-12.jpg",
+        "bedii-13.jpg",
+        "bedii-14.jpg",
+        "bedii-15.jpg",
+        "bedii-16.jpg",
+        "bedii-17.jpg",
+        "bedii-18.jpg",
+        "bedii-19.jpg",
+        "bedii-20.jpg",
+        "bedii-21.jpg",
+        "bedii-22.jpg",
+        "bedii-23.jpg",
+        "bedii-24.jpg",
+        "bedii-25.jpg",
+        "bedii-26.jpg",
+        "bedii-27.jpg",
+        "bedii-28.jpg",
+        "bedii-29.jpg",
+        "bedii-30.jpg"
+      ]
+    },
+    {
+      "key": "esse",
+      "slug": "eldar-ahadov-esse",
+      "images": [
+        "esse-01.jpg"
+      ]
+    }
+  ],
+  "image_count": 50
+}
