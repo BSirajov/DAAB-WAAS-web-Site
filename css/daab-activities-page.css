@@ -1051,15 +1051,67 @@ html[data-daab-page-id="activities-news"]{
   clear: both !important;
 }
 
-#summer-school-2026 .summer-school-photo{
-  float: right !important;
-  width: min(340px, 48%) !important;
-  margin: 0 0 16px 22px !important;
+/* UNEC Zagatala gallery — 9 first on top; video beside image 3 */
+#unec-zaqatala-2026 .zaqatala-gallery{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  grid-template-areas:
+    "z9 z6"
+    "z3 zv"
+    "z1 z8";
+  gap: 14px !important;
+  align-items: stretch !important;
+  margin-top: 0 !important;
+  margin-bottom: 1em !important;
+}
+#unec-zaqatala-2026 .zaqatala-g-9{ grid-area: z9 !important; }
+#unec-zaqatala-2026 .zaqatala-g-6{ grid-area: z6 !important; }
+#unec-zaqatala-2026 .zaqatala-g-3{ grid-area: z3 !important; }
+#unec-zaqatala-2026 .zaqatala-g-video{ grid-area: zv !important; }
+#unec-zaqatala-2026 .zaqatala-g-1{ grid-area: z1 !important; }
+#unec-zaqatala-2026 .zaqatala-g-8{ grid-area: z8 !important; }
+#unec-zaqatala-2026 .zaqatala-gallery img,
+#unec-zaqatala-2026 .zaqatala-gallery video{
+  width: 100% !important;
+  height: 240px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  border-radius: 12px !important;
+  display: block !important;
+  background: #0b1f33 !important;
+  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
+  box-shadow: 0 4px 16px rgba(0, 45, 82, 0.12) !important;
+}
+#unec-zaqatala-2026 .zaqatala-gallery video{
+  object-fit: contain !important;
+}
+@media (max-width: 760px) {
+  #unec-zaqatala-2026 .zaqatala-gallery{
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "z9"
+      "z6"
+      "z3"
+      "zv"
+      "z1"
+      "z8";
+  }
+  #unec-zaqatala-2026 .zaqatala-gallery img,
+  #unec-zaqatala-2026 .zaqatala-gallery video{
+    height: 220px !important;
+  }
+}
+
+/* Efendiyev innovation — photo float left, text wrap */
+#efendiyev-innovasiya-2026 .efendiyev-innovasiya-photo{
+  float: left !important;
+  width: min(260px, 42%) !important;
+  margin: 0 18px 12px 0 !important;
   padding: 0 !important;
   border: 0 !important;
   background: transparent !important;
 }
-#summer-school-2026 .summer-school-photo img{
+#efendiyev-innovasiya-2026 .efendiyev-innovasiya-photo img{
   display: block !important;
   width: 100% !important;
   height: auto !important;
@@ -1068,10 +1120,78 @@ html[data-daab-page-id="activities-news"]{
   box-shadow: 0 6px 20px rgba(0, 45, 82, 0.14) !important;
   background: #fff !important;
 }
-#summer-school-2026 .card-body::after{
+#efendiyev-innovasiya-2026 .card-body::after{
   content: "" !important;
   display: table !important;
   clear: both !important;
+}
+@media (max-width: 760px) {
+  #efendiyev-innovasiya-2026 .efendiyev-innovasiya-photo{
+    float: none !important;
+    width: min(100%, 320px) !important;
+    margin: 0 auto 16px !important;
+  }
+}
+
+/* Summer school — poster left; two photos stacked right, equal combined height */
+#summer-school-2026 .summer-school-media{
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 14px !important;
+  align-items: stretch !important;
+  margin: 0 0 18px !important;
+  width: 100% !important;
+}
+#summer-school-2026 .summer-school-poster{
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  height: 100% !important;
+}
+#summer-school-2026 .summer-school-poster img{
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
+  box-shadow: 0 6px 20px rgba(0, 45, 82, 0.14) !important;
+  background: transparent !important;
+}
+#summer-school-2026 .summer-school-photos{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  float: none !important;
+  width: auto !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#summer-school-2026 .summer-school-photos .summer-school-photo{
+  flex: 1 1 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 12px !important;
+}
+#summer-school-2026 .summer-school-photos img{
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
+  box-shadow: 0 6px 20px rgba(0, 45, 82, 0.14) !important;
+  background: #fff !important;
 }
 
 @media (max-width: 760px) {
@@ -1081,11 +1201,15 @@ html[data-daab-page-id="activities-news"]{
     margin: 0 auto 18px !important;
     text-align: center !important;
   }
-  #summer-school-2026 .summer-school-photo{
-    float: none !important;
-    width: min(100%, 520px) !important;
-    margin: 0 auto 18px !important;
-    text-align: center !important;
+  #summer-school-2026 .summer-school-media{
+    grid-template-columns: 1fr !important;
+  }
+  #summer-school-2026 .summer-school-poster{
+    width: min(100%, 360px) !important;
+    margin: 0 auto !important;
+  }
+  #summer-school-2026 .summer-school-photos{
+    min-height: 280px !important;
   }
 }
 
