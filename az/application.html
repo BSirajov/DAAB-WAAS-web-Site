@@ -55,7 +55,7 @@
 <script src="../js/daab-application-config.js?v=2" defer></script>
 <script src="../js/daab-country-codes.js?v=1" defer></script>
 <script src="../js/daab-phone-codes.js?v=2" defer></script>
-<script src="../js/daab-membership-application.js?v=17" defer></script>
+<script src="../js/daab-membership-application.js?v=18" defer></script>
 <script defer src="../js/daab-sidebar-spy.js?v=1"></script>
 <script defer src="../js/daab-sidebar-timeline.js?v=4"></script>
 <script defer src="../js/daab-page-content-search.js?v=5"></script>
@@ -152,7 +152,7 @@ Nəticə tapılmadı.
 </div>
 </aside>
 <div class="application-stack form-wrapper">
-  <form id="mainForm" novalidate>
+  <form id="mainForm" action="mail.php" method="post" enctype="application/x-www-form-urlencoded" novalidate>
 
     <!-- ═══ SECTION 1 — Giriş ═══ -->
     <div class="form-section active" id="sec-1">
@@ -498,7 +498,7 @@ Nəticə tapılmadı.
         <p class="app-submit-notice">Müraciət məlumatlarınız təhlükəsiz serverə göndərilir və yalnız DAAB üzvlük komissiyası tərəfindən nəzərdən keçirilir.</p>
         <div class="app-submit-status" id="app-submit-status" role="status" aria-live="polite" hidden></div>
         <div class="app-btn-row">
-          <button type="button" class="app-btn app-btn-submit" id="appSubmitBtn" onclick="daabApplicationSubmit()"><span aria-hidden="true">✓</span> Göndər</button>
+          <button type="submit" class="app-btn app-btn-submit" id="appSubmitBtn"><span aria-hidden="true">✓</span> Göndər</button>
         </div>
       </div>
     </div>

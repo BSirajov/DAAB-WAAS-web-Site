@@ -32,7 +32,7 @@ SCRIPT_VERSIONS = {
     "daab-photos-gallery.js": 7,
     "daab-profile-tts.js": 5,
     "daab-profile-deep-link.js": 3,
-    "daab-membership-application.js": 17,
+    "daab-membership-application.js": 18,
     "daab-phone-codes.js": 2,
     "daab-application-config.js": 2,
     "daab-country-codes.js": 1,
