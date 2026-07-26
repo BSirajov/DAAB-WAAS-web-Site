@@ -21,3 +21,8 @@ node_modules/
 # Accidental duplicates (use css/ and js/ only)
 /daab-common.css
 /daab-nav.js
+
+# Large book PDFs/assets — keep locally + on the web host; do not commit
+/Books/**
+!/Books/README.md
+/Deployment/Books/

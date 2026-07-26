@@ -39,8 +39,9 @@ HARD_EXCLUDES = {
 EXTRA_FILE_GLOBS = ("*.zip", "*.docx", "*.tmp", "~$*", "*.pyc", "*.pyo")
 EXTRA_DIR_NAMES = {".git", "__pycache__", "node_modules"}
 
-# Subfolder under Deployment/ left untouched when refreshing the package.
-PRESERVE_DEPLOY_DIRS = frozenset({"images"})
+# Subfolders under Deployment/ left untouched when refreshing the package.
+# Books/ is host-managed (not in Git); images/ is skipped unless --include-images.
+PRESERVE_DEPLOY_DIRS = frozenset({"images", "Books"})
 
 # Build-only assets — must match helpers/_deploy_assets.py + .deployignore.
 DEPLOY_EXCLUDED_ASSETS = frozenset(DEPLOYIGNORE_ASSET_PATHS)
@@ -89,6 +90,9 @@ def should_exclude(
     skip_images: bool,
 ) -> bool:
     if skip_images and (rel_posix == "images" or rel_posix.startswith("images/")):
+        return True
+    # Large PDFs are kept out of Git; never stage them into Deployment rebuilds.
+    if rel_posix == "Books" or rel_posix.startswith("Books/"):
         return True
     if rel_posix in DEPLOY_EXCLUDED_ASSETS:
         return True
@@ -315,9 +319,11 @@ def main() -> int:
             print("\nDeployment package validation FAILED.")
             return 1
 
-    preserve = PRESERVE_DEPLOY_DIRS if skip_images else frozenset()
+    preserve = set(PRESERVE_DEPLOY_DIRS)
+    if not skip_images:
+        preserve.discard("images")
     print("→ Publishing to Deployment/ …")
-    replace_deploy_dir(DEPLOY_STAGING, DEPLOY_DIR, preserve_names=preserve)
+    replace_deploy_dir(DEPLOY_STAGING, DEPLOY_DIR, preserve_names=frozenset(preserve))
 
     forbidden_live = validate_forbidden_assets(DEPLOY_DIR)
     if forbidden_live:

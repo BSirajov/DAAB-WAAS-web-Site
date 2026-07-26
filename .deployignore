@@ -38,6 +38,9 @@ _archive/
 cv/
 Deployment/
 
+# --- Large book PDFs (host-managed; upload Books/ separately) ---
+Books/
+
 # --- forum_2024: ship PDF only (linked from forum index) ---
 forum_2024/*
 !forum_2024/*.pdf
