@@ -26,3 +26,7 @@ node_modules/
 /Books/**
 !/Books/README.md
 /Deployment/Books/
+
+# Large news video — keep locally + on the web host; do not commit
+/images/activities/Messoud_Efendiyev_Zaqatala_video.mp4
+/Deployment/images/activities/Messoud_Efendiyev_Zaqatala_video.mp4
