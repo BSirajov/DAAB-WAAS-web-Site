@@ -939,6 +939,13 @@
     document.querySelectorAll(".application-page .form-section").forEach(function (s) {
       s.hidden = false;
     });
+    var form = byId("mainForm");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        submitForm();
+      });
+    }
     bindRadioHighlight();
     initEmailValidation();
     initResidenceDropdowns();

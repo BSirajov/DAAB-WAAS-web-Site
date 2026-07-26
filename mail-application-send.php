@@ -52,6 +52,30 @@ if ($fullName === '') {
     $fullName = trim($firstName . ' ' . $lastName);
 }
 
+// Native HTML form field aliases (no-JS progressive enhancement).
+$city = daab_mail_field('city');
+if ($city === '') {
+    $city = daab_mail_field('city_manual');
+}
+$phoneFull = daab_mail_field('phone_full');
+if ($phoneFull === '') {
+    $phoneCode = daab_mail_field('phone_code');
+    $phoneNumber = daab_mail_field('phone_number');
+    $phoneFull = trim($phoneCode . ' ' . $phoneNumber);
+}
+$fieldOfStudy = daab_mail_field('field_of_study') ?: daab_mail_field('fieldofstudy');
+$degreeInstitution = daab_mail_field('degree_institution') ?: daab_mail_field('deginst');
+$academicTitle = daab_mail_field('academic_title') ?: daab_mail_field('title');
+$titleInstitution = daab_mail_field('title_institution') ?: daab_mail_field('titinst');
+$currentJob = daab_mail_field('current_job') ?: daab_mail_field('currentjob');
+$previousJobs = daab_mail_field('previous_jobs') ?: daab_mail_field('prevjobs');
+$sciFields = daab_mail_field('sci_fields') ?: daab_mail_field('sci');
+$additionalInfo = daab_mail_field('additional_info') ?: daab_mail_field('addinfo');
+$cvConfirm = daab_mail_field('cv_confirm') ?: daab_mail_field('cvconfirm');
+if ($cvConfirm === 'on') {
+    $cvConfirm = 'yes';
+}
+
 $subjectPrefix = $isAz ? 'DAAB üzvlük müraciəti' : 'WAAS Membership Application';
 $subject = $subjectPrefix . ($fullName !== '' ? ' — ' . $fullName : '');
 
@@ -103,20 +127,20 @@ $fields = [
     'full_name' => $fullName,
     'email' => $email,
     'country' => daab_mail_field('country'),
-    'city' => daab_mail_field('city'),
-    'phone_full' => daab_mail_field('phone_full'),
+    'city' => $city,
+    'phone_full' => $phoneFull,
     'university' => daab_mail_field('university'),
-    'field_of_study' => daab_mail_field('field_of_study'),
+    'field_of_study' => $fieldOfStudy,
     'degree' => daab_mail_field('degree'),
-    'degree_institution' => daab_mail_field('degree_institution'),
-    'academic_title' => daab_mail_field('academic_title'),
-    'title_institution' => daab_mail_field('title_institution'),
-    'current_job' => daab_mail_field('current_job'),
-    'previous_jobs' => daab_mail_field('previous_jobs'),
+    'degree_institution' => $degreeInstitution,
+    'academic_title' => $academicTitle,
+    'title_institution' => $titleInstitution,
+    'current_job' => $currentJob,
+    'previous_jobs' => $previousJobs,
     'contributions' => daab_mail_field('contributions'),
-    'sci_fields' => daab_mail_field('sci_fields'),
-    'additional_info' => daab_mail_field('additional_info'),
-    'cv_confirm' => daab_mail_field('cv_confirm'),
+    'sci_fields' => $sciFields,
+    'additional_info' => $additionalInfo,
+    'cv_confirm' => $cvConfirm,
     'submitted_at' => daab_mail_field('submitted_at'),
     'page_url' => daab_mail_field('page_url'),
 ];
