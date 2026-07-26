@@ -77,7 +77,7 @@ STYLE_VERSIONS = {
     "daab-impressions-photos.css": 2,
     "daab-activities-layout.css": 24,
     "daab-sticky-sidebar.css": 1,
-    "daab-activities-page.css": 19,
+    "daab-activities-page.css": 32,
     "daab-executive-board.css": 7,
     "daab-membership-page.css": 13,
     "daab-membership-value.css": 19,
