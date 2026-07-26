@@ -8,7 +8,7 @@
   // Bump when scientist portrait files are replaced so browsers fetch the new
   // images instead of a cached copy (filenames are stable). Keep in sync with
   // PHOTO_VER in scientists-profiles-render.js.
-  var PHOTO_VER = "6";
+  var PHOTO_VER = "11";
 
   var CRED = {
     PhD: "Ph.D.",

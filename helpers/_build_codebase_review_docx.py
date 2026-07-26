@@ -68,7 +68,7 @@ ISSUES: list[Issue] = [
         "Internal links",
         "Image asset filename contains a space, which can cause encoding inconsistencies "
         "across servers and tools.",
-        "images/scientists-photos/rufat azizov.png; az/en/forum/2024/rector_speeches.html; "
+        "images/scientists-photos/rufat-azizov.jpg; az/en/forum/2024/rector_speeches.html; "
         "helpers/_speech_photos_lib.py",
         "Medium",
         "Rename file to rufat-azizov.png; update photo map and all HTML src references in one "

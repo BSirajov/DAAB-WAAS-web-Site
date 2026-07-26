@@ -346,6 +346,8 @@ STRINGS = {
         "author": "Eldar Əhədov",
         "section_nav_aria": "Ədəbi bölmələr",
         "panel_title": "Bu səhifə haqqında",
+        "figure_alt": '"{title}" illüstrasiyası',
+        "portrait_alt": "Eldar Əhədovun portreti",
         "footer_org": "Dünya Azərbaycanlı Alimlər Birliyi",
         "footer_contact": "Əlaqə",
         "footer_addr": "Ünvan",
@@ -403,6 +405,8 @@ STRINGS = {
         "author": "Eldar Ahadov",
         "section_nav_aria": "Literary sections",
         "panel_title": "About this page",
+        "figure_alt": 'Illustration for "{title}"',
+        "portrait_alt": "Portrait of Eldar Ahadov",
         "footer_org": "World Association of Azerbaijani Scientists",
         "footer_contact": "Contact",
         "footer_addr": "Address",
@@ -1119,9 +1123,11 @@ def reorder_poetry_figures_before_poems(blocks: list[dict]) -> list[dict]:
 
 def render_literary_html(page: dict, blocks: list[dict], lang: str) -> str:
     thumb_prefix = media_thumb_web_prefix(THUMB_DIRNAME)
+    s = STRINGS[lang]
     parts: list[str] = ['<div class="eldar-literary">']
     open_piece = False
     first_figure_done = False
+    current_piece_title = ""
     float_mode = page.get("float_first_img")
     # poem_targets: display title (may be EN) -> AZ-stable anchor
     poem_targets: list[tuple[str, str]] = [
@@ -1148,17 +1154,19 @@ def render_literary_html(page: dict, blocks: list[dict], lang: str) -> str:
                 poem_targets.append((en_title, anchor))
 
     def close_piece() -> None:
-        nonlocal open_piece
+        nonlocal open_piece, current_piece_title
         if open_piece:
             parts.append('<div class="eldar-clear"></div></article>')
             open_piece = False
+            current_piece_title = ""
 
     def open_piece_with(title: str, anchor: str) -> None:
-        nonlocal open_piece
+        nonlocal open_piece, current_piece_title
         close_piece()
         parts.append(f'<article class="eldar-piece" id="{esc(anchor)}">')
         parts.append(f"<h2>{esc(title)}</h2>")
         open_piece = True
+        current_piece_title = title
 
     poem_open = False
 
@@ -1167,6 +1175,15 @@ def render_literary_html(page: dict, blocks: list[dict], lang: str) -> str:
         if poem_open:
             parts.append("</div>")
             poem_open = False
+
+    def figure_alt(is_portrait: bool) -> str:
+        if is_portrait:
+            return s["portrait_alt"]
+        if current_piece_title:
+            return s["figure_alt"].format(title=current_piece_title)
+        # Page-level image (before any piece heading).
+        page_title = (s["meta"].get(page["page_id"]) or ("", "", ""))[0] or s["author"]
+        return s["figure_alt"].format(title=page_title)
 
     for b in blocks:
         kind = b["kind"]
@@ -1221,8 +1238,10 @@ def render_literary_html(page: dict, blocks: list[dict], lang: str) -> str:
             close_poem()
             src = thumb_prefix + b["file"]
             cls = "eldar-figure"
+            is_portrait = False
             if float_mode == "portrait" and page["key"] == "ozum" and not first_figure_done:
                 cls += " eldar-portrait"
+                is_portrait = True
                 first_figure_done = True
             elif page.get("is_poetry"):
                 # Every poem illustration floats beside the verse.
@@ -1232,8 +1251,10 @@ def render_literary_html(page: dict, blocks: list[dict], lang: str) -> str:
                 cls += " eldar-figure--float"
                 first_figure_done = True
             # bedii/esse: no float — keep story images a uniform centered size.
+            alt = esc(figure_alt(is_portrait))
             parts.append(
-                f'<figure class="{cls}"><img src="{esc(src)}" alt="" loading="lazy" decoding="async"/></figure>'
+                f'<figure class="{cls}"><img src="{esc(src)}" alt="{alt}" '
+                f'loading="lazy" decoding="async"/></figure>'
             )
             continue
         if kind == "video":

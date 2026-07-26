@@ -16,7 +16,7 @@ LOCAL = Path(
     r"C:\Users\BSira\Documents\Azərbaycanlı Alimlərin Istanbul görüşü, 8-10 Dekabr 2022"
     r"\1-ci Bakı forumu, 8-12 Sentyabr 2024\Forumdan foto və videolar\Fotolar"
 )
-OUT = ROOT / "images" / "photos-gallery" / "Garabagh"
+OUT = ROOT / "images" / "photos-gallery" / "7-garabagh"
 MANIFEST = OUT / "_match-manifest.json"
 
 

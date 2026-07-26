@@ -109,7 +109,7 @@ HTML = """<!DOCTYPE html>
         </p>
       </div>
       <figure class="hero-photo">
-        <img src="../images/scientists-photos/emirulla-memmedov.png" alt="Emirullah Mehmetov" width="160" height="200" loading="eager" />
+        <img src="../images/scientists-photos/emirulla-memmedov.jpg" alt="Emirullah Mehmetov" width="160" height="200" loading="eager" />
       </figure>
     </div>
     <dl class="rank-bar">

@@ -38,7 +38,6 @@ from _paths import ROOT
 
 PHOTOS = ROOT / "images" / "scientists-photos"
 BACKUP = Path(os.path.expandvars(r"%TEMP%")) / "daab-photos-backup"
-GROUP_PHOTO = "address-to-president"  # not a portrait; never touch
 
 FRAME_W, FRAME_H = 296, 352
 WORK_MIN_H = 900
@@ -194,8 +193,9 @@ def process(stem: str) -> str:
 
 
 def portrait_stems() -> list[str]:
-    stems = {p.stem for p in PHOTOS.glob("*.png")}
-    stems.discard(GROUP_PHOTO)
+    stems: set[str] = set()
+    for ext in ("*.jpg", "*.jpeg", "*.png"):
+        stems.update(p.stem for p in PHOTOS.glob(ext))
     return sorted(stems)
 
 

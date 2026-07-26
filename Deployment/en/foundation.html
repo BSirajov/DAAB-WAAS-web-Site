@@ -814,7 +814,7 @@
       <button aria-label="Close image" class="lightbox-close" type="button" onclick="closeLightbox()">
         ✕
       </button>
-      <img loading="lazy" fetchpriority="low" decoding="async" alt="" id="lightboxImg" src=""/>
+      <img loading="lazy" fetchpriority="low" decoding="async" alt="" aria-hidden="true" id="lightboxImg" src=""/>
     </div>
     <footer class="footer-pro">
   <div class="footer-inner">
@@ -846,8 +846,8 @@ const lightbox=document.getElementById('lightbox');
 const lightboxImg=document.getElementById('lightboxImg');
 const lightboxClose=document.querySelector('.lightbox-close');
 let lightboxTrigger=null;
-function openLightbox(image){if(!lightbox||!lightboxImg)return;lightboxTrigger=image&&typeof image.focus==='function'?image:null;lightboxImg.src=image.src;lightboxImg.alt=image.alt||'Enlarged photo';lightbox.classList.add('open');lightbox.removeAttribute('aria-hidden');lightboxClose?.focus();}
-function closeLightbox(){if(!lightbox||!lightboxImg)return;lightbox.classList.remove('open');lightbox.setAttribute('aria-hidden','true');lightboxImg.removeAttribute('src');if(lightboxTrigger)lightboxTrigger.focus();lightboxTrigger=null;}
+function openLightbox(image){if(!lightbox||!lightboxImg)return;lightboxTrigger=image&&typeof image.focus==='function'?image:null;lightboxImg.src=image.src;lightboxImg.alt=image.alt||'Enlarged photo';lightboxImg.removeAttribute('aria-hidden');lightbox.classList.add('open');lightbox.removeAttribute('aria-hidden');lightboxClose?.focus();}
+function closeLightbox(){if(!lightbox||!lightboxImg)return;lightbox.classList.remove('open');lightbox.setAttribute('aria-hidden','true');lightboxImg.setAttribute('aria-hidden','true');lightboxImg.alt='';lightboxImg.removeAttribute('src');if(lightboxTrigger)lightboxTrigger.focus();lightboxTrigger=null;}
 lightbox?.addEventListener('click',event=>{if(event.target===lightbox)closeLightbox();});
 document.addEventListener('keydown',event=>{if(!lightbox||!lightbox.classList.contains('open'))return;if(event.key==='Escape'){closeLightbox();}else if(event.key==='Tab'){event.preventDefault();lightboxClose?.focus();}});
 document.querySelectorAll('.gallery img').forEach(function(img){img.setAttribute('tabindex','0');img.setAttribute('role','button');img.setAttribute('aria-label',(img.alt||'Photo')+' — enlarge');img.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openLightbox(img);}});});

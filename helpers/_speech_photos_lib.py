@@ -13,8 +13,12 @@ from _paths import ROOT
 ASSET = "../../../"
 PHOTO_DIRS = (
     ROOT / "images" / "scientists-photos",
-    ROOT / "images" / "board-members-photos",
 )
+
+# Non-portrait assets living outside scientists-photos/ (repo-relative POSIX).
+SPECIAL_PHOTO_PATHS: dict[str, str] = {
+    "alimlerimiz": "images/forum/address-to-president.jpg",
+}
 
 PHOTO_ALIASES: dict[str, str] = {
     "isa-hebibbeyli": "isa-habibbayli",
@@ -44,12 +48,11 @@ PHOTO_ALIASES: dict[str, str] = {
     # Official addresses — article id → portrait file base
     "ilham-eliyev": "farah-aliyeva",
     "eziz-sancar": "aziz-sancar",
-    "alimlerimiz": "address-to-president",
 }
 
 SPECIAL_PHOTO_FILES: dict[str, str] = {
-    "rufet-ezizov": "rufat-azizov.png",
-    "rufat-azizov": "rufat-azizov.png",
+    "rufet-ezizov": "rufat-azizov.jpg",
+    "rufat-azizov": "rufat-azizov.jpg",
 }
 
 SPEECH_PHOTOS_CSS = (
@@ -128,6 +131,12 @@ def _resolve_photo_name(folder: Path, base: str) -> Path | None:
 
 
 def _photo_path(slug: str) -> Path | None:
+    special = SPECIAL_PHOTO_PATHS.get(slug)
+    if special:
+        path = ROOT / special
+        if path.is_file():
+            return path
+
     if slug in SPECIAL_PHOTO_FILES:
         name = SPECIAL_PHOTO_FILES[slug]
         for folder in PHOTO_DIRS:

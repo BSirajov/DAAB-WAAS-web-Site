@@ -16,24 +16,23 @@ OUT = ROOT / "js" / "photos-gallery-manifest.json"
 SKIP_FILENAMES = frozenset(
     {
         "lunch-break-21.jpg",
-        "010. Ziyafətdən görüntülər.jpg",
     }
 )
 
 CATEGORY_TITLES: dict[str, tuple[str, str]] = {
-    "1.AlleyOfHonor": (
+    "1-alley-of-honor": (
         "Alley of Honor and Martyrs' Lane",
         "Fəxri Xiyaban, Şəhidlər Xiyabanı",
     ),
-    "2.OpeningDay": ("Opening day", "Açılış günü"),
-    "3.BookExibition": ("Book exhibition", "Kitab sərgisi"),
-    "4.Discussions": ("Discussions", "Müzakirələr"),
-    "5. BetweenSessions": ("Between sessions", "Sessiyalar arası"),
-    "6. Portraits": ("Portraits", "Portretlər"),
-    "7. Garabagh": ("Karabakh", "Qarabağ"),
-    "8. CoffeeBreak": ("Coffee break", "Kofe fasiləsi"),
-    "9. LunchBreak": ("Lunch break", "Nahar fasiləsi"),
-    "10. Party": ("Evening reception", "Ziyafət"),
+    "2-opening-day": ("Opening day", "Açılış günü"),
+    "3-book-exhibition": ("Book exhibition", "Kitab sərgisi"),
+    "4-discussions": ("Discussions", "Müzakirələr"),
+    "5-between-sessions": ("Between sessions", "Sessiyalar arası"),
+    "6-portraits": ("Portraits", "Portretlər"),
+    "7-garabagh": ("Karabakh", "Qarabağ"),
+    "8-coffee-break": ("Coffee break", "Kofe fasiləsi"),
+    "9-lunch-break": ("Lunch break", "Nahar fasiləsi"),
+    "10-party": ("Evening reception", "Ziyafət"),
 }
 
 

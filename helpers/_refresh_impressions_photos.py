@@ -13,7 +13,6 @@ from _paths import ROOT
 ASSET = "../../../"
 PHOTO_DIRS = (
     ROOT / "images" / "scientists-photos",
-    ROOT / "images" / "board-members-photos",
 )
 
 PHOTO_ALIASES: dict[str, str] = {

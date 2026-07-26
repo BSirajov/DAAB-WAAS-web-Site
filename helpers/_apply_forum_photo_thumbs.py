@@ -7,7 +7,7 @@ from pathlib import Path
 
 from _paths import ROOT
 
-# scientists-photos/foo.png -> scientists-photos/_thumbs/foo.jpg
+# scientists-photos/foo.jpg -> scientists-photos/_thumbs/foo.jpg
 PHOTO_RE = re.compile(
     r"(images/scientists-photos/)(?!_thumbs/)([A-Za-z0-9._-]+)\.(?:png|jpe?g|webp)",
     re.I,

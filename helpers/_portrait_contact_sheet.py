@@ -21,16 +21,22 @@ COLS = 10
 def main() -> int:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     if args:
-        pngs = [SRC / f"{s}.png" for s in args]
+        photos = []
+        for s in args:
+            for ext in (".jpg", ".jpeg", ".png"):
+                cand = SRC / f"{s}{ext}"
+                if cand.is_file():
+                    photos.append(cand)
+                    break
     else:
-        pngs = sorted(SRC.glob("*.png"))
-    cols = min(COLS, len(pngs)) or 1
-    rows = math.ceil(len(pngs) / cols)
+        photos = sorted(SRC.glob("*.jpg")) + sorted(SRC.glob("*.jpeg")) + sorted(SRC.glob("*.png"))
+    cols = min(COLS, len(photos)) or 1
+    rows = math.ceil(len(photos) / cols)
     sw = cols * (CELL_W + PAD) + PAD
     sh = rows * (CELL_H + PAD) + PAD
     sheet = Image.new("RGB", (sw, sh), (255, 255, 255))
     draw = ImageDraw.Draw(sheet)
-    for i, p in enumerate(pngs):
+    for i, p in enumerate(photos):
         r, c = divmod(i, cols)
         x, y = PAD + c * (CELL_W + PAD), PAD + r * (CELL_H + PAD)
         cell = Image.new("RGBA", (CELL_W, CELL_H), CARD_BG)

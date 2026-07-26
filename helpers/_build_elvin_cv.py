@@ -109,7 +109,7 @@ HTML = """<!DOCTYPE html>
         </p>
       </div>
       <figure class="hero-photo">
-        <img src="../images/scientists-photos/elvin-efendi.png" alt="Elvin Afandi" width="160" height="200" loading="eager" />
+        <img src="../images/scientists-photos/elvin-efendi.jpg" alt="Elvin Afandi" width="160" height="200" loading="eager" />
       </figure>
     </div>
     <dl class="rank-bar">

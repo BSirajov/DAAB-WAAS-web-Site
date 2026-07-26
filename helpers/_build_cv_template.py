@@ -209,7 +209,7 @@ html = f"""<!DOCTYPE html>
           "Peşəkar x\u00fclas\u0259: ixtisas, qurum, ixtisasla\u015fma sah\u0259si v\u0259 f\u0259rql\u0259ndirici nailiyy\u0259tl\u0259r.")}</p>
       </div>
       <figure class=\"hero-photo\">
-        <img src=\"../images/scientists-photos/placeholder.png\" alt=\"Photo\" width=\"160\" height=\"200\" loading=\"eager\" />
+        <img src=\"../images/scientists-photos/placeholder.jpg\" alt=\"Photo\" width=\"160\" height=\"200\" loading=\"eager\" />
       </figure>
     </div>
     <dl class=\"rank-bar\">

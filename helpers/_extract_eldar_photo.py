@@ -7,7 +7,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = Path(__file__).resolve().parent / "_docx_media" / "image16.jpeg"
-DST = ROOT / "images" / "scientists-photos" / "eldar-ehedov.png"
+DST = ROOT / "images" / "scientists-photos" / "eldar-ehedov.jpg"
 TARGET = (148, 176)
 BG = (247, 251, 255)
 
@@ -27,7 +27,7 @@ def normalize_portrait(src: Path, dst: Path) -> None:
         top = max(0, min(top, h - nh))
         im = im.crop((0, top, w, top + nh))
     im = im.resize(TARGET, Image.Resampling.LANCZOS)
-    im.save(dst, format="PNG", optimize=True)
+    im.save(dst, format="JPEG", quality=90, optimize=True)
     print("saved", dst, dst.stat().st_size, im.size)
 
 

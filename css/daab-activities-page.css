@@ -1,10 +1,7 @@
 /**
  * Extracted from inline <style> on en/activities.html.
  * Shared by AZ/EN locale pages — do not duplicate in HTML.
- */
-
-/* ─── LAYOUT ──────────────────────────────────────────── */
-  .content-wrap{
+ *//* ─── LAYOUT ──────────────────────────────────────────── */html[data-daab-page-id="activities-news"] .content-wrap{
     max-width: 1180px;
     margin: 0 auto;
     padding: 52px 24px 80px;
@@ -12,8 +9,7 @@
     grid-template-columns: 280px 1fr;
     gap: 40px;
     align-items: start;
-  }/* ─── NEWS FEED ───────────────────────────────────────── */
-  .news-feed{ display: flex; flex-direction: column; gap: 0; }.news-card{
+  }/* ─── NEWS FEED ───────────────────────────────────────── */html[data-daab-page-id="activities-news"] .news-feed{ display: flex; flex-direction: column; gap: 0; }html[data-daab-page-id="activities-news"] .news-card{
     background: var(--card-bg);
     border-radius: 12px;
     overflow: hidden;
@@ -22,14 +18,14 @@
     box-shadow: 0 2px 16px rgba(13,31,60,.06);
     transition: transform .22s, box-shadow .22s;
     scroll-margin-top: calc(var(--daab-nav-height, 86px) + 1.25rem);
-  }.news-card:hover{
+  }html[data-daab-page-id="activities-news"] .news-card:hover{
     transform: translateY(-3px);
     box-shadow: 0 8px 32px rgba(13,31,60,.12);
-  }.card-header{
+  }html[data-daab-page-id="activities-news"] .card-header{
     background: linear-gradient(135deg, #1A6FA8 0%, #2E9FD4 100%);
     padding: 22px 28px 14px;
     position: relative;
-  }.card-date{
+  }html[data-daab-page-id="activities-news"] .card-date{
     font-size: 11.5px;
     font-weight: 600;
     letter-spacing: .1em;
@@ -39,26 +35,26 @@
     display: flex;
     align-items: center;
     gap: 8px;
-  }.card-date::before{
+  }html[data-daab-page-id="activities-news"] .card-date::before{
     content: '';
     display: inline-block;
     width: 20px;
     height: 2px;
     background: var(--gold);
     flex-shrink: 0;
-  }.card-title{
-    font-family: 'Playfair Display', serif;
+  }html[data-daab-page-id="activities-news"] .card-title{
+    font-family: var(--font-serif);
     font-size: 12.6px;
     font-weight: 600;
     color: var(--white);
     line-height: 1.38;
     margin: 0;
-  }.card-body{ padding: 14px 28px 24px; }.card-text{
+  }html[data-daab-page-id="activities-news"] .card-body{ padding: 14px 28px 24px; }html[data-daab-page-id="activities-news"] .card-text{
     font-size: 14.5px;
     color: var(--text-mid);
     line-height: 1.35;
     margin-bottom: 8px;
-  }.card-source{
+  }html[data-daab-page-id="activities-news"] .card-source{
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -73,38 +69,37 @@
     margin-top: 0;
     margin-bottom: 20px;
     transition: all .2s;
-  }.card-source:hover{
+  }html[data-daab-page-id="activities-news"] .card-source:hover{
     background: var(--teal);
     color: var(--white);
     border-color: var(--teal);
-  }/* Space between standalone img and button */
-  img + .card-source{ margin-top: 1em; }.card-source svg{ flex-shrink: 0; }.card-gallery{
+  }/* Space between standalone img and button */html[data-daab-page-id="activities-news"] img + .card-source{ margin-top: 1em; }html[data-daab-page-id="activities-news"] .card-source svg{ flex-shrink: 0; }html[data-daab-page-id="activities-news"] .card-gallery{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 10px;
     margin-top: 18px;
     margin-bottom: 1em;
-  }.card-gallery.single{ grid-template-columns: 1fr; }.card-gallery.double{ grid-template-columns: 1fr 1fr; }.card-gallery.triple{ grid-template-columns: 1fr 1fr 1fr; }.card-gallery.quadruple{ grid-template-columns: 1fr 1fr 1fr 1fr; }.card-gallery img{
+  }html[data-daab-page-id="activities-news"] .card-gallery.single{ grid-template-columns: 1fr; }html[data-daab-page-id="activities-news"] .card-gallery.double{ grid-template-columns: 1fr 1fr; }html[data-daab-page-id="activities-news"] .card-gallery.triple{ grid-template-columns: 1fr 1fr 1fr; }html[data-daab-page-id="activities-news"] .card-gallery.quadruple{ grid-template-columns: 1fr 1fr 1fr 1fr; }html[data-daab-page-id="activities-news"] .card-gallery img{
     width: 100%;
     height: 160px;
     object-fit: cover;
     border-radius: 8px;
     display: block;
     border: 1px solid var(--border);
-  }.card-gallery.single img{ height: 260px; }.award-grid{
+  }html[data-daab-page-id="activities-news"] .card-gallery.single img{ height: 260px; }html[data-daab-page-id="activities-news"] .award-grid{
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 16px;
     margin-top: 22px;
     margin-bottom: 1em;
     align-items: stretch;
-  }.award-item{
+  }html[data-daab-page-id="activities-news"] .award-item{
     border-radius: 12px;
     overflow: hidden;
     background: #ffffff;
     border: 1px solid var(--border);
     box-shadow: 0 2px 12px rgba(13,31,60,.06);
-  }.award-item img{
+  }html[data-daab-page-id="activities-news"] .award-item img{
     width: 100%;
     height: 220px;
     object-fit: cover;
@@ -112,40 +107,39 @@
     display: block;
     background: #f7f9fb;
     border-bottom: 1px solid var(--border);
-  }.award-item p{
+  }html[data-daab-page-id="activities-news"] .award-item p{
     font-size: 12.5px;
     font-weight: 600;
     color: var(--text);
     padding: 8px 10px;
     text-align: center;
-  }/* ─── SIDEBAR ─────────────────────────────────────────── */
-  .sidebar{
+  }/* ─── SIDEBAR ─────────────────────────────────────────── */html[data-daab-page-id="activities-news"] .sidebar{
     display: flex;
     flex-direction: column;
     gap: 24px;
     align-self: start;
-  }.sidebar-widget{
+  }html[data-daab-page-id="activities-news"] .sidebar-widget{
     background: var(--card-bg);
     border-radius: 12px;
     border: 1px solid var(--border);
     overflow: hidden;
-  }.widget-head{
+  }html[data-daab-page-id="activities-news"] .widget-head{
     background: linear-gradient(135deg, #1A6FA8 0%, #2E9FD4 100%);
     padding: 14px 20px;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-serif);
     font-size: 14px;
     font-weight: 600;
     color: var(--white);
     letter-spacing: .04em;
     border-bottom: 2px solid var(--gold);
     text-align: center;
-  }.widget-body{
+  }html[data-daab-page-id="activities-news"] .widget-body{
     padding: 16px 20px;
     max-height: calc(15 * 41px + 32px);
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #2E9FD4 #e8eef5;
-  }.widget-body::-webkit-scrollbar{ width: 6px; }.widget-body::-webkit-scrollbar-track{ background: #e8eef5; border-radius: 3px; }.widget-body::-webkit-scrollbar-thumb{ background: #2E9FD4; border-radius: 3px; }.widget-body::-webkit-scrollbar-thumb:hover{ background: #1A6FA8; }.timeline-list{ list-style: none; margin: 0; padding: 0; }.timeline-list li{
+  }html[data-daab-page-id="activities-news"] .widget-body::-webkit-scrollbar{ width: 6px; }html[data-daab-page-id="activities-news"] .widget-body::-webkit-scrollbar-track{ background: #e8eef5; border-radius: 3px; }html[data-daab-page-id="activities-news"] .widget-body::-webkit-scrollbar-thumb{ background: #2E9FD4; border-radius: 3px; }html[data-daab-page-id="activities-news"] .widget-body::-webkit-scrollbar-thumb:hover{ background: #1A6FA8; }html[data-daab-page-id="activities-news"] .timeline-list{ list-style: none; margin: 0; padding: 0; }html[data-daab-page-id="activities-news"] .timeline-list li{
     display: flex;
     gap: 12px;
     padding: 6px 0;
@@ -155,341 +149,267 @@
     line-height: 1.5;
     cursor: pointer;
     transition: color .18s;
-  }.timeline-list li:last-child{ border-bottom: none; }.timeline-list li:hover{ color: var(--teal); }.timeline-list .tl-date{
+  }html[data-daab-page-id="activities-news"] .timeline-list li:last-child{ border-bottom: none; }html[data-daab-page-id="activities-news"] .timeline-list li:hover{ color: var(--teal); }html[data-daab-page-id="activities-news"] .timeline-list .tl-date{
     color: var(--navy);
     font-weight: 600;
     font-size: 12px;
     white-space: nowrap;
     flex-shrink: 0;
     padding-top: 2px;
-  }.timeline-list a{
+  }html[data-daab-page-id="activities-news"] .timeline-list a{
     color: inherit;
     text-decoration: none;
     border-radius: 6px;
     padding: 2px 6px;
     margin: -2px -6px;
     transition: background 0.15s, color 0.15s;
-  }.timeline-list a:hover{
+  }html[data-daab-page-id="activities-news"] .timeline-list a:hover{
     background: #daeef2;
     color: var(--teal);
-  }.timeline-list a.tl-active{
+  }html[data-daab-page-id="activities-news"] .timeline-list a.tl-active{
     color: var(--teal);
     font-weight: 700;
     background: #e8edf3;
     border-radius: 6px;
     padding: 2px 6px;
     margin: -2px -6px;
-  }.timeline-list li:has(a.tl-active) .tl-date{
+  }html[data-daab-page-id="activities-news"] .timeline-list li:has(a.tl-active) .tl-date{
     color: var(--teal);
-  }/* ─── CONF CARD ───────────────────────────────────────── */
+  }/* ─── CONF CARD ───────────────────────────────────────── *//* ─── FOOTER ──────────────────────────────────────────── *//* ─── DIVIDER ──────────────────────────────────────────── *//* ─── IMAGE PLACEHOLDER ──────────────────────────────── */html[data-daab-page-id="activities-news"] .card-gallery.single .img-ph{ height: 260px; }html[data-daab-page-id="activities-news"] .list-az{ list-style: none; padding-left: 0; }html[data-daab-page-id="activities-news"] .list-az li{ padding: 4px 0 4px 22px; position: relative; font-size: 14px; color: var(--text-mid); }html[data-daab-page-id="activities-news"] .list-az li::before{ content: '▸'; position: absolute; left: 0; color: var(--teal); font-size: 12px; top: 6px; }
 
-
-  /* ─── FOOTER ──────────────────────────────────────────── */
-/* ─── DIVIDER ──────────────────────────────────────────── */
-
-
-  /* ─── IMAGE PLACEHOLDER ──────────────────────────────── */
-
-
-  .card-gallery.single .img-ph{ height: 260px; }.list-az{ list-style: none; padding-left: 0; }.list-az li{ padding: 4px 0 4px 22px; position: relative; font-size: 14px; color: var(--text-mid); }.list-az li::before{ content: '▸'; position: absolute; left: 0; color: var(--teal); font-size: 12px; top: 6px; }
-
-
-  @media (max-width: 1100px) {.award-grid{ grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 1100px) {html[data-daab-page-id="activities-news"] .award-grid{ grid-template-columns: repeat(3, 1fr); }
   }
 
-  @media (max-width: 640px) {.award-grid{ grid-template-columns: repeat(2, 1fr); }.award-item img{ height: 190px; }
+  @media (max-width: 640px) {html[data-daab-page-id="activities-news"] .award-grid{ grid-template-columns: repeat(2, 1fr); }html[data-daab-page-id="activities-news"] .award-item img{ height: 190px; }
   }
-  @media (max-width: 900px) {.content-wrap{ grid-template-columns: 1fr; }
+  @media (max-width: 900px) {html[data-daab-page-id="activities-news"] .content-wrap{ grid-template-columns: 1fr; }
 
-  }/* Two-image gallery normalization */
-.card-gallery.double{
+  }/* Two-image gallery normalization */html[data-daab-page-id="activities-news"] .card-gallery.double{
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
   gap: 18px !important;
   align-items: stretch !important;
-}.card-gallery.double img{
+}html[data-daab-page-id="activities-news"] .card-gallery.double img{
   width: 100% !important;
   height: 260px !important;
   min-height: 260px !important;
   max-height: 260px !important;
   object-fit: contain !important;
   object-position: center center !important;
-  background: #f7fbff !important;
-  border-radius: 10px !important;
-  padding: 6px !important;
-}/* Qazax Center gallery */
-.card-gallery.qazax-gallery{
+  background:#f7fbff;
+  border-radius:10px;
+  padding:6px;
+}/* Qazax Center gallery */html[data-daab-page-id="activities-news"] .card-gallery.qazax-gallery{
     display:grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap:18px !important;
-}.card-gallery.qazax-gallery img{
+}html[data-daab-page-id="activities-news"] .card-gallery.qazax-gallery img{
     width:100% !important;
     height:220px !important;
     object-fit:cover !important;
-    border-radius:12px !important;
+    border-radius:12px;
     display:block !important;
 }
-@media(max-width:768px){.card-gallery.qazax-gallery{
+@media(max-width:768px){html[data-daab-page-id="activities-news"] .card-gallery.qazax-gallery{
         grid-template-columns:1fr !important;
     }
-}/* BDU masterclass gallery */
-.card-gallery.bdu-gallery{
+}/* BDU masterclass gallery */html[data-daab-page-id="activities-news"] .card-gallery.bdu-gallery{
     display:grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
     gap:12px !important;
-}.card-gallery.bdu-gallery img{
+}html[data-daab-page-id="activities-news"] .card-gallery.bdu-gallery img{
     width:100% !important;
     height:160px !important;
     object-fit:cover !important;
-    border-radius:12px !important;
+    border-radius:12px;
     display:block !important;
 }
-@media(max-width:768px){.card-gallery.bdu-gallery{
+@media(max-width:768px){html[data-daab-page-id="activities-news"] .card-gallery.bdu-gallery{
         grid-template-columns:1fr !important;
     }
-}/* Bakhtiyar Sirajov BDU gallery */
-.card-gallery.siracov-gallery{
+}/* Bakhtiyar Sirajov BDU gallery */html[data-daab-page-id="activities-news"] .card-gallery.siracov-gallery{
     display:grid !important;
     grid-template-columns:repeat(2,1fr) !important;
     gap:12px !important;
-}.card-gallery.siracov-gallery img{
+}html[data-daab-page-id="activities-news"] .card-gallery.siracov-gallery img{
     width:100% !important;
     height:240px !important;
     object-fit:cover !important;
-    border-radius:12px !important;
+    border-radius:12px;
     display:block !important;
 }
-@media(max-width:768px){.card-gallery.siracov-gallery{
+@media(max-width:768px){html[data-daab-page-id="activities-news"] .card-gallery.siracov-gallery{
         grid-template-columns:1fr !important;
-    }.card-gallery.siracov-gallery img{
+    }html[data-daab-page-id="activities-news"] .card-gallery.siracov-gallery img{
         height:auto !important;
-    }.card-gallery.siracov-gallery img:first-child{
+    }html[data-daab-page-id="activities-news"] .card-gallery.siracov-gallery img:first-child{
         grid-column:auto !important;
         height:320px !important;
     }
-}/* ===== Global typography normalization (activities page only) ===== */
-html[data-daab-page-id="activities-news"] body,
-html[data-daab-page-id="activities-news"] p,
-html[data-daab-page-id="activities-news"] li,
-html[data-daab-page-id="activities-news"] a,
-html[data-daab-page-id="activities-news"] span,
-html[data-daab-page-id="activities-news"] div,
-html[data-daab-page-id="activities-news"] .card-text,
-html[data-daab-page-id="activities-news"] .timeline-list li,
-html[data-daab-page-id="activities-news"] .card-source,
-html[data-daab-page-id="activities-news"] .widget-body,
-html[data-daab-page-id="activities-news"] .widget-head{
-    font-family: Inter,system-ui,-apple-system,Segoe UI,sans-serif !important;
-    font-size: 15px !important;
-    line-height: 1.45 !important;
-    letter-spacing: 0 !important;
-}/* Headings */
-html[data-daab-page-id="activities-news"] h1,
-html[data-daab-page-id="activities-news"] h2,
-html[data-daab-page-id="activities-news"] h3,
-html[data-daab-page-id="activities-news"] h4,
-html[data-daab-page-id="activities-news"] h5,
-html[data-daab-page-id="activities-news"] h6,
-html[data-daab-page-id="activities-news"] .page-hero h1{
-    font-family: 'Playfair Display', serif !important;
-    line-height: 1.25 !important;
-}.news-card .card-header .card-title{
-    line-height: 1.38 !important;
-}/* Reduce spacing between paragraphs */
-.card-body p,
-.card-text{
-    margin-bottom: 10px !important;
-}/* Compact lists */
-html[data-daab-page-id="activities-news"] li{
-    margin-bottom: 2px !important;
-    padding-top: 2px !important;
-    padding-bottom: 2px !important;
-}/* Sidebar compactness */
-.timeline-list li{
-    line-height: 1.3 !important;
-}/* Improve readability of long texts */
-.card-body{
-    line-height: 1.45 !important;
-}
-/* Justify news-feed article body (even left and right edges) */
-html[data-daab-page-id="activities-news"] .news-feed .card-body p,
-html[data-daab-page-id="activities-news"] .news-feed .card-text,
-html[data-daab-page-id="activities-news"] .news-feed .card-body li{
-    text-align: justify !important;
+}/* ===== Global typography normalization (activities page only) ===== */html[data-daab-page-id="activities-news"]{
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.45;
+    letter-spacing: 0;
+}html[data-daab-page-id="activities-news"] .news-feed,html[data-daab-page-id="activities-news"] .sidebar,html[data-daab-page-id="activities-news"] .card-text,html[data-daab-page-id="activities-news"] .timeline-list,html[data-daab-page-id="activities-news"] .card-source,html[data-daab-page-id="activities-news"] .widget-body,html[data-daab-page-id="activities-news"] .widget-head{
+    font-family: var(--font-sans);
+}html[data-daab-page-id="activities-news"] h1,html[data-daab-page-id="activities-news"] h2,html[data-daab-page-id="activities-news"] h3,html[data-daab-page-id="activities-news"] h4,html[data-daab-page-id="activities-news"] h5,html[data-daab-page-id="activities-news"] h6,html[data-daab-page-id="activities-news"] .page-hero h1{
+    font-family: var(--font-serif);
+    line-height: 1.25;
+}html[data-daab-page-id="activities-news"] .news-card .card-header .card-title{
+    line-height: 1.38;
+}html[data-daab-page-id="activities-news"] .card-body p,html[data-daab-page-id="activities-news"] .card-text{
+    margin-bottom: 10px;
+}html[data-daab-page-id="activities-news"] li{
+    margin-bottom: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}html[data-daab-page-id="activities-news"] .timeline-list li{
+    line-height: 1.3;
+}html[data-daab-page-id="activities-news"] .card-body{
+    line-height: 1.45;
+}html[data-daab-page-id="activities-news"] .news-feed .card-body p,html[data-daab-page-id="activities-news"] .news-feed .card-text,html[data-daab-page-id="activities-news"] .news-feed .card-body li{
+    text-align: justify;
     text-justify: inter-word;
     hyphens: auto;
-}/* Egypt medal gallery */
-.egypt-medal-gallery{
+}/* Egypt medal gallery */html[data-daab-page-id="activities-news"] .egypt-medal-gallery{
     display:grid !important;
     grid-template-columns:repeat(2,1fr) !important;
     gap:18px !important;
-}.egypt-medal-gallery img{
+}html[data-daab-page-id="activities-news"] .egypt-medal-gallery img{
     width:100% !important;
     height:320px !important;
     object-fit:contain !important;
-    background:var(--white) !important;
-    border-radius:12px !important;
+    background:var(--white);
+    border-radius:12px;
     display:block !important;
 }
-@media(max-width:768px){.egypt-medal-gallery{
+@media(max-width:768px){html[data-daab-page-id="activities-news"] .egypt-medal-gallery{
         grid-template-columns:1fr !important;
     }
-}/* Egypt President Award Gallery */
-.egypt-president-gallery{
+}/* Egypt President Award Gallery */html[data-daab-page-id="activities-news"] .egypt-president-gallery{
     display:grid !important;
     grid-template-columns:repeat(2,1fr) !important;
     gap:18px !important;
-}.egypt-president-gallery img{
+}html[data-daab-page-id="activities-news"] .egypt-president-gallery img{
     width:100% !important;
     height:340px !important;
     object-fit:contain !important;
-    background:var(--white) !important;
-    border-radius:12px !important;
+    background:var(--white);
+    border-radius:12px;
     display:block !important;
 }
-@media(max-width:768px){.egypt-president-gallery{
+@media(max-width:768px){html[data-daab-page-id="activities-news"] .egypt-president-gallery{
         grid-template-columns:1fr !important;
     }
-}/* Saadet Kerimi image */
-.saadet-gallery{
-    display:flex !important;
-    justify-content:center !important;
-}.saadet-gallery img{
-    width:320px !important;
-    height:320px !important;
-    object-fit:cover !important;
-    border-radius:16px !important;
-    display:block !important;
-}/* Float Saadat Karimi image to top-right */
-.saadet-gallery img{
-    width:240px !important;
-    height:240px !important;
-    object-fit:cover !important;
-    border-radius:16px !important;
-    box-shadow:0 4px 18px rgba(0,0,0,0.12) !important;
-}
-@media(max-width:768px){.saadet-gallery{
-        float:none !important;
-        width:100% !important;
-        margin:0 auto 20px auto !important;
-        text-align:center !important;
-    }
-}/* Improved portrait fitting */
-.saadet-gallery{
+}/* Saadet Kerimi portrait — single policy: float + contain (no cover/contain fight) */
+html[data-daab-page-id="activities-news"] .saadet-gallery{
     float:right !important;
     width:240px !important;
-    margin:0 0 18px 24px !important;
+    margin:0 0 18px 24px;
     display:flex !important;
     justify-content:center !important;
     align-items:center !important;
-}.saadet-gallery img{
+}html[data-daab-page-id="activities-news"] .saadet-gallery img{
     width:100% !important;
     height:auto !important;
     max-height:320px !important;
     object-fit:contain !important;
-    background:#ffffff !important;
-    border-radius:16px !important;
-    box-shadow:0 4px 18px rgba(0,0,0,0.12) !important;
-    padding:6px !important;
+    background:#ffffff;
+    border-radius:16px;
+    box-shadow:0 4px 18px rgba(0,0,0,0.12);
+    padding:6px;
+    display:block !important;
 }
-
-@media(max-width:768px){.saadet-gallery{
+@media(max-width:768px){html[data-daab-page-id="activities-news"] .saadet-gallery{
         float:none !important;
         width:100% !important;
-        margin:0 auto 20px auto !important;
-        text-align:center !important;
-    }.saadet-gallery img{
+        margin:0 auto 20px auto;
+        text-align:center;
+    }html[data-daab-page-id="activities-news"] .saadet-gallery img{
         width:240px !important;
     }
-}/* Telman Aliyev 90 — portrait float, letter as text */
-#telman-90-2025 .telman-jubilee-photo{
+}/* Telman Aliyev 90 — portrait float, letter as text */html[data-daab-page-id="activities-news"] #telman-90-2025 .telman-jubilee-photo{
   float: right !important;
   width: min(260px, 42%) !important;
-  margin: 0 0 16px 22px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
-}
-#telman-90-2025 .telman-jubilee-photo img{
+  margin:0 0 16px 22px;
+  padding:0;
+  border:0;
+  background:transparent;
+}html[data-daab-page-id="activities-news"] #telman-90-2025 .telman-jubilee-photo img{
   display: block !important;
   width: 100% !important;
   height: auto !important;
-  border-radius: 12px !important;
-  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
-  box-shadow: 0 6px 20px rgba(0, 45, 82, 0.14) !important;
-  background: #fff !important;
+  border-radius:12px;
+  border:1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16));
+  box-shadow:0 6px 20px rgba(0, 45, 82, 0.14);
+  background:#fff;
   object-fit: cover !important;
   aspect-ratio: 3 / 4 !important;
-}
-#telman-90-2025 .card-body::after{
+}html[data-daab-page-id="activities-news"] #telman-90-2025 .card-body::after{
   content: "" !important;
   display: table !important;
   clear: both !important;
 }
-@media (max-width: 760px) {
-  #telman-90-2025 .telman-jubilee-photo{
+@media (max-width: 760px) {html[data-daab-page-id="activities-news"] #telman-90-2025 .telman-jubilee-photo{
     float: none !important;
     width: min(100%, 280px) !important;
-    margin: 0 auto 18px !important;
-    text-align: center !important;
+    margin:0 auto 18px;
+    text-align:center;
   }
-}
-/* Bilingual open letter columns */
-.open-letter-bilingual{
+}/* Bilingual open letter columns */html[data-daab-page-id="activities-news"] .open-letter-bilingual{
   display:grid !important;
   grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
   gap:22px !important;
-  margin:22px 0 28px 0 !important;
+  margin:22px 0 28px 0;
   clear:both !important;
-}.open-letter-column{
-  background:#ffffff !important;
-  border:1px solid var(--border) !important;
-  border-radius:12px !important;
-  padding:18px 20px !important;
-  box-shadow:0 2px 14px rgba(13,31,60,.06) !important;
+}html[data-daab-page-id="activities-news"] .open-letter-column{
+  background:#ffffff;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:18px 20px;
+  box-shadow:0 2px 14px rgba(13,31,60,.06);
   max-height:720px !important;
   overflow-y:auto !important;
   overflow-x:hidden !important;
-}.open-letter-column h3{
-  font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif !important;
-  font-size:16px !important;
-  color:var(--teal) !important;
-  margin:0 0 12px 0 !important;
-  text-align:center !important;
-  border-bottom:1px solid var(--border) !important;
-  padding-bottom:8px !important;
-}.open-letter-column p{
-  font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif !important;
-  font-size:14px !important;
-  line-height:1.42 !important;
-  margin:0 0 10px 0 !important;
-  color:var(--text-mid) !important;
-  word-break:normal !important;
-}.open-letter-single{
+}html[data-daab-page-id="activities-news"] .open-letter-column h3{
+  font-family: var(--font-sans);
+  font-size:16px;
+  color:var(--teal);
+  margin:0 0 12px 0;
+  text-align:center;
+  border-bottom:1px solid var(--border);
+  padding-bottom:8px;
+}html[data-daab-page-id="activities-news"] .open-letter-column p{
+  font-family: var(--font-sans);
+  font-size:14px;
+  line-height:1.42;
+  margin:0 0 10px 0;
+  color:var(--text-mid);
+  word-break:normal;
+}html[data-daab-page-id="activities-news"] .open-letter-single{
   grid-template-columns:minmax(0,1fr) !important;
-}.open-letter-single .open-letter-column{
+}html[data-daab-page-id="activities-news"] .open-letter-single .open-letter-column{
   max-height:none !important;
-  padding:22px 28px !important;
-}.open-letter-single .open-letter-column p{
-  font-size:15.5px !important;
-  line-height:1.55 !important;
-  color:var(--text) !important;
+  padding:22px 28px;
+}html[data-daab-page-id="activities-news"] .open-letter-single .open-letter-column p{
+  font-size:15.5px;
+  line-height:1.55;
+  color:var(--text);
 }
-@media(max-width:900px){.open-letter-bilingual{
+@media(max-width:900px){html[data-daab-page-id="activities-news"] .open-letter-bilingual{
     grid-template-columns:1fr !important;
   }
-}/* Center align all card captions/titles */
-.card-title, .card-header, article h1, article h2, article h3, article h4{
-    text-align:center !important;
-}/* Current activity page layout */
-:root{
+}/* Center align all card captions/titles */html[data-daab-page-id="activities-news"] .card-title,html[data-daab-page-id="activities-news"] .card-header,html[data-daab-page-id="activities-news"] article h1,html[data-daab-page-id="activities-news"] article h2,html[data-daab-page-id="activities-news"] article h3,html[data-daab-page-id="activities-news"] article h4{
+    text-align:center;
+}/* Current activity page layout */:root{
   --daab-nav-height: 68px;
   --activities-gap: 32px;
-}.content-wrap{
+}html[data-daab-page-id="activities-news"] .content-wrap{
   width: 100% !important;
   max-width: var(--max) !important;
-  margin: var(--activities-gap) auto 0 !important;
-  padding: 0 24px 80px !important;
+  margin:var(--activities-gap) auto 0;
+  padding:0 24px 80px;
   display: grid !important;
   grid-template-columns: minmax(240px, 300px) minmax(0, 1fr) !important;
   gap: 28px !important;
@@ -497,25 +417,20 @@ html[data-daab-page-id="activities-news"] .news-feed .card-body li{
   position: relative !important;
   z-index: 2 !important;
   overflow: visible !important;
-}/* Sticky events column: css/daab-activities-layout.css */
-
-.news-card{
-  scroll-margin-top: calc(var(--daab-nav-height) + 28px) !important;
+}/* Sticky events column: css/daab-activities-layout.css */html[data-daab-page-id="activities-news"] .news-card{
+  scroll-margin-top:calc(var(--daab-nav-height) + 28px);
 }
 
-@media (max-width: 1060px) {:root{ --daab-nav-height: 62px; --activities-gap: 24px; }.content-wrap{
+@media (max-width: 1060px) {:root{ --daab-nav-height: 62px; --activities-gap: 24px; }html[data-daab-page-id="activities-news"] .content-wrap{
     grid-template-columns: 1fr !important;
-    padding: 0 18px 64px !important;
+    padding:0 18px 64px;
   }
 }
 
-@media (max-width: 760px) {.content-wrap{
-    padding: 0 14px 52px !important;
+@media (max-width: 760px) {html[data-daab-page-id="activities-news"] .content-wrap{
+    padding:0 14px 52px;
   }
-}/* ===== merged from style converted-inline-styles ===== */
-/* Former inline styles converted to classes for consistency */
-.act-card-lead{font-weight:700 !important;color:var(--text) !important;margin-bottom:8px !important;}.act-row-thumb{width:100% !important;height:160px !important;object-fit:cover !important;border-radius:8px !important;display:block !important;}.act-pullquote{border-left:3px solid var(--gold) !important;padding:12px 18px !important;margin:0 0 16px !important;background:var(--cream) !important;border-radius:0 8px 8px 0 !important;font-style:italic !important;color:var(--text-mid) !important;font-size:14px !important;line-height:1.7 !important;}.act-thumb-row{display:flex !important;gap:10px !important;margin-bottom:16px !important;flex-wrap:wrap !important;}.act-gallery-spaced{margin-top:22px !important;margin-bottom:28px !important;}.act-gallery-compact{margin-top:18px !important;margin-bottom:26px !important;}.act-float-photo{float:right !important;width:240px !important;margin:0 0 18px 24px !important;display:block !important;}.act-info-panel{background:var(--cream) !important;border-radius:8px !important;padding:16px 20px !important;margin-bottom:16px !important;border-left:3px solid var(--teal) !important;}.act-info-panel-title{font-size:13px !important;font-weight:600 !important;color:var(--text) !important;margin-bottom:10px !important;}.act-info-link{color:var(--teal) !important;}.act-contact-panel{background:var(--navy) !important;border-radius:8px !important;padding:16px 20px !important;color:white !important;}.act-contact-title{font-size:13px !important;font-weight:600 !important;color:var(--gold-lt) !important;margin-bottom:10px !important;}.act-contact-line{font-size:13px !important;color:rgba(255,255,255,.75) !important;margin-bottom:4px !important;}.act-contact-link{color:var(--gold-lt) !important;}.act-contact-muted{font-size:13px !important;color:rgba(255,255,255,.75) !important;}.act-centered-wrap{margin:20px 0 26px 0 !important;text-align:center !important;}.act-feature-img{width:100% !important;max-width:900px !important;height:auto !important;border-radius:14px !important;object-fit:contain !important;box-shadow:0 4px 18px rgba(0,0,0,0.12) !important;}.act-photo-grid{display:grid !important;grid-template-columns:repeat(auto-fit,minmax(320px,1fr)) !important;gap:18px !important;margin:22px 0 28px 0 !important;align-items:start !important;}.act-photo-grid-cell{background:var(--white) !important;border-radius:14px !important;overflow:hidden !important;box-shadow:0 4px 16px rgba(0,0,0,.12) !important;padding:8px !important;}.act-photo-grid-img-lg{width:100% !important;height:360px !important;object-fit:cover !important;border-radius:10px !important;display:block !important;margin:auto !important;}.act-photo-grid-img{width:100% !important;height:320px !important;object-fit:cover !important;border-radius:10px !important;display:block !important;margin:auto !important;}.act-narrow-img{width:60% !important;border-radius:10px !important;display:block !important;margin:0 auto 16px auto !important;}.act-video-row{display:flex !important;gap:12px !important;margin-bottom:16px !important;}.act-video-col{flex:1 !important;display:flex !important;flex-direction:column !important;gap:1em !important;}.act-video-thumb{width:100% !important;height:180px !important;border-radius:10px !important;object-fit:cover !important;}.act-video-caption{display:flex !important;width:100% !important;justify-content:center !important;font-size:11px !important;}.act-video-row-wrap{display:flex !important;gap:12px !important;}.act-portrait-img{width:100% !important;max-width:600px !important;border-radius:10px !important;display:block !important;margin:0 auto 16px auto !important;}.act-half-img{width:50% !important;border-radius:10px !important;object-fit:cover !important;}.act-inline-row{display:flex !important;gap:10px !important;margin-top:14px !important;flex-wrap:wrap !important;}/* ===== WAAS common UI alignment ===== */
-:root{
+}/* ===== merged from style converted-inline-styles ===== *//* Former inline styles converted to classes for consistency */html[data-daab-page-id="activities-news"] .act-card-lead{font-weight:700;color:var(--text);margin-bottom:8px;}html[data-daab-page-id="activities-news"] .act-row-thumb{width:100% !important;height:160px !important;object-fit:cover !important;border-radius:8px;display:block !important;}html[data-daab-page-id="activities-news"] .act-pullquote{border-left:3px solid var(--gold);padding:12px 18px;margin:0 0 16px;background:var(--cream);border-radius:0 8px 8px 0;font-style:italic;color:var(--text-mid);font-size:14px;line-height:1.7;}html[data-daab-page-id="activities-news"] .act-thumb-row{display:flex !important;gap:10px !important;margin-bottom:16px;flex-wrap:wrap !important;}html[data-daab-page-id="activities-news"] .act-gallery-spaced{margin-top:22px;margin-bottom:28px;}html[data-daab-page-id="activities-news"] .act-gallery-compact{margin-top:18px;margin-bottom:26px;}html[data-daab-page-id="activities-news"] .act-float-photo{float:right !important;width:240px !important;margin:0 0 18px 24px;display:block !important;}html[data-daab-page-id="activities-news"] .act-info-panel{background:var(--cream);border-radius:8px;padding:16px 20px;margin-bottom:16px;border-left:3px solid var(--teal);}html[data-daab-page-id="activities-news"] .act-info-panel-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:10px;}html[data-daab-page-id="activities-news"] .act-info-link{color:var(--teal);}html[data-daab-page-id="activities-news"] .act-contact-panel{background:var(--navy);border-radius:8px;padding:16px 20px;color:white;}html[data-daab-page-id="activities-news"] .act-contact-title{font-size:13px;font-weight:600;color:var(--gold-lt);margin-bottom:10px;}html[data-daab-page-id="activities-news"] .act-contact-line{font-size:13px;color:rgba(255,255,255,.75);margin-bottom:4px;}html[data-daab-page-id="activities-news"] .act-contact-link{color:var(--gold-lt);}html[data-daab-page-id="activities-news"] .act-contact-muted{font-size:13px;color:rgba(255,255,255,.75);}html[data-daab-page-id="activities-news"] .act-centered-wrap{margin:20px 0 26px 0;text-align:center;}html[data-daab-page-id="activities-news"] .act-feature-img{width:100% !important;max-width:900px !important;height:auto !important;border-radius:14px;object-fit:contain !important;box-shadow:0 4px 18px rgba(0,0,0,0.12);}html[data-daab-page-id="activities-news"] .act-photo-grid{display:grid !important;grid-template-columns:repeat(auto-fit,minmax(320px,1fr)) !important;gap:18px !important;margin:22px 0 28px 0;align-items:start !important;}html[data-daab-page-id="activities-news"] .act-photo-grid-cell{background:var(--white);border-radius:14px;overflow:hidden !important;box-shadow:0 4px 16px rgba(0,0,0,.12);padding:8px;}html[data-daab-page-id="activities-news"] .act-photo-grid-img-lg{width:100% !important;height:360px !important;object-fit:cover !important;border-radius:10px;display:block !important;margin:auto;}html[data-daab-page-id="activities-news"] .act-photo-grid-img{width:100% !important;height:320px !important;object-fit:cover !important;border-radius:10px;display:block !important;margin:auto;}html[data-daab-page-id="activities-news"] .act-narrow-img{width:60% !important;border-radius:10px;display:block !important;margin:0 auto 16px auto;}html[data-daab-page-id="activities-news"] .act-video-row{display:flex !important;gap:12px !important;margin-bottom:16px;}html[data-daab-page-id="activities-news"] .act-video-col{flex:1 !important;display:flex !important;flex-direction:column !important;gap:1em !important;}html[data-daab-page-id="activities-news"] .act-video-thumb{width:100% !important;height:180px !important;border-radius:10px;object-fit:cover !important;}html[data-daab-page-id="activities-news"] .act-video-caption{display:flex !important;width:100% !important;justify-content:center !important;font-size:11px;}html[data-daab-page-id="activities-news"] .act-video-row-wrap{display:flex !important;gap:12px !important;}html[data-daab-page-id="activities-news"] .act-portrait-img{width:100% !important;max-width:600px !important;border-radius:10px;display:block !important;margin:0 auto 16px auto;}html[data-daab-page-id="activities-news"] .act-half-img{width:50% !important;border-radius:10px;object-fit:cover !important;}html[data-daab-page-id="activities-news"] .act-inline-row{display:flex !important;gap:10px !important;margin-top:14px;flex-wrap:wrap !important;}/* ===== WAAS common UI alignment ===== */:root{
   --navy: var(--blue-900);
   --teal: var(--blue-700);
   --teal-lt: var(--blue-400);
@@ -528,14 +443,14 @@ html[data-daab-page-id="activities-news"] .news-feed .card-body li{
   --card-bg: rgba(255, 255, 255, .96);
   --tag-bg: var(--soft);
 }html[data-daab-page-id="activities-news"] body{
-  color: var(--ink) !important;
-}.page-hero{
-  color: var(--ink) !important;
-  background: transparent !important;
-  border-bottom: 1px solid var(--color-border-blue-10) !important;
-}.page-hero::before{
-  background: var(--color-hero-scrim) !important;
-}.page-hero::after{
+  color:var(--ink);
+}html[data-daab-page-id="activities-news"] .page-hero{
+  color:var(--ink);
+  background:transparent;
+  border-bottom:1px solid var(--color-border-blue-10);
+}html[data-daab-page-id="activities-news"] .page-hero::before{
+  background:var(--color-hero-scrim);
+}html[data-daab-page-id="activities-news"] .page-hero::after{
   content: "";
   position: absolute;
   inset: 0;
@@ -544,219 +459,209 @@ html[data-daab-page-id="activities-news"] .news-feed .card-body li{
   opacity: .72;
   pointer-events: none;
   mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
-}.page-hero h1,
-.page-hero p{
+}html[data-daab-page-id="activities-news"] .page-hero h1,html[data-daab-page-id="activities-news"] .page-hero p{
   position: relative !important;
   z-index: 1 !important;
-}.page-hero h1{
-  color: var(--ink) !important;
-  font-size: clamp(21.28px, 3.36vw, 40.32px) !important;
-  font-weight: 800 !important;
-  letter-spacing: -.035em !important;
-}.page-hero p{
+}html[data-daab-page-id="activities-news"] .page-hero h1{
+  color:var(--ink);
+  font-size:clamp(21.28px, 3.36vw, 40.32px);
+  font-weight:800;
+  letter-spacing:-.035em;
+}html[data-daab-page-id="activities-news"] .page-hero p{
   max-width: 720px !important;
-  color: var(--muted) !important;
-  font-weight: 600 !important;
-}.content-wrap{
+  color:var(--muted);
+  font-weight:600;
+}html[data-daab-page-id="activities-news"] .content-wrap{
   max-width: var(--max) !important;
   gap: 28px !important;
-}.news-card,
-.sidebar-widget{
-  background: rgba(255, 255, 255, .96) !important;
-  border: 1px solid var(--color-border-blue-faint) !important;
-  border-radius: var(--radius) !important;
-  box-shadow: var(--shadow) !important;
-}.news-card{
-  margin-bottom: 26px !important;
-}.news-card:hover{
+}html[data-daab-page-id="activities-news"] .news-card,html[data-daab-page-id="activities-news"] .sidebar-widget{
+  background:rgba(255, 255, 255, .96);
+  border:1px solid var(--color-border-blue-faint);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}html[data-daab-page-id="activities-news"] .news-card{
+  margin-bottom:26px;
+}html[data-daab-page-id="activities-news"] .news-card:hover{
   transform: translateY(-5px) !important;
-  box-shadow: var(--shadow-strong) !important;
-  border-color: rgba(78, 180, 238, .42) !important;
-}.card-header,
-.widget-head{
-  background: linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 58%, var(--blue-400) 100%) !important;
-}.card-header{
-  padding: 20px 28px 14px !important;
-}.card-date{
-  color: var(--gold-soft) !important;
+  box-shadow:var(--shadow-strong);
+  border-color:rgba(78, 180, 238, .42);
+}html[data-daab-page-id="activities-news"] .card-header,html[data-daab-page-id="activities-news"] .widget-head{
+  background:linear-gradient(135deg, var(--blue-900) 0%, var(--blue-700) 58%, var(--blue-400) 100%);
+}html[data-daab-page-id="activities-news"] .card-header{
+  padding:20px 28px 14px;
+}html[data-daab-page-id="activities-news"] .card-date{
+  color:var(--gold-soft);
   justify-content: center !important;
-  font-weight: 800 !important;
-}.card-date::before{
-  background: var(--gold) !important;
-}.card-title{
-  color: var(--white) !important;
-  font-size: clamp(14px, 1.54vw, 19.6px) !important;
-  font-weight: 800 !important;
-  letter-spacing: -.015em !important;
-  line-height: 1.38 !important;
-  margin: 0 !important;
-}.card-body{
-  padding: 14px 28px 26px !important;
-}.news-card .card-body > :first-child{
-  margin-top: 0 !important;
-}.card-text,
-.card-body p,
-.card-body li{
-  color: var(--muted) !important;
-  font-size: 15px !important;
-  line-height: 1.62 !important;
-}.card-source{
-  color: var(--blue-700) !important;
-  background: var(--white) !important;
-  border: 1px solid var(--line) !important;
-  border-radius: var(--radius-pill) !important;
-  box-shadow: 0 10px 24px rgba(0, 45, 82, .10) !important;
-  font-weight: 800 !important;
-}.card-source:hover{
-  color: var(--white) !important;
-  background: var(--blue-700) !important;
-  border-color: var(--blue-700) !important;
+  font-weight:800;
+}html[data-daab-page-id="activities-news"] .card-date::before{
+  background:var(--gold);
+}html[data-daab-page-id="activities-news"] .card-title{
+  color:var(--white);
+  font-size:clamp(14px, 1.54vw, 19.6px);
+  font-weight:800;
+  letter-spacing:-.015em;
+  line-height:1.38;
+  margin:0;
+}html[data-daab-page-id="activities-news"] .card-body{
+  padding:14px 28px 26px;
+}html[data-daab-page-id="activities-news"] .news-card .card-body > :first-child{
+  margin-top:0;
+}html[data-daab-page-id="activities-news"] .card-text,html[data-daab-page-id="activities-news"] .card-body p,html[data-daab-page-id="activities-news"] .card-body li{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.62;
+}html[data-daab-page-id="activities-news"] .card-source{
+  color:var(--blue-700);
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--radius-pill);
+  box-shadow:0 10px 24px rgba(0, 45, 82, .10);
+  font-weight:800;
+}html[data-daab-page-id="activities-news"] .card-source:hover{
+  color:var(--white);
+  background:var(--blue-700);
+  border-color:var(--blue-700);
   transform: translateY(-1px) !important;
-}.card-gallery img,
-.award-item img{
-  border-color: var(--color-border-blue-16) !important;
-  border-radius: 14px !important;
-  background: #f7fbff !important;
-}.widget-head{
-  border-bottom: 2px solid var(--gold) !important;
-  font-family: var(--font-serif) !important;
-  font-size: 12.6px !important;
-  font-weight: 800 !important;
-}.timeline-list a{
-  border-radius: 10px !important;
-}.timeline-list a:hover,
-.timeline-list a.tl-active{
-  color: var(--blue-700) !important;
-  background: var(--soft) !important;
+}html[data-daab-page-id="activities-news"] .card-gallery img,html[data-daab-page-id="activities-news"] .award-item img{
+  border-color:var(--color-border-blue-16);
+  border-radius:14px;
+  background:#f7fbff;
+}html[data-daab-page-id="activities-news"] .widget-head{
+  border-bottom:2px solid var(--gold);
+  font-family:var(--font-serif);
+  font-size:12.6px;
+  font-weight:800;
+}html[data-daab-page-id="activities-news"] .timeline-list a{
+  border-radius:10px;
+}html[data-daab-page-id="activities-news"] .timeline-list a:hover,html[data-daab-page-id="activities-news"] .timeline-list a.tl-active{
+  color:var(--blue-700);
+  background:var(--soft);
 }
 
-@media (max-width: 760px) {.card-body,
-  .card-header{
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }.card-title{
-    font-size: 15.4px !important;
+@media (max-width: 760px) {html[data-daab-page-id="activities-news"] .card-body,html[data-daab-page-id="activities-news"] .card-header{
+    padding-left:20px;
+    padding-right:20px;
+  }html[data-daab-page-id="activities-news"] .card-title{
+    font-size:15.4px;
   }
-}/* ===== Title panel consistency with shared pages ===== */
-:root{
+}/* ===== Title panel consistency with shared pages ===== */:root{
   --activities-title-height: 0px;
   --activities-gap: 32px;
-}.page-hero{
+}html[data-daab-page-id="activities-news"] .page-hero{
   position: relative !important;
   top: auto !important;
   z-index: 1 !important;
   min-height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding:0;
+  margin:0;
   overflow: hidden !important;
-  color: var(--ink) !important;
-  text-align: left !important;
-  background: transparent !important;
-  border-bottom: 0 !important;
-  box-shadow: none !important;
-}.page-hero::before{
+  color:var(--ink);
+  text-align:left;
+  background:transparent;
+  border-bottom:0;
+  box-shadow:none;
+}html[data-daab-page-id="activities-news"] .page-hero::before{
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
-  background: var(--color-hero-scrim) !important;
+  background:var(--color-hero-scrim);
   pointer-events: none !important;
-}.page-hero::after{
+}html[data-daab-page-id="activities-news"] .page-hero::after{
   content: "" !important;
   position: absolute !important;
   inset: 0 !important;
   z-index: 0 !important;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, .18), rgba(255, 255, 255, 0)) !important;
+  background:linear-gradient(to bottom, rgba(255, 255, 255, .18), rgba(255, 255, 255, 0));
   opacity: .72 !important;
   mix-blend-mode: normal !important;
   pointer-events: none !important;
   mask-image: linear-gradient(to bottom, #000 0%, transparent 82%) !important;
-}.activities-hero-wrap{
+}html[data-daab-page-id="activities-news"] .activities-hero-wrap{
   position: relative !important;
   z-index: 1 !important;
   display: grid !important;
   grid-template-columns: 1.12fr .88fr !important;
   gap: 24px !important;
   align-items: start !important;
-  padding: 22px 20px 26px !important;
-}.page-hero h1{
-  margin: 0 0 14px !important;
-  padding-top: .08em !important;
-  color: var(--ink) !important;
-  font-family: var(--font-serif) !important;
-  font-size: clamp(21.28px, 3.36vw, 40.32px) !important;
-  font-weight: 800 !important;
-  line-height: 1.12 !important;
-  letter-spacing: -.035em !important;
-}.activities-summary-panel{
-  padding: 10px !important;
-  background: rgba(255, 255, 255, .14) !important;
-  border: 1px solid rgba(255, 255, 255, .28) !important;
-  border-radius: 22px !important;
-  box-shadow: var(--shadow-hero-panel) !important;
-  backdrop-filter: blur(18px) !important;
-}.activities-summary-card{
-  padding: 12px 14px !important;
-  color: var(--ink) !important;
-  background: var(--color-panel-card-bg) !important;
-  border: 1px solid var(--color-panel-card-border) !important;
-  border-radius: 16px !important;
-}.activities-summary-card .activities-summary-title{
+  padding:22px 20px 26px;
+}html[data-daab-page-id="activities-news"] .page-hero h1{
+  margin:0 0 14px;
+  padding-top:.08em;
+  color:var(--ink);
+  font-family:var(--font-serif);
+  font-size:clamp(21.28px, 3.36vw, 40.32px);
+  font-weight:800;
+  line-height:1.12;
+  letter-spacing:-.035em;
+}html[data-daab-page-id="activities-news"] .activities-summary-panel{
+  padding:10px;
+  background:rgba(255, 255, 255, .14);
+  border:1px solid rgba(255, 255, 255, .28);
+  border-radius:22px;
+  box-shadow:var(--shadow-hero-panel);
+  backdrop-filter:blur(18px);
+}html[data-daab-page-id="activities-news"] .activities-summary-card{
+  padding:12px 14px;
+  color:var(--ink);
+  background:var(--color-panel-card-bg);
+  border:1px solid var(--color-panel-card-border);
+  border-radius:16px;
+}html[data-daab-page-id="activities-news"] .activities-summary-card .activities-summary-title{
   margin: 0 0 6px;
-  color: var(--color-heading-blue) !important;
+  color:var(--color-heading-blue);
   font-family: var(--font-serif);
   font-size: var(--font-size-summary-panel-title);
   font-weight: 800;
   line-height: 1.15;
   text-align: center;
-}.activities-summary-card .hero-text{
+}html[data-daab-page-id="activities-news"] .activities-summary-card .hero-text{
   max-width: none !important;
-  margin: 0 !important;
-  color: var(--muted-hero) !important;
+  margin:0;
+  color:var(--muted-hero);
   font-size: 13px;
   line-height: 1.42;
-}.content-wrap{
-  margin: var(--activities-gap) auto 0 !important;
-}.news-card{
-  scroll-margin-top: calc(var(--daab-nav-height) + 28px) !important;
+}html[data-daab-page-id="activities-news"] .content-wrap{
+  margin:var(--activities-gap) auto 0;
+}html[data-daab-page-id="activities-news"] .news-card{
+  scroll-margin-top:calc(var(--daab-nav-height) + 28px);
 }
 
-@media (max-width: 760px) {.page-hero{
-    background-size: auto 360px !important;
-  }.activities-hero-wrap{
+@media (max-width: 760px) {html[data-daab-page-id="activities-news"] .page-hero{
+    background-size:auto 360px;
+  }html[data-daab-page-id="activities-news"] .activities-hero-wrap{
     grid-template-columns: 1fr !important;
-  }.activities-summary-panel{
+  }html[data-daab-page-id="activities-news"] .activities-summary-panel{
     max-width: 100% !important;
-    padding: 8px !important;
-  }.activities-summary-card{
-    padding: 10px 12px !important;
-  }.activities-summary-card .activities-summary-title{
+    padding:8px;
+  }html[data-daab-page-id="activities-news"] .activities-summary-card{
+    padding:10px 12px;
+  }html[data-daab-page-id="activities-news"] .activities-summary-card .activities-summary-title{
     font-size: var(--font-size-summary-panel-title-mobile);
     margin-bottom: 5px;
-  }.page-hero h1{
-    font-size: clamp(21px, 7.35vw, 29.4px) !important;
+  }html[data-daab-page-id="activities-news"] .page-hero h1{
+    font-size:clamp(21px, 7.35vw, 29.4px);
   }
-}/* ===== Instant event navigation and mobile timeline ===== */
-html[data-daab-page-id="activities-news"]{
-  scroll-behavior: auto !important;
-}.timeline-list a{
+}/* ===== Instant event navigation and mobile timeline ===== */html[data-daab-page-id="activities-news"]{
+  scroll-behavior:auto;
+}html[data-daab-page-id="activities-news"] .timeline-list a{
   flex: 1 1 auto !important;
   min-width: 0 !important;
   display: block !important;
   min-height: 36px !important;
-  line-height: 1.35 !important;
-}.events-menu-toggle{
+  line-height:1.35;
+}html[data-daab-page-id="activities-news"] .events-menu-toggle{
   display: none;
 }
 
-@media (max-width: 1060px) {.sidebar-widget{
+@media (max-width: 1060px) {html[data-daab-page-id="activities-news"] .sidebar-widget{
     overflow: hidden !important;
-  }.widget-head{
+  }html[data-daab-page-id="activities-news"] .widget-head{
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     gap: 14px !important;
-    text-align: left !important;
-  }.events-menu-toggle{
+    text-align:left;
+  }html[data-daab-page-id="activities-news"] .events-menu-toggle{
     display: inline-flex !important;
     flex: 0 0 auto !important;
     flex-direction: column !important;
@@ -764,56 +669,56 @@ html[data-daab-page-id="activities-news"]{
     gap: 4px !important;
     width: 42px !important;
     height: 38px !important;
-    padding: 0 10px !important;
-    cursor: pointer !important;
-    background: rgba(255, 255, 255, .16) !important;
-    border: 1px solid rgba(255, 255, 255, .34) !important;
-    border-radius: 10px !important;
-  }.events-menu-toggle span{
+    padding:0 10px;
+    cursor:pointer;
+    background:rgba(255, 255, 255, .16);
+    border:1px solid rgba(255, 255, 255, .34);
+    border-radius:10px;
+  }html[data-daab-page-id="activities-news"] .events-menu-toggle span{
     display: block !important;
     width: 100% !important;
     height: 2px !important;
-    background: var(--white) !important;
-    border-radius: var(--radius-pill) !important;
-  }.sidebar-widget .widget-body{
+    background:var(--white);
+    border-radius:var(--radius-pill);
+  }html[data-daab-page-id="activities-news"] .sidebar-widget .widget-body{
     max-height: 0 !important;
-    padding: 0 12px !important;
+    padding:0 12px;
     overflow: hidden !important;
-    transition: max-height .22s ease, padding .22s ease !important;
-  }.sidebar-widget.events-open .widget-body{
+    transition:max-height .22s ease, padding .22s ease;
+  }html[data-daab-page-id="activities-news"] .sidebar-widget.events-open .widget-body{
     max-height: min(70vh, 560px) !important;
-    padding: 12px !important;
+    padding:12px;
     overflow-y: auto !important;
     overflow-x: hidden !important;
-  }.timeline-list{
+  }html[data-daab-page-id="activities-news"] .timeline-list{
     display: block !important;
-    padding: 0 !important;
-  }.timeline-list li{
+    padding:0;
+  }html[data-daab-page-id="activities-news"] .timeline-list li{
     display: flex !important;
     gap: 10px !important;
     width: 100% !important;
-    margin: 0 !important;
-    padding: 9px 0 !important;
-    border-bottom: 1px solid var(--color-border-blue-12) !important;
-  }.timeline-list .tl-date{
+    margin:0;
+    padding:9px 0;
+    border-bottom:1px solid var(--color-border-blue-12);
+  }html[data-daab-page-id="activities-news"] .timeline-list .tl-date{
     flex: 0 0 64px !important;
-    margin: 0 !important;
-    padding-top: 3px !important;
-  }.timeline-list a{
+    margin:0;
+    padding-top:3px;
+  }html[data-daab-page-id="activities-news"] .timeline-list a{
     flex: 1 1 auto !important;
     min-width: 0 !important;
     min-height: 44px !important;
-    padding: 10px 12px !important;
-    margin: 0 !important;
+    padding:10px 12px;
+    margin:0;
   }
 }
 
 /* Final mobile override: show events hamburger panel reliably */
-@media (max-width: 1060px) {.content-wrap{
+@media (max-width: 1060px) {html[data-daab-page-id="activities-news"] .content-wrap{
     display: flex !important;
     flex-direction: column !important;
     gap: 22px !important;
-  }.sidebar{
+  }html[data-daab-page-id="activities-news"] .sidebar{
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -822,22 +727,22 @@ html[data-daab-page-id="activities-news"]{
     width: 100% !important;
     max-width: 100% !important;
     max-height: none !important;
-    order: 0 !important;
+    order:0;
     z-index: 4500 !important;
-  }.news-feed{
-    order: 1 !important;
-  }.sidebar-widget{
+  }html[data-daab-page-id="activities-news"] .news-feed{
+    order:1;
+  }html[data-daab-page-id="activities-news"] .sidebar-widget{
     display: block !important;
     width: 100% !important;
     overflow: hidden !important;
-    border-radius: var(--radius2) !important;
-  }.widget-head{
+    border-radius:var(--radius2);
+  }html[data-daab-page-id="activities-news"] .widget-head{
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     min-height: 58px !important;
-    padding: 12px 16px !important;
-  }.events-menu-toggle{
+    padding:12px 16px;
+  }html[data-daab-page-id="activities-news"] .events-menu-toggle{
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -848,41 +753,28 @@ html[data-daab-page-id="activities-news"]{
     min-width: 44px !important;
     opacity: 1 !important;
     visibility: visible !important;
-  }.events-menu-toggle span{
+  }html[data-daab-page-id="activities-news"] .events-menu-toggle span{
     display: block !important;
     width: 20px !important;
     height: 2px !important;
-    background: var(--white) !important;
-  }.sidebar-widget:not(.events-open) .widget-body{
+    background:var(--white);
+  }html[data-daab-page-id="activities-news"] .sidebar-widget:not(.events-open) .widget-body{
     display: block !important;
     max-height: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    padding-top:0;
+    padding-bottom:0;
     overflow: hidden !important;
-  }.sidebar-widget.events-open .widget-body{
+  }html[data-daab-page-id="activities-news"] .sidebar-widget.events-open .widget-body{
     display: block !important;
     max-height: min(62vh, 520px) !important;
-    padding: 12px !important;
+    padding:12px;
     overflow-y: auto !important;
-  }.card-gallery,
-  .award-grid,
-  .act-photo-grid,
-  .act-video-row,
-  .act-video-row-wrap{
+  }html[data-daab-page-id="activities-news"] .card-gallery,html[data-daab-page-id="activities-news"] .award-grid,html[data-daab-page-id="activities-news"] .act-photo-grid,html[data-daab-page-id="activities-news"] .act-video-row,html[data-daab-page-id="activities-news"] .act-video-row-wrap{
     display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 14px !important;
     width: 100% !important;
-  }.card-gallery img,
-  .award-item img,
-  .act-row-thumb,
-  .act-feature-img,
-  .act-photo-grid-img-lg,
-  .act-photo-grid-img,
-  .act-narrow-img,
-  .act-video-thumb,
-  .act-portrait-img,
-  .act-half-img{
+  }html[data-daab-page-id="activities-news"] .card-gallery img,html[data-daab-page-id="activities-news"] .act-row-thumb,html[data-daab-page-id="activities-news"] .act-feature-img,html[data-daab-page-id="activities-news"] .act-photo-grid-img-lg,html[data-daab-page-id="activities-news"] .act-photo-grid-img,html[data-daab-page-id="activities-news"] .act-narrow-img,html[data-daab-page-id="activities-news"] .act-video-thumb,html[data-daab-page-id="activities-news"] .act-portrait-img,html[data-daab-page-id="activities-news"] .act-half-img{
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
@@ -890,33 +782,33 @@ html[data-daab-page-id="activities-news"]{
     max-height: none !important;
     object-fit: contain !important;
     object-position: center center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }.award-item{
+    margin-left:auto;
+    margin-right:auto;
+  }
+  /* Award portraits keep cover framing (e.g. #serencam-2026); do not force contain here. */html[data-daab-page-id="activities-news"] .award-item{
     width: 100% !important;
     min-width: 0 !important;
   }
-}/* Clear portrait layout for the presidential award section */
-#serencam-2026 .award-grid{
+}/* Clear portrait layout for the presidential award section */html[data-daab-page-id="activities-news"] #serencam-2026 .award-grid{
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)) !important;
   gap: 16px !important;
   align-items: stretch !important;
   overflow: visible !important;
   width: 100% !important;
-}#serencam-2026 .award-item{
+}html[data-daab-page-id="activities-news"] #serencam-2026 .award-item{
   display: flex !important;
   min-width: 0 !important;
   height: auto !important;
   flex-direction: column !important;
   justify-content: space-between !important;
-  padding: 10px !important;
+  padding:10px;
   overflow: hidden !important;
-  background: var(--white) !important;
-  border: 1px solid var(--color-border-blue-16) !important;
-  border-radius: var(--radius2) !important;
-  box-shadow: 0 10px 24px rgba(0, 45, 82, .10) !important;
-}#serencam-2026 .award-item img{
+  background:var(--white);
+  border:1px solid var(--color-border-blue-16);
+  border-radius:var(--radius2);
+  box-shadow:0 10px 24px rgba(0, 45, 82, .10);
+}html[data-daab-page-id="activities-news"] #serencam-2026 .award-item img{
   display: block !important;
   width: 100% !important;
   aspect-ratio: 540 / 680 !important;
@@ -925,39 +817,39 @@ html[data-daab-page-id="activities-news"]{
   max-height: none !important;
   object-fit: cover !important;
   object-position: center top !important;
-  padding: 0 !important;
-  background: var(--white) !important;
-  border: 1px solid var(--color-border-blue-12) !important;
-  border-radius: 14px !important;
-}#serencam-2026 .award-item p{
+  padding:0;
+  background:var(--white);
+  border:1px solid var(--color-border-blue-12);
+  border-radius:14px;
+}html[data-daab-page-id="activities-news"] #serencam-2026 .award-item p{
   min-height: 0 !important;
-  margin: 10px 0 0 !important;
-  padding: 0 !important;
-  color: var(--ink) !important;
-  font-size: 13px !important;
-  font-weight: 800 !important;
-  line-height: 1.35 !important;
-  text-align: center !important;
+  margin:10px 0 0;
+  padding:0;
+  color:var(--ink);
+  font-size:13px;
+  font-weight:800;
+  line-height:1.35;
+  text-align:center;
 }
 
-@media (min-width: 1180px) {#serencam-2026 .award-grid{
+@media (min-width: 1180px) {html[data-daab-page-id="activities-news"] #serencam-2026 .award-grid{
     grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
   }
 }
 
-@media (max-width: 1060px) {#serencam-2026 .award-grid{
+@media (max-width: 1060px) {html[data-daab-page-id="activities-news"] #serencam-2026 .award-grid{
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
     gap: 16px !important;
     overflow: visible !important;
-  }#serencam-2026 .award-item{
+  }html[data-daab-page-id="activities-news"] #serencam-2026 .award-item{
     display: block !important;
     width: 100% !important;
     min-width: 0 !important;
     max-width: 100% !important;
-    margin: 0 !important;
+    margin:0;
     overflow: visible !important;
-  }#serencam-2026 .award-item img{
+  }html[data-daab-page-id="activities-news"] #serencam-2026 .award-item img{
     position: static !important;
     float: none !important;
     aspect-ratio: 540 / 680 !important;
@@ -965,94 +857,83 @@ html[data-daab-page-id="activities-news"]{
     min-height: 0 !important;
     max-height: none !important;
     transform: none !important;
-    padding: 0 !important;
+    padding:0;
   }
 }
 
-@media (max-width: 520px) {#serencam-2026 .award-grid{
+@media (max-width: 520px) {html[data-daab-page-id="activities-news"] #serencam-2026 .award-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
-}/* Compact responsive layouts for BMU and 187 school online event galleries */
-#bmu-2026 .card-gallery.double,
-#baxtiyar-187-2026 .card-gallery.double{
+}/* Compact responsive layouts for BMU and 187 school online event galleries */html[data-daab-page-id="activities-news"] #bmu-2026 .card-gallery.double,html[data-daab-page-id="activities-news"] #baxtiyar-187-2026 .card-gallery.double{
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
   gap: 16px !important;
   align-items: stretch !important;
   width: 100% !important;
   overflow: visible !important;
-}#bmu-2026 .card-gallery.double img,
-#baxtiyar-187-2026 .card-gallery.double img{
+}html[data-daab-page-id="activities-news"] #bmu-2026 .card-gallery.double img,html[data-daab-page-id="activities-news"] #baxtiyar-187-2026 .card-gallery.double img{
   display: block !important;
   width: 100% !important;
   min-width: 0 !important;
-  padding: 6px !important;
+  padding:6px;
   object-position: center center !important;
-  background: #f7fbff !important;
-  border: 1px solid var(--color-border-blue-16) !important;
-  border-radius: 14px !important;
-  box-shadow: 0 8px 18px rgba(0, 45, 82, .08) !important;
-}#bmu-2026 .card-gallery.double img{
+  background:#f7fbff;
+  border:1px solid var(--color-border-blue-16);
+  border-radius:14px;
+  box-shadow:0 8px 18px rgba(0, 45, 82, .08);
+}html[data-daab-page-id="activities-news"] #bmu-2026 .card-gallery.double img{
   height: 180px !important;
   min-height: 180px !important;
   max-height: 180px !important;
   object-fit: contain !important;
-}#baxtiyar-187-2026 .card-gallery.double img{
+}html[data-daab-page-id="activities-news"] #baxtiyar-187-2026 .card-gallery.double img{
   height: 220px !important;
   min-height: 220px !important;
   max-height: 220px !important;
-  padding: 0 !important;
+  padding:0;
   object-fit: cover !important;
 }
 
-@media (max-width: 760px) {#bmu-2026 .card-gallery.double,
-  #baxtiyar-187-2026 .card-gallery.double{
+@media (max-width: 760px) {html[data-daab-page-id="activities-news"] #bmu-2026 .card-gallery.double,html[data-daab-page-id="activities-news"] #baxtiyar-187-2026 .card-gallery.double{
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)) !important;
     gap: 14px !important;
-  }#bmu-2026 .card-gallery.double img{
+  }html[data-daab-page-id="activities-news"] #bmu-2026 .card-gallery.double img{
     height: 160px !important;
     min-height: 160px !important;
     max-height: 160px !important;
-  }#baxtiyar-187-2026 .card-gallery.double img{
+  }html[data-daab-page-id="activities-news"] #baxtiyar-187-2026 .card-gallery.double img{
     height: clamp(190px, 56vw, 260px) !important;
     min-height: 190px !important;
     max-height: 260px !important;
   }
 }
 
-@media (max-width: 560px) {#bmu-2026 .card-gallery.double,
-  #baxtiyar-187-2026 .card-gallery.double{
+@media (max-width: 560px) {html[data-daab-page-id="activities-news"] #bmu-2026 .card-gallery.double,html[data-daab-page-id="activities-news"] #baxtiyar-187-2026 .card-gallery.double{
     grid-template-columns: 1fr !important;
   }
-}/* Summer school photo — float right, text wrap */
-/* Amirulla Mammadov jubilee — float right, text wrap */
-#amirulla-80-2026 .amirulla-jubilee-photo{
+}/* Summer school photo — float right, text wrap *//* Amirulla Mammadov jubilee — float right, text wrap */html[data-daab-page-id="activities-news"] #amirulla-80-2026 .amirulla-jubilee-photo{
   float: right !important;
   width: min(260px, 42%) !important;
-  margin: 0 0 16px 22px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
-}
-#amirulla-80-2026 .amirulla-jubilee-photo img{
+  margin:0 0 16px 22px;
+  padding:0;
+  border:0;
+  background:transparent;
+}html[data-daab-page-id="activities-news"] #amirulla-80-2026 .amirulla-jubilee-photo img{
   display: block !important;
   width: 100% !important;
   height: auto !important;
-  border-radius: 12px !important;
-  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
-  box-shadow: 0 6px 20px rgba(0, 45, 82, 0.14) !important;
-  background: #fff !important;
+  border-radius:12px;
+  border:1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16));
+  box-shadow:0 6px 20px rgba(0, 45, 82, 0.14);
+  background:#fff;
   object-fit: cover !important;
   aspect-ratio: 3 / 4 !important;
-}
-#amirulla-80-2026 .card-body::after{
+}html[data-daab-page-id="activities-news"] #amirulla-80-2026 .card-body::after{
   content: "" !important;
   display: table !important;
   clear: both !important;
-}
-
-/* UNEC Zagatala gallery — 9 first on top; video beside image 3 */
-#unec-zaqatala-2026 .zaqatala-gallery{
+}/* UNEC Zagatala gallery — 2×3: photos + video thumb in zv slot */
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery{
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
   grid-template-areas:
@@ -1061,32 +942,64 @@ html[data-daab-page-id="activities-news"]{
     "z1 z8";
   gap: 14px !important;
   align-items: stretch !important;
-  margin-top: 0 !important;
-  margin-bottom: 1em !important;
+  margin-top: 0;
+  margin-bottom: 1em;
 }
-#unec-zaqatala-2026 .zaqatala-g-9{ grid-area: z9 !important; }
-#unec-zaqatala-2026 .zaqatala-g-6{ grid-area: z6 !important; }
-#unec-zaqatala-2026 .zaqatala-g-3{ grid-area: z3 !important; }
-#unec-zaqatala-2026 .zaqatala-g-video{ grid-area: zv !important; }
-#unec-zaqatala-2026 .zaqatala-g-1{ grid-area: z1 !important; }
-#unec-zaqatala-2026 .zaqatala-g-8{ grid-area: z8 !important; }
-#unec-zaqatala-2026 .zaqatala-gallery img,
-#unec-zaqatala-2026 .zaqatala-gallery video{
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-g-9{ grid-area: z9 !important; }
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-g-6{ grid-area: z6 !important; }
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-g-3{ grid-area: z3 !important; }
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-g-video{ grid-area: zv !important; }
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-g-1{ grid-area: z1 !important; }
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-g-8{ grid-area: z8 !important; }
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery > img,
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery > video,
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-video-link{
   width: 100% !important;
   height: 240px !important;
+  border-radius: 12px;
+  display: block !important;
+  background: #0b1f33;
+  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16));
+  box-shadow: 0 4px 16px rgba(0, 45, 82, 0.12);
+  overflow: hidden !important;
+}
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery > img,
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery > video,
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-video-link img{
   object-fit: cover !important;
   object-position: center center !important;
-  border-radius: 12px !important;
-  display: block !important;
-  background: #0b1f33 !important;
-  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
-  box-shadow: 0 4px 16px rgba(0, 45, 82, 0.12) !important;
 }
-#unec-zaqatala-2026 .zaqatala-gallery video{
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-video-link{
+  position: relative !important;
+  text-decoration: none;
+}
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-video-link img{
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: #0b1f33;
+}
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-video-link__play{
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+}
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-video-link__play svg{
+  width: 68px !important;
+  height: 48px !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
+}
+html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery > video{
   object-fit: contain !important;
 }
 @media (max-width: 760px) {
-  #unec-zaqatala-2026 .zaqatala-gallery{
+  html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery{
     grid-template-columns: 1fr !important;
     grid-template-areas:
       "z9"
@@ -1096,69 +1009,58 @@ html[data-daab-page-id="activities-news"]{
       "z1"
       "z8";
   }
-  #unec-zaqatala-2026 .zaqatala-gallery img,
-  #unec-zaqatala-2026 .zaqatala-gallery video{
+  html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery > img,
+  html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery > video,
+  html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-video-link{
     height: 220px !important;
   }
-}
-
-/* Efendiyev innovation — photo float left, text wrap */
-#efendiyev-innovasiya-2026 .efendiyev-innovasiya-photo{
+}/* Efendiyev innovation — photo float left, text wrap */html[data-daab-page-id="activities-news"] #efendiyev-innovasiya-2026 .efendiyev-innovasiya-photo{
   float: left !important;
   width: min(260px, 42%) !important;
-  margin: 0 18px 12px 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
-}
-#efendiyev-innovasiya-2026 .efendiyev-innovasiya-photo img{
+  margin:0 18px 12px 0;
+  padding:0;
+  border:0;
+  background:transparent;
+}html[data-daab-page-id="activities-news"] #efendiyev-innovasiya-2026 .efendiyev-innovasiya-photo img{
   display: block !important;
   width: 100% !important;
   height: auto !important;
-  border-radius: 12px !important;
-  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
-  box-shadow: 0 6px 20px rgba(0, 45, 82, 0.14) !important;
-  background: #fff !important;
-}
-#efendiyev-innovasiya-2026 .card-body::after{
+  border-radius:12px;
+  border:1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16));
+  box-shadow:0 6px 20px rgba(0, 45, 82, 0.14);
+  background:#fff;
+}html[data-daab-page-id="activities-news"] #efendiyev-innovasiya-2026 .card-body::after{
   content: "" !important;
   display: table !important;
   clear: both !important;
 }
-@media (max-width: 760px) {
-  #efendiyev-innovasiya-2026 .efendiyev-innovasiya-photo{
+@media (max-width: 760px) {html[data-daab-page-id="activities-news"] #efendiyev-innovasiya-2026 .efendiyev-innovasiya-photo{
     float: none !important;
     width: min(100%, 320px) !important;
-    margin: 0 auto 16px !important;
+    margin:0 auto 16px;
   }
-}
-
-/* Summer school — poster left; two photos stacked right, equal combined height */
-#summer-school-2026 .summer-school-media{
+}/* Summer school — poster left; two photos stacked right, equal combined height */html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-media{
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
   gap: 14px !important;
   align-items: stretch !important;
-  margin: 0 0 18px !important;
+  margin:0 0 18px;
   width: 100% !important;
-}
-#summer-school-2026 .summer-school-poster{
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
+}html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-poster{
+  margin:0;
+  padding:0;
+  border:0;
+  background:transparent;
   height: 100% !important;
-}
-#summer-school-2026 .summer-school-poster img{
+}html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-poster img{
   display: block !important;
   width: 100% !important;
   height: auto !important;
-  border-radius: 12px !important;
-  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
-  box-shadow: 0 6px 20px rgba(0, 45, 82, 0.14) !important;
-  background: transparent !important;
-}
-#summer-school-2026 .summer-school-photos{
+  border-radius:12px;
+  border:1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16));
+  box-shadow:0 6px 20px rgba(0, 45, 82, 0.14);
+  background:transparent;
+}html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-photos{
   display: flex !important;
   flex-direction: column !important;
   gap: 14px !important;
@@ -1166,21 +1068,19 @@ html[data-daab-page-id="activities-news"]{
   width: auto !important;
   height: 100% !important;
   min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-#summer-school-2026 .summer-school-photos .summer-school-photo{
+  margin:0;
+  padding:0;
+}html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-photos .summer-school-photo{
   flex: 1 1 0 !important;
   min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
+  margin:0;
+  padding:0;
+  border:0;
+  background:transparent;
   position: relative !important;
   overflow: hidden !important;
-  border-radius: 12px !important;
-}
-#summer-school-2026 .summer-school-photos img{
+  border-radius:12px;
+}html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-photos img{
   display: block !important;
   position: absolute !important;
   inset: 0 !important;
@@ -1188,106 +1088,91 @@ html[data-daab-page-id="activities-news"]{
   height: 100% !important;
   object-fit: cover !important;
   object-position: center !important;
-  border-radius: 12px !important;
-  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
-  box-shadow: 0 6px 20px rgba(0, 45, 82, 0.14) !important;
-  background: #fff !important;
+  border-radius:12px;
+  border:1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16));
+  box-shadow:0 6px 20px rgba(0, 45, 82, 0.14);
+  background:#fff;
 }
 
-@media (max-width: 760px) {
-  #amirulla-80-2026 .amirulla-jubilee-photo{
+@media (max-width: 760px) {html[data-daab-page-id="activities-news"] #amirulla-80-2026 .amirulla-jubilee-photo{
     float: none !important;
     width: min(100%, 280px) !important;
-    margin: 0 auto 18px !important;
-    text-align: center !important;
-  }
-  #summer-school-2026 .summer-school-media{
+    margin:0 auto 18px;
+    text-align:center;
+  }html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-media{
     grid-template-columns: 1fr !important;
-  }
-  #summer-school-2026 .summer-school-poster{
+  }html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-poster{
     width: min(100%, 360px) !important;
-    margin: 0 auto !important;
-  }
-  #summer-school-2026 .summer-school-photos{
+    margin:0 auto;
+  }html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-photos{
     min-height: 280px !important;
   }
-}
-
-/* Garuslu book cover — float right, text wrap */
-#garuslu-book-2026 .garuslu-book-cover{
+}/* Garuslu book cover — float right, text wrap */html[data-daab-page-id="activities-news"] #garuslu-book-2026 .garuslu-book-cover{
   float: right !important;
   width: min(260px, 42%) !important;
-  margin: 0 0 16px 22px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
-}#garuslu-book-2026 .garuslu-book-cover img{
+  margin:0 0 16px 22px;
+  padding:0;
+  border:0;
+  background:transparent;
+}html[data-daab-page-id="activities-news"] #garuslu-book-2026 .garuslu-book-cover img{
   display: block !important;
   width: 100% !important;
   height: auto !important;
-  border-radius: 12px !important;
-  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
-  box-shadow: 0 6px 20px rgba(0, 45, 82, 0.14) !important;
-  background: #fff !important;
-}#garuslu-book-2026 .garuslu-book-source{
+  border-radius:12px;
+  border:1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16));
+  box-shadow:0 6px 20px rgba(0, 45, 82, 0.14);
+  background:#fff;
+}html[data-daab-page-id="activities-news"] #garuslu-book-2026 .garuslu-book-source{
   clear: both !important;
-  padding-top: 4px !important;
+  padding-top:4px;
 }
 
-@media (max-width: 760px) {#garuslu-book-2026 .garuslu-book-cover{
+@media (max-width: 760px) {html[data-daab-page-id="activities-news"] #garuslu-book-2026 .garuslu-book-cover{
     float: none !important;
     width: min(280px, 100%) !important;
-    margin: 0 auto 18px !important;
-    text-align: center !important;
+    margin:0 auto 18px;
+    text-align:center;
   }
-}
-
-/* First Forum book — float cover, text wrap */
-#forum-book-2026 .forum-book-cover{
+}/* First Forum book — float cover, text wrap */html[data-daab-page-id="activities-news"] #forum-book-2026 .forum-book-cover{
   float: right !important;
   width: min(260px, 42%) !important;
-  margin: 0 0 16px 22px !important;
-  padding: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
-}
-#forum-book-2026 .forum-book-cover img{
+  margin:0 0 16px 22px;
+  padding:0;
+  border:0;
+  background:transparent;
+}html[data-daab-page-id="activities-news"] #forum-book-2026 .forum-book-cover img{
   display: block !important;
   width: 100% !important;
   height: auto !important;
-  border-radius: 12px !important;
-  border: 1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16)) !important;
-  box-shadow: 0 6px 20px rgba(0, 45, 82, 0.14) !important;
-  background: #fff !important;
-}
-#forum-book-2026 .forum-book-credits{
-  font-size: 13.5px !important;
-  line-height: 1.65 !important;
-  color: var(--text-mid) !important;
-}
-#forum-book-2026 .forum-book-contrib{
-  list-style: none !important;
-  margin: 0 0 8px !important;
-  padding: 0 !important;
-}
-#forum-book-2026 .forum-book-contrib li{
+  border-radius:12px;
+  border:1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16));
+  box-shadow:0 6px 20px rgba(0, 45, 82, 0.14);
+  background:#fff;
+}html[data-daab-page-id="activities-news"] #forum-book-2026 .forum-book-credits{
+  font-size:13.5px;
+  line-height:1.65;
+  color:var(--text-mid);
+}html[data-daab-page-id="activities-news"] #forum-book-2026 .forum-book-contrib{
+  list-style:none;
+  margin:0 0 8px;
+  padding:0;
+}html[data-daab-page-id="activities-news"] #forum-book-2026 .forum-book-contrib li{
   position: relative !important;
-  padding: 4px 0 4px 18px !important;
-  font-size: 14px !important;
-  line-height: 1.55 !important;
-  color: var(--text-mid) !important;
-}
-#forum-book-2026 .forum-book-contrib li::before{
+  padding:4px 0 4px 18px;
+  font-size:14px;
+  line-height:1.55;
+  color:var(--text-mid);
+}html[data-daab-page-id="activities-news"] #forum-book-2026 .forum-book-contrib li::before{
   content: "•" !important;
   position: absolute !important;
   left: 0 !important;
-  color: var(--teal) !important;
+  color:var(--teal);
 }
 
-@media (max-width: 760px) {#forum-book-2026 .forum-book-cover{
+@media (max-width: 760px) {html[data-daab-page-id="activities-news"] #forum-book-2026 .forum-book-cover{
     float: none !important;
     width: min(280px, 100%) !important;
-    margin: 0 auto 18px !important;
-    text-align: center !important;
+    margin:0 auto 18px;
+    text-align:center;
   }
 }

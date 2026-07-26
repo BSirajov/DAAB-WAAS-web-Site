@@ -6,7 +6,9 @@ import re
 
 from _paths import ROOT
 
-PHOTO_SLUG_RE = re.compile(r"board-members-photos/(?P<slug>[\w-]+)\.(?:png|jpe?g)")
+PHOTO_SLUG_RE = re.compile(
+    r"(?:board-members-photos|scientists-photos)/(?P<slug>[\w-]+)\.(?:png|jpe?g)"
+)
 NAME_RE = re.compile(r'<h2 class="person-name">([^<]*)</h2>')
 
 PAGES = (

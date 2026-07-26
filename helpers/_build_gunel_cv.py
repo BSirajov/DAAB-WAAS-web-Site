@@ -106,7 +106,7 @@ HTML = """<!DOCTYPE html>
         </p>
       </div>
       <figure class="hero-photo">
-        <img src="../images/scientists-photos/gunel-seferova.png" alt="Gunel Safarova" width="160" height="200" loading="eager" />
+        <img src="../images/scientists-photos/gunel-seferova.jpg" alt="Gunel Safarova" width="160" height="200" loading="eager" />
       </figure>
     </div>
     <dl class="rank-bar">

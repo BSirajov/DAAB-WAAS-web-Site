@@ -64,12 +64,23 @@ def card_html(item: dict, lang: str, strings: dict, thumb_prefix: str) -> str:
         tag, go, overlay = s["tag_article"], f'{s["go_article"]}{EXT_SVG}', ""
 
     # Prefer the original site thumbnail; fall back gracefully if missing.
+    # Thumb is a content image — use the card title as alt (visible in h3 too,
+    # but empty alt fails a11y audits for meaningful gallery/media visuals).
     if item.get("thumb"):
-        img = f'<img src="{esc(thumb_prefix + item["thumb"])}" alt="" loading="lazy"/>'
+        img = (
+            f'<img src="{esc(thumb_prefix + item["thumb"])}" alt="{title}" '
+            f'loading="lazy"/>'
+        )
     elif is_video:
-        img = f'<img src="https://i.ytimg.com/vi/{item["yt"]}/hqdefault.jpg" alt="" loading="lazy"/>'
+        img = (
+            f'<img src="https://i.ytimg.com/vi/{item["yt"]}/hqdefault.jpg" '
+            f'alt="{title}" loading="lazy"/>'
+        )
     else:
-        img = f'<img src="{favicon(item["source"])}" alt="" loading="lazy" width="46" height="46"/>'
+        img = (
+            f'<img src="{favicon(item["source"])}" alt="{title}" '
+            f'loading="lazy" width="46" height="46"/>'
+        )
 
     thumb = (
         '<figure class="media-card__thumb">'
@@ -81,7 +92,7 @@ def card_html(item: dict, lang: str, strings: dict, thumb_prefix: str) -> str:
         f'<a class="media-card media-card--{item["kind"]}" href="{esc(url)}" target="_blank" rel="noopener noreferrer">'
         f'{thumb}'
         '<div class="media-card__body">'
-        f'<span class="media-card__source"><img src="{fav_badge}" alt="" loading="lazy" width="16" height="16"/>{source}</span>'
+        f'<span class="media-card__source"><img src="{fav_badge}" alt="" aria-hidden="true" loading="lazy" width="16" height="16"/>{source}</span>'
         f'<h3 class="media-card__title">{title}</h3>'
         '<div class="media-card__meta">'
         f'<span class="media-card__date">{date}</span>'

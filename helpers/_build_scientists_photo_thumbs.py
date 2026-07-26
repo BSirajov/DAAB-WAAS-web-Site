@@ -18,10 +18,14 @@ JPEG_QUALITY = 82
 EXTS = {".jpg", ".jpeg", ".png", ".webp"}
 
 
+# Bump when regenerating thumbs so forum/pages pick up new avatar JPEGs.
+THUMB_VER = "8"
+
+
 def scientist_thumb_src(filename: str, asset_prefix: str = "") -> str:
     """Public URL path for a scientist avatar thumb (always .jpg)."""
     stem = Path(filename).stem
-    return f"{asset_prefix}images/scientists-photos/_thumbs/{stem}.jpg"
+    return f"{asset_prefix}images/scientists-photos/_thumbs/{stem}.jpg?v={THUMB_VER}"
 
 
 def make_thumb(src: Path, dest: Path) -> None:
