@@ -7,7 +7,7 @@ Writes:
     az/scientists/akif-alaferdov-media.html
     en/scientists/akif-alaferdov-media.html
 Cover display thumbs:
-    az/scientists/akif-alaferdov-media-thumbnails/001.jpg … 003.jpg
+    images/scientists-media/akif-alaferdov-media-thumbnails/001.jpg … 003.jpg
 PDF/book assets remain in Books/Akif_Alaferdov/.
 """
 from __future__ import annotations
@@ -18,10 +18,11 @@ from urllib.parse import quote
 from PIL import Image, ImageOps
 
 from _paths import ROOT
-from _scientist_media import esc, write_pages
+from _scientist_media import esc, media_thumb_dir, media_thumb_web_prefix, write_pages
 
 BOOKS_DIR = ROOT / "Books" / "Akif_Alaferdov"
-THUMB_DIR = ROOT / "az" / "scientists" / "akif-alaferdov-media-thumbnails"
+THUMB_DIRNAME = "akif-alaferdov-media-thumbnails"
+THUMB_DIR = media_thumb_dir(THUMB_DIRNAME)
 THUMB_MAX_EDGE = 720
 BOOKS_WEB = "../../Books/Akif_Alaferdov"
 
@@ -248,11 +249,7 @@ def books_section_html(lang: str, books: list[dict]) -> str:
     for book in books:
         title = book[lang]
         note = book[f"lang_note_{lang}"]
-        thumb_src = (
-            f"akif-alaferdov-media-thumbnails/{book['id']}.jpg"
-            if lang == "az"
-            else f"../../az/scientists/akif-alaferdov-media-thumbnails/{book['id']}.jpg"
-        )
+        thumb_src = f"{media_thumb_web_prefix(THUMB_DIRNAME)}{book['id']}.jpg"
         pdf_href = books_href(book["pdf"].name)
         photos_href = books_href(book["photos"].name)
         alt = f"{s['cover_alt_prefix']} {title}"
@@ -285,7 +282,7 @@ def main() -> int:
     cfg = {
         "page_id": "akif-media",
         "slug": "akif-alaferdov-media",
-        "thumb_dirname": "akif-alaferdov-media-thumbnails",
+        "thumb_dirname": THUMB_DIRNAME,
         "thumbs": [],
         "resources": [],
         "strings": STRINGS,

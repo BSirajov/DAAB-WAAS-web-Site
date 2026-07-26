@@ -16,6 +16,18 @@ from _paths import ROOT
 
 MEDIA_CSS_VER = 9  # bump when css/daab-media-resources.css content changes
 
+# Shared bilingual thumbs live under images/, not under az/scientists/.
+MEDIA_THUMBS_ROOT = ROOT / "images" / "scientists-media"
+
+
+def media_thumb_dir(dirname: str) -> Path:
+    return MEDIA_THUMBS_ROOT / dirname
+
+
+def media_thumb_web_prefix(dirname: str) -> str:
+    """Relative URL from az|en/scientists/*.html to a thumb folder."""
+    return f"../../images/scientists-media/{dirname}/"
+
 PLAY_SVG = (
     '<span class="media-card__play" aria-hidden="true">'
     '<svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg">'
@@ -105,8 +117,7 @@ def build_html(cfg: dict, lang: str) -> str:
     canonical = f"https://daab-waas.com/{lang}/scientists/{slug}.html"
     az_url = f"https://daab-waas.com/az/scientists/{slug}.html"
     en_url = f"https://daab-waas.com/en/scientists/{slug}.html"
-    # Thumbnails live under az/scientists/; EN pages reach them cross-locale.
-    thumb_prefix = f"{thumb_dirname}/" if lang == "az" else f"../../az/scientists/{thumb_dirname}/"
+    thumb_prefix = media_thumb_web_prefix(thumb_dirname)
 
     custom = cfg.get("sections_html") or {}
     if lang in custom:

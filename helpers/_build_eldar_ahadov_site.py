@@ -5,7 +5,7 @@
     python helpers/_build_eldar_ahadov_site.py --download-images
 
 Source HTML lives in helpers/_eldar_ahadov_source/ (copied from the scrape).
-Images are written to az/scientists/eldar-ahadov-media-thumbnails/.
+Images are written to images/scientists-media/eldar-ahadov-media-thumbnails/.
 """
 from __future__ import annotations
 
@@ -33,10 +33,12 @@ from _eldar_ahadov_en_strings import (
     TRANSLATIONS,
 )
 from _paths import ROOT
+from _scientist_media import media_thumb_dir, media_thumb_web_prefix
 from _site_wide_cleanup import SCRIPT_VERSIONS, STYLE_VERSIONS
 
 SOURCE_DIR = ROOT / "helpers" / "_eldar_ahadov_source"
-THUMB_DIR = ROOT / "az" / "scientists" / "eldar-ahadov-media-thumbnails"
+THUMB_DIRNAME = "eldar-ahadov-media-thumbnails"
+THUMB_DIR = media_thumb_dir(THUMB_DIRNAME)
 ELDAR_CSS = "daab-eldar-ahadov.css"
 ELDAR_CSS_VER = int(STYLE_VERSIONS.get(ELDAR_CSS, 1))
 
@@ -1116,11 +1118,7 @@ def reorder_poetry_figures_before_poems(blocks: list[dict]) -> list[dict]:
 
 
 def render_literary_html(page: dict, blocks: list[dict], lang: str) -> str:
-    thumb_prefix = (
-        "eldar-ahadov-media-thumbnails/"
-        if lang == "az"
-        else "../../az/scientists/eldar-ahadov-media-thumbnails/"
-    )
+    thumb_prefix = media_thumb_web_prefix(THUMB_DIRNAME)
     parts: list[str] = ['<div class="eldar-literary">']
     open_piece = False
     first_figure_done = False

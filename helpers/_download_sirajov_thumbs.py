@@ -18,9 +18,10 @@ import urllib.request
 from pathlib import Path
 
 from _paths import ROOT
+from _scientist_media import media_thumb_dir
 
 PAGE = "https://sites.google.com/view/bakhtiyar-sirajov/haqq%C4%B1mda-internet-resurslar%C4%B1"
-OUT_DIR = ROOT / "az" / "scientists" / "bakhtiyar-sirajov-media-thumbnails"
+OUT_DIR = media_thumb_dir("bakhtiyar-sirajov-media-thumbnails")
 MANIFEST = ROOT / "helpers" / "_sirajov_thumbs.json"
 
 UA = (
