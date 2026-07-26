@@ -1,7 +1,7 @@
 /* Executive Board — member cards and responsive photos (AZ + EN) */
 
 html[data-daab-page-id="executive-board"]{
-  /* Reference: images/board-members-photos/bakhtiyar-sirajov.png (855×1179) */
+  /* Portraits share images/scientists-photos/ (single master). */
   --board-photo-aspect: 855 / 1179;
   --board-photo-pad: 10px;
   --board-photo-w: 148px;
@@ -154,7 +154,7 @@ html[data-daab-page-id="executive-board"] .person-card .photo-wrap{
   height: 100%;
   min-width: 0;
   min-height: 0;
-  object-fit: cover;
+  object-fit: contain;
   object-position: var(--board-photo-position);
 }html[data-daab-page-id="executive-board"] .person-body{
   position: relative;

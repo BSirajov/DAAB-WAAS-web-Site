@@ -37,7 +37,7 @@
 <link href="../css/scientists-catalog-toolbar.css?v=8" rel="stylesheet"/>
 <link href="../css/daab-page-content-search.css?v=4" rel="stylesheet"/>
 <link href="../css/daab-sidebar-widget.css?v=6" rel="stylesheet"/>
-<link href="../css/daab-membership-application.css?v=26" rel="stylesheet"/>
+<link href="../css/daab-membership-application.css?v=27" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
 <script src="../js/daab-perf.js?v=4" defer></script>
 <script src="../js/daab-sticky-chrome.js?v=3" defer></script>
@@ -55,7 +55,7 @@
 <script src="../js/daab-application-config.js?v=2" defer></script>
 <script src="../js/daab-country-codes.js?v=1" defer></script>
 <script src="../js/daab-phone-codes.js?v=2" defer></script>
-<script src="../js/daab-membership-application.js?v=18" defer></script>
+<script src="../js/daab-membership-application.js?v=19" defer></script>
 <script defer src="../js/daab-sidebar-spy.js?v=1"></script>
 <script defer src="../js/daab-sidebar-timeline.js?v=4"></script>
 <script defer src="../js/daab-page-content-search.js?v=5"></script>
@@ -169,11 +169,11 @@ No results found.
           Introduction
           <small>Section 1 of 4</small>
         </div>
-        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-1-body" data-section-label="Introduction">
+        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-1-body" aria-label="Collapse section: Introduction" data-section-label="Introduction">
           <svg class="app-section-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
       </div>
-      <div class="section-body">
+      <div class="section-body" id="sec-1-body">
         <div class="intro-box">
           To become a member of the <strong>World Association of Azerbaijani Scientists (WAAS)</strong>,
           you are requested to familiarize yourself with our <a href="charter.html">Charter</a> and provide
@@ -199,11 +199,11 @@ No results found.
           Personal Information
           <small>Section 2 of 4</small>
         </div>
-        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-2-body" data-section-label="Personal information">
+        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-2-body" aria-label="Collapse section: Personal information" data-section-label="Personal information">
           <svg class="app-section-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
       </div>
-      <div class="section-body">
+      <div class="section-body" id="sec-2-body">
 
         <div class="field-group">
           <label class="field-label" for="name">First Name <span class="req">*</span></label>
@@ -260,11 +260,11 @@ No results found.
 
         <!-- Academic Degree -->
         <div class="field-group">
-          <div class="field-label">Academic Degree <span class="req">*</span></div>
+          <div class="field-label" id="degree-label">Academic Degree <span class="req">*</span></div>
           <span class="field-hint">Select the highest academic degree you hold.</span>
-          <div class="options-list">
+          <div class="options-list" role="radiogroup" aria-labelledby="degree-label">
             <div class="opt-item">
-              <input type="radio" name="degree" id="deg1" value="bachelor">
+              <input type="radio" name="degree" id="deg1" required value="bachelor">
               <label for="deg1"><strong>Bachelor's Degree</strong> — BA (Bachelor of Arts), BSc (Bachelor of Science), BEng (Bachelor of Engineering)</label>
             </div>
             <div class="opt-item">
@@ -302,11 +302,11 @@ No results found.
 
         <!-- Academic Title -->
         <div class="field-group">
-          <div class="field-label">Academic Title <span class="req">*</span></div>
+          <div class="field-label" id="title-label">Academic Title <span class="req">*</span></div>
           <span class="field-hint">Select the academic title you currently hold.</span>
-          <div class="options-list">
+          <div class="options-list" role="radiogroup" aria-labelledby="title-label">
             <div class="opt-item">
-              <input type="radio" name="title" id="tit1" value="docent">
+              <input type="radio" name="title" id="tit1" required value="docent">
               <label for="tit1"><strong>Associate Professor (Docent)</strong> — For scientists holding a PhD and a recognised record of academic achievement.</label>
             </div>
             <div class="opt-item">
@@ -359,11 +359,11 @@ No results found.
           Scientific Fields You Are Engaged In
           <small>Section 3 of 4 — Select all that apply</small>
         </div>
-        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-3-body" data-section-label="Scientific fields">
+        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-3-body" aria-label="Collapse section: Scientific fields" data-section-label="Scientific fields">
           <svg class="app-section-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
       </div>
-      <div class="section-body">
+      <div class="section-body" id="sec-3-body">
 
         <fieldset class="sci-fields-fieldset" id="sci-fields" aria-describedby="app-submit-status">
         <legend class="sci-fields-legend">Scientific Fields You Are Engaged In</legend>
@@ -472,11 +472,11 @@ No results found.
           Additional Information
           <small>Section 4 of 4</small>
         </div>
-        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-4-body" data-section-label="Additional information">
+        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-4-body" aria-label="Collapse section: Additional information" data-section-label="Additional information">
           <svg class="app-section-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
       </div>
-      <div class="section-body">
+      <div class="section-body" id="sec-4-body">
 
         <div class="field-group">
           <label class="field-label" for="addinfo">Additional Information You Would Like to Share <span class="field-label-optional">(optional)</span></label>
@@ -505,6 +505,10 @@ No results found.
 
         <p class="app-submit-notice">Your application data is sent securely to our server and reviewed only by the WAAS membership committee.</p>
         <div class="app-submit-status" id="app-submit-status" role="status" aria-live="polite" hidden></div>
+        <div class="app-honeypot" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="app-btn-row">
           <button type="submit" class="app-btn app-btn-submit" id="appSubmitBtn"><span aria-hidden="true">✓</span> Submit Application</button>
         </div>

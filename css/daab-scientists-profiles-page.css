@@ -158,7 +158,7 @@ html[data-daab-page-id="scientists-profiles"] .catalog-sort-group-cluster .sort-
 }.card{
   --avatar-w: 148px;
   --avatar-h: 176px;
-}.card-avatar{
+}html[data-daab-page-id="scientists-profiles"] .card-avatar{
   display: block;
   flex-shrink: 0;
   width: var(--avatar-w);
@@ -170,15 +170,14 @@ html[data-daab-page-id="scientists-profiles"] .catalog-sort-group-cluster .sort-
   border: 1px solid var(--color-border-blue-faint);
   border-radius: 20px;
   box-shadow: 0 12px 28px rgba(0, 78, 140, .16);
-}.card-avatar img{
+}html[data-daab-page-id="scientists-profiles"] .card-avatar img{
   display: block;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  /* All portraits are now harmonized to the frame ratio (37:44, e.g. 296x352),
-     so cover fills the frame edge-to-edge with no gaps and no meaningful crop
-     (only the transparent breathing-room margin is trimmed). */
-  object-fit: cover;
+  /* Scale the full portrait into the 37:44 frame (no crop). Letterboxing uses
+     the avatar background when source aspect ratio differs. */
+  object-fit: contain;
   object-position: center;
 }.card-body{
   display: flex;
@@ -419,7 +418,7 @@ a.card-name:focus-visible{
 @media (max-width: 900px) {.card{
     --avatar-w: 124px;
     --avatar-h: 148px;
-  }.card-avatar{
+  }html[data-daab-page-id="scientists-profiles"] .card-avatar{
     border-radius: var(--radius2);
   }.card{
     gap: 18px;
@@ -445,7 +444,7 @@ a.card-name:focus-visible{
   }.card{
     --avatar-w: 112px;
     --avatar-h: 134px;
-  }.card-avatar{
+  }html[data-daab-page-id="scientists-profiles"] .card-avatar{
     border-radius: var(--radius2);
   }.card-name{
     font-size: 15px;
@@ -487,7 +486,7 @@ a.card-name:focus-visible{
     --avatar-w: 112px;
     --avatar-h: 134px;
     padding: 16px;
-  }.card-avatar img{
+  }html[data-daab-page-id="scientists-profiles"] .card-avatar img{
     width: 100%;
     height: 100%;
     aspect-ratio: 37 / 44;
@@ -506,7 +505,7 @@ a.card-name:focus-visible{
   }.card{
     --avatar-w: 120px;
     --avatar-h: 143px;
-  }.card-avatar{
+  }html[data-daab-page-id="scientists-profiles"] .card-avatar{
     border-radius: 16px;
   }.card-name{
     font-size: 14px;

@@ -49,7 +49,7 @@ html[data-daab-page-id="forum-2024-presentations"] .timeline-list li{
   height: 100% !important;
   max-width: none !important;
   max-height: none !important;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center top;
 }html[data-daab-page-id="forum-2024-presentations"] .presentation-toc-name{
   font-weight: 600;
@@ -107,7 +107,7 @@ html[data-daab-page-id="forum-2024-presentations"] .news-feed .card-title{
   height: 100% !important;
   max-width: none !important;
   max-height: none !important;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center top;
 }html[data-daab-page-id="forum-2024-presentations"] .news-feed .presentation-lead-row .card-lead,
 html[data-daab-page-id="forum-2024-presentations"] .news-feed .card-body > .card-lead:first-child{
@@ -178,7 +178,7 @@ html[data-daab-page-id="forum-official"] .presentation-toc-photo-frame .presenta
   height: 100% !important;
   max-width: none !important;
   max-height: none !important;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center top;
 }
 

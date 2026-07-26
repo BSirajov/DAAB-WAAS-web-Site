@@ -137,6 +137,8 @@
         submitting: "Göndərilir…",
         submit: "✓ Göndər",
         sciRequired: "Ən azı bir elmi sahə seçin.",
+        degreeRequired: "Akademik dərəcənizi seçin.",
+        titleRequired: "Akademik titulunuzu seçin.",
         noEndpoint:
           "Müraciət serveri hələ konfiqurasiya edilməyib. Zəhmət olmasa birbaşa info@daab-waas.com ünvanına yazın.",
         submitFailed: "Müraciət göndərilmədi. Bir az sonra yenidən cəhd edin və ya info@daab-waas.com ünvanına yazın.",
@@ -150,6 +152,8 @@
         submitting: "Submitting…",
         submit: "✓ Submit Application",
         sciRequired: "Select at least one scientific field.",
+        degreeRequired: "Please select your academic degree.",
+        titleRequired: "Please select your academic title.",
         noEndpoint:
           "The application backend is not configured yet. Please email info@daab-waas.com directly.",
         submitFailed: "Could not submit your application. Please try again or email info@daab-waas.com.",
@@ -227,6 +231,23 @@
     showSubmitError(uiText("sciRequired"), { alert: true });
     var sec = byId("sec-3");
     if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+    return false;
+  }
+
+  function validateRadioGroup(name, messageKey, focusId) {
+    if (getRadioValue(name)) return true;
+    showSubmitError(uiText(messageKey), { alert: true });
+    var focusEl = byId(focusId) || document.querySelector(
+      '.application-page input[name="' + name + '"]'
+    );
+    if (focusEl) {
+      try {
+        focusEl.focus({ preventScroll: true });
+      } catch (e) {
+        focusEl.focus();
+      }
+      focusEl.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
     return false;
   }
 
@@ -345,7 +366,14 @@
 
   function submitForm() {
     clearSubmitStatus();
+    var honeypot = byId("website");
+    if (honeypot && String(honeypot.value || "").trim()) {
+      showSuccessScreen();
+      return;
+    }
     if (!validateForm()) return;
+    if (!validateRadioGroup("degree", "degreeRequired", "deg1")) return;
+    if (!validateRadioGroup("title", "titleRequired", "tit1")) return;
     if (!validateSciSelection()) return;
 
     setSubmitting(true);
@@ -678,9 +706,16 @@
 
     var btn = document.createElement("button");
     btn.type = "button";
+    btn.id = select.id ? select.id + "_picker" : "phone_code_picker";
     btn.className = "phone-code-picker-btn";
     btn.setAttribute("aria-haspopup", "listbox");
     btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute(
+      "aria-label",
+      (fieldGroup.querySelector("label.field-label") &&
+        fieldGroup.querySelector("label.field-label").textContent.trim()) ||
+        "Phone country code"
+    );
 
     var valueWrap = document.createElement("span");
     valueWrap.className = "phone-code-picker-value";
@@ -753,7 +788,7 @@
 
     var label = fieldGroup.querySelector('label[for="' + select.id + '"]');
     if (label) {
-      label.setAttribute("for", "");
+      label.setAttribute("for", btn.id);
       label.addEventListener("click", function (e) {
         e.preventDefault();
         btn.focus();

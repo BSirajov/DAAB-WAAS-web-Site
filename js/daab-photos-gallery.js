@@ -8,6 +8,19 @@
   var THUMB_INDEX_URL = "photos-gallery-thumbs.json";
   var EAGER_COUNT = 4;
   var IO_ROOT_MARGIN = "280px 0px";
+  // Old folder query values (?category=10.%20Party) → kebab folder names.
+  var LEGACY_FOLDER_ALIASES = {
+    "1.AlleyOfHonor": "1-alley-of-honor",
+    "2.OpeningDay": "2-opening-day",
+    "3.BookExibition": "3-book-exhibition",
+    "4.Discussions": "4-discussions",
+    "5. BetweenSessions": "5-between-sessions",
+    "6. Portraits": "6-portraits",
+    "7. Garabagh": "7-garabagh",
+    "8. CoffeeBreak": "8-coffee-break",
+    "9. LunchBreak": "9-lunch-break",
+    "10. Party": "10-party"
+  };
 
   var grid = document.getElementById("photosGalleryGrid");
   var catList = document.getElementById("photosGalleryCategories");
@@ -542,8 +555,9 @@
         })) {
           return fromUrl;
         }
+        var mapped = LEGACY_FOLDER_ALIASES[fromUrl] || fromUrl;
         var legacy = categories.find(function (c) {
-          return c.folder === fromUrl;
+          return c.folder === mapped || c.folder === fromUrl;
         });
         if (legacy) return legacy.id;
       }

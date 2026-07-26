@@ -37,7 +37,7 @@
 <link href="../css/scientists-catalog-toolbar.css?v=8" rel="stylesheet"/>
 <link href="../css/daab-page-content-search.css?v=4" rel="stylesheet"/>
 <link href="../css/daab-sidebar-widget.css?v=6" rel="stylesheet"/>
-<link href="../css/daab-membership-application.css?v=26" rel="stylesheet"/>
+<link href="../css/daab-membership-application.css?v=27" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
 <script src="../js/daab-perf.js?v=4" defer></script>
 <script src="../js/daab-sticky-chrome.js?v=3" defer></script>
@@ -55,7 +55,7 @@
 <script src="../js/daab-application-config.js?v=2" defer></script>
 <script src="../js/daab-country-codes.js?v=1" defer></script>
 <script src="../js/daab-phone-codes.js?v=2" defer></script>
-<script src="../js/daab-membership-application.js?v=18" defer></script>
+<script src="../js/daab-membership-application.js?v=19" defer></script>
 <script defer src="../js/daab-sidebar-spy.js?v=1"></script>
 <script defer src="../js/daab-sidebar-timeline.js?v=4"></script>
 <script defer src="../js/daab-page-content-search.js?v=5"></script>
@@ -162,11 +162,11 @@ Nəticə tapılmadı.
           Giriş
           <small>4 bölmədən 1-ci bölmə — Giriş</small>
         </div>
-        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-1-body" data-section-label="Giriş">
+        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-1-body" aria-label="Bölməni yığ: Giriş" data-section-label="Giriş">
           <svg class="app-section-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
       </div>
-      <div class="section-body">
+      <div class="section-body" id="sec-1-body">
         <div class="intro-box">
           Dünya Azərbaycanlı Alimlər Birliyinə (DAAB) üzv olmaq üçün
           <a href="charter.html">Nizamnamə</a> ilə tanış olmanız və aşağıdakı məlumatları daxil etməniz xahiş olunur.
@@ -192,11 +192,11 @@ Nəticə tapılmadı.
           Şəxsi Məlumatlar
           <small>4 bölmədən 2-ci bölmə — Şəxsi məlumatlar</small>
         </div>
-        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-2-body" data-section-label="Şəxsi Məlumatlar">
+        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-2-body" aria-label="Bölməni yığ: Şəxsi Məlumatlar" data-section-label="Şəxsi Məlumatlar">
           <svg class="app-section-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
       </div>
-      <div class="section-body">
+      <div class="section-body" id="sec-2-body">
 
         <div class="field-group">
           <label class="field-label" for="name">Adınız <span class="req">*</span></label>
@@ -253,11 +253,11 @@ Nəticə tapılmadı.
 
         <!-- Academic Degree -->
         <div class="field-group">
-          <div class="field-label">Akademik dərəcəniz <span class="req">*</span></div>
+          <div class="field-label" id="degree-label">Akademik dərəcəniz <span class="req">*</span></div>
           <span class="field-hint">Sahib olduğunuz ən yüksək akademik dərəcəni seçin.</span>
-          <div class="options-list">
+          <div class="options-list" role="radiogroup" aria-labelledby="degree-label">
             <div class="opt-item">
-              <input type="radio" name="degree" id="deg1" value="bachelor">
+              <input type="radio" name="degree" id="deg1" required value="bachelor">
               <label for="deg1">Bakalavr — BA, BSc, BEng</label>
             </div>
             <div class="opt-item">
@@ -295,11 +295,11 @@ Nəticə tapılmadı.
 
         <!-- Academic Title -->
         <div class="field-group">
-          <div class="field-label">Akademik titulunuz <span class="req">*</span></div>
+          <div class="field-label" id="title-label">Akademik titulunuz <span class="req">*</span></div>
           <span class="field-hint">Hazırda sahib olduğunuz akademik titulu seçin.</span>
-          <div class="options-list">
+          <div class="options-list" role="radiogroup" aria-labelledby="title-label">
             <div class="opt-item">
-              <input type="radio" name="title" id="tit1" value="docent">
+              <input type="radio" name="title" id="tit1" required value="docent">
               <label for="tit1">Dosent — PhD və müəyyən akademik nailiyyətlərə malik alimlər üçün.</label>
             </div>
             <div class="opt-item">
@@ -352,11 +352,11 @@ Nəticə tapılmadı.
           Məşğul Olduğunuz Elm Sahələri
           <small>4 bölmədən 3-cü bölmə — Elmi fəaliyyət sahələri</small>
         </div>
-        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-3-body" data-section-label="Elm sahələri">
+        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-3-body" aria-label="Bölməni yığ: Elm sahələri" data-section-label="Elm sahələri">
           <svg class="app-section-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
       </div>
-      <div class="section-body">
+      <div class="section-body" id="sec-3-body">
 
         <fieldset class="sci-fields-fieldset" id="sci-fields" aria-describedby="app-submit-status">
         <legend class="sci-fields-legend">Məşğul Olduğunuz Elm Sahələri</legend>
@@ -465,11 +465,11 @@ Nəticə tapılmadı.
           Əlavə Məlumatlar
           <small>4 bölmədən 4-cü bölmə — Əlavə məlumatlar</small>
         </div>
-        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-4-body" data-section-label="Əlavə Məlumatlar">
+        <button type="button" class="app-section-toggle" aria-expanded="true" aria-controls="sec-4-body" aria-label="Bölməni yığ: Əlavə Məlumatlar" data-section-label="Əlavə Məlumatlar">
           <svg class="app-section-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </button>
       </div>
-      <div class="section-body">
+      <div class="section-body" id="sec-4-body">
 
         <div class="field-group">
           <label class="field-label" for="addinfo">Əlavə olaraq paylaşmaq istədiyiniz məlumatlar (istəyə bağlı)</label>
@@ -497,6 +497,10 @@ Nəticə tapılmadı.
 
         <p class="app-submit-notice">Müraciət məlumatlarınız təhlükəsiz serverə göndərilir və yalnız DAAB üzvlük komissiyası tərəfindən nəzərdən keçirilir.</p>
         <div class="app-submit-status" id="app-submit-status" role="status" aria-live="polite" hidden></div>
+        <div class="app-honeypot" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="app-btn-row">
           <button type="submit" class="app-btn app-btn-submit" id="appSubmitBtn"><span aria-hidden="true">✓</span> Göndər</button>
         </div>
