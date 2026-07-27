@@ -91,8 +91,7 @@ def en_nav_html(active_id: str, nav_depth: int = 0) -> str:
         f'<div class="page-logo"><a aria-label="WAAS home" title="Home page" href="{home_href}">',
         f'<img src="{img_src}" class="nav-brand-logo" alt="WAAS Logo"></a></div>',
         f'<a aria-label="WAAS home" class="nav-brand" href="{home_href}">',
-        '<span class="nav-brand-text">World Association of<br class="mobile-hidden-break">'
-        "Azerbaijani Scientists</span></a>",
+        '<span class="nav-brand-text"><span class="nav-brand-line">World Association of</span><span class="nav-brand-line">Azerbaijani Scientists</span></span></a>',
         '<div class="nav-menu" id="primaryNavMenu"><div class="nav-divider"></div>',
     ]
     for nav_id, href, label in EN_NAV_ITEMS[:4]:

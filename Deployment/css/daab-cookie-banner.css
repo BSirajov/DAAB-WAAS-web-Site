@@ -52,7 +52,8 @@
   font: inherit;
   font-size: 13px;
   font-weight: 800;
-  padding: 8px 14px;
+  min-height: var(--daab-touch-min, 44px);
+  padding: 10px 16px;
   cursor: pointer;
 }
 

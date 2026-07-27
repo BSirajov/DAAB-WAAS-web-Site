@@ -304,6 +304,8 @@ def main() -> int:
     ]
     if not skip_images:
         required.append("images/daab-logo.png")
+        required.append("images/daab-favicon.png")
+        required.append("favicon.ico")
     missing_roots = [p for p in required if not (DEPLOY_STAGING / p).is_file()]
     if missing_roots:
         print("ERROR — deployment package missing required files:")

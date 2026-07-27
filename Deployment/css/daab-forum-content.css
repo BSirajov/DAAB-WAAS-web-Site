@@ -798,7 +798,7 @@ html[data-daab-page-id="forum-2026"] .card-body .content-list{
   text-justify: inter-word;
 }
 
-@media (max-width: 1000px) {html[data-daab-page-id="forum-official"] .page-hero .hero-wrap,
+@media (max-width: 1060px) {html[data-daab-page-id="forum-official"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-2024-presentations"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-sessions-organization"] .page-hero .hero-wrap,
 html[data-daab-page-id="forum-program"] .page-hero .hero-wrap,
@@ -816,12 +816,7 @@ html[data-daab-page-id="forum-2026"] .page-hero .hero-wrap{
   }
 }
 
-@media (max-width: 1060px) {html[data-daab-page-id="forum-official"],
-html[data-daab-page-id="forum-program"],
-html[data-daab-page-id="forum-logistics"],
-html[data-daab-page-id="forum-sessions-organization"]{
-    --daab-nav-height: 62px;
-  }html[data-daab-page-id="forum-official"] .content-wrap,
+@media (max-width: 1060px) {html[data-daab-page-id="forum-official"] .content-wrap,
 html[data-daab-page-id="forum-sessions-organization"] .content-wrap,
 html[data-daab-page-id="forum-2024-presentations"] .content-wrap,
 html[data-daab-page-id="forum-program"] .content-wrap,

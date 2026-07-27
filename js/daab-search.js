@@ -695,6 +695,12 @@
 
   global.DAAB_SEARCH = {
     normalizeText: normalizeText,
-    scoreEntry: scoreEntry
+    scoreEntry: scoreEntry,
+    open: function () {
+      var btn =
+        document.getElementById("nav-search-btn") ||
+        document.getElementById("gateway-search-btn");
+      if (btn) btn.click();
+    }
   };
 })(typeof window !== "undefined" ? window : this);

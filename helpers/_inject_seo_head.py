@@ -95,6 +95,7 @@ def strip_existing_seo(text: str) -> str:
     text = repair_broken_description_meta(text)
     text = RE_OLD_SEO.sub("", text)
     text = re.sub(r'\s*<link rel="icon"[^>]*>', "", text, flags=re.I)
+    text = re.sub(r'\s*<link rel="apple-touch-icon"[^>]*>', "", text, flags=re.I)
     text = re.sub(r'\s*<link rel="canonical"[^>]*>', "", text, flags=re.I)
     text = re.sub(r'\s*<link rel="alternate" hreflang="[^"]+"[^>]*>', "", text, flags=re.I)
     text = re.sub(r'\s*<meta property="og:[^"]+"[^>]*>', "", text, flags=re.I)
@@ -120,7 +121,8 @@ def build_seo_block(
 
     lines = [
         MARKER_START,
-        f'<link rel="icon" href="{asset}images/daab-logo.png" type="image/png"/>',
+        f'<link rel="icon" href="{asset}images/daab-favicon.png" type="image/png"/>',
+        f'<link rel="apple-touch-icon" href="{asset}images/daab-favicon.png"/>',
         f'<link rel="canonical" href="{canonical}"/>',
     ]
     if pair:

@@ -392,8 +392,9 @@ def forum_nav_strip(lang: str = "az", *, active_nav_id: str | None = None) -> st
             f'<div class="page-logo"><a aria-label="WAAS home" title="Home page" href="../../index.html">'
             f'<img src="{asset}images/daab-logo.png" class="nav-brand-logo" alt="WAAS Logo"></a></div>'
             f'<a aria-label="WAAS home" class="nav-brand" href="../../index.html">'
-            f'<span class="nav-brand-text">World Association of<br class="mobile-hidden-break">'
-            f"Azerbaijani Scientists</span></a>"
+            f'<span class="nav-brand-text">'
+            f'<span class="nav-brand-line">World Association of</span>'
+            f'<span class="nav-brand-line">Azerbaijani Scientists</span></span></a>'
             f'<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1">{menu}</div>'
             f'<div class="nav-actions" role="group"></div>'
             f"</div></nav>"
@@ -406,8 +407,9 @@ def forum_nav_strip(lang: str = "az", *, active_nav_id: str | None = None) -> st
         f'<div class="page-logo"><a aria-label="DAAB ana səhifə" title="Ana səhifə" href="../../index.html">'
         f'<img src="{asset}images/daab-logo.png" class="nav-brand-logo" alt="DAAB Logo"></a></div>'
         f'<a aria-label="DAAB ana səhifə" class="nav-brand" href="../../index.html">'
-        f'<span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">'
-        f"Alimlər Birliyi</span></a>"
+        f'<span class="nav-brand-text">'
+        f'<span class="nav-brand-line">Dünya Azərbaycanlı</span>'
+        f'<span class="nav-brand-line">Alimlər Birliyi</span></span></a>'
         f'<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1">{menu}</div>'
         f'<div class="nav-actions" role="group"></div>'
         f"</div></nav>"

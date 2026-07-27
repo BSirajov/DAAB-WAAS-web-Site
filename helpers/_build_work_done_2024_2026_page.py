@@ -549,7 +549,7 @@ def nav_strip_az() -> str:
 <div class="page-logo"><a title="Ana səhifə" aria-label="DAAB ana səhifə" href="index.html">
 <img src="../images/daab-logo.png" class="nav-brand-logo" alt="DAAB Logo"></a></div>
 <a aria-label="DAAB ana səhifə" class="nav-brand" href="index.html">
-<span class="nav-brand-text">Dünya Azərbaycanlı<br class="mobile-hidden-break">Alimlər Birliyi</span></a>
+<span class="nav-brand-text"><span class="nav-brand-line">Dünya Azərbaycanlı</span><span class="nav-brand-line">Alimlər Birliyi</span></span></a>
 <div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"></div>
 </div></nav>"""
 
@@ -658,7 +658,7 @@ def nav_strip_en() -> str:
 <div class="page-logo"><a title="Home page" aria-label="WAAS home" href="index.html">
 <img src="../images/daab-logo.png" class="nav-brand-logo" alt="WAAS Logo"></a></div>
 <a aria-label="WAAS home" class="nav-brand" href="index.html">
-<span class="nav-brand-text">World Association of<br class="mobile-hidden-break">Azerbaijani Scientists</span></a>
+<span class="nav-brand-text"><span class="nav-brand-line">World Association of</span><span class="nav-brand-line">Azerbaijani Scientists</span></span></a>
 <div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"></div>
 </div></nav>"""
 

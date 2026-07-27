@@ -74,8 +74,44 @@
     }
   }
 
+  /**
+   * Desktop: show site brand text when the primary bar has room; hide only on overflow.
+   * Mobile/tablet layout always shows brand via its own grid rules.
+   */
+  function fitDesktopNavBrand() {
+    var inner = document.querySelector(".nav-inner");
+    if (!inner) return;
+    var brand = inner.querySelector(":scope > .nav-brand");
+    var menu = document.getElementById("primaryNavMenu") || inner.querySelector(".nav-menu");
+    if (!brand || !menu) return;
+
+    if (isMobileNav()) {
+      inner.classList.remove("is-brand-tight");
+      return;
+    }
+
+    var wasTight = inner.classList.contains("is-brand-tight");
+    inner.classList.remove("is-brand-tight");
+    void brand.offsetWidth;
+
+    var overflowing =
+      menu.scrollWidth > menu.clientWidth + 1 ||
+      inner.scrollWidth > inner.clientWidth + 1;
+
+    if (overflowing) {
+      inner.classList.add("is-brand-tight");
+      return;
+    }
+
+    /* Hysteresis: after re-showing, keep a little spare so resize does not flicker */
+    if (wasTight && menu.clientWidth - menu.scrollWidth < 12) {
+      inner.classList.add("is-brand-tight");
+    }
+  }
+
   var resizeTimer = 0;
   function onViewportChange() {
+    fitDesktopNavBrand();
     syncNavHeight();
     document.querySelectorAll(".nav-dropdown--forums .nav-dropdown--nested.is-forum-mega-open").forEach(function (nested) {
       nested.classList.remove("is-forum-mega-open");
@@ -87,7 +123,10 @@
 
   function scheduleNavHeightSync() {
     if (resizeTimer) window.clearTimeout(resizeTimer);
-    resizeTimer = window.setTimeout(syncNavHeight, 50);
+    resizeTimer = window.setTimeout(function () {
+      fitDesktopNavBrand();
+      syncNavHeight();
+    }, 50);
   }
 
   function initMobileNav() {
@@ -637,6 +676,7 @@
     injectFooterHomeQr: injectFooterHomeQr,
     closeMobileMenu: closeMobileMenu,
     syncNavHeight: syncNavHeight,
+    fitDesktopNavBrand: fitDesktopNavBrand,
     currentNavKey: currentNavKey,
     isForumNavPageId: isForumNavPageId,
     isMembershipNavPageId: isMembershipNavPageId
@@ -656,6 +696,9 @@
   }
 
   window.addEventListener("load", scheduleNavHeightSync, { once: true });
+  if (document.fonts && typeof document.fonts.ready !== "undefined") {
+    document.fonts.ready.then(scheduleNavHeightSync).catch(function () {});
+  }
   document.addEventListener("daab-primary-nav-ready", function () {
     initNavDropdowns();
     initForumsSubmenuBehavior();

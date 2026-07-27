@@ -337,7 +337,7 @@ STRINGS = {
         "skip": "Məzmuna keç",
         "nav_home_title": "Ana səhifə",
         "nav_home_aria": "DAAB ana səhifə",
-        "brand": "Dünya Azərbaycanlı<br class=\"mobile-hidden-break\">Alimlər Birliyi",
+        "brand": "<span class=\"nav-brand-line\">Dünya Azərbaycanlı</span><span class=\"nav-brand-line\">Alimlər Birliyi</span>",
         "brand_menu_aria": "Əsas naviqasiya",
         "menu_open": "Menyunu aç",
         "crumb_home": "Ana səhifə",
@@ -396,7 +396,7 @@ STRINGS = {
         "skip": "Skip to content",
         "nav_home_title": "Home",
         "nav_home_aria": "WAAS home",
-        "brand": "World Association of<br class=\"mobile-hidden-break\">Azerbaijani Scientists",
+        "brand": "<span class=\"nav-brand-line\">World Association of</span><span class=\"nav-brand-line\">Azerbaijani Scientists</span>",
         "brand_menu_aria": "Primary navigation",
         "menu_open": "Open menu",
         "crumb_home": "Home",
@@ -1366,7 +1366,8 @@ def build_page_html(page: dict, literary: str, lang: str) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>{esc(title)}</title>
 <meta content="{esc(meta_desc)}" name="description"/>
-<link rel="icon" href="../../images/daab-logo.png" type="image/png"/>
+<link rel="icon" href="../../images/daab-favicon.png" type="image/png"/>
+<link rel="apple-touch-icon" href="../../images/daab-favicon.png"/>
 <link rel="canonical" href="{canonical}"/>
 <link rel="alternate" hreflang="az" href="{az_url}"/>
 <link rel="alternate" hreflang="en" href="{en_url}"/>

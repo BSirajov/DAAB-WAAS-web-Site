@@ -67,6 +67,11 @@ PAGE_LABEL_KEYS = {
     "sponsorship-partnership": "sponsorshipPartnership",
     "donate": "donate",
     "sponsors-flyer": "sponsorsFlyer",
+    "privacy": "privacy",
+    "terms": "terms",
+    "cookies": "cookies",
+    "legal-notice": "legalNotice",
+    "sitemap": "sitemap",
 }
 
 TYPE_BOOST = {

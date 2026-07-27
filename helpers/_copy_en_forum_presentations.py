@@ -27,8 +27,8 @@ def main() -> None:
     text = text.replace('aria-label="Menyunu aç"', 'aria-label="Open menu"')
     text = text.replace('aria-label="DAAB ana səhifə"', 'aria-label="WAAS home"')
     text = text.replace(
-        'Dünya Azərbaycanlı<br class="mobile-hidden-break">Alimlər Birliyi',
-        'World Association of<br class="mobile-hidden-break">Azerbaijani Scientists',
+        '<span class="nav-brand-line">Dünya Azərbaycanlı</span><span class="nav-brand-line">Alimlər Birliyi</span>',
+        '<span class="nav-brand-line">World Association of</span><span class="nav-brand-line">Azerbaijani Scientists</span>',
     )
     DST.parent.mkdir(parents=True, exist_ok=True)
     DST.write_text(text, encoding="utf-8", newline="\n")

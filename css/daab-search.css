@@ -6,10 +6,13 @@
   display: inline-flex !important;
   align-items: center;
   gap: 8px;
-  min-width: min(220px, 22vw);
-  max-width: 300px;
+  flex: 0 0 auto;
+  min-width: 44px;
+  width: clamp(148px, 14vw, 220px);
+  max-width: 220px;
   height: 40px;
   padding: 0 10px 0 12px;
+  overflow: hidden;
   color: rgba(255, 255, 255, 0.95);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.28);
@@ -414,12 +417,14 @@
   }
 }
 
-@media (max-width: 1320px){
+/* Icon-only until the bar is wide enough for pill + menu gaps + Sitemap. */
+@media (max-width: 1519px){
   .nav-search-btn-label,
   .nav-search-kbd{
     display: none !important;
   }
   .nav-search-btn{
+    flex: 0 0 auto !important;
     min-width: 44px !important;
     max-width: 44px !important;
     width: 44px !important;

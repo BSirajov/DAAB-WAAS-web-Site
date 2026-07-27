@@ -70,7 +70,7 @@ def adapt_html(html: str, lang: str) -> str:
     if lang == "az":
         pairs = [
             (
-                "Dünya Azərbaycanlı<br class=\"mobile-hidden-break\">Alimlər Birliyi",
+                "<span class=\"nav-brand-line\">Dünya Azərbaycanlı</span><span class=\"nav-brand-line\">Alimlər Birliyi</span>",
                 "Bilik<br class=\"mobile-hidden-break\">xəzinəsi",
             ),
             ("DAAB ana səhifə", "Bilik xəzinəsi ana səhifə"),
@@ -87,7 +87,7 @@ def adapt_html(html: str, lang: str) -> str:
     else:
         pairs = [
             (
-                "World Association of<br class=\"mobile-hidden-break\">Azerbaijani Scientists",
+                "<span class=\"nav-brand-line\">World Association of</span><span class=\"nav-brand-line\">Azerbaijani Scientists</span>",
                 "Knowledge<br class=\"mobile-hidden-break\">Treasury",
             ),
             ("WAAS home", "Knowledge Treasury home"),

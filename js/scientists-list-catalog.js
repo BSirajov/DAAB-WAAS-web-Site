@@ -173,9 +173,11 @@
 
   function readViewState() {
     try {
-      return sessionStorage.getItem(VIEW_STORAGE_KEY) === "cards" ? "cards" : "table";
+      var raw = sessionStorage.getItem(VIEW_STORAGE_KEY);
+      if (raw === "table") return "table";
+      return "cards";
     } catch (e) {
-      return "table";
+      return "cards";
     }
   }
 

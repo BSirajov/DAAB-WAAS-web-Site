@@ -70,9 +70,9 @@ PAGES = [
 
 def render(lang: str, spec: dict, copy: dict) -> str:
     brand_line = (
-        "Dünya Azərbaycanlı<br class=\"mobile-hidden-break\">Alimlər Birliyi"
+        "<span class=\"nav-brand-line\">Dünya Azərbaycanlı</span><span class=\"nav-brand-line\">Alimlər Birliyi</span>"
         if lang == "az"
-        else "World Association of<br class=\"mobile-hidden-break\">Azerbaijani Scientists"
+        else "<span class=\"nav-brand-line\">World Association of</span><span class=\"nav-brand-line\">Azerbaijani Scientists</span>"
     )
     nav_label = "Əsas naviqasiya" if lang == "az" else "Main navigation"
     home_label = "DAAB ana səhifə" if lang == "az" else "WAAS home"

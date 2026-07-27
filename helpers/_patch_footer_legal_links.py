@@ -67,7 +67,12 @@ def iter_html() -> list[Path]:
 def needs_legal_links(text: str) -> bool:
     if "footer-bottom" not in text and "footer-pro" not in text:
         return False
-    if "footer-legal-links" in text and "legal-notice" in text and "#page-title" in text:
+    if (
+        "footer-legal-links" in text
+        and "legal-notice" in text
+        and "#page-title" in text
+        and "sitemap.html" in text
+    ):
         return False
     return "footer-bottom" in text or "footer-pro" in text
 

@@ -483,6 +483,25 @@
   }
 }
 
+@media (max-width: 1060px) {
+  .flyer-wrap{
+    max-width: 100%;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 16px;
+  }
+  .flyer-sheet{
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding: 16px 18px;
+  }
+  .flyer-pillars{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 760px) {.flyer-page-controls{
     top: 8px;
     right: 8px;

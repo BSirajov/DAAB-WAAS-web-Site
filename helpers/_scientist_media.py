@@ -175,7 +175,8 @@ def build_html(cfg: dict, lang: str) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>{esc(s['title'])}</title>
 <meta content="{esc(s['meta_desc'])}" name="description"/>
-<link rel="icon" href="../../images/daab-logo.png" type="image/png"/>
+<link rel="icon" href="../../images/daab-favicon.png" type="image/png"/>
+<link rel="apple-touch-icon" href="../../images/daab-favicon.png"/>
 <link rel="canonical" href="{canonical}"/>
 <link rel="alternate" hreflang="az" href="{az_url}"/>
 <link rel="alternate" hreflang="en" href="{en_url}"/>

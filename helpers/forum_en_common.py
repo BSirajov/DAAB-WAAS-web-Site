@@ -22,8 +22,8 @@ SHELL_REPLACEMENTS: list[tuple[str, str]] = [
     ('aria-label="DAAB ana səhifə"', 'aria-label="WAAS home"'),
     ("alt=\"DAAB Logo\"", "alt=\"WAAS Logo\""),
     (
-        "Dünya Azərbaycanlı<br class=\"mobile-hidden-break\">Alimlər Birliyi",
-        "World Association of<br class=\"mobile-hidden-break\">Azerbaijani Scientists",
+        "<span class=\"nav-brand-line\">Dünya Azərbaycanlı</span><span class=\"nav-brand-line\">Alimlər Birliyi</span>",
+        "<span class=\"nav-brand-line\">World Association of</span><span class=\"nav-brand-line\">Azerbaijani Scientists</span>",
     ),
     ("Ana səhifə", "Home"),
     ("Fəaliyyətimiz", "Activities"),

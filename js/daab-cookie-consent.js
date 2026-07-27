@@ -6,7 +6,7 @@
   "use strict";
 
   var STORAGE_KEY = "daab-cookie-consent";
-  var CSS_HREF = "css/daab-cookie-banner.css?v=2";
+  var CSS_HREF = "css/daab-cookie-banner.css?v=3";
   var bannerEl = null;
   var previouslyFocused = null;
   var keydownBound = false;

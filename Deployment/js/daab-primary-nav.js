@@ -40,6 +40,7 @@
     privacy: "privacy",
     cookies: "cookies",
     terms: "terms",
+    sitemap: "sitemap",
     membership: "membershipTerms",
     "membership-value": "membershipWhy",
     "membership-application": "membershipJoin",

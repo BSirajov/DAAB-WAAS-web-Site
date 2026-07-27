@@ -282,8 +282,16 @@ html[data-daab-page-id^="forum-"] .footer-leader{
   font-size: 12px;
   border-top: 1px solid rgba(158, 214, 245, 0.5);
 }html[data-daab-page-id^="forum-"] .footer-legal-links{
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
+  align-items: center;
+  gap: 8px 1.25rem;
+  width: auto;
+  max-width: 100%;
+}html[data-daab-page-id^="forum-"] .footer-legal-links a{
+  flex: 0 0 auto;
+  white-space: nowrap;
 }html[data-daab-page-id^="forum-"] .footer-copy{
   flex: 1 1 100%;
   margin-left: 0;
@@ -313,7 +321,7 @@ html[data-daab-page-id^="forum-"] .program-table td{
   font-weight: 900;
 }
 
-@media (max-width: 1000px) {html[data-daab-page-id^="forum-"] .forum-hero-wrap{
+@media (max-width: 1060px) {html[data-daab-page-id^="forum-"] .forum-hero-wrap{
     grid-template-columns: 1fr;
   }html[data-daab-page-id^="forum-"] .forum-layout{
     grid-template-columns: 1fr;

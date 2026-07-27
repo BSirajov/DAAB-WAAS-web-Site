@@ -421,9 +421,11 @@ html[data-daab-page-id="activities-news"] .saadet-gallery{
   scroll-margin-top:calc(var(--daab-nav-height) + 28px);
 }
 
-@media (max-width: 1060px) {:root{ --daab-nav-height: 62px; --activities-gap: 24px; }html[data-daab-page-id="activities-news"] .content-wrap{
+@media (max-width: 1060px) {:root{ --activities-gap: 24px; }html[data-daab-page-id="activities-news"] .content-wrap{
     grid-template-columns: 1fr !important;
     padding:0 18px 64px;
+  }html[data-daab-page-id="activities-news"] .activities-hero-wrap{
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -628,8 +630,6 @@ html[data-daab-page-id="activities-news"] .saadet-gallery{
 
 @media (max-width: 760px) {html[data-daab-page-id="activities-news"] .page-hero{
     background-size:auto 360px;
-  }html[data-daab-page-id="activities-news"] .activities-hero-wrap{
-    grid-template-columns: 1fr !important;
   }html[data-daab-page-id="activities-news"] .activities-summary-panel{
     max-width: 100% !important;
     padding:8px;

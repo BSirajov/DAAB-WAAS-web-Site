@@ -499,6 +499,8 @@ a.card-name:focus-visible{
   }.cards-grid{
     gap: 14px;
   }.card{
+    flex-direction: column;
+    align-items: center;
     gap: 12px;
     padding: 16px;
     border-radius: calc(var(--radius) - 2px);
@@ -507,6 +509,10 @@ a.card-name:focus-visible{
     --avatar-h: 143px;
   }html[data-daab-page-id="scientists-profiles"] .card-avatar{
     border-radius: 16px;
+    margin: 0 auto;
+  }.card-body{
+    width: 100%;
+    text-align: left;
   }.card-name{
     font-size: 14px;
   }.card-title,

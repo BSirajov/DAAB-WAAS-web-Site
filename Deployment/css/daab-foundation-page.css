@@ -459,102 +459,112 @@ html[data-daab-page-id="foundation"] .content-card{
   max-width: 100%;
 }
 
-@media (max-width: 900px) {html,
-  body{
+@media (max-width: 900px) {
+  html[data-daab-page-id="foundation"] .shell,
+  html[data-daab-page-id="foundation"] .main{
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
-  }img,
-  svg,
-  video{
-    max-width: 100%;
-    height: auto;
-  }.shell,
-  .main{
-    width: 100%;
     padding-left: 18px;
     padding-right: 18px;
-  }.hero-wrap{
+  }
+  html[data-daab-page-id="foundation"] img,
+  html[data-daab-page-id="foundation"] svg,
+  html[data-daab-page-id="foundation"] video{
+    max-width: 100%;
+    height: auto;
+  }
+  html[data-daab-page-id="foundation"] .hero-wrap{
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 28px 18px 30px;
-  }.hero-panel{
+  }
+  html[data-daab-page-id="foundation"] .hero-panel{
     max-width: 100%;
     padding: 0;
-  }.foundation-overview,
-  .footer-grid{
+  }
+  html[data-daab-page-id="foundation"] .foundation-overview,
+  html[data-daab-page-id="foundation"] .footer-grid{
     grid-template-columns: 1fr;
   }
-
-  .ist-inline-010,
-  .ist-inline-019,
-  .ist-inline-028{
+  html[data-daab-page-id="foundation"] .ist-inline-010,
+  html[data-daab-page-id="foundation"] .ist-inline-019,
+  html[data-daab-page-id="foundation"] .ist-inline-028{
     min-width: 0;
   }
-
-  .goals-list .ist-inline-027{
+  html[data-daab-page-id="foundation"] .goals-list .ist-inline-027{
     overflow-x: visible;
   }
 }
 
-@media (max-width: 760px) {.hero{
+@media (max-width: 760px) {
+  html[data-daab-page-id="foundation"] .hero{
     background-size: auto 360px;
-  }.hero h1{
+  }
+  html[data-daab-page-id="foundation"] .hero h1{
     font-size: clamp(21px, 7.35vw, 29.4px);
-  }.card-body{
+  }
+  html[data-daab-page-id="foundation"] .card-body{
     padding: 20px;
-  }.foundation-bridge-grid{
+  }
+  html[data-daab-page-id="foundation"] .foundation-bridge-grid{
     grid-template-columns: 1fr !important;
-  }.foundation-bridge-grid > div:first-child > img{
+  }
+  html[data-daab-page-id="foundation"] .foundation-bridge-grid > div:first-child > img{
     grid-column: 1;
     grid-row: 1;
-  }.foundation-bridge-grid > div:nth-child(2) > p:nth-of-type(1){
+  }
+  html[data-daab-page-id="foundation"] .foundation-bridge-grid > div:nth-child(2) > p:nth-of-type(1){
     grid-column: 1;
     grid-row: 2;
-  }.foundation-bridge-grid > div:nth-child(2) > p:nth-of-type(2){
+  }
+  html[data-daab-page-id="foundation"] .foundation-bridge-grid > div:nth-child(2) > p:nth-of-type(2){
     grid-column: 1;
     grid-row: 3;
-  }.foundation-bridge-grid > div:first-child > .found-inline-006{
+  }
+  html[data-daab-page-id="foundation"] .foundation-bridge-grid > div:first-child > .found-inline-006{
     grid-column: 1;
     grid-row: 4;
-  }.foundation-bridge-grid > div:nth-child(2) > .found-inline-007{
+  }
+  html[data-daab-page-id="foundation"] .foundation-bridge-grid > div:nth-child(2) > .found-inline-007{
     grid-column: 1;
     grid-row: 5;
-  }.gallery,
-  .ist-inline-026,
-  .strategy-grid{
+  }
+  html[data-daab-page-id="foundation"] .gallery,
+  html[data-daab-page-id="foundation"] .ist-inline-026,
+  html[data-daab-page-id="foundation"] .strategy-grid{
     grid-template-columns: 1fr !important;
-  }.section-heading h2{
+  }
+  html[data-daab-page-id="foundation"] .section-heading h2{
     white-space: normal;
     overflow-wrap: anywhere;
-  }  .foundation-logo-panel-img{
+  }
+  html[data-daab-page-id="foundation"] .foundation-logo-panel-img{
     float: none;
     display: block;
     width: 140px;
     max-width: 55%;
     margin: 0 auto 16px;
   }
-
-  .ist-inline-010,
-  .ist-inline-019,
-  .ist-inline-028{
+  html[data-daab-page-id="foundation"] .ist-inline-010,
+  html[data-daab-page-id="foundation"] .ist-inline-019,
+  html[data-daab-page-id="foundation"] .ist-inline-028{
     min-width: 0;
     table-layout: fixed;
   }
-
-  .goals-list .ist-inline-027{
+  html[data-daab-page-id="foundation"] .goals-list .ist-inline-027{
     overflow-x: visible;
   }
-
-  .strategy-card-wide{
+  html[data-daab-page-id="foundation"] .strategy-card-wide{
     grid-column: auto;
-  }.footer-inner{
+  }
+  html[data-daab-page-id="foundation"] .footer-inner{
     padding: 24px 16px;
   }
 }
 
-@media (max-width: 420px) {.shell,
-  .main{
+@media (max-width: 420px) {
+  html[data-daab-page-id="foundation"] .shell,
+  html[data-daab-page-id="foundation"] .main{
     padding-left: 14px;
     padding-right: 14px;
   }

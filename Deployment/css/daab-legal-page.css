@@ -144,6 +144,15 @@ html:is(
 }
 
 @media (max-width: 1060px) {
+  html[data-daab-page-id="privacy"] .hero-wrap,
+  html[data-daab-page-id="cookies"] .hero-wrap,
+  html[data-daab-page-id="terms"] .hero-wrap,
+  html[data-daab-page-id="legal-notice"] .hero-wrap {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px 16px 12px !important;
+  }
+
   html:is(
     [data-daab-page-id="privacy"],
     [data-daab-page-id="cookies"],
@@ -477,15 +486,6 @@ html[data-daab-page-id="cookies"] .legal-cookie-settings:focus-visible {
 }
 
 @media (max-width: 900px) {
-  html[data-daab-page-id="privacy"] .hero-wrap,
-  html[data-daab-page-id="cookies"] .hero-wrap,
-  html[data-daab-page-id="terms"] .hero-wrap,
-  html[data-daab-page-id="legal-notice"] .hero-wrap {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 14px 16px 12px !important;
-  }
-
   html[data-daab-page-id="privacy"] .legal-table,
   html[data-daab-page-id="cookies"] .legal-table,
   html[data-daab-page-id="terms"] .legal-table,
