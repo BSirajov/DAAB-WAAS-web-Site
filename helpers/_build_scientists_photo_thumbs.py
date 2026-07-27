@@ -19,7 +19,7 @@ EXTS = {".jpg", ".jpeg", ".png", ".webp"}
 
 
 # Bump when regenerating thumbs so forum/pages pick up new avatar JPEGs.
-THUMB_VER = "8"
+THUMB_VER = "12"
 
 
 def scientist_thumb_src(filename: str, asset_prefix: str = "") -> str:
