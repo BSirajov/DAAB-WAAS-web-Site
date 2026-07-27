@@ -21,9 +21,10 @@
   justify-content: center !important;
   flex: 0 0 auto !important;
   box-sizing: border-box !important;
-  width: 36px !important;
-  height: 28px !important;
-  min-width: 36px !important;
+  width: var(--daab-touch-min, 44px) !important;
+  height: var(--daab-touch-min, 44px) !important;
+  min-width: var(--daab-touch-min, 44px) !important;
+  min-height: var(--daab-touch-min, 44px) !important;
   padding: 0 !important;
   background: transparent !important;
   border: 1px solid transparent !important;
@@ -181,14 +182,15 @@
   }.nav-inner > .daab-lang-switch a,
   .nav-actions > .daab-lang-switch a,
   .page-logo .daab-lang-switch a{
-    width: 30px !important;
-    min-width: 30px !important;
-    height: 22px !important;
+    width: var(--daab-touch-min, 44px) !important;
+    min-width: var(--daab-touch-min, 44px) !important;
+    height: var(--daab-touch-min, 44px) !important;
+    min-height: var(--daab-touch-min, 44px) !important;
   }.nav-inner > .daab-lang-switch .daab-lang-flag,
   .nav-actions > .daab-lang-switch .daab-lang-flag,
   .page-logo .daab-lang-switch .daab-lang-flag{
-    width: 20px;
-    height: 12px;
+    width: 22px;
+    height: 14px;
   }
 }
 

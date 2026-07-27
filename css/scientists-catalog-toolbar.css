@@ -484,7 +484,13 @@
   }
 }
 
-@media (max-width: 1060px) {.catalog-toolbar__panel .filter-group{
+@media (max-width: 1060px) {
+  .catalog-toolbar__panel .filter-group{
+    width: 100%;
+  }
+  .catalog-toolbar__panel .sel-wrap,
+  .catalog-toolbar__panel select{
+    min-width: 0;
     width: 100%;
   }
 }

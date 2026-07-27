@@ -227,77 +227,91 @@
 
 
 
-@media (max-width: 1060px) {.hero-wrap,
-  .intro-card{
+@media (max-width: 1060px) {
+  html[data-daab-page-id="mission"] .hero-wrap,
+  html[data-daab-page-id="mission"] .intro-card{
     grid-template-columns: 1fr;
-  }.hero-panel{
+  }
+  html[data-daab-page-id="mission"] .hero-panel{
     max-width: 640px;
-  }.core-grid,
-  .values-detail{
+  }
+  html[data-daab-page-id="mission"] .core-grid,
+  html[data-daab-page-id="mission"] .values-detail{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 900px) {html,
-  body{
+@media (max-width: 900px) {
+  html[data-daab-page-id="mission"] .shell,
+  html[data-daab-page-id="mission"] .main{
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
-  }img,
-  svg,
-  video{
-    max-width: 100%;
-    height: auto;
-  }.shell,
-  .main{
-    width: 100%;
     padding-left: 18px;
     padding-right: 18px;
-  }.hero-wrap{
+  }
+  html[data-daab-page-id="mission"] img,
+  html[data-daab-page-id="mission"] svg,
+  html[data-daab-page-id="mission"] video{
+    max-width: 100%;
+    height: auto;
+  }
+  html[data-daab-page-id="mission"] .hero-wrap{
     gap: 22px;
     padding: 42px 18px 34px;
-  }.hero-panel{
+  }
+  html[data-daab-page-id="mission"] .hero-panel{
     max-width: 100%;
-  }.toc{
+  }
+  html[data-daab-page-id="mission"] .toc{
     width: 100%;
-  }.toc{
     justify-content: flex-start;
-  }.footer-grid{
+  }
+  html[data-daab-page-id="mission"] .footer-grid{
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 760px) {.hero h1{
+@media (max-width: 760px) {
+  html[data-daab-page-id="mission"] .hero h1{
     font-size: clamp(21px, 7.35vw, 29.4px);
     line-height: 1.12;
-  }.panel-card,
-  .intro-card{
+  }
+  html[data-daab-page-id="mission"] .panel-card,
+  html[data-daab-page-id="mission"] .intro-card{
     padding: 20px;
-  }.intro-card h2{
+  }
+  html[data-daab-page-id="mission"] .intro-card h2{
     font-size: 16.8px;
     line-height: 1.18;
-  }.core-grid,
-  .values-grid,
-  .values-detail{
+  }
+  html[data-daab-page-id="mission"] .core-grid,
+  html[data-daab-page-id="mission"] .values-grid,
+  html[data-daab-page-id="mission"] .values-detail{
     grid-template-columns: 1fr;
-  }.values-title h2{
+  }
+  html[data-daab-page-id="mission"] .values-title h2{
     margin-bottom: 10px;
     font-size: 19.6px;
-  }.values-title p{
+  }
+  html[data-daab-page-id="mission"] .values-title p{
     font-size: 14px;
     line-height: 1.7;
-  }.footer-inner{
+  }
+  html[data-daab-page-id="mission"] .footer-inner{
     padding: 24px 16px;
   }
 }
 
-@media (max-width: 420px) {.shell,
-  .main{
+@media (max-width: 420px) {
+  html[data-daab-page-id="mission"] .shell,
+  html[data-daab-page-id="mission"] .main{
     padding-left: 14px;
     padding-right: 14px;
-  }.hero h1{
+  }
+  html[data-daab-page-id="mission"] .hero h1{
     font-size: clamp(19.6px, 7vw, 26.6px);
-  }.intro-card h2{
+  }
+  html[data-daab-page-id="mission"] .intro-card h2{
     font-size: 15.4px;
   }
 }

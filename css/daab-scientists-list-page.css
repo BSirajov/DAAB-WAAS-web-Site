@@ -225,7 +225,8 @@ html[data-daab-page-id="scientists-list"] a.email-link:focus-visible{
   background: #f3f9fd;
   border-top: 1px solid var(--color-border-blue-muted);
 }html[data-daab-page-id="scientists-list"] .page-btn{
-  min-width: 38px;
+  min-width: var(--daab-touch-min, 44px);
+  min-height: var(--daab-touch-min, 44px);
   padding: 8px 12px;
 }html[data-daab-page-id="scientists-list"] .page-btn.active{
   color: var(--white);
@@ -249,9 +250,27 @@ html[data-daab-page-id="scientists-list"] a.email-link:focus-visible{
   opacity: .35;
 }
 
-@media (max-width: 1060px) {html[data-daab-page-id="scientists-list"] .hero-inner{
+@media (max-width: 1060px) {
+  html[data-daab-page-id="scientists-list"] .hero-inner{
     grid-template-columns: 1fr;
-  }html[data-daab-page-id="scientists-list"] .filter-group{ width: 100%; }
+  }
+  html[data-daab-page-id="scientists-list"] .filter-group{ width: 100%; }
+  /* Drop fixed ch widths so progressive column hiding can shrink the table */
+  html[data-daab-page-id="scientists-list"] table{
+    min-width: 0;
+    table-layout: auto;
+  }
+  html[data-daab-page-id="scientists-list"] .col-no,
+  html[data-daab-page-id="scientists-list"] .col-name,
+  html[data-daab-page-id="scientists-list"] .col-cntry,
+  html[data-daab-page-id="scientists-list"] .col-spec,
+  html[data-daab-page-id="scientists-list"] .col-degree,
+  html[data-daab-page-id="scientists-list"] .col-email{
+    width: auto;
+  }
+  html[data-daab-page-id="scientists-list"] .col-no{
+    width: 3.5rem;
+  }
 }
 
 @media (max-width: 960px) {

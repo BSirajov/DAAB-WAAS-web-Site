@@ -1,5 +1,5 @@
 {
-  "version": 14,
+  "version": 16,
   "defaultLang": "az",
   "languages": [
     "az",
@@ -235,6 +235,16 @@
       "en": "en/legal-notice.html"
     },
     {
+      "id": "sitemap",
+      "navId": "sitemap",
+      "navGroup": null,
+      "navParent": null,
+      "navOrder": 99,
+      "doc": "Human-readable HTML sitemap; top-level primary nav item and footer link. XML remains at /sitemap.xml.",
+      "az": "az/sitemap.html",
+      "en": "en/sitemap.html"
+    },
+    {
       "id": "membership-value",
       "navId": "membership-value",
       "navGroup": "membership",
@@ -392,7 +402,7 @@
       "navGroup": null,
       "navParent": null,
       "navOrder": null,
-      "doc": "Eldar Əhədov fiction prose page; not in primary nav.",
+      "doc": "Eldar Əhədov literary prose page; not in primary nav.",
       "az": "az/scientists/eldar-ahadov-bedii-nesr.html",
       "en": "en/scientists/eldar-ahadov-bedii-nesr.html"
     },

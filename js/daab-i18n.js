@@ -107,7 +107,7 @@
     ROUTES_URL = ROUTES_URL || i18nUrl("routes.json");
     /* Browser cache bust: bump ?v= below when routes.json content changes (JSON "version" field is documentary). */
     return loadCachedJson(
-      ROUTES_URL + "?v=14",
+      ROUTES_URL + "?v=16",
       function () { return routesCache; },
       function (data) { routesCache = data; },
       function () { return routesInflight; },
@@ -118,7 +118,7 @@
   function loadUi() {
     UI_URL = UI_URL || i18nUrl("ui.json");
     return loadCachedJson(
-      UI_URL + "?v=34",
+      UI_URL + "?v=35",
       function () { return uiCache; },
       function (data) { uiCache = data; },
       function () { return uiInflight; },
@@ -138,7 +138,7 @@
 
   function loadNav() {
     return loadCachedJson(
-      i18nUrl("nav.json") + "?v=17",
+      i18nUrl("nav.json") + "?v=19",
       function () { return navCache; },
       function (data) { navCache = data; },
       function () { return navInflight; },

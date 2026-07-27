@@ -68,6 +68,7 @@
     privacy: "privacy",
     cookies: "cookies",
     terms: "terms",
+    sitemap: "sitemap",
     membership: "membershipTerms",
     "membership-value": "membershipWhy",
     "membership-application": "membershipJoin",
@@ -248,6 +249,13 @@
         en: "en/legal-notice.html",
         navParent: "legal-pages",
         navGroup: "legal-pages"
+      },
+      {
+        id: "sitemap",
+        az: "az/sitemap.html",
+        en: "en/sitemap.html",
+        navParent: null,
+        navGroup: null
       },
       {
         id: "membership-value",
