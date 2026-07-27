@@ -139,6 +139,7 @@
         sciRequired: "Ən azı bir elmi sahə seçin.",
         degreeRequired: "Akademik dərəcənizi seçin.",
         titleRequired: "Akademik titulunuzu seçin.",
+        privacyRequired: "Davam etmək üçün məxfilik bildirişi ilə razılaşmalısınız.",
         noEndpoint:
           "Müraciət serveri hələ konfiqurasiya edilməyib. Zəhmət olmasa birbaşa info@daab-waas.com ünvanına yazın.",
         submitFailed: "Müraciət göndərilmədi. Bir az sonra yenidən cəhd edin və ya info@daab-waas.com ünvanına yazın.",
@@ -154,6 +155,7 @@
         sciRequired: "Select at least one scientific field.",
         degreeRequired: "Please select your academic degree.",
         titleRequired: "Please select your academic title.",
+        privacyRequired: "Please accept the privacy notice to continue.",
         noEndpoint:
           "The application backend is not configured yet. Please email info@daab-waas.com directly.",
         submitFailed: "Could not submit your application. Please try again or email info@daab-waas.com.",
@@ -222,6 +224,32 @@
     if (!field) return "";
     if (field.type === "checkbox") return field.checked ? "yes" : "";
     return String(field.value || "").trim();
+  }
+
+  function getPrivacyConfirmValue() {
+    var field = byId("privacyconfirm");
+    if (!field) return "";
+    if (field.type === "checkbox") return field.checked ? "yes" : "";
+    return String(field.value || "").trim();
+  }
+
+  function validatePrivacyConfirm() {
+    var field = byId("privacyconfirm");
+    if (!field) return true;
+    if (field.checked) {
+      field.setCustomValidity("");
+      return true;
+    }
+    field.setCustomValidity(uiText("privacyRequired"));
+    showSubmitError(uiText("privacyRequired"), { alert: true });
+    try {
+      field.focus({ preventScroll: true });
+    } catch (e) {
+      field.focus();
+    }
+    field.scrollIntoView({ behavior: "smooth", block: "center" });
+    field.reportValidity();
+    return false;
   }
 
   function validateSciSelection() {
@@ -296,6 +324,7 @@
       sci_fields_count: String(getSciValues().length),
       additional_info: (byId("addinfo") && byId("addinfo").value.trim()) || "",
       cv_confirm: getCvConfirmValue(),
+      privacy_confirm: getPrivacyConfirmValue(),
     };
   }
 
@@ -375,6 +404,7 @@
     if (!validateRadioGroup("degree", "degreeRequired", "deg1")) return;
     if (!validateRadioGroup("title", "titleRequired", "tit1")) return;
     if (!validateSciSelection()) return;
+    if (!validatePrivacyConfirm()) return;
 
     setSubmitting(true);
     var payload = buildSubmissionPayload();

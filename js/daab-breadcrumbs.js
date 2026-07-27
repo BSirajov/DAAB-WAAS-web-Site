@@ -64,6 +64,10 @@
     "scientists-profiles": "scientistsProfilesForum",
     "executive-board": "executiveBoard",
     charter: "charter",
+    "legal-notice": "legalNotice",
+    privacy: "privacy",
+    cookies: "cookies",
+    terms: "terms",
     membership: "membershipTerms",
     "membership-value": "membershipWhy",
     "membership-application": "membershipJoin",
@@ -79,7 +83,8 @@
     activities: "activities",
     membership: "membership",
     sponsorship: "sponsors",
-    forum: "forum2024"
+    forum: "forum2024",
+    "legal-pages": "legalPages"
   };
 
   /** Dropdown groups in primary nav (not top-level page links). */
@@ -87,7 +92,8 @@
     about: true,
     activities: true,
     membership: true,
-    sponsorship: true
+    sponsorship: true,
+    "legal-pages": true
   };
 
   function usesForumHubCrumb(page) {
@@ -215,6 +221,34 @@
         navParent: "about"
       },
       { id: "charter", az: "az/charter.html", en: "en/charter.html", navParent: "about" },
+      {
+        id: "privacy",
+        az: "az/privacy.html",
+        en: "en/privacy.html",
+        navParent: "legal-pages",
+        navGroup: "legal-pages"
+      },
+      {
+        id: "terms",
+        az: "az/terms.html",
+        en: "en/terms.html",
+        navParent: "legal-pages",
+        navGroup: "legal-pages"
+      },
+      {
+        id: "cookies",
+        az: "az/cookies.html",
+        en: "en/cookies.html",
+        navParent: "legal-pages",
+        navGroup: "legal-pages"
+      },
+      {
+        id: "legal-notice",
+        az: "az/legal-notice.html",
+        en: "en/legal-notice.html",
+        navParent: "legal-pages",
+        navGroup: "legal-pages"
+      },
       {
         id: "membership-value",
         az: "az/membership_value.html",
@@ -566,13 +600,27 @@
       });
     }
 
-    // About / Membership / Activities dropdowns (Forum 2024 uses hub crumb).
-    if (
+    // Legal pages sit under About → Legal in the primary nav.
+    if (page.navParent === "legal-pages" || page.navGroup === "legal-pages") {
+      var aboutLandingId = sectionLanding(navDef, "about") || "mission";
+      var aboutLanding = pageById(routes, aboutLandingId);
+      crumbs.push({
+        href: aboutLanding ? pageHref(I18N, aboutLanding, lang) : null,
+        text: t(ui, lang, "breadcrumbs", "about") || "About"
+      });
+      var legalLandingId = sectionLanding(navDef, "legal-pages") || "privacy";
+      var legalLanding = pageById(routes, legalLandingId);
+      crumbs.push({
+        href: legalLanding ? pageHref(I18N, legalLanding, lang) : null,
+        text: t(ui, lang, "breadcrumbs", "legalPages") || t(ui, lang, "nav", "legalPages") || "Legal"
+      });
+    } else if (
       page.navParent &&
       page.navParent !== "forum" &&
       PRIMARY_GROUP_PARENTS[page.navParent] &&
       !usesForumHubCrumb(page)
     ) {
+      // About / Membership / Activities dropdowns (Forum 2024 uses hub crumb).
       var groupKey = GROUP_LABEL_KEYS[page.navParent];
       var landingId = sectionLanding(navDef, page.navParent);
       var landing = landingId ? pageById(routes, landingId) : null;

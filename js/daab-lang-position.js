@@ -5,7 +5,14 @@
   "use strict";
 
   var STORAGE_KEY = "daab-lang-position";
+  var FORCE_TOP_KEY = "daab-force-page-top";
   var HASH_SYNC_PAGES = { activities: 1, charter: 1, foundation: 1 };
+  var LEGAL_PAGE_IDS = {
+    "legal-notice": 1,
+    privacy: 1,
+    cookies: 1,
+    terms: 1
+  };
 
   /** AZ ↔ EN article ids that differ on the same logical page (see i18n/anchor-aliases.json). */
   var ANCHOR_ALIASES = {
@@ -32,6 +39,8 @@
   };
 
   var SKIP_IDS = {
+    top: 1,
+    "page-title": 1,
     content: 1,
     "search-overlay": 1,
     "search-input": 1,
@@ -284,16 +293,67 @@
 
   function restoreTop() {
     var root = document.documentElement;
-    var prevInline = root.style.scrollBehavior;
-    root.style.scrollBehavior = "auto";
+    var body = document.body;
+    root.style.setProperty("scroll-behavior", "auto", "important");
+    if (body) body.style.setProperty("scroll-behavior", "auto", "important");
+    root.scrollTop = 0;
+    if (body) body.scrollTop = 0;
     window.scrollTo(0, 0);
-    global.requestAnimationFrame(function () {
-      root.style.scrollBehavior = prevInline;
-    });
+    /* Keep auto on legal pages; elsewhere restore after the jump settles */
+    if (!LEGAL_PAGE_IDS[pageId()]) {
+      global.requestAnimationFrame(function () {
+        root.style.removeProperty("scroll-behavior");
+        if (body) body.style.removeProperty("scroll-behavior");
+      });
+    }
     return true;
   }
 
+  function consumeForceTopFlag() {
+    try {
+      if (sessionStorage.getItem(FORCE_TOP_KEY)) {
+        sessionStorage.removeItem(FORCE_TOP_KEY);
+        return true;
+      }
+    } catch (e) {
+      /* ignore */
+    }
+    return false;
+  }
+
   function restoreFromIntent() {
+    /* Footer legal links: always open at document top (instant), never mid-page */
+    if (consumeForceTopFlag()) {
+      clearUrlHash();
+      restoreTop();
+      clearIntent();
+      return true;
+    }
+
+    var idEarly = hashId();
+    if (
+      LEGAL_PAGE_IDS[pageId()] &&
+      (!idEarly || idEarly === "top" || idEarly === "page-title")
+    ) {
+      if (idEarly === "top") clearUrlHash();
+      clearIntent();
+      /* Align to page title under sticky chrome (not mid-article) */
+      if (scrollToAnchor("page-title", false)) {
+        return true;
+      }
+      var h1 = document.querySelector(".hero h1, h1");
+      if (h1) {
+        var top =
+          h1.getBoundingClientRect().top + window.pageYOffset - navOffset();
+        var root = document.documentElement;
+        root.style.setProperty("scroll-behavior", "auto", "important");
+        window.scrollTo(0, Math.max(0, Math.round(top)));
+        return true;
+      }
+      restoreTop();
+      return true;
+    }
+
     var intent = readIntent();
 
     if (
@@ -308,7 +368,14 @@
       return true;
     }
 
-    var id = hashId();
+    var id = idEarly;
+    /* #top means document start — never treat as a section anchor */
+    if (id === "top") {
+      clearUrlHash();
+      restoreTop();
+      clearIntent();
+      return true;
+    }
     if (id) {
       var mappedId = translateAnchor(id);
       if (mappedId !== id && document.getElementById(mappedId)) {
@@ -449,6 +516,11 @@
   global.addEventListener("hashchange", function () {
     var id = hashId();
     if (pageId() === "scientists-profiles" && isProfileCardAnchor(id)) {
+      return;
+    }
+    if (id === "top") {
+      clearUrlHash();
+      restoreTop();
       return;
     }
     if (id) scrollToAnchor(id, false);

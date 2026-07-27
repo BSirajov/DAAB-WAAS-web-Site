@@ -254,6 +254,54 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/charter.html"/>
   </url>
   <url>
+    <loc>https://daab-waas.com/az/legal-notice.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/legal-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/legal-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/legal-notice.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/en/legal-notice.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/legal-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/legal-notice.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/legal-notice.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/az/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/az/cookies.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/cookies.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/en/cookies.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/cookies.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/cookies.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/az/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/terms.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/en/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/terms.html"/>
+  </url>
+  <url>
     <loc>https://daab-waas.com/az/membership_value.html</loc>
     <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/membership_value.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/membership_value.html"/>

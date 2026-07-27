@@ -1,4 +1,6 @@
 /* Membership application form — scoped to .application-page */
+/* Sticky TOC: daab-sticky-sidebar.css (aside.sidebar) */
+@import url("daab-sticky-sidebar.css?v=3");
 
 .application-page .skip{
   position: absolute;
@@ -883,38 +885,12 @@
 }
 
 .application-page .city-manual-fallback[hidden] {
-  display: none !important;
+  display: none;
 }
 
 @media (min-width: 1061px) {
   .application-page .application-layout{
     grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
-  }
-  .application-page .application-sidebar{
-    position: sticky !important;
-    top: calc(var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) + 12px) !important;
-    max-height: calc(100vh - var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) - 28px) !important;
-    overflow: visible !important;
-    z-index: 20 !important;
-  }
-  .application-page .application-sidebar > .sidebar-widget{
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    max-height: calc(100vh - var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) - 28px) !important;
-    overflow: hidden !important;
-  }
-  .application-page .application-sidebar > .sidebar-widget > .widget-head{
-    flex: 0 0 auto !important;
-  }
-  .application-page .application-sidebar > .sidebar-widget > .widget-body{
-    flex: 1 1 auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    overscroll-behavior: contain !important;
-    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -926,18 +902,13 @@
   }
   .application-page .application-sidebar{
     order: 0;
-    margin-bottom: 4px !important;
   }
   .application-page .application-stack{
     order: 1;
   }
-  .application-page .application-sidebar > .sidebar-widget{
-    max-height: none !important;
-  }
-  .application-page .application-sidebar .sidebar-widget.events-open .widget-body{
+  /* Taller open panel than shared default — many form steps */
+  html[data-daab-page-id="membership-application"] .sidebar-widget.events-open .widget-body{
     max-height: min(78vh, 720px) !important;
-    padding: 16px 20px !important;
-    overflow-y: auto !important;
   }
 }
 

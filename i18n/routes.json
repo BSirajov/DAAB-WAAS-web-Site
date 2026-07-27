@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 14,
   "defaultLang": "az",
   "languages": [
     "az",
@@ -194,6 +194,45 @@
       "navOrder": 4,
       "az": "az/charter.html",
       "en": "en/charter.html"
+    },
+    {
+      "id": "privacy",
+      "navId": "privacy",
+      "navGroup": "legal-pages",
+      "navParent": "legal-pages",
+      "navOrder": 1,
+      "doc": "PDPL/KVKK privacy notice; linked from footer and forms.",
+      "az": "az/privacy.html",
+      "en": "en/privacy.html"
+    },
+    {
+      "id": "terms",
+      "navId": "terms",
+      "navGroup": "legal-pages",
+      "navParent": "legal-pages",
+      "navOrder": 2,
+      "doc": "Website terms of use; linked from footer.",
+      "az": "az/terms.html",
+      "en": "en/terms.html"
+    },
+    {
+      "id": "cookies",
+      "navId": "cookies",
+      "navGroup": "legal-pages",
+      "navParent": "legal-pages",
+      "navOrder": 3,
+      "doc": "Cookie policy; linked from footer and consent banner.",
+      "az": "az/cookies.html",
+      "en": "en/cookies.html"
+    },
+    {
+      "id": "legal-notice",
+      "navId": "legal-notice",
+      "navGroup": "legal-pages",
+      "navParent": "legal-pages",
+      "navOrder": 4,
+      "az": "az/legal-notice.html",
+      "en": "en/legal-notice.html"
     },
     {
       "id": "membership-value",

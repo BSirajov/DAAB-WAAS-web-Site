@@ -35,6 +35,11 @@
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",
     charter: "charter",
+    "legal-pages": "legalPages",
+    "legal-notice": "legal-notice",
+    privacy: "privacy",
+    cookies: "cookies",
+    terms: "terms",
     membership: "membershipTerms",
     "membership-value": "membershipWhy",
     "membership-application": "membershipJoin",
@@ -159,28 +164,98 @@
     toggle.setAttribute("aria-controls", panel.id);
   }
 
+  function appendDropdownPageLink(panel, childDef, routes, lang, ui, activeId) {
+    var page = pageById(routes, childDef.id);
+    if (!page) return false;
+    var link = document.createElement("a");
+    link.href = childPageHref(page, lang, childDef);
+    link.className = "nav-dropdown-link";
+    link.setAttribute("role", "menuitem");
+    link.setAttribute("data-nav-id", childNavId(childDef));
+
+    var iconKey = childIconKey(childDef, page);
+    var title = document.createElement("span");
+    title.className = "nav-dropdown-link-title";
+    title.textContent = labelWithIcon(ui, iconKey, childLabel(ui, lang, childDef, page));
+    link.appendChild(title);
+
+    var descText = linkDescription(ui, lang, childDef, page);
+    if (descText) {
+      var desc = document.createElement("span");
+      desc.className = "nav-dropdown-link-desc";
+      desc.textContent = descText;
+      link.appendChild(desc);
+    }
+
+    var active = childLinkIsActive(page, childDef, activeId);
+    if (active) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
+    }
+    panel.appendChild(link);
+    return active;
+  }
+
+  function fillMultilineText(el, text) {
+    el.textContent = "";
+    var parts = String(text || "").split("\n");
+    for (var i = 0; i < parts.length; i++) {
+      if (i) el.appendChild(document.createElement("br"));
+      el.appendChild(document.createTextNode(parts[i]));
+    }
+  }
+
+  function buildNestedGroupToggle(toggle, item, lang, ui) {
+    toggle.classList.add("nav-dropdown-toggle--nested");
+
+    var title = document.createElement("span");
+    title.className = "nav-dropdown-link-title";
+    title.textContent = labelWithIcon(ui, item.labelKey, label(ui, lang, item.labelKey));
+    toggle.appendChild(title);
+
+    if (item.descKey) {
+      var desc = document.createElement("span");
+      desc.className = "nav-dropdown-link-desc";
+      fillMultilineText(desc, label(ui, lang, item.descKey));
+      toggle.appendChild(desc);
+    }
+
+    toggle.appendChild(document.createTextNode(" "));
+    var caret = document.createElement("span");
+    caret.className = "nav-dropdown-caret";
+    caret.setAttribute("aria-hidden", "true");
+    toggle.appendChild(caret);
+  }
+
   /**
    * Unified dropdown renderer. Every group — whether marked `mega` or `dropdown`
    * in nav.json — gets the same panel/link styling. Descriptions are optional.
+   * Nested `type: "group"` children render as a submenu (e.g. About → Legal).
    */
-  function buildGroup(item, routes, lang, ui, activeId) {
+  function buildGroup(item, routes, lang, ui, activeId, nested) {
+    var isNested = !!nested;
     var wrap = document.createElement("div");
-    wrap.className = "nav-dropdown";
+    wrap.className = "nav-dropdown" + (isNested ? " nav-dropdown--nested" : "");
     wrap.setAttribute("data-nav-dropdown", "");
+    if (item.id) wrap.setAttribute("data-nav-group", item.id);
 
     var toggle = document.createElement("button");
     toggle.type = "button";
     toggle.className = "nav-link nav-dropdown-toggle";
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-haspopup", "true");
-    toggle.appendChild(
-      document.createTextNode(labelWithIcon(ui, item.labelKey, label(ui, lang, item.labelKey)))
-    );
-    var caret = document.createElement("span");
-    caret.className = "nav-dropdown-caret";
-    caret.setAttribute("aria-hidden", "true");
-    toggle.appendChild(document.createTextNode(" "));
-    toggle.appendChild(caret);
+    if (isNested) {
+      buildNestedGroupToggle(toggle, item, lang, ui);
+    } else {
+      toggle.appendChild(
+        document.createTextNode(labelWithIcon(ui, item.labelKey, label(ui, lang, item.labelKey)))
+      );
+      var caret = document.createElement("span");
+      caret.className = "nav-dropdown-caret";
+      caret.setAttribute("aria-hidden", "true");
+      toggle.appendChild(document.createTextNode(" "));
+      toggle.appendChild(caret);
+    }
 
     var panel = document.createElement("div");
     panel.className = "nav-dropdown-panel";
@@ -190,34 +265,18 @@
     var groupActive = false;
     children.forEach(function (childDef) {
       if (childDef.type === "section") return;
-      var page = pageById(routes, childDef.id);
-      if (!page) return;
-      var link = document.createElement("a");
-      link.href = childPageHref(page, lang, childDef);
-      link.className = "nav-dropdown-link";
-      link.setAttribute("role", "menuitem");
-      link.setAttribute("data-nav-id", childNavId(childDef));
-
-      var iconKey = childIconKey(childDef, page);
-      var title = document.createElement("span");
-      title.className = "nav-dropdown-link-title";
-      title.textContent = labelWithIcon(ui, iconKey, childLabel(ui, lang, childDef, page));
-      link.appendChild(title);
-
-      var descText = linkDescription(ui, lang, childDef, page);
-      if (descText) {
-        var desc = document.createElement("span");
-        desc.className = "nav-dropdown-link-desc";
-        desc.textContent = descText;
-        link.appendChild(desc);
+      if (childDef.type === "group") {
+        var nestedGroup = buildGroup(childDef, routes, lang, ui, activeId, true);
+        panel.appendChild(nestedGroup);
+        if (nestedGroup.classList.contains("has-active-child")) {
+          groupActive = true;
+        }
+        return;
       }
-
-      if (childLinkIsActive(page, childDef, activeId)) {
-        link.classList.add("active");
-        link.setAttribute("aria-current", "page");
+      if (!childDef.id) return;
+      if (appendDropdownPageLink(panel, childDef, routes, lang, ui, activeId)) {
         groupActive = true;
       }
-      panel.appendChild(link);
     });
 
     if (groupActive) wrap.classList.add("has-active-child");
