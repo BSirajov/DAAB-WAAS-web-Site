@@ -38,8 +38,30 @@ function daab_mail_line(string $label, string $value): string
     return $label . ': ' . $value . "\n";
 }
 
+/* Honeypot: bots fill "website"; humans leave it empty (field is hidden in CSS). */
+$honeypot = daab_mail_field('website');
+if ($honeypot !== '') {
+    http_response_code(200);
+    echo 'success';
+    exit;
+}
+
 $email = daab_mail_field('email');
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    echo 'error';
+    exit;
+}
+
+$privacyConfirm = daab_mail_field('privacy_confirm');
+if ($privacyConfirm === '') {
+    $privacyConfirm = daab_mail_field('privacyconfirm');
+}
+if ($privacyConfirm === 'on') {
+    $privacyConfirm = 'yes';
+}
+$privacyOk = in_array(strtolower($privacyConfirm), ['yes', 'true', '1', 'on'], true);
+if (!$privacyOk) {
     http_response_code(400);
     echo 'error';
     exit;
@@ -98,6 +120,7 @@ $labels = $isAz
         'sci_fields' => 'Elmi sahələr',
         'additional_info' => 'Əlavə məlumat',
         'cv_confirm' => 'CV təsdiqi',
+        'privacy_confirm' => 'Məxfilik bildirişi təsdiqi',
         'submitted_at' => 'Göndərilmə vaxtı',
         'page_url' => 'Səhifə',
     ]
@@ -119,6 +142,7 @@ $labels = $isAz
         'sci_fields' => 'Scientific fields',
         'additional_info' => 'Additional information',
         'cv_confirm' => 'CV confirmation',
+        'privacy_confirm' => 'Privacy notice acknowledgment',
         'submitted_at' => 'Submitted at',
         'page_url' => 'Page URL',
     ];
@@ -141,6 +165,7 @@ $fields = [
     'sci_fields' => $sciFields,
     'additional_info' => $additionalInfo,
     'cv_confirm' => $cvConfirm,
+    'privacy_confirm' => $privacyConfirm,
     'submitted_at' => daab_mail_field('submitted_at'),
     'page_url' => daab_mail_field('page_url'),
 ];

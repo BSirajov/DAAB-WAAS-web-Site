@@ -268,6 +268,160 @@
     if (switcherNode) placeSwitcher(switcherNode);
   }
 
+  function assetRootPrefix() {
+    var root = document.documentElement.getAttribute("data-daab-asset-root");
+    if (root == null || root === "") return "";
+    return root.endsWith("/") ? root : root + "/";
+  }
+
+  function isLegalDocHref(href) {
+    return /(?:^|\/)(legal-notice|privacy|cookies|terms)\.html(?:$|[?#])/i.test(
+      href || ""
+    );
+  }
+
+  /** Turn /az/... and /en/... into asset-root-relative hrefs (file:// + nested hosts). */
+  function rewriteSiteRootHrefs(scope) {
+    var prefix = assetRootPrefix();
+    var root = scope || document;
+    var nodes = root.querySelectorAll(
+      'a[href*="legal-notice.html"], a[href*="privacy.html"], a[href*="cookies.html"], a[href*="terms.html"]'
+    );
+    for (var i = 0; i < nodes.length; i++) {
+      var a = nodes[i];
+      var href = a.getAttribute("href") || "";
+      if (!href || href.charAt(0) === "#" || href.indexOf("//") === 0) continue;
+      if (!isLegalDocHref(href)) continue;
+
+      /* Always land on the hero page title */
+      if (href.indexOf("#page-title") === -1) {
+        href = href.split("#")[0] + "#page-title";
+      }
+
+      if (href.charAt(0) === "/" && prefix) {
+        href = prefix + href.slice(1);
+      }
+      a.setAttribute("href", href);
+    }
+  }
+
+  function stickyOffsetForTitle() {
+    if (window.DAAB_LANG_POSITION && typeof window.DAAB_LANG_POSITION.navOffset === "function") {
+      return window.DAAB_LANG_POSITION.navOffset();
+    }
+    var root = document.documentElement;
+    var style = window.getComputedStyle(root);
+    var h = parseFloat(style.getPropertyValue("--daab-sticky-top-stack"));
+    if (!isFinite(h) || h <= 0) {
+      h = parseFloat(style.getPropertyValue("--daab-nav-height"));
+      if (!isFinite(h) || h <= 0) {
+        var nav = document.querySelector(".nav-strip");
+        h = nav ? nav.getBoundingClientRect().height : 86;
+      }
+      var crumbs = document.getElementById("daab-breadcrumbs");
+      if (crumbs) h += crumbs.getBoundingClientRect().height;
+    }
+    return Math.ceil(h) + 12;
+  }
+
+  /** Instant jump so the page title sits just under sticky chrome */
+  function jumpPageTopInstant() {
+    var html = document.documentElement;
+    var body = document.body;
+    html.style.setProperty("scroll-behavior", "auto", "important");
+    if (body) body.style.setProperty("scroll-behavior", "auto", "important");
+    var title =
+      document.getElementById("page-title") ||
+      document.querySelector(".hero h1") ||
+      document.querySelector("h1");
+    if (!title) {
+      html.scrollTop = 0;
+      if (body) body.scrollTop = 0;
+      window.scrollTo(0, 0);
+      return;
+    }
+    var y =
+      title.getBoundingClientRect().top +
+      (window.pageYOffset || html.scrollTop || 0) -
+      stickyOffsetForTitle();
+    y = Math.max(0, Math.round(y));
+    html.scrollTop = y;
+    if (body) body.scrollTop = y;
+    window.scrollTo(0, y);
+  }
+
+  function prepareLegalNavigation() {
+    try {
+      sessionStorage.removeItem("daab-lang-position");
+      sessionStorage.setItem("daab-force-page-top", String(Date.now()));
+    } catch (err) {
+      /* private mode */
+    }
+    document.documentElement.style.setProperty("scroll-behavior", "auto", "important");
+  }
+
+  function bindFooterLegalTopJump() {
+    if (document.documentElement.getAttribute("data-daab-footer-legal-top") === "1") {
+      return;
+    }
+    document.documentElement.setAttribute("data-daab-footer-legal-top", "1");
+    rewriteSiteRootHrefs(document);
+    document.addEventListener(
+      "click",
+      function (ev) {
+        var a =
+          ev.target &&
+          ev.target.closest &&
+          ev.target.closest(
+            ".footer-legal-links a[href], .daab-cookie-banner a[href]"
+          );
+        if (!a) return;
+        if (ev.defaultPrevented) return;
+        if (ev.button != null && ev.button !== 0) return;
+        if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+
+        var hrefAttr = a.getAttribute("href") || "";
+        if (!hrefAttr || hrefAttr.charAt(0) === "#") return;
+
+        /* Resolved absolute URL from the browser — reliable across depths */
+        var abs = a.href || "";
+        if (!/legal-notice|privacy|cookies|terms/i.test(abs)) return;
+
+        prepareLegalNavigation();
+        ev.preventDefault();
+
+        var url;
+        try {
+          url = new URL(abs);
+        } catch (errUrl) {
+          location.assign(hrefAttr);
+          return;
+        }
+
+        var here = location.pathname.replace(/\/+$/, "") || "/";
+        var dest = url.pathname.replace(/\/+$/, "") || "/";
+        var titleHash = "#page-title";
+        if (here === dest && url.search === location.search) {
+          if (window.history && window.history.replaceState) {
+            window.history.replaceState(
+              null,
+              "",
+              location.pathname + location.search + titleHash
+            );
+          } else {
+            location.hash = "page-title";
+          }
+          jumpPageTopInstant();
+          return;
+        }
+
+        /* Open legal page at the hero page title */
+        location.assign(url.origin + url.pathname + url.search + titleHash);
+      },
+      true
+    );
+  }
+
   function init() {
     var I18N = getI18n();
     if (!I18N) return;
@@ -278,6 +432,8 @@
     if (document.body && document.body.classList.contains("daab-gateway")) {
       return;
     }
+
+    bindFooterLegalTopJump();
 
     Promise.all([I18N.loadRoutes(), I18N.loadUi()])
       .then(function (results) {
@@ -309,11 +465,14 @@
     init();
   }
 
+  /* Bind early so footer legal clicks work even if i18n boot is delayed */
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
+      bindFooterLegalTopJump();
       boot(0);
     });
   } else {
+    bindFooterLegalTopJump();
     boot(0);
   }
 

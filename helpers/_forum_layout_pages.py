@@ -44,6 +44,17 @@ LAYOUT_IS_PAGE_IDS: tuple[str, ...] = (
     "forum-2026",
 )
 
+# Page IDs that share css/daab-sticky-sidebar.css (activities/forum + legal + TOC pages).
+# Aside markup must include class "sidebar" (and usually .sidebar-widget).
+STICKY_SIDEBAR_PAGE_IDS: tuple[str, ...] = LAYOUT_IS_PAGE_IDS + (
+    "privacy",
+    "cookies",
+    "terms",
+    "legal-notice",
+    "charter",
+    "membership-application",
+)
+
 # Matches the `html:is([data-daab-page-id="..."], ...)` selector head (no suffix).
 _IS_GROUP_RE = re.compile(
     r'html:is\(\[data-daab-page-id="[^"]+"\]'
@@ -60,14 +71,16 @@ def canonical_is_head() -> str:
     return f"html:is({inner})"
 
 
-def sync_activities_layout_css() -> int:
-    """Normalize every `html:is(...)` page-id group in daab-activities-layout.css
-    to the canonical LAYOUT_IS_PAGE_IDS set/order. Returns groups changed."""
+def sticky_is_head() -> str:
+    inner = ", ".join(f'[data-daab-page-id="{pid}"]' for pid in STICKY_SIDEBAR_PAGE_IDS)
+    return f"html:is({inner})"
+
+
+def _sync_is_groups(path_name: str, canonical: str) -> int:
     from _paths import ROOT
 
-    path = ROOT / "css" / "daab-activities-layout.css"
+    path = ROOT / "css" / path_name
     text = path.read_text(encoding="utf-8")
-    canonical = canonical_is_head()
     changed = 0
 
     def repl(m: "re.Match[str]") -> str:
@@ -82,6 +95,20 @@ def sync_activities_layout_css() -> int:
     return changed
 
 
+def sync_activities_layout_css() -> int:
+    """Normalize every `html:is(...)` page-id group in daab-activities-layout.css
+    to the canonical LAYOUT_IS_PAGE_IDS set/order. Returns groups changed."""
+    return _sync_is_groups("daab-activities-layout.css", canonical_is_head())
+
+
+def sync_sticky_sidebar_css() -> int:
+    """Normalize every `html:is(...)` page-id group in daab-sticky-sidebar.css
+    to STICKY_SIDEBAR_PAGE_IDS. Returns groups changed."""
+    return _sync_is_groups("daab-sticky-sidebar.css", sticky_is_head())
+
+
 if __name__ == "__main__":
     n = sync_activities_layout_css()
     print(f"Normalized {n} :is() selector group(s) in css/daab-activities-layout.css")
+    n2 = sync_sticky_sidebar_css()
+    print(f"Normalized {n2} :is() selector group(s) in css/daab-sticky-sidebar.css")

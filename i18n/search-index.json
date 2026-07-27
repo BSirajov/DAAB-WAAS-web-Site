@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated": "2026-06-25",
-  "entryCount": 536,
+  "generated": "2026-07-27",
+  "entryCount": 572,
   "entries": [
     {
       "id": "page-home-az",
@@ -550,6 +550,110 @@
       "norm": "waas charter charter of the world association of azerbaijani scientists."
     },
     {
+      "id": "page-legal-notice-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "legal-notice",
+      "anchor": "",
+      "title": "DAAB — Hüquqi rekvizitlər",
+      "summary": "Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) hüquqi kimliyi, ünvanı və əlaqə məlumatları.",
+      "tag": "Səhifə",
+      "icon": "⚖️",
+      "boost": 12,
+      "norm": "daab hu quqi rekvizitler du nya azerbaycanli alimler birliyinin daab hu quqi kimliyi u nvani ve elaqe melumatlari."
+    },
+    {
+      "id": "page-legal-notice-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "legal-notice",
+      "anchor": "",
+      "title": "WAAS — Legal notice (Imprint)",
+      "summary": "Legal identity, address and contact details of the World Association of Azerbaijani Scientists (WAAS).",
+      "tag": "Page",
+      "icon": "⚖️",
+      "boost": 12,
+      "norm": "waas legal notice imprint legal identity address and contact details of the world association of azerbaijani scientists waas ."
+    },
+    {
+      "id": "page-privacy-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "privacy",
+      "anchor": "",
+      "title": "DAAB — Məxfilik bildirişi",
+      "summary": "DAAB veb-saytı və üzvlük forması üzrə KVKK məlumatlandırma mətni və məxfilik bildirişi.",
+      "tag": "Səhifə",
+      "icon": "🔒",
+      "boost": 12,
+      "norm": "daab mexfilik bildiris i daab veb-sayti ve u zvlu k formasi u zre kvkk melumatlandirma metni ve mexfilik bildiris i."
+    },
+    {
+      "id": "page-privacy-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "privacy",
+      "anchor": "",
+      "title": "WAAS — Privacy notice",
+      "summary": "PDPL privacy notice for the WAAS website and membership application.",
+      "tag": "Page",
+      "icon": "🔒",
+      "boost": 12,
+      "norm": "waas privacy notice pdpl privacy notice for the waas website and membership application."
+    },
+    {
+      "id": "page-cookies-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "cookies",
+      "anchor": "",
+      "title": "DAAB — Kuki siyasəti",
+      "summary": "DAAB saytında istifadə olunan zəruri və analitika kukiləri haqqında məlumat.",
+      "tag": "Səhifə",
+      "icon": "🍪",
+      "boost": 12,
+      "norm": "daab kuki siyaseti daab saytinda istifade olunan zeruri ve analitika kukileri haqqinda melumat."
+    },
+    {
+      "id": "page-cookies-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "cookies",
+      "anchor": "",
+      "title": "WAAS — Cookie policy",
+      "summary": "Essential and analytics cookies used on the WAAS website.",
+      "tag": "Page",
+      "icon": "🍪",
+      "boost": 12,
+      "norm": "waas cookie policy essential and analytics cookies used on the waas website."
+    },
+    {
+      "id": "page-terms-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "terms",
+      "anchor": "",
+      "title": "DAAB — İstifadə şərtləri",
+      "summary": "DAAB veb-saytından istifadənin ümumi şərtləri.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "daab i stifade s ertleri daab veb-saytindan istifadenin u mumi s ertleri."
+    },
+    {
+      "id": "page-terms-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "terms",
+      "anchor": "",
+      "title": "WAAS — Terms of use",
+      "summary": "General terms for using the WAAS website.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "waas terms of use general terms for using the waas website."
+    },
+    {
       "id": "page-membership-value-az",
       "lang": "az",
       "type": "page",
@@ -784,6 +888,240 @@
       "norm": "contributions waas acknowledgements and institutional partners who supported the first forum of azerbaijani scientists living abroad."
     },
     {
+      "id": "page-sirajov-media-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "sirajov-media",
+      "anchor": "",
+      "title": "Bəxtiyar Siracov — İnternet resursları | DAAB",
+      "summary": "Nobel Sülh Mükafatçısı, DAAB İdarə Heyətinin həmsədri Dr. Bəxtiyar Siracov haqqında müsahibələr, tədbirlər, TV proqramları və video resursların toplusu.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "bextiyar siracov i nternet resurslari daab nobel su lh mu kafatc isi daab i dare heyetinin hemsedri dr. bextiyar siracov haqqinda mu sahibeler tedbirler tv proqramlari ve video resurslarin toplusu."
+    },
+    {
+      "id": "page-sirajov-media-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "sirajov-media",
+      "anchor": "",
+      "title": "Bakhtiyar Sirajov — Internet resources | WAAS",
+      "summary": "A collection of interviews, events, TV programmes and video resources about Dr. Bakhtiyar Sirajov — Nobel Peace Prize laureate and Co-Chair of the WAAS Executive Board.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "bakhtiyar sirajov internet resources waas a collection of interviews events tv programmes and video resources about dr. bakhtiyar sirajov nobel peace prize laureate and co-chair of the waas executive board."
+    },
+    {
+      "id": "page-teymur-media-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "teymur-media",
+      "anchor": "",
+      "title": "Teymur Rzayev — Video resursları | DAAB",
+      "summary": "DAAB İdarə Heyətinin üzvü, Azərbaycan Respublikasının Əməkdar Rəssamı Prof. Dr. Teymur Rzayev haqqında müsahibələr, sənədli filmlər və televiziya proqramlarının toplusu.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "teymur rzayev video resurslari daab daab i dare heyetinin u zvu azerbaycan respublikasinin emekdar ressami prof. dr. teymur rzayev haqqinda mu sahibeler senedli filmler ve televiziya proqramlarinin toplusu."
+    },
+    {
+      "id": "page-teymur-media-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "teymur-media",
+      "anchor": "",
+      "title": "Teymur Rzayev — Video resources | WAAS",
+      "summary": "A collection of interviews, documentaries and television programmes about Prof. Dr. Teymur Rzayev — Honored Artist of the Republic of Azerbaijan and member of the WAAS Executive Board.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "teymur rzayev video resources waas a collection of interviews documentaries and television programmes about prof. dr. teymur rzayev honored artist of the republic of azerbaijan and member of the waas executive board."
+    },
+    {
+      "id": "page-seymur-media-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "seymur-media",
+      "anchor": "",
+      "title": "Seymur Nəsirov — Mətbuat resursları | DAAB",
+      "summary": "DAAB İdarə Heyətinin həmsədri, tədqiqatçı-alim Dr. Seymur Nəsirov haqqında mətbuat və onlayn xəbər materiallarının toplusu.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "seymur nesirov metbuat resurslari daab daab i dare heyetinin hemsedri tedqiqatc i-alim dr. seymur nesirov haqqinda metbuat ve onlayn xeber materiallarinin toplusu."
+    },
+    {
+      "id": "page-seymur-media-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "seymur-media",
+      "anchor": "",
+      "title": "Seymur Nasirov — Press resources | WAAS",
+      "summary": "A collection of press and online news coverage about Dr. Seymur Nasirov — researcher and Co-Chair of the WAAS Executive Board.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "seymur nasirov press resources waas a collection of press and online news coverage about dr. seymur nasirov researcher and co-chair of the waas executive board."
+    },
+    {
+      "id": "page-akif-media-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "akif-media",
+      "anchor": "",
+      "title": "Akif Alaferdov — Kitablar | DAAB",
+      "summary": "Dr. Akif Alaferdovun Qırğızıstan azərbaycanlılarına və repressiya olunmuş xalqlara dair kitabları və foto toplusu.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "akif alaferdov kitablar daab dr. akif alaferdovun qirg izistan azerbaycanlilarina ve repressiya olunmus xalqlara dair kitablari ve foto toplusu."
+    },
+    {
+      "id": "page-akif-media-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "akif-media",
+      "anchor": "",
+      "title": "Akif Alaferdov — Books | WAAS",
+      "summary": "Books and photo collections by Dr. Akif Alaferdov on repressed Azerbaijanis and peoples of Kyrgyzstan.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "akif alaferdov books waas books and photo collections by dr. akif alaferdov on repressed azerbaijanis and peoples of kyrgyzstan."
+    },
+    {
+      "id": "page-eldar-ahadov-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "eldar-ahadov",
+      "anchor": "",
+      "title": "Eldar Əhədov — Özüm haqqında | DAAB",
+      "summary": "Eldar Əhədovun bioqrafiyası, mükafatları və Riçard Berengartenin rəyi.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "eldar ehedov o zu m haqqinda daab eldar ehedovun bioqrafiyasi mu kafatlari ve ric ard berengartenin reyi."
+    },
+    {
+      "id": "page-eldar-ahadov-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "eldar-ahadov",
+      "anchor": "",
+      "title": "Eldar Ahadov — About me | WAAS",
+      "summary": "Biography, awards, and Richard Berengarten’s tribute to Eldar Ahadov.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "eldar ahadov about me waas biography awards and richard berengarten s tribute to eldar ahadov."
+    },
+    {
+      "id": "page-eldar-ahadov-poeziya-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "eldar-ahadov-poeziya",
+      "anchor": "",
+      "title": "Eldar Əhədov — Poeziya | DAAB",
+      "summary": "Eldar Əhədovun şeirləri, təsvir və şeir təhlilləri ilə.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "eldar ehedov poeziya daab eldar ehedovun s eirleri tesvir ve s eir tehlilleri ile."
+    },
+    {
+      "id": "page-eldar-ahadov-poeziya-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "eldar-ahadov-poeziya",
+      "anchor": "",
+      "title": "Eldar Ahadov — Poetry | WAAS",
+      "summary": "Poems by Eldar Ahadov with illustration and poem analyses. Verse remains in Azerbaijani.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "eldar ahadov poetry waas poems by eldar ahadov with illustration and poem analyses. verse remains in azerbaijani."
+    },
+    {
+      "id": "page-eldar-ahadov-poetik-dastanlar-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "eldar-ahadov-poetik-dastanlar",
+      "anchor": "",
+      "title": "Eldar Əhədov — Poetik dastanlar və əfsanələr | DAAB",
+      "summary": "Eldar Əhədovun «Xarı bülbül» dastanı və adlar göstəricisi.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "eldar ehedov poetik dastanlar ve efsaneler daab eldar ehedovun xari bu lbu l dastani ve adlar go stericisi."
+    },
+    {
+      "id": "page-eldar-ahadov-poetik-dastanlar-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "eldar-ahadov-poetik-dastanlar",
+      "anchor": "",
+      "title": "Eldar Ahadov — Poetic epics and legends | WAAS",
+      "summary": "Eldar Ahadov’s “Khari Bulbul” epic and name index. Epic verse remains in Azerbaijani.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "eldar ahadov poetic epics and legends waas eldar ahadov s khari bulbul epic and name index. epic verse remains in azerbaijani."
+    },
+    {
+      "id": "page-eldar-ahadov-bedii-nesr-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "eldar-ahadov-bedii-nesr",
+      "anchor": "",
+      "title": "Eldar Əhədov — Bədii nəsr | DAAB",
+      "summary": "Eldar Əhədovun bədii nəsr əsərləri və video materiallar.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "eldar ehedov bedii nesr daab eldar ehedovun bedii nesr eserleri ve video materiallar."
+    },
+    {
+      "id": "page-eldar-ahadov-bedii-nesr-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "eldar-ahadov-bedii-nesr",
+      "anchor": "",
+      "title": "Eldar Ahadov — Literary prose | WAAS",
+      "summary": "Prose works by Eldar Ahadov with video links.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "eldar ahadov literary prose waas prose works by eldar ahadov with video links."
+    },
+    {
+      "id": "page-eldar-ahadov-esse-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "eldar-ahadov-esse",
+      "anchor": "",
+      "title": "Eldar Əhədov — Esse | DAAB",
+      "summary": "Eldar Əhədovun esse yazıları.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "eldar ehedov esse daab eldar ehedovun esse yazilari."
+    },
+    {
+      "id": "page-eldar-ahadov-esse-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "eldar-ahadov-esse",
+      "anchor": "",
+      "title": "Eldar Ahadov — Essay | WAAS",
+      "summary": "Essays by Eldar Ahadov.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "eldar ahadov essay waas essays by eldar ahadov."
+    },
+    {
       "id": "nav-home-az",
       "lang": "az",
       "type": "nav",
@@ -899,6 +1237,19 @@
       "icon": "📜",
       "boost": 11,
       "norm": "nizamname nizamname ve idareetme qaydalari haqqimizda"
+    },
+    {
+      "id": "nav-legal-pages-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "legal-pages",
+      "anchor": "",
+      "title": "Hüquqi məlumat",
+      "summary": "Məxfilik bildirişi, istifadə şərtləri,\nkuki siyasəti və hüquqi rekvizitlər",
+      "tag": "Naviqasiya",
+      "icon": "🏛️",
+      "boost": 11,
+      "norm": "hu quqi melumat mexfilik bildiris i istifade s ertleri kuki siyaseti ve hu quqi rekvizitler haqqimizda"
     },
     {
       "id": "nav-membership-value-az",
@@ -1094,6 +1445,19 @@
       "icon": "📜",
       "boost": 11,
       "norm": "charter charter and governance rules about us"
+    },
+    {
+      "id": "nav-legal-pages-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "legal-pages",
+      "anchor": "",
+      "title": "Legal",
+      "summary": "Privacy Notice, Terms of Use,\nCookie Policy and Legal notice",
+      "tag": "Navigation",
+      "icon": "🏛️",
+      "boost": 11,
+      "norm": "legal privacy notice terms of use cookie policy and legal notice about us"
     },
     {
       "id": "nav-membership-value-en",
@@ -1460,6 +1824,58 @@
       "norm": "transparency"
     },
     {
+      "id": "activity-summer-school-2026-az",
+      "lang": "az",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "summer-school-2026",
+      "title": "DAAB İdarə Heyətinin sədri professor Məsud Əfəndiyevin Beynəlxalq Yay Məktəbi başa çatıb.",
+      "summary": "Azərbaycan Memarlıq və İnşaat Universitetində (AzMİU) kompleks sistemlərin öyrənilməsi və müxtəlif sahələrdə tətbiqinə həsr olunan Beynəlxalq Yay Məktəbi başa çatıb.",
+      "tag": "Fəaliyyət",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "daab i dare heyetinin sedri professor mesud efendiyevin beynelxalq yay mektebi bas a c atib. azerbaycan memarliq ve i ns aat universitetinde azmi u kompleks sistemlerin o yrenilmesi ve mu xtelif sahelerde tetbiqine hesr olunan beynelxalq yay mektebi bas a c atib."
+    },
+    {
+      "id": "activity-amirulla-80-2026-az",
+      "lang": "az",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "amirulla-80-2026",
+      "title": "Professor Əmirulla Məmmədovun 80 illik yubileyi münasibətilə Dünya Azərbaycanlı Alimlər Birliyinin təbriki",
+      "summary": "Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) üzvləri olaraq görkəmli azərbaycanlı alim, DAAB-ın üzvü, fizika-riyaziyyat elmləri doktoru, professor Əmirulla Məmmədovu 80 illik yubileyi münasibətilə təbrik edir, ona möhkəm can sağlığı, uzun ö",
+      "tag": "Fəaliyyət",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "professor emirulla memmedovun 80 illik yubileyi mu nasibetile du nya azerbaycanli alimler birliyinin tebriki du nya azerbaycanli alimler birliyinin daab u zvleri olaraq go rkemli azerbaycanli alim daab-in u zvu fizika-riyaziyyat elmleri doktoru professor emirulla memmedovu 80 illik yubileyi mu nasibetile tebrik edir ona mo hkem can sag lig i uzun o"
+    },
+    {
+      "id": "activity-efendiyev-innovasiya-2026-az",
+      "lang": "az",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "efendiyev-innovasiya-2026",
+      "title": "Professor Məsud Əfəndiyev: Azərbaycan elmində ən perspektivli innovasiya istiqaməti fənlərarası tədqiqatlardır",
+      "summary": "Dünya Azərbaycanlı Alimlər Birliyinin İdarə Heyətinin sədri, professor Məsud Əfəndiyev hesab edir ki, Azərbaycanın elmi inkişafında prioritet istiqamət fənlərarası tədqiqatların genişləndirilməsi olmalıdır. Onun sözlərinə görə, süni intelle",
+      "tag": "Fəaliyyət",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "professor mesud efendiyev azerbaycan elminde en perspektivli innovasiya istiqameti fenlerarasi tedqiqatlardir du nya azerbaycanli alimler birliyinin i dare heyetinin sedri professor mesud efendiyev hesab edir ki azerbaycanin elmi inkis afinda prioritet istiqamet fenlerarasi tedqiqatlarin genis lendirilmesi olmalidir. onun so zlerine go re su ni intelle"
+    },
+    {
+      "id": "activity-unec-zaqatala-2026-az",
+      "lang": "az",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "unec-zaqatala-2026",
+      "title": "UNEC-in Zaqatala filialının 10 ili: Uğurlar və rəqəmsal hədəflər",
+      "summary": "Azərbaycan Dövlət İqtisad Universitetinin (UNEC) Zaqatala filialının 10 illiyinə həsr olunmuş “Rəqəmsallaşma dövründə regional universitet modeli” mövzusunda Beynəlxalq elmi-praktiki konfrans keçirilib. Naxçıvan və Qarabağ universitetləri d",
+      "tag": "Fəaliyyət",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "unec-in zaqatala filialinin 10 ili ug urlar ve reqemsal hedefler azerbaycan do vlet i qtisad universitetinin unec zaqatala filialinin 10 illiyine hesr olunmus reqemsallas ma do vru nde regional universitet modeli mo vzusunda beynelxalq elmi-praktiki konfrans kec irilib. naxc ivan ve qarabag universitetleri d"
+    },
+    {
       "id": "activity-garuslu-book-2026-az",
       "lang": "az",
       "type": "activity",
@@ -1713,11 +2129,11 @@
       "pageId": "activities-news",
       "anchor": "telman-90-2025",
       "title": "Akademik Telman Əliyevin 90 illik yubileyi münasibətilə DAAB-ın İdarə Heyəti təbrik məktubu ünvanlamışdır",
-      "summary": "",
+      "summary": "02 May 2025-ci il",
       "tag": "Fəaliyyət",
       "icon": "📰",
       "boost": 8,
-      "norm": "akademik telman eliyevin 90 illik yubileyi mu nasibetile daab-in i dare heyeti tebrik mektubu u nvanlamis dir"
+      "norm": "akademik telman eliyevin 90 illik yubileyi mu nasibetile daab-in i dare heyeti tebrik mektubu u nvanlamis dir 02 may 2025-ci il"
     },
     {
       "id": "activity-fevral-2025-az",
@@ -1790,12 +2206,12 @@
       "type": "activity",
       "pageId": "activities-news",
       "anchor": "diaspora-sila-2024",
-      "title": "Diasporla İş üzrə Dövlət Komitəsi — СИЛА В ЕДИНСТВЕ (VİDEO MÜSAHİBƏLƏR)",
+      "title": "Diasporla İş üzrə Dövlət Komitəsi — GÜC BİRLİKDƏDİR (VİDEO MÜSAHİBƏLƏR)",
       "summary": "",
       "tag": "Fəaliyyət",
       "icon": "📰",
       "boost": 8,
-      "norm": "diasporla i s u zre do vlet komitesi сила в единстве vi deo mu sahi beler"
+      "norm": "diasporla i s u zre do vlet komitesi gu c bi rli kdedi r vi deo mu sahi beler"
     },
     {
       "id": "activity-525-mesud-2024-az",
@@ -1822,6 +2238,58 @@
       "icon": "📰",
       "boost": 8,
       "norm": "qarabag universiteti ile onlayn go ru s 15 oktyabr 2024-cu il tarixinde du nya azerbaycanli alimler birliyinin daab i dare heyetinin u zvleri ve qarabag universitetinin rehber heyeti arasinda go ru s kec irilib. daab-in tes ebbu su ile onlayn formatda kec irilen go ru s tedris elmi-tedqi"
+    },
+    {
+      "id": "activity-summer-school-2026-en",
+      "lang": "en",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "summer-school-2026",
+      "title": "The International Summer School of Professor Messoud Efendiyev, Chair of the WAAS Executive Board, concludes.",
+      "summary": "The International Summer School dedicated to the study of complex systems and their application across various fields has concluded at Azerbaijan University of Architecture and Construction (AzMIU).",
+      "tag": "Activity",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "the international summer school of professor messoud efendiyev chair of the waas executive board concludes. the international summer school dedicated to the study of complex systems and their application across various fields has concluded at azerbaijan university of architecture and construction azmiu ."
+    },
+    {
+      "id": "activity-amirulla-80-2026-en",
+      "lang": "en",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "amirulla-80-2026",
+      "title": "Congratulations from the World Association of Azerbaijani Scientists on the 80th anniversary of Professor Amirulla Mammadov",
+      "summary": "The members of the World Association of Azerbaijani Scientists (WAAS) congratulate the distinguished Azerbaijani scientist, WAAS member, Doctor of Physical and Mathematical Sciences, Professor Amirulla Mammadov on his 80th anniversary, and ",
+      "tag": "Activity",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "congratulations from the world association of azerbaijani scientists on the 80th anniversary of professor amirulla mammadov the members of the world association of azerbaijani scientists waas congratulate the distinguished azerbaijani scientist waas member doctor of physical and mathematical sciences professor amirulla mammadov on his 80th anniversary and"
+    },
+    {
+      "id": "activity-efendiyev-innovasiya-2026-en",
+      "lang": "en",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "efendiyev-innovasiya-2026",
+      "title": "Professor Messoud Efendiyev: the most promising direction for innovation in Azerbaijani science is interdisciplinary research",
+      "summary": "The Chair of the Executive Board of the World Association of Azerbaijani Scientists, Professor Messoud Efendiyev, believes that the priority direction in Azerbaijan’s scientific development should be the expansion of interdisciplinary resea",
+      "tag": "Activity",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "professor messoud efendiyev the most promising direction for innovation in azerbaijani science is interdisciplinary research the chair of the executive board of the world association of azerbaijani scientists professor messoud efendiyev believes that the priority direction in azerbaijan s scientific development should be the expansion of interdisciplinary resea"
+    },
+    {
+      "id": "activity-unec-zaqatala-2026-en",
+      "lang": "en",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "unec-zaqatala-2026",
+      "title": "10 years of UNEC’s Zagatala branch: Achievements and digital goals",
+      "summary": "Azerbaijan State University of Economics (UNEC) held an international scientific-practical conference dedicated to the 10th anniversary of its Zagatala branch, on the theme “A regional university model in the era of digitalisation.” Rectors",
+      "tag": "Activity",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "10 years of unec s zagatala branch achievements and digital goals azerbaijan state university of economics unec held an international scientific-practical conference dedicated to the 10th anniversary of its zagatala branch on the theme a regional university model in the era of digitalisation. rectors"
     },
     {
       "id": "activity-garuslu-book-2026-en",
@@ -2077,11 +2545,11 @@
       "pageId": "activities-news",
       "anchor": "telman-90-2025",
       "title": "WAAS Executive Board sends congratulatory letter on 90th anniversary of Academician Telman Aliyev",
-      "summary": "",
+      "summary": "2 May 2025",
       "tag": "Activity",
       "icon": "📰",
       "boost": 8,
-      "norm": "waas executive board sends congratulatory letter on 90th anniversary of academician telman aliyev"
+      "norm": "waas executive board sends congratulatory letter on 90th anniversary of academician telman aliyev 2 may 2025"
     },
     {
       "id": "activity-fevral-2025-en",
@@ -2708,19 +3176,6 @@
       "norm": "yaqub pi ri yev baki mu hendislik universiteti olaraq 2024-cu ilin 9 11 sentyabr tarixlerinde bakida xankendide ve s us ada kec irilmis xaricde yas ayan azerbaycanli alimlerin forumunu azerbaycanin elmi ve milli-menevi heyatinda mu hu m ehemiyyet kesb eden tarix"
     },
     {
-      "id": "section-forum-rector-speeches-ceyran-mahmudova-en",
-      "lang": "en",
-      "type": "section",
-      "pageId": "forum-rector-speeches",
-      "anchor": "ceyran-mahmudova",
-      "title": "Jeyran MAHMUDOVA",
-      "summary": "In 2001, at the initiative of our National Leader Heydar Aliyev, the First Congress of World Azerbaijanis was held. In subsequent years, these congresses continued by the orders and with the support of President Ilham Aliyev. In 2022, the F",
-      "tag": "Section",
-      "icon": "🎤",
-      "boost": 9,
-      "norm": "jeyran mahmudova in 2001 at the initiative of our national leader heydar aliyev the first congress of world azerbaijanis was held. in subsequent years these congresses continued by the orders and with the support of president ilham aliyev. in 2022 the f"
-    },
-    {
       "id": "section-forum-rector-speeches-adalat-muradov-en",
       "lang": "en",
       "type": "section",
@@ -2784,6 +3239,19 @@
       "icon": "🎤",
       "boost": 9,
       "norm": "hamlet isakhanli the forum of azerbaijani scientists living abroad held in the capital city of baku is one of the most remarkable events for azerbaijani science and higher education. in today s world science and technology rather than the economy alone"
+    },
+    {
+      "id": "section-forum-rector-speeches-ceyran-mahmudova-en",
+      "lang": "en",
+      "type": "section",
+      "pageId": "forum-rector-speeches",
+      "anchor": "ceyran-mahmudova",
+      "title": "Jeyran MAHMUDOVA",
+      "summary": "In 2001, at the initiative of our National Leader Heydar Aliyev, the First Congress of World Azerbaijanis was held. In subsequent years, these congresses continued by the orders and with the support of President Ilham Aliyev. In 2022, the F",
+      "tag": "Section",
+      "icon": "🎤",
+      "boost": 9,
+      "norm": "jeyran mahmudova in 2001 at the initiative of our national leader heydar aliyev the first congress of world azerbaijanis was held. in subsequent years these congresses continued by the orders and with the support of president ilham aliyev. in 2022 the f"
     },
     {
       "id": "section-forum-rector-speeches-natiq-aliyev-en",
@@ -5370,7 +5838,7 @@
       "tag": "Alim",
       "icon": "👤",
       "boost": 6,
-      "norm": "vehid geruslu birles mis krallig in belfast s eherindeki queen s universitetinin proqram teminati mu hendisliyi professoru kompu ter elmleri birles mis kralliq vehid.geruslu@gmail.com vehid geruslu i t mu texessisi ve akademik olaraq iki esas rolda fealiyyet go sterir. o 1998-ci ilden etibaren proqram teminati mu hendisliyi test ve keyfiyyet teminati qa sahelerinde beynelxalq i t s irketlerine konsaltinq ve telim verir. eyni zamanda i ngilterenin belfast s eherinde yerles en queen s universitetinde proqr prof.dr."
+      "norm": "vehid geruslu birles mis krallig in belfast s eherindeki queen s universitetinin proqram teminati mu hendisliyi professoru kompu ter elmleri birles mis kralliq vehid.geruslu@gmail.com dr. vehid geruslu iki pes ekar rolda fealiyyet go sterir i t mu texessisi ve i t professoru. 1998-ci ilden etibaren proqram teminati mu hendisliyi test ve qa sahelerinde beynelxalq i t s irketlerine konsaltinq ve telim vermekle yanas i birles mis krallig in belfast s eherinde yeres en queen s universitetinde proqram teminati mu h prof.dr."
     },
     {
       "id": "scientist-vehid-geruslu-en",
@@ -5383,7 +5851,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "vehid geruslu professor of software engineering at queen s university belfast united kingdom computer science united kingdom vehid.geruslu@gmail.com vahid garuslu works in two main roles as an it specialist and an academic. he has been consulting and training international it companies in the areas of software engineering testing and quality assurance qa since 1998. at the same time he works as a professor of software engineering at queen s university in belfas prof.dr."
+      "norm": "vehid geruslu professor of software engineering at queen s university belfast united kingdom computer science united kingdom vehid.geruslu@gmail.com dr. vahid garousi works in two professional roles as an it specialist and an it professor. since 1998 he has provided consulting and training to international it companies in software engineering testing and qa and he is also a professor of software engineering at queen s university in belfast united kingdom. at th prof.dr."
     },
     {
       "id": "scientist-xaqani-qayibli-az",

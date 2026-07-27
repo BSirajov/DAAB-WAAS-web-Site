@@ -12,7 +12,7 @@
  * Page IDs using this layout must stay in sync with forum sidebar pages in
  * helpers/_forum_layout_pages.py
  */
-@import url("daab-sticky-sidebar.css?v=1");
+@import url("daab-sticky-sidebar.css?v=3");
 html:is([data-daab-page-id="activities-news"], [data-daab-page-id="forum-official"], [data-daab-page-id="forum-program"], [data-daab-page-id="forum-logistics"], [data-daab-page-id="forum-sessions-organization"], [data-daab-page-id="forum-2024-presentations"], [data-daab-page-id="forum-impressions"], [data-daab-page-id="forum-roadmap"], [data-daab-page-id="forum-bagli-hekayeler"], [data-daab-page-id="forum-cooperation"], [data-daab-page-id="forum-rector-speeches"], [data-daab-page-id="forum-anas-leadership-speeches"], [data-daab-page-id="forum-2026"]) .content-wrap{
   display: grid !important;
   align-items: start !important;

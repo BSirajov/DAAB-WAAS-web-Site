@@ -1,4 +1,8 @@
-"""Build az/en forum video gallery pages from js/video-gallery-data.json."""
+"""Build az/en forum video gallery pages from js/video-gallery-data.json.
+
+Source of truth for gallery cards is video-gallery-data.json (build-time only).
+Live HTML embeds the data; the JSON is not linked from the browser.
+"""
 from __future__ import annotations
 
 import html

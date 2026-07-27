@@ -20,6 +20,34 @@ FOOTER_EN_LEADER_HTML = (
     f"{FOOTER_EN_CREDENTIAL}"
 )
 
+FOOTER_AZ_LEGAL_LINKS = (
+    '<nav class="footer-legal-links" aria-label="Hüquqi sənədlər">'
+    '<a href="/az/privacy.html#page-title">Məxfilik bildirişi</a>'
+    '<a href="/az/terms.html#page-title">İstifadə şərtləri</a>'
+    '<a href="/az/cookies.html#page-title">Kuki siyasəti</a>'
+    '<a href="/az/legal-notice.html#page-title">Hüquqi rekvizitlər</a>'
+    "</nav>"
+)
+
+FOOTER_EN_LEGAL_LINKS = (
+    '<nav class="footer-legal-links" aria-label="Legal documents">'
+    '<a href="/en/privacy.html#page-title">Privacy notice</a>'
+    '<a href="/en/terms.html#page-title">Terms of use</a>'
+    '<a href="/en/cookies.html#page-title">Cookie policy</a>'
+    '<a href="/en/legal-notice.html#page-title">Legal notice (Imprint)</a>'
+    "</nav>"
+)
+
+FOOTER_AZ_BOTTOM = (
+    f'<div class="footer-bottom">{FOOTER_AZ_LEGAL_LINKS}'
+    f'<div class="footer-copy">{FOOTER_COPYRIGHT_AZ}</div></div>'
+)
+
+FOOTER_EN_BOTTOM = (
+    f'<div class="footer-bottom">{FOOTER_EN_LEGAL_LINKS}'
+    f'<div class="footer-copy">{FOOTER_COPYRIGHT_EN}</div></div>'
+)
+
 FOOTER_AZ_HTML = f"""<footer class="footer-pro">
 <div class="footer-inner">
 <div class="footer-brand"><h3>Dünya Azərbaycanlı Alimlər Birliyi</h3></div>
@@ -29,7 +57,7 @@ FOOTER_AZ_HTML = f"""<footer class="footer-pro">
 <div class="footer-col"><h4 class="footer-title">Rəhbərlik</h4><p class="footer-leader">{FOOTER_AZ_LEADER_HTML}</p></div>
 </div>
 </div>
-<div class="footer-bottom">{FOOTER_COPYRIGHT_AZ}</div>
+{FOOTER_AZ_BOTTOM}
 </footer>"""
 
 FOOTER_EN_HTML = f"""<footer class="footer-pro">
@@ -54,5 +82,5 @@ FOOTER_EN_HTML = f"""<footer class="footer-pro">
       </div>
     </div>
   </div>
-  <div class="footer-bottom">{FOOTER_COPYRIGHT_EN}</div>
+  {FOOTER_EN_BOTTOM}
 </footer>"""

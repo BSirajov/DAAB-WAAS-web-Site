@@ -1,5 +1,5 @@
 {
-  "version": 13,
+  "version": 17,
   "primary": [
     {
       "type": "page",
@@ -160,6 +160,36 @@
         {
           "id": "charter",
           "descKey": "aboutCharterDesc"
+        },
+        {
+          "type": "group",
+          "id": "legal-pages",
+          "style": "dropdown",
+          "labelKey": "legalPages",
+          "descKey": "aboutLegalPagesDesc",
+          "landingId": "privacy",
+          "children": [
+            {
+              "id": "privacy",
+              "labelKey": "privacyPolicy",
+              "descKey": "aboutPrivacyDesc"
+            },
+            {
+              "id": "terms",
+              "labelKey": "termsOfUse",
+              "descKey": "aboutTermsDesc"
+            },
+            {
+              "id": "cookies",
+              "labelKey": "cookiePolicy",
+              "descKey": "aboutCookiesDesc"
+            },
+            {
+              "id": "legal-notice",
+              "labelKey": "copyrightNotice",
+              "descKey": "aboutCopyrightNoticeDesc"
+            }
+          ]
         }
       ]
     },
@@ -219,7 +249,20 @@
         "foundation",
         "mission",
         "executive-board",
-        "charter"
+        "charter",
+        "privacy",
+        "terms",
+        "cookies",
+        "legal-notice"
+      ]
+    },
+    "legal-pages": {
+      "landingId": "privacy",
+      "pages": [
+        "privacy",
+        "terms",
+        "cookies",
+        "legal-notice"
       ]
     },
     "scientists": {

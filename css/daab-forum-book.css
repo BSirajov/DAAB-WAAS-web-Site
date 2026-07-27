@@ -271,11 +271,23 @@ html[data-daab-page-id^="forum-"] .footer-leader{
   color: var(--forum-muted);
   font-size: 14px;
 }html[data-daab-page-id^="forum-"] .footer-bottom{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  align-items: center;
+  justify-content: center;
   padding: 14px;
   text-align: center;
   color: #7891a1;
   font-size: 12px;
   border-top: 1px solid rgba(158, 214, 245, 0.5);
+}html[data-daab-page-id^="forum-"] .footer-legal-links{
+  justify-content: center;
+  width: 100%;
+}html[data-daab-page-id^="forum-"] .footer-copy{
+  flex: 1 1 100%;
+  margin-left: 0;
+  text-align: center;
 }html[data-daab-page-id^="forum-"] .program-table-wrap{
   width: 100%;
   overflow-x: auto;

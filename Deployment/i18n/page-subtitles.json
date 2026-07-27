@@ -98,6 +98,22 @@
       "en": "Support WAAS with a bank transfer — any amount helps",
       "az": "Bank köçürməsi ilə DAAB-a ianə — hər bir məbləğ dəyərlidir"
     },
+    "legal-notice": {
+      "en": "Website operator and association identity",
+      "az": "Saytın sahibi və birliyin hüquqi kimliyi haqqında"
+    },
+    "privacy": {
+      "en": "How we process your personal data",
+      "az": "Şəxsi məlumatlarınız necə istifadə olunur"
+    },
+    "cookies": {
+      "en": "Which cookies we use and how you can control them",
+      "az": "Hansı kukilərdən istifadə edirik və onları necə idarə edə bilərsiniz"
+    },
+    "terms": {
+      "en": "Rules for using this website",
+      "az": "Bu saytdan istifadə edərkən nəyi bilməlisiniz"
+    },
     "forum-roadmap": {
       "en": "Ideas and proposals for the future of science, education, and diaspora cooperation",
       "az": "Elm, təhsil və diaspora əməkdaşlığının gələcəyinə dair təkliflər"

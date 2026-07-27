@@ -1,0 +1,497 @@
+/* Legal pages: notice, privacy, cookies, terms — modern reading UX */
+@import url("daab-sticky-sidebar.css?v=3");
+
+html[data-daab-page-id="privacy"],
+html[data-daab-page-id="cookies"],
+html[data-daab-page-id="terms"],
+html[data-daab-page-id="legal-notice"] {
+  scroll-behavior: auto !important;
+  --legal-accent: #004e8c;
+  --legal-accent-soft: #e8f3fb;
+  --legal-accent-line: rgba(0, 78, 140, 0.16);
+  --legal-mark: #fff3c4;
+  --legal-mark-border: rgba(180, 140, 0, 0.28);
+  --legal-plain: #f3faf6;
+  --legal-plain-border: rgba(20, 120, 80, 0.18);
+  --legal-warn: #fff8f0;
+  --legal-warn-border: rgba(180, 100, 20, 0.22);
+}
+
+html[data-daab-page-id="privacy"] #page-title,
+html[data-daab-page-id="cookies"] #page-title,
+html[data-daab-page-id="terms"] #page-title,
+html[data-daab-page-id="legal-notice"] #page-title,
+html[data-daab-page-id="privacy"] .hero h1,
+html[data-daab-page-id="cookies"] .hero h1,
+html[data-daab-page-id="terms"] .hero h1,
+html[data-daab-page-id="legal-notice"] .hero h1 {
+  scroll-margin-top: calc(
+    var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) + 12px
+  );
+}
+
+html[data-daab-page-id="privacy"] .hero,
+html[data-daab-page-id="cookies"] .hero,
+html[data-daab-page-id="terms"] .hero,
+html[data-daab-page-id="legal-notice"] .hero {
+  position: relative;
+  overflow: hidden;
+  color: var(--ink) !important;
+  background:
+    radial-gradient(1200px 420px at 12% -10%, rgba(0, 105, 180, 0.1), transparent 60%),
+    linear-gradient(180deg, #f7fbff 0%, transparent 70%) !important;
+}
+
+html[data-daab-page-id="privacy"] .hero-wrap,
+html[data-daab-page-id="cookies"] .hero-wrap,
+html[data-daab-page-id="terms"] .hero-wrap,
+html[data-daab-page-id="legal-notice"] .hero-wrap {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  align-items: start;
+  padding: 28px 20px 20px !important;
+}
+
+html[data-daab-page-id="privacy"] .hero-panel,
+html[data-daab-page-id="cookies"] .hero-panel,
+html[data-daab-page-id="terms"] .hero-panel,
+html[data-daab-page-id="legal-notice"] .hero-panel {
+  align-self: start !important;
+  padding: 0 !important;
+}
+
+html[data-daab-page-id="privacy"] .panel-card,
+html[data-daab-page-id="cookies"] .panel-card,
+html[data-daab-page-id="terms"] .panel-card,
+html[data-daab-page-id="legal-notice"] .panel-card {
+  padding: 16px 18px !important;
+  border: 1px solid var(--legal-accent-line) !important;
+  border-radius: 16px !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: 0 10px 28px rgba(8, 38, 59, 0.06);
+}
+
+html[data-daab-page-id="privacy"] .panel-copy,
+html[data-daab-page-id="cookies"] .panel-copy,
+html[data-daab-page-id="terms"] .panel-copy,
+html[data-daab-page-id="legal-notice"] .panel-copy,
+html[data-daab-page-id="privacy"] .panel-copy p,
+html[data-daab-page-id="cookies"] .panel-copy p,
+html[data-daab-page-id="terms"] .panel-copy p,
+html[data-daab-page-id="legal-notice"] .panel-copy p {
+  margin: 0 !important;
+}
+
+html[data-daab-page-id="privacy"] .legal-hero-note,
+html[data-daab-page-id="cookies"] .legal-hero-note,
+html[data-daab-page-id="terms"] .legal-hero-note,
+html[data-daab-page-id="legal-notice"] .legal-hero-note {
+  margin: 8px 0 0;
+  max-width: 40rem;
+  color: var(--muted-hero, #5a7c93);
+  font-size: 13.5px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+/* News-style content grid: sticky sidebar + main article */
+html:is(
+  [data-daab-page-id="privacy"],
+  [data-daab-page-id="cookies"],
+  [data-daab-page-id="terms"],
+  [data-daab-page-id="legal-notice"]
+) .content-wrap {
+  width: 100% !important;
+  max-width: var(--max, 1100px) !important;
+  margin: 12px auto 0;
+  padding: 0 24px 72px;
+  display: grid !important;
+  grid-template-columns: minmax(240px, 300px) minmax(0, 1fr) !important;
+  gap: 28px !important;
+  align-items: start !important;
+  position: relative !important;
+  z-index: 2 !important;
+  overflow: visible !important;
+}
+
+html:is(
+  [data-daab-page-id="privacy"],
+  [data-daab-page-id="cookies"],
+  [data-daab-page-id="terms"],
+  [data-daab-page-id="legal-notice"]
+) .content-wrap > .sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-self: start;
+}
+
+html:is(
+  [data-daab-page-id="privacy"],
+  [data-daab-page-id="cookies"],
+  [data-daab-page-id="terms"],
+  [data-daab-page-id="legal-notice"]
+) .content-wrap > main.legal-main {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  justify-self: stretch !important;
+}
+
+@media (max-width: 1060px) {
+  html:is(
+    [data-daab-page-id="privacy"],
+    [data-daab-page-id="cookies"],
+    [data-daab-page-id="terms"],
+    [data-daab-page-id="legal-notice"]
+  ) .content-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 22px !important;
+    grid-template-columns: 1fr !important;
+    padding: 0 18px 56px;
+  }
+
+  html:is(
+    [data-daab-page-id="privacy"],
+    [data-daab-page-id="cookies"],
+    [data-daab-page-id="terms"],
+    [data-daab-page-id="legal-notice"]
+  ) .content-wrap > .sidebar {
+    order: 0 !important;
+    position: static !important;
+    width: 100% !important;
+    max-height: none !important;
+    z-index: var(--z-sidebar-mobile, 4500) !important;
+  }
+
+  html:is(
+    [data-daab-page-id="privacy"],
+    [data-daab-page-id="cookies"],
+    [data-daab-page-id="terms"],
+    [data-daab-page-id="legal-notice"]
+  ) .content-wrap > main.legal-main {
+    order: 1 !important;
+  }
+}
+
+html[data-daab-page-id="privacy"] .legal-doc,
+html[data-daab-page-id="cookies"] .legal-doc,
+html[data-daab-page-id="terms"] .legal-doc,
+html[data-daab-page-id="legal-notice"] .legal-doc {
+  max-width: 46rem;
+  color: var(--ink, #1a2b3c);
+  font-size: 15.5px;
+  line-height: 1.72;
+}
+
+html[data-daab-page-id="privacy"] .legal-meta,
+html[data-daab-page-id="cookies"] .legal-meta,
+html[data-daab-page-id="terms"] .legal-meta,
+html[data-daab-page-id="legal-notice"] .legal-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--legal-accent-soft);
+  color: var(--legal-accent);
+  font-size: 12.5px;
+  font-weight: 800;
+}
+
+html[data-daab-page-id="privacy"] .legal-doc h2,
+html[data-daab-page-id="cookies"] .legal-doc h2,
+html[data-daab-page-id="terms"] .legal-doc h2,
+html[data-daab-page-id="legal-notice"] .legal-doc h2,
+html[data-daab-page-id="privacy"] #section-takeaways,
+html[data-daab-page-id="cookies"] #section-takeaways,
+html[data-daab-page-id="terms"] #section-takeaways,
+html[data-daab-page-id="legal-notice"] #section-takeaways {
+  scroll-margin-top: calc(
+    var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) + 18px
+  );
+}
+
+html[data-daab-page-id="privacy"] .legal-doc h2,
+html[data-daab-page-id="cookies"] .legal-doc h2,
+html[data-daab-page-id="terms"] .legal-doc h2,
+html[data-daab-page-id="legal-notice"] .legal-doc h2 {
+  margin: 2rem 0 0.75rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--legal-accent-line);
+  color: var(--legal-accent);
+  font-size: 1.22rem;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+html[data-daab-page-id="privacy"] .legal-doc h2:first-of-type,
+html[data-daab-page-id="cookies"] .legal-doc h2:first-of-type,
+html[data-daab-page-id="terms"] .legal-doc h2:first-of-type,
+html[data-daab-page-id="legal-notice"] .legal-doc h2:first-of-type {
+  border-top: 0;
+  margin-top: 1.25rem;
+}
+
+html[data-daab-page-id="privacy"] .legal-doc h3,
+html[data-daab-page-id="cookies"] .legal-doc h3,
+html[data-daab-page-id="terms"] .legal-doc h3,
+html[data-daab-page-id="legal-notice"] .legal-doc h3 {
+  margin: 1.2rem 0 0.45rem;
+  font-size: 1.02rem;
+  font-weight: 800;
+}
+
+html[data-daab-page-id="privacy"] .legal-doc p,
+html[data-daab-page-id="cookies"] .legal-doc p,
+html[data-daab-page-id="terms"] .legal-doc p,
+html[data-daab-page-id="legal-notice"] .legal-doc p,
+html[data-daab-page-id="privacy"] .legal-doc li,
+html[data-daab-page-id="cookies"] .legal-doc li,
+html[data-daab-page-id="terms"] .legal-doc li,
+html[data-daab-page-id="legal-notice"] .legal-doc li {
+  margin: 0 0 0.9rem;
+}
+
+html[data-daab-page-id="privacy"] .legal-doc ul,
+html[data-daab-page-id="cookies"] .legal-doc ul,
+html[data-daab-page-id="terms"] .legal-doc ul,
+html[data-daab-page-id="legal-notice"] .legal-doc ul {
+  margin: 0 0 1.05rem;
+  padding-inline-start: 1.2rem;
+}
+
+html[data-daab-page-id="privacy"] .legal-doc li + li,
+html[data-daab-page-id="cookies"] .legal-doc li + li,
+html[data-daab-page-id="terms"] .legal-doc li + li,
+html[data-daab-page-id="legal-notice"] .legal-doc li + li {
+  margin-top: 0.35rem;
+}
+
+html[data-daab-page-id="privacy"] .legal-doc a,
+html[data-daab-page-id="cookies"] .legal-doc a,
+html[data-daab-page-id="terms"] .legal-doc a,
+html[data-daab-page-id="legal-notice"] .legal-doc a {
+  color: var(--legal-accent);
+  font-weight: 750;
+  text-underline-offset: 2px;
+}
+
+/* Key takeaways */
+html[data-daab-page-id="privacy"] .legal-takeaways,
+html[data-daab-page-id="cookies"] .legal-takeaways,
+html[data-daab-page-id="terms"] .legal-takeaways,
+html[data-daab-page-id="legal-notice"] .legal-takeaways {
+  margin: 0 0 1.4rem;
+  padding: 16px 18px 14px;
+  border: 1px solid var(--legal-accent-line);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(0, 105, 180, 0.07), transparent 55%),
+    #fff;
+  box-shadow: 0 8px 24px rgba(8, 38, 59, 0.04);
+}
+
+html[data-daab-page-id="privacy"] .legal-takeaways__title,
+html[data-daab-page-id="cookies"] .legal-takeaways__title,
+html[data-daab-page-id="terms"] .legal-takeaways__title,
+html[data-daab-page-id="legal-notice"] .legal-takeaways__title {
+  margin: 0 0 0.65rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: var(--legal-accent);
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+html[data-daab-page-id="privacy"] .legal-takeaways ul,
+html[data-daab-page-id="cookies"] .legal-takeaways ul,
+html[data-daab-page-id="terms"] .legal-takeaways ul,
+html[data-daab-page-id="legal-notice"] .legal-takeaways ul {
+  margin: 0;
+  padding-inline-start: 1.15rem;
+}
+
+html[data-daab-page-id="privacy"] .legal-takeaways li,
+html[data-daab-page-id="cookies"] .legal-takeaways li,
+html[data-daab-page-id="terms"] .legal-takeaways li,
+html[data-daab-page-id="legal-notice"] .legal-takeaways li {
+  margin: 0 0 0.45rem;
+}
+
+/* Callouts */
+html[data-daab-page-id="privacy"] .legal-callout,
+html[data-daab-page-id="cookies"] .legal-callout,
+html[data-daab-page-id="terms"] .legal-callout,
+html[data-daab-page-id="legal-notice"] .legal-callout {
+  margin: 1.1rem 0;
+  padding: 14px 16px;
+  background: var(--legal-accent-soft);
+  border: 1px solid var(--legal-accent-line);
+  border-left: 4px solid var(--legal-accent);
+  border-radius: 12px;
+}
+
+html[data-daab-page-id="privacy"] .legal-plain,
+html[data-daab-page-id="cookies"] .legal-plain,
+html[data-daab-page-id="terms"] .legal-plain,
+html[data-daab-page-id="legal-notice"] .legal-plain {
+  margin: 0.9rem 0 1.15rem;
+  padding: 13px 15px;
+  background: var(--legal-plain);
+  border: 1px solid var(--legal-plain-border);
+  border-radius: 12px;
+}
+
+html[data-daab-page-id="privacy"] .legal-plain__label,
+html[data-daab-page-id="cookies"] .legal-plain__label,
+html[data-daab-page-id="terms"] .legal-plain__label,
+html[data-daab-page-id="legal-notice"] .legal-plain__label {
+  display: inline-block;
+  margin: 0 0 6px;
+  color: #0f6a45;
+  font-size: 11.5px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+html[data-daab-page-id="privacy"] .legal-plain p:last-child,
+html[data-daab-page-id="cookies"] .legal-plain p:last-child,
+html[data-daab-page-id="terms"] .legal-plain p:last-child,
+html[data-daab-page-id="legal-notice"] .legal-plain p:last-child {
+  margin-bottom: 0;
+}
+
+html[data-daab-page-id="privacy"] .legal-highlight,
+html[data-daab-page-id="cookies"] .legal-highlight,
+html[data-daab-page-id="terms"] .legal-highlight,
+html[data-daab-page-id="legal-notice"] .legal-highlight,
+html[data-daab-page-id="privacy"] mark.legal-mark,
+html[data-daab-page-id="cookies"] mark.legal-mark,
+html[data-daab-page-id="terms"] mark.legal-mark,
+html[data-daab-page-id="legal-notice"] mark.legal-mark {
+  display: inline;
+  padding: 0.08em 0.28em;
+  border-radius: 0.3em;
+  background: var(--legal-mark);
+  box-shadow: inset 0 0 0 1px var(--legal-mark-border);
+  color: inherit;
+  font-weight: 750;
+}
+
+html[data-daab-page-id="privacy"] .legal-note,
+html[data-daab-page-id="cookies"] .legal-note,
+html[data-daab-page-id="terms"] .legal-note,
+html[data-daab-page-id="legal-notice"] .legal-note {
+  margin: 1rem 0;
+  padding: 12px 14px;
+  background: var(--legal-warn);
+  border: 1px solid var(--legal-warn-border);
+  border-radius: 12px;
+  font-size: 14.5px;
+}
+
+html[data-daab-page-id="privacy"] .legal-contact-card,
+html[data-daab-page-id="cookies"] .legal-contact-card,
+html[data-daab-page-id="terms"] .legal-contact-card,
+html[data-daab-page-id="legal-notice"] .legal-contact-card {
+  margin: 1.25rem 0 0;
+  padding: 16px 18px;
+  border: 1px solid var(--legal-accent-line);
+  border-radius: 16px;
+  background: #fff;
+}
+
+html[data-daab-page-id="privacy"] .legal-table,
+html[data-daab-page-id="cookies"] .legal-table,
+html[data-daab-page-id="terms"] .legal-table,
+html[data-daab-page-id="legal-notice"] .legal-table {
+  width: 100%;
+  margin: 0.35rem 0 1.25rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--legal-accent-line);
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+html[data-daab-page-id="privacy"] .legal-table th,
+html[data-daab-page-id="cookies"] .legal-table th,
+html[data-daab-page-id="terms"] .legal-table th,
+html[data-daab-page-id="legal-notice"] .legal-table th,
+html[data-daab-page-id="privacy"] .legal-table td,
+html[data-daab-page-id="cookies"] .legal-table td,
+html[data-daab-page-id="terms"] .legal-table td,
+html[data-daab-page-id="legal-notice"] .legal-table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--legal-accent-line);
+  text-align: left;
+  vertical-align: top;
+}
+
+html[data-daab-page-id="privacy"] .legal-table tr:last-child td,
+html[data-daab-page-id="cookies"] .legal-table tr:last-child td,
+html[data-daab-page-id="terms"] .legal-table tr:last-child td,
+html[data-daab-page-id="legal-notice"] .legal-table tr:last-child td {
+  border-bottom: 0;
+}
+
+html[data-daab-page-id="privacy"] .legal-table th,
+html[data-daab-page-id="cookies"] .legal-table th,
+html[data-daab-page-id="terms"] .legal-table th,
+html[data-daab-page-id="legal-notice"] .legal-table th {
+  background: var(--legal-accent-soft);
+  font-weight: 850;
+}
+
+html[data-daab-page-id="cookies"] .legal-cookie-settings,
+html[data-daab-page-id="privacy"] .legal-cookie-settings {
+  appearance: none;
+  margin: 0.25rem 0 0.85rem;
+  padding: 11px 18px;
+  border: 1px solid rgba(0, 78, 140, 0.28);
+  border-radius: 12px;
+  background: linear-gradient(180deg, #f4f9fd, #e8f2fa);
+  color: #004e8c;
+  font: inherit;
+  font-weight: 850;
+  cursor: pointer;
+  box-shadow: 0 2px 0 rgba(0, 78, 140, 0.08);
+}
+
+html[data-daab-page-id="cookies"] .legal-cookie-settings:hover,
+html[data-daab-page-id="cookies"] .legal-cookie-settings:focus-visible {
+  background: #e2eef8;
+  outline: 2px solid rgba(0, 78, 140, 0.35);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  html[data-daab-page-id="privacy"] .hero-wrap,
+  html[data-daab-page-id="cookies"] .hero-wrap,
+  html[data-daab-page-id="terms"] .hero-wrap,
+  html[data-daab-page-id="legal-notice"] .hero-wrap {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px 16px 12px !important;
+  }
+
+  html[data-daab-page-id="privacy"] .legal-table,
+  html[data-daab-page-id="cookies"] .legal-table,
+  html[data-daab-page-id="terms"] .legal-table,
+  html[data-daab-page-id="legal-notice"] .legal-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

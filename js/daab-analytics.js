@@ -91,14 +91,48 @@
     gtag("config", measurementId, config);
   }
 
+  function hasAnalyticsConsent() {
+    var api = global.DAAB_COOKIE;
+    if (api && typeof api.hasAnalyticsConsent === "function") {
+      return api.hasAnalyticsConsent();
+    }
+    try {
+      var raw = global.localStorage.getItem("daab-cookie-consent");
+      if (!raw) return false;
+      var data = JSON.parse(raw);
+      return !!(data && data.analytics);
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function ensureCookieConsentScript() {
+    if (document.getElementById("daab-cookie-consent-script")) return;
+    if (global.DAAB_COOKIE) return;
+    var script = document.createElement("script");
+    script.id = "daab-cookie-consent-script";
+    script.src = assetRoot() + "js/daab-cookie-consent.js?v=6";
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+
+  function tryLoadGa(config) {
+    if (!config || config.provider !== "ga4") return;
+    if (shouldSkip(config)) return;
+    if (!hasAnalyticsConsent()) return;
+    var measurementId = String(config.measurementId || "").trim();
+    if (!/^G-[A-Z0-9]+$/i.test(measurementId)) return;
+    injectGtag(measurementId);
+  }
+
   function init() {
+    ensureCookieConsentScript();
     fetchConfig()
       .then(function (config) {
-        if (!config || config.provider !== "ga4") return;
-        if (shouldSkip(config)) return;
-        var measurementId = String(config.measurementId || "").trim();
-        if (!/^G-[A-Z0-9]+$/i.test(measurementId)) return;
-        injectGtag(measurementId);
+        tryLoadGa(config);
+        global.addEventListener("daab-cookie-consent", function () {
+          tryLoadGa(config);
+        });
       })
       .catch(function () {
         /* analytics optional — never break the page */
