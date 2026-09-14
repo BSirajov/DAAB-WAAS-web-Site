@@ -284,7 +284,7 @@ a.card-name:focus-visible{
 .card-email:focus-visible{
   color: var(--blue-800);
   text-decoration: underline;
-}/* Used when a profile has no email (TTS checks .card-email--empty in daab-profile-tts.js). */
+}/* Used when a profile has no email. */
 .card-email--empty{
   color: var(--muted);
   font-weight: 600;

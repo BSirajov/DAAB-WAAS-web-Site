@@ -55,8 +55,6 @@ html[data-daab-page-id="scientists-profiles"] .cards-grid > .card > .card-body >
   max-width: none;
   margin-top: 10px;
   padding-top: 10px;
-}html[data-daab-page-id="scientists-profiles"] .cards-grid > .card .card-tts{
-  margin-top: 8px;
 }.card-qr-link:focus-visible{
   outline: 3px solid rgba(26, 111, 168, 0.45);
   outline-offset: 2px;

@@ -640,7 +640,7 @@ article.charter-card[id],
   background: var(--blue-700) !important;
   border-color: var(--blue-700) !important;
 }.nav-dropdown-link.active .nav-dropdown-link-desc{
-  color: rgba(255, 255, 255, .85) !important;
+  color: #fff !important;
 }
 
 @media (hover: hover) and (pointer: fine) {.nav-dropdown:hover .nav-dropdown-panel,

@@ -263,7 +263,7 @@ div.breadcrumbs.forum-breadcrumbs{
   border-left: 2px solid rgba(0, 105, 180, 0.22);
 }
 
-.nav-dropdown--forums .nav-dropdown--nested .nav-dropdown-link-title{
+.nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega .nav-dropdown-link-title{
   font-weight: 400 !important;
 }
 
@@ -391,7 +391,7 @@ div.breadcrumbs.forum-breadcrumbs{
     min-width: 0;
   }
 
-  .nav-dropdown--forums .nav-dropdown--nested .nav-dropdown-link{
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega .nav-dropdown-link{
     position: relative;
     width: max-content;
     max-width: 100%;
@@ -426,11 +426,11 @@ div.breadcrumbs.forum-breadcrumbs{
     padding: 6px 7px 6px 8px !important;
   }
 
-  .nav-dropdown--forums .nav-dropdown--nested .nav-dropdown-link-title{
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega .nav-dropdown-link-title{
     max-width: 24ch;
   }
 
-  .nav-dropdown--forums .nav-dropdown--nested .nav-dropdown-link .nav-dropdown-link-desc{
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega .nav-dropdown-link .nav-dropdown-link-desc{
     display: block !important;
     position: absolute;
     top: calc(100% + 4px);
@@ -455,14 +455,14 @@ div.breadcrumbs.forum-breadcrumbs{
     transform: translateY(-2px);
   }
 
-  .nav-dropdown--forums .nav-dropdown--nested .nav-dropdown-link:hover .nav-dropdown-link-desc,
-  .nav-dropdown--forums .nav-dropdown--nested .nav-dropdown-link:focus-visible .nav-dropdown-link-desc{
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega .nav-dropdown-link:hover .nav-dropdown-link-desc,
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega .nav-dropdown-link:focus-visible .nav-dropdown-link-desc{
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
   }
 
-  .nav-dropdown--forums .nav-dropdown--nested .nav-dropdown-link.active .nav-dropdown-link-desc{
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega .nav-dropdown-link.active .nav-dropdown-link-desc{
     color: #2c5470 !important;
     background: #fff;
   }
@@ -760,6 +760,32 @@ div.breadcrumbs.forum-breadcrumbs{
   overflow: visible !important;
   white-space: normal !important;
 }
+.nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel:not(.nav-dropdown-panel--mega){
+  min-width: min(320px, calc(100vw - 32px));
+}
+.nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel:not(.nav-dropdown-panel--mega) .nav-dropdown-link-desc{
+  display: block !important;
+  position: static !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  max-width: 18rem;
+  margin: 0;
+  padding: 0;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  color: #5a7c93 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: auto !important;
+}
+.nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel:not(.nav-dropdown-panel--mega) .nav-dropdown-link.active .nav-dropdown-link-desc,
+.nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel:not(.nav-dropdown-panel--mega) .nav-dropdown-link.active:hover .nav-dropdown-link-desc,
+.nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel:not(.nav-dropdown-panel--mega) .nav-dropdown-link.active:focus-visible .nav-dropdown-link-desc{
+  color: #fff !important;
+}
 .nav-dropdown-panel > .nav-dropdown--nested > .nav-dropdown-toggle--nested .nav-dropdown-caret{
   position: absolute;
   right: 14px;
@@ -852,5 +878,14 @@ div.breadcrumbs.forum-breadcrumbs{
   }
   .nav-dropdown-panel > .nav-dropdown--nested > .nav-dropdown-panel .nav-dropdown-link{
     padding-left: calc(14px + 3ch) !important;
+  }
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel:not(.nav-dropdown-panel--mega) .nav-dropdown-link.active{
+    color: #fff !important;
+    background: var(--blue-700) !important;
+    border-color: var(--blue-700) !important;
+  }
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel:not(.nav-dropdown-panel--mega) .nav-dropdown-link.active .nav-dropdown-link-title,
+  .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel:not(.nav-dropdown-panel--mega) .nav-dropdown-link.active .nav-dropdown-link-desc{
+    color: #fff !important;
   }
 }

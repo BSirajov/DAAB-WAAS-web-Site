@@ -4,7 +4,12 @@
 (function () {
   "use strict";
 
-  var totalSections = 4;
+  var totalSections = 5;
+
+  function countFormSections() {
+    var n = document.querySelectorAll(".application-page .form-section").length;
+    return n > 0 ? n : 5;
+  }
   var currentSection = 1;
   var cityCache = Object.create(null);
   // Codes come from the shared js/daab-country-codes.js module.
@@ -12,6 +17,22 @@
 
   function byId(id) {
     return document.getElementById(id);
+  }
+
+  function formKind() {
+    var kind = document.documentElement.getAttribute("data-daab-form-kind");
+    if (kind && kind.trim()) return kind.trim();
+    var pageId = document.documentElement.getAttribute("data-daab-page-id");
+    if (pageId === "forum-2026-register") return "forum-2026";
+    return "membership";
+  }
+
+  function isForumRegister() {
+    return formKind() === "forum-2026";
+  }
+
+  function mainFormEl() {
+    return byId("forumRegisterForm") || byId("mainForm");
   }
 
   function detectLang() {
@@ -60,9 +81,43 @@
     if (n > 1) showSection(n - 1);
   }
 
+  function applyForumIdentityValidity() {
+    var requiredText = [
+      ["fathername", "fatherNameRequired"],
+      ["dob", "dobRequired"],
+      ["birthcountry", "birthCountryRequired"],
+      ["citizenship", "citizenshipRequired"],
+      ["country", "residenceCountryRequired"],
+    ];
+    requiredText.forEach(function (pair) {
+      var el = byId(pair[0]);
+      if (!el) return;
+      el.setCustomValidity(String(el.value || "").trim() ? "" : uiText(pair[1]));
+    });
+    var genderFirst = byId("gender-male");
+    if (genderFirst) {
+      genderFirst.setCustomValidity(getRadioValue("gender") ? "" : uiText("genderRequired"));
+    }
+  }
+
+  function initForumIdentityValidation() {
+    ["fathername", "dob", "birthcountry", "citizenship", "country"].forEach(function (id) {
+      var el = byId(id);
+      if (!el) return;
+      el.addEventListener("input", applyForumIdentityValidity);
+      el.addEventListener("change", applyForumIdentityValidity);
+      el.addEventListener("blur", applyForumIdentityValidity);
+    });
+    document.querySelectorAll('.application-page input[name="gender"]').forEach(function (radio) {
+      radio.addEventListener("change", applyForumIdentityValidity);
+    });
+    applyForumIdentityValidity();
+  }
+
   function validateForm() {
-    var form = byId("mainForm");
+    var form = mainFormEl();
     if (!form) return true;
+    applyForumIdentityValidity();
     var emailInput = byId("email");
     if (emailInput && !isEmailValid(emailInput.value || "")) {
       emailInput.reportValidity();
@@ -139,15 +194,25 @@
         sciRequired: "Ən azı bir elmi sahə seçin.",
         degreeRequired: "Akademik dərəcənizi seçin.",
         titleRequired: "Akademik titulunuzu seçin.",
+        genderRequired: "Cinsinizi seçin.",
+        fatherNameRequired: "Atanızın adını daxil edin.",
+        dobRequired: "Doğum tarixinizi daxil edin.",
+        birthCountryRequired: "Doğulduğunuz ölkəni seçin.",
+        citizenshipRequired: "Vətəndaşlığınızı seçin.",
+        residenceCountryRequired: "Yaşadığınız ölkəni seçin.",
         privacyRequired: "Davam etmək üçün məxfilik bildirişi ilə razılaşmalısınız.",
-        noEndpoint:
-          "Müraciət serveri hələ konfiqurasiya edilməyib. Zəhmət olmasa birbaşa info@daab-waas.com ünvanına yazın.",
-        submitFailed: "Müraciət göndərilmədi. Bir az sonra yenidən cəhd edin və ya info@daab-waas.com ünvanına yazın.",
+        noEndpoint: isForumRegister()
+          ? "Qeydiyyat serveri hələ konfiqurasiya edilməyib. Zəhmət olmasa birbaşa info@daab-waas.com ünvanına yazın."
+          : "Müraciət serveri hələ konfiqurasiya edilməyib. Zəhmət olmasa birbaşa info@daab-waas.com ünvanına yazın.",
+        submitFailed: isForumRegister()
+          ? "Qeydiyyat göndərilmədi. Bir az sonra yenidən cəhd edin və ya info@daab-waas.com ünvanına yazın."
+          : "Müraciət göndərilmədi. Bir az sonra yenidən cəhd edin və ya info@daab-waas.com ünvanına yazın.",
         networkError: "Şəbəkə xətası. İnternet bağlantınızı yoxlayın və yenidən cəhd edin.",
         expandSection: "Bölməni aç",
         collapseSection: "Bölməni yığ",
-        phpUnavailable:
-          "Müraciət forması bu serverdə işləmir (PHP dəstəyi lazımdır). Zəhmət olmasa məlumatlarınızı info@daab-waas.com ünvanına e-məktubla göndərin.",
+        phpUnavailable: isForumRegister()
+          ? "Qeydiyyat forması bu serverdə işləmir (PHP dəstəyi lazımdır). Zəhmət olmasa məlumatlarınızı info@daab-waas.com ünvanına e-məktubla göndərin."
+          : "Müraciət forması bu serverdə işləmir (PHP dəstəyi lazımdır). Zəhmət olmasa məlumatlarınızı info@daab-waas.com ünvanına e-məktubla göndərin.",
       },
       en: {
         submitting: "Submitting…",
@@ -155,15 +220,25 @@
         sciRequired: "Select at least one scientific field.",
         degreeRequired: "Please select your academic degree.",
         titleRequired: "Please select your academic title.",
+        genderRequired: "Please select your gender.",
+        fatherNameRequired: "Please enter your father’s name.",
+        dobRequired: "Please enter your date of birth.",
+        birthCountryRequired: "Please select your country of birth.",
+        citizenshipRequired: "Please select your citizenship.",
+        residenceCountryRequired: "Please select your country of residence.",
         privacyRequired: "Please accept the privacy notice to continue.",
-        noEndpoint:
-          "The application backend is not configured yet. Please email info@daab-waas.com directly.",
-        submitFailed: "Could not submit your application. Please try again or email info@daab-waas.com.",
+        noEndpoint: isForumRegister()
+          ? "The registration backend is not configured yet. Please email info@daab-waas.com directly."
+          : "The application backend is not configured yet. Please email info@daab-waas.com directly.",
+        submitFailed: isForumRegister()
+          ? "Could not submit your registration. Please try again or email info@daab-waas.com."
+          : "Could not submit your application. Please try again or email info@daab-waas.com.",
         networkError: "Network error. Check your connection and try again.",
         expandSection: "Expand section",
         collapseSection: "Collapse section",
-        phpUnavailable:
-          "This server cannot process applications (PHP mail handler required). Please email your details to info@daab-waas.com.",
+        phpUnavailable: isForumRegister()
+          ? "This server cannot process registrations (PHP mail handler required). Please email your details to info@daab-waas.com."
+          : "This server cannot process applications (PHP mail handler required). Please email your details to info@daab-waas.com.",
       },
     };
     return (strings[lang] || strings.en)[key] || key;
@@ -257,7 +332,9 @@
     var sciFieldset = byId("sci-fields");
     if (sciFieldset) sciFieldset.setAttribute("aria-invalid", "true");
     showSubmitError(uiText("sciRequired"), { alert: true });
-    var sec = byId("sec-3");
+    var sec = sciFieldset && sciFieldset.closest
+      ? sciFieldset.closest(".form-section")
+      : byId("sec-4") || byId("sec-3");
     if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
     return false;
   }
@@ -297,8 +374,19 @@
     var phoneNumber = (byId("phone") && byId("phone").value.trim()) || "";
     var fullName = (firstName + " " + lastName).trim();
 
-    return {
-      _subject: (lang === "az" ? "DAAB üzvlük — " : "WAAS Membership — ") + fullName,
+    var subjectPrefix = isForumRegister()
+      ? lang === "az"
+        ? "Forum 2026 iştirakçı qeydiyyatı — "
+        : "Forum 2026 participant registration — "
+      : lang === "az"
+        ? "DAAB üzvlük — "
+        : "WAAS Membership — ";
+    var affiliation = (byId("currentjob") && byId("currentjob").value.trim()) || "";
+    var fieldOfStudyEl = byId("fieldofstudy");
+
+    var payload = {
+      _subject: subjectPrefix + fullName,
+      form_kind: formKind(),
       locale: lang,
       submitted_at: new Date().toISOString(),
       page_url: location.href,
@@ -306,18 +394,23 @@
       first_name: firstName,
       last_name: lastName,
       full_name: fullName,
+      father_name: (byId("fathername") && byId("fathername").value.trim()) || "",
+      date_of_birth: (byId("dob") && byId("dob").value.trim()) || "",
+      country_of_birth: (byId("birthcountry") && byId("birthcountry").value.trim()) || "",
+      citizenship: (byId("citizenship") && byId("citizenship").value.trim()) || "",
+      gender: getRadioValue("gender"),
       country: (byId("country") && byId("country").value.trim()) || "",
       city: getCityValue(),
       phone_code: phoneCode,
       phone_number: phoneNumber,
       phone_full: phoneCode && phoneNumber ? phoneCode + " " + phoneNumber : phoneNumber,
       university: (byId("university") && byId("university").value.trim()) || "",
-      field_of_study: (byId("fieldofstudy") && byId("fieldofstudy").value.trim()) || "",
       degree: getRadioValue("degree"),
       degree_institution: (byId("deginst") && byId("deginst").value.trim()) || "",
       academic_title: getRadioValue("title"),
       title_institution: (byId("titinst") && byId("titinst").value.trim()) || "",
-      current_job: (byId("currentjob") && byId("currentjob").value.trim()) || "",
+      affiliation: affiliation,
+      current_job: affiliation,
       previous_jobs: (byId("prevjobs") && byId("prevjobs").value.trim()) || "",
       contributions: (byId("contributions") && byId("contributions").value.trim()) || "",
       sci_fields: getSciValues().join(", "),
@@ -326,6 +419,10 @@
       cv_confirm: getCvConfirmValue(),
       privacy_confirm: getPrivacyConfirmValue(),
     };
+    if (fieldOfStudyEl) {
+      payload.field_of_study = fieldOfStudyEl.value.trim();
+    }
+    return payload;
   }
 
   function showSuccessScreen() {
@@ -401,9 +498,18 @@
       return;
     }
     if (!validateForm()) return;
-    if (!validateRadioGroup("degree", "degreeRequired", "deg1")) return;
-    if (!validateRadioGroup("title", "titleRequired", "tit1")) return;
-    if (!validateSciSelection()) return;
+    if (document.querySelector('.application-page input[name="degree"]')) {
+      if (!validateRadioGroup("degree", "degreeRequired", "deg1")) return;
+    }
+    if (document.querySelector('.application-page input[name="title"]')) {
+      if (!validateRadioGroup("title", "titleRequired", "tit1")) return;
+    }
+    if (document.querySelector('.application-page input[name="gender"]')) {
+      if (!validateRadioGroup("gender", "genderRequired", "gender-male")) return;
+    }
+    if (byId("sci-fields")) {
+      if (!validateSciSelection()) return;
+    }
     if (!validatePrivacyConfirm()) return;
 
     setSubmitting(true);
@@ -432,7 +538,421 @@
       });
   }
 
-  function initResidenceDropdowns() {
+  function buildLocalizedCountries(lang) {
+    var formatter =
+      typeof Intl !== "undefined" && typeof Intl.DisplayNames === "function"
+        ? new Intl.DisplayNames([lang], { type: "region" })
+        : null;
+    var enFormatter =
+      typeof Intl !== "undefined" && typeof Intl.DisplayNames === "function"
+        ? new Intl.DisplayNames(["en"], { type: "region" })
+        : null;
+    var collator =
+      typeof Intl !== "undefined" && typeof Intl.Collator === "function"
+        ? new Intl.Collator(lang, { sensitivity: "base" })
+        : null;
+
+    var azNames = window.DAAB_COUNTRY_NAMES_AZ || {};
+    var countries = COUNTRY_CODES.map(function (code) {
+      var azName = azNames[code];
+      var intlName = formatter ? formatter.of(code) || code : code;
+      return {
+        code: code,
+        name: lang === "az" && azName ? azName : intlName,
+        englishName: enFormatter ? enFormatter.of(code) || code : code,
+      };
+    });
+    countries.sort(function (a, b) {
+      if (collator) return collator.compare(a.name, b.name);
+      return String(a.name).localeCompare(String(b.name), lang);
+    });
+    return { countries: countries, collator: collator };
+  }
+
+  function fillCountrySelect(select, countries, placeholderText) {
+    select.innerHTML = "";
+    var placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = placeholderText;
+    select.appendChild(placeholder);
+    countries.forEach(function (entry) {
+      var option = document.createElement("option");
+      option.value = entry.name;
+      option.setAttribute("data-code", entry.code);
+      option.setAttribute("data-country-en", entry.englishName);
+      option.textContent = entry.name;
+      select.appendChild(option);
+    });
+    select.selectedIndex = 0;
+  }
+
+  function enhanceCountryPicker(select, config) {
+    if (!select || select.getAttribute("data-country-picker-ready") === "1") return;
+    select.setAttribute("data-country-picker-ready", "1");
+
+    var placeholderText = config.placeholderText || "";
+    var searchPlaceholder = config.searchPlaceholder || "";
+    var noResultsText = config.noResultsText || "";
+    var lang = config.lang || "en";
+    var fieldGroup = select.closest(".field-group");
+    if (!fieldGroup) return;
+
+    var picker = document.createElement("div");
+    picker.className = "phone-code-picker country-picker";
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.id = select.id ? select.id + "_picker" : "country_picker";
+    btn.className = "phone-code-picker-btn";
+    btn.setAttribute("aria-haspopup", "listbox");
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute(
+      "aria-label",
+      (fieldGroup.querySelector("label.field-label") &&
+        fieldGroup.querySelector("label.field-label").textContent.trim()) ||
+        placeholderText
+    );
+
+    var valueWrap = document.createElement("span");
+    valueWrap.className = "phone-code-picker-value";
+
+    var flagImg = document.createElement("img");
+    flagImg.className = "phone-code-flag";
+    flagImg.alt = "";
+    flagImg.setAttribute("aria-hidden", "true");
+    flagImg.width = 20;
+    flagImg.height = 15;
+    flagImg.hidden = true;
+
+    var labelSpan = document.createElement("span");
+    labelSpan.className = "phone-code-picker-text";
+    labelSpan.textContent = placeholderText;
+
+    valueWrap.appendChild(flagImg);
+    valueWrap.appendChild(labelSpan);
+    btn.appendChild(valueWrap);
+
+    var chevron = document.createElement("span");
+    chevron.className = "phone-code-picker-chevron";
+    chevron.setAttribute("aria-hidden", "true");
+    btn.appendChild(chevron);
+
+    var panel = document.createElement("div");
+    panel.className = "phone-code-picker-panel country-picker-panel";
+    panel.hidden = true;
+
+    var searchWrap = document.createElement("div");
+    searchWrap.className = "country-picker-search-wrap";
+    var search = document.createElement("input");
+    search.type = "search";
+    search.className = "country-picker-search";
+    search.setAttribute("autocomplete", "off");
+    search.setAttribute("spellcheck", "false");
+    search.setAttribute("aria-label", searchPlaceholder);
+    search.placeholder = searchPlaceholder;
+    searchWrap.appendChild(search);
+
+    var list = document.createElement("ul");
+    list.className = "phone-code-picker-list";
+    list.setAttribute("role", "listbox");
+    if (btn.id) list.id = btn.id + "_list";
+    btn.setAttribute("aria-controls", list.id);
+
+    var empty = document.createElement("div");
+    empty.className = "country-picker-empty";
+    empty.hidden = true;
+    empty.textContent = noResultsText;
+
+    Array.prototype.forEach.call(select.options, function (opt) {
+      if (!opt.value) return;
+      var countryCode = opt.getAttribute("data-code") || "";
+      var li = document.createElement("li");
+      li.className = "phone-code-picker-option country-picker-option";
+      li.setAttribute("role", "option");
+      li.setAttribute("aria-selected", "false");
+      li.setAttribute("data-value", opt.value);
+      li.setAttribute("data-code", countryCode);
+      li.setAttribute("data-country-en", opt.getAttribute("data-country-en") || "");
+      li.setAttribute("data-label", opt.textContent);
+
+      var img = document.createElement("img");
+      img.className = "phone-code-flag";
+      img.src = phoneFlagSrc(countryCode);
+      img.alt = "";
+      img.setAttribute("aria-hidden", "true");
+      img.width = 20;
+      img.height = 15;
+      img.loading = "lazy";
+      img.decoding = "async";
+
+      var text = document.createElement("span");
+      text.className = "phone-code-picker-option-text";
+      text.textContent = opt.textContent;
+
+      li.appendChild(img);
+      li.appendChild(text);
+      list.appendChild(li);
+    });
+
+    panel.appendChild(searchWrap);
+    panel.appendChild(list);
+    panel.appendChild(empty);
+
+    select.classList.add("phone-code-picker-native");
+    select.parentNode.insertBefore(picker, select);
+    picker.appendChild(select);
+    picker.appendChild(btn);
+    picker.appendChild(panel);
+
+    var label = fieldGroup.querySelector('label[for="' + select.id + '"]');
+    if (label) {
+      label.setAttribute("for", btn.id);
+      label.addEventListener("click", function (e) {
+        e.preventDefault();
+        btn.focus();
+        if (panel.hidden) openPanel();
+      });
+    }
+
+    function optionNodes() {
+      return list.querySelectorAll(".country-picker-option");
+    }
+
+    function syncFromSelect() {
+      var opt = select.options[select.selectedIndex];
+      btn.disabled = select.disabled;
+      if (!opt || !opt.value) {
+        flagImg.hidden = true;
+        flagImg.removeAttribute("src");
+        labelSpan.textContent = placeholderText;
+        btn.classList.remove("has-value");
+        optionNodes().forEach(function (li) {
+          li.classList.remove("is-selected", "is-active");
+          li.setAttribute("aria-selected", "false");
+        });
+        return;
+      }
+      btn.classList.add("has-value");
+      var cc = opt.getAttribute("data-code");
+      if (cc) {
+        flagImg.src = phoneFlagSrc(cc);
+        flagImg.hidden = false;
+      } else {
+        flagImg.hidden = true;
+      }
+      labelSpan.textContent = opt.textContent;
+      optionNodes().forEach(function (li) {
+        var selected = li.getAttribute("data-value") === opt.value;
+        li.classList.toggle("is-selected", selected);
+        li.classList.toggle("is-active", selected);
+        li.setAttribute("aria-selected", selected ? "true" : "false");
+      });
+    }
+
+    function closeOtherCountryPickers() {
+      document.querySelectorAll(".country-picker .country-picker-panel").forEach(function (other) {
+        if (other !== panel) {
+          other.hidden = true;
+          var otherBtn = other.parentNode && other.parentNode.querySelector(".phone-code-picker-btn");
+          if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+
+    function visibleOptions() {
+      return Array.prototype.filter.call(optionNodes(), function (li) {
+        return !li.classList.contains("is-filtered-out");
+      });
+    }
+
+    function applyFilter() {
+      var query = String(search.value || "").trim().toLocaleLowerCase(lang);
+      var shown = 0;
+      optionNodes().forEach(function (li) {
+        var hay = [
+          li.getAttribute("data-label") || "",
+          li.getAttribute("data-country-en") || "",
+          li.getAttribute("data-code") || "",
+        ]
+          .join(" ")
+          .toLocaleLowerCase(lang);
+        var match = !query || hay.indexOf(query) !== -1;
+        li.classList.toggle("is-filtered-out", !match);
+        if (match) shown += 1;
+      });
+      empty.hidden = shown > 0;
+      list.hidden = shown === 0;
+    }
+
+    function closePanel() {
+      panel.hidden = true;
+      btn.setAttribute("aria-expanded", "false");
+      search.value = "";
+      applyFilter();
+    }
+
+    function openPanel() {
+      if (select.disabled) return;
+      closeOtherCountryPickers();
+      search.value = "";
+      applyFilter();
+      panel.hidden = false;
+      btn.setAttribute("aria-expanded", "true");
+      var selected = list.querySelector(".country-picker-option.is-selected");
+      optionNodes().forEach(function (li) {
+        li.classList.toggle("is-active", li === selected);
+      });
+      try {
+        search.focus({ preventScroll: true });
+      } catch (e) {
+        search.focus();
+      }
+      if (selected) selected.scrollIntoView({ block: "nearest" });
+    }
+
+    function chooseOption(li) {
+      if (!li) return;
+      var value = li.getAttribute("data-value");
+      var i;
+      for (i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === value) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      select.dispatchEvent(new Event("change", { bubbles: true }));
+      syncFromSelect();
+      closePanel();
+      btn.focus();
+    }
+
+    function moveActive(delta) {
+      var items = visibleOptions();
+      if (!items.length) return;
+      var current = list.querySelector(".country-picker-option.is-active:not(.is-filtered-out)");
+      var index = current ? items.indexOf(current) : -1;
+      var next = items[(index + delta + items.length) % items.length];
+      items.forEach(function (li) {
+        li.classList.toggle("is-active", li === next);
+      });
+      if (next) next.scrollIntoView({ block: "nearest" });
+    }
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (panel.hidden) openPanel();
+      else closePanel();
+    });
+
+    btn.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        if (panel.hidden) openPanel();
+      }
+    });
+
+    search.addEventListener("input", applyFilter);
+    search.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        moveActive(1);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        moveActive(-1);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        var active = list.querySelector(".country-picker-option.is-active:not(.is-filtered-out)");
+        chooseOption(active || visibleOptions()[0]);
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        closePanel();
+        btn.focus();
+      }
+    });
+
+    list.addEventListener("click", function (e) {
+      var li = e.target.closest(".country-picker-option");
+      if (!li || li.classList.contains("is-filtered-out")) return;
+      chooseOption(li);
+    });
+
+    select.addEventListener("invalid", function () {
+      if (panel.hidden) {
+        try {
+          btn.focus({ preventScroll: true });
+        } catch (err) {
+          btn.focus();
+        }
+        btn.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+
+    document.addEventListener("click", function (e) {
+      if (picker.contains(e.target)) return;
+      if (label && label.contains(e.target)) return;
+      closePanel();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !panel.hidden) {
+        closePanel();
+        btn.focus();
+      }
+    });
+
+    select.addEventListener("change", syncFromSelect);
+    syncFromSelect();
+  }
+
+  function initCountryDropdowns() {
+    var lang = detectLang();
+    var localized = buildLocalizedCountries(lang);
+    var texts = {
+      en: {
+        countryPlaceholder: "Select country",
+        birthCountryPlaceholder: "Select country of birth",
+        citizenshipPlaceholder: "Select citizenship",
+        countrySearchPlaceholder: "Search country",
+        countryNoResults: "No countries found",
+        cityDisabledPlaceholder: "Select country first",
+        cityPlaceholder: "Select city",
+        cityLoadingPlaceholder: "Loading cities...",
+        cityUnavailablePlaceholder: "No cities available — type your city below",
+      },
+      az: {
+        countryPlaceholder: "Ölkə seçin",
+        birthCountryPlaceholder: "Doğulduğunuz ölkəni seçin",
+        citizenshipPlaceholder: "Vətəndaşlığınızı seçin",
+        countrySearchPlaceholder: "Ölkə axtarın",
+        countryNoResults: "Ölkə tapılmadı",
+        cityDisabledPlaceholder: "Əvvəlcə ölkə seçin",
+        cityPlaceholder: "Şəhər seçin",
+        cityLoadingPlaceholder: "Şəhərlər yüklənir...",
+        cityUnavailablePlaceholder: "Şəhərlər tapılmadı — aşağıda şəhəri yazın",
+      },
+    };
+    var t = texts[lang] || texts.en;
+    var placeholderById = {
+      country: t.countryPlaceholder,
+      birthcountry: t.birthCountryPlaceholder,
+      citizenship: t.citizenshipPlaceholder,
+    };
+
+    document.querySelectorAll("select[data-country-select]").forEach(function (select) {
+      var placeholder = placeholderById[select.id] || t.countryPlaceholder;
+      fillCountrySelect(select, localized.countries, placeholder);
+      enhanceCountryPicker(select, {
+        placeholderText: placeholder,
+        searchPlaceholder: t.countrySearchPlaceholder,
+        noResultsText: t.countryNoResults,
+        lang: lang,
+      });
+    });
+
+    initResidenceCityPicker(t, localized.collator, lang);
+  }
+
+  function initResidenceCityPicker(t, collator, lang) {
     var countrySelect = byId("country");
     var citySelect = byId("city");
     var cityManual = byId("city_manual");
@@ -454,64 +974,6 @@
       cityManual.removeAttribute("aria-hidden");
       citySelect.required = false;
     }
-
-    var lang = detectLang();
-    var texts = {
-      en: {
-        countryPlaceholder: "Select country",
-        cityDisabledPlaceholder: "Select country first",
-        cityPlaceholder: "Select city",
-        cityLoadingPlaceholder: "Loading cities...",
-        cityUnavailablePlaceholder: "No cities available — type your city below"
-      },
-      az: {
-        countryPlaceholder: "Ölkə seçin",
-        cityDisabledPlaceholder: "Əvvəlcə ölkə seçin",
-        cityPlaceholder: "Şəhər seçin",
-        cityLoadingPlaceholder: "Şəhərlər yüklənir...",
-        cityUnavailablePlaceholder: "Şəhərlər tapılmadı — aşağıda şəhəri yazın"
-      }
-    };
-    var t = texts[lang] || texts.en;
-
-    countrySelect.innerHTML = "";
-    var countryPlaceholder = document.createElement("option");
-    countryPlaceholder.value = "";
-    countryPlaceholder.textContent = t.countryPlaceholder;
-    countrySelect.appendChild(countryPlaceholder);
-
-    var formatter =
-      typeof Intl !== "undefined" && typeof Intl.DisplayNames === "function"
-        ? new Intl.DisplayNames([lang], { type: "region" })
-        : null;
-    var enFormatter =
-      typeof Intl !== "undefined" && typeof Intl.DisplayNames === "function"
-        ? new Intl.DisplayNames(["en"], { type: "region" })
-        : null;
-    var collator =
-      typeof Intl !== "undefined" && typeof Intl.Collator === "function"
-        ? new Intl.Collator(lang, { sensitivity: "base" })
-        : null;
-
-    var countries = COUNTRY_CODES.map(function (code) {
-      return {
-        code: code,
-        name: formatter ? (formatter.of(code) || code) : code,
-        englishName: enFormatter ? (enFormatter.of(code) || code) : code
-      };
-    });
-    countries.sort(function (a, b) {
-      if (collator) return collator.compare(a.name, b.name);
-      return String(a.name).localeCompare(String(b.name));
-    });
-    countries.forEach(function (entry) {
-      var option = document.createElement("option");
-      option.value = entry.name;
-      option.setAttribute("data-code", entry.code);
-      option.setAttribute("data-country-en", entry.englishName);
-      option.textContent = entry.name;
-      countrySelect.appendChild(option);
-    });
 
     function resetCitySelect() {
       hideCityManual();
@@ -578,7 +1040,7 @@
       });
       items.sort(function (a, b) {
         if (collator) return collator.compare(a, b);
-        return a.localeCompare(b);
+        return a.localeCompare(b, lang);
       });
       return items;
     }
@@ -590,7 +1052,7 @@
       return fetch("https://countriesnow.space/api/v0.1/countries/cities", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ country: countryEnglishName })
+        body: JSON.stringify({ country: countryEnglishName }),
       })
         .then(function (response) {
           if (!response.ok) throw new Error("city-fetch-failed");
@@ -999,12 +1461,95 @@
     if (submitBtn) submitBtn.disabled = true;
   }
 
+  function initForumRegisterStickyStack() {
+    var stack = document.querySelector(".forum-register-sticky-stack");
+    var spacer = document.querySelector(".forum-register-sticky-spacer");
+    if (!stack) return;
+
+    function headerOffset() {
+      var style = window.getComputedStyle(document.documentElement);
+      var h = parseFloat(style.getPropertyValue("--daab-sticky-top-stack"));
+      if (!isFinite(h) || h <= 0) {
+        h = parseFloat(style.getPropertyValue("--daab-nav-height"));
+      }
+      return !isFinite(h) || h <= 0 ? 86 : h;
+    }
+
+    function slotBox() {
+      return (spacer || stack).getBoundingClientRect();
+    }
+
+    function applyPinnedBox(box) {
+      var root = document.documentElement;
+      root.style.setProperty("--forum-register-sticky-left", box.left + "px");
+      root.style.setProperty("--forum-register-sticky-width", box.width + "px");
+      root.style.setProperty("--forum-register-sticky-transform", "none");
+    }
+
+    function clearPinnedBox() {
+      var root = document.documentElement;
+      root.style.removeProperty("--forum-register-sticky-left");
+      root.style.removeProperty("--forum-register-sticky-width");
+      root.style.removeProperty("--forum-register-sticky-transform");
+    }
+
+    function syncStack() {
+      var box = slotBox();
+      var h = Math.ceil(stack.getBoundingClientRect().height);
+      document.documentElement.style.setProperty(
+        "--daab-sticky-local-offset",
+        Math.max(0, h) + "px"
+      );
+      var naturalTop = spacer
+        ? spacer.getBoundingClientRect().top
+        : stack.getBoundingClientRect().top;
+      var pin = naturalTop <= headerOffset() + 0.5;
+      if (pin) applyPinnedBox(box);
+      else clearPinnedBox();
+      stack.classList.toggle("is-pinned", pin);
+      if (spacer) spacer.style.height = pin ? h + "px" : "0px";
+    }
+
+    syncStack();
+    if (typeof ResizeObserver !== "undefined") {
+      var ro = new ResizeObserver(syncStack);
+      ro.observe(stack);
+      if (spacer) ro.observe(spacer);
+      var band = document.querySelector(".page-content-search-band");
+      if (band) ro.observe(band);
+    }
+    window.addEventListener("resize", syncStack, { passive: true });
+    window.addEventListener("scroll", syncStack, { passive: true });
+
+    var bar = document.querySelector(".forum-register-stepbar");
+    var menu = byId("appStepsMenu");
+    function scrollActivePill() {
+      if (!bar || !menu) return;
+      var active = menu.querySelector("a.tl-active");
+      if (!active) return;
+      var br = bar.getBoundingClientRect();
+      var ar = active.getBoundingClientRect();
+      if (ar.left < br.left + 8 || ar.right > br.right - 8) {
+        bar.scrollLeft += ar.left - br.left - (br.width - ar.width) / 2;
+      }
+    }
+    if (menu && typeof MutationObserver !== "undefined") {
+      var mo = new MutationObserver(scrollActivePill);
+      mo.observe(menu, {
+        attributes: true,
+        subtree: true,
+        attributeFilter: ["class"],
+      });
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     if (!document.body.classList.contains("application-page")) return;
+    totalSections = countFormSections();
     document.querySelectorAll(".application-page .form-section").forEach(function (s) {
       s.hidden = false;
     });
-    var form = byId("mainForm");
+    var form = mainFormEl();
     if (form) {
       form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -1013,10 +1558,12 @@
     }
     bindRadioHighlight();
     initEmailValidation();
-    initResidenceDropdowns();
+    initForumIdentityValidation();
+    initCountryDropdowns();
     initPhoneCodeDropdown();
     initSectionToggles();
     initEndpointNotice();
+    initForumRegisterStickyStack();
     updateProgress(1);
     var sciFieldset = byId("sci-fields");
     if (sciFieldset) {

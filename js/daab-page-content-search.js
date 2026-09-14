@@ -49,6 +49,17 @@
         return li.textContent || "";
       },
     },
+    "forum-2026-register": {
+      blocks: ".form-section",
+      navItem: "#appStepsMenu li",
+      navTarget: function (li) {
+        var a = li.querySelector('a[href^="#"]');
+        return a ? a.getAttribute("href").slice(1) : "";
+      },
+      navText: function (li) {
+        return li.textContent || "";
+      },
+    },
   };
 
   var STRINGS = {

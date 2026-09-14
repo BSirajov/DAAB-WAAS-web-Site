@@ -166,6 +166,10 @@
         }
       }
     }
+    var local = parseFloat(style.getPropertyValue("--daab-sticky-local-offset"));
+    if (isFinite(local) && local > 0) {
+      h += local;
+    }
     return Math.ceil(h) + 20;
   }
 

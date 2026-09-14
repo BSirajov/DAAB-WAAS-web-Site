@@ -1,5 +1,5 @@
 {
-  "version": 19,
+  "version": 22,
   "primary": [
     {
       "type": "page",
@@ -132,9 +132,29 @@
           ]
         },
         {
-          "id": "forum-2026",
+          "type": "group",
+          "id": "forum-2026-year",
+          "style": "dropdown",
           "labelKey": "forum2026Year",
-          "descKey": "forum2026Desc"
+          "descKey": "forum2026Desc",
+          "landingId": "forum-2026",
+          "children": [
+            {
+              "id": "forum-2026",
+              "labelKey": "forum2026Highlights",
+              "descKey": "forum2026HighlightsDesc"
+            },
+            {
+              "id": "forum-2026-register",
+              "labelKey": "forum2026Register",
+              "descKey": "forum2026RegisterDesc"
+            }
+          ]
+        },
+        {
+          "id": "complex-topics",
+          "labelKey": "complexTopics",
+          "descKey": "complexTopicsDesc"
         }
       ]
     },
@@ -287,7 +307,16 @@
       "landingId": "forum-2024",
       "pages": [
         "forum-2024",
-        "forum-2026"
+        "forum-2026",
+        "forum-2026-register",
+        "complex-topics"
+      ]
+    },
+    "forum-2026-year": {
+      "landingId": "forum-2026",
+      "pages": [
+        "forum-2026",
+        "forum-2026-register"
       ]
     },
     "forum": {

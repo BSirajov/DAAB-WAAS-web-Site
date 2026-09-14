@@ -47,6 +47,8 @@
     "work-done-2024-2026": "activitiesWorkDone2024",
     "forum-2024": "forum2024",
     "forum-2026": "forum2026Year",
+    "forum-2026-register": "forum2026Register",
+    "complex-topics": "complexTopics",
     "forum-2024-presentations": "forum2024Presentations",
     "forum-official": "forumOfficial",
     "forum-rector-speeches": "forumRectorSpeeches",
@@ -101,6 +103,7 @@
     if (!page || !page.id) return false;
     if (page.id === "forum-2024") return false;
     if (page.id === "forum-2026") return false;
+    if (page.id === "forum-2026-register") return false;
     if (page.id === "scientists-list" || page.id === "scientists-profiles") return true;
     if (page.navParent === "forum" || page.navGroup === "forum") {
       return page.id.indexOf("forum-") === 0;
@@ -141,6 +144,18 @@
         id: "forum-2026",
         az: "az/forum/2026/index.html",
         en: "en/forum/2026/index.html",
+        navParent: "forums"
+      },
+      {
+        id: "forum-2026-register",
+        az: "az/forum/2026/register.html",
+        en: "en/forum/2026/register.html",
+        navParent: "forums"
+      },
+      {
+        id: "complex-topics",
+        az: "az/complex-topics.html",
+        en: "en/complex-topics.html",
         navParent: "forums"
       },
       {
@@ -310,7 +325,9 @@
         sponsors: "Bizi dəstəkləyin",
         forum2024Hub: "I Forum",
         forum2024Crumb: "Ümumi Mənzərə",
-        forum2026Year: "II Forum"
+        forum2026Year: "II Forum",
+        forum2026Register: "Qeydiyyat",
+        complexTopics: "Çətin mövzu, aydın izah"
       },
       en: {
         aria: "Breadcrumb",
@@ -324,7 +341,9 @@
         sponsors: "Support us",
         forum2024Hub: "I Forum",
         forum2024Crumb: "Highlights",
-        forum2026Year: "II Forum"
+        forum2026Year: "II Forum",
+        forum2026Register: "Register",
+        complexTopics: "Complex Topics, Clear Explanations"
       }
     },
     nav: {
@@ -338,6 +357,8 @@
         forum2024: "Ümumi Mənzərə",
         forum2024Year: "I Forum",
         forum2026Year: "II Forum",
+        forum2026Register: "Qeydiyyat",
+        complexTopics: "Çətin mövzu, aydın izah",
         forumOfficial: "Rəsmi müraciətlər",
         forumRectorSpeeches: "Rektorlar",
         forumAnasLeadershipSpeeches: "Akademiklər",
@@ -374,6 +395,8 @@
         forum2024: "Highlights",
         forum2024Year: "I Forum",
         forum2026Year: "II Forum",
+        forum2026Register: "Register",
+        complexTopics: "Complex Topics, Clear Explanations",
         forumOfficial: "Official addresses",
         forumRectorSpeeches: "Rectors",
         forumAnasLeadershipSpeeches: "Academicians",
@@ -646,6 +669,16 @@
         crumbs.push({
           href: pageHref(I18N, forumHub, lang),
           text: forumHubCrumbText(ui, lang)
+        });
+      }
+    }
+
+    if (page.id === "forum-2026-register") {
+      var forum2026 = pageById(routes, "forum-2026");
+      if (forum2026) {
+        crumbs.push({
+          href: pageHref(I18N, forum2026, lang),
+          text: pageTitle(ui, lang, "forum-2026")
         });
       }
     }

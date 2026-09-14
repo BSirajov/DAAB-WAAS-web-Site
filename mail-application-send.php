@@ -85,6 +85,17 @@ if ($phoneFull === '') {
     $phoneNumber = daab_mail_field('phone_number');
     $phoneFull = trim($phoneCode . ' ' . $phoneNumber);
 }
+$fatherName = daab_mail_field('father_name') ?: daab_mail_field('fathername');
+$dateOfBirth = daab_mail_field('date_of_birth') ?: daab_mail_field('dob');
+$countryOfBirth = daab_mail_field('country_of_birth') ?: daab_mail_field('birthcountry');
+$citizenship = daab_mail_field('citizenship');
+$genderRaw = strtolower(daab_mail_field('gender'));
+$gender = $genderRaw;
+if ($genderRaw === 'male') {
+    $gender = $isAz ? 'Kişi' : 'Male';
+} elseif ($genderRaw === 'female') {
+    $gender = $isAz ? 'Qadın' : 'Female';
+}
 $fieldOfStudy = daab_mail_field('field_of_study') ?: daab_mail_field('fieldofstudy');
 $degreeInstitution = daab_mail_field('degree_institution') ?: daab_mail_field('deginst');
 $academicTitle = daab_mail_field('academic_title') ?: daab_mail_field('title');
@@ -104,6 +115,11 @@ $subject = $subjectPrefix . ($fullName !== '' ? ' — ' . $fullName : '');
 $labels = $isAz
     ? [
         'full_name' => 'Ad, soyad',
+        'father_name' => 'Atanızın adı',
+        'date_of_birth' => 'Doğum tarixiniz',
+        'country_of_birth' => 'Doğulduğunuz ölkə',
+        'citizenship' => 'Vətəndaşlığınız',
+        'gender' => 'Cinsiniz',
         'email' => 'E-məktub',
         'country' => 'Ölkə',
         'city' => 'Şəhər',
@@ -126,6 +142,11 @@ $labels = $isAz
     ]
     : [
         'full_name' => 'Full name',
+        'father_name' => 'Father’s name',
+        'date_of_birth' => 'Date of birth',
+        'country_of_birth' => 'Country of birth',
+        'citizenship' => 'Citizenship',
+        'gender' => 'Gender',
         'email' => 'Email',
         'country' => 'Country',
         'city' => 'City',
@@ -149,6 +170,11 @@ $labels = $isAz
 
 $fields = [
     'full_name' => $fullName,
+    'father_name' => $fatherName,
+    'date_of_birth' => $dateOfBirth,
+    'country_of_birth' => $countryOfBirth,
+    'citizenship' => $citizenship,
+    'gender' => $gender,
     'email' => $email,
     'country' => daab_mail_field('country'),
     'city' => $city,
