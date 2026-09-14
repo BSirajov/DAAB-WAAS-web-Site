@@ -72,6 +72,13 @@ HREF_SRC_RE = re.compile(
 
 SKIP_PREFIXES = ("http://", "https://", "//", "mailto:", "tel:", "data:", "#", "javascript:")
 
+# Host-managed assets kept out of Git (see .gitignore). Local copies may be absent.
+HOST_MANAGED_PATHS = frozenset(
+    {
+        "images/activities/Messoud_Efendiyev_Zaqatala_video.mp4",
+    }
+)
+
 
 def site_html_files() -> list[Path]:
     files = sorted(ROOT.glob("*.html"))
@@ -165,6 +172,12 @@ def main() -> int:
             if target is None:
                 continue
             if not target.exists():
+                try:
+                    rel = target.relative_to(ROOT).as_posix()
+                except ValueError:
+                    rel = ""
+                if rel in HOST_MANAGED_PATHS:
+                    continue
                 errors.append(f"{page.name}: missing → {ref} ({target.relative_to(ROOT)})")
             else:
                 for issue in check_case_collision(target):

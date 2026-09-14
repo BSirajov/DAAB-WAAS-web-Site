@@ -90,44 +90,8 @@
     observer.observe(document.documentElement, { childList: true, subtree: true });
   }
 
-  function deferProfileTts() {
-    var root = document.documentElement;
-    if (root.getAttribute("data-daab-page-id") !== "scientists-profiles") return;
-    if (document.querySelector('script[data-daab-profile-tts="1"]')) return;
-    var assetRoot = root.getAttribute("data-daab-asset-root") || "";
-    function load() {
-      if (document.querySelector('script[data-daab-profile-tts="1"]')) return;
-      var s = document.createElement("script");
-      s.src = assetRoot + "js/daab-profile-tts.js?v=5";
-      s.defer = true;
-      s.setAttribute("data-daab-profile-tts", "1");
-      document.body.appendChild(s);
-    }
-    function scheduleLoad() {
-      if (typeof global.requestIdleCallback === "function") {
-        global.requestIdleCallback(load, { timeout: 2000 });
-      } else {
-        global.setTimeout(load, 400);
-      }
-    }
-    var catalog = document.getElementById("scientists-catalog");
-    if (catalog && catalog.getAttribute("data-daab-profiles-client") === "1") {
-      document.addEventListener("daab-scientists-profiles-rendered", scheduleLoad, {
-        once: true,
-      });
-      global.setTimeout(function () {
-        if (!document.querySelector('script[data-daab-profile-tts="1"]')) {
-          scheduleLoad();
-        }
-      }, 8000);
-      return;
-    }
-    scheduleLoad();
-  }
-
   function boot() {
     bootLazyImages();
-    deferProfileTts();
   }
 
   global.DAAB_PERF = {

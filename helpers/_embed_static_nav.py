@@ -126,22 +126,60 @@ def _forum_mega_drop(lang: str) -> str:
     )
 
 
-def _forum_2026_link(lang: str) -> str:
-    href = "forum/2026/index.html"
+def _forum_2026_drop(lang: str) -> str:
     if lang == "en":
-        title = "🎤 II Forum"
+        label = "🎤 II Forum"
         desc = "Second Forum of Azerbaijani Scientists Living Abroad — December 2026, draft concept"
+        items = [
+            ("forum/2026/index.html", "forum-2026", "✨ Highlights", "Forum concept, dates, and venue — 9–10 December 2026, Baku"),
+            (
+                "forum/2026/register.html",
+                "forum-2026-register",
+                "📝 Register",
+                "Personal information, education and career, field of study, and more",
+            ),
+        ]
     else:
-        title = "🎤 II Forum"
+        label = "🎤 II Forum"
         desc = "Xaricdə yaşayan alimlərin II Forumu — dekabr 2026, konsepsiya layihəsi"
-    return _drop(
-        [(href, "forum-2026", title, desc)],
-        link_class="nav-dropdown-link nav-dropdown-link--forum-year",
+        items = [
+            ("forum/2026/index.html", "forum-2026", "✨ Ümumi Mənzərə", "II Forumun konsepsiyası, tarixi və məkanı — 9–10 dekabr 2026, Bakı"),
+            (
+                "forum/2026/register.html",
+                "forum-2026-register",
+                "📝 Qeydiyyat",
+                "Şəxsi məlumatlar, təhsil və karyera, ixtisas sahəsi və s.",
+            ),
+        ]
+    return (
+        '<div class="nav-dropdown nav-dropdown--nested" data-nav-dropdown data-nav-group="forum-2026-year">'
+        + '<button type="button" class="nav-link nav-dropdown-toggle nav-dropdown-toggle--nested nav-dropdown-toggle--forum-year" aria-expanded="false" aria-haspopup="true">'
+        + f'<span class="nav-dropdown-link-title">{label}</span>'
+        + f'<span class="nav-dropdown-link-desc">{desc}</span>'
+        + ' <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
+        + '<div class="nav-dropdown-panel" role="menu">'
+        + _drop(items)
+        + "</div></div>"
+    )
+
+
+def _complex_topics_link(lang: str) -> str:
+    if lang == "en":
+        title = "📘 Complex Topics, Clear Explanations"
+        desc = "Making difficult subjects understandable"
+    else:
+        title = "📘 Çətin mövzu, aydın izah"
+        desc = "Çətin mövzuları aydın və sadə izahı"
+    return (
+        '<a class="nav-dropdown-link nav-dropdown-link--forum-year" role="menuitem" href="complex-topics.html" data-nav-id="complex-topics">'
+        + f'<span class="nav-dropdown-link-title">{title}</span>'
+        + f'<span class="nav-dropdown-link-desc">{desc}</span>'
+        + "</a>"
     )
 
 
 def _forums_drop(lang: str) -> str:
-    label = "🎤\u00a0Forumlar" if lang == "az" else "🎤\u00a0Forums"
+    label = "🗂️\u00a0Layihələr" if lang == "az" else "🗂️\u00a0Projects"
     return (
         '<div class="nav-dropdown nav-dropdown--forums" data-nav-dropdown data-nav-group="forums">'
         + '<button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">'
@@ -149,7 +187,8 @@ def _forums_drop(lang: str) -> str:
         + ' <span class="nav-dropdown-caret" aria-hidden="true"></span></button>'
         + '<div class="nav-dropdown-panel" role="menu">'
         + _forum_mega_drop(lang)
-        + _forum_2026_link(lang)
+        + _forum_2026_drop(lang)
+        + _complex_topics_link(lang)
         + "</div></div>"
     )
 

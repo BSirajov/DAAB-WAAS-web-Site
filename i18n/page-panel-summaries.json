@@ -110,9 +110,13 @@
       "en": "Membership rules and application procedures for WAAS, covering scientific cooperation, mentoring, international connections and opportunities to support Azerbaijan's scientific development.",
       "az": "DAAB üzvlük qaydaları və müraciət prosedurları; elmi əməkdaşlıq, mentorluq, beynəlxalq əlaqələr və Azərbaycanın elmi inkişafına töhfə imkanları burada izah olunur."
     },
+    "forum-2026-register": {
+      "en": "Register as a participant in the 2nd Forum of Azerbaijani Scientists Living Abroad, 9–10 December 2026, at the ANAS Presidium (Ismailiyya building) in Baku.",
+      "az": "Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumu üçün iştirakçı qeydiyyatı — 9–10 dekabr 2026, AMEA Rəyasət Heyətinin binası (İsmailiyyə), Bakı."
+    },
     "membership-application": {
-      "en": "Complete this step-by-step online membership application in order — introduction, personal details, scientific fields and additional information — and submit your CV and photo by email as indicated.",
-      "az": "Giriş, şəxsi məlumatlar, elm sahələri və əlavə məlumat bölmələrini ardıcıl doldurun; CV və fotoşəkli göstərilən e-poçt ünvanına göndərin."
+      "en": "Complete this step-by-step online membership application in order — introduction, personal information, education and career, scientific fields and additional information — and submit your CV and photo by email as indicated.",
+      "az": "Giriş, şəxsi məlumatlar, təhsil və karyera, elm sahələri və əlavə məlumat bölmələrini ardıcıl doldurun; CV və fotoşəkli göstərilən e-poçt ünvanına göndərin."
     },
     "membership-flyer": {
       "en": "A ready-to-share flyer summarizing the value of WAAS membership; save as PDF, print or share by email using the buttons at the top right of the flyer.",
@@ -129,6 +133,10 @@
     "donate": {
       "en": "Make a gift by bank transfer using the WAAS account details, payment reference, and charter link on this page.",
       "az": "Bu səhifədəki bank rekvizitləri, ödəniş təyinatı və nizamnamə keçidi ilə bank köçürməsi edərək ianə verin."
+    },
+    "complex-topics": {
+      "en": "This project presents complex scientific and cultural subjects in clear, accessible language.",
+      "az": "Bu layihə çətin elmi və mədəni mövzuları aydın və anlaşıqlı dildə təqdim edir."
     }
   }
 }

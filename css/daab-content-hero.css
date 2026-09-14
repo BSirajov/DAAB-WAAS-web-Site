@@ -178,3 +178,70 @@ html[data-daab-page-id="major-scientific-inventions"] .main{
     padding: 28px 16px 48px;
   }
 }
+
+html[data-daab-page-id="complex-topics"] .hero{
+  position: relative;
+  overflow: hidden;
+  color: var(--ink) !important;
+  background: transparent !important;
+}
+html[data-daab-page-id="complex-topics"] .hero-wrap{
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 32px;
+  align-items: start;
+  padding: 28px 24px 36px;
+}
+html[data-daab-page-id="complex-topics"] .hero h1{
+  margin: 0;
+  color: var(--ink) !important;
+  font-family: var(--font-serif) !important;
+  font-size: clamp(21.28px, 3.36vw, 40.32px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.035em !important;
+}
+html[data-daab-page-id="complex-topics"] .hero h1 span{
+  color: var(--blue-700) !important;
+}
+html[data-daab-page-id="complex-topics"] .hero-panel{
+  align-self: start;
+  padding: 0 22px 22px;
+  background: var(--color-hero-panel-bg) !important;
+  border: 1px solid var(--color-hero-panel-border) !important;
+  border-radius: 30px;
+  box-shadow: var(--shadow-hero-panel) !important;
+  backdrop-filter: blur(18px);
+}
+html[data-daab-page-id="complex-topics"] .panel-card{
+  padding: 24px;
+  color: var(--ink) !important;
+  background: var(--color-panel-card-bg) !important;
+  border: 1px solid var(--color-panel-card-border) !important;
+  border-radius: var(--radius);
+}
+html[data-daab-page-id="complex-topics"] .panel-title{
+  margin: 0 0 10px;
+  color: var(--color-heading-blue) !important;
+  font-family: var(--font-serif) !important;
+  font-size: var(--font-size-summary-panel-title-lg);
+  font-weight: 800;
+  line-height: 1.18;
+  text-align: center;
+}
+html[data-daab-page-id="complex-topics"] .panel-copy{
+  color: var(--muted-hero) !important;
+  font-size: 14px;
+}
+html[data-daab-page-id="complex-topics"] .main{
+  position: relative;
+  z-index: 2;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+@media (max-width: 1060px){
+  html[data-daab-page-id="complex-topics"] .hero-wrap{
+    grid-template-columns: 1fr;
+  }
+}

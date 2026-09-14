@@ -27,7 +27,27 @@
       })
       .filter(Boolean);
 
+    function stickyProbeLine() {
+      var style = window.getComputedStyle(document.documentElement);
+      var stack = parseFloat(style.getPropertyValue("--daab-sticky-top-stack"));
+      var local = parseFloat(style.getPropertyValue("--daab-sticky-local-offset"));
+      if (!isFinite(stack) || stack <= 0) stack = 86;
+      if (!isFinite(local) || local < 0) local = 0;
+      return stack + local + 24;
+    }
+
     function updateActive() {
+      if (document.querySelector(".forum-register-stepbar")) {
+        var line = stickyProbeLine();
+        var activeIndex = 0;
+        for (var i = 0; i < cards.length; i++) {
+          if (cards[i] && cards[i].getBoundingClientRect().top <= line) {
+            activeIndex = i;
+          }
+        }
+        onActivate(links[activeIndex] || null);
+        return;
+      }
       var mid = window.scrollY + window.innerHeight * scrollFraction;
       var activeIndex = -1;
       for (var i = cards.length - 1; i >= 0; i--) {
@@ -44,7 +64,7 @@
       if (!target) return;
       var Pos = window.DAAB_LANG_POSITION;
       if (Pos && Pos.scrollToAnchor) {
-        Pos.scrollToAnchor(id, false);
+        Pos.scrollToAnchor(id, behavior === "smooth");
         return;
       }
       target.scrollIntoView({ block: "start", behavior: behavior || "auto" });

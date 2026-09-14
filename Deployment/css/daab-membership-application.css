@@ -484,6 +484,8 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+}.application-page .form-row--3{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }.application-page .phone-row{
   align-items: end;
 }.application-page .phone-code-picker{
@@ -543,6 +545,8 @@
   border-radius: 2px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
   flex: 0 0 auto;
+}.application-page .phone-code-flag[hidden]{
+  display: none;
 }.application-page .phone-code-picker-chevron{
   width: 8px;
   height: 8px;
@@ -579,6 +583,37 @@
   background: #e8f6ff;
 }.application-page .phone-code-picker-option-text{
   min-width: 0;
+}.application-page .country-picker .phone-code-picker-btn{
+  padding: 10px 14px;
+}.application-page .country-picker-search-wrap{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 8px 8px 6px;
+  background: #fff;
+  border-bottom: 1px solid #d7ecf8;
+}.application-page .country-picker-search{
+  width: 100%;
+  border: 1.5px solid #9ed6f5;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ink);
+  background: #f5fbff;
+  outline: none;
+}.application-page .country-picker-search:focus{
+  border-color: var(--blue-400);
+  box-shadow: 0 0 0 3px rgba(77, 182, 240, 0.15);
+  background: #fff;
+}.application-page .country-picker-empty{
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #7f9ab0;
+}.application-page .country-picker-option.is-filtered-out{
+  display: none;
+}.application-page .country-picker-option.is-active{
+  background: #e8f6ff;
 }.application-page .field-label{
   font-size: 13px;
   font-weight: 600;
@@ -610,6 +645,7 @@
 }.application-page input[type="text"],
 .application-page input[type="email"],
 .application-page input[type="tel"],
+.application-page input[type="date"],
 .application-page select,
 .application-page textarea{
   width: 100%;
@@ -623,6 +659,9 @@
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
   resize: vertical;
+}.application-page input[type="date"]{
+  min-height: 42px;
+  color-scheme: light;
 }.application-page input:focus,
 .application-page select:focus,
 .application-page textarea:focus{
@@ -653,6 +692,14 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+}.application-page .options-list--inline{
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}.application-page .options-list--inline .opt-item{
+  flex: 1 1 0;
+  min-width: 0;
+  align-items: center;
 }.application-page .opt-item{
   display: flex;
   align-items: flex-start;
@@ -857,7 +904,8 @@
     font-size: 10px;
   }.application-page .sci-cat-body{
     grid-template-columns: 1fr;
-  }.application-page .form-row{
+  }.application-page .form-row,
+  .application-page .form-row--3{
     grid-template-columns: 1fr;
   }.application-page .app-terms-pricing{
     grid-template-columns: 1fr;
@@ -923,4 +971,320 @@
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+/* Shared sticky search + pill step toolbar (forum register + membership application) */
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) {
+  --daab-sticky-local-offset: 0px;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-page .application-layout,
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .application-layout {
+  display: block;
+  grid-template-columns: 1fr;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .page-content-search-band {
+  z-index: 40;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-sticky-spacer {
+  height: 0;
+  pointer-events: none;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-sticky-stack {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  z-index: calc(var(--z-sidebar-sticky, 20) + 10);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0 12px;
+  background: rgba(245, 251, 255, 0.94);
+  backdrop-filter: blur(14px);
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-sticky-stack.is-pinned {
+  /* html/body overflow-x: clip breaks position:sticky — pin after the natural slot.
+     Keep the in-flow left/width (JS measures the spacer) so the stack does not
+     jump to full-bleed or a different centered max-width. */
+  position: fixed;
+  top: var(--daab-sticky-top-stack, var(--daab-nav-height, 86px));
+  left: var(--forum-register-sticky-left, 50%);
+  right: auto;
+  width: var(
+    --forum-register-sticky-width,
+    min(
+      calc(100% - 2 * var(--shell-padding-x, 24px)),
+      calc(var(--max, 1220px) - 2 * var(--shell-padding-x, 24px))
+    )
+  );
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  transform: var(--forum-register-sticky-transform, translateX(-50%));
+  box-shadow: 0 12px 20px -14px rgba(0, 45, 82, 0.32);
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-sticky-stack.is-pinned > * {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-sticky-stack .page-content-search-toolbar {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-sticky-stack .search-wrap {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar {
+  width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #2e9fd4 transparent;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar::-webkit-scrollbar-thumb {
+  background: #2e9fd4;
+  border-radius: 999px;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: max-content;
+  min-width: 100%;
+  margin: 0;
+  padding: 2px 2px 4px;
+  list-style: none;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list li {
+  display: block;
+  flex: 0 0 auto;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a,
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a:link,
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a:visited {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  min-width: max-content;
+  min-height: 40px;
+  margin: 0;
+  padding: 6px 14px 6px 8px;
+  color: var(--blue-700) !important;
+  background: #f5fbff !important;
+  border: 1.5px solid #9ed6f5;
+  border-radius: var(--radius-pill, 999px);
+  box-shadow: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-decoration: none !important;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a:hover,
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a:focus-visible {
+  color: #003e6b !important;
+  background: #e8f6ff !important;
+  border-color: var(--blue-400, #4db6f0);
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a:focus-visible {
+  outline: 2px solid var(--blue-700);
+  outline-offset: 2px;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a.tl-active {
+  color: #fff !important;
+  background: linear-gradient(135deg, var(--blue-700), var(--blue-400)) !important;
+  border-color: var(--blue-700);
+  box-shadow: 0 6px 16px rgba(0, 105, 180, 0.22);
+  font-weight: 700;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar .forum-register-pill__num,
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar .tl-date {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--blue-700);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a.tl-active .forum-register-pill__num,
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a.tl-active .tl-date {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(240, 199, 94, 0.95);
+  color: #fff;
+}
+
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .application-page .form-section,
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .form-section {
+  scroll-margin-top: calc(
+    var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) +
+    var(--daab-sticky-local-offset, 0px) +
+    12px
+  );
+}
+
+@media (max-width: 720px) {
+  html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a,
+  html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a:link,
+  html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a:visited {
+    min-height: 44px;
+    padding: 7px 14px 7px 8px;
+    font-size: 12.5px;
+  }
+}
+
+html[data-daab-page-id="membership-application"] .application-invitation-band {
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+html[data-daab-page-id="membership-application"] .application-invitation-band .app-terms-panel {
+  margin-bottom: 0;
+}
+
+html[data-daab-page-id="membership-application"] .application-invitation-band + .page-content-search-band {
+  margin-top: 12px;
+}
+
+@media (max-width: 1060px) {
+  html[data-daab-page-id="membership-application"] .application-invitation-band {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  html[data-daab-page-id="membership-application"] .application-invitation-band {
+    margin-top: 16px;
+  }
+}
+
+/* Forum 2026 register — organizer logos from the registration form header */
+html[data-daab-page-id="forum-2026-register"] .forum-register-sponsors{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 2.4vw, 28px);
+  align-items: start;
+  justify-items: stretch;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 4px 0 0;
+  padding: 16px 4px 2px;
+  border-top: 1px solid rgba(8, 61, 94, 0.10);
+}
+html[data-daab-page-id="forum-2026-register"] .forum-register-sponsors__item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 0;
+  min-width: 0;
+  text-align: center;
+}
+html[data-daab-page-id="forum-2026-register"] .forum-register-sponsors__logo{
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  box-sizing: border-box;
+}
+html[data-daab-page-id="forum-2026-register"] .forum-register-sponsors__logo img{
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  object-position: center;
+}
+html[data-daab-page-id="forum-2026-register"] .forum-register-sponsors__caption{
+  margin: 0;
+  padding: 0 2px;
+  max-width: 100%;
+  color: #002060;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: clamp(9px, 1.15vw, 11px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+html[data-daab-page-id="forum-2026-register"] .forum-register-sponsors__line{
+  display: block;
+}
+@media (max-width: 900px){
+  html[data-daab-page-id="forum-2026-register"] .forum-register-sponsors{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 16px;
+    padding-top: 14px;
+  }
+}
+@media (max-width: 420px){
+  html[data-daab-page-id="forum-2026-register"] .forum-register-sponsors{
+    gap: 16px 12px;
+  }
+  html[data-daab-page-id="forum-2026-register"] .forum-register-sponsors__logo{
+    height: 68px;
+  }
+  html[data-daab-page-id="forum-2026-register"] .forum-register-sponsors__logo img{
+    max-height: 68px;
+  }
 }

@@ -35,7 +35,6 @@ OPTIONAL_JS: frozenset[str] = frozenset()
 # Injected at runtime (see js/daab-perf.js / daab-analytics.js), not always a static <script src>.
 DYNAMIC_JS = frozenset(
     {
-        "daab-profile-tts.js",  # scientists/profiles.html via deferProfileTts()
         "daab-cookie-consent.js",  # injected by daab-analytics.js ensureCookieConsentScript()
     }
 )

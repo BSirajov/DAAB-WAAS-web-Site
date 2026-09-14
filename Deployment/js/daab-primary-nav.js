@@ -17,7 +17,9 @@
     "work-done-2024-2026": "activitiesWorkDone2024",
     forum2024: "forum2024",
     "forum-2024": "forum2024",
-    "forum-2026": "forum2026Year",
+    "forum-2026": "forum2026Highlights",
+    "forum-2026-register": "forum2026Register",
+    "complex-topics": "complexTopics",
     "forum-2024-presentations": "forum2024Presentations",
     "forum-official": "forumOfficial",
     "forum-rector-speeches": "forumRectorSpeeches",
@@ -475,6 +477,18 @@
         var nestedMega = buildMegaGroup(child, routes, lang, ui, activeId, true);
         panel.appendChild(nestedMega);
         if (nestedMega.classList.contains("has-active-child")) {
+          groupActive = true;
+        }
+        return;
+      }
+      if (child.type === "group") {
+        var nestedGroup = buildGroup(child, routes, lang, ui, activeId, true);
+        var yearToggle = nestedGroup.querySelector(":scope > .nav-dropdown-toggle");
+        if (yearToggle) {
+          yearToggle.classList.add("nav-dropdown-toggle--forum-year");
+        }
+        panel.appendChild(nestedGroup);
+        if (nestedGroup.classList.contains("has-active-child")) {
           groupActive = true;
         }
         return;

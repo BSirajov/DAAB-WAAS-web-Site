@@ -307,6 +307,9 @@
       forumsSubmenuAttached.add(forumsDrop);
 
       var leafLinks = panel.querySelectorAll(":scope > .nav-dropdown-link--forum-year");
+      var siblingNested = panel.querySelectorAll(
+        ":scope > .nav-dropdown--nested:not(.nav-dropdown--has-mega)"
+      );
       var closeTimer = 0;
 
       function cancelCloseTimer() {
@@ -315,9 +318,19 @@
         closeTimer = 0;
       }
 
+      function closeSiblingNestedSubmenus() {
+        siblingNested.forEach(function (nested) {
+          nested.classList.remove("is-submenu-open");
+          nested.classList.remove("open");
+          var btn = nested.querySelector(":scope > .nav-dropdown-toggle");
+          if (btn) btn.setAttribute("aria-expanded", "false");
+        });
+      }
+
       function openMegaNow() {
         if (needsTapDropdown()) return;
         cancelCloseTimer();
+        closeSiblingNestedSubmenus();
         setForumMegaOpen(megaNested, true);
       }
 
@@ -373,6 +386,12 @@
         link.addEventListener("click", function () {
           closeForumsNestedMega(null);
         });
+      });
+
+      siblingNested.forEach(function (nested) {
+        nested.addEventListener("mouseenter", closeMegaNow);
+        var btn = nested.querySelector(":scope > .nav-dropdown-toggle");
+        if (btn) btn.addEventListener("focus", closeMegaNow);
       });
     });
   }

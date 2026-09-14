@@ -47,8 +47,9 @@
     if (!target) return;
     event.preventDefault();
     activate(link);
-    if (spy) spy.scrollToId(id);
-    else target.scrollIntoView({ block: 'start', behavior: 'auto' });
+    var smooth = !!document.querySelector('.forum-register-stepbar');
+    if (spy) spy.scrollToId(id, smooth ? 'smooth' : 'auto');
+    else target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
     history.pushState(null, '', link.getAttribute('href'));
     if (mobileQuery.matches) closeEventsMenu();
   }

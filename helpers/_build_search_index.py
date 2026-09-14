@@ -43,7 +43,9 @@ PAGE_LABEL_KEYS = {
     "activities": "activitiesNews",
     "activities-news": "activitiesNews",
     "forum-2024": "forum2024",
-    "forum-2026": "forum2026Year",
+    "forum-2026": "forum2026Highlights",
+    "forum-2026-register": "forum2026Register",
+    "complex-topics": "complexTopics",
     "forum-official": "forumOfficial",
     "forum-rector-speeches": "forumRectorSpeeches",
     "forum-anas-leadership-speeches": "forumAnasLeadershipSpeeches",
@@ -222,6 +224,28 @@ def _append_nav_child(
     if child.get("type") == "section":
         for nested in child.get("children", []):
             _append_nav_child(entries, ui, lang, group_label, group_id, nested, icons)
+        return
+    if child.get("type") == "group":
+        labels = ui["nav"][lang]
+        gid = child["id"]
+        key = child.get("labelKey", PAGE_LABEL_KEYS.get(gid, gid))
+        title = labels.get(key, gid)
+        desc = labels.get(child.get("descKey", ""), group_label)
+        entries.append(
+            entry(
+                eid=f"nav-{gid}-{lang}",
+                lang=lang,
+                kind="nav",
+                page_id=gid,
+                title=title,
+                summary=desc,
+                icon=nav_icon(icons, gid, group_id),
+                extra=group_label,
+            )
+        )
+        if child.get("style") != "mega":
+            for nested in child.get("children", []):
+                _append_nav_child(entries, ui, lang, title, gid, nested, icons)
         return
     pid = child["id"]
     labels = ui["nav"][lang]

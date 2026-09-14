@@ -34,7 +34,7 @@ def inject(path, prefix: str) -> list[str]:
             changes.append("hash-boot")
 
     if CSS_MARK not in text:
-        needle = "scientists-profile-tts.css"
+        needle = "scientists-catalog-multiselect.css"
         idx = text.find(needle)
         if idx >= 0:
             line_end = text.find("\n", idx)
