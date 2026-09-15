@@ -6,7 +6,7 @@
 
   var STORAGE_KEY = "daab-lang-position";
   var FORCE_TOP_KEY = "daab-force-page-top";
-  var HASH_SYNC_PAGES = { activities: 1, charter: 1, foundation: 1 };
+  var HASH_SYNC_PAGES = { activities: 1, charter: 1, foundation: 1, "complex-topics-approach": 1 };
   var LEGAL_PAGE_IDS = {
     "legal-notice": 1,
     privacy: 1,
@@ -48,6 +48,8 @@
     eventsTimelineMenu: 1,
     charterArticlesMenu: 1,
     charterArticlesWidget: 1,
+    ctaTocWidget: 1,
+    ctaTocMenu: 1,
     primaryNavMenu: 1,
     pagination: 1,
     tableBody: 1,

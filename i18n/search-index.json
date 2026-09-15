@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated": "2026-09-14",
-  "entryCount": 580,
+  "generated": "2026-09-15",
+  "entryCount": 600,
   "entries": [
     {
       "id": "page-home-az",
@@ -168,7 +168,7 @@
       "title": "II Forum - Ümumi Mənzərə — DAAB",
       "summary": "Xaricdə yaşayan alimlərin II Forumu — dekabr 2026, Bakı.",
       "tag": "Səhifə",
-      "icon": "🎤",
+      "icon": "✨",
       "boost": 12,
       "norm": "ii forum - u mumi menzere daab xaricde yas ayan alimlerin ii forumu dekabr 2026 baki."
     },
@@ -181,7 +181,7 @@
       "title": "II Forum - Highlights — WAAS",
       "summary": "Second Forum of Azerbaijani Scientists Living Abroad — December 2026, Baku.",
       "tag": "Page",
-      "icon": "🎤",
+      "icon": "✨",
       "boost": 12,
       "norm": "ii forum - highlights waas second forum of azerbaijani scientists living abroad december 2026 baku."
     },
@@ -210,6 +210,58 @@
       "icon": "📝",
       "boost": 12,
       "norm": "waas forum 2026 participant registration register as a participant in the 2nd forum of azerbaijani scientists living abroad 9 10 december 2026 baku."
+    },
+    {
+      "id": "page-complex-topics-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "complex-topics",
+      "anchor": "",
+      "title": "DAAB — Çətin mövzu, aydın izah",
+      "summary": "Çətin mövzuları aydın və sadə izahı. İnformatika, kompüter elmləri və İKT üzrə seçilmiş mühazirələr açıq müsabiqəsi.",
+      "tag": "Səhifə",
+      "icon": "📘",
+      "boost": 12,
+      "norm": "daab c etin mo vzu aydin izah c etin mo vzulari aydin ve sade izahi. i nformatika kompu ter elmleri ve i kt u zre sec ilmis mu hazireler ac iq mu sabiqesi."
+    },
+    {
+      "id": "page-complex-topics-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "complex-topics",
+      "anchor": "",
+      "title": "WAAS — Complex Topics, Clear Explanations",
+      "summary": "Making difficult subjects understandable. Open competition for selected lectures in informatics, computer science and ICT.",
+      "tag": "Page",
+      "icon": "📘",
+      "boost": 12,
+      "norm": "waas complex topics clear explanations making difficult subjects understandable. open competition for selected lectures in informatics computer science and ict."
+    },
+    {
+      "id": "page-complex-topics-approach-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "complex-topics-approach",
+      "anchor": "",
+      "title": "DAAB — İnformatika və İKT müsabiqəsinin təşkili və iştirak qaydaları",
+      "summary": "Complex Topics, Clear Explanations müsabiqəsinin sistemləşdirilmiş konsepsiya və icra üzrə işçi sənədi. Təsdiqlənmiş Əsasnamə deyil; büdcə və maliyyə dəstəyi müəyyən edilməyib.",
+      "tag": "Səhifə",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "daab i nformatika ve i kt mu sabiqesinin tes kili ve is tirak qaydalari complex topics clear explanations mu sabiqesinin sistemles dirilmis konsepsiya ve icra u zre is c i senedi. tesdiqlenmis esasname deyil bu dce ve maliyye desteyi mu eyyen edilmeyib."
+    },
+    {
+      "id": "page-complex-topics-approach-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "complex-topics-approach",
+      "anchor": "",
+      "title": "WAAS — Organisation of the informatics and ICT competition and the rules of participation",
+      "summary": "Working document for the Complex Topics, Clear Explanations competition: structured concept and delivery. This text is not an approved regulation. The budget and sources of funding have not been decided.",
+      "tag": "Page",
+      "icon": "📄",
+      "boost": 12,
+      "norm": "waas organisation of the informatics and ict competition and the rules of participation working document for the complex topics clear explanations competition structured concept and delivery. this text is not an approved regulation. the budget and sources of funding have not been decided."
     },
     {
       "id": "page-forum-2024-presentations-az",
@@ -1221,9 +1273,22 @@
       "title": "I Forum",
       "summary": "Xaricdə yaşayan alimlərin I Forumu — sentyabr 2024",
       "tag": "Naviqasiya",
-      "icon": "📁",
+      "icon": "🗂️",
       "boost": 11,
       "norm": "i forum xaricde yas ayan alimlerin i forumu sentyabr 2024 layiheler"
+    },
+    {
+      "id": "nav-forum-2026-year-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "forum-2026-year",
+      "anchor": "",
+      "title": "II Forum",
+      "summary": "Xaricdə yaşayan alimlərin II Forumu — dekabr 2026, konsepsiya layihəsi",
+      "tag": "Naviqasiya",
+      "icon": "🗂️",
+      "boost": 11,
+      "norm": "ii forum xaricde yas ayan alimlerin ii forumu dekabr 2026 konsepsiya layihesi layiheler"
     },
     {
       "id": "nav-forum-2026-az",
@@ -1231,12 +1296,12 @@
       "type": "nav",
       "pageId": "forum-2026",
       "anchor": "",
-      "title": "II Forum",
-      "summary": "Xaricdə yaşayan alimlərin II Forumu — dekabr 2026, konsepsiya layihəsi",
+      "title": "Ümumi Mənzərə",
+      "summary": "II Forumun konsepsiyası, tarixi və məkanı — 9–10 dekabr 2026, Bakı",
       "tag": "Naviqasiya",
-      "icon": "🎤",
+      "icon": "✨",
       "boost": 11,
-      "norm": "ii forum xaricde yas ayan alimlerin ii forumu dekabr 2026 konsepsiya layihesi layiheler"
+      "norm": "u mumi menzere ii forumun konsepsiyasi tarixi ve mekani 9 10 dekabr 2026 baki ii forum"
     },
     {
       "id": "nav-forum-2026-register-az",
@@ -1249,7 +1314,46 @@
       "tag": "Naviqasiya",
       "icon": "📝",
       "boost": 11,
-      "norm": "qeydiyyat xaricde yas ayan azerbaycanli alimlerin ii forumu is tirakc i qeydiyyati 9 10 dekabr 2026 ii forum"
+      "norm": "qeydiyyat s exsi melumatlar tehsil ve karyera ixtisas sahesi ve s. ii forum"
+    },
+    {
+      "id": "nav-complex-topics-group-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "complex-topics-group",
+      "anchor": "",
+      "title": "Müsabiqə",
+      "summary": "Çətin mövzuların aydın və sadə izahı",
+      "tag": "Naviqasiya",
+      "icon": "🗂️",
+      "boost": 11,
+      "norm": "mu sabiqe c etin mo vzularin aydin ve sade izahi layiheler"
+    },
+    {
+      "id": "nav-complex-topics-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "complex-topics",
+      "anchor": "",
+      "title": "Çətin mövzu, aydın izah",
+      "summary": "Çətin mövzuların aydın və sadə izahı",
+      "tag": "Naviqasiya",
+      "icon": "📘",
+      "boost": 11,
+      "norm": "c etin mo vzu aydin izah c etin mo vzularin aydin ve sade izahi mu sabiqe"
+    },
+    {
+      "id": "nav-complex-topics-approach-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "complex-topics-approach",
+      "anchor": "",
+      "title": "İşçi sənəd",
+      "summary": "Sistemləşdirilmiş konsepsiya və icra — təsdiqlənmiş Əsasnamə deyil",
+      "tag": "Naviqasiya",
+      "icon": "📄",
+      "boost": 11,
+      "norm": "i s c i sened sistemles dirilmis konsepsiya ve icra tesdiqlenmis esasname deyil mu sabiqe"
     },
     {
       "id": "nav-foundation-az",
@@ -1315,6 +1419,58 @@
       "icon": "🏛️",
       "boost": 11,
       "norm": "hu quqi melumat mexfilik bildiris i istifade s ertleri kuki siyaseti ve hu quqi rekvizitler haqqimizda"
+    },
+    {
+      "id": "nav-privacy-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "privacy",
+      "anchor": "",
+      "title": "Məxfilik bildirişi",
+      "summary": "KVKK üzrə şəxsi məlumatların işlənməsi",
+      "tag": "Naviqasiya",
+      "icon": "🔒",
+      "boost": 11,
+      "norm": "mexfilik bildiris i kvkk u zre s exsi melumatlarin is lenmesi hu quqi melumat"
+    },
+    {
+      "id": "nav-terms-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "terms",
+      "anchor": "",
+      "title": "İstifadə şərtləri",
+      "summary": "Saytdan istifadə qaydaları",
+      "tag": "Naviqasiya",
+      "icon": "📄",
+      "boost": 11,
+      "norm": "i stifade s ertleri saytdan istifade qaydalari hu quqi melumat"
+    },
+    {
+      "id": "nav-cookies-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "cookies",
+      "anchor": "",
+      "title": "Kuki siyasəti",
+      "summary": "Kukilər və razılıq seçimləri",
+      "tag": "Naviqasiya",
+      "icon": "🍪",
+      "boost": 11,
+      "norm": "kuki siyaseti kukiler ve raziliq sec imleri hu quqi melumat"
+    },
+    {
+      "id": "nav-legal-notice-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "legal-notice",
+      "anchor": "",
+      "title": "Hüquqi rekvizitlər",
+      "summary": "Birliyin hüquqi kimliyi və əlaqə rekvizitləri",
+      "tag": "Naviqasiya",
+      "icon": "⚖️",
+      "boost": 11,
+      "norm": "hu quqi rekvizitler birliyin hu quqi kimliyi ve elaqe rekvizitleri hu quqi melumat"
     },
     {
       "id": "nav-membership-value-az",
@@ -1455,9 +1611,22 @@
       "title": "I Forum",
       "summary": "First Forum of Azerbaijani Scientists Living Abroad — September 2024",
       "tag": "Navigation",
-      "icon": "📁",
+      "icon": "🗂️",
       "boost": 11,
       "norm": "i forum first forum of azerbaijani scientists living abroad september 2024 projects"
+    },
+    {
+      "id": "nav-forum-2026-year-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "forum-2026-year",
+      "anchor": "",
+      "title": "II Forum",
+      "summary": "Second Forum of Azerbaijani Scientists Living Abroad — December 2026, draft concept",
+      "tag": "Navigation",
+      "icon": "🗂️",
+      "boost": 11,
+      "norm": "ii forum second forum of azerbaijani scientists living abroad december 2026 draft concept projects"
     },
     {
       "id": "nav-forum-2026-en",
@@ -1465,12 +1634,12 @@
       "type": "nav",
       "pageId": "forum-2026",
       "anchor": "",
-      "title": "II Forum",
-      "summary": "Second Forum of Azerbaijani Scientists Living Abroad — December 2026, draft concept",
+      "title": "Highlights",
+      "summary": "Forum concept, dates, and venue — 9–10 December 2026, Baku",
       "tag": "Navigation",
-      "icon": "🎤",
+      "icon": "✨",
       "boost": 11,
-      "norm": "ii forum second forum of azerbaijani scientists living abroad december 2026 draft concept projects"
+      "norm": "highlights forum concept dates and venue 9 10 december 2026 baku ii forum"
     },
     {
       "id": "nav-forum-2026-register-en",
@@ -1483,7 +1652,46 @@
       "tag": "Navigation",
       "icon": "📝",
       "boost": 11,
-      "norm": "register 2nd forum of azerbaijani scientists living abroad participant registration 9 10 december 2026 ii forum"
+      "norm": "register personal information education and career field of study and more ii forum"
+    },
+    {
+      "id": "nav-complex-topics-group-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "complex-topics-group",
+      "anchor": "",
+      "title": "Competition",
+      "summary": "Making difficult subjects understandable",
+      "tag": "Navigation",
+      "icon": "🗂️",
+      "boost": 11,
+      "norm": "competition making difficult subjects understandable projects"
+    },
+    {
+      "id": "nav-complex-topics-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "complex-topics",
+      "anchor": "",
+      "title": "Complex Topics, Clear Explanations",
+      "summary": "Making difficult subjects understandable",
+      "tag": "Navigation",
+      "icon": "📘",
+      "boost": 11,
+      "norm": "complex topics clear explanations making difficult subjects understandable competition"
+    },
+    {
+      "id": "nav-complex-topics-approach-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "complex-topics-approach",
+      "anchor": "",
+      "title": "Working document",
+      "summary": "Structured concept and delivery — not an approved regulation",
+      "tag": "Navigation",
+      "icon": "📄",
+      "boost": 11,
+      "norm": "working document structured concept and delivery not an approved regulation competition"
     },
     {
       "id": "nav-foundation-en",
@@ -1549,6 +1757,58 @@
       "icon": "🏛️",
       "boost": 11,
       "norm": "legal privacy notice terms of use cookie policy and legal notice imprint about us"
+    },
+    {
+      "id": "nav-privacy-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "privacy",
+      "anchor": "",
+      "title": "Privacy notice",
+      "summary": "How personal data is processed under PDPL",
+      "tag": "Navigation",
+      "icon": "🔒",
+      "boost": 11,
+      "norm": "privacy notice how personal data is processed under pdpl legal"
+    },
+    {
+      "id": "nav-terms-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "terms",
+      "anchor": "",
+      "title": "Terms of use",
+      "summary": "Rules for using this website",
+      "tag": "Navigation",
+      "icon": "📄",
+      "boost": 11,
+      "norm": "terms of use rules for using this website legal"
+    },
+    {
+      "id": "nav-cookies-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "cookies",
+      "anchor": "",
+      "title": "Cookie policy",
+      "summary": "Cookies and consent choices",
+      "tag": "Navigation",
+      "icon": "🍪",
+      "boost": 11,
+      "norm": "cookie policy cookies and consent choices legal"
+    },
+    {
+      "id": "nav-legal-notice-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "legal-notice",
+      "anchor": "",
+      "title": "Legal notice (Imprint)",
+      "summary": "Association legal identity and contact details",
+      "tag": "Navigation",
+      "icon": "⚖️",
+      "boost": 11,
+      "norm": "legal notice imprint association legal identity and contact details legal"
     },
     {
       "id": "nav-membership-value-en",

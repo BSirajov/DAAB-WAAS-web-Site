@@ -1,5 +1,5 @@
 {
-  "version": 18,
+  "version": 20,
   "defaultLang": "az",
   "languages": [
     "az",
@@ -72,8 +72,8 @@
     {
       "id": "forum-2026-register",
       "navId": "forum-2026-register",
-      "navGroup": "forum",
-      "navParent": "forum",
+      "navGroup": "forums",
+      "navParent": "forums",
       "navOrder": 2.1,
       "az": "az/forum/2026/register.html",
       "en": "en/forum/2026/register.html"
@@ -86,6 +86,15 @@
       "navOrder": 3,
       "az": "az/complex-topics.html",
       "en": "en/complex-topics.html"
+    },
+    {
+      "id": "complex-topics-approach",
+      "navId": "complex-topics-approach",
+      "navGroup": "forums",
+      "navParent": "forums",
+      "navOrder": 3.1,
+      "az": "az/complex-topics-approach.html",
+      "en": "en/complex-topics-approach.html"
     },
     {
       "id": "forum-2024-presentations",

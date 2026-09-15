@@ -19,7 +19,7 @@
     "forum-2024": "forum2024",
     "forum-2026": "forum2026Highlights",
     "forum-2026-register": "forum2026Register",
-    "complex-topics": "complexTopics",
+    "complex-topics": "complexTopicsMenu",
     "forum-2024-presentations": "forum2024Presentations",
     "forum-official": "forumOfficial",
     "forum-rector-speeches": "forumRectorSpeeches",
