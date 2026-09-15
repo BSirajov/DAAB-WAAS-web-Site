@@ -49,6 +49,7 @@
     "forum-2026": "forum2026Year",
     "forum-2026-register": "forum2026Register",
     "complex-topics": "complexTopics",
+    "complex-topics-approach": "complexTopicsApproach",
     "forum-2024-presentations": "forum2024Presentations",
     "forum-official": "forumOfficial",
     "forum-rector-speeches": "forumRectorSpeeches",
@@ -86,6 +87,7 @@
     activities: "activities",
     membership: "membership",
     sponsorship: "sponsors",
+    forums: "forums",
     forum: "forum2024",
     "legal-pages": "legalPages"
   };
@@ -94,6 +96,7 @@
   var PRIMARY_GROUP_PARENTS = {
     about: true,
     activities: true,
+    forums: true,
     membership: true,
     sponsorship: true,
     "legal-pages": true
@@ -156,6 +159,12 @@
         id: "complex-topics",
         az: "az/complex-topics.html",
         en: "en/complex-topics.html",
+        navParent: "forums"
+      },
+      {
+        id: "complex-topics-approach",
+        az: "az/complex-topics-approach.html",
+        en: "en/complex-topics-approach.html",
         navParent: "forums"
       },
       {
@@ -327,6 +336,7 @@
         forum2024Crumb: "Ümumi Mənzərə",
         forum2026Year: "II Forum",
         forum2026Register: "Qeydiyyat",
+        forums: "Layihələr",
         complexTopics: "Çətin mövzu, aydın izah"
       },
       en: {
@@ -343,6 +353,7 @@
         forum2024Crumb: "Highlights",
         forum2026Year: "II Forum",
         forum2026Register: "Register",
+        forums: "Projects",
         complexTopics: "Complex Topics, Clear Explanations"
       }
     },
@@ -358,6 +369,7 @@
         forum2024Year: "I Forum",
         forum2026Year: "II Forum",
         forum2026Register: "Qeydiyyat",
+        forums: "Layihələr",
         complexTopics: "Çətin mövzu, aydın izah",
         forumOfficial: "Rəsmi müraciətlər",
         forumRectorSpeeches: "Rektorlar",
@@ -396,6 +408,7 @@
         forum2024Year: "I Forum",
         forum2026Year: "II Forum",
         forum2026Register: "Register",
+        forums: "Projects",
         complexTopics: "Complex Topics, Clear Explanations",
         forumOfficial: "Official addresses",
         forumRectorSpeeches: "Rectors",
@@ -431,6 +444,7 @@
       about: { landingId: "mission" },
       scientists: { landingId: "scientists-list" },
       activities: { landingId: "activities-news" },
+      forums: { landingId: "forum-2024" },
       membership: { landingId: "membership-value" },
       sponsorship: { landingId: "sponsorship-partnership" }
     }
@@ -491,8 +505,15 @@
   }
 
   function sectionLanding(navDef, groupId) {
+    if (!navDef) return null;
     var sec = navDef.sections && navDef.sections[groupId];
-    return sec ? sec.landingId : null;
+    if (sec && sec.landingId) return sec.landingId;
+    var primary = navDef.primary || [];
+    for (var i = 0; i < primary.length; i++) {
+      var node = primary[i];
+      if (node && node.id === groupId && node.landingId) return node.landingId;
+    }
+    return null;
   }
 
   function isBreadcrumbNode(node) {
@@ -679,6 +700,16 @@
         crumbs.push({
           href: pageHref(I18N, forum2026, lang),
           text: pageTitle(ui, lang, "forum-2026")
+        });
+      }
+    }
+
+    if (page.id === "complex-topics-approach") {
+      var competition = pageById(routes, "complex-topics");
+      if (competition) {
+        crumbs.push({
+          href: pageHref(I18N, competition, lang),
+          text: pageTitle(ui, lang, "complex-topics")
         });
       }
     }

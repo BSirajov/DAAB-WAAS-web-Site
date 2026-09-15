@@ -46,6 +46,7 @@ PAGE_LABEL_KEYS = {
     "forum-2026": "forum2026Highlights",
     "forum-2026-register": "forum2026Register",
     "complex-topics": "complexTopics",
+    "complex-topics-approach": "complexTopicsApproach",
     "forum-official": "forumOfficial",
     "forum-rector-speeches": "forumRectorSpeeches",
     "forum-anas-leadership-speeches": "forumAnasLeadershipSpeeches",

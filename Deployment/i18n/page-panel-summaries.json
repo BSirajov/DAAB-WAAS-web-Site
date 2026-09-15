@@ -135,8 +135,12 @@
       "az": "Bu səhifədəki bank rekvizitləri, ödəniş təyinatı və nizamnamə keçidi ilə bank köçürməsi edərək ianə verin."
     },
     "complex-topics": {
-      "en": "This project presents complex scientific and cultural subjects in clear, accessible language.",
-      "az": "Bu layihə çətin elmi və mədəni mövzuları aydın və anlaşıqlı dildə təqdim edir."
+      "en": "Open competition for clear, scientifically accurate explanations of hard ICT topics — article, video, slides, cartoon, animation, comic, infographic, interactive material or teaching pack.",
+      "az": "Çətin İKT mövzularının sadə və elmi cəhətdən düzgün izahı üzrə açıq müsabiqə — məqalə, video, slayd, cizgi filmi, animasiya, komiks, infoqrafika, interaktiv material və ya tədris paketi."
+    },
+    "complex-topics-approach": {
+      "en": "This text is not an approved regulation. Dates, scoring thresholds and procedures are working proposals for WAAS to review. The budget and sources of funding have not been decided; it is not known whether financial support or material prizes will be possible.",
+      "az": "Bu mətn təsdiqlənmiş Əsasnamə deyil. Tarixlər, qiymətləndirmə hədləri və prosedurlar DAAB-ın nəzərdən keçirməsi üçün işçi təkliflərdir. Büdcə və maliyyə mənbələri müəyyən edilməyib; maliyyə dəstəyinin və maddi mükafatların mümkünlüyü məlum deyil."
     }
   }
 }

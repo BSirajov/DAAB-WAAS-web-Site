@@ -559,7 +559,7 @@
       if (!card || !card.classList.contains("card")) return false;
 
       clearFilterInputs(searchInput, filterCountry, filterIxtilas, filterDegree);
-      showAllCards(cards, resultCount, noResults);
+      showAllCards(cards, resultCount, noResults, countLabels);
 
       window.requestAnimationFrame(function () {
         window.requestAnimationFrame(function () {

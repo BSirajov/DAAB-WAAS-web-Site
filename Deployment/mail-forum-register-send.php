@@ -42,6 +42,93 @@ function daab_forum_mail_line(string $label, string $value): string
     return $label . ': ' . $value . "\n";
 }
 
+function daab_forum_mail_fail(string $code, int $status = 400): void
+{
+    http_response_code($status);
+    echo $code;
+    exit;
+}
+
+function daab_forum_safe_filename(string $name): string
+{
+    $name = str_replace(["\0", "\r", "\n"], '', $name);
+    $name = basename($name);
+    $name = preg_replace('/[^\w.\- ()\[\]]+/u', '_', $name) ?: 'attachment';
+    if (strlen($name) > 140) {
+        $ext = pathinfo($name, PATHINFO_EXTENSION);
+        $base = substr((string) pathinfo($name, PATHINFO_FILENAME), 0, 110);
+        $name = $ext !== '' ? $base . '.' . $ext : $base;
+    }
+    return $name;
+}
+
+function daab_forum_read_upload(string $key, string $kind, array $extensions, array $mimes, int $maxBytes): array
+{
+    if (!isset($_FILES[$key]) || !is_array($_FILES[$key])) {
+        daab_forum_mail_fail('error:' . $kind . '_missing');
+    }
+    $file = $_FILES[$key];
+    $error = (int) ($file['error'] ?? UPLOAD_ERR_NO_FILE);
+    $tmp = (string) ($file['tmp_name'] ?? '');
+    if ($error === UPLOAD_ERR_NO_FILE || $tmp === '') {
+        daab_forum_mail_fail('error:' . $kind . '_missing');
+    }
+    if ($error === UPLOAD_ERR_INI_SIZE || $error === UPLOAD_ERR_FORM_SIZE) {
+        daab_forum_mail_fail('error:' . $kind . '_size');
+    }
+    if ($error !== UPLOAD_ERR_OK || !is_uploaded_file($tmp)) {
+        daab_forum_mail_fail('error:' . $kind . '_invalid');
+    }
+    $size = (int) ($file['size'] ?? 0);
+    if ($size <= 0 || $size > $maxBytes) {
+        daab_forum_mail_fail('error:' . $kind . '_size');
+    }
+    $name = daab_forum_safe_filename((string) ($file['name'] ?? 'attachment'));
+    $ext = strtolower((string) pathinfo($name, PATHINFO_EXTENSION));
+    if (!in_array($ext, $extensions, true)) {
+        daab_forum_mail_fail('error:' . $kind . '_type');
+    }
+    $detected = '';
+    if (class_exists('finfo')) {
+        $finfo = new finfo(FILEINFO_MIME_TYPE);
+        $detected = (string) $finfo->file($tmp);
+    }
+    $docxZip = $kind === 'cv' && $ext === 'docx' && in_array($detected, ['application/zip', 'application/x-zip-compressed'], true);
+    if (
+        $detected !== ''
+        && $detected !== 'application/octet-stream'
+        && !in_array($detected, $mimes, true)
+        && !$docxZip
+    ) {
+        daab_forum_mail_fail('error:' . $kind . '_type');
+    }
+    if ($kind === 'photo') {
+        $info = @getimagesize($tmp);
+        if ($info === false) {
+            daab_forum_mail_fail('error:' . $kind . '_type');
+        }
+    }
+    $data = file_get_contents($tmp);
+    if ($data === false || $data === '') {
+        daab_forum_mail_fail('error:' . $kind . '_invalid');
+    }
+    $mime = in_array($detected, $mimes, true) ? $detected : $mimes[0];
+    return [
+        'name' => $name,
+        'type' => $mime,
+        'data' => $data,
+    ];
+}
+
+function daab_forum_attachment_headers(array $attachment): string
+{
+    $ascii = preg_replace('/[^\x20-\x7E]/', '_', $attachment['name']) ?: 'attachment';
+    $encoded = rawurlencode($attachment['name']);
+    return 'Content-Type: ' . $attachment['type'] . '; name="' . $ascii . "\"\r\n"
+        . "Content-Transfer-Encoding: base64\r\n"
+        . 'Content-Disposition: attachment; filename="' . $ascii . '"; filename*=UTF-8\'\'' . $encoded . "\r\n\r\n";
+}
+
 $honeypot = daab_forum_mail_field('website');
 if ($honeypot !== '') {
     http_response_code(200);
@@ -113,6 +200,21 @@ if ($cvConfirm === 'on') {
     $cvConfirm = 'yes';
 }
 
+$cvAttachment = daab_forum_read_upload(
+    'cv_file',
+    'cv',
+    ['pdf', 'docx'],
+    ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
+    8 * 1024 * 1024
+);
+$photoAttachment = daab_forum_read_upload(
+    'photo_file',
+    'photo',
+    ['jpg', 'jpeg', 'png'],
+    ['image/jpeg', 'image/png'],
+    5 * 1024 * 1024
+);
+
 $subjectPrefix = $isAz ? 'Forum 2026 iştirakçı qeydiyyatı' : 'Forum 2026 participant registration';
 $subject = $subjectPrefix . ($fullName !== '' ? ' — ' . $fullName : '');
 
@@ -139,6 +241,8 @@ $labels = $isAz
         'sci_fields' => 'Elmi sahələr',
         'additional_info' => 'Əlavə məlumat',
         'cv_confirm' => 'CV təsdiqi',
+        'cv_file' => 'CV faylı',
+        'photo_file' => 'Foto faylı',
         'privacy_confirm' => 'Məxfilik bildirişi təsdiqi',
         'submitted_at' => 'Göndərilmə vaxtı',
         'page_url' => 'Səhifə',
@@ -166,6 +270,8 @@ $labels = $isAz
         'sci_fields' => 'Scientific fields',
         'additional_info' => 'Additional information',
         'cv_confirm' => 'CV confirmation',
+        'cv_file' => 'CV file',
+        'photo_file' => 'Photo file',
         'privacy_confirm' => 'Privacy notice acknowledgment',
         'submitted_at' => 'Submitted at',
         'page_url' => 'Page URL',
@@ -194,6 +300,8 @@ $fields = [
     'sci_fields' => $sciFields,
     'additional_info' => $additionalInfo,
     'cv_confirm' => $cvConfirm,
+    'cv_file' => $cvAttachment['name'],
+    'photo_file' => $photoAttachment['name'],
     'privacy_confirm' => $privacyConfirm,
     'submitted_at' => daab_forum_mail_field('submitted_at'),
     'page_url' => daab_forum_mail_field('page_url'),
@@ -213,13 +321,25 @@ foreach ($labels as $key => $label) {
 $to = 'info@daab-waas.com';
 $fromAddress = 'noreply@daab-waas.com';
 $fromName = $isAz ? 'DAAB veb saytı' : 'WAAS website';
+$boundary = '==DAAB_FORUM_' . bin2hex(random_bytes(12));
 $headers = 'From: ' . $fromName . ' <' . $fromAddress . ">\r\n";
 $headers .= 'Reply-To: ' . $fullName . ' <' . $email . ">\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= 'Content-Type: multipart/mixed; boundary="' . $boundary . "\"\r\n";
 
-if (@mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, $headers)) {
+$message = '--' . $boundary . "\r\n";
+$message .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$message .= "Content-Transfer-Encoding: 8bit\r\n\r\n";
+$message .= $body . "\r\n";
+foreach ([$cvAttachment, $photoAttachment] as $attachment) {
+    $message .= '--' . $boundary . "\r\n";
+    $message .= daab_forum_attachment_headers($attachment);
+    $message .= chunk_split(base64_encode($attachment['data']));
+}
+$message .= '--' . $boundary . "--\r\n";
+
+if (@mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $message, $headers)) {
     echo 'success';
 } else {
-    http_response_code(500);
-    echo 'error';
+    daab_forum_mail_fail('error:attach', 500);
 }

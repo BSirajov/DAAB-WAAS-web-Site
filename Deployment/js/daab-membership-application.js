@@ -12,8 +12,26 @@
   }
   var currentSection = 1;
   var cityCache = Object.create(null);
+  // Capitals and local-name aliases the remote city API sometimes omits or buries.
+  var CITY_GUARANTEES = {
+    AT: [
+      { name: "Vienna", aliases: ["Wien", "Wien Stadt", "Vienna", "Vyana", "Viyana", "Vena"] },
+      { name: "Wien", aliases: ["Vienna", "Wien Stadt"] },
+    ],
+  };
   // Codes come from the shared js/daab-country-codes.js module.
   var COUNTRY_CODES = window.DAAB_COUNTRY_CODES || [];
+
+  function closeOpenPickersExcept(keepPicker) {
+    document.querySelectorAll(".phone-code-picker.is-open").forEach(function (p) {
+      if (keepPicker && p === keepPicker) return;
+      p.classList.remove("is-open");
+      var pnl = p.querySelector(".phone-code-picker-panel");
+      var b = p.querySelector(".phone-code-picker-btn");
+      if (pnl) pnl.hidden = true;
+      if (b) b.setAttribute("aria-expanded", "false");
+    });
+  }
 
   function byId(id) {
     return document.getElementById(id);
@@ -84,11 +102,11 @@
   function applyForumIdentityValidity() {
     var requiredText = [
       ["fathername", "fatherNameRequired"],
-      ["dob", "dobRequired"],
       ["birthcountry", "birthCountryRequired"],
       ["citizenship", "citizenshipRequired"],
       ["country", "residenceCountryRequired"],
     ];
+    applyDobValidity();
     requiredText.forEach(function (pair) {
       var el = byId(pair[0]);
       if (!el) return;
@@ -100,7 +118,159 @@
     }
   }
 
+  function pad2(n) {
+    return String(n).padStart(2, "0");
+  }
+
+  function parseDobDisplay(value) {
+    var raw = String(value || "").trim();
+    var m = raw.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+    if (!m) return null;
+    var day = parseInt(m[1], 10);
+    var month = parseInt(m[2], 10);
+    var year = parseInt(m[3], 10);
+    if (year < 1900) return null;
+    var dt = new Date(year, month - 1, day);
+    if (dt.getFullYear() !== year || dt.getMonth() !== month - 1 || dt.getDate() !== day) return null;
+    var today = new Date();
+    today.setHours(23, 59, 59, 999);
+    if (dt > today) return null;
+    return {
+      day: day,
+      month: month,
+      year: year,
+      iso: year + "-" + pad2(month) + "-" + pad2(day),
+      display: pad2(day) + "/" + pad2(month) + "/" + year,
+    };
+  }
+
+  function normalizeDobTypedValue(raw) {
+    var text = String(raw || "").trim();
+    var iso = text.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (iso) {
+      var parsedIso = parseDobDisplay(iso[3] + "/" + iso[2] + "/" + iso[1]);
+      return parsedIso ? parsedIso.display : formatDobDigits(iso[3] + iso[2] + iso[1]);
+    }
+    var loose = text.match(/^(\d{1,2})[./-](\d{1,2})[./-](\d{4})$/);
+    if (loose) {
+      var parsedLoose = parseDobDisplay(pad2(loose[1]) + "/" + pad2(loose[2]) + "/" + loose[3]);
+      return parsedLoose ? parsedLoose.display : formatDobDigits(loose[1] + loose[2] + loose[3]);
+    }
+    return formatDobDigits(text);
+  }
+
+  function formatDobDigits(raw) {
+    var digits = String(raw || "").replace(/\D/g, "").slice(0, 8);
+    if (digits.length <= 2) return digits;
+    if (digits.length <= 4) return digits.slice(0, 2) + "/" + digits.slice(2);
+    return digits.slice(0, 2) + "/" + digits.slice(2, 4) + "/" + digits.slice(4);
+  }
+
+  function applyDobValidity() {
+    var dob = byId("dob");
+    if (!dob) return;
+    var value = String(dob.value || "").trim();
+    if (!value) {
+      dob.setCustomValidity(uiText("dobRequired"));
+      return;
+    }
+    dob.setCustomValidity(parseDobDisplay(value) ? "" : uiText("dobInvalid"));
+  }
+
+  function initDobField() {
+    var dob = byId("dob");
+    var picker = byId("dob_picker");
+    var calendarBtn = byId("dob_calendar_btn");
+    if (!dob) return;
+
+    var today = new Date();
+    if (picker) {
+      picker.setAttribute("max", today.getFullYear() + "-" + pad2(today.getMonth() + 1) + "-" + pad2(today.getDate()));
+      picker.setAttribute("min", "1900-01-01");
+    }
+    if (calendarBtn) {
+      calendarBtn.setAttribute("aria-label", uiText("dobCalendar"));
+    }
+
+    function syncPickerFromText() {
+      if (!picker) return;
+      var parsed = parseDobDisplay(dob.value);
+      picker.value = parsed ? parsed.iso : "";
+    }
+
+    function openDobPicker() {
+      if (!picker) return;
+      syncPickerFromText();
+      if (typeof picker.showPicker === "function") {
+        try {
+          picker.showPicker();
+          return;
+        } catch (err) {}
+      }
+      try {
+        picker.focus();
+        picker.click();
+      } catch (err2) {}
+    }
+
+    dob.addEventListener("input", function () {
+      var start = dob.selectionStart;
+      var before = dob.value;
+      var next = formatDobDigits(dob.value);
+      if (next !== before) {
+        dob.value = next;
+        if (typeof start === "number") {
+          var added = next.length - before.length;
+          var pos = Math.max(0, start + added);
+          try {
+            dob.setSelectionRange(pos, pos);
+          } catch (err) {}
+        }
+      }
+      syncPickerFromText();
+      applyDobValidity();
+    });
+
+    dob.addEventListener("blur", function () {
+      var normalized = normalizeDobTypedValue(dob.value);
+      if (normalized) dob.value = normalized;
+      syncPickerFromText();
+      applyDobValidity();
+    });
+
+    dob.addEventListener("paste", function (e) {
+      var pasted = "";
+      if (e.clipboardData) pasted = e.clipboardData.getData("text");
+      if (!pasted) return;
+      e.preventDefault();
+      dob.value = normalizeDobTypedValue(pasted);
+      syncPickerFromText();
+      applyDobValidity();
+    });
+
+    if (calendarBtn) {
+      calendarBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        openDobPicker();
+      });
+    }
+
+    if (picker) {
+      picker.addEventListener("change", function () {
+        var iso = String(picker.value || "").trim();
+        var parts = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (!parts) return;
+        dob.value = parts[3] + "/" + parts[2] + "/" + parts[1];
+        applyDobValidity();
+        dob.dispatchEvent(new Event("change", { bubbles: true }));
+      });
+    }
+
+    applyDobValidity();
+  }
+
   function initForumIdentityValidation() {
+    initDobField();
     ["fathername", "dob", "birthcountry", "citizenship", "country"].forEach(function (id) {
       var el = byId(id);
       if (!el) return;
@@ -174,6 +344,12 @@
     return /\.php(\?|#|$)/i.test(String(endpoint || ""));
   }
 
+  function isPhpHandlerUnavailable(statusCode, statusText, body) {
+    if (statusCode === 404 || statusCode === 405 || statusCode === 501) return true;
+    var text = String(statusText || "") + " " + String(body || "");
+    return /not implemented|unsupported method|php mail handler required/i.test(text);
+  }
+
   function buildFormDataForPhp(payload) {
     var fd = new FormData();
     Object.keys(payload).forEach(function (key) {
@@ -182,6 +358,12 @@
       if (val == null || val === "") return;
       fd.append(key, String(val));
     });
+    if (isForumRegister()) {
+      var cv = getSelectedUploadFile("cv");
+      var photo = getSelectedUploadFile("photo");
+      if (cv) fd.append("cv_file", cv, cv.name);
+      if (photo) fd.append("photo_file", photo, photo.name);
+    }
     return fd;
   }
 
@@ -192,15 +374,27 @@
         submitting: "Göndərilir…",
         submit: "✓ Göndər",
         sciRequired: "Ən azı bir elmi sahə seçin.",
+        sciLimitExceeded: "Siz ən çox iki elm sahəsi seçə bilərsiniz. Başqa birini seçməzdən əvvəl mövcud seçimlərdən birini ləğv edin.",
         degreeRequired: "Akademik dərəcənizi seçin.",
         titleRequired: "Akademik titulunuzu seçin.",
         genderRequired: "Cinsinizi seçin.",
         fatherNameRequired: "Atanızın adını daxil edin.",
         dobRequired: "Doğum tarixinizi daxil edin.",
+        dobInvalid: "Tarixi dd/mm/yyyy formatında daxil edin.",
+        dobCalendar: "Təqvimi aç",
         birthCountryRequired: "Doğulduğunuz ölkəni seçin.",
         citizenshipRequired: "Vətəndaşlığınızı seçin.",
         residenceCountryRequired: "Yaşadığınız ölkəni seçin.",
         privacyRequired: "Davam etmək üçün məxfilik bildirişi ilə razılaşmalısınız.",
+        fileCvRequired: "CV faylını seçin.",
+        filePhotoRequired: "Fotoşəkil seçin.",
+        fileCvType: "CV PDF və ya DOCX formatında olmalıdır.",
+        filePhotoType: "Foto JPG və ya PNG formatında olmalıdır.",
+        fileCvSize: "CV faylı çox böyükdür (ən çox 8 MB).",
+        filePhotoSize: "Fotoşəkil çox böyükdür (ən çox 5 MB).",
+        fileCvInvalid: "CV faylı oxuna bilmədi. Başqa fayl seçin.",
+        filePhotoInvalid: "Fotoşəkil oxuna bilmədi. Başqa fayl seçin.",
+        fileAttachFailed: "Fayllar e-məktuba əlavə edilə bilmədi. Yenidən cəhd edin və ya info@daab-waas.com ünvanına yazın.",
         noEndpoint: isForumRegister()
           ? "Qeydiyyat serveri hələ konfiqurasiya edilməyib. Zəhmət olmasa birbaşa info@daab-waas.com ünvanına yazın."
           : "Müraciət serveri hələ konfiqurasiya edilməyib. Zəhmət olmasa birbaşa info@daab-waas.com ünvanına yazın.",
@@ -211,22 +405,34 @@
         expandSection: "Bölməni aç",
         collapseSection: "Bölməni yığ",
         phpUnavailable: isForumRegister()
-          ? "Qeydiyyat forması bu serverdə işləmir (PHP dəstəyi lazımdır). Zəhmət olmasa məlumatlarınızı info@daab-waas.com ünvanına e-məktubla göndərin."
-          : "Müraciət forması bu serverdə işləmir (PHP dəstəyi lazımdır). Zəhmət olmasa məlumatlarınızı info@daab-waas.com ünvanına e-məktubla göndərin.",
+          ? "Bu server qeydiyyatı göndərə bilmir (PHP mail işləyicisi lazımdır). Canlı saytda göndərin, və ya məlumatlarınızı info@daab-waas.com ünvanına yazın."
+          : "Bu server müraciəti göndərə bilmir (PHP mail işləyicisi lazımdır). Canlı saytda göndərin, və ya məlumatlarınızı info@daab-waas.com ünvanına yazın.",
       },
       en: {
         submitting: "Submitting…",
         submit: "✓ Submit Application",
         sciRequired: "Select at least one scientific field.",
+        sciLimitExceeded: "You can select up to two scientific fields. Deselect one of your current choices before selecting another.",
         degreeRequired: "Please select your academic degree.",
         titleRequired: "Please select your academic title.",
         genderRequired: "Please select your gender.",
         fatherNameRequired: "Please enter your father’s name.",
         dobRequired: "Please enter your date of birth.",
+        dobInvalid: "Enter the date as dd/mm/yyyy.",
+        dobCalendar: "Open calendar",
         birthCountryRequired: "Please select your country of birth.",
         citizenshipRequired: "Please select your citizenship.",
         residenceCountryRequired: "Please select your country of residence.",
         privacyRequired: "Please accept the privacy notice to continue.",
+        fileCvRequired: "Please select a CV file.",
+        filePhotoRequired: "Please select a photo.",
+        fileCvType: "The CV must be a PDF or DOCX file.",
+        filePhotoType: "The photo must be a JPG or PNG image.",
+        fileCvSize: "The CV is too large (maximum 8 MB).",
+        filePhotoSize: "The photo is too large (maximum 5 MB).",
+        fileCvInvalid: "The CV file could not be read. Please choose another file.",
+        filePhotoInvalid: "The photo could not be read. Please choose another file.",
+        fileAttachFailed: "The files could not be attached to the registration email. Please try again or write to info@daab-waas.com.",
         noEndpoint: isForumRegister()
           ? "The registration backend is not configured yet. Please email info@daab-waas.com directly."
           : "The application backend is not configured yet. Please email info@daab-waas.com directly.",
@@ -237,8 +443,8 @@
         expandSection: "Expand section",
         collapseSection: "Collapse section",
         phpUnavailable: isForumRegister()
-          ? "This server cannot process registrations (PHP mail handler required). Please email your details to info@daab-waas.com."
-          : "This server cannot process applications (PHP mail handler required). Please email your details to info@daab-waas.com.",
+          ? "This server cannot send registrations (a PHP mail handler is required). Submit on the live website, or email your details to info@daab-waas.com."
+          : "This server cannot send applications (a PHP mail handler is required). Submit on the live website, or email your details to info@daab-waas.com.",
       },
     };
     return (strings[lang] || strings.en)[key] || key;
@@ -308,6 +514,179 @@
     return String(field.value || "").trim();
   }
 
+  var FORUM_CV_MAX_BYTES = 8 * 1024 * 1024;
+  var FORUM_PHOTO_MAX_BYTES = 5 * 1024 * 1024;
+  var photoPreviewUrl = "";
+
+  function fileExtension(name) {
+    var value = String(name || "");
+    var dot = value.lastIndexOf(".");
+    return dot >= 0 ? value.slice(dot + 1).toLowerCase() : "";
+  }
+
+  function uploadInputId(kind) {
+    return kind === "photo" ? "photofile" : "cvfile";
+  }
+
+  function getSelectedUploadFile(kind) {
+    var input = byId(uploadInputId(kind));
+    return input && input.files && input.files[0] ? input.files[0] : null;
+  }
+
+  function setFileCardError(kind, message) {
+    var box = byId(uploadInputId(kind) + "-error");
+    if (!box) return;
+    if (!message) {
+      box.hidden = true;
+      box.textContent = "";
+      return;
+    }
+    box.hidden = false;
+    box.textContent = message;
+  }
+
+  function revokePhotoPreview() {
+    var thumb = byId("photofile-thumb");
+    if (photoPreviewUrl) {
+      URL.revokeObjectURL(photoPreviewUrl);
+      photoPreviewUrl = "";
+    }
+    if (thumb) {
+      thumb.hidden = true;
+      thumb.removeAttribute("src");
+      thumb.alt = "";
+    }
+  }
+
+  function showPhotoPreview(file) {
+    var thumb = byId("photofile-thumb");
+    if (!thumb || !file) return;
+    revokePhotoPreview();
+    photoPreviewUrl = URL.createObjectURL(file);
+    thumb.src = photoPreviewUrl;
+    thumb.alt = file.name || uiText("filePhotoRequired");
+    thumb.hidden = false;
+  }
+
+  function setFileCardSelected(kind, file) {
+    var card = document.querySelector('.app-file-card[data-file-kind="' + kind + '"]');
+    var status = byId(uploadInputId(kind) + "-status");
+    var nameEl = status ? status.querySelector(".app-file-name") : null;
+    if (card) card.classList.toggle("is-selected", !!file);
+    if (!status) return;
+    if (!file) {
+      status.hidden = true;
+      if (nameEl) nameEl.textContent = "";
+      if (kind === "photo") revokePhotoPreview();
+      return;
+    }
+    if (nameEl) nameEl.textContent = file.name;
+    status.hidden = false;
+    if (kind === "photo") showPhotoPreview(file);
+  }
+
+  function validateSelectedFile(kind, file) {
+    if (!file) return uiText(kind === "photo" ? "filePhotoRequired" : "fileCvRequired");
+    var ext = fileExtension(file.name);
+    if (kind === "photo") {
+      if (ext !== "jpg" && ext !== "jpeg" && ext !== "png") return uiText("filePhotoType");
+      if (file.size > FORUM_PHOTO_MAX_BYTES) return uiText("filePhotoSize");
+    } else {
+      if (ext !== "pdf" && ext !== "docx") return uiText("fileCvType");
+      if (file.size > FORUM_CV_MAX_BYTES) return uiText("fileCvSize");
+    }
+    if (!file.size) return uiText(kind === "photo" ? "filePhotoInvalid" : "fileCvInvalid");
+    return "";
+  }
+
+  function applyUploadSelection(kind) {
+    var file = getSelectedUploadFile(kind);
+    if (!file) {
+      setFileCardSelected(kind, null);
+      setFileCardError(kind, "");
+      return false;
+    }
+    var error = validateSelectedFile(kind, file);
+    if (error) {
+      var input = byId(uploadInputId(kind));
+      if (input) input.value = "";
+      setFileCardSelected(kind, null);
+      setFileCardError(kind, error);
+      return false;
+    }
+    setFileCardError(kind, "");
+    setFileCardSelected(kind, file);
+    return true;
+  }
+
+  function clearUploadSelection(kind) {
+    var input = byId(uploadInputId(kind));
+    if (input) input.value = "";
+    setFileCardSelected(kind, null);
+    setFileCardError(kind, "");
+  }
+
+  function openUploadPicker(inputId) {
+    var input = byId(inputId);
+    if (input) input.click();
+  }
+
+  function initFileUploads() {
+    if (!isForumRegister()) return;
+    var root = byId("app-file-uploads");
+    if (!root) return;
+    root.addEventListener("click", function (e) {
+      var choose = e.target.closest(".app-file-choose, .app-file-replace");
+      if (choose) {
+        openUploadPicker(choose.getAttribute("data-file-target"));
+        return;
+      }
+      var remove = e.target.closest(".app-file-remove");
+      if (remove) clearUploadSelection(remove.getAttribute("data-file-kind"));
+    });
+    ["cv", "photo"].forEach(function (kind) {
+      var input = byId(uploadInputId(kind));
+      if (!input) return;
+      input.addEventListener("change", function () {
+        applyUploadSelection(kind);
+      });
+    });
+  }
+
+  function validateFileUploads() {
+    if (!isForumRegister() || !byId("app-file-uploads")) return true;
+    var firstError = "";
+    var firstKind = "";
+    ["cv", "photo"].forEach(function (kind) {
+      var error = validateSelectedFile(kind, getSelectedUploadFile(kind));
+      setFileCardError(kind, error);
+      if (error && !firstError) {
+        firstError = error;
+        firstKind = kind;
+      }
+    });
+    if (!firstError) return true;
+    showSubmitError(firstError, { alert: true });
+    var card = document.querySelector('.app-file-card[data-file-kind="' + firstKind + '"]');
+    if (card) card.scrollIntoView({ behavior: "smooth", block: "center" });
+    return false;
+  }
+
+  function uploadErrorFromStatus(status) {
+    var map = {
+      "error:cv_missing": "fileCvRequired",
+      "error:cv_type": "fileCvType",
+      "error:cv_size": "fileCvSize",
+      "error:cv_invalid": "fileCvInvalid",
+      "error:photo_missing": "filePhotoRequired",
+      "error:photo_type": "filePhotoType",
+      "error:photo_size": "filePhotoSize",
+      "error:photo_invalid": "filePhotoInvalid",
+      "error:attach": "fileAttachFailed",
+    };
+    return map[status] ? uiText(map[status]) : "";
+  }
+
   function validatePrivacyConfirm() {
     var field = byId("privacyconfirm");
     if (!field) return true;
@@ -325,6 +704,43 @@
     field.scrollIntoView({ behavior: "smooth", block: "center" });
     field.reportValidity();
     return false;
+  }
+
+  var SCI_FIELD_LIMIT = 2;
+
+  function showSciLimitMessage() {
+    var box = byId("sci-fields-limit");
+    if (!box) return;
+    box.hidden = false;
+    box.textContent = uiText("sciLimitExceeded");
+  }
+
+  function hideSciLimitMessage() {
+    var box = byId("sci-fields-limit");
+    if (!box) return;
+    box.hidden = true;
+    box.textContent = "";
+  }
+
+  function initSciFieldLimit() {
+    if (!isForumRegister()) return;
+    var fieldset = byId("sci-fields");
+    if (!fieldset) return;
+    fieldset.addEventListener("change", function (e) {
+      var target = e.target;
+      if (!target || target.name !== "sci" || target.type !== "checkbox") return;
+      if (!target.checked) {
+        hideSciLimitMessage();
+        return;
+      }
+      var selected = fieldset.querySelectorAll('input[name="sci"]:checked');
+      if (selected.length > SCI_FIELD_LIMIT) {
+        target.checked = false;
+        showSciLimitMessage();
+        return;
+      }
+      hideSciLimitMessage();
+    });
   }
 
   function validateSciSelection() {
@@ -456,10 +872,13 @@
         return response.text().then(function (text) {
           var status = String(text || "").trim().toLowerCase();
           if (!response.ok || status !== "success") {
-            if (response.status === 405) {
+            if (isPhpHandlerUnavailable(response.status, status, text)) {
               throw new Error(uiText("phpUnavailable"));
             }
-            throw new Error(status === "error" ? uiText("submitFailed") : text || response.statusText);
+            throw new Error(
+              uploadErrorFromStatus(status) ||
+                (status === "error" ? uiText("submitFailed") : uiText("submitFailed"))
+            );
           }
           return { ok: true };
         });
@@ -510,6 +929,7 @@
     if (byId("sci-fields")) {
       if (!validateSciSelection()) return;
     }
+    if (!validateFileUploads()) return;
     if (!validatePrivacyConfirm()) return;
 
     setSubmitting(true);
@@ -521,15 +941,15 @@
       })
       .catch(function (err) {
         var msg = uiText("submitFailed");
-        if (err && err.message) {
-          if (err.message.indexOf("Failed to fetch") >= 0) {
-            msg = uiText("networkError");
-          } else if (
-            err.message === uiText("phpUnavailable") ||
-            err.message.indexOf("405") >= 0
-          ) {
-            msg = uiText("phpUnavailable");
-          }
+        var detail = err && err.message ? String(err.message) : "";
+        if (
+          detail === uiText("phpUnavailable") ||
+          /405|501|404/.test(detail) ||
+          /failed to fetch|networkerror|load failed/i.test(detail)
+        ) {
+          msg = isPhpMailEndpoint(getFormEndpoint())
+            ? uiText("phpUnavailable")
+            : uiText("networkError");
         }
         showSubmitError(msg);
       })
@@ -750,13 +1170,7 @@
     }
 
     function closeOtherCountryPickers() {
-      document.querySelectorAll(".country-picker .country-picker-panel").forEach(function (other) {
-        if (other !== panel) {
-          other.hidden = true;
-          var otherBtn = other.parentNode && other.parentNode.querySelector(".phone-code-picker-btn");
-          if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
-        }
-      });
+      closeOpenPickersExcept(picker);
     }
 
     function visibleOptions() {
@@ -786,6 +1200,7 @@
 
     function closePanel() {
       panel.hidden = true;
+      picker.classList.remove("is-open");
       btn.setAttribute("aria-expanded", "false");
       search.value = "";
       applyFilter();
@@ -797,6 +1212,7 @@
       search.value = "";
       applyFilter();
       panel.hidden = false;
+      picker.classList.add("is-open");
       btn.setAttribute("aria-expanded", "true");
       var selected = list.querySelector(".country-picker-option.is-selected");
       optionNodes().forEach(function (li) {
@@ -918,6 +1334,8 @@
         cityPlaceholder: "Select city",
         cityLoadingPlaceholder: "Loading cities...",
         cityUnavailablePlaceholder: "No cities available — type your city below",
+        citySearchPlaceholder: "Search city",
+        cityNoResults: "No cities found",
       },
       az: {
         countryPlaceholder: "Ölkə seçin",
@@ -929,6 +1347,8 @@
         cityPlaceholder: "Şəhər seçin",
         cityLoadingPlaceholder: "Şəhərlər yüklənir...",
         cityUnavailablePlaceholder: "Şəhərlər tapılmadı — aşağıda şəhəri yazın",
+        citySearchPlaceholder: "Şəhər axtarın",
+        cityNoResults: "Şəhər tapılmadı",
       },
     };
     var t = texts[lang] || texts.en;
@@ -997,6 +1417,57 @@
       citySelect.appendChild(option);
     }
 
+    function selectedCountryCode() {
+      var selected = countrySelect.options[countrySelect.selectedIndex];
+      return selected ? selected.getAttribute("data-code") || "" : "";
+    }
+
+    function aliasesForCity(countryCode, cityName) {
+      var extras = CITY_GUARANTEES[countryCode] || [];
+      var key = String(cityName || "").toLocaleLowerCase(lang);
+      var i;
+      for (i = 0; i < extras.length; i++) {
+        if (String(extras[i].name).toLocaleLowerCase(lang) === key) {
+          return (extras[i].aliases || []).join(" ");
+        }
+      }
+      return "";
+    }
+
+    function pinGuaranteedCities(countryCode, cityList) {
+      var extras = CITY_GUARANTEES[countryCode] || [];
+      if (!extras.length) return cityList;
+      var pinOrder = extras.map(function (entry) {
+        return String(entry.name).toLocaleLowerCase(lang);
+      });
+      var pinSet = Object.create(null);
+      pinOrder.forEach(function (key) {
+        pinSet[key] = true;
+      });
+      var pinned = [];
+      var rest = [];
+      cityList.forEach(function (name) {
+        if (pinSet[String(name).toLocaleLowerCase(lang)]) pinned.push(name);
+        else rest.push(name);
+      });
+      pinned.sort(function (a, b) {
+        return (
+          pinOrder.indexOf(String(a).toLocaleLowerCase(lang)) -
+          pinOrder.indexOf(String(b).toLocaleLowerCase(lang))
+        );
+      });
+      return pinned.concat(rest);
+    }
+
+    function mergeGuaranteedCities(countryCode, rawList) {
+      var extras = CITY_GUARANTEES[countryCode] || [];
+      var merged = Array.isArray(rawList) ? rawList.slice() : [];
+      extras.forEach(function (entry) {
+        if (entry && entry.name) merged.push(entry.name);
+      });
+      return pinGuaranteedCities(countryCode, normalizeCityList(merged));
+    }
+
     function populateCitySelect(cityList) {
       citySelect.innerHTML = "";
 
@@ -1007,6 +1478,7 @@
         citySelect.appendChild(unavailable);
         citySelect.disabled = true;
         showCityManual();
+        if (citySelect._daabRebuildCityPicker) citySelect._daabRebuildCityPicker();
         return;
       }
 
@@ -1018,12 +1490,16 @@
       placeholder.textContent = t.cityPlaceholder;
       citySelect.appendChild(placeholder);
 
+      var countryCode = selectedCountryCode();
       cityList.forEach(function (cityName) {
         var option = document.createElement("option");
         option.value = cityName;
         option.textContent = cityName;
+        var aliases = aliasesForCity(countryCode, cityName);
+        if (aliases) option.setAttribute("data-aliases", aliases);
         citySelect.appendChild(option);
       });
+      if (citySelect._daabRebuildCityPicker) citySelect._daabRebuildCityPicker();
     }
 
     function normalizeCityList(rawList) {
@@ -1045,7 +1521,7 @@
       return items;
     }
 
-    function fetchCitiesByCountryEnglishName(countryEnglishName) {
+    function fetchCitiesByCountryEnglishName(countryEnglishName, countryCode) {
       if (cityCache[countryEnglishName]) {
         return Promise.resolve(cityCache[countryEnglishName]);
       }
@@ -1059,13 +1535,23 @@
           return response.json();
         })
         .then(function (payload) {
-          var list = normalizeCityList(payload && payload.data);
+          var list = mergeGuaranteedCities(countryCode, payload && payload.data);
           cityCache[countryEnglishName] = list;
           return list;
         })
         .catch(function () {
-          return [];
+          return mergeGuaranteedCities(countryCode, []);
         });
+    }
+
+    function resetCitySelectAndPicker() {
+      resetCitySelect();
+      if (citySelect._daabRebuildCityPicker) citySelect._daabRebuildCityPicker();
+    }
+
+    function showCityLoadingAndPicker() {
+      showCityLoading();
+      if (citySelect._daabRebuildCityPicker) citySelect._daabRebuildCityPicker();
     }
 
     countrySelect.addEventListener("change", function () {
@@ -1073,18 +1559,317 @@
       var requestId = cityRequestSeq;
       var selected = countrySelect.options[countrySelect.selectedIndex];
       var countryEnglishName = selected ? selected.getAttribute("data-country-en") : null;
+      var countryCode = selected ? selected.getAttribute("data-code") || "" : "";
       if (!countryEnglishName) {
-        resetCitySelect();
+        resetCitySelectAndPicker();
         return;
       }
-      showCityLoading();
-      fetchCitiesByCountryEnglishName(countryEnglishName).then(function (cityList) {
+      showCityLoadingAndPicker();
+      fetchCitiesByCountryEnglishName(countryEnglishName, countryCode).then(function (cityList) {
         if (requestId !== cityRequestSeq) return;
         populateCitySelect(cityList);
       });
     });
 
-    resetCitySelect();
+    enhanceCityPicker(citySelect, {
+      placeholderText: t.cityPlaceholder,
+      disabledPlaceholder: t.cityDisabledPlaceholder,
+      searchPlaceholder: t.citySearchPlaceholder,
+      noResultsText: t.cityNoResults,
+      lang: lang,
+    });
+    resetCitySelectAndPicker();
+  }
+
+  function enhanceCityPicker(select, config) {
+    if (!select || select.getAttribute("data-city-picker-ready") === "1") return;
+    select.setAttribute("data-city-picker-ready", "1");
+
+    var placeholderText = config.placeholderText || "";
+    var disabledPlaceholder = config.disabledPlaceholder || placeholderText;
+    var searchPlaceholder = config.searchPlaceholder || "";
+    var noResultsText = config.noResultsText || "";
+    var lang = config.lang || "en";
+    var fieldGroup = select.closest(".field-group");
+    if (!fieldGroup) return;
+
+    var picker = document.createElement("div");
+    picker.className = "phone-code-picker country-picker city-picker";
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.id = select.id ? select.id + "_picker" : "city_picker";
+    btn.className = "phone-code-picker-btn";
+    btn.setAttribute("aria-haspopup", "listbox");
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute(
+      "aria-label",
+      (fieldGroup.querySelector("label.field-label") &&
+        fieldGroup.querySelector("label.field-label").textContent.trim()) ||
+        placeholderText
+    );
+
+    var valueWrap = document.createElement("span");
+    valueWrap.className = "phone-code-picker-value";
+    var labelSpan = document.createElement("span");
+    labelSpan.className = "phone-code-picker-text";
+    labelSpan.textContent = disabledPlaceholder;
+    valueWrap.appendChild(labelSpan);
+    btn.appendChild(valueWrap);
+
+    var chevron = document.createElement("span");
+    chevron.className = "phone-code-picker-chevron";
+    chevron.setAttribute("aria-hidden", "true");
+    btn.appendChild(chevron);
+
+    var panel = document.createElement("div");
+    panel.className = "phone-code-picker-panel country-picker-panel";
+    panel.hidden = true;
+
+    var searchWrap = document.createElement("div");
+    searchWrap.className = "country-picker-search-wrap";
+    var search = document.createElement("input");
+    search.type = "search";
+    search.className = "country-picker-search";
+    search.setAttribute("autocomplete", "off");
+    search.setAttribute("spellcheck", "false");
+    search.setAttribute("aria-label", searchPlaceholder);
+    search.placeholder = searchPlaceholder;
+    searchWrap.appendChild(search);
+
+    var list = document.createElement("ul");
+    list.className = "phone-code-picker-list";
+    list.setAttribute("role", "listbox");
+    if (btn.id) list.id = btn.id + "_list";
+    btn.setAttribute("aria-controls", list.id);
+
+    var empty = document.createElement("div");
+    empty.className = "country-picker-empty";
+    empty.hidden = true;
+    empty.textContent = noResultsText;
+
+    panel.appendChild(searchWrap);
+    panel.appendChild(list);
+    panel.appendChild(empty);
+
+    select.classList.add("phone-code-picker-native");
+    select.parentNode.insertBefore(picker, select);
+    picker.appendChild(select);
+    picker.appendChild(btn);
+    picker.appendChild(panel);
+
+    var label = fieldGroup.querySelector('label[for="' + select.id + '"]');
+    if (label) {
+      label.setAttribute("for", btn.id);
+      label.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (select.disabled) return;
+        btn.focus();
+        if (panel.hidden) openPanel();
+      });
+    }
+
+    function optionNodes() {
+      return list.querySelectorAll(".country-picker-option");
+    }
+
+    function buttonLabel() {
+      if (select.disabled) {
+        var first = select.options[0];
+        return (first && first.textContent) || disabledPlaceholder;
+      }
+      var opt = select.options[select.selectedIndex];
+      if (opt && opt.value) return opt.textContent;
+      return placeholderText;
+    }
+
+    function syncFromSelect() {
+      var opt = select.options[select.selectedIndex];
+      btn.disabled = !!select.disabled;
+      labelSpan.textContent = buttonLabel();
+      if (!opt || !opt.value || select.disabled) {
+        btn.classList.remove("has-value");
+        optionNodes().forEach(function (li) {
+          li.classList.remove("is-selected", "is-active");
+          li.setAttribute("aria-selected", "false");
+        });
+        return;
+      }
+      btn.classList.add("has-value");
+      optionNodes().forEach(function (li) {
+        var selected = li.getAttribute("data-value") === opt.value;
+        li.classList.toggle("is-selected", selected);
+        li.classList.toggle("is-active", selected);
+        li.setAttribute("aria-selected", selected ? "true" : "false");
+      });
+    }
+
+    function rebuildOptions() {
+      list.innerHTML = "";
+      Array.prototype.forEach.call(select.options, function (opt) {
+        if (!opt.value) return;
+        var li = document.createElement("li");
+        li.className = "phone-code-picker-option country-picker-option";
+        li.setAttribute("role", "option");
+        li.setAttribute("aria-selected", "false");
+        li.setAttribute("data-value", opt.value);
+        li.setAttribute("data-label", opt.textContent);
+        li.setAttribute("data-aliases", opt.getAttribute("data-aliases") || "");
+        var text = document.createElement("span");
+        text.className = "phone-code-picker-option-text";
+        text.textContent = opt.textContent;
+        li.appendChild(text);
+        list.appendChild(li);
+      });
+      search.value = "";
+      applyFilter();
+      syncFromSelect();
+    }
+
+    function visibleOptions() {
+      return Array.prototype.filter.call(optionNodes(), function (li) {
+        return !li.classList.contains("is-filtered-out");
+      });
+    }
+
+    function applyFilter() {
+      var query = String(search.value || "").trim().toLocaleLowerCase(lang);
+      var shown = 0;
+      optionNodes().forEach(function (li) {
+        var hay = [li.getAttribute("data-label") || "", li.getAttribute("data-aliases") || ""]
+          .join(" ")
+          .toLocaleLowerCase(lang);
+        var match = !query || hay.indexOf(query) !== -1;
+        li.classList.toggle("is-filtered-out", !match);
+        if (match) shown += 1;
+      });
+      empty.hidden = shown > 0;
+      list.hidden = shown === 0;
+    }
+
+    function closePanel() {
+      panel.hidden = true;
+      picker.classList.remove("is-open");
+      btn.setAttribute("aria-expanded", "false");
+      search.value = "";
+      applyFilter();
+    }
+
+    function openPanel() {
+      if (select.disabled) return;
+      closeOpenPickersExcept(picker);
+      search.value = "";
+      applyFilter();
+      panel.hidden = false;
+      picker.classList.add("is-open");
+      btn.setAttribute("aria-expanded", "true");
+      var selected = list.querySelector(".country-picker-option.is-selected");
+      optionNodes().forEach(function (li) {
+        li.classList.toggle("is-active", li === selected);
+      });
+      try {
+        search.focus({ preventScroll: true });
+      } catch (e) {
+        search.focus();
+      }
+      if (selected) selected.scrollIntoView({ block: "nearest" });
+    }
+
+    function chooseOption(li) {
+      if (!li) return;
+      var value = li.getAttribute("data-value");
+      var i;
+      for (i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === value) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      select.dispatchEvent(new Event("change", { bubbles: true }));
+      syncFromSelect();
+      closePanel();
+      btn.focus();
+    }
+
+    function moveActive(delta) {
+      var items = visibleOptions();
+      if (!items.length) return;
+      var current = list.querySelector(".country-picker-option.is-active:not(.is-filtered-out)");
+      var index = current ? items.indexOf(current) : -1;
+      var next = items[(index + delta + items.length) % items.length];
+      items.forEach(function (li) {
+        li.classList.toggle("is-active", li === next);
+      });
+      if (next) next.scrollIntoView({ block: "nearest" });
+    }
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (select.disabled) return;
+      if (panel.hidden) openPanel();
+      else closePanel();
+    });
+
+    btn.addEventListener("keydown", function (e) {
+      if (select.disabled) return;
+      if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        if (panel.hidden) openPanel();
+      }
+    });
+
+    search.addEventListener("input", applyFilter);
+    search.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        moveActive(1);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        moveActive(-1);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        var active = list.querySelector(".country-picker-option.is-active:not(.is-filtered-out)");
+        chooseOption(active || visibleOptions()[0]);
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        closePanel();
+        btn.focus();
+      }
+    });
+
+    list.addEventListener("click", function (e) {
+      var li = e.target.closest(".country-picker-option");
+      if (!li || li.classList.contains("is-filtered-out")) return;
+      chooseOption(li);
+    });
+
+    select.addEventListener("invalid", function () {
+      if (panel.hidden) {
+        try {
+          btn.focus({ preventScroll: true });
+        } catch (err) {
+          btn.focus();
+        }
+        btn.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+
+    document.addEventListener("click", function (e) {
+      if (picker.contains(e.target)) return;
+      if (label && label.contains(e.target)) return;
+      closePanel();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !panel.hidden) {
+        closePanel();
+        btn.focus();
+      }
+    });
+
+    select.addEventListener("change", syncFromSelect);
+    select._daabRebuildCityPicker = rebuildOptions;
+    rebuildOptions();
   }
 
   function initPhoneCodeDropdown() {
@@ -1096,10 +1881,14 @@
     var texts = {
       en: {
         placeholder: "Select area code",
+        searchPlaceholder: "Search country or code",
+        noResults: "No area codes found",
         error: "Enter local phone number only (without country code)."
       },
       az: {
         placeholder: "Kod seçin",
+        searchPlaceholder: "Ölkə və ya kod axtarın",
+        noResults: "Kod tapılmadı",
         error: "Yalnız yerli telefon nömrəsini daxil edin (ölkə kodu olmadan)."
       }
     };
@@ -1109,14 +1898,25 @@
       typeof Intl !== "undefined" && typeof Intl.DisplayNames === "function"
         ? new Intl.DisplayNames([lang], { type: "region" })
         : null;
+    var enFormatter =
+      typeof Intl !== "undefined" && typeof Intl.DisplayNames === "function"
+        ? new Intl.DisplayNames(["en"], { type: "region" })
+        : null;
     var collator =
       typeof Intl !== "undefined" && typeof Intl.Collator === "function"
         ? new Intl.Collator(lang, { sensitivity: "base" })
         : null;
+    var azNames = window.DAAB_COUNTRY_NAMES_AZ || {};
 
     function localizedCountryName(code) {
       if (code === "TR") return lang === "az" ? "Türkiyə" : "Türkiye";
+      if (lang === "az" && azNames[code]) return azNames[code];
       return formatter ? (formatter.of(code) || code) : code;
+    }
+
+    function englishCountryName(code) {
+      if (code === "TR") return "Türkiye";
+      return enFormatter ? (enFormatter.of(code) || code) : code;
     }
 
     function validateLocalPhone() {
@@ -1137,6 +1937,7 @@
       return {
         countryCode: code,
         countryName: localizedCountryName(code),
+        englishName: englishCountryName(code),
         dialCode: dialCode
       };
     });
@@ -1159,11 +1960,17 @@
       var option = document.createElement("option");
       option.value = entry.dialCode;
       option.setAttribute("data-country-code", entry.countryCode);
+      option.setAttribute("data-country-en", entry.englishName);
       option.textContent = entry.countryName + " (" + entry.dialCode + ")";
       phoneCodeSelect.appendChild(option);
     });
     phoneCodeSelect.disabled = false;
-    enhancePhoneCodePicker(phoneCodeSelect, t.placeholder);
+    enhancePhoneCodePicker(phoneCodeSelect, {
+      placeholderText: t.placeholder,
+      searchPlaceholder: t.searchPlaceholder,
+      noResultsText: t.noResults,
+      lang: lang,
+    });
   }
 
   function phoneFlagAssetRoot() {
@@ -1186,10 +1993,14 @@
     );
   }
 
-  function enhancePhoneCodePicker(select, placeholderText) {
+  function enhancePhoneCodePicker(select, config) {
     if (!select || select.getAttribute("data-phone-code-picker-ready") === "1") return;
     select.setAttribute("data-phone-code-picker-ready", "1");
 
+    var placeholderText = (config && config.placeholderText) || "";
+    var searchPlaceholder = (config && config.searchPlaceholder) || "";
+    var noResultsText = (config && config.noResultsText) || "";
+    var lang = (config && config.lang) || "en";
     var fieldGroup = select.closest(".field-group");
     if (!fieldGroup) return;
 
@@ -1236,20 +2047,41 @@
     var panel = document.createElement("div");
     panel.className = "phone-code-picker-panel";
     panel.hidden = true;
-    panel.setAttribute("role", "listbox");
+
+    var searchWrap = document.createElement("div");
+    searchWrap.className = "country-picker-search-wrap";
+    var search = document.createElement("input");
+    search.type = "search";
+    search.className = "country-picker-search";
+    search.setAttribute("autocomplete", "off");
+    search.setAttribute("spellcheck", "false");
+    search.setAttribute("aria-label", searchPlaceholder);
+    search.placeholder = searchPlaceholder;
+    searchWrap.appendChild(search);
 
     var list = document.createElement("ul");
     list.className = "phone-code-picker-list";
+    list.setAttribute("role", "listbox");
+    if (btn.id) list.id = btn.id + "_list";
+    btn.setAttribute("aria-controls", list.id);
+
+    var empty = document.createElement("div");
+    empty.className = "country-picker-empty";
+    empty.hidden = true;
+    empty.textContent = noResultsText;
 
     Array.prototype.forEach.call(select.options, function (opt) {
       if (!opt.value) return;
       var countryCode = opt.getAttribute("data-country-code") || "";
       var li = document.createElement("li");
-      li.className = "phone-code-picker-option";
+      li.className = "phone-code-picker-option country-picker-option";
       li.setAttribute("role", "option");
       li.setAttribute("aria-selected", "false");
       li.setAttribute("data-value", opt.value);
       li.setAttribute("data-country-code", countryCode);
+      li.setAttribute("data-label", opt.textContent);
+      li.setAttribute("data-country-en", opt.getAttribute("data-country-en") || "");
+      li.setAttribute("data-dial", String(opt.value || "").replace(/^\+/, ""));
 
       var img = document.createElement("img");
       img.className = "phone-code-flag";
@@ -1270,7 +2102,9 @@
       list.appendChild(li);
     });
 
+    panel.appendChild(searchWrap);
     panel.appendChild(list);
+    panel.appendChild(empty);
 
     select.classList.add("phone-code-picker-native");
     select.parentNode.insertBefore(picker, select);
@@ -1288,6 +2122,37 @@
       });
     }
 
+    function optionNodes() {
+      return list.querySelectorAll(".phone-code-picker-option");
+    }
+
+    function visibleOptions() {
+      return Array.prototype.filter.call(optionNodes(), function (li) {
+        return !li.classList.contains("is-filtered-out");
+      });
+    }
+
+    function applyFilter() {
+      var query = String(search.value || "").trim().toLocaleLowerCase(lang);
+      var shown = 0;
+      optionNodes().forEach(function (li) {
+        var hay = [
+          li.getAttribute("data-label") || "",
+          li.getAttribute("data-country-code") || "",
+          li.getAttribute("data-country-en") || "",
+          li.getAttribute("data-value") || "",
+          li.getAttribute("data-dial") || "",
+        ]
+          .join(" ")
+          .toLocaleLowerCase(lang);
+        var match = !query || hay.indexOf(query) !== -1;
+        li.classList.toggle("is-filtered-out", !match);
+        if (match) shown += 1;
+      });
+      empty.hidden = shown > 0;
+      list.hidden = shown === 0;
+    }
+
     function syncFromSelect() {
       var opt = select.options[select.selectedIndex];
       btn.disabled = select.disabled;
@@ -1295,8 +2160,8 @@
         flagImg.hidden = true;
         labelSpan.textContent = placeholderText;
         btn.classList.remove("has-value");
-        list.querySelectorAll(".phone-code-picker-option").forEach(function (li) {
-          li.classList.remove("is-selected");
+        optionNodes().forEach(function (li) {
+          li.classList.remove("is-selected", "is-active");
           li.setAttribute("aria-selected", "false");
         });
         return;
@@ -1310,37 +2175,46 @@
         flagImg.hidden = true;
       }
       labelSpan.textContent = opt.textContent;
-      list.querySelectorAll(".phone-code-picker-option").forEach(function (li) {
+      optionNodes().forEach(function (li) {
         var selected =
           li.getAttribute("data-value") === opt.value &&
           li.getAttribute("data-country-code") === cc;
         li.classList.toggle("is-selected", selected);
+        li.classList.toggle("is-active", selected);
         li.setAttribute("aria-selected", selected ? "true" : "false");
       });
     }
 
     function closePanel() {
       panel.hidden = true;
+      picker.classList.remove("is-open");
       btn.setAttribute("aria-expanded", "false");
+      search.value = "";
+      applyFilter();
     }
 
     function openPanel() {
       if (select.disabled) return;
+      closeOpenPickersExcept(picker);
+      search.value = "";
+      applyFilter();
       panel.hidden = false;
+      picker.classList.add("is-open");
       btn.setAttribute("aria-expanded", "true");
       var selected = list.querySelector(".phone-code-picker-option.is-selected");
+      optionNodes().forEach(function (li) {
+        li.classList.toggle("is-active", li === selected);
+      });
+      try {
+        search.focus({ preventScroll: true });
+      } catch (e) {
+        search.focus();
+      }
       if (selected) selected.scrollIntoView({ block: "nearest" });
     }
 
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-      if (panel.hidden) openPanel();
-      else closePanel();
-    });
-
-    list.addEventListener("click", function (e) {
-      var li = e.target.closest(".phone-code-picker-option");
-      if (!li) return;
+    function chooseOption(li) {
+      if (!li || li.classList.contains("is-filtered-out")) return;
       var value = li.getAttribute("data-value");
       var cc = li.getAttribute("data-country-code");
       var i;
@@ -1354,14 +2228,70 @@
       select.dispatchEvent(new Event("change", { bubbles: true }));
       syncFromSelect();
       closePanel();
+      btn.focus();
+    }
+
+    function moveActive(delta) {
+      var items = visibleOptions();
+      if (!items.length) return;
+      var current = list.querySelector(".phone-code-picker-option.is-active:not(.is-filtered-out)");
+      var index = current ? items.indexOf(current) : -1;
+      var next = items[(index + delta + items.length) % items.length];
+      items.forEach(function (li) {
+        li.classList.toggle("is-active", li === next);
+      });
+      if (next) next.scrollIntoView({ block: "nearest" });
+    }
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (panel.hidden) openPanel();
+      else closePanel();
+    });
+
+    btn.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        if (panel.hidden) openPanel();
+      }
+    });
+
+    search.addEventListener("input", applyFilter);
+    search.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        moveActive(1);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        moveActive(-1);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        var active = list.querySelector(".phone-code-picker-option.is-active:not(.is-filtered-out)");
+        chooseOption(active || visibleOptions()[0]);
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        closePanel();
+        btn.focus();
+      }
+    });
+
+    list.addEventListener("click", function (e) {
+      var li = e.target.closest(".phone-code-picker-option");
+      if (!li) return;
+      chooseOption(li);
     });
 
     document.addEventListener("click", function (e) {
-      if (!picker.contains(e.target)) closePanel();
+      if (picker.contains(e.target)) return;
+      if (label && label.contains(e.target)) return;
+      closePanel();
     });
 
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closePanel();
+      if (e.key === "Escape" && !panel.hidden) {
+        closePanel();
+        btn.focus();
+      }
     });
 
     select.addEventListener("change", syncFromSelect);
@@ -1565,6 +2495,8 @@
     initEndpointNotice();
     initForumRegisterStickyStack();
     updateProgress(1);
+    initFileUploads();
+    initSciFieldLimit();
     var sciFieldset = byId("sci-fields");
     if (sciFieldset) {
       sciFieldset.addEventListener("change", function () {

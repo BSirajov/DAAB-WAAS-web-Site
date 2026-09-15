@@ -38,12 +38,12 @@
 <link href="../../../css/scientists-catalog-toolbar.css?v=9" rel="stylesheet"/>
 <link href="../../../css/daab-page-content-search.css?v=7" rel="stylesheet"/>
 <link href="../../../css/daab-sidebar-widget.css?v=6" rel="stylesheet"/>
-<link href="../../../css/daab-membership-application.css?v=38" rel="stylesheet"/>
+<link href="../../../css/daab-membership-application.css?v=48" rel="stylesheet"/>
 <script src="../../../js/daab-mobile.js?v=6" defer></script>
 <script src="../../../js/daab-perf.js?v=4" defer></script>
 <script src="../../../js/daab-sticky-chrome.js?v=3" defer></script>
 <script src="../../../js/daab-back-to-top.js?v=3" defer></script>
-<script src="../../../js/daab-i18n.js?v=61" defer></script>
+<script src="../../../js/daab-i18n.js?v=66" defer></script>
 <script src="../../../js/daab-lang-position.js?v=14" defer></script>
 <script src="../../../js/daab-design-tokens.js?v=2" defer></script>
 <script src="../../../js/daab-nav.js?v=34" defer></script>
@@ -56,7 +56,7 @@
 <script src="../../../js/daab-application-config.js?v=2" defer></script>
 <script src="../../../js/daab-country-codes.js?v=2" defer></script>
 <script src="../../../js/daab-phone-codes.js?v=2" defer></script>
-<script src="../../../js/daab-membership-application.js?v=30" defer></script>
+<script src="../../../js/daab-membership-application.js?v=42" defer></script>
 <script defer src="../../../js/daab-sidebar-spy.js?v=3"></script>
 <script defer src="../../../js/daab-sidebar-timeline.js?v=6"></script>
 <script defer src="../../../js/daab-page-content-search.js?v=6"></script>
@@ -138,7 +138,7 @@ No results found.
 </div>
 <div class="application-layout">
 <div class="application-stack form-wrapper">
-  <form id="forumRegisterForm" action="mail.php" method="post" enctype="application/x-www-form-urlencoded" novalidate>
+  <form id="forumRegisterForm" action="mail.php" method="post" enctype="multipart/form-data" novalidate>
     <input type="hidden" name="form_kind" value="forum-2026">
 
     <!-- ═══ SECTION 1 — Introduction ═══ -->
@@ -205,7 +205,15 @@ No results found.
         <div class="form-row form-row--3">
           <div class="field-group">
             <label class="field-label" for="dob">Date of birth <span class="req">*</span></label>
-            <input type="date" id="dob" name="dob" required autocomplete="bday">
+            <div class="dob-field">
+              <input type="text" id="dob" name="dob" required autocomplete="bday" inputmode="numeric" maxlength="10" placeholder="dd/mm/yyyy" spellcheck="false">
+              <span class="dob-calendar-wrap">
+                <button type="button" id="dob_calendar_btn" class="dob-calendar-btn" aria-label="Open calendar" aria-controls="dob">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                </button>
+                <input type="date" id="dob_picker" class="dob-native-picker" tabindex="-1" aria-hidden="true">
+              </span>
+            </div>
           </div>
 
           <div class="field-group">
@@ -392,8 +400,10 @@ No results found.
       </div>
       <div class="section-body" id="sec-4-body">
 
-        <fieldset class="sci-fields-fieldset" id="sci-fields" aria-describedby="app-submit-status">
+        <fieldset class="sci-fields-fieldset" id="sci-fields" aria-describedby="sci-fields-hint sci-fields-limit app-submit-status">
         <legend class="sci-fields-legend">Scientific Fields You Are Engaged In</legend>
+        <p class="sci-fields-hint" id="sci-fields-hint">Select up to two scientific fields.</p>
+        <p class="sci-fields-limit-msg" id="sci-fields-limit" hidden role="alert"></p>
 
         <div class="sci-category">
           <div class="sci-cat-header">1. Humanities and Social Sciences</div>
@@ -511,22 +521,42 @@ No results found.
           <textarea id="addinfo" name="addinfo" class="form-textarea-tall" placeholder="e.g. Awards, grants, professional memberships, publications, or any other relevant information..."></textarea>
         </div>
 
-        <div class="intro-box">
-          <strong><span aria-hidden="true">📎</span> Photo and CV</strong><br>
-          Please send your personal photo and CV to our
-          <a href="mailto:info@daab-waas.com">email address</a>
-          after submitting this form.<br><br>
-          <span class="form-note-muted">
-            Accepted formats: PDF, DOCX for CV; JPG or PNG for photo.
-            Please use the subject line: <em>"WAAS Membership — [Your Full Name]"</em>
-          </span>
-        </div>
+        <div class="app-file-uploads" id="app-file-uploads">
+          <div class="app-file-card" data-file-kind="cv">
+            <label class="field-label" for="cvfile">Upload CV <span class="req">*</span></label>
+            <p class="field-hint" id="cvfile-hint">PDF or DOCX, maximum 8 MB. You can choose a file from your device or from a cloud location offered by your file picker.</p>
+            <input class="app-file-input" type="file" id="cvfile" name="cv_file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-describedby="cvfile-hint cvfile-status cvfile-error">
+            <button type="button" class="app-btn app-btn-secondary app-file-choose" data-file-target="cvfile">Choose file</button>
+            <div class="app-file-selected" id="cvfile-status" hidden>
+              <div class="app-file-meta">
+                <span class="app-file-name"></span>
+                <span class="app-file-ready">Ready to submit</span>
+              </div>
+              <div class="app-file-tools">
+                <button type="button" class="app-file-replace" data-file-target="cvfile">Replace</button>
+                <button type="button" class="app-file-remove" data-file-kind="cv">Remove</button>
+              </div>
+            </div>
+            <p class="app-file-error" id="cvfile-error" hidden role="alert"></p>
+          </div>
 
-        <div class="field-group">
-          <label class="field-label" for="cvconfirm">I confirm I will send my photo and CV by email</label>
-          <div class="opt-item opt-item-cv-confirm">
-            <input type="checkbox" id="cvconfirm" name="cvconfirm">
-            <label for="cvconfirm">Yes, I will send my photo and CV to <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></label>
+          <div class="app-file-card" data-file-kind="photo">
+            <label class="field-label" for="photofile">Upload Photo <span class="req">*</span></label>
+            <p class="field-hint" id="photofile-hint">JPG or PNG, maximum 5 MB. You can choose a file from your device or from a cloud location offered by your file picker.</p>
+            <input class="app-file-input" type="file" id="photofile" name="photo_file" accept=".jpg,.jpeg,.png,image/jpeg,image/png" aria-describedby="photofile-hint photofile-status photofile-error">
+            <button type="button" class="app-btn app-btn-secondary app-file-choose" data-file-target="photofile">Choose file</button>
+            <div class="app-file-selected" id="photofile-status" hidden>
+              <img class="app-file-thumb" id="photofile-thumb" alt="" hidden>
+              <div class="app-file-meta">
+                <span class="app-file-name"></span>
+                <span class="app-file-ready">Ready to submit</span>
+              </div>
+              <div class="app-file-tools">
+                <button type="button" class="app-file-replace" data-file-target="photofile">Replace</button>
+                <button type="button" class="app-file-remove" data-file-kind="photo">Remove</button>
+              </div>
+            </div>
+            <p class="app-file-error" id="photofile-error" hidden role="alert"></p>
           </div>
         </div>
 
@@ -537,7 +567,7 @@ No results found.
           </div>
         </div>
 
-        <p class="app-submit-notice">Your application data is sent securely to our server and reviewed only by the WAAS membership committee.</p>
+        <p class="app-submit-notice">Your registration details, CV, and photo are sent securely to our server and reviewed only by the WAAS team.</p>
         <div class="app-submit-status" id="app-submit-status" role="status" aria-live="polite" hidden></div>
         <div class="app-honeypot" aria-hidden="true">
           <label for="website">Website</label>
@@ -555,7 +585,7 @@ No results found.
       <h2>Registration submitted successfully!</h2>
       <p>
         Thank you for registering for the 2nd Forum of Azerbaijani Scientists Living Abroad (Forum 2026).
-        Your participant registration has been received and we will be in touch with you shortly.
+        Your participant registration, CV, and photo have been received and we will be in touch with you shortly.
       </p>
 <div class="app-btn-row">
         <a class="app-btn app-btn-primary" href="index.html">Return to Forum 2026</a>

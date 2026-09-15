@@ -178,7 +178,7 @@
     inst.optionInputs.forEach(function (pair) {
       if (pair.input.checked) checked.push(pair.value);
     });
-    if (checked.length === total) {
+    if (checked.length === 0 || checked.length === total) {
       inst.selected = null;
     } else {
       inst.selected = new Set(checked);
@@ -194,7 +194,7 @@
       var row = pair.input.closest(".ms-filter-option");
       if (row) row.classList.toggle("is-hidden", false);
     });
-    inst.selected = checked ? null : new Set();
+    inst.selected = null;
     if (inst.searchInput) inst.searchInput.value = "";
     filterOptions(id, "");
     notifyChange(id);
@@ -404,7 +404,7 @@
       if (!el) return null;
       return el.value ? [el.value] : null;
     }
-    if (inst.selected === null) return null;
+    if (inst.selected === null || inst.selected.size === 0) return null;
     return Array.from(inst.selected);
   }
 
@@ -472,8 +472,7 @@
       });
     },
     matches: function (filterValues, value) {
-      if (filterValues === null) return true;
-      if (!filterValues.length) return false;
+      if (filterValues === null || !filterValues.length) return true;
       var v = (value == null ? "" : String(value)).trim();
       return filterValues.indexOf(v) !== -1;
     },

@@ -165,11 +165,11 @@ def _forum_2026_drop(lang: str) -> str:
 
 def _complex_topics_link(lang: str) -> str:
     if lang == "en":
-        title = "📘 Complex Topics, Clear Explanations"
+        title = "📘 Competition"
         desc = "Making difficult subjects understandable"
     else:
-        title = "📘 Çətin mövzu, aydın izah"
-        desc = "Çətin mövzuları aydın və sadə izahı"
+        title = "📘 Müsabiqə"
+        desc = "Çətin mövzuların aydın və sadə izahı"
     return (
         '<a class="nav-dropdown-link nav-dropdown-link--forum-year" role="menuitem" href="complex-topics.html" data-nav-id="complex-topics">'
         + f'<span class="nav-dropdown-link-title">{title}</span>'

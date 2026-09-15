@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "brand": {
     "az": {
       "short": "Dünya Azərbaycanlı Alimlər Birliyi",
@@ -77,7 +77,11 @@
       "forum2026Register": "Qeydiyyat",
       "forum2026RegisterDesc": "Şəxsi məlumatlar, təhsil və karyera, ixtisas sahəsi və s.",
       "complexTopics": "Çətin mövzu, aydın izah",
-      "complexTopicsDesc": "Çətin mövzuları aydın və sadə izahı",
+      "complexTopicsMenu": "Müsabiqə",
+      "complexTopicsDesc": "Çətin mövzuların aydın və sadə izahı",
+      "complexTopicsInvitation": "Açıq müsabiqə",
+      "complexTopicsApproach": "İşçi sənəd",
+      "complexTopicsApproachDesc": "Sistemləşdirilmiş konsepsiya və icra — təsdiqlənmiş Əsasnamə deyil",
       "forum2024": "Ümumi Mənzərə",
       "forumOfficial": "Rəsmi müraciətlər",
       "forumRectorSpeeches": "Rektorlar",
@@ -177,7 +181,11 @@
       "forum2026Register": "Register",
       "forum2026RegisterDesc": "Personal information, education and career, field of study, and more",
       "complexTopics": "Complex Topics, Clear Explanations",
+      "complexTopicsMenu": "Competition",
       "complexTopicsDesc": "Making difficult subjects understandable",
+      "complexTopicsInvitation": "Open competition",
+      "complexTopicsApproach": "Working document",
+      "complexTopicsApproachDesc": "Structured concept and delivery — not an approved regulation",
       "forum2024": "Highlights",
       "forumOfficial": "Official addresses",
       "forumRectorSpeeches": "Rectors",
@@ -235,6 +243,7 @@
       "aboutCopyrightNoticeDesc": "Association legal identity and contact details",
       "aboutSitemapDesc": "A map of every main page on the site",
       "scientistsListDesc": "Directory of all scientists",
+      "scientistsListForumDesc": "Directory of all scientists who participated in the Forum",
       "scientistsProfilesDesc": "Academic profiles of scientists",
       "forumRoadmap": "Strategic roadmap",
       "forumBagliHekayeler": "Stories",
@@ -260,7 +269,11 @@
     "work-done-2024-2026": "📋",
     "forums": "🗂️",
     "complexTopics": "📘",
+    "complexTopicsMenu": "📘",
+    "complexTopicsInvitation": "📘",
+    "complexTopicsApproach": "📄",
     "complex-topics": "📘",
+    "complex-topics-approach": "📄",
     "forumTitle": "🎤",
     "forum2024Year": "🎤",
     "forum2026Year": "🎤",
@@ -338,7 +351,9 @@
       "forum2024Crumb": "Ümumi Mənzərə",
       "forum2026Year": "II Forum",
       "forum2026Register": "Qeydiyyat",
+      "forums": "Layihələr",
       "complexTopics": "Çətin mövzu, aydın izah",
+      "complexTopicsApproach": "İşçi sənəd",
       "legalPages": "Hüquqi məlumat"
     },
     "en": {
@@ -355,7 +370,9 @@
       "forum2024Crumb": "Highlights",
       "forum2026Year": "II Forum",
       "forum2026Register": "Register",
+      "forums": "Projects",
       "complexTopics": "Complex Topics, Clear Explanations",
+      "complexTopicsApproach": "Working document",
       "legalPages": "Legal"
     }
   },
