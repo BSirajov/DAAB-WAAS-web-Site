@@ -75,13 +75,15 @@
   }
 
   /**
-   * Desktop: show site brand text when the primary bar has room; hide only on overflow.
-   * Mobile/tablet layout always shows brand via its own grid rules.
+   * Desktop: keep brand text next to the logo; mark overflow so CSS can shrink it.
+   * Compact layout always shows the brand beside the logo.
    */
   function fitDesktopNavBrand() {
     var inner = document.querySelector(".nav-inner");
     if (!inner) return;
-    var brand = inner.querySelector(":scope > .nav-brand");
+    var brand =
+      inner.querySelector(".nav-identity > .nav-brand") ||
+      inner.querySelector(":scope > .nav-brand");
     var menu = document.getElementById("primaryNavMenu") || inner.querySelector(".nav-menu");
     if (!brand || !menu) return;
 
@@ -631,7 +633,21 @@
     layout.insertBefore(wrap, details);
   }
 
+  function ensureNavIdentity() {
+    var inner = document.querySelector(".nav-inner");
+    if (!inner || inner.querySelector(":scope > .nav-identity")) return;
+    var logo = inner.querySelector(":scope > .page-logo");
+    var brand = inner.querySelector(":scope > .nav-brand");
+    if (!logo || !brand) return;
+    var wrap = document.createElement("div");
+    wrap.className = "nav-identity";
+    inner.insertBefore(wrap, logo);
+    wrap.appendChild(logo);
+    wrap.appendChild(brand);
+  }
+
   function init() {
+    ensureNavIdentity();
     if (!mobileInitialized) {
       mobileInitialized = initMobileNavOnce();
     } else {

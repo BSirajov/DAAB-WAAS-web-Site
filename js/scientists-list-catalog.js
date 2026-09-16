@@ -817,7 +817,9 @@
     }
 
     function applyFilters() {
-      var q = searchInput.value.trim().toLowerCase();
+      var q = (shared.normQuery || function (s) {
+        return String(s || "").toLowerCase().replace(/\s+/g, " ").trim();
+      })(searchInput.value);
       var countries = getMultiFilter("filterCountry");
       var degrees = getMultiFilter("filterDegree");
       var fieldsFilter = getMultiFilter("filterIxtilas");
@@ -833,9 +835,9 @@
         if (!matchFn(fieldsFilter, (r.ixtilas || "").trim())) return false;
         if (!matchFn(genders, (r.cinsi || "").trim())) return false;
         if (q) {
-          var hay = [r.ad_soyad, r.cinsi, r.yasadigi_olke, r.ixtilas, r.elmi_derece, r.email]
-            .join(" ")
-            .toLowerCase();
+          var hay = (shared.normQuery || function (s) {
+            return String(s || "").toLowerCase().replace(/\s+/g, " ").trim();
+          })([r.ad_soyad, r.cinsi, r.yasadigi_olke, r.ixtilas, r.elmi_derece, r.email].join(" "));
           if (hay.indexOf(q) === -1) return false;
         }
         return true;

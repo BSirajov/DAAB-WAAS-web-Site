@@ -5,17 +5,17 @@
   "use strict";
 
   function normalize(text) {
+    var AZ = {
+      "\u0259": "e", "\u0131": "i", "\u00f6": "o", "\u00fc": "u",
+      "\u011f": "g", "\u015f": "s", "\u00e7": "c",
+      "\u018f": "e", "\u0130": "i", "\u00d6": "o", "\u00dc": "u",
+      "\u011e": "g", "\u015e": "s", "\u00c7": "c"
+    };
     return String(text || "")
-      .toLocaleLowerCase("az")
-      .normalize("NFD")
+      .replace(/[^\u0000-\u007f]/g, function (ch) { return AZ[ch] || ch; })
+      .toLowerCase()
       .replace(/[\u0300-\u036f]/g, "")
-      .replace(/ə/g, "e")
-      .replace(/ı/g, "i")
-      .replace(/ö/g, "o")
-      .replace(/ü/g, "u")
-      .replace(/ğ/g, "g")
-      .replace(/ş/g, "s")
-      .replace(/ç/g, "c")
+      .replace(/\s+/g, " ")
       .trim();
   }
 

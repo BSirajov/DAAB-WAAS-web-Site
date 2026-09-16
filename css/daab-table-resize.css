@@ -5,8 +5,7 @@
 }.daab-resizable-table.daab-cols-ready th[class*="col-"]{
   width: auto;
   padding-right: 18px;
-}.daab-resizable-table.daab-cols-ready th[class*="col-"]:last-child,
-.daab-resizable-table.daab-cols-ready th.col-cins{
+}.daab-resizable-table.daab-cols-ready th.col-cins{
   padding-right: 15px;
 }.daab-resizable-table td{
   overflow: hidden;

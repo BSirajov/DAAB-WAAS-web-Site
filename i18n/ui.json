@@ -79,9 +79,11 @@
       "complexTopics": "Çətin mövzu, aydın izah",
       "complexTopicsMenu": "Müsabiqə",
       "complexTopicsDesc": "Çətin mövzuların aydın və sadə izahı",
-      "complexTopicsInvitation": "Açıq müsabiqə",
-      "complexTopicsApproach": "İşçi sənəd",
-      "complexTopicsApproachDesc": "Sistemləşdirilmiş konsepsiya və icra — təsdiqlənmiş Əsasnamə deyil",
+      "complexTopicsInvitation": "İnformatika, Kompüter Elmləri, İKT",
+      "complexTopicsApproach": "Müsabiqənin təşkili",
+      "complexTopicsApproachDesc": "“Çətin mövzu, aydın izah” müsabiqəsinin işçi planı",
+      "complexTopicsInformatics": "Mövzu seçimi üzrə bələdçi",
+      "complexTopicsInformaticsDesc": "Populyar və çətin informatika mövzuları üzrə işçi bələdçi",
       "forum2024": "Ümumi Mənzərə",
       "forumOfficial": "Rəsmi müraciətlər",
       "forumRectorSpeeches": "Rektorlar",
@@ -131,7 +133,7 @@
       "aboutMissionDesc": "Missiya, vizyon və akademik dəyərlər",
       "aboutBoardDesc": "İdarə heyəti və rəhbərlik",
       "aboutCharterDesc": "Nizamnamə və idarəetmə qaydaları",
-      "aboutLegalPagesDesc": "Məxfilik bildirişi, istifadə şərtləri,\nkuki siyasəti və hüquqi rekvizitlər",
+      "aboutLegalPagesDesc": "Məxfilik bildirişi, istifadə şərtləri, kuki siyasəti və hüquqi rekvizitlər",
       "aboutLegalNoticeDesc": "Birliyin hüquqi kimliyi və əlaqə rekvizitləri",
       "aboutPrivacyDesc": "KVKK üzrə şəxsi məlumatların işlənməsi",
       "aboutCookiesDesc": "Kukilər və razılıq seçimləri",
@@ -183,9 +185,11 @@
       "complexTopics": "Complex Topics, Clear Explanations",
       "complexTopicsMenu": "Competition",
       "complexTopicsDesc": "Making difficult subjects understandable",
-      "complexTopicsInvitation": "Open competition",
-      "complexTopicsApproach": "Working document",
-      "complexTopicsApproachDesc": "Structured concept and delivery — not an approved regulation",
+      "complexTopicsInvitation": "Informatics, Computer Science, ICT",
+      "complexTopicsApproach": "Organisation of competition",
+      "complexTopicsApproachDesc": "A working plan for “Complex Topics, Clear Explanations”",
+      "complexTopicsInformatics": "Guide to topic selection",
+      "complexTopicsInformaticsDesc": "A working guide to popular and difficult informatics topics",
       "forum2024": "Highlights",
       "forumOfficial": "Official addresses",
       "forumRectorSpeeches": "Rectors",
@@ -272,8 +276,10 @@
     "complexTopicsMenu": "📘",
     "complexTopicsInvitation": "📘",
     "complexTopicsApproach": "📄",
+    "complexTopicsInformatics": "📗",
     "complex-topics": "📘",
     "complex-topics-approach": "📄",
+    "complex-topics-informatics": "📗",
     "forumTitle": "🎤",
     "forum2024Year": "🎤",
     "forum2026Year": "🎤",
@@ -353,7 +359,8 @@
       "forum2026Register": "Qeydiyyat",
       "forums": "Layihələr",
       "complexTopics": "Çətin mövzu, aydın izah",
-      "complexTopicsApproach": "İşçi sənəd",
+      "complexTopicsApproach": "Müsabiqənin təşkili",
+      "complexTopicsInformatics": "Mövzu seçimi üzrə bələdçi",
       "legalPages": "Hüquqi məlumat"
     },
     "en": {
@@ -372,7 +379,8 @@
       "forum2026Register": "Register",
       "forums": "Projects",
       "complexTopics": "Complex Topics, Clear Explanations",
-      "complexTopicsApproach": "Working document",
+      "complexTopicsApproach": "Organisation of competition",
+      "complexTopicsInformatics": "Guide to topic selection",
       "legalPages": "Legal"
     }
   },
@@ -483,6 +491,54 @@
     },
     "en": {
       "label": "Back to top"
+    }
+  },
+  "goToBottom": {
+    "az": {
+      "label": "Aşağı keç"
+    },
+    "en": {
+      "label": "Go to bottom"
+    }
+  },
+  "pageSearch": {
+    "az": {
+      "label": "Bu səhifədə axtar",
+      "placeholder": "Bu səhifədə axtar…",
+      "clear": "Təmizlə",
+      "empty": "Nəticə tapılmadı.",
+      "next": "Növbəti",
+      "prev": "Əvvəlki",
+      "count": "{current} / {total}"
+    },
+    "en": {
+      "label": "Search this page",
+      "placeholder": "Search this page…",
+      "clear": "Clear",
+      "empty": "No results found.",
+      "next": "Next",
+      "prev": "Previous",
+      "count": "{current} / {total}"
+    }
+  },
+  "printPdf": {
+    "az": {
+      "label": "Çap et / PDF",
+      "title": "Brauzerin çap pəncərəsini açın və «PDF kimi yadda saxla» seçin.",
+      "preparing": "Şəkillər hazırlanır…"
+    },
+    "en": {
+      "label": "Print / PDF",
+      "title": "Open the browser print dialog and choose Save as PDF.",
+      "preparing": "Preparing images…"
+    }
+  },
+  "printHeader": {
+    "az": {
+      "name": "Dünya Azərbaycanlı Alimlər Birliyi"
+    },
+    "en": {
+      "name": "World Association of Azerbaijani Scientists"
     }
   },
   "footer": {

@@ -1176,3 +1176,214 @@ html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery 
     text-align:center;
   }
 }
+
+.daab-print-figure {
+  display: contents;
+}
+
+@media print {
+  html[data-daab-page-id="activities-news"] .content-wrap {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+  }
+
+  html[data-daab-page-id="activities-news"] .news-card,
+  html[data-daab-page-id="activities-news"] .card-body {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  html[data-daab-page-id="activities-news"] .news-card:hover {
+    transform: none !important;
+  }
+
+  html[data-daab-page-id="activities-news"] .card-header {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  html[data-daab-page-id="activities-news"] .card-title {
+    break-after: auto !important;
+    page-break-after: auto !important;
+  }
+
+  html[data-daab-page-id="activities-news"] .daab-print-figure {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  html[data-daab-page-id="activities-news"] .act-thumb-row {
+    display: block !important;
+  }
+
+  html[data-daab-page-id="activities-news"] .card-gallery,
+  html[data-daab-page-id="activities-news"] .card-gallery.qazax-gallery,
+  html[data-daab-page-id="activities-news"] .card-gallery.bdu-gallery,
+  html[data-daab-page-id="activities-news"] .card-gallery.siracov-gallery,
+  html[data-daab-page-id="activities-news"] .card-gallery.egypt-medal-gallery,
+  html[data-daab-page-id="activities-news"] .card-gallery.egypt-president-gallery,
+  html[data-daab-page-id="activities-news"] .act-photo-grid,
+  html[data-daab-page-id="activities-news"] .award-grid,
+  html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-areas: none !important;
+    gap: 8px !important;
+    justify-items: center !important;
+    align-items: start !important;
+    float: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  html[data-daab-page-id="activities-news"] .card-gallery.single,
+  html[data-daab-page-id="activities-news"] .card-gallery.saadet-gallery {
+    grid-template-columns: 1fr !important;
+  }
+
+  html[data-daab-page-id="activities-news"] .card-gallery .daab-print-figure,
+  html[data-daab-page-id="activities-news"] .zaqatala-gallery .daab-print-figure,
+  html[data-daab-page-id="activities-news"] .award-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-media {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    align-items: start !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-photos {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    width: auto !important;
+  }
+
+  html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-poster,
+  html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-photos .summer-school-photo {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    position: static !important;
+    flex: none !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin: 0 !important;
+  }
+
+  html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-photos .summer-school-photo img,
+  html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-photos .daab-print-figure,
+  html[data-daab-page-id="activities-news"] #summer-school-2026 .summer-school-photos .daab-print-figure img {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 48mm !important;
+  }
+
+  html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery > img,
+  html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery > video,
+  html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-video-link {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    position: static !important;
+  }
+
+  html[data-daab-page-id="activities-news"] #serencam-2026 .award-item img,
+  html[data-daab-page-id="activities-news"] .award-portrait {
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    max-height: 55mm !important;
+  }
+
+  html[data-daab-page-id="activities-news"] .news-card,
+  html[data-daab-page-id="activities-news"] .card-body,
+  html[data-daab-page-id="activities-news"] .award-item {
+    overflow: visible !important;
+  }
+
+  html[data-daab-page-id="activities-news"] .card-gallery img,
+  html[data-daab-page-id="activities-news"] .act-row-thumb,
+  html[data-daab-page-id="activities-news"] .act-feature-img,
+  html[data-daab-page-id="activities-news"] .act-photo-grid-img,
+  html[data-daab-page-id="activities-news"] .act-photo-grid-img-lg,
+  html[data-daab-page-id="activities-news"] .act-narrow-img,
+  html[data-daab-page-id="activities-news"] .act-video-thumb,
+  html[data-daab-page-id="activities-news"] .act-portrait-img,
+  html[data-daab-page-id="activities-news"] .act-half-img,
+  html[data-daab-page-id="activities-news"] .award-item img,
+  html[data-daab-page-id="activities-news"] .award-portrait,
+  html[data-daab-page-id="activities-news"] .news-card img,
+  html[data-daab-page-id="activities-news"] #summer-school-2026 img {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 90mm !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  html[data-daab-page-id="activities-news"] .card-gallery img,
+  html[data-daab-page-id="activities-news"] .zaqatala-gallery img,
+  html[data-daab-page-id="activities-news"] .act-thumb-row img,
+  html[data-daab-page-id="activities-news"] .act-photo-grid img {
+    max-height: 70mm !important;
+  }
+
+  html[data-daab-page-id="activities-news"] #amirulla-80-2026 .amirulla-jubilee-photo,
+  html[data-daab-page-id="activities-news"] #garuslu-book-2026 .garuslu-book-cover,
+  html[data-daab-page-id="activities-news"] #forum-book-2026 .forum-book-cover {
+    float: right !important;
+    width: 42mm !important;
+    max-width: 42% !important;
+    margin: 0 0 6px 10px !important;
+  }
+
+  html[data-daab-page-id="activities-news"] #amirulla-80-2026 .amirulla-jubilee-photo img,
+  html[data-daab-page-id="activities-news"] #garuslu-book-2026 .garuslu-book-cover img,
+  html[data-daab-page-id="activities-news"] #forum-book-2026 .forum-book-cover img {
+    width: 100% !important;
+    max-height: 58mm !important;
+  }
+
+  html[data-daab-page-id="activities-news"] .card-source,
+  html[data-daab-page-id="activities-news"] .card-body > a {
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+}

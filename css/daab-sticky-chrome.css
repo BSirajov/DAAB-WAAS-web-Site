@@ -20,7 +20,6 @@ body:not(.daab-gateway) {
   z-index: var(--z-nav, 9999) !important;
   overflow: visible !important;
   transform: none !important;
-  will-change: transform;
   pointer-events: none;
   background: transparent;
 }
@@ -41,6 +40,7 @@ html.daab-chrome-ready .nav-strip {
   max-width: 100% !important;
   margin: 0 !important;
   transform: none !important;
+  z-index: var(--z-nav, 9999) !important;
 }
 
 #daab-top-chrome #daab-breadcrumbs,
@@ -102,14 +102,28 @@ body:not(.daab-gateway):not(.daab-chrome-ready) > .breadcrumbs.forum-breadcrumbs
   flex-shrink: 0;
 }
 
-/* Scroll lock (mobile menu / search): keep chrome pinned */
+/* Scroll lock (mobile menu / search): keep the chrome shell pinned.
+   Do not fix .nav-strip when it already lives inside #daab-top-chrome —
+   that removes it from flow and the breadcrumbs jump over the bar. */
 html.daab-scroll-lock #daab-top-chrome,
-body.daab-scroll-lock #daab-top-chrome,
-html.daab-scroll-lock .nav-strip,
-body.daab-scroll-lock .nav-strip,
-html.daab-scroll-lock #daab-top-chrome .nav-strip {
+body.daab-scroll-lock #daab-top-chrome {
   position: fixed !important;
   top: 0 !important;
+  transform: none !important;
+}
+
+html.daab-scroll-lock:not(.daab-chrome-ready) body:not(.daab-gateway) > .nav-strip,
+html:not(.daab-chrome-ready) body.daab-scroll-lock:not(.daab-gateway) > .nav-strip {
+  position: fixed !important;
+  top: 0 !important;
+  transform: none !important;
+}
+
+html.daab-scroll-lock.daab-chrome-ready .nav-strip,
+html.daab-chrome-ready body.daab-scroll-lock .nav-strip,
+html.daab-scroll-lock.daab-chrome-ready #daab-top-chrome .nav-strip {
+  position: relative !important;
+  top: auto !important;
   transform: none !important;
 }
 
@@ -146,8 +160,13 @@ body.daab-scroll-lock {
   }
 
   html.daab-chrome-ready .nav-menu .nav-dropdown-panel {
-    background: #ffffff !important;
+    background: #f4f9fc !important;
     border: 1px solid rgba(0, 105, 180, 0.14) !important;
+  }
+
+  html.daab-chrome-ready .nav-menu .nav-dropdown--nested > .nav-dropdown-panel {
+    background: #e8f4fb !important;
+    border: 1px solid rgba(0, 105, 180, 0.16) !important;
   }
 
   html.daab-chrome-ready .nav-menu .nav-link,
@@ -170,17 +189,190 @@ body.daab-scroll-lock {
   }
 }
 
+.daab-print-sheet,
+.daab-print-sheet > tbody,
+.daab-print-sheet > tbody > tr,
+.daab-print-sheet > tbody > tr > td {
+  display: contents;
+}
+
+.daab-print-sheet > thead,
+.daab-print-header{
+  display: none;
+}
+
 @media print {
+  @page {
+    margin-top: 12mm;
+    margin-right: 12mm;
+    margin-bottom: 14mm;
+    margin-left: 12mm;
+  }
+
+  html,
+  body {
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+
+  body::before,
+  body::after {
+    display: none !important;
+  }
+
+  .daab-print-sheet {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    margin: 0 !important;
+  }
+
+  .daab-print-sheet > thead,
+  .daab-print-sheet__head {
+    display: table-header-group !important;
+  }
+
+  .daab-print-sheet > tbody,
+  .daab-print-sheet__body-group {
+    display: table-row-group !important;
+  }
+
+  .daab-print-sheet > thead > tr,
+  .daab-print-sheet > tbody > tr {
+    display: table-row !important;
+  }
+
+  .daab-print-sheet > thead > tr > td,
+  .daab-print-sheet > tbody > tr > td,
+  .daab-print-sheet__body {
+    display: table-cell !important;
+    width: 100% !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    vertical-align: top !important;
+  }
+
   #daab-top-chrome,
+  #daab-chrome-spacer,
   body:not(.daab-gateway) > .nav-strip,
+  .nav-strip,
+  .mobile-menu-toggle,
+  .daab-lang-switch,
+  .skip,
   #daab-breadcrumbs,
   nav.daab-breadcrumbs,
-  .forum-breadcrumbs {
-    position: static !important;
+  .daab-breadcrumbs,
+  .forum-breadcrumbs,
+  #search-overlay,
+  .daab-scroll-fabs,
+  .daab-back-to-top,
+  .report-print-btn,
+  .daab-toc-launch,
+  .daab-toc-backdrop,
+  .cta-toc-launch,
+  .cta-toc-backdrop,
+  .daab-cookie-banner,
+  #daab-cookie-banner,
+  .page-content-search-band,
+  .page-content-search-toolbar,
+  #daab-page-search,
+  .daab-page-search,
+  footer,
+  .footer-pro,
+  .footer-bottom,
+  .footer-inner{
+    display: none !important;
   }
 
   #daab-chrome-spacer {
-    display: none !important;
     height: 0 !important;
+  }
+
+  .daab-print-sheet__head,
+  .daab-print-header {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .card-title,
+  .card-header .card-title {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .daab-print-header{
+    display: flex !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    z-index: auto;
+    align-items: center;
+    gap: 8px;
+    height: auto;
+    min-height: 14mm;
+    padding: 0 0 3mm;
+    margin: 0 0 5mm;
+    box-sizing: border-box;
+    border-bottom: 0.4pt solid #0b3a63;
+    background: #fff;
+    color: #06314e;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .daab-print-header__logo{
+    display: block;
+    width: 12mm;
+    height: 12mm;
+    object-fit: contain;
+    flex: 0 0 12mm;
+  }
+
+  .daab-print-header__name{
+    margin: 0;
+    font-family: var(--font-serif, Georgia, "Times New Roman", serif);
+    font-size: 12pt;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    color: #06314e;
+  }
+
+  main img,
+  article img,
+  figure img,
+  .news-card img,
+  .card-gallery img,
+  .doc-figure img,
+  .act-row-thumb,
+  .award-item img {
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 170mm !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    object-fit: contain !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .daab-print-header img,
+  .daab-print-header__logo {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 }

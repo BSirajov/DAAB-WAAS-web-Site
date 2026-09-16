@@ -5,7 +5,7 @@
   "use strict";
 
   var CACHE = null;
-  var VERSION = "10";
+  var VERSION = "11";
 
   function assetRoot() {
     var I18N = global.DAAB_I18N;

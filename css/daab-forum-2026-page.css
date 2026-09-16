@@ -365,12 +365,12 @@ html[data-daab-page-id="forum-2026"] .forum-alert{
   gap: 14px;
   align-items: start;
   margin-top: 18px;
-  padding: 18px 20px;
-  border: 1px solid #f1b8b8;
+  padding: 20px 22px;
+  border: 1px solid #e6c200;
   border-radius: 14px;
-  background: linear-gradient(135deg, #fff1f1 0%, #ffe6e6 100%);
-  color: #b00000;
-  box-shadow: 0 10px 24px rgba(192, 0, 0, 0.08);
+  background: #ffe566;
+  color: #111;
+  box-shadow: none;
 }
 
 html[data-daab-page-id="forum-2026"] .forum-alert-icon{
@@ -380,8 +380,8 @@ html[data-daab-page-id="forum-2026"] .forum-alert-icon{
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: #c00000;
-  color: var(--white);
+  background: #111;
+  color: #ffe566;
   font-size: 22px;
   font-weight: 900;
   line-height: 1;
@@ -391,10 +391,11 @@ html[data-daab-page-id="forum-2026"] .forum-alert-body p{
   margin: 0;
   font-style: italic;
   font-weight: 600;
+  color: #111;
 }
 
 html[data-daab-page-id="forum-2026"] .forum-alert-body strong{
-  color: #8d0000;
+  color: #111;
 }
 
 html[data-daab-page-id="forum-2026"] .timeline-list li.toc-sub a{

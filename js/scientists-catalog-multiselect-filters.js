@@ -203,12 +203,15 @@
   function filterOptions(id, query) {
     var inst = instances[id];
     if (!inst) return;
-    var q = (query || "").toLowerCase().trim();
+    var fold = window.DAAB_SCIENTISTS_CATALOG && window.DAAB_SCIENTISTS_CATALOG.normQuery
+      ? window.DAAB_SCIENTISTS_CATALOG.normQuery
+      : function (s) { return String(s || "").toLowerCase().trim(); };
+    var q = fold(query || "");
     var visible = 0;
     inst.optionInputs.forEach(function (pair) {
       var row = pair.input.closest(".ms-filter-option");
       if (!row || row.classList.contains("ms-filter-option--select-all")) return;
-      var show = !q || pair.label.toLowerCase().indexOf(q) !== -1;
+      var show = !q || fold(pair.label).indexOf(q) !== -1;
       row.classList.toggle("is-hidden", !show);
       if (show) visible += 1;
     });

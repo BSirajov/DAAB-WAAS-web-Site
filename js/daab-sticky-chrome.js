@@ -100,9 +100,18 @@
     if (resizeObserver) resizeObserver.disconnect();
     resizeObserver = new ResizeObserver(scheduleSync);
     resizeObserver.observe(chromeEl);
-    chromeEl.querySelectorAll(".nav-strip, #daab-breadcrumbs, nav.daab-breadcrumbs, .breadcrumbs, .forum-breadcrumbs").forEach(function (el) {
+    chromeEl.querySelectorAll(".nav-strip, #daab-breadcrumbs, nav.daab-breadcrumbs, .breadcrumbs, .forum-breadcrumbs, #daab-page-search").forEach(function (el) {
       resizeObserver.observe(el);
     });
+  }
+
+  function measureSearchHeight() {
+    if (!chromeEl) return 0;
+    var search = chromeEl.querySelector("#daab-page-search");
+    if (!search) return 0;
+    var style = window.getComputedStyle(search);
+    if (style.display === "none" || style.visibility === "hidden") return 0;
+    return Math.ceil(search.getBoundingClientRect().height);
   }
 
   function measureBreadcrumbsHeight() {
@@ -138,10 +147,12 @@
     if (navH <= 0) navH = 86;
 
     var bcH = measureBreadcrumbsHeight();
-    var stack = navH + bcH;
+    var searchH = measureSearchHeight();
+    var stack = navH + bcH + searchH;
 
     rootEl().style.setProperty("--daab-nav-height", navH + "px");
     rootEl().style.setProperty("--daab-breadcrumbs-height", bcH + "px");
+    rootEl().style.setProperty("--daab-page-search-height", searchH + "px");
     rootEl().style.setProperty("--daab-sticky-top-stack", stack + "px");
 
     if (spacerEl) {
@@ -149,9 +160,100 @@
     }
   }
 
+  function detectLang() {
+    if (window.DAAB_I18N && typeof window.DAAB_I18N.detectLang === "function") {
+      return window.DAAB_I18N.detectLang();
+    }
+    var explicit = rootEl().getAttribute("data-daab-lang");
+    if (explicit === "az" || explicit === "en") return explicit;
+    return /\/en(\/|$)/.test(String(location.pathname).replace(/\\/g, "/")) ? "en" : "az";
+  }
+
+  function assetRoot() {
+    var root = rootEl().getAttribute("data-daab-asset-root");
+    if (root == null || root === "") return "";
+    return root.endsWith("/") ? root : root + "/";
+  }
+
+  function orgName(lang) {
+    return lang === "az"
+      ? "Dünya Azərbaycanlı Alimlər Birliyi"
+      : "World Association of Azerbaijani Scientists";
+  }
+
+  function applyPrintHeaderName(name) {
+    var title = document.querySelector(".daab-print-header__name");
+    if (title && name) title.textContent = name;
+  }
+
+  function mountPrintHeader() {
+    if (isGateway() || document.getElementById("daab-print-sheet")) return;
+    var pageId = rootEl().getAttribute("data-daab-page-id") || "";
+    if (pageId === "membership-flyer" || pageId === "sponsors-flyer") return;
+    if (!document.body) return;
+
+    var lang = detectLang();
+
+    var table = document.createElement("table");
+    table.id = "daab-print-sheet";
+    table.className = "daab-print-sheet";
+    table.setAttribute("role", "presentation");
+
+    var thead = document.createElement("thead");
+    thead.className = "daab-print-sheet__head";
+    thead.setAttribute("aria-hidden", "true");
+
+    var headRow = document.createElement("tr");
+    var headCell = document.createElement("td");
+
+    var header = document.createElement("div");
+    header.id = "daab-print-header";
+    header.className = "daab-print-header";
+
+    var img = document.createElement("img");
+    img.className = "daab-print-header__logo";
+    img.src = assetRoot() + "images/daab-logo.png";
+    img.alt = "";
+
+    var name = document.createElement("p");
+    name.className = "daab-print-header__name";
+    name.textContent = orgName(lang);
+
+    header.appendChild(img);
+    header.appendChild(name);
+    headCell.appendChild(header);
+    headRow.appendChild(headCell);
+    thead.appendChild(headRow);
+
+    var tbody = document.createElement("tbody");
+    tbody.className = "daab-print-sheet__body-group";
+    var bodyRow = document.createElement("tr");
+    var bodyCell = document.createElement("td");
+    bodyCell.className = "daab-print-sheet__body";
+
+    while (document.body.firstChild) {
+      bodyCell.appendChild(document.body.firstChild);
+    }
+
+    bodyRow.appendChild(bodyCell);
+    tbody.appendChild(bodyRow);
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    document.body.appendChild(table);
+    rootEl().classList.add("daab-print-header-ready");
+
+    if (window.DAAB_I18N && window.DAAB_I18N.loadUi) {
+      window.DAAB_I18N.loadUi().then(function (ui) {
+        var block = ui && ui.printHeader && ui.printHeader[lang];
+        if (block && block.name) applyPrintHeaderName(block.name);
+      });
+    }
+  }
+
   function boot() {
     if (isGateway()) return;
     mountChrome();
+    mountPrintHeader();
     sync();
   }
 
@@ -175,6 +277,10 @@
   document.addEventListener("daab-breadcrumbs-ready", scheduleSync);
   document.addEventListener("daab-primary-nav-ready", scheduleSync);
   document.addEventListener("daab-nav-tools-mounted", scheduleSync);
+  document.addEventListener("daab-page-search-ready", function () {
+    observeChrome();
+    scheduleSync();
+  });
 
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(scheduleSync);

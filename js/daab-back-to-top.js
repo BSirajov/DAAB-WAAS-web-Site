@@ -1,14 +1,25 @@
 /**
- * DAAB / WAAS — floating back-to-top control for long pages.
+ * DAAB / WAAS — floating Go to top / Go to bottom controls for long pages.
  */
 (function (global) {
   "use strict";
 
-  var THRESHOLD_PX = 280;
+  var TOP_THRESHOLD_PX = 280;
+  var BOTTOM_THRESHOLD_PX = 48;
+  var MIN_SCROLLABLE_PX = 80;
   var MOBILE_MQ = global.matchMedia("(max-width: 1180px)");
-  var btn = null;
+  var stack = null;
+  var topBtn = null;
+  var bottomBtn = null;
   var ticking = false;
-  var labels = { label: "Back to top" };
+  var labels = {
+    top: "Back to top",
+    bottom: "Go to bottom"
+  };
+  var DEFAULTS = {
+    en: { top: "Back to top", bottom: "Go to bottom" },
+    az: { top: "Yuxarı qayıt", bottom: "Aşağı keç" }
+  };
 
   function detectLang() {
     var I18N = global.DAAB_I18N;
@@ -18,13 +29,27 @@
     return /\/en(\/|$)/.test(String(location.pathname).replace(/\\/g, "/")) ? "en" : "az";
   }
 
+  function applyFallbackLabels() {
+    var pack = DEFAULTS[detectLang()] || DEFAULTS.en;
+    labels.top = pack.top;
+    labels.bottom = pack.bottom;
+  }
+
   function applyLabels(ui) {
+    applyFallbackLabels();
     var lang = detectLang();
-    var block = ui && ui.backToTop && ui.backToTop[lang];
-    if (block && block.label) labels.label = block.label;
-    if (!btn) return;
-    btn.setAttribute("aria-label", labels.label);
-    btn.setAttribute("title", labels.label);
+    var topBlock = ui && ui.backToTop && ui.backToTop[lang];
+    var bottomBlock = ui && ui.goToBottom && ui.goToBottom[lang];
+    if (topBlock && topBlock.label) labels.top = topBlock.label;
+    if (bottomBlock && bottomBlock.label) labels.bottom = bottomBlock.label;
+    setButtonLabel(topBtn, labels.top);
+    setButtonLabel(bottomBtn, labels.bottom);
+  }
+
+  function setButtonLabel(btn, text) {
+    if (!btn || !text) return;
+    btn.setAttribute("aria-label", text);
+    btn.setAttribute("title", text);
   }
 
   function getScrollY() {
@@ -36,19 +61,48 @@
     return global.scrollY || root.scrollTop || (body && body.scrollTop) || 0;
   }
 
-  function scrollToTop() {
+  function getViewportHeight() {
+    return global.innerHeight || document.documentElement.clientHeight || 0;
+  }
+
+  function getScrollHeight() {
+    var root = document.documentElement;
+    var body = document.body;
+    return Math.max(
+      root ? root.scrollHeight : 0,
+      root ? root.offsetHeight : 0,
+      body ? body.scrollHeight : 0,
+      body ? body.offsetHeight : 0
+    );
+  }
+
+  function getMaxScrollY() {
+    return Math.max(0, getScrollHeight() - getViewportHeight());
+  }
+
+  function setScrollY(y) {
     var html = document.documentElement;
     var body = document.body;
     var htmlPrev = html.style.scrollBehavior;
     var bodyPrev = body ? body.style.scrollBehavior : "";
     html.style.scrollBehavior = "auto";
     if (body) body.style.scrollBehavior = "auto";
-    html.scrollTop = 0;
-    if (body) body.scrollTop = 0;
-    global.scrollTo(0, 0);
+    html.scrollTop = y;
+    if (body) body.scrollTop = y;
+    global.scrollTo(0, y);
     html.style.scrollBehavior = htmlPrev;
     if (body) body.style.scrollBehavior = bodyPrev;
-    if (btn) btn.blur();
+  }
+
+  function scrollToTop() {
+    setScrollY(0);
+    if (topBtn) topBtn.blur();
+    updateVisibility();
+  }
+
+  function scrollToBottom() {
+    setScrollY(getMaxScrollY());
+    if (bottomBtn) bottomBtn.blur();
     updateVisibility();
   }
 
@@ -58,18 +112,31 @@
     return (
       (global.DAAB_SCROLL_LOCK && global.DAAB_SCROLL_LOCK.isLocked && global.DAAB_SCROLL_LOCK.isLocked()) ||
       (root && root.classList.contains("daab-scroll-lock")) ||
-      (body && body.classList.contains("daab-scroll-lock"))
+      (body && body.classList.contains("daab-scroll-lock")) ||
+      (root && root.classList.contains("daab-toc-scroll-lock")) ||
+      (body && body.classList.contains("daab-toc-scroll-lock"))
     );
   }
 
-  function updateVisibility() {
+  function setVisible(btn, visible) {
     if (!btn) return;
-    var show = getScrollY() > THRESHOLD_PX;
-    var locked = isScrollLocked();
-    var visible = show && !locked;
     btn.classList.toggle("is-visible", visible);
     btn.setAttribute("aria-hidden", visible ? "false" : "true");
     btn.tabIndex = visible ? 0 : -1;
+  }
+
+  function updateVisibility() {
+    var locked = isScrollLocked();
+    var y = getScrollY();
+    var maxY = getMaxScrollY();
+    var pageScrolls = maxY > MIN_SCROLLABLE_PX;
+    var showTop = !locked && pageScrolls && y > TOP_THRESHOLD_PX;
+    var showBottom = !locked && pageScrolls && y < maxY - BOTTOM_THRESHOLD_PX;
+    setVisible(topBtn, showTop);
+    setVisible(bottomBtn, showBottom);
+    if (stack) {
+      stack.classList.toggle("is-active", showTop || showBottom);
+    }
   }
 
   function onScroll() {
@@ -82,25 +149,50 @@
   }
 
   function mountTarget() {
-    return document.documentElement || document.body;
+    return document.body || document.documentElement;
   }
 
-  function createButton() {
-    if (btn || !mountTarget()) return;
-    btn = document.createElement("button");
+  function createButton(id, extraClass, iconPath, label, onClick) {
+    var btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "daab-back-to-top";
-    btn.id = "daab-back-to-top";
-    btn.setAttribute("aria-label", labels.label);
-    btn.setAttribute("title", labels.label);
+    btn.className = "daab-back-to-top" + (extraClass ? " " + extraClass : "");
+    btn.id = id;
+    btn.setAttribute("aria-label", label);
+    btn.setAttribute("title", label);
     btn.setAttribute("aria-hidden", "true");
     btn.tabIndex = -1;
     btn.innerHTML =
       '<svg class="daab-back-to-top__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">' +
-      '<path fill="currentColor" d="M12 5.2 6.1 11.1l1.4 1.4L11 9V18h2V9l3.5 3.5 1.4-1.4L12 5.2z"/>' +
+      '<path fill="currentColor" d="' + iconPath + '"/>' +
       "</svg>";
-    btn.addEventListener("click", scrollToTop);
-    mountTarget().appendChild(btn);
+    btn.addEventListener("click", onClick);
+    return btn;
+  }
+
+  function createControls() {
+    if (stack || !mountTarget()) return;
+    applyFallbackLabels();
+    stack = document.createElement("div");
+    stack.className = "daab-scroll-fabs";
+    stack.id = "daab-scroll-fabs";
+    stack.setAttribute("role", "group");
+    bottomBtn = createButton(
+      "daab-go-to-bottom",
+      "daab-go-to-bottom",
+      "M12 18.8l5.9-5.9-1.4-1.4L13 15V6h-2v9l-3.5-3.5-1.4 1.4L12 18.8z",
+      labels.bottom,
+      scrollToBottom
+    );
+    topBtn = createButton(
+      "daab-back-to-top",
+      "",
+      "M12 5.2 6.1 11.1l1.4 1.4L11 9V18h2V9l3.5 3.5 1.4-1.4L12 5.2z",
+      labels.top,
+      scrollToTop
+    );
+    stack.appendChild(bottomBtn);
+    stack.appendChild(topBtn);
+    mountTarget().appendChild(stack);
     updateVisibility();
   }
 
@@ -115,8 +207,15 @@
     }
   }
 
+  function watchLayout() {
+    if (typeof ResizeObserver === "undefined") return;
+    var observer = new ResizeObserver(onScroll);
+    if (document.documentElement) observer.observe(document.documentElement);
+    if (document.body) observer.observe(document.body);
+  }
+
   function init() {
-    createButton();
+    createControls();
     global.addEventListener("scroll", onScroll, { passive: true });
     document.addEventListener("scroll", onScroll, { passive: true });
     global.addEventListener("resize", onScroll, { passive: true });
@@ -127,6 +226,7 @@
       MOBILE_MQ.addEventListener("change", onScroll);
     }
     watchScrollLock();
+    watchLayout();
     global.addEventListener("load", onScroll, { passive: true });
     global.setTimeout(onScroll, 400);
 

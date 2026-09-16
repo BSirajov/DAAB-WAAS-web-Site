@@ -33,6 +33,21 @@
     });
   }
 
+  function foldSearch(text) {
+    var AZ = {
+      "\u0259": "e", "\u0131": "i", "\u00f6": "o", "\u00fc": "u",
+      "\u011f": "g", "\u015f": "s", "\u00e7": "c",
+      "\u018f": "e", "\u0130": "i", "\u00d6": "o", "\u00dc": "u",
+      "\u011e": "g", "\u015e": "s", "\u00c7": "c"
+    };
+    return String(text || "")
+      .replace(/[^\u0000-\u007f]/g, function (ch) { return AZ[ch] || ch; })
+      .toLowerCase()
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
   function byId(id) {
     return document.getElementById(id);
   }
@@ -1180,16 +1195,14 @@
     }
 
     function applyFilter() {
-      var query = String(search.value || "").trim().toLocaleLowerCase(lang);
+      var query = foldSearch(search.value);
       var shown = 0;
       optionNodes().forEach(function (li) {
-        var hay = [
+        var hay = foldSearch([
           li.getAttribute("data-label") || "",
           li.getAttribute("data-country-en") || "",
           li.getAttribute("data-code") || "",
-        ]
-          .join(" ")
-          .toLocaleLowerCase(lang);
+        ].join(" "));
         var match = !query || hay.indexOf(query) !== -1;
         li.classList.toggle("is-filtered-out", !match);
         if (match) shown += 1;
@@ -1733,12 +1746,12 @@
     }
 
     function applyFilter() {
-      var query = String(search.value || "").trim().toLocaleLowerCase(lang);
+      var query = foldSearch(search.value);
       var shown = 0;
       optionNodes().forEach(function (li) {
-        var hay = [li.getAttribute("data-label") || "", li.getAttribute("data-aliases") || ""]
-          .join(" ")
-          .toLocaleLowerCase(lang);
+        var hay = foldSearch(
+          [li.getAttribute("data-label") || "", li.getAttribute("data-aliases") || ""].join(" ")
+        );
         var match = !query || hay.indexOf(query) !== -1;
         li.classList.toggle("is-filtered-out", !match);
         if (match) shown += 1;
@@ -2133,18 +2146,16 @@
     }
 
     function applyFilter() {
-      var query = String(search.value || "").trim().toLocaleLowerCase(lang);
+      var query = foldSearch(search.value);
       var shown = 0;
       optionNodes().forEach(function (li) {
-        var hay = [
+        var hay = foldSearch([
           li.getAttribute("data-label") || "",
           li.getAttribute("data-country-code") || "",
           li.getAttribute("data-country-en") || "",
           li.getAttribute("data-value") || "",
           li.getAttribute("data-dial") || "",
-        ]
-          .join(" ")
-          .toLocaleLowerCase(lang);
+        ].join(" "));
         var match = !query || hay.indexOf(query) !== -1;
         li.classList.toggle("is-filtered-out", !match);
         if (match) shown += 1;

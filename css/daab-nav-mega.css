@@ -593,7 +593,7 @@ div.breadcrumbs.forum-breadcrumbs{
   }
 
   .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-toggle{
-    padding-left: calc(14px + 1.5ch) !important;
+    padding-left: 12px !important;
     font-weight: 700 !important;
   }
 
@@ -613,7 +613,9 @@ div.breadcrumbs.forum-breadcrumbs{
     left: auto !important;
     min-width: 0 !important;
     max-width: none !important;
-    margin-top: 4px !important;
+    margin-top: 6px !important;
+    margin-left: var(--daab-nav-toggle-pad-x, 14px) !important;
+    width: calc(100% - var(--daab-nav-toggle-pad-x, 14px)) !important;
     padding: 6px !important;
     transform: none !important;
     animation: none !important;
@@ -656,13 +658,15 @@ div.breadcrumbs.forum-breadcrumbs{
   .nav-dropdown--forums .nav-dropdown--nested .nav-mega-links,
   .nav-dropdown--forums .nav-dropdown--nested .nav-mega-nest{
     padding-right: 0;
-    padding-left: 12px;
+    padding-left: 0;
     border-right: none;
-    border-left: 2px solid rgba(0, 105, 180, 0.22);
+    border-left: none;
   }
 
   .nav-mega-nest{
-    padding-left: 12px;
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
   }
 
   .nav-dropdown--forum .nav-dropdown-link-desc,
@@ -685,7 +689,7 @@ div.breadcrumbs.forum-breadcrumbs{
   .nav-dropdown--forums > .nav-dropdown-panel > .nav-dropdown-link--forum-year{
     min-height: 0 !important;
     padding: 10px 14px !important;
-    padding-left: calc(14px + 1.5ch) !important;
+    padding-left: 12px !important;
     gap: 2px !important;
   }
 
@@ -707,11 +711,12 @@ div.breadcrumbs.forum-breadcrumbs{
   }
 
   .nav-dropdown--forum .nav-mega-links > .nav-dropdown-link{
-    padding-left: 14px !important;
+    padding-left: 12px !important;
   }
 
+  .nav-menu .nav-dropdown--nested > .nav-dropdown-panel .nav-mega-nest > .nav-dropdown-link,
   .nav-dropdown--forum .nav-mega-nest > .nav-dropdown-link{
-    padding-left: calc(14px + 1.5ch) !important;
+    padding-left: calc(12px + var(--daab-nav-indent-step, 0.5rem)) !important;
   }
 }
 
@@ -751,14 +756,19 @@ div.breadcrumbs.forum-breadcrumbs{
 }
 .nav-dropdown-panel > .nav-dropdown--nested > .nav-dropdown-toggle--nested .nav-dropdown-link-desc{
   display: block;
-  max-width: 16.5rem;
+  width: 100%;
+  max-width: none;
   font-size: 12px !important;
   font-weight: 400 !important;
   line-height: 1.4 !important;
   color: #5a7c93 !important;
+  margin: 0;
+  padding: 0;
   padding-right: 4px;
   overflow: visible !important;
   white-space: normal !important;
+  text-align: left !important;
+  text-indent: 0 !important;
 }
 .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel:not(.nav-dropdown-panel--mega){
   min-width: min(320px, calc(100vw - 32px));
@@ -848,7 +858,7 @@ div.breadcrumbs.forum-breadcrumbs{
 @media (max-width: 1180px) {
   .nav-dropdown-panel > .nav-dropdown--nested > .nav-dropdown-toggle--nested{
     min-height: 44px !important;
-    padding: 12px 40px 12px 14px !important;
+    padding: 12px 40px 12px var(--daab-nav-toggle-pad-x, 12px) !important;
   }
   .nav-dropdown-panel > .nav-dropdown--nested > .nav-dropdown-toggle--nested .nav-dropdown-caret{
     border-left: 4px solid transparent;
@@ -865,19 +875,20 @@ div.breadcrumbs.forum-breadcrumbs{
   .nav-dropdown-panel > .nav-dropdown--nested > .nav-dropdown-panel{
     position: static !important;
     display: none !important;
-    width: 100% !important;
     min-width: 0 !important;
-    margin-top: 4px !important;
-    margin-left: 0 !important;
-    background: rgba(255, 255, 255, .72) !important;
+    margin-top: 6px !important;
+    margin-left: var(--daab-nav-toggle-pad-x, 14px) !important;
+    width: calc(100% - var(--daab-nav-toggle-pad-x, 14px)) !important;
+    background: #e8f4fb !important;
     box-shadow: none !important;
   }
   .nav-dropdown-panel > .nav-dropdown--nested.open > .nav-dropdown-panel,
   .nav-dropdown-panel > .nav-dropdown--nested.is-submenu-open > .nav-dropdown-panel{
     display: flex !important;
   }
-  .nav-dropdown-panel > .nav-dropdown--nested > .nav-dropdown-panel .nav-dropdown-link{
-    padding-left: calc(14px + 3ch) !important;
+  .nav-dropdown-panel > .nav-dropdown--nested > .nav-dropdown-panel > .nav-dropdown-link,
+  .nav-dropdown-panel > .nav-dropdown--nested > .nav-dropdown-panel .nav-mega-links > .nav-dropdown-link{
+    padding-left: 12px !important;
   }
   .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel:not(.nav-dropdown-panel--mega) .nav-dropdown-link.active{
     color: #fff !important;

@@ -50,6 +50,7 @@
     "forum-2026-register": "forum2026Register",
     "complex-topics": "complexTopics",
     "complex-topics-approach": "complexTopicsApproach",
+    "complex-topics-informatics": "complexTopicsInformatics",
     "forum-2024-presentations": "forum2024Presentations",
     "forum-official": "forumOfficial",
     "forum-rector-speeches": "forumRectorSpeeches",
@@ -165,6 +166,12 @@
         id: "complex-topics-approach",
         az: "az/complex-topics-approach.html",
         en: "en/complex-topics-approach.html",
+        navParent: "forums"
+      },
+      {
+        id: "complex-topics-informatics",
+        az: "az/complex-topics-informatics.html",
+        en: "en/complex-topics-informatics.html",
         navParent: "forums"
       },
       {
@@ -337,7 +344,10 @@
         forum2026Year: "II Forum",
         forum2026Register: "Qeydiyyat",
         forums: "Layihələr",
-        complexTopics: "Çətin mövzu, aydın izah"
+        complexTopics: "Çətin mövzu, aydın izah",
+        complexTopicsApproach: "Müsabiqənin təşkili",
+        complexTopicsInformatics: "Mövzu seçimi üzrə bələdçi",
+        complexTopicsPresentation: "Təqdimat"
       },
       en: {
         aria: "Breadcrumb",
@@ -354,7 +364,10 @@
         forum2026Year: "II Forum",
         forum2026Register: "Register",
         forums: "Projects",
-        complexTopics: "Complex Topics, Clear Explanations"
+        complexTopics: "Complex Topics, Clear Explanations",
+        complexTopicsApproach: "Organisation of competition",
+        complexTopicsInformatics: "Guide to topic selection",
+        complexTopicsPresentation: "Presentation"
       }
     },
     nav: {
@@ -371,6 +384,9 @@
         forum2026Register: "Qeydiyyat",
         forums: "Layihələr",
         complexTopics: "Çətin mövzu, aydın izah",
+        complexTopicsApproach: "Müsabiqənin təşkili",
+        complexTopicsInformatics: "Mövzu seçimi üzrə bələdçi",
+        complexTopicsPresentation: "Təqdimat",
         forumOfficial: "Rəsmi müraciətlər",
         forumRectorSpeeches: "Rektorlar",
         forumAnasLeadershipSpeeches: "Akademiklər",
@@ -410,6 +426,9 @@
         forum2026Register: "Register",
         forums: "Projects",
         complexTopics: "Complex Topics, Clear Explanations",
+        complexTopicsApproach: "Organisation of competition",
+        complexTopicsInformatics: "Guide to topic selection",
+        complexTopicsPresentation: "Presentation",
         forumOfficial: "Official addresses",
         forumRectorSpeeches: "Rectors",
         forumAnasLeadershipSpeeches: "Academicians",
@@ -704,7 +723,7 @@
       }
     }
 
-    if (page.id === "complex-topics-approach") {
+    if (page.id === "complex-topics-approach" || page.id === "complex-topics-informatics") {
       var competition = pageById(routes, "complex-topics");
       if (competition) {
         crumbs.push({
