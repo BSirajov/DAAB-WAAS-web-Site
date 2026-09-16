@@ -47,6 +47,7 @@ PAGE_LABEL_KEYS = {
     "forum-2026-register": "forum2026Register",
     "complex-topics": "complexTopics",
     "complex-topics-approach": "complexTopicsApproach",
+    "complex-topics-informatics": "complexTopicsInformatics",
     "forum-official": "forumOfficial",
     "forum-rector-speeches": "forumRectorSpeeches",
     "forum-anas-leadership-speeches": "forumAnasLeadershipSpeeches",
@@ -114,9 +115,9 @@ def strip_html(text: str) -> str:
 
 def normalize(text: str) -> str:
     text = strip_html(text)
-    text = unicodedata.normalize("NFKD", text)
     text = text.translate(AZ_MAP)
     text = text.lower()
+    text = "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
     text = re.sub(r"[^\w\s@.-]", " ", text, flags=re.UNICODE)
     return re.sub(r"\s+", " ", text).strip()
 
@@ -293,6 +294,34 @@ def add_nav(entries: list[dict], ui: dict, nav_def: dict) -> None:
                 group_label = labels.get(item.get("labelKey", ""), item["id"])
                 for child in item.get("children", []):
                     _append_nav_child(entries, ui, lang, group_label, item["id"], child, icons)
+
+
+def extract_informatics_sections(raw: str, lang: str) -> list[dict]:
+    out: list[dict] = []
+    for m in re.finditer(
+        r'<section[^>]*class="[^"]*cta-card[^"]*"[^>]*id="([^"]+)"[^>]*>(.*?)</section>',
+        raw,
+        re.I | re.S,
+    ):
+        anchor = m.group(1)
+        block = m.group(2)
+        hm = re.search(r"<h2[^>]*>(.*?)</h2>", block, re.I | re.S)
+        title = strip_html(hm.group(1)) if hm else anchor
+        pm = re.search(r"<p[^>]*>(.*?)</p>", block, re.I | re.S)
+        summary = strip_html(pm.group(1))[:240] if pm else ""
+        out.append(
+            entry(
+                eid=f"section-complex-topics-informatics-{anchor}-{lang}",
+                lang=lang,
+                kind="section",
+                page_id="complex-topics-informatics",
+                title=title,
+                summary=summary,
+                anchor=anchor,
+                icon="📗",
+            )
+        )
+    return out
 
 
 def extract_forum_sections(raw: str, lang: str, page_id: str) -> list[dict]:
@@ -556,6 +585,7 @@ def build() -> dict:
         "forum-cooperation": lambda raw, lang: extract_forum_sections(
             raw, lang, "forum-cooperation"
         ),
+        "complex-topics-informatics": extract_informatics_sections,
     }
     for page in routes["pages"]:
         pid = page["id"]

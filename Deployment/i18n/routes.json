@@ -97,6 +97,15 @@
       "en": "en/complex-topics-approach.html"
     },
     {
+      "id": "complex-topics-informatics",
+      "navId": "complex-topics-informatics",
+      "navGroup": "forums",
+      "navParent": "forums",
+      "navOrder": 3.2,
+      "az": "az/complex-topics-informatics.html",
+      "en": "en/complex-topics-informatics.html"
+    },
+    {
       "id": "forum-2024-presentations",
       "navId": "forum-2024-presentations",
       "navGroup": "forum",

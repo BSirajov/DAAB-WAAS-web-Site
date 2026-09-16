@@ -168,6 +168,11 @@
               "id": "complex-topics-approach",
               "labelKey": "complexTopicsApproach",
               "descKey": "complexTopicsApproachDesc"
+            },
+            {
+              "id": "complex-topics-informatics",
+              "labelKey": "complexTopicsInformatics",
+              "descKey": "complexTopicsInformaticsDesc"
             }
           ]
         }
@@ -325,7 +330,8 @@
         "forum-2026",
         "forum-2026-register",
         "complex-topics",
-        "complex-topics-approach"
+        "complex-topics-approach",
+        "complex-topics-informatics"
       ]
     },
     "forum-2026-year": {

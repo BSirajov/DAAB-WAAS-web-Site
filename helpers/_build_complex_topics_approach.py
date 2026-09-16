@@ -423,7 +423,7 @@ def page_html(lang: str, items: list[dict]) -> str:
 <script src="../js/daab-breadcrumbs.js?v=57" defer></script>
 <script src="../js/daab-shell.js?v=19" defer></script>
 <script src="../js/daab-page-subtitle.js?v=2" defer></script>
-<script src="../js/daab-search.js?v=16" defer></script>
+<script src="../js/daab-search.js?v=17" defer></script>
 <script src="../js/daab-analytics.js?v=7" defer></script>
 <script src="../js/daab-sidebar-spy.js?v=1" defer></script>
 <script src="../js/daab-sidebar-timeline.js?v=4" defer></script>

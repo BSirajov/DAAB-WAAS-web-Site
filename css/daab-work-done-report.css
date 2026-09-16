@@ -3,11 +3,19 @@
  * Source: documents/report_2024-2026/
  */
 html[data-daab-page-id="work-done-2024-2026"] {
+  --daab-corner-fab-inset: 22px;
+  --daab-print-fab-height: 42px;
+  --daab-corner-fab-gap: 12px;
   scroll-behavior: smooth;
 }
 
 html[data-daab-page-id="work-done-2024-2026"] [id] {
-  scroll-margin-top: calc(var(--daab-nav-height, 64px) + var(--daab-breadcrumbs-height, 0px) + 18px);
+  scroll-margin-top: calc(var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) + 18px);
+}
+
+.work-done-report,
+.work-done-report .report-layout {
+  overflow: visible;
 }
 
 .work-done-report .report-layout {
@@ -17,26 +25,33 @@ html[data-daab-page-id="work-done-2024-2026"] [id] {
   align-items: start;
 }
 
-.work-done-report .report-toc {
+.work-done-report aside.report-toc.sidebar {
   position: sticky;
-  top: calc(var(--daab-nav-height, 64px) + var(--daab-breadcrumbs-height, 0px) + 12px);
+  top: calc(var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) + 12px);
   align-self: start;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 16px;
-  max-height: calc(100vh - var(--daab-nav-height, 64px) - var(--daab-breadcrumbs-height, 0px) - 28px);
-  overflow: auto;
+  z-index: var(--z-sidebar-sticky, 20);
+  width: 100%;
+  max-height: calc(100vh - var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) - 28px);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  overflow: visible;
 }
 
-.work-done-report .report-toc strong {
-  display: block;
-  color: var(--blue-700);
-  margin-bottom: 10px;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.work-done-report aside.report-toc .sidebar-widget {
+  display: flex;
+  flex-direction: column;
+  max-height: inherit;
+  overflow: hidden;
+}
+
+.work-done-report aside.report-toc .widget-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .work-done-report .report-toc .toc-link {
@@ -47,6 +62,7 @@ html[data-daab-page-id="work-done-2024-2026"] [id] {
   text-align: left;
   font: inherit;
   color: var(--ink);
+  text-decoration: none;
   padding: 7px 9px;
   border-radius: 10px;
   font-size: 0.94rem;
@@ -55,7 +71,7 @@ html[data-daab-page-id="work-done-2024-2026"] [id] {
 }
 
 .work-done-report .report-toc .toc-link:hover,
-.work-done-report .report-toc .toc-link:focus {
+.work-done-report .report-toc .toc-link:focus-visible {
   background: var(--blue-50, #eef4fb);
   color: var(--blue-700);
   outline: none;
@@ -74,47 +90,89 @@ html[data-daab-page-id="work-done-2024-2026"] [id] {
 }
 
 .work-done-report .report-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   min-width: 0;
 }
 
 .work-done-report .report-section {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 28px 26px;
-  margin-bottom: 22px;
-  box-shadow: var(--shadow);
+  background: #fff;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 0 22px;
+  box-shadow: none;
 }
 
-.work-done-report .report-section h2 {
-  margin: 0 0 16px;
-  font-family: var(--font-display, "Playfair Display", Georgia, serif);
-  color: var(--blue-700);
-  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+.work-done-report .report-section > h2 {
+  margin: 0;
+  padding: 16px 20px;
+  background: var(--blue-700);
+  color: #fff;
+  font-family: var(--font-serif) !important;
+  font-size: clamp(17px, 2.5vw, 19px);
+  font-weight: 700;
+  line-height: 1.38;
+  letter-spacing: 0.01em;
+  text-align: center;
+  text-transform: none;
+  border: 0;
+  border-bottom: 3px solid var(--blue-400);
+}
+
+.work-done-report .report-section > h3 {
+  margin: 22px 0 12px;
+  padding: 10px 16px;
+  background: #ececec;
+  border: 0;
+  border-bottom: 1px solid #d0d0d0;
+  color: #2b2b2b;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
   line-height: 1.25;
-  border-left: 5px solid var(--gold-soft, #c8a24a);
-  padding-left: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
 }
 
-.work-done-report .report-section h3 {
-  margin: 26px 0 10px;
-  color: var(--blue-400, #1f4e79);
-  font-size: 1.12rem;
+.work-done-report .report-section > h2 + h3 {
+  margin-top: 0;
+}
+
+.work-done-report .report-section > p,
+.work-done-report .report-section > ol,
+.work-done-report .report-section > .table-wrap,
+.work-done-report .report-section > .caption,
+.work-done-report .report-section > .doc-figure {
+  margin-left: 22px;
+  margin-right: 22px;
+}
+
+.work-done-report .report-section > p:first-of-type {
+  margin-top: 18px;
 }
 
 .work-done-report .report-section p,
 .work-done-report .report-section li {
   text-align: justify;
   text-justify: inter-word;
+  color: #2b2b2b;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 .work-done-report .report-section p {
-  margin: 0 0 14px;
+  margin-top: 0;
+  margin-bottom: 12px;
 }
 
 .work-done-report .doc-list {
-  margin: 0 0 16px 22px;
-  padding: 0;
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding-left: 1.4em;
 }
 
 .work-done-report .doc-list li {
@@ -123,42 +181,44 @@ html[data-daab-page-id="work-done-2024-2026"] [id] {
 
 .work-done-report .table-wrap {
   overflow-x: auto;
-  margin: 18px 0 20px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
+  margin-top: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
 }
 
 .work-done-report table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--white);
+  background: #fff;
   min-width: 520px;
 }
 
 .work-done-report th,
 .work-done-report td {
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--line);
+  padding: 10px 12px;
+  border: 1px solid #c9d3dc;
   vertical-align: top;
   text-align: left;
 }
 
 .work-done-report th {
-  background: var(--blue-50, #eef4fb);
-  color: var(--blue-700);
+  background: #eef4f9;
+  color: #0b3a63;
   font-weight: 700;
 }
 
-.work-done-report tr:last-child td {
-  border-bottom: none;
+.work-done-report tbody tr:nth-child(even) td {
+  background: #fafcfe;
 }
 
 .work-done-report .doc-figure {
-  margin: 18px 0 8px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
   overflow: hidden;
-  background: var(--white);
+  background: #fff;
 }
 
 .work-done-report .doc-figure img {
@@ -172,14 +232,15 @@ html[data-daab-page-id="work-done-2024-2026"] [id] {
 .work-done-report .caption {
   color: var(--muted);
   font-size: 0.92rem;
-  margin: 8px 0 18px;
+  margin-top: 8px;
+  margin-bottom: 18px;
   font-style: italic;
 }
 
 .work-done-report .report-print-btn {
   position: fixed;
-  right: 22px;
-  bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+  right: var(--daab-corner-fab-inset, 22px);
+  bottom: calc(var(--daab-corner-fab-inset, 22px) + env(safe-area-inset-bottom, 0px));
   z-index: 40;
   border: none;
   border-radius: 999px;
@@ -191,23 +252,43 @@ html[data-daab-page-id="work-done-2024-2026"] [id] {
   cursor: pointer;
 }
 
+/* Keep the scroll-control stack above Print / PDF. */
+html[data-daab-page-id="work-done-2024-2026"] .daab-scroll-fabs {
+  right: var(--daab-corner-fab-inset, 22px);
+  bottom: calc(
+    var(--daab-corner-fab-inset, 22px) +
+    env(safe-area-inset-bottom, 0px) +
+    var(--daab-print-fab-height, 42px) +
+    var(--daab-corner-fab-gap, 12px)
+  );
+}
+
 .work-done-report .report-print-btn:hover {
   filter: brightness(1.03);
 }
 
-@media (max-width: 960px) {
+html.daab-toc-open .work-done-report .report-print-btn {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 1060px) {
   .work-done-report .report-layout {
     grid-template-columns: 1fr;
   }
 
-  .work-done-report .report-toc {
-    position: relative;
-    top: auto;
-    max-height: none;
+  .work-done-report .report-section > p,
+  .work-done-report .report-section > ol,
+  .work-done-report .report-section > .table-wrap,
+  .work-done-report .report-section > .caption,
+  .work-done-report .report-section > .doc-figure {
+    margin-left: 16px;
+    margin-right: 16px;
   }
 
-  .work-done-report .report-section {
-    padding: 20px 18px;
+  .work-done-report .report-section > h2 {
+    padding: 14px 16px;
   }
 }
 
@@ -230,5 +311,26 @@ html[data-daab-page-id="work-done-2024-2026"] [id] {
     box-shadow: none;
     border: none;
     page-break-inside: auto;
+    overflow: visible !important;
+  }
+
+  .work-done-report .doc-figure {
+    overflow: visible !important;
+    text-align: center !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .work-done-report .doc-figure img {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 105mm !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    object-fit: contain !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 }

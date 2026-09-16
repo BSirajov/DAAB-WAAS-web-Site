@@ -71,13 +71,19 @@
     } catch (e) { /* ignore */ }
   }
 
+  function limitsFor(colKey) {
+    if (COL_LIMITS[colKey]) return COL_LIMITS[colKey];
+    if (colKey && colKey.indexOf("col-c") === 0) return { min: 72, max: 720, default: 140 };
+    return { min: 60, max: 480, default: 120 };
+  }
+
   function clampWidth(colKey, px) {
-    var lim = COL_LIMITS[colKey] || { min: 60, max: 480, default: 120 };
+    var lim = limitsFor(colKey);
     return Math.min(lim.max, Math.max(lim.min, px));
   }
 
   function defaultWidth(th, colKey) {
-    var lim = COL_LIMITS[colKey];
+    var lim = limitsFor(colKey);
     if (lim && lim.default) return lim.default;
     return th.offsetWidth || 120;
   }
@@ -161,7 +167,6 @@
 
   function initTable(table) {
     if (!table || table.getAttribute("data-daab-resize-init") === "1") return;
-    if (window.matchMedia("(pointer: coarse)").matches) return;
 
     var theadRow = table.querySelector("thead tr");
     if (!theadRow) return;
@@ -197,8 +202,7 @@
       colgroup.appendChild(col);
     });
 
-    visibleThs.forEach(function (th, index) {
-      if (index === visibleThs.length - 1) return;
+    visibleThs.forEach(function (th) {
       if (th.querySelector(".daab-col-resize-handle")) return;
 
       var handle = document.createElement("button");
@@ -297,8 +301,8 @@
 
     if (ev.key === "ArrowRight") next = current + step;
     else if (ev.key === "ArrowLeft") next = current - step;
-    else if (ev.key === "Home") next = (COL_LIMITS[colKey] || {}).min || 60;
-    else if (ev.key === "End") next = (COL_LIMITS[colKey] || {}).max || 480;
+    else if (ev.key === "Home") next = limitsFor(colKey).min;
+    else if (ev.key === "End") next = limitsFor(colKey).max;
     else return;
 
     ev.preventDefault();

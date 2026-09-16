@@ -1,10 +1,22 @@
-/* DAAB — floating back-to-top control */
+/* DAAB — floating Go to top / Go to bottom controls */
 
-.daab-back-to-top{
+.daab-scroll-fabs{
   position: fixed;
   z-index: var(--z-back-to-top, 10050);
   right: max(14px, var(--daab-safe-right));
   bottom: max(14px, var(--daab-safe-bottom));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.daab-back-to-top{
+  position: relative;
+  z-index: var(--z-back-to-top, 10050);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -30,52 +42,94 @@
   pointer-events: none;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
-}.daab-back-to-top.is-visible{
+}
+
+.daab-back-to-top.is-visible{
   opacity: 1;
   visibility: visible;
   transform: translate3d(0, 0, 0);
   pointer-events: auto;
-}.daab-back-to-top__icon{
+}
+
+.daab-scroll-fabs .daab-back-to-top:not(.is-visible){
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  box-shadow: none;
+}
+
+.daab-back-to-top__icon{
   display: block;
   width: 22px;
   height: 22px;
-}.daab-back-to-top:focus-visible{
+}
+
+.daab-back-to-top:focus-visible{
   outline: 3px solid rgba(255, 240, 191, 0.95);
   outline-offset: 3px;
 }
 
-@media (hover: hover) and (pointer: fine) {.daab-back-to-top.is-visible:hover{
+@media (hover: hover) and (pointer: fine) {
+  .daab-back-to-top.is-visible:hover{
     border-color: rgba(201, 155, 59, 0.55);
     box-shadow: var(--shadow-strong);
     transform: translate3d(0, -2px, 0);
   }
-}html.daab-scroll-lock .daab-back-to-top,
+}
+
+html.daab-scroll-lock .daab-scroll-fabs,
+body.daab-scroll-lock .daab-scroll-fabs,
+html.daab-toc-scroll-lock .daab-scroll-fabs,
+body.daab-toc-scroll-lock .daab-scroll-fabs,
+html.daab-scroll-lock .daab-back-to-top,
 body.daab-scroll-lock .daab-back-to-top{
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
 }
 
-@media (max-width: 1180px) {.daab-back-to-top{
+/* Keep the stack above any bottom-right Print / PDF control. */
+html:has(.report-print-btn) .daab-scroll-fabs{
+  right: 22px;
+  bottom: calc(22px + env(safe-area-inset-bottom, 0px) + 42px + 12px);
+}
+
+@media (max-width: 1180px) {
+  .daab-scroll-fabs{
     right: max(14px, calc(10px + var(--daab-safe-right, 0px)));
     bottom: max(
       18px,
       calc(14px + env(safe-area-inset-bottom, 0px))
     );
+  }
+
+  html:has(.report-print-btn) .daab-scroll-fabs{
+    right: 22px;
+    bottom: calc(22px + env(safe-area-inset-bottom, 0px) + 42px + 12px);
+  }
+
+  .daab-back-to-top{
     width: 48px;
     height: 48px;
     box-shadow: 0 12px 32px rgba(0, 45, 82, 0.34);
   }
 }
 
-@media (prefers-reduced-motion: reduce) {.daab-back-to-top{
+@media (prefers-reduced-motion: reduce) {
+  .daab-back-to-top{
     transition: opacity 0.12s ease, visibility 0.12s ease;
-  }.daab-back-to-top.is-visible:hover{
+  }
+  .daab-back-to-top.is-visible:hover{
     transform: none;
   }
 }
 
-@media print {.daab-back-to-top{
+@media print {
+  .daab-scroll-fabs,
+  .daab-back-to-top{
     display: none !important;
   }
 }

@@ -49,17 +49,17 @@
     return /\/en(\/|$)/.test(location.pathname.replace(/\\/g, "/")) ? "en" : "az";
   }
 
-  function normalizeText(text) {
-    var out = String(text || "");
-    out = out.replace(/<[^>]+>/g, " ");
-    var i;
-    for (i = 0; i < out.length; i++) {
-      if (AZ_MAP[out.charAt(i)]) {
-        out = out.split(out.charAt(i)).join(AZ_MAP[out.charAt(i)]);
-      }
-    }
-    return out
+  function foldLetters(text) {
+    return String(text || "")
+      .replace(/[^\u0000-\u007f]/g, function (ch) {
+        return AZ_MAP[ch] || ch;
+      })
       .toLowerCase()
+      .replace(/[\u0300-\u036f]/g, "");
+  }
+
+  function normalizeText(text) {
+    return foldLetters(String(text || "").replace(/<[^>]+>/g, " "))
       .replace(/[^\w\s@.-]/g, " ")
       .replace(/\s+/g, " ")
       .trim();
@@ -80,7 +80,7 @@
 
     var src = String(text);
     var spans = [];
-    var lower = normalizeText(src);
+    var lower = foldLetters(src);
     words.forEach(function (word) {
       var start = 0;
       var idx;
@@ -694,6 +694,7 @@
   }
 
   global.DAAB_SEARCH = {
+    foldLetters: foldLetters,
     normalizeText: normalizeText,
     scoreEntry: scoreEntry,
     open: function () {

@@ -139,8 +139,12 @@
       "az": "Çətin İKT mövzularının sadə və elmi cəhətdən düzgün izahı üzrə açıq müsabiqə — məqalə, video, slayd, cizgi filmi, animasiya, komiks, infoqrafika, interaktiv material və ya tədris paketi."
     },
     "complex-topics-approach": {
-      "en": "This text is not an approved regulation. Dates, scoring thresholds and procedures are working proposals for WAAS to review. The budget and sources of funding have not been decided; it is not known whether financial support or material prizes will be possible.",
-      "az": "Bu mətn təsdiqlənmiş Əsasnamə deyil. Tarixlər, qiymətləndirmə hədləri və prosedurlar DAAB-ın nəzərdən keçirməsi üçün işçi təkliflərdir. Büdcə və maliyyə mənbələri müəyyən edilməyib; maliyyə dəstəyinin və maddi mükafatların mümkünlüyü məlum deyil."
+      "en": "This text presents an initial working framework for preparing the competition regulation. The proposed dates, assessment criteria and procedures will be refined through discussion and suggestions. Opportunities for financial support and material prizes will be assessed in light of the budget and possible sources of funding. To make discussion easier, new recommendations for improving the text are shown separately.",
+      "az": "Bu mətn müsabiqənin Əsasnaməsinin hazırlanması üçün ilkin işçi çərçivə təqdim edir. Təklif olunan tarixlər, qiymətləndirmə meyarları və prosedurlar müzakirə və təkliflər əsasında dəqiqləşdiriləcək. Maliyyə dəstəyi və maddi mükafatlarla bağlı imkanlar büdcə və mümkün maliyyə mənbələri nəzərə alınmaqla dəyərləndiriləcək. Müzakirəni asanlaşdırmaq üçün mətnin təkmilləşdirilməsinə dair yeni tövsiyələr ayrıca göstərilir."
+    },
+    "complex-topics-informatics": {
+      "en": "This page is a working guide: it gathers curriculum priorities, learner interest, documented teaching difficulties and examples, and it marks places where the source documents differ.",
+      "az": "Bu səhifə işçi bələdçidir: tədris prioritetlərini, öyrənənlərin marağını, sənədləşdirilmiş çətinlikləri və nümunələri bir yerə toplayır, mənbələr fərqlənəndə isə fərqi gizlətmir."
     }
   }
 }

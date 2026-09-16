@@ -122,6 +122,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/complex-topics-approach.html"/>
   </url>
   <url>
+    <loc>https://daab-waas.com/az/complex-topics-informatics.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/complex-topics-informatics.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/complex-topics-informatics.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/complex-topics-informatics.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/en/complex-topics-informatics.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/complex-topics-informatics.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/complex-topics-informatics.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/complex-topics-informatics.html"/>
+  </url>
+  <url>
     <loc>https://daab-waas.com/az/forum/2024/presentations.html</loc>
     <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/forum/2024/presentations.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/forum/2024/presentations.html"/>

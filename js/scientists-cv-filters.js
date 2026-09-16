@@ -650,7 +650,7 @@
 
     function cardMatches(card, q, countryCodes, degreeFilter, ixtilasFilter) {
       var code = card.dataset.country || "";
-      var hay = (card.dataset.search || "").toLowerCase();
+      var hay = normQuery(card.dataset.search || "");
       var deg = (card.dataset.degree || "").trim();
       var ixt = (card.dataset.ixtilas || "").trim();
       var matchFn = ms ? ms.matches.bind(ms) : function (selected, value) {

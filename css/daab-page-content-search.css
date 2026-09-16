@@ -1,59 +1,145 @@
 /**
- * In-page content search (activities, charter, work-done report, application) — scoped to supported page ids.
- * Toolbar chrome reuses scientists-catalog-toolbar.css (.toolbar, .search-wrap).
+ * Sticky in-page search — compact bar in #daab-top-chrome, below nav + breadcrumbs.
  */
-html[data-daab-page-id="activities-news"] .page-content-search-toolbar,
-html[data-daab-page-id="charter"] .page-content-search-toolbar,
-html[data-daab-page-id="work-done-2024-2026"] .page-content-search-toolbar,
-html[data-daab-page-id="membership-application"] .page-content-search-toolbar,
-html[data-daab-page-id="forum-2026-register"] .page-content-search-toolbar {
-  margin-bottom: 0;
-}
 
-html[data-daab-page-id="forum-2026-register"] .page-content-search-toolbar,
-html[data-daab-page-id="membership-application"] .page-content-search-toolbar {
+.daab-page-search {
+  display: none;
+  box-sizing: border-box;
   width: 100%;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
+  padding: 0;
+  pointer-events: auto;
+  color: var(--ink, #102a43);
+  background: rgba(247, 251, 255, 0.96);
+  border-bottom: 1px solid var(--blue-soft, #d5e6f3);
+  box-shadow: 0 8px 16px -14px rgba(6, 49, 78, 0.35);
+  backdrop-filter: blur(14px);
 }
 
-html[data-daab-page-id="activities-news"] .page-content-search-band,
-html[data-daab-page-id="charter"] .page-content-search-band,
-html[data-daab-page-id="membership-application"] .page-content-search-band,
-html[data-daab-page-id="forum-2026-register"] .page-content-search-band {
+html.daab-page-search-ready .daab-page-search,
+#daab-top-chrome .daab-page-search {
+  display: block;
+}
+
+.daab-page-search__inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: min(100%, var(--max, 1220px));
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 8px max(16px, env(safe-area-inset-right)) 8px max(16px, env(safe-area-inset-left));
+  box-sizing: border-box;
+}
+
+.daab-page-search__field {
   position: relative;
-  z-index: 2;
-  margin-top: 24px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.daab-page-search__field svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  color: var(--muted, #5b7083);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.daab-page-search input[type="search"] {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 14px 8px 40px;
+  color: var(--ink, #102a43);
+  background: var(--white, #fff);
+  border: 1px solid var(--color-border-blue-light, #c5d8e8);
+  border-radius: var(--radius-pill, 999px);
+  font: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.daab-page-search input[type="search"]:focus,
+.daab-page-search input[type="search"]:focus-visible {
+  border-color: var(--blue-700, #005fa3);
+  box-shadow: var(--shadow-focus, 0 0 0 3px rgba(0, 105, 180, 0.18));
+}
+
+.daab-page-search__status {
+  flex: 0 0 auto;
+  margin: 0;
+  min-width: 4.5em;
+  color: var(--muted, #5b7083);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.daab-page-search__nav,
+.daab-page-search__clear {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  margin: 0;
+  color: var(--blue-700, #005fa3);
+  background: var(--color-surface-toolbar, #f4f8fc);
+  border: 1px solid var(--blue-soft, #d5e6f3);
+  border-radius: var(--radius-pill, 999px);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.daab-page-search__nav {
+  width: 40px;
+  padding: 0;
+}
+
+.daab-page-search__clear {
+  padding: 0 14px;
+}
+
+.daab-page-search__nav:hover,
+.daab-page-search__clear:hover {
+  background: #e8f3fb;
+}
+
+.daab-page-search__nav:focus-visible,
+.daab-page-search__clear:focus-visible,
+.daab-page-search input[type="search"]:focus-visible {
+  outline: 2px solid var(--blue-400, #4aa3d8);
+  outline-offset: 2px;
+}
+
+.daab-page-search__nav[hidden],
+.daab-page-search__clear[hidden],
+.daab-page-search__status[hidden] {
+  display: none !important;
+}
+
+html.daab-page-search-ready .page-content-search-toolbar,
+html.daab-page-search-ready .page-content-search-band > .toolbar,
+html.daab-page-search-ready [data-daab-page-search-legacy],
+html.daab-page-search-ready .daab-hub-page .search-box,
+html.daab-page-search-ready label.search-box:has(#cardSearch) {
+  display: none !important;
+}
+
+html.daab-page-search-ready .page-content-search-band {
+  margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-html[data-daab-page-id="activities-news"] .page-content-search-band + .content-wrap {
-  margin-top: 20px !important;
-}
-
-html[data-daab-page-id="charter"] .page-content-search-band + .main,
-html[data-daab-page-id="membership-application"] .page-content-search-band + .main,
-html[data-daab-page-id="forum-2026-register"] .page-content-search-band + .main {
-  margin-top: 20px !important;
-}
-
-html[data-daab-page-id="work-done-2024-2026"] .page-content-search-toolbar,
-html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty {
-  margin-bottom: 16px;
-}
-
-.page-content-search-toolbar__head {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-}
-
-.page-content-search-toolbar__head .search-wrap {
-  flex: 1 1 auto;
-  min-width: 0;
+html.daab-page-search-ready .forum-register-sticky-stack .page-content-search-toolbar {
+  display: none !important;
 }
 
 .page-content-search__hidden {
@@ -61,76 +147,80 @@ html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty {
 }
 
 .page-content-search__match {
-  border-radius: var(--radius);
+  border-radius: var(--radius, 12px);
   box-shadow:
     0 0 0 2px rgba(212, 168, 67, 0.65),
-    var(--shadow);
+    var(--shadow, 0 8px 20px rgba(8, 38, 59, 0.06));
 }
 
-html[data-daab-page-id="activities-news"] .page-content-search__empty,
-html[data-daab-page-id="charter"] .page-content-search__empty,
-html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty,
-html[data-daab-page-id="membership-application"] .page-content-search__empty,
-html[data-daab-page-id="forum-2026-register"] .page-content-search__empty {
+.daab-page-search-hit {
+  background: #ffe566;
+  color: #111;
+  padding: 0 0.12em;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  scroll-margin-top: calc(var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) + 16px);
+}
+
+.daab-page-search-hit.is-current {
+  background: #f5c518;
+  box-shadow: 0 0 0 2px #0b3a63;
+}
+
+.page-content-search__empty {
   display: none;
   padding: 48px 20px;
-  margin-bottom: 18px;
-  color: var(--muted);
+  margin: 20px auto 0;
+  width: min(100%, var(--max, 1220px));
+  color: var(--muted, #5b7083);
   font-size: 15px;
   text-align: center;
-  background: var(--color-surface-toolbar);
-  border: 1px solid var(--blue-soft);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  background: var(--color-surface-toolbar, #f4f8fc);
+  border: 1px solid var(--blue-soft, #d5e6f3);
+  border-radius: var(--radius, 12px);
+  box-shadow: var(--shadow, 0 8px 20px rgba(8, 38, 59, 0.06));
 }
 
-html[data-daab-page-id="activities-news"] .page-content-search__empty:not([hidden]),
-html[data-daab-page-id="charter"] .page-content-search__empty:not([hidden]),
-html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty:not([hidden]),
-html[data-daab-page-id="membership-application"] .page-content-search__empty:not([hidden]),
-html[data-daab-page-id="forum-2026-register"] .page-content-search__empty:not([hidden]) {
+.page-content-search__empty:not([hidden]) {
   display: block;
 }
 
-html[data-daab-page-id="activities-news"] .page-content-search__empty svg,
-html[data-daab-page-id="charter"] .page-content-search__empty svg,
-html[data-daab-page-id="work-done-2024-2026"] .page-content-search__empty svg,
-html[data-daab-page-id="membership-application"] .page-content-search__empty svg,
-html[data-daab-page-id="forum-2026-register"] .page-content-search__empty svg {
+.page-content-search__empty svg {
   display: block;
   margin: 0 auto 12px;
   opacity: 0.35;
 }
 
-@media (max-width: 1060px) {
-  html[data-daab-page-id="activities-news"] .page-content-search-band,
-  html[data-daab-page-id="charter"] .page-content-search-band,
-  html[data-daab-page-id="membership-application"] .page-content-search-band,
-  html[data-daab-page-id="forum-2026-register"] .page-content-search-band {
-    margin-top: 20px;
+@media (max-width: 720px) {
+  .daab-page-search__inner {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
-  html[data-daab-page-id="activities-news"] .page-content-search-band + .content-wrap,
-  html[data-daab-page-id="charter"] .page-content-search-band + .main,
-  html[data-daab-page-id="membership-application"] .page-content-search-band + .main,
-  html[data-daab-page-id="forum-2026-register"] .page-content-search-band + .main {
-    margin-top: 16px !important;
+  .daab-page-search__field {
+    flex: 1 1 calc(100% - 96px);
+  }
+
+  .daab-page-search__status {
+    order: 5;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .daab-page-search__clear {
+    min-width: 44px;
   }
 }
 
-@media (max-width: 720px) {
-  .page-content-search-toolbar__head {
-    flex-wrap: wrap;
-  }
-
-  .page-content-search-toolbar__head .btn-clear {
-    width: 100%;
-  }
-
-  html[data-daab-page-id="activities-news"] .page-content-search-band,
-  html[data-daab-page-id="charter"] .page-content-search-band,
-  html[data-daab-page-id="membership-application"] .page-content-search-band,
-  html[data-daab-page-id="forum-2026-register"] .page-content-search-band {
-    margin-top: 16px;
+@media print {
+  .daab-page-search,
+  #daab-page-search,
+  .page-content-search-band,
+  .page-content-search-toolbar,
+  .page-content-search__empty {
+    display: none !important;
   }
 }

@@ -1,0 +1,232 @@
+/* DAAB — shared Print / PDF control */
+
+.report-print-btn{
+  position: fixed;
+  right: 22px;
+  bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+  z-index: 40;
+  border: none;
+  border-radius: 999px;
+  background: var(--gold-soft, #c8a24a);
+  color: var(--blue-900, #102a43);
+  padding: 12px 18px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  box-shadow: 0 8px 18px rgba(16, 42, 67, 0.2);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.report-print-btn:hover{
+  filter: brightness(1.03);
+}
+
+.daab-print-figure {
+  display: contents;
+}
+
+.report-print-btn:disabled,
+html.daab-print-busy .report-print-btn{
+  opacity: 0.72;
+  cursor: wait;
+}
+
+.report-print-btn:focus-visible{
+  outline: 3px solid rgba(255, 240, 191, 0.95);
+  outline-offset: 3px;
+}
+
+html.daab-toc-open .report-print-btn,
+html.daab-scroll-lock .report-print-btn,
+body.daab-scroll-lock .report-print-btn,
+html.daab-toc-scroll-lock .report-print-btn,
+body.daab-toc-scroll-lock .report-print-btn{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media print {
+  .report-print-btn{
+    display: none !important;
+  }
+
+  html[data-daab-print="1"] #daab-top-chrome,
+  html[data-daab-print="1"] .nav-strip,
+  html[data-daab-print="1"] .mobile-menu-toggle,
+  html[data-daab-print="1"] .daab-lang-switch,
+  html[data-daab-print="1"] .daab-breadcrumbs,
+  html[data-daab-print="1"] nav.daab-breadcrumbs,
+  html[data-daab-print="1"] aside.sidebar,
+  html[data-daab-print="1"] .daab-toc-launch,
+  html[data-daab-print="1"] .daab-toc-backdrop,
+  html[data-daab-print="1"] .cta-toc-launch,
+  html[data-daab-print="1"] .cta-toc-backdrop,
+  html[data-daab-print="1"] #daab-page-search,
+  html[data-daab-print="1"] .daab-page-search,
+  html[data-daab-print="1"] .page-content-search-band,
+  html[data-daab-print="1"] .page-content-search-toolbar{
+    display: none !important;
+  }
+
+  html[data-daab-print="1"] footer,
+  html[data-daab-print="1"] .footer-pro,
+  html[data-daab-print="1"] .footer-bottom,
+  html[data-daab-print="1"] .footer-inner{
+    display: none !important;
+  }
+
+  html[data-daab-print="1"] .content-wrap,
+  html[data-daab-print="1"] .charter-layout,
+  html[data-daab-print="1"] .cta-layout{
+    display: block !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  html[data-daab-print="1"] .news-card,
+  html[data-daab-print="1"] .card-body,
+  html[data-daab-print="1"] article,
+  html[data-daab-print="1"] .report-section {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  html[data-daab-print="1"] .card-header {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  .daab-print-figure {
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    break-before: auto;
+    break-after: auto;
+  }
+
+  main img,
+  article img,
+  figure img,
+  .news-card img,
+  .card-gallery img,
+  .card-body img,
+  .doc-figure img,
+  .act-row-thumb,
+  .act-feature-img,
+  .act-photo-grid-img,
+  .act-photo-grid-img-lg,
+  .act-narrow-img,
+  .act-video-thumb,
+  .act-portrait-img,
+  .act-half-img,
+  .award-item img,
+  .award-portrait,
+  .daab-print-figure img {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 105mm !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    break-before: auto !important;
+    break-after: auto !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .card-gallery,
+  .act-thumb-row,
+  .act-photo-grid,
+  .act-video-row,
+  .act-video-row-wrap,
+  .award-item,
+  figure,
+  .doc-figure {
+    max-width: 100% !important;
+    overflow: visible !important;
+    text-align: center !important;
+    justify-items: center !important;
+  }
+
+  .news-card,
+  .card-body,
+  .report-section {
+    overflow: visible !important;
+  }
+
+  .card-gallery,
+  .act-photo-grid,
+  .award-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    justify-items: center !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  .act-thumb-row {
+    display: block !important;
+  }
+
+  .card-gallery.single {
+    grid-template-columns: 1fr !important;
+  }
+
+  .card-gallery .daab-print-figure,
+  .act-thumb-row .daab-print-figure {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .card-gallery img,
+  .act-thumb-row img,
+  .act-photo-grid img,
+  .award-item img {
+    width: 100% !important;
+    max-height: 70mm !important;
+  }
+
+  .doc-figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .card-source,
+  .card-body > a {
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+
+  .daab-print-header img,
+  .daab-print-header__logo {
+    width: 12mm !important;
+    height: 12mm !important;
+    max-height: 12mm !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    object-fit: contain !important;
+  }
+}

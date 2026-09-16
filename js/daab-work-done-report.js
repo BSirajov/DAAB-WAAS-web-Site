@@ -31,24 +31,31 @@
     } catch (e) {}
   }
 
-  var buttons = Array.prototype.slice.call(root.querySelectorAll(".toc-link[data-target]"));
+  function linkTarget(link) {
+    return (
+      link.getAttribute("data-target") ||
+      (link.getAttribute("href") || "").replace(/^#/, "")
+    );
+  }
+
+  var buttons = Array.prototype.slice.call(root.querySelectorAll(".toc-link[data-target], .toc-link[href^='#']"));
   buttons.forEach(function (btn) {
     btn.addEventListener("click", function (ev) {
       ev.preventDefault();
-      scrollToTarget(btn.getAttribute("data-target"));
+      scrollToTarget(linkTarget(btn));
     });
   });
 
   var targets = buttons
     .map(function (btn) {
-      return document.getElementById(btn.getAttribute("data-target"));
+      return document.getElementById(linkTarget(btn));
     })
     .filter(Boolean);
 
   if ("IntersectionObserver" in window && targets.length) {
     var byId = {};
     buttons.forEach(function (btn) {
-      byId[btn.getAttribute("data-target")] = btn;
+      byId[linkTarget(btn)] = btn;
     });
     var observer = new IntersectionObserver(
       function (entries) {

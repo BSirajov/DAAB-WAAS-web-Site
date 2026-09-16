@@ -1,7 +1,7 @@
 @import url("daab-sticky-sidebar.css?v=3");
 
 .cta-page {
-  overflow-x: clip;
+  overflow-x: visible;
 }
 
 .cta-page .hero {
@@ -249,6 +249,8 @@
   .cta-page .cta-toc.sidebar {
     position: sticky;
     top: calc(var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) + 12px);
+    align-self: start;
+    z-index: var(--z-sidebar-sticky, 20);
     max-height: calc(100vh - var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) - 28px);
   }
 
@@ -256,6 +258,7 @@
     display: flex;
     flex-direction: column;
     max-height: inherit;
+    overflow: hidden;
   }
 
   .cta-page .cta-toc .widget-body {
@@ -441,17 +444,6 @@
 
   .cta-layout {
     padding: 0 16px 56px;
-  }
-
-  .cta-page .sidebar-widget:not(.events-open) .widget-body {
-    max-height: 0;
-    overflow: hidden;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  html[data-daab-page-id="complex-topics-approach"] .sidebar-widget.events-open .widget-body {
-    max-height: min(78vh, 720px) !important;
   }
 }
 
