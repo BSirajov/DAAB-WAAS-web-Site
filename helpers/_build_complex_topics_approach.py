@@ -426,7 +426,7 @@ def page_html(lang: str, items: list[dict]) -> str:
 <script src="../js/daab-search.js?v=17" defer></script>
 <script src="../js/daab-analytics.js?v=7" defer></script>
 <script src="../js/daab-sidebar-spy.js?v=1" defer></script>
-<script src="../js/daab-sidebar-timeline.js?v=4" defer></script>
+<script src="../js/daab-sidebar-timeline.js?v=7" defer></script>
 </head>
 <body class="cta-page">
 <a class="skip" href="#content">{esc(ui['skip'])}</a>

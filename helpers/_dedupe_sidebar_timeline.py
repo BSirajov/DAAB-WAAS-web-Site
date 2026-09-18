@@ -17,7 +17,7 @@ INLINE_RE = re.compile(
     re.MULTILINE,
 )
 
-SCRIPT_TAG = '<script src="{root}js/daab-sidebar-timeline.js?v=2" defer></script>'
+SCRIPT_TAG = '<script src="{root}js/daab-sidebar-timeline.js?v=7" defer></script>'
 
 # Pages with bespoke sidebar logic — do not inject shared timeline script.
 SKIP_PAGE_IDS = frozenset({"charter", "forum-photos-gallery"})

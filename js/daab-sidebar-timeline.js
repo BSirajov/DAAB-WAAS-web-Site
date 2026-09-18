@@ -40,9 +40,17 @@
     eventsToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
 
+  function setSectionHash(href) {
+    if (!href || location.hash === href) return;
+    try {
+      if (history.replaceState) history.replaceState(null, '', href);
+    } catch (err) { /* ignore */ }
+  }
+
   function jumpToTarget(event) {
     const link = event.currentTarget;
-    const id = link.getAttribute('href').slice(1);
+    const href = link.getAttribute('href') || '';
+    const id = href.slice(1);
     const target = document.getElementById(id);
     if (!target) return;
     event.preventDefault();
@@ -50,7 +58,7 @@
     var smooth = !!document.querySelector('.forum-register-stepbar');
     if (spy) spy.scrollToId(id, smooth ? 'smooth' : 'auto');
     else target.scrollIntoView({ block: 'start', behavior: smooth ? 'smooth' : 'auto' });
-    history.pushState(null, '', link.getAttribute('href'));
+    setSectionHash(href);
     if (mobileQuery.matches) closeEventsMenu();
   }
 

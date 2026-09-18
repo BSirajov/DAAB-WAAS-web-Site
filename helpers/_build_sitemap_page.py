@@ -6,7 +6,6 @@ import html
 import json
 import re
 from pathlib import Path
-from urllib.parse import quote
 
 from _footer_leader_snippets import FOOTER_AZ_HTML, FOOTER_EN_HTML
 from _inject_seo_head import build_seo_block
@@ -239,8 +238,7 @@ RESOURCE_PAGES = [
 DOCUMENTS = [
     {
         "kind": "pdf",
-        "href": "Books/DAAB_DK/"
-        + quote("Xaricdə_yaşayan_Azərbaycanlı_Alimlərin_FORUMU_(27.04.2026).pdf"),
+        "href": "Books/DAAB_DK/forum-book-2026.pdf",
         "az": "I Forum hesabatı (PDF)",
         "en": "I Forum report (PDF)",
         "desc_az": "Dövlət Komitəsinə təqdim olunan forum hesabatı",

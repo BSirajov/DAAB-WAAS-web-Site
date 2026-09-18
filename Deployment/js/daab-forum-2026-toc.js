@@ -134,15 +134,23 @@
     });
   }
 
+  function setSectionHash(href) {
+    if (!href || location.hash === href) return;
+    try {
+      if (history.replaceState) history.replaceState(null, "", href);
+    } catch (err) { /* ignore */ }
+  }
+
   function jumpToTarget(event) {
     var link = event.currentTarget;
-    var id = link.getAttribute("href").slice(1);
+    var href = link.getAttribute("href") || "";
+    var id = href.slice(1);
     var target = document.getElementById(id);
     if (!target) return;
     event.preventDefault();
     activate(link);
     scrollToSection(id, false);
-    history.pushState(null, "", link.getAttribute("href"));
+    setSectionHash(href);
     if (mobileQuery.matches) closeEventsMenu();
   }
 
@@ -200,14 +208,6 @@
   window.addEventListener("popstate", syncFromHash);
 
   if (location.hash) {
-    var hashId = location.hash.slice(1);
-    var hashLink = links.find(function (a) {
-      return a.getAttribute("href") === "#" + hashId;
-    });
-    if (hashLink) {
-      setTimeout(function () {
-        jumpToTarget({ currentTarget: hashLink, preventDefault: function () {} });
-      }, 120);
-    }
+    setTimeout(syncFromHash, 120);
   }
 })();

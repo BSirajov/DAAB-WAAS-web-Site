@@ -22,7 +22,7 @@ from _official_content import (  # noqa: E402
 OUT = ROOT / "az" / "forum" / "2024" / "official.html"
 
 SIDEBAR_SCRIPT = """
-<script src="../../../js/daab-sidebar-timeline.js?v=2" defer></script>"""
+<script src="../../../js/daab-sidebar-timeline.js?v=7" defer></script>"""
 
 
 def build() -> None:

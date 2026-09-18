@@ -23,7 +23,7 @@ PANEL_SUMMARIES_PATH = ROOT / "i18n" / "page-panel-summaries.json"
 DOCX_AZ = ROOT / "forum_2024" / "AZƏRBAYCAN UNİVERSİTETLƏRİNİN REKTORLARININ NİTQLƏRİ.docx"
 DOCX_EN = ROOT / "forum_2024" / "Azerbaijani_University_Rectors_Speeches_EN.docx"
 ASSET = "../../../"
-SIDEBAR_SCRIPT = f'<script src="{ASSET}js/daab-sidebar-timeline.js?v=2" defer></script>'
+SIDEBAR_SCRIPT = f'<script src="{ASSET}js/daab-sidebar-timeline.js?v=7" defer></script>'
 
 ANAS_SECTION_IDS = frozenset({"isa-hebibbeyli", "rasim-eliquliyev"})
 

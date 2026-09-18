@@ -21,7 +21,7 @@ _spec_footer.loader.exec_module(_footer)
 
 SIDEBAR_SCRIPTS = """\
 <script defer src="../../../js/daab-sidebar-spy.js?v=1"></script>
-<script src="../../../js/daab-sidebar-timeline.js?v=4" defer></script>"""
+<script src="../../../js/daab-sidebar-timeline.js?v=7" defer></script>"""
 
 LOGISTICS_ASSET = "../../../"
 HEAD = (

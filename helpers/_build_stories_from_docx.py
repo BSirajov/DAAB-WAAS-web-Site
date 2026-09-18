@@ -98,7 +98,7 @@ EN_HEADERS: dict[str, tuple[str, str]] = {
     "KHADIJA": ("xedice", "KHADIJA"),
 }
 
-SIDEBAR_SCRIPT = f'<script src="{ASSET}js/daab-sidebar-timeline.js?v=1" defer></script>'
+SIDEBAR_SCRIPT = f'<script src="{ASSET}js/daab-sidebar-timeline.js?v=7" defer></script>'
 
 
 def esc(s: str) -> str:

@@ -182,7 +182,7 @@ def page_html(lang: str) -> str:
 <script src="../js/daab-search.js?v=17" defer></script>
 <script src="../js/daab-analytics.js?v=7" defer></script>
 <script src="../js/daab-sidebar-spy.js?v=1" defer></script>
-<script src="../js/daab-sidebar-timeline.js?v=4" defer></script>
+<script src="../js/daab-sidebar-timeline.js?v=7" defer></script>
 <script src="../js/daab-toc-drawer.js?v=1" defer></script>
 <script src="../js/daab-table-resize.js?v=5" defer></script>
 </head>

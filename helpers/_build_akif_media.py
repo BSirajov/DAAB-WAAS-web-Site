@@ -13,7 +13,6 @@ PDF/book assets remain in Books/Akif_Alaferdov/.
 from __future__ import annotations
 
 from pathlib import Path
-from urllib.parse import quote
 
 from PIL import Image, ImageOps
 
@@ -239,8 +238,19 @@ def make_cover_thumbs(books: list[dict]) -> None:
         print(f"  thumb {dest.relative_to(ROOT)} ({dest.stat().st_size // 1024} KB)")
 
 
-def books_href(filename: str) -> str:
-    return f"{BOOKS_WEB}/{quote(filename)}"
+# Stable web names (hardlinks beside the original Unicode filenames).
+ASCII_HREF = {
+    ("001", "pdf"): "001-2_book-az.pdf",
+    ("001", "photos"): "001-3_photos-az.pdf",
+    ("002", "pdf"): "002-2_book-ru.pdf",
+    ("002", "photos"): "002-3_photos-ru.pdf",
+    ("003", "pdf"): "003-2_book-ru.pdf",
+    ("003", "photos"): "003-3_photos-ru.pdf",
+}
+
+
+def books_href(book_id: str, kind: str) -> str:
+    return f"{BOOKS_WEB}/{ASCII_HREF[(book_id, kind)]}"
 
 
 def books_section_html(lang: str, books: list[dict]) -> str:
@@ -250,8 +260,8 @@ def books_section_html(lang: str, books: list[dict]) -> str:
         title = book[lang]
         note = book[f"lang_note_{lang}"]
         thumb_src = f"{media_thumb_web_prefix(THUMB_DIRNAME)}{book['id']}.jpg"
-        pdf_href = books_href(book["pdf"].name)
-        photos_href = books_href(book["photos"].name)
+        pdf_href = books_href(book["id"], "pdf")
+        photos_href = books_href(book["id"], "photos")
         alt = f"{s['cover_alt_prefix']} {title}"
         cards.append(
             '<article class="book-card">'

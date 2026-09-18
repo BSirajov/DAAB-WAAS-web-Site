@@ -20,7 +20,7 @@ def patch_file(path) -> bool:
     rel = "../" * max(depth, 0) + "js/daab-sidebar-spy.js?v=1"
     spy_tag = f'<script defer src="{rel}"></script>'
     text = TIMELINE_RE.sub(spy_tag + r"\n\1", text, count=1)
-    text = text.replace("daab-sidebar-timeline.js?v=3", "daab-sidebar-timeline.js?v=4")
+    text = text.replace("daab-sidebar-timeline.js?v=3", "daab-sidebar-timeline.js?v=7")
     path.write_text(text, encoding="utf-8")
     return True
 

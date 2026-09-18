@@ -572,26 +572,50 @@
     if (skip && navLabels.skip) skip.textContent = navLabels.skip;
   }
 
-  function homeHref() {
+  function pagePrefix() {
     var path = location.pathname.replace(/\\/g, "/");
-    if (/\/forum\/202[46]\//.test(path)) {
-      return "../../index.html";
-    }
-    if (/\/scientists\//.test(path)) {
-      return "../index.html";
-    }
-    return "index.html";
+    if (/\/forum\/202[46]\//.test(path)) return "../../";
+    if (/\/scientists\//.test(path)) return "../";
+    return "";
+  }
+
+  function homeHref() {
+    return pagePrefix() + "index.html";
   }
 
   function renderMinimalFallback(menu, lang) {
-    var title = lang === "en" ? "Home" : "Ana səhifə";
-    menu.innerHTML =
-      '<div class="nav-divider"></div>' +
-      '<a class="nav-link" href="' +
-      homeHref() +
-      '" data-nav-id="home">🏠\u00a0' +
-      title +
-      "</a>";
+    var prefix = pagePrefix();
+    var items =
+      lang === "en"
+        ? [
+            ["activities.html", "activities", "📰\u00a0Activities"],
+            ["forum/2024/index.html", "forums", "🗂️\u00a0Projects"],
+            ["mission.html", "about", "🏛️\u00a0About us"],
+            ["membership_value.html", "membership", "✒️\u00a0Membership"],
+            ["sponsorship_partnership.html", "sponsors", "🤝\u00a0Support us"],
+            ["sitemap.html", "sitemap", "🗺️\u00a0Sitemap"]
+          ]
+        : [
+            ["activities.html", "activities", "📰\u00a0Fəaliyyətimiz"],
+            ["forum/2024/index.html", "forums", "🗂️\u00a0Layihələr"],
+            ["mission.html", "about", "🏛️\u00a0Haqqımızda"],
+            ["membership_value.html", "membership", "✒️\u00a0Üzvlük"],
+            ["sponsorship_partnership.html", "sponsors", "🤝\u00a0Bizi dəstəkləyin"],
+            ["sitemap.html", "sitemap", "🗺️\u00a0Saytın xəritəsi"]
+          ];
+    var html = '<div class="nav-divider"></div>';
+    for (var i = 0; i < items.length; i++) {
+      html +=
+        '<a class="nav-link" href="' +
+        prefix +
+        items[i][0] +
+        '" data-nav-id="' +
+        items[i][1] +
+        '">' +
+        items[i][2] +
+        "</a>";
+    }
+    menu.innerHTML = html;
     menu.setAttribute("data-daab-nav-ready", "1");
     if (window.DAAB_NAV && typeof window.DAAB_NAV.init === "function") {
       window.DAAB_NAV.init();
@@ -606,6 +630,9 @@
     if (!menu) return;
 
     var lang = activeI18n.detectLang();
+    if (!menu.getAttribute("data-daab-nav-ready")) {
+      renderMinimalFallback(menu, lang);
+    }
 
     Promise.all([activeI18n.loadRoutes(), activeI18n.loadUi(), activeI18n.loadNav()])
       .then(function (results) {

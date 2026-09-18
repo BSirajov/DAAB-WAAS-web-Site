@@ -26,7 +26,7 @@ HERO_SUBTITLE = {
     "az": "Forumun təşkilinə dəstək verən tərəfdaşlarla tanış olun",
     "en": "Recognising the partners who supported the Forum",
 }
-SIDEBAR_SCRIPT = f'<script src="{ASSET}js/daab-sidebar-timeline.js?v=1" defer></script>'
+SIDEBAR_SCRIPT = f'<script src="{ASSET}js/daab-sidebar-timeline.js?v=7" defer></script>'
 
 SECTIONS = ({"id": "contributions", "az_title": "Töhfələr və tərəfdaşlar"},)
 

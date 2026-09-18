@@ -23,7 +23,7 @@ LOGISTICS_INLINE = re.compile(
     re.DOTALL,
 )
 
-SCRIPT_TAG = '<script src="../../../js/daab-sidebar-timeline.js?v=3" defer></script>'
+SCRIPT_TAG = '<script src="../../../js/daab-sidebar-timeline.js?v=7" defer></script>'
 
 PAGES = [
     * (ROOT / "az" / "forum" / "2024").glob("*.html"),
