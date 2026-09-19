@@ -49,11 +49,16 @@ def fetch_phone_by_iso2() -> dict[str, str]:
     return by_iso2
 
 
+FALLBACK_DIAL = {
+    "XK": "+383",
+}
+
+
 def build_entries(iso_codes: list[str], by_iso2: dict[str, str]) -> list[tuple[str, str]]:
     entries: list[tuple[str, str]] = []
     missing: list[str] = []
     for code in iso_codes:
-        dial = by_iso2.get(code)
+        dial = by_iso2.get(code) or FALLBACK_DIAL.get(code)
         if not dial:
             missing.append(code)
             continue

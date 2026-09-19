@@ -1031,6 +1031,15 @@
   background: #fff5f5;
   border: 1px solid #f0caca;
   color: #8a1c1c;
+}.application-page .field-required-warning{
+  margin: 8px 0 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #fff5f5;
+  border: 1px solid #e7a0a0;
+  color: #8a1c1c;
+  font-size: 13px;
+  line-height: 1.45;
 }.application-page .success-screen h2{
   font-family: "Playfair Display", Georgia, serif;
   font-size: 18.2px;
@@ -1104,12 +1113,14 @@
   }
 }
 
-.application-page .city-manual-fallback {
+.application-page .city-manual-fallback,
+.application-page .other-specify-input {
   margin-top: 0.5rem;
   width: 100%;
 }
 
-.application-page .city-manual-fallback[hidden] {
+.application-page .city-manual-fallback[hidden],
+.application-page .other-specify-input[hidden] {
   display: none;
 }
 
@@ -1463,6 +1474,186 @@ html[data-daab-page-id="forum-2026-register"] .forum-register-sponsors__line{
   }
   html[data-daab-page-id="forum-2026-register"] .forum-register-sponsors__logo img{
     max-height: 68px;
+  }
+}
+
+body.app-review-open{
+  overflow: hidden;
+}
+.application-page .app-review-dialog{
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(8, 30, 48, 0.55);
+}
+.application-page .app-review-dialog[hidden]{
+  display: none;
+}
+.application-page .app-review-panel{
+  width: min(920px, 100%);
+  max-height: calc(100vh - 32px);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(8, 38, 59, 0.28);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.application-page .app-review-head{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px 12px;
+  border-bottom: 1px solid #d7e8f3;
+}
+.application-page .app-review-head-copy h2{
+  margin: 0 0 6px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 22px;
+  color: #08263b;
+}
+.application-page .app-review-head-copy p{
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #345d76;
+}
+.application-page #app-review-status{
+  margin-top: 8px;
+  font-weight: 600;
+}
+.application-page #app-review-status.is-error{
+  color: #8a1c1c;
+}
+.application-page .app-review-x{
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 999px;
+  background: #eef5fa;
+  color: #08263b;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+.application-page .app-review-body{
+  min-height: 0;
+  flex: 1;
+  background: #fff;
+  overflow: auto;
+}
+.application-page .app-review-frame{
+  display: none;
+}
+.application-page .app-review-html{
+  padding: 8px 12px 20px;
+  overflow: visible;
+  max-height: none;
+  background: #fff;
+}
+.application-page .app-review-actions{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 12px 16px 16px;
+  border-top: 1px solid #d7e8f3;
+  background: #fff;
+  flex: 0 0 auto;
+}
+.application-page .app-review-actions .app-btn-submit{
+  grid-column: 1 / -1;
+}
+#daab-app-review-export-stage{
+  position: fixed;
+  left: -12000px;
+  top: 0;
+  width: 794px;
+  max-width: 794px;
+  z-index: -1;
+  pointer-events: none;
+  overflow: visible;
+  opacity: 1;
+  background: #fff;
+}
+.app-review-sheet,
+#daab-app-review-export-stage .app-review-sheet,
+.application-page .app-review-html .app-review-sheet{
+  width: 794px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 36px 42px 40px;
+  background: #fff;
+  color: #122433;
+  font-family: Inter, system-ui, "Segoe UI", Arial, sans-serif;
+}
+#daab-app-review-export-stage .app-review-sheet{
+  max-width: 794px;
+}
+.app-review-sheet .app-review-org{
+  margin: 0 0 6px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1a6fa8;
+  font-weight: 700;
+}
+.app-review-sheet h1{
+  margin: 0 0 8px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 26px;
+  line-height: 1.2;
+  color: #08263b;
+}
+.app-review-sheet .app-review-who{
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.app-review-sheet .app-review-meta{
+  margin: 0 0 22px;
+  font-size: 12px;
+  color: #5a7384;
+}
+.app-review-sheet .app-review-sec{
+  margin: 0 0 18px;
+  padding-top: 10px;
+  border-top: 1px solid #d7e8f3;
+}
+.app-review-sheet .app-review-sec h2{
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: #094d78;
+}
+.app-review-sheet .app-review-row{
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 10px 16px;
+  padding: 6px 0;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.app-review-sheet .app-review-k{
+  color: #5a7384;
+  font-weight: 600;
+}
+.app-review-sheet .app-review-v{
+  color: #122433;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 720px){
+  .application-page .app-review-actions{
+    grid-template-columns: 1fr;
+  }
+  .app-review-sheet .app-review-row{
+    grid-template-columns: 1fr;
+    gap: 2px;
   }
 }
 

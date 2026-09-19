@@ -19,6 +19,7 @@ desktop.ini
 # Optional: keep launch.json — remove .vscode/ line above if you commit tasks.json
 
 # Local / non-deploy
+helpers/_geo_cache/
 _pdf_extract.txt
 scripts/deploy.env
 node_modules/

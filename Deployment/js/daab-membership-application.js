@@ -12,11 +12,100 @@
   }
   var currentSection = 1;
   var cityCache = Object.create(null);
-  // Capitals and local-name aliases the remote city API sometimes omits or buries.
+  var membershipScriptEl = document.currentScript;
+  // Capitals and local-name aliases to pin and keep searchable.
   var CITY_GUARANTEES = {
+    AG: [{ name: "Saint John's", aliases: ["St. John's", "Saint Johns", "St Johns"] }],
     AT: [
       { name: "Vienna", aliases: ["Wien", "Wien Stadt", "Vienna", "Vyana", "Viyana", "Vena"] },
       { name: "Wien", aliases: ["Vienna", "Wien Stadt"] },
+    ],
+    BF: [{ name: "Ouagadougou", aliases: ["Vaqaduqu"] }],
+    BJ: [{ name: "Porto-Novo", aliases: ["Porto Novo"] }],
+    CD: [{ name: "Kinshasa", aliases: ["Kinşasa"] }],
+    CG: [{ name: "Brazzaville", aliases: ["Brazavil"] }],
+    CM: [
+      { name: "Yaoundé", aliases: ["Yaounde", "Yaunde"] },
+      { name: "Yaounde", aliases: ["Yaoundé", "Yaunde"] },
+    ],
+    CO: [
+      { name: "Bogotá", aliases: ["Bogota", "Santa Fe de Bogota", "Boqota"] },
+      { name: "Bogota", aliases: ["Bogotá"] },
+    ],
+    CZ: [
+      { name: "Prague", aliases: ["Praha", "Praqa"] },
+      { name: "Praha", aliases: ["Prague", "Praqa"] },
+    ],
+    DM: [{ name: "Roseau", aliases: ["Rozo"] }],
+    EG: [
+      { name: "Cairo", aliases: ["Qahirə", "Kairo", "Al Qahirah", "Al-Qahirah", "Al Qāhirah"] },
+      { name: "Qahirə", aliases: ["Cairo", "Kairo"] },
+    ],
+    ER: [{ name: "Asmara", aliases: ["Asmera"] }],
+    FM: [{ name: "Palikir", aliases: ["Palikir, Pohnpei"] }],
+    GQ: [{ name: "Malabo", aliases: [] }],
+    GY: [{ name: "Georgetown", aliases: ["George Town"] }],
+    IR: [{ name: "Tehran", aliases: ["Teheran", "Tehran"] }],
+    KI: [{ name: "Tarawa", aliases: ["South Tarawa", "Bairiki"] }],
+    KM: [{ name: "Moroni", aliases: [] }],
+    LA: [
+      { name: "Vientiane", aliases: ["Viangchan", "Vyençyan"] },
+      { name: "Viangchan", aliases: ["Vientiane"] },
+    ],
+    LR: [{ name: "Monrovia", aliases: ["Monroviya"] }],
+    MC: [{ name: "Monaco", aliases: ["Monako", "Monaco-Ville"] }],
+    MD: [
+      { name: "Chișinău", aliases: ["Chisinau", "Kishinev", "Kişinyov"] },
+      { name: "Chisinau", aliases: ["Chișinău", "Kishinev", "Kişinyov"] },
+    ],
+    MK: [{ name: "Skopje", aliases: ["Skopye", "Üsküb"] }],
+    MV: [
+      { name: "Malé", aliases: ["Male", "Maale"] },
+      { name: "Male", aliases: ["Malé", "Maale"] },
+    ],
+    PS: [{ name: "Ramallah", aliases: ["Ramallah and Al-Bireh", "Ramalla"] }],
+    PY: [
+      { name: "Asunción", aliases: ["Asuncion"] },
+      { name: "Asuncion", aliases: ["Asunción"] },
+    ],
+    QA: [
+      { name: "Doha", aliases: ["Ad Dawhah", "Ad-Dawhah", "Doha"] },
+      { name: "Ad Dawhah", aliases: ["Doha"] },
+    ],
+    SC: [{ name: "Victoria", aliases: ["Victoria, Seychelles"] }],
+    SL: [{ name: "Freetown", aliases: [] }],
+    SO: [{ name: "Mogadishu", aliases: ["Muqdisho", "Mogadiso"] }],
+    SY: [
+      { name: "Damascus", aliases: ["Dimashq", "Dəməşq", "Damashq", "Sham"] },
+      { name: "Dimashq", aliases: ["Damascus", "Dəməşq"] },
+    ],
+    SS: [{ name: "Juba", aliases: [] }],
+    SZ: [{ name: "Mbabane", aliases: ["Lobamba"] }],
+    TD: [
+      { name: "N'Djamena", aliases: ["Ndjamena", "NDjamena", "Ncamena"] },
+      { name: "Ndjamena", aliases: ["N'Djamena"] },
+    ],
+    TG: [
+      { name: "Lomé", aliases: ["Lome"] },
+      { name: "Lome", aliases: ["Lomé"] },
+    ],
+    TJ: [{ name: "Dushanbe", aliases: ["Düşənbə", "Dyushambe"] }],
+    TO: [{ name: "Nuku'alofa", aliases: ["Nukualofa", "Nukuʻalofa"] }],
+    TV: [{ name: "Funafuti", aliases: [] }],
+    UZ: [
+      { name: "Tashkent", aliases: ["Toshkent", "Toshkent Shahri", "Daşkənd"] },
+      { name: "Toshkent", aliases: ["Tashkent", "Toshkent Shahri", "Daşkənd"] },
+    ],
+    VA: [{ name: "Vatican City", aliases: ["Vatican", "Vatikan", "Holy See"] }],
+    VU: [{ name: "Port Vila", aliases: ["Port-Vila"] }],
+    WS: [{ name: "Apia", aliases: [] }],
+    XK: [
+      { name: "Pristina", aliases: ["Prishtina", "Priština", "Priştina", "Priştinə"] },
+      { name: "Prishtina", aliases: ["Pristina", "Priština"] },
+    ],
+    YE: [
+      { name: "Sanaa", aliases: ["Sana'a", "San'a'", "Səna"] },
+      { name: "Sana'a", aliases: ["Sanaa", "San'a'"] },
     ],
   };
   // Codes come from the shared js/daab-country-codes.js module.
@@ -304,11 +393,14 @@
     if (!form) return true;
     applyForumIdentityValidity();
     var emailInput = byId("email");
-    if (emailInput && !isEmailValid(emailInput.value || "")) {
+    if (emailInput && String(emailInput.value || "").trim() && !isEmailValid(emailInput.value || "")) {
+      warnRequiredField(emailInput, emailInput.validationMessage || uiText("requiredFields"));
       emailInput.reportValidity();
       return false;
     }
     if (!form.checkValidity()) {
+      var invalid = form.querySelector(":invalid");
+      warnRequiredField(invalid, requiredFieldMessage(invalid));
       form.reportValidity();
       return false;
     }
@@ -391,7 +483,9 @@
         sciRequired: "Ən azı bir elmi sahə seçin.",
         sciLimitExceeded: "Siz ən çox iki elm sahəsi seçə bilərsiniz. Başqa birini seçməzdən əvvəl mövcud seçimlərdən birini ləğv edin.",
         degreeRequired: "Akademik dərəcənizi seçin.",
+        degreeOtherRequired: "Digər akademik dərəcəni yazın.",
         titleRequired: "Akademik titulunuzu seçin.",
+        titleOtherRequired: "Digər akademik titulu yazın.",
         genderRequired: "Cinsinizi seçin.",
         fatherNameRequired: "Atanızın adını daxil edin.",
         dobRequired: "Doğum tarixinizi daxil edin.",
@@ -400,6 +494,8 @@
         birthCountryRequired: "Doğulduğunuz ölkəni seçin.",
         citizenshipRequired: "Vətəndaşlığınızı seçin.",
         residenceCountryRequired: "Yaşadığınız ölkəni seçin.",
+        requiredFields: "Zəhmət olmasa bütün məcburi sahələri doldurun.",
+        requiredFieldNamed: "«{field}» sahəsi məcburidir.",
         privacyRequired: "Davam etmək üçün məxfilik bildirişi ilə razılaşmalısınız.",
         fileCvRequired: "CV faylını seçin.",
         filePhotoRequired: "Fotoşəkil seçin.",
@@ -422,6 +518,25 @@
         phpUnavailable: isForumRegister()
           ? "Bu server qeydiyyatı göndərə bilmir (PHP mail işləyicisi lazımdır). Canlı saytda göndərin, və ya məlumatlarınızı info@daab-waas.com ünvanına yazın."
           : "Bu server müraciəti göndərə bilmir (PHP mail işləyicisi lazımdır). Canlı saytda göndərin, və ya məlumatlarınızı info@daab-waas.com ünvanına yazın.",
+        reviewTitle: "Müraciətinizi yoxlayın",
+        reviewLead: "Göndərməzdən əvvəl xülasəni yoxlayın. PDF də hazırlanır; istəsəniz yükləyə və aça bilərsiniz. Hər şey düzgündürsə, müraciəti göndərin.",
+        reviewPreparing: "PDF xülasə hazırlanır…",
+        reviewReady: "PDF xülasə hazırdır. Yoxlayın, sonra göndərin.",
+        reviewFailed: "PDF hazırlanmadı. Məlumatları aşağıda yoxlaya, sonra göndərə bilərsiniz.",
+        reviewDownload: "PDF yüklə",
+        reviewOpenPdf: "PDF-ə bax",
+        reviewEdit: "Düzəliş et",
+        reviewClose: "Bağla",
+        reviewEmpty: "Göstərilməyib",
+        reviewYes: "Bəli",
+        reviewNo: "Xeyr",
+        reviewPrivacy: "Məxfilik bildirişi",
+        reviewCvConfirm: "Foto və CV göndərmə təsdiqi",
+        reviewSci: "Elmi sahələr",
+        reviewPdfTitleForum: "Forum 2026 iştirakçı qeydiyyatı — xülasə",
+        reviewPdfTitleMember: "Üzvlük müraciəti — xülasə",
+        reviewGenerated: "Hazırlanma tarixi",
+        reviewOrg: "Dünya Azərbaycanlı Alimlər Birliyi",
       },
       en: {
         submitting: "Submitting…",
@@ -429,7 +544,9 @@
         sciRequired: "Select at least one scientific field.",
         sciLimitExceeded: "You can select up to two scientific fields. Deselect one of your current choices before selecting another.",
         degreeRequired: "Please select your academic degree.",
+        degreeOtherRequired: "Please enter the other academic degree.",
         titleRequired: "Please select your academic title.",
+        titleOtherRequired: "Please enter the other academic title.",
         genderRequired: "Please select your gender.",
         fatherNameRequired: "Please enter your father’s name.",
         dobRequired: "Please enter your date of birth.",
@@ -438,6 +555,8 @@
         birthCountryRequired: "Please select your country of birth.",
         citizenshipRequired: "Please select your citizenship.",
         residenceCountryRequired: "Please select your country of residence.",
+        requiredFields: "Please fill in all required fields.",
+        requiredFieldNamed: "“{field}” is required.",
         privacyRequired: "Please accept the privacy notice to continue.",
         fileCvRequired: "Please select a CV file.",
         filePhotoRequired: "Please select a photo.",
@@ -460,9 +579,101 @@
         phpUnavailable: isForumRegister()
           ? "This server cannot send registrations (a PHP mail handler is required). Submit on the live website, or email your details to info@daab-waas.com."
           : "This server cannot send applications (a PHP mail handler is required). Submit on the live website, or email your details to info@daab-waas.com.",
+        reviewTitle: "Review your application",
+        reviewLead: "Review the summary before sending. A PDF is also prepared so you can download or open it. If everything is correct, send the application.",
+        reviewPreparing: "Preparing the PDF summary…",
+        reviewReady: "The PDF summary is ready. Review it, then send.",
+        reviewFailed: "The PDF could not be created. You can still review the details below, then send.",
+        reviewDownload: "Download PDF",
+        reviewOpenPdf: "Open PDF",
+        reviewEdit: "Edit",
+        reviewClose: "Close",
+        reviewEmpty: "Not provided",
+        reviewYes: "Yes",
+        reviewNo: "No",
+        reviewPrivacy: "Privacy notice",
+        reviewCvConfirm: "Photo and CV email confirmation",
+        reviewSci: "Scientific fields",
+        reviewPdfTitleForum: "Forum 2026 participant registration — summary",
+        reviewPdfTitleMember: "Membership application — summary",
+        reviewGenerated: "Generated",
+        reviewOrg: "World Association of Azerbaijani Scientists",
       },
     };
     return (strings[lang] || strings.en)[key] || key;
+  }
+
+  function playValidationBeep() {
+    try {
+      var Ctx = window.AudioContext || window.webkitAudioContext;
+      if (!Ctx) return;
+      if (!playValidationBeep._ctx) playValidationBeep._ctx = new Ctx();
+      var ctx = playValidationBeep._ctx;
+      if (ctx.state === "suspended" && ctx.resume) ctx.resume();
+      var osc = ctx.createOscillator();
+      var gain = ctx.createGain();
+      osc.type = "square";
+      osc.frequency.setValueAtTime(880, ctx.currentTime);
+      gain.gain.setValueAtTime(0.12, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.2);
+    } catch (e) {}
+  }
+
+  function labelTextForControl(el) {
+    if (!el) return "";
+    var text = "";
+    if (el.id) {
+      var forLabel = document.querySelector('.application-page label[for="' + el.id + '"]');
+      if (forLabel) text = forLabel.textContent;
+    }
+    if (!text && el.labels && el.labels[0]) text = el.labels[0].textContent;
+    if (!text) {
+      var group = el.closest(".field-group");
+      var lab = group && (group.querySelector("label.field-label") || group.querySelector(".field-label"));
+      if (lab) text = lab.textContent;
+    }
+    return String(text || "")
+      .replace(/\s*\*\s*/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function requiredFieldMessage(el) {
+    var label = labelTextForControl(el);
+    if (label) return uiText("requiredFieldNamed").replace("{field}", label);
+    return uiText("requiredFields");
+  }
+
+  function clearFieldRequiredWarnings() {
+    document.querySelectorAll(".application-page .field-required-warning").forEach(function (note) {
+      note.parentNode.removeChild(note);
+    });
+  }
+
+  function showFieldRequiredWarning(el, message) {
+    clearFieldRequiredWarnings();
+    if (!el) return;
+    var group =
+      el.closest(".field-group") ||
+      el.closest(".sci-fields-fieldset") ||
+      el.closest(".opt-item") ||
+      el.parentNode;
+    if (!group) return;
+    var note = document.createElement("p");
+    note.className = "field-required-warning";
+    note.setAttribute("role", "alert");
+    note.textContent = message;
+    group.appendChild(note);
+  }
+
+  function warnRequiredField(el, message) {
+    var text = message || requiredFieldMessage(el);
+    showSubmitError(text, { alert: true });
+    showFieldRequiredWarning(el, text);
   }
 
   function showSubmitError(message, options) {
@@ -475,6 +686,7 @@
     if (opts.alert) {
       box.setAttribute("role", "alert");
       box.setAttribute("aria-live", "assertive");
+      playValidationBeep();
     } else {
       box.setAttribute("role", "status");
       box.setAttribute("aria-live", "polite");
@@ -489,16 +701,99 @@
     box.className = "app-submit-status";
     box.setAttribute("role", "status");
     box.setAttribute("aria-live", "polite");
+    clearFieldRequiredWarnings();
     var sciFieldset = byId("sci-fields");
     if (sciFieldset) sciFieldset.removeAttribute("aria-invalid");
   }
 
   function setSubmitting(isSubmitting) {
     var btn = byId("appSubmitBtn");
-    if (!btn) return;
-    btn.disabled = isSubmitting;
-    btn.classList.toggle("is-loading", isSubmitting);
-    btn.textContent = isSubmitting ? uiText("submitting") : uiText("submit");
+    if (btn) {
+      btn.disabled = isSubmitting;
+      btn.classList.toggle("is-loading", isSubmitting);
+      btn.textContent = isSubmitting ? uiText("submitting") : uiText("submit");
+    }
+    var send = byId("app-review-send");
+    if (send) {
+      send.disabled = isSubmitting;
+      send.classList.toggle("is-loading", isSubmitting);
+      send.textContent = isSubmitting ? uiText("submitting") : uiText("submit");
+    }
+    var edit = byId("app-review-edit");
+    var download = byId("app-review-download");
+    if (edit) edit.disabled = isSubmitting;
+    if (download) download.disabled = isSubmitting || !reviewPdfBlob;
+    var openPdf = byId("app-review-open");
+    if (openPdf) openPdf.disabled = isSubmitting || !reviewPdfBlob;
+  }
+
+  function getOtherSpecifyInput(radioName) {
+    return document.querySelector(
+      '.application-page .other-specify-input[data-other-for="' + radioName + '"]'
+    );
+  }
+
+  function getOtherSpecifyValue(radioName) {
+    if (getRadioValue(radioName) !== "other") return "";
+    var input = getOtherSpecifyInput(radioName);
+    return (input && String(input.value || "").trim()) || "";
+  }
+
+  function radioValueForSubmit(radioName) {
+    var value = getRadioValue(radioName);
+    if (value !== "other") return value;
+    var specified = getOtherSpecifyValue(radioName);
+    return specified ? "other: " + specified : value;
+  }
+
+  function syncOtherSpecify(radioName) {
+    var input = getOtherSpecifyInput(radioName);
+    if (!input) return;
+    var show = getRadioValue(radioName) === "other";
+    input.hidden = !show;
+    input.required = show;
+    if (show) {
+      input.removeAttribute("aria-hidden");
+    } else {
+      input.value = "";
+      input.setAttribute("aria-hidden", "true");
+    }
+  }
+
+  function initOtherSpecifyFields() {
+    document.querySelectorAll(".application-page .other-specify-input[data-other-for]").forEach(function (input) {
+      var radioName = input.getAttribute("data-other-for");
+      if (!radioName) return;
+      document.querySelectorAll('.application-page input[name="' + radioName + '"]').forEach(function (radio) {
+        radio.addEventListener("change", function () {
+          syncOtherSpecify(radioName);
+          if (getRadioValue(radioName) === "other") {
+            try {
+              input.focus({ preventScroll: true });
+            } catch (e) {
+              input.focus();
+            }
+          }
+        });
+      });
+      syncOtherSpecify(radioName);
+    });
+  }
+
+  function validateOtherSpecify(radioName, messageKey) {
+    if (getRadioValue(radioName) !== "other") return true;
+    if (getOtherSpecifyValue(radioName)) return true;
+    var input = getOtherSpecifyInput(radioName);
+    warnRequiredField(input, uiText(messageKey));
+    if (input) {
+      try {
+        input.focus({ preventScroll: true });
+      } catch (e) {
+        input.focus();
+      }
+      input.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+    return false;
   }
 
   function getRadioValue(name) {
@@ -681,8 +976,8 @@
       }
     });
     if (!firstError) return true;
-    showSubmitError(firstError, { alert: true });
     var card = document.querySelector('.app-file-card[data-file-kind="' + firstKind + '"]');
+    warnRequiredField(card || byId(uploadInputId(firstKind)), firstError);
     if (card) card.scrollIntoView({ behavior: "smooth", block: "center" });
     return false;
   }
@@ -710,7 +1005,7 @@
       return true;
     }
     field.setCustomValidity(uiText("privacyRequired"));
-    showSubmitError(uiText("privacyRequired"), { alert: true });
+    warnRequiredField(field, uiText("privacyRequired"));
     try {
       field.focus({ preventScroll: true });
     } catch (e) {
@@ -762,7 +1057,7 @@
     if (getSciValues().length > 0) return true;
     var sciFieldset = byId("sci-fields");
     if (sciFieldset) sciFieldset.setAttribute("aria-invalid", "true");
-    showSubmitError(uiText("sciRequired"), { alert: true });
+    warnRequiredField(sciFieldset, uiText("sciRequired"));
     var sec = sciFieldset && sciFieldset.closest
       ? sciFieldset.closest(".form-section")
       : byId("sec-4") || byId("sec-3");
@@ -772,10 +1067,10 @@
 
   function validateRadioGroup(name, messageKey, focusId) {
     if (getRadioValue(name)) return true;
-    showSubmitError(uiText(messageKey), { alert: true });
     var focusEl = byId(focusId) || document.querySelector(
       '.application-page input[name="' + name + '"]'
     );
+    warnRequiredField(focusEl, uiText(messageKey));
     if (focusEl) {
       try {
         focusEl.focus({ preventScroll: true });
@@ -836,9 +1131,11 @@
       phone_number: phoneNumber,
       phone_full: phoneCode && phoneNumber ? phoneCode + " " + phoneNumber : phoneNumber,
       university: (byId("university") && byId("university").value.trim()) || "",
-      degree: getRadioValue("degree"),
+      degree: radioValueForSubmit("degree"),
+      degree_other: getOtherSpecifyValue("degree"),
       degree_institution: (byId("deginst") && byId("deginst").value.trim()) || "",
-      academic_title: getRadioValue("title"),
+      academic_title: radioValueForSubmit("title"),
+      title_other: getOtherSpecifyValue("title"),
       title_institution: (byId("titinst") && byId("titinst").value.trim()) || "",
       affiliation: affiliation,
       current_job: affiliation,
@@ -924,29 +1221,587 @@
     });
   }
 
-  function submitForm() {
+  var reviewPdfBlob = null;
+  var reviewPdfUrl = "";
+  var reviewDialogOpen = false;
+  var reviewLastFocus = null;
+  var reviewPdfLibsPromise = null;
+  var PDF_CAPTURE_SCALE = 2;
+
+  function applicationAssetRoot() {
+    var fromAttr = document.documentElement.getAttribute("data-daab-asset-root");
+    if (fromAttr) return fromAttr;
+    var path = String(location.pathname || "").replace(/\\/g, "/");
+    if (/\/(az|en)\/forum\//.test(path)) return "../../../";
+    if (/\/(az|en)\//.test(path)) return "../";
+    return "";
+  }
+
+  function loadScriptOnce(src) {
+    return new Promise(function (resolve, reject) {
+      var existing = document.querySelector('script[src="' + src + '"]');
+      if (existing) {
+        if (existing.getAttribute("data-daab-loaded") === "1") {
+          resolve();
+          return;
+        }
+        existing.addEventListener("load", function () { resolve(); }, { once: true });
+        existing.addEventListener("error", function () { reject(new Error("Script failed: " + src)); }, { once: true });
+        return;
+      }
+      var script = document.createElement("script");
+      script.src = src;
+      script.async = true;
+      script.onload = function () {
+        script.setAttribute("data-daab-loaded", "1");
+        resolve();
+      };
+      script.onerror = function () {
+        reject(new Error("Script failed: " + src));
+      };
+      document.head.appendChild(script);
+    });
+  }
+
+  function getJsPDFConstructor() {
+    if (window.jspdf && window.jspdf.jsPDF) return window.jspdf.jsPDF;
+    if (typeof window.jsPDF === "function") return window.jsPDF;
+    return null;
+  }
+
+  function ensurePdfLibs() {
+    if (window.html2canvas && getJsPDFConstructor()) return Promise.resolve();
+    if (reviewPdfLibsPromise) return reviewPdfLibsPromise;
+    var root = applicationAssetRoot();
+    reviewPdfLibsPromise = loadScriptOnce(root + "js/vendor/html2canvas.min.js?v=1").then(function () {
+      return loadScriptOnce(root + "js/vendor/jspdf.umd.min.js?v=1");
+    });
+    return reviewPdfLibsPromise;
+  }
+
+  function cleanReviewLabel(text) {
+    return String(text || "")
+      .replace(/\s*\*\s*/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function escapeHtml(text) {
+    return String(text || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function radioDisplayLabel(el) {
+    if (!el) return "";
+    if (el.id) {
+      var lab = document.querySelector('.application-page label[for="' + el.id + '"]');
+      if (lab) return cleanReviewLabel(lab.textContent);
+    }
+    return el.value || "";
+  }
+
+  function sciDisplayLabels() {
+    return Array.prototype.map.call(
+      document.querySelectorAll('.application-page input[name="sci"]:checked'),
+      function (el) {
+        return radioDisplayLabel(el) || el.value;
+      }
+    );
+  }
+
+  function shouldSkipReviewControl(el) {
+    if (!el) return true;
+    if (el.id === "website" || el.id === "dob_picker") return true;
+    if (el.classList.contains("dob-native-picker")) return true;
+    if (el.classList.contains("other-specify-input")) return true;
+    if (el.id === "city_manual") return true;
+    if (el.type === "hidden" || el.type === "button" || el.type === "submit") return true;
+    return false;
+  }
+
+  function collectReviewSections() {
+    var sections = [];
+    document.querySelectorAll(".application-page .form-section").forEach(function (sec) {
+      var titleEl = sec.querySelector(".section-title");
+      var title = "";
+      if (titleEl) {
+        var small = titleEl.querySelector("small");
+        title = cleanReviewLabel(
+          small
+            ? String(titleEl.textContent || "").replace(small.textContent || "", "")
+            : titleEl.textContent
+        );
+      }
+      var rows = [];
+
+      function addRow(label, value) {
+        if (!label) return;
+        rows.push({
+          label: label,
+          value: String(value || "").trim() || uiText("reviewEmpty"),
+        });
+      }
+
+      sec.querySelectorAll(".field-group").forEach(function (group) {
+        if (group.querySelector(".opt-item-privacy-confirm")) {
+          addRow(uiText("reviewPrivacy"), getPrivacyConfirmValue() ? uiText("reviewYes") : uiText("reviewNo"));
+          return;
+        }
+        if (group.querySelector(".opt-item-cv-confirm")) {
+          addRow(uiText("reviewCvConfirm"), getCvConfirmValue() ? uiText("reviewYes") : uiText("reviewNo"));
+          return;
+        }
+        var radios = group.querySelectorAll('input[type="radio"]');
+        if (radios.length) {
+          var name = radios[0].name;
+          var checked = document.querySelector('.application-page input[name="' + name + '"]:checked');
+          var lab = group.querySelector(".field-label");
+          var value = "";
+          if (checked) {
+            value = radioDisplayLabel(checked);
+            if (checked.value === "other") {
+              var spec = getOtherSpecifyValue(name);
+              if (spec) value = value + " — " + spec;
+            }
+          }
+          addRow(cleanReviewLabel(lab && lab.textContent), value);
+          return;
+        }
+        var control = null;
+        Array.prototype.forEach.call(group.querySelectorAll("textarea, select, input"), function (el) {
+          if (control) return;
+          if (shouldSkipReviewControl(el)) return;
+          if (el.type === "radio" || el.type === "checkbox" || el.type === "file") return;
+          control = el;
+        });
+        if (!control) return;
+        if (control.id === "phone_code") return;
+        var val = "";
+        if (control.id === "city") val = getCityValue();
+        else if (control.id === "phone") {
+          var code = (byId("phone_code") && byId("phone_code").value.trim()) || "";
+          val = ((code ? code + " " : "") + String(control.value || "").trim()).trim();
+        } else {
+          val = String(control.value || "").trim();
+        }
+        addRow(
+          labelTextForControl(control) || cleanReviewLabel((group.querySelector(".field-label") || {}).textContent),
+          val
+        );
+      });
+
+      var sci = sec.querySelector("#sci-fields");
+      if (sci) {
+        addRow(
+          cleanReviewLabel((sci.querySelector("legend") || {}).textContent) || uiText("reviewSci"),
+          sciDisplayLabels().join("; ")
+        );
+      }
+
+      sec.querySelectorAll(".app-file-card").forEach(function (card) {
+        var input = card.querySelector("input[type=file]");
+        if (!input) return;
+        var file = input.files && input.files[0];
+        addRow(labelTextForControl(input), file ? file.name : "");
+      });
+
+      if (rows.length) sections.push({ title: title, rows: rows });
+    });
+    return sections;
+  }
+
+  function reviewDocumentTitle() {
+    return isForumRegister() ? uiText("reviewPdfTitleForum") : uiText("reviewPdfTitleMember");
+  }
+
+  function reviewApplicantName() {
+    var first = (byId("name") && byId("name").value.trim()) || "";
+    var last = (byId("surname") && byId("surname").value.trim()) || "";
+    return (first + " " + last).trim();
+  }
+
+  function formatReviewDate(date) {
+    var lang = detectLang();
+    try {
+      return new Intl.DateTimeFormat(lang === "az" ? "az-AZ" : "en-GB", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      }).format(date);
+    } catch (e) {
+      return date.toISOString();
+    }
+  }
+
+  function buildReviewSheetHtml(sections) {
+    var rowsHtml = sections
+      .map(function (section) {
+        var body = section.rows
+          .map(function (row) {
+            return (
+              '<div class="app-review-row">' +
+              '<div class="app-review-k">' +
+              escapeHtml(row.label) +
+              "</div>" +
+              '<div class="app-review-v">' +
+              escapeHtml(row.value).replace(/\n/g, "<br>") +
+              "</div>" +
+              "</div>"
+            );
+          })
+          .join("");
+        return (
+          '<section class="app-review-sec">' +
+          (section.title ? "<h2>" + escapeHtml(section.title) + "</h2>" : "") +
+          body +
+          "</section>"
+        );
+      })
+      .join("");
+    return (
+      '<div class="app-review-sheet">' +
+      '<p class="app-review-org">' +
+      escapeHtml(uiText("reviewOrg")) +
+      "</p>" +
+      "<h1>" +
+      escapeHtml(reviewDocumentTitle()) +
+      "</h1>" +
+      (reviewApplicantName()
+        ? '<p class="app-review-who">' + escapeHtml(reviewApplicantName()) + "</p>"
+        : "") +
+      '<p class="app-review-meta">' +
+      escapeHtml(uiText("reviewGenerated")) +
+      ": " +
+      escapeHtml(formatReviewDate(new Date())) +
+      "</p>" +
+      rowsHtml +
+      "</div>"
+    );
+  }
+
+  function revokeReviewPdfUrl() {
+    if (reviewPdfUrl) {
+      var url = reviewPdfUrl;
+      window.setTimeout(function () {
+        URL.revokeObjectURL(url);
+      }, 120000);
+      reviewPdfUrl = "";
+    }
+    reviewPdfBlob = null;
+  }
+
+  function reviewPdfFileName() {
+    var who = reviewApplicantName().replace(/\s+/g, "-") || "application";
+    var safe = who.replace(/[\\/:*?"<>|]+/g, "");
+    if (isForumRegister()) {
+      return (detectLang() === "az" ? "Forum-2026-qeydiyyat-" : "Forum-2026-registration-") + safe + ".pdf";
+    }
+    return (detectLang() === "az" ? "DAAB-uzvluk-" : "WAAS-membership-") + safe + ".pdf";
+  }
+
+  function canvasToMultiPageA4Pdf(canvas) {
+    var JsPDF = getJsPDFConstructor();
+    if (!JsPDF) throw new Error("jsPDF library is not loaded.");
+    var pdf = new JsPDF({
+      unit: "mm",
+      format: "a4",
+      orientation: "portrait",
+      compress: true,
+    });
+    var pageW = pdf.internal.pageSize.getWidth();
+    var pageH = pdf.internal.pageSize.getHeight();
+    var imgW = pageW;
+    var imgH = (canvas.height * pageW) / canvas.width;
+    var imgData;
+    try {
+      imgData = canvas.toDataURL("image/jpeg", 0.92);
+    } catch (err) {
+      imgData = canvas.toDataURL("image/png");
+    }
+    var format = imgData.indexOf("data:image/png") === 0 ? "PNG" : "JPEG";
+    var y = 0;
+    var remaining = imgH;
+    pdf.addImage(imgData, format, 0, y, imgW, imgH, undefined, "FAST");
+    remaining -= pageH;
+    while (remaining > 2) {
+      y -= pageH;
+      pdf.addPage();
+      pdf.addImage(imgData, format, 0, y, imgW, imgH, undefined, "FAST");
+      remaining -= pageH;
+    }
+    return pdf.output("blob");
+  }
+
+  function generateReviewPdfBlob(sheet) {
+    return ensurePdfLibs().then(function () {
+      var waitFonts =
+        document.fonts && document.fonts.ready
+          ? Promise.race([
+              document.fonts.ready,
+              new Promise(function (resolve) {
+                window.setTimeout(resolve, 4000);
+              }),
+            ])
+          : Promise.resolve();
+      return waitFonts.then(function () {
+        return new Promise(function (resolve) {
+          requestAnimationFrame(function () {
+            requestAnimationFrame(resolve);
+          });
+        }).then(function () {
+          var width = Math.max(sheet.scrollWidth, sheet.offsetWidth, 794);
+          var height = Math.max(sheet.scrollHeight, sheet.offsetHeight, 1);
+          return window.html2canvas(sheet, {
+            scale: PDF_CAPTURE_SCALE,
+            useCORS: true,
+            logging: false,
+            backgroundColor: "#ffffff",
+            scrollX: 0,
+            scrollY: 0,
+            width: width,
+            height: height,
+            windowWidth: width,
+            windowHeight: height + 24,
+            x: 0,
+            y: 0,
+          });
+        });
+      });
+    }).then(function (canvas) {
+      if (!canvas || canvas.width < 10 || canvas.height < 10) {
+        throw new Error("PDF capture returned an empty image.");
+      }
+      return canvasToMultiPageA4Pdf(canvas);
+    });
+  }
+
+  function setReviewStatus(message, isError) {
+    var status = byId("app-review-status");
+    if (!status) return;
+    status.textContent = message || "";
+    status.classList.toggle("is-error", !!isError);
+  }
+
+  function renderReviewHtmlFallback(sections) {
+    var box = byId("app-review-html");
+    if (!box) return;
+    box.innerHTML = buildReviewSheetHtml(sections);
+    box.hidden = false;
+  }
+
+  function showReviewPdf(blob) {
+    revokeReviewPdfUrl();
+    reviewPdfBlob = blob;
+    reviewPdfUrl = URL.createObjectURL(blob);
+    var frame = byId("app-review-frame");
+    var html = byId("app-review-html");
+    if (frame) {
+      frame.src = reviewPdfUrl;
+      frame.hidden = true;
+    }
+    if (html) html.hidden = false;
+    var download = byId("app-review-download");
+    var openPdf = byId("app-review-open");
+    if (download) download.disabled = false;
+    if (openPdf) openPdf.disabled = false;
+  }
+
+  function downloadReviewPdf() {
+    if (!reviewPdfBlob) return;
+    var link = document.createElement("a");
+    link.href = reviewPdfUrl || URL.createObjectURL(reviewPdfBlob);
+    link.download = reviewPdfFileName();
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  }
+
+  function openReviewPdfTab() {
+    if (!reviewPdfUrl && reviewPdfBlob) {
+      reviewPdfUrl = URL.createObjectURL(reviewPdfBlob);
+    }
+    if (!reviewPdfUrl) return;
+    window.open(reviewPdfUrl, "_blank", "noopener");
+  }
+
+  function onReviewKeydown(e) {
+    if (!reviewDialogOpen) return;
+    if (e.key === "Escape") {
+      e.preventDefault();
+      closeApplicationReview();
+    }
+  }
+
+  function ensureReviewDialog() {
+    var existing = byId("app-review-dialog");
+    if (existing) return existing;
+    var wrap = document.createElement("div");
+    wrap.id = "app-review-dialog";
+    wrap.className = "app-review-dialog";
+    wrap.hidden = true;
+    wrap.innerHTML =
+      '<div class="app-review-panel" role="dialog" aria-modal="true" aria-labelledby="app-review-title">' +
+      '<div class="app-review-head">' +
+      '<div class="app-review-head-copy">' +
+      '<h2 id="app-review-title"></h2>' +
+      '<p id="app-review-lead"></p>' +
+      '<p id="app-review-status" role="status" aria-live="polite"></p>' +
+      "</div>" +
+      '<button type="button" class="app-review-x" id="app-review-close"></button>' +
+      "</div>" +
+      '<div class="app-review-body">' +
+      '<iframe id="app-review-frame" class="app-review-frame" title="" hidden></iframe>' +
+      '<div id="app-review-html" class="app-review-html"></div>' +
+      "</div>" +
+      '<div class="app-review-actions">' +
+      '<button type="button" class="app-btn app-btn-secondary" id="app-review-edit"></button>' +
+      '<button type="button" class="app-btn app-btn-secondary" id="app-review-open" disabled></button>' +
+      '<button type="button" class="app-btn app-btn-secondary" id="app-review-download" disabled></button>' +
+      '<button type="button" class="app-btn app-btn-submit" id="app-review-send"></button>' +
+      "</div>" +
+      "</div>";
+    document.body.appendChild(wrap);
+    wrap.addEventListener("click", function (e) {
+      if (e.target === wrap) closeApplicationReview();
+    });
+    byId("app-review-close").addEventListener("click", closeApplicationReview);
+    byId("app-review-edit").addEventListener("click", closeApplicationReview);
+    byId("app-review-download").addEventListener("click", downloadReviewPdf);
+    byId("app-review-open").addEventListener("click", openReviewPdfTab);
+    byId("app-review-send").addEventListener("click", sendApplication);
+    return wrap;
+  }
+
+  function syncReviewDialogCopy() {
+    var title = byId("app-review-title");
+    var lead = byId("app-review-lead");
+    var close = byId("app-review-close");
+    var edit = byId("app-review-edit");
+    var download = byId("app-review-download");
+    var openPdf = byId("app-review-open");
+    var send = byId("app-review-send");
+    var frame = byId("app-review-frame");
+    if (title) title.textContent = uiText("reviewTitle");
+    if (lead) lead.textContent = uiText("reviewLead");
+    if (close) {
+      close.textContent = "×";
+      close.setAttribute("aria-label", uiText("reviewClose"));
+    }
+    if (edit) edit.textContent = uiText("reviewEdit");
+    if (download) download.textContent = uiText("reviewDownload");
+    if (openPdf) openPdf.textContent = uiText("reviewOpenPdf");
+    if (send) send.textContent = uiText("submit");
+    if (frame) frame.setAttribute("title", reviewDocumentTitle());
+  }
+
+  function closeApplicationReview() {
+    var dialog = byId("app-review-dialog");
+    if (dialog) dialog.hidden = true;
+    reviewDialogOpen = false;
+    document.body.classList.remove("app-review-open");
+    document.removeEventListener("keydown", onReviewKeydown);
+    revokeReviewPdfUrl();
+    var frame = byId("app-review-frame");
+    if (frame) {
+      frame.removeAttribute("src");
+      frame.hidden = true;
+    }
+    var html = byId("app-review-html");
+    if (html) {
+      html.innerHTML = "";
+      html.hidden = true;
+    }
+    var download = byId("app-review-download");
+    var openPdfBtn = byId("app-review-open");
+    if (download) download.disabled = true;
+    if (openPdfBtn) openPdfBtn.disabled = true;
+    if (reviewLastFocus && typeof reviewLastFocus.focus === "function") {
+      try {
+        reviewLastFocus.focus();
+      } catch (e) {}
+    }
+    reviewLastFocus = null;
+  }
+
+  function openApplicationReview() {
+    var sections = collectReviewSections();
+    var dialog = ensureReviewDialog();
+    syncReviewDialogCopy();
+    reviewLastFocus = document.activeElement;
+    reviewDialogOpen = true;
+    document.body.classList.add("app-review-open");
+    dialog.hidden = false;
+    renderReviewHtmlFallback(sections);
+    setReviewStatus(uiText("reviewPreparing"));
+    var download = byId("app-review-download");
+    if (download) download.disabled = true;
+    document.addEventListener("keydown", onReviewKeydown);
+    var send = byId("app-review-send");
+    if (send) send.focus();
+
+    var stage = document.createElement("div");
+    stage.id = "daab-app-review-export-stage";
+    stage.setAttribute("aria-hidden", "true");
+    stage.innerHTML = buildReviewSheetHtml(sections);
+    document.body.appendChild(stage);
+    var sheet = stage.querySelector(".app-review-sheet");
+
+    generateReviewPdfBlob(sheet)
+      .then(function (blob) {
+        if (!reviewDialogOpen) return;
+        showReviewPdf(blob);
+        setReviewStatus(uiText("reviewReady"));
+      })
+      .catch(function () {
+        if (!reviewDialogOpen) return;
+        setReviewStatus(uiText("reviewFailed"), true);
+        var html = byId("app-review-html");
+        if (html) html.hidden = false;
+      })
+      .finally(function () {
+        if (stage.parentNode) stage.parentNode.removeChild(stage);
+      });
+  }
+
+  function formIsReadyToSend() {
     clearSubmitStatus();
     var honeypot = byId("website");
     if (honeypot && String(honeypot.value || "").trim()) {
       showSuccessScreen();
-      return;
+      return false;
     }
-    if (!validateForm()) return;
+    if (!validateForm()) return false;
     if (document.querySelector('.application-page input[name="degree"]')) {
-      if (!validateRadioGroup("degree", "degreeRequired", "deg1")) return;
+      if (!validateRadioGroup("degree", "degreeRequired", "deg1")) return false;
+      if (!validateOtherSpecify("degree", "degreeOtherRequired")) return false;
     }
     if (document.querySelector('.application-page input[name="title"]')) {
-      if (!validateRadioGroup("title", "titleRequired", "tit1")) return;
+      if (!validateRadioGroup("title", "titleRequired", "tit1")) return false;
+      if (!validateOtherSpecify("title", "titleOtherRequired")) return false;
     }
     if (document.querySelector('.application-page input[name="gender"]')) {
-      if (!validateRadioGroup("gender", "genderRequired", "gender-male")) return;
+      if (!validateRadioGroup("gender", "genderRequired", "gender-male")) return false;
     }
     if (byId("sci-fields")) {
-      if (!validateSciSelection()) return;
+      if (!validateSciSelection()) return false;
     }
-    if (!validateFileUploads()) return;
-    if (!validatePrivacyConfirm()) return;
+    if (!validateFileUploads()) return false;
+    if (!validatePrivacyConfirm()) return false;
+    return true;
+  }
 
+  function sendApplication() {
+    if (!formIsReadyToSend()) {
+      closeApplicationReview();
+      return;
+    }
+    closeApplicationReview();
     setSubmitting(true);
     var payload = buildSubmissionPayload();
 
@@ -971,6 +1826,12 @@
       .finally(function () {
         setSubmitting(false);
       });
+  }
+
+  function submitForm() {
+    if (reviewDialogOpen) return;
+    if (!formIsReadyToSend()) return;
+    openApplicationReview();
   }
 
   function buildLocalizedCountries(lang) {
@@ -1412,6 +2273,7 @@
       hideCityManual();
       citySelect.required = true;
       citySelect.disabled = true;
+      citySelect._daabCityItems = [];
       citySelect.innerHTML = "";
       var option = document.createElement("option");
       option.value = "";
@@ -1423,6 +2285,7 @@
       hideCityManual();
       citySelect.required = true;
       citySelect.disabled = true;
+      citySelect._daabCityItems = [];
       citySelect.innerHTML = "";
       var option = document.createElement("option");
       option.value = "";
@@ -1483,6 +2346,7 @@
 
     function populateCitySelect(cityList) {
       citySelect.innerHTML = "";
+      citySelect._daabCityItems = [];
 
       if (!Array.isArray(cityList) || cityList.length === 0) {
         var unavailable = document.createElement("option");
@@ -1504,13 +2368,11 @@
       citySelect.appendChild(placeholder);
 
       var countryCode = selectedCountryCode();
-      cityList.forEach(function (cityName) {
-        var option = document.createElement("option");
-        option.value = cityName;
-        option.textContent = cityName;
-        var aliases = aliasesForCity(countryCode, cityName);
-        if (aliases) option.setAttribute("data-aliases", aliases);
-        citySelect.appendChild(option);
+      citySelect._daabCityItems = cityList.map(function (cityName) {
+        return {
+          name: cityName,
+          aliases: aliasesForCity(countryCode, cityName),
+        };
       });
       if (citySelect._daabRebuildCityPicker) citySelect._daabRebuildCityPicker();
     }
@@ -1527,33 +2389,48 @@
         map[key] = true;
         items.push(name);
       });
-      items.sort(function (a, b) {
-        if (collator) return collator.compare(a, b);
-        return a.localeCompare(b, lang);
-      });
       return items;
     }
 
-    function fetchCitiesByCountryEnglishName(countryEnglishName, countryCode) {
-      if (cityCache[countryEnglishName]) {
-        return Promise.resolve(cityCache[countryEnglishName]);
+    function citiesJsonUrl(countryCode) {
+      var src = "";
+      if (membershipScriptEl && membershipScriptEl.src) src = membershipScriptEl.src;
+      else {
+        var scripts = document.getElementsByTagName("script");
+        var i;
+        for (i = 0; i < scripts.length; i++) {
+          if ((scripts[i].src || "").indexOf("daab-membership-application.js") !== -1) {
+            src = scripts[i].src;
+            break;
+          }
+        }
       }
-      return fetch("https://countriesnow.space/api/v0.1/countries/cities", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ country: countryEnglishName }),
-      })
+      if (!src) return "../js/cities/" + encodeURIComponent(countryCode) + ".json";
+      return src.replace(
+        /daab-membership-application\.js(?:\?.*)?$/,
+        "cities/" + encodeURIComponent(countryCode) + ".json"
+      );
+    }
+
+    function fetchCitiesByCountryEnglishName(countryEnglishName, countryCode) {
+      var cacheKey = countryCode || countryEnglishName;
+      if (cityCache[cacheKey]) {
+        return Promise.resolve(cityCache[cacheKey]);
+      }
+      return fetch(citiesJsonUrl(countryCode))
         .then(function (response) {
           if (!response.ok) throw new Error("city-fetch-failed");
           return response.json();
         })
-        .then(function (payload) {
-          var list = mergeGuaranteedCities(countryCode, payload && payload.data);
-          cityCache[countryEnglishName] = list;
+        .then(function (raw) {
+          var list = mergeGuaranteedCities(countryCode, Array.isArray(raw) ? raw : []);
+          cityCache[cacheKey] = list;
           return list;
         })
         .catch(function () {
-          return mergeGuaranteedCities(countryCode, []);
+          var list = mergeGuaranteedCities(countryCode, []);
+          cityCache[cacheKey] = list;
+          return list;
         });
     }
 
@@ -1686,6 +2563,10 @@
       return list.querySelectorAll(".country-picker-option");
     }
 
+    function cityItems() {
+      return Array.isArray(select._daabCityItems) ? select._daabCityItems : [];
+    }
+
     function buttonLabel() {
       if (select.disabled) {
         var first = select.options[0];
@@ -1717,47 +2598,74 @@
       });
     }
 
-    function rebuildOptions() {
+    function appendCityLi(item) {
+      var li = document.createElement("li");
+      li.className = "phone-code-picker-option country-picker-option";
+      li.setAttribute("role", "option");
+      li.setAttribute("aria-selected", "false");
+      li.setAttribute("data-value", item.name);
+      li.setAttribute("data-label", item.name);
+      li.setAttribute("data-aliases", item.aliases || "");
+      var text = document.createElement("span");
+      text.className = "phone-code-picker-option-text";
+      text.textContent = item.name;
+      li.appendChild(text);
+      list.appendChild(li);
+    }
+
+    function renderCityList(query) {
       list.innerHTML = "";
-      Array.prototype.forEach.call(select.options, function (opt) {
-        if (!opt.value) return;
-        var li = document.createElement("li");
-        li.className = "phone-code-picker-option country-picker-option";
-        li.setAttribute("role", "option");
-        li.setAttribute("aria-selected", "false");
-        li.setAttribute("data-value", opt.value);
-        li.setAttribute("data-label", opt.textContent);
-        li.setAttribute("data-aliases", opt.getAttribute("data-aliases") || "");
-        var text = document.createElement("span");
-        text.className = "phone-code-picker-option-text";
-        text.textContent = opt.textContent;
-        li.appendChild(text);
-        list.appendChild(li);
-      });
+      var q = foldSearch(query);
+      var items = cityItems();
+      var shown = 0;
+      var i;
+      var item;
+      var hay;
+      var limit = 400;
+      for (i = 0; i < items.length; i++) {
+        item = items[i];
+        hay = foldSearch([item.name, item.aliases || ""].join(" "));
+        if (q && hay.indexOf(q) === -1) continue;
+        appendCityLi(item);
+        shown += 1;
+        if (shown >= limit) break;
+      }
+      empty.hidden = shown > 0;
+      list.hidden = shown === 0;
+    }
+
+    function rebuildOptions() {
       search.value = "";
-      applyFilter();
+      renderCityList("");
       syncFromSelect();
     }
 
     function visibleOptions() {
-      return Array.prototype.filter.call(optionNodes(), function (li) {
-        return !li.classList.contains("is-filtered-out");
-      });
+      return Array.prototype.slice.call(optionNodes());
     }
 
     function applyFilter() {
-      var query = foldSearch(search.value);
-      var shown = 0;
-      optionNodes().forEach(function (li) {
-        var hay = foldSearch(
-          [li.getAttribute("data-label") || "", li.getAttribute("data-aliases") || ""].join(" ")
-        );
-        var match = !query || hay.indexOf(query) !== -1;
-        li.classList.toggle("is-filtered-out", !match);
-        if (match) shown += 1;
-      });
-      empty.hidden = shown > 0;
-      list.hidden = shown === 0;
+      renderCityList(search.value);
+      syncFromSelect();
+    }
+
+    function setNativeValue(value, label) {
+      var ph = select.querySelector('option[value=""]');
+      var phText = ph ? ph.textContent : placeholderText;
+      select.innerHTML = "";
+      var placeholder = document.createElement("option");
+      placeholder.value = "";
+      placeholder.textContent = phText;
+      select.appendChild(placeholder);
+      if (value) {
+        var opt = document.createElement("option");
+        opt.value = value;
+        opt.textContent = label || value;
+        select.appendChild(opt);
+        select.value = value;
+      } else {
+        select.selectedIndex = 0;
+      }
     }
 
     function closePanel() {
@@ -1790,14 +2698,7 @@
 
     function chooseOption(li) {
       if (!li) return;
-      var value = li.getAttribute("data-value");
-      var i;
-      for (i = 0; i < select.options.length; i++) {
-        if (select.options[i].value === value) {
-          select.selectedIndex = i;
-          break;
-        }
-      }
+      setNativeValue(li.getAttribute("data-value"), li.getAttribute("data-label"));
       select.dispatchEvent(new Event("change", { bubbles: true }));
       syncFromSelect();
       closePanel();
@@ -2498,6 +3399,7 @@
       });
     }
     bindRadioHighlight();
+    initOtherSpecifyFields();
     initEmailValidation();
     initForumIdentityValidation();
     initCountryDropdowns();
