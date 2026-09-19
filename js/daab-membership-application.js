@@ -395,13 +395,11 @@
     var emailInput = byId("email");
     if (emailInput && String(emailInput.value || "").trim() && !isEmailValid(emailInput.value || "")) {
       warnRequiredField(emailInput, emailInput.validationMessage || uiText("requiredFields"));
-      emailInput.reportValidity();
       return false;
     }
     if (!form.checkValidity()) {
       var invalid = form.querySelector(":invalid");
       warnRequiredField(invalid, requiredFieldMessage(invalid));
-      form.reportValidity();
       return false;
     }
     return true;
@@ -604,22 +602,38 @@
   }
 
   function playValidationBeep() {
+    function tone(ctx, start, freq, duration) {
+      var osc = ctx.createOscillator();
+      var gain = ctx.createGain();
+      osc.type = "square";
+      osc.frequency.setValueAtTime(freq, start);
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(0.22, start + 0.01);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(start);
+      osc.stop(start + duration);
+    }
+
+    function playFromContext(ctx) {
+      var t = ctx.currentTime;
+      tone(ctx, t, 880, 0.14);
+      tone(ctx, t + 0.16, 660, 0.18);
+    }
+
     try {
       var Ctx = window.AudioContext || window.webkitAudioContext;
       if (!Ctx) return;
       if (!playValidationBeep._ctx) playValidationBeep._ctx = new Ctx();
       var ctx = playValidationBeep._ctx;
-      if (ctx.state === "suspended" && ctx.resume) ctx.resume();
-      var osc = ctx.createOscillator();
-      var gain = ctx.createGain();
-      osc.type = "square";
-      osc.frequency.setValueAtTime(880, ctx.currentTime);
-      gain.gain.setValueAtTime(0.12, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.start();
-      osc.stop(ctx.currentTime + 0.2);
+      if (ctx.state === "suspended" && ctx.resume) {
+        ctx.resume().then(function () {
+          playFromContext(ctx);
+        }).catch(function () {});
+        return;
+      }
+      playFromContext(ctx);
     } catch (e) {}
   }
 
@@ -652,11 +666,32 @@
     document.querySelectorAll(".application-page .field-required-warning").forEach(function (note) {
       note.parentNode.removeChild(note);
     });
+    document.querySelectorAll(".application-page .is-required-invalid").forEach(function (el) {
+      el.classList.remove("is-required-invalid");
+      if (el.getAttribute("aria-invalid") === "true") el.removeAttribute("aria-invalid");
+    });
+  }
+
+  function focusInvalidControl(el) {
+    if (!el) return;
+    var target = el.nodeName === "FIELDSET" ? el.querySelector("input, select, textarea") || el : el;
+    try {
+      target.focus({ preventScroll: true });
+    } catch (e) {
+      try {
+        target.focus();
+      } catch (e2) {}
+    }
+    if (typeof target.scrollIntoView === "function") {
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
   }
 
   function showFieldRequiredWarning(el, message) {
     clearFieldRequiredWarnings();
     if (!el) return;
+    el.classList.add("is-required-invalid");
+    el.setAttribute("aria-invalid", "true");
     var group =
       el.closest(".field-group") ||
       el.closest(".sci-fields-fieldset") ||
@@ -668,6 +703,7 @@
     note.setAttribute("role", "alert");
     note.textContent = message;
     group.appendChild(note);
+    focusInvalidControl(el);
   }
 
   function warnRequiredField(el, message) {
@@ -1602,9 +1638,9 @@
     var html = byId("app-review-html");
     if (frame) {
       frame.src = reviewPdfUrl;
-      frame.hidden = true;
+      frame.hidden = false;
     }
-    if (html) html.hidden = false;
+    if (html) html.hidden = true;
     var download = byId("app-review-download");
     var openPdf = byId("app-review-open");
     if (download) download.disabled = false;
@@ -1798,10 +1834,10 @@
 
   function sendApplication() {
     if (!formIsReadyToSend()) {
-      closeApplicationReview();
+      if (reviewDialogOpen) closeApplicationReview();
       return;
     }
-    closeApplicationReview();
+    if (reviewDialogOpen) closeApplicationReview();
     setSubmitting(true);
     var payload = buildSubmissionPayload();
 
@@ -1831,7 +1867,11 @@
   function submitForm() {
     if (reviewDialogOpen) return;
     if (!formIsReadyToSend()) return;
-    openApplicationReview();
+    if (isForumRegister()) {
+      openApplicationReview();
+      return;
+    }
+    sendApplication();
   }
 
   function buildLocalizedCountries(lang) {
@@ -3425,6 +3465,16 @@
     var submitBtn = byId("appSubmitBtn");
     if (submitBtn && !submitBtn.textContent.trim()) {
       submitBtn.textContent = uiText("submit");
+    }
+    if (submitBtn) {
+      submitBtn.addEventListener("pointerdown", function () {
+        try {
+          var Ctx = window.AudioContext || window.webkitAudioContext;
+          if (!Ctx) return;
+          if (!playValidationBeep._ctx) playValidationBeep._ctx = new Ctx();
+          if (playValidationBeep._ctx.state === "suspended") playValidationBeep._ctx.resume();
+        } catch (e) {}
+      });
     }
   });
 })();
