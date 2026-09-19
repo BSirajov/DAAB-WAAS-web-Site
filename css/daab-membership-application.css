@@ -1482,6 +1482,36 @@ html[data-daab-page-id="forum-2026-register"] .forum-register-sponsors__line{
 
 body.app-review-open{
   overflow: hidden;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+.application-page .app-validation-toast,
+.app-validation-toast{
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100001;
+  max-width: min(560px, calc(100vw - 24px));
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #8a1c1c;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.45;
+  box-shadow: 0 10px 28px rgba(8, 38, 59, 0.28);
+}
+.application-page .app-validation-toast[hidden],
+.app-validation-toast[hidden]{
+  display: none;
+}
+.application-page .field-group,
+.application-page .opt-item,
+.application-page .sci-fields-fieldset{
+  scroll-margin-top: 96px;
 }
 .application-page .app-review-dialog{
   position: fixed;

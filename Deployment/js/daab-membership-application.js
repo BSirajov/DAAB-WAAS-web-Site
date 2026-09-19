@@ -391,6 +391,10 @@
   function validateForm() {
     var form = mainFormEl();
     if (!form) return true;
+    var dob = byId("dob");
+    if (dob && String(dob.value || "").trim()) {
+      dob.value = normalizeDobTypedValue(dob.value);
+    }
     applyForumIdentityValidity();
     var emailInput = byId("email");
     if (emailInput && String(emailInput.value || "").trim() && !isEmailValid(emailInput.value || "")) {
@@ -672,9 +676,21 @@
     });
   }
 
+  function visibleTargetForControl(el) {
+    if (!el) return null;
+    if (el.classList && el.classList.contains("phone-code-picker-native")) {
+      var pickerBtn = el.closest(".phone-code-picker") && el.closest(".phone-code-picker").querySelector(".phone-code-picker-btn");
+      if (pickerBtn) return pickerBtn;
+    }
+    if (el.nodeName === "FIELDSET") {
+      return el.querySelector("input, select, textarea") || el;
+    }
+    return el;
+  }
+
   function focusInvalidControl(el) {
     if (!el) return;
-    var target = el.nodeName === "FIELDSET" ? el.querySelector("input, select, textarea") || el : el;
+    var target = visibleTargetForControl(el) || el;
     try {
       target.focus({ preventScroll: true });
     } catch (e) {
@@ -685,6 +701,19 @@
     if (typeof target.scrollIntoView === "function") {
       target.scrollIntoView({ behavior: "smooth", block: "center" });
     }
+  }
+
+  function showValidationToast(message) {
+    var toast = byId("app-validation-toast");
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.id = "app-validation-toast";
+      toast.className = "app-validation-toast";
+      toast.setAttribute("role", "alert");
+      document.body.appendChild(toast);
+    }
+    toast.textContent = message || "";
+    toast.hidden = !message;
   }
 
   function showFieldRequiredWarning(el, message) {
@@ -715,28 +744,34 @@
   function showSubmitError(message, options) {
     var opts = options || {};
     var box = byId("app-submit-status");
-    if (!box) return;
-    box.hidden = false;
-    box.className = "app-submit-status app-submit-status--error";
-    box.textContent = message;
+    if (box) {
+      box.hidden = false;
+      box.className = "app-submit-status app-submit-status--error";
+      box.textContent = message;
+      if (opts.alert) {
+        box.setAttribute("role", "alert");
+        box.setAttribute("aria-live", "assertive");
+      } else {
+        box.setAttribute("role", "status");
+        box.setAttribute("aria-live", "polite");
+      }
+    }
     if (opts.alert) {
-      box.setAttribute("role", "alert");
-      box.setAttribute("aria-live", "assertive");
+      showValidationToast(message);
       playValidationBeep();
-    } else {
-      box.setAttribute("role", "status");
-      box.setAttribute("aria-live", "polite");
     }
   }
 
   function clearSubmitStatus() {
     var box = byId("app-submit-status");
-    if (!box) return;
-    box.hidden = true;
-    box.textContent = "";
-    box.className = "app-submit-status";
-    box.setAttribute("role", "status");
-    box.setAttribute("aria-live", "polite");
+    if (box) {
+      box.hidden = true;
+      box.textContent = "";
+      box.className = "app-submit-status";
+      box.setAttribute("role", "status");
+      box.setAttribute("aria-live", "polite");
+    }
+    showValidationToast("");
     clearFieldRequiredWarnings();
     var sciFieldset = byId("sci-fields");
     if (sciFieldset) sciFieldset.removeAttribute("aria-invalid");
@@ -1262,7 +1297,22 @@
   var reviewDialogOpen = false;
   var reviewLastFocus = null;
   var reviewPdfLibsPromise = null;
+  var reviewScrollY = 0;
   var PDF_CAPTURE_SCALE = 2;
+
+  function lockReviewScroll() {
+    reviewScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+    document.body.style.top = "-" + reviewScrollY + "px";
+    document.body.classList.add("app-review-open");
+  }
+
+  function unlockReviewScroll() {
+    document.body.classList.remove("app-review-open");
+    document.body.style.top = "";
+    if (typeof window.scrollTo === "function") {
+      window.scrollTo(0, reviewScrollY);
+    }
+  }
 
   function applicationAssetRoot() {
     var fromAttr = document.documentElement.getAttribute("data-daab-asset-root");
@@ -1738,9 +1788,12 @@
 
   function closeApplicationReview() {
     var dialog = byId("app-review-dialog");
-    if (dialog) dialog.hidden = true;
+    if (dialog) {
+      dialog.hidden = true;
+      dialog.style.display = "";
+    }
     reviewDialogOpen = false;
-    document.body.classList.remove("app-review-open");
+    unlockReviewScroll();
     document.removeEventListener("keydown", onReviewKeydown);
     revokeReviewPdfUrl();
     var frame = byId("app-review-frame");
@@ -1771,8 +1824,9 @@
     syncReviewDialogCopy();
     reviewLastFocus = document.activeElement;
     reviewDialogOpen = true;
-    document.body.classList.add("app-review-open");
+    lockReviewScroll();
     dialog.hidden = false;
+    dialog.style.display = "flex";
     renderReviewHtmlFallback(sections);
     setReviewStatus(uiText("reviewPreparing"));
     var download = byId("app-review-download");
@@ -1865,13 +1919,17 @@
   }
 
   function submitForm() {
-    if (reviewDialogOpen) return;
-    if (!formIsReadyToSend()) return;
-    if (isForumRegister()) {
-      openApplicationReview();
-      return;
+    try {
+      if (reviewDialogOpen) return;
+      if (!formIsReadyToSend()) return;
+      if (isForumRegister()) {
+        openApplicationReview();
+        return;
+      }
+      sendApplication();
+    } catch (err) {
+      showSubmitError(uiText("submitFailed"), { alert: true });
     }
-    sendApplication();
   }
 
   function buildLocalizedCountries(lang) {
@@ -3435,8 +3493,16 @@
     if (form) {
       form.addEventListener("submit", function (e) {
         e.preventDefault();
+        e.stopPropagation();
         submitForm();
       });
+    }
+    if (isForumRegister()) {
+      var preload = function () {
+        ensurePdfLibs().catch(function () {});
+      };
+      if (window.requestIdleCallback) window.requestIdleCallback(preload, { timeout: 2500 });
+      else window.setTimeout(preload, 800);
     }
     bindRadioHighlight();
     initOtherSpecifyFields();
