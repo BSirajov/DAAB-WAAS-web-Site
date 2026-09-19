@@ -997,6 +997,9 @@
   padding: 52px 32px;
   box-shadow: var(--shadow);
   animation: daabAppFadeIn 0.4s ease;
+  scroll-margin-top: calc(
+    var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) + 16px
+  );
 }.application-page .success-screen.active{
   display: block;
 }.application-page .success-icon{
@@ -1054,8 +1057,21 @@
   line-height: 1.65;
   max-width: 480px;
   margin: 0 auto 20px;
-}.application-page .success-screen .app-btn{
+}.application-page .success-screen .app-btn-row,
+.application-page.application-page--single .success-screen .app-btn-row{
+  justify-content: center;
+}
+.application-page .success-screen .app-btn,
+.application-page .success-screen a.app-btn,
+.application-page .success-screen a.app-btn-primary{
   margin-top: 8px;
+  color: #fff !important;
+  text-decoration: none;
+}
+.application-page .success-screen a.app-btn:hover,
+.application-page .success-screen a.app-btn-primary:hover{
+  color: #fff !important;
+  text-decoration: none;
 }
 
 @media (max-width: 760px) {.application-page .application-main{

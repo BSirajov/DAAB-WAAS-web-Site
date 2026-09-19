@@ -1304,7 +1304,20 @@
       el.classList.remove("active");
       el.classList.add("done");
     });
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    function scrollToSuccess() {
+      if (success && typeof success.scrollIntoView === "function") {
+        success.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+      var bottom = Math.max(
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight
+      );
+      window.scrollTo({ top: bottom, behavior: "smooth" });
+    }
+    requestAnimationFrame(function () {
+      requestAnimationFrame(scrollToSuccess);
+    });
   }
 
   function postApplication(payload) {
