@@ -666,7 +666,79 @@
     return uiText("requiredFields");
   }
 
+  var warnedRequiredEl = null;
+
+  function warningGroupFor(el) {
+    if (!el || !el.closest) return null;
+    return (
+      el.closest(".field-group") ||
+      el.closest(".sci-fields-fieldset") ||
+      el.closest(".app-file-card") ||
+      el.closest(".opt-item") ||
+      null
+    );
+  }
+
+  function controlIsFilled(el) {
+    if (!el) return false;
+    if (el.classList && el.classList.contains("app-file-card")) {
+      return !!getSelectedUploadFile(el.getAttribute("data-file-kind"));
+    }
+    if (el.nodeName === "FIELDSET") {
+      return !!el.querySelector("input:checked");
+    }
+    var type = String(el.type || "").toLowerCase();
+    if (type === "radio" || type === "checkbox") {
+      if (el.name) {
+        var nodes = document.querySelectorAll('.application-page [name="' + el.name + '"]');
+        for (var i = 0; i < nodes.length; i++) {
+          if (nodes[i].checked) return true;
+        }
+        return false;
+      }
+      return !!el.checked;
+    }
+    if (type === "file") return !!(el.files && el.files[0]);
+    return String(el.value || "").trim() !== "";
+  }
+
+  function eventTargetsWarnedField(target) {
+    if (!warnedRequiredEl || !target) return false;
+    if (target === warnedRequiredEl) return true;
+    if (warnedRequiredEl.contains && warnedRequiredEl.contains(target)) return true;
+    if (warnedRequiredEl.name && target.name && warnedRequiredEl.name === target.name) return true;
+    var warnedGroup = warningGroupFor(warnedRequiredEl);
+    var targetGroup = warningGroupFor(target);
+    if (warnedGroup && warnedGroup === targetGroup) return true;
+    if (
+      (warnedRequiredEl.id === "city" && target.id === "city_manual") ||
+      (warnedRequiredEl.id === "city_manual" && target.id === "city")
+    ) {
+      return true;
+    }
+    return false;
+  }
+
+  function maybeClearRequiredWarning(target) {
+    if (!warnedRequiredEl) return;
+    if (!eventTargetsWarnedField(target)) return;
+    if (!controlIsFilled(warnedRequiredEl) && !controlIsFilled(target)) return;
+    clearFieldRequiredWarnings();
+  }
+
+  function initClearRequiredWarningOnFill() {
+    var form = mainFormEl();
+    if (!form || form.getAttribute("data-clear-required-bound") === "1") return;
+    form.setAttribute("data-clear-required-bound", "1");
+    function onEdit(e) {
+      maybeClearRequiredWarning(e.target);
+    }
+    form.addEventListener("input", onEdit);
+    form.addEventListener("change", onEdit);
+  }
+
   function clearFieldRequiredWarnings() {
+    warnedRequiredEl = null;
     document.querySelectorAll(".application-page .field-required-warning").forEach(function (note) {
       note.parentNode.removeChild(note);
     });
@@ -703,22 +775,15 @@
     }
   }
 
-  function showValidationToast(message) {
+  function hideValidationToast() {
     var toast = byId("app-validation-toast");
-    if (!toast) {
-      toast = document.createElement("div");
-      toast.id = "app-validation-toast";
-      toast.className = "app-validation-toast";
-      toast.setAttribute("role", "alert");
-      document.body.appendChild(toast);
-    }
-    toast.textContent = message || "";
-    toast.hidden = !message;
+    if (toast && toast.parentNode) toast.parentNode.removeChild(toast);
   }
 
   function showFieldRequiredWarning(el, message) {
     clearFieldRequiredWarnings();
     if (!el) return;
+    warnedRequiredEl = el;
     el.classList.add("is-required-invalid");
     el.setAttribute("aria-invalid", "true");
     var group =
@@ -757,7 +822,7 @@
       }
     }
     if (opts.alert) {
-      showValidationToast(message);
+      hideValidationToast();
       playValidationBeep();
     }
   }
@@ -771,7 +836,7 @@
       box.setAttribute("role", "status");
       box.setAttribute("aria-live", "polite");
     }
-    showValidationToast("");
+    hideValidationToast();
     clearFieldRequiredWarnings();
     var sciFieldset = byId("sci-fields");
     if (sciFieldset) sciFieldset.removeAttribute("aria-invalid");
@@ -1687,10 +1752,10 @@
     var frame = byId("app-review-frame");
     var html = byId("app-review-html");
     if (frame) {
-      frame.src = reviewPdfUrl;
-      frame.hidden = false;
+      frame.removeAttribute("src");
+      frame.hidden = true;
     }
-    if (html) html.hidden = true;
+    if (html) html.hidden = false;
     var download = byId("app-review-download");
     var openPdf = byId("app-review-open");
     if (download) download.disabled = false;
@@ -3506,6 +3571,7 @@
     }
     bindRadioHighlight();
     initOtherSpecifyFields();
+    initClearRequiredWarningOnFill();
     initEmailValidation();
     initForumIdentityValidation();
     initCountryDropdowns();
