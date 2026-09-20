@@ -20,6 +20,10 @@ desktop.ini
 
 # Local / non-deploy
 helpers/_geo_cache/
+/daab-private/
+/Deployment/daab-private/
+/mail-registrations-config.php
+/Deployment/mail-registrations-config.php
 _pdf_extract.txt
 scripts/deploy.env
 node_modules/

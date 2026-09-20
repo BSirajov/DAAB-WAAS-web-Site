@@ -38,6 +38,10 @@ _archive/
 cv/
 Deployment/
 
+# --- Registration CSVs and optional path override (never publish) ---
+daab-private/
+mail-registrations-config.php
+
 # --- Large book PDFs (host-managed; upload Books/ separately) ---
 Books/
 
