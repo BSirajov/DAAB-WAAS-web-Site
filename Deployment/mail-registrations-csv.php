@@ -2,6 +2,7 @@
 /**
  * Append one registration/membership row to a private CSV.
  * Preferred location: daab-private/ next to public_html (not on the web).
+ * Forum CV/photo copies go in daab-private/forum-2026-files/.
  * Fallback: public_html/daab-private/ with Apache deny rules.
  *
  * Optional override: copy mail-registrations-config.example.php to
@@ -113,6 +114,106 @@ function daab_registration_csv_filename(string $kind): string
         return 'membership-applications.csv';
     }
     return 'forum-2026-registrations.csv';
+}
+
+function daab_registration_files_subdir(string $kind): string
+{
+    if ($kind === 'membership') {
+        return 'membership-files';
+    }
+    return 'forum-2026-files';
+}
+
+function daab_registration_safe_stored_name(string $name): string
+{
+    $name = str_replace(["\0", "\r", "\n"], '', $name);
+    $name = basename($name);
+    $name = preg_replace('/[^\w.\- ()\[\]]+/u', '_', $name) ?: 'attachment';
+    if (strlen($name) > 80) {
+        $ext = pathinfo($name, PATHINFO_EXTENSION);
+        $base = substr((string) pathinfo($name, PATHINFO_FILENAME), 0, 60);
+        $name = $ext !== '' ? $base . '.' . $ext : $base;
+    }
+    return $name;
+}
+
+function daab_registration_person_token(string $value): string
+{
+    $value = trim($value);
+    $value = preg_replace('/\s+/u', '', $value) ?? '';
+    $value = preg_replace('/[^\p{L}\p{N}\-]+/u', '', $value) ?? '';
+    return $value;
+}
+
+function daab_registration_named_filename(string $role, string $firstName, string $lastName, string $originalName): string
+{
+    $roleLabel = strtolower($role) === 'photo' ? 'Photo' : 'CV';
+    $first = daab_registration_person_token($firstName);
+    $last = daab_registration_person_token($lastName);
+    if ($first === '' && $last === '') {
+        $first = 'Unknown';
+    }
+    $ext = strtolower((string) pathinfo($originalName, PATHINFO_EXTENSION));
+    if ($ext === '') {
+        $ext = strtolower($role) === 'photo' ? 'jpg' : 'pdf';
+    }
+    $base = $roleLabel . '_' . $first;
+    if ($last !== '') {
+        $base .= '_' . $last;
+    }
+    return $base . '.' . $ext;
+}
+
+function daab_registration_files_dir(string $kind): string
+{
+    $root = daab_registrations_csv_dir();
+    if ($root === '') {
+        return '';
+    }
+    $dir = $root . DIRECTORY_SEPARATOR . daab_registration_files_subdir($kind);
+    if (!daab_registrations_dir_ready($dir)) {
+        return '';
+    }
+    $insideWeb = __DIR__ . DIRECTORY_SEPARATOR . 'daab-private';
+    $normDir = str_replace('\\', '/', $dir);
+    $normInside = str_replace('\\', '/', $insideWeb);
+    if (strpos($normDir, $normInside) === 0) {
+        daab_registrations_protect_web_dir($dir);
+    }
+    return $dir;
+}
+
+function daab_save_registration_upload(
+    string $formKind,
+    string $role,
+    string $originalName,
+    string $data,
+    string $firstName = '',
+    string $lastName = ''
+): string {
+    if ($data === '') {
+        return '';
+    }
+    $dir = daab_registration_files_dir($formKind);
+    if ($dir === '') {
+        return '';
+    }
+    $filename = daab_registration_named_filename($role, $firstName, $lastName, $originalName);
+    $path = $dir . DIRECTORY_SEPARATOR . $filename;
+    if (is_file($path)) {
+        $base = (string) pathinfo($filename, PATHINFO_FILENAME);
+        $ext = (string) pathinfo($filename, PATHINFO_EXTENSION);
+        $n = 2;
+        do {
+            $filename = $base . '-' . $n . ($ext !== '' ? '.' . $ext : '');
+            $path = $dir . DIRECTORY_SEPARATOR . $filename;
+            $n++;
+        } while (is_file($path) && $n < 1000);
+    }
+    if (@file_put_contents($path, $data) === false) {
+        return '';
+    }
+    return daab_registration_files_subdir($formKind) . '/' . $filename;
 }
 
 /**
