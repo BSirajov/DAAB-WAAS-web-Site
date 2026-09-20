@@ -78,6 +78,7 @@ HOST_MANAGED_PATHS = frozenset(
         "images/activities/Messoud_Efendiyev_Zaqatala_video.mp4",
     }
 )
+HOST_MANAGED_PREFIXES = ("Books/",)
 
 
 def site_html_files() -> list[Path]:
@@ -176,7 +177,7 @@ def main() -> int:
                     rel = target.relative_to(ROOT).as_posix()
                 except ValueError:
                     rel = ""
-                if rel in HOST_MANAGED_PATHS:
+                if rel in HOST_MANAGED_PATHS or rel.startswith(HOST_MANAGED_PREFIXES):
                     continue
                 errors.append(f"{page.name}: missing → {ref} ({target.relative_to(ROOT)})")
             else:
