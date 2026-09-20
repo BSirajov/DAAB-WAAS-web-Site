@@ -219,6 +219,14 @@ $headers .= 'Reply-To: ' . $fullName . ' <' . $email . ">\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 if (@mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, $headers)) {
+    require_once __DIR__ . '/mail-registrations-csv.php';
+    $csvRow = $fields;
+    $csvRow['locale'] = $locale;
+    $csvRow['form_kind'] = 'membership';
+    $csvRow['received_at'] = ($fields['submitted_at'] ?? '') !== ''
+        ? $fields['submitted_at']
+        : gmdate('Y-m-d H:i:s') . ' UTC';
+    daab_append_registration_csv('membership', $csvRow);
     echo 'success';
 } else {
     daab_release_mail_send($mailOnceKey);

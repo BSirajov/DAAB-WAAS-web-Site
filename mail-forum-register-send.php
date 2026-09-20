@@ -346,6 +346,14 @@ foreach ([$cvAttachment, $photoAttachment] as $attachment) {
 $message .= '--' . $boundary . "--\r\n";
 
 if (@mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $message, $headers)) {
+    require_once __DIR__ . '/mail-registrations-csv.php';
+    $csvRow = $fields;
+    $csvRow['locale'] = $locale;
+    $csvRow['form_kind'] = $fields['form_kind'] !== '' ? $fields['form_kind'] : 'forum-2026';
+    $csvRow['received_at'] = $fields['submitted_at'] !== ''
+        ? $fields['submitted_at']
+        : gmdate('Y-m-d H:i:s') . ' UTC';
+    daab_append_registration_csv('forum-2026', $csvRow);
     echo 'success';
 } else {
     daab_release_mail_send($mailOnceKey);
