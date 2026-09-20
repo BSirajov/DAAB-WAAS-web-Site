@@ -163,6 +163,15 @@ $fullName = daab_forum_mail_field('full_name');
 if ($fullName === '') {
     $fullName = trim($firstName . ' ' . $lastName);
 }
+if (($firstName === '' || $lastName === '') && $fullName !== '') {
+    $parts = preg_split('/\s+/u', $fullName, 2) ?: [];
+    if ($firstName === '') {
+        $firstName = $parts[0] ?? '';
+    }
+    if ($lastName === '') {
+        $lastName = $parts[1] ?? '';
+    }
+}
 
 $city = daab_forum_mail_field('city');
 if ($city === '') {
@@ -353,6 +362,28 @@ if (@mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $message, $headers
     $csvRow['received_at'] = $fields['submitted_at'] !== ''
         ? $fields['submitted_at']
         : gmdate('Y-m-d H:i:s') . ' UTC';
+    $savedCv = daab_save_registration_upload(
+        'forum-2026',
+        'cv',
+        $cvAttachment['name'],
+        $cvAttachment['data'],
+        $firstName,
+        $lastName
+    );
+    $savedPhoto = daab_save_registration_upload(
+        'forum-2026',
+        'photo',
+        $photoAttachment['name'],
+        $photoAttachment['data'],
+        $firstName,
+        $lastName
+    );
+    if ($savedCv !== '') {
+        $csvRow['cv_file'] = $savedCv;
+    }
+    if ($savedPhoto !== '') {
+        $csvRow['photo_file'] = $savedPhoto;
+    }
     daab_append_registration_csv('forum-2026', $csvRow);
     echo 'success';
 } else {
