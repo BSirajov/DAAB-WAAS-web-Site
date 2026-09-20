@@ -38,7 +38,7 @@
 <link href="../../../css/scientists-catalog-toolbar.css?v=9" rel="stylesheet"/>
 <link href="../../../css/daab-page-content-search.css?v=9" rel="stylesheet"/>
 <link href="../../../css/daab-sidebar-widget.css?v=6" rel="stylesheet"/>
-<link href="../../../css/daab-membership-application.css?v=58" rel="stylesheet"/>
+<link href="../../../css/daab-membership-application.css?v=59" rel="stylesheet"/>
 <script src="../../../js/daab-mobile.js?v=6" defer></script>
 <script src="../../../js/daab-perf.js?v=4" defer></script>
 <script src="../../../js/daab-sticky-chrome.js?v=7" defer></script>
@@ -56,7 +56,7 @@
 <script src="../../../js/daab-application-config.js?v=2" defer></script>
 <script src="../../../js/daab-country-codes.js?v=3" defer></script>
 <script src="../../../js/daab-phone-codes.js?v=3" defer></script>
-<script src="../../../js/daab-membership-application.js?v=57" defer></script>
+<script src="../../../js/daab-membership-application.js?v=59" defer></script>
 <script defer src="../../../js/daab-sidebar-spy.js?v=3"></script>
 <script defer src="../../../js/daab-sidebar-timeline.js?v=7"></script>
 <script defer src="../../../js/daab-page-content-search.js?v=10"></script>
@@ -298,28 +298,44 @@ Nəticə tapılmadı.
           <span class="field-hint">Sahib olduğunuz ən yüksək akademik dərəcəni seçin.</span>
           <div class="options-list" role="radiogroup" aria-labelledby="degree-label">
             <div class="opt-item">
-              <input type="radio" name="degree" id="deg1" required value="bachelor">
+              <input type="radio" name="degree" id="deg-none" required value="none">
+              <label for="deg-none">Yoxdur — Akademik dərəcəm yoxdur</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg1" value="bachelor">
               <label for="deg1">Bakalavr — BA, BSc, BEng</label>
             </div>
             <div class="opt-item">
-              <input type="radio" name="degree" id="deg2" value="master">
-              <label for="deg2">Magistr — MA, MSc, MEng</label>
-            </div>
-            <div class="opt-item">
-              <input type="radio" name="degree" id="deg3" value="phd">
-              <label for="deg3">PhD — Elmlər üzrə fəlsəfə doktoru</label>
+              <input type="radio" name="degree" id="deg-health" value="health_professional">
+              <label for="deg-health">DDS / DMD, PharmD, DVM — Stomatologiya, əczaçılıq və ya baytarlıq üzrə peşə doktorluğu</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="degree" id="deg4" value="dsc">
-              <label for="deg4">DSc, Dr. Habil. — Postdoktorantura</label>
+              <label for="deg4">DSc, Dr. Habil. — Elmlər doktoru / habilitasiya</label>
             </div>
             <div class="opt-item">
-              <input type="radio" name="degree" id="deg5" value="md">
-              <label for="deg5">MD — Tibb üzrə doktorluq dərəcəsi</label>
+              <input type="radio" name="degree" id="deg-honorary" value="honorary">
+              <label for="deg-honorary">Fəxri doktor (Dr. h.c.)</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="degree" id="deg6" value="jd">
               <label for="deg6">JD — Hüquq doktoru</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg2" value="master">
+              <label for="deg2">Magistr — MA, MSc, MEng, MBA</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg5" value="md">
+              <label for="deg5">MD / MBBS / MBChB / DO — Həkim: tibb üzrə doktorluq və ekvivalent peşə dərəcələri</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg-specialist" value="specialist">
+              <label for="deg-specialist">Mütəxəssis diplomu — 5 illik ali təhsil (SSRİ/MDB)</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg3" value="phd">
+              <label for="deg3">PhD / Elmlər namizədi — Elmlər üzrə fəlsəfə doktoru</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="degree" id="deg7" value="other">
@@ -341,16 +357,36 @@ Nəticə tapılmadı.
           <span class="field-hint">Hazırda sahib olduğunuz akademik titulu seçin.</span>
           <div class="options-list" role="radiogroup" aria-labelledby="title-label">
             <div class="opt-item">
-              <input type="radio" name="title" id="tit1" required value="docent">
+              <input type="radio" name="title" id="tit-none" required value="none">
+              <label for="tit-none">Yoxdur — Akademik titulum yoxdur</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit-academician" value="academician">
+              <label for="tit-academician">Akademik — Elmlər akademiyasının həqiqi üzvü</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit-lecturer" value="lecturer">
+              <label for="tit-lecturer">Assistent / Müəllim</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit-assistant" value="assistant_professor">
+              <label for="tit-assistant">Baş müəllim / Assistant Professor (Dr. Öğretim Üyesi)</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit1" value="docent">
               <label for="tit1">Dosent — PhD və müəyyən akademik nailiyyətlərə malik alimlər üçün.</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit-emeritus" value="emeritus">
+              <label for="tit-emeritus">Əməkdar professor (Professor Emeritus)</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit-corresponding" value="corresponding_member">
+              <label for="tit-corresponding">Müxbir üzv</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="title" id="tit2" value="professor">
               <label for="tit2">Professor — Ali akademik titul, adətən elmlər doktoru və ya habilitasiyadan sonra verilir.</label>
-            </div>
-            <div class="opt-item">
-              <input type="radio" name="title" id="tit3" value="honorary">
-              <label for="tit3">Fəxri doktor (Dr. h.c.) — Universitet və ya akademiya tərəfindən verilən fəxri elmi dərəcə.</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="title" id="tit4" value="other">
@@ -416,6 +452,7 @@ Nəticə tapılmadı.
             <div class="sci-item"><input type="checkbox" id="h8" name="sci" value="psychology"><label for="h8">Psixologiya</label></div>
             <div class="sci-item"><input type="checkbox" id="h6" name="sci" value="political"><label for="h6">Siyasi elmlər</label></div>
             <div class="sci-item"><input type="checkbox" id="h7" name="sci" value="sociology"><label for="h7">Sosiologiya</label></div>
+            <div class="sci-item"><input type="checkbox" id="sci-oriental" name="sci" value="oriental"><label for="sci-oriental">Şərqşünaslıq və regionşünaslıq</label></div>
             <div class="sci-item"><input type="checkbox" id="h3" name="sci" value="history"><label for="h3">Tarix</label></div>
           </div>
         </div>
@@ -442,6 +479,7 @@ Nəticə tapılmadı.
             <div class="sci-item"><input type="checkbox" id="t2" name="sci" value="electronics"><label for="t2">Elektronika və Rabitə Texnologiyaları</label></div>
             <div class="sci-item"><input type="checkbox" id="t6" name="sci" value="energy"><label for="t6">Energetika və Elektrik Mühəndisliyi</label></div>
             <div class="sci-item"><input type="checkbox" id="t1" name="sci" value="cs"><label for="t1">İnformatika və Kompüter Elmləri</label></div>
+            <div class="sci-item"><input type="checkbox" id="sci-chemical" name="sci" value="chemical_engineering"><label for="sci-chemical">Kimya mühəndisliyi və kimya texnologiyası</label></div>
             <div class="sci-item"><input type="checkbox" id="t8" name="sci" value="materials"><label for="t8">Materialşünaslıq və Nanotexnologiya</label></div>
             <div class="sci-item"><input type="checkbox" id="t7" name="sci" value="mechanics"><label for="t7">Mexanika və Maşınqayırma</label></div>
             <div class="sci-item"><input type="checkbox" id="t4" name="sci" value="petroleum"><label for="t4">Neft və Qaz Mühəndisliyi</label></div>
@@ -458,6 +496,8 @@ Nəticə tapılmadı.
             <div class="sci-item"><input type="checkbox" id="b6" name="sci" value="biotech"><label for="b6">Biotexnologiya və Biomühəndislik</label></div>
             <div class="sci-item"><input type="checkbox" id="b3" name="sci" value="pharmacy"><label for="b3">Dərmanşünaslıq və Farmakologiya</label></div>
             <div class="sci-item"><input type="checkbox" id="b5" name="sci" value="ecology"><label for="b5">Ekologiya və Ətraf Mühit Elmləri</label></div>
+            <div class="sci-item"><input type="checkbox" id="sci-publichealth" name="sci" value="public_health"><label for="sci-publichealth">İctimai səhiyyə və epidemiologiya</label></div>
+            <div class="sci-item"><input type="checkbox" id="sci-dentistry" name="sci" value="dentistry"><label for="sci-dentistry">Stomatologiya və diş həkimliyi</label></div>
             <div class="sci-item"><input type="checkbox" id="b2" name="sci" value="medicine"><label for="b2">Tibb (Ümumi Tibb, Cərrahiyyə, Kardiologiya, Onkologiya, Nevrologiya)</label></div>
           </div>
         </div>
@@ -484,6 +524,13 @@ Nəticə tapılmadı.
             <div class="sci-item"><input type="checkbox" id="i3" name="sci" value="finearts"><label for="i3">Rəssamlıq və Dizayn</label></div>
             <div class="sci-item"><input type="checkbox" id="i2" name="sci" value="theatre"><label for="i2">Teatr və Kinoşünaslıq</label></div>
           </div>
+        </div>
+
+        <div class="sci-category">
+          <div class="sci-cat-body">
+            <div class="sci-item"><input type="checkbox" id="sci-other" name="sci" value="other"><label for="sci-other">Digər</label></div>
+          </div>
+          <input type="text" id="sci_other" name="sci_other" class="other-specify-input" hidden placeholder="Elmi sahəni yazın" aria-label="Digər elmi sahə" autocomplete="off">
         </div>
 
         </fieldset>
