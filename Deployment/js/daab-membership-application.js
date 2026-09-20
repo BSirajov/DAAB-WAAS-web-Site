@@ -842,6 +842,8 @@
     if (sciFieldset) sciFieldset.removeAttribute("aria-invalid");
   }
 
+  var applicationSendState = "idle";
+
   function setSubmitting(isSubmitting) {
     var btn = byId("appSubmitBtn");
     if (btn) {
@@ -1838,7 +1840,11 @@
     byId("app-review-edit").addEventListener("click", closeApplicationReview);
     byId("app-review-download").addEventListener("click", downloadReviewPdf);
     byId("app-review-open").addEventListener("click", openReviewPdfTab);
-    byId("app-review-send").addEventListener("click", sendApplication);
+    byId("app-review-send").addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      sendApplication();
+    });
     return wrap;
   }
 
@@ -1965,19 +1971,26 @@
   }
 
   function sendApplication() {
+    if (applicationSendState === "sending" || applicationSendState === "sent") {
+      return;
+    }
     if (!formIsReadyToSend()) {
       if (reviewDialogOpen) closeApplicationReview();
       return;
     }
-    if (reviewDialogOpen) closeApplicationReview();
+    applicationSendState = "sending";
     setSubmitting(true);
+    if (reviewDialogOpen) closeApplicationReview();
     var payload = buildSubmissionPayload();
 
     postApplication(payload)
       .then(function () {
+        applicationSendState = "sent";
         showSuccessScreen();
       })
       .catch(function (err) {
+        applicationSendState = "idle";
+        setSubmitting(false);
         var msg = uiText("submitFailed");
         var detail = err && err.message ? String(err.message) : "";
         if (
@@ -1990,14 +2003,12 @@
             : uiText("networkError");
         }
         showSubmitError(msg);
-      })
-      .finally(function () {
-        setSubmitting(false);
       });
   }
 
   function submitForm() {
     try {
+      if (applicationSendState === "sending" || applicationSendState === "sent") return;
       if (reviewDialogOpen) return;
       if (!formIsReadyToSend()) return;
       if (isForumRegister()) {
@@ -3572,6 +3583,7 @@
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         e.stopPropagation();
+        if (typeof e.stopImmediatePropagation === "function") e.stopImmediatePropagation();
         submitForm();
       });
     }

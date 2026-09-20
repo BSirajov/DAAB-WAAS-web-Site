@@ -318,9 +318,16 @@ foreach ($labels as $key => $label) {
     }
 }
 
+require_once __DIR__ . '/mail-send-once.php';
+$mailOnceKey = strtolower($email) . "\n" . $fullName . "\nforum-2026";
+if (!daab_claim_mail_send($mailOnceKey)) {
+    echo 'success';
+    exit;
+}
+
 $to = 'info@daab-waas.com';
 $fromAddress = 'noreply@daab-waas.com';
-$fromName = $isAz ? 'DAAB veb saytı' : 'WAAS website';
+$fromName = $isAz ? 'DAAB' : 'WAAS';
 $boundary = '==DAAB_FORUM_' . bin2hex(random_bytes(12));
 $headers = 'From: ' . $fromName . ' <' . $fromAddress . ">\r\n";
 $headers .= 'Reply-To: ' . $fullName . ' <' . $email . ">\r\n";
@@ -341,5 +348,6 @@ $message .= '--' . $boundary . "--\r\n";
 if (@mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $message, $headers)) {
     echo 'success';
 } else {
+    daab_release_mail_send($mailOnceKey);
     daab_forum_mail_fail('error:attach', 500);
 }
