@@ -484,6 +484,7 @@
         submit: "✓ Göndər",
         sciRequired: "Ən azı bir elmi sahə seçin.",
         sciLimitExceeded: "Siz ən çox iki elm sahəsi seçə bilərsiniz. Başqa birini seçməzdən əvvəl mövcud seçimlərdən birini ləğv edin.",
+        sciOtherRequired: "Digər elmi sahəni yazın.",
         degreeRequired: "Akademik dərəcənizi seçin.",
         degreeOtherRequired: "Digər akademik dərəcəni yazın.",
         titleRequired: "Akademik titulunuzu seçin.",
@@ -545,6 +546,7 @@
         submit: "✓ Submit Application",
         sciRequired: "Select at least one scientific field.",
         sciLimitExceeded: "You can select up to two scientific fields. Deselect one of your current choices before selecting another.",
+        sciOtherRequired: "Please enter the other scientific field.",
         degreeRequired: "Please select your academic degree.",
         degreeOtherRequired: "Please enter the other academic degree.",
         titleRequired: "Please select your academic title.",
@@ -918,6 +920,34 @@
     });
   }
 
+  function syncCredentialInstitution(radioName, fieldId) {
+    var field = byId(fieldId);
+    if (!field) return;
+    var group = field.closest(".field-group");
+    var needsInstitution = getRadioValue(radioName) !== "none";
+    field.required = needsInstitution;
+    if (!needsInstitution) {
+      field.value = "";
+      field.setCustomValidity("");
+    }
+    if (group) group.hidden = !needsInstitution;
+  }
+
+  function initCredentialInstitutionFields() {
+    [
+      { radio: "degree", field: "deginst" },
+      { radio: "title", field: "titinst" },
+    ].forEach(function (pair) {
+      if (!byId(pair.field)) return;
+      document.querySelectorAll('.application-page input[name="' + pair.radio + '"]').forEach(function (radio) {
+        radio.addEventListener("change", function () {
+          syncCredentialInstitution(pair.radio, pair.field);
+        });
+      });
+      syncCredentialInstitution(pair.radio, pair.field);
+    });
+  }
+
   function validateOtherSpecify(radioName, messageKey) {
     if (getRadioValue(radioName) !== "other") return true;
     if (getOtherSpecifyValue(radioName)) return true;
@@ -946,6 +976,76 @@
         return el.value;
       }
     );
+  }
+
+  function sciOtherChecked() {
+    var box = byId("sci-other");
+    return !!(box && box.checked);
+  }
+
+  function getSciOtherInput() {
+    return byId("sci_other");
+  }
+
+  function getSciOtherValue() {
+    if (!sciOtherChecked()) return "";
+    var input = getSciOtherInput();
+    return (input && String(input.value || "").trim()) || "";
+  }
+
+  function syncSciOtherSpecify() {
+    var input = getSciOtherInput();
+    if (!input) return;
+    var show = sciOtherChecked();
+    input.hidden = !show;
+    input.required = show;
+    if (show) {
+      input.removeAttribute("aria-hidden");
+    } else {
+      input.value = "";
+      input.setAttribute("aria-hidden", "true");
+    }
+  }
+
+  function initSciOtherSpecify() {
+    var box = byId("sci-other");
+    var input = getSciOtherInput();
+    if (!box || !input) return;
+    box.addEventListener("change", function () {
+      syncSciOtherSpecify();
+      if (sciOtherChecked()) {
+        try {
+          input.focus({ preventScroll: true });
+        } catch (e) {
+          input.focus();
+        }
+      }
+    });
+    syncSciOtherSpecify();
+  }
+
+  function validateSciOtherSpecify() {
+    if (!sciOtherChecked()) return true;
+    if (getSciOtherValue()) return true;
+    var input = getSciOtherInput();
+    warnRequiredField(input, uiText("sciOtherRequired"));
+    if (input) {
+      try {
+        input.focus({ preventScroll: true });
+      } catch (e) {
+        input.focus();
+      }
+      input.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+    return false;
+  }
+
+  function getSciValuesForSubmit() {
+    return getSciValues().map(function (value) {
+      if (value !== "other") return value;
+      var specified = getSciOtherValue();
+      return specified ? "other: " + specified : value;
+    });
   }
 
   function getCvConfirmValue() {
@@ -1184,6 +1284,7 @@
       var selected = fieldset.querySelectorAll('input[name="sci"]:checked');
       if (selected.length > SCI_FIELD_LIMIT) {
         target.checked = false;
+        syncSciOtherSpecify();
         showSciLimitMessage();
         return;
       }
@@ -1279,8 +1380,9 @@
       current_job: affiliation,
       previous_jobs: (byId("prevjobs") && byId("prevjobs").value.trim()) || "",
       contributions: (byId("contributions") && byId("contributions").value.trim()) || "",
-      sci_fields: getSciValues().join(", "),
+      sci_fields: getSciValuesForSubmit().join(", "),
       sci_fields_count: String(getSciValues().length),
+      sci_other: getSciOtherValue(),
       additional_info: (byId("addinfo") && byId("addinfo").value.trim()) || "",
       cv_confirm: getCvConfirmValue(),
       privacy_confirm: getPrivacyConfirmValue(),
@@ -1473,7 +1575,12 @@
     return Array.prototype.map.call(
       document.querySelectorAll('.application-page input[name="sci"]:checked'),
       function (el) {
-        return radioDisplayLabel(el) || el.value;
+        var label = radioDisplayLabel(el) || el.value;
+        if (el.value === "other") {
+          var specified = getSciOtherValue();
+          return specified ? label + ": " + specified : label;
+        }
+        return label;
       }
     );
   }
@@ -1964,6 +2071,7 @@
     }
     if (byId("sci-fields")) {
       if (!validateSciSelection()) return false;
+      if (!validateSciOtherSpecify()) return false;
     }
     if (!validateFileUploads()) return false;
     if (!validatePrivacyConfirm()) return false;
@@ -3596,6 +3704,8 @@
     }
     bindRadioHighlight();
     initOtherSpecifyFields();
+    initSciOtherSpecify();
+    initCredentialInstitutionFields();
     initClearRequiredWarningOnFill();
     initEmailValidation();
     initForumIdentityValidation();

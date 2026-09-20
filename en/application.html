@@ -38,7 +38,7 @@
 <link href="../css/scientists-catalog-toolbar.css?v=9" rel="stylesheet"/>
 <link href="../css/daab-page-content-search.css?v=9" rel="stylesheet"/>
 <link href="../css/daab-sidebar-widget.css?v=6" rel="stylesheet"/>
-<link href="../css/daab-membership-application.css?v=58" rel="stylesheet"/>
+<link href="../css/daab-membership-application.css?v=59" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
 <script src="../js/daab-perf.js?v=4" defer></script>
 <script src="../js/daab-sticky-chrome.js?v=7" defer></script>
@@ -56,7 +56,7 @@
 <script src="../js/daab-application-config.js?v=2" defer></script>
 <script src="../js/daab-country-codes.js?v=3" defer></script>
 <script src="../js/daab-phone-codes.js?v=3" defer></script>
-<script src="../js/daab-membership-application.js?v=57" defer></script>
+<script src="../js/daab-membership-application.js?v=59" defer></script>
 <script defer src="../js/daab-sidebar-spy.js?v=3"></script>
 <script defer src="../js/daab-sidebar-timeline.js?v=7"></script>
 <script defer src="../js/daab-page-content-search.js?v=10"></script>
@@ -330,28 +330,44 @@ No results found.
           <span class="field-hint">Select the highest academic degree you hold.</span>
           <div class="options-list" role="radiogroup" aria-labelledby="degree-label">
             <div class="opt-item">
-              <input type="radio" name="degree" id="deg1" required value="bachelor">
+              <input type="radio" name="degree" id="deg-none" required value="none">
+              <label for="deg-none"><strong>None</strong> — I do not hold an academic degree</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg1" value="bachelor">
               <label for="deg1"><strong>Bachelor's Degree</strong> — BA (Bachelor of Arts), BSc (Bachelor of Science), BEng (Bachelor of Engineering)</label>
             </div>
             <div class="opt-item">
-              <input type="radio" name="degree" id="deg2" value="master">
-              <label for="deg2"><strong>Master's Degree</strong> — MA (Master of Arts), MSc (Master of Science), MEng (Master of Engineering)</label>
-            </div>
-            <div class="opt-item">
-              <input type="radio" name="degree" id="deg3" value="phd">
-              <label for="deg3"><strong>PhD</strong> (Doctor of Philosophy) — Elmlər üzrə fəlsəfə doktoru</label>
+              <input type="radio" name="degree" id="deg-health" value="health_professional">
+              <label for="deg-health"><strong>DDS / DMD, PharmD, DVM</strong> — Professional doctorate in dentistry, pharmacy, or veterinary medicine</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="degree" id="deg4" value="dsc">
               <label for="deg4"><strong>DSc</strong> (Doctor of Science) / <strong>Dr. Habil.</strong> (Habilitation) — Post-doctoral degree</label>
             </div>
             <div class="opt-item">
-              <input type="radio" name="degree" id="deg5" value="md">
-              <label for="deg5"><strong>MD</strong> (Doctor of Medicine) — Doctoral degree in Medicine</label>
+              <input type="radio" name="degree" id="deg-honorary" value="honorary">
+              <label for="deg-honorary"><strong>Honorary Doctor (Dr. h.c.)</strong> — Honorary doctoral degree</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="degree" id="deg6" value="jd">
               <label for="deg6"><strong>JD</strong> (Juris Doctor) — Doctor of Law</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg2" value="master">
+              <label for="deg2"><strong>Master's Degree</strong> — MA, MSc, MEng, MBA</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg5" value="md">
+              <label for="deg5"><strong>MD / MBBS / MBChB / DO</strong> — Physician: Doctor of Medicine and equivalent first professional degrees</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg3" value="phd">
+              <label for="deg3"><strong>PhD / Candidate of Sciences</strong> — Doctor of Philosophy; Elmlər namizədi</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="degree" id="deg-specialist" value="specialist">
+              <label for="deg-specialist"><strong>Specialist diploma</strong> — Five-year Soviet/CIS higher-education diploma</label>
             </div>
             <div class="opt-item">
               <input type="radio" name="degree" id="deg7" value="other">
@@ -373,16 +389,36 @@ No results found.
           <span class="field-hint">Select the academic title you currently hold.</span>
           <div class="options-list" role="radiogroup" aria-labelledby="title-label">
             <div class="opt-item">
-              <input type="radio" name="title" id="tit1" required value="docent">
+              <input type="radio" name="title" id="tit-none" required value="none">
+              <label for="tit-none"><strong>None</strong> — I do not hold an academic title</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit-academician" value="academician">
+              <label for="tit-academician"><strong>Academician</strong> — Full member of an academy of sciences</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit-assistant" value="assistant_professor">
+              <label for="tit-assistant"><strong>Assistant Professor</strong> — Senior Lecturer; Dr. Öğretim Üyesi; Baş müəllim</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit1" value="docent">
               <label for="tit1"><strong>Associate Professor (Docent)</strong> — For scientists holding a PhD and a recognised record of academic achievement.</label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit-corresponding" value="corresponding_member">
+              <label for="tit-corresponding"><strong>Corresponding Member</strong></label>
             </div>
             <div class="opt-item">
               <input type="radio" name="title" id="tit2" value="professor">
               <label for="tit2"><strong>Full Professor</strong> — The highest academic rank, typically awarded after DSc or habilitation.</label>
             </div>
             <div class="opt-item">
-              <input type="radio" name="title" id="tit3" value="honorary">
-              <label for="tit3"><strong>Honorary Doctor (Dr. h.c.)</strong> — An honorary academic title conferred by a university or academy.</label>
+              <input type="radio" name="title" id="tit-lecturer" value="lecturer">
+              <label for="tit-lecturer"><strong>Lecturer / Assistant</strong></label>
+            </div>
+            <div class="opt-item">
+              <input type="radio" name="title" id="tit-emeritus" value="emeritus">
+              <label for="tit-emeritus"><strong>Professor Emeritus</strong></label>
             </div>
             <div class="opt-item">
               <input type="radio" name="title" id="tit4" value="other">
@@ -441,6 +477,7 @@ No results found.
             <div class="sci-item"><input type="checkbox" id="h13" name="sci" value="international"><label for="h13">International Relations</label></div>
             <div class="sci-item"><input type="checkbox" id="h10" name="sci" value="journalism"><label for="h10">Journalism and Mass Communication</label></div>
             <div class="sci-item"><input type="checkbox" id="h11" name="sci" value="law"><label for="h11">Law / Jurisprudence</label></div>
+            <div class="sci-item"><input type="checkbox" id="sci-oriental" name="sci" value="oriental"><label for="sci-oriental">Oriental and Area Studies</label></div>
             <div class="sci-item"><input type="checkbox" id="h9" name="sci" value="pedagogy"><label for="h9">Pedagogy</label></div>
             <div class="sci-item"><input type="checkbox" id="sci-philology" name="sci" value="philology"><label for="sci-philology">Philology (Languages, Literature, Linguistics)</label></div>
             <div class="sci-item"><input type="checkbox" id="h2" name="sci" value="philosophy"><label for="h2">Philosophy</label></div>
@@ -472,6 +509,7 @@ No results found.
           <div class="sci-cat-body">
             <div class="sci-item"><input type="checkbox" id="t10" name="sci" value="aerospace"><label for="t10">Aerospace Engineering</label></div>
             <div class="sci-item"><input type="checkbox" id="t3" name="sci" value="robotics"><label for="t3">Automation and Robotics</label></div>
+            <div class="sci-item"><input type="checkbox" id="sci-chemical" name="sci" value="chemical_engineering"><label for="sci-chemical">Chemical Engineering and Chemical Technology</label></div>
             <div class="sci-item"><input type="checkbox" id="t1" name="sci" value="cs"><label for="t1">Computer Science and Informatics</label></div>
             <div class="sci-item"><input type="checkbox" id="t5" name="sci" value="construction"><label for="t5">Construction and Architecture</label></div>
             <div class="sci-item"><input type="checkbox" id="t2" name="sci" value="electronics"><label for="t2">Electronics and Telecommunications</label></div>
@@ -489,9 +527,11 @@ No results found.
           <div class="sci-cat-body">
             <div class="sci-item"><input type="checkbox" id="b1" name="sci" value="biology"><label for="b1">Biology (Genetics, Molecular Biology, Botany, Zoology)</label></div>
             <div class="sci-item"><input type="checkbox" id="b6" name="sci" value="biotech"><label for="b6">Biotechnology and Bioengineering</label></div>
+            <div class="sci-item"><input type="checkbox" id="sci-dentistry" name="sci" value="dentistry"><label for="sci-dentistry">Dentistry / Stomatology</label></div>
             <div class="sci-item"><input type="checkbox" id="b5" name="sci" value="ecology"><label for="b5">Ecology and Environmental Sciences</label></div>
             <div class="sci-item"><input type="checkbox" id="b2" name="sci" value="medicine"><label for="b2">Medicine (General, Surgery, Cardiology, Oncology, Neurology)</label></div>
             <div class="sci-item"><input type="checkbox" id="b3" name="sci" value="pharmacy"><label for="b3">Pharmacy and Pharmacology</label></div>
+            <div class="sci-item"><input type="checkbox" id="sci-publichealth" name="sci" value="public_health"><label for="sci-publichealth">Public Health and Epidemiology</label></div>
             <div class="sci-item"><input type="checkbox" id="b4" name="sci" value="veterinary"><label for="b4">Veterinary Sciences</label></div>
           </div>
         </div>
@@ -520,6 +560,13 @@ No results found.
             <div class="sci-item"><input type="checkbox" id="i1" name="sci" value="musicology"><label for="i1">Musicology</label></div>
             <div class="sci-item"><input type="checkbox" id="i2" name="sci" value="theatre"><label for="i2">Theatre and Film Studies</label></div>
           </div>
+        </div>
+
+        <div class="sci-category">
+          <div class="sci-cat-body">
+            <div class="sci-item"><input type="checkbox" id="sci-other" name="sci" value="other"><label for="sci-other">Other</label></div>
+          </div>
+          <input type="text" id="sci_other" name="sci_other" class="other-specify-input" hidden placeholder="Enter your scientific field" aria-label="Other scientific field" autocomplete="off">
         </div>
 
         </fieldset>
