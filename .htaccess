@@ -6,4 +6,9 @@ RewriteRule ^az/forum_2027_sponsorship\.html$ /az/sponsorship_partnership.html [
 RewriteRule ^en/forum_2027_sponsorship\.html$ /en/sponsorship_partnership.html [R=301,L]
 RewriteRule ^az/sponsors\.html$ /az/sponsorship_partnership.html [R=301,L]
 RewriteRule ^en/sponsors\.html$ /en/sponsorship_partnership.html [R=301,L]
+RewriteRule ^complex-topics\.html$ /az/complex-topics.html [R=301,L]
+RewriteRule ^complex-topics-approach\.html$ /az/complex-topics-approach.html [R=301,L]
+RewriteRule ^complex-topics-informatics\.html$ /az/complex-topics-informatics.html [R=301,L]
+RewriteRule ^az/membership\.html$ /az/membership_value.html [R=301,L]
+RewriteRule ^en/membership\.html$ /en/membership_value.html [R=301,L]
 </IfModule>

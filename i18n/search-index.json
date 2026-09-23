@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated": "2026-09-16",
-  "entryCount": 630,
+  "generated": "2026-09-23",
+  "entryCount": 638,
   "entries": [
     {
       "id": "page-home-az",
@@ -236,6 +236,32 @@
       "icon": "📘",
       "boost": 12,
       "norm": "waas complex topics clear explanations making difficult subjects understandable. open competition for selected lectures in informatics computer science and ict."
+    },
+    {
+      "id": "page-complex-topics-apply-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "complex-topics-apply",
+      "anchor": "",
+      "title": "DAAB — Müraciətinizi göndərin: Çətin mövzu, aydın izah",
+      "summary": "Qısa təsvir",
+      "tag": "Səhifə",
+      "icon": "📝",
+      "boost": 12,
+      "norm": "daab muracietinizi gonderin cetin movzu aydin izah qisa tesvir"
+    },
+    {
+      "id": "page-complex-topics-apply-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "complex-topics-apply",
+      "anchor": "",
+      "title": "WAAS — Submit your application: Complex Topics, Clear Explanations",
+      "summary": "Brief description",
+      "tag": "Page",
+      "icon": "📝",
+      "boost": 12,
+      "norm": "waas submit your application complex topics clear explanations brief description"
     },
     {
       "id": "page-complex-topics-approach-az",
@@ -652,6 +678,32 @@
       "icon": "📜",
       "boost": 12,
       "norm": "waas charter charter of the world association of azerbaijani scientists."
+    },
+    {
+      "id": "page-feedback-az",
+      "lang": "az",
+      "type": "page",
+      "pageId": "feedback",
+      "anchor": "",
+      "title": "DAAB — Rəyinizi bizimlə bölüşün",
+      "summary": "DAAB saytı haqqında təklif, rəy və ya rastlaşdığınız problemi yazın.",
+      "tag": "Səhifə",
+      "icon": "💬",
+      "boost": 12,
+      "norm": "daab reyinizi bizimle bolusun daab sayti haqqinda teklif rey ve ya rastlasdiginiz problemi yazin."
+    },
+    {
+      "id": "page-feedback-en",
+      "lang": "en",
+      "type": "page",
+      "pageId": "feedback",
+      "anchor": "",
+      "title": "WAAS — Share your feedback with us",
+      "summary": "Share suggestions, comments, or a problem you found on the WAAS website.",
+      "tag": "Page",
+      "icon": "💬",
+      "boost": 12,
+      "norm": "waas share your feedback with us share suggestions comments or a problem you found on the waas website."
     },
     {
       "id": "page-privacy-az",
@@ -1369,6 +1421,19 @@
       "norm": "cetin movzu aydin izah cetin movzularin aydin ve sade izahi musabiqe"
     },
     {
+      "id": "nav-complex-topics-apply-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "complex-topics-apply",
+      "anchor": "",
+      "title": "Müraciət",
+      "summary": "Müsabiqəyə müraciət formasını doldurun",
+      "tag": "Naviqasiya",
+      "icon": "📝",
+      "boost": 11,
+      "norm": "muraciet musabiqeye muraciet formasini doldurun musabiqe"
+    },
+    {
       "id": "nav-complex-topics-approach-az",
       "lang": "az",
       "type": "nav",
@@ -1445,6 +1510,19 @@
       "icon": "📜",
       "boost": 11,
       "norm": "nizamname nizamname ve idareetme qaydalari haqqimizda"
+    },
+    {
+      "id": "nav-feedback-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "feedback",
+      "anchor": "",
+      "title": "Rəyinizi bizimlə bölüşün",
+      "summary": "Şərhlər, təkliflər və saytda rastlaşdığınız problemlər",
+      "tag": "Naviqasiya",
+      "icon": "💬",
+      "boost": 11,
+      "norm": "reyinizi bizimle bolusun serhler teklifler ve saytda rastlasdiginiz problemler haqqimizda"
     },
     {
       "id": "nav-legal-pages-az",
@@ -1720,6 +1798,19 @@
       "norm": "complex topics clear explanations making difficult subjects understandable competition"
     },
     {
+      "id": "nav-complex-topics-apply-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "complex-topics-apply",
+      "anchor": "",
+      "title": "Apply",
+      "summary": "Submit an application for the competition",
+      "tag": "Navigation",
+      "icon": "📝",
+      "boost": 11,
+      "norm": "apply submit an application for the competition competition"
+    },
+    {
       "id": "nav-complex-topics-approach-en",
       "lang": "en",
       "type": "nav",
@@ -1796,6 +1887,19 @@
       "icon": "📜",
       "boost": 11,
       "norm": "charter charter and governance rules about us"
+    },
+    {
+      "id": "nav-feedback-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "feedback",
+      "anchor": "",
+      "title": "Share your feedback with us",
+      "summary": "Comments, suggestions, and problems you find on this website",
+      "tag": "Navigation",
+      "icon": "💬",
+      "boost": 11,
+      "norm": "share your feedback with us comments suggestions and problems you find on this website about us"
     },
     {
       "id": "nav-legal-pages-en",
@@ -3117,11 +3221,11 @@
       "pageId": "complex-topics-informatics",
       "anchor": "priority",
       "title": "Tövsiyə olunan 30 əsas mövzu",
-      "summary": "Bu cədvəl mövzulara ümumi baxış verir. Sıra ilkin prioritet təklifidir, statistik reytinq deyil. «Hər iki qrup» məktəbliləri və universitet tələbələrini bildirir; eyni mövzu bu qruplara fərqli dərinlikdə izah olunmalıdır. «Yuxarı siniflər» ",
+      "summary": "Bu cədvəl mövzulara ümumi baxış verir. Sıra ilkin prioritet təklifidir, statistik reytinq deyil. «I–XI siniflər və ali məktəb» eyni mövzunun bu qruplara fərqli dərinlikdə izah oluna biləcəyini bildirir. «X–XI siniflər» və «ali məktəb» bölgü",
       "tag": "Bölmə",
       "icon": "📗",
       "boost": 9,
-      "norm": "tovsiye olunan 30 esas movzu bu cedvel movzulara umumi baxis verir. sira ilkin prioritet teklifidir statistik reytinq deyil. her iki qrup mekteblileri ve universitet telebelerini bildirir eyni movzu bu qruplara ferqli derinlikde izah olunmalidir. yuxari sinifler"
+      "norm": "tovsiye olunan 30 esas movzu bu cedvel movzulara umumi baxis verir. sira ilkin prioritet teklifidir statistik reytinq deyil. i xi sinifler ve ali mekteb eyni movzunun bu qruplara ferqli derinlikde izah oluna bileceyini bildirir. x xi sinifler ve ali mekteb bolgu"
     },
     {
       "id": "section-complex-topics-informatics-school-az",
@@ -3129,12 +3233,12 @@
       "type": "section",
       "pageId": "complex-topics-informatics",
       "anchor": "school",
-      "title": "Məktəblilər və orta məktəb şagirdləri üçün",
-      "summary": "Bu mövzular şagirdlər və orta məktəb şagirdləri üçün xüsusilə faydalıdır. Məktəb auditoriyası üçün konkret situasiyadan başlamaq və sonra ümumi anlayışa keçmək əlverişlidir. Yenidən işlənmiş sənəd eyni 23 bəndi tematik qruplarda toplayır; ə",
+      "title": "I–XI sinif şagirdləri üçün",
+      "summary": "Bu mövzular I–XI sinif şagirdləri üçün xüsusilə faydalıdır. Məktəb auditoriyası üçün konkret situasiyadan başlamaq və sonra ümumi anlayışa keçmək əlverişlidir. Yenidən işlənmiş sənəd eyni 23 bəndi tematik qruplarda toplayır; əvvəlki səhifə ",
       "tag": "Bölmə",
       "icon": "📗",
       "boost": 9,
-      "norm": "mektebliler ve orta mekteb sagirdleri ucun bu movzular sagirdler ve orta mekteb sagirdleri ucun xususile faydalidir. mekteb auditoriyasi ucun konkret situasiyadan baslamaq ve sonra umumi anlayisa kecmek elverislidir. yeniden islenmis sened eyni 23 bendi tematik qruplarda toplayir e"
+      "norm": "i xi sinif sagirdleri ucun bu movzular i xi sinif sagirdleri ucun xususile faydalidir. mekteb auditoriyasi ucun konkret situasiyadan baslamaq ve sonra umumi anlayisa kecmek elverislidir. yeniden islenmis sened eyni 23 bendi tematik qruplarda toplayir evvelki sehife"
     },
     {
       "id": "section-complex-topics-informatics-university-az",
@@ -3142,12 +3246,12 @@
       "type": "section",
       "pageId": "complex-topics-informatics",
       "anchor": "university",
-      "title": "Universitet tələbələri üçün",
-      "summary": "Bu auditoriya üçün təkcə mexanizmin işləməsini deyil, alternativ həllər arasındakı fərqi və seçim səbəblərini də izah etmək vacibdir. Əvvəlki səhifə mövzuları kollec və universitet təhsili üçün xüsusilə vacib sayırdı; yenidən işlənmiş sənəd",
+      "title": "Ali məktəb tələbələri üçün",
+      "summary": "Bu auditoriya üçün təkcə mexanizmin işləməsini deyil, alternativ həllər arasındakı fərqi və seçim səbəblərini də izah etmək vacibdir. Əvvəlki səhifə mövzuları peşə təhsili, kolleclər və ali məktəb təhsili üçün xüsusilə vacib sayırdı; yenidə",
       "tag": "Bölmə",
       "icon": "📗",
       "boost": 9,
-      "norm": "universitet telebeleri ucun bu auditoriya ucun tekce mexanizmin islemesini deyil alternativ heller arasindaki ferqi ve secim sebeblerini de izah etmek vacibdir. evvelki sehife movzulari kollec ve universitet tehsili ucun xususile vacib sayirdi yeniden islenmis sened"
+      "norm": "ali mekteb telebeleri ucun bu auditoriya ucun tekce mexanizmin islemesini deyil alternativ heller arasindaki ferqi ve secim sebeblerini de izah etmek vacibdir. evvelki sehife movzulari pese tehsili kollecler ve ali mekteb tehsili ucun xususile vacib sayirdi yenide"
     },
     {
       "id": "section-complex-topics-informatics-difficult-az",
@@ -3286,11 +3390,11 @@
       "pageId": "complex-topics-informatics",
       "anchor": "priority",
       "title": "Thirty recommended topics",
-      "summary": "This table gives an overview of the topics. The order is a first suggestion of priority, not a statistical ranking. “Both groups” means school learners and university students; the same topic should be explained at different depths for thos",
+      "summary": "This table gives an overview of the topics. The order is a first suggestion of priority, not a statistical ranking. “Grades I–XI and higher education” means the same topic can be explained at different depths for those groups. “Grades X–XI”",
       "tag": "Section",
       "icon": "📗",
       "boost": 9,
-      "norm": "thirty recommended topics this table gives an overview of the topics. the order is a first suggestion of priority not a statistical ranking. both groups means school learners and university students the same topic should be explained at different depths for thos"
+      "norm": "thirty recommended topics this table gives an overview of the topics. the order is a first suggestion of priority not a statistical ranking. grades i xi and higher education means the same topic can be explained at different depths for those groups. grades x xi"
     },
     {
       "id": "section-complex-topics-informatics-school-en",
@@ -3298,12 +3402,12 @@
       "type": "section",
       "pageId": "complex-topics-informatics",
       "anchor": "school",
-      "title": "For school learners",
-      "summary": "These topics are especially useful for pupils and secondary-school students. For a school audience it helps to begin with a concrete situation and then move to the general idea. The reworked document gathered the same 23 items in thematic g",
+      "title": "For pupils in grades I–XI",
+      "summary": "These topics are especially useful for pupils in grades I–XI. For a school audience it helps to begin with a concrete situation and then move to the general idea. The reworked document gathered the same 23 items in thematic groups; the earl",
       "tag": "Section",
       "icon": "📗",
       "boost": 9,
-      "norm": "for school learners these topics are especially useful for pupils and secondary-school students. for a school audience it helps to begin with a concrete situation and then move to the general idea. the reworked document gathered the same 23 items in thematic g"
+      "norm": "for pupils in grades i xi these topics are especially useful for pupils in grades i xi. for a school audience it helps to begin with a concrete situation and then move to the general idea. the reworked document gathered the same 23 items in thematic groups the earl"
     },
     {
       "id": "section-complex-topics-informatics-university-en",
@@ -3311,12 +3415,12 @@
       "type": "section",
       "pageId": "complex-topics-informatics",
       "anchor": "university",
-      "title": "For university students",
-      "summary": "For this audience it is important to explain not only how a mechanism works, but also the difference between alternative solutions and why one is chosen. The earlier page treated these topics as especially important for college and universi",
+      "title": "For higher-education students",
+      "summary": "For this audience it is important to explain not only how a mechanism works, but also the difference between alternative solutions and why one is chosen. The earlier page treated these topics as especially important for vocational instituti",
       "tag": "Section",
       "icon": "📗",
       "boost": 9,
-      "norm": "for university students for this audience it is important to explain not only how a mechanism works but also the difference between alternative solutions and why one is chosen. the earlier page treated these topics as especially important for college and universi"
+      "norm": "for higher-education students for this audience it is important to explain not only how a mechanism works but also the difference between alternative solutions and why one is chosen. the earlier page treated these topics as especially important for vocational instituti"
     },
     {
       "id": "section-complex-topics-informatics-difficult-en",
@@ -7346,7 +7450,7 @@
       "tag": "Alim",
       "icon": "👤",
       "boost": 6,
-      "norm": "kamran rustemov azerbaycan respublikasinin emekdar elm xadimi rusiya memarliq ve insaat elmleri akademiyasinin raaisn ecnebi uzvu azerbaycan ve rusiya jurnalistler ittifaqlarinin uzvu muhendis rusiya federasiyasi aliev.05@mail.ru elm ve texnikanin neft ve qaz yataqlarinin islenmesi ve istismari qazma hidravlikasi qeyri-nyuton mexanikasi boru kemerleri sistemleri kimi muxtelif saheleri uzre 300-den cox elmi meqale ve dersliyin muellifidir. k.e.rustemovun yetisdirdiyi elmler doktorlari namizedler muhendisler ve mutexessisler bu gun yalniz az prof.dr."
+      "norm": "kamran rustemov azerbaycan respublikasinin emekdar elm xadimi rusiya memarliq ve insaat elmleri akademiyasinin raaisn ecnebi uzvu azerbaycan ve rusiya jurnalistler ittifaqlarinin uzvu muhendis rusiya federasiyasi k-rust@rambler.ru elm ve texnikanin neft ve qaz yataqlarinin islenmesi ve istismari qazma hidravlikasi qeyri-nyuton mexanikasi boru kemerleri sistemleri kimi muxtelif saheleri uzre 300-den cox elmi meqale ve dersliyin muellifidir. k.e.rustemovun yetisdirdiyi elmler doktorlari namizedler muhendisler ve mutexessisler bu gun yalniz az prof.dr."
     },
     {
       "id": "scientist-kamran-rustemov-en",
@@ -7359,7 +7463,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "kamran rustamov honored scientist of the republic of azerbaijan foreign member of the russian academy of architecture and construction sciences raacs member of the azerbaijan and russia journalists unions engineering russia aliev.05@mail.ru he is the author of more than 300 scientific articles and textbooks in various fields of science and technology including development and operation of oil and gas fields drilling hydraulics non-newtonian mechanics and pipeline systems. doctors of sciences candidates engineers and specialists trained by k. e. rust prof.dr."
+      "norm": "kamran rustamov honored scientist of the republic of azerbaijan foreign member of the russian academy of architecture and construction sciences raacs member of the azerbaijan and russia journalists unions engineering russia k-rust@rambler.ru he is the author of more than 300 scientific articles and textbooks in various fields of science and technology including development and operation of oil and gas fields drilling hydraulics non-newtonian mechanics and pipeline systems. doctors of sciences candidates engineers and specialists trained by k. e. rust prof.dr."
     },
     {
       "id": "scientist-nigar-masimova-az",

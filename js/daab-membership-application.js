@@ -388,9 +388,66 @@
     applyForumIdentityValidity();
   }
 
+  function nameOk(value) {
+    return /^[\p{L}\p{M}][\p{L}\p{M} .'’-]*$/u.test(String(value || "").trim());
+  }
+
+  function textUnsafe(value) {
+    var text = String(value || "");
+    if (/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/.test(text)) return true;
+    if (/<\s*\/?\s*[a-z!]/i.test(text)) return true;
+    if (/(?:javascript|vbscript|data)\s*:/i.test(text)) return true;
+    if (/<\?(?:php|=)?|<%/i.test(text)) return true;
+    if (/\bon(?:error|load|click|mouseover|focus)\s*=/i.test(text)) return true;
+    if (/%3c|&#x?0*60;|&lt;/i.test(text)) return true;
+    var folded = text.toLowerCase();
+    return (
+      /\bunion\s+select\b/.test(folded) ||
+      /\bdrop\s+table\b/.test(folded) ||
+      /\binsert\s+into\b/.test(folded) ||
+      /\bdelete\s+from\b/.test(folded) ||
+      /\binformation_schema\b/.test(folded) ||
+      /\bxp_cmdshell\b/.test(folded) ||
+      /\binto\s+outfile\b/.test(folded) ||
+      /\bload_file\s*\(/.test(folded) ||
+      /\bor\s+1\s*=\s*1\b/.test(folded) ||
+      /'\s*or\b/.test(folded) ||
+      /['"]\s*;\s*--/.test(folded) ||
+      /\b(?:sleep|benchmark)\s*\(/.test(folded) ||
+      /\b(?:exec|execute)\s*\(/.test(folded)
+    );
+  }
+
+  function validatePlainTextFields() {
+    var nameIds = { name: 1, surname: 1, fathername: 1, first_name: 1, last_name: 1, father_name: 1, full_name: 1 };
+    var fields = document.querySelectorAll(".application-page input[type='text'], .application-page textarea");
+    for (var i = 0; i < fields.length; i++) {
+      var field = fields[i];
+      if (!field || field.id === "website" || field.name === "website") continue;
+      var value = String(field.value || "");
+      if (!value.trim()) continue;
+      if (nameIds[field.id] || nameIds[field.name]) {
+        if (!nameOk(value)) {
+          warnRequiredField(field, uiText("nameInvalid"));
+          return false;
+        }
+      }
+      if (window.daabRespectOffensive && window.daabRespectOffensive(value, { nameField: !!(nameIds[field.id] || nameIds[field.name]) })) {
+          warnRequiredField(field, uiText("respect"));
+          return false;
+        }
+        if (textUnsafe(value)) {
+          warnRequiredField(field, uiText("unsafe"));
+          return false;
+        }
+    }
+    return true;
+  }
+
   function validateForm() {
     var form = mainFormEl();
     if (!form) return true;
+    if (!validatePlainTextFields()) return false;
     var dob = byId("dob");
     if (dob && String(dob.value || "").trim()) {
       dob.value = normalizeDobTypedValue(dob.value);
@@ -499,6 +556,10 @@
         residenceCountryRequired: "Yaşadığınız ölkəni seçin.",
         requiredFields: "Zəhmət olmasa bütün məcburi sahələri doldurun.",
         requiredFieldNamed: "«{field}» sahəsi məcburidir.",
+        nameInvalid: "Zəhmət olmasa adı hərflərlə yazın.",
+        unsafe: "Zəhmət olmasa bunu adi dildə yazın. Kod və sayta zərər verə biləcək mətn göndərilə bilməz.",
+        respect: "Zəhmət olmasa, nəzakətli ifadələrdən istifadə edin. Göndərməzdən əvvəl işarələnmiş xanadakı təhqiramiz və ya nalayiq ifadələri düzəldin.",
+        emailInvalid: "Zəhmət olmasa etibarlı e-məktub ünvanı daxil edin.",
         privacyRequired: "Davam etmək üçün məxfilik bildirişi ilə razılaşmalısınız.",
         fileCvRequired: "CV faylını seçin.",
         filePhotoRequired: "Fotoşəkil seçin.",
@@ -561,6 +622,10 @@
         residenceCountryRequired: "Please select your country of residence.",
         requiredFields: "Please fill in all required fields.",
         requiredFieldNamed: "“{field}” is required.",
+        nameInvalid: "Please enter your name using letters.",
+        unsafe: "Please rewrite this in plain language. Code and other text that could harm the site cannot be sent.",
+        respect: "Please use respectful language. Review the highlighted field and remove any offensive or abusive wording before submitting.",
+        emailInvalid: "Please enter a valid email address.",
         privacyRequired: "Please accept the privacy notice to continue.",
         fileCvRequired: "Please select a CV file.",
         filePhotoRequired: "Please select a photo.",
@@ -1136,6 +1201,9 @@
   function validateSelectedFile(kind, file) {
     if (!file) return uiText(kind === "photo" ? "filePhotoRequired" : "fileCvRequired");
     var ext = fileExtension(file.name);
+    if (/\.(php\d?|phtml|phar|svg|html?|js|exe|dll|sh|bat|cmd|htaccess)(?:\.|$)/i.test(String(file.name || ""))) {
+      return uiText(kind === "photo" ? "filePhotoType" : "fileCvType");
+    }
     if (kind === "photo") {
       if (ext !== "jpg" && ext !== "jpeg" && ext !== "png") return uiText("filePhotoType");
       if (file.size > FORUM_PHOTO_MAX_BYTES) return uiText("filePhotoSize");
@@ -1440,9 +1508,17 @@
             if (isPhpHandlerUnavailable(response.status, status, text)) {
               throw new Error(uiText("phpUnavailable"));
             }
+            var safetyMessage = status === "error:respect"
+              ? uiText("respect")
+              : status === "error:unsafe"
+              ? uiText("unsafe")
+              : status === "error:email"
+                ? uiText("emailInvalid")
+                : "";
             throw new Error(
               uploadErrorFromStatus(status) ||
-                (status === "error" ? uiText("submitFailed") : uiText("submitFailed"))
+                safetyMessage ||
+                uiText("submitFailed")
             );
           }
           return { ok: true };
@@ -2101,7 +2177,9 @@
         setSubmitting(false);
         var msg = uiText("submitFailed");
         var detail = err && err.message ? String(err.message) : "";
-        if (
+        if (detail === uiText("unsafe") || detail === uiText("respect") || detail === uiText("emailInvalid") || detail === uiText("nameInvalid")) {
+          msg = detail;
+        } else if (
           detail === uiText("phpUnavailable") ||
           /405|501|404/.test(detail) ||
           /failed to fetch|networkerror|load failed/i.test(detail)
@@ -3682,6 +3760,10 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     if (!document.body.classList.contains("application-page")) return;
+    if (document.body.classList.contains("ct-apply-page")) {
+      initCountryDropdowns();
+      return;
+    }
     totalSections = countFormSections();
     document.querySelectorAll(".application-page .form-section").forEach(function (s) {
       s.hidden = false;

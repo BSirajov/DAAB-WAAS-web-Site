@@ -17,12 +17,21 @@
   var menuToggleRef = null;
   var navMenuRef = null;
 
+  function dropdownToggleBtn(dropdown) {
+    return dropdown ? dropdown.querySelector(":scope > .nav-dropdown-toggle") : null;
+  }
+
+  function closeDropdown(dropdown) {
+    if (!dropdown) return;
+    dropdown.classList.remove("open");
+    dropdown.classList.remove("is-forum-mega-open");
+    dropdown.classList.remove("is-submenu-open");
+    var btn = dropdownToggleBtn(dropdown);
+    if (btn) btn.setAttribute("aria-expanded", "false");
+  }
+
   function closeAllDropdowns() {
-    document.querySelectorAll("[data-nav-dropdown].open").forEach(function (dropdown) {
-      dropdown.classList.remove("open");
-      var btn = dropdown.querySelector(".nav-dropdown-toggle");
-      if (btn) btn.setAttribute("aria-expanded", "false");
-    });
+    document.querySelectorAll("[data-nav-dropdown].open, [data-nav-dropdown].is-forum-mega-open, [data-nav-dropdown].is-submenu-open").forEach(closeDropdown);
   }
 
   function setBodyScrollLock(on) {
@@ -155,7 +164,7 @@
       } else {
         document.querySelectorAll("[data-nav-dropdown].has-active-child").forEach(function (dropdown) {
           dropdown.classList.add("open");
-          var btn = dropdown.querySelector(".nav-dropdown-toggle");
+          var btn = dropdownToggleBtn(dropdown);
           if (btn) btn.setAttribute("aria-expanded", "true");
         });
       }
@@ -273,9 +282,27 @@
   var forumsSubmenuAttached = new WeakSet();
   var FORUM_MEGA_CLOSE_DELAY_MS = 200;
 
+  function placeForumMega(nested) {
+    if (!nested) return;
+    nested.classList.remove("is-mega-align-start");
+    if (needsTapDropdown()) return;
+    var panel = nested.querySelector(":scope > .nav-dropdown-panel--mega");
+    if (!panel) return;
+    var anchor = nested.getBoundingClientRect();
+    var width = panel.getBoundingClientRect().width || panel.offsetWidth;
+    if (!width) return;
+    var spaceRight = window.innerWidth - anchor.right - 12;
+    var spaceLeft = anchor.left - 12;
+    if (width > spaceRight && spaceLeft > spaceRight) {
+      nested.classList.add("is-mega-align-start");
+    }
+  }
+
   function setForumMegaOpen(nested, open) {
     if (!nested) return;
     nested.classList.toggle("is-forum-mega-open", !!open);
+    if (!open) nested.classList.remove("is-mega-align-start");
+    else placeForumMega(nested);
     if (!needsTapDropdown()) {
       var btn = nested.querySelector(":scope > .nav-dropdown-toggle");
       if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
@@ -476,10 +503,7 @@
     if (!parent) return;
     Array.prototype.forEach.call(parent.children, function (child) {
       if (child === dropdown || !child.matches || !child.matches("[data-nav-dropdown]")) return;
-      child.classList.remove("open");
-      child.classList.remove("is-submenu-open");
-      var btn = child.querySelector(":scope > .nav-dropdown-toggle");
-      if (btn) btn.setAttribute("aria-expanded", "false");
+      closeDropdown(child);
     });
   }
 
@@ -503,7 +527,7 @@
     clearNavActiveStates();
 
     dropdowns.forEach(function (dropdown) {
-      var toggle = dropdown.querySelector(".nav-dropdown-toggle");
+      var toggle = dropdownToggleBtn(dropdown);
       var links = dropdown.querySelectorAll(".nav-dropdown-link, .nav-mega-link");
       if (!toggle) return;
 
@@ -521,14 +545,30 @@
       if (!dropdownToggleAttached.has(toggle)) {
         dropdownToggleAttached.add(toggle);
         toggle.addEventListener("click", function (event) {
-          if (!needsTapDropdown()) return;
           event.preventDefault();
           event.stopPropagation();
           var willOpen = !dropdown.classList.contains("open");
           closeSiblingDropdowns(dropdown);
+          if (dropdown.classList.contains("nav-dropdown--has-mega")) {
+            closeForumsNestedMega(willOpen ? dropdown : null);
+            setForumMegaOpen(dropdown, willOpen);
+          } else if (dropdown.classList.contains("nav-dropdown--nested")) {
+            setNestedSubmenuOpen(dropdown, willOpen);
+          }
           dropdown.classList.toggle("open", willOpen);
           toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+          if (!willOpen) {
+            dropdown.classList.remove("is-forum-mega-open");
+            dropdown.classList.remove("is-submenu-open");
+          }
         });
+
+        if (!dropdown.classList.contains("nav-dropdown--nested")) {
+          dropdown.addEventListener("mouseenter", function () {
+            if (needsTapDropdown()) return;
+            closeSiblingDropdowns(dropdown);
+          });
+        }
       }
     });
 
@@ -686,23 +726,16 @@
     documentListenersAttached = true;
 
     document.addEventListener("click", function (event) {
-      if (!needsTapDropdown()) return;
-      document.querySelectorAll("[data-nav-dropdown].open").forEach(function (dropdown) {
+      document.querySelectorAll("[data-nav-dropdown].open, [data-nav-dropdown].is-forum-mega-open, [data-nav-dropdown].is-submenu-open").forEach(function (dropdown) {
         if (!dropdown.contains(event.target)) {
-          dropdown.classList.remove("open");
-          var btn = dropdown.querySelector(".nav-dropdown-toggle");
-          if (btn) btn.setAttribute("aria-expanded", "false");
+          closeDropdown(dropdown);
         }
       });
     });
 
     document.addEventListener("keydown", function (event) {
       if (event.key !== "Escape") return;
-      document.querySelectorAll("[data-nav-dropdown].open").forEach(function (dropdown) {
-        dropdown.classList.remove("open");
-        var btn = dropdown.querySelector(".nav-dropdown-toggle");
-        if (btn) btn.setAttribute("aria-expanded", "false");
-      });
+      closeAllDropdowns();
     });
   }
 

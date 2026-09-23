@@ -22,9 +22,61 @@ body:not(.daab-gateway) {
   transform: none !important;
   pointer-events: none;
   background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-#daab-top-chrome > * {
+/* Only the nav strip captures the full chrome width. Breadcrumbs / in-page
+   search stay clickable on their controls, but their empty boxes must not sit
+   on top of overflowing dropdown panels. */
+#daab-top-chrome > .nav-strip {
+  pointer-events: auto;
+  isolation: isolate;
+  /* Visual and tab order: menu, then breadcrumbs, then in-page search.
+     Dropdowns stay above later rows via z-index on .nav-strip. */
+  order: 1;
+}
+
+#daab-top-chrome > #daab-breadcrumbs,
+#daab-top-chrome > nav.daab-breadcrumbs,
+#daab-top-chrome > .forum-breadcrumbs,
+#daab-top-chrome > .breadcrumbs {
+  pointer-events: none;
+  z-index: 1 !important;
+  order: 2;
+}
+
+#daab-top-chrome > #daab-page-search,
+#daab-top-chrome > .daab-page-search {
+  pointer-events: none;
+  z-index: 1 !important;
+  order: 3;
+}
+
+/* pointer-events is not inherited. Descendants default to auto and would
+   still intercept clicks on overflowing dropdowns. */
+#daab-top-chrome > #daab-breadcrumbs *,
+#daab-top-chrome > nav.daab-breadcrumbs *,
+#daab-top-chrome > .forum-breadcrumbs *,
+#daab-top-chrome > .breadcrumbs *,
+#daab-top-chrome > #daab-page-search *,
+#daab-top-chrome > .daab-page-search * {
+  pointer-events: none;
+}
+
+#daab-top-chrome > #daab-breadcrumbs a,
+#daab-top-chrome > nav.daab-breadcrumbs a,
+#daab-top-chrome > .forum-breadcrumbs a,
+#daab-top-chrome > .breadcrumbs a,
+#daab-top-chrome > #daab-page-search input,
+#daab-top-chrome > #daab-page-search button,
+#daab-top-chrome > #daab-page-search a,
+#daab-top-chrome > #daab-page-search label,
+#daab-top-chrome > .daab-page-search input,
+#daab-top-chrome > .daab-page-search button,
+#daab-top-chrome > .daab-page-search a,
+#daab-top-chrome > .daab-page-search label {
   pointer-events: auto;
 }
 
@@ -48,6 +100,8 @@ html.daab-chrome-ready .nav-strip {
 #daab-top-chrome .forum-breadcrumbs,
 #daab-top-chrome .breadcrumbs.forum-breadcrumbs,
 #daab-top-chrome .breadcrumbs,
+#daab-top-chrome #daab-page-search,
+#daab-top-chrome .daab-page-search,
 html.daab-chrome-ready .daab-breadcrumbs,
 html.daab-chrome-ready .forum-breadcrumbs,
 html.daab-chrome-ready .breadcrumbs.forum-breadcrumbs {
@@ -59,7 +113,8 @@ html.daab-chrome-ready .breadcrumbs.forum-breadcrumbs {
   max-width: 100% !important;
   margin: 0 !important;
   transform: none !important;
-  z-index: var(--z-breadcrumbs, 9998) !important;
+  /* Stay below overflowing .nav-dropdown-panel (nav-strip is z 9999). */
+  z-index: 1 !important;
 }
 
 /* Fallback before JS mounts #daab-top-chrome */

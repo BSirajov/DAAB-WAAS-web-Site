@@ -60,6 +60,41 @@
     return spacerEl;
   }
 
+  /**
+   * Tab order follows DOM: menu, breadcrumbs, in-page search.
+   * Flex `order` keeps the same visual stack. Avoid moving nodes that
+   * are already in place so ResizeObserver does not loop.
+   */
+  function orderChrome(nav) {
+    if (!chromeEl) return nav || null;
+    nav = nav || chromeEl.querySelector(".nav-strip") || document.querySelector(".nav-strip");
+    var crumbs = breadcrumbNodes();
+    var search = document.getElementById("daab-page-search");
+
+    if (nav && chromeEl.firstElementChild !== nav) {
+      chromeEl.insertBefore(nav, chromeEl.firstChild);
+    }
+
+    var cursor = nav && nav.parentNode === chromeEl ? nav.nextElementSibling : chromeEl.firstElementChild;
+    crumbs.forEach(function (bc) {
+      if (bc !== cursor) chromeEl.insertBefore(bc, cursor);
+      cursor = bc.nextElementSibling;
+    });
+
+    var tools = document.querySelector(".sitemap-controls");
+    if (tools) {
+      var beforeTools = search && search.parentNode === chromeEl ? search : cursor;
+      if (tools.parentNode !== chromeEl || (beforeTools && tools.nextElementSibling !== beforeTools && tools !== beforeTools)) {
+        chromeEl.insertBefore(tools, beforeTools);
+      }
+    }
+
+    if (search && chromeEl.lastElementChild !== search) {
+      chromeEl.appendChild(search);
+    }
+    return nav;
+  }
+
   function mountChrome() {
     if (isGateway() || chromeEl) return;
 
@@ -74,15 +109,7 @@
       nav.parentNode.insertBefore(chromeEl, nav);
     }
 
-    if (nav.parentNode !== chromeEl) {
-      chromeEl.appendChild(nav);
-    }
-
-    breadcrumbNodes().forEach(function (bc) {
-      if (bc.parentNode !== chromeEl) {
-        chromeEl.appendChild(bc);
-      }
-    });
+    orderChrome(nav);
 
     var insertBefore =
       chromeEl.nextElementSibling && chromeEl.nextElementSibling.id !== "daab-chrome-spacer"
@@ -100,9 +127,18 @@
     if (resizeObserver) resizeObserver.disconnect();
     resizeObserver = new ResizeObserver(scheduleSync);
     resizeObserver.observe(chromeEl);
-    chromeEl.querySelectorAll(".nav-strip, #daab-breadcrumbs, nav.daab-breadcrumbs, .breadcrumbs, .forum-breadcrumbs, #daab-page-search").forEach(function (el) {
+    chromeEl.querySelectorAll(".nav-strip, #daab-breadcrumbs, nav.daab-breadcrumbs, .breadcrumbs, .forum-breadcrumbs, #daab-page-search, .sitemap-controls").forEach(function (el) {
       resizeObserver.observe(el);
     });
+  }
+
+  function measureSitemapControlsHeight() {
+    if (!chromeEl) return 0;
+    var tools = chromeEl.querySelector(".sitemap-controls");
+    if (!tools) return 0;
+    var style = window.getComputedStyle(tools);
+    if (style.display === "none" || style.visibility === "hidden") return 0;
+    return Math.ceil(tools.getBoundingClientRect().height);
   }
 
   function measureSearchHeight() {
@@ -136,19 +172,14 @@
       if (!chromeEl) return;
     }
 
-    breadcrumbNodes().forEach(function (bc) {
-      if (bc.parentNode !== chromeEl) {
-        chromeEl.appendChild(bc);
-      }
-    });
-
-    var nav = chromeEl.querySelector(".nav-strip");
+    var nav = orderChrome();
     var navH = nav ? Math.ceil(nav.getBoundingClientRect().height) : 0;
     if (navH <= 0) navH = 86;
 
     var bcH = measureBreadcrumbsHeight();
+    var toolsH = measureSitemapControlsHeight();
     var searchH = measureSearchHeight();
-    var stack = navH + bcH + searchH;
+    var stack = navH + bcH + toolsH + searchH;
 
     rootEl().style.setProperty("--daab-nav-height", navH + "px");
     rootEl().style.setProperty("--daab-breadcrumbs-height", bcH + "px");

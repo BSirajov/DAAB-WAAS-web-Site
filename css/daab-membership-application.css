@@ -588,7 +588,8 @@
   color: var(--ink);
   cursor: pointer;
 }.application-page .phone-code-picker-option:hover,
-.application-page .phone-code-picker-option.is-selected{
+.application-page .phone-code-picker-option.is-selected,
+.application-page .phone-code-picker-option.is-active{
   background: #e8f6ff;
 }.application-page .phone-code-picker-option-text{
   min-width: 0;
@@ -1184,26 +1185,26 @@
 }
 
 /* Shared sticky search + pill step toolbar (forum register + membership application) */
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) {
   --daab-sticky-local-offset: 0px;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-page .application-layout,
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .application-layout {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-page .application-layout,
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .application-layout {
   display: block;
   grid-template-columns: 1fr;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .page-content-search-band {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .page-content-search-band {
   z-index: 40;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-sticky-spacer {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-sticky-spacer {
   height: 0;
   pointer-events: none;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-sticky-stack {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-sticky-stack {
   position: relative;
   top: auto;
   left: auto;
@@ -1222,7 +1223,7 @@ html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membershi
   backdrop-filter: blur(14px);
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-sticky-stack.is-pinned {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-sticky-stack.is-pinned {
   /* html/body overflow-x: clip breaks position:sticky â€” pin after the natural slot.
      Keep the in-flow left/width (JS measures the spacer) so the stack does not
      jump to full-bleed or a different centered max-width. */
@@ -1244,25 +1245,25 @@ html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membershi
   box-shadow: 0 12px 20px -14px rgba(0, 45, 82, 0.32);
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-sticky-stack.is-pinned > * {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-sticky-stack.is-pinned > * {
   width: 100%;
   max-width: 100%;
   margin-left: 0;
   margin-right: 0;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-sticky-stack .page-content-search-toolbar {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-sticky-stack .page-content-search-toolbar {
   margin-bottom: 0;
   width: 100%;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-sticky-stack .search-wrap {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-sticky-stack .search-wrap {
   flex: 1 1 auto;
   min-width: 0;
   width: 100%;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar {
   width: 100%;
   min-width: 0;
   overflow-x: auto;
@@ -1273,16 +1274,16 @@ html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membershi
   scrollbar-color: #2e9fd4 transparent;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar::-webkit-scrollbar {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar::-webkit-scrollbar {
   height: 6px;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar::-webkit-scrollbar-thumb {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar::-webkit-scrollbar-thumb {
   background: #2e9fd4;
   border-radius: 999px;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar__list.timeline-list {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -1295,7 +1296,7 @@ html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membershi
   list-style: none;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list li {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar__list.timeline-list li {
   display: block;
   flex: 0 0 auto;
   gap: 0;
@@ -1305,9 +1306,9 @@ html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membershi
   color: inherit;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a,
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a:link,
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a:visited {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar__list.timeline-list a,
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar__list.timeline-list a:link,
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar__list.timeline-list a:visited {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1330,19 +1331,19 @@ html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membershi
   text-decoration: none !important;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a:hover,
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a:focus-visible {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar__list.timeline-list a:hover,
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar__list.timeline-list a:focus-visible {
   color: #003e6b !important;
   background: #e8f6ff !important;
   border-color: var(--blue-400, #4db6f0);
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a:focus-visible {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar__list.timeline-list a:focus-visible {
   outline: 2px solid var(--blue-700);
   outline-offset: 2px;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a.tl-active {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar__list.timeline-list a.tl-active {
   color: #fff !important;
   background: linear-gradient(135deg, var(--blue-700), var(--blue-400)) !important;
   border-color: var(--blue-700);
@@ -1350,8 +1351,8 @@ html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membershi
   font-weight: 700;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar .forum-register-pill__num,
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar .tl-date {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar .forum-register-pill__num,
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar .tl-date {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1370,15 +1371,15 @@ html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membershi
   white-space: nowrap;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a.tl-active .forum-register-pill__num,
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a.tl-active .tl-date {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar__list.timeline-list a.tl-active .forum-register-pill__num,
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar__list.timeline-list a.tl-active .tl-date {
   background: rgba(255, 255, 255, 0.2);
   border-color: rgba(240, 199, 94, 0.95);
   color: #fff;
 }
 
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .application-page .form-section,
-html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .form-section {
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .application-page .form-section,
+html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .form-section {
   scroll-margin-top: calc(
     var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) +
     var(--daab-sticky-local-offset, 0px) +
@@ -1387,9 +1388,9 @@ html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membershi
 }
 
 @media (max-width: 720px) {
-  html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a,
-  html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a:link,
-  html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"]) .forum-register-stepbar__list.timeline-list a:visited {
+  html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar__list.timeline-list a,
+  html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar__list.timeline-list a:link,
+  html:is([data-daab-page-id="forum-2026-register"], [data-daab-page-id="membership-application"], [data-daab-page-id="complex-topics-apply"]) .forum-register-stepbar__list.timeline-list a:visited {
     min-height: 44px;
     padding: 7px 14px 7px 8px;
     font-size: 12.5px;
@@ -1710,5 +1711,464 @@ body.app-review-open{
     grid-template-columns: 1fr;
     gap: 2px;
   }
+}
+
+.feedback-page .feedback-privacy{
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.feedback-page .feedback-privacy a{
+  color: var(--blue-700);
+}
+.feedback-page .feedback-hl{
+  position: relative;
+  width: 100%;
+}
+.feedback-page .feedback-hl--line .feedback-hl__back{
+  white-space: pre;
+  overflow: hidden;
+}
+.feedback-page .feedback-hl__back{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+}
+.feedback-page .feedback-hl textarea,
+.feedback-page .feedback-hl input[type="text"]{
+  line-height: 1.5;
+  position: relative;
+  background: #f5fbff;
+}
+.feedback-page .feedback-hl.is-flagged textarea,
+.feedback-page .feedback-hl.is-flagged input[type="text"]{
+  color: transparent;
+  caret-color: #08263b;
+  background: transparent;
+}
+.feedback-page .feedback-hl mark,
+.feedback-page .feedback-lang-hit{
+  background: #ffc9c9;
+  color: #7a1212;
+  border-radius: 2px;
+}
+.feedback-page .app-btn-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+@media (max-width: 720px){
+  .feedback-page .app-btn-submit,
+  .feedback-page .success-screen .app-btn{
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* The membership layout reserves a 300px sidebar column. Feedback has no sidebar,
+   so the form uses the full content width and the fields sit in a landscape grid. */
+.feedback-page .application-layout{
+  display: block;
+}
+.feedback-page #sec-feedback-body{
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: auto;
+  gap: 16px 18px;
+  align-items: start;
+  background: #fff;
+  border: 1px solid #9ed6f5;
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+  padding: 22px 24px 20px;
+}
+.feedback-page #sec-feedback-body > .intro-box,
+.feedback-page #sec-feedback-body > .app-submit-status,
+.feedback-page #sec-feedback-body > .app-btn-row,
+.feedback-page #sec-feedback-body > .field-group:has(#privacyconfirm){
+  grid-column: 1 / -1;
+}
+.feedback-page #sec-feedback-body > .field-group:has(#name),
+.feedback-page #sec-feedback-body > .field-group:has(#email),
+.feedback-page #sec-feedback-body > .field-group:has(#feedback-type){
+  grid-column: span 2;
+}
+.feedback-page #sec-feedback-body > .field-group:has(#subject),
+.feedback-page #sec-feedback-body > .field-group:has(#message){
+  grid-column: span 4;
+}
+.feedback-page #sec-feedback-body > .field-group:has(#related-url),
+.feedback-page #sec-feedback-body > .app-file-uploads{
+  grid-column: span 2;
+}
+.feedback-page #sec-feedback-body > .app-file-uploads{
+  height: 100%;
+}
+.feedback-page #sec-feedback-body > .app-file-uploads .app-file-card{
+  height: 100%;
+  box-sizing: border-box;
+}
+.feedback-page textarea.form-textarea-tall{
+  min-height: 168px;
+}
+@media (max-width: 900px){
+  .feedback-page #sec-feedback-body{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .feedback-page #sec-feedback-body > .field-group:has(#name),
+  .feedback-page #sec-feedback-body > .field-group:has(#email),
+  .feedback-page #sec-feedback-body > .field-group:has(#related-url),
+  .feedback-page #sec-feedback-body > .app-file-uploads{
+    grid-column: span 1;
+  }
+  .feedback-page #sec-feedback-body > .intro-box,
+  .feedback-page #sec-feedback-body > .field-group:has(#feedback-type),
+  .feedback-page #sec-feedback-body > .field-group:has(#subject),
+  .feedback-page #sec-feedback-body > .field-group:has(#message),
+  .feedback-page #sec-feedback-body > .field-group:has(#privacyconfirm),
+  .feedback-page #sec-feedback-body > .app-submit-status,
+  .feedback-page #sec-feedback-body > .app-btn-row{
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 640px){
+  .feedback-page #sec-feedback-body{
+    grid-template-columns: 1fr;
+    padding: 16px 14px 14px;
+  }
+  .feedback-page #sec-feedback-body > *{
+    grid-column: 1 / -1;
+  }
+}
+
+html[data-daab-page-id="complex-topics-apply"] .application-layout{
+  display: block;
+  grid-template-columns: 1fr;
+}
+
+.ct-apply-page .ct-pair{
+  display: grid;
+  gap: 16px;
+}
+
+.ct-apply-page .ct-org-photo{
+  display: grid;
+  gap: 16px;
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+}
+
+.ct-apply-page .ct-org-photo > .field-group,
+.ct-apply-page .ct-org-photo > .app-file-card{
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ct-apply-page .ct-org-photo > .app-file-card{
+  width: 100%;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+.ct-apply-page .ct-org-photo .field-hint,
+.ct-apply-page .ct-org-photo .app-file-name{
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.ct-apply-page .form-section .section-body{
+  row-gap: 22px;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.ct-apply-page .form-section .section-body > *{
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (min-width: 720px){
+  .ct-apply-page .ct-pair{
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .ct-apply-page .ct-org-photo{
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 0.3fr);
+  }
+}
+
+@media (min-width: 960px){
+  .ct-apply-page .ct-pair.ct-pair--3{
+    grid-template-columns: 1fr 1fr minmax(220px, 0.95fr);
+  }
+}
+
+@media (min-width: 1100px){
+  .ct-apply-page .ct-pair.ct-pair--4{
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.05fr) minmax(168px, 0.95fr) minmax(180px, 1.15fr);
+    align-items: start;
+  }
+
+  .ct-apply-page .ct-pair.ct-pair--4 .dob-field #dob{
+    width: 100%;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+}
+
+.ct-apply-page .ct-combo{
+  position: relative;
+}
+
+.ct-apply-page .ct-combo-list{
+  position: absolute;
+  z-index: 8;
+  left: 0;
+  right: 0;
+  max-height: 260px;
+  overflow: auto;
+  margin: 4px 0 0;
+  padding: 4px;
+  list-style: none;
+  background: #fff;
+  border: 1.5px solid #9ed6f5;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(3, 24, 42, 0.12);
+}
+
+.ct-apply-page .ct-combo-list[hidden]{
+  display: none;
+}
+
+.ct-apply-page .ct-combo-option{
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.ct-apply-page .ct-combo-option.is-active,
+.ct-apply-page .ct-combo-option:hover{
+  background: #dff2ff;
+}
+
+.ct-apply-page .ct-conditional[hidden],
+.ct-apply-page .ct-format-notes[hidden],
+.ct-apply-page .section-body[hidden],
+.ct-apply-page .form-section[hidden]{
+  display: none !important;
+}
+
+.ct-apply-page .ct-format-notes{
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f5fbff;
+  border: 1px solid #9ed6f5;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.ct-apply-page .ct-format-notes p{
+  margin: 0;
+}
+
+.ct-apply-page .ct-format-notes p + p{
+  margin-top: 6px;
+}
+
+.ct-apply-page .ct-file-list{
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.ct-apply-page .ct-file-list li{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #9ed6f5;
+}
+
+.ct-apply-page .options-list{
+  display: grid;
+  gap: 8px;
+}
+
+.ct-apply-page .options-list--groups{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  align-items: stretch;
+}
+
+.ct-apply-page .options-list--groups .opt-item{
+  min-width: 0;
+  align-items: flex-start;
+  padding: 10px 12px;
+}
+
+@media (min-width: 720px){
+  .ct-apply-page .options-list--groups{
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+.ct-apply-page .options-list--groups .opt-item label{
+  line-height: 1.25;
+}
+
+.ct-apply-page fieldset.field-group:has(.options-list--groups){
+  margin: 0;
+  padding: 12px 14px 14px;
+  border: 1.5px solid #9ed6f5;
+  border-radius: 12px;
+  background: #f5fbff;
+}
+
+.ct-apply-page fieldset.field-group:has(.options-list--groups) > #category-other-wrap{
+  margin-top: 8px;
+}
+
+.ct-apply-page .options-list.options-list--audience,
+.ct-apply-page .options-list.options-list--formats{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  align-items: stretch;
+}
+
+.ct-apply-page .options-list--formats .opt-item{
+  height: 100%;
+  margin: 0;
+  align-items: flex-start;
+}
+
+.ct-apply-page .options-list--formats .opt-item label{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ct-apply-page .format-title,
+.ct-apply-page .audience-title{
+  font-weight: 600;
+}
+
+.ct-apply-page .options-list--audience .opt-item{
+  height: 100%;
+  margin: 0;
+  align-items: flex-start;
+}
+
+.ct-apply-page .options-list--audience .opt-item label{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ct-apply-page .audience-detail,
+.ct-apply-page .format-detail{
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: #345d76;
+  font-weight: 400;
+}
+
+.ct-apply-page .options-list--audience .opt-item:has(input:checked){
+  border-color: var(--blue-700);
+  background: #dff2ff;
+}
+
+.ct-apply-page fieldset.field-group:has(.options-list--audience){
+  margin: 0;
+  padding: 12px 14px 14px;
+  border: 1.5px solid #9ed6f5;
+  border-radius: 12px;
+  background: #f5fbff;
+}
+
+.ct-apply-page fieldset.field-group:has(.options-list--audience) .options-list--audience{
+  margin-top: 8px;
+}
+
+.ct-apply-page fieldset.field-group:has(.options-list--audience) > #audience-after{
+  margin: 10px 0 0;
+}
+
+.ct-apply-page fieldset.field-group:has(.options-list--audience) > .field-group,
+.ct-apply-page fieldset.field-group:has(.options-list--audience) > #audience-other-wrap,
+.ct-apply-page #language-other-wrap{
+  margin-top: 12px;
+}
+
+@media (min-width: 720px){
+  .ct-apply-page .options-list--two,
+  .ct-apply-page .options-list.options-list--audience,
+  .ct-apply-page .options-list.options-list--formats{
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+.ct-apply-page .ct-topic-row{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+@media (min-width: 720px){
+  .ct-apply-page .ct-topic-row{
+    grid-template-columns: minmax(0, 0.39fr) minmax(0, 0.61fr);
+  }
+}
+
+.ct-apply-page .topic-picker .phone-code-picker-option{
+  align-items: flex-start;
+}
+
+.ct-apply-page .topic-picker .phone-code-picker-option-text{
+  white-space: normal;
+  line-height: 1.35;
+}
+
+.ct-apply-page .topic-guide{
+  width: 100%;
+  min-height: 168px;
+  max-height: 220px;
+  resize: none;
+  overflow: auto;
+  box-sizing: border-box;
+  border: 1.5px solid #9ed6f5;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink);
+  background: #f5fbff;
+  cursor: default;
 }
 

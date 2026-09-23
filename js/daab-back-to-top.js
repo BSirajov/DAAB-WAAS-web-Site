@@ -152,7 +152,7 @@
     return document.body || document.documentElement;
   }
 
-  function createButton(id, extraClass, iconPath, label, onClick) {
+  function createButton(id, extraClass, direction, label, onClick) {
     var btn = document.createElement("button");
     btn.type = "button";
     btn.className = "daab-back-to-top" + (extraClass ? " " + extraClass : "");
@@ -161,9 +161,10 @@
     btn.setAttribute("title", label);
     btn.setAttribute("aria-hidden", "true");
     btn.tabIndex = -1;
+    var path = direction === "down" ? "M6 9l6 6 6-6" : "M6 15l6-6 6 6";
     btn.innerHTML =
-      '<svg class="daab-back-to-top__icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">' +
-      '<path fill="currentColor" d="' + iconPath + '"/>' +
+      '<svg class="daab-back-to-top__icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path d="' + path + '"/>' +
       "</svg>";
     btn.addEventListener("click", onClick);
     return btn;
@@ -179,14 +180,14 @@
     bottomBtn = createButton(
       "daab-go-to-bottom",
       "daab-go-to-bottom",
-      "M12 18.8l5.9-5.9-1.4-1.4L13 15V6h-2v9l-3.5-3.5-1.4 1.4L12 18.8z",
+      "down",
       labels.bottom,
       scrollToBottom
     );
     topBtn = createButton(
       "daab-back-to-top",
       "",
-      "M12 5.2 6.1 11.1l1.4 1.4L11 9V18h2V9l3.5 3.5 1.4-1.4L12 5.2z",
+      "up",
       labels.top,
       scrollToTop
     );

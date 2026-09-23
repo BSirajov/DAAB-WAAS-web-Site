@@ -113,13 +113,42 @@ function daab_registration_csv_filename(string $kind): string
     if ($kind === 'membership') {
         return 'membership-applications.csv';
     }
+    if ($kind === 'feedback') {
+        return 'website-feedback.csv';
+    }
+    if ($kind === 'complex-topics') {
+        return 'complex-topics-submissions.csv';
+    }
     return 'forum-2026-registrations.csv';
+}
+
+function daab_feedback_csv_columns(): array
+{
+    return [
+        'received_at',
+        'locale',
+        'form_kind',
+        'name',
+        'email',
+        'reply_requested',
+        'feedback_type',
+        'subject',
+        'message',
+        'page_url',
+        'attachment',
+    ];
 }
 
 function daab_registration_files_subdir(string $kind): string
 {
     if ($kind === 'membership') {
         return 'membership-files';
+    }
+    if ($kind === 'feedback') {
+        return 'feedback-files';
+    }
+    if ($kind === 'complex-topics') {
+        return 'complex-topics-files';
     }
     return 'forum-2026-files';
 }
@@ -135,33 +164,6 @@ function daab_registration_safe_stored_name(string $name): string
         $name = $ext !== '' ? $base . '.' . $ext : $base;
     }
     return $name;
-}
-
-function daab_registration_person_token(string $value): string
-{
-    $value = trim($value);
-    $value = preg_replace('/\s+/u', '', $value) ?? '';
-    $value = preg_replace('/[^\p{L}\p{N}\-]+/u', '', $value) ?? '';
-    return $value;
-}
-
-function daab_registration_named_filename(string $role, string $firstName, string $lastName, string $originalName): string
-{
-    $roleLabel = strtolower($role) === 'photo' ? 'Photo' : 'CV';
-    $first = daab_registration_person_token($firstName);
-    $last = daab_registration_person_token($lastName);
-    if ($first === '' && $last === '') {
-        $first = 'Unknown';
-    }
-    $ext = strtolower((string) pathinfo($originalName, PATHINFO_EXTENSION));
-    if ($ext === '') {
-        $ext = strtolower($role) === 'photo' ? 'jpg' : 'pdf';
-    }
-    $base = $roleLabel . '_' . $first;
-    if ($last !== '') {
-        $base .= '_' . $last;
-    }
-    return $base . '.' . $ext;
 }
 
 function daab_registration_files_dir(string $kind): string
@@ -183,14 +185,8 @@ function daab_registration_files_dir(string $kind): string
     return $dir;
 }
 
-function daab_save_registration_upload(
-    string $formKind,
-    string $role,
-    string $originalName,
-    string $data,
-    string $firstName = '',
-    string $lastName = ''
-): string {
+function daab_save_registration_upload(string $formKind, string $role, string $originalName, string $data): string
+{
     if ($data === '') {
         return '';
     }
@@ -198,18 +194,12 @@ function daab_save_registration_upload(
     if ($dir === '') {
         return '';
     }
-    $filename = daab_registration_named_filename($role, $firstName, $lastName, $originalName);
+    $safe = daab_registration_safe_stored_name($originalName);
+    $stamp = gmdate('Ymd-His');
+    $hash = substr(hash('sha256', $data), 0, 8);
+    $role = preg_replace('/[^a-z0-9]+/i', '', $role) ?: 'file';
+    $filename = $stamp . '_' . $hash . '_' . $role . '_' . $safe;
     $path = $dir . DIRECTORY_SEPARATOR . $filename;
-    if (is_file($path)) {
-        $base = (string) pathinfo($filename, PATHINFO_FILENAME);
-        $ext = (string) pathinfo($filename, PATHINFO_EXTENSION);
-        $n = 2;
-        do {
-            $filename = $base . '-' . $n . ($ext !== '' ? '.' . $ext : '');
-            $path = $dir . DIRECTORY_SEPARATOR . $filename;
-            $n++;
-        } while (is_file($path) && $n < 1000);
-    }
     if (@file_put_contents($path, $data) === false) {
         return '';
     }
@@ -219,7 +209,7 @@ function daab_save_registration_upload(
 /**
  * @param array<string, string> $row
  */
-function daab_append_registration_csv(string $kind, array $row): bool
+function daab_append_registration_csv(string $kind, array $row, ?array $columns = null): bool
 {
     $dir = daab_registrations_csv_dir();
     if ($dir === '') {
@@ -227,7 +217,7 @@ function daab_append_registration_csv(string $kind, array $row): bool
     }
 
     $path = $dir . DIRECTORY_SEPARATOR . daab_registration_csv_filename($kind);
-    $columns = daab_registration_csv_columns();
+    $columns = $columns ?? daab_registration_csv_columns();
     if (($row['received_at'] ?? '') === '') {
         $row['received_at'] = gmdate('Y-m-d H:i:s') . ' UTC';
     }
@@ -257,7 +247,12 @@ function daab_append_registration_csv(string $kind, array $row): bool
     foreach ($columns as $key) {
         $value = $row[$key] ?? '';
         $value = str_replace(["\0", "\r"], '', (string) $value);
-        $line[] = trim($value);
+        $value = trim($value);
+        $lead = ltrim($value, " \t");
+        if ($lead !== '' && strpos('=+-@', $lead[0]) !== false) {
+            $value = "'" . $value;
+        }
+        $line[] = $value;
     }
     $ok = fputcsv($handle, $line) !== false;
     fflush($handle);
