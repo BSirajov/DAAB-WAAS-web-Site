@@ -31,7 +31,7 @@ def main() -> None:
             continue
         root = asset_root(rel)
         tag = LINK.format(root=root)
-        anchor = f'<link href="{root}css/daab-back-to-top.css?v=1" rel="stylesheet"/>'
+        anchor = f'<link href="{root}css/daab-back-to-top.css?v=4" rel="stylesheet"/>'
         if anchor not in text:
             anchor = f'<link href="{root}css/daab-membership-page.css?v=2" rel="stylesheet"/>'
         if anchor in text:

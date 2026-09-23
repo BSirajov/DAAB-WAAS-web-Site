@@ -34,8 +34,8 @@ def page_html(cfg: dict) -> str:
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <meta name="robots" content="noindex, follow"/>
-<meta http-equiv="refresh" content="0; url=membership_value.html"/>
-<link href="../css/daab-mobile.css?v=13" rel="stylesheet"/>
+<script>location.replace("membership_value.html" + location.search + location.hash);</script>
+<link href="../css/daab-mobile.css?v=14" rel="stylesheet"/>
 <title>{cfg["title"]}</title>
 <!-- daab-seo -->
 <link rel="icon" href="../images/daab-favicon.png" type="image/png"/>

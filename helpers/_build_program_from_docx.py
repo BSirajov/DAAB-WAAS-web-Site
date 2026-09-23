@@ -304,7 +304,7 @@ def build() -> None:
 <link href="{ASSET}css/daab-common.css?v=24" rel="stylesheet"/>
 <link href="{ASSET}css/daab-mobile.css?v=5" rel="stylesheet"/>
 <link href="{ASSET}css/daab-search.css?v=3" rel="stylesheet"/>
-<link href="{ASSET}css/daab-back-to-top.css?v=1" rel="stylesheet"/>
+<link href="{ASSET}css/daab-back-to-top.css?v=4" rel="stylesheet"/>
 <link href="{ASSET}css/daab-lang.css?v=10" rel="stylesheet"/>
 <link href="{ASSET}css/daab-nav-mega.css?v=23" rel="stylesheet"/>
 <link href="{ASSET}css/daab-hero-summary.css?v=1" rel="stylesheet"/>
@@ -312,7 +312,7 @@ def build() -> None:
 <link href="{ASSET}css/daab-activities-layout.css?v=7" rel="stylesheet"/>
 <link href="{ASSET}css/daab-forum-content.css?v=12" rel="stylesheet"/>
 <script src="{ASSET}js/daab-mobile.js?v=1" defer></script>
-<script src="{ASSET}js/daab-back-to-top.js?v=2" defer></script>
+<script src="{ASSET}js/daab-back-to-top.js?v=5" defer></script>
 <script src="{ASSET}js/daab-i18n.js?v=12" defer></script>
 <script src="{ASSET}js/daab-lang-position.js?v=7" defer></script>
 <script src="{ASSET}js/daab-nav.js?v=9" defer></script>

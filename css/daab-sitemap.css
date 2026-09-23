@@ -106,7 +106,7 @@ html[data-daab-page-id="sitemap"] .sitemap-main::after {
   z-index: -1;
 }
 
-/* Filter / jump controls — not sticky so section labels can dock under the nav */
+/* Filter / jump controls — fixed under the breadcrumbs with the top chrome */
 html[data-daab-page-id="sitemap"] .sitemap-controls {
   position: relative;
   z-index: 2;
@@ -119,6 +119,105 @@ html[data-daab-page-id="sitemap"] .sitemap-controls {
     0 1px 0 rgba(255, 255, 255, 0.7) inset,
     0 14px 36px rgba(8, 38, 59, 0.08);
   animation: sm-rise 0.45s ease both;
+}
+
+#daab-top-chrome > .sitemap-controls {
+  order: 3;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  box-shadow: 0 10px 22px rgba(8, 38, 59, 0.08);
+  background: rgba(255, 255, 255, 0.98);
+  padding-left: max(20px, calc((100% - 1180px) / 2));
+  padding-right: max(20px, calc((100% - 1180px) / 2));
+  animation: none;
+  pointer-events: none;
+}
+
+#daab-top-chrome > .sitemap-controls input,
+#daab-top-chrome > .sitemap-controls button,
+#daab-top-chrome > .sitemap-controls a,
+#daab-top-chrome > .sitemap-controls label,
+#daab-top-chrome > .sitemap-controls .sitemap-chips,
+#daab-top-chrome > .sitemap-controls .sitemap-tools-launch,
+#daab-top-chrome > .sitemap-controls .sitemap-tools-toggle {
+  pointer-events: auto;
+}
+
+html[data-daab-page-id="sitemap"] .sitemap-tools-launch,
+html[data-daab-page-id="sitemap"] .sitemap-tools-toggle {
+  display: none;
+}
+
+html[data-daab-page-id="sitemap"] .sitemap-tools-panel {
+  display: contents;
+}
+
+.sitemap-tools-backdrop {
+  display: none;
+}
+
+@media (min-width: 721px) {
+  #daab-top-chrome > .sitemap-controls {
+    padding-right: max(72px, calc((100% - 1180px) / 2));
+  }
+
+  html[data-daab-page-id="sitemap"] .sitemap-tools-toggle {
+    display: inline-flex;
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    right: max(16px, calc((100% - 1180px) / 2 - 48px));
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    border: 1.5px solid #c99b3b;
+    border-radius: 8px;
+    color: #0b3a63;
+    background: #fff6dc;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  html[data-daab-page-id="sitemap"] .sitemap-tools-toggle__icon {
+    display: block;
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease;
+  }
+
+  html.sitemap-toolbar-collapsed[data-daab-page-id="sitemap"] .sitemap-tools-toggle__icon {
+    transform: rotate(180deg);
+  }
+
+  html.sitemap-toolbar-collapsed[data-daab-page-id="sitemap"] #daab-top-chrome > .sitemap-controls {
+    min-height: 60px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  html.sitemap-toolbar-collapsed[data-daab-page-id="sitemap"] .sitemap-tools-panel {
+    display: none;
+  }
+
+  html[data-daab-page-id="sitemap"] .sitemap-tools-toggle:hover {
+    background: #ffe7a3;
+    border-color: #a67c22;
+  }
+
+  html[data-daab-page-id="sitemap"] .sitemap-tools-toggle:focus-visible {
+    outline: 2px solid var(--blue-700, #0069b4);
+    outline-offset: 3px;
+  }
 }
 
 html[data-daab-page-id="sitemap"] .sitemap-search-row {
@@ -936,6 +1035,17 @@ html[data-daab-page-id="sitemap"] .sitemap-cta__actions .btn {
 }
 
 @media (max-width: 720px) {
+  #daab-top-chrome > .sitemap-controls .sitemap-chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding-bottom: 2px;
+  }
+
+  #daab-top-chrome > .sitemap-controls .sitemap-chips > li {
+    flex: 0 0 auto;
+  }
+
   html[data-daab-page-id="sitemap"] .sitemap-main {
     width: min(100% - 24px, 1180px);
   }
@@ -981,6 +1091,105 @@ html[data-daab-page-id="sitemap"] .sitemap-cta__actions .btn {
     min-height: 0;
     padding: 14px 14px 14px 16px;
   }
+
+  html.sitemap-tools-drawer #daab-top-chrome > .sitemap-controls {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  html.sitemap-tools-drawer .sitemap-tools-launch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: 0 16px;
+    border: 1px solid var(--sm-accent-line);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--blue-800, #0b3a63);
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  html.sitemap-tools-drawer .sitemap-tools-launch__icon {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+  }
+
+  html.sitemap-tools-drawer .sitemap-tools-launch:focus-visible {
+    outline: 2px solid var(--blue-400, #4aa3d8);
+    outline-offset: 3px;
+  }
+
+  html.sitemap-tools-drawer .sitemap-tools-panel {
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    top: var(--daab-sticky-top-stack, 120px);
+    left: 0;
+    bottom: 0;
+    width: min(22rem, calc(100vw - 28px));
+    max-width: calc(100vw - 28px);
+    margin: 0;
+    padding: 16px 16px 20px;
+    flex-direction: column;
+    gap: 0;
+    background: #fff;
+    box-shadow: 12px 0 32px rgba(8, 38, 59, 0.16);
+    transform: translateX(-105%);
+    visibility: hidden;
+    overflow: hidden;
+    pointer-events: none;
+    transition: transform 0.24s ease, visibility 0.24s ease;
+  }
+
+  html.sitemap-tools-drawer.sitemap-tools-open .sitemap-tools-panel {
+    transform: none;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  html.sitemap-tools-drawer .sitemap-tools-panel .sitemap-search-row {
+    flex: 0 0 auto;
+  }
+
+  html.sitemap-tools-drawer #daab-top-chrome > .sitemap-controls .sitemap-chips {
+    flex: 1 1 auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    min-height: 0;
+    margin-top: 12px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  html.sitemap-tools-drawer .sitemap-tools-panel .sitemap-chip {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  html.sitemap-tools-drawer.sitemap-tools-open .sitemap-tools-backdrop {
+    display: block;
+    position: fixed;
+    top: var(--daab-sticky-top-stack, 120px);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4000;
+    background: rgba(3, 24, 42, 0.42);
+  }
+
+  html.sitemap-tools-open body.sitemap-tools-scroll-lock {
+    overflow: hidden;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -988,8 +1197,27 @@ html[data-daab-page-id="sitemap"] .sitemap-cta__actions .btn {
   html[data-daab-page-id="sitemap"] .sitemap-section,
   html[data-daab-page-id="sitemap"] .sitemap-empty,
   html[data-daab-page-id="sitemap"] .sitemap-link,
-  html[data-daab-page-id="sitemap"] .sitemap-chip {
+  html[data-daab-page-id="sitemap"] .sitemap-chip,
+  html.sitemap-tools-drawer .sitemap-tools-panel,
+  html[data-daab-page-id="sitemap"] .sitemap-tools-toggle__icon {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+@media print {
+  html[data-daab-page-id="sitemap"] .sitemap-tools-launch,
+  html[data-daab-page-id="sitemap"] .sitemap-tools-toggle,
+  .sitemap-tools-backdrop {
+    display: none !important;
+  }
+
+  html[data-daab-page-id="sitemap"] .sitemap-tools-panel {
+    display: block !important;
+    position: static !important;
+    transform: none !important;
+    visibility: visible !important;
+    width: auto !important;
+    overflow: visible !important;
   }
 }

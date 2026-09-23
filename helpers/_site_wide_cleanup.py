@@ -9,12 +9,12 @@ from _paths import ROOT
 
 # Canonical ?v= for deploy HTML — keep in sync with latest page builds (May 2026).
 SCRIPT_VERSIONS = {
-    "daab-i18n.js": 74,
+    "daab-i18n.js": 78,
     "daab-lang-position.js": 13,
     "daab-design-tokens.js": 2,
     "daab-nav.js": 34,
     "daab-primary-nav.js": 67,
-    "daab-breadcrumbs.js": 55,
+    "daab-breadcrumbs.js": 57,
     "daab-shell.js": 19,
     "daab-search.js": 17,
     "daab-analytics.js": 7,
@@ -22,8 +22,8 @@ SCRIPT_VERSIONS = {
     "daab-legal-page.js": 11,
     "daab-mobile.js": 6,
     "daab-perf.js": 5,
-    "daab-sticky-chrome.js": 3,
-    "daab-back-to-top.js": 3,
+    "daab-sticky-chrome.js": 4,
+    "daab-back-to-top.js": 5,
     "daab-work-done-report.js": 2,
     "daab-page-content-search.js": 10,
     "daab-page-subtitle.js": 8,
@@ -49,7 +49,7 @@ SCRIPT_VERSIONS = {
     "scientists-catalog-data.js": 2,
     "scientists-catalog-data-en.js": 2,
     "daab-hub-card-search.js": 2,
-    "daab-sitemap.js": 7,
+    "daab-sitemap.js": 10,
     "scientists-catalog-shared.js": 2,
     "scientists-catalog-multiselect-filters.js": 3,
     "scientists-list-catalog.js": 19,
@@ -66,7 +66,7 @@ STYLE_VERSIONS = {
     "daab-lang.css": 14,
     "daab-nav-mega.css": 79,
     "daab-search.css": 10,
-    "daab-back-to-top.css": 2,
+    "daab-back-to-top.css": 4,
     "daab-hero-summary.css": 13,
     "daab-forum-content.css": 49,
     "daab-forum-logistics.css": 1,
@@ -112,7 +112,7 @@ STYLE_VERSIONS = {
     "scientists-profile-qr.css": 19,
     "daab-media-resources.css": 9,
     "daab-eldar-ahadov.css": 12,
-    "daab-sitemap.css": 13,
+    "daab-sitemap.css": 21,
 }
 
 DEPLOY_HTML_DIRS = (ROOT / "az", ROOT / "en")

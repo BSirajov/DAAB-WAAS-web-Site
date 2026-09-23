@@ -39,7 +39,7 @@ def migrate(path: Path) -> bool:
     text = HTML_TAG.sub(html_repl, text, count=1)
 
     if "daab-hub-cards.css" not in text:
-        anchor = '<link href="../css/daab-back-to-top.css?v=1" rel="stylesheet"/>'
+        anchor = '<link href="../css/daab-back-to-top.css?v=4" rel="stylesheet"/>'
         if anchor in text:
             text = text.replace(anchor, anchor + "\n" + HUB_LINK.strip())
         else:

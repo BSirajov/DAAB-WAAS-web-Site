@@ -578,7 +578,7 @@ article.charter-card[id],
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 10010;
+  z-index: 10050;
   display: none;
   flex-direction: column;
   gap: 4px;
@@ -643,9 +643,14 @@ article.charter-card[id],
   color: #fff !important;
 }
 
-@media (hover: hover) and (pointer: fine) {.nav-dropdown:hover .nav-dropdown-panel,
-  .nav-dropdown:focus-within .nav-dropdown-panel,
-  .nav-dropdown.open .nav-dropdown-panel{
+/* Click-to-open must work even when hover MQ does not match (touch laptops). */
+.nav-dropdown.open > .nav-dropdown-panel{
+  display: flex;
+}
+
+@media (hover: hover) and (pointer: fine) {.nav-dropdown:hover > .nav-dropdown-panel,
+  .nav-dropdown:focus-within > .nav-dropdown-panel,
+  .nav-dropdown.open > .nav-dropdown-panel{
     display: flex;
   }.nav-dropdown:hover > .nav-dropdown-toggle,
   .nav-dropdown:focus-within > .nav-dropdown-toggle{
@@ -1214,7 +1219,7 @@ button,
   .nav-menu .nav-dropdown--nested > .nav-dropdown-panel .nav-mega-links > .nav-dropdown-link,
   .nav-menu .nav-mega-nest > .nav-dropdown-link{
     background: rgba(255, 255, 255, .82) !important;
-  }.nav-dropdown.open .nav-dropdown-panel{
+  }.nav-dropdown.open > .nav-dropdown-panel{
     display: flex !important;
   }.nav-dropdown-link{
     width: 100% !important;

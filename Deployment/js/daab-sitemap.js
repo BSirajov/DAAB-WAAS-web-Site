@@ -55,6 +55,119 @@
     );
     if (!input) return;
 
+    var launch = document.getElementById("sitemap-tools-launch");
+    var panel = document.getElementById("sitemap-tools-panel");
+    var drawerMq = window.matchMedia("(max-width: 720px)");
+    var backdrop = document.getElementById("sitemap-tools-backdrop");
+    if (!backdrop) {
+      backdrop = document.createElement("div");
+      backdrop.id = "sitemap-tools-backdrop";
+      backdrop.className = "sitemap-tools-backdrop";
+      backdrop.hidden = true;
+      document.body.appendChild(backdrop);
+    }
+
+    function drawerWanted() {
+      return drawerMq.matches;
+    }
+
+    function panelShouldHide(drawerOpen) {
+      if (drawerWanted()) return !drawerOpen;
+      return root.classList.contains("sitemap-toolbar-collapsed");
+    }
+
+    function syncPanelAccess(drawerOpen) {
+      if (!panel) return;
+      if (panelShouldHide(drawerOpen)) {
+        panel.setAttribute("inert", "");
+        panel.setAttribute("aria-hidden", "true");
+        return;
+      }
+      panel.removeAttribute("inert");
+      panel.removeAttribute("aria-hidden");
+    }
+
+    function setToolbarCollapsed(collapsed) {
+      if (drawerWanted()) collapsed = false;
+      root.classList.toggle("sitemap-toolbar-collapsed", collapsed);
+      var toggle = document.getElementById("sitemap-toolbar-toggle");
+      if (toggle) {
+        var label = collapsed
+          ? toggle.getAttribute("data-label-expand")
+          : toggle.getAttribute("data-label-collapse");
+        toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+        if (label) {
+          toggle.setAttribute("aria-label", label);
+          toggle.setAttribute("title", label);
+        }
+      }
+      syncPanelAccess(root.classList.contains("sitemap-tools-open"));
+      if (window.DAAB_STICKY_CHROME && typeof window.DAAB_STICKY_CHROME.sync === "function") {
+        window.DAAB_STICKY_CHROME.sync();
+      }
+    }
+
+    function setDrawerOpen(open) {
+      if (!drawerWanted()) open = false;
+      root.classList.toggle("sitemap-tools-open", open);
+      if (launch) launch.setAttribute("aria-expanded", open ? "true" : "false");
+      backdrop.hidden = !open;
+      document.body.classList.toggle("sitemap-tools-scroll-lock", open);
+      syncPanelAccess(open);
+      if (open) {
+        window.setTimeout(function () { input.focus(); }, 0);
+      }
+    }
+
+    function syncDrawerMode() {
+      root.classList.toggle("sitemap-tools-drawer", drawerWanted());
+      if (!drawerWanted()) setDrawerOpen(false);
+      else syncPanelAccess(root.classList.contains("sitemap-tools-open"));
+      if (window.DAAB_STICKY_CHROME && typeof window.DAAB_STICKY_CHROME.sync === "function") {
+        window.DAAB_STICKY_CHROME.sync();
+      }
+    }
+
+    if (launch) {
+      launch.addEventListener("click", function () {
+        var open = !root.classList.contains("sitemap-tools-open");
+        setDrawerOpen(open);
+        if (!open) launch.focus();
+      });
+    }
+
+    var toolbarToggle = document.getElementById("sitemap-toolbar-toggle");
+    if (toolbarToggle) {
+      toolbarToggle.addEventListener("click", function () {
+        var collapsed = !root.classList.contains("sitemap-toolbar-collapsed");
+        setToolbarCollapsed(collapsed);
+      });
+    }
+
+    backdrop.addEventListener("click", function () {
+      setDrawerOpen(false);
+      if (launch) launch.focus();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape") return;
+      if (!root.classList.contains("sitemap-tools-open")) return;
+      setDrawerOpen(false);
+      if (launch) launch.focus();
+    });
+
+    function onDrawerBreakpoint() {
+      syncDrawerMode();
+    }
+
+    if (typeof drawerMq.addEventListener === "function") {
+      drawerMq.addEventListener("change", onDrawerBreakpoint);
+    } else if (typeof drawerMq.addListener === "function") {
+      drawerMq.addListener(onDrawerBreakpoint);
+    }
+
+    syncDrawerMode();
+
     var totalLabel = countEl ? countEl.getAttribute("data-label-template") || "{n}" : "{n}";
     var totalPages = links.length;
 
@@ -163,6 +276,7 @@
       if (e.key === "Escape" && input.value) {
         input.value = "";
         applyFilter();
+        e.stopPropagation();
       }
     });
 
@@ -209,6 +323,7 @@
         var href = chip.getAttribute("href") || "";
         if (href.charAt(0) !== "#") return;
         e.preventDefault();
+        setDrawerOpen(false);
         goToSection(href.slice(1));
       });
     });

@@ -173,6 +173,11 @@
               "id": "complex-topics-informatics",
               "labelKey": "complexTopicsInformatics",
               "descKey": "complexTopicsInformaticsDesc"
+            },
+            {
+              "id": "complex-topics-apply",
+              "labelKey": "complexTopicsApply",
+              "descKey": "complexTopicsApplyDesc"
             }
           ]
         }
@@ -200,6 +205,11 @@
         {
           "id": "charter",
           "descKey": "aboutCharterDesc"
+        },
+        {
+          "id": "feedback",
+          "labelKey": "feedbackShare",
+          "descKey": "aboutFeedbackDesc"
         },
         {
           "type": "group",
@@ -294,6 +304,7 @@
         "mission",
         "executive-board",
         "charter",
+        "feedback",
         "privacy",
         "terms",
         "cookies",
@@ -331,7 +342,8 @@
         "forum-2026-register",
         "complex-topics",
         "complex-topics-approach",
-        "complex-topics-informatics"
+        "complex-topics-informatics",
+        "complex-topics-apply"
       ]
     },
     "forum-2026-year": {

@@ -372,10 +372,10 @@ def home_shell(lang: str, catalog_count: int) -> str:
 <link href="../css/daab-mobile.css?v=1" rel="stylesheet"/>
 <link href="../css/daab-lang.css?v=1" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=1" rel="stylesheet"/>
-<link href="../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
+<link href="../css/daab-back-to-top.css?v=4" rel="stylesheet"/>
 <link href="../css/kt-home.css?v=1" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=1" defer></script>
-<script src="../js/daab-back-to-top.js?v=1" defer></script>
+<script src="../js/daab-back-to-top.js?v=5" defer></script>
 <script src="../js/daab-i18n.js?v=1" defer></script>
 <script src="../js/daab-lang-position.js?v=1" defer></script>
 <script src="../js/daab-nav.js?v=1" defer></script>

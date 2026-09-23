@@ -228,9 +228,8 @@ def write_intro(document: Document) -> None:
     document.add_heading("1. Bələdçidən istifadə", level=1)
     p(
         document,
-        "Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) bu bələdçisi informatika üzrə "
-        "tədris materialı hazırlamaq istəyən müəllimlərə, mütəxəssislərə və "
-        "«Çətin mövzu, aydın izah» müsabiqəsinin iştirakçılarına mövzu seçməkdə kömək edir. "
+        "Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) bu bələdçisi "
+        "«Çətin mövzu, aydın izah» müsabiqəsinin iştirakçılarına informatika mövzusu seçməkdə kömək edir. "
         "Burada təhsil baxımından əhəmiyyətli və praktikada aktual olan mövzular, "
         "onların öyrənilməsindəki çətinliklər və aydın izah üçün nümunələr bir araya gətirilir.",
     )

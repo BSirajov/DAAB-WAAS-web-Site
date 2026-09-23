@@ -5,8 +5,8 @@ Run from repository root:
     python helpers/_build_deployment_folder.py
     python helpers/_build_deployment_folder.py --include-images   # full copy incl. images/
 
-By default **images/** is not copied (unchanged on production). Existing
-Deployment/images/ is preserved when rebuilding the package.
+Always copies images/ and Books/ into Deployment/. Production is wiped and
+replaced from this folder, so the package must contain every file the site needs.
 """
 from __future__ import annotations
 
@@ -39,9 +39,9 @@ HARD_EXCLUDES = {
 EXTRA_FILE_GLOBS = ("*.zip", "*.docx", "*.tmp", "~$*", "*.pyc", "*.pyo")
 EXTRA_DIR_NAMES = {".git", "__pycache__", "node_modules"}
 
-# Subfolders under Deployment/ left untouched when refreshing the package.
-# Books/ is host-managed (not in Git); images/ is skipped unless --include-images.
-PRESERVE_DEPLOY_DIRS = frozenset({"images", "Books"})
+# Nothing under Deployment/ is host-managed. images/ and Books/ are copied
+# from the repo on every rebuild.
+PRESERVE_DEPLOY_DIRS = frozenset()
 
 # Build-only assets — must match helpers/_deploy_assets.py + .deployignore.
 DEPLOY_EXCLUDED_ASSETS = frozenset(DEPLOYIGNORE_ASSET_PATHS)
@@ -86,14 +86,7 @@ def should_exclude(
     rel_posix: str,
     excludes: list[str],
     includes: list[str],
-    *,
-    skip_images: bool,
 ) -> bool:
-    if skip_images and (rel_posix == "images" or rel_posix.startswith("images/")):
-        return True
-    # Large PDFs are kept out of Git; never stage them into Deployment rebuilds.
-    if rel_posix == "Books" or rel_posix.startswith("Books/"):
-        return True
     if rel_posix in DEPLOY_EXCLUDED_ASSETS:
         return True
     parts = rel_posix.split("/")
@@ -123,7 +116,7 @@ def should_exclude(
     return False
 
 
-def collect_deploy_files(*, skip_images: bool) -> tuple[list[Path], list[Path]]:
+def collect_deploy_files() -> tuple[list[Path], list[Path]]:
     excludes, includes = parse_deployignore(DEPLOYIGNORE)
     included: list[Path] = []
     skipped: list[Path] = []
@@ -135,7 +128,7 @@ def collect_deploy_files(*, skip_images: bool) -> tuple[list[Path], list[Path]]:
         except ValueError:
             continue
         rel_posix = rel.as_posix()
-        if should_exclude(rel_posix, excludes, includes, skip_images=skip_images):
+        if should_exclude(rel_posix, excludes, includes):
             skipped.append(path)
         else:
             included.append(path)
@@ -234,19 +227,18 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--include-images",
         action="store_true",
-        help="Copy images/ from repo (default: skip; keep server copy)",
+        help="Accepted for older commands. images/ and Books/ are always copied.",
     )
     return p.parse_args()
 
 
 def main() -> int:
-    args = parse_args()
-    skip_images = not args.include_images
+    parse_args()
 
     print("DAAB deployment package builder\n")
     print(f"  Source: {ROOT}")
     print(f"  Output: {DEPLOY_DIR}")
-    print(f"  Images: {'copy from repo' if not skip_images else 'skip (preserve Deployment/images if present)'}\n")
+    print("  Images and Books: copy from repo\n")
 
     # Preflight on source
     print("→ Validating source site…")
@@ -258,7 +250,7 @@ def main() -> int:
         print("Source validation failed — fix errors before building Deployment/.")
         return 1
 
-    included, skipped = collect_deploy_files(skip_images=skip_images)
+    included, skipped = collect_deploy_files()
 
     if DEPLOY_STAGING.exists():
         print("→ Clearing previous staging …")
@@ -302,10 +294,10 @@ def main() -> int:
         "js/daab-mobile.js",
         "i18n/nav.json",
     ]
-    if not skip_images:
-        required.append("images/daab-logo.png")
-        required.append("images/daab-favicon.png")
-        required.append("favicon.ico")
+    required.append("images/daab-logo.png")
+    required.append("images/daab-favicon.png")
+    required.append("favicon.ico")
+    required.append("Books/DAAB_DK/forum-book-2026.pdf")
     missing_roots = [p for p in required if not (DEPLOY_STAGING / p).is_file()]
     if missing_roots:
         print("ERROR — deployment package missing required files:")
@@ -313,19 +305,13 @@ def main() -> int:
             print(f"  ✗ {p}")
         return 1
 
-    if skip_images:
-        print("→ Link check: skipped on staging (images omitted; source site validated OK).")
-    else:
-        print("→ Validating staging link integrity…")
-        if validate_deployment_tree(DEPLOY_STAGING) != 0:
-            print("\nDeployment package validation FAILED.")
-            return 1
+    print("→ Validating staging link integrity…")
+    if validate_deployment_tree(DEPLOY_STAGING) != 0:
+        print("\nDeployment package validation FAILED.")
+        return 1
 
-    preserve = set(PRESERVE_DEPLOY_DIRS)
-    if not skip_images:
-        preserve.discard("images")
     print("→ Publishing to Deployment/ …")
-    replace_deploy_dir(DEPLOY_STAGING, DEPLOY_DIR, preserve_names=frozenset(preserve))
+    replace_deploy_dir(DEPLOY_STAGING, DEPLOY_DIR, preserve_names=PRESERVE_DEPLOY_DIRS)
 
     forbidden_live = validate_forbidden_assets(DEPLOY_DIR)
     if forbidden_live:
@@ -334,16 +320,10 @@ def main() -> int:
             print(f"  ✗ {rel}")
         return 1
 
-    if skip_images:
-        img_dir = DEPLOY_DIR / "images"
-        if img_dir.is_dir() and any(img_dir.rglob("*")):
-            n = sum(1 for _ in img_dir.rglob("*") if _.is_file())
-            print(f"  (kept existing Deployment/images/ — {n} files)")
-        else:
-            print(
-                "  NOTE: Deployment/images/ is empty. Production must already have images/, "
-                "or run with --include-images once."
-            )
+    img_n = sum(1 for p in (DEPLOY_DIR / "images").rglob("*") if p.is_file()) if (DEPLOY_DIR / "images").is_dir() else 0
+    books_n = sum(1 for p in (DEPLOY_DIR / "Books").rglob("*") if p.is_file()) if (DEPLOY_DIR / "Books").is_dir() else 0
+    print(f"  images/: {img_n} files")
+    print(f"  Books/: {books_n} files")
 
     print(f"\nOK — Deployment/ is ready ({copied} files).")
     print("Upload everything inside Deployment/ to your production web root.")

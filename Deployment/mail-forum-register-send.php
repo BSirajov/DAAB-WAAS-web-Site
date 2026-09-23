@@ -9,6 +9,8 @@
  */
 declare(strict_types=1);
 
+require_once __DIR__ . '/mail-input-safety.php';
+
 header('Content-Type: text/plain; charset=UTF-8');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -112,6 +114,9 @@ function daab_forum_read_upload(string $key, string $kind, array $extensions, ar
     if ($data === false || $data === '') {
         daab_forum_mail_fail('error:' . $kind . '_invalid');
     }
+    if (daab_input_file_blocked((string) ($file['name'] ?? ''), $data, $ext)) {
+        daab_forum_mail_fail('error:' . $kind . '_invalid');
+    }
     $mime = in_array($detected, $mimes, true) ? $detected : $mimes[0];
     return [
         'name' => $name,
@@ -137,10 +142,8 @@ if ($honeypot !== '') {
 }
 
 $email = daab_forum_mail_field('email');
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    http_response_code(400);
-    echo 'error';
-    exit;
+if (!daab_input_valid_email($email)) {
+    daab_input_fail('error:email');
 }
 
 $privacyConfirm = daab_forum_mail_field('privacy_confirm');
@@ -162,15 +165,6 @@ $lastName = daab_forum_mail_field('last_name') ?: daab_forum_mail_field('surname
 $fullName = daab_forum_mail_field('full_name');
 if ($fullName === '') {
     $fullName = trim($firstName . ' ' . $lastName);
-}
-if (($firstName === '' || $lastName === '') && $fullName !== '') {
-    $parts = preg_split('/\s+/u', $fullName, 2) ?: [];
-    if ($firstName === '') {
-        $firstName = $parts[0] ?? '';
-    }
-    if ($lastName === '') {
-        $lastName = $parts[1] ?? '';
-    }
 }
 
 $city = daab_forum_mail_field('city');
@@ -208,6 +202,16 @@ $cvConfirm = daab_forum_mail_field('cv_confirm') ?: daab_forum_mail_field('cvcon
 if ($cvConfirm === 'on') {
     $cvConfirm = 'yes';
 }
+
+daab_input_guard(
+    $email,
+    [$firstName, $lastName, $fatherName, $fullName],
+    [
+        $fullName, $fatherName, $dateOfBirth, $countryOfBirth, $citizenship, $genderRaw,
+        $city, $phoneFull, $university, $degree, $degreeInstitution, $academicTitle,
+        $titleInstitution, $currentJob, $previousJobs, $contributions, $sciFields, $additionalInfo,
+    ]
+);
 
 $cvAttachment = daab_forum_read_upload(
     'cv_file',
@@ -312,8 +316,8 @@ $fields = [
     'cv_file' => $cvAttachment['name'],
     'photo_file' => $photoAttachment['name'],
     'privacy_confirm' => $privacyConfirm,
-    'submitted_at' => daab_forum_mail_field('submitted_at'),
-    'page_url' => daab_forum_mail_field('page_url'),
+    'submitted_at' => gmdate('Y-m-d H:i:s') . ' UTC',
+    'page_url' => daab_input_valid_url(daab_forum_mail_field('page_url')) ? daab_forum_mail_field('page_url') : '',
     'form_kind' => daab_forum_mail_field('form_kind') ?: 'forum-2026',
 ];
 
@@ -339,7 +343,7 @@ $fromAddress = 'noreply@daab-waas.com';
 $fromName = $isAz ? 'DAAB' : 'WAAS';
 $boundary = '==DAAB_FORUM_' . bin2hex(random_bytes(12));
 $headers = 'From: ' . $fromName . ' <' . $fromAddress . ">\r\n";
-$headers .= 'Reply-To: ' . $fullName . ' <' . $email . ">\r\n";
+$headers .= 'Reply-To: ' . daab_input_header_name($fullName) . ' <' . $email . ">\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= 'Content-Type: multipart/mixed; boundary="' . $boundary . "\"\r\n";
 
@@ -359,25 +363,9 @@ if (@mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $message, $headers
     $csvRow = $fields;
     $csvRow['locale'] = $locale;
     $csvRow['form_kind'] = $fields['form_kind'] !== '' ? $fields['form_kind'] : 'forum-2026';
-    $csvRow['received_at'] = $fields['submitted_at'] !== ''
-        ? $fields['submitted_at']
-        : gmdate('Y-m-d H:i:s') . ' UTC';
-    $savedCv = daab_save_registration_upload(
-        'forum-2026',
-        'cv',
-        $cvAttachment['name'],
-        $cvAttachment['data'],
-        $firstName,
-        $lastName
-    );
-    $savedPhoto = daab_save_registration_upload(
-        'forum-2026',
-        'photo',
-        $photoAttachment['name'],
-        $photoAttachment['data'],
-        $firstName,
-        $lastName
-    );
+    $csvRow['received_at'] = gmdate('Y-m-d H:i:s') . ' UTC';
+    $savedCv = daab_save_registration_upload('forum-2026', 'cv', $cvAttachment['name'], $cvAttachment['data']);
+    $savedPhoto = daab_save_registration_upload('forum-2026', 'photo', $photoAttachment['name'], $photoAttachment['data']);
     if ($savedCv !== '') {
         $csvRow['cv_file'] = $savedCv;
     }

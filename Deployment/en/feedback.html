@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-daab-lang="en" data-daab-asset-root="../" data-daab-page-id="feedback" data-daab-nav-mount="1" data-daab-form-endpoint="mail-feedback.php">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>WAAS — Share your feedback with us</title>
+<meta name="description" content="Share suggestions, comments, or a problem you found on the WAAS website."/>
+<!-- daab-seo -->
+<link rel="icon" href="../images/daab-favicon.png" type="image/png"/>
+<link rel="apple-touch-icon" href="../images/daab-favicon.png"/>
+<link rel="canonical" href="https://daab-waas.com/en/feedback.html"/>
+<link rel="alternate" hreflang="az" href="https://daab-waas.com/az/feedback.html"/>
+<link rel="alternate" hreflang="en" href="https://daab-waas.com/en/feedback.html"/>
+<link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/feedback.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="WAAS"/>
+<meta property="og:title" content="WAAS — Share your feedback with us"/>
+<meta property="og:description" content="Share suggestions, comments, or a problem you found on the WAAS website."/>
+<meta property="og:url" content="https://daab-waas.com/en/feedback.html"/>
+<meta property="og:image" content="https://daab-waas.com/images/daab-logo.png"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:locale:alternate" content="az_AZ"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="WAAS — Share your feedback with us"/>
+<meta name="twitter:description" content="Share suggestions, comments, or a problem you found on the WAAS website."/>
+<meta name="twitter:image" content="https://daab-waas.com/images/daab-logo.png"/>
+<!-- /daab-seo -->
+<link href="../css/daab-fonts.css?v=1" rel="stylesheet"/>
+<link href="../css/daab-common.css?v=115" rel="stylesheet"/>
+<link href="../css/daab-perf.css?v=2" rel="stylesheet"/>
+<link href="../css/daab-mobile.css?v=14" rel="stylesheet"/>
+<link href="../css/daab-sticky-chrome.css?v=13" rel="stylesheet"/>
+<link href="../css/daab-search.css?v=10" rel="stylesheet"/>
+<link href="../css/daab-back-to-top.css?v=4" rel="stylesheet"/>
+<link href="../css/daab-lang.css?v=15" rel="stylesheet"/>
+<link href="../css/daab-nav-mega.css?v=87" rel="stylesheet"/>
+<link href="../css/daab-hero-summary.css?v=13" rel="stylesheet"/>
+<link href="../css/daab-page-content-search.css?v=10" rel="stylesheet"/>
+<link href="../css/daab-membership-application.css?v=62" rel="stylesheet"/>
+<script src="../js/daab-mobile.js?v=6" defer></script>
+<script src="../js/daab-perf.js?v=4" defer></script>
+<script src="../js/daab-sticky-chrome.js?v=8" defer></script>
+<script src="../js/daab-back-to-top.js?v=5" defer></script>
+<script src="../js/daab-i18n.js?v=78" defer></script>
+<script src="../js/daab-lang-position.js?v=14" defer></script>
+<script src="../js/daab-design-tokens.js?v=2" defer></script>
+<script src="../js/daab-nav.js?v=36" defer></script>
+<script src="../js/daab-primary-nav.js?v=67" defer></script>
+<script src="../js/daab-breadcrumbs.js?v=56" defer></script>
+<script src="../js/daab-shell.js?v=19" defer></script>
+<script src="../js/daab-page-subtitle.js?v=2" defer></script>
+<script src="../js/daab-search.js?v=17" defer></script>
+<script src="../js/daab-analytics.js?v=7" defer></script>
+<script src="../js/daab-page-content-search.js?v=10" defer></script>
+<script src="../js/daab-respect.js?v=1" defer></script>
+<script src="../js/daab-feedback.js?v=6" defer></script>
+</head>
+<body class="application-page membership-page application-page--single feedback-page">
+<a class="skip" href="#content">Skip to content</a>
+<nav aria-label="Main navigation" class="nav-strip">
+<div class="nav-inner">
+<button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button>
+<div class="page-logo"><a title="Home page" aria-label="WAAS home" href="index.html">
+<img src="../images/daab-logo.png" class="nav-brand-logo" alt="WAAS Logo"></a></div>
+<a aria-label="WAAS home" class="nav-brand" href="index.html">
+<span class="nav-brand-text"><span class="nav-brand-line">World Association of</span><span class="nav-brand-line">Azerbaijani Scientists</span></span></a>
+<div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div></div></div></nav>
+<header class="hero">
+<div class="hero-wrap shell">
+<section>
+<h1>Share your <span>feedback</span></h1>
+<p class="page-hero-subtitle" id="page-hero-subtitle" role="doc-subtitle">Comments, suggestions, and problems you find on this website</p>
+</section>
+<aside aria-label="About this form" class="hero-panel">
+<div class="panel-card">
+<h2 class="panel-title">Website feedback</h2>
+<div class="panel-copy">
+<p class="panel-copy-lead">Your feedback helps us improve our website. Share your suggestions, tell us what you enjoyed, or let us know about a problem you encountered.</p>
+</div>
+</div>
+</aside>
+</div>
+</header>
+<main class="main application-main" id="content">
+<div class="shell application-preamble">
+<p class="app-steps-intro">Fields marked with <span class="req">*</span> are required.</p>
+</div>
+<div class="application-layout">
+<div class="application-stack form-wrapper">
+<form id="feedbackForm" action="mail-feedback.php" method="post" enctype="multipart/form-data" novalidate>
+<input type="hidden" name="form_kind" value="feedback">
+<input type="hidden" name="form_started" id="form-started" value="">
+<input type="hidden" name="submitted_at" id="submitted-at" value="">
+<input type="hidden" name="page_url" id="page-url" value="">
+<div class="form-section active" id="sec-feedback">
+<div class="section-header">
+<div class="section-num">1</div>
+<div class="section-title">Your feedback<small>Comments, suggestions, and website problems</small></div>
+</div>
+<div class="section-body" id="sec-feedback-body">
+<div class="intro-box">Your feedback helps us improve our website. Share your suggestions, tell us what you enjoyed, or let us know about a problem you encountered.</div>
+<div class="field-group">
+<label class="field-label" for="name">Name <span class="req">*</span></label>
+<input type="text" id="name" name="name" maxlength="120" autocomplete="name" required>
+</div>
+<div class="field-group">
+<label class="field-label" for="email">Email address <span class="req">*</span></label>
+<input type="email" id="email" name="email" maxlength="200" autocomplete="email" inputmode="email" placeholder="example@email.com" required>
+</div>
+<div class="field-group">
+<label class="field-label" for="feedback-type">Feedback type <span class="req">*</span></label>
+<select id="feedback-type" name="feedback_type" required>
+<option value="">Select a type</option>
+<option value="general">General feedback</option>
+<option value="suggestion">Suggestion</option>
+<option value="technical">Technical problem</option>
+<option value="correction">Content correction</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="field-group">
+<label class="field-label" for="subject">Subject <span class="req">*</span> <span class="field-label-optional">(for example: a broken link, a page that does not open, a spelling correction, etc.)</span></label>
+<div class="feedback-hl feedback-hl--line">
+<div class="feedback-hl__back" aria-hidden="true"></div>
+<input type="text" id="subject" name="subject" maxlength="200" required autocomplete="off">
+</div>
+</div>
+<div class="field-group">
+<label class="field-label" for="message">Your feedback <span class="req">*</span></label>
+<div class="feedback-hl">
+<div class="feedback-hl__back" aria-hidden="true"></div>
+<textarea id="message" name="message" class="form-textarea-tall" maxlength="5000" required></textarea>
+</div>
+</div>
+<div class="field-group">
+<label class="field-label" for="related-url">Related page URL <span class="field-label-optional">(optional)</span></label>
+<span class="field-hint" id="related-url-hint">Filled in automatically when you arrive from a page-specific feedback link.</span>
+<input type="text" id="related-url" name="related_url" maxlength="500" inputmode="url" autocomplete="url" aria-describedby="related-url-hint" placeholder="https://daab-waas.com/en/…">
+</div>
+<div class="app-file-uploads" id="app-file-uploads">
+<div class="app-file-card" data-file-kind="attachment">
+<label class="field-label" for="attachment">Screenshot or attachment <span class="field-label-optional">(optional)</span></label>
+<p class="field-hint" id="attachment-hint">JPG, PNG, WEBP, GIF, or PDF. Maximum 5 MB.</p>
+<input class="app-file-input" type="file" id="attachment" name="attachment" accept=".jpg,.jpeg,.png,.webp,.gif,.pdf,image/jpeg,image/png,image/webp,image/gif,application/pdf" aria-describedby="attachment-hint attachment-status attachment-error">
+<button type="button" class="app-btn app-btn-secondary app-file-choose" id="attachment-choose" data-file-target="attachment">Choose file</button>
+<div class="app-file-selected" id="attachment-status" hidden>
+<img class="app-file-thumb" id="attachment-thumb" alt="" hidden>
+<div class="app-file-meta">
+<span class="app-file-name"></span>
+<span class="app-file-ready">Ready to submit</span>
+</div>
+<div class="app-file-tools">
+<button type="button" class="app-file-replace" data-file-target="attachment">Replace</button>
+<button type="button" class="app-file-remove" data-file-kind="attachment">Remove</button>
+</div>
+</div>
+<p class="app-file-error" id="attachment-error" hidden role="alert"></p>
+</div>
+</div>
+<div class="field-group">
+<div class="opt-item opt-item-privacy-confirm">
+<input type="checkbox" id="privacyconfirm" name="privacyconfirm" value="yes" required>
+<label for="privacyconfirm">I have read the <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy notice</a> and understand that this feedback will be used as described there</label>
+</div>
+</div>
+<div class="app-honeypot" aria-hidden="true">
+<label for="website">Website</label>
+<input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+</div>
+<div class="app-submit-status" id="app-submit-status" role="status" aria-live="polite" hidden></div>
+<div class="app-btn-row">
+<button type="submit" class="app-btn app-btn-submit" id="appSubmitBtn">Send your feedback</button>
+</div>
+</div>
+</div>
+<div class="success-screen" id="success">
+<div class="success-icon">✓</div>
+<h2>Thank you. Your feedback has been sent.</h2>
+<p>We read every message and use it to improve the website.</p>
+<div class="app-btn-row">
+<a class="app-btn app-btn-primary" href="index.html">Back to the home page</a>
+</div>
+</div>
+</form>
+</div>
+</div>
+</main>
+<footer class="footer-pro">
+<div class="footer-inner">
+<div class="footer-brand"><h3>World Association of Azerbaijani Scientists</h3></div>
+<div class="footer-grid">
+<div class="footer-col"><h4 class="footer-title">Contact</h4><div class="footer-item"><span aria-hidden="true">✉</span> <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item"><span aria-hidden="true">☎</span> <a href="tel:+905551474674">+90 555 147 46 74</a></div><div class="footer-item"><span aria-hidden="true">🌐</span> <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div></div>
+<div class="footer-col"><h4 class="footer-title">Address</h4><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, Istanbul, Türkiye</p></div>
+<div class="footer-col"><h4 class="footer-title">Leadership</h4><p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p></div>
+</div>
+</div>
+<div class="footer-bottom"><nav class="footer-legal-links" aria-label="Legal documents and sitemap"><a href="/en/feedback.html">Feedback</a><a href="/en/privacy.html#page-title">Privacy notice</a><a href="/en/terms.html#page-title">Terms of use</a><a href="/en/cookies.html#page-title">Cookie policy</a><a href="/en/legal-notice.html#page-title">Legal notice (Imprint)</a><a href="/en/sitemap.html#page-title">Sitemap</a></nav><div class="footer-copy">© 2026 WAAS — All Rights Reserved</div></div>
+</footer>
+</body>
+</html>

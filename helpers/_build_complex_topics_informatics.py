@@ -48,6 +48,7 @@ UI = {
         "cookies": "Cookie policy",
         "legal": "Legal notice (Imprint)",
         "sitemap": "Sitemap",
+        "feedback": "Feedback",
         "copy": "© 2026 WAAS — All Rights Reserved",
         "related_flyer": "Open competition invitation",
         "related_approach": "Organisation of competition",
@@ -89,6 +90,7 @@ UI = {
         "cookies": "Kuki siyasəti",
         "legal": "Hüquqi rekvizitlər",
         "sitemap": "Saytın xəritəsi",
+        "feedback": "Rəy bildirin",
         "copy": "© 2026 DAAB — Bütün hüquqlar qorunur",
         "related_flyer": "Açıq müsabiqə dəvəti",
         "related_approach": "Müsabiqənin təşkili",
@@ -155,7 +157,7 @@ def page_html(lang: str) -> str:
 <link href="../css/daab-sticky-chrome.css?v=11" rel="stylesheet"/>
 <link href="../css/daab-search.css?v=10" rel="stylesheet"/>
 <link href="../css/daab-page-content-search.css?v=9" rel="stylesheet"/>
-<link href="../css/daab-back-to-top.css?v=3" rel="stylesheet"/>
+<link href="../css/daab-back-to-top.css?v=4" rel="stylesheet"/>
 <link href="../css/daab-print-pdf.css?v=11" rel="stylesheet"/>
 <link href="../css/daab-lang.css?v=15" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=86" rel="stylesheet"/>
@@ -169,7 +171,7 @@ def page_html(lang: str) -> str:
 <script src="../js/daab-perf.js?v=4" defer></script>
 <script src="../js/daab-sticky-chrome.js?v=7" defer></script>
 <script src="../js/daab-page-content-search.js?v=10" defer></script>
-<script src="../js/daab-back-to-top.js?v=4" defer></script>
+<script src="../js/daab-back-to-top.js?v=5" defer></script>
 <script src="../js/daab-print-pdf.js?v=3" defer></script>
 <script src="../js/daab-i18n.js?v=74" defer></script>
 <script src="../js/daab-lang-position.js?v=16" defer></script>
@@ -244,7 +246,7 @@ def page_html(lang: str) -> str:
 <div class="footer-col"><h4 class="footer-title">{esc(ui['leadership'])}</h4><p class="footer-leader">{ui['leader_html']}</p></div>
 </div>
 </div>
-<div class="footer-bottom"><nav class="footer-legal-links" aria-label="{esc(ui['legal_aria'])}"><a href="/{lang}/privacy.html#page-title">{esc(ui['privacy'])}</a><a href="/{lang}/terms.html#page-title">{esc(ui['terms'])}</a><a href="/{lang}/cookies.html#page-title">{esc(ui['cookies'])}</a><a href="/{lang}/legal-notice.html#page-title">{esc(ui['legal'])}</a><a href="/{lang}/sitemap.html#page-title">{esc(ui['sitemap'])}</a></nav><div class="footer-copy">{esc(ui['copy'])}</div></div>
+<div class="footer-bottom"><nav class="footer-legal-links" aria-label="{esc(ui['legal_aria'])}"><a href="/{lang}/feedback.html">{esc(ui['feedback'])}</a><a href="/{lang}/privacy.html#page-title">{esc(ui['privacy'])}</a><a href="/{lang}/terms.html#page-title">{esc(ui['terms'])}</a><a href="/{lang}/cookies.html#page-title">{esc(ui['cookies'])}</a><a href="/{lang}/legal-notice.html#page-title">{esc(ui['legal'])}</a><a href="/{lang}/sitemap.html#page-title">{esc(ui['sitemap'])}</a></nav><div class="footer-copy">{esc(ui['copy'])}</div></div>
 </footer>
 <button type="button" class="cta-toc-launch" id="ctaTocLaunch" aria-controls="ctaTocPanel" aria-expanded="false" aria-label="{esc(ui['toc_open'])}">
 <span class="cta-toc-launch-icon" aria-hidden="true">📗</span>

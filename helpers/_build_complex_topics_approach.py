@@ -94,6 +94,7 @@ UI = {
         "cookies": "Kuki siyasəti",
         "legal": "Hüquqi rekvizitlər",
         "sitemap": "Saytın xəritəsi",
+        "feedback": "Rəy bildirin",
         "copy": "© 2026 DAAB — Bütün hüquqlar qorunur",
     },
     "en": {
@@ -134,6 +135,7 @@ UI = {
         "cookies": "Cookie policy",
         "legal": "Legal notice (Imprint)",
         "sitemap": "Sitemap",
+        "feedback": "Feedback",
         "copy": "© 2026 WAAS — All Rights Reserved",
     },
 }
@@ -405,7 +407,7 @@ def page_html(lang: str, items: list[dict]) -> str:
 <link href="../css/daab-mobile.css?v=14" rel="stylesheet"/>
 <link href="../css/daab-sticky-chrome.css?v=2" rel="stylesheet"/>
 <link href="../css/daab-search.css?v=10" rel="stylesheet"/>
-<link href="../css/daab-back-to-top.css?v=2" rel="stylesheet"/>
+<link href="../css/daab-back-to-top.css?v=4" rel="stylesheet"/>
 <link href="../css/daab-lang.css?v=14" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=79" rel="stylesheet"/>
 <link href="../css/daab-sidebar-widget.css?v=6" rel="stylesheet"/>
@@ -414,7 +416,7 @@ def page_html(lang: str, items: list[dict]) -> str:
 <script src="../js/daab-mobile.js?v=6" defer></script>
 <script src="../js/daab-perf.js?v=4" defer></script>
 <script src="../js/daab-sticky-chrome.js?v=3" defer></script>
-<script src="../js/daab-back-to-top.js?v=3" defer></script>
+<script src="../js/daab-back-to-top.js?v=5" defer></script>
 <script src="../js/daab-i18n.js?v=65" defer></script>
 <script src="../js/daab-lang-position.js?v=14" defer></script>
 <script src="../js/daab-design-tokens.js?v=2" defer></script>
@@ -481,7 +483,7 @@ def page_html(lang: str, items: list[dict]) -> str:
 <div class="footer-col"><h4 class="footer-title">{esc(ui['leadership'])}</h4><p class="footer-leader">{ui['leader_html']}</p></div>
 </div>
 </div>
-<div class="footer-bottom"><nav class="footer-legal-links" aria-label="{esc(ui['legal_aria'])}"><a href="/{lang}/privacy.html#page-title">{esc(ui['privacy'])}</a><a href="/{lang}/terms.html#page-title">{esc(ui['terms'])}</a><a href="/{lang}/cookies.html#page-title">{esc(ui['cookies'])}</a><a href="/{lang}/legal-notice.html#page-title">{esc(ui['legal'])}</a><a href="/{lang}/sitemap.html#page-title">{esc(ui['sitemap'])}</a></nav><div class="footer-copy">{esc(ui['copy'])}</div></div>
+<div class="footer-bottom"><nav class="footer-legal-links" aria-label="{esc(ui['legal_aria'])}"><a href="/{lang}/feedback.html">{esc(ui['feedback'])}</a><a href="/{lang}/privacy.html#page-title">{esc(ui['privacy'])}</a><a href="/{lang}/terms.html#page-title">{esc(ui['terms'])}</a><a href="/{lang}/cookies.html#page-title">{esc(ui['cookies'])}</a><a href="/{lang}/legal-notice.html#page-title">{esc(ui['legal'])}</a><a href="/{lang}/sitemap.html#page-title">{esc(ui['sitemap'])}</a></nav><div class="footer-copy">{esc(ui['copy'])}</div></div>
 </footer>
 </body>
 </html>

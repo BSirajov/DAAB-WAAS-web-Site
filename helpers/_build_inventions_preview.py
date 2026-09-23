@@ -598,7 +598,7 @@ def build_html(data: dict) -> str:
 <link href="../../css/daab-mobile.css?v=13" rel="stylesheet"/>
 <link href="../../css/daab-sticky-chrome.css?v=1" rel="stylesheet"/>
 <link href="../../css/daab-search.css?v=4" rel="stylesheet"/>
-<link href="../../css/daab-back-to-top.css?v=2" rel="stylesheet"/>
+<link href="../../css/daab-back-to-top.css?v=4" rel="stylesheet"/>
 <link href="../../css/daab-lang.css?v=12" rel="stylesheet"/>
 <link href="../../css/daab-nav-mega.css?v=69" rel="stylesheet"/>
 <link href="../../css/daab-hero-summary.css?v=12" rel="stylesheet"/>
@@ -608,7 +608,7 @@ def build_html(data: dict) -> str:
 <script src="../../js/daab-mobile.js?v=6" defer></script>
 <script src="../../js/daab-perf.js?v=1" defer></script>
 <script src="../../js/daab-sticky-chrome.js?v=3" defer></script>
-<script src="../../js/daab-back-to-top.js?v=3" defer></script>
+<script src="../../js/daab-back-to-top.js?v=5" defer></script>
 <script src="../../js/daab-i18n.js?v=28" defer></script>
 <script src="../../js/daab-lang-position.js?v=7" defer></script>
 <script src="../../js/daab-design-tokens.js?v=1" defer></script>

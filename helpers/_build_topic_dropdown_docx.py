@@ -1,0 +1,185 @@
+# -*- coding: utf-8 -*-
+"""Review document: English Topic dropdown, in on-screen order."""
+from pathlib import Path
+
+from docx import Document
+from docx.shared import Pt, Cm, RGBColor
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / "Topic-dropdown-explanations.docx"
+
+TOPICS = [
+    (
+        "Algorithm efficiency and Big-O",
+        "This topic is about telling whether a method will stay usable as the amount of data grows. Two programs can solve the same problem, yet one may become much slower when the list gets long. Big-O is a plain way to describe that growth: it asks how the number of steps changes as the input gets larger, not how many seconds the program takes on one particular computer. A participant could explain why reading a list from start to finish is different from a search that repeatedly halves the remaining choices, what people mean by a linear or a quadratic method, and why a better method can matter more than a faster machine.",
+    ),
+    (
+        "Algorithms and computational problem-solving",
+        "An algorithm is a sequence of steps that is clear enough for a person or a computer to follow without guessing. This topic covers how to turn an everyday problem into those steps: what information goes in, what result should come out, and how to check that the steps work for ordinary cases and for awkward ones. It comes before any argument about a particular programming language. A participant could explain how to find the largest number in a list, how to put names into alphabetical order, or how to describe a route so that someone else could follow it and arrive at the same place.",
+    ),
+    (
+        "Automata, computability and complexity classes",
+        "This topic asks what a computer can do at all, and which problems remain hard no matter how cleverly they are written. An automaton is a very simple imaginary machine that reads a row of symbols and answers yes or no, for example whether a piece of text matches a pattern. Computability asks whether any method is guaranteed to finish. Complexity classes group problems by how hard they are, including the question of whether every problem whose answer is easy to check is also easy to solve. A participant could explain a vending machine as a set of states, what it means for a problem to have no general method, or why some puzzles seem to require trying almost every possibility.",
+    ),
+    (
+        "Binary numbers and digital representation",
+        "Computers do not store letters, pictures or sounds in the form people see. They store patterns of on and off, usually written as 1 and 0. This topic explains how those patterns stand for whole numbers, negative numbers, fractions, text and colour, and why a small change in the pattern can change the meaning. A participant could explain why 10 in binary means two rather than ten, how a computer can store the letter A, why a photograph is a grid of numbers, or how a value such as one tenth can be stored only approximately.",
+    ),
+    (
+        "Cloud computing, containers and distributed systems",
+        "This topic is about running programs on computers reached over a network, often many computers acting as one service. The cloud, in this sense, means machines in a data centre rather than one computer on a desk. A container packages a program with the files it needs so that it can run in the same way on different machines. A distributed system splits the work across several computers and has to keep going when one of them fails or answers slowly. A participant could explain why a website can stay available when one server breaks, what it means to handle more visitors, or why two people can briefly see different versions of the same information.",
+    ),
+    (
+        "Computer architecture, the processor, memory and instructions",
+        "This topic looks at the machine underneath the programs. A processor follows very small instructions, such as add these numbers, fetch a stored value, or jump to another instruction. Memory holds both the instructions and the data, and some kinds of memory are much faster to reach than others. A participant could explain what happens, one instruction at a time, when a computer adds two numbers, why a program is ultimately a list of instructions, how the processor and memory communicate, or why a faster processor does not speed up every program by the same amount.",
+    ),
+    (
+        "Concurrent, asynchronous and parallel programming",
+        "Some programs have more than one piece of work under way. Parallel work really happens at the same time, for example on several cores of a processor. Concurrent work is arranged so that tasks overlap, even if the processor switches between them. Asynchronous work lets a program continue instead of waiting, as when a page asks for an image and carries on. The difficulty is that overlapping tasks can interrupt one another and leave shared information half updated. A participant could explain how two updates to the same balance can lose one of them, what a lock is for, or why a page can show its text before every picture has arrived.",
+    ),
+    (
+        "Conditions, Boolean logic and decision-making",
+        "This topic is about how a program chooses what to do next. A condition is a question with a yes or no answer, such as whether a score is at least 50. Boolean logic combines those answers with AND, OR and NOT, and the program then follows one path or another. A small mistake in the question can send the program the wrong way even when the rest of the steps are fine. A participant could explain how to test whether a year is a leap year, why “greater than 10 and less than 20” is different from “greater than 10 or less than 20”, or how a sign-in check fails if the password test is written backwards.",
+    ),
+    (
+        "Cryptography, encryption, hashing and digital signatures",
+        "This topic is about protecting information with mathematics. Encryption scrambles a message so that only someone with the right key can read it. Hashing turns data into a short fingerprint: the same input always gives the same fingerprint, and a good hash makes it impractical to hunt for a different input with the same result. A digital signature lets a receiver check that a message came from the claimed sender and has not been altered. A participant could explain why a password store should keep a hash rather than the password itself, how a browser can recognise that it has reached the real bank, or why encryption alone does not prove who sent a message.",
+    ),
+    (
+        "Cybersecurity, privacy and safe digital behaviour",
+        "This topic is about how accounts, computers and people are attacked, and about habits that reduce the risk. It includes passwords, deceptive messages, harmful software, updates and permissions, and also the difference between keeping a necessary secret and collecting more personal information than a service needs. Many attacks persuade a person rather than break a code. A participant could explain how a fraudulent email imitates a real organisation, why using one password everywhere is dangerous, what it means to let an app read your contacts, or how privacy can be explained to pupils without treating every risk as equally serious.",
+    ),
+    (
+        "Data science, interpreting data and visualisation",
+        "This topic is about moving from a table of values to a conclusion that the evidence can actually support. The question, the people or items included, the missing values and the chart can all change what a reader believes. A picture of the data should make a real pattern easier to see, not conceal a weakness. A participant could explain why a line that rises does not by itself prove that one thing caused another, how an average can hide a split between two groups, what a chopped-off axis does to a bar chart, or whether a survey of one class can say anything reliable about a whole country.",
+    ),
+    (
+        "Data structures and their uses",
+        "A data structure is a way of arranging values so that a program can store, find or change them. Lists, stacks, queues, sets, dictionaries and trees suit different jobs, and the wrong choice can make a simple task clumsy. A participant could explain why a queue fits people waiting for a printer, why a stack matches an Undo button, how a dictionary can find one definition without reading every entry, or when folders inside folders are better understood as a tree than as one long list.",
+    ),
+    (
+        "Databases, modelling and SQL",
+        "This topic is about keeping structured records so that many people can search and update them without corrupting the information. Modelling means deciding which facts belong together: a pupil, a class and an enrolment are related, but they are not the same record. SQL is a language for asking questions of those tables and for adding or changing rows. A participant could explain how a library catalogue can store an author’s details once and reuse them for many books, what should happen if two people try to borrow the last copy together, or how to ask which books have not been returned.",
+    ),
+    (
+        "Dynamic programming and designing complex algorithms",
+        "Some problems break into smaller copies of the same problem, but a careless split repeats the same work again and again. Dynamic programming keeps an answer once it has been worked out and uses that answer when the same smaller problem appears later. It is a way of designing a method, not the name of a programming language. A participant could explain how to count the ways of climbing stairs one or two steps at a time, why starting a Fibonacci calculation from the beginning every time is wasteful, or how remembering smaller cases helps a program choose what will fit into a limited bag.",
+    ),
+    (
+        "Ethics, algorithmic bias and the social effects of computing",
+        "This topic asks who is helped, who is harmed and who gets to decide when a computer system supports a decision about people. Unfair results can come from unbalanced examples, from a badly chosen goal, or from using a system outside the situation it was built for. A calculation can be technically tidy and still be the wrong system to put into use. A participant could explain why a hiring tool trained on past decisions may repeat an old pattern of exclusion, what changes if a school uses an automatic mark and offers no appeal, or how a convenient app can collect more personal detail than the person understands.",
+    ),
+    (
+        "Finding errors, tests and reading error messages",
+        "This topic is about finding out why a program does not do what its author meant. A test is a small check with a known input and an expected result. An error message is evidence: it usually points to a place in the program and a kind of failure. Searching for the fault works better as a narrow series of checks than as a string of random edits. A participant could explain how to read a message that says a name has not been defined, how one test can show that a calculation fails when the input is zero, or why changing what the user sees can leave the underlying mistake untouched.",
+    ),
+    (
+        "Functions, parameters, return values and scope",
+        "A function is a named part of a program that does one job and can be used again. Parameters are the values it receives. A return value is the result it hands back to the place that called it. Scope is the question of where a name is visible: a name created inside a function is not automatically visible outside it. A participant could explain how one temperature conversion can be used in many places, what goes wrong when a function changes a value the caller did not expect to share, or why two variables with the same name in different functions do not collide.",
+    ),
+    (
+        "Game development and interactive graphics",
+        "This topic covers programs that respond straight away to a person and draw a picture that changes. A game repeats a loop: read what the player did, update the world, then draw the next frame. Coordinates, moving pictures, collisions and timing turn that loop into something a person can play. The same ideas appear in simulations and other interactive pictures, not only in entertainment. A participant could explain how a character moves while a key is held, how a program decides that a ball has met a wall, or why the picture can stutter when there is too much to draw.",
+    ),
+    (
+        "Generative AI and large language models",
+        "This topic is about systems that produce text, pictures or other material by following patterns learned from very large collections of examples. A large language model does not keep a finished answer for every possible question. It estimates what is likely to come next. The result can be fluent and still be wrong, invented or unfair, so a clear explanation has to separate a confident sentence from a checked fact. A participant could explain why a chatbot can state a false date without hesitation, how the wording of a request steers the reply, or why “the system said so” is not evidence.",
+    ),
+    (
+        "How the Internet and the Web work",
+        "The Internet is the network that carries data between computers. The Web is one service on that network: documents and links, fetched when one computer makes a request and another sends a response. This topic keeps those two ideas apart, and then shows how an address, a route and a reply fit together. A participant could explain what happens between typing an address and seeing a page, why mail and web pages can travel over the same network, what a numeric machine address is for, or why one broken link does not mean the whole network has failed.",
+    ),
+    (
+        "Loops, repetition and stopping",
+        "A loop repeats steps so that they do not have to be written out once for every repetition. The important design choice is when the repetition stops. A loop may run a fixed number of times, or it may continue while a condition remains true. If that condition never becomes false, the program does not move on. A participant could explain how to add the numbers from 1 to 100, how to keep asking for a password until it matches, how “repeat ten times” differs from “repeat until the list is empty”, or why a count that stops one step too late prints an extra line.",
+    ),
+    (
+        "Machine learning, training data, models and predictions",
+        "This topic is about programs that infer a pattern from examples instead of following only rules a person has written one by one. The training data are those examples. The model is the pattern that has been fitted to them. A prediction is what the model says about a new case it was not shown during training. The prediction is only as dependable as the examples and the question. A participant could explain how examples of handwritten digits can be used to recognise a new digit, why photos taken only in sunshine can make a model fail in the rain, or how a high success rate can still hide poor results on a rare case.",
+    ),
+    (
+        "Memory, references, pointers, the stack and dynamic memory",
+        "This topic is about where a running program keeps its values and how it finds them again. A variable’s name is not the same thing as the place in memory that holds the value. A reference or a pointer records where that place is, so two names can lead to one shared value. The stack is the orderly area used as functions are called and then finished. Dynamic memory is requested while the program is running, when the amount needed is not known beforehand. A participant could explain why changing a list through one name can surprise the holder of another name, or what goes wrong if memory is requested and never given back.",
+    ),
+    (
+        "Object-oriented programming",
+        "This topic organises a program around objects that keep related information together with the actions that belong to it. A class is the plan, and an object is one thing built from that plan. An account, a pupil record or a button is often clearer as an object than as a loose collection of separate values. Sharing a plan among several objects is useful, and so is promising that different objects can be used in the same way, but putting every action into one enormous object makes change harder. A participant could explain how several accounts follow the same rules while keeping different balances.",
+    ),
+    (
+        "Operating systems, processes, memory and file systems",
+        "The operating system is the program that looks after the computer on behalf of every other program. A process is one running program, with memory set aside for it. The system chooses which process may use the processor, stops processes from casually overwriting one another, and stores named files on disk so they can be found after the program has closed. A participant could explain what happens when an application is started, why saving a document lets it be opened again after a restart, why one failed program need not bring down the whole computer, or how folders are a way of viewing files rather than the disk’s only organisation.",
+    ),
+    (
+        "Recursion",
+        "Recursion solves a problem by using a smaller version of the same problem. A folder that contains folders, or a story that contains a shorter copy of itself, has this shape. The solution must include a base case, the situation in which it stops calling itself; without that, it never finishes. A participant could explain a factorial by saying that it is the number multiplied by the factorial of the number just below, stopping at 1, how to list every file in a folder and in the folders inside it, or why a loop and a recursive description can be two ways of expressing one task.",
+    ),
+    (
+        "Robotics, physical computing and the Internet of Things",
+        "This topic joins programs to physical devices. A robot or a small controller reads sensors, decides what the readings mean, and switches a motor, a light or another actuator. The Internet of Things extends that pattern to ordinary objects that send and receive measurements. Sensors are noisy, parts fail, and a device in a home or a street is less predictable than an example on a screen. A participant could explain how a robot follows a line, why a temperature reading may jump around, what a connected lock should do when the network disappears, or how a greenhouse could open a window when it becomes too hot.",
+    ),
+    (
+        "Software engineering, Git and collaborative development",
+        "This topic is about building software with other people so that the result stays understandable and can be recovered if a change goes wrong. It includes making a small change, having someone else look at it, testing it and keeping a history. Git records those versions and helps people combine separate pieces of work. The tool matters less than the habit: clear names, a note about why a change was made, and an agreement about when work is ready. A participant could explain why files called final, final2 and final-really cause confusion, or what two people should do when they have both edited the same file.",
+    ),
+    (
+        "Variables, assignment, data types and program state",
+        "This topic is the basic mechanics of information inside a program. A variable is a named place that holds a value. Assignment replaces the value that is there. A data type says what kind of value is allowed, such as a whole number, a decimal, a piece of text or a yes-or-no answer. The program’s state is the collection of those values at one moment, and later steps see the new state rather than the old one. A participant could explain why setting a score to 0 and then adding 1 leaves 1, what fails when a number is treated as text, or how the state of a simple game changes after one move.",
+    ),
+    (
+        "Web programming, APIs and client–server applications",
+        "This topic is about programs divided between the person’s device and another computer. The client asks for something. The server checks that request, reads or updates stored information, and sends a reply. An API is the agreed form of such a request, often used by one program talking to another rather than by a person looking at a page. A participant could explain what happens when a form is submitted, why the page in the browser cannot be the only place a rule is enforced, how a weather display can show a forecast it did not calculate itself, or what a reply contains besides the words a person sees.",
+    ),
+]
+
+
+def main():
+    document = Document()
+    section = document.sections[0]
+    section.top_margin = Cm(2.2)
+    section.bottom_margin = Cm(2.2)
+    section.left_margin = Cm(2.4)
+    section.right_margin = Cm(2.4)
+
+    normal = document.styles["Normal"]
+    normal.font.name = "Calibri"
+    normal.font.size = Pt(11)
+    normal.paragraph_format.space_after = Pt(8)
+    normal.paragraph_format.space_before = Pt(0)
+    normal.paragraph_format.line_spacing = 1.08
+
+    heading = document.styles["Heading 1"]
+    heading.font.name = "Calibri"
+    heading.font.size = Pt(16)
+    heading.font.bold = True
+    heading.font.color.rgb = RGBColor(0x14, 0x3D, 0x59)
+    heading.paragraph_format.space_before = Pt(16)
+    heading.paragraph_format.space_after = Pt(6)
+
+    title = document.styles["Title"]
+    title.font.name = "Calibri"
+    title.font.size = Pt(22)
+    title.font.color.rgb = RGBColor(0x14, 0x3D, 0x59)
+
+    document.add_paragraph("Topics in the application dropdown", style="Title")
+    intro = document.add_paragraph(
+        "These are the 30 topics in the Topic dropdown on the English application form for "
+        "Complex Topics, Clear Explanations. Each heading is the topic’s exact name, and the "
+        "topics follow the order of that dropdown. The questions are examples of what a clear "
+        "explanation might help a learner understand. They are not required tasks."
+    )
+    intro.paragraph_format.space_after = Pt(12)
+
+    for name, body in TOPICS:
+        document.add_heading(name, level=1)
+        document.add_paragraph(body)
+
+    document.core_properties.title = "Topics in the application dropdown"
+    document.core_properties.subject = "Complex Topics, Clear Explanations"
+    document.core_properties.category = "Review"
+    document.save(OUT)
+    print(OUT)
+    print(len(TOPICS))
+
+
+if __name__ == "__main__":
+    main()

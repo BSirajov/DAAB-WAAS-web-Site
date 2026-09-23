@@ -5,6 +5,8 @@
  */
 declare(strict_types=1);
 
+require_once __DIR__ . '/mail-input-safety.php';
+
 header('Content-Type: text/plain; charset=UTF-8');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -47,10 +49,8 @@ if ($honeypot !== '') {
 }
 
 $email = daab_mail_field('email');
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    http_response_code(400);
-    echo 'error';
-    exit;
+if (!daab_input_valid_email($email)) {
+    daab_input_fail('error:email');
 }
 
 $privacyConfirm = daab_mail_field('privacy_confirm');
@@ -192,9 +192,11 @@ $fields = [
     'additional_info' => $additionalInfo,
     'cv_confirm' => $cvConfirm,
     'privacy_confirm' => $privacyConfirm,
-    'submitted_at' => daab_mail_field('submitted_at'),
-    'page_url' => daab_mail_field('page_url'),
+    'submitted_at' => gmdate('Y-m-d H:i:s') . ' UTC',
+    'page_url' => daab_input_valid_url(daab_mail_field('page_url')) ? daab_mail_field('page_url') : '',
 ];
+
+daab_input_guard($email, [$firstName, $lastName, $fatherName, $fullName], array_values($fields));
 
 $body = ($isAz ? "Yeni üzvlük müraciəti\n\n" : "New membership application\n\n");
 foreach ($labels as $key => $label) {
@@ -215,7 +217,7 @@ $to = 'info@daab-waas.com';
 $fromAddress = 'noreply@daab-waas.com';
 $fromName = $isAz ? 'DAAB' : 'WAAS';
 $headers = 'From: ' . $fromName . ' <' . $fromAddress . ">\r\n";
-$headers .= 'Reply-To: ' . $fullName . ' <' . $email . ">\r\n";
+$headers .= 'Reply-To: ' . daab_input_header_name($fullName) . ' <' . $email . ">\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 if (@mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, $headers)) {
@@ -223,9 +225,7 @@ if (@mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, $headers)) 
     $csvRow = $fields;
     $csvRow['locale'] = $locale;
     $csvRow['form_kind'] = 'membership';
-    $csvRow['received_at'] = ($fields['submitted_at'] ?? '') !== ''
-        ? $fields['submitted_at']
-        : gmdate('Y-m-d H:i:s') . ' UTC';
+    $csvRow['received_at'] = gmdate('Y-m-d H:i:s') . ' UTC';
     daab_append_registration_csv('membership', $csvRow);
     echo 'success';
 } else {

@@ -22,6 +22,7 @@ FOOTER_EN_LEADER_HTML = (
 
 FOOTER_AZ_LEGAL_LINKS = (
     '<nav class="footer-legal-links" aria-label="Hüquqi sənədlər və saytın xəritəsi">'
+    '<a href="/az/feedback.html">Rəy bildirin</a>'
     '<a href="/az/privacy.html#page-title">Məxfilik bildirişi</a>'
     '<a href="/az/terms.html#page-title">İstifadə şərtləri</a>'
     '<a href="/az/cookies.html#page-title">Kuki siyasəti</a>'
@@ -32,6 +33,7 @@ FOOTER_AZ_LEGAL_LINKS = (
 
 FOOTER_EN_LEGAL_LINKS = (
     '<nav class="footer-legal-links" aria-label="Legal documents and sitemap">'
+    '<a href="/en/feedback.html">Feedback</a>'
     '<a href="/en/privacy.html#page-title">Privacy notice</a>'
     '<a href="/en/terms.html#page-title">Terms of use</a>'
     '<a href="/en/cookies.html#page-title">Cookie policy</a>'

@@ -49,6 +49,7 @@
     "forum-2026": "forum2026Year",
     "forum-2026-register": "forum2026Register",
     "complex-topics": "complexTopics",
+    "complex-topics-apply": "complexTopicsApply",
     "complex-topics-approach": "complexTopicsApproach",
     "complex-topics-informatics": "complexTopicsInformatics",
     "forum-2024-presentations": "forum2024Presentations",
@@ -68,6 +69,7 @@
     "scientists-profiles": "scientistsProfilesForum",
     "executive-board": "executiveBoard",
     charter: "charter",
+    feedback: "feedbackShare",
     "legal-notice": "legalNotice",
     privacy: "privacy",
     cookies: "cookies",
@@ -253,6 +255,7 @@
         navParent: "about"
       },
       { id: "charter", az: "az/charter.html", en: "en/charter.html", navParent: "about" },
+      { id: "feedback", az: "az/feedback.html", en: "en/feedback.html", navParent: "about" },
       {
         id: "privacy",
         az: "az/privacy.html",
@@ -404,6 +407,7 @@
         scientistsProfilesForum: "Alimlərin profilləri",
         executiveBoard: "İdarə heyəti",
         charter: "Nizamnamə",
+        feedbackShare: "Rəyinizi bizimlə bölüşün",
         membership: "Üzvlük",
         membershipWhy: "DAAB üzvlüyü Sizə nə qazandırır?",
         membershipTerms: "Üzvlüyə dəvət və ödəniş",
@@ -446,6 +450,7 @@
         scientistsProfilesForum: "Profiles of Scientists",
         executiveBoard: "Executive Board",
         charter: "Charter",
+        feedbackShare: "Share your feedback with us",
         membership: "Membership",
         membershipWhy: "Why join WAAS",
         membershipTerms: "Invitation to Membership and Fees",
@@ -723,7 +728,7 @@
       }
     }
 
-    if (page.id === "complex-topics-approach" || page.id === "complex-topics-informatics") {
+    if (page.id === "complex-topics-approach" || page.id === "complex-topics-informatics" || page.id === "complex-topics-apply") {
       var competition = pageById(routes, "complex-topics");
       if (competition) {
         crumbs.push({

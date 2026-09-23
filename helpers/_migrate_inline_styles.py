@@ -8,7 +8,7 @@ from pathlib import Path
 from _paths import ROOT
 
 STYLE_BLOCK = re.compile(r"\s*<style>.*?</style>\s*", re.DOTALL | re.IGNORECASE)
-BACK_TO_TOP = '<link href="{root}css/daab-back-to-top.css?v=1" rel="stylesheet"/>'
+BACK_TO_TOP = '<link href="{root}css/daab-back-to-top.css?v=4" rel="stylesheet"/>'
 
 MIGRATIONS: list[dict] = [
     {

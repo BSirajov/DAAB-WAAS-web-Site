@@ -6,8 +6,14 @@ import argparse
 import gzip
 import io
 import mimetypes
+import socket
+import sys
+import threading
+import time
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from urllib.error import URLError
+from urllib.request import urlopen
 
 from _paths import ROOT
 
@@ -89,6 +95,40 @@ class DAABRequestHandler(SimpleHTTPRequestHandler):
         return io.BytesIO(data)
 
 
+def port_in_use(host: str, port: int) -> bool:
+    family = socket.AF_INET6 if ":" in host.strip("[]") else socket.AF_INET
+    sock = socket.socket(family, socket.SOCK_STREAM)
+    sock.settimeout(0.3)
+    try:
+        target = host.strip("[]")
+        return sock.connect_ex((target, port)) == 0
+    finally:
+        sock.close()
+
+
+def preview_ok(host: str, port: int) -> bool:
+    """True if this repo's Azerbaijani home page is being served."""
+    url = f"http://{host}:{port}/az/index.html"
+    try:
+        with urlopen(url, timeout=0.8) as resp:
+            body = resp.read().decode("utf-8", "replace")
+            return resp.status == 200 and "primaryNavMenu" in body
+    except (URLError, OSError, TimeoutError):
+        return False
+
+
+class ThreadingHTTPServerV6(ThreadingHTTPServer):
+    address_family = socket.AF_INET6
+
+
+def idle_until_interrupt() -> None:
+    try:
+        while True:
+            time.sleep(3600)
+    except KeyboardInterrupt:
+        print("\nStopped.")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="DAAB static site preview server")
     parser.add_argument("--port", type=int, default=8010)
@@ -98,12 +138,58 @@ def main() -> None:
     mimetypes.add_type("image/webp", ".webp")
     mimetypes.add_type("font/woff2", ".woff2")
 
-    server = ThreadingHTTPServer((args.bind, args.port), DAABRequestHandler)
-    print(f"Serving {ROOT} at http://{args.bind}:{args.port}/ (gzip + cache headers)")
+    ipv4_ok = preview_ok("127.0.0.1", args.port)
+    ipv6_ok = preview_ok("[::1]", args.port)
+    # Windows resolves localhost to ::1 first; require both loopbacks when we bind IPv4.
+    want_ipv6 = args.bind in ("127.0.0.1", "localhost")
+    healthy = ipv4_ok and (ipv6_ok if want_ipv6 else True)
+
+    # Reuse an already-running preview (VS Code F5 / START-SITE.bat) instead of crashing.
+    if healthy:
+        extra = " + http://[::1]" if ipv6_ok else ""
+        print(
+            f"Serving HTTP on {args.bind} port {args.port}{extra} "
+            f"(already running, {ROOT}) ...",
+            flush=True,
+        )
+        idle_until_interrupt()
+        return
+
+    if (
+        port_in_use(args.bind, args.port)
+        or port_in_use("127.0.0.1", args.port)
+        or (want_ipv6 and port_in_use("::1", args.port))
+    ):
+        print(
+            f"Port {args.port} is in use but is not serving this DAAB site "
+            f"({ROOT}/az/index.html). Stop the other listener or run START-SITE.bat.",
+            file=sys.stderr,
+            flush=True,
+        )
+        raise SystemExit(1)
+
+    servers: list[tuple[str, ThreadingHTTPServer]] = []
+    servers.append((args.bind, ThreadingHTTPServer((args.bind, args.port), DAABRequestHandler)))
+    if want_ipv6:
+        try:
+            servers.append(("::1", ThreadingHTTPServerV6(("::1", args.port), DAABRequestHandler)))
+        except OSError as exc:
+            print(f"(IPv6 ::1 not bound, localhost may fail: {exc})", flush=True)
+
+    bound = ", ".join(f"{host}:{args.port}" for host, _ in servers)
+    print(
+        f"Serving HTTP on {bound} ({ROOT}, gzip + cache headers) ...",
+        flush=True,
+    )
     try:
-        server.serve_forever()
+        for _host, extra in servers[1:]:
+            threading.Thread(target=extra.serve_forever, daemon=True).start()
+        servers[0][1].serve_forever()
     except KeyboardInterrupt:
         print("\nStopped.")
+    finally:
+        for _host, srv in servers:
+            srv.shutdown()
 
 
 if __name__ == "__main__":

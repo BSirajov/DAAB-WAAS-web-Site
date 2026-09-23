@@ -27,6 +27,7 @@ PAGE_LABEL_KEYS = {
     "forum-2026": "forum2026Year",
     "forum-2026-register": "forum2026Register",
     "complex-topics": "complexTopics",
+    "complex-topics-apply": "complexTopicsApply",
     "complex-topics-approach": "complexTopicsApproach",
     "complex-topics-informatics": "complexTopicsInformatics",
     "forum-2024-presentations": "forum2024Presentations",
@@ -46,6 +47,7 @@ PAGE_LABEL_KEYS = {
     "scientists-profiles": "scientistsProfiles",
     "executive-board": "executiveBoard",
     "charter": "charter",
+    "feedback": "feedbackShare",
     "legal-notice": "legalNotice",
     "privacy": "privacy",
     "cookies": "cookies",
@@ -64,9 +66,11 @@ PAGE_BADGES = {
     "forum-2026": "new",
     "forum-2026-register": "new",
     "complex-topics": "new",
+    "complex-topics-apply": "new",
     "complex-topics-approach": "new",
     "complex-topics-informatics": "new",
     "sitemap": "new",
+    "feedback": "new",
     "privacy": "updated",
     "terms": "updated",
     "cookies": "updated",
@@ -131,7 +135,7 @@ HELP_ICONS = ("🌐", "🔍", "🍪", "⚖️")
 # (section_id, label_key OR None for custom title key in COPY, page_ids)
 GROUPS: list[tuple[str, str, list[str]]] = [
     ("home", "home", ["home"]),
-    ("about", "about", ["foundation", "mission", "executive-board", "charter"]),
+    ("about", "about", ["foundation", "mission", "executive-board", "charter", "feedback"]),
     ("activities", "activities", ["activities-news", "work-done-2024-2026"]),
     (
         "forum-2024",
@@ -154,7 +158,7 @@ GROUPS: list[tuple[str, str, list[str]]] = [
         ],
     ),
     ("forum-2026", "forum2026Year", ["forum-2026", "forum-2026-register"]),
-    ("complex-topics", "complexTopics", ["complex-topics", "complex-topics-approach", "complex-topics-informatics"]),
+    ("complex-topics", "complexTopics", ["complex-topics", "complex-topics-apply", "complex-topics-approach", "complex-topics-informatics"]),
     ("scientists", "scientists", ["scientists-list", "scientists-profiles"]),
     (
         "membership",
@@ -307,6 +311,10 @@ COPY = {
         "section_count": "{n}",
         "empty": "Uyğun səhifə tapılmadı. Başqa açar söz yoxlayın.",
         "jump_aria": "Bölmələrə keçid",
+        "tools_open": "Axtarış və bölmələr",
+        "tools_open_aria": "Axtarış və bölmələri aç",
+        "toolbar_expand": "Paneli aç",
+        "toolbar_collapse": "Paneli yığ",
         "start_title": "Buradan başlayın",
         "start_lead": "İlk dəfə gələnlər üçün ən faydalı səhifələr",
         "lang_title": "Dil",
@@ -370,6 +378,10 @@ COPY = {
         "section_count": "{n}",
         "empty": "No matching pages. Try a different keyword.",
         "jump_aria": "Jump to sections",
+        "tools_open": "Search and sections",
+        "tools_open_aria": "Open search and sections",
+        "toolbar_expand": "Expand toolbar",
+        "toolbar_collapse": "Collapse toolbar",
         "start_title": "Start here",
         "start_lead": "The most useful pages for first-time visitors",
         "lang_title": "Language",
@@ -814,20 +826,28 @@ def render_body(lang: str, routes: dict, ui: dict, subs: dict) -> str:
         '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>'
     )
 
-    return f"""
-<section class="sitemap-start" aria-labelledby="sitemap-start-title">
-  <div class="sitemap-start__ornament" aria-hidden="true"></div>
-  <div class="sitemap-start__head">
-    <span class="sitemap-start__mark" aria-hidden="true">✨</span>
-    <div>
-      <h2 id="sitemap-start-title">{esc(copy["start_title"])}</h2>
-      <p>{esc(copy["start_lead"])}</p>
-    </div>
-  </div>
-  <ul class="sitemap-grid sitemap-grid--start">{"".join(start_items)}</ul>
-</section>
+    toggle_icon = (
+        '<svg class="sitemap-tools-toggle__icon" viewBox="0 0 24 24" width="22" height="22" '
+        'fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" '
+        'stroke-linejoin="round" aria-hidden="true">'
+        '<path d="M6 14.5 12 8.5 18 14.5"/></svg>'
+    )
 
+    launch_icon = (
+        '<svg class="sitemap-tools-launch__icon" viewBox="0 0 24 24" fill="none" '
+        'stroke="currentColor" stroke-width="2" aria-hidden="true">'
+        '<path d="M4 7h16M4 12h16M4 17h10"/></svg>'
+    )
+
+    controls = f"""
 <div class="sitemap-controls" role="search">
+  <button type="button" id="sitemap-tools-launch" class="sitemap-tools-launch"
+    aria-controls="sitemap-tools-panel" aria-expanded="false"
+    aria-label="{esc(copy["tools_open_aria"])}">
+    {launch_icon}
+    <span class="sitemap-tools-launch__label">{esc(copy["tools_open"])}</span>
+  </button>
+  <div id="sitemap-tools-panel" class="sitemap-tools-panel">
   <div class="sitemap-search-row">
     <div class="sitemap-search">
       <label class="visually-hidden" for="sitemap-filter">{esc(copy["search_label"])}</label>
@@ -845,12 +865,36 @@ def render_body(lang: str, routes: dict, ui: dict, subs: dict) -> str:
   <ul class="sitemap-chips" aria-label="{esc(copy["jump_aria"])}">
     {"".join(chips)}
   </ul>
+  </div>
+  <button type="button" id="sitemap-toolbar-toggle" class="sitemap-tools-toggle"
+    aria-controls="sitemap-tools-panel" aria-expanded="true"
+    title="{esc(copy["toolbar_collapse"])}"
+    aria-label="{esc(copy["toolbar_collapse"])}"
+    data-label-expand="{esc(copy["toolbar_expand"])}"
+    data-label-collapse="{esc(copy["toolbar_collapse"])}">
+    {toggle_icon}
+  </button>
 </div>
+""".strip()
+
+    main = f"""
+<section class="sitemap-start" aria-labelledby="sitemap-start-title">
+  <div class="sitemap-start__ornament" aria-hidden="true"></div>
+  <div class="sitemap-start__head">
+    <span class="sitemap-start__mark" aria-hidden="true">✨</span>
+    <div>
+      <h2 id="sitemap-start-title">{esc(copy["start_title"])}</h2>
+      <p>{esc(copy["start_lead"])}</p>
+    </div>
+  </div>
+  <ul class="sitemap-grid sitemap-grid--start">{"".join(start_items)}</ul>
+</section>
 <div class="sitemap-sections" id="sitemap-sections">
   {"".join(sections)}
 </div>
 <p id="sitemap-empty" class="sitemap-empty" role="status">{esc(copy["empty"])}</p>
 """.strip()
+    return controls, main
 
 
 def shell_head(cfg: dict, lang: str) -> str:
@@ -911,11 +955,12 @@ def build_page(lang: str, routes: dict, ui: dict, subs: dict) -> None:
     if not nav:
         raise SystemExit(f"Could not extract nav from membership_value ({lang})")
     footer = FOOTER_AZ_HTML if lang == "az" else FOOTER_EN_HTML
-    body = render_body(lang, routes, ui, subs)
+    controls, body = render_body(lang, routes, ui, subs)
 
     page = shell_head(copy, lang) + f"""<body class="sitemap-page">
 <a class="skip" href="#content">{SKIP[lang]}</a>
 {nav}
+{controls}
 <header class="hero">
 <div class="hero-wrap shell">
 <section>

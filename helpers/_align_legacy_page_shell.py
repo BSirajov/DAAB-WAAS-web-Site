@@ -24,13 +24,13 @@ CHARTER_HEAD_SHELL = """<link href="../css/daab-fonts.css?v=1" rel="stylesheet"/
 <link href="../css/daab-common.css?v=21" rel="stylesheet"/>
 <link href="../css/daab-mobile.css?v=4" rel="stylesheet"/>
 <link href="../css/daab-search.css?v=3" rel="stylesheet"/>
-<link href="../css/daab-back-to-top.css?v=1" rel="stylesheet"/>
+<link href="../css/daab-back-to-top.css?v=4" rel="stylesheet"/>
 """
 
 CHARTER_HEAD_TAIL = """<link href="../css/daab-hero-summary.css?v=1" rel="stylesheet"/>
 <link href="../css/daab-sidebar-widget.css?v=2" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=1" defer></script>
-<script src="../js/daab-back-to-top.js?v=2" defer></script>
+<script src="../js/daab-back-to-top.js?v=5" defer></script>
 <link href="../css/daab-lang.css?v=9" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=11" rel="stylesheet"/>
 <script src="../js/daab-i18n.js?v=12" defer></script>

@@ -349,6 +349,8 @@ div.breadcrumbs.forum-breadcrumbs{
     transition: opacity .14s ease, visibility .14s ease;
   }
 
+  .nav-dropdown--forums .nav-dropdown--nested.nav-dropdown--has-mega:hover > .nav-dropdown-panel--mega,
+  .nav-dropdown--forums .nav-dropdown--nested.nav-dropdown--has-mega.open > .nav-dropdown-panel--mega,
   .nav-dropdown--forums .nav-dropdown--nested.nav-dropdown--has-mega.is-forum-mega-open > .nav-dropdown-panel--mega,
   .nav-dropdown--forums .nav-dropdown--nested.nav-dropdown--has-mega:focus-within > .nav-dropdown-panel--mega{
     opacity: 1;
@@ -372,6 +374,18 @@ div.breadcrumbs.forum-breadcrumbs{
     right: auto;
     width: 18px;
     height: auto;
+  }
+
+  /* Open toward the spare side so the I Forum grid stays inside the viewport. */
+  .nav-dropdown--forums .nav-dropdown--nested.nav-dropdown--has-mega.is-mega-align-start > .nav-dropdown-panel--mega{
+    left: auto;
+    right: 100%;
+    margin: 0 -2px 0 0;
+  }
+
+  .nav-dropdown--forums .nav-dropdown--nested.nav-dropdown--has-mega.is-mega-align-start > .nav-dropdown-panel--mega::before{
+    left: auto;
+    right: -18px;
   }
 
   .nav-dropdown--forums .nav-dropdown--nested .nav-mega-grid{
@@ -826,6 +840,10 @@ div.breadcrumbs.forum-breadcrumbs{
   border: 1px solid var(--color-border-blue-faint);
   border-radius: 12px;
   box-shadow: 0 16px 40px rgba(0, 45, 82, .22);
+}
+.nav-dropdown-panel > .nav-dropdown--nested.open > .nav-dropdown-panel,
+.nav-dropdown-panel > .nav-dropdown--nested.is-submenu-open > .nav-dropdown-panel{
+  display: flex;
 }
 
 /* Side flyouts only when desktop nav is active (≥1181). Hamburger band uses accordion. */

@@ -20,7 +20,7 @@ AZ = "../.."
 
 SHELL_SCRIPTS = """
 <script src="{a}js/daab-mobile.js?v=1" defer></script>
-<script src="{a}js/daab-back-to-top.js?v=2" defer></script>
+<script src="{a}js/daab-back-to-top.js?v=5" defer></script>
 <script src="{a}js/daab-i18n.js?v=12" defer></script>
 <script src="{a}js/daab-lang-position.js?v=7" defer></script>
 <script src="{a}js/daab-nav.js?v=8" defer></script>
@@ -118,7 +118,7 @@ def page_shell(
 <link href="{ASSET}css/daab-common.css?v=24" rel="stylesheet"/>
 <link href="{ASSET}css/daab-mobile.css?v=5" rel="stylesheet"/>
 <link href="{ASSET}css/daab-search.css?v=3" rel="stylesheet"/>
-<link href="{ASSET}css/daab-back-to-top.css?v=1" rel="stylesheet"/>
+<link href="{ASSET}css/daab-back-to-top.css?v=4" rel="stylesheet"/>
 <link href="{ASSET}css/daab-lang.css?v=10" rel="stylesheet"/>
 <link href="{ASSET}css/daab-nav-mega.css?v=12" rel="stylesheet"/>
 <link href="{ASSET}css/daab-forum-book.css?v=2" rel="stylesheet"/>

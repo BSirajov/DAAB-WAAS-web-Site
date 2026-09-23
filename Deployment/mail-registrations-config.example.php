@@ -8,8 +8,7 @@
  *   (the folder next to public_html, not inside it)
  *
  * Forum CV and photo copies:
- *   daab-private/forum-2026-files/CV_FirstName_Surname.pdf
- *   daab-private/forum-2026-files/Photo_FirstName_Surname.jpg
+ *   daab-private/forum-2026-files/
  *
  * Fallback if that parent folder is not writable:
  *   public_html/daab-private/  (blocked from the web by .htaccess)

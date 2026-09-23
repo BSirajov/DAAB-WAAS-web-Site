@@ -10,7 +10,7 @@ production web host. They are **not** committed to GitHub.
 
 ## Deploy
 
-1. Keep this folder on your machine (and a backup).
-2. Upload `Books/` to the website root (same paths the HTML links use).
-3. When rebuilding `Deployment/`, existing `Deployment/Books/` is preserved;
-   upload it to the host separately if needed, or copy from this folder before FTP.
+1. Keep this folder on your machine (and a backup). It is not committed to Git.
+2. `python helpers/_build_deployment_folder.py` copies `Books/` and `images/`
+   into `Deployment/`.
+3. Upload the whole `Deployment/` folder after emptying the production folder.

@@ -94,6 +94,10 @@
       "en": "Strategic investment in science, education, innovation, and human capital — a sponsorship and partnership proposal for WAAS.",
       "az": "Elm, təhsil, innovasiya və insan kapitalına strateji sərmayə — DAAB ilə sponsorluq və tərəfdaşlıq təklifi."
     },
+    "feedback": {
+      "en": "Comments, suggestions, and problems you find on this website",
+      "az": "Sayt haqqında şərhlər, təkliflər və rastlaşdığınız problemlər"
+    },
     "donate": {
       "en": "Support WAAS with a bank transfer — any amount helps",
       "az": "Bank köçürməsi ilə DAAB-a ianə — hər bir məbləğ dəyərlidir"
@@ -141,6 +145,10 @@
     "forum-2026-register": {
       "en": "Register as a participant in the 2nd Forum of Azerbaijani Scientists Living Abroad",
       "az": "Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumu üçün iştirakçı kimi qeydiyyatdan keçin"
+    },
+    "complex-topics-apply": {
+      "en": "Submit your application",
+      "az": "Müraciətinizi göndərin"
     },
     "complex-topics": {
       "en": "Making difficult subjects understandable",

@@ -1,5 +1,5 @@
 {
-  "version": 20,
+  "version": 22,
   "defaultLang": "az",
   "languages": [
     "az",
@@ -86,6 +86,15 @@
       "navOrder": 3,
       "az": "az/complex-topics.html",
       "en": "en/complex-topics.html"
+    },
+    {
+      "id": "complex-topics-apply",
+      "navId": "complex-topics-apply",
+      "navGroup": "forums",
+      "navParent": "forums",
+      "navOrder": 3.05,
+      "az": "az/complex-topics-apply.html",
+      "en": "en/complex-topics-apply.html"
     },
     {
       "id": "complex-topics-approach",
@@ -230,6 +239,15 @@
       "navOrder": 4,
       "az": "az/charter.html",
       "en": "en/charter.html"
+    },
+    {
+      "id": "feedback",
+      "navId": "feedback",
+      "navGroup": "about",
+      "navParent": "about",
+      "navOrder": 5,
+      "az": "az/feedback.html",
+      "en": "en/feedback.html"
     },
     {
       "id": "privacy",

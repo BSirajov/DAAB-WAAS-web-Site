@@ -497,7 +497,7 @@ def shell_head() -> str:
 <link href="{ASSET}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-sticky-chrome.css?v={st.get("daab-sticky-chrome.css", 1)}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-search.css?v={st["daab-search.css"]}" rel="stylesheet"/>
-<link href="{ASSET}css/daab-back-to-top.css?v=2" rel="stylesheet"/>
+<link href="{ASSET}css/daab-back-to-top.css?v=4" rel="stylesheet"/>
 <link href="{ASSET}css/daab-content-hero.css?v={st.get("daab-content-hero.css", 5)}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-hero-summary.css?v={st["daab-hero-summary.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-sidebar-widget.css?v={st.get("daab-sidebar-widget.css", 6)}" rel="stylesheet"/>
@@ -621,7 +621,7 @@ def shell_head_en() -> str:
 <link href="{ASSET}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-sticky-chrome.css?v={st.get("daab-sticky-chrome.css", 1)}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-search.css?v={st["daab-search.css"]}" rel="stylesheet"/>
-<link href="{ASSET}css/daab-back-to-top.css?v=2" rel="stylesheet"/>
+<link href="{ASSET}css/daab-back-to-top.css?v=4" rel="stylesheet"/>
 <link href="{ASSET}css/daab-content-hero.css?v={st.get("daab-content-hero.css", 5)}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-hero-summary.css?v={st["daab-hero-summary.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-sidebar-widget.css?v={st.get("daab-sidebar-widget.css", 6)}" rel="stylesheet"/>

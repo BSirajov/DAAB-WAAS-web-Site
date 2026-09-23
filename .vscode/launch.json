@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8010/index.html",
+            "url": "http://127.0.0.1:8010/az/index.html",
             "webRoot": "${workspaceFolder}",
             "preLaunchTask": "Start DAAB static server"
         }

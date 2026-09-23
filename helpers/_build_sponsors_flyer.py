@@ -236,7 +236,7 @@ def shell_head(cfg: dict) -> str:
 <link href="{ASSET}css/daab-common.css?v={st["daab-common.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-search.css?v={st["daab-search.css"]}" rel="stylesheet"/>
-<link href="{ASSET}css/daab-back-to-top.css?v=2" rel="stylesheet"/>
+<link href="{ASSET}css/daab-back-to-top.css?v=4" rel="stylesheet"/>
 <link href="{ASSET}css/daab-lang.css?v={st["daab-lang.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-nav-mega.css?v={st["daab-nav-mega.css"]}" rel="stylesheet"/>
 <link href="{ASSET}css/daab-content-hero.css?v={st["daab-content-hero.css"]}" rel="stylesheet"/>

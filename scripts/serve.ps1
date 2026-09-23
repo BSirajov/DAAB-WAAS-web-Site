@@ -2,6 +2,6 @@
 $Port = 8010
 $Root = Split-Path $PSScriptRoot -Parent
 Set-Location $Root
-Write-Host "DAAB static server: http://127.0.0.1:$Port/index.html"
+Write-Host "DAAB static server: http://127.0.0.1:$Port/az/index.html"
 Write-Host "Press Ctrl+C to stop."
-python -m http.server $Port --bind 127.0.0.1
+python helpers/serve_site.py --bind 127.0.0.1 --port $Port

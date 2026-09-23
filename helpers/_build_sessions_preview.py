@@ -1112,7 +1112,7 @@ def build_html(
 <link href="{asset}css/daab-mobile.css?v={st["daab-mobile.css"]}" rel="stylesheet"/>
 <link href="{asset}css/daab-sticky-chrome.css?v={st.get("daab-sticky-chrome.css", 1)}" rel="stylesheet"/>
 <link href="{asset}css/daab-search.css?v={st["daab-search.css"]}" rel="stylesheet"/>
-<link href="{asset}css/daab-back-to-top.css?v=2" rel="stylesheet"/>
+<link href="{asset}css/daab-back-to-top.css?v=4" rel="stylesheet"/>
 <link href="{asset}css/daab-lang.css?v={st["daab-lang.css"]}" rel="stylesheet"/>
 <link href="{asset}css/daab-nav-mega.css?v={st["daab-nav-mega.css"]}" rel="stylesheet"/>
 <link href="{asset}css/daab-hero-summary.css?v={st["daab-hero-summary.css"]}" rel="stylesheet"/>

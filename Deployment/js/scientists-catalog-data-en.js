@@ -503,7 +503,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "say": 51,
     "yasadigi_olke": "Russia",
     "ad_soyad": "Kamran Rustamov",
-    "email": "aliev.05@mail.ru",
+    "email": "k-rust@rambler.ru",
     "ixtilas": "Engineering",
     "elmi_derece": "Prof.Dr.",
     "cinsi": "male",

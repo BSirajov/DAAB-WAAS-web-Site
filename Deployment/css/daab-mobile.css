@@ -27,7 +27,7 @@ body:not(.daab-gateway) > .nav-strip,
 }
 
 /* Touch / tablet: tap-to-open dropdown when hover is unavailable */
-@media (hover: none), (pointer: coarse) {.nav-dropdown.open .nav-dropdown-panel{
+@media (hover: none), (pointer: coarse) {.nav-dropdown.open > .nav-dropdown-panel{
     display: flex !important;
   }.nav-dropdown-toggle{
     touch-action: manipulation;
