@@ -911,6 +911,33 @@ html[data-daab-page-id="activities-news"] .saadet-gallery{
 @media (max-width: 560px) {html[data-daab-page-id="activities-news"] #bmu-2026 .card-gallery.double,html[data-daab-page-id="activities-news"] #baxtiyar-187-2026 .card-gallery.double{
     grid-template-columns: 1fr !important;
   }
+}html[data-daab-page-id="activities-news"] #sheki-zaqatala-2026 .card-gallery.double{
+  align-items: start !important;
+}html[data-daab-page-id="activities-news"] #sheki-zaqatala-2026 .card-gallery.double img{
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  padding: 0;
+}@media (max-width: 760px) {html[data-daab-page-id="activities-news"] #sheki-zaqatala-2026 .card-gallery.double{
+    grid-template-columns: 1fr !important;
+  }
+}html[data-daab-page-id="activities-news"] #zaqatala-muellimler-2026 .card-gallery.triple,html[data-daab-page-id="activities-news"] #ldu-seminar-2026 .card-gallery.triple{
+  align-items: start !important;
+}html[data-daab-page-id="activities-news"] #zaqatala-muellimler-2026 .card-gallery.triple img,html[data-daab-page-id="activities-news"] #ldu-seminar-2026 .card-gallery.triple img{
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  padding: 0;
+}@media (max-width: 760px) {html[data-daab-page-id="activities-news"] #zaqatala-muellimler-2026 .card-gallery.triple,html[data-daab-page-id="activities-news"] #ldu-seminar-2026 .card-gallery.triple{
+    grid-template-columns: 1fr !important;
+  }
+}html[data-daab-page-id="activities-news"] #daab-azedu-2026 .card-gallery.single img{
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: contain !important;
 }/* Summer school photo — float right, text wrap *//* Amirulla Mammadov jubilee — float right, text wrap */html[data-daab-page-id="activities-news"] #amirulla-80-2026 .amirulla-jubilee-photo{
   float: right !important;
   width: min(260px, 42%) !important;
