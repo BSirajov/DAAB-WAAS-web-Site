@@ -280,7 +280,7 @@
   }
 
   function init() {
-    if (!readConsent()) showBanner(false);
+    /* Banner hidden for now. Restore: if (!readConsent()) showBanner(false); */
   }
 
   global.DAAB_COOKIE = {
@@ -288,7 +288,7 @@
     read: readConsent,
     hasAnalyticsConsent: hasAnalyticsConsent,
     openSettings: function () {
-      showBanner(true);
+      /* Banner hidden for now. Restore: showBanner(true); */
     },
     acceptAll: function () {
       writeConsent(true);

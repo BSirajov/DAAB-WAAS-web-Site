@@ -1100,7 +1100,7 @@ html[data-daab-page-id="forum-2026"] .rector-toc-titles{
   font-size: 9px;
   line-height: 1.42;
   color: var(--muted, #5a7084);
-}html[data-daab-page-id="forum-anas-leadership-speeches"],
+}html[data-daab-page-id="forum-anas-leadership-speeches"] .rector-toc-speech-title,
 html[data-daab-page-id="forum-2026"] .rector-toc-speech-title{
   display: block;
   margin-top: 0.15rem;
@@ -1109,11 +1109,11 @@ html[data-daab-page-id="forum-2026"] .rector-toc-speech-title{
   line-height: 1.38;
   letter-spacing: 0.02em;
   color: var(--blue-700, #0069b4);
-}html[data-daab-page-id="forum-anas-leadership-speeches"],
-html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link:hover .rector-toc-speech-title,
+}html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link:hover .rector-toc-speech-title,
 html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector-toc-link:hover .rector-toc-speech-title,
 html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link:focus-visible .rector-toc-speech-title,
 html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector-toc-link:focus-visible .rector-toc-speech-title,
+html[data-daab-page-id="forum-anas-leadership-speeches"] .timeline-list a.rector-toc-link.tl-active .rector-toc-speech-title,
 html[data-daab-page-id="forum-2026"] .timeline-list a.rector-toc-link.tl-active .rector-toc-speech-title{
   color: inherit;
 }html[data-daab-page-id="forum-rector-speeches"] .timeline-list a.rector-toc-link:hover .rector-toc-name,

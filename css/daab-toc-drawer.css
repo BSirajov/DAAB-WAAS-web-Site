@@ -24,10 +24,11 @@
     position: fixed;
     left: max(12px, env(safe-area-inset-left));
     bottom: calc(16px + env(safe-area-inset-bottom));
-    z-index: var(--z-sidebar-mobile, 4500);
+    z-index: 4600;
     align-items: center;
     gap: 8px;
     min-height: 44px;
+    min-width: 44px;
     padding: 0 16px 0 12px;
     border: 1px solid rgba(255, 255, 255, 0.28);
     border-radius: 999px;
@@ -39,17 +40,14 @@
     font-weight: 700;
     line-height: 1;
     cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .daab-toc-launch:focus-visible,
   .cta-toc-launch:focus-visible {
     outline: 2px solid var(--blue-400, #4aa3d8);
     outline-offset: 3px;
-  }
-
-  html.daab-toc-open .daab-toc-launch,
-  html.daab-toc-open .cta-toc-launch {
-    display: none;
   }
 
   .daab-toc-backdrop,
@@ -62,6 +60,9 @@
     left: 0;
     z-index: 4490;
     background: rgba(3, 24, 42, 0.42);
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   html.daab-toc-open .daab-toc-backdrop,
@@ -82,11 +83,13 @@
     width: min(22rem, calc(100vw - 28px)) !important;
     max-width: min(22rem, calc(100vw - 28px)) !important;
     max-height: none !important;
-    padding: 10px 10px 12px !important;
+    /* Keep the list above the Contents button and the home indicator. */
+    padding: 10px 10px calc(72px + env(safe-area-inset-bottom, 0px)) !important;
     margin: 0 !important;
     transform: translateX(-105%);
-    visibility: hidden;
-    transition: transform 0.24s ease, visibility 0.24s ease;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: transform 0.24s ease;
   }
 
   html.daab-toc-open.daab-toc-page .content-wrap > aside.sidebar,
@@ -95,7 +98,8 @@
   html.daab-toc-open.daab-toc-page .report-layout > aside.sidebar,
   html.daab-toc-open.daab-toc-page aside.sidebar {
     transform: none;
-    visibility: visible;
+    visibility: visible !important;
+    pointer-events: auto !important;
   }
 
   html.daab-toc-page aside.sidebar .sidebar-widget {
@@ -112,8 +116,34 @@
     flex: 1 1 auto !important;
     min-height: 0 !important;
     max-height: none !important;
+    overflow-x: hidden !important;
     overflow-y: auto !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
     padding: 16px 20px !important;
+  }
+
+  html.daab-toc-page aside.sidebar .presentation-toc-name,
+  html.daab-toc-page aside.sidebar .rector-toc-name,
+  html.daab-toc-page aside.sidebar .timeline-link-title {
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  html.daab-toc-page aside.sidebar .presentation-toc-title,
+  html.daab-toc-page aside.sidebar .rector-toc-titles,
+  html.daab-toc-page aside.sidebar .rector-toc-speech-title,
+  html.daab-toc-page aside.sidebar .timeline-link-teaser {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  html.daab-toc-page[data-daab-page-id="forum-sessions-organization"] aside.sidebar .timeline-list li.toc-sub a,
+  html.daab-toc-page[data-daab-page-id="forum-sessions-organization"] aside.sidebar .timeline-list li.toc-qarisiq-sub a,
+  html.daab-toc-page[data-daab-page-id="forum-sessions-organization"] aside.sidebar .timeline-list li.toc-ixtisas-group a,
+  html.daab-toc-page[data-daab-page-id="forum-sessions-organization"] aside.sidebar .timeline-list .toc-section-label {
+    font-size: 14px !important;
+    line-height: 1.35 !important;
   }
 
   html.daab-toc-open body.daab-toc-scroll-lock {

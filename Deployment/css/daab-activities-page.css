@@ -630,8 +630,25 @@ html[data-daab-page-id="activities-news"] .saadet-gallery{
 
 @media (max-width: 760px) {html[data-daab-page-id="activities-news"] .page-hero{
     background-size:auto 360px;
+  }html[data-daab-page-id="activities-news"] .activities-hero-wrap{
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 14px !important;
+    align-items: stretch !important;
+  }html[data-daab-page-id="activities-news"] .activities-hero-wrap > section{
+    display: contents;
+  }html[data-daab-page-id="activities-news"] .activities-hero-wrap > section > h1{
+    order: 1;
+    margin-bottom: 0 !important;
+  }html[data-daab-page-id="activities-news"] .activities-hero-wrap .page-hero-subtitle{
+    order: 2;
+    margin: 0 !important;
+    max-width: none !important;
   }html[data-daab-page-id="activities-news"] .activities-summary-panel{
-    max-width: 100% !important;
+    order: 3;
+    width: 100%;
+    max-width: none !important;
+    justify-self: stretch;
+    margin: 0;
     padding:8px;
   }html[data-daab-page-id="activities-news"] .activities-summary-card{
     padding:10px 12px;
@@ -1202,6 +1219,36 @@ html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery 
     margin:0 auto 18px;
     text-align:center;
   }
+}/* Taleb interview — photo top-right, text wrap; stacked full width on mobile */html[data-daab-page-id="activities-news"] #efendiyev-taleb-2026 .taleb-interview-photo{
+  float: right !important;
+  width: min(280px, 42%) !important;
+  margin:0 0 16px 22px;
+  padding:0;
+  border:0;
+  background:transparent;
+}html[data-daab-page-id="activities-news"] #efendiyev-taleb-2026 .taleb-interview-photo img{
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius:12px;
+  border:1px solid var(--color-border-blue-16, rgba(0, 105, 180, 0.16));
+  box-shadow:0 6px 20px rgba(0, 45, 82, 0.14);
+  background:#fff;
+}html[data-daab-page-id="activities-news"] #efendiyev-taleb-2026 .card-body::after{
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}html[data-daab-page-id="activities-news"] #efendiyev-taleb-2026 .card-source{
+  clear: both !important;
+  display: flex !important;
+  width: fit-content;
+}
+@media (max-width: 760px) {html[data-daab-page-id="activities-news"] #efendiyev-taleb-2026 .taleb-interview-photo{
+    float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin:0 0 16px;
+  }
 }
 
 .daab-print-figure {
@@ -1394,7 +1441,8 @@ html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery 
 
   html[data-daab-page-id="activities-news"] #amirulla-80-2026 .amirulla-jubilee-photo,
   html[data-daab-page-id="activities-news"] #garuslu-book-2026 .garuslu-book-cover,
-  html[data-daab-page-id="activities-news"] #forum-book-2026 .forum-book-cover {
+  html[data-daab-page-id="activities-news"] #forum-book-2026 .forum-book-cover,
+  html[data-daab-page-id="activities-news"] #efendiyev-taleb-2026 .taleb-interview-photo {
     float: right !important;
     width: 42mm !important;
     max-width: 42% !important;
@@ -1403,7 +1451,8 @@ html[data-daab-page-id="activities-news"] #unec-zaqatala-2026 .zaqatala-gallery 
 
   html[data-daab-page-id="activities-news"] #amirulla-80-2026 .amirulla-jubilee-photo img,
   html[data-daab-page-id="activities-news"] #garuslu-book-2026 .garuslu-book-cover img,
-  html[data-daab-page-id="activities-news"] #forum-book-2026 .forum-book-cover img {
+  html[data-daab-page-id="activities-news"] #forum-book-2026 .forum-book-cover img,
+  html[data-daab-page-id="activities-news"] #efendiyev-taleb-2026 .taleb-interview-photo img {
     width: 100% !important;
     max-height: 58mm !important;
   }
