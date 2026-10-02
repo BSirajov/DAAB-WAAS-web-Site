@@ -101,28 +101,74 @@
     return true;
   }
 
+  function bindPress(el, action) {
+    if (!el || el.getAttribute("data-daab-toc-bound")) return;
+    el.setAttribute("data-daab-toc-bound", "1");
+    var last = 0;
+    function invoke(event) {
+      var now = Date.now();
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      if (now - last < 500) return;
+      last = now;
+      action();
+    }
+    el.addEventListener("click", invoke);
+    el.addEventListener(
+      "touchend",
+      function (event) {
+        if (event.touches && event.touches.length) return;
+        invoke(event);
+      },
+      { passive: false }
+    );
+  }
+
   function bind() {
     if (!ensureChrome()) return;
 
-    if (launch && !launch.getAttribute("data-daab-toc-bound")) {
-      launch.setAttribute("data-daab-toc-bound", "1");
-      launch.addEventListener("click", function (event) {
-        event.stopPropagation();
-        setOpen(!widgetOpen());
-        if (widgetOpen() && toggle) toggle.focus();
-      });
-    }
+    bindPress(launch, function () {
+      setOpen(!widgetOpen());
+      if (widgetOpen() && toggle) {
+        try {
+          toggle.focus({ preventScroll: true });
+        } catch (err) {
+          toggle.focus();
+        }
+      }
+    });
 
-    if (backdrop && !backdrop.getAttribute("data-daab-toc-bound")) {
-      backdrop.setAttribute("data-daab-toc-bound", "1");
-      backdrop.addEventListener("click", close);
-    }
+    bindPress(backdrop, close);
 
     if (toggle && !toggle.getAttribute("data-daab-toc-bound")) {
       toggle.setAttribute("data-daab-toc-bound", "1");
-      toggle.addEventListener("click", function () {
-        window.requestAnimationFrame(syncFromWidget);
-      });
+      var lastToggleTouch = 0;
+      toggle.addEventListener(
+        "touchend",
+        function (event) {
+          if (!mq.matches) return;
+          if (event.touches && event.touches.length) return;
+          event.preventDefault();
+          event.stopPropagation();
+          lastToggleTouch = Date.now();
+          setOpen(!widgetOpen());
+        },
+        { capture: true, passive: false }
+      );
+      toggle.addEventListener(
+        "click",
+        function (event) {
+          if (!mq.matches) return;
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+          if (Date.now() - lastToggleTouch < 500) return;
+          setOpen(!widgetOpen());
+        },
+        true
+      );
     }
 
     document.addEventListener("click", function () {
