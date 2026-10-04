@@ -49,6 +49,17 @@ body.daab-toc-scroll-lock .report-print-btn{
   pointer-events: none;
 }
 
+/* Phones and tablets (--bp-sidebar-stack). Desktop above 1060px keeps the control. */
+@media (max-width: 1060px) {
+  .report-print-btn,
+  #daab-print-pdf,
+  #flyerPrintPdfBtn{
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
 @media print {
   .report-print-btn{
     display: none !important;

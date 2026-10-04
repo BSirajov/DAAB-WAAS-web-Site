@@ -172,6 +172,9 @@
     document.addEventListener("click", function (e) {
       if (!mobileQuery().matches || !widget.classList.contains("events-open")) return;
       if (widget.contains(e.target)) return;
+      if (window.DAAB_TOC_DRAWER && typeof window.DAAB_TOC_DRAWER.holdingOpen === "function" && window.DAAB_TOC_DRAWER.holdingOpen()) return;
+      var target = e.target;
+      if (target && typeof target.closest === "function" && target.closest(".daab-toc-launch, .cta-toc-launch, #daabTocLaunch, #ctaTocLaunch, .daab-toc-backdrop, .cta-toc-backdrop")) return;
       closeMenu();
     });
 

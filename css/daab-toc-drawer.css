@@ -23,8 +23,11 @@
     display: inline-flex;
     position: fixed;
     left: max(12px, env(safe-area-inset-left));
-    bottom: calc(16px + env(safe-area-inset-bottom));
-    z-index: 4600;
+    /* Stay on `bottom`. JS must not replace this with an inline `top`:
+       iOS WebKit hit-tests that `top` under the browser UI in Safari,
+       Chrome, and Edge. Coarse pointers clear that UI plus the home indicator. */
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    z-index: 10070;
     align-items: center;
     gap: 8px;
     min-height: 44px;
@@ -42,6 +45,20 @@
     cursor: pointer;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .daab-toc-launch > *,
+  .cta-toc-launch > * {
+    pointer-events: none;
+  }
+
+  @media (hover: none), (pointer: coarse) {
+    .daab-toc-launch,
+    .cta-toc-launch {
+      bottom: calc(136px + env(safe-area-inset-bottom, 0px));
+    }
   }
 
   .daab-toc-launch:focus-visible,
@@ -54,7 +71,7 @@
   .cta-toc-backdrop {
     display: none;
     position: fixed;
-    top: var(--daab-sticky-top-stack, var(--daab-nav-height, 86px));
+    top: var(--daab-toc-drawer-top, var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)));
     right: 0;
     bottom: 0;
     left: 0;
@@ -67,7 +84,7 @@
 
   html.daab-toc-open .daab-toc-backdrop,
   html.daab-toc-open .cta-toc-backdrop {
-    display: block;
+    display: block !important;
   }
 
   html.daab-toc-page .content-wrap > aside.sidebar,
@@ -76,20 +93,45 @@
   html.daab-toc-page .report-layout > aside.sidebar,
   html.daab-toc-page aside.sidebar {
     position: fixed !important;
-    top: var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) !important;
+    top: var(--daab-toc-drawer-top, var(--daab-sticky-top-stack, var(--daab-nav-height, 86px))) !important;
+    right: auto !important;
+    bottom: auto !important;
     left: 0 !important;
-    bottom: 0 !important;
     z-index: var(--z-sidebar-mobile, 4500) !important;
     width: min(22rem, calc(100vw - 28px)) !important;
     max-width: min(22rem, calc(100vw - 28px)) !important;
-    max-height: none !important;
-    /* Keep the list above the Contents button and the home indicator. */
-    padding: 10px 10px calc(72px + env(safe-area-inset-bottom, 0px)) !important;
+    /* Closed size. An open height of calc(100dvh - top) collapses to a
+       hairline on iOS WebKit (Safari, Chrome, and Edge). The open rule
+       below uses a pixel height instead. Do not use transform to park
+       the closed panel: a transformed fixed layer still hit-tests, and
+       WebKit resolves dvh as 0 while that layer is off-screen. */
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    padding: 10px 10px calc(140px + env(safe-area-inset-bottom, 0px)) !important;
     margin: 0 !important;
-    transform: translateX(-105%);
+    transform: none !important;
+    -webkit-transform: none !important;
     visibility: hidden !important;
     pointer-events: none !important;
-    transition: transform 0.24s ease;
+    opacity: 0 !important;
+  }
+
+  /* Page CSS sets visibility:visible on the in-flow hamburger. A child with
+     visibility:visible stays visible even when its parent is hidden, so the
+     closed rule has to hide every descendant too. */
+  html.daab-toc-page:not(.daab-toc-open) aside.sidebar,
+  html.daab-toc-page:not(.daab-toc-open) aside.sidebar * {
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* Park the closed panel off the layout box as well as off the transform.
+     A translated fixed layer can still hit-test in WebKit and steal taps. */
+  html.daab-toc-page:not(.daab-toc-open) aside.sidebar {
+    left: -110vw !important;
   }
 
   html.daab-toc-open.daab-toc-page .content-wrap > aside.sidebar,
@@ -97,7 +139,27 @@
   html.daab-toc-open.daab-toc-page .cta-layout > aside.sidebar,
   html.daab-toc-open.daab-toc-page .report-layout > aside.sidebar,
   html.daab-toc-open.daab-toc-page aside.sidebar {
-    transform: none;
+    position: fixed !important;
+    top: var(--daab-toc-drawer-top, var(--daab-sticky-top-stack, var(--daab-nav-height, 86px))) !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 0 !important;
+    display: block !important;
+    width: min(22rem, calc(100vw - 28px)) !important;
+    max-width: min(22rem, calc(100vw - 28px)) !important;
+    height: var(--daab-toc-drawer-height, calc(100svh - var(--daab-toc-drawer-top, var(--daab-sticky-top-stack, 86px)))) !important;
+    min-height: var(--daab-toc-drawer-height, calc(100svh - var(--daab-toc-drawer-top, var(--daab-sticky-top-stack, 86px)))) !important;
+    max-height: var(--daab-toc-drawer-height, calc(100svh - var(--daab-toc-drawer-top, var(--daab-sticky-top-stack, 86px)))) !important;
+    overflow: hidden !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+  }
+
+  html.daab-toc-open.daab-toc-page aside.sidebar,
+  html.daab-toc-open.daab-toc-page aside.sidebar * {
     visibility: visible !important;
     pointer-events: auto !important;
   }
@@ -106,15 +168,19 @@
     display: flex !important;
     flex-direction: column !important;
     height: 100% !important;
-    max-height: calc(100dvh - var(--daab-sticky-top-stack, var(--daab-nav-height, 86px)) - 20px) !important;
+    max-height: 100% !important;
+    min-height: 0 !important;
     overflow: hidden !important;
   }
 
   html.daab-toc-page aside.sidebar .widget-body,
   html.daab-toc-page aside.sidebar .sidebar-widget:not(.events-open) .widget-body,
-  html.daab-toc-page aside.sidebar .sidebar-widget.events-open .widget-body {
+  html.daab-toc-page aside.sidebar .sidebar-widget.events-open .widget-body,
+  html.daab-toc-open.daab-toc-page aside.sidebar .widget-body {
+    display: block !important;
     flex: 1 1 auto !important;
     min-height: 0 !important;
+    height: auto !important;
     max-height: none !important;
     overflow-x: hidden !important;
     overflow-y: auto !important;
@@ -126,7 +192,7 @@
   html.daab-toc-page aside.sidebar .presentation-toc-name,
   html.daab-toc-page aside.sidebar .rector-toc-name,
   html.daab-toc-page aside.sidebar .timeline-link-title {
-    font-size: 15px;
+    font-size: 15px !important;
     line-height: 1.35;
   }
 
@@ -134,7 +200,7 @@
   html.daab-toc-page aside.sidebar .rector-toc-titles,
   html.daab-toc-page aside.sidebar .rector-toc-speech-title,
   html.daab-toc-page aside.sidebar .timeline-link-teaser {
-    font-size: 13px;
+    font-size: 13px !important;
     line-height: 1.4;
   }
 
@@ -154,6 +220,19 @@
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
+  }
+
+  /* The raised button is 44px tall and sits 136px up. The 140px padding
+     above leaves the last rows underneath it. Keep this after the
+     shorthand padding on the panel. */
+  @media (hover: none), (pointer: coarse) {
+    html.daab-toc-page .content-wrap > aside.sidebar,
+    html.daab-toc-page .charter-layout > aside.sidebar,
+    html.daab-toc-page .cta-layout > aside.sidebar,
+    html.daab-toc-page .report-layout > aside.sidebar,
+    html.daab-toc-page aside.sidebar {
+      padding-bottom: calc(196px + env(safe-area-inset-bottom, 0px)) !important;
+    }
   }
 }
 
