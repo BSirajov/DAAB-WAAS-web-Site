@@ -361,7 +361,7 @@ STRINGS = {
             "DAAB İdarə Heyətinin Sədri<br/>"
             "Almaniya — James D. Murray mükafatlı professoru"
         ),
-        "footer_rights": "© 2026 DAAB — Bütün hüquqlar qorunur",
+        "footer_rights": "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514",
         "meta": {
             "eldar-ahadov": (
                 "Özüm haqqında",
@@ -420,7 +420,7 @@ STRINGS = {
             "Chair of the WAAS Executive Board<br/>"
             "Germany — James D. Murray Distinguished Professor"
         ),
-        "footer_rights": "© 2026 WAAS — All Rights Reserved",
+        "footer_rights": "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514",
         "meta": {
             "eldar-ahadov": (
                 "About me",

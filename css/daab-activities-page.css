@@ -582,10 +582,19 @@ html[data-daab-page-id="activities-news"] .saadet-gallery{
   position: relative !important;
   z-index: 1 !important;
   display: grid !important;
-  grid-template-columns: 1.12fr .88fr !important;
-  gap: 24px !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 16px !important;
   align-items: start !important;
+  justify-items: stretch !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
   padding:22px 20px 26px;
+}@media (min-width: 1061px) {html[data-daab-page-id="activities-news"] .activities-hero-wrap{
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr) !important;
+    gap: 24px !important;
+    align-items: start !important;
+  }
 }html[data-daab-page-id="activities-news"] .page-hero h1{
   margin:0 0 14px;
   padding-top:.08em;
@@ -635,20 +644,24 @@ html[data-daab-page-id="activities-news"] .saadet-gallery{
     gap: 14px !important;
     align-items: stretch !important;
   }html[data-daab-page-id="activities-news"] .activities-hero-wrap > section{
-    display: contents;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
   }html[data-daab-page-id="activities-news"] .activities-hero-wrap > section > h1{
-    order: 1;
-    margin-bottom: 0 !important;
+    margin-bottom: 10px !important;
   }html[data-daab-page-id="activities-news"] .activities-hero-wrap .page-hero-subtitle{
-    order: 2;
+    display: block !important;
     margin: 0 !important;
-    max-width: none !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
   }html[data-daab-page-id="activities-news"] .activities-summary-panel{
-    order: 3;
-    width: 100%;
-    max-width: none !important;
-    justify-self: stretch;
-    margin: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    justify-self: stretch !important;
+    grid-column: 1 / -1 !important;
+    margin: 4px 0 0 !important;
     padding:8px;
   }html[data-daab-page-id="activities-news"] .activities-summary-card{
     padding:10px 12px;
@@ -657,6 +670,47 @@ html[data-daab-page-id="activities-news"] .saadet-gallery{
     margin-bottom: 5px;
   }html[data-daab-page-id="activities-news"] .page-hero h1{
     font-size:clamp(21px, 7.35vw, 29.4px);
+  }
+}
+
+/* Phones and tablets: title, subtitle, then Highlights. Two columns stay at min-width 1061px. */
+@media (max-width: 1060px) {html[data-daab-page-id="activities-news"] .activities-hero-wrap{
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-flow: row !important;
+    justify-items: stretch !important;
+    align-items: start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    gap: 14px !important;
+  }html[data-daab-page-id="activities-news"] .activities-hero-wrap > section{
+    display: block !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }html[data-daab-page-id="activities-news"] .activities-hero-wrap > section > h1{
+    max-width: 100% !important;
+  }html[data-daab-page-id="activities-news"] .activities-hero-wrap .page-hero-subtitle{
+    display: block !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-wrap: break-word;
+  }html[data-daab-page-id="activities-news"] .activities-summary-panel{
+    display: block !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    justify-self: stretch !important;
+    margin-top: 4px !important;
+  }html[data-daab-page-id="activities-news"] .activities-summary-card,
+  html[data-daab-page-id="activities-news"] .activities-summary-title,
+  html[data-daab-page-id="activities-news"] .activities-summary-card .hero-text{
+    max-width: 100% !important;
+    overflow-wrap: break-word;
   }
 }/* ===== Instant event navigation and mobile timeline ===== */html[data-daab-page-id="activities-news"]{
   scroll-behavior:auto;

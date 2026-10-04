@@ -12,12 +12,26 @@ from __future__ import annotations
 
 import argparse
 import fnmatch
+import re
 import shutil
 import sys
 from pathlib import Path
 
-from _paths import ROOT
+from _paths import (
+    LEGACY_FOOTER_COPYRIGHTS,
+    ROOT,
+    footer_copyright_line,
+)
 from _deploy_assets import DEPLOYIGNORE_ASSET_PATHS
+
+FOOTER_COPY_RE = re.compile(r'(<div class="footer-copy">)(.*?)(</div>)', re.DOTALL)
+STAMPED_COPYRIGHT_RE = re.compile(
+    r"© DAAB-WAAS - All rights reserved \| Build (?:\d{8} - \d{4}|\d+)"
+)
+FOOTER_STAMP_SKIP = {
+    "_paths.py",
+    "_build_deployment_folder.py",
+}
 
 DEPLOY_DIR = ROOT / "Deployment"
 DEPLOY_STAGING = ROOT / ".deployment-staging"
@@ -222,6 +236,54 @@ def validate_forbidden_assets(deploy_root: Path) -> list[str]:
     return found
 
 
+def _write_if_changed(path: Path, original: str, updated: str) -> bool:
+    if updated == original:
+        return False
+    path.write_bytes(updated.encode("utf-8"))
+    return True
+
+
+def stamp_footer_copyrights(line: str) -> int:
+    """Write the shared English copyright row into source footers and generator strings.
+
+    Deployment/ is produced by the copy step, so it is not edited here.
+    """
+    changed = 0
+    for folder in ("az", "en", "templates"):
+        base = ROOT / folder
+        if not base.is_dir():
+            continue
+        for path in sorted(base.rglob("*.html")):
+            original = path.read_bytes().decode("utf-8")
+            updated = FOOTER_COPY_RE.sub(
+                lambda match: match.group(1) + line + match.group(3),
+                original,
+            )
+            if _write_if_changed(path, original, updated):
+                changed += 1
+
+    helpers = ROOT / "helpers"
+    for path in sorted(helpers.rglob("*.py")):
+        if path.name in FOOTER_STAMP_SKIP:
+            continue
+        raw = path.read_bytes()
+        try:
+            original = raw.decode("utf-8")
+        except UnicodeDecodeError:
+            continue
+        if not any(legacy in original for legacy in LEGACY_FOOTER_COPYRIGHTS) and (
+            "© DAAB-WAAS - All rights reserved | Build " not in original
+        ):
+            continue
+        updated = original
+        for legacy in LEGACY_FOOTER_COPYRIGHTS:
+            updated = updated.replace(legacy, line)
+        updated = STAMPED_COPYRIGHT_RE.sub(line, updated)
+        if _write_if_changed(path, original, updated):
+            changed += 1
+    return changed
+
+
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Build production Deployment/ package.")
     p.add_argument(
@@ -235,9 +297,18 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     parse_args()
 
+    copyright_line = footer_copyright_line()
+    import _paths
+
+    _paths.FOOTER_COPYRIGHT_AZ = copyright_line
+    _paths.FOOTER_COPYRIGHT_EN = copyright_line
+    stamped = stamp_footer_copyrights(copyright_line)
+
     print("DAAB deployment package builder\n")
     print(f"  Source: {ROOT}")
     print(f"  Output: {DEPLOY_DIR}")
+    print(f"  Footer: {copyright_line}")
+    print(f"  Footer files updated: {stamped}")
     print("  Images and Books: copy from repo\n")
 
     # Preflight on source
@@ -267,10 +338,8 @@ def main() -> int:
         copied += 1
         bytes_total += src.stat().st_size
 
-    htaccess_src = DEPLOY_DIR / ".htaccess"
-    if htaccess_src.is_file():
-        shutil.copy2(htaccess_src, DEPLOY_STAGING / ".htaccess")
-        copied += 1
+    # Repo-root .htaccess is the source of truth (copied above with the site).
+    # Do not overlay the previous Deployment/.htaccess or cache rules never ship.
 
     print(f"→ Staged {copied} files ({bytes_total / (1024 * 1024):.1f} MB)")
     print(f"→ Skipped {len(skipped)} non-deploy paths\n")

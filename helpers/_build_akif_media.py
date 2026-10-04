@@ -123,7 +123,7 @@ STRINGS = {
         "footer_lead_h": "Rəhbərlik",
         "footer_addr_body": "Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, İstanbul, Türkiyə",
         "footer_lead_body": "<strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>DAAB İdarə Heyətinin Sədri<br/>Almaniya — James D. Murray mükafatlı professoru",
-        "footer_rights": "© 2026 DAAB — Bütün hüquqlar qorunur",
+        "footer_rights": "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514",
         # unused by custom section but required by shared shell strings
         "tag_video": "Video",
         "tag_article": "Məqalə",
@@ -200,7 +200,7 @@ STRINGS = {
         "footer_lead_h": "Leadership",
         "footer_addr_body": "Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, İstanbul, Türkiye",
         "footer_lead_body": "<strong>Prof. Dr. Messoud Efendiev</strong><br/>Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor",
-        "footer_rights": "© 2026 WAAS — All rights reserved",
+        "footer_rights": "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514",
         "tag_video": "Video",
         "tag_article": "Article",
         "go_video": "Watch",

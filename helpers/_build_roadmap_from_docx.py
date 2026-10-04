@@ -189,7 +189,7 @@ def page_html(data: dict, *, lang: str) -> str:
         footer_contact = "Contact"
         footer_address_title = "Address"
         footer_leadership = "Leadership"
-        footer_rights = "© 2026 WAAS — All Rights Reserved"
+        footer_rights = "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514"
         bc_aria = "Breadcrumb"
         panel_aria = "Strategic roadmap summary"
     else:
@@ -215,7 +215,7 @@ def page_html(data: dict, *, lang: str) -> str:
         footer_contact = "Əlaqə"
         footer_address_title = "Ünvan"
         footer_leadership = "Rəhbərlik"
-        footer_rights = "© 2026 DAAB — Bütün hüquqlar qorunur"
+        footer_rights = "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514"
         bc_aria = "Səhifə yolu"
         panel_aria = "Strateji yol xəritəsi haqqında qısa məlumat"
 

@@ -11,4 +11,19 @@ RewriteRule ^complex-topics-approach\.html$ /az/complex-topics-approach.html [R=
 RewriteRule ^complex-topics-informatics\.html$ /az/complex-topics-informatics.html [R=301,L]
 RewriteRule ^az/membership\.html$ /az/membership_value.html [R=301,L]
 RewriteRule ^en/membership\.html$ /en/membership_value.html [R=301,L]
+# HTML documents and extensionless directory indexes (/, /az/, …).
+# CSS, JS, and images are unchanged; pages already version those with ?v=.
+RewriteRule \.html$ - [E=DAAB_HTML:1]
+RewriteRule ^$ - [E=DAAB_HTML:1]
+RewriteRule /$ - [E=DAAB_HTML:1]
+</IfModule>
+
+# Revalidate HTML on every visit so the next load uses the current page,
+# including its versioned drawer CSS/JS. Does not apply to CSS, JS, or images.
+<IfModule mod_headers.c>
+<FilesMatch "\.(html|htm)$">
+Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>
+Header set Cache-Control "no-cache, must-revalidate" env=DAAB_HTML
+Header set Cache-Control "no-cache, must-revalidate" env=REDIRECT_DAAB_HTML
 </IfModule>

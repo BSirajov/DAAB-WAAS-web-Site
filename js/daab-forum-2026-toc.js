@@ -182,6 +182,9 @@
       return;
     }
     if (eventsWidget.contains(event.target)) return;
+    if (window.DAAB_TOC_DRAWER && typeof window.DAAB_TOC_DRAWER.holdingOpen === "function" && window.DAAB_TOC_DRAWER.holdingOpen()) return;
+    var target = event.target;
+    if (target && typeof target.closest === "function" && target.closest(".daab-toc-launch, .cta-toc-launch, #daabTocLaunch, #ctaTocLaunch, .daab-toc-backdrop, .cta-toc-backdrop")) return;
     closeEventsMenu();
   });
 

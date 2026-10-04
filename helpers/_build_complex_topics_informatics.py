@@ -49,7 +49,7 @@ UI = {
         "legal": "Legal notice (Imprint)",
         "sitemap": "Sitemap",
         "feedback": "Feedback",
-        "copy": "© 2026 WAAS — All Rights Reserved",
+        "copy": "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514",
         "related_flyer": "Open competition invitation",
         "related_approach": "Organisation of competition",
     },
@@ -91,7 +91,7 @@ UI = {
         "legal": "Hüquqi rekvizitlər",
         "sitemap": "Saytın xəritəsi",
         "feedback": "Rəy bildirin",
-        "copy": "© 2026 DAAB — Bütün hüquqlar qorunur",
+        "copy": "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514",
         "related_flyer": "Açıq müsabiqə dəvəti",
         "related_approach": "Müsabiqənin təşkili",
     },
@@ -166,7 +166,7 @@ def page_html(lang: str) -> str:
 <link href="../css/daab-complex-topics-approach.css?v=8" rel="stylesheet"/>
 <link href="../css/daab-complex-topics-informatics.css?v=6" rel="stylesheet"/>
 <link href="../css/daab-table-resize.css?v=3" rel="stylesheet"/>
-<link href="../css/daab-toc-drawer.css?v=1" rel="stylesheet"/>
+<link href="../css/daab-toc-drawer.css?v=8" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
 <script src="../js/daab-perf.js?v=4" defer></script>
 <script src="../js/daab-sticky-chrome.js?v=7" defer></script>
@@ -185,7 +185,7 @@ def page_html(lang: str) -> str:
 <script src="../js/daab-analytics.js?v=7" defer></script>
 <script src="../js/daab-sidebar-spy.js?v=1" defer></script>
 <script src="../js/daab-sidebar-timeline.js?v=7" defer></script>
-<script src="../js/daab-toc-drawer.js?v=1" defer></script>
+<script src="../js/daab-toc-drawer.js?v=8" defer></script>
 <script src="../js/daab-table-resize.js?v=5" defer></script>
 </head>
 <body class="cta-page">
