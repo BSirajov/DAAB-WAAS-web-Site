@@ -95,7 +95,7 @@ UI = {
         "legal": "Hüquqi rekvizitlər",
         "sitemap": "Saytın xəritəsi",
         "feedback": "Rəy bildirin",
-        "copy": "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514",
+        "copy": "© DAAB-WAAS - All rights reserved | Build 20261004 - 1128",
     },
     "en": {
         "lang": "en",
@@ -136,7 +136,7 @@ UI = {
         "legal": "Legal notice (Imprint)",
         "sitemap": "Sitemap",
         "feedback": "Feedback",
-        "copy": "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514",
+        "copy": "© DAAB-WAAS - All rights reserved | Build 20261004 - 1128",
     },
 }
 

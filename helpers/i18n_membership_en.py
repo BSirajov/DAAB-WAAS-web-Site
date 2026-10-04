@@ -72,5 +72,5 @@ MEMBERSHIP_REPLACEMENTS: list[tuple[str, str]] = [
         '<p class="signature">Your support means a great deal to us. Thank you for joining our association.<br/><br/>With respect and best wishes,<br/><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Executive Board</p>',
     ),
     ("Almaniya — James D. Murray mükafatlı professoru", "Germany — James D. Murray Distinguished Professor"),
-    ("© DAAB-WAAS - All rights reserved | Build 20261003 - 1514", "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514"),
+    ("© DAAB-WAAS - All rights reserved | Build 20261004 - 1128", "© DAAB-WAAS - All rights reserved | Build 20261004 - 1128"),
 ]

@@ -188,8 +188,9 @@ def page_html(data: dict, *, lang: str) -> str:
         footer_brand = "World Association of Azerbaijani Scientists"
         footer_contact = "Contact"
         footer_address_title = "Address"
+        footer_address = "Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, Istanbul, Türkiye"
         footer_leadership = "Leadership"
-        footer_rights = "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514"
+        footer_rights = "© DAAB-WAAS - All rights reserved | Build 20261004 - 1128"
         bc_aria = "Breadcrumb"
         panel_aria = "Strategic roadmap summary"
     else:
@@ -214,8 +215,9 @@ def page_html(data: dict, *, lang: str) -> str:
         footer_brand = "Dünya Azərbaycanlı Alimlər Birliyi"
         footer_contact = "Əlaqə"
         footer_address_title = "Ünvan"
+        footer_address = "Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, İstanbul, Türkiyə"
         footer_leadership = "Rəhbərlik"
-        footer_rights = "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514"
+        footer_rights = "© DAAB-WAAS - All rights reserved | Build 20261004 - 1128"
         bc_aria = "Səhifə yolu"
         panel_aria = "Strateji yol xəritəsi haqqında qısa məlumat"
 
@@ -274,7 +276,7 @@ def page_html(data: dict, *, lang: str) -> str:
 <div class="footer-brand"><h3>{esc(footer_brand)}</h3></div>
 <div class="footer-grid">
 <div class="footer-col"><h4 class="footer-title">{esc(footer_contact)}</h4><div class="footer-item">✉ <a href="mailto:info@daab-waas.com">info@daab-waas.com</a></div><div class="footer-item">☎ <span>+90 555 147 46 74</span></div><div class="footer-item">🌐 <a href="https://daab-waas.com" rel="noopener noreferrer" target="_blank">daab-waas.com</a></div></div>
-<div class="footer-col"><h4 class="footer-title">{esc(footer_address_title)}</h4><p class="footer-address">Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, İstanbul, Türkiyə</p></div>
+<div class="footer-col"><h4 class="footer-title">{esc(footer_address_title)}</h4><p class="footer-address">{footer_address}</p></div>
 <div class="footer-col"><h4 class="footer-title">{esc(footer_leadership)}</h4><p class="footer-leader"><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>DAAB İdarə Heyətinin Sədri<br/>Almaniya — James D. Murray mükafatlı professoru</p></div>
 </div>
 </div>

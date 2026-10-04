@@ -191,7 +191,7 @@ def footer_block(lang: str) -> str:
 <div class="footer-col"><div class="footer-title">Rəhbərlik</div><p class="footer-leader">{FOOTER_AZ_LEADER_HTML}</p></div>
 </div>
 </div>
-<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261003 - 1514</div>
+<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261004 - 1128</div>
 </footer>"""
     return f"""<footer class="footer-pro">
 <div class="footer-inner">

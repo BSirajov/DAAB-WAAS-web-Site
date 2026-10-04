@@ -172,7 +172,7 @@ FOOTER_AZ = {
     "footer_leadership": "Rəhbərlik",
     "footer_chair": "DAAB İdarə Heyətinin Sədri",
     "footer_chair_name": "Prof. Dr. Məsud Əfəndiyev",
-    "footer_bottom": "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514",
+    "footer_bottom": "© DAAB-WAAS - All rights reserved | Build 20261004 - 1128",
 }
 
 FOOTER_EN = {
@@ -182,7 +182,7 @@ FOOTER_EN = {
     "footer_leadership": "Leadership",
     "footer_chair": "Chair of the WAAS Executive Board",
     "footer_chair_name": "Prof. Dr. Messoud Efendiyev",
-    "footer_bottom": "© DAAB-WAAS - All rights reserved | Build 20261003 - 1514",
+    "footer_bottom": "© DAAB-WAAS - All rights reserved | Build 20261004 - 1128",
 }
 
 

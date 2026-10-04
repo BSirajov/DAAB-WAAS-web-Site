@@ -13,7 +13,7 @@ FOOTER_AZ = """<footer class="footer-pro">
 <div class="footer-col"><div class="footer-title">Rəhbərlik</div><p class="footer-leader"><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>DAAB İdarə Heyətinin Sədri</p></div>
 </div>
 </div>
-<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261003 - 1514</div>
+<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261004 - 1128</div>
 </footer>"""
 
 FOOTER_EN = """<footer class="footer-pro">
@@ -25,7 +25,7 @@ FOOTER_EN = """<footer class="footer-pro">
 <div class="footer-col"><div class="footer-title">Leadership</div><p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Executive Board</p></div>
 </div>
 </div>
-<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261003 - 1514</div>
+<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261004 - 1128</div>
 </footer>"""
 
 PAGES = [

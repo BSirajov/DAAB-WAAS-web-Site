@@ -11,6 +11,7 @@ RewriteRule ^complex-topics-approach\.html$ /az/complex-topics-approach.html [R=
 RewriteRule ^complex-topics-informatics\.html$ /az/complex-topics-informatics.html [R=301,L]
 RewriteRule ^az/membership\.html$ /az/membership_value.html [R=301,L]
 RewriteRule ^en/membership\.html$ /en/membership_value.html [R=301,L]
+ErrorDocument 404 /404.html
 # HTML documents and extensionless directory indexes (/, /az/, …).
 # CSS, JS, and images are unchanged; pages already version those with ?v=.
 RewriteRule \.html$ - [E=DAAB_HTML:1]

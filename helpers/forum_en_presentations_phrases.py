@@ -776,8 +776,8 @@ PRESENTATIONS_PHRASES: dict[str, str] = {
     "Qısa xülasə: Kiber-fiziki sistemlərin aktual alqoritmik problemləri ədədlər nəzəriyyəsinin aktual problemləri ilə sıx bağlıdır.": (
         "Brief summary: Actual algorithmic problems of cyber-physical systems are closely linked to actual problems of number theory."
     ),
-    "Məmmədov N.M., Məmmədəliyeva S.Y. Ekologiya və texnika. Bakı: “Səda”. 1999. – 96 s. T. 5, №1. – 2024. //https:// ecopoiesis.ru": (
-        "Mammadov N.M., Mammadaliyeva S.Y. Ecology and technology. Baku: “Sada”. 1999. – 96 pp. Vol. 5, No. 1. – 2024. //https:// ecopoiesis.ru"
+    "Məmmədov N.M., Məmmədəliyeva S.Y. Ekologiya və texnika. Bakı: “Səda”. 1999. – 96 s. T. 5, №1. – 2024. //https://ecopoiesis.ru": (
+        "Mammadov N.M., Mammadaliyeva S.Y. Ecology and technology. Baku: “Sada”. 1999. – 96 pp. Vol. 5, No. 1. – 2024. //https://ecopoiesis.ru"
     ),
     "Azərbaycanda bioinformatikanın və intensiv kompüter istifadəsi ilə aparılan digər tədqiqat sahələrinin inkişaf perspektivləri": (
         "Development prospects for bioinformatics and other research fields conducted with intensive computer use in Azerbaijan"
