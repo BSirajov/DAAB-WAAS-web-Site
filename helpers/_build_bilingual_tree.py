@@ -127,7 +127,7 @@ STUB_EN_TEMPLATE = """<!DOCTYPE html>
 </section>
 </main>
 <footer class="footer-pro"><div class="footer-inner"><div class="footer-brand"><h3>World Association of Azerbaijani Scientists</h3></div></div>
-<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261004 - 1128</div></footer>
+<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261005 - 1710</div></footer>
 </body>
 </html>
 """
@@ -476,7 +476,7 @@ def build_en_home() -> None:
 <main class="main shell" id="content" style="padding-bottom:60px;">
 <section class="cards-grid">{''.join(card_html)}</section>
 </main>
-<footer class="footer-pro"><div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261004 - 1128</div></footer>
+<footer class="footer-pro"><div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261005 - 1710</div></footer>
 </body>
 </html>"""
     dest.parent.mkdir(parents=True, exist_ok=True)

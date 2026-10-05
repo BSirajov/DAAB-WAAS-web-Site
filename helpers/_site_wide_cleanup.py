@@ -99,7 +99,7 @@ STYLE_VERSIONS = {
     "daab-photos-gallery.css": 9,
     "daab-forum-book.css": 10,
     "daab-membership-flyer.css": 36,
-    "daab-forum-2026-page.css": 32,
+    "daab-forum-2026-page.css": 34,
     "daab-complex-topics.css": 3,
     "daab-sidebar-widget.css": 6,
     "daab-table-resize.css": 2,

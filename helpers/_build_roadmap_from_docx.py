@@ -190,7 +190,7 @@ def page_html(data: dict, *, lang: str) -> str:
         footer_address_title = "Address"
         footer_address = "Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, Istanbul, Türkiye"
         footer_leadership = "Leadership"
-        footer_rights = "© DAAB-WAAS - All rights reserved | Build 20261004 - 1128"
+        footer_rights = "© DAAB-WAAS - All rights reserved | Build 20261005 - 1710"
         bc_aria = "Breadcrumb"
         panel_aria = "Strategic roadmap summary"
     else:
@@ -217,7 +217,7 @@ def page_html(data: dict, *, lang: str) -> str:
         footer_address_title = "Ünvan"
         footer_address = "Feneryolu Mahallesi<br/>Gazi Muhtar Paşa Sokak No:44<br/>Kadıköy, İstanbul, Türkiyə"
         footer_leadership = "Rəhbərlik"
-        footer_rights = "© DAAB-WAAS - All rights reserved | Build 20261004 - 1128"
+        footer_rights = "© DAAB-WAAS - All rights reserved | Build 20261005 - 1710"
         bc_aria = "Səhifə yolu"
         panel_aria = "Strateji yol xəritəsi haqqında qısa məlumat"
 
