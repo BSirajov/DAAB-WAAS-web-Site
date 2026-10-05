@@ -28,7 +28,7 @@ def std_sections(h, prof_en, prof_az, stats, comps, exp_items, edu_items, extra=
 h = b.hero("Messoud A. Efendiyev, Prof. Dr.", "Məsud Əfəndiyev, prof. dr.",
     "Mathematician specializing in infinite-dimensional dynamical systems and mathematical biology. DAAB board chair; Rector's Distinguished Visiting Professor at Marmara University; leading professor at Helmholtz Center Munich / TUM.",
     "Sonsuz ölçülü dinamik sistemlər və riyazi biologiya üzrə riyaziyyatçı. DAAB idarə heyəti sədri; Marmara Universitetində fəxri professor; Helmholtz Münhen / TUM aparıcı professor.",
-    "messoud-efendiyev.png", "Messoud Efendiyev",
+    "messoud-efendiyev.webp", "Messoud Efendiyev",
     b.rank_item("Academic Rank", "Akademik rütbə", "Prof. Dr., Dr. habil.", "Prof. dr., Dr. habil.")
     + b.rank_item("Affiliation", "Əlaqə", "Helmholtz Munich / Marmara Univ.", "Helmholtz Münhen / Marmara Univ.")
     + b.rank_item("E-mail", "E-poçt", "messoud.efendiyev@gmail.com", "messoud.efendiyev@gmail.com")
@@ -63,7 +63,7 @@ write_cv("mesud_efendiyev.html", "Curriculum Vitae — Messoud Efendiyev",
 h = b.hero("Murad Abuzerli, Ph.D.", "Murad Abuzərli, Ph.D.",
     "Quantum optics researcher; MSCA postdoctoral fellow at University of Vienna (NEOVITA project). PhD from Kastler Brossel Lab, Paris (2022) on out-of-equilibrium paraxial fluid of light.",
     "Kvant optika tədqiqatçısı; Vyana Universitetində MSCA postdoktorant (NEOVITA). Paris Kastler Brossel Lab PhD (2022) — paraksial işıq mayesi.",
-    "murad-abuzerli.png", "Murad Abuzerli",
+    "murad-abuzerli.webp", "Murad Abuzerli",
     b.rank_item("Academic Rank", "Akademik rütbə", "Ph.D.", "Ph.D.")
     + b.rank_item("Affiliation", "Əlaqə", "University of Vienna", "Vyana Universiteti")
     + b.rank_item("E-mail", "E-poçt", "murad.abuzarli@univie.ac.at", "murad.abuzarli@univie.ac.at")
@@ -93,7 +93,7 @@ write_cv("murad_abuzerli.html", "Curriculum Vitae — Murad Abuzerli",
 h = b.hero("Murad Omarov, Ph.D., Prof.", "Murad Ömərov, Ph.D., prof.",
     "Vice-Rector for International Cooperation, Kharkiv National University of Radio Electronics. Doctor of Technical Sciences; Academician of Ukrainian Academy of Applied Radioelectronic Sciences; Honored Scientist of Azerbaijan.",
     "Xarkov Milli Radioelektronika Universitetində beynəlxalq əməkdaşlıq üzrə prorektor. Texnika elmləri doktoru; Ukrayna Tətbiqi Radioelektronika Akademiyasının akademiki; Azərbaycanın fəxri elm xadimi.",
-    "murad-omerov.png", "Murad Omarov",
+    "murad-omerov.webp", "Murad Omarov",
     b.rank_item("Academic Rank", "Akademik rütbə", "Dr.Sc., Professor", "Elmlər doktoru, professor")
     + b.rank_item("Affiliation", "Əlaqə", "Kharkiv NURE", "Xarkov MREU")
     + b.rank_item("E-mail", "E-poçt", "murad.omarov@nure.ua", "murad.omarov@nure.ua")

@@ -82,7 +82,7 @@ def _nav_href(nav_id: str, href: str, nav_depth: int) -> str:
 
 def en_nav_html(active_id: str, nav_depth: int = 0) -> str:
     home_href = "../index.html" if nav_depth else "index.html"
-    img_src = "../../images/daab-logo.png" if nav_depth else "../images/daab-logo.png"
+    img_src = "../../images/daab-logo.webp" if nav_depth else "../images/daab-logo.webp"
     lines = [
         '<nav aria-label="Main navigation" class="nav-strip">',
         '<div class="nav-inner">',

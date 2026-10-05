@@ -241,11 +241,11 @@ def seed_qr_assets(reachable: set[Path]) -> None:
                 continue
             stem = photo.rsplit("/", 1)[-1]
             slug = stem.rsplit(".", 1)[0] if "." in stem else stem
-            p = (ROOT / "images" / "qr" / lang / f"{slug}.png").resolve()
+            p = (ROOT / "images" / "qr" / lang / f"{slug}.webp").resolve()
             if p.exists():
                 reachable.add(p)
     for lang in ("az", "en"):
-        p = (ROOT / "images" / "qr" / f"home-{lang}.png").resolve()
+        p = (ROOT / "images" / "qr" / f"home-{lang}.webp").resolve()
         if p.exists():
             reachable.add(p)
 

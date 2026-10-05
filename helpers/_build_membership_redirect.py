@@ -38,7 +38,7 @@ def page_html(cfg: dict) -> str:
 <link href="../css/daab-mobile.css?v=14" rel="stylesheet"/>
 <title>{cfg["title"]}</title>
 <!-- daab-seo -->
-<link rel="icon" href="../images/daab-favicon.png" type="image/png"/>
+<link rel="icon" href="../images/daab-favicon.webp" type="image/webp"/>
 <link rel="apple-touch-icon" href="../images/daab-favicon.png"/>
 <link rel="canonical" href="{cfg["canonical"]}"/>
 <meta property="og:type" content="website"/>

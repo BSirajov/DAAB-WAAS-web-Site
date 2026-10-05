@@ -31,7 +31,7 @@ def build():
         "İsmixan Bayramov, prof. dr.",
         "Professor of probability and statistics at Izmir University of Economics (born 1959). Founding dean of Faculty of Arts and Sciences (2001–2022); ISI Fellow (1999); Editor-in-Chief of ISTATISTIK; 68+ WoS articles; Google Scholar h-index 21.",
         "İzmir İqtisad Universitetində ehtimal və statistika professoru (1959-cu il təv.). Elmlər fakültəsinin qurucu dekanı (2001–2022); ISI Fellow (1999); ISTATISTIK baş redaktoru; 68+ WoS məqalə; Google Scholar h-indeks 21.",
-        "ismixan-bayramov.png",
+        "ismixan-bayramov.webp",
         "Ismihan Bayramoglu",
         ranks,
     )

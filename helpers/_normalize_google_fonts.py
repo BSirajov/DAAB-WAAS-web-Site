@@ -69,7 +69,7 @@ def process_file(path: Path) -> int:
         depth = len(path.relative_to(ROOT).parts) - 1
         css_root = "../" * depth if depth else ""
         new_text, n = normalize_html(text, css_root=css_root)
-        new_text = new_text.replace("daab-logo.svg", "daab-logo.png")
+        new_text = new_text.replace("daab-logo.svg", "daab-logo.webp")
     else:
         new_text, n = modernize_shell_source(text)
 

@@ -131,7 +131,7 @@ def replace_google_fonts(text: str) -> tuple[str, int]:
 
 
 def replace_legacy_nav_logo(text: str) -> tuple[str, int]:
-    new_text, n = re.subn(r"daab-logo\.svg", "daab-logo.png", text)
+    new_text, n = re.subn(r"daab-logo\.svg", "daab-logo.webp", text)
     return new_text, n
 
 

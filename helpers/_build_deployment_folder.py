@@ -284,6 +284,263 @@ def stamp_footer_copyrights(line: str) -> int:
     return changed
 
 
+# The Register submenu stays linked in source so local preview can open
+# register.html. This lock runs only on the staged Deployment copy and mutes
+# that submenu. The Second Forum participant pill stays an active external link
+# in both trees.
+_FORUM_REGISTER_HTML = (
+    "en/forum/2026/index.html",
+    "az/forum/2026/index.html",
+)
+_PARTICIPANT_PILL_URL = "https://diaspor.gov.az/forum/"
+_PARTICIPANT_PILL_ACTIVE = (
+    '<a class="btn btn-primary" href="https://diaspor.gov.az/forum/" '
+    'rel="noopener noreferrer" target="_blank">{label}</a>'
+)
+_PARTICIPANT_PILL_RE = re.compile(
+    r'<p class="forum-register-cta">(.*?)</p>',
+    re.DOTALL,
+)
+_PARTICIPANT_PILL_CONTROL_RE = re.compile(
+    r'(?:<a class="btn btn-primary" href="(?:register\.html|https://diaspor\.gov\.az/forum/)"[^>]*>'
+    r'|<button type="button" class="btn btn-primary"[^>]*>)'
+    r'([^<]*)(?:</a>|</button>)'
+)
+_NAV_REGISTER_OBJECT_RE = re.compile(
+    r'\{[^{}]*"id": "forum-2026-register"[^{}]*\}'
+)
+_ENABLED_NAV_FN = """\
+  function appendDropdownPageLink(panel, childDef, routes, lang, ui, activeId) {
+    var page = pageById(routes, childDef.id);
+    if (!page) return false;
+    var link = document.createElement("a");
+    link.href = childPageHref(page, lang, childDef);
+    link.className = "nav-dropdown-link";
+    link.setAttribute("role", "menuitem");
+    link.setAttribute("data-nav-id", childNavId(childDef));
+
+    var iconKey = childIconKey(childDef, page);
+    var title = document.createElement("span");
+    title.className = "nav-dropdown-link-title";
+    title.textContent = labelWithIcon(ui, iconKey, childLabel(ui, lang, childDef, page));
+    link.appendChild(title);
+
+    var descText = linkDescription(ui, lang, childDef, page);
+    if (descText) {
+      var desc = document.createElement("span");
+      desc.className = "nav-dropdown-link-desc";
+      desc.textContent = descText;
+      link.appendChild(desc);
+    }
+
+    var active = childLinkIsActive(page, childDef, activeId);
+    if (active) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
+    }
+    panel.appendChild(link);
+    return active;
+  }
+"""
+_DISABLED_NAV_FN = """\
+  function markNavLinkDisabled(link) {
+    link.removeAttribute("href");
+    link.setAttribute("aria-disabled", "true");
+    link.setAttribute("tabindex", "-1");
+    link.classList.add("nav-dropdown-link--disabled");
+    link.style.setProperty("pointer-events", "none", "important");
+    link.style.setProperty("cursor", "default", "important");
+    link.style.setProperty("color", "#8b97a3", "important");
+    link.style.setProperty("background", "transparent", "important");
+    link.style.setProperty("opacity", "0.72", "important");
+    var title = link.querySelector(".nav-dropdown-link-title");
+    if (title) title.style.setProperty("color", "#8b97a3", "important");
+    var desc = link.querySelector(".nav-dropdown-link-desc");
+    if (desc) desc.style.setProperty("color", "#a8b3bd", "important");
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    });
+  }
+
+  function appendDropdownPageLink(panel, childDef, routes, lang, ui, activeId) {
+    var page = pageById(routes, childDef.id);
+    if (!page) return false;
+    var link = document.createElement("a");
+    var navDisabled = !!(childDef.disabled || childDef.id === "forum-2026-register");
+    if (!navDisabled) link.href = childPageHref(page, lang, childDef);
+    link.className = "nav-dropdown-link";
+    link.setAttribute("role", "menuitem");
+    link.setAttribute("data-nav-id", childNavId(childDef));
+
+    var iconKey = childIconKey(childDef, page);
+    var title = document.createElement("span");
+    title.className = "nav-dropdown-link-title";
+    title.textContent = labelWithIcon(ui, iconKey, childLabel(ui, lang, childDef, page));
+    link.appendChild(title);
+
+    var descText = linkDescription(ui, lang, childDef, page);
+    if (descText) {
+      var desc = document.createElement("span");
+      desc.className = "nav-dropdown-link-desc";
+      desc.textContent = descText;
+      link.appendChild(desc);
+    }
+
+    var active = childLinkIsActive(page, childDef, activeId);
+    if (active && !navDisabled) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
+    }
+    if (navDisabled) markNavLinkDisabled(link);
+    panel.appendChild(link);
+    return active && !navDisabled;
+  }
+"""
+_NAV_DISABLED_CSS = """
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled,
+.nav-menu .nav-dropdown--nested > .nav-dropdown-panel > .nav-dropdown-link.nav-dropdown-link--disabled,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled:hover,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled:focus,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled:focus-visible,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled.active {
+  color: #8b97a3 !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  cursor: default !important;
+  pointer-events: none !important;
+  opacity: 0.72;
+  text-decoration: none !important;
+}
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled .nav-dropdown-link-title,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled .nav-dropdown-link-desc,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled:hover .nav-dropdown-link-desc,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled.active .nav-dropdown-link-title,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled.active .nav-dropdown-link-desc {
+  color: #8b97a3 !important;
+}
+"""
+
+
+def _with_source_newlines(original: str, updated: str) -> str:
+    if "\r\n" in original and "\r\n" not in updated:
+        return updated.replace("\n", "\r\n")
+    return updated
+
+
+def _lock_nav_json(text: str) -> str:
+    match = _NAV_REGISTER_OBJECT_RE.search(text)
+    if not match:
+        raise SystemExit("Production lock: forum-2026-register entry missing from i18n/nav.json")
+    block = match.group(0)
+    if re.search(r'"disabled"\s*:\s*true', block):
+        return text
+    desc = re.search(r'("descKey": "[^"]*")(\s*)\}$', block)
+    if not desc:
+        raise SystemExit("Production lock: forum-2026-register entry has no descKey")
+    indent = desc.group(2)
+    if "\n" in indent:
+        closing = indent[indent.rfind("\n") + 1 :]
+        prop_indent = indent[: indent.rfind("\n") + 1] + closing + "  "
+    else:
+        prop_indent = "\n" + indent + "  "
+        indent = "\n" + indent
+    updated = (
+        block[: desc.start()]
+        + desc.group(1)
+        + ","
+        + prop_indent
+        + '"disabled": true'
+        + indent
+        + "}"
+    )
+    return text[: match.start()] + updated + text[match.end() :]
+
+
+def _lock_primary_nav_js(text: str) -> str:
+    norm = text.replace("\r\n", "\n")
+    if "function markNavLinkDisabled" in norm and 'childDef.id === "forum-2026-register"' in norm:
+        return text
+    if _ENABLED_NAV_FN not in norm:
+        raise SystemExit(
+            "Production lock: js/daab-primary-nav.js no longer matches the enabled registration function."
+        )
+    updated = norm.replace(_ENABLED_NAV_FN, _DISABLED_NAV_FN, 1)
+    return _with_source_newlines(text, updated)
+
+
+def _active_participant_pill(label: str) -> str:
+    return _PARTICIPANT_PILL_ACTIVE.format(label=label)
+
+
+def _lock_forum_html(text: str, rel: str) -> str:
+    """Keep the participant pill enabled and linked. Do not mute it."""
+    match = _PARTICIPANT_PILL_RE.search(text)
+    if not match:
+        raise SystemExit(f"Production lock: participant registration pill missing in {rel}")
+    control = _PARTICIPANT_PILL_CONTROL_RE.search(match.group(1))
+    if not control:
+        raise SystemExit(f"Production lock: participant registration pill missing in {rel}")
+    active = _active_participant_pill(control.group(1))
+    if control.group(0) == active and "disabled" not in control.group(0):
+        return text
+    updated = (
+        text[: match.start(1)]
+        + match.group(1).replace(control.group(0), active, 1)
+        + text[match.end(1) :]
+    )
+    if _PARTICIPANT_PILL_URL not in updated or "disabled" in active:
+        raise SystemExit(f"Production lock: participant pill was not left enabled in {rel}")
+    return updated
+
+
+def _append_css_once(text: str, marker: str, addition: str) -> str:
+    if marker in text:
+        return text
+    sep = "\r\n" if "\r\n" in text else "\n"
+    body = addition.strip("\r\n").replace("\n", sep)
+    if text and not text.endswith(("\n", "\r")):
+        text += sep
+    return text + sep + body + sep
+
+
+def lock_production_forum_registration(deploy_root: Path) -> list[str]:
+    """Mute the Forum 2026 Register submenu inside a deployment tree.
+
+    The participant pill stays an active link to the external forum form.
+    Does not touch source.
+    """
+    changed: list[str] = []
+
+    nav_path = deploy_root / "i18n" / "nav.json"
+    nav_orig = nav_path.read_text(encoding="utf-8")
+    nav_updated = _lock_nav_json(nav_orig)
+    if _write_if_changed(nav_path, nav_orig, nav_updated):
+        changed.append("i18n/nav.json")
+
+    nav_js = deploy_root / "js" / "daab-primary-nav.js"
+    js_orig = nav_js.read_text(encoding="utf-8")
+    js_updated = _lock_primary_nav_js(js_orig)
+    if _write_if_changed(nav_js, js_orig, js_updated):
+        changed.append("js/daab-primary-nav.js")
+
+    common_css = deploy_root / "css" / "daab-common.css"
+    common_orig = common_css.read_text(encoding="utf-8")
+    common_updated = _append_css_once(common_orig, "nav-dropdown-link--disabled", _NAV_DISABLED_CSS)
+    if _write_if_changed(common_css, common_orig, common_updated):
+        changed.append("css/daab-common.css")
+
+    for rel in _FORUM_REGISTER_HTML:
+        path = deploy_root / rel
+        original = path.read_text(encoding="utf-8")
+        updated = _lock_forum_html(original, rel)
+        if _write_if_changed(path, original, updated):
+            changed.append(rel)
+
+    return changed
+
+
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Build production Deployment/ package.")
     p.add_argument(
@@ -338,6 +595,10 @@ def main() -> int:
         copied += 1
         bytes_total += src.stat().st_size
 
+    print("→ Muting Forum 2026 Register menu item for production…")
+    for rel in lock_production_forum_registration(DEPLOY_STAGING):
+        print(f"  locked {rel}")
+
     # Repo-root .htaccess is the source of truth (copied above with the site).
     # Do not overlay the previous Deployment/.htaccess or cache rules never ship.
 
@@ -363,8 +624,8 @@ def main() -> int:
         "js/daab-mobile.js",
         "i18n/nav.json",
     ]
-    required.append("images/daab-logo.png")
-    required.append("images/daab-favicon.png")
+    required.append("images/daab-logo.webp")
+    required.append("images/daab-favicon.webp")
     required.append("favicon.ico")
     required.append("Books/DAAB_DK/forum-book-2026.pdf")
     missing_roots = [p for p in required if not (DEPLOY_STAGING / p).is_file()]

@@ -43,7 +43,7 @@
   --color-nav-hover-bg: rgba(255, 255, 255, 0.12);
   --color-hero-scrim: rgba(255, 255, 255, 0.36);
   --color-site-bg-scrim: rgba(255, 255, 255, 0.07);
-  --site-bg-image: url("../images/diaspor-body-top-bg.png");
+  --site-bg-image: url("../images/diaspor-body-top-bg.webp");
   --site-bg-size: cover;
   --site-bg-position: top center;
   --site-bg-repeat: no-repeat;
@@ -168,7 +168,7 @@
 
 /* --- daab-site-background.css (inlined) --- */
 /**
- * Site-wide page background — diaspora embroidery (images/diaspor-body-top-bg.png).
+ * Site-wide page background — diaspora embroidery (images/diaspor-body-top-bg.webp).
  * Applied on every page that loads daab-common.css (including the language gateway).
  */
 
@@ -195,7 +195,7 @@ body::before {
       var(--color-site-bg-scrim, rgba(255, 255, 255, 0.07)),
       var(--color-site-bg-scrim, rgba(255, 255, 255, 0.07))
     ),
-    var(--site-bg-image, url("../images/diaspor-body-top-bg.png"));
+    var(--site-bg-image, url("../images/diaspor-body-top-bg.webp"));
   background-position: center, var(--site-bg-position, top center);
   background-size: 100% 100%, var(--site-bg-size, cover);
   background-repeat: no-repeat, var(--site-bg-repeat, no-repeat);
@@ -1428,4 +1428,27 @@ button,
   html[data-daab-page-id="scientists-list"] .scientist-card__qr-link {
     display: none !important;
   }
+}
+
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled,
+.nav-menu .nav-dropdown--nested > .nav-dropdown-panel > .nav-dropdown-link.nav-dropdown-link--disabled,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled:hover,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled:focus,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled:focus-visible,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled.active {
+  color: #8b97a3 !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  cursor: default !important;
+  pointer-events: none !important;
+  opacity: 0.72;
+  text-decoration: none !important;
+}
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled .nav-dropdown-link-title,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled .nav-dropdown-link-desc,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled:hover .nav-dropdown-link-desc,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled.active .nav-dropdown-link-title,
+.nav-menu .nav-dropdown-link.nav-dropdown-link--disabled.active .nav-dropdown-link-desc {
+  color: #8b97a3 !important;
 }

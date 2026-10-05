@@ -170,11 +170,32 @@
     toggle.setAttribute("aria-controls", panel.id);
   }
 
+  function markNavLinkDisabled(link) {
+    link.removeAttribute("href");
+    link.setAttribute("aria-disabled", "true");
+    link.setAttribute("tabindex", "-1");
+    link.classList.add("nav-dropdown-link--disabled");
+    link.style.setProperty("pointer-events", "none", "important");
+    link.style.setProperty("cursor", "default", "important");
+    link.style.setProperty("color", "#8b97a3", "important");
+    link.style.setProperty("background", "transparent", "important");
+    link.style.setProperty("opacity", "0.72", "important");
+    var title = link.querySelector(".nav-dropdown-link-title");
+    if (title) title.style.setProperty("color", "#8b97a3", "important");
+    var desc = link.querySelector(".nav-dropdown-link-desc");
+    if (desc) desc.style.setProperty("color", "#a8b3bd", "important");
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    });
+  }
+
   function appendDropdownPageLink(panel, childDef, routes, lang, ui, activeId) {
     var page = pageById(routes, childDef.id);
     if (!page) return false;
     var link = document.createElement("a");
-    link.href = childPageHref(page, lang, childDef);
+    var navDisabled = !!(childDef.disabled || childDef.id === "forum-2026-register");
+    if (!navDisabled) link.href = childPageHref(page, lang, childDef);
     link.className = "nav-dropdown-link";
     link.setAttribute("role", "menuitem");
     link.setAttribute("data-nav-id", childNavId(childDef));
@@ -194,12 +215,13 @@
     }
 
     var active = childLinkIsActive(page, childDef, activeId);
-    if (active) {
+    if (active && !navDisabled) {
       link.classList.add("active");
       link.setAttribute("aria-current", "page");
     }
+    if (navDisabled) markNavLinkDisabled(link);
     panel.appendChild(link);
-    return active;
+    return active && !navDisabled;
   }
 
   function fillMultilineText(el, text) {

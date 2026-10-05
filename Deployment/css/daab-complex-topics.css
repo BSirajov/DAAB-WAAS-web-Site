@@ -82,11 +82,11 @@ html[data-daab-page-id="complex-topics"] .ct-title__flourish{
   height: 80px;
   flex: 0 1 280px;
   pointer-events: none;
-  background: url("../images/forum/2026/register-embroidery-left.png") no-repeat center / contain;
+  background: url("../images/forum/2026/register-embroidery-left.webp") no-repeat center / contain;
 }
 
 html[data-daab-page-id="complex-topics"] .ct-title__flourish--end{
-  background-image: url("../images/forum/2026/register-embroidery-right.png");
+  background-image: url("../images/forum/2026/register-embroidery-right.webp");
 }
 
 html[data-daab-page-id="complex-topics"] .forum-register-sponsors{

@@ -9,10 +9,10 @@ from _build_home_qr import DEFAULT_BASE, write_qr_png
 from _paths import ROOT
 
 FLYER_TARGETS = {
-    "flyer-membership-az.png": "/az/application.html",
-    "flyer-membership-en.png": "/en/application.html",
-    "flyer-sponsorship-az.png": "/az/sponsorship_partnership.html#contact",
-    "flyer-sponsorship-en.png": "/en/sponsorship_partnership.html#contact",
+    "flyer-membership-az.webp": "/az/application.html",
+    "flyer-membership-en.webp": "/en/application.html",
+    "flyer-sponsorship-az.webp": "/az/sponsorship_partnership.html#contact",
+    "flyer-sponsorship-en.webp": "/en/sponsorship_partnership.html#contact",
 }
 
 OUT_DIR = ROOT / "images" / "qr"

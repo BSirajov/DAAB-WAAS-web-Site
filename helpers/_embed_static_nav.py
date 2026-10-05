@@ -429,7 +429,7 @@ def forum_nav_strip(lang: str = "az", *, active_nav_id: str | None = None) -> st
             f'aria-expanded="false" aria-controls="primaryNavMenu">'
             f"<span></span><span></span><span></span></button>"
             f'<div class="page-logo"><a aria-label="WAAS home" title="Home page" href="../../index.html">'
-            f'<img src="{asset}images/daab-logo.png" class="nav-brand-logo" alt="WAAS Logo"></a></div>'
+            f'<img src="{asset}images/daab-logo.webp" class="nav-brand-logo" alt="WAAS Logo"></a></div>'
             f'<a aria-label="WAAS home" class="nav-brand" href="../../index.html">'
             f'<span class="nav-brand-text">'
             f'<span class="nav-brand-line">World Association of</span>'
@@ -444,7 +444,7 @@ def forum_nav_strip(lang: str = "az", *, active_nav_id: str | None = None) -> st
         f'aria-expanded="false" aria-controls="primaryNavMenu">'
         f"<span></span><span></span><span></span></button>"
         f'<div class="page-logo"><a aria-label="DAAB ana səhifə" title="Ana səhifə" href="../../index.html">'
-        f'<img src="{asset}images/daab-logo.png" class="nav-brand-logo" alt="DAAB Logo"></a></div>'
+        f'<img src="{asset}images/daab-logo.webp" class="nav-brand-logo" alt="DAAB Logo"></a></div>'
         f'<a aria-label="DAAB ana səhifə" class="nav-brand" href="../../index.html">'
         f'<span class="nav-brand-text">'
         f'<span class="nav-brand-line">Dünya Azərbaycanlı</span>'

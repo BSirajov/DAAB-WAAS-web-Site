@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build circular transparent favicon assets from images/daab-logo.png."""
+"""Build circular transparent favicon assets from images/daab-logo.webp."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -11,8 +11,8 @@ try:
 except ImportError:
     from helpers._paths import ROOT  # type: ignore
 
-SRC = ROOT / "images" / "daab-logo.png"
-OUT_PNG = ROOT / "images" / "daab-favicon.png"
+SRC = ROOT / "images" / "daab-logo.webp"
+OUT_PNG = ROOT / "images" / "daab-favicon.webp"
 OUT_ICO = ROOT / "favicon.ico"
 DEPLOY_ICO = ROOT / "Deployment" / "favicon.ico"
 
@@ -56,7 +56,7 @@ def main() -> int:
     write_ico(circle, OUT_ICO)
     if (ROOT / "Deployment").is_dir():
         write_ico(circle, DEPLOY_ICO)
-        deploy_png = ROOT / "Deployment" / "images" / "daab-favicon.png"
+        deploy_png = ROOT / "Deployment" / "images" / "daab-favicon.webp"
         deploy_png.parent.mkdir(parents=True, exist_ok=True)
         circle.save(deploy_png, "PNG", optimize=True)
     print(f"Wrote {OUT_PNG.relative_to(ROOT)} ({OUT_PNG.stat().st_size} bytes)")

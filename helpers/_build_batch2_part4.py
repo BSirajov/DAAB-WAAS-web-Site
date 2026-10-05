@@ -28,7 +28,7 @@ def std_sections(h, prof_en, prof_az, stats, comps, exp_items, edu_items, extra=
 h = b.hero("Makbule Sabziyeva, Ph.D., Prof.", "Makbulə Sabziyeva, Ph.D., prof.",
     "Professor and Head of Russian Language and Literature Department, Anadolu University. Specialist in Russian literature, translation studies, and Tolstoy's War and Peace.",
     "Anadolu Universitetində Rus dili və ədəbiyyatı kafedrasının müdiri, professor. Rus ədəbiyyatı, tərcüməşünaslıq və Tolstoyun \"Müharibə və sülh\" əsəri üzrə mütəxəssis.",
-    "meqbule-sebziyeva.png", "Makbule Sabziyeva",
+    "meqbule-sebziyeva.webp", "Makbule Sabziyeva",
     b.rank_item("Academic Rank", "Akademik rütbə", "Ph.D., Professor", "PhD, professor")
     + b.rank_item("Affiliation", "Əlaqə", "Anadolu University", "Anadolu Universiteti")
     + b.rank_item("E-mail", "E-poçt", "makbulesabziyeva@anadolu.edu.tr", "makbulesabziyeva@anadolu.edu.tr")
@@ -60,7 +60,7 @@ write_cv("makbule_sabziyeva.html", "Curriculum Vitae — Makbule Sabziyeva",
 h = b.hero("Mark Vilen Applebaum, Ph.D.", "Mark Vilen Applebaum, Ph.D.",
     "Professor at Kaye Academic College of Education, Beer Sheva. STEM education researcher; composer and interdisciplinary scholar. Member of IGMCG and EMS committees.",
     "Beer Sheva Kaye Təhsil Kollecində professor. STEM təhsili tədqiqatçısı; bəstəkar və interdisiplinar alim. IGMCG və EMS komitələrinin üzvü.",
-    "mark-applebaum.png", "Mark Applebaum",
+    "mark-applebaum.webp", "Mark Applebaum",
     b.rank_item("Academic Rank", "Akademik rütbə", "Ph.D., Professor", "PhD, professor")
     + b.rank_item("Affiliation", "Əlaqə", "Kaye Academic College", "Kaye Təhsil Kolleci")
     + b.rank_item("E-mail", "E-poçt", "applebaum.mark@gmail.com", "applebaum.mark@gmail.com")

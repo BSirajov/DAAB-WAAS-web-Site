@@ -256,14 +256,14 @@ def main() -> None:
 
     # Asaf: use images/scientists-photos/asef-salamov.jpg as uploaded (do not reprocess).
 
-    bakht_src = board / "bakhtiyar-sirajov.png"
+    bakht_src = board / "bakhtiyar-sirajov.webp"
     if not bakht_src.is_file():
         bakht_src = board / "bakhtiyar-sirajov 1.png"
     if not bakht_src.is_file():
-        bakht_src = photos / "bakhtiyar-sirajov.png"
+        bakht_src = photos / "bakhtiyar-sirajov.webp"
 
     print("Rebuilding presentation / profile portraits (Bakhtiyar only):")
-    _process_white_studio(bakht_src, photos / "bakhtiyar-sirajov.png")
+    _process_white_studio(bakht_src, photos / "bakhtiyar-sirajov.webp")
 
 
 if __name__ == "__main__":

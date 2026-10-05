@@ -131,7 +131,7 @@ def page_html(lang: str) -> str:
 <title>{esc(ui['title'])}</title>
 <meta name="description" content="{esc(ui['description'])}"/>
 <!-- daab-seo -->
-<link rel="icon" href="../images/daab-favicon.png" type="image/png"/>
+<link rel="icon" href="../images/daab-favicon.webp" type="image/webp"/>
 <link rel="apple-touch-icon" href="../images/daab-favicon.png"/>
 <link rel="canonical" href="https://daab-waas.com/{lang}/{FILE}"/>
 <link rel="alternate" hreflang="az" href="https://daab-waas.com/az/{FILE}"/>
@@ -194,7 +194,7 @@ def page_html(lang: str) -> str:
 <div class="nav-inner">
 <button class="mobile-menu-toggle" type="button" aria-label="{esc(ui['menu'])}" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button>
 <div class="page-logo"><a title="{esc(ui['home_title'])}" aria-label="{esc(ui['home_aria'])}" href="index.html">
-<img src="../images/daab-logo.png" class="nav-brand-logo" alt="{esc(ui['logo_alt'])}"></a></div>
+<img src="../images/daab-logo.webp" class="nav-brand-logo" alt="{esc(ui['logo_alt'])}"></a></div>
 <a aria-label="{esc(ui['home_aria'])}" class="nav-brand" href="index.html">
 <span class="nav-brand-text"><span class="nav-brand-line">{esc(ui['brand1'])}</span><span class="nav-brand-line">{esc(ui['brand2'])}</span></span></a>
 <div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div></div></div></nav>

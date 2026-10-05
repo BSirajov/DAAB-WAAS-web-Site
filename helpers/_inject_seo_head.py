@@ -12,7 +12,7 @@ from _paths import ROOT
 from _site_wide_cleanup import iter_deploy_html
 
 SITE_ORIGIN = "https://daab-waas.com"
-OG_IMAGE = f"{SITE_ORIGIN}/images/daab-logo.png"
+OG_IMAGE = f"{SITE_ORIGIN}/images/daab-logo.webp"
 SITE_NAME = {"az": "DAAB", "en": "WAAS"}
 MARKER_START = "<!-- daab-seo -->"
 MARKER_END = "<!-- /daab-seo -->"
@@ -121,7 +121,7 @@ def build_seo_block(
 
     lines = [
         MARKER_START,
-        f'<link rel="icon" href="{asset}images/daab-favicon.png" type="image/png"/>',
+        f'<link rel="icon" href="{asset}images/daab-favicon.webp" type="image/webp"/>',
         f'<link rel="apple-touch-icon" href="{asset}images/daab-favicon.png"/>',
         f'<link rel="canonical" href="{canonical}"/>',
     ]

@@ -115,7 +115,7 @@ def build_xelil_kelenter() -> str:
         "Xəlil Kələntər, Ph.D.",
         "Senior researcher and developer in optical engineering and display technologies. SID Fellow, IEC expert, and pioneer of LCD backlight (BLU) optics with nearly 100 patents and 96+ publications.",
         "Optik mühəndisliyi və displey texnologiyaları üzrə baş tədqiqatçı. SID Fellow, IEC eksperti; LCD arxa işıqlandırma (BLU) optikası sahəsinin yaradıcısı; təxminən 100 patent və 96+ nəşr.",
-        "xelil-kelenter.png",
+        "xelil-kelenter.webp",
         "Khalil Kelenter",
         ranks,
     )
@@ -199,7 +199,7 @@ def build_kamal_akbarov() -> str:
         "Kamal Əkbərov, T.E.N., PhD",
         "Radiation oncologist and healthcare project manager. Technical Officer (CBRN) at WHO; former IAEA radiation oncology officer. Expert in cancer control, radiotherapy development, and international cooperation.",
         "Radiasiya onkoloqu və səhiyyə layihə meneceri. ÜST-də CBRN üzrə texniki məsul; IAEA-nın keçmiş radiasiya onkologiyası məsul şəxsi. Onkoloji xəstəliklərin nəzarəti, radioterapiya inkişafı və beynəlxalq əməkdaşlıq üzrə ekspert.",
-        "kamal-ekberov.png",
+        "kamal-ekberov.webp",
         "Kamal Akbarov",
         ranks,
     )
@@ -252,7 +252,7 @@ def build_kamran_rustemov() -> str:
         "Kamran Rüstəmov, elmlər doktoru, prof.",
         "Azerbaijani scientist, educator, publicist and public figure. Honored Scientist of Azerbaijan; foreign member of RAASN. Pioneer in oil/gas hydraulics, building climatology, and non-Newtonian mechanics.",
         "Azərbaycanlı alim, pedaqoq, publisist və ictimai xadim. Azərbaycan Respublikasının əməkdar elm xadimi; RAASN xarici üzvü. Neft-qaz hidravlikası, bina iqlimologiyası və qeyri-nyuton mexanikası üzrə öncül.",
-        "kamran-rustemov.png",
+        "kamran-rustemov.webp",
         "Kamran Rustemov",
         ranks,
     )
@@ -321,7 +321,7 @@ def build_ismayil_aliyev() -> str:
         "İsmayıl Əliyev, iqtisad elmləri doktoru, prof.",
         "Professor of labor economics and human resource management at St. Petersburg State University of Economics. Head of the Labor Economics scientific school; author of 150+ publications including major textbooks.",
         "Sankt-Peterburq Dövlət İqtisad Universitetində əməyin iqtisadiyyatı və insan resurslarının idarə edilməsi professoru. 'Əməyin iqtisadiyyatı' elmi məktəbinin rəhbəri; 150-dən artıq nəşrin, o cümlədən dərsliklərin müəllifi.",
-        "ismayil-eliyev.png",
+        "ismayil-eliyev.webp",
         "Ismayil Aliyev",
         ranks,
     )
@@ -388,7 +388,7 @@ def build_sevda_kerimova() -> str:
         "Sevda Kərimova, PhD(m)",
         "Legal scholar specializing in bioethics, medical law, and criminal law. Former ethics consultant at TABİB; visiting fellow at Ruhr University Bochum; lecturer on bioethics and medical law.",
         "Bioetika, tibb hüququ və cinayət hüququ üzrə ixtisaslaşmış hüquqşünas. TABİB-də keçmiş etika məsləhətçisi; Ruhr Universitetində visiting fellow; bioetika və tibb hüququ müəllimi.",
-        "sevda-kerimova.png",
+        "sevda-kerimova.webp",
         "Sevda Karimova",
         ranks,
     )
@@ -443,7 +443,7 @@ def build_ilham_akhundov() -> str:
         "İlham Axundov, Ph.D.",
         "Director of Undergraduate Mathematics Business and Accounting Programs, University of Waterloo. Probability theorist and statistician; former Fulbright professor at Texas A&amp;M and faculty at McMaster University.",
         "Vaterloo Universitetində riyaziyyat, biznes və mühasibat proqramları direktoru. Ehtimal nəzəriyyəçisi və statistik; Texas A&amp;M Fulbright professoru; McMaster Universitetində keçmiş fakültə üzvü.",
-        "ilham-axundov.png",
+        "ilham-axundov.webp",
         "Ilham Akhundov",
         ranks,
     )
@@ -497,7 +497,7 @@ def build_ilkin_qulusoy() -> str:
         "İlkin Gulusoy, dosent",
         "Associate Professor and head of Contemporary Turkic Dialects and Literatures (Azerbaijani Turkish and Literature) at Kafkas University. Turkologist, author of 12 books and organizer of major international conferences.",
         "Qafqaz Universitetində Çağdaş Türk Ləhcələri və Ədəbiyyatları (Azərbaycan türkcəsi və ədəbiyyatı) bölməsinin dosenti və rəhbəri. Türkoloq; 12 kitabın müəllifi; beynəlxalq konfransların təşkilatçısı.",
-        "ilkin-qulusoy.png",
+        "ilkin-qulusoy.webp",
         "Ilkin Gulusoy",
         ranks,
     )
@@ -550,7 +550,7 @@ def build_hacali_necefoglu() -> str:
         "Hacalı Nəcəfoğlu, prof.",
         "Professor of inorganic chemistry at Kafkas University. Head of External Relations, Caucasus and Central Asia Research Center, and Department of Inorganic Chemistry. 200+ WoS/Scopus articles; H-index 20 (WoS).",
         "Qafqaz Universitetində qeyri-üzvi kimya professoru. Xarici əlaqələr, Qafqaz və Orta Asiya Araşdırma Mərkəzi və Qeyri-üzvi kimya kafedrasının rəhbəri. 200+ WoS/Scopus məqalə; H-indeks 20 (WoS).",
-        "hacali-necefoglu.png",
+        "hacali-necefoglu.webp",
         "Hacali Necefoğlu",
         ranks,
     )
@@ -602,7 +602,7 @@ def build_ismixan_bayramov() -> str:
         "İsmixan Bayramov, prof. dr.",
         "Professor of probability and statistics at Izmir University of Economics. Founding dean of Faculty of Arts and Sciences (2001–2022); Editor-in-Chief of ISTATISTIK; 120+ SCI publications; supervisor of 17+ PhD graduates.",
         "İzmir İqtisad Universitetində ehtimal və statistika professoru. Elmlər fakültəsinin qurucu dekanı (2001–2022); ISTATISTIK jurnalının baş redaktoru; 120+ SCI nəşr; 17+ PhD məzunu rəhbərliyi.",
-        "ismixan-bayramov.png",
+        "ismixan-bayramov.webp",
         "Ismihan Bayramoglu",
         ranks,
     )

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Optimize images/daab-logo.png — replace embedded raster with a small PNG favicon/nav asset."""
+"""Optimize images/daab-logo.webp — replace embedded raster with a small PNG favicon/nav asset."""
 from __future__ import annotations
 
 import base64
@@ -13,9 +13,9 @@ from PIL import Image
 
 from _paths import ROOT
 
-SVG = ROOT / "images" / "daab-logo.png"
+SVG = ROOT / "images" / "daab-logo.webp"
 SVG_BACKUP = ROOT / "images" / "daab-logo.source.svg"
-PNG = ROOT / "images" / "daab-logo.png"
+PNG = ROOT / "images" / "daab-logo.webp"
 WEBP = ROOT / "images" / "daab-logo.webp"
 
 
@@ -42,7 +42,7 @@ def write_webp(im: Image.Image, dest: Path, size: int = 128, quality: int = 82) 
     im.save(dest, "WEBP", quality=quality, method=6)
 
 
-def write_minimal_svg(png_name: str = "daab-logo.png", size: int = 256) -> str:
+def write_minimal_svg(png_name: str = "daab-logo.webp", size: int = 256) -> str:
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" '
         f'width="{size}" height="{size}" viewBox="0 0 {size} {size}" role="img" aria-hidden="true">\n'
@@ -66,11 +66,11 @@ def main() -> int:
 
     write_optimized_png(im, PNG, size=128)
     write_webp(im, WEBP, size=128, quality=82)
-    SVG.write_text(write_minimal_svg(png_name="daab-logo.png", size=128), encoding="utf-8", newline="\n")
+    SVG.write_text(write_minimal_svg(png_name="daab-logo.webp", size=128), encoding="utf-8", newline="\n")
     print(f"logo source: {before // 1024} KB")
-    print(f"daab-logo.png: {PNG.stat().st_size / 1024:.1f} KB")
+    print(f"daab-logo.webp: {PNG.stat().st_size / 1024:.1f} KB")
     print(f"daab-logo.webp: {WEBP.stat().st_size / 1024:.1f} KB")
-    print(f"daab-logo.png: {SVG.stat().st_size} bytes (wrapper)")
+    print(f"daab-logo.webp: {SVG.stat().st_size} bytes (wrapper)")
     return 0
 
 

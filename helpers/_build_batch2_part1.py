@@ -37,7 +37,7 @@ h = b.hero(
     "Mehdi Genceli, Prof. Dr.", "Mehdi Gəncəli (İsmayilov), prof. dr.",
     "Associate professor at Marmara University Institute of Turcology. Scholar of Azerbaijani and Turkish literature, press history, and Karabakh studies; author of monographs on Mehemmed Hadi and Abdullah Sur.",
     "Marmara Universiteti Türkiyat Araştırmaları Enstitüsündə dosent. Azərbaycan və türk ədəbiyyatı, mətbuat tarixi və Qarabağ tədqiqatları üzrə alim; Mehemmed Hadi və Abdullah Sur monoqrafiyalarının müəllifi.",
-    "mehdi-genceli-ismayilov.png", "Mehdi Genceli",
+    "mehdi-genceli-ismayilov.webp", "Mehdi Genceli",
     b.rank_item("Academic Rank", "Akademik rütbə", "Prof. Dr.", "Prof. dr.")
     + b.rank_item("Affiliation", "Əlaqə", "Marmara University", "Marmara Universiteti")
     + b.rank_item("E-mail", "E-poçt", "mehdi.genceli@marmara.edu.tr", "mehdi.genceli@marmara.edu.tr")
@@ -71,7 +71,7 @@ h = b.hero(
     "Mehmet Riza Heyet, Ph.D.", "Mehmet Rıza Heyət, Ph.D.",
     "Turkologist at Ankara University; editor-in-chief of <em>Varliq</em> journal; director of Tabriz Research Institute (TEBAREN). PhD (2021) on contemporary Turkic dialects and literatures.",
     "Ankara Universitetində türkoloq; <em>Varlıq</em> jurnalının baş redaktoru; TEBAREN rəhbəri. Çağdaş türk ləhcələri üzrə PhD (2021).",
-    "mehmet-riza-heyet.png", "Mehmet Riza Heyet",
+    "mehmet-riza-heyet.webp", "Mehmet Riza Heyet",
     b.rank_item("Academic Rank", "Akademik rütbə", "Ph.D.", "Ph.D.")
     + b.rank_item("Affiliation", "Əlaqə", "Ankara University", "Ankara Universiteti")
     + b.rank_item("E-mail", "E-poçt", "mrheyet@gmail.com", "mrheyet@gmail.com")

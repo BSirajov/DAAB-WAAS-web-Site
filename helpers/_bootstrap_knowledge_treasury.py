@@ -102,9 +102,9 @@ def adapt_html(html: str, lang: str) -> str:
             ("Treasury of science", "Knowledge Treasury of science"),
         ]
     pairs += [
-        ("../images/daab-logo.png", "../images/kt-logo.svg"),
-        ("../../images/daab-logo.png", "../../images/kt-logo.svg"),
-        ("../../../images/daab-logo.png", "../../../images/kt-logo.svg"),
+        ("../images/daab-logo.webp", "../images/kt-logo.svg"),
+        ("../../images/daab-logo.webp", "../../images/kt-logo.svg"),
+        ("../../../images/daab-logo.webp", "../../../images/kt-logo.svg"),
         ("https://daab-waas.com", SITE_DOMAIN),
         ("daab-search.js", ""),
         ("daab-search.css", ""),
@@ -502,9 +502,9 @@ def copy_tree() -> int:
         shutil.copy2(DAAB / "js" / name, KT_ROOT / "js" / name)
         count += 1
 
-    bg = DAAB / "images" / "diaspor-body-top-bg.png"
+    bg = DAAB / "images" / "diaspor-body-top-bg.webp"
     if bg.is_file():
-        shutil.copy2(bg, KT_ROOT / "images" / "diaspor-body-top-bg.png")
+        shutil.copy2(bg, KT_ROOT / "images" / "diaspor-body-top-bg.webp")
         count += 1
 
     for lang in ("az", "en"):

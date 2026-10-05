@@ -8,8 +8,8 @@ from pathlib import Path
 from _paths import ROOT
 
 DEFAULT_BASE = "https://daab-waas.com"
-OUT_AZ = ROOT / "images" / "qr" / "home-az.png"
-OUT_EN = ROOT / "images" / "qr" / "home-en.png"
+OUT_AZ = ROOT / "images" / "qr" / "home-az.webp"
+OUT_EN = ROOT / "images" / "qr" / "home-en.webp"
 
 
 def home_url(base: str, lang: str) -> str:

@@ -28,7 +28,7 @@ def std_sections(h, prof_en, prof_az, stats, comps, exp_items, edu_items, extra=
 h = b.hero("Natig M. Atakishiyev, Ph.D.", "Natiq Atakişiyev, Ph.D.",
     "Emeritus National Researcher (Investigador Nacional Emérito), UNAM Mexico. Theoretical physicist in quantum groups, q-polynomials, and deformed quantum systems.",
     "Meksika UNAM-da Emeritus Milli Tədqiqatçı. Kvant qrupları, q-polinomlar və deformasiya olunmuş kvant sistemləri üzrə nəzəri fizik.",
-    "natiq-agakisiyev.png", "Natig Atakishiyev",
+    "natiq-agakisiyev.webp", "Natig Atakishiyev",
     b.rank_item("Academic Rank", "Akademik rütbə", "Ph.D., Dr.Sc.", "PhD, elmlər doktoru")
     + b.rank_item("Affiliation", "Əlaqə", "UNAM, Cuernavaca", "UNAM, Kuernavaka")
     + b.rank_item("E-mail", "E-poçt", "natig_atakishiyev@hotmail.com", "natig_atakishiyev@hotmail.com")
@@ -59,7 +59,7 @@ write_cv("natiq_atakishiyev.html", "Curriculum Vitae — Natig Atakishiyev",
 h = b.hero("Nigar Masumova, Ph.D.", "Nigar Məsumova, Ph.D.",
     "Associate Professor at MGIMO; Head of Advertising and Public Relations Department; Deputy Dean of School of International Journalism. Expert on economies of Turkey, Iran, and CIS; branding.",
     "MGIMO-da dosent; Reklam və İctimaiyyətlə Əlaqələr kafedrasının müdiri; Beynəlxalq Jurnalistika fakültəsi dekan müavini. Türkiyə, İran və MDB iqtisadiyyatı; brendinq.",
-    "nigar-masimova.png", "Nigar Masumova",
+    "nigar-masimova.webp", "Nigar Masumova",
     b.rank_item("Academic Rank", "Akademik rütbə", "Ph.D., Associate Professor", "PhD, dosent")
     + b.rank_item("Affiliation", "Əlaqə", "MGIMO University", "MGIMO Universiteti")
     + b.rank_item("E-mail", "E-poçt", "masumova@mail.ru", "masumova@mail.ru")
@@ -92,7 +92,7 @@ write_cv("nigar_masumova.html", "Curriculum Vitae — Nigar Masumova",
 h = b.hero("Lev Eppelbaum, Ph.D., Prof.", "Lev Eppelbaum, Ph.D., prof.",
     "Professor of Geophysics, Tel Aviv University. Christian Huygens Medal (EGU, 2018–2019). Expert in potential field interpretation, archaeological geophysics, and environmental geophysics.",
     "Tel-Aviv Universitetində geofizika professoru. Christian Huygens medalı (EGU, 2018–2019). Potensial sahələrin interpretasiyası, arxeoloji və ekoloji geofizika.",
-    "lev-v-eppelbaum.png", "Lev Eppelbaum",
+    "lev-v-eppelbaum.webp", "Lev Eppelbaum",
     b.rank_item("Academic Rank", "Akademik rütbə", "Ph.D., Professor", "PhD, professor")
     + b.rank_item("Affiliation", "Əlaqə", "Tel Aviv University", "Tel-Aviv Universiteti")
     + b.rank_item("E-mail", "E-poçt", "levap@tauex.tau.ac.il", "levap@tauex.tau.ac.il")

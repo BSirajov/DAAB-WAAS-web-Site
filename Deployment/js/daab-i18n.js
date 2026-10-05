@@ -138,7 +138,7 @@
 
   function loadNav() {
     return loadCachedJson(
-      i18nUrl("nav.json") + "?v=26",
+      i18nUrl("nav.json") + "?v=27",
       function () { return navCache; },
       function (data) { navCache = data; },
       function () { return navInflight; },

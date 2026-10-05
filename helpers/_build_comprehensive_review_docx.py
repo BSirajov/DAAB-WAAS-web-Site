@@ -50,7 +50,7 @@ FINDINGS: list[Finding] = [
         "All 60 indexable az/ and en/ pages; <!-- daab-seo --> blocks",
         "No og:image or twitter:image meta tags anywhere on the site.",
         "Social and messaging apps show text-only link previews without a visual card.",
-        "Add a shared 1200×630 image (or daab-logo.png) via helpers/_inject_seo_head.py.",
+        "Add a shared 1200×630 image (or daab-logo.webp) via helpers/_inject_seo_head.py.",
         "High",
     ),
     Finding(
@@ -93,10 +93,10 @@ FINDINGS: list[Finding] = [
     Finding(
         "LINK-03",
         "Links & assets",
-        "Site web root; all pages use images/daab-logo.png as favicon",
+        "Site web root; all pages use images/daab-logo.webp as favicon",
         "No favicon.ico at root; browsers request /favicon.ico and may get 404.",
         "Minor UX noise and extra failed requests in server logs.",
-        "Add favicon.ico at web root or configure host rewrite to images/daab-logo.png.",
+        "Add favicon.ico at web root or configure host rewrite to images/daab-logo.webp.",
         "Low",
     ),
     # --- Performance ---

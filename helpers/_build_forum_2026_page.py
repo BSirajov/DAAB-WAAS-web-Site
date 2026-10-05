@@ -7,6 +7,10 @@ Usage (from repo root):
 
 After building, re-embed static nav on Forum 2026:
     python helpers/_embed_static_nav.py
+
+Local pages keep the registration link and nav item active. Production muting
+is applied only when helpers/_build_deployment_folder.py copies these pages
+into Deployment/.
 """
 from __future__ import annotations
 

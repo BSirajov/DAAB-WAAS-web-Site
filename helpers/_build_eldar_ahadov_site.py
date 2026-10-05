@@ -1366,7 +1366,7 @@ def build_page_html(page: dict, literary: str, lang: str) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>{esc(title)}</title>
 <meta content="{esc(meta_desc)}" name="description"/>
-<link rel="icon" href="../../images/daab-favicon.png" type="image/png"/>
+<link rel="icon" href="../../images/daab-favicon.webp" type="image/webp"/>
 <link rel="apple-touch-icon" href="../../images/daab-favicon.png"/>
 <link rel="canonical" href="{canonical}"/>
 <link rel="alternate" hreflang="az" href="{az_url}"/>
@@ -1408,7 +1408,7 @@ def build_page_html(page: dict, literary: str, lang: str) -> str:
 </head>
 <body>
 <a class="skip" href="#content">{esc(s['skip'])}</a>
-<nav aria-label="{esc(s['brand_menu_aria'])}" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="{esc(s['menu_open'])}" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a title="{esc(s['nav_home_title'])}" aria-label="{esc(s['nav_home_aria'])}" href="../index.html"><img src="../../images/daab-logo.png" class="nav-brand-logo" alt="DAAB Logo"></a></div><a aria-label="{esc(s['nav_home_aria'])}" class="nav-brand" href="../index.html"><span class="nav-brand-text">{s['brand']}</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div></div></div></nav>
+<nav aria-label="{esc(s['brand_menu_aria'])}" class="nav-strip"><div class="nav-inner"><button class="mobile-menu-toggle" type="button" aria-label="{esc(s['menu_open'])}" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button><div class="page-logo"><a title="{esc(s['nav_home_title'])}" aria-label="{esc(s['nav_home_aria'])}" href="../index.html"><img src="../../images/daab-logo.webp" class="nav-brand-logo" alt="DAAB Logo"></a></div><a aria-label="{esc(s['nav_home_aria'])}" class="nav-brand" href="../index.html"><span class="nav-brand-text">{s['brand']}</span></a><div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div></div></div></nav>
 <nav class="daab-breadcrumbs" id="daab-breadcrumbs" aria-label="{esc(s['crumb_aria'])}">
 <ol class="daab-breadcrumbs-list">
 <li class="daab-breadcrumbs-item"><a href="../index.html">{esc(s['crumb_home'])}</a></li>

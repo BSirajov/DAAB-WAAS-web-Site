@@ -30,7 +30,7 @@ def qr_markup(slug: str, lang: str) -> str:
     return (
         f'<a class="board-card-qr-link card-qr-link" href="scientists/profiles.html#{slug}" '
         f'title="{s["title"]}" aria-label="{s["aria"]}">\n'
-        f'<img class="board-card-qr card-qr" src="../images/qr/{lang}/{slug}.png?v=1" '
+        f'<img class="board-card-qr card-qr" src="../images/qr/{lang}/{slug}.webp?v=1" '
         f'width="64" height="64" alt="" decoding="async" loading="lazy"/>\n'
         f"</a>\n"
     )

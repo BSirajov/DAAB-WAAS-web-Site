@@ -8,8 +8,8 @@ en = ROOT / "en/scientists/profiles.html"
 t = en.read_text(encoding="utf-8")
 
 pairs = [
-    ("ismayil-eliyev.png", "ismayil_aliyev.html"),
-    ("kamran-rustemov.png", "kamran_rustemov.html"),
+    ("ismayil-eliyev.webp", "ismayil_aliyev.html"),
+    ("kamran-rustemov.webp", "kamran_rustemov.html"),
 ]
 for photo, slug in pairs:
     pat = rf'(<div class="card"[^>]*>.*?scientists-photos/{re.escape(photo)}[^>]*>.*?<span class="card-name">)'

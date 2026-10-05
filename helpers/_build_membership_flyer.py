@@ -321,7 +321,7 @@ def benefit_icon_markup(icon: str) -> str:
 
 def qr_img_path(lang: str, kind: str) -> str:
     """Local static QR asset (see helpers/_build_flyer_qr.py)."""
-    return f"{ASSET}images/qr/flyer-{kind}-{lang}.png"
+    return f"{ASSET}images/qr/flyer-{kind}-{lang}.webp"
 
 
 def build_email_body(cfg: dict, lang: str) -> str:
@@ -416,7 +416,7 @@ def build_locale(key: str) -> None:
 <div class="flyer-wrap">
 <article class="flyer-sheet" aria-label="{esc(cfg["title"])}">
 <header class="flyer-header">
-<img class="flyer-logo" src="{ASSET}images/daab-logo.png" alt="{esc(cfg["brand_short"])}" width="72" height="72"/>
+<img class="flyer-logo" src="{ASSET}images/daab-logo.webp" alt="{esc(cfg["brand_short"])}" width="72" height="72"/>
 <div class="flyer-brand-block">
 <p class="flyer-org">{esc(cfg["org"])}</p>
 <h2 class="flyer-brand-mark">{esc(cfg["brand_short"])}</h2>

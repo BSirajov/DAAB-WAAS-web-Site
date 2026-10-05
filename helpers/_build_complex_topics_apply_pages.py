@@ -759,7 +759,7 @@ def page(lang):
 <title>{c["title"]}</title>
 <meta name="description" content="{c["description"]}"/>
 <!-- daab-seo -->
-<link rel="icon" href="../images/daab-favicon.png" type="image/png"/>
+<link rel="icon" href="../images/daab-favicon.webp" type="image/webp"/>
 <link rel="apple-touch-icon" href="../images/daab-favicon.png"/>
 <link rel="canonical" href="{c["canonical"]}"/>
 <link rel="alternate" hreflang="az" href="https://daab-waas.com/az/complex-topics-apply.html"/>
@@ -820,7 +820,7 @@ def page(lang):
 <div class="nav-inner">
 <button class="mobile-menu-toggle" type="button" aria-label="{c["menu"]}" aria-expanded="false" aria-controls="primaryNavMenu"><span></span><span></span><span></span></button>
 <div class="page-logo"><a title="{c["home_title"]}" aria-label="{c["home_label"]}" href="{c["home_href"]}">
-<img src="../images/daab-logo.png" class="nav-brand-logo" alt="{c["logo_alt"]}"></a></div>
+<img src="../images/daab-logo.webp" class="nav-brand-logo" alt="{c["logo_alt"]}"></a></div>
 <a aria-label="{c["home_label"]}" class="nav-brand" href="{c["home_href"]}">
 <span class="nav-brand-text">{c["brand"]}</span></a>
 <div class="nav-menu" id="primaryNavMenu" data-daab-nav-placeholder="1"><div class="nav-divider"></div></div></div></nav>

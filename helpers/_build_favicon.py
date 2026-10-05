@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write circular favicon.ico / PNG from images/daab-logo.png."""
+"""Write circular favicon.ico / PNG from images/daab-logo.webp."""
 from __future__ import annotations
 
 from _make_circular_favicon import main

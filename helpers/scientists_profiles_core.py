@@ -198,7 +198,7 @@ def render_card(profile: dict, lang: str, *, asset_prefix: str = "../../") -> st
     alt = html.escape(name_display)
     qr_labels = QR_LABELS[lang]
     profile_href = f"#{html.escape(slug)}"
-    qr_src = f"{asset_prefix}images/qr/{lang}/{html.escape(slug)}.png?v=1"
+    qr_src = f"{asset_prefix}images/qr/{lang}/{html.escape(slug)}.webp?v=1"
     listen_lead = (profile.get("listen_lead_az") if lang == "az" else profile.get("listen_lead_en")) or ""
     title_html = (
         f'      <p class="card-title">{html.escape(title)}</p>\n'

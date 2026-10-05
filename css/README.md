@@ -8,7 +8,7 @@ Shared and page-specific CSS for the DAAB static site.
 |------|---------|
 | `daab-common.css` | Global design system (inlined bundles: tokens, site background, sticky chrome, etc.). |
 | `daab-mobile.css` | Mobile/touch layer: safe areas, scroll lock, hamburger, landscape. |
-| `daab-site-background.css` | **Source** for site-wide `body::before` background (`images/diaspor-body-top-bg.png`). Content is synced into `daab-common.css`; edit here first, then re-inline or bump `daab-common.css`. |
+| `daab-site-background.css` | **Source** for site-wide `body::before` background (`images/diaspor-body-top-bg.webp`). Content is synced into `daab-common.css`; edit here first, then re-inline or bump `daab-common.css`. |
 
 **HTML reference (from `az/` or `en/`):**
 

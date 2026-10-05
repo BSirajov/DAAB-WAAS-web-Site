@@ -147,7 +147,8 @@
             {
               "id": "forum-2026-register",
               "labelKey": "forum2026Register",
-              "descKey": "forum2026RegisterDesc"
+              "descKey": "forum2026RegisterDesc",
+              "disabled": true
             }
           ]
         },

@@ -220,7 +220,7 @@ def resolve_book_files() -> list[dict]:
     out = []
     for book in BOOKS:
         bid = book["id"]
-        cover = _find(f"{bid}-1_", ".png")
+        cover = _find(f"{bid}-1_", ".webp")
         pdf = _find(f"{bid}-2_", ".pdf")
         photos = _find(f"{bid}-3_", ".pdf")
         out.append({**book, "cover": cover, "pdf": pdf, "photos": photos})

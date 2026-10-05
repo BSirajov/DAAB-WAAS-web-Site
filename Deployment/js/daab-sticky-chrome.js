@@ -243,7 +243,7 @@
 
     var img = document.createElement("img");
     img.className = "daab-print-header__logo";
-    img.src = assetRoot() + "images/daab-logo.png";
+    img.src = assetRoot() + "images/daab-logo.webp";
     img.alt = "";
 
     var name = document.createElement("p");
