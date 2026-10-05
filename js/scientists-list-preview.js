@@ -165,7 +165,7 @@
 
   function qrUrlForProfile(profile) {
     if (!profile || !profile.slug) return "";
-    return assetRoot + "images/qr/" + lang + "/" + profile.slug + ".png?v=1";
+    return assetRoot + "images/qr/" + lang + "/" + profile.slug + ".webp?v=1";
   }
 
   function profileHrefForProfile(profile) {

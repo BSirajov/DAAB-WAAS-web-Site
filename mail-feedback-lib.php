@@ -385,7 +385,7 @@ function daab_feedback_validate(array $post, ?array $file = null): array
     }
     $replyYes = in_array(strtolower($reply), ['yes', 'true', '1', 'on'], true);
     $privacyYes = in_array(strtolower($privacy), ['yes', 'true', '1', 'on'], true);
-    $types = ['general', 'suggestion', 'technical', 'correction', 'other'];
+    $types = ['second-forum', 'general', 'suggestion', 'technical', 'correction', 'other'];
 
     if ($name === '' || mb_strlen($name, 'UTF-8') > 120) {
         $empty['error'] = 'error:name';

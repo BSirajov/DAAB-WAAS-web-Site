@@ -64,6 +64,7 @@ $attachment = $result['attachment'];
 
 $typeLabels = $isAz
     ? [
+        'second-forum' => 'II Forum',
         'general' => 'Ümumi rəy',
         'suggestion' => 'Təklif',
         'technical' => 'Texniki problem',
@@ -71,6 +72,7 @@ $typeLabels = $isAz
         'other' => 'Digər',
     ]
     : [
+        'second-forum' => '2nd Forum',
         'general' => 'General feedback',
         'suggestion' => 'Suggestion',
         'technical' => 'Technical problem',

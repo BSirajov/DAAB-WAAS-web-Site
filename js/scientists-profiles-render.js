@@ -215,7 +215,7 @@
     var credHtml = cred ? ' <span class="cred">' + escHtml(cred) + "</span>" : "";
     var qrLabels = QR_LABELS[lang] || QR_LABELS.en;
     var profileHref = "#" + escAttr(slug);
-    var qrSrc = assetUrl(prefix, "images/qr/" + lang + "/" + slug + ".png?v=1");
+    var qrSrc = assetUrl(prefix, "images/qr/" + lang + "/" + slug + ".webp?v=1");
     var listenLead =
       lang === "az"
         ? String(profile.listen_lead_az || "").trim()
