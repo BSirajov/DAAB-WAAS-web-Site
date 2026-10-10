@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-09",
+  "profile": "Rauf Abdullayev",
+  "profileNumber": 11,
+  "languages": [
+    "English",
+    "Azerbaijani"
+  ],
+  "source": "User-provided CV, page 1",
+  "sources": [
+    {
+      "title": "CV Rauf Abdullayev.pdf",
+      "file": "E:/Documents/Azərbaycanlı Alimlərin Istanbul görüşü, 8-10 Dekabr 2022/1-ci Bakı forumu, 8-12 Sentyabr 2024/Web Site/CV/CV Rauf Abdullayev.pdf",
+      "page": 1,
+      "sha256": "baea6f3a3e8d0728c21cd8241bd80bb2ad2becc8db7df6d1a21f95f9e56ee9ab",
+      "pdfMetadataCreated": "2023-11-08T07:29:12Z",
+      "note": "Single-page CV visually inspected. Its metadata date is not proof that every claim remained current after 2023."
+    }
+  ],
+  "issueIds": [
+    "V015",
+    "V104"
+  ],
+  "resolvedIssueIds": [
+    "V015",
+    "V104"
+  ],
+  "newVerificationIds": [
+    "V155",
+    "V156"
+  ],
+  "summary": [
+    "V015: replaced city-only graduation wording with named universities and the qualifications actually described in the CV. Strasbourg study is described as French language teaching without inventing a degree type; the computer-engineering qualification is a bachelor’s degree.",
+    "V104: used the CV’s exact final-thesis title and completion month rather than the unsupported data-template wording.",
+    "Synchronized the English and Azerbaijani education and thesis details, the English translation source, and both search records.",
+    "Flagged the displayed PhD and present-day employer for separate confirmation; neither was changed."
+  ],
+  "scopeNote": "The CV is historical evidence, with PDF creation metadata dated November 8, 2023. It lists proCtec GmbH from January 2023 as current at that time. That does not establish his employer today, and the absence of a doctorate in this CV does not prove he lacks one. No contact details, address, photo, employer, credentials, or unrelated biographical claims were changed.",
+  "approvedWording": {
+    "educationBefore": "He graduated from Strasbourg, France and Duisburg-Essen, Germany.",
+    "educationAfter": "He studied French language teaching at the University of Strasbourg, France, from 2009 to 2012 and earned a bachelor's degree in computer engineering at the University of Duisburg-Essen, Germany, in 2022.",
+    "thesisBefore": "He conducted research on \"Programming of a data storage application with an in-mobile app option to change the data entry templates.\"",
+    "thesisAfter": "His final thesis, completed in September 2022, was titled <em>&quot;ManageData&quot; Mobile Application in Xamarin</em>."
+  },
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 189,
+      "jsonPointer": "/profiles/10/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He graduated from Strasbourg, France and Duisburg-Essen, Germany. He conducted research on \"Programming of a data storage application with an in-mobile app option to change the data entry templates.\" He works as an IT system administrator at the company \"Stadler.\" At the same time, he continues scientific research in the field of IT innovations.</p>",
+      "after": "<p class=\"bio bio-lead\">He studied French language teaching at the University of Strasbourg, France, from 2009 to 2012 and earned a bachelor's degree in computer engineering at the University of Duisburg-Essen, Germany, in 2022. His final thesis, completed in September 2022, was titled <em>&quot;ManageData&quot; Mobile Application in Xamarin</em>. He works as an IT system administrator at the company \"Stadler.\" At the same time, he continues scientific research in the field of IT innovations.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 185,
+      "jsonPointer": "/profiles/10/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Fransanın Strasburq və Almaniyanın Duisburq-Essen universitetlərinin məzunu olub. “Programming of a data storage application with an in-mobile app option to change the data entry templates” mövzusunda araşdırmalar aparmışdır. “Stadler” şirkətində İT üzrə sistem administratoru vəzifəsində çalışır. Eyni zamanda İT yenilikləri sahəsində elmi araşdırmaları davam etdirir.</p>",
+      "after": "<p class=\"bio bio-lead\">2009–2012-ci illərdə Fransanın Strasburq Universitetində fransız dili müəllimliyi üzrə təhsil almış, 2022-ci ildə isə Almaniyanın Duisburq-Essen Universitetində kompüter mühəndisliyi üzrə bakalavr dərəcəsi almışdır. 2022-ci ilin sentyabrında tamamladığı buraxılış işinin adı <em>&quot;ManageData&quot; Mobile Application in Xamarin</em> olmuşdur. “Stadler” şirkətində İT üzrə sistem administratoru vəzifəsində çalışır. Eyni zamanda İT yenilikləri sahəsində elmi araşdırmaları davam etdirir.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/10/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He graduated from Strasbourg, France and Duisburg-Essen, Germany. He conducted research on \"Programming of a data storage application with an in-mobile app option to change the data entry templates.\" He works as an IT system administrator at the company \"Stadler.\" At the same time, he continues scientific research in the field of IT innovations.</p>",
+      "after": "<p class=\"bio bio-lead\">He studied French language teaching at the University of Strasbourg, France, from 2009 to 2012 and earned a bachelor's degree in computer engineering at the University of Duisburg-Essen, Germany, in 2022. His final thesis, completed in September 2022, was titled <em>&quot;ManageData&quot; Mobile Application in Xamarin</em>. He works as an IT system administrator at the company \"Stadler.\" At the same time, he continues scientific research in the field of IT innovations.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/10/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Fransanın Strasburq və Almaniyanın Duisburq-Essen universitetlərinin məzunu olub. “Programming of a data storage application with an in-mobile app option to change the data entry templates” mövzusunda araşdırmalar aparmışdır. “Stadler” şirkətində İT üzrə sistem administratoru vəzifəsində çalışır. Eyni zamanda İT yenilikləri sahəsində elmi araşdırmaları davam etdirir.</p>",
+      "after": "<p class=\"bio bio-lead\">2009–2012-ci illərdə Fransanın Strasburq Universitetində fransız dili müəllimliyi üzrə təhsil almış, 2022-ci ildə isə Almaniyanın Duisburq-Essen Universitetində kompüter mühəndisliyi üzrə bakalavr dərəcəsi almışdır. 2022-ci ilin sentyabrında tamamladığı buraxılış işinin adı <em>&quot;ManageData&quot; Mobile Application in Xamarin</em> olmuşdur. “Stadler” şirkətində İT üzrə sistem administratoru vəzifəsində çalışır. Eyni zamanda İT yenilikləri sahəsində elmi araşdırmaları davam etdirir.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 189,
+      "jsonPointer": "/profiles/10/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He graduated from Strasbourg, France and Duisburg-Essen, Germany. He conducted research on \"Programming of a data storage application with an in-mobile app option to change the data entry templates.\" He works as an IT system administrator at the company \"Stadler.\" At the same time, he continues scientific research in the field of IT innovations.</p>",
+      "after": "<p class=\"bio bio-lead\">He studied French language teaching at the University of Strasbourg, France, from 2009 to 2012 and earned a bachelor's degree in computer engineering at the University of Duisburg-Essen, Germany, in 2022. His final thesis, completed in September 2022, was titled <em>&quot;ManageData&quot; Mobile Application in Xamarin</em>. He works as an IT system administrator at the company \"Stadler.\" At the same time, he continues scientific research in the field of IT innovations.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 185,
+      "jsonPointer": "/profiles/10/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Fransanın Strasburq və Almaniyanın Duisburq-Essen universitetlərinin məzunu olub. “Programming of a data storage application with an in-mobile app option to change the data entry templates” mövzusunda araşdırmalar aparmışdır. “Stadler” şirkətində İT üzrə sistem administratoru vəzifəsində çalışır. Eyni zamanda İT yenilikləri sahəsində elmi araşdırmaları davam etdirir.</p>",
+      "after": "<p class=\"bio bio-lead\">2009–2012-ci illərdə Fransanın Strasburq Universitetində fransız dili müəllimliyi üzrə təhsil almış, 2022-ci ildə isə Almaniyanın Duisburq-Essen Universitetində kompüter mühəndisliyi üzrə bakalavr dərəcəsi almışdır. 2022-ci ilin sentyabrında tamamladığı buraxılış işinin adı <em>&quot;ManageData&quot; Mobile Application in Xamarin</em> olmuşdur. “Stadler” şirkətində İT üzrə sistem administratoru vəzifəsində çalışır. Eyni zamanda İT yenilikləri sahəsində elmi araşdırmaları davam etdirir.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/10/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He graduated from Strasbourg, France and Duisburg-Essen, Germany. He conducted research on \"Programming of a data storage application with an in-mobile app option to change the data entry templates.\" He works as an IT system administrator at the company \"Stadler.\" At the same time, he continues scientific research in the field of IT innovations.</p>",
+      "after": "<p class=\"bio bio-lead\">He studied French language teaching at the University of Strasbourg, France, from 2009 to 2012 and earned a bachelor's degree in computer engineering at the University of Duisburg-Essen, Germany, in 2022. His final thesis, completed in September 2022, was titled <em>&quot;ManageData&quot; Mobile Application in Xamarin</em>. He works as an IT system administrator at the company \"Stadler.\" At the same time, he continues scientific research in the field of IT innovations.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/10/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Fransanın Strasburq və Almaniyanın Duisburq-Essen universitetlərinin məzunu olub. “Programming of a data storage application with an in-mobile app option to change the data entry templates” mövzusunda araşdırmalar aparmışdır. “Stadler” şirkətində İT üzrə sistem administratoru vəzifəsində çalışır. Eyni zamanda İT yenilikləri sahəsində elmi araşdırmaları davam etdirir.</p>",
+      "after": "<p class=\"bio bio-lead\">2009–2012-ci illərdə Fransanın Strasburq Universitetində fransız dili müəllimliyi üzrə təhsil almış, 2022-ci ildə isə Almaniyanın Duisburq-Essen Universitetində kompüter mühəndisliyi üzrə bakalavr dərəcəsi almışdır. 2022-ci ilin sentyabrında tamamladığı buraxılış işinin adı <em>&quot;ManageData&quot; Mobile Application in Xamarin</em> olmuşdur. “Stadler” şirkətində İT üzrə sistem administratoru vəzifəsində çalışır. Eyni zamanda İT yenilikləri sahəsində elmi araşdırmaları davam etdirir.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 66,
+      "jsonPointer": "/profiles/rauf_abdullayev@yahoo.fr/bio_html",
+      "field": "bio_html",
+      "before": "<p class=\"bio bio-lead\">He graduated from Strasbourg, France and Duisburg-Essen, Germany. Conducted research on &quot;Programming of a data storage application with an in-mobile app option to change the data entry templates&quot;. He works as an IT system administrator in &quot;Stadler&quot; company. At the same time, he continues scientific research in the field of IT innovations.</p>",
+      "after": "<p class=\"bio bio-lead\">He studied French language teaching at the University of Strasbourg, France, from 2009 to 2012 and earned a bachelor's degree in computer engineering at the University of Duisburg-Essen, Germany, in 2022. His final thesis, completed in September 2022, was titled <em>&quot;ManageData&quot; Mobile Application in Xamarin</em>. He works as an IT system administrator in &quot;Stadler&quot; company. At the same time, he continues scientific research in the field of IT innovations.</p>"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6426,
+      "jsonPointer": "/entries/493/norm",
+      "field": "norm",
+      "before": "rauf abdullayev stadler company computer science germany rauf_abdullayev@yahoo.fr he graduated from strasbourg france and duisburg-essen germany. conducted research on programming of a data storage application with an in-mobile app option to change the data entry templates . he works as an it system administrator in stadler company. at the same time he continues scientific research in the fiel phd",
+      "after": "rauf abdullayev stadler company computer science germany rauf_abdullayev@yahoo.fr he studied french language teaching at the university of strasbourg france from 2009 to 2012 and earned a bachelor s degree in computer engineering at the university of duisburg-essen germany in 2022. his final thesis completed in september 2022 was titled managedata mobile application in xamarin. he works as a phd"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6413,
+      "jsonPointer": "/entries/492/norm",
+      "field": "norm",
+      "before": "rauf abdullayev stadler sirketi komputer elmleri almaniya rauf_abdullayev@yahoo.fr fransanin strasburq ve almaniyanin duisburq-essen universitetlerinin mezunu olub. programming of a data storage application with an in-mobile app option to change the data entry templates movzusunda arasdirmalar aparmisdir. stadler sirketinde it uzre sistem administratoru vezifesinde calisir. eyni zamanda it yenili phd",
+      "after": "rauf abdullayev stadler sirketi komputer elmleri almaniya rauf_abdullayev@yahoo.fr 2009 2012-ci illerde fransanin strasburq universitetinde fransiz dili muellimliyi uzre tehsil almis 2022-ci ilde ise almaniyanin duisburq-essen universitetinde komputer muhendisliyi uzre bakalavr derecesi almisdir. 2022-ci ilin sentyabrinda tamamladigi buraxilis isinin adi managedata mobile application in xamarin ol phd"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6426,
+      "jsonPointer": "/entries/493/norm",
+      "field": "norm",
+      "before": "rauf abdullayev stadler company computer science germany rauf_abdullayev@yahoo.fr he graduated from strasbourg france and duisburg-essen germany. conducted research on programming of a data storage application with an in-mobile app option to change the data entry templates . he works as an it system administrator in stadler company. at the same time he continues scientific research in the fiel phd",
+      "after": "rauf abdullayev stadler company computer science germany rauf_abdullayev@yahoo.fr he studied french language teaching at the university of strasbourg france from 2009 to 2012 and earned a bachelor s degree in computer engineering at the university of duisburg-essen germany in 2022. his final thesis completed in september 2022 was titled managedata mobile application in xamarin. he works as a phd"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6413,
+      "jsonPointer": "/entries/492/norm",
+      "field": "norm",
+      "before": "rauf abdullayev stadler sirketi komputer elmleri almaniya rauf_abdullayev@yahoo.fr fransanin strasburq ve almaniyanin duisburq-essen universitetlerinin mezunu olub. programming of a data storage application with an in-mobile app option to change the data entry templates movzusunda arasdirmalar aparmisdir. stadler sirketinde it uzre sistem administratoru vezifesinde calisir. eyni zamanda it yenili phd",
+      "after": "rauf abdullayev stadler sirketi komputer elmleri almaniya rauf_abdullayev@yahoo.fr 2009 2012-ci illerde fransanin strasburq universitetinde fransiz dili muellimliyi uzre tehsil almis 2022-ci ilde ise almaniyanin duisburq-essen universitetinde komputer muhendisliyi uzre bakalavr derecesi almisdir. 2022-ci ilin sentyabrinda tamamladigi buraxilis isinin adi managedata mobile application in xamarin ol phd"
+    }
+  ]
+}

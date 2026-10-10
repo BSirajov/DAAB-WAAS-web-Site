@@ -5,9 +5,6 @@
 (function () {
   "use strict";
 
-  var SORT_STORAGE_KEY = "daab-scientists-list-sort";
-  var GROUP_STORAGE_KEY = "daab-scientists-list-group";
-  var VIEW_STORAGE_KEY = "daab-scientists-list-view";
   var SORT_COLUMNS = ["ad_soyad", "yasadigi_olke", "ixtilas", "elmi_derece", "cinsi"];
   var GROUP_COLUMNS = ["yasadigi_olke", "ixtilas", "elmi_derece", "cinsi"];
 
@@ -129,33 +126,51 @@
     return String(s || "");
   }
 
+  var LIST_PER = ["20", "50", "100", "999999"];
+
+  function displayPrefs() {
+    try {
+      return window.DAAB_PREFS || null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function readListPrefs() {
+    try {
+      var api = displayPrefs();
+      var stored = api && api.readList ? api.readList() : null;
+      return stored && typeof stored === "object" ? stored : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function writeListPrefs(snapshot) {
+    try {
+      var api = displayPrefs();
+      if (api && api.writeList) api.writeList(snapshot);
+    } catch (e) { /* ignore */ }
+  }
+
   function readSortState() {
     try {
-      var raw = sessionStorage.getItem(SORT_STORAGE_KEY);
-      if (!raw) return null;
-      var s = JSON.parse(raw);
-      if (!s || SORT_COLUMNS.indexOf(s.sortCol) === -1) return null;
-      if (s.sortDir !== 1 && s.sortDir !== -1) return null;
-      return { sortCol: s.sortCol, sortDir: s.sortDir };
+      var stored = readListPrefs();
+      if (SORT_COLUMNS.indexOf(stored.sort) === -1) return null;
+      if (stored.dir !== 1 && stored.dir !== -1) return null;
+      return { sortCol: stored.sort, sortDir: stored.dir };
     } catch (e) {
       return null;
     }
   }
 
   function saveSortState(sortCol, sortDir) {
-    try {
-      sessionStorage.setItem(
-        SORT_STORAGE_KEY,
-        JSON.stringify({ sortCol: sortCol, sortDir: sortDir })
-      );
-    } catch (e) {
-      /* ignore */
-    }
+    writeListPrefs({ sort: sortCol, dir: sortDir });
   }
 
   function readGroupState() {
     try {
-      var col = sessionStorage.getItem(GROUP_STORAGE_KEY) || "";
+      var col = readListPrefs().group || "";
       return GROUP_COLUMNS.indexOf(col) >= 0 ? col : "";
     } catch (e) {
       return "";
@@ -163,29 +178,31 @@
   }
 
   function saveGroupState(groupCol) {
-    try {
-      if (!groupCol) sessionStorage.removeItem(GROUP_STORAGE_KEY);
-      else sessionStorage.setItem(GROUP_STORAGE_KEY, groupCol);
-    } catch (e) {
-      /* ignore */
-    }
+    writeListPrefs({ group: GROUP_COLUMNS.indexOf(groupCol) >= 0 ? groupCol : "" });
   }
 
   function readViewState() {
     try {
-      var raw = sessionStorage.getItem(VIEW_STORAGE_KEY);
-      if (raw === "table") return "table";
-      return "cards";
+      return readListPrefs().view === "table" ? "table" : "cards";
     } catch (e) {
       return "cards";
     }
   }
 
   function saveViewState(mode) {
+    writeListPrefs({ view: mode === "table" ? "table" : "cards" });
+  }
+
+  function savePerState(per) {
+    if (LIST_PER.indexOf(String(per)) === -1) return;
+    writeListPrefs({ per: String(per) });
+  }
+
+  function urlHas(key) {
     try {
-      sessionStorage.setItem(VIEW_STORAGE_KEY, mode === "cards" ? "cards" : "table");
+      return new URLSearchParams(location.search || "").has(key);
     } catch (e) {
-      /* ignore */
+      return false;
     }
   }
 
@@ -247,6 +264,56 @@
     var filtered = DATA.slice();
     var page = 1;
     var perPage = 50;
+    var booting = true;
+    var urlState = window.DAAB_URL_STATE;
+    var urlDisplay = false;
+    try {
+      var storedPer = readListPrefs().per;
+      if (storedPer && perPageSel && !urlHas("per")) perPageSel.value = storedPer;
+    } catch (e) { /* ignore */ }
+    if (urlState) {
+      var urlSort = urlState.get("sort");
+      if (urlHas("sort") && urlSort && SORT_COLUMNS.indexOf(urlSort) !== -1) {
+        sortCol = urlSort;
+        urlDisplay = true;
+      }
+      if (urlHas("dir") && urlState.get("dir") === "desc") {
+        sortDir = -1;
+        urlDisplay = true;
+      } else if (urlHas("dir") && urlState.get("dir") === "asc") {
+        sortDir = 1;
+        urlDisplay = true;
+      }
+      var urlGroup = urlState.get("group");
+      if (urlHas("group") && urlGroup && GROUP_COLUMNS.indexOf(urlGroup) !== -1) {
+        groupCol = urlGroup;
+        urlDisplay = true;
+      }
+      var urlView = urlState.get("view");
+      if (urlHas("view") && (urlView === "list" || urlView === "table")) {
+        viewMode = "table";
+        urlDisplay = true;
+      } else if (urlHas("view") && (urlView === "grid" || urlView === "cards")) {
+        viewMode = "cards";
+        urlDisplay = true;
+      }
+      var urlPage = parseInt(urlState.get("page"), 10);
+      if (urlPage > 1) page = urlPage;
+      if (urlState.get("q")) searchInput.value = urlState.get("q");
+      if (urlHas("per") && perPageSel && LIST_PER.indexOf(urlState.get("per")) !== -1) {
+        perPageSel.value = urlState.get("per");
+        urlDisplay = true;
+      }
+    }
+    if (urlDisplay) {
+      writeListPrefs({
+        view: viewMode,
+        group: groupCol,
+        sort: sortCol,
+        dir: sortDir,
+        per: perPageSel ? String(perPageSel.value || "50") : "50"
+      });
+    }
 
     var countries = sortValues(
       DATA.map(function (r) {
@@ -276,7 +343,7 @@
 
     countries.forEach(function (c) {
       var o = document.createElement("option");
-      o.value = c;
+      o.value = (shared.countryIso && shared.countryIso(c)) || c;
       o.textContent = c;
       filterCountry.appendChild(o);
     });
@@ -288,7 +355,7 @@
     });
     fields.forEach(function (x) {
       var o = document.createElement("option");
-      o.value = x;
+      o.value = (shared.fieldCode && shared.fieldCode(x)) || x;
       o.textContent = x;
       filterIxtilas.appendChild(o);
     });
@@ -319,6 +386,43 @@
     }
 
     mountMultiFilters();
+
+    if (urlState && ms && ms.setSelected) {
+      ["country", "field", "degree", "gender"].forEach(function (key) {
+        var id =
+          key === "country"
+            ? "filterCountry"
+            : key === "field"
+              ? "filterIxtilas"
+              : key === "degree"
+                ? "filterDegree"
+                : "filterCins";
+        var values = urlState.list(key);
+        if (values.length) ms.setSelected(id, values, true);
+      });
+    }
+
+    function syncCatalogUrl() {
+      if (!urlState) return;
+      var countries = getMultiFilter("filterCountry");
+      var degrees = getMultiFilter("filterDegree");
+      var fieldsFilter = getMultiFilter("filterIxtilas");
+      var genders = getMultiFilter("filterCins");
+      var perVal = perPageSel ? String(perPageSel.value || "50") : "50";
+      urlState.write({
+        q: (searchInput.value || "").trim(),
+        country: countries || [],
+        field: fieldsFilter || [],
+        degree: degrees || [],
+        gender: genders || [],
+        sort: sortCol || "",
+        dir: sortDir === -1 ? "desc" : "asc",
+        group: groupCol || "",
+        view: viewMode === "table" ? "list" : "",
+        page: viewMode === "table" && page > 1 ? String(page) : "",
+        per: viewMode === "table" && perVal !== "50" ? perVal : ""
+      });
+    }
 
     function sortRows(rows) {
       rows.sort(function (a, b) {
@@ -368,7 +472,11 @@
             "</button>"
           : nameLabel;
       return (
-        '<tr class="' + stripeClass + '">' +
+        '<tr' +
+        (r.say != null ? ' id="scientist-' + esc(String(r.say)) + '"' : "") +
+        ' class="' +
+        stripeClass +
+        '">' +
         '<td class="col-no">' +
         idx +
         "</td>" +
@@ -543,6 +651,7 @@
     function renderCard(row) {
       var card = document.createElement("article");
       card.className = "scientist-card";
+      if (row.say != null) card.id = "scientist-" + String(row.say);
       var email = (row.email || "").trim();
       var field = (row.ixtilas || "").trim();
       var country = row.yasadigi_olke || "";
@@ -725,6 +834,7 @@
         el.addEventListener("click", function () {
           page = parseInt(el.getAttribute("data-page"), 10);
           render();
+          syncCatalogUrl();
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
       });
@@ -830,10 +940,13 @@
         return selected.indexOf((value == null ? "" : String(value)).trim()) !== -1;
       };
       filtered = DATA.filter(function (r) {
-        if (!matchFn(countries, r.yasadigi_olke)) return false;
+        var countryCode = shared.countryIso ? shared.countryIso(r.yasadigi_olke) : r.yasadigi_olke;
+        var fieldId = shared.fieldCode ? shared.fieldCode((r.ixtilas || "").trim()) : (r.ixtilas || "").trim();
+        var genderId = shared.genderCode ? shared.genderCode(r.cinsi) : (r.cinsi || "").trim();
+        if (!matchFn(countries, countryCode)) return false;
         if (!matchFn(degrees, (r.elmi_derece || "").trim())) return false;
-        if (!matchFn(fieldsFilter, (r.ixtilas || "").trim())) return false;
-        if (!matchFn(genders, (r.cinsi || "").trim())) return false;
+        if (!matchFn(fieldsFilter, fieldId)) return false;
+        if (!matchFn(genders, genderId)) return false;
         if (q) {
           var hay = (shared.normQuery || function (s) {
             return String(s || "").toLowerCase().replace(/\s+/g, " ").trim();
@@ -842,8 +955,10 @@
         }
         return true;
       });
-      page = 1;
+      if (!applyFilters.keepPage) page = 1;
+      applyFilters.keepPage = false;
       render();
+      syncCatalogUrl();
     }
 
     function applySortState(nextCol, nextDir, persist) {
@@ -852,6 +967,7 @@
       if (persist !== false) saveSortState(sortCol, sortDir);
       updateSortUi();
       render();
+      if (!booting) syncCatalogUrl();
     }
 
     function applyGroupState(nextCol, persist) {
@@ -859,16 +975,18 @@
       if (persist !== false) saveGroupState(groupCol);
       updateGroupUi();
       updateViewUi();
-      page = 1;
+      if (!booting) page = 1;
       render();
+      if (!booting) syncCatalogUrl();
     }
 
     function setViewMode(mode) {
       viewMode = mode === "cards" ? "cards" : "table";
-      saveViewState(viewMode);
+      if (!booting) saveViewState(viewMode);
       updateViewUi();
-      page = 1;
+      if (!booting) page = 1;
       render();
+      if (!booting) syncCatalogUrl();
     }
 
     function updateFilterStyles() {
@@ -962,6 +1080,8 @@
       perPageSel.addEventListener("change", function () {
         page = 1;
         render();
+        syncCatalogUrl();
+        savePerState(perPageSel.value);
       });
     }
 
@@ -1021,6 +1141,8 @@
     applyGroupState(groupCol, false);
     setViewMode(viewMode);
     updateFilterStyles();
+    applyFilters.keepPage = page > 1;
+    booting = false;
     applyFilters();
 
     if (

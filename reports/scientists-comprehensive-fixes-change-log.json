@@ -1,0 +1,1845 @@
+{
+  "created": "2026-10-09T10:17:07.131Z",
+  "sourceReport": "scientists-english-comprehensive-review-before-fixes.html",
+  "confirmedIssuesApplied": 15,
+  "profilesChanged": 13,
+  "verificationItemsNotApplied": [
+    "V121",
+    "V122",
+    "V123",
+    "V124",
+    "V125",
+    "V126",
+    "V127",
+    "V128",
+    "V129",
+    "V130",
+    "V131",
+    "V132",
+    "V133",
+    "V134",
+    "V135",
+    "V136",
+    "V137",
+    "V138",
+    "V139",
+    "V140",
+    "V141",
+    "V142",
+    "V143",
+    "V144",
+    "V145",
+    "V146",
+    "V147",
+    "V148",
+    "V149",
+    "V150",
+    "V151",
+    "V152",
+    "V153",
+    "V154",
+    "V001",
+    "V002",
+    "V099",
+    "V003",
+    "V100",
+    "V101",
+    "V004",
+    "V102",
+    "V103",
+    "V005",
+    "V006",
+    "V007",
+    "V008",
+    "V009",
+    "V080",
+    "V010",
+    "V113",
+    "V011",
+    "V012",
+    "V013",
+    "V092",
+    "V014",
+    "V015",
+    "V104",
+    "V016",
+    "V017",
+    "V018",
+    "V081",
+    "V019",
+    "V020",
+    "V021",
+    "V022",
+    "V023",
+    "V082",
+    "V024",
+    "V025",
+    "V083",
+    "V026",
+    "V027",
+    "V114",
+    "V118",
+    "V093",
+    "V028",
+    "V029",
+    "V030",
+    "V031",
+    "V032",
+    "V033",
+    "V105",
+    "V034",
+    "V035",
+    "V106",
+    "V036",
+    "V037",
+    "V038",
+    "V039",
+    "V040",
+    "V041",
+    "V042",
+    "V043",
+    "V084",
+    "V107",
+    "V044",
+    "V085",
+    "V045",
+    "V046",
+    "V112",
+    "V119",
+    "V047",
+    "V086",
+    "V094",
+    "V087",
+    "V048",
+    "V049",
+    "V088",
+    "V108",
+    "V050",
+    "V115",
+    "V051",
+    "V052",
+    "V117",
+    "V053",
+    "V054",
+    "V116",
+    "V055",
+    "V056",
+    "V057",
+    "V058",
+    "V059",
+    "V060",
+    "V095",
+    "V061",
+    "V062",
+    "V063",
+    "V110",
+    "V064",
+    "V065",
+    "V089",
+    "V066",
+    "V120",
+    "V067",
+    "V068",
+    "V069",
+    "V070",
+    "V096",
+    "V071",
+    "V090",
+    "V111",
+    "V072",
+    "V073",
+    "V074",
+    "V075",
+    "V091",
+    "V097",
+    "V076",
+    "V077",
+    "V098",
+    "V078",
+    "V079"
+  ],
+  "issues": [
+    {
+      "id": "L278",
+      "p": 15,
+      "section": "Title",
+      "c": "founder, artistic director of the orchestra of the same name",
+      "s": "founder and artistic director of the orchestra of the same name",
+      "parts": [
+        {
+          "c": "founder, artistic director of the orchestra of the same name",
+          "s": "founder and artistic director of the orchestra of the same name"
+        }
+      ],
+      "t": "Style",
+      "e": "Join the two roles with and; the current comma leaves an incomplete coordination inside an already long list.",
+      "severity": "Low",
+      "verify": false,
+      "status": "New",
+      "sources": [],
+      "group": "Language and structure",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 256,
+          "jsonPointer": "/profiles/14/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-01.json",
+          "line": 1,
+          "jsonPointer": "/profiles/14/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 256,
+          "jsonPointer": "/profiles/14/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+          "line": 1,
+          "jsonPointer": "/profiles/14/title_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 256,
+          "jsonPointer": "/profiles/14/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-01.json",
+          "line": 1,
+          "jsonPointer": "/profiles/14/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 256,
+          "jsonPointer": "/profiles/14/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+          "line": 1,
+          "jsonPointer": "/profiles/14/title_en"
+        }
+      ]
+    },
+    {
+      "id": "L279",
+      "p": 29,
+      "section": "Biography",
+      "c": "Baku branch of Moscow State University (MSU)",
+      "s": "the Baku branch of Moscow State University (MSU)",
+      "parts": [
+        {
+          "c": "Baku branch of Moscow State University (MSU)",
+          "s": "the Baku branch of Moscow State University (MSU)"
+        }
+      ],
+      "t": "Grammar",
+      "e": "Use the definite article for the specified branch, a descriptive noun phrase rather than a standalone university name.",
+      "severity": "Medium",
+      "verify": false,
+      "status": "New",
+      "sources": [],
+      "group": "Language and structure",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 499,
+          "jsonPointer": "/profiles/28/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/7/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 499,
+          "jsonPointer": "/profiles/28/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/7/bio_html_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 499,
+          "jsonPointer": "/profiles/28/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/7/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 499,
+          "jsonPointer": "/profiles/28/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/7/bio_html_en"
+        }
+      ]
+    },
+    {
+      "id": "L280",
+      "p": 42,
+      "section": "Biography",
+      "c": "\"Birlik\" gold medal (\"Birlik\"), 2018",
+      "s": "\"Birlik\" gold medal, 2018",
+      "parts": [
+        {
+          "c": "\"Birlik\" gold medal (\"Birlik\"), 2018",
+          "s": "\"Birlik\" gold medal, 2018"
+        }
+      ],
+      "t": "Style",
+      "e": "The parenthesis repeats the identical name and supplies no additional information.",
+      "severity": "Low",
+      "verify": false,
+      "status": "New",
+      "sources": [],
+      "group": "Language and structure",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 720,
+          "jsonPointer": "/profiles/41/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/20/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 720,
+          "jsonPointer": "/profiles/41/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/20/bio_html_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 720,
+          "jsonPointer": "/profiles/41/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/20/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 720,
+          "jsonPointer": "/profiles/41/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/20/bio_html_en"
+        }
+      ]
+    },
+    {
+      "id": "L281",
+      "p": 66,
+      "section": "Biography",
+      "c": "In 2023, he organized 5 international scientific conferences on the occasion of the 100th anniversary of the birth of our national leader Heydar Aliyev, 2 international scientific conferences dedicated to the author of Karabakh Victory, Supreme Commander-in-Chief Ilham Aliyev, and 3 international conferences in 2024 to mark the 100th anniversary of the Nakhchivan Autonomous Republic.",
+      "s": "In 2023, he organized 5 international scientific conferences on the occasion of the 100th anniversary of the birth of our national leader Heydar Aliyev and 2 international scientific conferences dedicated to the author of Karabakh Victory, Supreme Commander-in-Chief Ilham Aliyev. In 2024, he organized 3 international conferences to mark the 100th anniversary of the Nakhchivan Autonomous Republic.",
+      "parts": [
+        {
+          "c": "In 2023, he organized 5 international scientific conferences on the occasion of the 100th anniversary of the birth of our national leader Heydar Aliyev, 2 international scientific conferences dedicated to the author of Karabakh Victory, Supreme Commander-in-Chief Ilham Aliyev, and 3 international conferences in 2024 to mark the 100th anniversary of the Nakhchivan Autonomous Republic.",
+          "s": "In 2023, he organized 5 international scientific conferences on the occasion of the 100th anniversary of the birth of our national leader Heydar Aliyev and 2 international scientific conferences dedicated to the author of Karabakh Victory, Supreme Commander-in-Chief Ilham Aliyev. In 2024, he organized 3 international conferences to mark the 100th anniversary of the Nakhchivan Autonomous Republic."
+        }
+      ],
+      "t": "Grammar",
+      "e": "The introductory In 2023 appears to govern events explicitly dated 2024. Separate the stated years; every date, count, name and attribution is preserved. This does not approve the separate translation question about author of Karabakh Victory.",
+      "severity": "Medium",
+      "verify": false,
+      "status": "New",
+      "sources": [],
+      "group": "Language and structure",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1131,
+          "jsonPointer": "/profiles/65/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/2/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1131,
+          "jsonPointer": "/profiles/65/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/2/bio_html_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1131,
+          "jsonPointer": "/profiles/65/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/2/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1131,
+          "jsonPointer": "/profiles/65/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/2/bio_html_en"
+        }
+      ]
+    },
+    {
+      "id": "L282",
+      "p": 70,
+      "section": "Biography",
+      "c": "two scientific-research books",
+      "s": "two research books",
+      "parts": [
+        {
+          "c": "two scientific-research books",
+          "s": "two research books"
+        }
+      ],
+      "t": "Style",
+      "e": "Scientific-research is a redundant, unidiomatic compound modifying books; research conveys the intended category.",
+      "severity": "Low",
+      "verify": false,
+      "status": "New",
+      "sources": [],
+      "group": "Language and structure",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1199,
+          "jsonPointer": "/profiles/69/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/6/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1199,
+          "jsonPointer": "/profiles/69/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/6/bio_html_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1199,
+          "jsonPointer": "/profiles/69/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/6/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1199,
+          "jsonPointer": "/profiles/69/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/6/bio_html_en"
+        }
+      ]
+    },
+    {
+      "id": "L283",
+      "p": 73,
+      "section": "Biography",
+      "c": "he was the author of 3 scientific books in the fields of educational psychology and positive psychology, 35 scientific articles in indexed international journals, and a speaker at 40 international scientific conferences.",
+      "s": "he was the author of 3 scientific books in the fields of educational psychology and positive psychology and 35 scientific articles in indexed international journals. He also spoke at 40 international scientific conferences.",
+      "parts": [
+        {
+          "c": "he was the author of 3 scientific books in the fields of educational psychology and positive psychology, 35 scientific articles in indexed international journals, and a speaker at 40 international scientific conferences.",
+          "s": "he was the author of 3 scientific books in the fields of educational psychology and positive psychology and 35 scientific articles in indexed international journals. He also spoke at 40 international scientific conferences."
+        }
+      ],
+      "t": "Style",
+      "e": "Separate the publication list from the speaking role so that a speaker cannot be read as another object of author of. Preserve all counts and past-tense claims.",
+      "severity": "Low",
+      "verify": false,
+      "status": "New",
+      "sources": [],
+      "group": "Language and structure",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1250,
+          "jsonPointer": "/profiles/72/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/9/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1250,
+          "jsonPointer": "/profiles/72/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/9/bio_html_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1250,
+          "jsonPointer": "/profiles/72/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/9/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1250,
+          "jsonPointer": "/profiles/72/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/9/bio_html_en"
+        }
+      ]
+    },
+    {
+      "id": "L284",
+      "p": 83,
+      "section": "Biography",
+      "c": "received doctoral degrees in a number of foreign universities",
+      "s": "received doctoral degrees from a number of foreign universities",
+      "parts": [
+        {
+          "c": "received doctoral degrees in a number of foreign universities",
+          "s": "received doctoral degrees from a number of foreign universities"
+        }
+      ],
+      "t": "Grammar",
+      "e": "Degrees are received from the awarding universities.",
+      "severity": "Medium",
+      "verify": false,
+      "status": "New",
+      "sources": [],
+      "group": "Language and structure",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1420,
+          "jsonPointer": "/profiles/82/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/19/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1420,
+          "jsonPointer": "/profiles/82/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/19/bio_html_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1420,
+          "jsonPointer": "/profiles/82/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/19/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1420,
+          "jsonPointer": "/profiles/82/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/19/bio_html_en"
+        }
+      ]
+    },
+    {
+      "id": "L285",
+      "p": 47,
+      "section": "Biography",
+      "c": "M.V. Lomonosov",
+      "s": "M. V. Lomonosov",
+      "parts": [
+        {
+          "c": "M.V. Lomonosov",
+          "s": "M. V. Lomonosov"
+        }
+      ],
+      "t": "Orthography",
+      "e": "Use spaces between personal initials, consistent with L. D. Landau, V. I. Vernadsky and other spaced initials in the profiles. The letters and name spelling are unchanged.",
+      "severity": "Low",
+      "verify": false,
+      "status": "New",
+      "sources": [],
+      "group": "Initial spacing",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 806,
+          "jsonPointer": "/profiles/46/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/4/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 806,
+          "jsonPointer": "/profiles/46/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/4/bio_html_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 806,
+          "jsonPointer": "/profiles/46/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/4/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 806,
+          "jsonPointer": "/profiles/46/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/4/bio_html_en"
+        }
+      ]
+    },
+    {
+      "id": "L286",
+      "p": 48,
+      "section": "Title",
+      "c": "I.M. Sechenov",
+      "s": "I. M. Sechenov",
+      "parts": [
+        {
+          "c": "I.M. Sechenov",
+          "s": "I. M. Sechenov"
+        }
+      ],
+      "t": "Orthography",
+      "e": "Use spaces between personal initials, consistent with L. D. Landau, V. I. Vernadsky and other spaced initials in the profiles. The letters and name spelling are unchanged.",
+      "severity": "Low",
+      "verify": false,
+      "status": "New",
+      "sources": [],
+      "group": "Initial spacing",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 822,
+          "jsonPointer": "/profiles/47/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/5/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 822,
+          "jsonPointer": "/profiles/47/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/5/title_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 822,
+          "jsonPointer": "/profiles/47/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/5/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 822,
+          "jsonPointer": "/profiles/47/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/5/title_en"
+        }
+      ]
+    },
+    {
+      "id": "L287",
+      "p": 48,
+      "section": "Biography",
+      "c": "B.V. Petrovsky",
+      "s": "B. V. Petrovsky",
+      "parts": [
+        {
+          "c": "B.V. Petrovsky",
+          "s": "B. V. Petrovsky"
+        }
+      ],
+      "t": "Orthography",
+      "e": "Use spaces between personal initials, consistent with L. D. Landau, V. I. Vernadsky and other spaced initials in the profiles. The letters and name spelling are unchanged.",
+      "severity": "Low",
+      "verify": false,
+      "status": "New",
+      "sources": [],
+      "group": "Initial spacing",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 823,
+          "jsonPointer": "/profiles/47/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/5/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 823,
+          "jsonPointer": "/profiles/47/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/5/bio_html_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 823,
+          "jsonPointer": "/profiles/47/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/5/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 823,
+          "jsonPointer": "/profiles/47/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/5/bio_html_en"
+        }
+      ]
+    },
+    {
+      "id": "L288",
+      "p": 54,
+      "section": "Title",
+      "c": "N.I. Pirogov",
+      "s": "N. I. Pirogov",
+      "parts": [
+        {
+          "c": "N.I. Pirogov",
+          "s": "N. I. Pirogov"
+        }
+      ],
+      "t": "Orthography",
+      "e": "Use spaces between personal initials, consistent with L. D. Landau, V. I. Vernadsky and other spaced initials in the profiles. The letters and name spelling are unchanged.",
+      "severity": "Low",
+      "verify": false,
+      "status": "New",
+      "sources": [],
+      "group": "Initial spacing",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 924,
+          "jsonPointer": "/profiles/53/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/11/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 924,
+          "jsonPointer": "/profiles/53/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/11/title_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 924,
+          "jsonPointer": "/profiles/53/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/11/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 924,
+          "jsonPointer": "/profiles/53/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/11/title_en"
+        }
+      ]
+    },
+    {
+      "id": "L289",
+      "p": 54,
+      "section": "Biography",
+      "c": "S.N. Fyodorov",
+      "s": "S. N. Fyodorov",
+      "parts": [
+        {
+          "c": "S.N. Fyodorov",
+          "s": "S. N. Fyodorov"
+        }
+      ],
+      "t": "Orthography",
+      "e": "Use spaces between personal initials, consistent with L. D. Landau, V. I. Vernadsky and other spaced initials in the profiles. The letters and name spelling are unchanged.",
+      "severity": "Low",
+      "verify": false,
+      "status": "New",
+      "sources": [],
+      "group": "Initial spacing",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 925,
+          "jsonPointer": "/profiles/53/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/11/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 925,
+          "jsonPointer": "/profiles/53/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/11/bio_html_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 925,
+          "jsonPointer": "/profiles/53/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/11/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 925,
+          "jsonPointer": "/profiles/53/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/11/bio_html_en"
+        }
+      ]
+    },
+    {
+      "id": "L290",
+      "p": 55,
+      "section": "Title",
+      "c": "M.V. Lomonosov",
+      "s": "M. V. Lomonosov",
+      "parts": [
+        {
+          "c": "M.V. Lomonosov",
+          "s": "M. V. Lomonosov"
+        }
+      ],
+      "t": "Orthography",
+      "e": "Use spaces between personal initials, consistent with L. D. Landau, V. I. Vernadsky and other spaced initials in the profiles. The letters and name spelling are unchanged.",
+      "severity": "Low",
+      "verify": false,
+      "status": "New",
+      "sources": [],
+      "group": "Initial spacing",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 941,
+          "jsonPointer": "/profiles/54/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/12/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 941,
+          "jsonPointer": "/profiles/54/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/12/title_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 941,
+          "jsonPointer": "/profiles/54/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/12/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 941,
+          "jsonPointer": "/profiles/54/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/12/title_en"
+        }
+      ]
+    },
+    {
+      "id": "L291",
+      "p": 57,
+      "section": "Title",
+      "c": "N.E. Bauman",
+      "s": "N. E. Bauman",
+      "parts": [
+        {
+          "c": "N.E. Bauman",
+          "s": "N. E. Bauman"
+        }
+      ],
+      "t": "Orthography",
+      "e": "Use spaces between personal initials, consistent with L. D. Landau, V. I. Vernadsky and other spaced initials in the profiles. The letters and name spelling are unchanged.",
+      "severity": "Low",
+      "verify": false,
+      "status": "New",
+      "sources": [],
+      "group": "Initial spacing",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 975,
+          "jsonPointer": "/profiles/56/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/14/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 975,
+          "jsonPointer": "/profiles/56/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/14/title_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 975,
+          "jsonPointer": "/profiles/56/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/14/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 975,
+          "jsonPointer": "/profiles/56/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/14/title_en"
+        }
+      ]
+    },
+    {
+      "id": "L292",
+      "p": 51,
+      "section": "Title",
+      "c": "member of the Azerbaijan and Russia Journalists Unions",
+      "s": "member of the journalists’ unions of Azerbaijan and Russia",
+      "t": "Grammar",
+      "e": "Use a possessive for unions of journalists and attach the country names with of. This describes the same affiliations without inventing either union’s official name.",
+      "severity": "Medium",
+      "verify": false,
+      "status": "New",
+      "group": "Language and structure",
+      "sources": [],
+      "parts": [
+        {
+          "c": "member of the Azerbaijan and Russia Journalists Unions",
+          "s": "member of the journalists’ unions of Azerbaijan and Russia"
+        }
+      ],
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 873,
+          "jsonPointer": "/profiles/50/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/8/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 873,
+          "jsonPointer": "/profiles/50/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/8/title_en"
+        }
+      ],
+      "appliedLocations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 873,
+          "jsonPointer": "/profiles/50/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/8/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 873,
+          "jsonPointer": "/profiles/50/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/8/title_en"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 256,
+      "jsonPointer": "/profiles/14/title_en",
+      "profile": "Khadija Zeynalova",
+      "issueIds": [
+        "L278"
+      ],
+      "before": "Composer, musicologist, scientific researcher, associate professor, doctor of philosophy in art studies, Baku Music Academy, Detmold Music Academy (Hochschule für Musik Detmold), and a graduate of Paderborn University, chairman of the German BRIDGE OF SOUND organization and founder, artistic director of the orchestra of the same name, founder, curator and artistic director of the HARMONY OF SOUND International Music Festival",
+      "after": "Composer, musicologist, scientific researcher, associate professor, doctor of philosophy in art studies, Baku Music Academy, Detmold Music Academy (Hochschule für Musik Detmold), and a graduate of Paderborn University, chairman of the German BRIDGE OF SOUND organization and founder and artistic director of the orchestra of the same name, founder, curator and artistic director of the HARMONY OF SOUND International Music Festival"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 822,
+      "jsonPointer": "/profiles/47/title_en",
+      "profile": "Aliheydar Rahimov",
+      "issueIds": [
+        "L286"
+      ],
+      "before": "Professor of the Department of Anesthesiology and Reanimatology of the First Moscow State Medical University named after I.M. Sechenov, doctor of medical sciences, professor, senior transfusionist doctor",
+      "after": "Professor of the Department of Anesthesiology and Reanimatology of the First Moscow State Medical University named after I. M. Sechenov, doctor of medical sciences, professor, senior transfusionist doctor"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 873,
+      "jsonPointer": "/profiles/50/title_en",
+      "profile": "Kamran Rustamov",
+      "issueIds": [
+        "L292"
+      ],
+      "before": "Honored Scientist of the Republic of Azerbaijan, foreign member of the Russian Academy of Architecture and Construction Sciences (RAACS), member of the Azerbaijan and Russia Journalists Unions",
+      "after": "Honored Scientist of the Republic of Azerbaijan, foreign member of the Russian Academy of Architecture and Construction Sciences (RAACS), member of the journalists’ unions of Azerbaijan and Russia"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 924,
+      "jsonPointer": "/profiles/53/title_en",
+      "profile": "Sevinj Asgerova",
+      "issueIds": [
+        "L288"
+      ],
+      "before": "Doctor of medical sciences, academician of the Russian Academy of Natural Sciences (TEA), Honored scientist and educator, professor and senior researcher of the Russian National Research Medical University named after N.I. Pirogov",
+      "after": "Doctor of medical sciences, academician of the Russian Academy of Natural Sciences (TEA), Honored scientist and educator, professor and senior researcher of the Russian National Research Medical University named after N. I. Pirogov"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 941,
+      "jsonPointer": "/profiles/54/title_en",
+      "profile": "Suleyman Allahverdiyev",
+      "issueIds": [
+        "L290"
+      ],
+      "before": "Doctor of biological sciences, corresponding member of the Russian Academy of Sciences (REA), REA's K.A. Head of the \"Controlled Photobiosynthesis\" laboratory of the Timiryazev Institute of Plant Physiology (Moscow), senior researcher of the Institute of Fundamental Problems of Biology of REA (Pushchino), professor of M.V. Lomonosov Moscow State University and Moscow Institute of Physics and Technology, and head of the \"Photosynthesis and Hydrogen Energy\" laboratory of Bahçeşehir University in Turkey",
+      "after": "Doctor of biological sciences, corresponding member of the Russian Academy of Sciences (REA), REA's K.A. Head of the \"Controlled Photobiosynthesis\" laboratory of the Timiryazev Institute of Plant Physiology (Moscow), senior researcher of the Institute of Fundamental Problems of Biology of REA (Pushchino), professor of M. V. Lomonosov Moscow State University and Moscow Institute of Physics and Technology, and head of the \"Photosynthesis and Hydrogen Energy\" laboratory of Bahçeşehir University in Turkey"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 975,
+      "jsonPointer": "/profiles/56/title_en",
+      "profile": "Zahid Gojayev",
+      "issueIds": [
+        "L291"
+      ],
+      "before": "Deputy Director for Innovation and Implementation of the Federal Scientific Agrotechnical Center VIM (FGBNU), professor of Moscow Polytechnic University and N.E. Bauman Moscow State Technical University, doctor of technical sciences, professor, corresponding member of the Russian Academy of Sciences",
+      "after": "Deputy Director for Innovation and Implementation of the Federal Scientific Agrotechnical Center VIM (FGBNU), professor of Moscow Polytechnic University and N. E. Bauman Moscow State Technical University, doctor of technical sciences, professor, corresponding member of the Russian Academy of Sciences"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 499,
+      "jsonPointer": "/profiles/28/bio_html_en",
+      "profile": "Mark Applebaum",
+      "issueIds": [
+        "L279"
+      ],
+      "before": "<p class=\"bio bio-lead\">Professor Mark Applebaum is the author of 16 books and more than 90 articles published in scientific journals and conference proceedings in English, Hebrew, Russian, Spanish, Arabic, Ukrainian and Polish. His research interests include popularizing mathematics, teaching mathematics to gifted children, developing creative and critical thinking, and developing STEM education.</p><p class=\"bio\">During his academic career, Professor M. Applebaum spoke at more than 30 international conferences and often acted as a keynote speaker and a member of scientific committees. In 2022, he was elected to the International Committee of the International Mathematical Creativity and Talent Group (IGMCG) and the Education Committee of the European Mathematical Society (EMS). Since 2023, Kaye has been serving as the head of the Master&#x27;s Program in Integrative STEM Education at the College of Education.</p><p class=\"bio\">Over the last 15 years, Professor M. Applebaum has spoken as an invited guest at various academic events held at universities and schools in Azerbaijan. These institutions include Baku State University (BSU), Baku branch of Moscow State University (MSU), Azerbaijan Language University, Azerbaijan State University of Architecture and Construction, school number 134 and other educational institutions.</p>",
+      "after": "<p class=\"bio bio-lead\">Professor Mark Applebaum is the author of 16 books and more than 90 articles published in scientific journals and conference proceedings in English, Hebrew, Russian, Spanish, Arabic, Ukrainian and Polish. His research interests include popularizing mathematics, teaching mathematics to gifted children, developing creative and critical thinking, and developing STEM education.</p><p class=\"bio\">During his academic career, Professor M. Applebaum spoke at more than 30 international conferences and often acted as a keynote speaker and a member of scientific committees. In 2022, he was elected to the International Committee of the International Mathematical Creativity and Talent Group (IGMCG) and the Education Committee of the European Mathematical Society (EMS). Since 2023, Kaye has been serving as the head of the Master&#x27;s Program in Integrative STEM Education at the College of Education.</p><p class=\"bio\">Over the last 15 years, Professor M. Applebaum has spoken as an invited guest at various academic events held at universities and schools in Azerbaijan. These institutions include Baku State University (BSU), the Baku branch of Moscow State University (MSU), Azerbaijan Language University, Azerbaijan State University of Architecture and Construction, school number 134 and other educational institutions.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 720,
+      "jsonPointer": "/profiles/41/bio_html_en",
+      "profile": "Arzu Gurbanova",
+      "issueIds": [
+        "L280"
+      ],
+      "before": "<p class=\"bio bio-lead\"></p><p class=\"bio\">Professor Arzu Gurbanova gave lectures on \"English language stylistics,\" \"English grammar,\" \"History of England,\" &quot;Practical phonetics of the English language&quot; and other subjects. She is the author of the textbooks \"English Grammar,\" \"English Phonetics,\" &quot;English Stylistics&quot; and the monograph \"Pedagogical conditions for increasing the independent work of high school students in the English language class.\"</p><p class=\"bio\">She is the author of more than 250 scientific articles in local and foreign publications, including journals indexed in the &quot;Scopus&quot; database. She has given presentations at international scientific conferences and seminars held in various countries. She was the scientific supervisor of more than 100 master&#x27;s dissertations on English language teaching methodology and served as an examiner in the defense of 2 candidate&#x27;s dissertations.</p><p class=\"bio\">In 2020, she was awarded a letter of thanks by the State Committee for Diaspora Work of the Republic of Azerbaijan for her contributions to diaspora development.</p><p class=\"bio\">She translated the famous Azerbaijani writer Kamal Abdulla&#x27;s &quot;Valley of Sorcerers&quot; from Azerbaijani to Kazakh (2012). Also, she translated the book \"Hajimukan - The Mighty One,\" published on the occasion of the 150th anniversary of the famous wrestler Hajimukan Minaytpasov, from Kazakh into Russian and English (2021).</p><p class=\"bio\">Within the scope of her scientific and pedagogical activities, she supervised the dissertation work of more than 150 graduate students.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;Excellence in Education&quot; medal, 2013</li><li>20th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2015</li><li>&quot;Birlik&quot; gold medal (&quot;Birlik&quot;), 2018</li><li>&quot;Kind Mother&quot; gold medal, Dede Gorgud Foundation of the Republic of Azerbaijan, 2019</li><li>25th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2020</li><li>&quot;Meirim&quot; badge of the People&#x27;s Assembly of Kazakhstan (&quot;Мейирим&quot;), 2020</li><li>For her activities in the field of international relations and diaspora, she was awarded the medal of the Republic of Azerbaijan &quot;For services in diaspora activities&quot; in 2024</li><li>30th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2025</li></ul></div>",
+      "after": "<p class=\"bio bio-lead\"></p><p class=\"bio\">Professor Arzu Gurbanova gave lectures on \"English language stylistics,\" \"English grammar,\" \"History of England,\" &quot;Practical phonetics of the English language&quot; and other subjects. She is the author of the textbooks \"English Grammar,\" \"English Phonetics,\" &quot;English Stylistics&quot; and the monograph \"Pedagogical conditions for increasing the independent work of high school students in the English language class.\"</p><p class=\"bio\">She is the author of more than 250 scientific articles in local and foreign publications, including journals indexed in the &quot;Scopus&quot; database. She has given presentations at international scientific conferences and seminars held in various countries. She was the scientific supervisor of more than 100 master&#x27;s dissertations on English language teaching methodology and served as an examiner in the defense of 2 candidate&#x27;s dissertations.</p><p class=\"bio\">In 2020, she was awarded a letter of thanks by the State Committee for Diaspora Work of the Republic of Azerbaijan for her contributions to diaspora development.</p><p class=\"bio\">She translated the famous Azerbaijani writer Kamal Abdulla&#x27;s &quot;Valley of Sorcerers&quot; from Azerbaijani to Kazakh (2012). Also, she translated the book \"Hajimukan - The Mighty One,\" published on the occasion of the 150th anniversary of the famous wrestler Hajimukan Minaytpasov, from Kazakh into Russian and English (2021).</p><p class=\"bio\">Within the scope of her scientific and pedagogical activities, she supervised the dissertation work of more than 150 graduate students.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;Excellence in Education&quot; medal, 2013</li><li>20th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2015</li><li>\"Birlik\" gold medal, 2018</li><li>&quot;Kind Mother&quot; gold medal, Dede Gorgud Foundation of the Republic of Azerbaijan, 2019</li><li>25th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2020</li><li>&quot;Meirim&quot; badge of the People&#x27;s Assembly of Kazakhstan (&quot;Мейирим&quot;), 2020</li><li>For her activities in the field of international relations and diaspora, she was awarded the medal of the Republic of Azerbaijan &quot;For services in diaspora activities&quot; in 2024</li><li>30th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2025</li></ul></div>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 806,
+      "jsonPointer": "/profiles/46/bio_html_en",
+      "profile": "Aladdin Allahverdiyev",
+      "issueIds": [
+        "L285"
+      ],
+      "before": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. Based on his research findings, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times—in 1975, 1977 and 1980—badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. Based on his research findings, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times—in 1975, 1977 and 1980—badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M. V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 823,
+      "jsonPointer": "/profiles/47/bio_html_en",
+      "profile": "Aliheydar Rahimov",
+      "issueIds": [
+        "L287"
+      ],
+      "before": "<p class=\"bio bio-lead\">He graduated from Azerbaijan State Medical Institute in 1976. In 1980, he received the doctor of philosophy degree in medicine; in 1988 he received the scientific degree of doctor of medical sciences, and since 1993 he has been a professor.</p><p class=\"bio\">He is the author of more than 390 scientific works in the field of transfusiology, including 18 monographs and 13 lessons and methodical materials. He is the author of 4 inventions and has prepared 15 PhDs and 6 PhDs. He was awarded &quot;Man of the Year&quot; (2000), &quot;Best scientific monograph&quot; (2001) and &quot;Academic B.V. Petrovsky medal&quot; (2009) for his scientific activities and services.</p><p class=\"bio\">He is a member of the editorial boards of Russian and international scientific journals and a participant in and organizer of a number of prestigious international conferences. He actively participates in scientific societies of Russia and Azerbaijan in the field of transfusiology.</p>",
+      "after": "<p class=\"bio bio-lead\">He graduated from Azerbaijan State Medical Institute in 1976. In 1980, he received the doctor of philosophy degree in medicine; in 1988 he received the scientific degree of doctor of medical sciences, and since 1993 he has been a professor.</p><p class=\"bio\">He is the author of more than 390 scientific works in the field of transfusiology, including 18 monographs and 13 lessons and methodical materials. He is the author of 4 inventions and has prepared 15 PhDs and 6 PhDs. He was awarded &quot;Man of the Year&quot; (2000), &quot;Best scientific monograph&quot; (2001) and &quot;Academic B. V. Petrovsky medal&quot; (2009) for his scientific activities and services.</p><p class=\"bio\">He is a member of the editorial boards of Russian and international scientific journals and a participant in and organizer of a number of prestigious international conferences. He actively participates in scientific societies of Russia and Azerbaijan in the field of transfusiology.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 925,
+      "jsonPointer": "/profiles/53/bio_html_en",
+      "profile": "Sevinj Asgerova",
+      "issueIds": [
+        "L289"
+      ],
+      "before": "<p class=\"bio bio-lead\">She is a full member of the European Society of Plastic and Reconstructive Ophthalmological Surgeons (ESOPRS) and an honorary member and coordinator of the Society of Ophthalmologists of Turkic-speaking Countries. At the same time, she is a member of the Expert Council of the American Society of Ophthalmologists, the International Dacryological Society, the International Society of Pediatric Ophthalmologists, the Russian Society of Ophthalmology, the Russian Society of Plastic, Reconstructive and Aesthetic Surgeons, the International Union of Scientists, Teachers and Specialists, as well as the Internet publication \"Modern Problems of Science and Education.\"</p><p class=\"bio\">In 2005, she successfully defended her doctoral dissertation at the Institute of Eye Microsurgery of the Scientific and Technical Complex named after S.N. Fyodorov in Moscow.</p><p class=\"bio\">She is the author of 18 patents for inventions, 15 efficiency proposals and more than 140 scientific articles and theses. She was awarded gold medals named after Hippocrates and V. I. Vernadsky for her scientific and pedagogical activities.</p>",
+      "after": "<p class=\"bio bio-lead\">She is a full member of the European Society of Plastic and Reconstructive Ophthalmological Surgeons (ESOPRS) and an honorary member and coordinator of the Society of Ophthalmologists of Turkic-speaking Countries. At the same time, she is a member of the Expert Council of the American Society of Ophthalmologists, the International Dacryological Society, the International Society of Pediatric Ophthalmologists, the Russian Society of Ophthalmology, the Russian Society of Plastic, Reconstructive and Aesthetic Surgeons, the International Union of Scientists, Teachers and Specialists, as well as the Internet publication \"Modern Problems of Science and Education.\"</p><p class=\"bio\">In 2005, she successfully defended her doctoral dissertation at the Institute of Eye Microsurgery of the Scientific and Technical Complex named after S. N. Fyodorov in Moscow.</p><p class=\"bio\">She is the author of 18 patents for inventions, 15 efficiency proposals and more than 140 scientific articles and theses. She was awarded gold medals named after Hippocrates and V. I. Vernadsky for her scientific and pedagogical activities.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 1131,
+      "jsonPointer": "/profiles/65/bio_html_en",
+      "profile": "Ilkin Gulusoy",
+      "issueIds": [
+        "L281"
+      ],
+      "before": "<p class=\"bio bio-lead\">The Department of Contemporary Turkish Dialects and Literature operating at Qafqaz University is the only 4-year department in Turkey that trains specialists in Azerbaijani language and literature. Since 2014, on the initiative of Ilkin Gulusoy, a master&#x27;s department has been opened in the department, and during this period, about 60 masters have graduated.</p><p class=\"bio\">In 2023, he organized 5 international scientific conferences on the occasion of the 100th anniversary of the birth of our national leader Heydar Aliyev, 2 international scientific conferences dedicated to the author of Karabakh Victory, Supreme Commander-in-Chief Ilham Aliyev, and 3 international conferences in 2024 to mark the 100th anniversary of the Nakhchivan Autonomous Republic. Conference materials were published by the Ministry of Culture and Tourism of the Republic of Turkey with ISBNs.</p><p class=\"bio\">Ilkin Gulusoy is the author of 12 scientific books. 27 articles were published in periodical scientific publications included in international abstracting and indexing services. He has given presentations at more than 70 international scientific conferences and is the scientific editor of more than 60 books. Under his guidance, 10 people defended their master's theses in Azerbaijani language and literature.</p><p class=\"bio\">He received awards 3 times for his contributions to the science of Turkology. The book &quot;Comparative Phraseology of Turkish Turkish and Azerbaijani Turkish&quot; prepared jointly with Sema Sahin Dede was highly appreciated as the first research work written in this field.</p>",
+      "after": "<p class=\"bio bio-lead\">The Department of Contemporary Turkish Dialects and Literature operating at Qafqaz University is the only 4-year department in Turkey that trains specialists in Azerbaijani language and literature. Since 2014, on the initiative of Ilkin Gulusoy, a master&#x27;s department has been opened in the department, and during this period, about 60 masters have graduated.</p><p class=\"bio\">In 2023, he organized 5 international scientific conferences on the occasion of the 100th anniversary of the birth of our national leader Heydar Aliyev and 2 international scientific conferences dedicated to the author of Karabakh Victory, Supreme Commander-in-Chief Ilham Aliyev. In 2024, he organized 3 international conferences to mark the 100th anniversary of the Nakhchivan Autonomous Republic. Conference materials were published by the Ministry of Culture and Tourism of the Republic of Turkey with ISBNs.</p><p class=\"bio\">Ilkin Gulusoy is the author of 12 scientific books. 27 articles were published in periodical scientific publications included in international abstracting and indexing services. He has given presentations at more than 70 international scientific conferences and is the scientific editor of more than 60 books. Under his guidance, 10 people defended their master's theses in Azerbaijani language and literature.</p><p class=\"bio\">He received awards 3 times for his contributions to the science of Turkology. The book &quot;Comparative Phraseology of Turkish Turkish and Azerbaijani Turkish&quot; prepared jointly with Sema Sahin Dede was highly appreciated as the first research work written in this field.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 1199,
+      "jsonPointer": "/profiles/69/bio_html_en",
+      "profile": "Mehmet Riza Heyet",
+      "issueIds": [
+        "L282"
+      ],
+      "before": "<p class=\"bio bio-lead\">He translated a one-volume book on historical topics, and supervised the compilation of two-volume scientific and two-volume literary books. He was the scientific editor of two scientific-research books and published 18 scientific articles. He acted as the chairman of the organizing committee of 11 scientific symposia and participated as a speaker in 8 international scientific conferences. He was a member of the scientific council of one international scientific journal, the chairman of the organizing committee of two international symposia, and the editor-in-chief of one scientific journal. For many years, he worked as an editor and editor-in-chief of \"Varlıg\" magazine, and currently he is the owner and editor-in-chief of this publication. He worked as a speaker and translator at TRT, and taught at Tehran and Ankara universities.</p><p class=\"bio\">Currently, he is a lecturer at Ankara University and the head of Tabriz Research Institute (TEBAREN). Professor Mehmet Rıza Hayet, who conducts research on modern Turkish dialects and literature, has played a leading role in the organization of more than 10 international symposia and conferences. His scientific interests include Turkish press, Iranian Turks, language policy, national identity issues and South Azerbaijan topics. He is the author or editor of more than 100 scientific articles, 5 books and numerous translated works in these areas. Mirza Mehdi Khan Astarabadi&#x27;s works, Atatürk's \"Speech\" and the collection of articles by Dr Javad Hayat occupy an important place. He serves on the editorial boards of a number of prestigious academic journals.</p><p class=\"bio\">His scientific and practical activities are mainly focused on Turkology, language and culture of South Azerbaijani Turks, identity issues and language rights of Iranian Turks.</p>",
+      "after": "<p class=\"bio bio-lead\">He translated a one-volume book on historical topics, and supervised the compilation of two-volume scientific and two-volume literary books. He was the scientific editor of two research books and published 18 scientific articles. He acted as the chairman of the organizing committee of 11 scientific symposia and participated as a speaker in 8 international scientific conferences. He was a member of the scientific council of one international scientific journal, the chairman of the organizing committee of two international symposia, and the editor-in-chief of one scientific journal. For many years, he worked as an editor and editor-in-chief of \"Varlıg\" magazine, and currently he is the owner and editor-in-chief of this publication. He worked as a speaker and translator at TRT, and taught at Tehran and Ankara universities.</p><p class=\"bio\">Currently, he is a lecturer at Ankara University and the head of Tabriz Research Institute (TEBAREN). Professor Mehmet Rıza Hayet, who conducts research on modern Turkish dialects and literature, has played a leading role in the organization of more than 10 international symposia and conferences. His scientific interests include Turkish press, Iranian Turks, language policy, national identity issues and South Azerbaijan topics. He is the author or editor of more than 100 scientific articles, 5 books and numerous translated works in these areas. Mirza Mehdi Khan Astarabadi&#x27;s works, Atatürk's \"Speech\" and the collection of articles by Dr Javad Hayat occupy an important place. He serves on the editorial boards of a number of prestigious academic journals.</p><p class=\"bio\">His scientific and practical activities are mainly focused on Turkology, language and culture of South Azerbaijani Turks, identity issues and language rights of Iranian Turks.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 1250,
+      "jsonPointer": "/profiles/72/bio_html_en",
+      "profile": "Ramin Aliyev",
+      "issueIds": [
+        "L283"
+      ],
+      "before": "<p class=\"bio bio-lead\">As one of the first professors in his field in Turkey, he was the author of 3 scientific books in the fields of educational psychology and positive psychology, 35 scientific articles in indexed international journals, and a speaker at 40 international scientific conferences. Also, he supervised 6 PhD students and 19 master's students. He worked as a researcher in 7 international projects developed in the field of innovative approaches in education and application of positive psychology in schools. He received various prizes and awards for his scientific activities and contributions to the field of education. He is a member of prestigious organizations such as the American Psychological Association and the Turkish Psychological Counseling and Guidance Association. The projects he led have produced significant results, especially in the field of psychological well-being of young people and motivation in education. He also actively participated in many university and state projects in Turkey, including cooperation with TUBITAK and UNICEF. His academic activities include educational psychology, family therapy, social support systems, and psychological resilience during a pandemic.</p>",
+      "after": "<p class=\"bio bio-lead\">As one of the first professors in his field in Turkey, he was the author of 3 scientific books in the fields of educational psychology and positive psychology and 35 scientific articles in indexed international journals. He also spoke at 40 international scientific conferences. Also, he supervised 6 PhD students and 19 master's students. He worked as a researcher in 7 international projects developed in the field of innovative approaches in education and application of positive psychology in schools. He received various prizes and awards for his scientific activities and contributions to the field of education. He is a member of prestigious organizations such as the American Psychological Association and the Turkish Psychological Counseling and Guidance Association. The projects he led have produced significant results, especially in the field of psychological well-being of young people and motivation in education. He also actively participated in many university and state projects in Turkey, including cooperation with TUBITAK and UNICEF. His academic activities include educational psychology, family therapy, social support systems, and psychological resilience during a pandemic.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 1420,
+      "jsonPointer": "/profiles/82/bio_html_en",
+      "profile": "Khalil Kalantar",
+      "issueIds": [
+        "L284"
+      ],
+      "before": "<p class=\"bio bio-lead\">He received doctorates from both Nagoya and Tohoku universities. As one of the leading experts in the field of developing and manufacturing electronic displays and sensors, he is the author of 105 patents and 28 technical documents in various countries and regions, including Japan, the USA, Canada, Europe, South Korea and Taiwan. 35 articles and presentations on screen technologies were published in international scientific journals, and 59 in local publications. He has published 5 books in Japanese, abstracts in English, 15 book chapters and 7 IEC standards documents and has participated in 9 government projects. He implemented these projects in cooperation with leading Japanese universities. In addition, he provided scientific guidance to researchers who received doctoral degrees in a number of foreign universities.</p><p class=\"bio\">He was awarded the &quot;Progress&quot; medal in 2026 by the Decree of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</p>",
+      "after": "<p class=\"bio bio-lead\">He received doctorates from both Nagoya and Tohoku universities. As one of the leading experts in the field of developing and manufacturing electronic displays and sensors, he is the author of 105 patents and 28 technical documents in various countries and regions, including Japan, the USA, Canada, Europe, South Korea and Taiwan. 35 articles and presentations on screen technologies were published in international scientific journals, and 59 in local publications. He has published 5 books in Japanese, abstracts in English, 15 book chapters and 7 IEC standards documents and has participated in 9 government projects. He implemented these projects in cooperation with leading Japanese universities. In addition, he provided scientific guidance to researchers who received doctoral degrees from a number of foreign universities.</p><p class=\"bio\">He was awarded the &quot;Progress&quot; medal in 2026 by the Decree of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/14/title_en",
+      "profile": "Khadija Zeynalova",
+      "issueIds": [
+        "L278"
+      ],
+      "before": "Composer, musicologist, scientific researcher, associate professor, doctor of philosophy in art studies, Baku Music Academy, Detmold Music Academy (Hochschule für Musik Detmold), and a graduate of Paderborn University, chairman of the German BRIDGE OF SOUND organization and founder, artistic director of the orchestra of the same name, founder, curator and artistic director of the HARMONY OF SOUND International Music Festival",
+      "after": "Composer, musicologist, scientific researcher, associate professor, doctor of philosophy in art studies, Baku Music Academy, Detmold Music Academy (Hochschule für Musik Detmold), and a graduate of Paderborn University, chairman of the German BRIDGE OF SOUND organization and founder and artistic director of the orchestra of the same name, founder, curator and artistic director of the HARMONY OF SOUND International Music Festival"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-02.json",
+      "line": 1,
+      "jsonPointer": "/profiles/7/bio_html_en",
+      "profile": "Mark Applebaum",
+      "issueIds": [
+        "L279"
+      ],
+      "before": "<p class=\"bio bio-lead\">Professor Mark Applebaum is the author of 16 books and more than 90 articles published in scientific journals and conference proceedings in English, Hebrew, Russian, Spanish, Arabic, Ukrainian and Polish. His research interests include popularizing mathematics, teaching mathematics to gifted children, developing creative and critical thinking, and developing STEM education.</p><p class=\"bio\">During his academic career, Professor M. Applebaum spoke at more than 30 international conferences and often acted as a keynote speaker and a member of scientific committees. In 2022, he was elected to the International Committee of the International Mathematical Creativity and Talent Group (IGMCG) and the Education Committee of the European Mathematical Society (EMS). Since 2023, Kaye has been serving as the head of the Master&#x27;s Program in Integrative STEM Education at the College of Education.</p><p class=\"bio\">Over the last 15 years, Professor M. Applebaum has spoken as an invited guest at various academic events held at universities and schools in Azerbaijan. These institutions include Baku State University (BSU), Baku branch of Moscow State University (MSU), Azerbaijan Language University, Azerbaijan State University of Architecture and Construction, school number 134 and other educational institutions.</p>",
+      "after": "<p class=\"bio bio-lead\">Professor Mark Applebaum is the author of 16 books and more than 90 articles published in scientific journals and conference proceedings in English, Hebrew, Russian, Spanish, Arabic, Ukrainian and Polish. His research interests include popularizing mathematics, teaching mathematics to gifted children, developing creative and critical thinking, and developing STEM education.</p><p class=\"bio\">During his academic career, Professor M. Applebaum spoke at more than 30 international conferences and often acted as a keynote speaker and a member of scientific committees. In 2022, he was elected to the International Committee of the International Mathematical Creativity and Talent Group (IGMCG) and the Education Committee of the European Mathematical Society (EMS). Since 2023, Kaye has been serving as the head of the Master&#x27;s Program in Integrative STEM Education at the College of Education.</p><p class=\"bio\">Over the last 15 years, Professor M. Applebaum has spoken as an invited guest at various academic events held at universities and schools in Azerbaijan. These institutions include Baku State University (BSU), the Baku branch of Moscow State University (MSU), Azerbaijan Language University, Azerbaijan State University of Architecture and Construction, school number 134 and other educational institutions.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-02.json",
+      "line": 1,
+      "jsonPointer": "/profiles/20/bio_html_en",
+      "profile": "Arzu Gurbanova",
+      "issueIds": [
+        "L280"
+      ],
+      "before": "<p class=\"bio bio-lead\"></p><p class=\"bio\">Professor Arzu Gurbanova gave lectures on \"English language stylistics,\" \"English grammar,\" \"History of England,\" &quot;Practical phonetics of the English language&quot; and other subjects. She is the author of the textbooks \"English Grammar,\" \"English Phonetics,\" &quot;English Stylistics&quot; and the monograph \"Pedagogical conditions for increasing the independent work of high school students in the English language class.\"</p><p class=\"bio\">She is the author of more than 250 scientific articles in local and foreign publications, including journals indexed in the &quot;Scopus&quot; database. She has given presentations at international scientific conferences and seminars held in various countries. She was the scientific supervisor of more than 100 master&#x27;s dissertations on English language teaching methodology and served as an examiner in the defense of 2 candidate&#x27;s dissertations.</p><p class=\"bio\">In 2020, she was awarded a letter of thanks by the State Committee for Diaspora Work of the Republic of Azerbaijan for her contributions to diaspora development.</p><p class=\"bio\">She translated the famous Azerbaijani writer Kamal Abdulla&#x27;s &quot;Valley of Sorcerers&quot; from Azerbaijani to Kazakh (2012). Also, she translated the book \"Hajimukan - The Mighty One,\" published on the occasion of the 150th anniversary of the famous wrestler Hajimukan Minaytpasov, from Kazakh into Russian and English (2021).</p><p class=\"bio\">Within the scope of her scientific and pedagogical activities, she supervised the dissertation work of more than 150 graduate students.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;Excellence in Education&quot; medal, 2013</li><li>20th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2015</li><li>&quot;Birlik&quot; gold medal (&quot;Birlik&quot;), 2018</li><li>&quot;Kind Mother&quot; gold medal, Dede Gorgud Foundation of the Republic of Azerbaijan, 2019</li><li>25th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2020</li><li>&quot;Meirim&quot; badge of the People&#x27;s Assembly of Kazakhstan (&quot;Мейирим&quot;), 2020</li><li>For her activities in the field of international relations and diaspora, she was awarded the medal of the Republic of Azerbaijan &quot;For services in diaspora activities&quot; in 2024</li><li>30th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2025</li></ul></div>",
+      "after": "<p class=\"bio bio-lead\"></p><p class=\"bio\">Professor Arzu Gurbanova gave lectures on \"English language stylistics,\" \"English grammar,\" \"History of England,\" &quot;Practical phonetics of the English language&quot; and other subjects. She is the author of the textbooks \"English Grammar,\" \"English Phonetics,\" &quot;English Stylistics&quot; and the monograph \"Pedagogical conditions for increasing the independent work of high school students in the English language class.\"</p><p class=\"bio\">She is the author of more than 250 scientific articles in local and foreign publications, including journals indexed in the &quot;Scopus&quot; database. She has given presentations at international scientific conferences and seminars held in various countries. She was the scientific supervisor of more than 100 master&#x27;s dissertations on English language teaching methodology and served as an examiner in the defense of 2 candidate&#x27;s dissertations.</p><p class=\"bio\">In 2020, she was awarded a letter of thanks by the State Committee for Diaspora Work of the Republic of Azerbaijan for her contributions to diaspora development.</p><p class=\"bio\">She translated the famous Azerbaijani writer Kamal Abdulla&#x27;s &quot;Valley of Sorcerers&quot; from Azerbaijani to Kazakh (2012). Also, she translated the book \"Hajimukan - The Mighty One,\" published on the occasion of the 150th anniversary of the famous wrestler Hajimukan Minaytpasov, from Kazakh into Russian and English (2021).</p><p class=\"bio\">Within the scope of her scientific and pedagogical activities, she supervised the dissertation work of more than 150 graduate students.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;Excellence in Education&quot; medal, 2013</li><li>20th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2015</li><li>\"Birlik\" gold medal, 2018</li><li>&quot;Kind Mother&quot; gold medal, Dede Gorgud Foundation of the Republic of Azerbaijan, 2019</li><li>25th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2020</li><li>&quot;Meirim&quot; badge of the People&#x27;s Assembly of Kazakhstan (&quot;Мейирим&quot;), 2020</li><li>For her activities in the field of international relations and diaspora, she was awarded the medal of the Republic of Azerbaijan &quot;For services in diaspora activities&quot; in 2024</li><li>30th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2025</li></ul></div>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/5/title_en",
+      "profile": "Aliheydar Rahimov",
+      "issueIds": [
+        "L286"
+      ],
+      "before": "Professor of the Department of Anesthesiology and Reanimatology of the First Moscow State Medical University named after I.M. Sechenov, doctor of medical sciences, professor, senior transfusionist doctor",
+      "after": "Professor of the Department of Anesthesiology and Reanimatology of the First Moscow State Medical University named after I. M. Sechenov, doctor of medical sciences, professor, senior transfusionist doctor"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/title_en",
+      "profile": "Kamran Rustamov",
+      "issueIds": [
+        "L292"
+      ],
+      "before": "Honored Scientist of the Republic of Azerbaijan, foreign member of the Russian Academy of Architecture and Construction Sciences (RAACS), member of the Azerbaijan and Russia Journalists Unions",
+      "after": "Honored Scientist of the Republic of Azerbaijan, foreign member of the Russian Academy of Architecture and Construction Sciences (RAACS), member of the journalists’ unions of Azerbaijan and Russia"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/11/title_en",
+      "profile": "Sevinj Asgerova",
+      "issueIds": [
+        "L288"
+      ],
+      "before": "Doctor of medical sciences, academician of the Russian Academy of Natural Sciences (TEA), Honored scientist and educator, professor and senior researcher of the Russian National Research Medical University named after N.I. Pirogov",
+      "after": "Doctor of medical sciences, academician of the Russian Academy of Natural Sciences (TEA), Honored scientist and educator, professor and senior researcher of the Russian National Research Medical University named after N. I. Pirogov"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/12/title_en",
+      "profile": "Suleyman Allahverdiyev",
+      "issueIds": [
+        "L290"
+      ],
+      "before": "Doctor of biological sciences, corresponding member of the Russian Academy of Sciences (REA), REA's K.A. Head of the \"Controlled Photobiosynthesis\" laboratory of the Timiryazev Institute of Plant Physiology (Moscow), senior researcher of the Institute of Fundamental Problems of Biology of REA (Pushchino), professor of M.V. Lomonosov Moscow State University and Moscow Institute of Physics and Technology, and head of the \"Photosynthesis and Hydrogen Energy\" laboratory of Bahçeşehir University in Turkey",
+      "after": "Doctor of biological sciences, corresponding member of the Russian Academy of Sciences (REA), REA's K.A. Head of the \"Controlled Photobiosynthesis\" laboratory of the Timiryazev Institute of Plant Physiology (Moscow), senior researcher of the Institute of Fundamental Problems of Biology of REA (Pushchino), professor of M. V. Lomonosov Moscow State University and Moscow Institute of Physics and Technology, and head of the \"Photosynthesis and Hydrogen Energy\" laboratory of Bahçeşehir University in Turkey"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/14/title_en",
+      "profile": "Zahid Gojayev",
+      "issueIds": [
+        "L291"
+      ],
+      "before": "Deputy Director for Innovation and Implementation of the Federal Scientific Agrotechnical Center VIM (FGBNU), professor of Moscow Polytechnic University and N.E. Bauman Moscow State Technical University, doctor of technical sciences, professor, corresponding member of the Russian Academy of Sciences",
+      "after": "Deputy Director for Innovation and Implementation of the Federal Scientific Agrotechnical Center VIM (FGBNU), professor of Moscow Polytechnic University and N. E. Bauman Moscow State Technical University, doctor of technical sciences, professor, corresponding member of the Russian Academy of Sciences"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/4/bio_html_en",
+      "profile": "Aladdin Allahverdiyev",
+      "issueIds": [
+        "L285"
+      ],
+      "before": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. Based on his research findings, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times—in 1975, 1977 and 1980—badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. Based on his research findings, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times—in 1975, 1977 and 1980—badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M. V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/5/bio_html_en",
+      "profile": "Aliheydar Rahimov",
+      "issueIds": [
+        "L287"
+      ],
+      "before": "<p class=\"bio bio-lead\">He graduated from Azerbaijan State Medical Institute in 1976. In 1980, he received the doctor of philosophy degree in medicine; in 1988 he received the scientific degree of doctor of medical sciences, and since 1993 he has been a professor.</p><p class=\"bio\">He is the author of more than 390 scientific works in the field of transfusiology, including 18 monographs and 13 lessons and methodical materials. He is the author of 4 inventions and has prepared 15 PhDs and 6 PhDs. He was awarded &quot;Man of the Year&quot; (2000), &quot;Best scientific monograph&quot; (2001) and &quot;Academic B.V. Petrovsky medal&quot; (2009) for his scientific activities and services.</p><p class=\"bio\">He is a member of the editorial boards of Russian and international scientific journals and a participant in and organizer of a number of prestigious international conferences. He actively participates in scientific societies of Russia and Azerbaijan in the field of transfusiology.</p>",
+      "after": "<p class=\"bio bio-lead\">He graduated from Azerbaijan State Medical Institute in 1976. In 1980, he received the doctor of philosophy degree in medicine; in 1988 he received the scientific degree of doctor of medical sciences, and since 1993 he has been a professor.</p><p class=\"bio\">He is the author of more than 390 scientific works in the field of transfusiology, including 18 monographs and 13 lessons and methodical materials. He is the author of 4 inventions and has prepared 15 PhDs and 6 PhDs. He was awarded &quot;Man of the Year&quot; (2000), &quot;Best scientific monograph&quot; (2001) and &quot;Academic B. V. Petrovsky medal&quot; (2009) for his scientific activities and services.</p><p class=\"bio\">He is a member of the editorial boards of Russian and international scientific journals and a participant in and organizer of a number of prestigious international conferences. He actively participates in scientific societies of Russia and Azerbaijan in the field of transfusiology.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/11/bio_html_en",
+      "profile": "Sevinj Asgerova",
+      "issueIds": [
+        "L289"
+      ],
+      "before": "<p class=\"bio bio-lead\">She is a full member of the European Society of Plastic and Reconstructive Ophthalmological Surgeons (ESOPRS) and an honorary member and coordinator of the Society of Ophthalmologists of Turkic-speaking Countries. At the same time, she is a member of the Expert Council of the American Society of Ophthalmologists, the International Dacryological Society, the International Society of Pediatric Ophthalmologists, the Russian Society of Ophthalmology, the Russian Society of Plastic, Reconstructive and Aesthetic Surgeons, the International Union of Scientists, Teachers and Specialists, as well as the Internet publication \"Modern Problems of Science and Education.\"</p><p class=\"bio\">In 2005, she successfully defended her doctoral dissertation at the Institute of Eye Microsurgery of the Scientific and Technical Complex named after S.N. Fyodorov in Moscow.</p><p class=\"bio\">She is the author of 18 patents for inventions, 15 efficiency proposals and more than 140 scientific articles and theses. She was awarded gold medals named after Hippocrates and V. I. Vernadsky for her scientific and pedagogical activities.</p>",
+      "after": "<p class=\"bio bio-lead\">She is a full member of the European Society of Plastic and Reconstructive Ophthalmological Surgeons (ESOPRS) and an honorary member and coordinator of the Society of Ophthalmologists of Turkic-speaking Countries. At the same time, she is a member of the Expert Council of the American Society of Ophthalmologists, the International Dacryological Society, the International Society of Pediatric Ophthalmologists, the Russian Society of Ophthalmology, the Russian Society of Plastic, Reconstructive and Aesthetic Surgeons, the International Union of Scientists, Teachers and Specialists, as well as the Internet publication \"Modern Problems of Science and Education.\"</p><p class=\"bio\">In 2005, she successfully defended her doctoral dissertation at the Institute of Eye Microsurgery of the Scientific and Technical Complex named after S. N. Fyodorov in Moscow.</p><p class=\"bio\">She is the author of 18 patents for inventions, 15 efficiency proposals and more than 140 scientific articles and theses. She was awarded gold medals named after Hippocrates and V. I. Vernadsky for her scientific and pedagogical activities.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/2/bio_html_en",
+      "profile": "Ilkin Gulusoy",
+      "issueIds": [
+        "L281"
+      ],
+      "before": "<p class=\"bio bio-lead\">The Department of Contemporary Turkish Dialects and Literature operating at Qafqaz University is the only 4-year department in Turkey that trains specialists in Azerbaijani language and literature. Since 2014, on the initiative of Ilkin Gulusoy, a master&#x27;s department has been opened in the department, and during this period, about 60 masters have graduated.</p><p class=\"bio\">In 2023, he organized 5 international scientific conferences on the occasion of the 100th anniversary of the birth of our national leader Heydar Aliyev, 2 international scientific conferences dedicated to the author of Karabakh Victory, Supreme Commander-in-Chief Ilham Aliyev, and 3 international conferences in 2024 to mark the 100th anniversary of the Nakhchivan Autonomous Republic. Conference materials were published by the Ministry of Culture and Tourism of the Republic of Turkey with ISBNs.</p><p class=\"bio\">Ilkin Gulusoy is the author of 12 scientific books. 27 articles were published in periodical scientific publications included in international abstracting and indexing services. He has given presentations at more than 70 international scientific conferences and is the scientific editor of more than 60 books. Under his guidance, 10 people defended their master's theses in Azerbaijani language and literature.</p><p class=\"bio\">He received awards 3 times for his contributions to the science of Turkology. The book &quot;Comparative Phraseology of Turkish Turkish and Azerbaijani Turkish&quot; prepared jointly with Sema Sahin Dede was highly appreciated as the first research work written in this field.</p>",
+      "after": "<p class=\"bio bio-lead\">The Department of Contemporary Turkish Dialects and Literature operating at Qafqaz University is the only 4-year department in Turkey that trains specialists in Azerbaijani language and literature. Since 2014, on the initiative of Ilkin Gulusoy, a master&#x27;s department has been opened in the department, and during this period, about 60 masters have graduated.</p><p class=\"bio\">In 2023, he organized 5 international scientific conferences on the occasion of the 100th anniversary of the birth of our national leader Heydar Aliyev and 2 international scientific conferences dedicated to the author of Karabakh Victory, Supreme Commander-in-Chief Ilham Aliyev. In 2024, he organized 3 international conferences to mark the 100th anniversary of the Nakhchivan Autonomous Republic. Conference materials were published by the Ministry of Culture and Tourism of the Republic of Turkey with ISBNs.</p><p class=\"bio\">Ilkin Gulusoy is the author of 12 scientific books. 27 articles were published in periodical scientific publications included in international abstracting and indexing services. He has given presentations at more than 70 international scientific conferences and is the scientific editor of more than 60 books. Under his guidance, 10 people defended their master's theses in Azerbaijani language and literature.</p><p class=\"bio\">He received awards 3 times for his contributions to the science of Turkology. The book &quot;Comparative Phraseology of Turkish Turkish and Azerbaijani Turkish&quot; prepared jointly with Sema Sahin Dede was highly appreciated as the first research work written in this field.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/bio_html_en",
+      "profile": "Mehmet Riza Heyet",
+      "issueIds": [
+        "L282"
+      ],
+      "before": "<p class=\"bio bio-lead\">He translated a one-volume book on historical topics, and supervised the compilation of two-volume scientific and two-volume literary books. He was the scientific editor of two scientific-research books and published 18 scientific articles. He acted as the chairman of the organizing committee of 11 scientific symposia and participated as a speaker in 8 international scientific conferences. He was a member of the scientific council of one international scientific journal, the chairman of the organizing committee of two international symposia, and the editor-in-chief of one scientific journal. For many years, he worked as an editor and editor-in-chief of \"Varlıg\" magazine, and currently he is the owner and editor-in-chief of this publication. He worked as a speaker and translator at TRT, and taught at Tehran and Ankara universities.</p><p class=\"bio\">Currently, he is a lecturer at Ankara University and the head of Tabriz Research Institute (TEBAREN). Professor Mehmet Rıza Hayet, who conducts research on modern Turkish dialects and literature, has played a leading role in the organization of more than 10 international symposia and conferences. His scientific interests include Turkish press, Iranian Turks, language policy, national identity issues and South Azerbaijan topics. He is the author or editor of more than 100 scientific articles, 5 books and numerous translated works in these areas. Mirza Mehdi Khan Astarabadi&#x27;s works, Atatürk's \"Speech\" and the collection of articles by Dr Javad Hayat occupy an important place. He serves on the editorial boards of a number of prestigious academic journals.</p><p class=\"bio\">His scientific and practical activities are mainly focused on Turkology, language and culture of South Azerbaijani Turks, identity issues and language rights of Iranian Turks.</p>",
+      "after": "<p class=\"bio bio-lead\">He translated a one-volume book on historical topics, and supervised the compilation of two-volume scientific and two-volume literary books. He was the scientific editor of two research books and published 18 scientific articles. He acted as the chairman of the organizing committee of 11 scientific symposia and participated as a speaker in 8 international scientific conferences. He was a member of the scientific council of one international scientific journal, the chairman of the organizing committee of two international symposia, and the editor-in-chief of one scientific journal. For many years, he worked as an editor and editor-in-chief of \"Varlıg\" magazine, and currently he is the owner and editor-in-chief of this publication. He worked as a speaker and translator at TRT, and taught at Tehran and Ankara universities.</p><p class=\"bio\">Currently, he is a lecturer at Ankara University and the head of Tabriz Research Institute (TEBAREN). Professor Mehmet Rıza Hayet, who conducts research on modern Turkish dialects and literature, has played a leading role in the organization of more than 10 international symposia and conferences. His scientific interests include Turkish press, Iranian Turks, language policy, national identity issues and South Azerbaijan topics. He is the author or editor of more than 100 scientific articles, 5 books and numerous translated works in these areas. Mirza Mehdi Khan Astarabadi&#x27;s works, Atatürk's \"Speech\" and the collection of articles by Dr Javad Hayat occupy an important place. He serves on the editorial boards of a number of prestigious academic journals.</p><p class=\"bio\">His scientific and practical activities are mainly focused on Turkology, language and culture of South Azerbaijani Turks, identity issues and language rights of Iranian Turks.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/9/bio_html_en",
+      "profile": "Ramin Aliyev",
+      "issueIds": [
+        "L283"
+      ],
+      "before": "<p class=\"bio bio-lead\">As one of the first professors in his field in Turkey, he was the author of 3 scientific books in the fields of educational psychology and positive psychology, 35 scientific articles in indexed international journals, and a speaker at 40 international scientific conferences. Also, he supervised 6 PhD students and 19 master's students. He worked as a researcher in 7 international projects developed in the field of innovative approaches in education and application of positive psychology in schools. He received various prizes and awards for his scientific activities and contributions to the field of education. He is a member of prestigious organizations such as the American Psychological Association and the Turkish Psychological Counseling and Guidance Association. The projects he led have produced significant results, especially in the field of psychological well-being of young people and motivation in education. He also actively participated in many university and state projects in Turkey, including cooperation with TUBITAK and UNICEF. His academic activities include educational psychology, family therapy, social support systems, and psychological resilience during a pandemic.</p>",
+      "after": "<p class=\"bio bio-lead\">As one of the first professors in his field in Turkey, he was the author of 3 scientific books in the fields of educational psychology and positive psychology and 35 scientific articles in indexed international journals. He also spoke at 40 international scientific conferences. Also, he supervised 6 PhD students and 19 master's students. He worked as a researcher in 7 international projects developed in the field of innovative approaches in education and application of positive psychology in schools. He received various prizes and awards for his scientific activities and contributions to the field of education. He is a member of prestigious organizations such as the American Psychological Association and the Turkish Psychological Counseling and Guidance Association. The projects he led have produced significant results, especially in the field of psychological well-being of young people and motivation in education. He also actively participated in many university and state projects in Turkey, including cooperation with TUBITAK and UNICEF. His academic activities include educational psychology, family therapy, social support systems, and psychological resilience during a pandemic.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/19/bio_html_en",
+      "profile": "Khalil Kalantar",
+      "issueIds": [
+        "L284"
+      ],
+      "before": "<p class=\"bio bio-lead\">He received doctorates from both Nagoya and Tohoku universities. As one of the leading experts in the field of developing and manufacturing electronic displays and sensors, he is the author of 105 patents and 28 technical documents in various countries and regions, including Japan, the USA, Canada, Europe, South Korea and Taiwan. 35 articles and presentations on screen technologies were published in international scientific journals, and 59 in local publications. He has published 5 books in Japanese, abstracts in English, 15 book chapters and 7 IEC standards documents and has participated in 9 government projects. He implemented these projects in cooperation with leading Japanese universities. In addition, he provided scientific guidance to researchers who received doctoral degrees in a number of foreign universities.</p><p class=\"bio\">He was awarded the &quot;Progress&quot; medal in 2026 by the Decree of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</p>",
+      "after": "<p class=\"bio bio-lead\">He received doctorates from both Nagoya and Tohoku universities. As one of the leading experts in the field of developing and manufacturing electronic displays and sensors, he is the author of 105 patents and 28 technical documents in various countries and regions, including Japan, the USA, Canada, Europe, South Korea and Taiwan. 35 articles and presentations on screen technologies were published in international scientific journals, and 59 in local publications. He has published 5 books in Japanese, abstracts in English, 15 book chapters and 7 IEC standards documents and has participated in 9 government projects. He implemented these projects in cooperation with leading Japanese universities. In addition, he provided scientific guidance to researchers who received doctoral degrees from a number of foreign universities.</p><p class=\"bio\">He was awarded the &quot;Progress&quot; medal in 2026 by the Decree of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 256,
+      "jsonPointer": "/profiles/14/title_en",
+      "profile": "Khadija Zeynalova",
+      "issueIds": [
+        "L278"
+      ],
+      "before": "Composer, musicologist, scientific researcher, associate professor, doctor of philosophy in art studies, Baku Music Academy, Detmold Music Academy (Hochschule für Musik Detmold), and a graduate of Paderborn University, chairman of the German BRIDGE OF SOUND organization and founder, artistic director of the orchestra of the same name, founder, curator and artistic director of the HARMONY OF SOUND International Music Festival",
+      "after": "Composer, musicologist, scientific researcher, associate professor, doctor of philosophy in art studies, Baku Music Academy, Detmold Music Academy (Hochschule für Musik Detmold), and a graduate of Paderborn University, chairman of the German BRIDGE OF SOUND organization and founder and artistic director of the orchestra of the same name, founder, curator and artistic director of the HARMONY OF SOUND International Music Festival"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 822,
+      "jsonPointer": "/profiles/47/title_en",
+      "profile": "Aliheydar Rahimov",
+      "issueIds": [
+        "L286"
+      ],
+      "before": "Professor of the Department of Anesthesiology and Reanimatology of the First Moscow State Medical University named after I.M. Sechenov, doctor of medical sciences, professor, senior transfusionist doctor",
+      "after": "Professor of the Department of Anesthesiology and Reanimatology of the First Moscow State Medical University named after I. M. Sechenov, doctor of medical sciences, professor, senior transfusionist doctor"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 873,
+      "jsonPointer": "/profiles/50/title_en",
+      "profile": "Kamran Rustamov",
+      "issueIds": [
+        "L292"
+      ],
+      "before": "Honored Scientist of the Republic of Azerbaijan, foreign member of the Russian Academy of Architecture and Construction Sciences (RAACS), member of the Azerbaijan and Russia Journalists Unions",
+      "after": "Honored Scientist of the Republic of Azerbaijan, foreign member of the Russian Academy of Architecture and Construction Sciences (RAACS), member of the journalists’ unions of Azerbaijan and Russia"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 924,
+      "jsonPointer": "/profiles/53/title_en",
+      "profile": "Sevinj Asgerova",
+      "issueIds": [
+        "L288"
+      ],
+      "before": "Doctor of medical sciences, academician of the Russian Academy of Natural Sciences (TEA), Honored scientist and educator, professor and senior researcher of the Russian National Research Medical University named after N.I. Pirogov",
+      "after": "Doctor of medical sciences, academician of the Russian Academy of Natural Sciences (TEA), Honored scientist and educator, professor and senior researcher of the Russian National Research Medical University named after N. I. Pirogov"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 941,
+      "jsonPointer": "/profiles/54/title_en",
+      "profile": "Suleyman Allahverdiyev",
+      "issueIds": [
+        "L290"
+      ],
+      "before": "Doctor of biological sciences, corresponding member of the Russian Academy of Sciences (REA), REA's K.A. Head of the \"Controlled Photobiosynthesis\" laboratory of the Timiryazev Institute of Plant Physiology (Moscow), senior researcher of the Institute of Fundamental Problems of Biology of REA (Pushchino), professor of M.V. Lomonosov Moscow State University and Moscow Institute of Physics and Technology, and head of the \"Photosynthesis and Hydrogen Energy\" laboratory of Bahçeşehir University in Turkey",
+      "after": "Doctor of biological sciences, corresponding member of the Russian Academy of Sciences (REA), REA's K.A. Head of the \"Controlled Photobiosynthesis\" laboratory of the Timiryazev Institute of Plant Physiology (Moscow), senior researcher of the Institute of Fundamental Problems of Biology of REA (Pushchino), professor of M. V. Lomonosov Moscow State University and Moscow Institute of Physics and Technology, and head of the \"Photosynthesis and Hydrogen Energy\" laboratory of Bahçeşehir University in Turkey"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 975,
+      "jsonPointer": "/profiles/56/title_en",
+      "profile": "Zahid Gojayev",
+      "issueIds": [
+        "L291"
+      ],
+      "before": "Deputy Director for Innovation and Implementation of the Federal Scientific Agrotechnical Center VIM (FGBNU), professor of Moscow Polytechnic University and N.E. Bauman Moscow State Technical University, doctor of technical sciences, professor, corresponding member of the Russian Academy of Sciences",
+      "after": "Deputy Director for Innovation and Implementation of the Federal Scientific Agrotechnical Center VIM (FGBNU), professor of Moscow Polytechnic University and N. E. Bauman Moscow State Technical University, doctor of technical sciences, professor, corresponding member of the Russian Academy of Sciences"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 499,
+      "jsonPointer": "/profiles/28/bio_html_en",
+      "profile": "Mark Applebaum",
+      "issueIds": [
+        "L279"
+      ],
+      "before": "<p class=\"bio bio-lead\">Professor Mark Applebaum is the author of 16 books and more than 90 articles published in scientific journals and conference proceedings in English, Hebrew, Russian, Spanish, Arabic, Ukrainian and Polish. His research interests include popularizing mathematics, teaching mathematics to gifted children, developing creative and critical thinking, and developing STEM education.</p><p class=\"bio\">During his academic career, Professor M. Applebaum spoke at more than 30 international conferences and often acted as a keynote speaker and a member of scientific committees. In 2022, he was elected to the International Committee of the International Mathematical Creativity and Talent Group (IGMCG) and the Education Committee of the European Mathematical Society (EMS). Since 2023, Kaye has been serving as the head of the Master&#x27;s Program in Integrative STEM Education at the College of Education.</p><p class=\"bio\">Over the last 15 years, Professor M. Applebaum has spoken as an invited guest at various academic events held at universities and schools in Azerbaijan. These institutions include Baku State University (BSU), Baku branch of Moscow State University (MSU), Azerbaijan Language University, Azerbaijan State University of Architecture and Construction, school number 134 and other educational institutions.</p>",
+      "after": "<p class=\"bio bio-lead\">Professor Mark Applebaum is the author of 16 books and more than 90 articles published in scientific journals and conference proceedings in English, Hebrew, Russian, Spanish, Arabic, Ukrainian and Polish. His research interests include popularizing mathematics, teaching mathematics to gifted children, developing creative and critical thinking, and developing STEM education.</p><p class=\"bio\">During his academic career, Professor M. Applebaum spoke at more than 30 international conferences and often acted as a keynote speaker and a member of scientific committees. In 2022, he was elected to the International Committee of the International Mathematical Creativity and Talent Group (IGMCG) and the Education Committee of the European Mathematical Society (EMS). Since 2023, Kaye has been serving as the head of the Master&#x27;s Program in Integrative STEM Education at the College of Education.</p><p class=\"bio\">Over the last 15 years, Professor M. Applebaum has spoken as an invited guest at various academic events held at universities and schools in Azerbaijan. These institutions include Baku State University (BSU), the Baku branch of Moscow State University (MSU), Azerbaijan Language University, Azerbaijan State University of Architecture and Construction, school number 134 and other educational institutions.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 720,
+      "jsonPointer": "/profiles/41/bio_html_en",
+      "profile": "Arzu Gurbanova",
+      "issueIds": [
+        "L280"
+      ],
+      "before": "<p class=\"bio bio-lead\"></p><p class=\"bio\">Professor Arzu Gurbanova gave lectures on \"English language stylistics,\" \"English grammar,\" \"History of England,\" &quot;Practical phonetics of the English language&quot; and other subjects. She is the author of the textbooks \"English Grammar,\" \"English Phonetics,\" &quot;English Stylistics&quot; and the monograph \"Pedagogical conditions for increasing the independent work of high school students in the English language class.\"</p><p class=\"bio\">She is the author of more than 250 scientific articles in local and foreign publications, including journals indexed in the &quot;Scopus&quot; database. She has given presentations at international scientific conferences and seminars held in various countries. She was the scientific supervisor of more than 100 master&#x27;s dissertations on English language teaching methodology and served as an examiner in the defense of 2 candidate&#x27;s dissertations.</p><p class=\"bio\">In 2020, she was awarded a letter of thanks by the State Committee for Diaspora Work of the Republic of Azerbaijan for her contributions to diaspora development.</p><p class=\"bio\">She translated the famous Azerbaijani writer Kamal Abdulla&#x27;s &quot;Valley of Sorcerers&quot; from Azerbaijani to Kazakh (2012). Also, she translated the book \"Hajimukan - The Mighty One,\" published on the occasion of the 150th anniversary of the famous wrestler Hajimukan Minaytpasov, from Kazakh into Russian and English (2021).</p><p class=\"bio\">Within the scope of her scientific and pedagogical activities, she supervised the dissertation work of more than 150 graduate students.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;Excellence in Education&quot; medal, 2013</li><li>20th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2015</li><li>&quot;Birlik&quot; gold medal (&quot;Birlik&quot;), 2018</li><li>&quot;Kind Mother&quot; gold medal, Dede Gorgud Foundation of the Republic of Azerbaijan, 2019</li><li>25th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2020</li><li>&quot;Meirim&quot; badge of the People&#x27;s Assembly of Kazakhstan (&quot;Мейирим&quot;), 2020</li><li>For her activities in the field of international relations and diaspora, she was awarded the medal of the Republic of Azerbaijan &quot;For services in diaspora activities&quot; in 2024</li><li>30th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2025</li></ul></div>",
+      "after": "<p class=\"bio bio-lead\"></p><p class=\"bio\">Professor Arzu Gurbanova gave lectures on \"English language stylistics,\" \"English grammar,\" \"History of England,\" &quot;Practical phonetics of the English language&quot; and other subjects. She is the author of the textbooks \"English Grammar,\" \"English Phonetics,\" &quot;English Stylistics&quot; and the monograph \"Pedagogical conditions for increasing the independent work of high school students in the English language class.\"</p><p class=\"bio\">She is the author of more than 250 scientific articles in local and foreign publications, including journals indexed in the &quot;Scopus&quot; database. She has given presentations at international scientific conferences and seminars held in various countries. She was the scientific supervisor of more than 100 master&#x27;s dissertations on English language teaching methodology and served as an examiner in the defense of 2 candidate&#x27;s dissertations.</p><p class=\"bio\">In 2020, she was awarded a letter of thanks by the State Committee for Diaspora Work of the Republic of Azerbaijan for her contributions to diaspora development.</p><p class=\"bio\">She translated the famous Azerbaijani writer Kamal Abdulla&#x27;s &quot;Valley of Sorcerers&quot; from Azerbaijani to Kazakh (2012). Also, she translated the book \"Hajimukan - The Mighty One,\" published on the occasion of the 150th anniversary of the famous wrestler Hajimukan Minaytpasov, from Kazakh into Russian and English (2021).</p><p class=\"bio\">Within the scope of her scientific and pedagogical activities, she supervised the dissertation work of more than 150 graduate students.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;Excellence in Education&quot; medal, 2013</li><li>20th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2015</li><li>\"Birlik\" gold medal, 2018</li><li>&quot;Kind Mother&quot; gold medal, Dede Gorgud Foundation of the Republic of Azerbaijan, 2019</li><li>25th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2020</li><li>&quot;Meirim&quot; badge of the People&#x27;s Assembly of Kazakhstan (&quot;Мейирим&quot;), 2020</li><li>For her activities in the field of international relations and diaspora, she was awarded the medal of the Republic of Azerbaijan &quot;For services in diaspora activities&quot; in 2024</li><li>30th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2025</li></ul></div>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 806,
+      "jsonPointer": "/profiles/46/bio_html_en",
+      "profile": "Aladdin Allahverdiyev",
+      "issueIds": [
+        "L285"
+      ],
+      "before": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. Based on his research findings, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times—in 1975, 1977 and 1980—badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. Based on his research findings, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times—in 1975, 1977 and 1980—badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M. V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 823,
+      "jsonPointer": "/profiles/47/bio_html_en",
+      "profile": "Aliheydar Rahimov",
+      "issueIds": [
+        "L287"
+      ],
+      "before": "<p class=\"bio bio-lead\">He graduated from Azerbaijan State Medical Institute in 1976. In 1980, he received the doctor of philosophy degree in medicine; in 1988 he received the scientific degree of doctor of medical sciences, and since 1993 he has been a professor.</p><p class=\"bio\">He is the author of more than 390 scientific works in the field of transfusiology, including 18 monographs and 13 lessons and methodical materials. He is the author of 4 inventions and has prepared 15 PhDs and 6 PhDs. He was awarded &quot;Man of the Year&quot; (2000), &quot;Best scientific monograph&quot; (2001) and &quot;Academic B.V. Petrovsky medal&quot; (2009) for his scientific activities and services.</p><p class=\"bio\">He is a member of the editorial boards of Russian and international scientific journals and a participant in and organizer of a number of prestigious international conferences. He actively participates in scientific societies of Russia and Azerbaijan in the field of transfusiology.</p>",
+      "after": "<p class=\"bio bio-lead\">He graduated from Azerbaijan State Medical Institute in 1976. In 1980, he received the doctor of philosophy degree in medicine; in 1988 he received the scientific degree of doctor of medical sciences, and since 1993 he has been a professor.</p><p class=\"bio\">He is the author of more than 390 scientific works in the field of transfusiology, including 18 monographs and 13 lessons and methodical materials. He is the author of 4 inventions and has prepared 15 PhDs and 6 PhDs. He was awarded &quot;Man of the Year&quot; (2000), &quot;Best scientific monograph&quot; (2001) and &quot;Academic B. V. Petrovsky medal&quot; (2009) for his scientific activities and services.</p><p class=\"bio\">He is a member of the editorial boards of Russian and international scientific journals and a participant in and organizer of a number of prestigious international conferences. He actively participates in scientific societies of Russia and Azerbaijan in the field of transfusiology.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 925,
+      "jsonPointer": "/profiles/53/bio_html_en",
+      "profile": "Sevinj Asgerova",
+      "issueIds": [
+        "L289"
+      ],
+      "before": "<p class=\"bio bio-lead\">She is a full member of the European Society of Plastic and Reconstructive Ophthalmological Surgeons (ESOPRS) and an honorary member and coordinator of the Society of Ophthalmologists of Turkic-speaking Countries. At the same time, she is a member of the Expert Council of the American Society of Ophthalmologists, the International Dacryological Society, the International Society of Pediatric Ophthalmologists, the Russian Society of Ophthalmology, the Russian Society of Plastic, Reconstructive and Aesthetic Surgeons, the International Union of Scientists, Teachers and Specialists, as well as the Internet publication \"Modern Problems of Science and Education.\"</p><p class=\"bio\">In 2005, she successfully defended her doctoral dissertation at the Institute of Eye Microsurgery of the Scientific and Technical Complex named after S.N. Fyodorov in Moscow.</p><p class=\"bio\">She is the author of 18 patents for inventions, 15 efficiency proposals and more than 140 scientific articles and theses. She was awarded gold medals named after Hippocrates and V. I. Vernadsky for her scientific and pedagogical activities.</p>",
+      "after": "<p class=\"bio bio-lead\">She is a full member of the European Society of Plastic and Reconstructive Ophthalmological Surgeons (ESOPRS) and an honorary member and coordinator of the Society of Ophthalmologists of Turkic-speaking Countries. At the same time, she is a member of the Expert Council of the American Society of Ophthalmologists, the International Dacryological Society, the International Society of Pediatric Ophthalmologists, the Russian Society of Ophthalmology, the Russian Society of Plastic, Reconstructive and Aesthetic Surgeons, the International Union of Scientists, Teachers and Specialists, as well as the Internet publication \"Modern Problems of Science and Education.\"</p><p class=\"bio\">In 2005, she successfully defended her doctoral dissertation at the Institute of Eye Microsurgery of the Scientific and Technical Complex named after S. N. Fyodorov in Moscow.</p><p class=\"bio\">She is the author of 18 patents for inventions, 15 efficiency proposals and more than 140 scientific articles and theses. She was awarded gold medals named after Hippocrates and V. I. Vernadsky for her scientific and pedagogical activities.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 1131,
+      "jsonPointer": "/profiles/65/bio_html_en",
+      "profile": "Ilkin Gulusoy",
+      "issueIds": [
+        "L281"
+      ],
+      "before": "<p class=\"bio bio-lead\">The Department of Contemporary Turkish Dialects and Literature operating at Qafqaz University is the only 4-year department in Turkey that trains specialists in Azerbaijani language and literature. Since 2014, on the initiative of Ilkin Gulusoy, a master&#x27;s department has been opened in the department, and during this period, about 60 masters have graduated.</p><p class=\"bio\">In 2023, he organized 5 international scientific conferences on the occasion of the 100th anniversary of the birth of our national leader Heydar Aliyev, 2 international scientific conferences dedicated to the author of Karabakh Victory, Supreme Commander-in-Chief Ilham Aliyev, and 3 international conferences in 2024 to mark the 100th anniversary of the Nakhchivan Autonomous Republic. Conference materials were published by the Ministry of Culture and Tourism of the Republic of Turkey with ISBNs.</p><p class=\"bio\">Ilkin Gulusoy is the author of 12 scientific books. 27 articles were published in periodical scientific publications included in international abstracting and indexing services. He has given presentations at more than 70 international scientific conferences and is the scientific editor of more than 60 books. Under his guidance, 10 people defended their master's theses in Azerbaijani language and literature.</p><p class=\"bio\">He received awards 3 times for his contributions to the science of Turkology. The book &quot;Comparative Phraseology of Turkish Turkish and Azerbaijani Turkish&quot; prepared jointly with Sema Sahin Dede was highly appreciated as the first research work written in this field.</p>",
+      "after": "<p class=\"bio bio-lead\">The Department of Contemporary Turkish Dialects and Literature operating at Qafqaz University is the only 4-year department in Turkey that trains specialists in Azerbaijani language and literature. Since 2014, on the initiative of Ilkin Gulusoy, a master&#x27;s department has been opened in the department, and during this period, about 60 masters have graduated.</p><p class=\"bio\">In 2023, he organized 5 international scientific conferences on the occasion of the 100th anniversary of the birth of our national leader Heydar Aliyev and 2 international scientific conferences dedicated to the author of Karabakh Victory, Supreme Commander-in-Chief Ilham Aliyev. In 2024, he organized 3 international conferences to mark the 100th anniversary of the Nakhchivan Autonomous Republic. Conference materials were published by the Ministry of Culture and Tourism of the Republic of Turkey with ISBNs.</p><p class=\"bio\">Ilkin Gulusoy is the author of 12 scientific books. 27 articles were published in periodical scientific publications included in international abstracting and indexing services. He has given presentations at more than 70 international scientific conferences and is the scientific editor of more than 60 books. Under his guidance, 10 people defended their master's theses in Azerbaijani language and literature.</p><p class=\"bio\">He received awards 3 times for his contributions to the science of Turkology. The book &quot;Comparative Phraseology of Turkish Turkish and Azerbaijani Turkish&quot; prepared jointly with Sema Sahin Dede was highly appreciated as the first research work written in this field.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 1199,
+      "jsonPointer": "/profiles/69/bio_html_en",
+      "profile": "Mehmet Riza Heyet",
+      "issueIds": [
+        "L282"
+      ],
+      "before": "<p class=\"bio bio-lead\">He translated a one-volume book on historical topics, and supervised the compilation of two-volume scientific and two-volume literary books. He was the scientific editor of two scientific-research books and published 18 scientific articles. He acted as the chairman of the organizing committee of 11 scientific symposia and participated as a speaker in 8 international scientific conferences. He was a member of the scientific council of one international scientific journal, the chairman of the organizing committee of two international symposia, and the editor-in-chief of one scientific journal. For many years, he worked as an editor and editor-in-chief of \"Varlıg\" magazine, and currently he is the owner and editor-in-chief of this publication. He worked as a speaker and translator at TRT, and taught at Tehran and Ankara universities.</p><p class=\"bio\">Currently, he is a lecturer at Ankara University and the head of Tabriz Research Institute (TEBAREN). Professor Mehmet Rıza Hayet, who conducts research on modern Turkish dialects and literature, has played a leading role in the organization of more than 10 international symposia and conferences. His scientific interests include Turkish press, Iranian Turks, language policy, national identity issues and South Azerbaijan topics. He is the author or editor of more than 100 scientific articles, 5 books and numerous translated works in these areas. Mirza Mehdi Khan Astarabadi&#x27;s works, Atatürk's \"Speech\" and the collection of articles by Dr Javad Hayat occupy an important place. He serves on the editorial boards of a number of prestigious academic journals.</p><p class=\"bio\">His scientific and practical activities are mainly focused on Turkology, language and culture of South Azerbaijani Turks, identity issues and language rights of Iranian Turks.</p>",
+      "after": "<p class=\"bio bio-lead\">He translated a one-volume book on historical topics, and supervised the compilation of two-volume scientific and two-volume literary books. He was the scientific editor of two research books and published 18 scientific articles. He acted as the chairman of the organizing committee of 11 scientific symposia and participated as a speaker in 8 international scientific conferences. He was a member of the scientific council of one international scientific journal, the chairman of the organizing committee of two international symposia, and the editor-in-chief of one scientific journal. For many years, he worked as an editor and editor-in-chief of \"Varlıg\" magazine, and currently he is the owner and editor-in-chief of this publication. He worked as a speaker and translator at TRT, and taught at Tehran and Ankara universities.</p><p class=\"bio\">Currently, he is a lecturer at Ankara University and the head of Tabriz Research Institute (TEBAREN). Professor Mehmet Rıza Hayet, who conducts research on modern Turkish dialects and literature, has played a leading role in the organization of more than 10 international symposia and conferences. His scientific interests include Turkish press, Iranian Turks, language policy, national identity issues and South Azerbaijan topics. He is the author or editor of more than 100 scientific articles, 5 books and numerous translated works in these areas. Mirza Mehdi Khan Astarabadi&#x27;s works, Atatürk's \"Speech\" and the collection of articles by Dr Javad Hayat occupy an important place. He serves on the editorial boards of a number of prestigious academic journals.</p><p class=\"bio\">His scientific and practical activities are mainly focused on Turkology, language and culture of South Azerbaijani Turks, identity issues and language rights of Iranian Turks.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 1250,
+      "jsonPointer": "/profiles/72/bio_html_en",
+      "profile": "Ramin Aliyev",
+      "issueIds": [
+        "L283"
+      ],
+      "before": "<p class=\"bio bio-lead\">As one of the first professors in his field in Turkey, he was the author of 3 scientific books in the fields of educational psychology and positive psychology, 35 scientific articles in indexed international journals, and a speaker at 40 international scientific conferences. Also, he supervised 6 PhD students and 19 master's students. He worked as a researcher in 7 international projects developed in the field of innovative approaches in education and application of positive psychology in schools. He received various prizes and awards for his scientific activities and contributions to the field of education. He is a member of prestigious organizations such as the American Psychological Association and the Turkish Psychological Counseling and Guidance Association. The projects he led have produced significant results, especially in the field of psychological well-being of young people and motivation in education. He also actively participated in many university and state projects in Turkey, including cooperation with TUBITAK and UNICEF. His academic activities include educational psychology, family therapy, social support systems, and psychological resilience during a pandemic.</p>",
+      "after": "<p class=\"bio bio-lead\">As one of the first professors in his field in Turkey, he was the author of 3 scientific books in the fields of educational psychology and positive psychology and 35 scientific articles in indexed international journals. He also spoke at 40 international scientific conferences. Also, he supervised 6 PhD students and 19 master's students. He worked as a researcher in 7 international projects developed in the field of innovative approaches in education and application of positive psychology in schools. He received various prizes and awards for his scientific activities and contributions to the field of education. He is a member of prestigious organizations such as the American Psychological Association and the Turkish Psychological Counseling and Guidance Association. The projects he led have produced significant results, especially in the field of psychological well-being of young people and motivation in education. He also actively participated in many university and state projects in Turkey, including cooperation with TUBITAK and UNICEF. His academic activities include educational psychology, family therapy, social support systems, and psychological resilience during a pandemic.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 1420,
+      "jsonPointer": "/profiles/82/bio_html_en",
+      "profile": "Khalil Kalantar",
+      "issueIds": [
+        "L284"
+      ],
+      "before": "<p class=\"bio bio-lead\">He received doctorates from both Nagoya and Tohoku universities. As one of the leading experts in the field of developing and manufacturing electronic displays and sensors, he is the author of 105 patents and 28 technical documents in various countries and regions, including Japan, the USA, Canada, Europe, South Korea and Taiwan. 35 articles and presentations on screen technologies were published in international scientific journals, and 59 in local publications. He has published 5 books in Japanese, abstracts in English, 15 book chapters and 7 IEC standards documents and has participated in 9 government projects. He implemented these projects in cooperation with leading Japanese universities. In addition, he provided scientific guidance to researchers who received doctoral degrees in a number of foreign universities.</p><p class=\"bio\">He was awarded the &quot;Progress&quot; medal in 2026 by the Decree of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</p>",
+      "after": "<p class=\"bio bio-lead\">He received doctorates from both Nagoya and Tohoku universities. As one of the leading experts in the field of developing and manufacturing electronic displays and sensors, he is the author of 105 patents and 28 technical documents in various countries and regions, including Japan, the USA, Canada, Europe, South Korea and Taiwan. 35 articles and presentations on screen technologies were published in international scientific journals, and 59 in local publications. He has published 5 books in Japanese, abstracts in English, 15 book chapters and 7 IEC standards documents and has participated in 9 government projects. He implemented these projects in cooperation with leading Japanese universities. In addition, he provided scientific guidance to researchers who received doctoral degrees from a number of foreign universities.</p><p class=\"bio\">He was awarded the &quot;Progress&quot; medal in 2026 by the Decree of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/14/title_en",
+      "profile": "Khadija Zeynalova",
+      "issueIds": [
+        "L278"
+      ],
+      "before": "Composer, musicologist, scientific researcher, associate professor, doctor of philosophy in art studies, Baku Music Academy, Detmold Music Academy (Hochschule für Musik Detmold), and a graduate of Paderborn University, chairman of the German BRIDGE OF SOUND organization and founder, artistic director of the orchestra of the same name, founder, curator and artistic director of the HARMONY OF SOUND International Music Festival",
+      "after": "Composer, musicologist, scientific researcher, associate professor, doctor of philosophy in art studies, Baku Music Academy, Detmold Music Academy (Hochschule für Musik Detmold), and a graduate of Paderborn University, chairman of the German BRIDGE OF SOUND organization and founder and artistic director of the orchestra of the same name, founder, curator and artistic director of the HARMONY OF SOUND International Music Festival"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+      "line": 1,
+      "jsonPointer": "/profiles/7/bio_html_en",
+      "profile": "Mark Applebaum",
+      "issueIds": [
+        "L279"
+      ],
+      "before": "<p class=\"bio bio-lead\">Professor Mark Applebaum is the author of 16 books and more than 90 articles published in scientific journals and conference proceedings in English, Hebrew, Russian, Spanish, Arabic, Ukrainian and Polish. His research interests include popularizing mathematics, teaching mathematics to gifted children, developing creative and critical thinking, and developing STEM education.</p><p class=\"bio\">During his academic career, Professor M. Applebaum spoke at more than 30 international conferences and often acted as a keynote speaker and a member of scientific committees. In 2022, he was elected to the International Committee of the International Mathematical Creativity and Talent Group (IGMCG) and the Education Committee of the European Mathematical Society (EMS). Since 2023, Kaye has been serving as the head of the Master&#x27;s Program in Integrative STEM Education at the College of Education.</p><p class=\"bio\">Over the last 15 years, Professor M. Applebaum has spoken as an invited guest at various academic events held at universities and schools in Azerbaijan. These institutions include Baku State University (BSU), Baku branch of Moscow State University (MSU), Azerbaijan Language University, Azerbaijan State University of Architecture and Construction, school number 134 and other educational institutions.</p>",
+      "after": "<p class=\"bio bio-lead\">Professor Mark Applebaum is the author of 16 books and more than 90 articles published in scientific journals and conference proceedings in English, Hebrew, Russian, Spanish, Arabic, Ukrainian and Polish. His research interests include popularizing mathematics, teaching mathematics to gifted children, developing creative and critical thinking, and developing STEM education.</p><p class=\"bio\">During his academic career, Professor M. Applebaum spoke at more than 30 international conferences and often acted as a keynote speaker and a member of scientific committees. In 2022, he was elected to the International Committee of the International Mathematical Creativity and Talent Group (IGMCG) and the Education Committee of the European Mathematical Society (EMS). Since 2023, Kaye has been serving as the head of the Master&#x27;s Program in Integrative STEM Education at the College of Education.</p><p class=\"bio\">Over the last 15 years, Professor M. Applebaum has spoken as an invited guest at various academic events held at universities and schools in Azerbaijan. These institutions include Baku State University (BSU), the Baku branch of Moscow State University (MSU), Azerbaijan Language University, Azerbaijan State University of Architecture and Construction, school number 134 and other educational institutions.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+      "line": 1,
+      "jsonPointer": "/profiles/20/bio_html_en",
+      "profile": "Arzu Gurbanova",
+      "issueIds": [
+        "L280"
+      ],
+      "before": "<p class=\"bio bio-lead\"></p><p class=\"bio\">Professor Arzu Gurbanova gave lectures on \"English language stylistics,\" \"English grammar,\" \"History of England,\" &quot;Practical phonetics of the English language&quot; and other subjects. She is the author of the textbooks \"English Grammar,\" \"English Phonetics,\" &quot;English Stylistics&quot; and the monograph \"Pedagogical conditions for increasing the independent work of high school students in the English language class.\"</p><p class=\"bio\">She is the author of more than 250 scientific articles in local and foreign publications, including journals indexed in the &quot;Scopus&quot; database. She has given presentations at international scientific conferences and seminars held in various countries. She was the scientific supervisor of more than 100 master&#x27;s dissertations on English language teaching methodology and served as an examiner in the defense of 2 candidate&#x27;s dissertations.</p><p class=\"bio\">In 2020, she was awarded a letter of thanks by the State Committee for Diaspora Work of the Republic of Azerbaijan for her contributions to diaspora development.</p><p class=\"bio\">She translated the famous Azerbaijani writer Kamal Abdulla&#x27;s &quot;Valley of Sorcerers&quot; from Azerbaijani to Kazakh (2012). Also, she translated the book \"Hajimukan - The Mighty One,\" published on the occasion of the 150th anniversary of the famous wrestler Hajimukan Minaytpasov, from Kazakh into Russian and English (2021).</p><p class=\"bio\">Within the scope of her scientific and pedagogical activities, she supervised the dissertation work of more than 150 graduate students.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;Excellence in Education&quot; medal, 2013</li><li>20th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2015</li><li>&quot;Birlik&quot; gold medal (&quot;Birlik&quot;), 2018</li><li>&quot;Kind Mother&quot; gold medal, Dede Gorgud Foundation of the Republic of Azerbaijan, 2019</li><li>25th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2020</li><li>&quot;Meirim&quot; badge of the People&#x27;s Assembly of Kazakhstan (&quot;Мейирим&quot;), 2020</li><li>For her activities in the field of international relations and diaspora, she was awarded the medal of the Republic of Azerbaijan &quot;For services in diaspora activities&quot; in 2024</li><li>30th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2025</li></ul></div>",
+      "after": "<p class=\"bio bio-lead\"></p><p class=\"bio\">Professor Arzu Gurbanova gave lectures on \"English language stylistics,\" \"English grammar,\" \"History of England,\" &quot;Practical phonetics of the English language&quot; and other subjects. She is the author of the textbooks \"English Grammar,\" \"English Phonetics,\" &quot;English Stylistics&quot; and the monograph \"Pedagogical conditions for increasing the independent work of high school students in the English language class.\"</p><p class=\"bio\">She is the author of more than 250 scientific articles in local and foreign publications, including journals indexed in the &quot;Scopus&quot; database. She has given presentations at international scientific conferences and seminars held in various countries. She was the scientific supervisor of more than 100 master&#x27;s dissertations on English language teaching methodology and served as an examiner in the defense of 2 candidate&#x27;s dissertations.</p><p class=\"bio\">In 2020, she was awarded a letter of thanks by the State Committee for Diaspora Work of the Republic of Azerbaijan for her contributions to diaspora development.</p><p class=\"bio\">She translated the famous Azerbaijani writer Kamal Abdulla&#x27;s &quot;Valley of Sorcerers&quot; from Azerbaijani to Kazakh (2012). Also, she translated the book \"Hajimukan - The Mighty One,\" published on the occasion of the 150th anniversary of the famous wrestler Hajimukan Minaytpasov, from Kazakh into Russian and English (2021).</p><p class=\"bio\">Within the scope of her scientific and pedagogical activities, she supervised the dissertation work of more than 150 graduate students.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;Excellence in Education&quot; medal, 2013</li><li>20th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2015</li><li>\"Birlik\" gold medal, 2018</li><li>&quot;Kind Mother&quot; gold medal, Dede Gorgud Foundation of the Republic of Azerbaijan, 2019</li><li>25th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2020</li><li>&quot;Meirim&quot; badge of the People&#x27;s Assembly of Kazakhstan (&quot;Мейирим&quot;), 2020</li><li>For her activities in the field of international relations and diaspora, she was awarded the medal of the Republic of Azerbaijan &quot;For services in diaspora activities&quot; in 2024</li><li>30th anniversary medal of the People&#x27;s Assembly of Kazakhstan, 2025</li></ul></div>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/5/title_en",
+      "profile": "Aliheydar Rahimov",
+      "issueIds": [
+        "L286"
+      ],
+      "before": "Professor of the Department of Anesthesiology and Reanimatology of the First Moscow State Medical University named after I.M. Sechenov, doctor of medical sciences, professor, senior transfusionist doctor",
+      "after": "Professor of the Department of Anesthesiology and Reanimatology of the First Moscow State Medical University named after I. M. Sechenov, doctor of medical sciences, professor, senior transfusionist doctor"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/title_en",
+      "profile": "Kamran Rustamov",
+      "issueIds": [
+        "L292"
+      ],
+      "before": "Honored Scientist of the Republic of Azerbaijan, foreign member of the Russian Academy of Architecture and Construction Sciences (RAACS), member of the Azerbaijan and Russia Journalists Unions",
+      "after": "Honored Scientist of the Republic of Azerbaijan, foreign member of the Russian Academy of Architecture and Construction Sciences (RAACS), member of the journalists’ unions of Azerbaijan and Russia"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/11/title_en",
+      "profile": "Sevinj Asgerova",
+      "issueIds": [
+        "L288"
+      ],
+      "before": "Doctor of medical sciences, academician of the Russian Academy of Natural Sciences (TEA), Honored scientist and educator, professor and senior researcher of the Russian National Research Medical University named after N.I. Pirogov",
+      "after": "Doctor of medical sciences, academician of the Russian Academy of Natural Sciences (TEA), Honored scientist and educator, professor and senior researcher of the Russian National Research Medical University named after N. I. Pirogov"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/12/title_en",
+      "profile": "Suleyman Allahverdiyev",
+      "issueIds": [
+        "L290"
+      ],
+      "before": "Doctor of biological sciences, corresponding member of the Russian Academy of Sciences (REA), REA's K.A. Head of the \"Controlled Photobiosynthesis\" laboratory of the Timiryazev Institute of Plant Physiology (Moscow), senior researcher of the Institute of Fundamental Problems of Biology of REA (Pushchino), professor of M.V. Lomonosov Moscow State University and Moscow Institute of Physics and Technology, and head of the \"Photosynthesis and Hydrogen Energy\" laboratory of Bahçeşehir University in Turkey",
+      "after": "Doctor of biological sciences, corresponding member of the Russian Academy of Sciences (REA), REA's K.A. Head of the \"Controlled Photobiosynthesis\" laboratory of the Timiryazev Institute of Plant Physiology (Moscow), senior researcher of the Institute of Fundamental Problems of Biology of REA (Pushchino), professor of M. V. Lomonosov Moscow State University and Moscow Institute of Physics and Technology, and head of the \"Photosynthesis and Hydrogen Energy\" laboratory of Bahçeşehir University in Turkey"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/14/title_en",
+      "profile": "Zahid Gojayev",
+      "issueIds": [
+        "L291"
+      ],
+      "before": "Deputy Director for Innovation and Implementation of the Federal Scientific Agrotechnical Center VIM (FGBNU), professor of Moscow Polytechnic University and N.E. Bauman Moscow State Technical University, doctor of technical sciences, professor, corresponding member of the Russian Academy of Sciences",
+      "after": "Deputy Director for Innovation and Implementation of the Federal Scientific Agrotechnical Center VIM (FGBNU), professor of Moscow Polytechnic University and N. E. Bauman Moscow State Technical University, doctor of technical sciences, professor, corresponding member of the Russian Academy of Sciences"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/4/bio_html_en",
+      "profile": "Aladdin Allahverdiyev",
+      "issueIds": [
+        "L285"
+      ],
+      "before": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. Based on his research findings, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times—in 1975, 1977 and 1980—badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. Based on his research findings, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times—in 1975, 1977 and 1980—badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M. V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/5/bio_html_en",
+      "profile": "Aliheydar Rahimov",
+      "issueIds": [
+        "L287"
+      ],
+      "before": "<p class=\"bio bio-lead\">He graduated from Azerbaijan State Medical Institute in 1976. In 1980, he received the doctor of philosophy degree in medicine; in 1988 he received the scientific degree of doctor of medical sciences, and since 1993 he has been a professor.</p><p class=\"bio\">He is the author of more than 390 scientific works in the field of transfusiology, including 18 monographs and 13 lessons and methodical materials. He is the author of 4 inventions and has prepared 15 PhDs and 6 PhDs. He was awarded &quot;Man of the Year&quot; (2000), &quot;Best scientific monograph&quot; (2001) and &quot;Academic B.V. Petrovsky medal&quot; (2009) for his scientific activities and services.</p><p class=\"bio\">He is a member of the editorial boards of Russian and international scientific journals and a participant in and organizer of a number of prestigious international conferences. He actively participates in scientific societies of Russia and Azerbaijan in the field of transfusiology.</p>",
+      "after": "<p class=\"bio bio-lead\">He graduated from Azerbaijan State Medical Institute in 1976. In 1980, he received the doctor of philosophy degree in medicine; in 1988 he received the scientific degree of doctor of medical sciences, and since 1993 he has been a professor.</p><p class=\"bio\">He is the author of more than 390 scientific works in the field of transfusiology, including 18 monographs and 13 lessons and methodical materials. He is the author of 4 inventions and has prepared 15 PhDs and 6 PhDs. He was awarded &quot;Man of the Year&quot; (2000), &quot;Best scientific monograph&quot; (2001) and &quot;Academic B. V. Petrovsky medal&quot; (2009) for his scientific activities and services.</p><p class=\"bio\">He is a member of the editorial boards of Russian and international scientific journals and a participant in and organizer of a number of prestigious international conferences. He actively participates in scientific societies of Russia and Azerbaijan in the field of transfusiology.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/11/bio_html_en",
+      "profile": "Sevinj Asgerova",
+      "issueIds": [
+        "L289"
+      ],
+      "before": "<p class=\"bio bio-lead\">She is a full member of the European Society of Plastic and Reconstructive Ophthalmological Surgeons (ESOPRS) and an honorary member and coordinator of the Society of Ophthalmologists of Turkic-speaking Countries. At the same time, she is a member of the Expert Council of the American Society of Ophthalmologists, the International Dacryological Society, the International Society of Pediatric Ophthalmologists, the Russian Society of Ophthalmology, the Russian Society of Plastic, Reconstructive and Aesthetic Surgeons, the International Union of Scientists, Teachers and Specialists, as well as the Internet publication \"Modern Problems of Science and Education.\"</p><p class=\"bio\">In 2005, she successfully defended her doctoral dissertation at the Institute of Eye Microsurgery of the Scientific and Technical Complex named after S.N. Fyodorov in Moscow.</p><p class=\"bio\">She is the author of 18 patents for inventions, 15 efficiency proposals and more than 140 scientific articles and theses. She was awarded gold medals named after Hippocrates and V. I. Vernadsky for her scientific and pedagogical activities.</p>",
+      "after": "<p class=\"bio bio-lead\">She is a full member of the European Society of Plastic and Reconstructive Ophthalmological Surgeons (ESOPRS) and an honorary member and coordinator of the Society of Ophthalmologists of Turkic-speaking Countries. At the same time, she is a member of the Expert Council of the American Society of Ophthalmologists, the International Dacryological Society, the International Society of Pediatric Ophthalmologists, the Russian Society of Ophthalmology, the Russian Society of Plastic, Reconstructive and Aesthetic Surgeons, the International Union of Scientists, Teachers and Specialists, as well as the Internet publication \"Modern Problems of Science and Education.\"</p><p class=\"bio\">In 2005, she successfully defended her doctoral dissertation at the Institute of Eye Microsurgery of the Scientific and Technical Complex named after S. N. Fyodorov in Moscow.</p><p class=\"bio\">She is the author of 18 patents for inventions, 15 efficiency proposals and more than 140 scientific articles and theses. She was awarded gold medals named after Hippocrates and V. I. Vernadsky for her scientific and pedagogical activities.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/2/bio_html_en",
+      "profile": "Ilkin Gulusoy",
+      "issueIds": [
+        "L281"
+      ],
+      "before": "<p class=\"bio bio-lead\">The Department of Contemporary Turkish Dialects and Literature operating at Qafqaz University is the only 4-year department in Turkey that trains specialists in Azerbaijani language and literature. Since 2014, on the initiative of Ilkin Gulusoy, a master&#x27;s department has been opened in the department, and during this period, about 60 masters have graduated.</p><p class=\"bio\">In 2023, he organized 5 international scientific conferences on the occasion of the 100th anniversary of the birth of our national leader Heydar Aliyev, 2 international scientific conferences dedicated to the author of Karabakh Victory, Supreme Commander-in-Chief Ilham Aliyev, and 3 international conferences in 2024 to mark the 100th anniversary of the Nakhchivan Autonomous Republic. Conference materials were published by the Ministry of Culture and Tourism of the Republic of Turkey with ISBNs.</p><p class=\"bio\">Ilkin Gulusoy is the author of 12 scientific books. 27 articles were published in periodical scientific publications included in international abstracting and indexing services. He has given presentations at more than 70 international scientific conferences and is the scientific editor of more than 60 books. Under his guidance, 10 people defended their master's theses in Azerbaijani language and literature.</p><p class=\"bio\">He received awards 3 times for his contributions to the science of Turkology. The book &quot;Comparative Phraseology of Turkish Turkish and Azerbaijani Turkish&quot; prepared jointly with Sema Sahin Dede was highly appreciated as the first research work written in this field.</p>",
+      "after": "<p class=\"bio bio-lead\">The Department of Contemporary Turkish Dialects and Literature operating at Qafqaz University is the only 4-year department in Turkey that trains specialists in Azerbaijani language and literature. Since 2014, on the initiative of Ilkin Gulusoy, a master&#x27;s department has been opened in the department, and during this period, about 60 masters have graduated.</p><p class=\"bio\">In 2023, he organized 5 international scientific conferences on the occasion of the 100th anniversary of the birth of our national leader Heydar Aliyev and 2 international scientific conferences dedicated to the author of Karabakh Victory, Supreme Commander-in-Chief Ilham Aliyev. In 2024, he organized 3 international conferences to mark the 100th anniversary of the Nakhchivan Autonomous Republic. Conference materials were published by the Ministry of Culture and Tourism of the Republic of Turkey with ISBNs.</p><p class=\"bio\">Ilkin Gulusoy is the author of 12 scientific books. 27 articles were published in periodical scientific publications included in international abstracting and indexing services. He has given presentations at more than 70 international scientific conferences and is the scientific editor of more than 60 books. Under his guidance, 10 people defended their master's theses in Azerbaijani language and literature.</p><p class=\"bio\">He received awards 3 times for his contributions to the science of Turkology. The book &quot;Comparative Phraseology of Turkish Turkish and Azerbaijani Turkish&quot; prepared jointly with Sema Sahin Dede was highly appreciated as the first research work written in this field.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/bio_html_en",
+      "profile": "Mehmet Riza Heyet",
+      "issueIds": [
+        "L282"
+      ],
+      "before": "<p class=\"bio bio-lead\">He translated a one-volume book on historical topics, and supervised the compilation of two-volume scientific and two-volume literary books. He was the scientific editor of two scientific-research books and published 18 scientific articles. He acted as the chairman of the organizing committee of 11 scientific symposia and participated as a speaker in 8 international scientific conferences. He was a member of the scientific council of one international scientific journal, the chairman of the organizing committee of two international symposia, and the editor-in-chief of one scientific journal. For many years, he worked as an editor and editor-in-chief of \"Varlıg\" magazine, and currently he is the owner and editor-in-chief of this publication. He worked as a speaker and translator at TRT, and taught at Tehran and Ankara universities.</p><p class=\"bio\">Currently, he is a lecturer at Ankara University and the head of Tabriz Research Institute (TEBAREN). Professor Mehmet Rıza Hayet, who conducts research on modern Turkish dialects and literature, has played a leading role in the organization of more than 10 international symposia and conferences. His scientific interests include Turkish press, Iranian Turks, language policy, national identity issues and South Azerbaijan topics. He is the author or editor of more than 100 scientific articles, 5 books and numerous translated works in these areas. Mirza Mehdi Khan Astarabadi&#x27;s works, Atatürk's \"Speech\" and the collection of articles by Dr Javad Hayat occupy an important place. He serves on the editorial boards of a number of prestigious academic journals.</p><p class=\"bio\">His scientific and practical activities are mainly focused on Turkology, language and culture of South Azerbaijani Turks, identity issues and language rights of Iranian Turks.</p>",
+      "after": "<p class=\"bio bio-lead\">He translated a one-volume book on historical topics, and supervised the compilation of two-volume scientific and two-volume literary books. He was the scientific editor of two research books and published 18 scientific articles. He acted as the chairman of the organizing committee of 11 scientific symposia and participated as a speaker in 8 international scientific conferences. He was a member of the scientific council of one international scientific journal, the chairman of the organizing committee of two international symposia, and the editor-in-chief of one scientific journal. For many years, he worked as an editor and editor-in-chief of \"Varlıg\" magazine, and currently he is the owner and editor-in-chief of this publication. He worked as a speaker and translator at TRT, and taught at Tehran and Ankara universities.</p><p class=\"bio\">Currently, he is a lecturer at Ankara University and the head of Tabriz Research Institute (TEBAREN). Professor Mehmet Rıza Hayet, who conducts research on modern Turkish dialects and literature, has played a leading role in the organization of more than 10 international symposia and conferences. His scientific interests include Turkish press, Iranian Turks, language policy, national identity issues and South Azerbaijan topics. He is the author or editor of more than 100 scientific articles, 5 books and numerous translated works in these areas. Mirza Mehdi Khan Astarabadi&#x27;s works, Atatürk's \"Speech\" and the collection of articles by Dr Javad Hayat occupy an important place. He serves on the editorial boards of a number of prestigious academic journals.</p><p class=\"bio\">His scientific and practical activities are mainly focused on Turkology, language and culture of South Azerbaijani Turks, identity issues and language rights of Iranian Turks.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/9/bio_html_en",
+      "profile": "Ramin Aliyev",
+      "issueIds": [
+        "L283"
+      ],
+      "before": "<p class=\"bio bio-lead\">As one of the first professors in his field in Turkey, he was the author of 3 scientific books in the fields of educational psychology and positive psychology, 35 scientific articles in indexed international journals, and a speaker at 40 international scientific conferences. Also, he supervised 6 PhD students and 19 master's students. He worked as a researcher in 7 international projects developed in the field of innovative approaches in education and application of positive psychology in schools. He received various prizes and awards for his scientific activities and contributions to the field of education. He is a member of prestigious organizations such as the American Psychological Association and the Turkish Psychological Counseling and Guidance Association. The projects he led have produced significant results, especially in the field of psychological well-being of young people and motivation in education. He also actively participated in many university and state projects in Turkey, including cooperation with TUBITAK and UNICEF. His academic activities include educational psychology, family therapy, social support systems, and psychological resilience during a pandemic.</p>",
+      "after": "<p class=\"bio bio-lead\">As one of the first professors in his field in Turkey, he was the author of 3 scientific books in the fields of educational psychology and positive psychology and 35 scientific articles in indexed international journals. He also spoke at 40 international scientific conferences. Also, he supervised 6 PhD students and 19 master's students. He worked as a researcher in 7 international projects developed in the field of innovative approaches in education and application of positive psychology in schools. He received various prizes and awards for his scientific activities and contributions to the field of education. He is a member of prestigious organizations such as the American Psychological Association and the Turkish Psychological Counseling and Guidance Association. The projects he led have produced significant results, especially in the field of psychological well-being of young people and motivation in education. He also actively participated in many university and state projects in Turkey, including cooperation with TUBITAK and UNICEF. His academic activities include educational psychology, family therapy, social support systems, and psychological resilience during a pandemic.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/19/bio_html_en",
+      "profile": "Khalil Kalantar",
+      "issueIds": [
+        "L284"
+      ],
+      "before": "<p class=\"bio bio-lead\">He received doctorates from both Nagoya and Tohoku universities. As one of the leading experts in the field of developing and manufacturing electronic displays and sensors, he is the author of 105 patents and 28 technical documents in various countries and regions, including Japan, the USA, Canada, Europe, South Korea and Taiwan. 35 articles and presentations on screen technologies were published in international scientific journals, and 59 in local publications. He has published 5 books in Japanese, abstracts in English, 15 book chapters and 7 IEC standards documents and has participated in 9 government projects. He implemented these projects in cooperation with leading Japanese universities. In addition, he provided scientific guidance to researchers who received doctoral degrees in a number of foreign universities.</p><p class=\"bio\">He was awarded the &quot;Progress&quot; medal in 2026 by the Decree of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</p>",
+      "after": "<p class=\"bio bio-lead\">He received doctorates from both Nagoya and Tohoku universities. As one of the leading experts in the field of developing and manufacturing electronic displays and sensors, he is the author of 105 patents and 28 technical documents in various countries and regions, including Japan, the USA, Canada, Europe, South Korea and Taiwan. 35 articles and presentations on screen technologies were published in international scientific journals, and 59 in local publications. He has published 5 books in Japanese, abstracts in English, 15 book chapters and 7 IEC standards documents and has participated in 9 government projects. He implemented these projects in cooperation with leading Japanese universities. In addition, he provided scientific guidance to researchers who received doctoral degrees from a number of foreign universities.</p><p class=\"bio\">He was awarded the &quot;Progress&quot; medal in 2026 by the Decree of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</p>"
+    }
+  ],
+  "files": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "beforeSha256": "0167e9338b494f0e7149fa870bad7fc67ab73bbc19679f962b8b13f41f275af1",
+      "afterSha256": "57995de3a9f4a72479f1077962ea685f9c74f86d5fb0c344c934da6c394d926e"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "beforeSha256": "2563eaae29d9724674d7817aa17f77c6235fcd21d360409e6fa6313e9b0e7798",
+      "afterSha256": "c23104a41d3122ffcc1543bcee4b1a4d14b2726318b8a8d0519a2a1f5e41efb9"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-02.json",
+      "beforeSha256": "2165f8d5702e6faa3df8ba8f04b933925feacdfc317ba4cbfd5aaed07d9bfdf5",
+      "afterSha256": "a5bdc38acdcd3b901baa12827b5562cb1931989477663be0ebce0f9f29c49593"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "beforeSha256": "81940fc409a8e6e5bf826a80ada4197a9c29ff4815359a39d19a29d74dc6f2e2",
+      "afterSha256": "a07def63fea233d53fa368cd5190801713fbc8e5f386e2fa3218089ed7577c5f"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-04.json",
+      "beforeSha256": "9aed84442d869f319d4ef0e35f0abd2a321bc3dd0fbd364eb2fd4e2e06dd70b7",
+      "afterSha256": "0f895dc3ccb8812dfc0779b742d5e47b0924f85f0973d23b5f3b86aa9f1ff6b5"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "beforeSha256": "0167e9338b494f0e7149fa870bad7fc67ab73bbc19679f962b8b13f41f275af1",
+      "afterSha256": "57995de3a9f4a72479f1077962ea685f9c74f86d5fb0c344c934da6c394d926e"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "beforeSha256": "2563eaae29d9724674d7817aa17f77c6235fcd21d360409e6fa6313e9b0e7798",
+      "afterSha256": "c23104a41d3122ffcc1543bcee4b1a4d14b2726318b8a8d0519a2a1f5e41efb9"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+      "beforeSha256": "2165f8d5702e6faa3df8ba8f04b933925feacdfc317ba4cbfd5aaed07d9bfdf5",
+      "afterSha256": "a5bdc38acdcd3b901baa12827b5562cb1931989477663be0ebce0f9f29c49593"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "beforeSha256": "81940fc409a8e6e5bf826a80ada4197a9c29ff4815359a39d19a29d74dc6f2e2",
+      "afterSha256": "a07def63fea233d53fa368cd5190801713fbc8e5f386e2fa3218089ed7577c5f"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+      "beforeSha256": "9aed84442d869f319d4ef0e35f0abd2a321bc3dd0fbd364eb2fd4e2e06dd70b7",
+      "afterSha256": "0f895dc3ccb8812dfc0779b742d5e47b0924f85f0973d23b5f3b86aa9f1ff6b5"
+    }
+  ],
+  "validation": {
+    "all15SuggestionsPresent": true,
+    "onlyApprovedEnglishTitleAndBiographyFieldsChanged": true,
+    "nonEnglishFieldsUnchanged": true,
+    "numericValuesAndMarkupPreserved": true,
+    "allActiveDatasetsMatch": true,
+    "renderersUnchanged": true
+  }
+}

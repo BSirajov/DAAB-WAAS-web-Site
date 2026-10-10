@@ -147,7 +147,11 @@
     var card = findCard(slug);
     if (!card) return false;
 
-    clearBlockingFilters();
+    var params = new URLSearchParams(location.search || "");
+    var keepFilters = ["q", "country", "field", "degree", "gender"].some(function (key) {
+      return !!params.get(key);
+    });
+    if (!keepFilters) clearBlockingFilters();
     markProfilesReady();
 
     window.requestAnimationFrame(function () {

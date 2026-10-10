@@ -1,0 +1,123 @@
+{
+  "confirmation": {
+    "date": "2026-10-10",
+    "profile": "Yashar Musayev",
+    "profileNumber": 16,
+    "section": "Biography — 2017 supplier award",
+    "value": "Yashar Musayev personally received the award.",
+    "source": "Explicit user confirmation: the recipient was Musayev personally",
+    "sourceChanges": 0,
+    "resolvedIssueIds": [],
+    "remainingIssueIds": [
+      "V125"
+    ],
+    "outcome": "Recipient identity recorded as confirmed. V125 remains open only for the manufacturer and exact official award title. Public profile text is unchanged."
+  },
+  "supportingDocument": {
+    "title": "CV Yaşar Musayev.pdf",
+    "file": "E:/Documents/Azərbaycanlı Alimlərin Istanbul görüşü, 8-10 Dekabr 2022/1-ci Bakı forumu, 8-12 Sentyabr 2024/Web Site/CV/CV Yaşar Musayev.pdf",
+    "pages": 3,
+    "relevantPage": 3,
+    "sha256": "be1d0ff19ed6711be02975101d64165777a06d5989fc59ba48b0d4576b4773e8",
+    "note": "All three pages read and visually inspected. Page 3 lists Customer Supplier Award, global Japanese OEM, 2017. It does not identify the manufacturer or independently establish the formal award title. The user confirmed that Musayev personally received the award."
+  },
+  "reportFinding": {
+    "before": {
+      "id": "V125",
+      "p": 16,
+      "section": "Biography",
+      "c": "Global Japanese car manufacturer \"Supplier\" award (2017).",
+      "s": "Retain pending verification.",
+      "parts": [
+        {
+          "c": "Global Japanese car manufacturer \"Supplier\" award (2017).",
+          "s": "Retain pending verification."
+        }
+      ],
+      "t": "Style",
+      "e": "The manufacturer and award name are missing or conflated. Confirm the awarding organization and whether Supplier is the official award title; the current wording cannot identify the honor.",
+      "severity": "High",
+      "verify": true,
+      "status": "New",
+      "sources": [],
+      "group": "Verification",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 274,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-01.json",
+          "line": 1,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 274,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+          "line": 1,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        }
+      ],
+      "e_ru": "Название производителя и награды отсутствует либо смешано. Необходимо уточнить награждающую организацию и выяснить, является ли Supplier официальным названием награды. Нынешняя формулировка не позволяет определить, о какой награде идёт речь."
+    },
+    "after": {
+      "id": "V125",
+      "p": 16,
+      "section": "Biography",
+      "c": "Global Japanese car manufacturer \"Supplier\" award (2017).",
+      "s": "In 2017, Yashar Musayev received a Customer Supplier Award from a global Japanese automotive manufacturer.",
+      "parts": [
+        {
+          "c": "Global Japanese car manufacturer \"Supplier\" award (2017).",
+          "s": "In 2017, Yashar Musayev received a Customer Supplier Award from a global Japanese automotive manufacturer."
+        }
+      ],
+      "t": "Style",
+      "e": "The CV lists “Customer Supplier Award, global Japanese OEM” for 2017. The user confirms that Yashar Musayev personally received the award; recipient identity is no longer an open question. The manufacturer and exact official award title remain unverified. The proposed wording uses the CV’s label and has not been applied to the profile.",
+      "severity": "High",
+      "verify": true,
+      "status": "New",
+      "sources": [
+        {
+          "title": "CV Yaşar Musayev.pdf",
+          "file": "E:/Documents/Azərbaycanlı Alimlərin Istanbul görüşü, 8-10 Dekabr 2022/1-ci Bakı forumu, 8-12 Sentyabr 2024/Web Site/CV/CV Yaşar Musayev.pdf",
+          "pages": 3,
+          "relevantPage": 3,
+          "sha256": "be1d0ff19ed6711be02975101d64165777a06d5989fc59ba48b0d4576b4773e8",
+          "note": "All three pages read and visually inspected. Page 3 lists Customer Supplier Award, global Japanese OEM, 2017. It does not identify the manufacturer or independently establish the formal award title. The user confirmed that Musayev personally received the award."
+        }
+      ],
+      "group": "Verification",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 274,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-01.json",
+          "line": 1,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 274,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+          "line": 1,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        }
+      ],
+      "e_ru": "В CV за 2017 год указано: «Customer Supplier Award, global Japanese OEM». Пользователь подтвердил, что награду получил лично Яшар Мусаев; вопрос о получателе закрыт. Название производителя и точное официальное название награды остаются неподтверждёнными. Предложенная формулировка использует название из CV и пока не внесена в профиль.",
+      "verificationStatus": "Recipient confirmed by the user; manufacturer and exact official award title remain unverified."
+    }
+  },
+  "profileFilesChanged": 0
+}

@@ -20,8 +20,10 @@ from pathlib import Path
 from _paths import (
     LEGACY_FOOTER_COPYRIGHTS,
     ROOT,
+    current_build_stamp,
     footer_copyright_line,
 )
+from _stamp_asset_versions import build_id_from_stamp, stamp_tree
 from _deploy_assets import DEPLOYIGNORE_ASSET_PATHS
 
 FOOTER_COPY_RE = re.compile(r'(<div class="footer-copy">)(.*?)(</div>)', re.DOTALL)
@@ -554,7 +556,9 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     parse_args()
 
-    copyright_line = footer_copyright_line()
+    build_stamp = current_build_stamp()
+    asset_build_id = build_id_from_stamp(build_stamp)
+    copyright_line = footer_copyright_line(build_stamp)
     import _paths
 
     _paths.FOOTER_COPYRIGHT_AZ = copyright_line
@@ -565,6 +569,7 @@ def main() -> int:
     print(f"  Source: {ROOT}")
     print(f"  Output: {DEPLOY_DIR}")
     print(f"  Footer: {copyright_line}")
+    print(f"  Asset version: ?v={asset_build_id}")
     print(f"  Footer files updated: {stamped}")
     print("  Images and Books: copy from repo\n")
 
@@ -598,6 +603,10 @@ def main() -> int:
     print("→ Muting Forum 2026 Register menu item for production…")
     for rel in lock_production_forum_registration(DEPLOY_STAGING):
         print(f"  locked {rel}")
+
+    print(f"→ Stamping local asset URLs with ?v={asset_build_id} …")
+    stamped_assets = stamp_tree(DEPLOY_STAGING, asset_build_id)
+    print(f"  asset files updated: {stamped_assets}")
 
     # Repo-root .htaccess is the source of truth (copied above with the site).
     # Do not overlay the previous Deployment/.htaccess or cache rules never ship.

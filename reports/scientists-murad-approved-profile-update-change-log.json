@@ -1,0 +1,282 @@
+{
+  "date": "2026-10-10",
+  "profile": "Murad Abuzerli / Murad Abuzərli",
+  "profileNumber": 20,
+  "languages": [
+    "English",
+    "Azerbaijani"
+  ],
+  "source": "User approval of the complete English and Azerbaijani profile drafts based on the supplied CV",
+  "sources": [
+    {
+      "title": "CV Murad Abuzərli.pdf",
+      "file": "E:/Documents/Azərbaycanlı Alimlərin Istanbul görüşü, 8-10 Dekabr 2022/1-ci Bakı forumu, 8-12 Sentyabr 2024/Web Site/CV/CV Murad Abuzərli.pdf",
+      "pages": 1,
+      "sha256": "7dcbd562d912bc4ad551e03465f9512bd8ad7db724799178c2f7b9b6f7780a1e",
+      "note": "Complete one-page CV read and visually inspected. It provides academic and research experience but no publication count, patent reference, or patent-role attribution. The approved profiles omit those claims and identify the doctoral research laboratory without assigning a degree-awarding university. The user-approved website text retains Murad Abuzerli in English and Murad Abuzərli in Azerbaijani."
+    }
+  ],
+  "issueIds": [
+    "V082"
+  ],
+  "resolvedIssueIds": [],
+  "previouslyClosedIssueIds": [
+    "V082"
+  ],
+  "summary": [
+    "Applied the approved bilingual title, MSCA/NEOVITA fellowship, doctoral research, education, internships, teaching, technical skills, award, research interests, and languages.",
+    "Retained the approved English name Murad Abuzerli, Azerbaijani name Murad Abuzərli, and PhD credential.",
+    "Omitted the former publication count and patent attribution. V082 remains closed following the user’s earlier editorial instruction.",
+    "Named the Kastler Brossel Laboratory as the doctoral research location without asserting the degree-awarding university.",
+    "Preserved the dissertation title in italics and the 2023–2026 fellowship period.",
+    "Synchronized active profile data, the English translation source, and English/Azerbaijani search entries."
+  ],
+  "scopeNote": "The exact approved wording is retained. Name spellings, credential, email/profile lookup key, photo, country, subject field, and profile anchor are unchanged. V082 was closed before this update, so the remaining-finding total is unchanged. This is not a new comprehensive proofreading pass or independent verification of every historical CV claim.",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 341,
+      "jsonPointer": "/profiles/19/title_en",
+      "field": "title_en",
+      "before": "University of Vienna, Faculty of Physics, postdoctoral studies in the group \"quantum optics, quantum information and nanophysics\"",
+      "after": "Physicist; Marie Skłodowska-Curie Actions postdoctoral fellow, University of Vienna (2023–2026)"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 342,
+      "jsonPointer": "/profiles/19/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">In 2022, he received his PhD in experimental quantum optics at Sorbonne University in Paris. He is the co-author of 6 scientific articles published in international journals and 1 scientific patent. In 2023, he was awarded the &quot;Marie Skłodowska-Curie Actions&quot; scientific grant by the &quot;Horizon Europe&quot; program to carry out his postdoctoral research project in the field of many-body quantum optomechanics.</p>",
+      "after": "<p class=\"bio bio-lead\">Murad Abuzerli is a physicist specializing in nonlinear and quantum optics, quantum fluids of light, and the behavior and control of waves in complex media. His research combines experimental optical techniques, numerical modeling, and the study of light–matter interactions.</p><p class=\"bio\">In 2023, he began a Marie Skłodowska-Curie Actions (MSCA) postdoctoral fellowship at the University of Vienna, working on the NEOVITA project under Prof Markus Aspelmeyer and Dr Uroš Delić. The fellowship covers the period 2023–2026.</p><p class=\"bio\">From 2018 to 2022, he conducted doctoral research at the Kastler Brossel Laboratory in Paris under Dr Quentin Glorieux. His dissertation was titled <em>“Out of equilibrium dynamics in a paraxial fluid of light.”</em></p><p class=\"bio\">His education includes MSc studies in lasers, optics, and matter at Paris-Saclay University in 2017–2018, within a double-degree program between ESPCI Paris and Institut d’Optique Graduate School. He studied engineering at ESPCI Paris in 2014–2017 and undertook undergraduate studies in physics and chemistry at Sorbonne Université’s Pierre and Marie Curie campus in 2012–2014.</p><p class=\"bio\">His research experience includes master’s research at CEA Saclay in 2018 on radiative damping and high-harmonic generation in plasma mirrors excited by ultra-intense lasers. In 2017, he completed an internship at Princeton University on controlling light in multimode fibers. Earlier internships included electrochemistry research on hybrid supercapacitors at Robert Bosch’s Renningen campus in 2016 and work on nanostructured materials and their electrochemical characterization at Humboldt University Berlin in 2014.</p><p class=\"bio\">In 2020–2021, he delivered 128 hours of undergraduate laboratory classes and seminars at Sorbonne Université, covering wave physics, including acoustics and optics, electromagnetism, and the mechanics of solid systems.</p><p class=\"bio\">His technical skills include Python, MATLAB, Mathematica, basic electronics for diode-laser control, and optical measurements using spatial light modulators, photodiodes, and cameras.</p><p class=\"bio\">He received the Best Poster Award at the QuTech 2020 Quantum Technologies School in Sochi. He has also organized a public astrophysics lecture and observatory visits around Paris.</p><p class=\"bio-section-title\">Research interests:</p><ul><li>Nonlinear and quantum optics.</li><li>Quantum fluids of light and their field and intensity correlations.</li><li>Wave propagation and control in complex media.</li><li>Atomic optics and light-induced phenomena.</li><li>Experimental optical methods and numerical modeling.</li></ul><p class=\"bio\">He speaks native Azerbaijani and Russian, fluent English, German, and French, and intermediate Turkish.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 337,
+      "jsonPointer": "/profiles/19/title_az",
+      "field": "title_az",
+      "before": "Vyana Universiteti (University of Vienna) Fizika fakültəsi, ”kvant optikası, kvant informasiya və nanofizika” qrupunda postdoktorantura",
+      "after": "Fizik; Vyana Universitetində Marie Skłodowska-Curie Actions proqramı üzrə postdoktoral tədqiqatçı (2023–2026)"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 338,
+      "jsonPointer": "/profiles/19/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">2022-ci ildə Parisin Sorbon Universitetində eksperimental kvant optikası sahəsində fəlsəfə doktoru dərəcəsini əldə edib. Beynəlxalq jurnallarda çap olunmuş 6 elmi məqalənin və 1 elmi patentin müştərək müəllifidir. 2023-cü ildə çoxcisimli kvant optomexanikası sahəsində post-doktoral araşdırmaları layihəsini həyata keçirmək üçün “Horizon Europe” proqramı tərəfindən “Marie Skłodowska-Curie Actions” elmi qrantına layiq görülmüşdür.</p>",
+      "after": "<p class=\"bio bio-lead\">Murad Abuzərli qeyri-xətti və kvant optikası, işığın kvant mayeləri, mürəkkəb mühitlərdə dalğaların davranışı və idarə olunması sahələrində ixtisaslaşmış fizikdir. Onun tədqiqatları eksperimental optik üsulları, ədədi modelləşdirməni və işıq–maddə qarşılıqlı təsirlərinin öyrənilməsini birləşdirir.</p><p class=\"bio\">2023-cü ildə Vyana Universitetində Marie Skłodowska-Curie Actions (MSCA) proqramı üzrə postdoktoral tədqiqatlara başlamışdır. Professor Markus Aspelmeyer və doktor Uroš Delićin rəhbərliyi altında NEOVITA layihəsi üzərində çalışır. Təqaüd proqramı 2023–2026-cı illəri əhatə edir.</p><p class=\"bio\">2018–2022-ci illərdə Parisdə Kastler Brossel Laboratoriyasında doktor Quentin Glorieux-nün rəhbərliyi altında doktorluq tədqiqatları aparmışdır. Dissertasiyasının adı <em>“Out of equilibrium dynamics in a paraxial fluid of light”</em> olmuşdur.</p><p class=\"bio\">2017–2018-ci illərdə ESPCI Paris və Institut d’Optique Graduate School arasında ikili diplom proqramı çərçivəsində Paris-Saclay Universitetində lazerlər, optika və maddə üzrə magistr təhsili almışdır. 2014–2017-ci illərdə ESPCI Paris-də mühəndislik, 2012–2014-cü illərdə isə Sorbonne Université-nin Pierre və Marie Curie kampusunda fizika və kimya üzrə bakalavr pilləsində təhsil almışdır.</p><p class=\"bio\">Elmi təcrübəsinə 2018-ci ildə CEA Saclay mərkəzində magistr işi çərçivəsində ultraintensiv lazerlərlə həyəcanlandırılan plazma güzgülərində radiasiya sönümlənməsi və yüksək harmonikaların generasiyası üzrə tədqiqatlar daxildir. 2017-ci ildə Princeton Universitetində çoxmodlu optik liflərdə işığın idarə olunması üzrə təcrübə keçmişdir. Daha əvvəl, 2016-cı ildə Robert Bosch şirkətinin Renningen kampusunda hibrid superkondensatorlar üzrə elektrokimyəvi tədqiqatlarda, 2014-cü ildə isə Berlin Humboldt Universitetində nanostrukturlu materialların hazırlanması və elektrokimyəvi xarakteristikalarının öyrənilməsində iştirak etmişdir.</p><p class=\"bio\">2020–2021-ci illərdə Sorbonne Université-də bakalavr tələbələri üçün dalğa fizikası, o cümlədən akustika və optika, elektromaqnetizm və bərk cisimlər sistemlərinin mexanikası üzrə ümumilikdə 128 saat laboratoriya məşğələsi və seminar aparmışdır.</p><p class=\"bio\">Texniki bacarıqlarına Python, MATLAB və Mathematica proqramları, diod lazerlərinin idarə olunması üçün əsas elektronika, eləcə də fəza işıq modulyatorları, fotodiodlar və kameralar vasitəsilə optik ölçmələr daxildir.</p><p class=\"bio\">Soçidə keçirilən QuTech 2020 Kvant Texnologiyaları Məktəbində ən yaxşı poster mükafatına layiq görülmüşdür. Həmçinin astrofizika üzrə ictimai mühazirə və Paris ətrafındakı rəsədxanalara səfərlər təşkil etmişdir.</p><p class=\"bio-section-title\">Elmi maraq sahələri:</p><ul><li>Qeyri-xətti və kvant optikası.</li><li>İşığın kvant mayeləri, onların sahə və intensivlik korrelyasiyaları.</li><li>Mürəkkəb mühitlərdə dalğaların yayılması və idarə olunması.</li><li>Atom optikası və işığın təsiri ilə yaranan hadisələr.</li><li>Eksperimental optik üsullar və ədədi modelləşdirmə.</li></ul><p class=\"bio\">Azərbaycan və rus dilləri onun ana dilləridir. İngilis, alman və fransız dillərini sərbəst, türk dilini isə orta səviyyədə bilir.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/19/title_en",
+      "field": "title_en",
+      "before": "University of Vienna, Faculty of Physics, postdoctoral studies in the group \"quantum optics, quantum information and nanophysics\"",
+      "after": "Physicist; Marie Skłodowska-Curie Actions postdoctoral fellow, University of Vienna (2023–2026)"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/19/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">In 2022, he received his PhD in experimental quantum optics at Sorbonne University in Paris. He is the co-author of 6 scientific articles published in international journals and 1 scientific patent. In 2023, he was awarded the &quot;Marie Skłodowska-Curie Actions&quot; scientific grant by the &quot;Horizon Europe&quot; program to carry out his postdoctoral research project in the field of many-body quantum optomechanics.</p>",
+      "after": "<p class=\"bio bio-lead\">Murad Abuzerli is a physicist specializing in nonlinear and quantum optics, quantum fluids of light, and the behavior and control of waves in complex media. His research combines experimental optical techniques, numerical modeling, and the study of light–matter interactions.</p><p class=\"bio\">In 2023, he began a Marie Skłodowska-Curie Actions (MSCA) postdoctoral fellowship at the University of Vienna, working on the NEOVITA project under Prof Markus Aspelmeyer and Dr Uroš Delić. The fellowship covers the period 2023–2026.</p><p class=\"bio\">From 2018 to 2022, he conducted doctoral research at the Kastler Brossel Laboratory in Paris under Dr Quentin Glorieux. His dissertation was titled <em>“Out of equilibrium dynamics in a paraxial fluid of light.”</em></p><p class=\"bio\">His education includes MSc studies in lasers, optics, and matter at Paris-Saclay University in 2017–2018, within a double-degree program between ESPCI Paris and Institut d’Optique Graduate School. He studied engineering at ESPCI Paris in 2014–2017 and undertook undergraduate studies in physics and chemistry at Sorbonne Université’s Pierre and Marie Curie campus in 2012–2014.</p><p class=\"bio\">His research experience includes master’s research at CEA Saclay in 2018 on radiative damping and high-harmonic generation in plasma mirrors excited by ultra-intense lasers. In 2017, he completed an internship at Princeton University on controlling light in multimode fibers. Earlier internships included electrochemistry research on hybrid supercapacitors at Robert Bosch’s Renningen campus in 2016 and work on nanostructured materials and their electrochemical characterization at Humboldt University Berlin in 2014.</p><p class=\"bio\">In 2020–2021, he delivered 128 hours of undergraduate laboratory classes and seminars at Sorbonne Université, covering wave physics, including acoustics and optics, electromagnetism, and the mechanics of solid systems.</p><p class=\"bio\">His technical skills include Python, MATLAB, Mathematica, basic electronics for diode-laser control, and optical measurements using spatial light modulators, photodiodes, and cameras.</p><p class=\"bio\">He received the Best Poster Award at the QuTech 2020 Quantum Technologies School in Sochi. He has also organized a public astrophysics lecture and observatory visits around Paris.</p><p class=\"bio-section-title\">Research interests:</p><ul><li>Nonlinear and quantum optics.</li><li>Quantum fluids of light and their field and intensity correlations.</li><li>Wave propagation and control in complex media.</li><li>Atomic optics and light-induced phenomena.</li><li>Experimental optical methods and numerical modeling.</li></ul><p class=\"bio\">He speaks native Azerbaijani and Russian, fluent English, German, and French, and intermediate Turkish.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/19/title_az",
+      "field": "title_az",
+      "before": "Vyana Universiteti (University of Vienna) Fizika fakültəsi, ”kvant optikası, kvant informasiya və nanofizika” qrupunda postdoktorantura",
+      "after": "Fizik; Vyana Universitetində Marie Skłodowska-Curie Actions proqramı üzrə postdoktoral tədqiqatçı (2023–2026)"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/19/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">2022-ci ildə Parisin Sorbon Universitetində eksperimental kvant optikası sahəsində fəlsəfə doktoru dərəcəsini əldə edib. Beynəlxalq jurnallarda çap olunmuş 6 elmi məqalənin və 1 elmi patentin müştərək müəllifidir. 2023-cü ildə çoxcisimli kvant optomexanikası sahəsində post-doktoral araşdırmaları layihəsini həyata keçirmək üçün “Horizon Europe” proqramı tərəfindən “Marie Skłodowska-Curie Actions” elmi qrantına layiq görülmüşdür.</p>",
+      "after": "<p class=\"bio bio-lead\">Murad Abuzərli qeyri-xətti və kvant optikası, işığın kvant mayeləri, mürəkkəb mühitlərdə dalğaların davranışı və idarə olunması sahələrində ixtisaslaşmış fizikdir. Onun tədqiqatları eksperimental optik üsulları, ədədi modelləşdirməni və işıq–maddə qarşılıqlı təsirlərinin öyrənilməsini birləşdirir.</p><p class=\"bio\">2023-cü ildə Vyana Universitetində Marie Skłodowska-Curie Actions (MSCA) proqramı üzrə postdoktoral tədqiqatlara başlamışdır. Professor Markus Aspelmeyer və doktor Uroš Delićin rəhbərliyi altında NEOVITA layihəsi üzərində çalışır. Təqaüd proqramı 2023–2026-cı illəri əhatə edir.</p><p class=\"bio\">2018–2022-ci illərdə Parisdə Kastler Brossel Laboratoriyasında doktor Quentin Glorieux-nün rəhbərliyi altında doktorluq tədqiqatları aparmışdır. Dissertasiyasının adı <em>“Out of equilibrium dynamics in a paraxial fluid of light”</em> olmuşdur.</p><p class=\"bio\">2017–2018-ci illərdə ESPCI Paris və Institut d’Optique Graduate School arasında ikili diplom proqramı çərçivəsində Paris-Saclay Universitetində lazerlər, optika və maddə üzrə magistr təhsili almışdır. 2014–2017-ci illərdə ESPCI Paris-də mühəndislik, 2012–2014-cü illərdə isə Sorbonne Université-nin Pierre və Marie Curie kampusunda fizika və kimya üzrə bakalavr pilləsində təhsil almışdır.</p><p class=\"bio\">Elmi təcrübəsinə 2018-ci ildə CEA Saclay mərkəzində magistr işi çərçivəsində ultraintensiv lazerlərlə həyəcanlandırılan plazma güzgülərində radiasiya sönümlənməsi və yüksək harmonikaların generasiyası üzrə tədqiqatlar daxildir. 2017-ci ildə Princeton Universitetində çoxmodlu optik liflərdə işığın idarə olunması üzrə təcrübə keçmişdir. Daha əvvəl, 2016-cı ildə Robert Bosch şirkətinin Renningen kampusunda hibrid superkondensatorlar üzrə elektrokimyəvi tədqiqatlarda, 2014-cü ildə isə Berlin Humboldt Universitetində nanostrukturlu materialların hazırlanması və elektrokimyəvi xarakteristikalarının öyrənilməsində iştirak etmişdir.</p><p class=\"bio\">2020–2021-ci illərdə Sorbonne Université-də bakalavr tələbələri üçün dalğa fizikası, o cümlədən akustika və optika, elektromaqnetizm və bərk cisimlər sistemlərinin mexanikası üzrə ümumilikdə 128 saat laboratoriya məşğələsi və seminar aparmışdır.</p><p class=\"bio\">Texniki bacarıqlarına Python, MATLAB və Mathematica proqramları, diod lazerlərinin idarə olunması üçün əsas elektronika, eləcə də fəza işıq modulyatorları, fotodiodlar və kameralar vasitəsilə optik ölçmələr daxildir.</p><p class=\"bio\">Soçidə keçirilən QuTech 2020 Kvant Texnologiyaları Məktəbində ən yaxşı poster mükafatına layiq görülmüşdür. Həmçinin astrofizika üzrə ictimai mühazirə və Paris ətrafındakı rəsədxanalara səfərlər təşkil etmişdir.</p><p class=\"bio-section-title\">Elmi maraq sahələri:</p><ul><li>Qeyri-xətti və kvant optikası.</li><li>İşığın kvant mayeləri, onların sahə və intensivlik korrelyasiyaları.</li><li>Mürəkkəb mühitlərdə dalğaların yayılması və idarə olunması.</li><li>Atom optikası və işığın təsiri ilə yaranan hadisələr.</li><li>Eksperimental optik üsullar və ədədi modelləşdirmə.</li></ul><p class=\"bio\">Azərbaycan və rus dilləri onun ana dilləridir. İngilis, alman və fransız dillərini sərbəst, türk dilini isə orta səviyyədə bilir.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 341,
+      "jsonPointer": "/profiles/19/title_en",
+      "field": "title_en",
+      "before": "University of Vienna, Faculty of Physics, postdoctoral studies in the group \"quantum optics, quantum information and nanophysics\"",
+      "after": "Physicist; Marie Skłodowska-Curie Actions postdoctoral fellow, University of Vienna (2023–2026)"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 342,
+      "jsonPointer": "/profiles/19/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">In 2022, he received his PhD in experimental quantum optics at Sorbonne University in Paris. He is the co-author of 6 scientific articles published in international journals and 1 scientific patent. In 2023, he was awarded the &quot;Marie Skłodowska-Curie Actions&quot; scientific grant by the &quot;Horizon Europe&quot; program to carry out his postdoctoral research project in the field of many-body quantum optomechanics.</p>",
+      "after": "<p class=\"bio bio-lead\">Murad Abuzerli is a physicist specializing in nonlinear and quantum optics, quantum fluids of light, and the behavior and control of waves in complex media. His research combines experimental optical techniques, numerical modeling, and the study of light–matter interactions.</p><p class=\"bio\">In 2023, he began a Marie Skłodowska-Curie Actions (MSCA) postdoctoral fellowship at the University of Vienna, working on the NEOVITA project under Prof Markus Aspelmeyer and Dr Uroš Delić. The fellowship covers the period 2023–2026.</p><p class=\"bio\">From 2018 to 2022, he conducted doctoral research at the Kastler Brossel Laboratory in Paris under Dr Quentin Glorieux. His dissertation was titled <em>“Out of equilibrium dynamics in a paraxial fluid of light.”</em></p><p class=\"bio\">His education includes MSc studies in lasers, optics, and matter at Paris-Saclay University in 2017–2018, within a double-degree program between ESPCI Paris and Institut d’Optique Graduate School. He studied engineering at ESPCI Paris in 2014–2017 and undertook undergraduate studies in physics and chemistry at Sorbonne Université’s Pierre and Marie Curie campus in 2012–2014.</p><p class=\"bio\">His research experience includes master’s research at CEA Saclay in 2018 on radiative damping and high-harmonic generation in plasma mirrors excited by ultra-intense lasers. In 2017, he completed an internship at Princeton University on controlling light in multimode fibers. Earlier internships included electrochemistry research on hybrid supercapacitors at Robert Bosch’s Renningen campus in 2016 and work on nanostructured materials and their electrochemical characterization at Humboldt University Berlin in 2014.</p><p class=\"bio\">In 2020–2021, he delivered 128 hours of undergraduate laboratory classes and seminars at Sorbonne Université, covering wave physics, including acoustics and optics, electromagnetism, and the mechanics of solid systems.</p><p class=\"bio\">His technical skills include Python, MATLAB, Mathematica, basic electronics for diode-laser control, and optical measurements using spatial light modulators, photodiodes, and cameras.</p><p class=\"bio\">He received the Best Poster Award at the QuTech 2020 Quantum Technologies School in Sochi. He has also organized a public astrophysics lecture and observatory visits around Paris.</p><p class=\"bio-section-title\">Research interests:</p><ul><li>Nonlinear and quantum optics.</li><li>Quantum fluids of light and their field and intensity correlations.</li><li>Wave propagation and control in complex media.</li><li>Atomic optics and light-induced phenomena.</li><li>Experimental optical methods and numerical modeling.</li></ul><p class=\"bio\">He speaks native Azerbaijani and Russian, fluent English, German, and French, and intermediate Turkish.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 337,
+      "jsonPointer": "/profiles/19/title_az",
+      "field": "title_az",
+      "before": "Vyana Universiteti (University of Vienna) Fizika fakültəsi, ”kvant optikası, kvant informasiya və nanofizika” qrupunda postdoktorantura",
+      "after": "Fizik; Vyana Universitetində Marie Skłodowska-Curie Actions proqramı üzrə postdoktoral tədqiqatçı (2023–2026)"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 338,
+      "jsonPointer": "/profiles/19/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">2022-ci ildə Parisin Sorbon Universitetində eksperimental kvant optikası sahəsində fəlsəfə doktoru dərəcəsini əldə edib. Beynəlxalq jurnallarda çap olunmuş 6 elmi məqalənin və 1 elmi patentin müştərək müəllifidir. 2023-cü ildə çoxcisimli kvant optomexanikası sahəsində post-doktoral araşdırmaları layihəsini həyata keçirmək üçün “Horizon Europe” proqramı tərəfindən “Marie Skłodowska-Curie Actions” elmi qrantına layiq görülmüşdür.</p>",
+      "after": "<p class=\"bio bio-lead\">Murad Abuzərli qeyri-xətti və kvant optikası, işığın kvant mayeləri, mürəkkəb mühitlərdə dalğaların davranışı və idarə olunması sahələrində ixtisaslaşmış fizikdir. Onun tədqiqatları eksperimental optik üsulları, ədədi modelləşdirməni və işıq–maddə qarşılıqlı təsirlərinin öyrənilməsini birləşdirir.</p><p class=\"bio\">2023-cü ildə Vyana Universitetində Marie Skłodowska-Curie Actions (MSCA) proqramı üzrə postdoktoral tədqiqatlara başlamışdır. Professor Markus Aspelmeyer və doktor Uroš Delićin rəhbərliyi altında NEOVITA layihəsi üzərində çalışır. Təqaüd proqramı 2023–2026-cı illəri əhatə edir.</p><p class=\"bio\">2018–2022-ci illərdə Parisdə Kastler Brossel Laboratoriyasında doktor Quentin Glorieux-nün rəhbərliyi altında doktorluq tədqiqatları aparmışdır. Dissertasiyasının adı <em>“Out of equilibrium dynamics in a paraxial fluid of light”</em> olmuşdur.</p><p class=\"bio\">2017–2018-ci illərdə ESPCI Paris və Institut d’Optique Graduate School arasında ikili diplom proqramı çərçivəsində Paris-Saclay Universitetində lazerlər, optika və maddə üzrə magistr təhsili almışdır. 2014–2017-ci illərdə ESPCI Paris-də mühəndislik, 2012–2014-cü illərdə isə Sorbonne Université-nin Pierre və Marie Curie kampusunda fizika və kimya üzrə bakalavr pilləsində təhsil almışdır.</p><p class=\"bio\">Elmi təcrübəsinə 2018-ci ildə CEA Saclay mərkəzində magistr işi çərçivəsində ultraintensiv lazerlərlə həyəcanlandırılan plazma güzgülərində radiasiya sönümlənməsi və yüksək harmonikaların generasiyası üzrə tədqiqatlar daxildir. 2017-ci ildə Princeton Universitetində çoxmodlu optik liflərdə işığın idarə olunması üzrə təcrübə keçmişdir. Daha əvvəl, 2016-cı ildə Robert Bosch şirkətinin Renningen kampusunda hibrid superkondensatorlar üzrə elektrokimyəvi tədqiqatlarda, 2014-cü ildə isə Berlin Humboldt Universitetində nanostrukturlu materialların hazırlanması və elektrokimyəvi xarakteristikalarının öyrənilməsində iştirak etmişdir.</p><p class=\"bio\">2020–2021-ci illərdə Sorbonne Université-də bakalavr tələbələri üçün dalğa fizikası, o cümlədən akustika və optika, elektromaqnetizm və bərk cisimlər sistemlərinin mexanikası üzrə ümumilikdə 128 saat laboratoriya məşğələsi və seminar aparmışdır.</p><p class=\"bio\">Texniki bacarıqlarına Python, MATLAB və Mathematica proqramları, diod lazerlərinin idarə olunması üçün əsas elektronika, eləcə də fəza işıq modulyatorları, fotodiodlar və kameralar vasitəsilə optik ölçmələr daxildir.</p><p class=\"bio\">Soçidə keçirilən QuTech 2020 Kvant Texnologiyaları Məktəbində ən yaxşı poster mükafatına layiq görülmüşdür. Həmçinin astrofizika üzrə ictimai mühazirə və Paris ətrafındakı rəsədxanalara səfərlər təşkil etmişdir.</p><p class=\"bio-section-title\">Elmi maraq sahələri:</p><ul><li>Qeyri-xətti və kvant optikası.</li><li>İşığın kvant mayeləri, onların sahə və intensivlik korrelyasiyaları.</li><li>Mürəkkəb mühitlərdə dalğaların yayılması və idarə olunması.</li><li>Atom optikası və işığın təsiri ilə yaranan hadisələr.</li><li>Eksperimental optik üsullar və ədədi modelləşdirmə.</li></ul><p class=\"bio\">Azərbaycan və rus dilləri onun ana dilləridir. İngilis, alman və fransız dillərini sərbəst, türk dilini isə orta səviyyədə bilir.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/19/title_en",
+      "field": "title_en",
+      "before": "University of Vienna, Faculty of Physics, postdoctoral studies in the group \"quantum optics, quantum information and nanophysics\"",
+      "after": "Physicist; Marie Skłodowska-Curie Actions postdoctoral fellow, University of Vienna (2023–2026)"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/19/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">In 2022, he received his PhD in experimental quantum optics at Sorbonne University in Paris. He is the co-author of 6 scientific articles published in international journals and 1 scientific patent. In 2023, he was awarded the &quot;Marie Skłodowska-Curie Actions&quot; scientific grant by the &quot;Horizon Europe&quot; program to carry out his postdoctoral research project in the field of many-body quantum optomechanics.</p>",
+      "after": "<p class=\"bio bio-lead\">Murad Abuzerli is a physicist specializing in nonlinear and quantum optics, quantum fluids of light, and the behavior and control of waves in complex media. His research combines experimental optical techniques, numerical modeling, and the study of light–matter interactions.</p><p class=\"bio\">In 2023, he began a Marie Skłodowska-Curie Actions (MSCA) postdoctoral fellowship at the University of Vienna, working on the NEOVITA project under Prof Markus Aspelmeyer and Dr Uroš Delić. The fellowship covers the period 2023–2026.</p><p class=\"bio\">From 2018 to 2022, he conducted doctoral research at the Kastler Brossel Laboratory in Paris under Dr Quentin Glorieux. His dissertation was titled <em>“Out of equilibrium dynamics in a paraxial fluid of light.”</em></p><p class=\"bio\">His education includes MSc studies in lasers, optics, and matter at Paris-Saclay University in 2017–2018, within a double-degree program between ESPCI Paris and Institut d’Optique Graduate School. He studied engineering at ESPCI Paris in 2014–2017 and undertook undergraduate studies in physics and chemistry at Sorbonne Université’s Pierre and Marie Curie campus in 2012–2014.</p><p class=\"bio\">His research experience includes master’s research at CEA Saclay in 2018 on radiative damping and high-harmonic generation in plasma mirrors excited by ultra-intense lasers. In 2017, he completed an internship at Princeton University on controlling light in multimode fibers. Earlier internships included electrochemistry research on hybrid supercapacitors at Robert Bosch’s Renningen campus in 2016 and work on nanostructured materials and their electrochemical characterization at Humboldt University Berlin in 2014.</p><p class=\"bio\">In 2020–2021, he delivered 128 hours of undergraduate laboratory classes and seminars at Sorbonne Université, covering wave physics, including acoustics and optics, electromagnetism, and the mechanics of solid systems.</p><p class=\"bio\">His technical skills include Python, MATLAB, Mathematica, basic electronics for diode-laser control, and optical measurements using spatial light modulators, photodiodes, and cameras.</p><p class=\"bio\">He received the Best Poster Award at the QuTech 2020 Quantum Technologies School in Sochi. He has also organized a public astrophysics lecture and observatory visits around Paris.</p><p class=\"bio-section-title\">Research interests:</p><ul><li>Nonlinear and quantum optics.</li><li>Quantum fluids of light and their field and intensity correlations.</li><li>Wave propagation and control in complex media.</li><li>Atomic optics and light-induced phenomena.</li><li>Experimental optical methods and numerical modeling.</li></ul><p class=\"bio\">He speaks native Azerbaijani and Russian, fluent English, German, and French, and intermediate Turkish.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/19/title_az",
+      "field": "title_az",
+      "before": "Vyana Universiteti (University of Vienna) Fizika fakültəsi, ”kvant optikası, kvant informasiya və nanofizika” qrupunda postdoktorantura",
+      "after": "Fizik; Vyana Universitetində Marie Skłodowska-Curie Actions proqramı üzrə postdoktoral tədqiqatçı (2023–2026)"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/19/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">2022-ci ildə Parisin Sorbon Universitetində eksperimental kvant optikası sahəsində fəlsəfə doktoru dərəcəsini əldə edib. Beynəlxalq jurnallarda çap olunmuş 6 elmi məqalənin və 1 elmi patentin müştərək müəllifidir. 2023-cü ildə çoxcisimli kvant optomexanikası sahəsində post-doktoral araşdırmaları layihəsini həyata keçirmək üçün “Horizon Europe” proqramı tərəfindən “Marie Skłodowska-Curie Actions” elmi qrantına layiq görülmüşdür.</p>",
+      "after": "<p class=\"bio bio-lead\">Murad Abuzərli qeyri-xətti və kvant optikası, işığın kvant mayeləri, mürəkkəb mühitlərdə dalğaların davranışı və idarə olunması sahələrində ixtisaslaşmış fizikdir. Onun tədqiqatları eksperimental optik üsulları, ədədi modelləşdirməni və işıq–maddə qarşılıqlı təsirlərinin öyrənilməsini birləşdirir.</p><p class=\"bio\">2023-cü ildə Vyana Universitetində Marie Skłodowska-Curie Actions (MSCA) proqramı üzrə postdoktoral tədqiqatlara başlamışdır. Professor Markus Aspelmeyer və doktor Uroš Delićin rəhbərliyi altında NEOVITA layihəsi üzərində çalışır. Təqaüd proqramı 2023–2026-cı illəri əhatə edir.</p><p class=\"bio\">2018–2022-ci illərdə Parisdə Kastler Brossel Laboratoriyasında doktor Quentin Glorieux-nün rəhbərliyi altında doktorluq tədqiqatları aparmışdır. Dissertasiyasının adı <em>“Out of equilibrium dynamics in a paraxial fluid of light”</em> olmuşdur.</p><p class=\"bio\">2017–2018-ci illərdə ESPCI Paris və Institut d’Optique Graduate School arasında ikili diplom proqramı çərçivəsində Paris-Saclay Universitetində lazerlər, optika və maddə üzrə magistr təhsili almışdır. 2014–2017-ci illərdə ESPCI Paris-də mühəndislik, 2012–2014-cü illərdə isə Sorbonne Université-nin Pierre və Marie Curie kampusunda fizika və kimya üzrə bakalavr pilləsində təhsil almışdır.</p><p class=\"bio\">Elmi təcrübəsinə 2018-ci ildə CEA Saclay mərkəzində magistr işi çərçivəsində ultraintensiv lazerlərlə həyəcanlandırılan plazma güzgülərində radiasiya sönümlənməsi və yüksək harmonikaların generasiyası üzrə tədqiqatlar daxildir. 2017-ci ildə Princeton Universitetində çoxmodlu optik liflərdə işığın idarə olunması üzrə təcrübə keçmişdir. Daha əvvəl, 2016-cı ildə Robert Bosch şirkətinin Renningen kampusunda hibrid superkondensatorlar üzrə elektrokimyəvi tədqiqatlarda, 2014-cü ildə isə Berlin Humboldt Universitetində nanostrukturlu materialların hazırlanması və elektrokimyəvi xarakteristikalarının öyrənilməsində iştirak etmişdir.</p><p class=\"bio\">2020–2021-ci illərdə Sorbonne Université-də bakalavr tələbələri üçün dalğa fizikası, o cümlədən akustika və optika, elektromaqnetizm və bərk cisimlər sistemlərinin mexanikası üzrə ümumilikdə 128 saat laboratoriya məşğələsi və seminar aparmışdır.</p><p class=\"bio\">Texniki bacarıqlarına Python, MATLAB və Mathematica proqramları, diod lazerlərinin idarə olunması üçün əsas elektronika, eləcə də fəza işıq modulyatorları, fotodiodlar və kameralar vasitəsilə optik ölçmələr daxildir.</p><p class=\"bio\">Soçidə keçirilən QuTech 2020 Kvant Texnologiyaları Məktəbində ən yaxşı poster mükafatına layiq görülmüşdür. Həmçinin astrofizika üzrə ictimai mühazirə və Paris ətrafındakı rəsədxanalara səfərlər təşkil etmişdir.</p><p class=\"bio-section-title\">Elmi maraq sahələri:</p><ul><li>Qeyri-xətti və kvant optikası.</li><li>İşığın kvant mayeləri, onların sahə və intensivlik korrelyasiyaları.</li><li>Mürəkkəb mühitlərdə dalğaların yayılması və idarə olunması.</li><li>Atom optikası və işığın təsiri ilə yaranan hadisələr.</li><li>Eksperimental optik üsullar və ədədi modelləşdirmə.</li></ul><p class=\"bio\">Azərbaycan və rus dilləri onun ana dilləridir. İngilis, alman və fransız dillərini sərbəst, türk dilini isə orta səviyyədə bilir.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 119,
+      "jsonPointer": "/profiles/murad.abuzarli@univie.ac.at/title",
+      "field": "title",
+      "before": "University of Vienna, Faculty of Physics, postdoctoral studies in the group \"quantum optics, quantum information and nanophysics\"",
+      "after": "Physicist; Marie Skłodowska-Curie Actions postdoctoral fellow, University of Vienna (2023–2026)"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 120,
+      "jsonPointer": "/profiles/murad.abuzarli@univie.ac.at/bio_html",
+      "field": "bio_html",
+      "before": "<p class=\"bio bio-lead\">In 2022, he received his PhD in experimental quantum optics at the Sorbonne University in Paris. He is the co-author of 6 scientific articles published in international journals and 1 scientific patent. In 2023, he was awarded the &quot;Marie Skłodowska-Curie Actions&quot; scientific grant by the &quot;Horizon Europe&quot; program to carry out his post-doctoral research project in the field of many-body quantum optomechanics.</p>",
+      "after": "<p class=\"bio bio-lead\">Murad Abuzerli is a physicist specializing in nonlinear and quantum optics, quantum fluids of light, and the behavior and control of waves in complex media. His research combines experimental optical techniques, numerical modeling, and the study of light–matter interactions.</p><p class=\"bio\">In 2023, he began a Marie Skłodowska-Curie Actions (MSCA) postdoctoral fellowship at the University of Vienna, working on the NEOVITA project under Prof Markus Aspelmeyer and Dr Uroš Delić. The fellowship covers the period 2023–2026.</p><p class=\"bio\">From 2018 to 2022, he conducted doctoral research at the Kastler Brossel Laboratory in Paris under Dr Quentin Glorieux. His dissertation was titled <em>“Out of equilibrium dynamics in a paraxial fluid of light.”</em></p><p class=\"bio\">His education includes MSc studies in lasers, optics, and matter at Paris-Saclay University in 2017–2018, within a double-degree program between ESPCI Paris and Institut d’Optique Graduate School. He studied engineering at ESPCI Paris in 2014–2017 and undertook undergraduate studies in physics and chemistry at Sorbonne Université’s Pierre and Marie Curie campus in 2012–2014.</p><p class=\"bio\">His research experience includes master’s research at CEA Saclay in 2018 on radiative damping and high-harmonic generation in plasma mirrors excited by ultra-intense lasers. In 2017, he completed an internship at Princeton University on controlling light in multimode fibers. Earlier internships included electrochemistry research on hybrid supercapacitors at Robert Bosch’s Renningen campus in 2016 and work on nanostructured materials and their electrochemical characterization at Humboldt University Berlin in 2014.</p><p class=\"bio\">In 2020–2021, he delivered 128 hours of undergraduate laboratory classes and seminars at Sorbonne Université, covering wave physics, including acoustics and optics, electromagnetism, and the mechanics of solid systems.</p><p class=\"bio\">His technical skills include Python, MATLAB, Mathematica, basic electronics for diode-laser control, and optical measurements using spatial light modulators, photodiodes, and cameras.</p><p class=\"bio\">He received the Best Poster Award at the QuTech 2020 Quantum Technologies School in Sochi. He has also organized a public astrophysics lecture and observatory visits around Paris.</p><p class=\"bio-section-title\">Research interests:</p><ul><li>Nonlinear and quantum optics.</li><li>Quantum fluids of light and their field and intensity correlations.</li><li>Wave propagation and control in complex media.</li><li>Atomic optics and light-induced phenomena.</li><li>Experimental optical methods and numerical modeling.</li></ul><p class=\"bio\">He speaks native Azerbaijani and Russian, fluent English, German, and French, and intermediate Turkish.</p>"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6656,
+      "jsonPointer": "/entries/511/summary",
+      "field": "summary",
+      "before": "University of Vienna, Faculty of Physics, postdoctoral studies in the group \"quantum optics, quantum information and nanophysics\" · Physics · Austria",
+      "after": "Physicist; Marie Skłodowska-Curie Actions postdoctoral fellow, University of Vienna (2023–2026) · Physics · Austria"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6660,
+      "jsonPointer": "/entries/511/norm",
+      "field": "norm",
+      "before": "murad abuzerli university of vienna faculty of physics postdoctoral studies in the group quantum optics quantum information and nanophysics physics austria murad.abuzarli@univie.ac.at in 2022 he received his phd in experimental quantum optics at the sorbonne university in paris. he is the co-author of 6 scientific articles published in international journals and 1 scientific patent. in 2023 he was awarded the marie skłodowska-curie actions scientific grant by the horizon europe program to carr phd",
+      "after": "murad abuzerli physicist marie skłodowska-curie actions postdoctoral fellow university of vienna 2023 2026 physics austria murad.abuzarli@univie.ac.at murad abuzerli is a physicist specializing in nonlinear and quantum optics quantum fluids of light and the behavior and control of waves in complex media. his research combines experimental optical techniques numerical modeling and the study of light matter interactions. in 2023 he began a marie skłodowska-curie a phd"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6643,
+      "jsonPointer": "/entries/510/summary",
+      "field": "summary",
+      "before": "Vyana Universiteti (University of Vienna) Fizika fakültəsi, ”kvant optikası, kvant informasiya və nanofizika” qrupunda postdoktorantura · Fizika · Avstriya",
+      "after": "Fizik; Vyana Universitetində Marie Skłodowska-Curie Actions proqramı üzrə postdoktoral tədqiqatçı (2023–2026) · Fizika · Avstriya"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6647,
+      "jsonPointer": "/entries/510/norm",
+      "field": "norm",
+      "before": "murad abuzerli vyana universiteti university of vienna fizika fakultesi kvant optikasi kvant informasiya ve nanofizika qrupunda postdoktorantura fizika avstriya murad.abuzarli@univie.ac.at 2022-ci ilde parisin sorbon universitetinde eksperimental kvant optikasi sahesinde felsefe doktoru derecesini elde edib. beynelxalq jurnallarda cap olunmus 6 elmi meqalenin ve 1 elmi patentin musterek muellifidir. 2023-cu ilde coxcisimli kvant optomexanikasi sahesinde post-doktoral arasdirmalari layihesini heyata kecir phd",
+      "after": "murad abuzerli fizik vyana universitetinde marie skłodowska-curie actions proqrami uzre postdoktoral tedqiqatci 2023 2026 fizika avstriya murad.abuzarli@univie.ac.at murad abuzerli qeyri-xetti ve kvant optikasi isigin kvant mayeleri murekkeb muhitlerde dalgalarin davranisi ve idare olunmasi sahelerinde ixtisaslasmis fizikdir. onun tedqiqatlari eksperimental optik usullari ededi modellesdirmeni ve isiq madde qarsiliqli tesirlerinin oyrenilmesini birlesdirir. 2023-cu ilde vyana un phd"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6656,
+      "jsonPointer": "/entries/511/summary",
+      "field": "summary",
+      "before": "University of Vienna, Faculty of Physics, postdoctoral studies in the group \"quantum optics, quantum information and nanophysics\" · Physics · Austria",
+      "after": "Physicist; Marie Skłodowska-Curie Actions postdoctoral fellow, University of Vienna (2023–2026) · Physics · Austria"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6660,
+      "jsonPointer": "/entries/511/norm",
+      "field": "norm",
+      "before": "murad abuzerli university of vienna faculty of physics postdoctoral studies in the group quantum optics quantum information and nanophysics physics austria murad.abuzarli@univie.ac.at in 2022 he received his phd in experimental quantum optics at the sorbonne university in paris. he is the co-author of 6 scientific articles published in international journals and 1 scientific patent. in 2023 he was awarded the marie skłodowska-curie actions scientific grant by the horizon europe program to carr phd",
+      "after": "murad abuzerli physicist marie skłodowska-curie actions postdoctoral fellow university of vienna 2023 2026 physics austria murad.abuzarli@univie.ac.at murad abuzerli is a physicist specializing in nonlinear and quantum optics quantum fluids of light and the behavior and control of waves in complex media. his research combines experimental optical techniques numerical modeling and the study of light matter interactions. in 2023 he began a marie skłodowska-curie a phd"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6643,
+      "jsonPointer": "/entries/510/summary",
+      "field": "summary",
+      "before": "Vyana Universiteti (University of Vienna) Fizika fakültəsi, ”kvant optikası, kvant informasiya və nanofizika” qrupunda postdoktorantura · Fizika · Avstriya",
+      "after": "Fizik; Vyana Universitetində Marie Skłodowska-Curie Actions proqramı üzrə postdoktoral tədqiqatçı (2023–2026) · Fizika · Avstriya"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6647,
+      "jsonPointer": "/entries/510/norm",
+      "field": "norm",
+      "before": "murad abuzerli vyana universiteti university of vienna fizika fakultesi kvant optikasi kvant informasiya ve nanofizika qrupunda postdoktorantura fizika avstriya murad.abuzarli@univie.ac.at 2022-ci ilde parisin sorbon universitetinde eksperimental kvant optikasi sahesinde felsefe doktoru derecesini elde edib. beynelxalq jurnallarda cap olunmus 6 elmi meqalenin ve 1 elmi patentin musterek muellifidir. 2023-cu ilde coxcisimli kvant optomexanikasi sahesinde post-doktoral arasdirmalari layihesini heyata kecir phd",
+      "after": "murad abuzerli fizik vyana universitetinde marie skłodowska-curie actions proqrami uzre postdoktoral tedqiqatci 2023 2026 fizika avstriya murad.abuzarli@univie.ac.at murad abuzerli qeyri-xetti ve kvant optikasi isigin kvant mayeleri murekkeb muhitlerde dalgalarin davranisi ve idare olunmasi sahelerinde ixtisaslasmis fizikdir. onun tedqiqatlari eksperimental optik usullari ededi modellesdirmeni ve isiq madde qarsiliqli tesirlerinin oyrenilmesini birlesdirir. 2023-cu ilde vyana un phd"
+    }
+  ],
+  "fileHashes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "before": "1bc91e1ea2fd3fe5a1764abaabc2cbe77131b8f39e0a854375e9eee738a64512",
+      "after": "ffa17f6204d1c1ec5857c49165a18557599b3fc70dbb3f99ac017ccf15b6bf92"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "before": "6dcf8123e13b621a2e0c35966912c7f37c089ab22d9e9a78ec101e474f123e35",
+      "after": "d4700637594c21a9571d2edbdcafc4fa61c171ae1b5b9815ecf8c085d7b7ece1"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "before": "1bc91e1ea2fd3fe5a1764abaabc2cbe77131b8f39e0a854375e9eee738a64512",
+      "after": "ffa17f6204d1c1ec5857c49165a18557599b3fc70dbb3f99ac017ccf15b6bf92"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "before": "6dcf8123e13b621a2e0c35966912c7f37c089ab22d9e9a78ec101e474f123e35",
+      "after": "d4700637594c21a9571d2edbdcafc4fa61c171ae1b5b9815ecf8c085d7b7ece1"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "before": "e97f20b3febdbd4c9352925a329b7d17aefff8ac158f9a700fec324d69524c94",
+      "after": "bc8606f77a19d84f77da25cecec9e8441b337a33f813186813f9b38b30b48a2f"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "before": "0afed0852f3a8cff17285494eb7e1beaf38af7e6ad52dbb7fb2ab3431857e887",
+      "after": "96b69a01fbab44769742a0ea7d57ffd8f5c8eb0241041c1fccf9a35e1b810e2c"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "before": "0afed0852f3a8cff17285494eb7e1beaf38af7e6ad52dbb7fb2ab3431857e887",
+      "after": "96b69a01fbab44769742a0ea7d57ffd8f5c8eb0241041c1fccf9a35e1b810e2c"
+    }
+  ]
+}

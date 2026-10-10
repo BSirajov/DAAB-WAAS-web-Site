@@ -206,11 +206,16 @@
   }
 }
 
-/* Desktop: switcher sits in .nav-actions with search (see daab-shell.js) */
+/* Desktop: switcher sits in .nav-actions with search (see daab-shell.js).
+   The menu copy lives in #primaryNavMenu, which is the desktop link bar,
+   so it would sit beside the logo. Keep it for the opened mobile menu only. */
 @media (min-width: 1181px) {.nav-inner > .daab-lang-switch,
   .nav-actions > .daab-lang-switch{
     flex-shrink: 0;
     margin-left: 0;
+  }
+  .nav-menu .daab-lang-switch--menu{
+    display: none !important;
   }
 }/* Anchor targets: sticky nav offset for hash links, back/forward, and lang switch */
 main article[id],
@@ -226,4 +231,27 @@ main [data-daab-section-id]{
   cursor: not-allowed;
   pointer-events: none;
   filter: grayscale(0.35);
+}
+
+/* Same switcher in the footer (dark) and inside the mobile menu (light) */
+.daab-lang-switch--footer,
+.nav-menu .daab-lang-switch--menu{
+  --daab-lang-control-h: 40px;
+  margin: 0;
+}
+.nav-menu .daab-lang-switch--menu{
+  align-self: flex-end;
+  margin: 0 0 4px;
+  background: rgba(0, 90, 154, .08);
+  box-shadow: inset 0 0 0 1px rgba(0, 90, 154, .28);
+}
+.daab-lang-notice{
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  color: #14364c;
+  background: #fff6df;
+  border: 1px solid #e4c98a;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.45;
 }

@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-09",
+  "profile": "Shuay Abdullayev",
+  "profileNumber": 6,
+  "issueIds": [
+    "V006"
+  ],
+  "source": "Exact replacement sentence supplied by the user",
+  "summary": [
+    "Changed the biography affiliation from Georgia State University to University of Georgia, Athens, USA.",
+    "Synchronized the four active profile-data copies and the equivalent sentence in the English translation source.",
+    "Resolved V006 because the title and biography now identify the same university."
+  ],
+  "scopeNote": "Only the specified employment sentence was changed. V080 remains pending. This is a user-approved correction, not independent verification of the appointment or its dates.",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 104,
+      "jsonPointer": "/profiles/5/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He completed his master's degree at Claude Bernard University Lyon 1 in Lyon, France. During his studies, he completed research internships at the Institute of Molecular and Supramolecular Chemistry and Biochemistry and at Wayne State University in Michigan, USA. From 2016 to 2021, he studied at the University of Quebec in Canada, where he earned a PhD in the synthesis of therapeutic nanomaterials.</p><p class=\"bio\">Since 2022, he has been working as a postdoctoral research scientist at Georgia State University in the USA.</p><p class=\"bio\">He is the author of 10 scientific papers published in high-impact-factor international journals. His h-index, according to the Scopus database, is 4.</p><p class=\"bio\">His research focuses on the bioactive chemical synthesis of carbohydrate molecules. In particular, he has published papers on the efficient synthesis of di- and trisaccharides used in cancer diagnostics in <em>Carbohydrate Research</em> and the <em>International Journal of Molecular Sciences</em>. He has developed a new and efficient synthesis of migalastat, a drug used to treat the rare Fabry disease, and plans to file a patent application for this methodology.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his master's degree at Claude Bernard University Lyon 1 in Lyon, France. During his studies, he completed research internships at the Institute of Molecular and Supramolecular Chemistry and Biochemistry and at Wayne State University in Michigan, USA. From 2016 to 2021, he studied at the University of Quebec in Canada, where he earned a PhD in the synthesis of therapeutic nanomaterials.</p><p class=\"bio\">Since 2022, he has been working as a postdoctoral research scientist at University of Georgia, Athens, USA.</p><p class=\"bio\">He is the author of 10 scientific papers published in high-impact-factor international journals. His h-index, according to the Scopus database, is 4.</p><p class=\"bio\">His research focuses on the bioactive chemical synthesis of carbohydrate molecules. In particular, he has published papers on the efficient synthesis of di- and trisaccharides used in cancer diagnostics in <em>Carbohydrate Research</em> and the <em>International Journal of Molecular Sciences</em>. He has developed a new and efficient synthesis of migalastat, a drug used to treat the rare Fabry disease, and plans to file a patent application for this methodology.</p>",
+      "beforeText": "Since 2022, he has been working as a postdoctoral research scientist at Georgia State University in the USA.",
+      "afterText": "Since 2022, he has been working as a postdoctoral research scientist at University of Georgia, Athens, USA.",
+      "issueIds": [
+        "V006"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/5/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He completed his master's degree at Claude Bernard University Lyon 1 in Lyon, France. During his studies, he completed research internships at the Institute of Molecular and Supramolecular Chemistry and Biochemistry and at Wayne State University in Michigan, USA. From 2016 to 2021, he studied at the University of Quebec in Canada, where he earned a PhD in the synthesis of therapeutic nanomaterials.</p><p class=\"bio\">Since 2022, he has been working as a postdoctoral research scientist at Georgia State University in the USA.</p><p class=\"bio\">He is the author of 10 scientific papers published in high-impact-factor international journals. His h-index, according to the Scopus database, is 4.</p><p class=\"bio\">His research focuses on the bioactive chemical synthesis of carbohydrate molecules. In particular, he has published papers on the efficient synthesis of di- and trisaccharides used in cancer diagnostics in <em>Carbohydrate Research</em> and the <em>International Journal of Molecular Sciences</em>. He has developed a new and efficient synthesis of migalastat, a drug used to treat the rare Fabry disease, and plans to file a patent application for this methodology.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his master's degree at Claude Bernard University Lyon 1 in Lyon, France. During his studies, he completed research internships at the Institute of Molecular and Supramolecular Chemistry and Biochemistry and at Wayne State University in Michigan, USA. From 2016 to 2021, he studied at the University of Quebec in Canada, where he earned a PhD in the synthesis of therapeutic nanomaterials.</p><p class=\"bio\">Since 2022, he has been working as a postdoctoral research scientist at University of Georgia, Athens, USA.</p><p class=\"bio\">He is the author of 10 scientific papers published in high-impact-factor international journals. His h-index, according to the Scopus database, is 4.</p><p class=\"bio\">His research focuses on the bioactive chemical synthesis of carbohydrate molecules. In particular, he has published papers on the efficient synthesis of di- and trisaccharides used in cancer diagnostics in <em>Carbohydrate Research</em> and the <em>International Journal of Molecular Sciences</em>. He has developed a new and efficient synthesis of migalastat, a drug used to treat the rare Fabry disease, and plans to file a patent application for this methodology.</p>",
+      "beforeText": "Since 2022, he has been working as a postdoctoral research scientist at Georgia State University in the USA.",
+      "afterText": "Since 2022, he has been working as a postdoctoral research scientist at University of Georgia, Athens, USA.",
+      "issueIds": [
+        "V006"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 104,
+      "jsonPointer": "/profiles/5/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He completed his master's degree at Claude Bernard University Lyon 1 in Lyon, France. During his studies, he completed research internships at the Institute of Molecular and Supramolecular Chemistry and Biochemistry and at Wayne State University in Michigan, USA. From 2016 to 2021, he studied at the University of Quebec in Canada, where he earned a PhD in the synthesis of therapeutic nanomaterials.</p><p class=\"bio\">Since 2022, he has been working as a postdoctoral research scientist at Georgia State University in the USA.</p><p class=\"bio\">He is the author of 10 scientific papers published in high-impact-factor international journals. His h-index, according to the Scopus database, is 4.</p><p class=\"bio\">His research focuses on the bioactive chemical synthesis of carbohydrate molecules. In particular, he has published papers on the efficient synthesis of di- and trisaccharides used in cancer diagnostics in <em>Carbohydrate Research</em> and the <em>International Journal of Molecular Sciences</em>. He has developed a new and efficient synthesis of migalastat, a drug used to treat the rare Fabry disease, and plans to file a patent application for this methodology.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his master's degree at Claude Bernard University Lyon 1 in Lyon, France. During his studies, he completed research internships at the Institute of Molecular and Supramolecular Chemistry and Biochemistry and at Wayne State University in Michigan, USA. From 2016 to 2021, he studied at the University of Quebec in Canada, where he earned a PhD in the synthesis of therapeutic nanomaterials.</p><p class=\"bio\">Since 2022, he has been working as a postdoctoral research scientist at University of Georgia, Athens, USA.</p><p class=\"bio\">He is the author of 10 scientific papers published in high-impact-factor international journals. His h-index, according to the Scopus database, is 4.</p><p class=\"bio\">His research focuses on the bioactive chemical synthesis of carbohydrate molecules. In particular, he has published papers on the efficient synthesis of di- and trisaccharides used in cancer diagnostics in <em>Carbohydrate Research</em> and the <em>International Journal of Molecular Sciences</em>. He has developed a new and efficient synthesis of migalastat, a drug used to treat the rare Fabry disease, and plans to file a patent application for this methodology.</p>",
+      "beforeText": "Since 2022, he has been working as a postdoctoral research scientist at Georgia State University in the USA.",
+      "afterText": "Since 2022, he has been working as a postdoctoral research scientist at University of Georgia, Athens, USA.",
+      "issueIds": [
+        "V006"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/5/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He completed his master's degree at Claude Bernard University Lyon 1 in Lyon, France. During his studies, he completed research internships at the Institute of Molecular and Supramolecular Chemistry and Biochemistry and at Wayne State University in Michigan, USA. From 2016 to 2021, he studied at the University of Quebec in Canada, where he earned a PhD in the synthesis of therapeutic nanomaterials.</p><p class=\"bio\">Since 2022, he has been working as a postdoctoral research scientist at Georgia State University in the USA.</p><p class=\"bio\">He is the author of 10 scientific papers published in high-impact-factor international journals. His h-index, according to the Scopus database, is 4.</p><p class=\"bio\">His research focuses on the bioactive chemical synthesis of carbohydrate molecules. In particular, he has published papers on the efficient synthesis of di- and trisaccharides used in cancer diagnostics in <em>Carbohydrate Research</em> and the <em>International Journal of Molecular Sciences</em>. He has developed a new and efficient synthesis of migalastat, a drug used to treat the rare Fabry disease, and plans to file a patent application for this methodology.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his master's degree at Claude Bernard University Lyon 1 in Lyon, France. During his studies, he completed research internships at the Institute of Molecular and Supramolecular Chemistry and Biochemistry and at Wayne State University in Michigan, USA. From 2016 to 2021, he studied at the University of Quebec in Canada, where he earned a PhD in the synthesis of therapeutic nanomaterials.</p><p class=\"bio\">Since 2022, he has been working as a postdoctoral research scientist at University of Georgia, Athens, USA.</p><p class=\"bio\">He is the author of 10 scientific papers published in high-impact-factor international journals. His h-index, according to the Scopus database, is 4.</p><p class=\"bio\">His research focuses on the bioactive chemical synthesis of carbohydrate molecules. In particular, he has published papers on the efficient synthesis of di- and trisaccharides used in cancer diagnostics in <em>Carbohydrate Research</em> and the <em>International Journal of Molecular Sciences</em>. He has developed a new and efficient synthesis of migalastat, a drug used to treat the rare Fabry disease, and plans to file a patent application for this methodology.</p>",
+      "beforeText": "Since 2022, he has been working as a postdoctoral research scientist at Georgia State University in the USA.",
+      "afterText": "Since 2022, he has been working as a postdoctoral research scientist at University of Georgia, Athens, USA.",
+      "issueIds": [
+        "V006"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 36,
+      "jsonPointer": "/profiles/shuay.abdullayev@gmail.com/bio_html",
+      "field": "bio_html",
+      "before": "<p class=\"bio bio-lead\">Claude Bernard received his master&#x27;s degree from Lyon 1 University in Lyon, France. During his studies, he had a scientific internship at the Institute of Molecular and Supramolecular Chemistry and Biochemistry and Wayne State University in Michigan, USA. In 2016-2021, he received a PhD degree in &quot;Synthesis of therapeutic nanomaterials&quot; at the University of Quebec in Canada.</p><p class=\"bio\">Since 2022, he has been working as a post-doctoral scientist-researcher at Georgia State University, USA.</p><p class=\"bio\">He is the author of 10 scientific articles published in high-impact international journals. Its H-index is estimated as 4 according to the Scopus database.</p><p class=\"bio\">His scientific activity includes the bioactive chemical synthesis of carbohydrate molecules. In particular, he published articles on the effective synthesis of di- and trisaccharides used in cancer diagnostics in &quot;Carbohydrate Research&quot; and &quot;International Journal of Molecular Science&quot; magazines. Nadir has developed a new and effective synthesis of Migalastat, a drug used for Fabry disease, and plans to apply for a patent for this methodology.</p>",
+      "after": "<p class=\"bio bio-lead\">Claude Bernard received his master&#x27;s degree from Lyon 1 University in Lyon, France. During his studies, he had a scientific internship at the Institute of Molecular and Supramolecular Chemistry and Biochemistry and Wayne State University in Michigan, USA. In 2016-2021, he received a PhD degree in &quot;Synthesis of therapeutic nanomaterials&quot; at the University of Quebec in Canada.</p><p class=\"bio\">Since 2022, he has been working as a postdoctoral research scientist at University of Georgia, Athens, USA.</p><p class=\"bio\">He is the author of 10 scientific articles published in high-impact international journals. Its H-index is estimated as 4 according to the Scopus database.</p><p class=\"bio\">His scientific activity includes the bioactive chemical synthesis of carbohydrate molecules. In particular, he published articles on the effective synthesis of di- and trisaccharides used in cancer diagnostics in &quot;Carbohydrate Research&quot; and &quot;International Journal of Molecular Science&quot; magazines. Nadir has developed a new and effective synthesis of Migalastat, a drug used for Fabry disease, and plans to apply for a patent for this methodology.</p>",
+      "beforeText": "Since 2022, he has been working as a post-doctoral scientist-researcher at Georgia State University, USA.",
+      "afterText": "Since 2022, he has been working as a postdoctoral research scientist at University of Georgia, Athens, USA.",
+      "issueIds": [
+        "V006"
+      ]
+    }
+  ]
+}

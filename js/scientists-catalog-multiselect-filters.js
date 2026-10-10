@@ -415,6 +415,25 @@
     return getFilterValues(id) !== null;
   }
 
+  function setSelected(id, values, silent) {
+    var inst = instances[id];
+    if (!inst) {
+      var el = document.getElementById(id);
+      if (el) el.value = values && values.length ? values[0] : "";
+      return;
+    }
+    if (!values || !values.length) inst.selected = null;
+    else inst.selected = new Set(values);
+    rebuildPanel(id);
+    if (silent) {
+      updateTriggerLabel(id);
+      syncSelectAll(inst);
+      if (inst.wrap) inst.wrap.classList.toggle("active", inst.selected !== null);
+      return;
+    }
+    notifyChange(id);
+  }
+
   function clear(id) {
     var inst = instances[id];
     if (!inst) {
@@ -468,6 +487,7 @@
     remount: remount,
     getFilterValues: getFilterValues,
     isActive: isActive,
+    setSelected: setSelected,
     clear: clear,
     clearAll: function (ids) {
       (ids || []).forEach(function (id) {

@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-09",
+  "profile": "Toghrul Talishinskiy / Toğrul Talişinski",
+  "profileNumber": 7,
+  "language": "Azerbaijani",
+  "source": "Azerbaijani translation of the user-approved English profile",
+  "issueIds": [],
+  "summary": [
+    "Translated the approved roles, education, training, certification, professional affiliations, publications, teaching, languages, and research interests into Azerbaijani.",
+    "Updated the Azerbaijani directory credentials to MD, FACS, FASMBS and synchronized the Azerbaijani search entry.",
+    "Retained Fellow as a professional-status term and distinguished fellowship training from scholarship funding."
+  ],
+  "scopeNote": "English profile text, Azerbaijani name spelling, photo filenames, and profile anchors were retained. The shared profile credential already read MD, FACS, FASMBS. This translation adds no new biographical claims and does not constitute a new English proofreading pass.",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 116,
+      "jsonPointer": "/profiles/6/title_az",
+      "field": "title_az",
+      "before": "St. Joseph Universiteti Minimal invaziv cərrahiyyə direktoru, Seton Hall Universitetinin Hackensack Meridian Tibb Məktəbində cərrahiyyə üzrə dosent",
+      "after": "Cərrahiyyə üzrə assistent professor; Minimal invaziv və robotik cərrahiyyə üzrə direktor, St. Joseph's University Medical Center, Paterson, ABŞ; Minimal invaziv cərrahiyyə üzrə əlavə ixtisaslaşma (fellowship) proqramının direktoru; Bariatrik cərrahiyyə rəhbəri"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 117,
+      "jsonPointer": "/profiles/6/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Nyu-York Tibb Kollecinin Westchester Sound Shore Tibb Mərkəzində təcrübə keçmiş və Nyu-York Universitetinin Cərrahiyyə Departamentində rezidentura proqramını tamamlamışdır.</p><p class=\"bio\">O, Miçiqan Universitetinin Cərrahiyyə Departamentində cərrahi kritik baxım sahəsində, həmçinin Hackensack Universitetinin Tibb Mərkəzində minimal invaziv cərrahiyyə sahəsində təqaüd proqramlarını uğurla bitirmişdir.</p><p class=\"bio\">Amerika Metabolik və Bariatrik Cərrahiyyə Cəmiyyəti, Amerika Cərrahlar Kolleci, Kritik Baxım Tibb Cəmiyyəti, Miçiqan Dövlət Tibb Cəmiyyəti kimi nüfuzlu tibbi təşkilatların üzvüdür.</p>",
+      "after": "<p class=\"bio bio-lead\">Dr Talişinski minimal invaziv, robotik və bariatrik cərrahiyyə üzrə ixtisaslaşmış cərrahdır. O, Azərbaycan Respublikasının Təhsil Nazirliyinin tam təqaüdü ilə Karib Amerika Universitetinin Tibb Məktəbində (American University of the Caribbean School of Medicine) tibb təhsili alaraq MD dərəcəsini qazanmış və Nyu-York Universitetində ümumi cərrahiyyə üzrə rezidenturanı tamamlamışdır. Daha sonra Miçiqan Universitetində cərrahi intensiv terapiya, Hackensack Universitet Tibb Mərkəzində isə minimal invaziv cərrahiyyə üzrə əlavə ixtisaslaşma təhsili almışdır. O, Amerika Cərrahiyyə Şurası (American Board of Surgery) tərəfindən cərrahiyyə və cərrahi intensiv terapiya üzrə sertifikatlaşdırılmışdır. Amerika Cərrahlar Kollecinin (FACS) və Amerika Metabolik və Bariatrik Cərrahiyyə Cəmiyyətinin (FASMBS) Fellow statuslu üzvüdür. O, həmçinin Piylənmə və Metabolik Pozğunluqların Cərrahiyyəsi üzrə Beynəlxalq Federasiyanın (IFSO) gənclər bölməsi olan Young IFSO-nun Şimali Amerika bölməsinin nümayəndəsidir.</p><p class=\"bio\">O, resenziyadan keçmiş çoxsaylı elmi nəşrlərin və bir kitab fəslinin müəllifidir. IFSO, Amerika Cərrahlar Kollecinin Klinik Konqresi, SAGES, Digestive Disease Week və ObesityWeek daxil olmaqla, aparıcı beynəlxalq elmi toplantılarda məruzələr etmişdir. Tibb tələbələrinin, rezidentlərin və əlavə ixtisaslaşma (fellowship) proqramlarının iştirakçılarının təlimində fəal iştirak edir. İngilis, rus, türk və Azərbaycan dillərində sərbəst danışır.</p><p class=\"bio\"><strong>Tədqiqat maraqları:</strong> bariatrik və metabolik cərrahiyyə, yırtıq cərrahiyyəsi, gövdə əzələlərinin zədələnməsi və uşaq cərrahiyyəsi.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/title_az",
+      "field": "title_az",
+      "before": "St. Joseph Universiteti Minimal invaziv cərrahiyyə direktoru, Seton Hall Universitetinin Hackensack Meridian Tibb Məktəbində cərrahiyyə üzrə dosent",
+      "after": "Cərrahiyyə üzrə assistent professor; Minimal invaziv və robotik cərrahiyyə üzrə direktor, St. Joseph's University Medical Center, Paterson, ABŞ; Minimal invaziv cərrahiyyə üzrə əlavə ixtisaslaşma (fellowship) proqramının direktoru; Bariatrik cərrahiyyə rəhbəri"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Nyu-York Tibb Kollecinin Westchester Sound Shore Tibb Mərkəzində təcrübə keçmiş və Nyu-York Universitetinin Cərrahiyyə Departamentində rezidentura proqramını tamamlamışdır.</p><p class=\"bio\">O, Miçiqan Universitetinin Cərrahiyyə Departamentində cərrahi kritik baxım sahəsində, həmçinin Hackensack Universitetinin Tibb Mərkəzində minimal invaziv cərrahiyyə sahəsində təqaüd proqramlarını uğurla bitirmişdir.</p><p class=\"bio\">Amerika Metabolik və Bariatrik Cərrahiyyə Cəmiyyəti, Amerika Cərrahlar Kolleci, Kritik Baxım Tibb Cəmiyyəti, Miçiqan Dövlət Tibb Cəmiyyəti kimi nüfuzlu tibbi təşkilatların üzvüdür.</p>",
+      "after": "<p class=\"bio bio-lead\">Dr Talişinski minimal invaziv, robotik və bariatrik cərrahiyyə üzrə ixtisaslaşmış cərrahdır. O, Azərbaycan Respublikasının Təhsil Nazirliyinin tam təqaüdü ilə Karib Amerika Universitetinin Tibb Məktəbində (American University of the Caribbean School of Medicine) tibb təhsili alaraq MD dərəcəsini qazanmış və Nyu-York Universitetində ümumi cərrahiyyə üzrə rezidenturanı tamamlamışdır. Daha sonra Miçiqan Universitetində cərrahi intensiv terapiya, Hackensack Universitet Tibb Mərkəzində isə minimal invaziv cərrahiyyə üzrə əlavə ixtisaslaşma təhsili almışdır. O, Amerika Cərrahiyyə Şurası (American Board of Surgery) tərəfindən cərrahiyyə və cərrahi intensiv terapiya üzrə sertifikatlaşdırılmışdır. Amerika Cərrahlar Kollecinin (FACS) və Amerika Metabolik və Bariatrik Cərrahiyyə Cəmiyyətinin (FASMBS) Fellow statuslu üzvüdür. O, həmçinin Piylənmə və Metabolik Pozğunluqların Cərrahiyyəsi üzrə Beynəlxalq Federasiyanın (IFSO) gənclər bölməsi olan Young IFSO-nun Şimali Amerika bölməsinin nümayəndəsidir.</p><p class=\"bio\">O, resenziyadan keçmiş çoxsaylı elmi nəşrlərin və bir kitab fəslinin müəllifidir. IFSO, Amerika Cərrahlar Kollecinin Klinik Konqresi, SAGES, Digestive Disease Week və ObesityWeek daxil olmaqla, aparıcı beynəlxalq elmi toplantılarda məruzələr etmişdir. Tibb tələbələrinin, rezidentlərin və əlavə ixtisaslaşma (fellowship) proqramlarının iştirakçılarının təlimində fəal iştirak edir. İngilis, rus, türk və Azərbaycan dillərində sərbəst danışır.</p><p class=\"bio\"><strong>Tədqiqat maraqları:</strong> bariatrik və metabolik cərrahiyyə, yırtıq cərrahiyyəsi, gövdə əzələlərinin zədələnməsi və uşaq cərrahiyyəsi.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 116,
+      "jsonPointer": "/profiles/6/title_az",
+      "field": "title_az",
+      "before": "St. Joseph Universiteti Minimal invaziv cərrahiyyə direktoru, Seton Hall Universitetinin Hackensack Meridian Tibb Məktəbində cərrahiyyə üzrə dosent",
+      "after": "Cərrahiyyə üzrə assistent professor; Minimal invaziv və robotik cərrahiyyə üzrə direktor, St. Joseph's University Medical Center, Paterson, ABŞ; Minimal invaziv cərrahiyyə üzrə əlavə ixtisaslaşma (fellowship) proqramının direktoru; Bariatrik cərrahiyyə rəhbəri"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 117,
+      "jsonPointer": "/profiles/6/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Nyu-York Tibb Kollecinin Westchester Sound Shore Tibb Mərkəzində təcrübə keçmiş və Nyu-York Universitetinin Cərrahiyyə Departamentində rezidentura proqramını tamamlamışdır.</p><p class=\"bio\">O, Miçiqan Universitetinin Cərrahiyyə Departamentində cərrahi kritik baxım sahəsində, həmçinin Hackensack Universitetinin Tibb Mərkəzində minimal invaziv cərrahiyyə sahəsində təqaüd proqramlarını uğurla bitirmişdir.</p><p class=\"bio\">Amerika Metabolik və Bariatrik Cərrahiyyə Cəmiyyəti, Amerika Cərrahlar Kolleci, Kritik Baxım Tibb Cəmiyyəti, Miçiqan Dövlət Tibb Cəmiyyəti kimi nüfuzlu tibbi təşkilatların üzvüdür.</p>",
+      "after": "<p class=\"bio bio-lead\">Dr Talişinski minimal invaziv, robotik və bariatrik cərrahiyyə üzrə ixtisaslaşmış cərrahdır. O, Azərbaycan Respublikasının Təhsil Nazirliyinin tam təqaüdü ilə Karib Amerika Universitetinin Tibb Məktəbində (American University of the Caribbean School of Medicine) tibb təhsili alaraq MD dərəcəsini qazanmış və Nyu-York Universitetində ümumi cərrahiyyə üzrə rezidenturanı tamamlamışdır. Daha sonra Miçiqan Universitetində cərrahi intensiv terapiya, Hackensack Universitet Tibb Mərkəzində isə minimal invaziv cərrahiyyə üzrə əlavə ixtisaslaşma təhsili almışdır. O, Amerika Cərrahiyyə Şurası (American Board of Surgery) tərəfindən cərrahiyyə və cərrahi intensiv terapiya üzrə sertifikatlaşdırılmışdır. Amerika Cərrahlar Kollecinin (FACS) və Amerika Metabolik və Bariatrik Cərrahiyyə Cəmiyyətinin (FASMBS) Fellow statuslu üzvüdür. O, həmçinin Piylənmə və Metabolik Pozğunluqların Cərrahiyyəsi üzrə Beynəlxalq Federasiyanın (IFSO) gənclər bölməsi olan Young IFSO-nun Şimali Amerika bölməsinin nümayəndəsidir.</p><p class=\"bio\">O, resenziyadan keçmiş çoxsaylı elmi nəşrlərin və bir kitab fəslinin müəllifidir. IFSO, Amerika Cərrahlar Kollecinin Klinik Konqresi, SAGES, Digestive Disease Week və ObesityWeek daxil olmaqla, aparıcı beynəlxalq elmi toplantılarda məruzələr etmişdir. Tibb tələbələrinin, rezidentlərin və əlavə ixtisaslaşma (fellowship) proqramlarının iştirakçılarının təlimində fəal iştirak edir. İngilis, rus, türk və Azərbaycan dillərində sərbəst danışır.</p><p class=\"bio\"><strong>Tədqiqat maraqları:</strong> bariatrik və metabolik cərrahiyyə, yırtıq cərrahiyyəsi, gövdə əzələlərinin zədələnməsi və uşaq cərrahiyyəsi.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/title_az",
+      "field": "title_az",
+      "before": "St. Joseph Universiteti Minimal invaziv cərrahiyyə direktoru, Seton Hall Universitetinin Hackensack Meridian Tibb Məktəbində cərrahiyyə üzrə dosent",
+      "after": "Cərrahiyyə üzrə assistent professor; Minimal invaziv və robotik cərrahiyyə üzrə direktor, St. Joseph's University Medical Center, Paterson, ABŞ; Minimal invaziv cərrahiyyə üzrə əlavə ixtisaslaşma (fellowship) proqramının direktoru; Bariatrik cərrahiyyə rəhbəri"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Nyu-York Tibb Kollecinin Westchester Sound Shore Tibb Mərkəzində təcrübə keçmiş və Nyu-York Universitetinin Cərrahiyyə Departamentində rezidentura proqramını tamamlamışdır.</p><p class=\"bio\">O, Miçiqan Universitetinin Cərrahiyyə Departamentində cərrahi kritik baxım sahəsində, həmçinin Hackensack Universitetinin Tibb Mərkəzində minimal invaziv cərrahiyyə sahəsində təqaüd proqramlarını uğurla bitirmişdir.</p><p class=\"bio\">Amerika Metabolik və Bariatrik Cərrahiyyə Cəmiyyəti, Amerika Cərrahlar Kolleci, Kritik Baxım Tibb Cəmiyyəti, Miçiqan Dövlət Tibb Cəmiyyəti kimi nüfuzlu tibbi təşkilatların üzvüdür.</p>",
+      "after": "<p class=\"bio bio-lead\">Dr Talişinski minimal invaziv, robotik və bariatrik cərrahiyyə üzrə ixtisaslaşmış cərrahdır. O, Azərbaycan Respublikasının Təhsil Nazirliyinin tam təqaüdü ilə Karib Amerika Universitetinin Tibb Məktəbində (American University of the Caribbean School of Medicine) tibb təhsili alaraq MD dərəcəsini qazanmış və Nyu-York Universitetində ümumi cərrahiyyə üzrə rezidenturanı tamamlamışdır. Daha sonra Miçiqan Universitetində cərrahi intensiv terapiya, Hackensack Universitet Tibb Mərkəzində isə minimal invaziv cərrahiyyə üzrə əlavə ixtisaslaşma təhsili almışdır. O, Amerika Cərrahiyyə Şurası (American Board of Surgery) tərəfindən cərrahiyyə və cərrahi intensiv terapiya üzrə sertifikatlaşdırılmışdır. Amerika Cərrahlar Kollecinin (FACS) və Amerika Metabolik və Bariatrik Cərrahiyyə Cəmiyyətinin (FASMBS) Fellow statuslu üzvüdür. O, həmçinin Piylənmə və Metabolik Pozğunluqların Cərrahiyyəsi üzrə Beynəlxalq Federasiyanın (IFSO) gənclər bölməsi olan Young IFSO-nun Şimali Amerika bölməsinin nümayəndəsidir.</p><p class=\"bio\">O, resenziyadan keçmiş çoxsaylı elmi nəşrlərin və bir kitab fəslinin müəllifidir. IFSO, Amerika Cərrahlar Kollecinin Klinik Konqresi, SAGES, Digestive Disease Week və ObesityWeek daxil olmaqla, aparıcı beynəlxalq elmi toplantılarda məruzələr etmişdir. Tibb tələbələrinin, rezidentlərin və əlavə ixtisaslaşma (fellowship) proqramlarının iştirakçılarının təlimində fəal iştirak edir. İngilis, rus, türk və Azərbaycan dillərində sərbəst danışır.</p><p class=\"bio\"><strong>Tədqiqat maraqları:</strong> bariatrik və metabolik cərrahiyyə, yırtıq cərrahiyyəsi, gövdə əzələlərinin zədələnməsi və uşaq cərrahiyyəsi.</p>"
+    },
+    {
+      "file": "js/scientists-catalog-data.js",
+      "line": 68,
+      "jsonPointer": "/6/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "MD, FACS, FASMBS"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data.js",
+      "line": 68,
+      "jsonPointer": "/6/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "MD, FACS, FASMBS"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6305,
+      "jsonPointer": "/entries/484/summary",
+      "field": "summary",
+      "before": "St. Joseph Universiteti Minimal invaziv cərrahiyyə direktoru, Seton Hall Universitetinin Hackensack Meridian Tibb Məktəbində cərrahiyyə üzrə dosent · Həkim · ABŞ",
+      "after": "Cərrahiyyə üzrə assistent professor; Minimal invaziv və robotik cərrahiyyə üzrə direktor, St. Joseph's University Medical Center, Paterson, ABŞ; Minimal invaziv cərrahiyyə üzrə əlavə ixtisaslaşma (fellowship) proqramının direktoru; Bariatri"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6309,
+      "jsonPointer": "/entries/484/norm",
+      "field": "norm",
+      "before": "togrul talisinski st. joseph universiteti minimal invaziv cerrahiyye direktoru seton hall universitetinin hackensack meridian tibb mektebinde cerrahiyye uzre dosent hekim abs talishinskiy.toghrul@gmail.com nyu-york tibb kollecinin westchester sound shore tibb merkezinde tecrube kecmis ve nyu-york universitetinin cerrahiyye departamentinde rezidentura proqramini tamamlamisdir. o miciqan universitetinin cerrahiyye departamentinde cerrahi kritik baxim sahesinde hemcinin hackensack universitetinin tibb merkezinde minimal i phd",
+      "after": "togrul talisinski cerrahiyye uzre assistent professor minimal invaziv ve robotik cerrahiyye uzre direktor st. joseph s university medical center paterson abs minimal invaziv cerrahiyye uzre elave ixtisaslasma fellowship proqraminin direktoru bariatrik cerrahiyye rehberi hekim abs talishinskiy.toghrul@gmail.com dr talisinski minimal invaziv robotik ve bariatrik cerrahiyye uzre ixtisaslasmis cerrahdir. o azerbaycan respublikasinin tehsil nazirliyinin tam teqaudu ile karib amerika universitetinin tibb mektebinde american university of the caribbean school of medicine tibb tehsili alaraq md derecesini qazanmis ve nyu-york un md facs fasmbs"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6305,
+      "jsonPointer": "/entries/484/summary",
+      "field": "summary",
+      "before": "St. Joseph Universiteti Minimal invaziv cərrahiyyə direktoru, Seton Hall Universitetinin Hackensack Meridian Tibb Məktəbində cərrahiyyə üzrə dosent · Həkim · ABŞ",
+      "after": "Cərrahiyyə üzrə assistent professor; Minimal invaziv və robotik cərrahiyyə üzrə direktor, St. Joseph's University Medical Center, Paterson, ABŞ; Minimal invaziv cərrahiyyə üzrə əlavə ixtisaslaşma (fellowship) proqramının direktoru; Bariatri"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6309,
+      "jsonPointer": "/entries/484/norm",
+      "field": "norm",
+      "before": "togrul talisinski st. joseph universiteti minimal invaziv cerrahiyye direktoru seton hall universitetinin hackensack meridian tibb mektebinde cerrahiyye uzre dosent hekim abs talishinskiy.toghrul@gmail.com nyu-york tibb kollecinin westchester sound shore tibb merkezinde tecrube kecmis ve nyu-york universitetinin cerrahiyye departamentinde rezidentura proqramini tamamlamisdir. o miciqan universitetinin cerrahiyye departamentinde cerrahi kritik baxim sahesinde hemcinin hackensack universitetinin tibb merkezinde minimal i phd",
+      "after": "togrul talisinski cerrahiyye uzre assistent professor minimal invaziv ve robotik cerrahiyye uzre direktor st. joseph s university medical center paterson abs minimal invaziv cerrahiyye uzre elave ixtisaslasma fellowship proqraminin direktoru bariatrik cerrahiyye rehberi hekim abs talishinskiy.toghrul@gmail.com dr talisinski minimal invaziv robotik ve bariatrik cerrahiyye uzre ixtisaslasmis cerrahdir. o azerbaycan respublikasinin tehsil nazirliyinin tam teqaudu ile karib amerika universitetinin tibb mektebinde american university of the caribbean school of medicine tibb tehsili alaraq md derecesini qazanmis ve nyu-york un md facs fasmbs"
+    }
+  ]
+}

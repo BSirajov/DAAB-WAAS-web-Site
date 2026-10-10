@@ -307,8 +307,9 @@ html[data-daab-page-id="scientists-list"] a.email-link:focus-visible{
 
 /* Catalog view / group / cards — scientists list */
 html[data-daab-page-id="scientists-list"] .catalog-view-control {
-  flex: 0 1 auto;
-  margin-left: auto;
+  flex: 0 0 auto;
+  margin-inline: 0;
+  max-width: 100%;
 }
 
 html[data-daab-page-id="scientists-list"] .catalog-view-control__shell {
@@ -614,12 +615,8 @@ html[data-daab-page-id="scientists-list"] th.desc::after {
 
 @media (max-width: 900px) {
   html[data-daab-page-id="scientists-list"] .catalog-view-control {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  html[data-daab-page-id="scientists-list"] .catalog-view-control__shell {
-    width: 100%;
+    margin-inline: 0;
+    max-width: 100%;
   }
 }
 

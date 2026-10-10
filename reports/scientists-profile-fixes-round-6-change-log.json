@@ -1,0 +1,248 @@
+{
+  "date": "2026-10-09",
+  "sourceReport": "scientists-english-proofreading-report-round-6.html",
+  "confirmedIssuesApplied": 1,
+  "verificationItemsSkipped": [
+    "V001",
+    "V002",
+    "V003",
+    "V004",
+    "V005",
+    "V006",
+    "V007",
+    "V008",
+    "V009",
+    "V010",
+    "V011",
+    "V012",
+    "V013",
+    "V014",
+    "V015",
+    "V016",
+    "V017",
+    "V018",
+    "V019",
+    "V020",
+    "V021",
+    "V022",
+    "V023",
+    "V024",
+    "V025",
+    "V026",
+    "V027",
+    "V028",
+    "V029",
+    "V030",
+    "V031",
+    "V032",
+    "V033",
+    "V034",
+    "V035",
+    "V036",
+    "V037",
+    "V038",
+    "V039",
+    "V040",
+    "V041",
+    "V042",
+    "V043",
+    "V044",
+    "V045",
+    "V046",
+    "V047",
+    "V048",
+    "V049",
+    "V050",
+    "V051",
+    "V052",
+    "V053",
+    "V054",
+    "V055",
+    "V056",
+    "V057",
+    "V058",
+    "V059",
+    "V060",
+    "V061",
+    "V062",
+    "V063",
+    "V064",
+    "V065",
+    "V066",
+    "V067",
+    "V068",
+    "V069",
+    "V070",
+    "V071",
+    "V072",
+    "V073",
+    "V074",
+    "V075",
+    "V076",
+    "V077",
+    "V078",
+    "V079",
+    "V080",
+    "V081",
+    "V082",
+    "V083",
+    "V084",
+    "V085",
+    "V086",
+    "V087",
+    "V088",
+    "V089",
+    "V090",
+    "V091",
+    "V092",
+    "V093",
+    "V094",
+    "V095",
+    "V096",
+    "V097",
+    "V098"
+  ],
+  "files": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "beforeSha256": "34ee062a0ae37fb0dd0123364d7ba5916036a57025dfa71995039c07e347019e",
+      "afterSha256": "bd495ebf37e57d0f850a684e1b51038afefe86071fecb3575492ab071fadf850"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "beforeSha256": "75faac6c91e58e7341e82635c982c60d1358aeee36b4143280d425477db7ad71",
+      "afterSha256": "75faac6c91e58e7341e82635c982c60d1358aeee36b4143280d425477db7ad71"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-02.json",
+      "beforeSha256": "86435f75c013fe9cb8c2e91151d2aa208330d48a7b467d8fac8d378046747c1e",
+      "afterSha256": "86435f75c013fe9cb8c2e91151d2aa208330d48a7b467d8fac8d378046747c1e"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "beforeSha256": "1c0a2cfe0f422b9569d2b1e4a9c56d88548e9bf4c84e1e06893a57b1f43bcebc",
+      "afterSha256": "cf2876a5aaf7de1a8f112ce02ae828671dc46182ffb932f6f4c40a14d541a932"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-04.json",
+      "beforeSha256": "f9a568c8f21ea23c67eb188f7bd240d901bd32a8a77ceb509d66186abec1c2ca",
+      "afterSha256": "f9a568c8f21ea23c67eb188f7bd240d901bd32a8a77ceb509d66186abec1c2ca"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "beforeSha256": "34ee062a0ae37fb0dd0123364d7ba5916036a57025dfa71995039c07e347019e",
+      "afterSha256": "bd495ebf37e57d0f850a684e1b51038afefe86071fecb3575492ab071fadf850"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "beforeSha256": "75faac6c91e58e7341e82635c982c60d1358aeee36b4143280d425477db7ad71",
+      "afterSha256": "75faac6c91e58e7341e82635c982c60d1358aeee36b4143280d425477db7ad71"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+      "beforeSha256": "86435f75c013fe9cb8c2e91151d2aa208330d48a7b467d8fac8d378046747c1e",
+      "afterSha256": "86435f75c013fe9cb8c2e91151d2aa208330d48a7b467d8fac8d378046747c1e"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "beforeSha256": "1c0a2cfe0f422b9569d2b1e4a9c56d88548e9bf4c84e1e06893a57b1f43bcebc",
+      "afterSha256": "cf2876a5aaf7de1a8f112ce02ae828671dc46182ffb932f6f4c40a14d541a932"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+      "beforeSha256": "f9a568c8f21ea23c67eb188f7bd240d901bd32a8a77ceb509d66186abec1c2ca",
+      "afterSha256": "f9a568c8f21ea23c67eb188f7bd240d901bd32a8a77ceb509d66186abec1c2ca"
+    }
+  ],
+  "issues": [
+    {
+      "p": 47,
+      "c": "Three times - in 1975, 1977 and 1980 - badges",
+      "s": "Three times—in 1975, 1977 and 1980—badges",
+      "t": "Orthography",
+      "e": "Use paired em dashes rather than hyphens around the parenthetical dates. Keep all dates and the award wording unchanged.",
+      "section": "Biography",
+      "id": "L001",
+      "verify": false,
+      "status": "New",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 806,
+          "jsonPointer": "/profiles/46/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/4/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 806,
+          "jsonPointer": "/profiles/46/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/4/bio_html_en"
+        }
+      ],
+      "field": "bio_html_en",
+      "occurrences": 1
+    }
+  ],
+  "fieldChanges": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 806,
+      "jsonPointer": "/profiles/46/bio_html_en",
+      "profileNumber": 47,
+      "profile": "Aladdin Allahverdiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L001"
+      ],
+      "before": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times - in 1975, 1977 and 1980 - badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times—in 1975, 1977 and 1980—badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/4/bio_html_en",
+      "profileNumber": 47,
+      "profile": "Aladdin Allahverdiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L001"
+      ],
+      "before": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times - in 1975, 1977 and 1980 - badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times—in 1975, 1977 and 1980—badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 806,
+      "jsonPointer": "/profiles/46/bio_html_en",
+      "profileNumber": 47,
+      "profile": "Aladdin Allahverdiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L001"
+      ],
+      "before": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times - in 1975, 1977 and 1980 - badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times—in 1975, 1977 and 1980—badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/4/bio_html_en",
+      "profileNumber": 47,
+      "profile": "Aladdin Allahverdiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L001"
+      ],
+      "before": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times - in 1975, 1977 and 1980 - badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times—in 1975, 1977 and 1980—badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>"
+    }
+  ]
+}

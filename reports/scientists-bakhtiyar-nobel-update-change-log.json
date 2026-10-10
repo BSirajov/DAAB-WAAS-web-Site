@@ -1,0 +1,218 @@
+{
+  "date": "2026-10-09",
+  "profile": "Bakhtiyar Sirajov / Bəxtiyar Siracov",
+  "profileNumber": 17,
+  "languages": [
+    "English",
+    "Azerbaijani"
+  ],
+  "source": "User approval of the proposed Nobel Peace Prize paragraph and its Azerbaijani equivalent",
+  "sources": [
+    {
+      "title": "Official Nobel Peace Prize 2005 laureate record",
+      "url": "https://www.nobelprize.org/prizes/peace/2005/summary/",
+      "supports": "The joint recipients were the IAEA and Mohamed ElBaradei."
+    },
+    {
+      "title": "IAEA publication of Mohamed ElBaradei’s Nobel lecture",
+      "url": "https://www.iaea.org/sites/default/files/publications/magazines/bulletin/bull47-2/47201402125.pdf",
+      "supports": "The lecture acknowledges IAEA staff as colleagues sharing in the honor."
+    }
+  ],
+  "issueIds": [
+    "V020",
+    "V021",
+    "V022"
+  ],
+  "resolvedIssueIds": [
+    "V020",
+    "V021",
+    "V022"
+  ],
+  "summary": [
+    "Replaced the Nobel Peace Prize entry with the exact approved English paragraph and a corresponding Azerbaijani translation.",
+    "Distinguished the IAEA’s institutional award from individual laureate status while acknowledging Bakhtiyar Sirajov’s contribution as a staff member.",
+    "The approved replacement also resolves V020 (Sirajov spelling) and V021 (Director General, Mohamed ElBaradei, and removal of the incorrect committee reference).",
+    "Synchronized all four active profile copies and the English translation source."
+  ],
+  "scopeNote": "Only the Nobel Peace Prize list item was changed. Other biographical paragraphs, awards, links, names outside that item, photos, and directory fields are unchanged. The search index contains only earlier biographical excerpts and needs no update. No new comprehensive proofreading pass was performed.",
+  "approvedParagraphs": {
+    "en": "In 2005, the Nobel Peace Prize was awarded jointly to the International Atomic Energy Agency (IAEA) and its Director General, Mohamed ElBaradei, for their work to prevent the military misuse of nuclear energy and promote its safe, peaceful use. As a member of the IAEA’s Department of Safeguards at the time, Bakhtiyar Sirajov contributed to the agency’s work and shared in the recognition accorded to the organization.",
+    "az": "2005-ci ildə Nobel Sülh mükafatı nüvə enerjisindən hərbi məqsədlərlə sui-istifadənin qarşısının alınması və onun dinc məqsədlərlə təhlükəsiz istifadəsinin təşviqi sahəsindəki fəaliyyətlərinə görə Atom Enerjisi üzrə Beynəlxalq Agentliyə (AEBA) və onun baş direktoru Məhəmməd əl-Baradeiyə birgə verilmişdir. Həmin dövrdə AEBA-nın “Safeguards” Departamentinin əməkdaşı olan Bəxtiyar Siracov agentliyin fəaliyyətinə töhfə vermiş və təşkilatın qazandığı bu şərəfi digər əməkdaşlarla bölüşmüşdür."
+  },
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 291,
+      "jsonPointer": "/profiles/16/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He was the head of the &quot;Application Development&quot; section in the Department of &quot;Safeguards&quot; of the International Atomic Energy Agency (IAEA).</p><p class=\"bio\">From 1995 to 2021, he participated in software development projects implemented in the &quot;Safeguards&quot; Department of the International Atomic Energy Agency (IAEA) and worked as a project manager, group leader and section head.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>In 2006, he was awarded the &quot;Outstanding Team Award&quot; by the IAEA.</li><li>In 2005, by the decision of the Norwegian Peace Committee, the General Director of IAEA, Mohammed al-Baradei, and the Agency&#x27;s employees were awarded the Nobel Peace Prize for their important services in the field of preventing the use of nuclear energy for military purposes and ensuring its safe use for peaceful purposes. Bakhtiyar Siracov, together with other employees of the IAEA, is among those who have been awarded the Nobel Peace Prize.</li><li>In 2023, he was awarded the &quot;100th anniversary of Heydar Aliyev (1923–2023)&quot; jubilee medal by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in diaspora activities.</li><li>He was awarded the &quot;Progress&quot; medal in 2026 by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Additional resources <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>",
+      "after": "<p class=\"bio bio-lead\">He was the head of the &quot;Application Development&quot; section in the Department of &quot;Safeguards&quot; of the International Atomic Energy Agency (IAEA).</p><p class=\"bio\">From 1995 to 2021, he participated in software development projects implemented in the &quot;Safeguards&quot; Department of the International Atomic Energy Agency (IAEA) and worked as a project manager, group leader and section head.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>In 2006, he was awarded the &quot;Outstanding Team Award&quot; by the IAEA.</li><li>In 2005, the Nobel Peace Prize was awarded jointly to the International Atomic Energy Agency (IAEA) and its Director General, Mohamed ElBaradei, for their work to prevent the military misuse of nuclear energy and promote its safe, peaceful use. As a member of the IAEA’s Department of Safeguards at the time, Bakhtiyar Sirajov contributed to the agency’s work and shared in the recognition accorded to the organization.</li><li>In 2023, he was awarded the &quot;100th anniversary of Heydar Aliyev (1923–2023)&quot; jubilee medal by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in diaspora activities.</li><li>He was awarded the &quot;Progress&quot; medal in 2026 by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Additional resources <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 287,
+      "jsonPointer": "/profiles/16/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində “İnformasiya Sistemləri Yaradılması” şöbəsinin rəhbəri olmuşdur</p><p class=\"bio\">1995–2021-ci illər ərzində Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində həyata keçirilən proqram təminatı yaradılması üzrə layihələrdə iştirak etmiş, layihə meneceri, qrup rəhbəri və şöbə rəhbəri vəzifələrində çalışmışdır.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>2006-cı ildə AEBA tərəfindən “Komanda İşinə Müstəsna Töhfəsinə Görə” (Outstanding Team Award) mükafatına layiq görülmüşdür.</li><li>2005-ci ildə Norveç Sülh Komitəsinin qərarı ilə AEBA-nın Baş Direktoru Məhəmməd əl-Baradei və Agentliyin əməkdaşları, nüvə enerjisinin hərbi məqsədlərlə istifadəsinin qarşısının alınması və onun dinc məqsədlərlə təhlükəsiz istifadəsinin təmin edilməsi sahəsindəki mühüm xidmətlərinə görə Nobel Sülh mükafatına layiq görülmüşlər. Bəxtiyar Siracov da AEBA-nın digər əməkdaşları ilə birlikdə Nobel Sülh mükafatına layiq görülənlər sırasındadır.</li><li>Diaspor fəaliyyətindəki xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2023-cü ildə “Heydər Əliyevin 100 illiyi (1923–2023)” yubiley medalı ilə təltif edilmişdir.</li><li>Xalqlar arasında dostluğun möhkəmləndirilməsi və Azərbaycan diasporunun inkişafı sahəsində xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2026-cı ildə “Tərəqqi” medalı ilə təltif edilmişdir.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Əlavə resurslar <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>",
+      "after": "<p class=\"bio bio-lead\">Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində “İnformasiya Sistemləri Yaradılması” şöbəsinin rəhbəri olmuşdur</p><p class=\"bio\">1995–2021-ci illər ərzində Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində həyata keçirilən proqram təminatı yaradılması üzrə layihələrdə iştirak etmiş, layihə meneceri, qrup rəhbəri və şöbə rəhbəri vəzifələrində çalışmışdır.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>2006-cı ildə AEBA tərəfindən “Komanda İşinə Müstəsna Töhfəsinə Görə” (Outstanding Team Award) mükafatına layiq görülmüşdür.</li><li>2005-ci ildə Nobel Sülh mükafatı nüvə enerjisindən hərbi məqsədlərlə sui-istifadənin qarşısının alınması və onun dinc məqsədlərlə təhlükəsiz istifadəsinin təşviqi sahəsindəki fəaliyyətlərinə görə Atom Enerjisi üzrə Beynəlxalq Agentliyə (AEBA) və onun baş direktoru Məhəmməd əl-Baradeiyə birgə verilmişdir. Həmin dövrdə AEBA-nın “Safeguards” Departamentinin əməkdaşı olan Bəxtiyar Siracov agentliyin fəaliyyətinə töhfə vermiş və təşkilatın qazandığı bu şərəfi digər əməkdaşlarla bölüşmüşdür.</li><li>Diaspor fəaliyyətindəki xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2023-cü ildə “Heydər Əliyevin 100 illiyi (1923–2023)” yubiley medalı ilə təltif edilmişdir.</li><li>Xalqlar arasında dostluğun möhkəmləndirilməsi və Azərbaycan diasporunun inkişafı sahəsində xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2026-cı ildə “Tərəqqi” medalı ilə təltif edilmişdir.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Əlavə resurslar <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/16/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He was the head of the &quot;Application Development&quot; section in the Department of &quot;Safeguards&quot; of the International Atomic Energy Agency (IAEA).</p><p class=\"bio\">From 1995 to 2021, he participated in software development projects implemented in the &quot;Safeguards&quot; Department of the International Atomic Energy Agency (IAEA) and worked as a project manager, group leader and section head.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>In 2006, he was awarded the &quot;Outstanding Team Award&quot; by the IAEA.</li><li>In 2005, by the decision of the Norwegian Peace Committee, the General Director of IAEA, Mohammed al-Baradei, and the Agency&#x27;s employees were awarded the Nobel Peace Prize for their important services in the field of preventing the use of nuclear energy for military purposes and ensuring its safe use for peaceful purposes. Bakhtiyar Siracov, together with other employees of the IAEA, is among those who have been awarded the Nobel Peace Prize.</li><li>In 2023, he was awarded the &quot;100th anniversary of Heydar Aliyev (1923–2023)&quot; jubilee medal by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in diaspora activities.</li><li>He was awarded the &quot;Progress&quot; medal in 2026 by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Additional resources <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>",
+      "after": "<p class=\"bio bio-lead\">He was the head of the &quot;Application Development&quot; section in the Department of &quot;Safeguards&quot; of the International Atomic Energy Agency (IAEA).</p><p class=\"bio\">From 1995 to 2021, he participated in software development projects implemented in the &quot;Safeguards&quot; Department of the International Atomic Energy Agency (IAEA) and worked as a project manager, group leader and section head.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>In 2006, he was awarded the &quot;Outstanding Team Award&quot; by the IAEA.</li><li>In 2005, the Nobel Peace Prize was awarded jointly to the International Atomic Energy Agency (IAEA) and its Director General, Mohamed ElBaradei, for their work to prevent the military misuse of nuclear energy and promote its safe, peaceful use. As a member of the IAEA’s Department of Safeguards at the time, Bakhtiyar Sirajov contributed to the agency’s work and shared in the recognition accorded to the organization.</li><li>In 2023, he was awarded the &quot;100th anniversary of Heydar Aliyev (1923–2023)&quot; jubilee medal by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in diaspora activities.</li><li>He was awarded the &quot;Progress&quot; medal in 2026 by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Additional resources <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/16/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində “İnformasiya Sistemləri Yaradılması” şöbəsinin rəhbəri olmuşdur</p><p class=\"bio\">1995–2021-ci illər ərzində Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində həyata keçirilən proqram təminatı yaradılması üzrə layihələrdə iştirak etmiş, layihə meneceri, qrup rəhbəri və şöbə rəhbəri vəzifələrində çalışmışdır.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>2006-cı ildə AEBA tərəfindən “Komanda İşinə Müstəsna Töhfəsinə Görə” (Outstanding Team Award) mükafatına layiq görülmüşdür.</li><li>2005-ci ildə Norveç Sülh Komitəsinin qərarı ilə AEBA-nın Baş Direktoru Məhəmməd əl-Baradei və Agentliyin əməkdaşları, nüvə enerjisinin hərbi məqsədlərlə istifadəsinin qarşısının alınması və onun dinc məqsədlərlə təhlükəsiz istifadəsinin təmin edilməsi sahəsindəki mühüm xidmətlərinə görə Nobel Sülh mükafatına layiq görülmüşlər. Bəxtiyar Siracov da AEBA-nın digər əməkdaşları ilə birlikdə Nobel Sülh mükafatına layiq görülənlər sırasındadır.</li><li>Diaspor fəaliyyətindəki xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2023-cü ildə “Heydər Əliyevin 100 illiyi (1923–2023)” yubiley medalı ilə təltif edilmişdir.</li><li>Xalqlar arasında dostluğun möhkəmləndirilməsi və Azərbaycan diasporunun inkişafı sahəsində xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2026-cı ildə “Tərəqqi” medalı ilə təltif edilmişdir.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Əlavə resurslar <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>",
+      "after": "<p class=\"bio bio-lead\">Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində “İnformasiya Sistemləri Yaradılması” şöbəsinin rəhbəri olmuşdur</p><p class=\"bio\">1995–2021-ci illər ərzində Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində həyata keçirilən proqram təminatı yaradılması üzrə layihələrdə iştirak etmiş, layihə meneceri, qrup rəhbəri və şöbə rəhbəri vəzifələrində çalışmışdır.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>2006-cı ildə AEBA tərəfindən “Komanda İşinə Müstəsna Töhfəsinə Görə” (Outstanding Team Award) mükafatına layiq görülmüşdür.</li><li>2005-ci ildə Nobel Sülh mükafatı nüvə enerjisindən hərbi məqsədlərlə sui-istifadənin qarşısının alınması və onun dinc məqsədlərlə təhlükəsiz istifadəsinin təşviqi sahəsindəki fəaliyyətlərinə görə Atom Enerjisi üzrə Beynəlxalq Agentliyə (AEBA) və onun baş direktoru Məhəmməd əl-Baradeiyə birgə verilmişdir. Həmin dövrdə AEBA-nın “Safeguards” Departamentinin əməkdaşı olan Bəxtiyar Siracov agentliyin fəaliyyətinə töhfə vermiş və təşkilatın qazandığı bu şərəfi digər əməkdaşlarla bölüşmüşdür.</li><li>Diaspor fəaliyyətindəki xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2023-cü ildə “Heydər Əliyevin 100 illiyi (1923–2023)” yubiley medalı ilə təltif edilmişdir.</li><li>Xalqlar arasında dostluğun möhkəmləndirilməsi və Azərbaycan diasporunun inkişafı sahəsində xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2026-cı ildə “Tərəqqi” medalı ilə təltif edilmişdir.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Əlavə resurslar <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 291,
+      "jsonPointer": "/profiles/16/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He was the head of the &quot;Application Development&quot; section in the Department of &quot;Safeguards&quot; of the International Atomic Energy Agency (IAEA).</p><p class=\"bio\">From 1995 to 2021, he participated in software development projects implemented in the &quot;Safeguards&quot; Department of the International Atomic Energy Agency (IAEA) and worked as a project manager, group leader and section head.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>In 2006, he was awarded the &quot;Outstanding Team Award&quot; by the IAEA.</li><li>In 2005, by the decision of the Norwegian Peace Committee, the General Director of IAEA, Mohammed al-Baradei, and the Agency&#x27;s employees were awarded the Nobel Peace Prize for their important services in the field of preventing the use of nuclear energy for military purposes and ensuring its safe use for peaceful purposes. Bakhtiyar Siracov, together with other employees of the IAEA, is among those who have been awarded the Nobel Peace Prize.</li><li>In 2023, he was awarded the &quot;100th anniversary of Heydar Aliyev (1923–2023)&quot; jubilee medal by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in diaspora activities.</li><li>He was awarded the &quot;Progress&quot; medal in 2026 by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Additional resources <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>",
+      "after": "<p class=\"bio bio-lead\">He was the head of the &quot;Application Development&quot; section in the Department of &quot;Safeguards&quot; of the International Atomic Energy Agency (IAEA).</p><p class=\"bio\">From 1995 to 2021, he participated in software development projects implemented in the &quot;Safeguards&quot; Department of the International Atomic Energy Agency (IAEA) and worked as a project manager, group leader and section head.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>In 2006, he was awarded the &quot;Outstanding Team Award&quot; by the IAEA.</li><li>In 2005, the Nobel Peace Prize was awarded jointly to the International Atomic Energy Agency (IAEA) and its Director General, Mohamed ElBaradei, for their work to prevent the military misuse of nuclear energy and promote its safe, peaceful use. As a member of the IAEA’s Department of Safeguards at the time, Bakhtiyar Sirajov contributed to the agency’s work and shared in the recognition accorded to the organization.</li><li>In 2023, he was awarded the &quot;100th anniversary of Heydar Aliyev (1923–2023)&quot; jubilee medal by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in diaspora activities.</li><li>He was awarded the &quot;Progress&quot; medal in 2026 by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Additional resources <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 287,
+      "jsonPointer": "/profiles/16/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində “İnformasiya Sistemləri Yaradılması” şöbəsinin rəhbəri olmuşdur</p><p class=\"bio\">1995–2021-ci illər ərzində Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində həyata keçirilən proqram təminatı yaradılması üzrə layihələrdə iştirak etmiş, layihə meneceri, qrup rəhbəri və şöbə rəhbəri vəzifələrində çalışmışdır.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>2006-cı ildə AEBA tərəfindən “Komanda İşinə Müstəsna Töhfəsinə Görə” (Outstanding Team Award) mükafatına layiq görülmüşdür.</li><li>2005-ci ildə Norveç Sülh Komitəsinin qərarı ilə AEBA-nın Baş Direktoru Məhəmməd əl-Baradei və Agentliyin əməkdaşları, nüvə enerjisinin hərbi məqsədlərlə istifadəsinin qarşısının alınması və onun dinc məqsədlərlə təhlükəsiz istifadəsinin təmin edilməsi sahəsindəki mühüm xidmətlərinə görə Nobel Sülh mükafatına layiq görülmüşlər. Bəxtiyar Siracov da AEBA-nın digər əməkdaşları ilə birlikdə Nobel Sülh mükafatına layiq görülənlər sırasındadır.</li><li>Diaspor fəaliyyətindəki xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2023-cü ildə “Heydər Əliyevin 100 illiyi (1923–2023)” yubiley medalı ilə təltif edilmişdir.</li><li>Xalqlar arasında dostluğun möhkəmləndirilməsi və Azərbaycan diasporunun inkişafı sahəsində xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2026-cı ildə “Tərəqqi” medalı ilə təltif edilmişdir.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Əlavə resurslar <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>",
+      "after": "<p class=\"bio bio-lead\">Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində “İnformasiya Sistemləri Yaradılması” şöbəsinin rəhbəri olmuşdur</p><p class=\"bio\">1995–2021-ci illər ərzində Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində həyata keçirilən proqram təminatı yaradılması üzrə layihələrdə iştirak etmiş, layihə meneceri, qrup rəhbəri və şöbə rəhbəri vəzifələrində çalışmışdır.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>2006-cı ildə AEBA tərəfindən “Komanda İşinə Müstəsna Töhfəsinə Görə” (Outstanding Team Award) mükafatına layiq görülmüşdür.</li><li>2005-ci ildə Nobel Sülh mükafatı nüvə enerjisindən hərbi məqsədlərlə sui-istifadənin qarşısının alınması və onun dinc məqsədlərlə təhlükəsiz istifadəsinin təşviqi sahəsindəki fəaliyyətlərinə görə Atom Enerjisi üzrə Beynəlxalq Agentliyə (AEBA) və onun baş direktoru Məhəmməd əl-Baradeiyə birgə verilmişdir. Həmin dövrdə AEBA-nın “Safeguards” Departamentinin əməkdaşı olan Bəxtiyar Siracov agentliyin fəaliyyətinə töhfə vermiş və təşkilatın qazandığı bu şərəfi digər əməkdaşlarla bölüşmüşdür.</li><li>Diaspor fəaliyyətindəki xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2023-cü ildə “Heydər Əliyevin 100 illiyi (1923–2023)” yubiley medalı ilə təltif edilmişdir.</li><li>Xalqlar arasında dostluğun möhkəmləndirilməsi və Azərbaycan diasporunun inkişafı sahəsində xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2026-cı ildə “Tərəqqi” medalı ilə təltif edilmişdir.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Əlavə resurslar <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/16/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He was the head of the &quot;Application Development&quot; section in the Department of &quot;Safeguards&quot; of the International Atomic Energy Agency (IAEA).</p><p class=\"bio\">From 1995 to 2021, he participated in software development projects implemented in the &quot;Safeguards&quot; Department of the International Atomic Energy Agency (IAEA) and worked as a project manager, group leader and section head.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>In 2006, he was awarded the &quot;Outstanding Team Award&quot; by the IAEA.</li><li>In 2005, by the decision of the Norwegian Peace Committee, the General Director of IAEA, Mohammed al-Baradei, and the Agency&#x27;s employees were awarded the Nobel Peace Prize for their important services in the field of preventing the use of nuclear energy for military purposes and ensuring its safe use for peaceful purposes. Bakhtiyar Siracov, together with other employees of the IAEA, is among those who have been awarded the Nobel Peace Prize.</li><li>In 2023, he was awarded the &quot;100th anniversary of Heydar Aliyev (1923–2023)&quot; jubilee medal by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in diaspora activities.</li><li>He was awarded the &quot;Progress&quot; medal in 2026 by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Additional resources <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>",
+      "after": "<p class=\"bio bio-lead\">He was the head of the &quot;Application Development&quot; section in the Department of &quot;Safeguards&quot; of the International Atomic Energy Agency (IAEA).</p><p class=\"bio\">From 1995 to 2021, he participated in software development projects implemented in the &quot;Safeguards&quot; Department of the International Atomic Energy Agency (IAEA) and worked as a project manager, group leader and section head.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>In 2006, he was awarded the &quot;Outstanding Team Award&quot; by the IAEA.</li><li>In 2005, the Nobel Peace Prize was awarded jointly to the International Atomic Energy Agency (IAEA) and its Director General, Mohamed ElBaradei, for their work to prevent the military misuse of nuclear energy and promote its safe, peaceful use. As a member of the IAEA’s Department of Safeguards at the time, Bakhtiyar Sirajov contributed to the agency’s work and shared in the recognition accorded to the organization.</li><li>In 2023, he was awarded the &quot;100th anniversary of Heydar Aliyev (1923–2023)&quot; jubilee medal by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in diaspora activities.</li><li>He was awarded the &quot;Progress&quot; medal in 2026 by order of the President of the Republic of Azerbaijan Mr Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Additional resources <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/16/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində “İnformasiya Sistemləri Yaradılması” şöbəsinin rəhbəri olmuşdur</p><p class=\"bio\">1995–2021-ci illər ərzində Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində həyata keçirilən proqram təminatı yaradılması üzrə layihələrdə iştirak etmiş, layihə meneceri, qrup rəhbəri və şöbə rəhbəri vəzifələrində çalışmışdır.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>2006-cı ildə AEBA tərəfindən “Komanda İşinə Müstəsna Töhfəsinə Görə” (Outstanding Team Award) mükafatına layiq görülmüşdür.</li><li>2005-ci ildə Norveç Sülh Komitəsinin qərarı ilə AEBA-nın Baş Direktoru Məhəmməd əl-Baradei və Agentliyin əməkdaşları, nüvə enerjisinin hərbi məqsədlərlə istifadəsinin qarşısının alınması və onun dinc məqsədlərlə təhlükəsiz istifadəsinin təmin edilməsi sahəsindəki mühüm xidmətlərinə görə Nobel Sülh mükafatına layiq görülmüşlər. Bəxtiyar Siracov da AEBA-nın digər əməkdaşları ilə birlikdə Nobel Sülh mükafatına layiq görülənlər sırasındadır.</li><li>Diaspor fəaliyyətindəki xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2023-cü ildə “Heydər Əliyevin 100 illiyi (1923–2023)” yubiley medalı ilə təltif edilmişdir.</li><li>Xalqlar arasında dostluğun möhkəmləndirilməsi və Azərbaycan diasporunun inkişafı sahəsində xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2026-cı ildə “Tərəqqi” medalı ilə təltif edilmişdir.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Əlavə resurslar <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>",
+      "after": "<p class=\"bio bio-lead\">Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində “İnformasiya Sistemləri Yaradılması” şöbəsinin rəhbəri olmuşdur</p><p class=\"bio\">1995–2021-ci illər ərzində Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) “Safeguards” Departamentində həyata keçirilən proqram təminatı yaradılması üzrə layihələrdə iştirak etmiş, layihə meneceri, qrup rəhbəri və şöbə rəhbəri vəzifələrində çalışmışdır.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>2006-cı ildə AEBA tərəfindən “Komanda İşinə Müstəsna Töhfəsinə Görə” (Outstanding Team Award) mükafatına layiq görülmüşdür.</li><li>2005-ci ildə Nobel Sülh mükafatı nüvə enerjisindən hərbi məqsədlərlə sui-istifadənin qarşısının alınması və onun dinc məqsədlərlə təhlükəsiz istifadəsinin təşviqi sahəsindəki fəaliyyətlərinə görə Atom Enerjisi üzrə Beynəlxalq Agentliyə (AEBA) və onun baş direktoru Məhəmməd əl-Baradeiyə birgə verilmişdir. Həmin dövrdə AEBA-nın “Safeguards” Departamentinin əməkdaşı olan Bəxtiyar Siracov agentliyin fəaliyyətinə töhfə vermiş və təşkilatın qazandığı bu şərəfi digər əməkdaşlarla bölüşmüşdür.</li><li>Diaspor fəaliyyətindəki xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2023-cü ildə “Heydər Əliyevin 100 illiyi (1923–2023)” yubiley medalı ilə təltif edilmişdir.</li><li>Xalqlar arasında dostluğun möhkəmləndirilməsi və Azərbaycan diasporunun inkişafı sahəsində xidmətlərinə görə Azərbaycan Respublikası Prezidenti cənab İlham Əliyevin sərəncamı ilə 2026-cı ildə “Tərəqqi” medalı ilə təltif edilmişdir.</li></ul></div><div class=\"card-resources\"><a class=\"btn btn-primary\" href=\"bakhtiyar-sirajov-media.html\">Əlavə resurslar <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div>"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 102,
+      "jsonPointer": "/profiles/b.sirajov@hotmail.com/bio_html",
+      "field": "bio_html",
+      "before": "<p class=\"bio bio-lead\">He was the head of the &quot;Application Development&quot; section in the Department of &quot;Safeguards&quot; of the International Atomic Energy Agency (IAEA).</p><p class=\"bio\">During the years 1995-2021, he participated in software development projects implemented in the &quot;Safeguards&quot; Department of the International Atomic Energy Agency (IAEA), worked as a project manager, group leader and section head.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>In 2006, he was awarded the &quot;Outstanding Team Award&quot; by IAEA.</li><li>In 2005, by the decision of the Norwegian Peace Committee, the General Director of IAEA, Mohammed al-Baradei, and the Agency&#x27;s employees were awarded the Nobel Peace Prize for their important services in the field of preventing the use of nuclear energy for military purposes and ensuring its safe use for peaceful purposes. Bakhtiyar Siracov, together with other employees of IAEA, is among those who have been awarded the Nobel Peace Prize.</li><li>In 2023, he was awarded the &quot;100th anniversary of Heydar Aliyev (1923-2023)&quot; jubilee medal by order of the President of the Republic of Azerbaijan Mr. Ilham Aliyev for his services in diaspora activities.</li><li>He was awarded the &quot;Progress&quot; medal in 2026 by order of the President of the Republic of Azerbaijan Mr. Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</li></ul></div>",
+      "after": "<p class=\"bio bio-lead\">He was the head of the &quot;Application Development&quot; section in the Department of &quot;Safeguards&quot; of the International Atomic Energy Agency (IAEA).</p><p class=\"bio\">During the years 1995-2021, he participated in software development projects implemented in the &quot;Safeguards&quot; Department of the International Atomic Energy Agency (IAEA), worked as a project manager, group leader and section head.</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>In 2006, he was awarded the &quot;Outstanding Team Award&quot; by IAEA.</li><li>In 2005, the Nobel Peace Prize was awarded jointly to the International Atomic Energy Agency (IAEA) and its Director General, Mohamed ElBaradei, for their work to prevent the military misuse of nuclear energy and promote its safe, peaceful use. As a member of the IAEA’s Department of Safeguards at the time, Bakhtiyar Sirajov contributed to the agency’s work and shared in the recognition accorded to the organization.</li><li>In 2023, he was awarded the &quot;100th anniversary of Heydar Aliyev (1923-2023)&quot; jubilee medal by order of the President of the Republic of Azerbaijan Mr. Ilham Aliyev for his services in diaspora activities.</li><li>He was awarded the &quot;Progress&quot; medal in 2026 by order of the President of the Republic of Azerbaijan Mr. Ilham Aliyev for his services in the field of strengthening friendship between peoples and the development of the Azerbaijani diaspora.</li></ul></div>"
+    }
+  ],
+  "fileHashes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "before": "b17dcb8ed92d61262264c0fab3d79ee645d6a721fa8d81f297d5ac0cd8fbfaae",
+      "after": "21c10dff7a27192e6911c02721271cc11e398f0d7db285f58f7fbca1a8f70af6"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "before": "04f7de791d9af7bae0279338c3d989a86283361ad194fe55cdfd1c9805542974",
+      "after": "2ab2f05d223d2167c5c9f7816511cce6a65ee2ab355a1e720c3fa1de8a4ebe77"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "before": "b17dcb8ed92d61262264c0fab3d79ee645d6a721fa8d81f297d5ac0cd8fbfaae",
+      "after": "21c10dff7a27192e6911c02721271cc11e398f0d7db285f58f7fbca1a8f70af6"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "before": "04f7de791d9af7bae0279338c3d989a86283361ad194fe55cdfd1c9805542974",
+      "after": "2ab2f05d223d2167c5c9f7816511cce6a65ee2ab355a1e720c3fa1de8a4ebe77"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "before": "f368ebcd3a4420505f995c40a0a420a6a14683ebe4c4d950147b2a40edc042b4",
+      "after": "0961ac6b2cd496aec494bee8e2202d7f7a6ba964887b304f8b13c148e49c8038"
+    }
+  ],
+  "preExistingUnrelatedChangesPreserved": [
+    {
+      "file": "en/executive-board.html",
+      "lastReviewedSha256": "729a070304ca7838f61974d8f1f1402ba3c77529c28cc5679a0bfbabf1bdb188",
+      "observedSha256": "f51a532d362c5fadb1db2f7f3f537d65eafa758858de1bf4e9de371de19e32ef",
+      "action": "Preserved without modification or renewed content review"
+    },
+    {
+      "file": "en/forum/2024/sessions_organization.html",
+      "lastReviewedSha256": "cd5b73c6f64409f834e1b1272c265257c056d5a0db7b0d04435c3ad31bb356e8",
+      "observedSha256": "7a349f5e6beeeb23b7176e06a18144c9fb4ba6c8a5bd7b5be63cd6a0e9fa82d8",
+      "action": "Preserved without modification or renewed content review"
+    },
+    {
+      "file": "en/forum/2024/presentations.html",
+      "lastReviewedSha256": "d277afb1362eda1227b1e71259f9cadb2444ad1ce966777548d1f924a3b6803f",
+      "observedSha256": "0874884f99edcff6bc441a2b131e5f07384f186bbef198779c5be591d91ac157",
+      "action": "Preserved without modification or renewed content review"
+    },
+    {
+      "file": "en/forum/2024/impressions.html",
+      "lastReviewedSha256": "b7f71023994fc06eb2cdba4684b64a3a7fb10851d848dab0ff9d569ea9e13b97",
+      "observedSha256": "428abbef68674db0b4de28caefea854dbb50368326d8f8d5ab0cc2f55f3ef1c0",
+      "action": "Preserved without modification or renewed content review"
+    },
+    {
+      "file": "en/forum/2024/cooperation.html",
+      "lastReviewedSha256": "dc16788f2c0b8295ee169526d65b08b815e14c42fb00ac2b8338f3188619b0af",
+      "observedSha256": "31e11471c74876beac068c31972bab6aea762d2a561aa90442baf5967d11fa8c",
+      "action": "Preserved without modification or renewed content review"
+    },
+    {
+      "file": "en/work_done_2024_2026.html",
+      "lastReviewedSha256": "708002fb38357fe66ddb8e9b157eccf5910694a9a2ac61fc1585a195a53ca447",
+      "observedSha256": "5a57a22921dfcc5ca9456452f641ee8661592b4a50dcca912dd8fb32172ab2c5",
+      "action": "Preserved without modification or renewed content review"
+    },
+    {
+      "file": "Deployment/en/executive-board.html",
+      "lastReviewedSha256": "729a070304ca7838f61974d8f1f1402ba3c77529c28cc5679a0bfbabf1bdb188",
+      "observedSha256": "f51a532d362c5fadb1db2f7f3f537d65eafa758858de1bf4e9de371de19e32ef",
+      "action": "Preserved without modification or renewed content review"
+    },
+    {
+      "file": "Deployment/en/forum/2024/sessions_organization.html",
+      "lastReviewedSha256": "cd5b73c6f64409f834e1b1272c265257c056d5a0db7b0d04435c3ad31bb356e8",
+      "observedSha256": "7a349f5e6beeeb23b7176e06a18144c9fb4ba6c8a5bd7b5be63cd6a0e9fa82d8",
+      "action": "Preserved without modification or renewed content review"
+    },
+    {
+      "file": "Deployment/en/forum/2024/presentations.html",
+      "lastReviewedSha256": "d277afb1362eda1227b1e71259f9cadb2444ad1ce966777548d1f924a3b6803f",
+      "observedSha256": "0874884f99edcff6bc441a2b131e5f07384f186bbef198779c5be591d91ac157",
+      "action": "Preserved without modification or renewed content review"
+    },
+    {
+      "file": "Deployment/en/forum/2024/impressions.html",
+      "lastReviewedSha256": "b7f71023994fc06eb2cdba4684b64a3a7fb10851d848dab0ff9d569ea9e13b97",
+      "observedSha256": "428abbef68674db0b4de28caefea854dbb50368326d8f8d5ab0cc2f55f3ef1c0",
+      "action": "Preserved without modification or renewed content review"
+    },
+    {
+      "file": "Deployment/en/forum/2024/cooperation.html",
+      "lastReviewedSha256": "dc16788f2c0b8295ee169526d65b08b815e14c42fb00ac2b8338f3188619b0af",
+      "observedSha256": "31e11471c74876beac068c31972bab6aea762d2a561aa90442baf5967d11fa8c",
+      "action": "Preserved without modification or renewed content review"
+    },
+    {
+      "file": "Deployment/en/work_done_2024_2026.html",
+      "lastReviewedSha256": "708002fb38357fe66ddb8e9b157eccf5910694a9a2ac61fc1585a195a53ca447",
+      "observedSha256": "5a57a22921dfcc5ca9456452f641ee8661592b4a50dcca912dd8fb32172ab2c5",
+      "action": "Preserved without modification or renewed content review"
+    }
+  ]
+}

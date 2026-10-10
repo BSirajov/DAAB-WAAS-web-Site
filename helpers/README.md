@@ -23,7 +23,7 @@ Run all commands from the **repository root**: `python helpers/<script>.py`
 | `_build_donate_pages.py` | `az/en/donate.html` |
 | `_build_video_gallery_page.py` | `az/en/forum/2024/video_gallery.html` |
 | `_build_membership_redirect.py` | `az/en/membership.html` legacy redirect stubs |
-| `_build_deployment_folder.py --include-images` | `Deployment/` upload package |
+| `_build_deployment_folder.py --include-images` | `Deployment/` upload package. Stamps footer `Build YYYYMMDD - HHmm` and `?v=YYYYMMDD-HHmm` on local CSS, JS, images, fonts, and JSON. HTML stays `Cache-Control: no-cache, must-revalidate`. |
 
 ## One-shot harmonisation
 

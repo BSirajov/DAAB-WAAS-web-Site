@@ -1,0 +1,473 @@
+{
+  "date": "2026-10-10",
+  "profile": "Garib Murshudov / Qərib Mürşüdov",
+  "profileNumber": 21,
+  "languages": [
+    "English",
+    "Azerbaijani"
+  ],
+  "source": "User approval of the complete English and Azerbaijani profile drafts based on the supplied CV and official institutional sources",
+  "sources": [
+    {
+      "title": "CV Qarib Murshudov.pdf",
+      "file": "E:/Documents/Azərbaycanlı Alimlərin Istanbul görüşü, 8-10 Dekabr 2022/1-ci Bakı forumu, 8-12 Sentyabr 2024/Web Site/CV/CV Qarib Murshudov.pdf",
+      "pages": 9,
+      "relevantPages": [
+        1,
+        2,
+        8,
+        9
+      ],
+      "sha256": "ad835d34f838a267d284e1b98cbb97d557a897eaaa9309cafc4fd24c0adf58ff",
+      "note": "Complete CV text read; pages 1, 2, 8, and 9 visually inspected for positions, education, recognition, and software. The heading says December 2021, but later entries include 2023–2024. No publication total or exact PhD award year is asserted in the approved replacement."
+    },
+    {
+      "url": "https://mrclmb.ac.uk/research-leaders/garib-murshudov/",
+      "note": "Confirms the MRC Laboratory of Molecular Biology name, group-leader role, computational structural biology research, and software functions."
+    },
+    {
+      "url": "https://imbb.az/en",
+      "note": "Current institutional website uses Institute of Molecular Biology, Ministry of Science and Education of the Republic of Azerbaijan."
+    },
+    {
+      "url": "https://science.gov.az/en/institutes/1146",
+      "note": "Lists Garib Murshudov as the head of the Laboratory of Computational Structural Biology."
+    },
+    {
+      "url": "https://imbb.az/az/news/2563",
+      "note": "January 22, 2026 institutional report identifies Professor Garib Murshudov among international laboratory heads; that report retains the institute’s older name."
+    }
+  ],
+  "issueIds": [
+    "V024",
+    "V025",
+    "V083"
+  ],
+  "resolvedIssueIds": [
+    "V024",
+    "V025",
+    "V083"
+  ],
+  "summary": [
+    "Applied the approved bilingual roles, research summary, education, career history, software contributions, publications, teaching, recognition, and research interests.",
+    "Resolved V024 by describing structural determination, refinement, and validation.",
+    "Resolved V025 by using MRC Laboratory of Molecular Biology consistently.",
+    "Resolved V083 by spelling out the ministry and using the current Baku institution name, Institute of Molecular Biology.",
+    "Used the approved Royal Statistical Society membership wording, past-service wording for the CCP4 executive committee, and omitted the former publication total and unsupported superlatives.",
+    "Preserved italics for the bacterial species and four journal titles.",
+    "Synchronized active profile data, the English translation source, and both language search entries."
+  ],
+  "scopeNote": "The approved public profile wording is retained, with semicolons joining the two affiliation lines in the existing plain-text title fields. Draft source links are retained here for audit rather than inserted into the public biography. Names, PhD credential, email/profile lookup key, photo, country, subject field, and profile anchor are unchanged. This update is not a new comprehensive proofreading pass or independent verification of every historical CV claim.",
+  "reportFindings": [
+    {
+      "before": {
+        "p": 21,
+        "c": "renders them transparent",
+        "s": "Retain pending verification.",
+        "t": "Style",
+        "e": "The intended software operation is unclear; verify the technical meaning before rewriting.",
+        "verify": true,
+        "status": "Carried over",
+        "previousId": "V024",
+        "section": "Biography",
+        "id": "V024",
+        "previousReport": "Round 8 after fixes",
+        "locations": [
+          {
+            "file": "i18n/scientists-profiles.json",
+            "line": 359,
+            "jsonPointer": "/profiles/20/bio_html_en"
+          },
+          {
+            "file": "i18n/scientists-profiles/chunk-01.json",
+            "line": 1,
+            "jsonPointer": "/profiles/20/bio_html_en"
+          },
+          {
+            "file": "Deployment/i18n/scientists-profiles.json",
+            "line": 359,
+            "jsonPointer": "/profiles/20/bio_html_en"
+          },
+          {
+            "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+            "line": 1,
+            "jsonPointer": "/profiles/20/bio_html_en"
+          }
+        ],
+        "severity": "High",
+        "group": "Verification",
+        "parts": [
+          {
+            "c": "renders them transparent",
+            "s": "Retain pending verification."
+          }
+        ],
+        "previousStatus": "Carried over",
+        "e_ru": "Неясно, какое действие выполняет программное обеспечение. Перед переформулировкой необходимо уточнить технический смысл."
+      },
+      "after": {
+        "id": "V024",
+        "profileNumber": 21,
+        "status": "Resolved",
+        "resolution": "Replaced the unclear translation “renders them transparent” with the approved description of determining, refining, and validating macromolecular structures, supported by the CV software descriptions and MRC profile."
+      }
+    },
+    {
+      "before": {
+        "p": 21,
+        "c": "MRC Molecular Biology Laboratory",
+        "s": "Retain pending verification.",
+        "t": "Style",
+        "e": "The heading uses MRC Laboratory of Molecular Biology; confirm and standardize the institution’s name. The current institutional research-leader page confirms MRC Laboratory of Molecular Biology and Murshudov’s group-leader role.",
+        "verify": true,
+        "status": "Carried over",
+        "previousId": "V025",
+        "section": "Biography",
+        "id": "V025",
+        "previousReport": "Round 8 after fixes",
+        "locations": [
+          {
+            "file": "i18n/scientists-profiles.json",
+            "line": 359,
+            "jsonPointer": "/profiles/20/bio_html_en"
+          },
+          {
+            "file": "i18n/scientists-profiles/chunk-01.json",
+            "line": 1,
+            "jsonPointer": "/profiles/20/bio_html_en"
+          },
+          {
+            "file": "Deployment/i18n/scientists-profiles.json",
+            "line": 359,
+            "jsonPointer": "/profiles/20/bio_html_en"
+          },
+          {
+            "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+            "line": 1,
+            "jsonPointer": "/profiles/20/bio_html_en"
+          }
+        ],
+        "severity": "High",
+        "group": "Verification",
+        "parts": [
+          {
+            "c": "MRC Molecular Biology Laboratory",
+            "s": "Retain pending verification."
+          }
+        ],
+        "previousStatus": "Carried over",
+        "sources": [
+          "https://mrclmb.ac.uk/research-leaders/garib-murshudov/"
+        ],
+        "evidenceCheckedThisPass": true,
+        "e_ru": "В заголовке используется MRC Laboratory of Molecular Biology. Необходимо подтвердить название учреждения и привести его к единому виду. Текущая страница руководителя исследований на сайте учреждения подтверждает MRC Laboratory of Molecular Biology и должность Murshudov как руководителя группы."
+      },
+      "after": {
+        "id": "V025",
+        "profileNumber": 21,
+        "status": "Resolved",
+        "resolution": "Standardized the Cambridge institution as MRC Laboratory of Molecular Biology in the approved titles and biographies."
+      }
+    },
+    {
+      "before": {
+        "p": 21,
+        "c": "Azerbaijan ETN Institute of Molecular Biology and Biotechnologies",
+        "s": "Retain pending verification.",
+        "t": "Style",
+        "e": "The same profile later gives Institute of Molecular Biology and Biotechnology of the Ministry of Science and Education of Azerbaijan. Confirm the English name and unexplained ETN abbreviation.",
+        "verify": true,
+        "status": "Carried over",
+        "section": "Biography",
+        "id": "V083",
+        "previousId": "V083",
+        "previousReport": "Round 8 after fixes",
+        "locations": [
+          {
+            "file": "i18n/scientists-profiles.json",
+            "line": 359,
+            "jsonPointer": "/profiles/20/bio_html_en"
+          },
+          {
+            "file": "i18n/scientists-profiles/chunk-01.json",
+            "line": 1,
+            "jsonPointer": "/profiles/20/bio_html_en"
+          },
+          {
+            "file": "Deployment/i18n/scientists-profiles.json",
+            "line": 359,
+            "jsonPointer": "/profiles/20/bio_html_en"
+          },
+          {
+            "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+            "line": 1,
+            "jsonPointer": "/profiles/20/bio_html_en"
+          }
+        ],
+        "severity": "High",
+        "group": "Verification",
+        "parts": [
+          {
+            "c": "Azerbaijan ETN Institute of Molecular Biology and Biotechnologies",
+            "s": "Retain pending verification."
+          }
+        ],
+        "previousStatus": "Carried over",
+        "e_ru": "Далее в том же профиле указано Institute of Molecular Biology and Biotechnology of the Ministry of Science and Education of Azerbaijan. Необходимо подтвердить английское название и расшифровать необъяснённое сокращение ETN."
+      },
+      "after": {
+        "id": "V083",
+        "profileNumber": 21,
+        "status": "Resolved",
+        "resolution": "Replaced the unexplained ETN abbreviation and inconsistent Baku institution names with the approved full ministry affiliation and the current name Institute of Molecular Biology, as used on the institutional website."
+      }
+    }
+  ],
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 358,
+      "jsonPointer": "/profiles/20/title_en",
+      "field": "title_en",
+      "before": "MRC Laboratory of Molecular Biology, Cambridge, United Kingdom",
+      "after": "Group Leader, Computational Structural Biology, MRC Laboratory of Molecular Biology, Cambridge, United Kingdom; Head of the Laboratory of Computational Structural Biology, Institute of Molecular Biology, Ministry of Science and Education of the Republic of Azerbaijan, Baku, Azerbaijan"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 359,
+      "jsonPointer": "/profiles/20/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Azerbaijan ETN Institute of Molecular Biology and Biotechnologies in Baku, group leader and laboratory manager</p><p class=\"bio-section-title\">Research areas</p><p class=\"bio\">Prof Dr Garib Murshudov is one of the world&#x27;s leading scientists in the field of molecular biology, crystallography and structural biology. His main research directions are as follows:</p><p class=\"bio\">Macromolecular crystallography and structural biology (analysis of three-dimensional structures of proteins and nucleic acids).</p><p class=\"bio\">Cryo-electron microscopy (Cryo-EM) and bioinformatics (molecular modeling, structural analysis and data processing).</p><p class=\"bio\">Statistical and mathematical modeling (application of maximum likelihood and Bayesian statistical methods in biological systems).</p><p class=\"bio-section-title\">Academic and professional experience</p><p class=\"bio\">He works as a group leader at the MRC Molecular Biology Laboratory (Cambridge, Great Britain) and as a laboratory manager at the Institute of Molecular Biology and Biotechnology of the Ministry of Science and Education of Azerbaijan (Baku).</p><p class=\"bio\">He worked in prestigious research institutes and universities in Great Britain, Russia and Azerbaijan.</p><p class=\"bio\">He is the main author of the software that constructs atomic models of macromolecules using experiments, renders them transparent and checks them statistically (REFMAC, BALBES, Servalcat, AceDRG, etc.).</p><p class=\"bio-section-title\">Awards and recognition</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>He was awarded the honorary title of &quot;Honored Scientist&quot; of the Republic of Azerbaijan.</li><li>Won the Wellcome Trust Senior Fellowship—the UK's most prestigious fellowship in biology</li><li>Member of the European Molecular Biology Organization (EMBO).</li><li>Fellow of the Royal Statistical Society of Great Britain.</li><li>Member of the CCP4 executive committee – this committee brings together leading international researchers in the field of computational structural biology.</li></ul></div><p class=\"bio-section-title\">Publications and scientific contributions</p><p class=\"bio\">He is the author of more than 120 high-impact scientific articles, including in prestigious journals such as Nature, Science, PNAS and Acta Crystallographica.</p><p class=\"bio\">He was a leading researcher in the development of innovative software (REFMAC5, SERVALCAT, EMDA, BALBES, AceDRG) for the analysis and modeling of molecular structures.</p><p class=\"bio\">He regularly participates in international symposia and conferences and organizes scientific seminars in different countries (Great Britain, Japan, China, USA, Brazil, India, etc.).</p>",
+      "after": "<p class=\"bio bio-lead\">Garib Murshudov specializes in computational structural biology, developing mathematical, statistical, and computational methods for studying the three-dimensional structures of biological macromolecules. His work combines experimental data from crystallography and cryo-electron microscopy with prior structural and chemical knowledge to produce reliable atomic models. His group is based at the MRC Laboratory of Molecular Biology in Cambridge.</p><p class=\"bio\">He studied applied mathematics at Baku State University from 1980 to 1985 and earned his PhD at the Institute of Crystallography in Moscow. His doctoral research investigated the three-dimensional structure of catalase from the bacterium <em>Micrococcus lysodeikticus</em>.</p><p class=\"bio\">He worked at the Institute of Physics in Baku from 1985 to 1987 and at the Institute of Crystallography in Moscow from 1987 to 1993. From 1993 to 2011, he held research positions at the University of York, including a Wellcome Trust Senior Research Fellowship and a Wellcome Trust University Research Fellowship. He has led a research group at the MRC Laboratory of Molecular Biology since 2011.</p><p class=\"bio\">He has contributed to the development of software for determining, refining, and validating macromolecular structures, including REFMAC, BALBES, Servalcat, AceDRG, and EMDA. These tools support the analysis of experimental data, the refinement of atomic models, and the incorporation of chemical and structural information into molecular modeling.</p><p class=\"bio\">His publications include research articles in <em>Nature</em>, <em>Science</em>, <em>PNAS</em>, and <em>Acta Crystallographica</em>, as well as book chapters on crystallography and structural refinement. He has taught statistics, computational chemistry, and computational structural biology, and has organized international scientific workshops in countries including Brazil, Uruguay, the United States, Japan, China, and Thailand.</p><p class=\"bio\">He holds the honorary title of Honored Scientist of the Republic of Azerbaijan and is a member of the European Molecular Biology Organization (EMBO) and the Royal Statistical Society. He has also served on the CCP4 executive committee.</p><p class=\"bio-section-title\">Research interests:</p><ul><li>Macromolecular crystallography and the structural analysis of proteins and nucleic acids.</li><li>Cryo-electron microscopy and the interpretation of experimental structural data.</li><li>Maximum likelihood and Bayesian statistical methods in structural biology.</li><li>Software development for molecular modeling, atomic model refinement, and structure validation.</li></ul>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 354,
+      "jsonPointer": "/profiles/20/title_az",
+      "field": "title_az",
+      "before": "Birləşmiş Krallığın Kembric şəhərində MRC Molekulyar Biologiya laboratoriyası",
+      "after": "Kompüter struktur biologiyası qrupunun rəhbəri, Tibbi Tədqiqatlar Şurasının Molekulyar Biologiya Laboratoriyası (MRC Laboratory of Molecular Biology), Kembric, Birləşmiş Krallıq; Kompüter struktur biologiyası laboratoriyasının rəhbəri, Azərbaycan Respublikası Elm və Təhsil Nazirliyinin Molekulyar Biologiya İnstitutu, Bakı, Azərbaycan"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 355,
+      "jsonPointer": "/profiles/20/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Bakıda Azərbaycan ETN Molekulyar Biologiya və Biotexnologiyalar İnstitutu qrup rəhbəri və laboratoriya müdiri</p><p class=\"bio-section-title\">Tədqiqat sahələri:</p><p class=\"bio\">Prof. Dr. Qərib Mürşüdov molekulyar biologiya, kristalloqrafiya və struktur biologiya sahəsində dünyanın aparıcı alimlərindən biridir. Onun əsas tədqiqat istiqamətləri aşağıdakılardır:</p><p class=\"bio\">Makromolekulyar kristalloqrafiya və struktur biologiya (zülalların və nüvə turşularının üçölçülü quruluşlarının analizi).</p><p class=\"bio\">Krio-elektron mikroskopiya (Cryo-EM) və bioinformatika (molekulyar modelləşdirmə, struktur təhlil və məlumatların emalı).</p><p class=\"bio\">Statistik və riyazi modelləşdirmə (maksimum ehtimallılıq və Bayes statistika üsullarının bioloji sistemlərdə tətbiqi).</p><p class=\"bio-section-title\">Akademik və peşəkar təcrübə:</p><p class=\"bio\">MRC Molekulyar biologiya laboratoriyasında (Cambridge, Böyük Britaniya) qrup rəhbəri və Azərbaycan Elm və Təhsil Nazirliyinin Molekulyar Biologiya və Biotexnologiya İnstitutunda (Bakı) laboratoriya müdiri olaraq fəaliyyət göstərir.</p><p class=\"bio\">Böyük Britaniya, Rusiya və Azərbaycanın nüfuzlu elmi-tədqiqat institutlarında və universitetlərində çalışıb.</p><p class=\"bio\">Makromolekulların eksperimentdən istifadə edərək atomik model quran, şəffaflaşdıran və statistik yoxlayan proqram təminatlarının əsas müəlliflərindədir (REFMAC, BALBES, Servalcat, AceDRG və s.)</p><p class=\"bio-section-title\">Mükafatlar və tanınma:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Azərbaycan Respublikasının “Əməkdar alim” fəxri adı ilə təltif edilib.</li><li>Wellcome Trust Senior Fellowship mükafatı – biologiya sahəsində Böyük Britaniyada ən nüfuzlu Fellowship qazanıb</li><li>Avropa Molekulyar Biologiya Təşkilatının (EMBO) üzvü.</li><li>Böyük Britaniyanın Kral Statistika Cəmiyyətinin üzvü.</li><li>CCP4 icraiyyə komitəsinin üzvü – bu komitə hesablama struktur biologiya sahəsində aparıcı beynəlxalq tədqiqatçıları birləşdirir.</li></ul></div><p class=\"bio-section-title\">Nəşrlər və elmi töhfələr:</p><p class=\"bio\">120-dən çox yüksək impakt faktorlu elmi məqalənin müəllifidir, o cümlədən Nature, Science, PNAS və Acta Crystallographica kimi nüfuzlu jurnallarda.</p><p class=\"bio\">Molekulyar strukturların analizi və modelləşdirilməsi üçün innovativ proqram təminatlarının (REFMAC5, SERVALCAT, EMDA, BALBES, AceDRG) hazırlanmasında aparıcı tədqiqatçı olub.</p><p class=\"bio\">Beynəlxalq simpozium və konfranslarda müntəzəm iştirak edir və müxtəlif ölkələrdə elmi seminarlar təşkil edir (Böyük Britaniya, Yaponiya, Çin, ABŞ, Braziliya, Hindistan və s.).</p>",
+      "after": "<p class=\"bio bio-lead\">Qərib Mürşüdov kompüter struktur biologiyası üzrə ixtisaslaşmış alimdir. O, bioloji makromolekulların üçölçülü strukturlarının öyrənilməsi üçün riyazi, statistik və hesablama üsulları hazırlayır. Tədqiqatlarında etibarlı atom modelləri qurmaq məqsədilə kristalloqrafiya və krioelektron mikroskopiya üsulları ilə əldə olunan eksperimental məlumatları mövcud struktur və kimyəvi biliklərlə birləşdirir. Onun rəhbərlik etdiyi qrup Kembricdəki MRC Molekulyar Biologiya Laboratoriyasında fəaliyyət göstərir.</p><p class=\"bio\">1980–1985-ci illərdə Bakı Dövlət Universitetində tətbiqi riyaziyyat üzrə təhsil almış, Moskvadakı Kristalloqrafiya İnstitutunda fəlsəfə doktoru elmi dərəcəsini qazanmışdır. Dissertasiya işi <em>Micrococcus lysodeikticus</em> bakteriyasından alınmış katalaza fermentinin üçölçülü strukturunun tədqiqinə həsr olunmuşdur.</p><p class=\"bio\">1985–1987-ci illərdə Bakıda Fizika İnstitutunda, 1987–1993-cü illərdə isə Moskvada Kristalloqrafiya İnstitutunda çalışmışdır. 1993–2011-ci illərdə York Universitetində müxtəlif tədqiqat vəzifələrində işləmiş, o cümlədən Wellcome Trust Senior Research Fellowship və Wellcome Trust University Research Fellowship proqramları çərçivəsində elmi fəaliyyət göstərmişdir. 2011-ci ildən MRC Molekulyar Biologiya Laboratoriyasında tədqiqat qrupuna rəhbərlik edir.</p><p class=\"bio\">Makromolekulyar strukturların müəyyənləşdirilməsi, dəqiqləşdirilməsi və düzgünlüyünün yoxlanılması üçün istifadə olunan REFMAC, BALBES, Servalcat, AceDRG və EMDA kimi proqram təminatlarının hazırlanmasında iştirak etmişdir. Bu proqramlar eksperimental məlumatların təhlili, atom modellərinin dəqiqləşdirilməsi və kimyəvi və struktur məlumatların molekulyar modelləşdirmədə istifadəsi üçün nəzərdə tutulmuşdur.</p><p class=\"bio\">Elmi məqalələri <em>Nature</em>, <em>Science</em>, <em>PNAS</em> və <em>Acta Crystallographica</em> jurnallarında dərc olunmuşdur. Kristalloqrafiya və struktur modellərinin dəqiqləşdirilməsi üzrə kitab fəsillərinin də müəllifidir. Statistika, hesablama kimyası və kompüter struktur biologiyası fənlərini tədris etmiş, Braziliya, Uruqvay, ABŞ, Yaponiya, Çin və Tailand da daxil olmaqla müxtəlif ölkələrdə beynəlxalq elmi seminarlar təşkil etmişdir.</p><p class=\"bio\">Azərbaycan Respublikasının “Əməkdar elm xadimi” fəxri adına layiq görülmüşdür. Avropa Molekulyar Biologiya Təşkilatının (EMBO) və Kral Statistika Cəmiyyətinin üzvüdür. CCP4-ün icra komitəsində də fəaliyyət göstərmişdir.</p><p class=\"bio-section-title\">Tədqiqat maraqları:</p><ul><li>Makromolekulyar kristalloqrafiya, zülalların və nuklein turşularının struktur təhlili.</li><li>Krioelektron mikroskopiya və eksperimental struktur məlumatlarının şərhi.</li><li>Struktur biologiyasında maksimum həqiqətəuyğunluq və Bayes statistikası üsulları.</li><li>Molekulyar modelləşdirmə, atom modellərinin dəqiqləşdirilməsi və strukturların düzgünlüyünün yoxlanılması üçün proqram təminatının hazırlanması.</li></ul>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/20/title_en",
+      "field": "title_en",
+      "before": "MRC Laboratory of Molecular Biology, Cambridge, United Kingdom",
+      "after": "Group Leader, Computational Structural Biology, MRC Laboratory of Molecular Biology, Cambridge, United Kingdom; Head of the Laboratory of Computational Structural Biology, Institute of Molecular Biology, Ministry of Science and Education of the Republic of Azerbaijan, Baku, Azerbaijan"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/20/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Azerbaijan ETN Institute of Molecular Biology and Biotechnologies in Baku, group leader and laboratory manager</p><p class=\"bio-section-title\">Research areas</p><p class=\"bio\">Prof Dr Garib Murshudov is one of the world&#x27;s leading scientists in the field of molecular biology, crystallography and structural biology. His main research directions are as follows:</p><p class=\"bio\">Macromolecular crystallography and structural biology (analysis of three-dimensional structures of proteins and nucleic acids).</p><p class=\"bio\">Cryo-electron microscopy (Cryo-EM) and bioinformatics (molecular modeling, structural analysis and data processing).</p><p class=\"bio\">Statistical and mathematical modeling (application of maximum likelihood and Bayesian statistical methods in biological systems).</p><p class=\"bio-section-title\">Academic and professional experience</p><p class=\"bio\">He works as a group leader at the MRC Molecular Biology Laboratory (Cambridge, Great Britain) and as a laboratory manager at the Institute of Molecular Biology and Biotechnology of the Ministry of Science and Education of Azerbaijan (Baku).</p><p class=\"bio\">He worked in prestigious research institutes and universities in Great Britain, Russia and Azerbaijan.</p><p class=\"bio\">He is the main author of the software that constructs atomic models of macromolecules using experiments, renders them transparent and checks them statistically (REFMAC, BALBES, Servalcat, AceDRG, etc.).</p><p class=\"bio-section-title\">Awards and recognition</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>He was awarded the honorary title of &quot;Honored Scientist&quot; of the Republic of Azerbaijan.</li><li>Won the Wellcome Trust Senior Fellowship—the UK's most prestigious fellowship in biology</li><li>Member of the European Molecular Biology Organization (EMBO).</li><li>Fellow of the Royal Statistical Society of Great Britain.</li><li>Member of the CCP4 executive committee – this committee brings together leading international researchers in the field of computational structural biology.</li></ul></div><p class=\"bio-section-title\">Publications and scientific contributions</p><p class=\"bio\">He is the author of more than 120 high-impact scientific articles, including in prestigious journals such as Nature, Science, PNAS and Acta Crystallographica.</p><p class=\"bio\">He was a leading researcher in the development of innovative software (REFMAC5, SERVALCAT, EMDA, BALBES, AceDRG) for the analysis and modeling of molecular structures.</p><p class=\"bio\">He regularly participates in international symposia and conferences and organizes scientific seminars in different countries (Great Britain, Japan, China, USA, Brazil, India, etc.).</p>",
+      "after": "<p class=\"bio bio-lead\">Garib Murshudov specializes in computational structural biology, developing mathematical, statistical, and computational methods for studying the three-dimensional structures of biological macromolecules. His work combines experimental data from crystallography and cryo-electron microscopy with prior structural and chemical knowledge to produce reliable atomic models. His group is based at the MRC Laboratory of Molecular Biology in Cambridge.</p><p class=\"bio\">He studied applied mathematics at Baku State University from 1980 to 1985 and earned his PhD at the Institute of Crystallography in Moscow. His doctoral research investigated the three-dimensional structure of catalase from the bacterium <em>Micrococcus lysodeikticus</em>.</p><p class=\"bio\">He worked at the Institute of Physics in Baku from 1985 to 1987 and at the Institute of Crystallography in Moscow from 1987 to 1993. From 1993 to 2011, he held research positions at the University of York, including a Wellcome Trust Senior Research Fellowship and a Wellcome Trust University Research Fellowship. He has led a research group at the MRC Laboratory of Molecular Biology since 2011.</p><p class=\"bio\">He has contributed to the development of software for determining, refining, and validating macromolecular structures, including REFMAC, BALBES, Servalcat, AceDRG, and EMDA. These tools support the analysis of experimental data, the refinement of atomic models, and the incorporation of chemical and structural information into molecular modeling.</p><p class=\"bio\">His publications include research articles in <em>Nature</em>, <em>Science</em>, <em>PNAS</em>, and <em>Acta Crystallographica</em>, as well as book chapters on crystallography and structural refinement. He has taught statistics, computational chemistry, and computational structural biology, and has organized international scientific workshops in countries including Brazil, Uruguay, the United States, Japan, China, and Thailand.</p><p class=\"bio\">He holds the honorary title of Honored Scientist of the Republic of Azerbaijan and is a member of the European Molecular Biology Organization (EMBO) and the Royal Statistical Society. He has also served on the CCP4 executive committee.</p><p class=\"bio-section-title\">Research interests:</p><ul><li>Macromolecular crystallography and the structural analysis of proteins and nucleic acids.</li><li>Cryo-electron microscopy and the interpretation of experimental structural data.</li><li>Maximum likelihood and Bayesian statistical methods in structural biology.</li><li>Software development for molecular modeling, atomic model refinement, and structure validation.</li></ul>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/20/title_az",
+      "field": "title_az",
+      "before": "Birləşmiş Krallığın Kembric şəhərində MRC Molekulyar Biologiya laboratoriyası",
+      "after": "Kompüter struktur biologiyası qrupunun rəhbəri, Tibbi Tədqiqatlar Şurasının Molekulyar Biologiya Laboratoriyası (MRC Laboratory of Molecular Biology), Kembric, Birləşmiş Krallıq; Kompüter struktur biologiyası laboratoriyasının rəhbəri, Azərbaycan Respublikası Elm və Təhsil Nazirliyinin Molekulyar Biologiya İnstitutu, Bakı, Azərbaycan"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/20/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Bakıda Azərbaycan ETN Molekulyar Biologiya və Biotexnologiyalar İnstitutu qrup rəhbəri və laboratoriya müdiri</p><p class=\"bio-section-title\">Tədqiqat sahələri:</p><p class=\"bio\">Prof. Dr. Qərib Mürşüdov molekulyar biologiya, kristalloqrafiya və struktur biologiya sahəsində dünyanın aparıcı alimlərindən biridir. Onun əsas tədqiqat istiqamətləri aşağıdakılardır:</p><p class=\"bio\">Makromolekulyar kristalloqrafiya və struktur biologiya (zülalların və nüvə turşularının üçölçülü quruluşlarının analizi).</p><p class=\"bio\">Krio-elektron mikroskopiya (Cryo-EM) və bioinformatika (molekulyar modelləşdirmə, struktur təhlil və məlumatların emalı).</p><p class=\"bio\">Statistik və riyazi modelləşdirmə (maksimum ehtimallılıq və Bayes statistika üsullarının bioloji sistemlərdə tətbiqi).</p><p class=\"bio-section-title\">Akademik və peşəkar təcrübə:</p><p class=\"bio\">MRC Molekulyar biologiya laboratoriyasında (Cambridge, Böyük Britaniya) qrup rəhbəri və Azərbaycan Elm və Təhsil Nazirliyinin Molekulyar Biologiya və Biotexnologiya İnstitutunda (Bakı) laboratoriya müdiri olaraq fəaliyyət göstərir.</p><p class=\"bio\">Böyük Britaniya, Rusiya və Azərbaycanın nüfuzlu elmi-tədqiqat institutlarında və universitetlərində çalışıb.</p><p class=\"bio\">Makromolekulların eksperimentdən istifadə edərək atomik model quran, şəffaflaşdıran və statistik yoxlayan proqram təminatlarının əsas müəlliflərindədir (REFMAC, BALBES, Servalcat, AceDRG və s.)</p><p class=\"bio-section-title\">Mükafatlar və tanınma:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Azərbaycan Respublikasının “Əməkdar alim” fəxri adı ilə təltif edilib.</li><li>Wellcome Trust Senior Fellowship mükafatı – biologiya sahəsində Böyük Britaniyada ən nüfuzlu Fellowship qazanıb</li><li>Avropa Molekulyar Biologiya Təşkilatının (EMBO) üzvü.</li><li>Böyük Britaniyanın Kral Statistika Cəmiyyətinin üzvü.</li><li>CCP4 icraiyyə komitəsinin üzvü – bu komitə hesablama struktur biologiya sahəsində aparıcı beynəlxalq tədqiqatçıları birləşdirir.</li></ul></div><p class=\"bio-section-title\">Nəşrlər və elmi töhfələr:</p><p class=\"bio\">120-dən çox yüksək impakt faktorlu elmi məqalənin müəllifidir, o cümlədən Nature, Science, PNAS və Acta Crystallographica kimi nüfuzlu jurnallarda.</p><p class=\"bio\">Molekulyar strukturların analizi və modelləşdirilməsi üçün innovativ proqram təminatlarının (REFMAC5, SERVALCAT, EMDA, BALBES, AceDRG) hazırlanmasında aparıcı tədqiqatçı olub.</p><p class=\"bio\">Beynəlxalq simpozium və konfranslarda müntəzəm iştirak edir və müxtəlif ölkələrdə elmi seminarlar təşkil edir (Böyük Britaniya, Yaponiya, Çin, ABŞ, Braziliya, Hindistan və s.).</p>",
+      "after": "<p class=\"bio bio-lead\">Qərib Mürşüdov kompüter struktur biologiyası üzrə ixtisaslaşmış alimdir. O, bioloji makromolekulların üçölçülü strukturlarının öyrənilməsi üçün riyazi, statistik və hesablama üsulları hazırlayır. Tədqiqatlarında etibarlı atom modelləri qurmaq məqsədilə kristalloqrafiya və krioelektron mikroskopiya üsulları ilə əldə olunan eksperimental məlumatları mövcud struktur və kimyəvi biliklərlə birləşdirir. Onun rəhbərlik etdiyi qrup Kembricdəki MRC Molekulyar Biologiya Laboratoriyasında fəaliyyət göstərir.</p><p class=\"bio\">1980–1985-ci illərdə Bakı Dövlət Universitetində tətbiqi riyaziyyat üzrə təhsil almış, Moskvadakı Kristalloqrafiya İnstitutunda fəlsəfə doktoru elmi dərəcəsini qazanmışdır. Dissertasiya işi <em>Micrococcus lysodeikticus</em> bakteriyasından alınmış katalaza fermentinin üçölçülü strukturunun tədqiqinə həsr olunmuşdur.</p><p class=\"bio\">1985–1987-ci illərdə Bakıda Fizika İnstitutunda, 1987–1993-cü illərdə isə Moskvada Kristalloqrafiya İnstitutunda çalışmışdır. 1993–2011-ci illərdə York Universitetində müxtəlif tədqiqat vəzifələrində işləmiş, o cümlədən Wellcome Trust Senior Research Fellowship və Wellcome Trust University Research Fellowship proqramları çərçivəsində elmi fəaliyyət göstərmişdir. 2011-ci ildən MRC Molekulyar Biologiya Laboratoriyasında tədqiqat qrupuna rəhbərlik edir.</p><p class=\"bio\">Makromolekulyar strukturların müəyyənləşdirilməsi, dəqiqləşdirilməsi və düzgünlüyünün yoxlanılması üçün istifadə olunan REFMAC, BALBES, Servalcat, AceDRG və EMDA kimi proqram təminatlarının hazırlanmasında iştirak etmişdir. Bu proqramlar eksperimental məlumatların təhlili, atom modellərinin dəqiqləşdirilməsi və kimyəvi və struktur məlumatların molekulyar modelləşdirmədə istifadəsi üçün nəzərdə tutulmuşdur.</p><p class=\"bio\">Elmi məqalələri <em>Nature</em>, <em>Science</em>, <em>PNAS</em> və <em>Acta Crystallographica</em> jurnallarında dərc olunmuşdur. Kristalloqrafiya və struktur modellərinin dəqiqləşdirilməsi üzrə kitab fəsillərinin də müəllifidir. Statistika, hesablama kimyası və kompüter struktur biologiyası fənlərini tədris etmiş, Braziliya, Uruqvay, ABŞ, Yaponiya, Çin və Tailand da daxil olmaqla müxtəlif ölkələrdə beynəlxalq elmi seminarlar təşkil etmişdir.</p><p class=\"bio\">Azərbaycan Respublikasının “Əməkdar elm xadimi” fəxri adına layiq görülmüşdür. Avropa Molekulyar Biologiya Təşkilatının (EMBO) və Kral Statistika Cəmiyyətinin üzvüdür. CCP4-ün icra komitəsində də fəaliyyət göstərmişdir.</p><p class=\"bio-section-title\">Tədqiqat maraqları:</p><ul><li>Makromolekulyar kristalloqrafiya, zülalların və nuklein turşularının struktur təhlili.</li><li>Krioelektron mikroskopiya və eksperimental struktur məlumatlarının şərhi.</li><li>Struktur biologiyasında maksimum həqiqətəuyğunluq və Bayes statistikası üsulları.</li><li>Molekulyar modelləşdirmə, atom modellərinin dəqiqləşdirilməsi və strukturların düzgünlüyünün yoxlanılması üçün proqram təminatının hazırlanması.</li></ul>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 358,
+      "jsonPointer": "/profiles/20/title_en",
+      "field": "title_en",
+      "before": "MRC Laboratory of Molecular Biology, Cambridge, United Kingdom",
+      "after": "Group Leader, Computational Structural Biology, MRC Laboratory of Molecular Biology, Cambridge, United Kingdom; Head of the Laboratory of Computational Structural Biology, Institute of Molecular Biology, Ministry of Science and Education of the Republic of Azerbaijan, Baku, Azerbaijan"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 359,
+      "jsonPointer": "/profiles/20/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Azerbaijan ETN Institute of Molecular Biology and Biotechnologies in Baku, group leader and laboratory manager</p><p class=\"bio-section-title\">Research areas</p><p class=\"bio\">Prof Dr Garib Murshudov is one of the world&#x27;s leading scientists in the field of molecular biology, crystallography and structural biology. His main research directions are as follows:</p><p class=\"bio\">Macromolecular crystallography and structural biology (analysis of three-dimensional structures of proteins and nucleic acids).</p><p class=\"bio\">Cryo-electron microscopy (Cryo-EM) and bioinformatics (molecular modeling, structural analysis and data processing).</p><p class=\"bio\">Statistical and mathematical modeling (application of maximum likelihood and Bayesian statistical methods in biological systems).</p><p class=\"bio-section-title\">Academic and professional experience</p><p class=\"bio\">He works as a group leader at the MRC Molecular Biology Laboratory (Cambridge, Great Britain) and as a laboratory manager at the Institute of Molecular Biology and Biotechnology of the Ministry of Science and Education of Azerbaijan (Baku).</p><p class=\"bio\">He worked in prestigious research institutes and universities in Great Britain, Russia and Azerbaijan.</p><p class=\"bio\">He is the main author of the software that constructs atomic models of macromolecules using experiments, renders them transparent and checks them statistically (REFMAC, BALBES, Servalcat, AceDRG, etc.).</p><p class=\"bio-section-title\">Awards and recognition</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>He was awarded the honorary title of &quot;Honored Scientist&quot; of the Republic of Azerbaijan.</li><li>Won the Wellcome Trust Senior Fellowship—the UK's most prestigious fellowship in biology</li><li>Member of the European Molecular Biology Organization (EMBO).</li><li>Fellow of the Royal Statistical Society of Great Britain.</li><li>Member of the CCP4 executive committee – this committee brings together leading international researchers in the field of computational structural biology.</li></ul></div><p class=\"bio-section-title\">Publications and scientific contributions</p><p class=\"bio\">He is the author of more than 120 high-impact scientific articles, including in prestigious journals such as Nature, Science, PNAS and Acta Crystallographica.</p><p class=\"bio\">He was a leading researcher in the development of innovative software (REFMAC5, SERVALCAT, EMDA, BALBES, AceDRG) for the analysis and modeling of molecular structures.</p><p class=\"bio\">He regularly participates in international symposia and conferences and organizes scientific seminars in different countries (Great Britain, Japan, China, USA, Brazil, India, etc.).</p>",
+      "after": "<p class=\"bio bio-lead\">Garib Murshudov specializes in computational structural biology, developing mathematical, statistical, and computational methods for studying the three-dimensional structures of biological macromolecules. His work combines experimental data from crystallography and cryo-electron microscopy with prior structural and chemical knowledge to produce reliable atomic models. His group is based at the MRC Laboratory of Molecular Biology in Cambridge.</p><p class=\"bio\">He studied applied mathematics at Baku State University from 1980 to 1985 and earned his PhD at the Institute of Crystallography in Moscow. His doctoral research investigated the three-dimensional structure of catalase from the bacterium <em>Micrococcus lysodeikticus</em>.</p><p class=\"bio\">He worked at the Institute of Physics in Baku from 1985 to 1987 and at the Institute of Crystallography in Moscow from 1987 to 1993. From 1993 to 2011, he held research positions at the University of York, including a Wellcome Trust Senior Research Fellowship and a Wellcome Trust University Research Fellowship. He has led a research group at the MRC Laboratory of Molecular Biology since 2011.</p><p class=\"bio\">He has contributed to the development of software for determining, refining, and validating macromolecular structures, including REFMAC, BALBES, Servalcat, AceDRG, and EMDA. These tools support the analysis of experimental data, the refinement of atomic models, and the incorporation of chemical and structural information into molecular modeling.</p><p class=\"bio\">His publications include research articles in <em>Nature</em>, <em>Science</em>, <em>PNAS</em>, and <em>Acta Crystallographica</em>, as well as book chapters on crystallography and structural refinement. He has taught statistics, computational chemistry, and computational structural biology, and has organized international scientific workshops in countries including Brazil, Uruguay, the United States, Japan, China, and Thailand.</p><p class=\"bio\">He holds the honorary title of Honored Scientist of the Republic of Azerbaijan and is a member of the European Molecular Biology Organization (EMBO) and the Royal Statistical Society. He has also served on the CCP4 executive committee.</p><p class=\"bio-section-title\">Research interests:</p><ul><li>Macromolecular crystallography and the structural analysis of proteins and nucleic acids.</li><li>Cryo-electron microscopy and the interpretation of experimental structural data.</li><li>Maximum likelihood and Bayesian statistical methods in structural biology.</li><li>Software development for molecular modeling, atomic model refinement, and structure validation.</li></ul>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 354,
+      "jsonPointer": "/profiles/20/title_az",
+      "field": "title_az",
+      "before": "Birləşmiş Krallığın Kembric şəhərində MRC Molekulyar Biologiya laboratoriyası",
+      "after": "Kompüter struktur biologiyası qrupunun rəhbəri, Tibbi Tədqiqatlar Şurasının Molekulyar Biologiya Laboratoriyası (MRC Laboratory of Molecular Biology), Kembric, Birləşmiş Krallıq; Kompüter struktur biologiyası laboratoriyasının rəhbəri, Azərbaycan Respublikası Elm və Təhsil Nazirliyinin Molekulyar Biologiya İnstitutu, Bakı, Azərbaycan"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 355,
+      "jsonPointer": "/profiles/20/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Bakıda Azərbaycan ETN Molekulyar Biologiya və Biotexnologiyalar İnstitutu qrup rəhbəri və laboratoriya müdiri</p><p class=\"bio-section-title\">Tədqiqat sahələri:</p><p class=\"bio\">Prof. Dr. Qərib Mürşüdov molekulyar biologiya, kristalloqrafiya və struktur biologiya sahəsində dünyanın aparıcı alimlərindən biridir. Onun əsas tədqiqat istiqamətləri aşağıdakılardır:</p><p class=\"bio\">Makromolekulyar kristalloqrafiya və struktur biologiya (zülalların və nüvə turşularının üçölçülü quruluşlarının analizi).</p><p class=\"bio\">Krio-elektron mikroskopiya (Cryo-EM) və bioinformatika (molekulyar modelləşdirmə, struktur təhlil və məlumatların emalı).</p><p class=\"bio\">Statistik və riyazi modelləşdirmə (maksimum ehtimallılıq və Bayes statistika üsullarının bioloji sistemlərdə tətbiqi).</p><p class=\"bio-section-title\">Akademik və peşəkar təcrübə:</p><p class=\"bio\">MRC Molekulyar biologiya laboratoriyasında (Cambridge, Böyük Britaniya) qrup rəhbəri və Azərbaycan Elm və Təhsil Nazirliyinin Molekulyar Biologiya və Biotexnologiya İnstitutunda (Bakı) laboratoriya müdiri olaraq fəaliyyət göstərir.</p><p class=\"bio\">Böyük Britaniya, Rusiya və Azərbaycanın nüfuzlu elmi-tədqiqat institutlarında və universitetlərində çalışıb.</p><p class=\"bio\">Makromolekulların eksperimentdən istifadə edərək atomik model quran, şəffaflaşdıran və statistik yoxlayan proqram təminatlarının əsas müəlliflərindədir (REFMAC, BALBES, Servalcat, AceDRG və s.)</p><p class=\"bio-section-title\">Mükafatlar və tanınma:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Azərbaycan Respublikasının “Əməkdar alim” fəxri adı ilə təltif edilib.</li><li>Wellcome Trust Senior Fellowship mükafatı – biologiya sahəsində Böyük Britaniyada ən nüfuzlu Fellowship qazanıb</li><li>Avropa Molekulyar Biologiya Təşkilatının (EMBO) üzvü.</li><li>Böyük Britaniyanın Kral Statistika Cəmiyyətinin üzvü.</li><li>CCP4 icraiyyə komitəsinin üzvü – bu komitə hesablama struktur biologiya sahəsində aparıcı beynəlxalq tədqiqatçıları birləşdirir.</li></ul></div><p class=\"bio-section-title\">Nəşrlər və elmi töhfələr:</p><p class=\"bio\">120-dən çox yüksək impakt faktorlu elmi məqalənin müəllifidir, o cümlədən Nature, Science, PNAS və Acta Crystallographica kimi nüfuzlu jurnallarda.</p><p class=\"bio\">Molekulyar strukturların analizi və modelləşdirilməsi üçün innovativ proqram təminatlarının (REFMAC5, SERVALCAT, EMDA, BALBES, AceDRG) hazırlanmasında aparıcı tədqiqatçı olub.</p><p class=\"bio\">Beynəlxalq simpozium və konfranslarda müntəzəm iştirak edir və müxtəlif ölkələrdə elmi seminarlar təşkil edir (Böyük Britaniya, Yaponiya, Çin, ABŞ, Braziliya, Hindistan və s.).</p>",
+      "after": "<p class=\"bio bio-lead\">Qərib Mürşüdov kompüter struktur biologiyası üzrə ixtisaslaşmış alimdir. O, bioloji makromolekulların üçölçülü strukturlarının öyrənilməsi üçün riyazi, statistik və hesablama üsulları hazırlayır. Tədqiqatlarında etibarlı atom modelləri qurmaq məqsədilə kristalloqrafiya və krioelektron mikroskopiya üsulları ilə əldə olunan eksperimental məlumatları mövcud struktur və kimyəvi biliklərlə birləşdirir. Onun rəhbərlik etdiyi qrup Kembricdəki MRC Molekulyar Biologiya Laboratoriyasında fəaliyyət göstərir.</p><p class=\"bio\">1980–1985-ci illərdə Bakı Dövlət Universitetində tətbiqi riyaziyyat üzrə təhsil almış, Moskvadakı Kristalloqrafiya İnstitutunda fəlsəfə doktoru elmi dərəcəsini qazanmışdır. Dissertasiya işi <em>Micrococcus lysodeikticus</em> bakteriyasından alınmış katalaza fermentinin üçölçülü strukturunun tədqiqinə həsr olunmuşdur.</p><p class=\"bio\">1985–1987-ci illərdə Bakıda Fizika İnstitutunda, 1987–1993-cü illərdə isə Moskvada Kristalloqrafiya İnstitutunda çalışmışdır. 1993–2011-ci illərdə York Universitetində müxtəlif tədqiqat vəzifələrində işləmiş, o cümlədən Wellcome Trust Senior Research Fellowship və Wellcome Trust University Research Fellowship proqramları çərçivəsində elmi fəaliyyət göstərmişdir. 2011-ci ildən MRC Molekulyar Biologiya Laboratoriyasında tədqiqat qrupuna rəhbərlik edir.</p><p class=\"bio\">Makromolekulyar strukturların müəyyənləşdirilməsi, dəqiqləşdirilməsi və düzgünlüyünün yoxlanılması üçün istifadə olunan REFMAC, BALBES, Servalcat, AceDRG və EMDA kimi proqram təminatlarının hazırlanmasında iştirak etmişdir. Bu proqramlar eksperimental məlumatların təhlili, atom modellərinin dəqiqləşdirilməsi və kimyəvi və struktur məlumatların molekulyar modelləşdirmədə istifadəsi üçün nəzərdə tutulmuşdur.</p><p class=\"bio\">Elmi məqalələri <em>Nature</em>, <em>Science</em>, <em>PNAS</em> və <em>Acta Crystallographica</em> jurnallarında dərc olunmuşdur. Kristalloqrafiya və struktur modellərinin dəqiqləşdirilməsi üzrə kitab fəsillərinin də müəllifidir. Statistika, hesablama kimyası və kompüter struktur biologiyası fənlərini tədris etmiş, Braziliya, Uruqvay, ABŞ, Yaponiya, Çin və Tailand da daxil olmaqla müxtəlif ölkələrdə beynəlxalq elmi seminarlar təşkil etmişdir.</p><p class=\"bio\">Azərbaycan Respublikasının “Əməkdar elm xadimi” fəxri adına layiq görülmüşdür. Avropa Molekulyar Biologiya Təşkilatının (EMBO) və Kral Statistika Cəmiyyətinin üzvüdür. CCP4-ün icra komitəsində də fəaliyyət göstərmişdir.</p><p class=\"bio-section-title\">Tədqiqat maraqları:</p><ul><li>Makromolekulyar kristalloqrafiya, zülalların və nuklein turşularının struktur təhlili.</li><li>Krioelektron mikroskopiya və eksperimental struktur məlumatlarının şərhi.</li><li>Struktur biologiyasında maksimum həqiqətəuyğunluq və Bayes statistikası üsulları.</li><li>Molekulyar modelləşdirmə, atom modellərinin dəqiqləşdirilməsi və strukturların düzgünlüyünün yoxlanılması üçün proqram təminatının hazırlanması.</li></ul>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/20/title_en",
+      "field": "title_en",
+      "before": "MRC Laboratory of Molecular Biology, Cambridge, United Kingdom",
+      "after": "Group Leader, Computational Structural Biology, MRC Laboratory of Molecular Biology, Cambridge, United Kingdom; Head of the Laboratory of Computational Structural Biology, Institute of Molecular Biology, Ministry of Science and Education of the Republic of Azerbaijan, Baku, Azerbaijan"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/20/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Azerbaijan ETN Institute of Molecular Biology and Biotechnologies in Baku, group leader and laboratory manager</p><p class=\"bio-section-title\">Research areas</p><p class=\"bio\">Prof Dr Garib Murshudov is one of the world&#x27;s leading scientists in the field of molecular biology, crystallography and structural biology. His main research directions are as follows:</p><p class=\"bio\">Macromolecular crystallography and structural biology (analysis of three-dimensional structures of proteins and nucleic acids).</p><p class=\"bio\">Cryo-electron microscopy (Cryo-EM) and bioinformatics (molecular modeling, structural analysis and data processing).</p><p class=\"bio\">Statistical and mathematical modeling (application of maximum likelihood and Bayesian statistical methods in biological systems).</p><p class=\"bio-section-title\">Academic and professional experience</p><p class=\"bio\">He works as a group leader at the MRC Molecular Biology Laboratory (Cambridge, Great Britain) and as a laboratory manager at the Institute of Molecular Biology and Biotechnology of the Ministry of Science and Education of Azerbaijan (Baku).</p><p class=\"bio\">He worked in prestigious research institutes and universities in Great Britain, Russia and Azerbaijan.</p><p class=\"bio\">He is the main author of the software that constructs atomic models of macromolecules using experiments, renders them transparent and checks them statistically (REFMAC, BALBES, Servalcat, AceDRG, etc.).</p><p class=\"bio-section-title\">Awards and recognition</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>He was awarded the honorary title of &quot;Honored Scientist&quot; of the Republic of Azerbaijan.</li><li>Won the Wellcome Trust Senior Fellowship—the UK's most prestigious fellowship in biology</li><li>Member of the European Molecular Biology Organization (EMBO).</li><li>Fellow of the Royal Statistical Society of Great Britain.</li><li>Member of the CCP4 executive committee – this committee brings together leading international researchers in the field of computational structural biology.</li></ul></div><p class=\"bio-section-title\">Publications and scientific contributions</p><p class=\"bio\">He is the author of more than 120 high-impact scientific articles, including in prestigious journals such as Nature, Science, PNAS and Acta Crystallographica.</p><p class=\"bio\">He was a leading researcher in the development of innovative software (REFMAC5, SERVALCAT, EMDA, BALBES, AceDRG) for the analysis and modeling of molecular structures.</p><p class=\"bio\">He regularly participates in international symposia and conferences and organizes scientific seminars in different countries (Great Britain, Japan, China, USA, Brazil, India, etc.).</p>",
+      "after": "<p class=\"bio bio-lead\">Garib Murshudov specializes in computational structural biology, developing mathematical, statistical, and computational methods for studying the three-dimensional structures of biological macromolecules. His work combines experimental data from crystallography and cryo-electron microscopy with prior structural and chemical knowledge to produce reliable atomic models. His group is based at the MRC Laboratory of Molecular Biology in Cambridge.</p><p class=\"bio\">He studied applied mathematics at Baku State University from 1980 to 1985 and earned his PhD at the Institute of Crystallography in Moscow. His doctoral research investigated the three-dimensional structure of catalase from the bacterium <em>Micrococcus lysodeikticus</em>.</p><p class=\"bio\">He worked at the Institute of Physics in Baku from 1985 to 1987 and at the Institute of Crystallography in Moscow from 1987 to 1993. From 1993 to 2011, he held research positions at the University of York, including a Wellcome Trust Senior Research Fellowship and a Wellcome Trust University Research Fellowship. He has led a research group at the MRC Laboratory of Molecular Biology since 2011.</p><p class=\"bio\">He has contributed to the development of software for determining, refining, and validating macromolecular structures, including REFMAC, BALBES, Servalcat, AceDRG, and EMDA. These tools support the analysis of experimental data, the refinement of atomic models, and the incorporation of chemical and structural information into molecular modeling.</p><p class=\"bio\">His publications include research articles in <em>Nature</em>, <em>Science</em>, <em>PNAS</em>, and <em>Acta Crystallographica</em>, as well as book chapters on crystallography and structural refinement. He has taught statistics, computational chemistry, and computational structural biology, and has organized international scientific workshops in countries including Brazil, Uruguay, the United States, Japan, China, and Thailand.</p><p class=\"bio\">He holds the honorary title of Honored Scientist of the Republic of Azerbaijan and is a member of the European Molecular Biology Organization (EMBO) and the Royal Statistical Society. He has also served on the CCP4 executive committee.</p><p class=\"bio-section-title\">Research interests:</p><ul><li>Macromolecular crystallography and the structural analysis of proteins and nucleic acids.</li><li>Cryo-electron microscopy and the interpretation of experimental structural data.</li><li>Maximum likelihood and Bayesian statistical methods in structural biology.</li><li>Software development for molecular modeling, atomic model refinement, and structure validation.</li></ul>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/20/title_az",
+      "field": "title_az",
+      "before": "Birləşmiş Krallığın Kembric şəhərində MRC Molekulyar Biologiya laboratoriyası",
+      "after": "Kompüter struktur biologiyası qrupunun rəhbəri, Tibbi Tədqiqatlar Şurasının Molekulyar Biologiya Laboratoriyası (MRC Laboratory of Molecular Biology), Kembric, Birləşmiş Krallıq; Kompüter struktur biologiyası laboratoriyasının rəhbəri, Azərbaycan Respublikası Elm və Təhsil Nazirliyinin Molekulyar Biologiya İnstitutu, Bakı, Azərbaycan"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/20/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Bakıda Azərbaycan ETN Molekulyar Biologiya və Biotexnologiyalar İnstitutu qrup rəhbəri və laboratoriya müdiri</p><p class=\"bio-section-title\">Tədqiqat sahələri:</p><p class=\"bio\">Prof. Dr. Qərib Mürşüdov molekulyar biologiya, kristalloqrafiya və struktur biologiya sahəsində dünyanın aparıcı alimlərindən biridir. Onun əsas tədqiqat istiqamətləri aşağıdakılardır:</p><p class=\"bio\">Makromolekulyar kristalloqrafiya və struktur biologiya (zülalların və nüvə turşularının üçölçülü quruluşlarının analizi).</p><p class=\"bio\">Krio-elektron mikroskopiya (Cryo-EM) və bioinformatika (molekulyar modelləşdirmə, struktur təhlil və məlumatların emalı).</p><p class=\"bio\">Statistik və riyazi modelləşdirmə (maksimum ehtimallılıq və Bayes statistika üsullarının bioloji sistemlərdə tətbiqi).</p><p class=\"bio-section-title\">Akademik və peşəkar təcrübə:</p><p class=\"bio\">MRC Molekulyar biologiya laboratoriyasında (Cambridge, Böyük Britaniya) qrup rəhbəri və Azərbaycan Elm və Təhsil Nazirliyinin Molekulyar Biologiya və Biotexnologiya İnstitutunda (Bakı) laboratoriya müdiri olaraq fəaliyyət göstərir.</p><p class=\"bio\">Böyük Britaniya, Rusiya və Azərbaycanın nüfuzlu elmi-tədqiqat institutlarında və universitetlərində çalışıb.</p><p class=\"bio\">Makromolekulların eksperimentdən istifadə edərək atomik model quran, şəffaflaşdıran və statistik yoxlayan proqram təminatlarının əsas müəlliflərindədir (REFMAC, BALBES, Servalcat, AceDRG və s.)</p><p class=\"bio-section-title\">Mükafatlar və tanınma:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Azərbaycan Respublikasının “Əməkdar alim” fəxri adı ilə təltif edilib.</li><li>Wellcome Trust Senior Fellowship mükafatı – biologiya sahəsində Böyük Britaniyada ən nüfuzlu Fellowship qazanıb</li><li>Avropa Molekulyar Biologiya Təşkilatının (EMBO) üzvü.</li><li>Böyük Britaniyanın Kral Statistika Cəmiyyətinin üzvü.</li><li>CCP4 icraiyyə komitəsinin üzvü – bu komitə hesablama struktur biologiya sahəsində aparıcı beynəlxalq tədqiqatçıları birləşdirir.</li></ul></div><p class=\"bio-section-title\">Nəşrlər və elmi töhfələr:</p><p class=\"bio\">120-dən çox yüksək impakt faktorlu elmi məqalənin müəllifidir, o cümlədən Nature, Science, PNAS və Acta Crystallographica kimi nüfuzlu jurnallarda.</p><p class=\"bio\">Molekulyar strukturların analizi və modelləşdirilməsi üçün innovativ proqram təminatlarının (REFMAC5, SERVALCAT, EMDA, BALBES, AceDRG) hazırlanmasında aparıcı tədqiqatçı olub.</p><p class=\"bio\">Beynəlxalq simpozium və konfranslarda müntəzəm iştirak edir və müxtəlif ölkələrdə elmi seminarlar təşkil edir (Böyük Britaniya, Yaponiya, Çin, ABŞ, Braziliya, Hindistan və s.).</p>",
+      "after": "<p class=\"bio bio-lead\">Qərib Mürşüdov kompüter struktur biologiyası üzrə ixtisaslaşmış alimdir. O, bioloji makromolekulların üçölçülü strukturlarının öyrənilməsi üçün riyazi, statistik və hesablama üsulları hazırlayır. Tədqiqatlarında etibarlı atom modelləri qurmaq məqsədilə kristalloqrafiya və krioelektron mikroskopiya üsulları ilə əldə olunan eksperimental məlumatları mövcud struktur və kimyəvi biliklərlə birləşdirir. Onun rəhbərlik etdiyi qrup Kembricdəki MRC Molekulyar Biologiya Laboratoriyasında fəaliyyət göstərir.</p><p class=\"bio\">1980–1985-ci illərdə Bakı Dövlət Universitetində tətbiqi riyaziyyat üzrə təhsil almış, Moskvadakı Kristalloqrafiya İnstitutunda fəlsəfə doktoru elmi dərəcəsini qazanmışdır. Dissertasiya işi <em>Micrococcus lysodeikticus</em> bakteriyasından alınmış katalaza fermentinin üçölçülü strukturunun tədqiqinə həsr olunmuşdur.</p><p class=\"bio\">1985–1987-ci illərdə Bakıda Fizika İnstitutunda, 1987–1993-cü illərdə isə Moskvada Kristalloqrafiya İnstitutunda çalışmışdır. 1993–2011-ci illərdə York Universitetində müxtəlif tədqiqat vəzifələrində işləmiş, o cümlədən Wellcome Trust Senior Research Fellowship və Wellcome Trust University Research Fellowship proqramları çərçivəsində elmi fəaliyyət göstərmişdir. 2011-ci ildən MRC Molekulyar Biologiya Laboratoriyasında tədqiqat qrupuna rəhbərlik edir.</p><p class=\"bio\">Makromolekulyar strukturların müəyyənləşdirilməsi, dəqiqləşdirilməsi və düzgünlüyünün yoxlanılması üçün istifadə olunan REFMAC, BALBES, Servalcat, AceDRG və EMDA kimi proqram təminatlarının hazırlanmasında iştirak etmişdir. Bu proqramlar eksperimental məlumatların təhlili, atom modellərinin dəqiqləşdirilməsi və kimyəvi və struktur məlumatların molekulyar modelləşdirmədə istifadəsi üçün nəzərdə tutulmuşdur.</p><p class=\"bio\">Elmi məqalələri <em>Nature</em>, <em>Science</em>, <em>PNAS</em> və <em>Acta Crystallographica</em> jurnallarında dərc olunmuşdur. Kristalloqrafiya və struktur modellərinin dəqiqləşdirilməsi üzrə kitab fəsillərinin də müəllifidir. Statistika, hesablama kimyası və kompüter struktur biologiyası fənlərini tədris etmiş, Braziliya, Uruqvay, ABŞ, Yaponiya, Çin və Tailand da daxil olmaqla müxtəlif ölkələrdə beynəlxalq elmi seminarlar təşkil etmişdir.</p><p class=\"bio\">Azərbaycan Respublikasının “Əməkdar elm xadimi” fəxri adına layiq görülmüşdür. Avropa Molekulyar Biologiya Təşkilatının (EMBO) və Kral Statistika Cəmiyyətinin üzvüdür. CCP4-ün icra komitəsində də fəaliyyət göstərmişdir.</p><p class=\"bio-section-title\">Tədqiqat maraqları:</p><ul><li>Makromolekulyar kristalloqrafiya, zülalların və nuklein turşularının struktur təhlili.</li><li>Krioelektron mikroskopiya və eksperimental struktur məlumatlarının şərhi.</li><li>Struktur biologiyasında maksimum həqiqətəuyğunluq və Bayes statistikası üsulları.</li><li>Molekulyar modelləşdirmə, atom modellərinin dəqiqləşdirilməsi və strukturların düzgünlüyünün yoxlanılması üçün proqram təminatının hazırlanması.</li></ul>"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 125,
+      "jsonPointer": "/profiles/garib@mrc-lmb.cam.ac.uk/title",
+      "field": "title",
+      "before": "MRC Laboratory of Molecular Biology, Cambridge, United Kingdom",
+      "after": "Group Leader, Computational Structural Biology, MRC Laboratory of Molecular Biology, Cambridge, United Kingdom; Head of the Laboratory of Computational Structural Biology, Institute of Molecular Biology, Ministry of Science and Education of the Republic of Azerbaijan, Baku, Azerbaijan"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 126,
+      "jsonPointer": "/profiles/garib@mrc-lmb.cam.ac.uk/bio_html",
+      "field": "bio_html",
+      "before": "<p class=\"bio bio-lead\">Azerbaijan ETN Institute of Molecular Biology and Biotechnologies in Baku, group leader and laboratory manager</p><p class=\"bio-section-title\">Research areas:</p><p class=\"bio\">Prof. Dr. Garib Murshudov is one of the world&#x27;s leading scientists in the field of molecular biology, crystallography and structural biology. His main research directions are as follows:</p><p class=\"bio\">Macromolecular crystallography and structural biology (analysis of three-dimensional structures of proteins and nucleic acids).</p><p class=\"bio\">Cryo-electron microscopy (Cryo-EM) and bioinformatics (molecular modeling, structural analysis and data processing).</p><p class=\"bio\">Statistical and mathematical modeling (application of maximum likelihood and Bayes statistics methods in biological systems).</p><p class=\"bio-section-title\">Academic and professional experience:</p><p class=\"bio\">He works as a group leader at the MRC Molecular Biology Laboratory (Cambridge, Great Britain) and as a laboratory manager at the Institute of Molecular Biology and Biotechnology of the Ministry of Science and Education of Azerbaijan (Baku).</p><p class=\"bio\">He worked in prestigious research institutes and universities in Great Britain, Russia and Azerbaijan.</p><p class=\"bio\">He is the main author of the software that constructs atomic models of macromolecules using experiments, renders them transparent and checks them statistically (REFMAC, BALBES, Servalcat, AceDRG, etc.)</p><p class=\"bio-section-title\">Awards and recognition:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>He was awarded the honorary title of &quot;Honored Scientist&quot; of the Republic of Azerbaijan.</li><li>Won the Wellcome Trust Senior Fellowship - the UK&#x27;s most prestigious Fellowship in biology</li><li>Member of the European Molecular Biology Organization (EMBO).</li><li>Fellow of the Royal Statistical Society of Great Britain.</li><li>Member of the CCP4 executive committee – this committee brings together leading international researchers in the field of computational structural biology.</li></ul></div><p class=\"bio-section-title\">Publications and scientific contributions:</p><p class=\"bio\">He is the author of more than 120 high-impact scientific articles, including in prestigious journals such as Nature, Science, PNAS and Acta Crystallographica.</p><p class=\"bio\">He was a leading researcher in the development of innovative software (REFMAC5, SERVALCAT, EMDA, BALBES, AceDRG) for the analysis and modeling of molecular structures.</p><p class=\"bio\">He regularly participates in international symposia and conferences and organizes scientific seminars in different countries (Great Britain, Japan, China, USA, Brazil, India, etc.).</p>",
+      "after": "<p class=\"bio bio-lead\">Garib Murshudov specializes in computational structural biology, developing mathematical, statistical, and computational methods for studying the three-dimensional structures of biological macromolecules. His work combines experimental data from crystallography and cryo-electron microscopy with prior structural and chemical knowledge to produce reliable atomic models. His group is based at the MRC Laboratory of Molecular Biology in Cambridge.</p><p class=\"bio\">He studied applied mathematics at Baku State University from 1980 to 1985 and earned his PhD at the Institute of Crystallography in Moscow. His doctoral research investigated the three-dimensional structure of catalase from the bacterium <em>Micrococcus lysodeikticus</em>.</p><p class=\"bio\">He worked at the Institute of Physics in Baku from 1985 to 1987 and at the Institute of Crystallography in Moscow from 1987 to 1993. From 1993 to 2011, he held research positions at the University of York, including a Wellcome Trust Senior Research Fellowship and a Wellcome Trust University Research Fellowship. He has led a research group at the MRC Laboratory of Molecular Biology since 2011.</p><p class=\"bio\">He has contributed to the development of software for determining, refining, and validating macromolecular structures, including REFMAC, BALBES, Servalcat, AceDRG, and EMDA. These tools support the analysis of experimental data, the refinement of atomic models, and the incorporation of chemical and structural information into molecular modeling.</p><p class=\"bio\">His publications include research articles in <em>Nature</em>, <em>Science</em>, <em>PNAS</em>, and <em>Acta Crystallographica</em>, as well as book chapters on crystallography and structural refinement. He has taught statistics, computational chemistry, and computational structural biology, and has organized international scientific workshops in countries including Brazil, Uruguay, the United States, Japan, China, and Thailand.</p><p class=\"bio\">He holds the honorary title of Honored Scientist of the Republic of Azerbaijan and is a member of the European Molecular Biology Organization (EMBO) and the Royal Statistical Society. He has also served on the CCP4 executive committee.</p><p class=\"bio-section-title\">Research interests:</p><ul><li>Macromolecular crystallography and the structural analysis of proteins and nucleic acids.</li><li>Cryo-electron microscopy and the interpretation of experimental structural data.</li><li>Maximum likelihood and Bayesian statistical methods in structural biology.</li><li>Software development for molecular modeling, atomic model refinement, and structure validation.</li></ul>"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6682,
+      "jsonPointer": "/entries/513/summary",
+      "field": "summary",
+      "before": "MRC Laboratory of Molecular Biology, Cambridge, United Kingdom · Biology · United Kingdom",
+      "after": "Group Leader, Computational Structural Biology, MRC Laboratory of Molecular Biology, Cambridge, United Kingdom; Head of the Laboratory of Computational Structural Biology, Institute of Molecular Biology, Ministry of Science and Education of"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6686,
+      "jsonPointer": "/entries/513/norm",
+      "field": "norm",
+      "before": "garib murshudov mrc laboratory of molecular biology cambridge united kingdom biology united kingdom garib@mrc-lmb.cam.ac.uk azerbaijan etn institute of molecular biology and biotechnologies in baku group leader and laboratory manager research areas prof. dr. garib murshudov is one of the world s leading scientists in the field of molecular biology crystallography and structural biology. his main research directions are as follows macrom phd",
+      "after": "garib murshudov group leader computational structural biology mrc laboratory of molecular biology cambridge united kingdom head of the laboratory of computational structural biology institute of molecular biology ministry of science and education of the republic of azerbaijan baku azerbaijan biology united kingdom garib@mrc-lmb.cam.ac.uk garib murshudov specializes in computational structural biology developing mathematical statistical and computational methods for studying the three-dimensional structures of biological macromolecules. his work combines experimental data from crystallography and cryo-electron microscopy with prior structural and che phd"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6669,
+      "jsonPointer": "/entries/512/summary",
+      "field": "summary",
+      "before": "Birləşmiş Krallığın Kembric şəhərində MRC Molekulyar Biologiya laboratoriyası · Biologiya · Birləşmiş Krallıq",
+      "after": "Kompüter struktur biologiyası qrupunun rəhbəri, Tibbi Tədqiqatlar Şurasının Molekulyar Biologiya Laboratoriyası (MRC Laboratory of Molecular Biology), Kembric, Birləşmiş Krallıq; Kompüter struktur biologiyası laboratoriyasının rəhbəri, Azər"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6673,
+      "jsonPointer": "/entries/512/norm",
+      "field": "norm",
+      "before": "qerib mursudov birlesmis kralligin kembric seherinde mrc molekulyar biologiya laboratoriyasi biologiya birlesmis kralliq garib@mrc-lmb.cam.ac.uk bakida azerbaycan etn molekulyar biologiya ve biotexnologiyalar institutu qrup rehberi ve laboratoriya mudiri tedqiqat saheleri prof. dr. qerib mursudov molekulyar biologiya kristalloqrafiya ve struktur biologiya sahesinde dunyanin aparici alimlerinden biridir. onun esas tedqiqat istiqametleri asagidakilardir makrom phd",
+      "after": "qerib mursudov komputer struktur biologiyasi qrupunun rehberi tibbi tedqiqatlar surasinin molekulyar biologiya laboratoriyasi mrc laboratory of molecular biology kembric birlesmis kralliq komputer struktur biologiyasi laboratoriyasinin rehberi azerbaycan respublikasi elm ve tehsil nazirliyinin molekulyar biologiya institutu baki azerbaycan biologiya birlesmis kralliq garib@mrc-lmb.cam.ac.uk qerib mursudov komputer struktur biologiyasi uzre ixtisaslasmis alimdir. o bioloji makromolekullarin ucolculu strukturlarinin oyrenilmesi ucun riyazi statistik ve hesablama usullari hazirlayir. tedqiqatlarinda etibarli atom modelleri qurmaq meqsedile kristalloqrafiya ve krioelektron mikroskopiya usullari ile elde olu phd"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6682,
+      "jsonPointer": "/entries/513/summary",
+      "field": "summary",
+      "before": "MRC Laboratory of Molecular Biology, Cambridge, United Kingdom · Biology · United Kingdom",
+      "after": "Group Leader, Computational Structural Biology, MRC Laboratory of Molecular Biology, Cambridge, United Kingdom; Head of the Laboratory of Computational Structural Biology, Institute of Molecular Biology, Ministry of Science and Education of"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6686,
+      "jsonPointer": "/entries/513/norm",
+      "field": "norm",
+      "before": "garib murshudov mrc laboratory of molecular biology cambridge united kingdom biology united kingdom garib@mrc-lmb.cam.ac.uk azerbaijan etn institute of molecular biology and biotechnologies in baku group leader and laboratory manager research areas prof. dr. garib murshudov is one of the world s leading scientists in the field of molecular biology crystallography and structural biology. his main research directions are as follows macrom phd",
+      "after": "garib murshudov group leader computational structural biology mrc laboratory of molecular biology cambridge united kingdom head of the laboratory of computational structural biology institute of molecular biology ministry of science and education of the republic of azerbaijan baku azerbaijan biology united kingdom garib@mrc-lmb.cam.ac.uk garib murshudov specializes in computational structural biology developing mathematical statistical and computational methods for studying the three-dimensional structures of biological macromolecules. his work combines experimental data from crystallography and cryo-electron microscopy with prior structural and che phd"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6669,
+      "jsonPointer": "/entries/512/summary",
+      "field": "summary",
+      "before": "Birləşmiş Krallığın Kembric şəhərində MRC Molekulyar Biologiya laboratoriyası · Biologiya · Birləşmiş Krallıq",
+      "after": "Kompüter struktur biologiyası qrupunun rəhbəri, Tibbi Tədqiqatlar Şurasının Molekulyar Biologiya Laboratoriyası (MRC Laboratory of Molecular Biology), Kembric, Birləşmiş Krallıq; Kompüter struktur biologiyası laboratoriyasının rəhbəri, Azər"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6673,
+      "jsonPointer": "/entries/512/norm",
+      "field": "norm",
+      "before": "qerib mursudov birlesmis kralligin kembric seherinde mrc molekulyar biologiya laboratoriyasi biologiya birlesmis kralliq garib@mrc-lmb.cam.ac.uk bakida azerbaycan etn molekulyar biologiya ve biotexnologiyalar institutu qrup rehberi ve laboratoriya mudiri tedqiqat saheleri prof. dr. qerib mursudov molekulyar biologiya kristalloqrafiya ve struktur biologiya sahesinde dunyanin aparici alimlerinden biridir. onun esas tedqiqat istiqametleri asagidakilardir makrom phd",
+      "after": "qerib mursudov komputer struktur biologiyasi qrupunun rehberi tibbi tedqiqatlar surasinin molekulyar biologiya laboratoriyasi mrc laboratory of molecular biology kembric birlesmis kralliq komputer struktur biologiyasi laboratoriyasinin rehberi azerbaycan respublikasi elm ve tehsil nazirliyinin molekulyar biologiya institutu baki azerbaycan biologiya birlesmis kralliq garib@mrc-lmb.cam.ac.uk qerib mursudov komputer struktur biologiyasi uzre ixtisaslasmis alimdir. o bioloji makromolekullarin ucolculu strukturlarinin oyrenilmesi ucun riyazi statistik ve hesablama usullari hazirlayir. tedqiqatlarinda etibarli atom modelleri qurmaq meqsedile kristalloqrafiya ve krioelektron mikroskopiya usullari ile elde olu phd"
+    }
+  ],
+  "fileHashes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "before": "ffa17f6204d1c1ec5857c49165a18557599b3fc70dbb3f99ac017ccf15b6bf92",
+      "after": "d1d0f43667dea5d1d89978291a2800f9af1a5a22435abd03e21b0464b0f5b62b"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "before": "d4700637594c21a9571d2edbdcafc4fa61c171ae1b5b9815ecf8c085d7b7ece1",
+      "after": "7699878c8518ca6dcab2b77982bc1b10a33f8f9912347530fa3002535baa9c15"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "before": "ffa17f6204d1c1ec5857c49165a18557599b3fc70dbb3f99ac017ccf15b6bf92",
+      "after": "d1d0f43667dea5d1d89978291a2800f9af1a5a22435abd03e21b0464b0f5b62b"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "before": "d4700637594c21a9571d2edbdcafc4fa61c171ae1b5b9815ecf8c085d7b7ece1",
+      "after": "7699878c8518ca6dcab2b77982bc1b10a33f8f9912347530fa3002535baa9c15"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "before": "bc8606f77a19d84f77da25cecec9e8441b337a33f813186813f9b38b30b48a2f",
+      "after": "c5c7cff9cde80fa339cce7d42679395b46ffb571d9766dfb4e92c7c487aa1942"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "before": "96b69a01fbab44769742a0ea7d57ffd8f5c8eb0241041c1fccf9a35e1b810e2c",
+      "after": "b045324df901cc659b161bdafafd919bee60b4fffe2ba12bba2fbf1c80f82b86"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "before": "96b69a01fbab44769742a0ea7d57ffd8f5c8eb0241041c1fccf9a35e1b810e2c",
+      "after": "b045324df901cc659b161bdafafd919bee60b4fffe2ba12bba2fbf1c80f82b86"
+    }
+  ]
+}

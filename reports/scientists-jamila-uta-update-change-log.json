@@ -1,0 +1,184 @@
+{
+  "date": "2026-10-09T10:31:37.036Z",
+  "profile": "Jamila Javadova-Spitzberg",
+  "profileNumber": 3,
+  "issueIds": [
+    "V003",
+    "V100",
+    "V101"
+  ],
+  "source": "https://www.uta.edu/academics/schools-colleges/liberal-arts/departments/music/areas-of-study/keyboard",
+  "sourceChecked": "2026-10-09",
+  "authorization": "Update Jamila Javadova-Spitzberg related information as per UTA official page.",
+  "summary": [
+    "Corrected appointment and university to Adjunct Assistant Professor (Organ and Harpsichord), The University of Texas at Arlington.",
+    "Changed the credential from PhD to DMA in the profile data and English catalog. The profile degree is a shared field used in both language views.",
+    "Added Doctor of Musical Arts, organ performance, music theory minor, and University of North Texas to the doctoral paragraph.",
+    "Corrected Johann Ernst Eberl to Johann Ernst Eberlin."
+  ],
+  "scopeNote": "Existing recording dates, labels, contact email, and unrelated biographical details were retained. This update does not independently verify details absent from the UTA page. Azerbaijani prose and the separate Azerbaijani catalog were not edited.",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 47,
+      "jsonPointer": "/profiles/2/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "DMA",
+      "issueIds": [
+        "V101"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 52,
+      "jsonPointer": "/profiles/2/title_en",
+      "field": "title_en",
+      "before": "Professor of Applied Organ and Harpsichord, Doctor of Arts in Music Performance, Texas State University, Arlington",
+      "after": "Adjunct Assistant Professor (Organ and Harpsichord), The University of Texas at Arlington",
+      "issueIds": [
+        "V003"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 53,
+      "jsonPointer": "/profiles/2/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Her concert performances have taken place in the USA, the former USSR and Western European countries, including the Netherlands, Germany, France, Denmark, the Czech Republic and England.</p><p class=\"bio\">She successfully defended her doctoral dissertation on the Dutch Baroque composer Antoni Van Noordt and his work &quot;Tabulatuurboeck van Psalmen en Fantasyen&quot; written in 1659.</p><p class=\"bio\">She is an international promoter of organ works by Azerbaijani composers.</p><p class=\"bio\">In December 2022, she presented videos featuring organ works by Azerbaijani composers at the Elandstraat church in The Hague, the Netherlands.</p><p class=\"bio\">In 2016, she produced an audio CD of the works of the brilliant Azerbaijani composer Gara Garayev (1918–1982) and published it through \"Tritonus Musicproduction.\"</p><p class=\"bio\">In 2023, she recorded the works of the German-Austrian composer Johann Ernst Eberl, and in January 2025 this recording was released as a disc by the German group \"Ambiente-Audio.\"</p><p class=\"bio\">Drawing on her knowledge of the history and development of organ music in Azerbaijan, J. Javadova has given presentations in various countries and at online conferences.</p>",
+      "after": "<p class=\"bio bio-lead\">Her concert performances have taken place in the USA, the former USSR and Western European countries, including the Netherlands, Germany, France, Denmark, the Czech Republic and England.</p><p class=\"bio\">She earned a Doctor of Musical Arts degree in organ performance, with a minor in music theory, from the University of North Texas. Her doctoral dissertation examined the Dutch Baroque composer Antoni Van Noordt and his 1659 work &quot;Tabulatuurboeck van Psalmen en Fantasyen&quot;.</p><p class=\"bio\">She is an international promoter of organ works by Azerbaijani composers.</p><p class=\"bio\">In December 2022, she presented videos featuring organ works by Azerbaijani composers at the Elandstraat church in The Hague, the Netherlands.</p><p class=\"bio\">In 2016, she produced an audio CD of the works of the brilliant Azerbaijani composer Gara Garayev (1918–1982) and published it through \"Tritonus Musicproduction.\"</p><p class=\"bio\">In 2023, she recorded the works of the German-Austrian composer Johann Ernst Eberlin, and in January 2025 this recording was released as a disc by the German group \"Ambiente-Audio.\"</p><p class=\"bio\">Drawing on her knowledge of the history and development of organ music in Azerbaijan, J. Javadova has given presentations in various countries and at online conferences.</p>",
+      "issueIds": [
+        "V003",
+        "V100",
+        "V101"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/2/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "DMA",
+      "issueIds": [
+        "V101"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/2/title_en",
+      "field": "title_en",
+      "before": "Professor of Applied Organ and Harpsichord, Doctor of Arts in Music Performance, Texas State University, Arlington",
+      "after": "Adjunct Assistant Professor (Organ and Harpsichord), The University of Texas at Arlington",
+      "issueIds": [
+        "V003"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/2/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Her concert performances have taken place in the USA, the former USSR and Western European countries, including the Netherlands, Germany, France, Denmark, the Czech Republic and England.</p><p class=\"bio\">She successfully defended her doctoral dissertation on the Dutch Baroque composer Antoni Van Noordt and his work &quot;Tabulatuurboeck van Psalmen en Fantasyen&quot; written in 1659.</p><p class=\"bio\">She is an international promoter of organ works by Azerbaijani composers.</p><p class=\"bio\">In December 2022, she presented videos featuring organ works by Azerbaijani composers at the Elandstraat church in The Hague, the Netherlands.</p><p class=\"bio\">In 2016, she produced an audio CD of the works of the brilliant Azerbaijani composer Gara Garayev (1918–1982) and published it through \"Tritonus Musicproduction.\"</p><p class=\"bio\">In 2023, she recorded the works of the German-Austrian composer Johann Ernst Eberl, and in January 2025 this recording was released as a disc by the German group \"Ambiente-Audio.\"</p><p class=\"bio\">Drawing on her knowledge of the history and development of organ music in Azerbaijan, J. Javadova has given presentations in various countries and at online conferences.</p>",
+      "after": "<p class=\"bio bio-lead\">Her concert performances have taken place in the USA, the former USSR and Western European countries, including the Netherlands, Germany, France, Denmark, the Czech Republic and England.</p><p class=\"bio\">She earned a Doctor of Musical Arts degree in organ performance, with a minor in music theory, from the University of North Texas. Her doctoral dissertation examined the Dutch Baroque composer Antoni Van Noordt and his 1659 work &quot;Tabulatuurboeck van Psalmen en Fantasyen&quot;.</p><p class=\"bio\">She is an international promoter of organ works by Azerbaijani composers.</p><p class=\"bio\">In December 2022, she presented videos featuring organ works by Azerbaijani composers at the Elandstraat church in The Hague, the Netherlands.</p><p class=\"bio\">In 2016, she produced an audio CD of the works of the brilliant Azerbaijani composer Gara Garayev (1918–1982) and published it through \"Tritonus Musicproduction.\"</p><p class=\"bio\">In 2023, she recorded the works of the German-Austrian composer Johann Ernst Eberlin, and in January 2025 this recording was released as a disc by the German group \"Ambiente-Audio.\"</p><p class=\"bio\">Drawing on her knowledge of the history and development of organ music in Azerbaijan, J. Javadova has given presentations in various countries and at online conferences.</p>",
+      "issueIds": [
+        "V003",
+        "V100",
+        "V101"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 47,
+      "jsonPointer": "/profiles/2/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "DMA",
+      "issueIds": [
+        "V101"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 52,
+      "jsonPointer": "/profiles/2/title_en",
+      "field": "title_en",
+      "before": "Professor of Applied Organ and Harpsichord, Doctor of Arts in Music Performance, Texas State University, Arlington",
+      "after": "Adjunct Assistant Professor (Organ and Harpsichord), The University of Texas at Arlington",
+      "issueIds": [
+        "V003"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 53,
+      "jsonPointer": "/profiles/2/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Her concert performances have taken place in the USA, the former USSR and Western European countries, including the Netherlands, Germany, France, Denmark, the Czech Republic and England.</p><p class=\"bio\">She successfully defended her doctoral dissertation on the Dutch Baroque composer Antoni Van Noordt and his work &quot;Tabulatuurboeck van Psalmen en Fantasyen&quot; written in 1659.</p><p class=\"bio\">She is an international promoter of organ works by Azerbaijani composers.</p><p class=\"bio\">In December 2022, she presented videos featuring organ works by Azerbaijani composers at the Elandstraat church in The Hague, the Netherlands.</p><p class=\"bio\">In 2016, she produced an audio CD of the works of the brilliant Azerbaijani composer Gara Garayev (1918–1982) and published it through \"Tritonus Musicproduction.\"</p><p class=\"bio\">In 2023, she recorded the works of the German-Austrian composer Johann Ernst Eberl, and in January 2025 this recording was released as a disc by the German group \"Ambiente-Audio.\"</p><p class=\"bio\">Drawing on her knowledge of the history and development of organ music in Azerbaijan, J. Javadova has given presentations in various countries and at online conferences.</p>",
+      "after": "<p class=\"bio bio-lead\">Her concert performances have taken place in the USA, the former USSR and Western European countries, including the Netherlands, Germany, France, Denmark, the Czech Republic and England.</p><p class=\"bio\">She earned a Doctor of Musical Arts degree in organ performance, with a minor in music theory, from the University of North Texas. Her doctoral dissertation examined the Dutch Baroque composer Antoni Van Noordt and his 1659 work &quot;Tabulatuurboeck van Psalmen en Fantasyen&quot;.</p><p class=\"bio\">She is an international promoter of organ works by Azerbaijani composers.</p><p class=\"bio\">In December 2022, she presented videos featuring organ works by Azerbaijani composers at the Elandstraat church in The Hague, the Netherlands.</p><p class=\"bio\">In 2016, she produced an audio CD of the works of the brilliant Azerbaijani composer Gara Garayev (1918–1982) and published it through \"Tritonus Musicproduction.\"</p><p class=\"bio\">In 2023, she recorded the works of the German-Austrian composer Johann Ernst Eberlin, and in January 2025 this recording was released as a disc by the German group \"Ambiente-Audio.\"</p><p class=\"bio\">Drawing on her knowledge of the history and development of organ music in Azerbaijan, J. Javadova has given presentations in various countries and at online conferences.</p>",
+      "issueIds": [
+        "V003",
+        "V100",
+        "V101"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/2/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "DMA",
+      "issueIds": [
+        "V101"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/2/title_en",
+      "field": "title_en",
+      "before": "Professor of Applied Organ and Harpsichord, Doctor of Arts in Music Performance, Texas State University, Arlington",
+      "after": "Adjunct Assistant Professor (Organ and Harpsichord), The University of Texas at Arlington",
+      "issueIds": [
+        "V003"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/2/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Her concert performances have taken place in the USA, the former USSR and Western European countries, including the Netherlands, Germany, France, Denmark, the Czech Republic and England.</p><p class=\"bio\">She successfully defended her doctoral dissertation on the Dutch Baroque composer Antoni Van Noordt and his work &quot;Tabulatuurboeck van Psalmen en Fantasyen&quot; written in 1659.</p><p class=\"bio\">She is an international promoter of organ works by Azerbaijani composers.</p><p class=\"bio\">In December 2022, she presented videos featuring organ works by Azerbaijani composers at the Elandstraat church in The Hague, the Netherlands.</p><p class=\"bio\">In 2016, she produced an audio CD of the works of the brilliant Azerbaijani composer Gara Garayev (1918–1982) and published it through \"Tritonus Musicproduction.\"</p><p class=\"bio\">In 2023, she recorded the works of the German-Austrian composer Johann Ernst Eberl, and in January 2025 this recording was released as a disc by the German group \"Ambiente-Audio.\"</p><p class=\"bio\">Drawing on her knowledge of the history and development of organ music in Azerbaijan, J. Javadova has given presentations in various countries and at online conferences.</p>",
+      "after": "<p class=\"bio bio-lead\">Her concert performances have taken place in the USA, the former USSR and Western European countries, including the Netherlands, Germany, France, Denmark, the Czech Republic and England.</p><p class=\"bio\">She earned a Doctor of Musical Arts degree in organ performance, with a minor in music theory, from the University of North Texas. Her doctoral dissertation examined the Dutch Baroque composer Antoni Van Noordt and his 1659 work &quot;Tabulatuurboeck van Psalmen en Fantasyen&quot;.</p><p class=\"bio\">She is an international promoter of organ works by Azerbaijani composers.</p><p class=\"bio\">In December 2022, she presented videos featuring organ works by Azerbaijani composers at the Elandstraat church in The Hague, the Netherlands.</p><p class=\"bio\">In 2016, she produced an audio CD of the works of the brilliant Azerbaijani composer Gara Garayev (1918–1982) and published it through \"Tritonus Musicproduction.\"</p><p class=\"bio\">In 2023, she recorded the works of the German-Austrian composer Johann Ernst Eberlin, and in January 2025 this recording was released as a disc by the German group \"Ambiente-Audio.\"</p><p class=\"bio\">Drawing on her knowledge of the history and development of organ music in Azerbaijan, J. Javadova has given presentations in various countries and at online conferences.</p>",
+      "issueIds": [
+        "V003",
+        "V100",
+        "V101"
+      ]
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "line": 28,
+      "jsonPointer": "/2/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "DMA",
+      "issueIds": [
+        "V101"
+      ]
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "line": 28,
+      "jsonPointer": "/2/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "DMA",
+      "issueIds": [
+        "V101"
+      ]
+    }
+  ]
+}

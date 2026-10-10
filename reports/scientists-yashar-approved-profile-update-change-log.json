@@ -1,0 +1,428 @@
+{
+  "date": "2026-10-10",
+  "profile": "Yashar Musayev / Yaşar Musayev",
+  "profileNumber": 16,
+  "languages": [
+    "English",
+    "Azerbaijani"
+  ],
+  "source": "User approval of the complete revised English and Azerbaijani drafts and subsequent explicit request to close V125 without identifying the manufacturer",
+  "sources": [
+    {
+      "title": "CV Yaşar Musayev.pdf",
+      "file": "E:/Documents/Azərbaycanlı Alimlərin Istanbul görüşü, 8-10 Dekabr 2022/1-ci Bakı forumu, 8-12 Sentyabr 2024/Web Site/CV/CV Yaşar Musayev.pdf",
+      "pages": 3,
+      "relevantPage": 3,
+      "sha256": "be1d0ff19ed6711be02975101d64165777a06d5989fc59ba48b0d4576b4773e8",
+      "note": "All three pages read and visually inspected. Page 3 lists Customer Supplier Award, global Japanese OEM, 2017. It does not identify the manufacturer or independently establish the formal award title. The user confirmed that Musayev personally received the award."
+    }
+  ],
+  "issueIds": [
+    "V125"
+  ],
+  "resolvedIssueIds": [
+    "V125"
+  ],
+  "summary": [
+    "Applied the approved bilingual title, education, career history, research output, awards, memberships, research interests, and language information.",
+    "Changed the displayed credential from PhD to the specific Dr.-Ing. qualification and synchronized both language directories.",
+    "Retained the approved full official FAU name on first mention and FAU thereafter.",
+    "Used the approved Customer Supplier Award wording without mentioning the CV or emphasizing personal receipt in the public profile. V125 is closed by explicit user approval; the manufacturer need not be named.",
+    "Applied the approved combined figures: more than 40 inventions and patents and 150 publications and lectures since 2005.",
+    "Synchronized active profile data, the English translation source, directory credentials, and English/Azerbaijani search entries."
+  ],
+  "scopeNote": "The exact approved wording is retained. Names, email/profile lookup key, photo, country, subject field, and profile anchor are unchanged. The approved replacement omits the previous 2022 presidential diploma, top-five innovator statement, and European Azerbaijani engineers’ organization role. V125 is closed as an editorial decision, not an independent identification of the awarding manufacturer or verification of its formal award title. This is not a new comprehensive proofreading pass.",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 268,
+      "jsonPointer": "/profiles/15/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "Dr.-Ing."
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 273,
+      "jsonPointer": "/profiles/15/title_en",
+      "field": "title_en",
+      "before": "\"Siemens Energy\" company, senior management",
+      "after": "Engineer and technology executive, Germany"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 274,
+      "jsonPointer": "/profiles/15/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Yashar Musayev is an expert in the fields of renewable energy, automotive innovations, e-mobility, green hydrogen and nanotechnology. He has contributed to the development of new energy technologies by leading important research projects in industry and academia. He has more than 80 patents and more than 150 scientific articles.</p><p class=\"bio-section-title\">Main research areas</p><p class=\"bio\">Green hydrogen and renewable energy: Development of electrolysis and fuel cell technologies.</p><p class=\"bio\">Surface technologies and tribology: Coating technologies, thin-film sensors and nanotechnologies.</p><p class=\"bio\">Automotive and e-mobility: Fuel efficiency and sustainable mobility solutions.</p><p class=\"bio\">Strategic R&amp;D management: Strategic roadmaps, partnerships with global universities and research institutes.</p><p class=\"bio-section-title\">Professional experience</p><p class=\"bio\">Siemens Energy AG (2020–present): Green hydrogen and new energy technologies, Senior Management</p><p class=\"bio\">Schaeffler AG (2005–2020): Global research activities in nanotechnology, tribology and fuel cell technologies, leading teams of 100+ scientists and engineers, Senior Vice President</p><p class=\"bio\">SIA Schaeffler Baltic, CEO (2016–2018): Led the acquisition and integration of Naco Technologies by Schaeffler AG.</p><p class=\"bio\">Other positions: H-O-T GmbH, Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU), Daimler AG Azerbaijan partner, Azerbaijan Technical University.</p><p class=\"bio-section-title\">Awards and recognition</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Global Japanese car manufacturer &quot;Supplier&quot; award (2017).</li><li>Materialica Design + Technology award (2016, 2014).</li><li>One of Germany's top 5 innovators (2005–2020).</li><li>Honorary diploma of the President of the Republic of Azerbaijan, 2022</li></ul></div><p class=\"bio-section-title\">Education and professional training</p><p class=\"bio\">Doctorate (Dr.-Ing.), FAU (2001).</p><p class=\"bio\">DAAD Scholar, FAU (1997–1998).</p><p class=\"bio\">Mechanical Engineering (Dipl.-Ing.), Azerbaijan Technical University (1991).</p><p class=\"bio-section-title\">Membership and international relations</p><p class=\"bio\">&quot;Nano in Germany e.V.&quot; founding member.</p><p class=\"bio\">&quot;BalticNet-Plasmatech e.V.&quot; Chairman of the Board.</p><p class=\"bio\">&quot;Baku-Nuremberg e.V.&quot; Chairman of the Board.</p><p class=\"bio\">Member of the Association of German Engineers (VDI).</p><p class=\"bio\">Chairman of the Board of the Union of Engineers of European Azerbaijanis</p>",
+      "after": "<p class=\"bio bio-lead\">Yashar Musayev is an engineer and technology executive specializing in green hydrogen, renewable energy, surface engineering, nanotechnology, and automotive technologies. His international experience combines research and development, industrial production, technology strategy, and collaboration with universities and research institutes.</p><p class=\"bio\">He studied Mechanical Engineering Technology at Azerbaijan Technical University from 1984 to 1991, graduating with distinction with a Dipl.-Ing. degree. He held a DAAD scholarship at Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) in 1997–1998 and completed his doctoral research there in 1998–2001, earning the Dr.-Ing. degree. He also participated in Schaeffler’s International Development Program for Top Managers in 2016–2020.</p><p class=\"bio\">In May 2020, he joined Siemens Energy AG in Erlangen/Munich as Head of Development for New Energy Business. His responsibilities included the development of green hydrogen, electrolysis, and renewable energy technologies, together with technology strategy and team leadership.</p><p class=\"bio\">From December 2005 to January 2020, he worked at Schaeffler AG in Herzogenaurach. He progressed from Project Leader for establishing the Coating Center to Team Lead and Expert, Director of the Coating Center, and Senior Vice President and Head of the Competency Center for Surface Technology, a position he held from September 2015 to January 2020. His responsibilities covered international research and production activities, coating technologies, supplier development, and partnerships with universities and research institutes.</p><p class=\"bio\">As a Schaeffler representative, he led the acquisition and integration of Naco Technologies in Riga in December 2015. Alongside his other responsibilities, he served as CEO of SIA Schaeffler Baltic from February 2016 to December 2018, directing research, development, and sales activities in the Baltic States.</p><p class=\"bio\">His earlier positions included Head of Research and Development at H-O-T in Nuremberg (2001–2005), Research Associate at FAU (2000–2001), Plant Manager at Autostern, a joint-venture partner of Daimler AG in Azerbaijan (1998–2000), and research and teaching roles at Azerbaijan Technical University (1991–1997).</p><p class=\"bio\">His work since 2005 includes more than 40 inventions and patents and 150 national and international publications and lectures.</p><p class=\"bio-section-title\">Awards and recognition:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li><strong>Customer Supplier Award</strong> from a global Japanese automotive manufacturer (2017).</li><li><strong>Materialica Design + Technology Best-Award</strong> for Sensotect® thin-film sensors, Munich (2014, 2016).</li><li><strong>Customer Innovation Award</strong> for engine components from a global Japanese automotive manufacturer (2006).</li></ul></div><p class=\"bio\">He is a founding member of Nano in Germany e.V. and a member of the Association of German Engineers (VDI). He has served as Chairman of the Board of BalticNet-Plasmatech e.V. and Baku-Nürnberg e.V.</p><p class=\"bio-section-title\">Research and professional interests:</p><ul><li>Green hydrogen, electrolysis, renewable energy, and fuel-cell technologies.</li><li>Surface engineering, coating technologies, nanotechnology, and tribology.</li><li>Thin-film sensors, automotive technologies, and electric mobility.</li><li>Research and development management, technology strategy, and international scientific collaboration.</li></ul><p class=\"bio\">He speaks native Azerbaijani, fluent German, English, and Russian, and conversational Turkish.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 269,
+      "jsonPointer": "/profiles/15/title_az",
+      "field": "title_az",
+      "before": "“Siemens Energy” şirkəti, senior management",
+      "after": "Mühəndis və texnologiya sahəsində rəhbər, Almaniya"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 270,
+      "jsonPointer": "/profiles/15/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Yaşar Musayev bərpa olunan enerji, avtomobil innovasiyaları, e-mobilitet, yaşıl hidrogen və nanotexnologiya sahələrində mütəxəssisdir. O, sənaye və akademik sahədə mühüm tədqiqat layihələrinə rəhbərlik edərək yeni enerji texnologiyalarının inkişafına töhfə vermişdir. 80-dən çox patenti və 150-dən çox elmi məqaləsi var.</p><p class=\"bio-section-title\">Əsas tədqiqat sahələri:</p><p class=\"bio\">Yaşıl hidrogen və bərpa olunan enerji: Elektroliz və yanacaq elementləri texnologiyalarının inkişafı.</p><p class=\"bio\">Səth texnologiyaları və tribologiya: Örtük texnologiyaları, nazik təbəqəli sensorlar və nanotexnologiyalar.</p><p class=\"bio\">Avtomobil və e-mobilitet: Yanacaq səmərəliliyi və dayanıqlı mobillik həlləri.</p><p class=\"bio\">Strateji elmi-tədqiqat rəhbərliyi: Strateji yol xəritələri, qlobal universitetlər və tədqiqat institutları ilə əməkdaşlıqlar.</p><p class=\"bio-section-title\">Peşəkar təcrübə:</p><p class=\"bio\">Siemens Energy AG (2020–indiyədək): Yaşıl hidrogen və yeni enerji texnologiyaları, Senior Management</p><p class=\"bio\">Schaeffler AG (2005–2020): Nanotexnologiya, tribologiya və yanacaq elementi texnologiyaları üzrə qlobal tədqiqat işləri, 100+ alim və mühəndisdən ibarət qruplara rəhbərlik, Senior Vice Prezident</p><p class=\"bio\">SIA Schaeffler Baltic, CEO (2016–2018): Naco Technologies-in Schaeffler AG tərəfindən alınmasına və inteqrasiyasına rəhbərlik.</p><p class=\"bio\">Digər vəzifələr: H-O-T GmbH, Erlangen-Nürnberg Universiteti, Daimler AG Azərbaycan tərəfdaşı, Azərbaycan Texniki Universiteti.</p><p class=\"bio-section-title\">Mükafatlar və tanınma:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Qlobal yapon avtomobil istehsalçısının “Təchizatçı” mükafatı (2017).</li><li>Materialica Dizayn + Texnologiya mükafatı (2016, 2014).</li><li>Almaniyanın TOP-5 innovatorlarından biri (2005–2020).</li><li>Azərbaycan Respublikası Prezidentinin fəxri diplomu, 2022</li></ul></div><p class=\"bio-section-title\">Təhsil və peşəkar hazırlıq:</p><p class=\"bio\">Doktorantura (Dr.-Ing.), Erlangen-Nürnberg Universiteti (2001).</p><p class=\"bio\">DAAD təqaüdçüsü, Erlangen-Nürnberg Universiteti (1997–1998).</p><p class=\"bio\">Mexanika Mühəndisliyi (Dipl.-Ing.), Azərbaycan Texniki Universiteti (1991).</p><p class=\"bio-section-title\">Üzvlük və beynəlxalq əlaqələr:</p><p class=\"bio\">“Nano in Germany e.V.” təsisçi üzvü.</p><p class=\"bio\">“BalticNet-Plasmatech e.V.” İdarə Heyətinin sədri.</p><p class=\"bio\">“Bakı-Nürnberg e.V.” İdarə Heyətinin sədri.</p><p class=\"bio\">Alman Mühəndislər Birliyinin (VDI) üzvü.</p><p class=\"bio\">Avropa Azərbaycanlıları Mühəndislər İttifaqı İdarə Heyətinin sədri</p>",
+      "after": "<p class=\"bio bio-lead\">Yaşar Musayev yaşıl hidrogen, bərpa olunan enerji, səth mühəndisliyi, nanotexnologiya və avtomobil texnologiyaları sahələrində ixtisaslaşmış mühəndis və rəhbərdir. Onun beynəlxalq təcrübəsi elmi-tədqiqat və işləmələri, sənaye istehsalını, texnologiya strategiyasını, universitetlər və tədqiqat institutları ilə əməkdaşlığı əhatə edir.</p><p class=\"bio\">1984–1991-ci illərdə Azərbaycan Texniki Universitetində maşınqayırma texnologiyası üzrə təhsil almış və universiteti fərqlənmə ilə bitirərək Dipl.-Ing. dərəcəsi qazanmışdır. 1997–1998-ci illərdə Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) universitetində DAAD təqaüdçüsü olmuş, 1998–2001-ci illərdə həmin universitetdə doktorluq tədqiqatlarını apararaq Dr.-Ing. dərəcəsini almışdır. Həmçinin 2016–2020-ci illərdə Schaeffler şirkətinin yüksək səviyyəli rəhbərlər üçün Beynəlxalq İnkişaf Proqramında iştirak etmişdir.</p><p class=\"bio\">2020-ci ilin mayında Siemens Energy AG şirkətinin Erlangen/Münhen bölməsində Yeni Enerji Biznesi istiqaməti üzrə inkişaf rəhbəri vəzifəsində fəaliyyətə başlamışdır. Onun vəzifələrinə yaşıl hidrogen, elektroliz və bərpa olunan enerji texnologiyalarının inkişafı, texnologiya strategiyasının hazırlanması və komandalara rəhbərlik daxil olmuşdur.</p><p class=\"bio\">2005-ci ilin dekabrından 2020-ci ilin yanvarınadək Herzogenaurach şəhərində Schaeffler AG şirkətində çalışmışdır. Örtük Mərkəzinin yaradılması üzrə layihə rəhbəri vəzifəsindən komanda rəhbəri və ekspert, Örtük Mərkəzinin direktoru, daha sonra isə baş vitse-prezident və Səth Texnologiyaları üzrə Kompetensiya Mərkəzinin rəhbəri vəzifələrinə yüksəlmişdir. Sonuncu vəzifəni 2015-ci ilin sentyabrından 2020-ci ilin yanvarınadək tutmuşdur. Onun məsuliyyət sahələrinə beynəlxalq elmi-tədqiqat və istehsal fəaliyyəti, örtük texnologiyaları, təchizatçıların inkişafı, universitetlər və tədqiqat institutları ilə tərəfdaşlıq daxil olmuşdur.</p><p class=\"bio\">Schaeffler şirkətinin nümayəndəsi kimi 2015-ci ilin dekabrında Riqada Naco Technologies şirkətinin alınmasına və inteqrasiyasına rəhbərlik etmişdir. Digər vəzifələri ilə yanaşı, 2016-cı ilin fevralından 2018-ci ilin dekabrınadək SIA Schaeffler Baltic şirkətinin baş icraçı direktoru olmuş, Baltik ölkələrində elmi-tədqiqat, inkişaf və satış fəaliyyətinə rəhbərlik etmişdir.</p><p class=\"bio\">Əvvəllər Nürnberqdə H-O-T şirkətində elmi-tədqiqat və inkişaf rəhbəri (2001–2005), FAU-da elmi işçi (2000–2001), Daimler AG-nin Azərbaycandakı birgə müəssisə tərəfdaşı olan Autostern şirkətində istehsalat rəhbəri (1998–2000), Azərbaycan Texniki Universitetində isə elmi-tədqiqat və pedaqoji vəzifələrdə (1991–1997) çalışmışdır.</p><p class=\"bio\">2005-ci ildən etibarən fəaliyyəti 40-dan çox ixtira və patenti, həmçinin 150 milli və beynəlxalq elmi nəşr və məruzəni əhatə edir.</p><p class=\"bio-section-title\">Mükafatlar və tanınma:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Qlobal fəaliyyət göstərən yapon avtomobil istehsalçısının “<strong>Customer Supplier Award</strong>” mükafatı (2017).</li><li>Sensotect® nazik təbəqəli sensorlarına görə “<strong>Materialica Design + Technology Best-Award</strong>” mükafatı, Münhen (2014, 2016).</li><li>Mühərrik komponentlərinə görə qlobal fəaliyyət göstərən yapon avtomobil istehsalçısının “<strong>Customer Innovation Award</strong>” mükafatı (2006).</li></ul></div><p class=\"bio\">O, Nano in Germany e.V. təşkilatının təsisçi üzvü və Alman Mühəndislər Birliyinin (VDI) üzvüdür. BalticNet-Plasmatech e.V. və Baku-Nürnberg e.V. təşkilatlarının idarə heyətlərinin sədri kimi fəaliyyət göstərmişdir.</p><p class=\"bio-section-title\">Elmi və peşəkar maraq sahələri:</p><ul><li>Yaşıl hidrogen, elektroliz, bərpa olunan enerji və yanacaq elementi texnologiyaları.</li><li>Səth mühəndisliyi, örtük texnologiyaları, nanotexnologiya və tribologiya.</li><li>Nazik təbəqəli sensorlar, avtomobil texnologiyaları və elektrik mobilliyi.</li><li>Elmi-tədqiqat və işləmələrin idarə olunması, texnologiya strategiyası və beynəlxalq elmi əməkdaşlıq.</li></ul><p class=\"bio\">Azərbaycan dili onun ana dilidir. Alman, ingilis və rus dillərini sərbəst, türk dilini isə danışıq səviyyəsində bilir.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/15/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "Dr.-Ing."
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/15/title_en",
+      "field": "title_en",
+      "before": "\"Siemens Energy\" company, senior management",
+      "after": "Engineer and technology executive, Germany"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/15/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Yashar Musayev is an expert in the fields of renewable energy, automotive innovations, e-mobility, green hydrogen and nanotechnology. He has contributed to the development of new energy technologies by leading important research projects in industry and academia. He has more than 80 patents and more than 150 scientific articles.</p><p class=\"bio-section-title\">Main research areas</p><p class=\"bio\">Green hydrogen and renewable energy: Development of electrolysis and fuel cell technologies.</p><p class=\"bio\">Surface technologies and tribology: Coating technologies, thin-film sensors and nanotechnologies.</p><p class=\"bio\">Automotive and e-mobility: Fuel efficiency and sustainable mobility solutions.</p><p class=\"bio\">Strategic R&amp;D management: Strategic roadmaps, partnerships with global universities and research institutes.</p><p class=\"bio-section-title\">Professional experience</p><p class=\"bio\">Siemens Energy AG (2020–present): Green hydrogen and new energy technologies, Senior Management</p><p class=\"bio\">Schaeffler AG (2005–2020): Global research activities in nanotechnology, tribology and fuel cell technologies, leading teams of 100+ scientists and engineers, Senior Vice President</p><p class=\"bio\">SIA Schaeffler Baltic, CEO (2016–2018): Led the acquisition and integration of Naco Technologies by Schaeffler AG.</p><p class=\"bio\">Other positions: H-O-T GmbH, Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU), Daimler AG Azerbaijan partner, Azerbaijan Technical University.</p><p class=\"bio-section-title\">Awards and recognition</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Global Japanese car manufacturer &quot;Supplier&quot; award (2017).</li><li>Materialica Design + Technology award (2016, 2014).</li><li>One of Germany's top 5 innovators (2005–2020).</li><li>Honorary diploma of the President of the Republic of Azerbaijan, 2022</li></ul></div><p class=\"bio-section-title\">Education and professional training</p><p class=\"bio\">Doctorate (Dr.-Ing.), FAU (2001).</p><p class=\"bio\">DAAD Scholar, FAU (1997–1998).</p><p class=\"bio\">Mechanical Engineering (Dipl.-Ing.), Azerbaijan Technical University (1991).</p><p class=\"bio-section-title\">Membership and international relations</p><p class=\"bio\">&quot;Nano in Germany e.V.&quot; founding member.</p><p class=\"bio\">&quot;BalticNet-Plasmatech e.V.&quot; Chairman of the Board.</p><p class=\"bio\">&quot;Baku-Nuremberg e.V.&quot; Chairman of the Board.</p><p class=\"bio\">Member of the Association of German Engineers (VDI).</p><p class=\"bio\">Chairman of the Board of the Union of Engineers of European Azerbaijanis</p>",
+      "after": "<p class=\"bio bio-lead\">Yashar Musayev is an engineer and technology executive specializing in green hydrogen, renewable energy, surface engineering, nanotechnology, and automotive technologies. His international experience combines research and development, industrial production, technology strategy, and collaboration with universities and research institutes.</p><p class=\"bio\">He studied Mechanical Engineering Technology at Azerbaijan Technical University from 1984 to 1991, graduating with distinction with a Dipl.-Ing. degree. He held a DAAD scholarship at Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) in 1997–1998 and completed his doctoral research there in 1998–2001, earning the Dr.-Ing. degree. He also participated in Schaeffler’s International Development Program for Top Managers in 2016–2020.</p><p class=\"bio\">In May 2020, he joined Siemens Energy AG in Erlangen/Munich as Head of Development for New Energy Business. His responsibilities included the development of green hydrogen, electrolysis, and renewable energy technologies, together with technology strategy and team leadership.</p><p class=\"bio\">From December 2005 to January 2020, he worked at Schaeffler AG in Herzogenaurach. He progressed from Project Leader for establishing the Coating Center to Team Lead and Expert, Director of the Coating Center, and Senior Vice President and Head of the Competency Center for Surface Technology, a position he held from September 2015 to January 2020. His responsibilities covered international research and production activities, coating technologies, supplier development, and partnerships with universities and research institutes.</p><p class=\"bio\">As a Schaeffler representative, he led the acquisition and integration of Naco Technologies in Riga in December 2015. Alongside his other responsibilities, he served as CEO of SIA Schaeffler Baltic from February 2016 to December 2018, directing research, development, and sales activities in the Baltic States.</p><p class=\"bio\">His earlier positions included Head of Research and Development at H-O-T in Nuremberg (2001–2005), Research Associate at FAU (2000–2001), Plant Manager at Autostern, a joint-venture partner of Daimler AG in Azerbaijan (1998–2000), and research and teaching roles at Azerbaijan Technical University (1991–1997).</p><p class=\"bio\">His work since 2005 includes more than 40 inventions and patents and 150 national and international publications and lectures.</p><p class=\"bio-section-title\">Awards and recognition:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li><strong>Customer Supplier Award</strong> from a global Japanese automotive manufacturer (2017).</li><li><strong>Materialica Design + Technology Best-Award</strong> for Sensotect® thin-film sensors, Munich (2014, 2016).</li><li><strong>Customer Innovation Award</strong> for engine components from a global Japanese automotive manufacturer (2006).</li></ul></div><p class=\"bio\">He is a founding member of Nano in Germany e.V. and a member of the Association of German Engineers (VDI). He has served as Chairman of the Board of BalticNet-Plasmatech e.V. and Baku-Nürnberg e.V.</p><p class=\"bio-section-title\">Research and professional interests:</p><ul><li>Green hydrogen, electrolysis, renewable energy, and fuel-cell technologies.</li><li>Surface engineering, coating technologies, nanotechnology, and tribology.</li><li>Thin-film sensors, automotive technologies, and electric mobility.</li><li>Research and development management, technology strategy, and international scientific collaboration.</li></ul><p class=\"bio\">He speaks native Azerbaijani, fluent German, English, and Russian, and conversational Turkish.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/15/title_az",
+      "field": "title_az",
+      "before": "“Siemens Energy” şirkəti, senior management",
+      "after": "Mühəndis və texnologiya sahəsində rəhbər, Almaniya"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/15/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Yaşar Musayev bərpa olunan enerji, avtomobil innovasiyaları, e-mobilitet, yaşıl hidrogen və nanotexnologiya sahələrində mütəxəssisdir. O, sənaye və akademik sahədə mühüm tədqiqat layihələrinə rəhbərlik edərək yeni enerji texnologiyalarının inkişafına töhfə vermişdir. 80-dən çox patenti və 150-dən çox elmi məqaləsi var.</p><p class=\"bio-section-title\">Əsas tədqiqat sahələri:</p><p class=\"bio\">Yaşıl hidrogen və bərpa olunan enerji: Elektroliz və yanacaq elementləri texnologiyalarının inkişafı.</p><p class=\"bio\">Səth texnologiyaları və tribologiya: Örtük texnologiyaları, nazik təbəqəli sensorlar və nanotexnologiyalar.</p><p class=\"bio\">Avtomobil və e-mobilitet: Yanacaq səmərəliliyi və dayanıqlı mobillik həlləri.</p><p class=\"bio\">Strateji elmi-tədqiqat rəhbərliyi: Strateji yol xəritələri, qlobal universitetlər və tədqiqat institutları ilə əməkdaşlıqlar.</p><p class=\"bio-section-title\">Peşəkar təcrübə:</p><p class=\"bio\">Siemens Energy AG (2020–indiyədək): Yaşıl hidrogen və yeni enerji texnologiyaları, Senior Management</p><p class=\"bio\">Schaeffler AG (2005–2020): Nanotexnologiya, tribologiya və yanacaq elementi texnologiyaları üzrə qlobal tədqiqat işləri, 100+ alim və mühəndisdən ibarət qruplara rəhbərlik, Senior Vice Prezident</p><p class=\"bio\">SIA Schaeffler Baltic, CEO (2016–2018): Naco Technologies-in Schaeffler AG tərəfindən alınmasına və inteqrasiyasına rəhbərlik.</p><p class=\"bio\">Digər vəzifələr: H-O-T GmbH, Erlangen-Nürnberg Universiteti, Daimler AG Azərbaycan tərəfdaşı, Azərbaycan Texniki Universiteti.</p><p class=\"bio-section-title\">Mükafatlar və tanınma:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Qlobal yapon avtomobil istehsalçısının “Təchizatçı” mükafatı (2017).</li><li>Materialica Dizayn + Texnologiya mükafatı (2016, 2014).</li><li>Almaniyanın TOP-5 innovatorlarından biri (2005–2020).</li><li>Azərbaycan Respublikası Prezidentinin fəxri diplomu, 2022</li></ul></div><p class=\"bio-section-title\">Təhsil və peşəkar hazırlıq:</p><p class=\"bio\">Doktorantura (Dr.-Ing.), Erlangen-Nürnberg Universiteti (2001).</p><p class=\"bio\">DAAD təqaüdçüsü, Erlangen-Nürnberg Universiteti (1997–1998).</p><p class=\"bio\">Mexanika Mühəndisliyi (Dipl.-Ing.), Azərbaycan Texniki Universiteti (1991).</p><p class=\"bio-section-title\">Üzvlük və beynəlxalq əlaqələr:</p><p class=\"bio\">“Nano in Germany e.V.” təsisçi üzvü.</p><p class=\"bio\">“BalticNet-Plasmatech e.V.” İdarə Heyətinin sədri.</p><p class=\"bio\">“Bakı-Nürnberg e.V.” İdarə Heyətinin sədri.</p><p class=\"bio\">Alman Mühəndislər Birliyinin (VDI) üzvü.</p><p class=\"bio\">Avropa Azərbaycanlıları Mühəndislər İttifaqı İdarə Heyətinin sədri</p>",
+      "after": "<p class=\"bio bio-lead\">Yaşar Musayev yaşıl hidrogen, bərpa olunan enerji, səth mühəndisliyi, nanotexnologiya və avtomobil texnologiyaları sahələrində ixtisaslaşmış mühəndis və rəhbərdir. Onun beynəlxalq təcrübəsi elmi-tədqiqat və işləmələri, sənaye istehsalını, texnologiya strategiyasını, universitetlər və tədqiqat institutları ilə əməkdaşlığı əhatə edir.</p><p class=\"bio\">1984–1991-ci illərdə Azərbaycan Texniki Universitetində maşınqayırma texnologiyası üzrə təhsil almış və universiteti fərqlənmə ilə bitirərək Dipl.-Ing. dərəcəsi qazanmışdır. 1997–1998-ci illərdə Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) universitetində DAAD təqaüdçüsü olmuş, 1998–2001-ci illərdə həmin universitetdə doktorluq tədqiqatlarını apararaq Dr.-Ing. dərəcəsini almışdır. Həmçinin 2016–2020-ci illərdə Schaeffler şirkətinin yüksək səviyyəli rəhbərlər üçün Beynəlxalq İnkişaf Proqramında iştirak etmişdir.</p><p class=\"bio\">2020-ci ilin mayında Siemens Energy AG şirkətinin Erlangen/Münhen bölməsində Yeni Enerji Biznesi istiqaməti üzrə inkişaf rəhbəri vəzifəsində fəaliyyətə başlamışdır. Onun vəzifələrinə yaşıl hidrogen, elektroliz və bərpa olunan enerji texnologiyalarının inkişafı, texnologiya strategiyasının hazırlanması və komandalara rəhbərlik daxil olmuşdur.</p><p class=\"bio\">2005-ci ilin dekabrından 2020-ci ilin yanvarınadək Herzogenaurach şəhərində Schaeffler AG şirkətində çalışmışdır. Örtük Mərkəzinin yaradılması üzrə layihə rəhbəri vəzifəsindən komanda rəhbəri və ekspert, Örtük Mərkəzinin direktoru, daha sonra isə baş vitse-prezident və Səth Texnologiyaları üzrə Kompetensiya Mərkəzinin rəhbəri vəzifələrinə yüksəlmişdir. Sonuncu vəzifəni 2015-ci ilin sentyabrından 2020-ci ilin yanvarınadək tutmuşdur. Onun məsuliyyət sahələrinə beynəlxalq elmi-tədqiqat və istehsal fəaliyyəti, örtük texnologiyaları, təchizatçıların inkişafı, universitetlər və tədqiqat institutları ilə tərəfdaşlıq daxil olmuşdur.</p><p class=\"bio\">Schaeffler şirkətinin nümayəndəsi kimi 2015-ci ilin dekabrında Riqada Naco Technologies şirkətinin alınmasına və inteqrasiyasına rəhbərlik etmişdir. Digər vəzifələri ilə yanaşı, 2016-cı ilin fevralından 2018-ci ilin dekabrınadək SIA Schaeffler Baltic şirkətinin baş icraçı direktoru olmuş, Baltik ölkələrində elmi-tədqiqat, inkişaf və satış fəaliyyətinə rəhbərlik etmişdir.</p><p class=\"bio\">Əvvəllər Nürnberqdə H-O-T şirkətində elmi-tədqiqat və inkişaf rəhbəri (2001–2005), FAU-da elmi işçi (2000–2001), Daimler AG-nin Azərbaycandakı birgə müəssisə tərəfdaşı olan Autostern şirkətində istehsalat rəhbəri (1998–2000), Azərbaycan Texniki Universitetində isə elmi-tədqiqat və pedaqoji vəzifələrdə (1991–1997) çalışmışdır.</p><p class=\"bio\">2005-ci ildən etibarən fəaliyyəti 40-dan çox ixtira və patenti, həmçinin 150 milli və beynəlxalq elmi nəşr və məruzəni əhatə edir.</p><p class=\"bio-section-title\">Mükafatlar və tanınma:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Qlobal fəaliyyət göstərən yapon avtomobil istehsalçısının “<strong>Customer Supplier Award</strong>” mükafatı (2017).</li><li>Sensotect® nazik təbəqəli sensorlarına görə “<strong>Materialica Design + Technology Best-Award</strong>” mükafatı, Münhen (2014, 2016).</li><li>Mühərrik komponentlərinə görə qlobal fəaliyyət göstərən yapon avtomobil istehsalçısının “<strong>Customer Innovation Award</strong>” mükafatı (2006).</li></ul></div><p class=\"bio\">O, Nano in Germany e.V. təşkilatının təsisçi üzvü və Alman Mühəndislər Birliyinin (VDI) üzvüdür. BalticNet-Plasmatech e.V. və Baku-Nürnberg e.V. təşkilatlarının idarə heyətlərinin sədri kimi fəaliyyət göstərmişdir.</p><p class=\"bio-section-title\">Elmi və peşəkar maraq sahələri:</p><ul><li>Yaşıl hidrogen, elektroliz, bərpa olunan enerji və yanacaq elementi texnologiyaları.</li><li>Səth mühəndisliyi, örtük texnologiyaları, nanotexnologiya və tribologiya.</li><li>Nazik təbəqəli sensorlar, avtomobil texnologiyaları və elektrik mobilliyi.</li><li>Elmi-tədqiqat və işləmələrin idarə olunması, texnologiya strategiyası və beynəlxalq elmi əməkdaşlıq.</li></ul><p class=\"bio\">Azərbaycan dili onun ana dilidir. Alman, ingilis və rus dillərini sərbəst, türk dilini isə danışıq səviyyəsində bilir.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 268,
+      "jsonPointer": "/profiles/15/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "Dr.-Ing."
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 273,
+      "jsonPointer": "/profiles/15/title_en",
+      "field": "title_en",
+      "before": "\"Siemens Energy\" company, senior management",
+      "after": "Engineer and technology executive, Germany"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 274,
+      "jsonPointer": "/profiles/15/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Yashar Musayev is an expert in the fields of renewable energy, automotive innovations, e-mobility, green hydrogen and nanotechnology. He has contributed to the development of new energy technologies by leading important research projects in industry and academia. He has more than 80 patents and more than 150 scientific articles.</p><p class=\"bio-section-title\">Main research areas</p><p class=\"bio\">Green hydrogen and renewable energy: Development of electrolysis and fuel cell technologies.</p><p class=\"bio\">Surface technologies and tribology: Coating technologies, thin-film sensors and nanotechnologies.</p><p class=\"bio\">Automotive and e-mobility: Fuel efficiency and sustainable mobility solutions.</p><p class=\"bio\">Strategic R&amp;D management: Strategic roadmaps, partnerships with global universities and research institutes.</p><p class=\"bio-section-title\">Professional experience</p><p class=\"bio\">Siemens Energy AG (2020–present): Green hydrogen and new energy technologies, Senior Management</p><p class=\"bio\">Schaeffler AG (2005–2020): Global research activities in nanotechnology, tribology and fuel cell technologies, leading teams of 100+ scientists and engineers, Senior Vice President</p><p class=\"bio\">SIA Schaeffler Baltic, CEO (2016–2018): Led the acquisition and integration of Naco Technologies by Schaeffler AG.</p><p class=\"bio\">Other positions: H-O-T GmbH, Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU), Daimler AG Azerbaijan partner, Azerbaijan Technical University.</p><p class=\"bio-section-title\">Awards and recognition</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Global Japanese car manufacturer &quot;Supplier&quot; award (2017).</li><li>Materialica Design + Technology award (2016, 2014).</li><li>One of Germany's top 5 innovators (2005–2020).</li><li>Honorary diploma of the President of the Republic of Azerbaijan, 2022</li></ul></div><p class=\"bio-section-title\">Education and professional training</p><p class=\"bio\">Doctorate (Dr.-Ing.), FAU (2001).</p><p class=\"bio\">DAAD Scholar, FAU (1997–1998).</p><p class=\"bio\">Mechanical Engineering (Dipl.-Ing.), Azerbaijan Technical University (1991).</p><p class=\"bio-section-title\">Membership and international relations</p><p class=\"bio\">&quot;Nano in Germany e.V.&quot; founding member.</p><p class=\"bio\">&quot;BalticNet-Plasmatech e.V.&quot; Chairman of the Board.</p><p class=\"bio\">&quot;Baku-Nuremberg e.V.&quot; Chairman of the Board.</p><p class=\"bio\">Member of the Association of German Engineers (VDI).</p><p class=\"bio\">Chairman of the Board of the Union of Engineers of European Azerbaijanis</p>",
+      "after": "<p class=\"bio bio-lead\">Yashar Musayev is an engineer and technology executive specializing in green hydrogen, renewable energy, surface engineering, nanotechnology, and automotive technologies. His international experience combines research and development, industrial production, technology strategy, and collaboration with universities and research institutes.</p><p class=\"bio\">He studied Mechanical Engineering Technology at Azerbaijan Technical University from 1984 to 1991, graduating with distinction with a Dipl.-Ing. degree. He held a DAAD scholarship at Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) in 1997–1998 and completed his doctoral research there in 1998–2001, earning the Dr.-Ing. degree. He also participated in Schaeffler’s International Development Program for Top Managers in 2016–2020.</p><p class=\"bio\">In May 2020, he joined Siemens Energy AG in Erlangen/Munich as Head of Development for New Energy Business. His responsibilities included the development of green hydrogen, electrolysis, and renewable energy technologies, together with technology strategy and team leadership.</p><p class=\"bio\">From December 2005 to January 2020, he worked at Schaeffler AG in Herzogenaurach. He progressed from Project Leader for establishing the Coating Center to Team Lead and Expert, Director of the Coating Center, and Senior Vice President and Head of the Competency Center for Surface Technology, a position he held from September 2015 to January 2020. His responsibilities covered international research and production activities, coating technologies, supplier development, and partnerships with universities and research institutes.</p><p class=\"bio\">As a Schaeffler representative, he led the acquisition and integration of Naco Technologies in Riga in December 2015. Alongside his other responsibilities, he served as CEO of SIA Schaeffler Baltic from February 2016 to December 2018, directing research, development, and sales activities in the Baltic States.</p><p class=\"bio\">His earlier positions included Head of Research and Development at H-O-T in Nuremberg (2001–2005), Research Associate at FAU (2000–2001), Plant Manager at Autostern, a joint-venture partner of Daimler AG in Azerbaijan (1998–2000), and research and teaching roles at Azerbaijan Technical University (1991–1997).</p><p class=\"bio\">His work since 2005 includes more than 40 inventions and patents and 150 national and international publications and lectures.</p><p class=\"bio-section-title\">Awards and recognition:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li><strong>Customer Supplier Award</strong> from a global Japanese automotive manufacturer (2017).</li><li><strong>Materialica Design + Technology Best-Award</strong> for Sensotect® thin-film sensors, Munich (2014, 2016).</li><li><strong>Customer Innovation Award</strong> for engine components from a global Japanese automotive manufacturer (2006).</li></ul></div><p class=\"bio\">He is a founding member of Nano in Germany e.V. and a member of the Association of German Engineers (VDI). He has served as Chairman of the Board of BalticNet-Plasmatech e.V. and Baku-Nürnberg e.V.</p><p class=\"bio-section-title\">Research and professional interests:</p><ul><li>Green hydrogen, electrolysis, renewable energy, and fuel-cell technologies.</li><li>Surface engineering, coating technologies, nanotechnology, and tribology.</li><li>Thin-film sensors, automotive technologies, and electric mobility.</li><li>Research and development management, technology strategy, and international scientific collaboration.</li></ul><p class=\"bio\">He speaks native Azerbaijani, fluent German, English, and Russian, and conversational Turkish.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 269,
+      "jsonPointer": "/profiles/15/title_az",
+      "field": "title_az",
+      "before": "“Siemens Energy” şirkəti, senior management",
+      "after": "Mühəndis və texnologiya sahəsində rəhbər, Almaniya"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 270,
+      "jsonPointer": "/profiles/15/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Yaşar Musayev bərpa olunan enerji, avtomobil innovasiyaları, e-mobilitet, yaşıl hidrogen və nanotexnologiya sahələrində mütəxəssisdir. O, sənaye və akademik sahədə mühüm tədqiqat layihələrinə rəhbərlik edərək yeni enerji texnologiyalarının inkişafına töhfə vermişdir. 80-dən çox patenti və 150-dən çox elmi məqaləsi var.</p><p class=\"bio-section-title\">Əsas tədqiqat sahələri:</p><p class=\"bio\">Yaşıl hidrogen və bərpa olunan enerji: Elektroliz və yanacaq elementləri texnologiyalarının inkişafı.</p><p class=\"bio\">Səth texnologiyaları və tribologiya: Örtük texnologiyaları, nazik təbəqəli sensorlar və nanotexnologiyalar.</p><p class=\"bio\">Avtomobil və e-mobilitet: Yanacaq səmərəliliyi və dayanıqlı mobillik həlləri.</p><p class=\"bio\">Strateji elmi-tədqiqat rəhbərliyi: Strateji yol xəritələri, qlobal universitetlər və tədqiqat institutları ilə əməkdaşlıqlar.</p><p class=\"bio-section-title\">Peşəkar təcrübə:</p><p class=\"bio\">Siemens Energy AG (2020–indiyədək): Yaşıl hidrogen və yeni enerji texnologiyaları, Senior Management</p><p class=\"bio\">Schaeffler AG (2005–2020): Nanotexnologiya, tribologiya və yanacaq elementi texnologiyaları üzrə qlobal tədqiqat işləri, 100+ alim və mühəndisdən ibarət qruplara rəhbərlik, Senior Vice Prezident</p><p class=\"bio\">SIA Schaeffler Baltic, CEO (2016–2018): Naco Technologies-in Schaeffler AG tərəfindən alınmasına və inteqrasiyasına rəhbərlik.</p><p class=\"bio\">Digər vəzifələr: H-O-T GmbH, Erlangen-Nürnberg Universiteti, Daimler AG Azərbaycan tərəfdaşı, Azərbaycan Texniki Universiteti.</p><p class=\"bio-section-title\">Mükafatlar və tanınma:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Qlobal yapon avtomobil istehsalçısının “Təchizatçı” mükafatı (2017).</li><li>Materialica Dizayn + Texnologiya mükafatı (2016, 2014).</li><li>Almaniyanın TOP-5 innovatorlarından biri (2005–2020).</li><li>Azərbaycan Respublikası Prezidentinin fəxri diplomu, 2022</li></ul></div><p class=\"bio-section-title\">Təhsil və peşəkar hazırlıq:</p><p class=\"bio\">Doktorantura (Dr.-Ing.), Erlangen-Nürnberg Universiteti (2001).</p><p class=\"bio\">DAAD təqaüdçüsü, Erlangen-Nürnberg Universiteti (1997–1998).</p><p class=\"bio\">Mexanika Mühəndisliyi (Dipl.-Ing.), Azərbaycan Texniki Universiteti (1991).</p><p class=\"bio-section-title\">Üzvlük və beynəlxalq əlaqələr:</p><p class=\"bio\">“Nano in Germany e.V.” təsisçi üzvü.</p><p class=\"bio\">“BalticNet-Plasmatech e.V.” İdarə Heyətinin sədri.</p><p class=\"bio\">“Bakı-Nürnberg e.V.” İdarə Heyətinin sədri.</p><p class=\"bio\">Alman Mühəndislər Birliyinin (VDI) üzvü.</p><p class=\"bio\">Avropa Azərbaycanlıları Mühəndislər İttifaqı İdarə Heyətinin sədri</p>",
+      "after": "<p class=\"bio bio-lead\">Yaşar Musayev yaşıl hidrogen, bərpa olunan enerji, səth mühəndisliyi, nanotexnologiya və avtomobil texnologiyaları sahələrində ixtisaslaşmış mühəndis və rəhbərdir. Onun beynəlxalq təcrübəsi elmi-tədqiqat və işləmələri, sənaye istehsalını, texnologiya strategiyasını, universitetlər və tədqiqat institutları ilə əməkdaşlığı əhatə edir.</p><p class=\"bio\">1984–1991-ci illərdə Azərbaycan Texniki Universitetində maşınqayırma texnologiyası üzrə təhsil almış və universiteti fərqlənmə ilə bitirərək Dipl.-Ing. dərəcəsi qazanmışdır. 1997–1998-ci illərdə Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) universitetində DAAD təqaüdçüsü olmuş, 1998–2001-ci illərdə həmin universitetdə doktorluq tədqiqatlarını apararaq Dr.-Ing. dərəcəsini almışdır. Həmçinin 2016–2020-ci illərdə Schaeffler şirkətinin yüksək səviyyəli rəhbərlər üçün Beynəlxalq İnkişaf Proqramında iştirak etmişdir.</p><p class=\"bio\">2020-ci ilin mayında Siemens Energy AG şirkətinin Erlangen/Münhen bölməsində Yeni Enerji Biznesi istiqaməti üzrə inkişaf rəhbəri vəzifəsində fəaliyyətə başlamışdır. Onun vəzifələrinə yaşıl hidrogen, elektroliz və bərpa olunan enerji texnologiyalarının inkişafı, texnologiya strategiyasının hazırlanması və komandalara rəhbərlik daxil olmuşdur.</p><p class=\"bio\">2005-ci ilin dekabrından 2020-ci ilin yanvarınadək Herzogenaurach şəhərində Schaeffler AG şirkətində çalışmışdır. Örtük Mərkəzinin yaradılması üzrə layihə rəhbəri vəzifəsindən komanda rəhbəri və ekspert, Örtük Mərkəzinin direktoru, daha sonra isə baş vitse-prezident və Səth Texnologiyaları üzrə Kompetensiya Mərkəzinin rəhbəri vəzifələrinə yüksəlmişdir. Sonuncu vəzifəni 2015-ci ilin sentyabrından 2020-ci ilin yanvarınadək tutmuşdur. Onun məsuliyyət sahələrinə beynəlxalq elmi-tədqiqat və istehsal fəaliyyəti, örtük texnologiyaları, təchizatçıların inkişafı, universitetlər və tədqiqat institutları ilə tərəfdaşlıq daxil olmuşdur.</p><p class=\"bio\">Schaeffler şirkətinin nümayəndəsi kimi 2015-ci ilin dekabrında Riqada Naco Technologies şirkətinin alınmasına və inteqrasiyasına rəhbərlik etmişdir. Digər vəzifələri ilə yanaşı, 2016-cı ilin fevralından 2018-ci ilin dekabrınadək SIA Schaeffler Baltic şirkətinin baş icraçı direktoru olmuş, Baltik ölkələrində elmi-tədqiqat, inkişaf və satış fəaliyyətinə rəhbərlik etmişdir.</p><p class=\"bio\">Əvvəllər Nürnberqdə H-O-T şirkətində elmi-tədqiqat və inkişaf rəhbəri (2001–2005), FAU-da elmi işçi (2000–2001), Daimler AG-nin Azərbaycandakı birgə müəssisə tərəfdaşı olan Autostern şirkətində istehsalat rəhbəri (1998–2000), Azərbaycan Texniki Universitetində isə elmi-tədqiqat və pedaqoji vəzifələrdə (1991–1997) çalışmışdır.</p><p class=\"bio\">2005-ci ildən etibarən fəaliyyəti 40-dan çox ixtira və patenti, həmçinin 150 milli və beynəlxalq elmi nəşr və məruzəni əhatə edir.</p><p class=\"bio-section-title\">Mükafatlar və tanınma:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Qlobal fəaliyyət göstərən yapon avtomobil istehsalçısının “<strong>Customer Supplier Award</strong>” mükafatı (2017).</li><li>Sensotect® nazik təbəqəli sensorlarına görə “<strong>Materialica Design + Technology Best-Award</strong>” mükafatı, Münhen (2014, 2016).</li><li>Mühərrik komponentlərinə görə qlobal fəaliyyət göstərən yapon avtomobil istehsalçısının “<strong>Customer Innovation Award</strong>” mükafatı (2006).</li></ul></div><p class=\"bio\">O, Nano in Germany e.V. təşkilatının təsisçi üzvü və Alman Mühəndislər Birliyinin (VDI) üzvüdür. BalticNet-Plasmatech e.V. və Baku-Nürnberg e.V. təşkilatlarının idarə heyətlərinin sədri kimi fəaliyyət göstərmişdir.</p><p class=\"bio-section-title\">Elmi və peşəkar maraq sahələri:</p><ul><li>Yaşıl hidrogen, elektroliz, bərpa olunan enerji və yanacaq elementi texnologiyaları.</li><li>Səth mühəndisliyi, örtük texnologiyaları, nanotexnologiya və tribologiya.</li><li>Nazik təbəqəli sensorlar, avtomobil texnologiyaları və elektrik mobilliyi.</li><li>Elmi-tədqiqat və işləmələrin idarə olunması, texnologiya strategiyası və beynəlxalq elmi əməkdaşlıq.</li></ul><p class=\"bio\">Azərbaycan dili onun ana dilidir. Alman, ingilis və rus dillərini sərbəst, türk dilini isə danışıq səviyyəsində bilir.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/15/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "Dr.-Ing."
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/15/title_en",
+      "field": "title_en",
+      "before": "\"Siemens Energy\" company, senior management",
+      "after": "Engineer and technology executive, Germany"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/15/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Yashar Musayev is an expert in the fields of renewable energy, automotive innovations, e-mobility, green hydrogen and nanotechnology. He has contributed to the development of new energy technologies by leading important research projects in industry and academia. He has more than 80 patents and more than 150 scientific articles.</p><p class=\"bio-section-title\">Main research areas</p><p class=\"bio\">Green hydrogen and renewable energy: Development of electrolysis and fuel cell technologies.</p><p class=\"bio\">Surface technologies and tribology: Coating technologies, thin-film sensors and nanotechnologies.</p><p class=\"bio\">Automotive and e-mobility: Fuel efficiency and sustainable mobility solutions.</p><p class=\"bio\">Strategic R&amp;D management: Strategic roadmaps, partnerships with global universities and research institutes.</p><p class=\"bio-section-title\">Professional experience</p><p class=\"bio\">Siemens Energy AG (2020–present): Green hydrogen and new energy technologies, Senior Management</p><p class=\"bio\">Schaeffler AG (2005–2020): Global research activities in nanotechnology, tribology and fuel cell technologies, leading teams of 100+ scientists and engineers, Senior Vice President</p><p class=\"bio\">SIA Schaeffler Baltic, CEO (2016–2018): Led the acquisition and integration of Naco Technologies by Schaeffler AG.</p><p class=\"bio\">Other positions: H-O-T GmbH, Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU), Daimler AG Azerbaijan partner, Azerbaijan Technical University.</p><p class=\"bio-section-title\">Awards and recognition</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Global Japanese car manufacturer &quot;Supplier&quot; award (2017).</li><li>Materialica Design + Technology award (2016, 2014).</li><li>One of Germany's top 5 innovators (2005–2020).</li><li>Honorary diploma of the President of the Republic of Azerbaijan, 2022</li></ul></div><p class=\"bio-section-title\">Education and professional training</p><p class=\"bio\">Doctorate (Dr.-Ing.), FAU (2001).</p><p class=\"bio\">DAAD Scholar, FAU (1997–1998).</p><p class=\"bio\">Mechanical Engineering (Dipl.-Ing.), Azerbaijan Technical University (1991).</p><p class=\"bio-section-title\">Membership and international relations</p><p class=\"bio\">&quot;Nano in Germany e.V.&quot; founding member.</p><p class=\"bio\">&quot;BalticNet-Plasmatech e.V.&quot; Chairman of the Board.</p><p class=\"bio\">&quot;Baku-Nuremberg e.V.&quot; Chairman of the Board.</p><p class=\"bio\">Member of the Association of German Engineers (VDI).</p><p class=\"bio\">Chairman of the Board of the Union of Engineers of European Azerbaijanis</p>",
+      "after": "<p class=\"bio bio-lead\">Yashar Musayev is an engineer and technology executive specializing in green hydrogen, renewable energy, surface engineering, nanotechnology, and automotive technologies. His international experience combines research and development, industrial production, technology strategy, and collaboration with universities and research institutes.</p><p class=\"bio\">He studied Mechanical Engineering Technology at Azerbaijan Technical University from 1984 to 1991, graduating with distinction with a Dipl.-Ing. degree. He held a DAAD scholarship at Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) in 1997–1998 and completed his doctoral research there in 1998–2001, earning the Dr.-Ing. degree. He also participated in Schaeffler’s International Development Program for Top Managers in 2016–2020.</p><p class=\"bio\">In May 2020, he joined Siemens Energy AG in Erlangen/Munich as Head of Development for New Energy Business. His responsibilities included the development of green hydrogen, electrolysis, and renewable energy technologies, together with technology strategy and team leadership.</p><p class=\"bio\">From December 2005 to January 2020, he worked at Schaeffler AG in Herzogenaurach. He progressed from Project Leader for establishing the Coating Center to Team Lead and Expert, Director of the Coating Center, and Senior Vice President and Head of the Competency Center for Surface Technology, a position he held from September 2015 to January 2020. His responsibilities covered international research and production activities, coating technologies, supplier development, and partnerships with universities and research institutes.</p><p class=\"bio\">As a Schaeffler representative, he led the acquisition and integration of Naco Technologies in Riga in December 2015. Alongside his other responsibilities, he served as CEO of SIA Schaeffler Baltic from February 2016 to December 2018, directing research, development, and sales activities in the Baltic States.</p><p class=\"bio\">His earlier positions included Head of Research and Development at H-O-T in Nuremberg (2001–2005), Research Associate at FAU (2000–2001), Plant Manager at Autostern, a joint-venture partner of Daimler AG in Azerbaijan (1998–2000), and research and teaching roles at Azerbaijan Technical University (1991–1997).</p><p class=\"bio\">His work since 2005 includes more than 40 inventions and patents and 150 national and international publications and lectures.</p><p class=\"bio-section-title\">Awards and recognition:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li><strong>Customer Supplier Award</strong> from a global Japanese automotive manufacturer (2017).</li><li><strong>Materialica Design + Technology Best-Award</strong> for Sensotect® thin-film sensors, Munich (2014, 2016).</li><li><strong>Customer Innovation Award</strong> for engine components from a global Japanese automotive manufacturer (2006).</li></ul></div><p class=\"bio\">He is a founding member of Nano in Germany e.V. and a member of the Association of German Engineers (VDI). He has served as Chairman of the Board of BalticNet-Plasmatech e.V. and Baku-Nürnberg e.V.</p><p class=\"bio-section-title\">Research and professional interests:</p><ul><li>Green hydrogen, electrolysis, renewable energy, and fuel-cell technologies.</li><li>Surface engineering, coating technologies, nanotechnology, and tribology.</li><li>Thin-film sensors, automotive technologies, and electric mobility.</li><li>Research and development management, technology strategy, and international scientific collaboration.</li></ul><p class=\"bio\">He speaks native Azerbaijani, fluent German, English, and Russian, and conversational Turkish.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/15/title_az",
+      "field": "title_az",
+      "before": "“Siemens Energy” şirkəti, senior management",
+      "after": "Mühəndis və texnologiya sahəsində rəhbər, Almaniya"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/15/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Yaşar Musayev bərpa olunan enerji, avtomobil innovasiyaları, e-mobilitet, yaşıl hidrogen və nanotexnologiya sahələrində mütəxəssisdir. O, sənaye və akademik sahədə mühüm tədqiqat layihələrinə rəhbərlik edərək yeni enerji texnologiyalarının inkişafına töhfə vermişdir. 80-dən çox patenti və 150-dən çox elmi məqaləsi var.</p><p class=\"bio-section-title\">Əsas tədqiqat sahələri:</p><p class=\"bio\">Yaşıl hidrogen və bərpa olunan enerji: Elektroliz və yanacaq elementləri texnologiyalarının inkişafı.</p><p class=\"bio\">Səth texnologiyaları və tribologiya: Örtük texnologiyaları, nazik təbəqəli sensorlar və nanotexnologiyalar.</p><p class=\"bio\">Avtomobil və e-mobilitet: Yanacaq səmərəliliyi və dayanıqlı mobillik həlləri.</p><p class=\"bio\">Strateji elmi-tədqiqat rəhbərliyi: Strateji yol xəritələri, qlobal universitetlər və tədqiqat institutları ilə əməkdaşlıqlar.</p><p class=\"bio-section-title\">Peşəkar təcrübə:</p><p class=\"bio\">Siemens Energy AG (2020–indiyədək): Yaşıl hidrogen və yeni enerji texnologiyaları, Senior Management</p><p class=\"bio\">Schaeffler AG (2005–2020): Nanotexnologiya, tribologiya və yanacaq elementi texnologiyaları üzrə qlobal tədqiqat işləri, 100+ alim və mühəndisdən ibarət qruplara rəhbərlik, Senior Vice Prezident</p><p class=\"bio\">SIA Schaeffler Baltic, CEO (2016–2018): Naco Technologies-in Schaeffler AG tərəfindən alınmasına və inteqrasiyasına rəhbərlik.</p><p class=\"bio\">Digər vəzifələr: H-O-T GmbH, Erlangen-Nürnberg Universiteti, Daimler AG Azərbaycan tərəfdaşı, Azərbaycan Texniki Universiteti.</p><p class=\"bio-section-title\">Mükafatlar və tanınma:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Qlobal yapon avtomobil istehsalçısının “Təchizatçı” mükafatı (2017).</li><li>Materialica Dizayn + Texnologiya mükafatı (2016, 2014).</li><li>Almaniyanın TOP-5 innovatorlarından biri (2005–2020).</li><li>Azərbaycan Respublikası Prezidentinin fəxri diplomu, 2022</li></ul></div><p class=\"bio-section-title\">Təhsil və peşəkar hazırlıq:</p><p class=\"bio\">Doktorantura (Dr.-Ing.), Erlangen-Nürnberg Universiteti (2001).</p><p class=\"bio\">DAAD təqaüdçüsü, Erlangen-Nürnberg Universiteti (1997–1998).</p><p class=\"bio\">Mexanika Mühəndisliyi (Dipl.-Ing.), Azərbaycan Texniki Universiteti (1991).</p><p class=\"bio-section-title\">Üzvlük və beynəlxalq əlaqələr:</p><p class=\"bio\">“Nano in Germany e.V.” təsisçi üzvü.</p><p class=\"bio\">“BalticNet-Plasmatech e.V.” İdarə Heyətinin sədri.</p><p class=\"bio\">“Bakı-Nürnberg e.V.” İdarə Heyətinin sədri.</p><p class=\"bio\">Alman Mühəndislər Birliyinin (VDI) üzvü.</p><p class=\"bio\">Avropa Azərbaycanlıları Mühəndislər İttifaqı İdarə Heyətinin sədri</p>",
+      "after": "<p class=\"bio bio-lead\">Yaşar Musayev yaşıl hidrogen, bərpa olunan enerji, səth mühəndisliyi, nanotexnologiya və avtomobil texnologiyaları sahələrində ixtisaslaşmış mühəndis və rəhbərdir. Onun beynəlxalq təcrübəsi elmi-tədqiqat və işləmələri, sənaye istehsalını, texnologiya strategiyasını, universitetlər və tədqiqat institutları ilə əməkdaşlığı əhatə edir.</p><p class=\"bio\">1984–1991-ci illərdə Azərbaycan Texniki Universitetində maşınqayırma texnologiyası üzrə təhsil almış və universiteti fərqlənmə ilə bitirərək Dipl.-Ing. dərəcəsi qazanmışdır. 1997–1998-ci illərdə Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) universitetində DAAD təqaüdçüsü olmuş, 1998–2001-ci illərdə həmin universitetdə doktorluq tədqiqatlarını apararaq Dr.-Ing. dərəcəsini almışdır. Həmçinin 2016–2020-ci illərdə Schaeffler şirkətinin yüksək səviyyəli rəhbərlər üçün Beynəlxalq İnkişaf Proqramında iştirak etmişdir.</p><p class=\"bio\">2020-ci ilin mayında Siemens Energy AG şirkətinin Erlangen/Münhen bölməsində Yeni Enerji Biznesi istiqaməti üzrə inkişaf rəhbəri vəzifəsində fəaliyyətə başlamışdır. Onun vəzifələrinə yaşıl hidrogen, elektroliz və bərpa olunan enerji texnologiyalarının inkişafı, texnologiya strategiyasının hazırlanması və komandalara rəhbərlik daxil olmuşdur.</p><p class=\"bio\">2005-ci ilin dekabrından 2020-ci ilin yanvarınadək Herzogenaurach şəhərində Schaeffler AG şirkətində çalışmışdır. Örtük Mərkəzinin yaradılması üzrə layihə rəhbəri vəzifəsindən komanda rəhbəri və ekspert, Örtük Mərkəzinin direktoru, daha sonra isə baş vitse-prezident və Səth Texnologiyaları üzrə Kompetensiya Mərkəzinin rəhbəri vəzifələrinə yüksəlmişdir. Sonuncu vəzifəni 2015-ci ilin sentyabrından 2020-ci ilin yanvarınadək tutmuşdur. Onun məsuliyyət sahələrinə beynəlxalq elmi-tədqiqat və istehsal fəaliyyəti, örtük texnologiyaları, təchizatçıların inkişafı, universitetlər və tədqiqat institutları ilə tərəfdaşlıq daxil olmuşdur.</p><p class=\"bio\">Schaeffler şirkətinin nümayəndəsi kimi 2015-ci ilin dekabrında Riqada Naco Technologies şirkətinin alınmasına və inteqrasiyasına rəhbərlik etmişdir. Digər vəzifələri ilə yanaşı, 2016-cı ilin fevralından 2018-ci ilin dekabrınadək SIA Schaeffler Baltic şirkətinin baş icraçı direktoru olmuş, Baltik ölkələrində elmi-tədqiqat, inkişaf və satış fəaliyyətinə rəhbərlik etmişdir.</p><p class=\"bio\">Əvvəllər Nürnberqdə H-O-T şirkətində elmi-tədqiqat və inkişaf rəhbəri (2001–2005), FAU-da elmi işçi (2000–2001), Daimler AG-nin Azərbaycandakı birgə müəssisə tərəfdaşı olan Autostern şirkətində istehsalat rəhbəri (1998–2000), Azərbaycan Texniki Universitetində isə elmi-tədqiqat və pedaqoji vəzifələrdə (1991–1997) çalışmışdır.</p><p class=\"bio\">2005-ci ildən etibarən fəaliyyəti 40-dan çox ixtira və patenti, həmçinin 150 milli və beynəlxalq elmi nəşr və məruzəni əhatə edir.</p><p class=\"bio-section-title\">Mükafatlar və tanınma:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Qlobal fəaliyyət göstərən yapon avtomobil istehsalçısının “<strong>Customer Supplier Award</strong>” mükafatı (2017).</li><li>Sensotect® nazik təbəqəli sensorlarına görə “<strong>Materialica Design + Technology Best-Award</strong>” mükafatı, Münhen (2014, 2016).</li><li>Mühərrik komponentlərinə görə qlobal fəaliyyət göstərən yapon avtomobil istehsalçısının “<strong>Customer Innovation Award</strong>” mükafatı (2006).</li></ul></div><p class=\"bio\">O, Nano in Germany e.V. təşkilatının təsisçi üzvü və Alman Mühəndislər Birliyinin (VDI) üzvüdür. BalticNet-Plasmatech e.V. və Baku-Nürnberg e.V. təşkilatlarının idarə heyətlərinin sədri kimi fəaliyyət göstərmişdir.</p><p class=\"bio-section-title\">Elmi və peşəkar maraq sahələri:</p><ul><li>Yaşıl hidrogen, elektroliz, bərpa olunan enerji və yanacaq elementi texnologiyaları.</li><li>Səth mühəndisliyi, örtük texnologiyaları, nanotexnologiya və tribologiya.</li><li>Nazik təbəqəli sensorlar, avtomobil texnologiyaları və elektrik mobilliyi.</li><li>Elmi-tədqiqat və işləmələrin idarə olunması, texnologiya strategiyası və beynəlxalq elmi əməkdaşlıq.</li></ul><p class=\"bio\">Azərbaycan dili onun ana dilidir. Alman, ingilis və rus dillərini sərbəst, türk dilini isə danışıq səviyyəsində bilir.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 95,
+      "jsonPointer": "/profiles/mussa_98@hotmail.de/title",
+      "field": "title",
+      "before": "\"Siemens Energy\" company, senior management",
+      "after": "Engineer and technology executive, Germany"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 96,
+      "jsonPointer": "/profiles/mussa_98@hotmail.de/bio_html",
+      "field": "bio_html",
+      "before": "<p class=\"bio bio-lead\">Yashar Musayev is an expert in the fields of renewable energy, automotive innovations, e-mobility, green hydrogen and nanotechnology. He has contributed to the development of new energy technologies by leading important research projects in industry and academia. He has more than 80 patents and more than 150 scientific articles.</p><p class=\"bio-section-title\">Main research areas:</p><p class=\"bio\">Green hydrogen and renewable energy: Development of electrolysis and fuel cell technologies.</p><p class=\"bio\">Surface technologies and tribology: Coating technologies, thin film sensors and nanotechnologies.</p><p class=\"bio\">Automotive and e-mobility: Fuel efficiency and sustainable mobility solutions.</p><p class=\"bio\">Strategic R&amp;D management: Strategic roadmaps, partnerships with global universities and research institutes.</p><p class=\"bio-section-title\">Professional experience:</p><p class=\"bio\">Siemens Energy AG (2020–present): Green hydrogen and new energy technologies, Senior Management</p><p class=\"bio\">Schaeffler AG (2005–2020): Global research activities in nanotechnology, tribology and fuel cell technologies, leading teams of 100+ scientists and engineers, Senior Vice President</p><p class=\"bio\">SIA Schaeffler Baltic, CEO (2016–2018): Led the acquisition and integration of Naco Technologies by Schaeffler AG.</p><p class=\"bio\">Other positions: H-O-T GmbH, Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU), Daimler AG Azerbaijan partner, Azerbaijan Technical University.</p><p class=\"bio-section-title\">Awards and recognition:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>Global Japanese car manufacturer &quot;Supplier&quot; award (2017).</li><li>Materialica Design + Technology award (2016, 2014).</li><li>One of Germany&#x27;s TOP-5 innovators (2005–2020).</li><li>Honorary diploma of the President of the Republic of Azerbaijan, 2022</li></ul></div><p class=\"bio-section-title\">Education and professional training:</p><p class=\"bio\">Doctorate (Dr.-Ing.), FAU (2001).</p><p class=\"bio\">DAAD Scholar, FAU (1997–1998).</p><p class=\"bio\">Mechanical Engineering (Dipl.-Ing.), Azerbaijan Technical University (1991).</p><p class=\"bio-section-title\">Membership and international relations:</p><p class=\"bio\">&quot;Nano in Germany e.V.&quot; founding member.</p><p class=\"bio\">&quot;BalticNet-Plasmatech e.V.&quot; Chairman of the Board.</p><p class=\"bio\">&quot;Baku-Nuremberg e.V.&quot; Chairman of the Board.</p><p class=\"bio\">Member of the Association of German Engineers (VDI).</p><p class=\"bio\">Chairman of the Board of the Union of Engineers of European Azerbaijanis</p>",
+      "after": "<p class=\"bio bio-lead\">Yashar Musayev is an engineer and technology executive specializing in green hydrogen, renewable energy, surface engineering, nanotechnology, and automotive technologies. His international experience combines research and development, industrial production, technology strategy, and collaboration with universities and research institutes.</p><p class=\"bio\">He studied Mechanical Engineering Technology at Azerbaijan Technical University from 1984 to 1991, graduating with distinction with a Dipl.-Ing. degree. He held a DAAD scholarship at Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU) in 1997–1998 and completed his doctoral research there in 1998–2001, earning the Dr.-Ing. degree. He also participated in Schaeffler’s International Development Program for Top Managers in 2016–2020.</p><p class=\"bio\">In May 2020, he joined Siemens Energy AG in Erlangen/Munich as Head of Development for New Energy Business. His responsibilities included the development of green hydrogen, electrolysis, and renewable energy technologies, together with technology strategy and team leadership.</p><p class=\"bio\">From December 2005 to January 2020, he worked at Schaeffler AG in Herzogenaurach. He progressed from Project Leader for establishing the Coating Center to Team Lead and Expert, Director of the Coating Center, and Senior Vice President and Head of the Competency Center for Surface Technology, a position he held from September 2015 to January 2020. His responsibilities covered international research and production activities, coating technologies, supplier development, and partnerships with universities and research institutes.</p><p class=\"bio\">As a Schaeffler representative, he led the acquisition and integration of Naco Technologies in Riga in December 2015. Alongside his other responsibilities, he served as CEO of SIA Schaeffler Baltic from February 2016 to December 2018, directing research, development, and sales activities in the Baltic States.</p><p class=\"bio\">His earlier positions included Head of Research and Development at H-O-T in Nuremberg (2001–2005), Research Associate at FAU (2000–2001), Plant Manager at Autostern, a joint-venture partner of Daimler AG in Azerbaijan (1998–2000), and research and teaching roles at Azerbaijan Technical University (1991–1997).</p><p class=\"bio\">His work since 2005 includes more than 40 inventions and patents and 150 national and international publications and lectures.</p><p class=\"bio-section-title\">Awards and recognition:</p><div class=\"awards-block\"><ul class=\"awards-list\"><li><strong>Customer Supplier Award</strong> from a global Japanese automotive manufacturer (2017).</li><li><strong>Materialica Design + Technology Best-Award</strong> for Sensotect® thin-film sensors, Munich (2014, 2016).</li><li><strong>Customer Innovation Award</strong> for engine components from a global Japanese automotive manufacturer (2006).</li></ul></div><p class=\"bio\">He is a founding member of Nano in Germany e.V. and a member of the Association of German Engineers (VDI). He has served as Chairman of the Board of BalticNet-Plasmatech e.V. and Baku-Nürnberg e.V.</p><p class=\"bio-section-title\">Research and professional interests:</p><ul><li>Green hydrogen, electrolysis, renewable energy, and fuel-cell technologies.</li><li>Surface engineering, coating technologies, nanotechnology, and tribology.</li><li>Thin-film sensors, automotive technologies, and electric mobility.</li><li>Research and development management, technology strategy, and international scientific collaboration.</li></ul><p class=\"bio\">He speaks native Azerbaijani, fluent German, English, and Russian, and conversational Turkish.</p>"
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "line": 158,
+      "jsonPointer": "/15/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "Dr.-Ing."
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "line": 158,
+      "jsonPointer": "/15/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "Dr.-Ing."
+    },
+    {
+      "file": "js/scientists-catalog-data.js",
+      "line": 158,
+      "jsonPointer": "/15/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "Dr.-Ing."
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data.js",
+      "line": 158,
+      "jsonPointer": "/15/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "Dr.-Ing."
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6552,
+      "jsonPointer": "/entries/503/summary",
+      "field": "summary",
+      "before": "\"Siemens Energy\" company, senior management · Engineering · Germany",
+      "after": "Engineer and technology executive, Germany · Engineering · Germany"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6556,
+      "jsonPointer": "/entries/503/norm",
+      "field": "norm",
+      "before": "yashar musayev siemens energy company senior management engineering germany mussa_98@hotmail.de yashar musayev is an expert in the fields of renewable energy automotive innovations e-mobility green hydrogen and nanotechnology. he has contributed to the development of new energy technologies by leading important research projects in industry and academia. he has more than 80 patents and more than 150 scientific phd",
+      "after": "yashar musayev engineer and technology executive germany engineering germany mussa_98@hotmail.de yashar musayev is an engineer and technology executive specializing in green hydrogen renewable energy surface engineering nanotechnology and automotive technologies. his international experience combines research and development industrial production technology strategy and collaboration with universities and r dr.-ing."
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6539,
+      "jsonPointer": "/entries/502/summary",
+      "field": "summary",
+      "before": "“Siemens Energy” şirkəti, senior management · Mühəndis · Almaniya",
+      "after": "Mühəndis və texnologiya sahəsində rəhbər, Almaniya · Mühəndis · Almaniya"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6543,
+      "jsonPointer": "/entries/502/norm",
+      "field": "norm",
+      "before": "yasar musayev siemens energy sirketi senior management muhendis almaniya mussa_98@hotmail.de yasar musayev berpa olunan enerji avtomobil innovasiyalari e-mobilitet yasil hidrogen ve nanotexnologiya sahelerinde mutexessisdir. o senaye ve akademik sahede muhum tedqiqat layihelerine rehberlik ederek yeni enerji texnologiyalarinin inkisafina tohfe vermisdir. 80-den cox patenti ve 150-den cox elmi meqalesi var. phd",
+      "after": "yasar musayev muhendis ve texnologiya sahesinde rehber almaniya muhendis almaniya mussa_98@hotmail.de yasar musayev yasil hidrogen berpa olunan enerji seth muhendisliyi nanotexnologiya ve avtomobil texnologiyalari sahelerinde ixtisaslasmis muhendis ve rehberdir. onun beynelxalq tecrubesi elmi-tedqiqat ve islemeleri senaye istehsalini texnologiya strategiyasini universitetler ve tedqiqat institutlari ile emekdasli dr.-ing."
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6552,
+      "jsonPointer": "/entries/503/summary",
+      "field": "summary",
+      "before": "\"Siemens Energy\" company, senior management · Engineering · Germany",
+      "after": "Engineer and technology executive, Germany · Engineering · Germany"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6556,
+      "jsonPointer": "/entries/503/norm",
+      "field": "norm",
+      "before": "yashar musayev siemens energy company senior management engineering germany mussa_98@hotmail.de yashar musayev is an expert in the fields of renewable energy automotive innovations e-mobility green hydrogen and nanotechnology. he has contributed to the development of new energy technologies by leading important research projects in industry and academia. he has more than 80 patents and more than 150 scientific phd",
+      "after": "yashar musayev engineer and technology executive germany engineering germany mussa_98@hotmail.de yashar musayev is an engineer and technology executive specializing in green hydrogen renewable energy surface engineering nanotechnology and automotive technologies. his international experience combines research and development industrial production technology strategy and collaboration with universities and r dr.-ing."
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6539,
+      "jsonPointer": "/entries/502/summary",
+      "field": "summary",
+      "before": "“Siemens Energy” şirkəti, senior management · Mühəndis · Almaniya",
+      "after": "Mühəndis və texnologiya sahəsində rəhbər, Almaniya · Mühəndis · Almaniya"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6543,
+      "jsonPointer": "/entries/502/norm",
+      "field": "norm",
+      "before": "yasar musayev siemens energy sirketi senior management muhendis almaniya mussa_98@hotmail.de yasar musayev berpa olunan enerji avtomobil innovasiyalari e-mobilitet yasil hidrogen ve nanotexnologiya sahelerinde mutexessisdir. o senaye ve akademik sahede muhum tedqiqat layihelerine rehberlik ederek yeni enerji texnologiyalarinin inkisafina tohfe vermisdir. 80-den cox patenti ve 150-den cox elmi meqalesi var. phd",
+      "after": "yasar musayev muhendis ve texnologiya sahesinde rehber almaniya muhendis almaniya mussa_98@hotmail.de yasar musayev yasil hidrogen berpa olunan enerji seth muhendisliyi nanotexnologiya ve avtomobil texnologiyalari sahelerinde ixtisaslasmis muhendis ve rehberdir. onun beynelxalq tecrubesi elmi-tedqiqat ve islemeleri senaye istehsalini texnologiya strategiyasini universitetler ve tedqiqat institutlari ile emekdasli dr.-ing."
+    }
+  ],
+  "fileHashes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "before": "f79fd1ab2c5868aa068e91a636ee61841bffef6b1ae560287c2f0dbcdd907e96",
+      "after": "9e3805fd52cb1f474c2227614ed2c03b6922f5218d1174573c7d4f6fa4fcc2ff"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "before": "df0f5b80b85de80378b1d32119a245ff1b78b0575818a2777937ff029bb2f5e4",
+      "after": "cb9c692f6bfa43c49ca59d202c89b5a7152ead1c1aebbda5a146b8218cbd35c8"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "before": "f79fd1ab2c5868aa068e91a636ee61841bffef6b1ae560287c2f0dbcdd907e96",
+      "after": "9e3805fd52cb1f474c2227614ed2c03b6922f5218d1174573c7d4f6fa4fcc2ff"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "before": "df0f5b80b85de80378b1d32119a245ff1b78b0575818a2777937ff029bb2f5e4",
+      "after": "cb9c692f6bfa43c49ca59d202c89b5a7152ead1c1aebbda5a146b8218cbd35c8"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "before": "7eea5a5a41fd81d5ee2d1e71f44b0f2869210dbfd1d7c0a1e5d030535f3a71e9",
+      "after": "41f02e57f26e2e1d9c0fdfc03d63dc9a22dac11e393e47c509327b72d2a222a7"
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "before": "ecbc3bf795a37560fcf6ada6032e0fd35f0b9c191db79f3416af16f1d3dba689",
+      "after": "77fc1d0d2f756c9f08d7d206fb1876ee11dadf6eed748925940fb28ebe68c48e"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "before": "ecbc3bf795a37560fcf6ada6032e0fd35f0b9c191db79f3416af16f1d3dba689",
+      "after": "77fc1d0d2f756c9f08d7d206fb1876ee11dadf6eed748925940fb28ebe68c48e"
+    },
+    {
+      "file": "js/scientists-catalog-data.js",
+      "before": "d050ccf36fc7318b619a366fa1749e0e22cec45294728eac86c4150a1077b378",
+      "after": "83f51600ba049d95e9e1abd0761bf845f91d248c25a72fee4afdb8bf10274c89"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data.js",
+      "before": "d050ccf36fc7318b619a366fa1749e0e22cec45294728eac86c4150a1077b378",
+      "after": "83f51600ba049d95e9e1abd0761bf845f91d248c25a72fee4afdb8bf10274c89"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "before": "f45fc408dfb34e96a98a582042011abb36fdedb8be5295cda95502e95775d14a",
+      "after": "2bbde4febd0314b4fd9644e738a5e3825d770064e14462747391d0cf48777b9c"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "before": "f45fc408dfb34e96a98a582042011abb36fdedb8be5295cda95502e95775d14a",
+      "after": "2bbde4febd0314b4fd9644e738a5e3825d770064e14462747391d0cf48777b9c"
+    }
+  ],
+  "reportFinding": {
+    "before": {
+      "id": "V125",
+      "p": 16,
+      "section": "Biography",
+      "c": "Global Japanese car manufacturer \"Supplier\" award (2017).",
+      "s": "In 2017, Yashar Musayev received a Customer Supplier Award from a global Japanese automotive manufacturer.",
+      "parts": [
+        {
+          "c": "Global Japanese car manufacturer \"Supplier\" award (2017).",
+          "s": "In 2017, Yashar Musayev received a Customer Supplier Award from a global Japanese automotive manufacturer."
+        }
+      ],
+      "t": "Style",
+      "e": "The CV lists “Customer Supplier Award, global Japanese OEM” for 2017. The user confirms that Yashar Musayev personally received the award; recipient identity is no longer an open question. The manufacturer and exact official award title remain unverified. The proposed wording uses the CV’s label and has not been applied to the profile.",
+      "severity": "High",
+      "verify": true,
+      "status": "New",
+      "sources": [
+        {
+          "title": "CV Yaşar Musayev.pdf",
+          "file": "E:/Documents/Azərbaycanlı Alimlərin Istanbul görüşü, 8-10 Dekabr 2022/1-ci Bakı forumu, 8-12 Sentyabr 2024/Web Site/CV/CV Yaşar Musayev.pdf",
+          "pages": 3,
+          "relevantPage": 3,
+          "sha256": "be1d0ff19ed6711be02975101d64165777a06d5989fc59ba48b0d4576b4773e8",
+          "note": "All three pages read and visually inspected. Page 3 lists Customer Supplier Award, global Japanese OEM, 2017. It does not identify the manufacturer or independently establish the formal award title. The user confirmed that Musayev personally received the award."
+        }
+      ],
+      "group": "Verification",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 274,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-01.json",
+          "line": 1,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 274,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+          "line": 1,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        }
+      ],
+      "e_ru": "В CV за 2017 год указано: «Customer Supplier Award, global Japanese OEM». Пользователь подтвердил, что награду получил лично Яшар Мусаев; вопрос о получателе закрыт. Название производителя и точное официальное название награды остаются неподтверждёнными. Предложенная формулировка использует название из CV и пока не внесена в профиль.",
+      "verificationStatus": "Recipient confirmed by the user; manufacturer and exact official award title remain unverified."
+    },
+    "after": {
+      "id": "V125",
+      "profileNumber": 16,
+      "status": "Resolved by user approval",
+      "currentText": "Customer Supplier Award from a global Japanese automotive manufacturer (2017).",
+      "resolution": "The user approved the award description and explicitly requested closure without naming the manufacturer. Personal receipt was previously confirmed by the user."
+    }
+  }
+}

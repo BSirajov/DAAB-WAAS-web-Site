@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-09",
+  "profile": "Togrul Karimov",
+  "profileNumber": 13,
+  "language": "English",
+  "source": "User-approved award-name replacement for V123",
+  "issueIds": [
+    "V123"
+  ],
+  "resolvedIssueIds": [
+    "V123"
+  ],
+  "summary": [
+    "Replaced the award name with Ackermann Award for Computer Science Logic.",
+    "Synchronized the four active English profile copies, translation source, and English search records."
+  ],
+  "scopeNote": "Only the requested English award name and dependent search text were changed. The scientist’s name, other awards, Azerbaijani text, and all other biography wording are unchanged. V124 remains open for the separate English-name transliteration question.",
+  "beforeText": "Akerman Prize in Theoretical Computer Science",
+  "afterText": "Ackermann Award for Computer Science Logic",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 223,
+      "jsonPointer": "/profiles/12/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He received his bachelor&#x27;s and master&#x27;s degrees in computer science from Oxford University. His doctoral dissertation was awarded the prestigious Akerman Prize in Theoretical Computer Science and the Otto Hahn Medal of the Max Planck Society. He is the author of more than 20 articles in international journals and conference proceedings. His co-authored articles were awarded the &quot;ACM SIGBED Best Paper Award&quot; and the &quot;Distinguished Paper Award&quot; at the prestigious &quot;Logic in Computer Science&quot; conference.</p>",
+      "after": "<p class=\"bio bio-lead\">He received his bachelor&#x27;s and master&#x27;s degrees in computer science from Oxford University. His doctoral dissertation was awarded the prestigious Ackermann Award for Computer Science Logic and the Otto Hahn Medal of the Max Planck Society. He is the author of more than 20 articles in international journals and conference proceedings. His co-authored articles were awarded the &quot;ACM SIGBED Best Paper Award&quot; and the &quot;Distinguished Paper Award&quot; at the prestigious &quot;Logic in Computer Science&quot; conference.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/12/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He received his bachelor&#x27;s and master&#x27;s degrees in computer science from Oxford University. His doctoral dissertation was awarded the prestigious Akerman Prize in Theoretical Computer Science and the Otto Hahn Medal of the Max Planck Society. He is the author of more than 20 articles in international journals and conference proceedings. His co-authored articles were awarded the &quot;ACM SIGBED Best Paper Award&quot; and the &quot;Distinguished Paper Award&quot; at the prestigious &quot;Logic in Computer Science&quot; conference.</p>",
+      "after": "<p class=\"bio bio-lead\">He received his bachelor&#x27;s and master&#x27;s degrees in computer science from Oxford University. His doctoral dissertation was awarded the prestigious Ackermann Award for Computer Science Logic and the Otto Hahn Medal of the Max Planck Society. He is the author of more than 20 articles in international journals and conference proceedings. His co-authored articles were awarded the &quot;ACM SIGBED Best Paper Award&quot; and the &quot;Distinguished Paper Award&quot; at the prestigious &quot;Logic in Computer Science&quot; conference.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 223,
+      "jsonPointer": "/profiles/12/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He received his bachelor&#x27;s and master&#x27;s degrees in computer science from Oxford University. His doctoral dissertation was awarded the prestigious Akerman Prize in Theoretical Computer Science and the Otto Hahn Medal of the Max Planck Society. He is the author of more than 20 articles in international journals and conference proceedings. His co-authored articles were awarded the &quot;ACM SIGBED Best Paper Award&quot; and the &quot;Distinguished Paper Award&quot; at the prestigious &quot;Logic in Computer Science&quot; conference.</p>",
+      "after": "<p class=\"bio bio-lead\">He received his bachelor&#x27;s and master&#x27;s degrees in computer science from Oxford University. His doctoral dissertation was awarded the prestigious Ackermann Award for Computer Science Logic and the Otto Hahn Medal of the Max Planck Society. He is the author of more than 20 articles in international journals and conference proceedings. His co-authored articles were awarded the &quot;ACM SIGBED Best Paper Award&quot; and the &quot;Distinguished Paper Award&quot; at the prestigious &quot;Logic in Computer Science&quot; conference.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/12/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He received his bachelor&#x27;s and master&#x27;s degrees in computer science from Oxford University. His doctoral dissertation was awarded the prestigious Akerman Prize in Theoretical Computer Science and the Otto Hahn Medal of the Max Planck Society. He is the author of more than 20 articles in international journals and conference proceedings. His co-authored articles were awarded the &quot;ACM SIGBED Best Paper Award&quot; and the &quot;Distinguished Paper Award&quot; at the prestigious &quot;Logic in Computer Science&quot; conference.</p>",
+      "after": "<p class=\"bio bio-lead\">He received his bachelor&#x27;s and master&#x27;s degrees in computer science from Oxford University. His doctoral dissertation was awarded the prestigious Ackermann Award for Computer Science Logic and the Otto Hahn Medal of the Max Planck Society. He is the author of more than 20 articles in international journals and conference proceedings. His co-authored articles were awarded the &quot;ACM SIGBED Best Paper Award&quot; and the &quot;Distinguished Paper Award&quot; at the prestigious &quot;Logic in Computer Science&quot; conference.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 78,
+      "jsonPointer": "/profiles/toghs@mpi-sws.org/bio_html",
+      "field": "bio_html",
+      "before": "<p class=\"bio bio-lead\">He received his bachelor&#x27;s and master&#x27;s degrees in computer science from Oxford University. His doctoral dissertation was awarded the prestigious Akerman Prize in Theoretical Computer Science and the Otto Hahn Medal of the Max Planck Society. He is the author of more than 20 articles in international journals and conferences. His co-authored articles were awarded the &quot;ACM SIGBED Best Paper Award&quot; and the &quot;Distinguished Paper Award&quot; at the prestigious &quot;Logic in Computer Science&quot; conference.</p>",
+      "after": "<p class=\"bio bio-lead\">He received his bachelor&#x27;s and master&#x27;s degrees in computer science from Oxford University. His doctoral dissertation was awarded the prestigious Ackermann Award for Computer Science Logic and the Otto Hahn Medal of the Max Planck Society. He is the author of more than 20 articles in international journals and conferences. His co-authored articles were awarded the &quot;ACM SIGBED Best Paper Award&quot; and the &quot;Distinguished Paper Award&quot; at the prestigious &quot;Logic in Computer Science&quot; conference.</p>"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6478,
+      "jsonPointer": "/entries/497/norm",
+      "field": "norm",
+      "before": "togrul karimov max planck institute for software systems postdoctoral researcher computer science germany toghs@mpi-sws.org he received his bachelor s and master s degrees in computer science from oxford university. his doctoral dissertation was awarded the prestigious akerman prize in theoretical computer science and the otto hahn medal of the max planck society. he is the author of more than 20 articles in international journals and confe phd",
+      "after": "togrul karimov max planck institute for software systems postdoctoral researcher computer science germany toghs@mpi-sws.org he received his bachelor s and master s degrees in computer science from oxford university. his doctoral dissertation was awarded the prestigious ackermann award for computer science logic and the otto hahn medal of the max planck society. he is the author of more than 20 articles in international journals and conferen phd"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6478,
+      "jsonPointer": "/entries/497/norm",
+      "field": "norm",
+      "before": "togrul karimov max planck institute for software systems postdoctoral researcher computer science germany toghs@mpi-sws.org he received his bachelor s and master s degrees in computer science from oxford university. his doctoral dissertation was awarded the prestigious akerman prize in theoretical computer science and the otto hahn medal of the max planck society. he is the author of more than 20 articles in international journals and confe phd",
+      "after": "togrul karimov max planck institute for software systems postdoctoral researcher computer science germany toghs@mpi-sws.org he received his bachelor s and master s degrees in computer science from oxford university. his doctoral dissertation was awarded the prestigious ackermann award for computer science logic and the otto hahn medal of the max planck society. he is the author of more than 20 articles in international journals and conferen phd"
+    }
+  ]
+}

@@ -1,0 +1,422 @@
+{
+  "date": "2026-10-09",
+  "sourceReport": "scientists-english-proofreading-report-round-5.html",
+  "confirmedIssuesApplied": 3,
+  "verificationItemsSkipped": [
+    "V001",
+    "V002",
+    "V003",
+    "V004",
+    "V005",
+    "V006",
+    "V007",
+    "V008",
+    "V009",
+    "V010",
+    "V011",
+    "V012",
+    "V013",
+    "V014",
+    "V015",
+    "V016",
+    "V017",
+    "V018",
+    "V019",
+    "V020",
+    "V021",
+    "V022",
+    "V023",
+    "V024",
+    "V025",
+    "V026",
+    "V027",
+    "V028",
+    "V029",
+    "V030",
+    "V031",
+    "V032",
+    "V033",
+    "V034",
+    "V035",
+    "V036",
+    "V037",
+    "V038",
+    "V039",
+    "V040",
+    "V041",
+    "V042",
+    "V043",
+    "V044",
+    "V045",
+    "V046",
+    "V047",
+    "V048",
+    "V049",
+    "V050",
+    "V051",
+    "V052",
+    "V053",
+    "V054",
+    "V055",
+    "V056",
+    "V057",
+    "V058",
+    "V059",
+    "V060",
+    "V061",
+    "V062",
+    "V063",
+    "V064",
+    "V065",
+    "V066",
+    "V067",
+    "V068",
+    "V069",
+    "V070",
+    "V071",
+    "V072",
+    "V073",
+    "V074",
+    "V075",
+    "V076",
+    "V077",
+    "V078",
+    "V079",
+    "V080",
+    "V081",
+    "V082",
+    "V083",
+    "V084",
+    "V085",
+    "V086",
+    "V087",
+    "V088",
+    "V089",
+    "V090",
+    "V091",
+    "V092",
+    "V093",
+    "V094",
+    "V095",
+    "V096",
+    "V097",
+    "V098"
+  ],
+  "files": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "beforeSha256": "3b7a06681437c2b0bdf89b7d233a9cc507c0a8e54b0095c1b85e009af71aa280",
+      "afterSha256": "34ee062a0ae37fb0dd0123364d7ba5916036a57025dfa71995039c07e347019e"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "beforeSha256": "75faac6c91e58e7341e82635c982c60d1358aeee36b4143280d425477db7ad71",
+      "afterSha256": "75faac6c91e58e7341e82635c982c60d1358aeee36b4143280d425477db7ad71"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-02.json",
+      "beforeSha256": "86435f75c013fe9cb8c2e91151d2aa208330d48a7b467d8fac8d378046747c1e",
+      "afterSha256": "86435f75c013fe9cb8c2e91151d2aa208330d48a7b467d8fac8d378046747c1e"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "beforeSha256": "b4dae6cc5d7c2384f4b6c77f78649f4b7142416c61d114a42b676e644f6612f2",
+      "afterSha256": "1c0a2cfe0f422b9569d2b1e4a9c56d88548e9bf4c84e1e06893a57b1f43bcebc"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-04.json",
+      "beforeSha256": "fcf703fea508a0f97b99846344aa53839ef29072707834b6f80bb4b16d4163de",
+      "afterSha256": "f9a568c8f21ea23c67eb188f7bd240d901bd32a8a77ceb509d66186abec1c2ca"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "beforeSha256": "3b7a06681437c2b0bdf89b7d233a9cc507c0a8e54b0095c1b85e009af71aa280",
+      "afterSha256": "34ee062a0ae37fb0dd0123364d7ba5916036a57025dfa71995039c07e347019e"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "beforeSha256": "75faac6c91e58e7341e82635c982c60d1358aeee36b4143280d425477db7ad71",
+      "afterSha256": "75faac6c91e58e7341e82635c982c60d1358aeee36b4143280d425477db7ad71"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+      "beforeSha256": "86435f75c013fe9cb8c2e91151d2aa208330d48a7b467d8fac8d378046747c1e",
+      "afterSha256": "86435f75c013fe9cb8c2e91151d2aa208330d48a7b467d8fac8d378046747c1e"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "beforeSha256": "b4dae6cc5d7c2384f4b6c77f78649f4b7142416c61d114a42b676e644f6612f2",
+      "afterSha256": "1c0a2cfe0f422b9569d2b1e4a9c56d88548e9bf4c84e1e06893a57b1f43bcebc"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+      "beforeSha256": "fcf703fea508a0f97b99846344aa53839ef29072707834b6f80bb4b16d4163de",
+      "afterSha256": "f9a568c8f21ea23c67eb188f7bd240d901bd32a8a77ceb509d66186abec1c2ca"
+    }
+  ],
+  "issues": [
+    {
+      "p": 47,
+      "c": "higher education textbooks, a number of scientific articles",
+      "s": "higher education textbooks, and a number of scientific articles",
+      "t": "Grammar",
+      "e": "Add the conjunction before the final item in the list of works. The publication categories and total remain unchanged.",
+      "section": "Biography",
+      "id": "L001",
+      "verify": false,
+      "status": "New",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 806,
+          "jsonPointer": "/profiles/46/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/4/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 806,
+          "jsonPointer": "/profiles/46/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/4/bio_html_en"
+        }
+      ],
+      "field": "bio_html_en",
+      "occurrences": 1
+    },
+    {
+      "p": 63,
+      "c": "as a specially talented student",
+      "s": "as an especially talented student",
+      "t": "Style",
+      "e": "Especially means particularly or to a high degree. Specially normally means for a particular purpose and is unidiomatic when modifying talented here.",
+      "section": "Biography",
+      "id": "L002",
+      "verify": false,
+      "status": "New",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1080,
+          "jsonPointer": "/profiles/62/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/20/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1080,
+          "jsonPointer": "/profiles/62/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/20/bio_html_en"
+        }
+      ],
+      "field": "bio_html_en",
+      "occurrences": 1
+    },
+    {
+      "p": 76,
+      "c": "teacher of plastic arts-painting department",
+      "s": "teacher in the plastic arts-painting department",
+      "t": "Grammar",
+      "e": "Use in for membership of a department and supply the definite article. Retain the department wording and the job designation.",
+      "section": "Title",
+      "id": "L003",
+      "verify": false,
+      "status": "New",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1300,
+          "jsonPointer": "/profiles/75/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/12/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1300,
+          "jsonPointer": "/profiles/75/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/12/title_en"
+        }
+      ],
+      "field": "title_en",
+      "occurrences": 1
+    }
+  ],
+  "fieldChanges": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 1300,
+      "jsonPointer": "/profiles/75/title_en",
+      "profileNumber": 76,
+      "profile": "Teymur Rzayev",
+      "field": "title_en",
+      "issueIds": [
+        "L003"
+      ],
+      "before": "Member of the WAAS Executive Board, Honored Artist of the Republic of Azerbaijan, Yeditepe University of the Republic of Turkey, Faculty of Fine Arts, teacher of plastic arts-painting department",
+      "after": "Member of the WAAS Executive Board, Honored Artist of the Republic of Azerbaijan, Yeditepe University of the Republic of Turkey, Faculty of Fine Arts, teacher in the plastic arts-painting department"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 806,
+      "jsonPointer": "/profiles/46/bio_html_en",
+      "profileNumber": 47,
+      "profile": "Aladdin Allahverdiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L001"
+      ],
+      "before": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times - in 1975, 1977 and 1980 - badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times - in 1975, 1977 and 1980 - badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 1080,
+      "jsonPointer": "/profiles/62/bio_html_en",
+      "profileNumber": 63,
+      "profile": "Elchin Badalov",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L002"
+      ],
+      "before": "<p class=\"bio bio-lead\">Associate Professor Elchin Badalov was admitted to the Faculty of Dentistry of Azerbaijan Medical University in 2002. According to the cooperation agreement signed between Azerbaijan Medical University and Istanbul University in 2003, he successfully passed the selection exam for excellent students and continued his education as a specially talented student at the Faculty of Dentistry of Istanbul University within the framework of the state program.</p><p class=\"bio\">In 2007, he graduated with honors from the Faculty of Dentistry of Istanbul University and began his doctoral studies at the Department of Oral Implantology of the same university. In 2014, he defended his thesis on &quot;Effects of Vascular Endothelial Growth Factor on Bone Tissue Growth in an Experimental Mouse Model&quot; and received a Doctor of Philosophy (Ph.D.) degree in medical sciences.</p><p class=\"bio\">Since 2014, he has been working as a researcher and educator at the Department of Oral, Dental and Maxillofacial Surgery of the Faculty of Dentistry of Istanbul Aydın University. In 2023, he was awarded the scientific degree of associate professor.</p><p class=\"bio\">Under the guidance of Associate Professor E. Badalov, 7 doctoral dissertation topics were developed, and supervision of this work is ongoing. He is the author of more than 30 articles and 3 books published in international indexed scientific journals. At the same time, two surgical methods bearing his surname were applied to medical practice.</p><p class=\"bio\">Within the framework of his scientific activity, he has given presentations at more than 100 international scientific conferences held in different countries, and has organized professional development courses and training sessions related to surgical methods and clinical experience.</p><p class=\"bio\">For more than 10 years, he has been working as a member of the scientific committees (Opinion Leader) of four international dental implant brands from America, Germany, Turkey and Israel, and has been conducting theoretical and practical training programs for doctors.</p><p class=\"bio\">Associate Professor Elchin Badalov is one of a limited number of leading scientists specializing in dental implantology and working in Turkey. He is considered one of the outstanding scientists among Azerbaijani specialists working in this field.</p>",
+      "after": "<p class=\"bio bio-lead\">Associate Professor Elchin Badalov was admitted to the Faculty of Dentistry of Azerbaijan Medical University in 2002. According to the cooperation agreement signed between Azerbaijan Medical University and Istanbul University in 2003, he successfully passed the selection exam for excellent students and continued his education as an especially talented student at the Faculty of Dentistry of Istanbul University within the framework of the state program.</p><p class=\"bio\">In 2007, he graduated with honors from the Faculty of Dentistry of Istanbul University and began his doctoral studies at the Department of Oral Implantology of the same university. In 2014, he defended his thesis on &quot;Effects of Vascular Endothelial Growth Factor on Bone Tissue Growth in an Experimental Mouse Model&quot; and received a Doctor of Philosophy (Ph.D.) degree in medical sciences.</p><p class=\"bio\">Since 2014, he has been working as a researcher and educator at the Department of Oral, Dental and Maxillofacial Surgery of the Faculty of Dentistry of Istanbul Aydın University. In 2023, he was awarded the scientific degree of associate professor.</p><p class=\"bio\">Under the guidance of Associate Professor E. Badalov, 7 doctoral dissertation topics were developed, and supervision of this work is ongoing. He is the author of more than 30 articles and 3 books published in international indexed scientific journals. At the same time, two surgical methods bearing his surname were applied to medical practice.</p><p class=\"bio\">Within the framework of his scientific activity, he has given presentations at more than 100 international scientific conferences held in different countries, and has organized professional development courses and training sessions related to surgical methods and clinical experience.</p><p class=\"bio\">For more than 10 years, he has been working as a member of the scientific committees (Opinion Leader) of four international dental implant brands from America, Germany, Turkey and Israel, and has been conducting theoretical and practical training programs for doctors.</p><p class=\"bio\">Associate Professor Elchin Badalov is one of a limited number of leading scientists specializing in dental implantology and working in Turkey. He is considered one of the outstanding scientists among Azerbaijani specialists working in this field.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/4/bio_html_en",
+      "profileNumber": 47,
+      "profile": "Aladdin Allahverdiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L001"
+      ],
+      "before": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times - in 1975, 1977 and 1980 - badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times - in 1975, 1977 and 1980 - badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/20/bio_html_en",
+      "profileNumber": 63,
+      "profile": "Elchin Badalov",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L002"
+      ],
+      "before": "<p class=\"bio bio-lead\">Associate Professor Elchin Badalov was admitted to the Faculty of Dentistry of Azerbaijan Medical University in 2002. According to the cooperation agreement signed between Azerbaijan Medical University and Istanbul University in 2003, he successfully passed the selection exam for excellent students and continued his education as a specially talented student at the Faculty of Dentistry of Istanbul University within the framework of the state program.</p><p class=\"bio\">In 2007, he graduated with honors from the Faculty of Dentistry of Istanbul University and began his doctoral studies at the Department of Oral Implantology of the same university. In 2014, he defended his thesis on &quot;Effects of Vascular Endothelial Growth Factor on Bone Tissue Growth in an Experimental Mouse Model&quot; and received a Doctor of Philosophy (Ph.D.) degree in medical sciences.</p><p class=\"bio\">Since 2014, he has been working as a researcher and educator at the Department of Oral, Dental and Maxillofacial Surgery of the Faculty of Dentistry of Istanbul Aydın University. In 2023, he was awarded the scientific degree of associate professor.</p><p class=\"bio\">Under the guidance of Associate Professor E. Badalov, 7 doctoral dissertation topics were developed, and supervision of this work is ongoing. He is the author of more than 30 articles and 3 books published in international indexed scientific journals. At the same time, two surgical methods bearing his surname were applied to medical practice.</p><p class=\"bio\">Within the framework of his scientific activity, he has given presentations at more than 100 international scientific conferences held in different countries, and has organized professional development courses and training sessions related to surgical methods and clinical experience.</p><p class=\"bio\">For more than 10 years, he has been working as a member of the scientific committees (Opinion Leader) of four international dental implant brands from America, Germany, Turkey and Israel, and has been conducting theoretical and practical training programs for doctors.</p><p class=\"bio\">Associate Professor Elchin Badalov is one of a limited number of leading scientists specializing in dental implantology and working in Turkey. He is considered one of the outstanding scientists among Azerbaijani specialists working in this field.</p>",
+      "after": "<p class=\"bio bio-lead\">Associate Professor Elchin Badalov was admitted to the Faculty of Dentistry of Azerbaijan Medical University in 2002. According to the cooperation agreement signed between Azerbaijan Medical University and Istanbul University in 2003, he successfully passed the selection exam for excellent students and continued his education as an especially talented student at the Faculty of Dentistry of Istanbul University within the framework of the state program.</p><p class=\"bio\">In 2007, he graduated with honors from the Faculty of Dentistry of Istanbul University and began his doctoral studies at the Department of Oral Implantology of the same university. In 2014, he defended his thesis on &quot;Effects of Vascular Endothelial Growth Factor on Bone Tissue Growth in an Experimental Mouse Model&quot; and received a Doctor of Philosophy (Ph.D.) degree in medical sciences.</p><p class=\"bio\">Since 2014, he has been working as a researcher and educator at the Department of Oral, Dental and Maxillofacial Surgery of the Faculty of Dentistry of Istanbul Aydın University. In 2023, he was awarded the scientific degree of associate professor.</p><p class=\"bio\">Under the guidance of Associate Professor E. Badalov, 7 doctoral dissertation topics were developed, and supervision of this work is ongoing. He is the author of more than 30 articles and 3 books published in international indexed scientific journals. At the same time, two surgical methods bearing his surname were applied to medical practice.</p><p class=\"bio\">Within the framework of his scientific activity, he has given presentations at more than 100 international scientific conferences held in different countries, and has organized professional development courses and training sessions related to surgical methods and clinical experience.</p><p class=\"bio\">For more than 10 years, he has been working as a member of the scientific committees (Opinion Leader) of four international dental implant brands from America, Germany, Turkey and Israel, and has been conducting theoretical and practical training programs for doctors.</p><p class=\"bio\">Associate Professor Elchin Badalov is one of a limited number of leading scientists specializing in dental implantology and working in Turkey. He is considered one of the outstanding scientists among Azerbaijani specialists working in this field.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/12/title_en",
+      "profileNumber": 76,
+      "profile": "Teymur Rzayev",
+      "field": "title_en",
+      "issueIds": [
+        "L003"
+      ],
+      "before": "Member of the WAAS Executive Board, Honored Artist of the Republic of Azerbaijan, Yeditepe University of the Republic of Turkey, Faculty of Fine Arts, teacher of plastic arts-painting department",
+      "after": "Member of the WAAS Executive Board, Honored Artist of the Republic of Azerbaijan, Yeditepe University of the Republic of Turkey, Faculty of Fine Arts, teacher in the plastic arts-painting department"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 1300,
+      "jsonPointer": "/profiles/75/title_en",
+      "profileNumber": 76,
+      "profile": "Teymur Rzayev",
+      "field": "title_en",
+      "issueIds": [
+        "L003"
+      ],
+      "before": "Member of the WAAS Executive Board, Honored Artist of the Republic of Azerbaijan, Yeditepe University of the Republic of Turkey, Faculty of Fine Arts, teacher of plastic arts-painting department",
+      "after": "Member of the WAAS Executive Board, Honored Artist of the Republic of Azerbaijan, Yeditepe University of the Republic of Turkey, Faculty of Fine Arts, teacher in the plastic arts-painting department"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 806,
+      "jsonPointer": "/profiles/46/bio_html_en",
+      "profileNumber": 47,
+      "profile": "Aladdin Allahverdiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L001"
+      ],
+      "before": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times - in 1975, 1977 and 1980 - badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times - in 1975, 1977 and 1980 - badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 1080,
+      "jsonPointer": "/profiles/62/bio_html_en",
+      "profileNumber": 63,
+      "profile": "Elchin Badalov",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L002"
+      ],
+      "before": "<p class=\"bio bio-lead\">Associate Professor Elchin Badalov was admitted to the Faculty of Dentistry of Azerbaijan Medical University in 2002. According to the cooperation agreement signed between Azerbaijan Medical University and Istanbul University in 2003, he successfully passed the selection exam for excellent students and continued his education as a specially talented student at the Faculty of Dentistry of Istanbul University within the framework of the state program.</p><p class=\"bio\">In 2007, he graduated with honors from the Faculty of Dentistry of Istanbul University and began his doctoral studies at the Department of Oral Implantology of the same university. In 2014, he defended his thesis on &quot;Effects of Vascular Endothelial Growth Factor on Bone Tissue Growth in an Experimental Mouse Model&quot; and received a Doctor of Philosophy (Ph.D.) degree in medical sciences.</p><p class=\"bio\">Since 2014, he has been working as a researcher and educator at the Department of Oral, Dental and Maxillofacial Surgery of the Faculty of Dentistry of Istanbul Aydın University. In 2023, he was awarded the scientific degree of associate professor.</p><p class=\"bio\">Under the guidance of Associate Professor E. Badalov, 7 doctoral dissertation topics were developed, and supervision of this work is ongoing. He is the author of more than 30 articles and 3 books published in international indexed scientific journals. At the same time, two surgical methods bearing his surname were applied to medical practice.</p><p class=\"bio\">Within the framework of his scientific activity, he has given presentations at more than 100 international scientific conferences held in different countries, and has organized professional development courses and training sessions related to surgical methods and clinical experience.</p><p class=\"bio\">For more than 10 years, he has been working as a member of the scientific committees (Opinion Leader) of four international dental implant brands from America, Germany, Turkey and Israel, and has been conducting theoretical and practical training programs for doctors.</p><p class=\"bio\">Associate Professor Elchin Badalov is one of a limited number of leading scientists specializing in dental implantology and working in Turkey. He is considered one of the outstanding scientists among Azerbaijani specialists working in this field.</p>",
+      "after": "<p class=\"bio bio-lead\">Associate Professor Elchin Badalov was admitted to the Faculty of Dentistry of Azerbaijan Medical University in 2002. According to the cooperation agreement signed between Azerbaijan Medical University and Istanbul University in 2003, he successfully passed the selection exam for excellent students and continued his education as an especially talented student at the Faculty of Dentistry of Istanbul University within the framework of the state program.</p><p class=\"bio\">In 2007, he graduated with honors from the Faculty of Dentistry of Istanbul University and began his doctoral studies at the Department of Oral Implantology of the same university. In 2014, he defended his thesis on &quot;Effects of Vascular Endothelial Growth Factor on Bone Tissue Growth in an Experimental Mouse Model&quot; and received a Doctor of Philosophy (Ph.D.) degree in medical sciences.</p><p class=\"bio\">Since 2014, he has been working as a researcher and educator at the Department of Oral, Dental and Maxillofacial Surgery of the Faculty of Dentistry of Istanbul Aydın University. In 2023, he was awarded the scientific degree of associate professor.</p><p class=\"bio\">Under the guidance of Associate Professor E. Badalov, 7 doctoral dissertation topics were developed, and supervision of this work is ongoing. He is the author of more than 30 articles and 3 books published in international indexed scientific journals. At the same time, two surgical methods bearing his surname were applied to medical practice.</p><p class=\"bio\">Within the framework of his scientific activity, he has given presentations at more than 100 international scientific conferences held in different countries, and has organized professional development courses and training sessions related to surgical methods and clinical experience.</p><p class=\"bio\">For more than 10 years, he has been working as a member of the scientific committees (Opinion Leader) of four international dental implant brands from America, Germany, Turkey and Israel, and has been conducting theoretical and practical training programs for doctors.</p><p class=\"bio\">Associate Professor Elchin Badalov is one of a limited number of leading scientists specializing in dental implantology and working in Turkey. He is considered one of the outstanding scientists among Azerbaijani specialists working in this field.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/4/bio_html_en",
+      "profileNumber": 47,
+      "profile": "Aladdin Allahverdiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L001"
+      ],
+      "before": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times - in 1975, 1977 and 1980 - badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>",
+      "after": "<p class=\"bio bio-lead\">He completed his undergraduate and postgraduate studies at the Faculty of Mechanics and Mathematics of the Moscow State University named after M. V. Lomonosov.</p><p class=\"bio\">He is a well-known Soviet, Russian and Azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the creation of piezoelectric devices and apparatus. These are used in research on the world ocean and outer space, marine seismic exploration, and the electronics, defense and medical industries.</p><p class=\"bio\">For the first time, he managed to solve the problem of determining the optimal shape of piezoelectric elements, which has not been solved for many years, meets the physical properties required in the dynamic mode, and has a minimum mass or volume. The solution to this problem made it possible to determine the location and individual characteristics of objects moving under water in the world ocean, the information of interest to experts in relevant scientific fields was recorded from space objects - artificial satellites and spaceships, and the creation of receiver-transmitter devices to transmit and receive the Flight Control Center. For the first time, he successfully applied the method of solving two- and three-dimensional dynamic problems, which are important in the creation of piezoelectric devices used in military equipment. The existence of the &quot;edge effect&quot; in disk-shaped piezoceramic membranes was also theoretically discovered by him for the first time. The piezoceramic actuator, developed jointly with the co-authors, was successfully used to solve the problem of creating an artificial heart. He is the author of more than 450 open and closed (confidential) scientific works, inventions, monographs, higher education textbooks, and a number of scientific articles on the problems of organizing higher professional education and educational technologies. Under his scientific guidance, 7 graduate students, including 3 Azerbaijanis, defended their candidate dissertations. In general, based on the obtained scientific results, he delivered more than 60 presentations, including 12 commissioned plenary presentations, at 30 international and general congresses, conferences and symposia.</p><p class=\"bio\">Some of the prizes and awards received by Professor Aladdin Allahverdiyev for his achievements in the fields of science, technology and education:</p><p class=\"bio\">Medal named after the Hero of Socialist Labor of the Russian Cosmonautics Federation, lieutenant general, Lenin Prize laureate, professor, chairman of the State Commission on Space Programs Georgy Alexandrovich Tyulin;</p><p class=\"bio\">Medal named after Khalil Ahmadovich Rakhmatulin, Hero of Socialist Labor of the National Committee for Theoretical and Applied Mechanics of the Russian Academy of Sciences, academician, laureate of four Orders of Lenin, several State Prizes;</p><p class=\"bio\">the title &quot;Honored worker of higher vocational education of the Russian Federation&quot;;</p><p class=\"bio\">Three times - in 1975, 1977 and 1980 - badges of &quot;The winner of the race of socialism&quot; established by the Central Committee of the Communist Party of the Soviet Union, the former Council of Ministers of the USSR, the Central Committee of Trade Unions, the Central Committee of the All-Union Labor Party;</p><p class=\"bio\">&quot;850th anniversary of Moscow&quot; state medal;</p><p class=\"bio\">Jubilee medal &quot;250th anniversary of MSU named after M.V. Lomonosov&quot;;</p><p class=\"bio\">Gold medal of the All-Russian Exhibition Center;</p><p class=\"bio\">diploma of the winner of the review-competition of the Presidium of the Central Office of the All-Union Scientific Medical-Technical Society;</p><p class=\"bio\">Laureate titles and cash prizes for 4 consecutive years (2001–2004) in the \"Moscow Grant\" competition established by the Moscow Government for science and technology in the field of education;</p><p class=\"bio\">Numerous honorary decrees, diplomas, certificates, and other honors from the Russian Federation, several foreign countries, and many international institutions and organizations.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/20/bio_html_en",
+      "profileNumber": 63,
+      "profile": "Elchin Badalov",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L002"
+      ],
+      "before": "<p class=\"bio bio-lead\">Associate Professor Elchin Badalov was admitted to the Faculty of Dentistry of Azerbaijan Medical University in 2002. According to the cooperation agreement signed between Azerbaijan Medical University and Istanbul University in 2003, he successfully passed the selection exam for excellent students and continued his education as a specially talented student at the Faculty of Dentistry of Istanbul University within the framework of the state program.</p><p class=\"bio\">In 2007, he graduated with honors from the Faculty of Dentistry of Istanbul University and began his doctoral studies at the Department of Oral Implantology of the same university. In 2014, he defended his thesis on &quot;Effects of Vascular Endothelial Growth Factor on Bone Tissue Growth in an Experimental Mouse Model&quot; and received a Doctor of Philosophy (Ph.D.) degree in medical sciences.</p><p class=\"bio\">Since 2014, he has been working as a researcher and educator at the Department of Oral, Dental and Maxillofacial Surgery of the Faculty of Dentistry of Istanbul Aydın University. In 2023, he was awarded the scientific degree of associate professor.</p><p class=\"bio\">Under the guidance of Associate Professor E. Badalov, 7 doctoral dissertation topics were developed, and supervision of this work is ongoing. He is the author of more than 30 articles and 3 books published in international indexed scientific journals. At the same time, two surgical methods bearing his surname were applied to medical practice.</p><p class=\"bio\">Within the framework of his scientific activity, he has given presentations at more than 100 international scientific conferences held in different countries, and has organized professional development courses and training sessions related to surgical methods and clinical experience.</p><p class=\"bio\">For more than 10 years, he has been working as a member of the scientific committees (Opinion Leader) of four international dental implant brands from America, Germany, Turkey and Israel, and has been conducting theoretical and practical training programs for doctors.</p><p class=\"bio\">Associate Professor Elchin Badalov is one of a limited number of leading scientists specializing in dental implantology and working in Turkey. He is considered one of the outstanding scientists among Azerbaijani specialists working in this field.</p>",
+      "after": "<p class=\"bio bio-lead\">Associate Professor Elchin Badalov was admitted to the Faculty of Dentistry of Azerbaijan Medical University in 2002. According to the cooperation agreement signed between Azerbaijan Medical University and Istanbul University in 2003, he successfully passed the selection exam for excellent students and continued his education as an especially talented student at the Faculty of Dentistry of Istanbul University within the framework of the state program.</p><p class=\"bio\">In 2007, he graduated with honors from the Faculty of Dentistry of Istanbul University and began his doctoral studies at the Department of Oral Implantology of the same university. In 2014, he defended his thesis on &quot;Effects of Vascular Endothelial Growth Factor on Bone Tissue Growth in an Experimental Mouse Model&quot; and received a Doctor of Philosophy (Ph.D.) degree in medical sciences.</p><p class=\"bio\">Since 2014, he has been working as a researcher and educator at the Department of Oral, Dental and Maxillofacial Surgery of the Faculty of Dentistry of Istanbul Aydın University. In 2023, he was awarded the scientific degree of associate professor.</p><p class=\"bio\">Under the guidance of Associate Professor E. Badalov, 7 doctoral dissertation topics were developed, and supervision of this work is ongoing. He is the author of more than 30 articles and 3 books published in international indexed scientific journals. At the same time, two surgical methods bearing his surname were applied to medical practice.</p><p class=\"bio\">Within the framework of his scientific activity, he has given presentations at more than 100 international scientific conferences held in different countries, and has organized professional development courses and training sessions related to surgical methods and clinical experience.</p><p class=\"bio\">For more than 10 years, he has been working as a member of the scientific committees (Opinion Leader) of four international dental implant brands from America, Germany, Turkey and Israel, and has been conducting theoretical and practical training programs for doctors.</p><p class=\"bio\">Associate Professor Elchin Badalov is one of a limited number of leading scientists specializing in dental implantology and working in Turkey. He is considered one of the outstanding scientists among Azerbaijani specialists working in this field.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/12/title_en",
+      "profileNumber": 76,
+      "profile": "Teymur Rzayev",
+      "field": "title_en",
+      "issueIds": [
+        "L003"
+      ],
+      "before": "Member of the WAAS Executive Board, Honored Artist of the Republic of Azerbaijan, Yeditepe University of the Republic of Turkey, Faculty of Fine Arts, teacher of plastic arts-painting department",
+      "after": "Member of the WAAS Executive Board, Honored Artist of the Republic of Azerbaijan, Yeditepe University of the Republic of Turkey, Faculty of Fine Arts, teacher in the plastic arts-painting department"
+    }
+  ]
+}

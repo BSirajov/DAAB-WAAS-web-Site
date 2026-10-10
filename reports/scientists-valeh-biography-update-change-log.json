@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-09",
+  "profile": "Valeh Rustamov",
+  "profileNumber": 14,
+  "language": "English",
+  "source": "Exact biography replacement supplied and approved by the user",
+  "issueIds": [
+    "V016"
+  ],
+  "resolvedIssueIds": [
+    "V016"
+  ],
+  "summary": [
+    "Replaced the complete English biography with the two supplied paragraphs.",
+    "Preserved italics for Frontiers in Oncology and clarified the direction of the drug effects as explicitly approved.",
+    "Synchronized the four active profile copies, English translation source, and English search records."
+  ],
+  "scopeNote": "No additional factual verification or comprehensive proofreading pass was performed. Other profile fields and the Azerbaijani biography are unchanged.",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 240,
+      "jsonPointer": "/profiles/13/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">With the support of the \"2007–2015 State Program for the Education of Azerbaijani Youth in Foreign Countries,\" he completed his doctorate with honors at the Mannheim Medical Faculty of Heidelberg University. His main research focus is the creation of complex 3D cell cultures in vitro for the study of tumor diseases and the investigation of the effect of tumor cells on drugs in those cultures through various biomarkers. The findings of this research have been published in two peer-reviewed articles so far. The most recent article was well received by the journal &quot;Frontiers in Oncology&quot; and republished in a special issue. In addition, the program he wrote for the segmentation of large-volume confocal microscopic images is currently being registered as an invention. As a group leader, he supervises 2 master's students and 1 doctoral student.</p>",
+      "after": "<p class=\"bio bio-lead\">With the support of the State Program for the Education of Azerbaijani Youth Abroad in 2007-2015, he completed his doctoral studies at the Medical Faculty Mannheim of Heidelberg University with distinction. His main research focuses on creating complex in vitro 3D cell cultures for the study of tumor diseases, and on investigating the effects of drugs on tumor cells in these cultures using various biomarkers.</p><p class=\"bio\">His work has so far been published in two peer-reviewed articles. His latest article was highly rated by <em>Frontiers in Oncology</em> and republished in a special issue. In addition, software he wrote for the segmentation of large confocal microscopy images is currently at the stage of registration as an invention. As a group leader, he supervises two master's students and one doctoral student.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/13/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">With the support of the \"2007–2015 State Program for the Education of Azerbaijani Youth in Foreign Countries,\" he completed his doctorate with honors at the Mannheim Medical Faculty of Heidelberg University. His main research focus is the creation of complex 3D cell cultures in vitro for the study of tumor diseases and the investigation of the effect of tumor cells on drugs in those cultures through various biomarkers. The findings of this research have been published in two peer-reviewed articles so far. The most recent article was well received by the journal &quot;Frontiers in Oncology&quot; and republished in a special issue. In addition, the program he wrote for the segmentation of large-volume confocal microscopic images is currently being registered as an invention. As a group leader, he supervises 2 master's students and 1 doctoral student.</p>",
+      "after": "<p class=\"bio bio-lead\">With the support of the State Program for the Education of Azerbaijani Youth Abroad in 2007-2015, he completed his doctoral studies at the Medical Faculty Mannheim of Heidelberg University with distinction. His main research focuses on creating complex in vitro 3D cell cultures for the study of tumor diseases, and on investigating the effects of drugs on tumor cells in these cultures using various biomarkers.</p><p class=\"bio\">His work has so far been published in two peer-reviewed articles. His latest article was highly rated by <em>Frontiers in Oncology</em> and republished in a special issue. In addition, software he wrote for the segmentation of large confocal microscopy images is currently at the stage of registration as an invention. As a group leader, he supervises two master's students and one doctoral student.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 240,
+      "jsonPointer": "/profiles/13/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">With the support of the \"2007–2015 State Program for the Education of Azerbaijani Youth in Foreign Countries,\" he completed his doctorate with honors at the Mannheim Medical Faculty of Heidelberg University. His main research focus is the creation of complex 3D cell cultures in vitro for the study of tumor diseases and the investigation of the effect of tumor cells on drugs in those cultures through various biomarkers. The findings of this research have been published in two peer-reviewed articles so far. The most recent article was well received by the journal &quot;Frontiers in Oncology&quot; and republished in a special issue. In addition, the program he wrote for the segmentation of large-volume confocal microscopic images is currently being registered as an invention. As a group leader, he supervises 2 master's students and 1 doctoral student.</p>",
+      "after": "<p class=\"bio bio-lead\">With the support of the State Program for the Education of Azerbaijani Youth Abroad in 2007-2015, he completed his doctoral studies at the Medical Faculty Mannheim of Heidelberg University with distinction. His main research focuses on creating complex in vitro 3D cell cultures for the study of tumor diseases, and on investigating the effects of drugs on tumor cells in these cultures using various biomarkers.</p><p class=\"bio\">His work has so far been published in two peer-reviewed articles. His latest article was highly rated by <em>Frontiers in Oncology</em> and republished in a special issue. In addition, software he wrote for the segmentation of large confocal microscopy images is currently at the stage of registration as an invention. As a group leader, he supervises two master's students and one doctoral student.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/13/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">With the support of the \"2007–2015 State Program for the Education of Azerbaijani Youth in Foreign Countries,\" he completed his doctorate with honors at the Mannheim Medical Faculty of Heidelberg University. His main research focus is the creation of complex 3D cell cultures in vitro for the study of tumor diseases and the investigation of the effect of tumor cells on drugs in those cultures through various biomarkers. The findings of this research have been published in two peer-reviewed articles so far. The most recent article was well received by the journal &quot;Frontiers in Oncology&quot; and republished in a special issue. In addition, the program he wrote for the segmentation of large-volume confocal microscopic images is currently being registered as an invention. As a group leader, he supervises 2 master's students and 1 doctoral student.</p>",
+      "after": "<p class=\"bio bio-lead\">With the support of the State Program for the Education of Azerbaijani Youth Abroad in 2007-2015, he completed his doctoral studies at the Medical Faculty Mannheim of Heidelberg University with distinction. His main research focuses on creating complex in vitro 3D cell cultures for the study of tumor diseases, and on investigating the effects of drugs on tumor cells in these cultures using various biomarkers.</p><p class=\"bio\">His work has so far been published in two peer-reviewed articles. His latest article was highly rated by <em>Frontiers in Oncology</em> and republished in a special issue. In addition, software he wrote for the segmentation of large confocal microscopy images is currently at the stage of registration as an invention. As a group leader, he supervises two master's students and one doctoral student.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 84,
+      "jsonPointer": "/profiles/rustamov.valeh@gmail.com/bio_html",
+      "field": "bio_html",
+      "before": "<p class=\"bio bio-lead\">With the support of the &quot;2007-2015 State Program for the Education of Azerbaijani Youth in Foreign Countries&quot;, he graduated with honors from the doctoral level of the Mannheim Medical Faculty of Heidelberg University. The main scientific direction is the creation of &quot;in vitro&quot; complex 3D cell cultures for the study of tumor diseases and the investigation of the effect of tumor cells on drugs in those cultures through various biomarkers. The contents of these scientific works have been published in two peer-reviewed articles so far. The last article was highly appreciated by the journal &quot;Frontiers in Oncology&quot; and republished in a special issue. In addition, the program he wrote for the segmentation of large-volume confocal microscopic images is currently in the process of being registered as an invention. As a group leader, he supervises 2 master&#x27;s and 1 doctoral students.</p>",
+      "after": "<p class=\"bio bio-lead\">With the support of the State Program for the Education of Azerbaijani Youth Abroad in 2007-2015, he completed his doctoral studies at the Medical Faculty Mannheim of Heidelberg University with distinction. His main research focuses on creating complex in vitro 3D cell cultures for the study of tumor diseases, and on investigating the effects of drugs on tumor cells in these cultures using various biomarkers.</p><p class=\"bio\">His work has so far been published in two peer-reviewed articles. His latest article was highly rated by <em>Frontiers in Oncology</em> and republished in a special issue. In addition, software he wrote for the segmentation of large confocal microscopy images is currently at the stage of registration as an invention. As a group leader, he supervises two master's students and one doctoral student.</p>"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6504,
+      "jsonPointer": "/entries/499/norm",
+      "field": "norm",
+      "before": "valeh rustamov researcher and group leader at mannheim university of applied sciences faculty of biotechnology institute of cell and molecular biology and also cemos research and transfer center medicine germany rustamov.valeh@gmail.com with the support of the 2007-2015 state program for the education of azerbaijani youth in foreign countries he graduated with honors from the doctoral level of the mannheim medical faculty of heidelberg university. the main scientific direction is the creation of in vitro complex 3d cell cultures for the study of phd",
+      "after": "valeh rustamov researcher and group leader at mannheim university of applied sciences faculty of biotechnology institute of cell and molecular biology and also cemos research and transfer center medicine germany rustamov.valeh@gmail.com with the support of the state program for the education of azerbaijani youth abroad in 2007-2015 he completed his doctoral studies at the medical faculty mannheim of heidelberg university with distinction. his main research focuses on creating complex in vitro 3d cell cultures for the study of tumor diseases and on i phd"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6504,
+      "jsonPointer": "/entries/499/norm",
+      "field": "norm",
+      "before": "valeh rustamov researcher and group leader at mannheim university of applied sciences faculty of biotechnology institute of cell and molecular biology and also cemos research and transfer center medicine germany rustamov.valeh@gmail.com with the support of the 2007-2015 state program for the education of azerbaijani youth in foreign countries he graduated with honors from the doctoral level of the mannheim medical faculty of heidelberg university. the main scientific direction is the creation of in vitro complex 3d cell cultures for the study of phd",
+      "after": "valeh rustamov researcher and group leader at mannheim university of applied sciences faculty of biotechnology institute of cell and molecular biology and also cemos research and transfer center medicine germany rustamov.valeh@gmail.com with the support of the state program for the education of azerbaijani youth abroad in 2007-2015 he completed his doctoral studies at the medical faculty mannheim of heidelberg university with distinction. his main research focuses on creating complex in vitro 3d cell cultures for the study of tumor diseases and on i phd"
+    }
+  ],
+  "fileHashes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "before": "2b719668d1d9f31c95496cb93eca87b48f44a15b8e04d3592292355068712ba0",
+      "after": "c2ee0e0c695632d0a5dc887a7fc6510724a531231f3ee7993949c3872e5ff8d5"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "before": "17a520929ee72ac1a9fe08d6e885ca43205671861fa0cc67a96a515cd380722d",
+      "after": "7753862739231c3fb1903442b763da4acc101a93ed729daed14d2956730b0e49"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "before": "2b719668d1d9f31c95496cb93eca87b48f44a15b8e04d3592292355068712ba0",
+      "after": "c2ee0e0c695632d0a5dc887a7fc6510724a531231f3ee7993949c3872e5ff8d5"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "before": "17a520929ee72ac1a9fe08d6e885ca43205671861fa0cc67a96a515cd380722d",
+      "after": "7753862739231c3fb1903442b763da4acc101a93ed729daed14d2956730b0e49"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "before": "dacc08eb8a3650a992dc297b5ac917e369a5dbd3acec75bbf7fc4df35c519c73",
+      "after": "c1c36072d7479b1ca08f239e68d4d84b2034cdd34848672b530557de32e5e291"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "before": "b353acca00097af118924ddef851e82be477fd29ff73e25c6078e9d8b3a0a472",
+      "after": "cafa85e05746ac5f10af6c92fdcf78f0fc1121f756376b658fc072b02f59dac1"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "before": "b353acca00097af118924ddef851e82be477fd29ff73e25c6078e9d8b3a0a472",
+      "after": "cafa85e05746ac5f10af6c92fdcf78f0fc1121f756376b658fc072b02f59dac1"
+    }
+  ]
+}

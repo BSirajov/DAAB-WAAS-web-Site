@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 # Upload DAAB static site to production via rsync + SSH.
 # Run from repository root:  ./scripts/deploy-rsync.sh
+#
+# Production cache busting is not done here. Build Deployment/ first with
+#   python helpers/_build_deployment_folder.py
+# and upload that folder. The build stamps ?v= on local assets and the
+# footer. This script does not invent Hostinger or CDN purge credentials.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"

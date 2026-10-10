@@ -1,5 +1,9 @@
 name: Validate DAAB site
 
+# This workflow does not deploy and does not purge Hostinger or a CDN.
+# Production asset versions are stamped by helpers/_build_deployment_folder.py,
+# which a deploy workflow must run before uploading Deployment/.
+
 on:
   push:
     branches: ["**"]
@@ -18,3 +22,5 @@ jobs:
           python helpers/_validate_site.py
           python helpers/_validate_cv_cards.py
           python helpers/_check_name_order.py
+      - name: Asset version stamp check
+        run: python helpers/_stamp_asset_versions.py --self-check

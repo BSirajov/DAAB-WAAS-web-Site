@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-09",
+  "profile": "Mirza Mutallimov",
+  "profileNumber": 9,
+  "language": "English",
+  "source": "User instruction: keep Associate Professor in the English version",
+  "issueIds": [
+    "V122"
+  ],
+  "resolvedIssueIds": [
+    "V122"
+  ],
+  "summary": [
+    "Restored Associate Professor, Saarland University in the English heading.",
+    "Replaced the attributed teaching-role sentence with the user-approved Associate Professor wording.",
+    "Synchronized English profile copies, the translation source, and search records; closed V122 by editorial approval."
+  ],
+  "scopeNote": "The English title was selected explicitly by the user. V122 is closed on that basis, not on a claim of new independent verification of the German rank. Azerbaijani text, credentials, names, and all other biography sentences are unchanged.",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 154,
+      "jsonPointer": "/profiles/8/title_en",
+      "field": "title_en",
+      "before": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany; Associate Professor, Saarland University"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 155,
+      "jsonPointer": "/profiles/8/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. AzEdu’s September 2026 interview describes a teaching role at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. He is an Associate Professor at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/title_en",
+      "field": "title_en",
+      "before": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany; Associate Professor, Saarland University"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. AzEdu’s September 2026 interview describes a teaching role at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. He is an Associate Professor at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 154,
+      "jsonPointer": "/profiles/8/title_en",
+      "field": "title_en",
+      "before": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany; Associate Professor, Saarland University"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 155,
+      "jsonPointer": "/profiles/8/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. AzEdu’s September 2026 interview describes a teaching role at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. He is an Associate Professor at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/title_en",
+      "field": "title_en",
+      "before": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany; Associate Professor, Saarland University"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. AzEdu’s September 2026 interview describes a teaching role at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. He is an Associate Professor at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 53,
+      "jsonPointer": "/profiles/m.mutallimov@yahoo.com/title",
+      "field": "title",
+      "before": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany; Associate Professor, Saarland University"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 54,
+      "jsonPointer": "/profiles/m.mutallimov@yahoo.com/bio_html",
+      "field": "bio_html",
+      "before": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. AzEdu’s September 2026 interview describes a teaching role at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. He is an Associate Professor at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6370,
+      "jsonPointer": "/entries/489/summary",
+      "field": "summary",
+      "before": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany · Medicine · Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany; Associate Professor, Saarland University · Medicine · Germany"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6374,
+      "jsonPointer": "/entries/489/norm",
+      "field": "norm",
+      "before": "mirza mutallimov head of rhythmology klinikum idar-oberstein academic teaching hospital of johannes gutenberg university mainz idar-oberstein germany medicine germany m.mutallimov@yahoo.com he is a specialist in internal medicine cardiology and intensive care medicine. he is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. he completed his medical doctorate at the university of cologne in 2024. he holds a master of healt dr. med. mhba fesc",
+      "after": "mirza mutallimov head of rhythmology klinikum idar-oberstein academic teaching hospital of johannes gutenberg university mainz idar-oberstein germany associate professor saarland university medicine germany m.mutallimov@yahoo.com he is a specialist in internal medicine cardiology and intensive care medicine. he is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. he completed his medical doctorate at the university of cologne in 2024. he holds a master of healt dr. med. mhba fesc"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6370,
+      "jsonPointer": "/entries/489/summary",
+      "field": "summary",
+      "before": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany · Medicine · Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany; Associate Professor, Saarland University · Medicine · Germany"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6374,
+      "jsonPointer": "/entries/489/norm",
+      "field": "norm",
+      "before": "mirza mutallimov head of rhythmology klinikum idar-oberstein academic teaching hospital of johannes gutenberg university mainz idar-oberstein germany medicine germany m.mutallimov@yahoo.com he is a specialist in internal medicine cardiology and intensive care medicine. he is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. he completed his medical doctorate at the university of cologne in 2024. he holds a master of healt dr. med. mhba fesc",
+      "after": "mirza mutallimov head of rhythmology klinikum idar-oberstein academic teaching hospital of johannes gutenberg university mainz idar-oberstein germany associate professor saarland university medicine germany m.mutallimov@yahoo.com he is a specialist in internal medicine cardiology and intensive care medicine. he is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. he completed his medical doctorate at the university of cologne in 2024. he holds a master of healt dr. med. mhba fesc"
+    }
+  ]
+}

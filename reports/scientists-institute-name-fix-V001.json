@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-09T10:22:09.726Z",
+  "issueId": "V001",
+  "profile": "Asaf Salamov",
+  "approvedReplacement": {
+    "before": "United Genome Institute",
+    "after": "Joint Genome Institute"
+  },
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 18,
+      "jsonPointer": "/profiles/0/title_en",
+      "before": "Staff data scientist, United Genome Institute, Lawrence Berkeley National Laboratory",
+      "after": "Staff data scientist, Joint Genome Institute, Lawrence Berkeley National Laboratory"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/0/title_en",
+      "before": "Staff data scientist, United Genome Institute, Lawrence Berkeley National Laboratory",
+      "after": "Staff data scientist, Joint Genome Institute, Lawrence Berkeley National Laboratory"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 18,
+      "jsonPointer": "/profiles/0/title_en",
+      "before": "Staff data scientist, United Genome Institute, Lawrence Berkeley National Laboratory",
+      "after": "Staff data scientist, Joint Genome Institute, Lawrence Berkeley National Laboratory"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/0/title_en",
+      "before": "Staff data scientist, United Genome Institute, Lawrence Berkeley National Laboratory",
+      "after": "Staff data scientist, Joint Genome Institute, Lawrence Berkeley National Laboratory"
+    }
+  ]
+}

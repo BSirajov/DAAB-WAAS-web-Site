@@ -1,0 +1,335 @@
+{
+  "date": "2026-10-10",
+  "profile": "Vehid Goruslu",
+  "previousName": "Vehid Geruslu",
+  "profileNumber": 22,
+  "language": "English",
+  "source": "Explicit user instruction: V026: replace Vehid Geruslu with Vehid Goruslu in EN",
+  "issueIds": [
+    "V026"
+  ],
+  "resolvedIssueIds": [],
+  "partiallyAddressedIssueIds": [
+    "V026"
+  ],
+  "summary": [
+    "Changed the English display name to Vehid Goruslu in the scientist profile and directory.",
+    "Updated the English search entry and canonical English name mappings, including uppercase and titled forms.",
+    "Synchronized the deployment copies.",
+    "Updated V026 to cover only the other name variants still present in the biography; it remains open."
+  ],
+  "scopeNote": "Only the specified English spelling was changed. Azerbaijani display names and content, biographical names Vahid Garousi and Dr Garuslu, credentials, email addresses, image filenames, anchors, and URLs are unchanged. Historical reports and change logs are preserved. This is not a new proofreading pass.",
+  "reportFinding": {
+    "before": {
+      "p": 22,
+      "c": "Vehid Geruslu",
+      "s": "Retain pending verification.",
+      "t": "Orthography",
+      "e": "The heading uses Vehid Geruslu, the biography Vahid Garousi, and the achievements Dr. Garuslu. Confirm the preferred form; do not automatically transliterate.",
+      "verify": true,
+      "status": "Carried over",
+      "previousId": "V026",
+      "section": "Name",
+      "id": "V026",
+      "previousReport": "Round 8 after fixes",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 365,
+          "jsonPointer": "/profiles/21/name_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/0/name_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 365,
+          "jsonPointer": "/profiles/21/name_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/0/name_en"
+        }
+      ],
+      "severity": "Medium",
+      "group": "Verification",
+      "parts": [
+        {
+          "c": "Vehid Geruslu",
+          "s": "Retain pending verification."
+        }
+      ],
+      "previousStatus": "Carried over",
+      "e_ru": "В заголовке используется Vehid Geruslu, в биографии — Vahid Garousi, а в разделе достижений — Dr. Garuslu. Необходимо подтвердить предпочтительную форму; нельзя автоматически менять транслитерацию."
+    },
+    "after": {
+      "p": 22,
+      "c": "Vahid Garousi; Dr Garuslu",
+      "s": "Retain pending verification.",
+      "t": "Orthography",
+      "e": "The English display name is now Vehid Goruslu, as requested by the user. The biography still uses Vahid Garousi and Dr Garuslu, including the statement that his name is written in English as Vahid Garousi. Confirm whether to retain Vahid Garousi as his professional or publishing name and how to render Dr Garuslu. The specified display-name replacement has been applied; these other variants remain unchanged.",
+      "verify": true,
+      "status": "Carried over",
+      "previousId": "V026",
+      "section": "Biography — name variants",
+      "id": "V026",
+      "previousReport": "Round 8 after fixes",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 376,
+          "jsonPointer": "/profiles/21/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/0/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 376,
+          "jsonPointer": "/profiles/21/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/0/bio_html_en"
+        }
+      ],
+      "severity": "Medium",
+      "group": "Verification",
+      "parts": [
+        {
+          "c": "Vahid Garousi",
+          "s": "Retain pending verification."
+        },
+        {
+          "c": "Dr Garuslu",
+          "s": "Retain pending verification."
+        }
+      ],
+      "previousStatus": "Carried over",
+      "e_ru": "Отображаемое английское имя изменено на Vehid Goruslu по указанию пользователя. В биографии остаются Vahid Garousi и Dr Garuslu, включая утверждение, что его имя по-английски пишется Vahid Garousi. Необходимо уточнить, следует ли сохранить Vahid Garousi как профессиональное имя или имя в публикациях и как передавать Dr Garuslu. Запрошенная замена отображаемого имени выполнена; остальные варианты пока не изменены.",
+      "approvedPartialCorrection": {
+        "date": "2026-10-10",
+        "field": "name_en",
+        "before": "Vehid Geruslu",
+        "after": "Vehid Goruslu",
+        "source": "Explicit user instruction for V026",
+        "remainingScope": "Other personal-name variants in the English biography"
+      }
+    }
+  },
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 365,
+      "jsonPointer": "/profiles/21/name_en",
+      "field": "name_en",
+      "before": "Vehid Geruslu",
+      "after": "Vehid Goruslu"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-02.json",
+      "line": 1,
+      "jsonPointer": "/profiles/0/name_en",
+      "field": "name_en",
+      "before": "Vehid Geruslu",
+      "after": "Vehid Goruslu"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 365,
+      "jsonPointer": "/profiles/21/name_en",
+      "field": "name_en",
+      "before": "Vehid Geruslu",
+      "after": "Vehid Goruslu"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+      "line": 1,
+      "jsonPointer": "/profiles/0/name_en",
+      "field": "name_en",
+      "before": "Vehid Geruslu",
+      "after": "Vehid Goruslu"
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "line": 215,
+      "jsonPointer": "/21/ad_soyad",
+      "field": "ad_soyad",
+      "before": "Vehid Geruslu",
+      "after": "Vehid Goruslu"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "line": 215,
+      "jsonPointer": "/21/ad_soyad",
+      "field": "ad_soyad",
+      "before": "Vehid Geruslu",
+      "after": "Vehid Goruslu"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 130,
+      "jsonPointer": "/names/Vəhid Gəruslu",
+      "field": "Vəhid Gəruslu",
+      "before": "Vehid Geruslu",
+      "after": "Vehid Goruslu"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 131,
+      "jsonPointer": "/names/VƏHID GƏRUSLU",
+      "field": "VƏHID GƏRUSLU",
+      "before": "VEHID GERUSLU",
+      "after": "VEHID GORUSLU"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 671,
+      "jsonPointer": "/names/Vəhid Gəruslu, Prof. Dr.",
+      "field": "Vəhid Gəruslu, Prof. Dr.",
+      "before": "Vehid Geruslu, Prof. Dr.",
+      "after": "Vehid Goruslu, Prof. Dr."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 672,
+      "jsonPointer": "/names/Vəhid Gəruslu, Dr.",
+      "field": "Vəhid Gəruslu, Dr.",
+      "before": "Vehid Geruslu, Dr.",
+      "after": "Vehid Goruslu, Dr."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 673,
+      "jsonPointer": "/names/Vəhid Gəruslu, Prof.",
+      "field": "Vəhid Gəruslu, Prof.",
+      "before": "Vehid Geruslu, Prof.",
+      "after": "Vehid Goruslu, Prof."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 674,
+      "jsonPointer": "/names/Vəhid Gəruslu — NDU",
+      "field": "Vəhid Gəruslu — NDU",
+      "before": "Vehid Geruslu — NDU",
+      "after": "Vehid Goruslu — NDU"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 675,
+      "jsonPointer": "/names/VƏHID GƏRUSLU, Prof. Dr.",
+      "field": "VƏHID GƏRUSLU, Prof. Dr.",
+      "before": "VEHID GERUSLU, Prof. Dr.",
+      "after": "VEHID GORUSLU, Prof. Dr."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 676,
+      "jsonPointer": "/names/VƏHID GƏRUSLU, Dr.",
+      "field": "VƏHID GƏRUSLU, Dr.",
+      "before": "VEHID GERUSLU, Dr.",
+      "after": "VEHID GORUSLU, Dr."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 677,
+      "jsonPointer": "/names/VƏHID GƏRUSLU, Prof.",
+      "field": "VƏHID GƏRUSLU, Prof.",
+      "before": "VEHID GERUSLU, Prof.",
+      "after": "VEHID GORUSLU, Prof."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 678,
+      "jsonPointer": "/names/VƏHID GƏRUSLU — NDU",
+      "field": "VƏHID GƏRUSLU — NDU",
+      "before": "VEHID GERUSLU — NDU",
+      "after": "VEHID GORUSLU — NDU"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6707,
+      "jsonPointer": "/entries/515/title",
+      "field": "title",
+      "before": "Vehid Geruslu",
+      "after": "Vehid Goruslu"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6712,
+      "jsonPointer": "/entries/515/norm",
+      "field": "norm",
+      "before": "vehid geruslu professor of software engineering at queen s university belfast united kingdom computer science united kingdom vehid.geruslu@gmail.com dr. vahid garousi works in two professional roles as an it specialist and an it professor. since 1998 he has provided consulting and training to international it companies in software engineering testing and qa and he is also a professor of software engineering at queen s university in belfast united kingdom. at th prof.dr.",
+      "after": "vehid goruslu professor of software engineering at queen s university belfast united kingdom computer science united kingdom vehid.geruslu@gmail.com dr. vahid garousi works in two professional roles as an it specialist and an it professor. since 1998 he has provided consulting and training to international it companies in software engineering testing and qa and he is also a professor of software engineering at queen s university in belfast united kingdom. at th prof.dr."
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6707,
+      "jsonPointer": "/entries/515/title",
+      "field": "title",
+      "before": "Vehid Geruslu",
+      "after": "Vehid Goruslu"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6712,
+      "jsonPointer": "/entries/515/norm",
+      "field": "norm",
+      "before": "vehid geruslu professor of software engineering at queen s university belfast united kingdom computer science united kingdom vehid.geruslu@gmail.com dr. vahid garousi works in two professional roles as an it specialist and an it professor. since 1998 he has provided consulting and training to international it companies in software engineering testing and qa and he is also a professor of software engineering at queen s university in belfast united kingdom. at th prof.dr.",
+      "after": "vehid goruslu professor of software engineering at queen s university belfast united kingdom computer science united kingdom vehid.geruslu@gmail.com dr. vahid garousi works in two professional roles as an it specialist and an it professor. since 1998 he has provided consulting and training to international it companies in software engineering testing and qa and he is also a professor of software engineering at queen s university in belfast united kingdom. at th prof.dr."
+    }
+  ],
+  "fileHashes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "before": "d1d0f43667dea5d1d89978291a2800f9af1a5a22435abd03e21b0464b0f5b62b",
+      "after": "a657047190579fdbed45f0380ec78abcae9bddc0ed22433b0de210c47b2d0c46"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-02.json",
+      "before": "a5bdc38acdcd3b901baa12827b5562cb1931989477663be0ebce0f9f29c49593",
+      "after": "6ee26e159ce8b84f7953d8c9c91e7cbd1c5140f2577281ffd9f498a9e124ed4f"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "before": "d1d0f43667dea5d1d89978291a2800f9af1a5a22435abd03e21b0464b0f5b62b",
+      "after": "a657047190579fdbed45f0380ec78abcae9bddc0ed22433b0de210c47b2d0c46"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+      "before": "a5bdc38acdcd3b901baa12827b5562cb1931989477663be0ebce0f9f29c49593",
+      "after": "6ee26e159ce8b84f7953d8c9c91e7cbd1c5140f2577281ffd9f498a9e124ed4f"
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "before": "681c92cf1904c43b651b3abf895348413723cbebdfd21d2a180dc19169f75b8c",
+      "after": "aad9a5320d28dbfce10d7d834977bf1a96f42bc999888dda477ca8248da0c2ad"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "before": "681c92cf1904c43b651b3abf895348413723cbebdfd21d2a180dc19169f75b8c",
+      "after": "aad9a5320d28dbfce10d7d834977bf1a96f42bc999888dda477ca8248da0c2ad"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "before": "6cf252ad21f3df110968bdb1d157c0eedc34aacb66f9daf7bd8a22fbbbbcacb5",
+      "after": "a8d48e237f70d2eec100f8700eedf8ba0754d6d536f4f6ac7aca0719f413d490"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "before": "b045324df901cc659b161bdafafd919bee60b4fffe2ba12bba2fbf1c80f82b86",
+      "after": "2dcf42ab1caf06213674fca5ce10848373fb1bffc87a669119ea5cdfa6e5b696"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "before": "b045324df901cc659b161bdafafd919bee60b4fffe2ba12bba2fbf1c80f82b86",
+      "after": "2dcf42ab1caf06213674fca5ce10848373fb1bffc87a669119ea5cdfa6e5b696"
+    }
+  ]
+}

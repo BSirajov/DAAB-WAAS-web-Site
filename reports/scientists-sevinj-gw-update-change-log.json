@@ -1,0 +1,178 @@
+{
+  "date": "2026-10-09T10:37:28.398Z",
+  "profile": "Sevinj Mammadova",
+  "profileNumber": 5,
+  "issueIds": [
+    "V102",
+    "V103"
+  ],
+  "sources": [
+    "https://gsehd.gwu.edu/directory/sevinj-mammadova",
+    "https://www.gwu.edu/leadership",
+    "https://publichealth.gwu.edu/sites/g/files/zaxdzs4586/files/2026-04/GWSPH_Research_Day_2026_mentors__judges__collaborators__faculty__and_staff__1_.pdf"
+  ],
+  "sourceChecked": "2026-10-09",
+  "authorization": "V102 and V103: update Sevinj Mammadova profile as per GW current directory.",
+  "summary": [
+    "Updated the heading to Associate Provost for Global Academic Partnerships and Professor of Practice, Graduate School of Education and Human Development, George Washington University.",
+    "Corrected the doctorate to Doctor of Education (EdD) in education administration and policy studies from George Washington University. The directory confirms the subject and institution; GW’s 2026 Research Day publication confirms EdD.",
+    "Updated the profile credential and English catalog degree from PhD to EdD, without periods."
+  ],
+  "scopeNote": "This update addresses V102 and V103. Other biography text, award names and dates, contact details, and Azerbaijani prose were retained. The profile degree is a shared field used in both language views; the separate Azerbaijani catalog was not edited.",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 81,
+      "jsonPointer": "/profiles/4/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "EdD",
+      "issueIds": [
+        "V103"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 86,
+      "jsonPointer": "/profiles/4/title_en",
+      "field": "title_en",
+      "before": "Associate Dean, Professor of Educational Policy and Educational Administration, George Washington University",
+      "after": "Associate Provost for Global Academic Partnerships; Professor of Practice, Graduate School of Education and Human Development, George Washington University",
+      "issueIds": [
+        "V102"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 87,
+      "jsonPointer": "/profiles/4/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Sevinj Mammadova is a very experienced specialist in the field of education policy. She specializes in the development and implementation of strategies aimed at improving education systems. Sevinj Mammadova has led large-scale international projects to increase the quality and accessibility of education and ensure that everyone seeking an education has equal opportunities, resources and support, regardless of their background, socioeconomic status, gender, ethnicity and other factors. Her work aims to make education systems more effective and align them more closely with national priorities.</p><p class=\"bio\">She has extensive skills in managing large-scale projects, ensuring efficient use of resources, and making important decisions that improve educational outcomes. She also works extensively to establish global partnerships, adapt educational programs to the needs of the country, and implement educational reforms based on scientific research.</p><p class=\"bio\">Sevinj Mammadova also has extensive experience in the field of financial management for educational programs. She involves key stakeholders such as teachers, students and government representatives in the decision-making process and actively participates in defining long-term educational goals.</p><p class=\"bio\">Sevinj Mammadova holds a PhD in educational management and strategies, which further strengthens her ability to lead and recommend educational reforms. She also plays an important role in shaping educational strategies and practices at the international level, contributing to better educational outcomes worldwide.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;International Graduate of the Month&quot; award of the US State Department – February 2013</li><li>University of Texas, Arlington – \"University Scholar\" – November 2009</li><li>US Department of State – Edmund S. Muskie Graduate Fellowship – April 2008</li><li>US State Department – Undergraduate UGRAD Scholarship – July 2005.</li></ul></div>",
+      "after": "<p class=\"bio bio-lead\">Sevinj Mammadova is a very experienced specialist in the field of education policy. She specializes in the development and implementation of strategies aimed at improving education systems. Sevinj Mammadova has led large-scale international projects to increase the quality and accessibility of education and ensure that everyone seeking an education has equal opportunities, resources and support, regardless of their background, socioeconomic status, gender, ethnicity and other factors. Her work aims to make education systems more effective and align them more closely with national priorities.</p><p class=\"bio\">She has extensive skills in managing large-scale projects, ensuring efficient use of resources, and making important decisions that improve educational outcomes. She also works extensively to establish global partnerships, adapt educational programs to the needs of the country, and implement educational reforms based on scientific research.</p><p class=\"bio\">Sevinj Mammadova also has extensive experience in the field of financial management for educational programs. She involves key stakeholders such as teachers, students and government representatives in the decision-making process and actively participates in defining long-term educational goals.</p><p class=\"bio\">Sevinj Mammadova holds a Doctor of Education (EdD) in education administration and policy studies from George Washington University, which further strengthens her ability to lead and recommend educational reforms. She also plays an important role in shaping educational strategies and practices at the international level, contributing to better educational outcomes worldwide.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;International Graduate of the Month&quot; award of the US State Department – February 2013</li><li>University of Texas, Arlington – \"University Scholar\" – November 2009</li><li>US Department of State – Edmund S. Muskie Graduate Fellowship – April 2008</li><li>US State Department – Undergraduate UGRAD Scholarship – July 2005.</li></ul></div>",
+      "issueIds": [
+        "V103"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/4/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "EdD",
+      "issueIds": [
+        "V103"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/4/title_en",
+      "field": "title_en",
+      "before": "Associate Dean, Professor of Educational Policy and Educational Administration, George Washington University",
+      "after": "Associate Provost for Global Academic Partnerships; Professor of Practice, Graduate School of Education and Human Development, George Washington University",
+      "issueIds": [
+        "V102"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/4/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Sevinj Mammadova is a very experienced specialist in the field of education policy. She specializes in the development and implementation of strategies aimed at improving education systems. Sevinj Mammadova has led large-scale international projects to increase the quality and accessibility of education and ensure that everyone seeking an education has equal opportunities, resources and support, regardless of their background, socioeconomic status, gender, ethnicity and other factors. Her work aims to make education systems more effective and align them more closely with national priorities.</p><p class=\"bio\">She has extensive skills in managing large-scale projects, ensuring efficient use of resources, and making important decisions that improve educational outcomes. She also works extensively to establish global partnerships, adapt educational programs to the needs of the country, and implement educational reforms based on scientific research.</p><p class=\"bio\">Sevinj Mammadova also has extensive experience in the field of financial management for educational programs. She involves key stakeholders such as teachers, students and government representatives in the decision-making process and actively participates in defining long-term educational goals.</p><p class=\"bio\">Sevinj Mammadova holds a PhD in educational management and strategies, which further strengthens her ability to lead and recommend educational reforms. She also plays an important role in shaping educational strategies and practices at the international level, contributing to better educational outcomes worldwide.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;International Graduate of the Month&quot; award of the US State Department – February 2013</li><li>University of Texas, Arlington – \"University Scholar\" – November 2009</li><li>US Department of State – Edmund S. Muskie Graduate Fellowship – April 2008</li><li>US State Department – Undergraduate UGRAD Scholarship – July 2005.</li></ul></div>",
+      "after": "<p class=\"bio bio-lead\">Sevinj Mammadova is a very experienced specialist in the field of education policy. She specializes in the development and implementation of strategies aimed at improving education systems. Sevinj Mammadova has led large-scale international projects to increase the quality and accessibility of education and ensure that everyone seeking an education has equal opportunities, resources and support, regardless of their background, socioeconomic status, gender, ethnicity and other factors. Her work aims to make education systems more effective and align them more closely with national priorities.</p><p class=\"bio\">She has extensive skills in managing large-scale projects, ensuring efficient use of resources, and making important decisions that improve educational outcomes. She also works extensively to establish global partnerships, adapt educational programs to the needs of the country, and implement educational reforms based on scientific research.</p><p class=\"bio\">Sevinj Mammadova also has extensive experience in the field of financial management for educational programs. She involves key stakeholders such as teachers, students and government representatives in the decision-making process and actively participates in defining long-term educational goals.</p><p class=\"bio\">Sevinj Mammadova holds a Doctor of Education (EdD) in education administration and policy studies from George Washington University, which further strengthens her ability to lead and recommend educational reforms. She also plays an important role in shaping educational strategies and practices at the international level, contributing to better educational outcomes worldwide.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;International Graduate of the Month&quot; award of the US State Department – February 2013</li><li>University of Texas, Arlington – \"University Scholar\" – November 2009</li><li>US Department of State – Edmund S. Muskie Graduate Fellowship – April 2008</li><li>US State Department – Undergraduate UGRAD Scholarship – July 2005.</li></ul></div>",
+      "issueIds": [
+        "V103"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 81,
+      "jsonPointer": "/profiles/4/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "EdD",
+      "issueIds": [
+        "V103"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 86,
+      "jsonPointer": "/profiles/4/title_en",
+      "field": "title_en",
+      "before": "Associate Dean, Professor of Educational Policy and Educational Administration, George Washington University",
+      "after": "Associate Provost for Global Academic Partnerships; Professor of Practice, Graduate School of Education and Human Development, George Washington University",
+      "issueIds": [
+        "V102"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 87,
+      "jsonPointer": "/profiles/4/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Sevinj Mammadova is a very experienced specialist in the field of education policy. She specializes in the development and implementation of strategies aimed at improving education systems. Sevinj Mammadova has led large-scale international projects to increase the quality and accessibility of education and ensure that everyone seeking an education has equal opportunities, resources and support, regardless of their background, socioeconomic status, gender, ethnicity and other factors. Her work aims to make education systems more effective and align them more closely with national priorities.</p><p class=\"bio\">She has extensive skills in managing large-scale projects, ensuring efficient use of resources, and making important decisions that improve educational outcomes. She also works extensively to establish global partnerships, adapt educational programs to the needs of the country, and implement educational reforms based on scientific research.</p><p class=\"bio\">Sevinj Mammadova also has extensive experience in the field of financial management for educational programs. She involves key stakeholders such as teachers, students and government representatives in the decision-making process and actively participates in defining long-term educational goals.</p><p class=\"bio\">Sevinj Mammadova holds a PhD in educational management and strategies, which further strengthens her ability to lead and recommend educational reforms. She also plays an important role in shaping educational strategies and practices at the international level, contributing to better educational outcomes worldwide.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;International Graduate of the Month&quot; award of the US State Department – February 2013</li><li>University of Texas, Arlington – \"University Scholar\" – November 2009</li><li>US Department of State – Edmund S. Muskie Graduate Fellowship – April 2008</li><li>US State Department – Undergraduate UGRAD Scholarship – July 2005.</li></ul></div>",
+      "after": "<p class=\"bio bio-lead\">Sevinj Mammadova is a very experienced specialist in the field of education policy. She specializes in the development and implementation of strategies aimed at improving education systems. Sevinj Mammadova has led large-scale international projects to increase the quality and accessibility of education and ensure that everyone seeking an education has equal opportunities, resources and support, regardless of their background, socioeconomic status, gender, ethnicity and other factors. Her work aims to make education systems more effective and align them more closely with national priorities.</p><p class=\"bio\">She has extensive skills in managing large-scale projects, ensuring efficient use of resources, and making important decisions that improve educational outcomes. She also works extensively to establish global partnerships, adapt educational programs to the needs of the country, and implement educational reforms based on scientific research.</p><p class=\"bio\">Sevinj Mammadova also has extensive experience in the field of financial management for educational programs. She involves key stakeholders such as teachers, students and government representatives in the decision-making process and actively participates in defining long-term educational goals.</p><p class=\"bio\">Sevinj Mammadova holds a Doctor of Education (EdD) in education administration and policy studies from George Washington University, which further strengthens her ability to lead and recommend educational reforms. She also plays an important role in shaping educational strategies and practices at the international level, contributing to better educational outcomes worldwide.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;International Graduate of the Month&quot; award of the US State Department – February 2013</li><li>University of Texas, Arlington – \"University Scholar\" – November 2009</li><li>US Department of State – Edmund S. Muskie Graduate Fellowship – April 2008</li><li>US State Department – Undergraduate UGRAD Scholarship – July 2005.</li></ul></div>",
+      "issueIds": [
+        "V103"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/4/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "EdD",
+      "issueIds": [
+        "V103"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/4/title_en",
+      "field": "title_en",
+      "before": "Associate Dean, Professor of Educational Policy and Educational Administration, George Washington University",
+      "after": "Associate Provost for Global Academic Partnerships; Professor of Practice, Graduate School of Education and Human Development, George Washington University",
+      "issueIds": [
+        "V102"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/4/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Sevinj Mammadova is a very experienced specialist in the field of education policy. She specializes in the development and implementation of strategies aimed at improving education systems. Sevinj Mammadova has led large-scale international projects to increase the quality and accessibility of education and ensure that everyone seeking an education has equal opportunities, resources and support, regardless of their background, socioeconomic status, gender, ethnicity and other factors. Her work aims to make education systems more effective and align them more closely with national priorities.</p><p class=\"bio\">She has extensive skills in managing large-scale projects, ensuring efficient use of resources, and making important decisions that improve educational outcomes. She also works extensively to establish global partnerships, adapt educational programs to the needs of the country, and implement educational reforms based on scientific research.</p><p class=\"bio\">Sevinj Mammadova also has extensive experience in the field of financial management for educational programs. She involves key stakeholders such as teachers, students and government representatives in the decision-making process and actively participates in defining long-term educational goals.</p><p class=\"bio\">Sevinj Mammadova holds a PhD in educational management and strategies, which further strengthens her ability to lead and recommend educational reforms. She also plays an important role in shaping educational strategies and practices at the international level, contributing to better educational outcomes worldwide.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;International Graduate of the Month&quot; award of the US State Department – February 2013</li><li>University of Texas, Arlington – \"University Scholar\" – November 2009</li><li>US Department of State – Edmund S. Muskie Graduate Fellowship – April 2008</li><li>US State Department – Undergraduate UGRAD Scholarship – July 2005.</li></ul></div>",
+      "after": "<p class=\"bio bio-lead\">Sevinj Mammadova is a very experienced specialist in the field of education policy. She specializes in the development and implementation of strategies aimed at improving education systems. Sevinj Mammadova has led large-scale international projects to increase the quality and accessibility of education and ensure that everyone seeking an education has equal opportunities, resources and support, regardless of their background, socioeconomic status, gender, ethnicity and other factors. Her work aims to make education systems more effective and align them more closely with national priorities.</p><p class=\"bio\">She has extensive skills in managing large-scale projects, ensuring efficient use of resources, and making important decisions that improve educational outcomes. She also works extensively to establish global partnerships, adapt educational programs to the needs of the country, and implement educational reforms based on scientific research.</p><p class=\"bio\">Sevinj Mammadova also has extensive experience in the field of financial management for educational programs. She involves key stakeholders such as teachers, students and government representatives in the decision-making process and actively participates in defining long-term educational goals.</p><p class=\"bio\">Sevinj Mammadova holds a Doctor of Education (EdD) in education administration and policy studies from George Washington University, which further strengthens her ability to lead and recommend educational reforms. She also plays an important role in shaping educational strategies and practices at the international level, contributing to better educational outcomes worldwide.</p><p class=\"bio-section-title\">Awards</p><div class=\"awards-block\"><ul class=\"awards-list\"><li>&quot;International Graduate of the Month&quot; award of the US State Department – February 2013</li><li>University of Texas, Arlington – \"University Scholar\" – November 2009</li><li>US Department of State – Edmund S. Muskie Graduate Fellowship – April 2008</li><li>US State Department – Undergraduate UGRAD Scholarship – July 2005.</li></ul></div>",
+      "issueIds": [
+        "V103"
+      ]
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "line": 48,
+      "jsonPointer": "/4/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "EdD",
+      "issueIds": [
+        "V103"
+      ]
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "line": 48,
+      "jsonPointer": "/4/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "EdD",
+      "issueIds": [
+        "V103"
+      ]
+    }
+  ]
+}

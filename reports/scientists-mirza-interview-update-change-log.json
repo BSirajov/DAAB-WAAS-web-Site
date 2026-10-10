@@ -1,0 +1,247 @@
+{
+  "date": "2026-10-09",
+  "profile": "Mirza Mutallimov / Mirzə Mütəllimov",
+  "profileNumber": 9,
+  "languages": [
+    "English",
+    "Azerbaijani"
+  ],
+  "source": "User-provided interview, corroborated by hospital and publication sources",
+  "sources": [
+    {
+      "title": "AzEdu interview, September 30, 2026",
+      "url": "https://azedu.az/az/news/111126/almaniyada-sobe-rehberi-saarland-universitetinde-dosent-azerbaycanli-hekimle-musahibe",
+      "supports": "Career history, teaching role, and research; uses the Azerbaijani title dosent without an original German appointment title"
+    },
+    {
+      "title": "Klinikum Idar-Oberstein — student education",
+      "url": "https://www.shg-kliniken.de/idar-oberstein/karriere/studierendenausbildung/",
+      "supports": "Official teaching-hospital relationship with Johannes Gutenberg University Mainz"
+    },
+    {
+      "title": "2025 research publication — author affiliations",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12593675/",
+      "supports": "Published affiliation with Saarland University Medical Center; does not establish academic rank"
+    }
+  ],
+  "issueIds": [
+    "V122"
+  ],
+  "resolvedIssueIds": [],
+  "summary": [
+    "Clarified the hospital’s teaching affiliation with Mainz.",
+    "Added concise career and research information, an attributed teaching reference, and a dated publication affiliation.",
+    "Narrowed V122 to the exact academic rank and English translation."
+  ],
+  "scopeNote": "The source uses dosent. The English profile describes an attributed teaching role and does not equate that title with Associate Professor or Privatdozent. A publication affiliation is explicitly dated, not presented as proof of a current employment rank. Existing credentials, names, photos, and the previously corrected biography paragraph are unchanged. This is an update from additional evidence, not a fresh comprehensive review.",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 154,
+      "jsonPointer": "/profiles/8/title_en",
+      "field": "title_en",
+      "before": "Head of Rhythmology, Klinikum Idar-Oberstein, Idar-Oberstein, Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 155,
+      "jsonPointer": "/profiles/8/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. AzEdu’s September 2026 interview describes a teaching role at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 150,
+      "jsonPointer": "/profiles/8/title_az",
+      "field": "title_az",
+      "before": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein, İdar-Oberştayn, Almaniya",
+      "after": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein (Mainz Yohannes Qutenberq Universitetinin akademik tədris xəstəxanası), İdar-Oberştayn, Almaniya"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 151,
+      "jsonPointer": "/profiles/8/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Daxili xəstəliklər, kardiologiya və intensiv terapiya üzrə mütəxəssisdir. 10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. 2024-cü ildə Köln Universitetində tibb üzrə doktorluq dərəcəsi almışdır. Səhiyyə biznesinin idarə edilməsi üzrə magistr (Master of Health Business Administration, MHBA) dərəcəsinə malikdir. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Avropa Kardiologiya Cəmiyyətinin Fellow statuslu üzvüdür (FESC).</p>",
+      "after": "<p class=\"bio bio-lead\">Daxili xəstəliklər, kardiologiya və intensiv terapiya üzrə mütəxəssisdir. 10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. 2024-cü ildə Köln Universitetində tibb üzrə doktorluq dərəcəsi almışdır. Səhiyyə biznesinin idarə edilməsi üzrə magistr (Master of Health Business Administration, MHBA) dərəcəsinə malikdir. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Avropa Kardiologiya Cəmiyyətinin Fellow statuslu üzvüdür (FESC).</p><p class=\"bio\">2012-ci ildə Almaniyanın Bielefeld şəhərində rezident həkim kimi işləməyə başlamışdır. AzEdu-nun 2026-cı ilin sentyabrında dərc etdiyi müsahibədə onun Saarland Universitetində dosent kimi fəaliyyət göstərdiyi qeyd olunur. 2025-ci ildə dərc olunmuş məqaləsində Almaniyanın Homburq şəhərində yerləşən Saarland Universitet Tibb Mərkəzinin III Daxili Xəstəliklər — Kardiologiya, Angiologiya və İntensiv Terapiya şöbəsi də onun elmi mənsub olduğu qurum kimi göstərilmişdir.</p><p class=\"bio\">Tədqiqat maraqlarına atrial fibrilasiya, kateter ablasiyası, impuls sahəsi ablasiyası (PFA) və aritmiyaların uzunmüddətli nəticələri daxildir. Azərbaycan Tibb Universitetindəki həmkarları ilə “Cardiovascular Disease Burden in Azerbaijan” tədqiqatı üzərində əməkdaşlıq edir.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/title_en",
+      "field": "title_en",
+      "before": "Head of Rhythmology, Klinikum Idar-Oberstein, Idar-Oberstein, Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. AzEdu’s September 2026 interview describes a teaching role at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/title_az",
+      "field": "title_az",
+      "before": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein, İdar-Oberştayn, Almaniya",
+      "after": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein (Mainz Yohannes Qutenberq Universitetinin akademik tədris xəstəxanası), İdar-Oberştayn, Almaniya"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Daxili xəstəliklər, kardiologiya və intensiv terapiya üzrə mütəxəssisdir. 10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. 2024-cü ildə Köln Universitetində tibb üzrə doktorluq dərəcəsi almışdır. Səhiyyə biznesinin idarə edilməsi üzrə magistr (Master of Health Business Administration, MHBA) dərəcəsinə malikdir. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Avropa Kardiologiya Cəmiyyətinin Fellow statuslu üzvüdür (FESC).</p>",
+      "after": "<p class=\"bio bio-lead\">Daxili xəstəliklər, kardiologiya və intensiv terapiya üzrə mütəxəssisdir. 10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. 2024-cü ildə Köln Universitetində tibb üzrə doktorluq dərəcəsi almışdır. Səhiyyə biznesinin idarə edilməsi üzrə magistr (Master of Health Business Administration, MHBA) dərəcəsinə malikdir. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Avropa Kardiologiya Cəmiyyətinin Fellow statuslu üzvüdür (FESC).</p><p class=\"bio\">2012-ci ildə Almaniyanın Bielefeld şəhərində rezident həkim kimi işləməyə başlamışdır. AzEdu-nun 2026-cı ilin sentyabrında dərc etdiyi müsahibədə onun Saarland Universitetində dosent kimi fəaliyyət göstərdiyi qeyd olunur. 2025-ci ildə dərc olunmuş məqaləsində Almaniyanın Homburq şəhərində yerləşən Saarland Universitet Tibb Mərkəzinin III Daxili Xəstəliklər — Kardiologiya, Angiologiya və İntensiv Terapiya şöbəsi də onun elmi mənsub olduğu qurum kimi göstərilmişdir.</p><p class=\"bio\">Tədqiqat maraqlarına atrial fibrilasiya, kateter ablasiyası, impuls sahəsi ablasiyası (PFA) və aritmiyaların uzunmüddətli nəticələri daxildir. Azərbaycan Tibb Universitetindəki həmkarları ilə “Cardiovascular Disease Burden in Azerbaijan” tədqiqatı üzərində əməkdaşlıq edir.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 154,
+      "jsonPointer": "/profiles/8/title_en",
+      "field": "title_en",
+      "before": "Head of Rhythmology, Klinikum Idar-Oberstein, Idar-Oberstein, Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 155,
+      "jsonPointer": "/profiles/8/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. AzEdu’s September 2026 interview describes a teaching role at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 150,
+      "jsonPointer": "/profiles/8/title_az",
+      "field": "title_az",
+      "before": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein, İdar-Oberştayn, Almaniya",
+      "after": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein (Mainz Yohannes Qutenberq Universitetinin akademik tədris xəstəxanası), İdar-Oberştayn, Almaniya"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 151,
+      "jsonPointer": "/profiles/8/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Daxili xəstəliklər, kardiologiya və intensiv terapiya üzrə mütəxəssisdir. 10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. 2024-cü ildə Köln Universitetində tibb üzrə doktorluq dərəcəsi almışdır. Səhiyyə biznesinin idarə edilməsi üzrə magistr (Master of Health Business Administration, MHBA) dərəcəsinə malikdir. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Avropa Kardiologiya Cəmiyyətinin Fellow statuslu üzvüdür (FESC).</p>",
+      "after": "<p class=\"bio bio-lead\">Daxili xəstəliklər, kardiologiya və intensiv terapiya üzrə mütəxəssisdir. 10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. 2024-cü ildə Köln Universitetində tibb üzrə doktorluq dərəcəsi almışdır. Səhiyyə biznesinin idarə edilməsi üzrə magistr (Master of Health Business Administration, MHBA) dərəcəsinə malikdir. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Avropa Kardiologiya Cəmiyyətinin Fellow statuslu üzvüdür (FESC).</p><p class=\"bio\">2012-ci ildə Almaniyanın Bielefeld şəhərində rezident həkim kimi işləməyə başlamışdır. AzEdu-nun 2026-cı ilin sentyabrında dərc etdiyi müsahibədə onun Saarland Universitetində dosent kimi fəaliyyət göstərdiyi qeyd olunur. 2025-ci ildə dərc olunmuş məqaləsində Almaniyanın Homburq şəhərində yerləşən Saarland Universitet Tibb Mərkəzinin III Daxili Xəstəliklər — Kardiologiya, Angiologiya və İntensiv Terapiya şöbəsi də onun elmi mənsub olduğu qurum kimi göstərilmişdir.</p><p class=\"bio\">Tədqiqat maraqlarına atrial fibrilasiya, kateter ablasiyası, impuls sahəsi ablasiyası (PFA) və aritmiyaların uzunmüddətli nəticələri daxildir. Azərbaycan Tibb Universitetindəki həmkarları ilə “Cardiovascular Disease Burden in Azerbaijan” tədqiqatı üzərində əməkdaşlıq edir.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/title_en",
+      "field": "title_en",
+      "before": "Head of Rhythmology, Klinikum Idar-Oberstein, Idar-Oberstein, Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. AzEdu’s September 2026 interview describes a teaching role at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/title_az",
+      "field": "title_az",
+      "before": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein, İdar-Oberştayn, Almaniya",
+      "after": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein (Mainz Yohannes Qutenberq Universitetinin akademik tədris xəstəxanası), İdar-Oberştayn, Almaniya"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Daxili xəstəliklər, kardiologiya və intensiv terapiya üzrə mütəxəssisdir. 10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. 2024-cü ildə Köln Universitetində tibb üzrə doktorluq dərəcəsi almışdır. Səhiyyə biznesinin idarə edilməsi üzrə magistr (Master of Health Business Administration, MHBA) dərəcəsinə malikdir. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Avropa Kardiologiya Cəmiyyətinin Fellow statuslu üzvüdür (FESC).</p>",
+      "after": "<p class=\"bio bio-lead\">Daxili xəstəliklər, kardiologiya və intensiv terapiya üzrə mütəxəssisdir. 10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. 2024-cü ildə Köln Universitetində tibb üzrə doktorluq dərəcəsi almışdır. Səhiyyə biznesinin idarə edilməsi üzrə magistr (Master of Health Business Administration, MHBA) dərəcəsinə malikdir. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Avropa Kardiologiya Cəmiyyətinin Fellow statuslu üzvüdür (FESC).</p><p class=\"bio\">2012-ci ildə Almaniyanın Bielefeld şəhərində rezident həkim kimi işləməyə başlamışdır. AzEdu-nun 2026-cı ilin sentyabrında dərc etdiyi müsahibədə onun Saarland Universitetində dosent kimi fəaliyyət göstərdiyi qeyd olunur. 2025-ci ildə dərc olunmuş məqaləsində Almaniyanın Homburq şəhərində yerləşən Saarland Universitet Tibb Mərkəzinin III Daxili Xəstəliklər — Kardiologiya, Angiologiya və İntensiv Terapiya şöbəsi də onun elmi mənsub olduğu qurum kimi göstərilmişdir.</p><p class=\"bio\">Tədqiqat maraqlarına atrial fibrilasiya, kateter ablasiyası, impuls sahəsi ablasiyası (PFA) və aritmiyaların uzunmüddətli nəticələri daxildir. Azərbaycan Tibb Universitetindəki həmkarları ilə “Cardiovascular Disease Burden in Azerbaijan” tədqiqatı üzərində əməkdaşlıq edir.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 53,
+      "jsonPointer": "/profiles/m.mutallimov@yahoo.com/title",
+      "field": "title",
+      "before": "Head of Rhythmology, Klinikum Idar-Oberstein, Idar-Oberstein, Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 54,
+      "jsonPointer": "/profiles/m.mutallimov@yahoo.com/bio_html",
+      "field": "bio_html",
+      "before": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p><p class=\"bio\">He began working as a resident physician in Bielefeld, Germany, in 2012. AzEdu’s September 2026 interview describes a teaching role at Saarland University. His 2025 publication also lists an affiliation with the Department of Internal Medicine III, Cardiology, Angiology, and Intensive Care Medicine at Saarland University Medical Center in Homburg, Germany.</p><p class=\"bio\">His research interests include atrial fibrillation, catheter ablation, pulsed field ablation, and long-term arrhythmia outcomes. He collaborates with colleagues at Azerbaijan Medical University on the “Cardiovascular Disease Burden in Azerbaijan” study.</p>"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6370,
+      "jsonPointer": "/entries/489/summary",
+      "field": "summary",
+      "before": "Head of Rhythmology, Klinikum Idar-Oberstein, Idar-Oberstein, Germany · Medicine · Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany · Medicine · Germany"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6374,
+      "jsonPointer": "/entries/489/norm",
+      "field": "norm",
+      "before": "mirza mutallimov head of rhythmology klinikum idar-oberstein idar-oberstein germany medicine germany m.mutallimov@yahoo.com he is a specialist in internal medicine cardiology and intensive care medicine. he is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. he completed his medical doctorate at the university of cologne in 2024. he holds a master of healt dr. med. mhba fesc",
+      "after": "mirza mutallimov head of rhythmology klinikum idar-oberstein academic teaching hospital of johannes gutenberg university mainz idar-oberstein germany medicine germany m.mutallimov@yahoo.com he is a specialist in internal medicine cardiology and intensive care medicine. he is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. he completed his medical doctorate at the university of cologne in 2024. he holds a master of healt dr. med. mhba fesc"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6357,
+      "jsonPointer": "/entries/488/summary",
+      "field": "summary",
+      "before": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein, İdar-Oberştayn, Almaniya · Həkim · Almaniya",
+      "after": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein (Mainz Yohannes Qutenberq Universitetinin akademik tədris xəstəxanası), İdar-Oberştayn, Almaniya · Həkim · Almaniya"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6361,
+      "jsonPointer": "/entries/488/norm",
+      "field": "norm",
+      "before": "mirze mutellimov ritmologiya bolmesinin rehberi klinikum idar-oberstein idar-oberstayn almaniya hekim almaniya m.mutallimov@yahoo.com daxili xestelikler kardiologiya ve intensiv terapiya uzre mutexessisdir. 10-dan cox elmi meqalenin muellifidir ve tedqiqatlari nufuzlu beynelxalq elmi jurnallarda derc olunmusdur. 2024-cu ilde koln universitetinde tibb uzre doktorluq derecesi almisdir. sehiyye biznesinin idare edilmesi uzre magistr master of health b dr. med. mhba fesc",
+      "after": "mirze mutellimov ritmologiya bolmesinin rehberi klinikum idar-oberstein mainz yohannes qutenberq universitetinin akademik tedris xestexanasi idar-oberstayn almaniya hekim almaniya m.mutallimov@yahoo.com daxili xestelikler kardiologiya ve intensiv terapiya uzre mutexessisdir. 10-dan cox elmi meqalenin muellifidir ve tedqiqatlari nufuzlu beynelxalq elmi jurnallarda derc olunmusdur. 2024-cu ilde koln universitetinde tibb uzre doktorluq derecesi almisdir. sehiyye biznesinin idare edilmesi uzre magistr master of health b dr. med. mhba fesc"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6370,
+      "jsonPointer": "/entries/489/summary",
+      "field": "summary",
+      "before": "Head of Rhythmology, Klinikum Idar-Oberstein, Idar-Oberstein, Germany · Medicine · Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein (academic teaching hospital of Johannes Gutenberg University Mainz), Idar-Oberstein, Germany · Medicine · Germany"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6374,
+      "jsonPointer": "/entries/489/norm",
+      "field": "norm",
+      "before": "mirza mutallimov head of rhythmology klinikum idar-oberstein idar-oberstein germany medicine germany m.mutallimov@yahoo.com he is a specialist in internal medicine cardiology and intensive care medicine. he is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. he completed his medical doctorate at the university of cologne in 2024. he holds a master of healt dr. med. mhba fesc",
+      "after": "mirza mutallimov head of rhythmology klinikum idar-oberstein academic teaching hospital of johannes gutenberg university mainz idar-oberstein germany medicine germany m.mutallimov@yahoo.com he is a specialist in internal medicine cardiology and intensive care medicine. he is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. he completed his medical doctorate at the university of cologne in 2024. he holds a master of healt dr. med. mhba fesc"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6357,
+      "jsonPointer": "/entries/488/summary",
+      "field": "summary",
+      "before": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein, İdar-Oberştayn, Almaniya · Həkim · Almaniya",
+      "after": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein (Mainz Yohannes Qutenberq Universitetinin akademik tədris xəstəxanası), İdar-Oberştayn, Almaniya · Həkim · Almaniya"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6361,
+      "jsonPointer": "/entries/488/norm",
+      "field": "norm",
+      "before": "mirze mutellimov ritmologiya bolmesinin rehberi klinikum idar-oberstein idar-oberstayn almaniya hekim almaniya m.mutallimov@yahoo.com daxili xestelikler kardiologiya ve intensiv terapiya uzre mutexessisdir. 10-dan cox elmi meqalenin muellifidir ve tedqiqatlari nufuzlu beynelxalq elmi jurnallarda derc olunmusdur. 2024-cu ilde koln universitetinde tibb uzre doktorluq derecesi almisdir. sehiyye biznesinin idare edilmesi uzre magistr master of health b dr. med. mhba fesc",
+      "after": "mirze mutellimov ritmologiya bolmesinin rehberi klinikum idar-oberstein mainz yohannes qutenberq universitetinin akademik tedris xestexanasi idar-oberstayn almaniya hekim almaniya m.mutallimov@yahoo.com daxili xestelikler kardiologiya ve intensiv terapiya uzre mutexessisdir. 10-dan cox elmi meqalenin muellifidir ve tedqiqatlari nufuzlu beynelxalq elmi jurnallarda derc olunmusdur. 2024-cu ilde koln universitetinde tibb uzre doktorluq derecesi almisdir. sehiyye biznesinin idare edilmesi uzre magistr master of health b dr. med. mhba fesc"
+    }
+  ]
+}

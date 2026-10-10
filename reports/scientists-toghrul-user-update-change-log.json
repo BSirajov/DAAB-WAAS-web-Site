@@ -1,0 +1,371 @@
+{
+  "date": "2026-10-09",
+  "profile": "Toghrul Talishinskiy",
+  "previousEnglishName": "Togrul Talishinski",
+  "profileNumber": 7,
+  "issueIds": [
+    "V010",
+    "V113"
+  ],
+  "source": "Profile information supplied by the user in this conversation",
+  "summary": [
+    "Updated the English name to Toghrul Talishinskiy and the displayed credentials to MD, FACS, FASMBS.",
+    "Replaced the affiliation line, biography, and research interests with the supplied information.",
+    "Used the established American English spellings specializing and pediatric.",
+    "Updated the English directory, search entry, translation source, and canonical English name mappings."
+  ],
+  "scopeNote": "These are user-supplied biographical facts, not independently verified claims. The shared credential field also changes the badge on the Azerbaijani profile; Azerbaijani name, title, and biography text were not edited. Existing photo filenames and profile anchors were retained. Historical forum pages were not rewritten.",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 110,
+      "jsonPointer": "/profiles/6/name_en",
+      "field": "name_en",
+      "before": "Togrul Talishinski",
+      "after": "Toghrul Talishinskiy"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 115,
+      "jsonPointer": "/profiles/6/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "MD, FACS, FASMBS"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 120,
+      "jsonPointer": "/profiles/6/title_en",
+      "field": "title_en",
+      "before": "St. Joseph University Director of Minimally Invasive Surgery Assistant Professor of Surgery at Seton Hall University Hackensack Meridian School of Medicine",
+      "after": "Assistant Professor of Surgery; Director of Minimally Invasive and Robotic Surgery, St. Joseph's University Medical Center, Paterson, USA; Director, Minimally Invasive Surgery Fellowship; Chief, Bariatric Surgery"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 121,
+      "jsonPointer": "/profiles/6/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He interned at New York Medical College&#x27;s Westchester Sound Shore Medical Center and completed his residency program at New York University&#x27;s Department of Surgery.</p><p class=\"bio\">He successfully completed fellowship programs in surgical critical care at the University of Michigan Department of Surgery and minimally invasive surgery at Hackensack University Medical Center.</p><p class=\"bio\">He is a member of prestigious medical organizations such as the American Society of Metabolic and Bariatric Surgery, the American College of Surgeons, the Society of Critical Care Medicine, and the Michigan State Medical Society.</p>",
+      "after": "<p class=\"bio bio-lead\">Dr Talishinskiy is a surgeon specializing in minimally invasive, robotic and bariatric surgery. He earned his MD at the American University of the Caribbean School of Medicine, with a full scholarship from the Ministry of Education of Azerbaijan, and completed his general surgery residency at New York University. He then trained in surgical critical care at the University of Michigan and in minimally invasive surgery at Hackensack University Medical Center. He is board certified by the American Board of Surgery, including in surgical critical care, and is a Fellow of the American College of Surgeons and of the American Society for Metabolic and Bariatric Surgery. He also serves as North American Chapter Representative of the Young IFSO (International Federation for the Surgery of Obesity and Metabolic Disorders).</p><p class=\"bio\">He has authored numerous peer-reviewed publications and a book chapter, and has presented at major international meetings, including IFSO, the American College of Surgeons Clinical Congress, SAGES, Digestive Disease Week and ObesityWeek. He is actively involved in teaching medical students, residents and fellows. He is fluent in English, Russian, Turkish and Azerbaijani.</p><p class=\"bio\"><strong>Research interests:</strong> bariatric and metabolic surgery, hernia surgery, core muscle injury, and pediatric surgery.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/name_en",
+      "field": "name_en",
+      "before": "Togrul Talishinski",
+      "after": "Toghrul Talishinskiy"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "MD, FACS, FASMBS"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/title_en",
+      "field": "title_en",
+      "before": "St. Joseph University Director of Minimally Invasive Surgery Assistant Professor of Surgery at Seton Hall University Hackensack Meridian School of Medicine",
+      "after": "Assistant Professor of Surgery; Director of Minimally Invasive and Robotic Surgery, St. Joseph's University Medical Center, Paterson, USA; Director, Minimally Invasive Surgery Fellowship; Chief, Bariatric Surgery"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He interned at New York Medical College&#x27;s Westchester Sound Shore Medical Center and completed his residency program at New York University&#x27;s Department of Surgery.</p><p class=\"bio\">He successfully completed fellowship programs in surgical critical care at the University of Michigan Department of Surgery and minimally invasive surgery at Hackensack University Medical Center.</p><p class=\"bio\">He is a member of prestigious medical organizations such as the American Society of Metabolic and Bariatric Surgery, the American College of Surgeons, the Society of Critical Care Medicine, and the Michigan State Medical Society.</p>",
+      "after": "<p class=\"bio bio-lead\">Dr Talishinskiy is a surgeon specializing in minimally invasive, robotic and bariatric surgery. He earned his MD at the American University of the Caribbean School of Medicine, with a full scholarship from the Ministry of Education of Azerbaijan, and completed his general surgery residency at New York University. He then trained in surgical critical care at the University of Michigan and in minimally invasive surgery at Hackensack University Medical Center. He is board certified by the American Board of Surgery, including in surgical critical care, and is a Fellow of the American College of Surgeons and of the American Society for Metabolic and Bariatric Surgery. He also serves as North American Chapter Representative of the Young IFSO (International Federation for the Surgery of Obesity and Metabolic Disorders).</p><p class=\"bio\">He has authored numerous peer-reviewed publications and a book chapter, and has presented at major international meetings, including IFSO, the American College of Surgeons Clinical Congress, SAGES, Digestive Disease Week and ObesityWeek. He is actively involved in teaching medical students, residents and fellows. He is fluent in English, Russian, Turkish and Azerbaijani.</p><p class=\"bio\"><strong>Research interests:</strong> bariatric and metabolic surgery, hernia surgery, core muscle injury, and pediatric surgery.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 110,
+      "jsonPointer": "/profiles/6/name_en",
+      "field": "name_en",
+      "before": "Togrul Talishinski",
+      "after": "Toghrul Talishinskiy"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 115,
+      "jsonPointer": "/profiles/6/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "MD, FACS, FASMBS"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 120,
+      "jsonPointer": "/profiles/6/title_en",
+      "field": "title_en",
+      "before": "St. Joseph University Director of Minimally Invasive Surgery Assistant Professor of Surgery at Seton Hall University Hackensack Meridian School of Medicine",
+      "after": "Assistant Professor of Surgery; Director of Minimally Invasive and Robotic Surgery, St. Joseph's University Medical Center, Paterson, USA; Director, Minimally Invasive Surgery Fellowship; Chief, Bariatric Surgery"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 121,
+      "jsonPointer": "/profiles/6/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He interned at New York Medical College&#x27;s Westchester Sound Shore Medical Center and completed his residency program at New York University&#x27;s Department of Surgery.</p><p class=\"bio\">He successfully completed fellowship programs in surgical critical care at the University of Michigan Department of Surgery and minimally invasive surgery at Hackensack University Medical Center.</p><p class=\"bio\">He is a member of prestigious medical organizations such as the American Society of Metabolic and Bariatric Surgery, the American College of Surgeons, the Society of Critical Care Medicine, and the Michigan State Medical Society.</p>",
+      "after": "<p class=\"bio bio-lead\">Dr Talishinskiy is a surgeon specializing in minimally invasive, robotic and bariatric surgery. He earned his MD at the American University of the Caribbean School of Medicine, with a full scholarship from the Ministry of Education of Azerbaijan, and completed his general surgery residency at New York University. He then trained in surgical critical care at the University of Michigan and in minimally invasive surgery at Hackensack University Medical Center. He is board certified by the American Board of Surgery, including in surgical critical care, and is a Fellow of the American College of Surgeons and of the American Society for Metabolic and Bariatric Surgery. He also serves as North American Chapter Representative of the Young IFSO (International Federation for the Surgery of Obesity and Metabolic Disorders).</p><p class=\"bio\">He has authored numerous peer-reviewed publications and a book chapter, and has presented at major international meetings, including IFSO, the American College of Surgeons Clinical Congress, SAGES, Digestive Disease Week and ObesityWeek. He is actively involved in teaching medical students, residents and fellows. He is fluent in English, Russian, Turkish and Azerbaijani.</p><p class=\"bio\"><strong>Research interests:</strong> bariatric and metabolic surgery, hernia surgery, core muscle injury, and pediatric surgery.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/name_en",
+      "field": "name_en",
+      "before": "Togrul Talishinski",
+      "after": "Toghrul Talishinskiy"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "MD, FACS, FASMBS"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/title_en",
+      "field": "title_en",
+      "before": "St. Joseph University Director of Minimally Invasive Surgery Assistant Professor of Surgery at Seton Hall University Hackensack Meridian School of Medicine",
+      "after": "Assistant Professor of Surgery; Director of Minimally Invasive and Robotic Surgery, St. Joseph's University Medical Center, Paterson, USA; Director, Minimally Invasive Surgery Fellowship; Chief, Bariatric Surgery"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He interned at New York Medical College&#x27;s Westchester Sound Shore Medical Center and completed his residency program at New York University&#x27;s Department of Surgery.</p><p class=\"bio\">He successfully completed fellowship programs in surgical critical care at the University of Michigan Department of Surgery and minimally invasive surgery at Hackensack University Medical Center.</p><p class=\"bio\">He is a member of prestigious medical organizations such as the American Society of Metabolic and Bariatric Surgery, the American College of Surgeons, the Society of Critical Care Medicine, and the Michigan State Medical Society.</p>",
+      "after": "<p class=\"bio bio-lead\">Dr Talishinskiy is a surgeon specializing in minimally invasive, robotic and bariatric surgery. He earned his MD at the American University of the Caribbean School of Medicine, with a full scholarship from the Ministry of Education of Azerbaijan, and completed his general surgery residency at New York University. He then trained in surgical critical care at the University of Michigan and in minimally invasive surgery at Hackensack University Medical Center. He is board certified by the American Board of Surgery, including in surgical critical care, and is a Fellow of the American College of Surgeons and of the American Society for Metabolic and Bariatric Surgery. He also serves as North American Chapter Representative of the Young IFSO (International Federation for the Surgery of Obesity and Metabolic Disorders).</p><p class=\"bio\">He has authored numerous peer-reviewed publications and a book chapter, and has presented at major international meetings, including IFSO, the American College of Surgeons Clinical Congress, SAGES, Digestive Disease Week and ObesityWeek. He is actively involved in teaching medical students, residents and fellows. He is fluent in English, Russian, Turkish and Azerbaijani.</p><p class=\"bio\"><strong>Research interests:</strong> bariatric and metabolic surgery, hernia surgery, core muscle injury, and pediatric surgery.</p>"
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "line": 65,
+      "jsonPointer": "/6/ad_soyad",
+      "field": "ad_soyad",
+      "before": "Togrul Talishinski",
+      "after": "Toghrul Talishinskiy"
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "line": 68,
+      "jsonPointer": "/6/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "MD, FACS, FASMBS"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "line": 65,
+      "jsonPointer": "/6/ad_soyad",
+      "field": "ad_soyad",
+      "before": "Togrul Talishinski",
+      "after": "Toghrul Talishinskiy"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "line": 68,
+      "jsonPointer": "/6/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "MD, FACS, FASMBS"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 41,
+      "jsonPointer": "/profiles/talishinskiy.toghrul@gmail.com/title",
+      "field": "title",
+      "before": "St. Joseph University Director of Minimally Invasive Surgery Assistant Professor of Surgery at Seton Hall University Hackensack Meridian School of Medicine",
+      "after": "Assistant Professor of Surgery; Director of Minimally Invasive and Robotic Surgery, St. Joseph's University Medical Center, Paterson, USA; Director, Minimally Invasive Surgery Fellowship; Chief, Bariatric Surgery"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 42,
+      "jsonPointer": "/profiles/talishinskiy.toghrul@gmail.com/bio_html",
+      "field": "bio_html",
+      "before": "<p class=\"bio bio-lead\">He interned at New York Medical College&#x27;s Westchester Sound Shore Medical Center and completed his residency program at New York University&#x27;s Department of Surgery.</p><p class=\"bio\">He successfully completed fellowship programs in surgical critical care at the University of Michigan Department of Surgery and minimally invasive surgery at Hackensack University Medical Center.</p><p class=\"bio\">He is a member of prestigious medical organizations such as the American Society of Metabolic and Bariatric Surgery, the American College of Surgeons, the Society of Critical Care Medicine, and the Michigan State Medical Society.</p>",
+      "after": "<p class=\"bio bio-lead\">Dr Talishinskiy is a surgeon specializing in minimally invasive, robotic and bariatric surgery. He earned his MD at the American University of the Caribbean School of Medicine, with a full scholarship from the Ministry of Education of Azerbaijan, and completed his general surgery residency at New York University. He then trained in surgical critical care at the University of Michigan and in minimally invasive surgery at Hackensack University Medical Center. He is board certified by the American Board of Surgery, including in surgical critical care, and is a Fellow of the American College of Surgeons and of the American Society for Metabolic and Bariatric Surgery. He also serves as North American Chapter Representative of the Young IFSO (International Federation for the Surgery of Obesity and Metabolic Disorders).</p><p class=\"bio\">He has authored numerous peer-reviewed publications and a book chapter, and has presented at major international meetings, including IFSO, the American College of Surgeons Clinical Congress, SAGES, Digestive Disease Week and ObesityWeek. He is actively involved in teaching medical students, residents and fellows. He is fluent in English, Russian, Turkish and Azerbaijani.</p><p class=\"bio\"><strong>Research interests:</strong> bariatric and metabolic surgery, hernia surgery, core muscle injury, and pediatric surgery.</p>"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6317,
+      "jsonPointer": "/entries/485/title",
+      "field": "title",
+      "before": "Togrul Talishinski",
+      "after": "Toghrul Talishinskiy"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6318,
+      "jsonPointer": "/entries/485/summary",
+      "field": "summary",
+      "before": "St. Joseph University Director of Minimally Invasive Surgery Assistant Professor of Surgery at Seton Hall University Hackensack Meridian School of Medicine · Medicine · USA",
+      "after": "Assistant Professor of Surgery; Director of Minimally Invasive and Robotic Surgery, St. Joseph's University Medical Center, Paterson, USA; Director, Minimally Invasive Surgery Fellowship; Chief, Bariatric Surgery · Medicine · USA"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6322,
+      "jsonPointer": "/entries/485/norm",
+      "field": "norm",
+      "before": "togrul talishinski st. joseph university director of minimally invasive surgery assistant professor of surgery at seton hall university hackensack meridian school of medicine medicine usa talishinskiy.toghrul@gmail.com he interned at new york medical college s westchester sound shore medical center and completed his residency program at new york university s department of surgery. he successfully completed fellowship programs in surgical critical care at the university of michigan department of surgery and minimally invasive surgery phd",
+      "after": "toghrul talishinskiy assistant professor of surgery director of minimally invasive and robotic surgery st. joseph s university medical center paterson usa director minimally invasive surgery fellowship chief bariatric surgery medicine usa talishinskiy.toghrul@gmail.com dr talishinskiy is a surgeon specializing in minimally invasive robotic and bariatric surgery. he earned his md at the american university of the caribbean school of medicine with a full scholarship from the ministry of education of azerbaijan and completed his general surgery residency at new york university. he th md facs fasmbs"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6317,
+      "jsonPointer": "/entries/485/title",
+      "field": "title",
+      "before": "Togrul Talishinski",
+      "after": "Toghrul Talishinskiy"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6318,
+      "jsonPointer": "/entries/485/summary",
+      "field": "summary",
+      "before": "St. Joseph University Director of Minimally Invasive Surgery Assistant Professor of Surgery at Seton Hall University Hackensack Meridian School of Medicine · Medicine · USA",
+      "after": "Assistant Professor of Surgery; Director of Minimally Invasive and Robotic Surgery, St. Joseph's University Medical Center, Paterson, USA; Director, Minimally Invasive Surgery Fellowship; Chief, Bariatric Surgery · Medicine · USA"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6322,
+      "jsonPointer": "/entries/485/norm",
+      "field": "norm",
+      "before": "togrul talishinski st. joseph university director of minimally invasive surgery assistant professor of surgery at seton hall university hackensack meridian school of medicine medicine usa talishinskiy.toghrul@gmail.com he interned at new york medical college s westchester sound shore medical center and completed his residency program at new york university s department of surgery. he successfully completed fellowship programs in surgical critical care at the university of michigan department of surgery and minimally invasive surgery phd",
+      "after": "toghrul talishinskiy assistant professor of surgery director of minimally invasive and robotic surgery st. joseph s university medical center paterson usa director minimally invasive surgery fellowship chief bariatric surgery medicine usa talishinskiy.toghrul@gmail.com dr talishinskiy is a surgeon specializing in minimally invasive robotic and bariatric surgery. he earned his md at the american university of the caribbean school of medicine with a full scholarship from the ministry of education of azerbaijan and completed his general surgery residency at new york university. he th md facs fasmbs"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 78,
+      "jsonPointer": "/names/Toğrul Talişinski",
+      "field": "Toğrul Talişinski",
+      "before": "Togrul Talishinski",
+      "after": "Toghrul Talishinskiy"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 79,
+      "jsonPointer": "/names/TOĞRUL TALİŞİNSKİ",
+      "field": "TOĞRUL TALİŞİNSKİ",
+      "before": "TOGRUL TALISHINSKI",
+      "after": "TOGHRUL TALISHINSKIY"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 110,
+      "jsonPointer": "/names/TOĞRUL TALIŞINSKI",
+      "field": "TOĞRUL TALIŞINSKI",
+      "before": "TOGRUL TALISHINSKI",
+      "after": "TOGHRUL TALISHINSKIY"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 463,
+      "jsonPointer": "/names/Toğrul Talişinski, Prof. Dr.",
+      "field": "Toğrul Talişinski, Prof. Dr.",
+      "before": "Togrul Talishinski, Prof. Dr.",
+      "after": "Toghrul Talishinskiy, Prof. Dr."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 464,
+      "jsonPointer": "/names/Toğrul Talişinski, Dr.",
+      "field": "Toğrul Talişinski, Dr.",
+      "before": "Togrul Talishinski, Dr.",
+      "after": "Toghrul Talishinskiy, Dr."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 465,
+      "jsonPointer": "/names/Toğrul Talişinski, Prof.",
+      "field": "Toğrul Talişinski, Prof.",
+      "before": "Togrul Talishinski, Prof.",
+      "after": "Toghrul Talishinskiy, Prof."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 466,
+      "jsonPointer": "/names/Toğrul Talişinski — NDU",
+      "field": "Toğrul Talişinski — NDU",
+      "before": "Togrul Talishinski — NDU",
+      "after": "Toghrul Talishinskiy — NDU"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 467,
+      "jsonPointer": "/names/TOĞRUL TALİŞİNSKİ, Prof. Dr.",
+      "field": "TOĞRUL TALİŞİNSKİ, Prof. Dr.",
+      "before": "TOGRUL TALISHINSKI, Prof. Dr.",
+      "after": "TOGHRUL TALISHINSKIY, Prof. Dr."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 468,
+      "jsonPointer": "/names/TOĞRUL TALİŞİNSKİ, Dr.",
+      "field": "TOĞRUL TALİŞİNSKİ, Dr.",
+      "before": "TOGRUL TALISHINSKI, Dr.",
+      "after": "TOGHRUL TALISHINSKIY, Dr."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 469,
+      "jsonPointer": "/names/TOĞRUL TALİŞİNSKİ, Prof.",
+      "field": "TOĞRUL TALİŞİNSKİ, Prof.",
+      "before": "TOGRUL TALISHINSKI, Prof.",
+      "after": "TOGHRUL TALISHINSKIY, Prof."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 470,
+      "jsonPointer": "/names/TOĞRUL TALİŞİNSKİ — NDU",
+      "field": "TOĞRUL TALİŞİNSKİ — NDU",
+      "before": "TOGRUL TALISHINSKI — NDU",
+      "after": "TOGHRUL TALISHINSKIY — NDU"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 591,
+      "jsonPointer": "/names/TOĞRUL TALIŞINSKI, Prof. Dr.",
+      "field": "TOĞRUL TALIŞINSKI, Prof. Dr.",
+      "before": "TOGRUL TALISHINSKI, Prof. Dr.",
+      "after": "TOGHRUL TALISHINSKIY, Prof. Dr."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 592,
+      "jsonPointer": "/names/TOĞRUL TALIŞINSKI, Dr.",
+      "field": "TOĞRUL TALIŞINSKI, Dr.",
+      "before": "TOGRUL TALISHINSKI, Dr.",
+      "after": "TOGHRUL TALISHINSKIY, Dr."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 593,
+      "jsonPointer": "/names/TOĞRUL TALIŞINSKI, Prof.",
+      "field": "TOĞRUL TALIŞINSKI, Prof.",
+      "before": "TOGRUL TALISHINSKI, Prof.",
+      "after": "TOGHRUL TALISHINSKIY, Prof."
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 594,
+      "jsonPointer": "/names/TOĞRUL TALIŞINSKI — NDU",
+      "field": "TOĞRUL TALIŞINSKI — NDU",
+      "before": "TOGRUL TALISHINSKI — NDU",
+      "after": "TOGHRUL TALISHINSKIY — NDU"
+    },
+    {
+      "file": "helpers/i18n_person_names_en.py",
+      "line": 120,
+      "location": "English name mapping for Toğrul Talişinski",
+      "before": "Togrul Talishinski",
+      "after": "Toghrul Talishinskiy"
+    }
+  ]
+}

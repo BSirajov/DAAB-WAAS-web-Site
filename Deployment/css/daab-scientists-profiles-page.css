@@ -116,17 +116,9 @@ html[data-daab-page-id="scientists-profiles"] .catalog-group-head__count {
   color: var(--muted);
 }
 
-html[data-daab-page-id="scientists-profiles"] .catalog-sort-group-cluster {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-left: auto;
-  flex: 0 0 auto;
-}
-
 html[data-daab-page-id="scientists-profiles"] .catalog-sort-group-cluster .group-control,
 html[data-daab-page-id="scientists-profiles"] .catalog-sort-group-cluster .sort-control {
-  margin-left: 0;
+  margin-inline: 0;
 }
 
 .card.is-filtered-out{

@@ -1,0 +1,420 @@
+{
+  "date": "2026-10-10",
+  "profile": "Kamal Akbarov / Kamal Əkbərov",
+  "profileNumber": 19,
+  "languages": [
+    "English",
+    "Azerbaijani"
+  ],
+  "source": "User approval of the complete English and Azerbaijani profile drafts based on the supplied CV",
+  "sources": [
+    {
+      "title": "CV Kamal Akbarov (Latest).pdf",
+      "file": "E:/Documents/Azərbaycanlı Alimlərin Istanbul görüşü, 8-10 Dekabr 2022/1-ci Bakı forumu, 8-12 Sentyabr 2024/Web Site/CV/CV Kamal Akbarov (Latest).pdf",
+      "pages": 3,
+      "relevantPage": 2,
+      "sha256": "0e5f555f4a015af92218eea7cf1a0d95fdd9b5eed45d9eef4675b137483d5bc3",
+      "note": "All three pages read and visually inspected. Page 2 states that Akbarov contributed to the organization of ICARO3, ESTRO teaching courses, GEC-ESTRO workshops, and regional projects. The complete bilingual replacement was approved by the user."
+    }
+  ],
+  "issueIds": [
+    "V023"
+  ],
+  "resolvedIssueIds": [
+    "V023"
+  ],
+  "summary": [
+    "Applied the approved bilingual title, qualifications, career history, clinical experience, research, professional training, affiliations, interests, and languages.",
+    "Updated the displayed credentials to PhD, DMSc, MBA in profiles and both language directories.",
+    "Resolved V023 by making Akbarov the contributor to organizing ICARO3, ESTRO teaching courses, GEC-ESTRO workshops, and regional projects.",
+    "Used the approved statement that he supported 61 technical cooperation projects in 2021, with a combined budget of $331 million.",
+    "Applied the approved replacement without the former unsupported publication count and country-participation figures.",
+    "Synchronized active profile data, the English translation source, directory credentials, and English/Azerbaijani search entries."
+  ],
+  "scopeNote": "The exact approved wording is retained. Names, email/profile lookup key, photo, country, subject field, and profile anchor are unchanged. V023 is resolved by the supplied documentary evidence and user-approved wording. This update is not a new comprehensive proofreading pass or independent verification of every historical CV claim.",
+  "reportFinding": {
+    "before": {
+      "p": 19,
+      "c": "ICARO3 played a leading role in organizing ESTRO training courses and GEC-ESTRO seminars.",
+      "s": "Retain pending verification.",
+      "t": "Style",
+      "e": "ICARO3 unexpectedly becomes the subject. Confirm the scientist’s role and how ICARO3 relates to the courses.",
+      "verify": true,
+      "status": "Carried over",
+      "previousId": "V023",
+      "section": "Biography",
+      "id": "V023",
+      "previousReport": "Round 8 after fixes",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 325,
+          "jsonPointer": "/profiles/18/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-01.json",
+          "line": 1,
+          "jsonPointer": "/profiles/18/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 325,
+          "jsonPointer": "/profiles/18/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+          "line": 1,
+          "jsonPointer": "/profiles/18/bio_html_en"
+        }
+      ],
+      "severity": "High",
+      "group": "Verification",
+      "parts": [
+        {
+          "c": "ICARO3 played a leading role in organizing ESTRO training courses and GEC-ESTRO seminars.",
+          "s": "Retain pending verification."
+        }
+      ],
+      "previousStatus": "Carried over",
+      "e_ru": "ICARO3 неожиданно становится подлежащим. Необходимо уточнить роль учёного и связь ICARO3 с курсами."
+    },
+    "after": {
+      "id": "V023",
+      "profileNumber": 19,
+      "status": "Resolved",
+      "currentText": "He contributed to the organization of ICARO3, ESTRO teaching courses, GEC-ESTRO workshops, and regional projects.",
+      "resolution": "The CV identifies Akbarov as the contributor and lists ICARO3 among the activities organized. The approved wording avoids the unsupported stronger claim of a leading role."
+    }
+  },
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 319,
+      "jsonPointer": "/profiles/18/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "PhD, DMSc, MBA"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 324,
+      "jsonPointer": "/profiles/18/title_en",
+      "field": "title_en",
+      "before": "World Health Organization (WHO), expert on radiation, nuclear, chemical and biological threats, Ukraine and the European region",
+      "after": "Radiation oncologist and healthcare project management specialist"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 325,
+      "jsonPointer": "/profiles/18/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Doctor of Philosophy in Medicine and Doctor of Medical Sciences, author of more than 100 scientific publications, articles and methodological recommendations in the field of oncology and radiotherapy.</p><p class=\"bio\">He is an expert with extensive academic and clinical experience in radiation oncology and healthcare management. He is highly qualified in the fields of health project management, organization of cancer control programs, development of radiotherapy technologies and establishment of international collaborations.</p><p class=\"bio\">During his tenure at the International Atomic Energy Agency (IAEA) in 2018–2023, he led four international multicentric research projects involving 15–24 countries.</p><p class=\"bio-section-title\">Main achievements</p><p class=\"bio\">Led more than 60 technical cooperation projects (total budget: 331 million USD);</p><p class=\"bio\">acted as a leading expert in the UN global program to combat cervical cancer;</p><p class=\"bio\">led the \"ELAISA\" e-learning project aimed at the application of artificial intelligence technologies in radiotherapy;</p><p class=\"bio\">ICARO3 played a leading role in organizing ESTRO training courses and GEC-ESTRO seminars.</p><p class=\"bio\">Currently, as an employee of the World Health Organization, he provides scientific and technical support to radiation and nuclear safety programs in Ukraine.</p>",
+      "after": "<p class=\"bio bio-lead\">Kamal Akbarov is a radiation oncologist with extensive clinical, research, and international experience in cancer treatment, healthcare project management, and professional education. His work focuses on improving radiotherapy services, strengthening cancer control programs, and developing international scientific cooperation.</p><p class=\"bio\">He holds a PhD and a Doctor of Medical Sciences degree in Radiation Oncology from Azerbaijan’s National Center of Oncology, as well as an MBA in International Healthcare Management.</p><p class=\"bio\">In 2024, he joined the World Health Organization (WHO) as a Technical Officer for chemical, biological, radiological, and nuclear (CBRN) threats. His responsibilities include providing scientific and technical support for activities in Ukraine under the WHO Health Emergencies Program.</p><p class=\"bio\">From 2018 to 2023, he worked as a Technical Officer and Radiation Oncologist at the International Atomic Energy Agency (IAEA) in Vienna. He supported technical cooperation projects, the development of national cancer control programs, radiotherapy planning, equipment procurement, and professional training. In 2021, he supported 61 technical cooperation projects with a combined budget of $331 million.</p><p class=\"bio\">He led scientific and practical aspects of the United Nations Global Joint Program on Cervical Cancer and the ELAISA research project on e-learning interventions for AI-assisted contouring skills in radiotherapy. He contributed to the organization of ICARO3, ESTRO teaching courses, GEC-ESTRO workshops, and regional projects.</p><p class=\"bio\">From 2005 to 2018, he worked as a Radiation Oncologist and Scientific Officer at Azerbaijan’s National Center of Oncology in Baku. His clinical experience includes 3D conformal radiotherapy, intensity-modulated radiotherapy (IMRT), volumetric modulated arc therapy (VMAT), stereotactic body radiotherapy (SBRT), stereotactic radiosurgery (SRS), image-guided and interstitial brachytherapy, and concurrent chemotherapy. He also contributed to multidisciplinary treatment planning and the introduction of modern radiotherapy techniques.</p><p class=\"bio\">His research includes cervical cancer treatment, personalized radiosensitization, adaptive brachytherapy, and concurrent chemoradiotherapy. He participated in the EMBRACE II multicenter research project and has worked on radiotherapy contouring education, AI-assisted contouring, and spatially fractionated radiation therapy. His scientific work has been published in medical journals and presented at international conferences.</p><p class=\"bio\">He completed radiation oncology fellowships at institutions in Vienna, Schleswig-Holstein, and the US National Cancer Institute in Bethesda. He is a member of the GEC-ESTRO gynecological and breast brachytherapy working groups and serves as an ESTRO FALCON tutor in distance learning and online contouring.</p><p class=\"bio-section-title\">Research and professional interests:</p><ul><li>Radiation oncology, cervical cancer treatment, and brachytherapy.</li><li>Personalized radiosensitization and concurrent chemoradiotherapy.</li><li>AI-assisted contouring, e-learning, and professional training in radiotherapy.</li><li>Cancer control programs, healthcare project management, and quality assurance.</li><li>Scientific and technical support for preparedness and response to CBRN threats.</li></ul><p class=\"bio\">He speaks native Azerbaijani and Russian, fluent English and Turkish, and German at C1 level.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 320,
+      "jsonPointer": "/profiles/18/title_az",
+      "field": "title_az",
+      "before": "Ümumdünya Səhiyyə Təşkilatı (ÜST), radiasiya, nüvə, kimyəvi və bioloji təhlükələrə qarşı mütəxəssis, Ukrayna və Avropa regionu",
+      "after": "Şüa onkoloqu və səhiyyə layihələrinin idarə olunması üzrə mütəxəssis"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 321,
+      "jsonPointer": "/profiles/18/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Tibb üzrə fəlsəfə doktoru və tibb elmləri doktoru, onkologiya və radioterapiya sahəsində 100-dən artıq elmi nəşrin, məqalənin və metodik tövsiyənin müəllifidir.</p><p class=\"bio\">Şüa onkologiyası və səhiyyə idarəçiliyi üzrə geniş akademik və klinik təcrübəyə malik mütəxəssisdir. Səhiyyə layihələrinin idarə olunması, xərçənglə mübarizə proqramlarının təşkili, radioterapiya texnologiyalarının inkişafı və beynəlxalq əməkdaşlıqların qurulması sahələrində yüksək ixtisasa sahibdir.</p><p class=\"bio\">2018–2023-cü illərdə Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) çalışdığı müddətdə 15–24 ölkənin iştirakı ilə həyata keçirilən dörd beynəlxalq multisentrik elmi-tədqiqat layihəsinə rəhbərlik etmişdir.</p><p class=\"bio-section-title\">Əsas nailiyyətləri:</p><p class=\"bio\">60-dan çox texniki əməkdaşlıq layihəsinə rəhbərlik etmişdir (ümumi büdcə: 331 milyon ABŞ dolları);</p><p class=\"bio\">BMT-nin servikal xərçənglə mübarizə üzrə qlobal proqramında rəhbər ekspert qismində çıxış etmişdir;</p><p class=\"bio\">Radioterapiyada süni intellekt texnologiyalarının tətbiqinə yönəlmiş “ELAISA” e-öyrənmə layihəsinə rəhbərlik etmişdir;</p><p class=\"bio\">ICARO3, ESTRO tədris kursları və GEC-ESTRO seminarlarının təşkilində aparıcı rol oynamışdır.</p><p class=\"bio\">Hal-hazırda Ümumdünya Səhiyyə Təşkilatının əməkdaşı kimi Ukraynada radiasiya və nüvə təhlükəsizliyi proqramlarına elmi və texniki dəstək göstərir.</p>",
+      "after": "<p class=\"bio bio-lead\">Kamal Əkbərov xərçəngin müalicəsi, səhiyyə layihələrinin idarə olunması və peşəkar təhsil sahələrində geniş klinik, elmi və beynəlxalq təcrübəyə malik şüa onkoloqudur. Onun fəaliyyəti radioterapiya xidmətlərinin təkmilləşdirilməsinə, xərçənglə mübarizə proqramlarının gücləndirilməsinə və beynəlxalq elmi əməkdaşlığın inkişafına yönəlmişdir.</p><p class=\"bio\">Azərbaycanın Milli Onkologiya Mərkəzində şüa onkologiyası üzrə fəlsəfə doktoru və tibb elmləri doktoru elmi dərəcələri almışdır. Həmçinin beynəlxalq səhiyyə idarəçiliyi üzrə MBA dərəcəsinə malikdir.</p><p class=\"bio\">2024-cü ildə Ümumdünya Səhiyyə Təşkilatında (ÜST) kimyəvi, bioloji, radioloji və nüvə təhlükələri (CBRN) üzrə texniki mütəxəssis kimi fəaliyyətə başlamışdır. Onun vəzifələrinə ÜST-nin Səhiyyə sahəsində Fövqəladə Hallar Proqramı çərçivəsində Ukraynada həyata keçirilən fəaliyyətlərə elmi və texniki dəstəyin göstərilməsi daxildir.</p><p class=\"bio\">2018–2023-cü illərdə Vyanada Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) texniki mütəxəssis və şüa onkoloqu kimi çalışmışdır. Texniki əməkdaşlıq layihələrinə, milli xərçənglə mübarizə proqramlarının hazırlanmasına, radioterapiyanın planlaşdırılmasına, avadanlıqların satın alınmasına və peşəkar təlimlərə dəstək göstərmişdir. 2021-ci ildə ümumi büdcəsi 331 milyon ABŞ dolları olan 61 texniki əməkdaşlıq layihəsini dəstəkləmişdir.</p><p class=\"bio\">Birləşmiş Millətlər Təşkilatının Uşaqlıq Boynu Xərçəngi üzrə Qlobal Birgə Proqramının elmi və praktiki istiqamətlərinə, eləcə də radioterapiyada süni intellektin köməyi ilə konturlama bacarıqlarının inkişafı üçün elektron tədris üsullarını araşdıran ELAISA layihəsinə rəhbərlik etmişdir. ICARO3-ün, ESTRO tədris kurslarının, GEC-ESTRO seminarlarının və regional layihələrin təşkilinə töhfə vermişdir.</p><p class=\"bio\">2005–2018-ci illərdə Bakıda Azərbaycanın Milli Onkologiya Mərkəzində şüa onkoloqu və elmi işçi kimi çalışmışdır. Onun klinik təcrübəsinə üçölçülü konformal radioterapiya, intensivliyi modulyasiya olunan radioterapiya (IMRT), həcmli modulyasiya olunan qövs terapiyası (VMAT), stereotaktik bədən radioterapiyası (SBRT), stereotaktik radiocərrahiyyə (SRS), görüntü nəzarəti altında və interstisial braxiterapiya, həmçinin eyni vaxtda aparılan kimyaterapiya daxildir. Multidissiplinar müalicə planlarının hazırlanmasına və müasir radioterapiya üsullarının tətbiqinə də töhfə vermişdir.</p><p class=\"bio\">Tədqiqatları uşaqlıq boynu xərçənginin müalicəsini, fərdiləşdirilmiş radiosensibilizasiyanı, adaptiv braxiterapiyanı və eyni vaxtda aparılan kimya-şüa müalicəsini əhatə edir. EMBRACE II çoxmərkəzli tədqiqat layihəsində iştirak etmiş, radioterapiyada konturlama üzrə tədris, süni intellektin köməyi ilə konturlama və məkan üzrə fraksiyalaşdırılmış şüa terapiyası sahələrində elmi fəaliyyət göstərmişdir. Elmi işləri tibb jurnallarında dərc olunmuş və beynəlxalq konfranslarda təqdim edilmişdir.</p><p class=\"bio\">Vyanada, Şlezviq-Holşteyndə və ABŞ-ın Bethesda şəhərində yerləşən Milli Xərçəng İnstitutunda şüa onkologiyası üzrə ixtisasartırma proqramlarını tamamlamışdır. GEC-ESTRO-nun ginekoloji və süd vəzi braxiterapiyası üzrə işçi qruplarının üzvüdür. ESTRO FALCON çərçivəsində distant tədris və onlayn konturlama üzrə təlimçi kimi fəaliyyət göstərir.</p><p class=\"bio-section-title\">Elmi və peşəkar maraq sahələri:</p><ul><li>Şüa onkologiyası, uşaqlıq boynu xərçənginin müalicəsi və braxiterapiya.</li><li>Fərdiləşdirilmiş radiosensibilizasiya və eyni vaxtda aparılan kimya-şüa müalicəsi.</li><li>Süni intellektin köməyi ilə konturlama, elektron tədris və radioterapiya üzrə peşəkar təlimlər.</li><li>Xərçənglə mübarizə proqramları, səhiyyə layihələrinin idarə olunması və keyfiyyətin təmin edilməsi.</li><li>CBRN təhlükələrinə hazırlıq və cavab tədbirlərinə elmi və texniki dəstək.</li></ul><p class=\"bio\">Azərbaycan və rus dilləri onun ana dilləridir. İngilis və türk dillərini sərbəst, alman dilini isə C1 səviyyəsində bilir.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/18/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "PhD, DMSc, MBA"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/18/title_en",
+      "field": "title_en",
+      "before": "World Health Organization (WHO), expert on radiation, nuclear, chemical and biological threats, Ukraine and the European region",
+      "after": "Radiation oncologist and healthcare project management specialist"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/18/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Doctor of Philosophy in Medicine and Doctor of Medical Sciences, author of more than 100 scientific publications, articles and methodological recommendations in the field of oncology and radiotherapy.</p><p class=\"bio\">He is an expert with extensive academic and clinical experience in radiation oncology and healthcare management. He is highly qualified in the fields of health project management, organization of cancer control programs, development of radiotherapy technologies and establishment of international collaborations.</p><p class=\"bio\">During his tenure at the International Atomic Energy Agency (IAEA) in 2018–2023, he led four international multicentric research projects involving 15–24 countries.</p><p class=\"bio-section-title\">Main achievements</p><p class=\"bio\">Led more than 60 technical cooperation projects (total budget: 331 million USD);</p><p class=\"bio\">acted as a leading expert in the UN global program to combat cervical cancer;</p><p class=\"bio\">led the \"ELAISA\" e-learning project aimed at the application of artificial intelligence technologies in radiotherapy;</p><p class=\"bio\">ICARO3 played a leading role in organizing ESTRO training courses and GEC-ESTRO seminars.</p><p class=\"bio\">Currently, as an employee of the World Health Organization, he provides scientific and technical support to radiation and nuclear safety programs in Ukraine.</p>",
+      "after": "<p class=\"bio bio-lead\">Kamal Akbarov is a radiation oncologist with extensive clinical, research, and international experience in cancer treatment, healthcare project management, and professional education. His work focuses on improving radiotherapy services, strengthening cancer control programs, and developing international scientific cooperation.</p><p class=\"bio\">He holds a PhD and a Doctor of Medical Sciences degree in Radiation Oncology from Azerbaijan’s National Center of Oncology, as well as an MBA in International Healthcare Management.</p><p class=\"bio\">In 2024, he joined the World Health Organization (WHO) as a Technical Officer for chemical, biological, radiological, and nuclear (CBRN) threats. His responsibilities include providing scientific and technical support for activities in Ukraine under the WHO Health Emergencies Program.</p><p class=\"bio\">From 2018 to 2023, he worked as a Technical Officer and Radiation Oncologist at the International Atomic Energy Agency (IAEA) in Vienna. He supported technical cooperation projects, the development of national cancer control programs, radiotherapy planning, equipment procurement, and professional training. In 2021, he supported 61 technical cooperation projects with a combined budget of $331 million.</p><p class=\"bio\">He led scientific and practical aspects of the United Nations Global Joint Program on Cervical Cancer and the ELAISA research project on e-learning interventions for AI-assisted contouring skills in radiotherapy. He contributed to the organization of ICARO3, ESTRO teaching courses, GEC-ESTRO workshops, and regional projects.</p><p class=\"bio\">From 2005 to 2018, he worked as a Radiation Oncologist and Scientific Officer at Azerbaijan’s National Center of Oncology in Baku. His clinical experience includes 3D conformal radiotherapy, intensity-modulated radiotherapy (IMRT), volumetric modulated arc therapy (VMAT), stereotactic body radiotherapy (SBRT), stereotactic radiosurgery (SRS), image-guided and interstitial brachytherapy, and concurrent chemotherapy. He also contributed to multidisciplinary treatment planning and the introduction of modern radiotherapy techniques.</p><p class=\"bio\">His research includes cervical cancer treatment, personalized radiosensitization, adaptive brachytherapy, and concurrent chemoradiotherapy. He participated in the EMBRACE II multicenter research project and has worked on radiotherapy contouring education, AI-assisted contouring, and spatially fractionated radiation therapy. His scientific work has been published in medical journals and presented at international conferences.</p><p class=\"bio\">He completed radiation oncology fellowships at institutions in Vienna, Schleswig-Holstein, and the US National Cancer Institute in Bethesda. He is a member of the GEC-ESTRO gynecological and breast brachytherapy working groups and serves as an ESTRO FALCON tutor in distance learning and online contouring.</p><p class=\"bio-section-title\">Research and professional interests:</p><ul><li>Radiation oncology, cervical cancer treatment, and brachytherapy.</li><li>Personalized radiosensitization and concurrent chemoradiotherapy.</li><li>AI-assisted contouring, e-learning, and professional training in radiotherapy.</li><li>Cancer control programs, healthcare project management, and quality assurance.</li><li>Scientific and technical support for preparedness and response to CBRN threats.</li></ul><p class=\"bio\">He speaks native Azerbaijani and Russian, fluent English and Turkish, and German at C1 level.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/18/title_az",
+      "field": "title_az",
+      "before": "Ümumdünya Səhiyyə Təşkilatı (ÜST), radiasiya, nüvə, kimyəvi və bioloji təhlükələrə qarşı mütəxəssis, Ukrayna və Avropa regionu",
+      "after": "Şüa onkoloqu və səhiyyə layihələrinin idarə olunması üzrə mütəxəssis"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/18/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Tibb üzrə fəlsəfə doktoru və tibb elmləri doktoru, onkologiya və radioterapiya sahəsində 100-dən artıq elmi nəşrin, məqalənin və metodik tövsiyənin müəllifidir.</p><p class=\"bio\">Şüa onkologiyası və səhiyyə idarəçiliyi üzrə geniş akademik və klinik təcrübəyə malik mütəxəssisdir. Səhiyyə layihələrinin idarə olunması, xərçənglə mübarizə proqramlarının təşkili, radioterapiya texnologiyalarının inkişafı və beynəlxalq əməkdaşlıqların qurulması sahələrində yüksək ixtisasa sahibdir.</p><p class=\"bio\">2018–2023-cü illərdə Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) çalışdığı müddətdə 15–24 ölkənin iştirakı ilə həyata keçirilən dörd beynəlxalq multisentrik elmi-tədqiqat layihəsinə rəhbərlik etmişdir.</p><p class=\"bio-section-title\">Əsas nailiyyətləri:</p><p class=\"bio\">60-dan çox texniki əməkdaşlıq layihəsinə rəhbərlik etmişdir (ümumi büdcə: 331 milyon ABŞ dolları);</p><p class=\"bio\">BMT-nin servikal xərçənglə mübarizə üzrə qlobal proqramında rəhbər ekspert qismində çıxış etmişdir;</p><p class=\"bio\">Radioterapiyada süni intellekt texnologiyalarının tətbiqinə yönəlmiş “ELAISA” e-öyrənmə layihəsinə rəhbərlik etmişdir;</p><p class=\"bio\">ICARO3, ESTRO tədris kursları və GEC-ESTRO seminarlarının təşkilində aparıcı rol oynamışdır.</p><p class=\"bio\">Hal-hazırda Ümumdünya Səhiyyə Təşkilatının əməkdaşı kimi Ukraynada radiasiya və nüvə təhlükəsizliyi proqramlarına elmi və texniki dəstək göstərir.</p>",
+      "after": "<p class=\"bio bio-lead\">Kamal Əkbərov xərçəngin müalicəsi, səhiyyə layihələrinin idarə olunması və peşəkar təhsil sahələrində geniş klinik, elmi və beynəlxalq təcrübəyə malik şüa onkoloqudur. Onun fəaliyyəti radioterapiya xidmətlərinin təkmilləşdirilməsinə, xərçənglə mübarizə proqramlarının gücləndirilməsinə və beynəlxalq elmi əməkdaşlığın inkişafına yönəlmişdir.</p><p class=\"bio\">Azərbaycanın Milli Onkologiya Mərkəzində şüa onkologiyası üzrə fəlsəfə doktoru və tibb elmləri doktoru elmi dərəcələri almışdır. Həmçinin beynəlxalq səhiyyə idarəçiliyi üzrə MBA dərəcəsinə malikdir.</p><p class=\"bio\">2024-cü ildə Ümumdünya Səhiyyə Təşkilatında (ÜST) kimyəvi, bioloji, radioloji və nüvə təhlükələri (CBRN) üzrə texniki mütəxəssis kimi fəaliyyətə başlamışdır. Onun vəzifələrinə ÜST-nin Səhiyyə sahəsində Fövqəladə Hallar Proqramı çərçivəsində Ukraynada həyata keçirilən fəaliyyətlərə elmi və texniki dəstəyin göstərilməsi daxildir.</p><p class=\"bio\">2018–2023-cü illərdə Vyanada Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) texniki mütəxəssis və şüa onkoloqu kimi çalışmışdır. Texniki əməkdaşlıq layihələrinə, milli xərçənglə mübarizə proqramlarının hazırlanmasına, radioterapiyanın planlaşdırılmasına, avadanlıqların satın alınmasına və peşəkar təlimlərə dəstək göstərmişdir. 2021-ci ildə ümumi büdcəsi 331 milyon ABŞ dolları olan 61 texniki əməkdaşlıq layihəsini dəstəkləmişdir.</p><p class=\"bio\">Birləşmiş Millətlər Təşkilatının Uşaqlıq Boynu Xərçəngi üzrə Qlobal Birgə Proqramının elmi və praktiki istiqamətlərinə, eləcə də radioterapiyada süni intellektin köməyi ilə konturlama bacarıqlarının inkişafı üçün elektron tədris üsullarını araşdıran ELAISA layihəsinə rəhbərlik etmişdir. ICARO3-ün, ESTRO tədris kurslarının, GEC-ESTRO seminarlarının və regional layihələrin təşkilinə töhfə vermişdir.</p><p class=\"bio\">2005–2018-ci illərdə Bakıda Azərbaycanın Milli Onkologiya Mərkəzində şüa onkoloqu və elmi işçi kimi çalışmışdır. Onun klinik təcrübəsinə üçölçülü konformal radioterapiya, intensivliyi modulyasiya olunan radioterapiya (IMRT), həcmli modulyasiya olunan qövs terapiyası (VMAT), stereotaktik bədən radioterapiyası (SBRT), stereotaktik radiocərrahiyyə (SRS), görüntü nəzarəti altında və interstisial braxiterapiya, həmçinin eyni vaxtda aparılan kimyaterapiya daxildir. Multidissiplinar müalicə planlarının hazırlanmasına və müasir radioterapiya üsullarının tətbiqinə də töhfə vermişdir.</p><p class=\"bio\">Tədqiqatları uşaqlıq boynu xərçənginin müalicəsini, fərdiləşdirilmiş radiosensibilizasiyanı, adaptiv braxiterapiyanı və eyni vaxtda aparılan kimya-şüa müalicəsini əhatə edir. EMBRACE II çoxmərkəzli tədqiqat layihəsində iştirak etmiş, radioterapiyada konturlama üzrə tədris, süni intellektin köməyi ilə konturlama və məkan üzrə fraksiyalaşdırılmış şüa terapiyası sahələrində elmi fəaliyyət göstərmişdir. Elmi işləri tibb jurnallarında dərc olunmuş və beynəlxalq konfranslarda təqdim edilmişdir.</p><p class=\"bio\">Vyanada, Şlezviq-Holşteyndə və ABŞ-ın Bethesda şəhərində yerləşən Milli Xərçəng İnstitutunda şüa onkologiyası üzrə ixtisasartırma proqramlarını tamamlamışdır. GEC-ESTRO-nun ginekoloji və süd vəzi braxiterapiyası üzrə işçi qruplarının üzvüdür. ESTRO FALCON çərçivəsində distant tədris və onlayn konturlama üzrə təlimçi kimi fəaliyyət göstərir.</p><p class=\"bio-section-title\">Elmi və peşəkar maraq sahələri:</p><ul><li>Şüa onkologiyası, uşaqlıq boynu xərçənginin müalicəsi və braxiterapiya.</li><li>Fərdiləşdirilmiş radiosensibilizasiya və eyni vaxtda aparılan kimya-şüa müalicəsi.</li><li>Süni intellektin köməyi ilə konturlama, elektron tədris və radioterapiya üzrə peşəkar təlimlər.</li><li>Xərçənglə mübarizə proqramları, səhiyyə layihələrinin idarə olunması və keyfiyyətin təmin edilməsi.</li><li>CBRN təhlükələrinə hazırlıq və cavab tədbirlərinə elmi və texniki dəstək.</li></ul><p class=\"bio\">Azərbaycan və rus dilləri onun ana dilləridir. İngilis və türk dillərini sərbəst, alman dilini isə C1 səviyyəsində bilir.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 319,
+      "jsonPointer": "/profiles/18/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "PhD, DMSc, MBA"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 324,
+      "jsonPointer": "/profiles/18/title_en",
+      "field": "title_en",
+      "before": "World Health Organization (WHO), expert on radiation, nuclear, chemical and biological threats, Ukraine and the European region",
+      "after": "Radiation oncologist and healthcare project management specialist"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 325,
+      "jsonPointer": "/profiles/18/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Doctor of Philosophy in Medicine and Doctor of Medical Sciences, author of more than 100 scientific publications, articles and methodological recommendations in the field of oncology and radiotherapy.</p><p class=\"bio\">He is an expert with extensive academic and clinical experience in radiation oncology and healthcare management. He is highly qualified in the fields of health project management, organization of cancer control programs, development of radiotherapy technologies and establishment of international collaborations.</p><p class=\"bio\">During his tenure at the International Atomic Energy Agency (IAEA) in 2018–2023, he led four international multicentric research projects involving 15–24 countries.</p><p class=\"bio-section-title\">Main achievements</p><p class=\"bio\">Led more than 60 technical cooperation projects (total budget: 331 million USD);</p><p class=\"bio\">acted as a leading expert in the UN global program to combat cervical cancer;</p><p class=\"bio\">led the \"ELAISA\" e-learning project aimed at the application of artificial intelligence technologies in radiotherapy;</p><p class=\"bio\">ICARO3 played a leading role in organizing ESTRO training courses and GEC-ESTRO seminars.</p><p class=\"bio\">Currently, as an employee of the World Health Organization, he provides scientific and technical support to radiation and nuclear safety programs in Ukraine.</p>",
+      "after": "<p class=\"bio bio-lead\">Kamal Akbarov is a radiation oncologist with extensive clinical, research, and international experience in cancer treatment, healthcare project management, and professional education. His work focuses on improving radiotherapy services, strengthening cancer control programs, and developing international scientific cooperation.</p><p class=\"bio\">He holds a PhD and a Doctor of Medical Sciences degree in Radiation Oncology from Azerbaijan’s National Center of Oncology, as well as an MBA in International Healthcare Management.</p><p class=\"bio\">In 2024, he joined the World Health Organization (WHO) as a Technical Officer for chemical, biological, radiological, and nuclear (CBRN) threats. His responsibilities include providing scientific and technical support for activities in Ukraine under the WHO Health Emergencies Program.</p><p class=\"bio\">From 2018 to 2023, he worked as a Technical Officer and Radiation Oncologist at the International Atomic Energy Agency (IAEA) in Vienna. He supported technical cooperation projects, the development of national cancer control programs, radiotherapy planning, equipment procurement, and professional training. In 2021, he supported 61 technical cooperation projects with a combined budget of $331 million.</p><p class=\"bio\">He led scientific and practical aspects of the United Nations Global Joint Program on Cervical Cancer and the ELAISA research project on e-learning interventions for AI-assisted contouring skills in radiotherapy. He contributed to the organization of ICARO3, ESTRO teaching courses, GEC-ESTRO workshops, and regional projects.</p><p class=\"bio\">From 2005 to 2018, he worked as a Radiation Oncologist and Scientific Officer at Azerbaijan’s National Center of Oncology in Baku. His clinical experience includes 3D conformal radiotherapy, intensity-modulated radiotherapy (IMRT), volumetric modulated arc therapy (VMAT), stereotactic body radiotherapy (SBRT), stereotactic radiosurgery (SRS), image-guided and interstitial brachytherapy, and concurrent chemotherapy. He also contributed to multidisciplinary treatment planning and the introduction of modern radiotherapy techniques.</p><p class=\"bio\">His research includes cervical cancer treatment, personalized radiosensitization, adaptive brachytherapy, and concurrent chemoradiotherapy. He participated in the EMBRACE II multicenter research project and has worked on radiotherapy contouring education, AI-assisted contouring, and spatially fractionated radiation therapy. His scientific work has been published in medical journals and presented at international conferences.</p><p class=\"bio\">He completed radiation oncology fellowships at institutions in Vienna, Schleswig-Holstein, and the US National Cancer Institute in Bethesda. He is a member of the GEC-ESTRO gynecological and breast brachytherapy working groups and serves as an ESTRO FALCON tutor in distance learning and online contouring.</p><p class=\"bio-section-title\">Research and professional interests:</p><ul><li>Radiation oncology, cervical cancer treatment, and brachytherapy.</li><li>Personalized radiosensitization and concurrent chemoradiotherapy.</li><li>AI-assisted contouring, e-learning, and professional training in radiotherapy.</li><li>Cancer control programs, healthcare project management, and quality assurance.</li><li>Scientific and technical support for preparedness and response to CBRN threats.</li></ul><p class=\"bio\">He speaks native Azerbaijani and Russian, fluent English and Turkish, and German at C1 level.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 320,
+      "jsonPointer": "/profiles/18/title_az",
+      "field": "title_az",
+      "before": "Ümumdünya Səhiyyə Təşkilatı (ÜST), radiasiya, nüvə, kimyəvi və bioloji təhlükələrə qarşı mütəxəssis, Ukrayna və Avropa regionu",
+      "after": "Şüa onkoloqu və səhiyyə layihələrinin idarə olunması üzrə mütəxəssis"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 321,
+      "jsonPointer": "/profiles/18/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Tibb üzrə fəlsəfə doktoru və tibb elmləri doktoru, onkologiya və radioterapiya sahəsində 100-dən artıq elmi nəşrin, məqalənin və metodik tövsiyənin müəllifidir.</p><p class=\"bio\">Şüa onkologiyası və səhiyyə idarəçiliyi üzrə geniş akademik və klinik təcrübəyə malik mütəxəssisdir. Səhiyyə layihələrinin idarə olunması, xərçənglə mübarizə proqramlarının təşkili, radioterapiya texnologiyalarının inkişafı və beynəlxalq əməkdaşlıqların qurulması sahələrində yüksək ixtisasa sahibdir.</p><p class=\"bio\">2018–2023-cü illərdə Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) çalışdığı müddətdə 15–24 ölkənin iştirakı ilə həyata keçirilən dörd beynəlxalq multisentrik elmi-tədqiqat layihəsinə rəhbərlik etmişdir.</p><p class=\"bio-section-title\">Əsas nailiyyətləri:</p><p class=\"bio\">60-dan çox texniki əməkdaşlıq layihəsinə rəhbərlik etmişdir (ümumi büdcə: 331 milyon ABŞ dolları);</p><p class=\"bio\">BMT-nin servikal xərçənglə mübarizə üzrə qlobal proqramında rəhbər ekspert qismində çıxış etmişdir;</p><p class=\"bio\">Radioterapiyada süni intellekt texnologiyalarının tətbiqinə yönəlmiş “ELAISA” e-öyrənmə layihəsinə rəhbərlik etmişdir;</p><p class=\"bio\">ICARO3, ESTRO tədris kursları və GEC-ESTRO seminarlarının təşkilində aparıcı rol oynamışdır.</p><p class=\"bio\">Hal-hazırda Ümumdünya Səhiyyə Təşkilatının əməkdaşı kimi Ukraynada radiasiya və nüvə təhlükəsizliyi proqramlarına elmi və texniki dəstək göstərir.</p>",
+      "after": "<p class=\"bio bio-lead\">Kamal Əkbərov xərçəngin müalicəsi, səhiyyə layihələrinin idarə olunması və peşəkar təhsil sahələrində geniş klinik, elmi və beynəlxalq təcrübəyə malik şüa onkoloqudur. Onun fəaliyyəti radioterapiya xidmətlərinin təkmilləşdirilməsinə, xərçənglə mübarizə proqramlarının gücləndirilməsinə və beynəlxalq elmi əməkdaşlığın inkişafına yönəlmişdir.</p><p class=\"bio\">Azərbaycanın Milli Onkologiya Mərkəzində şüa onkologiyası üzrə fəlsəfə doktoru və tibb elmləri doktoru elmi dərəcələri almışdır. Həmçinin beynəlxalq səhiyyə idarəçiliyi üzrə MBA dərəcəsinə malikdir.</p><p class=\"bio\">2024-cü ildə Ümumdünya Səhiyyə Təşkilatında (ÜST) kimyəvi, bioloji, radioloji və nüvə təhlükələri (CBRN) üzrə texniki mütəxəssis kimi fəaliyyətə başlamışdır. Onun vəzifələrinə ÜST-nin Səhiyyə sahəsində Fövqəladə Hallar Proqramı çərçivəsində Ukraynada həyata keçirilən fəaliyyətlərə elmi və texniki dəstəyin göstərilməsi daxildir.</p><p class=\"bio\">2018–2023-cü illərdə Vyanada Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) texniki mütəxəssis və şüa onkoloqu kimi çalışmışdır. Texniki əməkdaşlıq layihələrinə, milli xərçənglə mübarizə proqramlarının hazırlanmasına, radioterapiyanın planlaşdırılmasına, avadanlıqların satın alınmasına və peşəkar təlimlərə dəstək göstərmişdir. 2021-ci ildə ümumi büdcəsi 331 milyon ABŞ dolları olan 61 texniki əməkdaşlıq layihəsini dəstəkləmişdir.</p><p class=\"bio\">Birləşmiş Millətlər Təşkilatının Uşaqlıq Boynu Xərçəngi üzrə Qlobal Birgə Proqramının elmi və praktiki istiqamətlərinə, eləcə də radioterapiyada süni intellektin köməyi ilə konturlama bacarıqlarının inkişafı üçün elektron tədris üsullarını araşdıran ELAISA layihəsinə rəhbərlik etmişdir. ICARO3-ün, ESTRO tədris kurslarının, GEC-ESTRO seminarlarının və regional layihələrin təşkilinə töhfə vermişdir.</p><p class=\"bio\">2005–2018-ci illərdə Bakıda Azərbaycanın Milli Onkologiya Mərkəzində şüa onkoloqu və elmi işçi kimi çalışmışdır. Onun klinik təcrübəsinə üçölçülü konformal radioterapiya, intensivliyi modulyasiya olunan radioterapiya (IMRT), həcmli modulyasiya olunan qövs terapiyası (VMAT), stereotaktik bədən radioterapiyası (SBRT), stereotaktik radiocərrahiyyə (SRS), görüntü nəzarəti altında və interstisial braxiterapiya, həmçinin eyni vaxtda aparılan kimyaterapiya daxildir. Multidissiplinar müalicə planlarının hazırlanmasına və müasir radioterapiya üsullarının tətbiqinə də töhfə vermişdir.</p><p class=\"bio\">Tədqiqatları uşaqlıq boynu xərçənginin müalicəsini, fərdiləşdirilmiş radiosensibilizasiyanı, adaptiv braxiterapiyanı və eyni vaxtda aparılan kimya-şüa müalicəsini əhatə edir. EMBRACE II çoxmərkəzli tədqiqat layihəsində iştirak etmiş, radioterapiyada konturlama üzrə tədris, süni intellektin köməyi ilə konturlama və məkan üzrə fraksiyalaşdırılmış şüa terapiyası sahələrində elmi fəaliyyət göstərmişdir. Elmi işləri tibb jurnallarında dərc olunmuş və beynəlxalq konfranslarda təqdim edilmişdir.</p><p class=\"bio\">Vyanada, Şlezviq-Holşteyndə və ABŞ-ın Bethesda şəhərində yerləşən Milli Xərçəng İnstitutunda şüa onkologiyası üzrə ixtisasartırma proqramlarını tamamlamışdır. GEC-ESTRO-nun ginekoloji və süd vəzi braxiterapiyası üzrə işçi qruplarının üzvüdür. ESTRO FALCON çərçivəsində distant tədris və onlayn konturlama üzrə təlimçi kimi fəaliyyət göstərir.</p><p class=\"bio-section-title\">Elmi və peşəkar maraq sahələri:</p><ul><li>Şüa onkologiyası, uşaqlıq boynu xərçənginin müalicəsi və braxiterapiya.</li><li>Fərdiləşdirilmiş radiosensibilizasiya və eyni vaxtda aparılan kimya-şüa müalicəsi.</li><li>Süni intellektin köməyi ilə konturlama, elektron tədris və radioterapiya üzrə peşəkar təlimlər.</li><li>Xərçənglə mübarizə proqramları, səhiyyə layihələrinin idarə olunması və keyfiyyətin təmin edilməsi.</li><li>CBRN təhlükələrinə hazırlıq və cavab tədbirlərinə elmi və texniki dəstək.</li></ul><p class=\"bio\">Azərbaycan və rus dilləri onun ana dilləridir. İngilis və türk dillərini sərbəst, alman dilini isə C1 səviyyəsində bilir.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/18/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "PhD, DMSc, MBA"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/18/title_en",
+      "field": "title_en",
+      "before": "World Health Organization (WHO), expert on radiation, nuclear, chemical and biological threats, Ukraine and the European region",
+      "after": "Radiation oncologist and healthcare project management specialist"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/18/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Doctor of Philosophy in Medicine and Doctor of Medical Sciences, author of more than 100 scientific publications, articles and methodological recommendations in the field of oncology and radiotherapy.</p><p class=\"bio\">He is an expert with extensive academic and clinical experience in radiation oncology and healthcare management. He is highly qualified in the fields of health project management, organization of cancer control programs, development of radiotherapy technologies and establishment of international collaborations.</p><p class=\"bio\">During his tenure at the International Atomic Energy Agency (IAEA) in 2018–2023, he led four international multicentric research projects involving 15–24 countries.</p><p class=\"bio-section-title\">Main achievements</p><p class=\"bio\">Led more than 60 technical cooperation projects (total budget: 331 million USD);</p><p class=\"bio\">acted as a leading expert in the UN global program to combat cervical cancer;</p><p class=\"bio\">led the \"ELAISA\" e-learning project aimed at the application of artificial intelligence technologies in radiotherapy;</p><p class=\"bio\">ICARO3 played a leading role in organizing ESTRO training courses and GEC-ESTRO seminars.</p><p class=\"bio\">Currently, as an employee of the World Health Organization, he provides scientific and technical support to radiation and nuclear safety programs in Ukraine.</p>",
+      "after": "<p class=\"bio bio-lead\">Kamal Akbarov is a radiation oncologist with extensive clinical, research, and international experience in cancer treatment, healthcare project management, and professional education. His work focuses on improving radiotherapy services, strengthening cancer control programs, and developing international scientific cooperation.</p><p class=\"bio\">He holds a PhD and a Doctor of Medical Sciences degree in Radiation Oncology from Azerbaijan’s National Center of Oncology, as well as an MBA in International Healthcare Management.</p><p class=\"bio\">In 2024, he joined the World Health Organization (WHO) as a Technical Officer for chemical, biological, radiological, and nuclear (CBRN) threats. His responsibilities include providing scientific and technical support for activities in Ukraine under the WHO Health Emergencies Program.</p><p class=\"bio\">From 2018 to 2023, he worked as a Technical Officer and Radiation Oncologist at the International Atomic Energy Agency (IAEA) in Vienna. He supported technical cooperation projects, the development of national cancer control programs, radiotherapy planning, equipment procurement, and professional training. In 2021, he supported 61 technical cooperation projects with a combined budget of $331 million.</p><p class=\"bio\">He led scientific and practical aspects of the United Nations Global Joint Program on Cervical Cancer and the ELAISA research project on e-learning interventions for AI-assisted contouring skills in radiotherapy. He contributed to the organization of ICARO3, ESTRO teaching courses, GEC-ESTRO workshops, and regional projects.</p><p class=\"bio\">From 2005 to 2018, he worked as a Radiation Oncologist and Scientific Officer at Azerbaijan’s National Center of Oncology in Baku. His clinical experience includes 3D conformal radiotherapy, intensity-modulated radiotherapy (IMRT), volumetric modulated arc therapy (VMAT), stereotactic body radiotherapy (SBRT), stereotactic radiosurgery (SRS), image-guided and interstitial brachytherapy, and concurrent chemotherapy. He also contributed to multidisciplinary treatment planning and the introduction of modern radiotherapy techniques.</p><p class=\"bio\">His research includes cervical cancer treatment, personalized radiosensitization, adaptive brachytherapy, and concurrent chemoradiotherapy. He participated in the EMBRACE II multicenter research project and has worked on radiotherapy contouring education, AI-assisted contouring, and spatially fractionated radiation therapy. His scientific work has been published in medical journals and presented at international conferences.</p><p class=\"bio\">He completed radiation oncology fellowships at institutions in Vienna, Schleswig-Holstein, and the US National Cancer Institute in Bethesda. He is a member of the GEC-ESTRO gynecological and breast brachytherapy working groups and serves as an ESTRO FALCON tutor in distance learning and online contouring.</p><p class=\"bio-section-title\">Research and professional interests:</p><ul><li>Radiation oncology, cervical cancer treatment, and brachytherapy.</li><li>Personalized radiosensitization and concurrent chemoradiotherapy.</li><li>AI-assisted contouring, e-learning, and professional training in radiotherapy.</li><li>Cancer control programs, healthcare project management, and quality assurance.</li><li>Scientific and technical support for preparedness and response to CBRN threats.</li></ul><p class=\"bio\">He speaks native Azerbaijani and Russian, fluent English and Turkish, and German at C1 level.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/18/title_az",
+      "field": "title_az",
+      "before": "Ümumdünya Səhiyyə Təşkilatı (ÜST), radiasiya, nüvə, kimyəvi və bioloji təhlükələrə qarşı mütəxəssis, Ukrayna və Avropa regionu",
+      "after": "Şüa onkoloqu və səhiyyə layihələrinin idarə olunması üzrə mütəxəssis"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/18/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Tibb üzrə fəlsəfə doktoru və tibb elmləri doktoru, onkologiya və radioterapiya sahəsində 100-dən artıq elmi nəşrin, məqalənin və metodik tövsiyənin müəllifidir.</p><p class=\"bio\">Şüa onkologiyası və səhiyyə idarəçiliyi üzrə geniş akademik və klinik təcrübəyə malik mütəxəssisdir. Səhiyyə layihələrinin idarə olunması, xərçənglə mübarizə proqramlarının təşkili, radioterapiya texnologiyalarının inkişafı və beynəlxalq əməkdaşlıqların qurulması sahələrində yüksək ixtisasa sahibdir.</p><p class=\"bio\">2018–2023-cü illərdə Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) çalışdığı müddətdə 15–24 ölkənin iştirakı ilə həyata keçirilən dörd beynəlxalq multisentrik elmi-tədqiqat layihəsinə rəhbərlik etmişdir.</p><p class=\"bio-section-title\">Əsas nailiyyətləri:</p><p class=\"bio\">60-dan çox texniki əməkdaşlıq layihəsinə rəhbərlik etmişdir (ümumi büdcə: 331 milyon ABŞ dolları);</p><p class=\"bio\">BMT-nin servikal xərçənglə mübarizə üzrə qlobal proqramında rəhbər ekspert qismində çıxış etmişdir;</p><p class=\"bio\">Radioterapiyada süni intellekt texnologiyalarının tətbiqinə yönəlmiş “ELAISA” e-öyrənmə layihəsinə rəhbərlik etmişdir;</p><p class=\"bio\">ICARO3, ESTRO tədris kursları və GEC-ESTRO seminarlarının təşkilində aparıcı rol oynamışdır.</p><p class=\"bio\">Hal-hazırda Ümumdünya Səhiyyə Təşkilatının əməkdaşı kimi Ukraynada radiasiya və nüvə təhlükəsizliyi proqramlarına elmi və texniki dəstək göstərir.</p>",
+      "after": "<p class=\"bio bio-lead\">Kamal Əkbərov xərçəngin müalicəsi, səhiyyə layihələrinin idarə olunması və peşəkar təhsil sahələrində geniş klinik, elmi və beynəlxalq təcrübəyə malik şüa onkoloqudur. Onun fəaliyyəti radioterapiya xidmətlərinin təkmilləşdirilməsinə, xərçənglə mübarizə proqramlarının gücləndirilməsinə və beynəlxalq elmi əməkdaşlığın inkişafına yönəlmişdir.</p><p class=\"bio\">Azərbaycanın Milli Onkologiya Mərkəzində şüa onkologiyası üzrə fəlsəfə doktoru və tibb elmləri doktoru elmi dərəcələri almışdır. Həmçinin beynəlxalq səhiyyə idarəçiliyi üzrə MBA dərəcəsinə malikdir.</p><p class=\"bio\">2024-cü ildə Ümumdünya Səhiyyə Təşkilatında (ÜST) kimyəvi, bioloji, radioloji və nüvə təhlükələri (CBRN) üzrə texniki mütəxəssis kimi fəaliyyətə başlamışdır. Onun vəzifələrinə ÜST-nin Səhiyyə sahəsində Fövqəladə Hallar Proqramı çərçivəsində Ukraynada həyata keçirilən fəaliyyətlərə elmi və texniki dəstəyin göstərilməsi daxildir.</p><p class=\"bio\">2018–2023-cü illərdə Vyanada Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) texniki mütəxəssis və şüa onkoloqu kimi çalışmışdır. Texniki əməkdaşlıq layihələrinə, milli xərçənglə mübarizə proqramlarının hazırlanmasına, radioterapiyanın planlaşdırılmasına, avadanlıqların satın alınmasına və peşəkar təlimlərə dəstək göstərmişdir. 2021-ci ildə ümumi büdcəsi 331 milyon ABŞ dolları olan 61 texniki əməkdaşlıq layihəsini dəstəkləmişdir.</p><p class=\"bio\">Birləşmiş Millətlər Təşkilatının Uşaqlıq Boynu Xərçəngi üzrə Qlobal Birgə Proqramının elmi və praktiki istiqamətlərinə, eləcə də radioterapiyada süni intellektin köməyi ilə konturlama bacarıqlarının inkişafı üçün elektron tədris üsullarını araşdıran ELAISA layihəsinə rəhbərlik etmişdir. ICARO3-ün, ESTRO tədris kurslarının, GEC-ESTRO seminarlarının və regional layihələrin təşkilinə töhfə vermişdir.</p><p class=\"bio\">2005–2018-ci illərdə Bakıda Azərbaycanın Milli Onkologiya Mərkəzində şüa onkoloqu və elmi işçi kimi çalışmışdır. Onun klinik təcrübəsinə üçölçülü konformal radioterapiya, intensivliyi modulyasiya olunan radioterapiya (IMRT), həcmli modulyasiya olunan qövs terapiyası (VMAT), stereotaktik bədən radioterapiyası (SBRT), stereotaktik radiocərrahiyyə (SRS), görüntü nəzarəti altında və interstisial braxiterapiya, həmçinin eyni vaxtda aparılan kimyaterapiya daxildir. Multidissiplinar müalicə planlarının hazırlanmasına və müasir radioterapiya üsullarının tətbiqinə də töhfə vermişdir.</p><p class=\"bio\">Tədqiqatları uşaqlıq boynu xərçənginin müalicəsini, fərdiləşdirilmiş radiosensibilizasiyanı, adaptiv braxiterapiyanı və eyni vaxtda aparılan kimya-şüa müalicəsini əhatə edir. EMBRACE II çoxmərkəzli tədqiqat layihəsində iştirak etmiş, radioterapiyada konturlama üzrə tədris, süni intellektin köməyi ilə konturlama və məkan üzrə fraksiyalaşdırılmış şüa terapiyası sahələrində elmi fəaliyyət göstərmişdir. Elmi işləri tibb jurnallarında dərc olunmuş və beynəlxalq konfranslarda təqdim edilmişdir.</p><p class=\"bio\">Vyanada, Şlezviq-Holşteyndə və ABŞ-ın Bethesda şəhərində yerləşən Milli Xərçəng İnstitutunda şüa onkologiyası üzrə ixtisasartırma proqramlarını tamamlamışdır. GEC-ESTRO-nun ginekoloji və süd vəzi braxiterapiyası üzrə işçi qruplarının üzvüdür. ESTRO FALCON çərçivəsində distant tədris və onlayn konturlama üzrə təlimçi kimi fəaliyyət göstərir.</p><p class=\"bio-section-title\">Elmi və peşəkar maraq sahələri:</p><ul><li>Şüa onkologiyası, uşaqlıq boynu xərçənginin müalicəsi və braxiterapiya.</li><li>Fərdiləşdirilmiş radiosensibilizasiya və eyni vaxtda aparılan kimya-şüa müalicəsi.</li><li>Süni intellektin köməyi ilə konturlama, elektron tədris və radioterapiya üzrə peşəkar təlimlər.</li><li>Xərçənglə mübarizə proqramları, səhiyyə layihələrinin idarə olunması və keyfiyyətin təmin edilməsi.</li><li>CBRN təhlükələrinə hazırlıq və cavab tədbirlərinə elmi və texniki dəstək.</li></ul><p class=\"bio\">Azərbaycan və rus dilləri onun ana dilləridir. İngilis və türk dillərini sərbəst, alman dilini isə C1 səviyyəsində bilir.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 113,
+      "jsonPointer": "/profiles/kamal.akbarov@gmail.com/title",
+      "field": "title",
+      "before": "World Health Organization (WHO), expert on radiation, nuclear, chemical and biological threats, Ukraine and European region",
+      "after": "Radiation oncologist and healthcare project management specialist"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 114,
+      "jsonPointer": "/profiles/kamal.akbarov@gmail.com/bio_html",
+      "field": "bio_html",
+      "before": "<p class=\"bio bio-lead\">Doctor of Philosophy in Medicine and Doctor of Medical Sciences, author of more than 100 scientific publications, articles and methodological recommendations in the field of oncology and radiotherapy.</p><p class=\"bio\">He is an expert with extensive academic and clinical experience in radiation oncology and healthcare management. He is highly qualified in the fields of health project management, organization of cancer control programs, development of radiotherapy technologies and establishment of international collaborations.</p><p class=\"bio\">During his tenure at the International Atomic Energy Agency (IAEA) in 2018-2023, he led four international multicentric research projects with the participation of 15-24 countries.</p><p class=\"bio-section-title\">Main achievements:</p><p class=\"bio\">Led more than 60 technical cooperation projects (total budget: 331 million USD);</p><p class=\"bio\">acted as a leading expert in the UN global program to combat cervical cancer;</p><p class=\"bio\">He led the &quot;ELAISA&quot; e-learning project aimed at the application of artificial intelligence technologies in radiotherapy;</p><p class=\"bio\">ICARO3 played a leading role in organizing ESTRO training courses and GEC-ESTRO seminars.</p><p class=\"bio\">Currently, as an employee of the World Health Organization, he provides scientific and technical support to radiation and nuclear safety programs in Ukraine.</p>",
+      "after": "<p class=\"bio bio-lead\">Kamal Akbarov is a radiation oncologist with extensive clinical, research, and international experience in cancer treatment, healthcare project management, and professional education. His work focuses on improving radiotherapy services, strengthening cancer control programs, and developing international scientific cooperation.</p><p class=\"bio\">He holds a PhD and a Doctor of Medical Sciences degree in Radiation Oncology from Azerbaijan’s National Center of Oncology, as well as an MBA in International Healthcare Management.</p><p class=\"bio\">In 2024, he joined the World Health Organization (WHO) as a Technical Officer for chemical, biological, radiological, and nuclear (CBRN) threats. His responsibilities include providing scientific and technical support for activities in Ukraine under the WHO Health Emergencies Program.</p><p class=\"bio\">From 2018 to 2023, he worked as a Technical Officer and Radiation Oncologist at the International Atomic Energy Agency (IAEA) in Vienna. He supported technical cooperation projects, the development of national cancer control programs, radiotherapy planning, equipment procurement, and professional training. In 2021, he supported 61 technical cooperation projects with a combined budget of $331 million.</p><p class=\"bio\">He led scientific and practical aspects of the United Nations Global Joint Program on Cervical Cancer and the ELAISA research project on e-learning interventions for AI-assisted contouring skills in radiotherapy. He contributed to the organization of ICARO3, ESTRO teaching courses, GEC-ESTRO workshops, and regional projects.</p><p class=\"bio\">From 2005 to 2018, he worked as a Radiation Oncologist and Scientific Officer at Azerbaijan’s National Center of Oncology in Baku. His clinical experience includes 3D conformal radiotherapy, intensity-modulated radiotherapy (IMRT), volumetric modulated arc therapy (VMAT), stereotactic body radiotherapy (SBRT), stereotactic radiosurgery (SRS), image-guided and interstitial brachytherapy, and concurrent chemotherapy. He also contributed to multidisciplinary treatment planning and the introduction of modern radiotherapy techniques.</p><p class=\"bio\">His research includes cervical cancer treatment, personalized radiosensitization, adaptive brachytherapy, and concurrent chemoradiotherapy. He participated in the EMBRACE II multicenter research project and has worked on radiotherapy contouring education, AI-assisted contouring, and spatially fractionated radiation therapy. His scientific work has been published in medical journals and presented at international conferences.</p><p class=\"bio\">He completed radiation oncology fellowships at institutions in Vienna, Schleswig-Holstein, and the US National Cancer Institute in Bethesda. He is a member of the GEC-ESTRO gynecological and breast brachytherapy working groups and serves as an ESTRO FALCON tutor in distance learning and online contouring.</p><p class=\"bio-section-title\">Research and professional interests:</p><ul><li>Radiation oncology, cervical cancer treatment, and brachytherapy.</li><li>Personalized radiosensitization and concurrent chemoradiotherapy.</li><li>AI-assisted contouring, e-learning, and professional training in radiotherapy.</li><li>Cancer control programs, healthcare project management, and quality assurance.</li><li>Scientific and technical support for preparedness and response to CBRN threats.</li></ul><p class=\"bio\">He speaks native Azerbaijani and Russian, fluent English and Turkish, and German at C1 level.</p>"
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "line": 188,
+      "jsonPointer": "/18/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "PhD, DMSc, MBA"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "line": 188,
+      "jsonPointer": "/18/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "PhD, DMSc, MBA"
+    },
+    {
+      "file": "js/scientists-catalog-data.js",
+      "line": 188,
+      "jsonPointer": "/18/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "PhD, DMSc, MBA"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data.js",
+      "line": 188,
+      "jsonPointer": "/18/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "PhD, DMSc, MBA"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6630,
+      "jsonPointer": "/entries/509/summary",
+      "field": "summary",
+      "before": "World Health Organization (WHO), expert on radiation, nuclear, chemical and biological threats, Ukraine and European region · Medicine · Austria",
+      "after": "Radiation oncologist and healthcare project management specialist · Medicine · Austria"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6634,
+      "jsonPointer": "/entries/509/norm",
+      "field": "norm",
+      "before": "kamal akbarov world health organization who expert on radiation nuclear chemical and biological threats ukraine and european region medicine austria kamal.akbarov@gmail.com doctor of philosophy in medicine and doctor of medical sciences author of more than 100 scientific publications articles and methodological recommendations in the field of oncology and radiotherapy. he is an expert with extensive academic and clinical experience in radiation oncology and healthcare management. he is phd",
+      "after": "kamal akbarov radiation oncologist and healthcare project management specialist medicine austria kamal.akbarov@gmail.com kamal akbarov is a radiation oncologist with extensive clinical research and international experience in cancer treatment healthcare project management and professional education. his work focuses on improving radiotherapy services strengthening cancer control programs and developing international scientific coop phd dmsc mba"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6617,
+      "jsonPointer": "/entries/508/summary",
+      "field": "summary",
+      "before": "Ümumdünya Səhiyyə Təşkilatı (ÜST), radiasiya, nüvə, kimyəvi və bioloji təhlükələrə qarşı mütəxəssis, Ukrayna və Avropa regionu · Həkim · Avstriya",
+      "after": "Şüa onkoloqu və səhiyyə layihələrinin idarə olunması üzrə mütəxəssis · Həkim · Avstriya"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6621,
+      "jsonPointer": "/entries/508/norm",
+      "field": "norm",
+      "before": "kamal ekberov umumdunya sehiyye teskilati ust radiasiya nuve kimyevi ve bioloji tehlukelere qarsi mutexessis ukrayna ve avropa regionu hekim avstriya kamal.akbarov@gmail.com tibb uzre felsefe doktoru ve tibb elmleri doktoru onkologiya ve radioterapiya sahesinde 100-den artiq elmi nesrin meqalenin ve metodik tovsiyenin muellifidir. sua onkologiyasi ve sehiyye idareciliyi uzre genis akademik ve klinik tecrubeye malik mutexessisdir. sehiyye layihelerinin idare olunmasi xercengle mubarize p phd",
+      "after": "kamal ekberov sua onkoloqu ve sehiyye layihelerinin idare olunmasi uzre mutexessis hekim avstriya kamal.akbarov@gmail.com kamal ekberov xercengin mualicesi sehiyye layihelerinin idare olunmasi ve pesekar tehsil sahelerinde genis klinik elmi ve beynelxalq tecrubeye malik sua onkoloqudur. onun fealiyyeti radioterapiya xidmetlerinin tekmillesdirilmesine xercengle mubarize proqramlarinin guclendirilmesine ve beynelxalq elmi emekdasligin in phd dmsc mba"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6630,
+      "jsonPointer": "/entries/509/summary",
+      "field": "summary",
+      "before": "World Health Organization (WHO), expert on radiation, nuclear, chemical and biological threats, Ukraine and European region · Medicine · Austria",
+      "after": "Radiation oncologist and healthcare project management specialist · Medicine · Austria"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6634,
+      "jsonPointer": "/entries/509/norm",
+      "field": "norm",
+      "before": "kamal akbarov world health organization who expert on radiation nuclear chemical and biological threats ukraine and european region medicine austria kamal.akbarov@gmail.com doctor of philosophy in medicine and doctor of medical sciences author of more than 100 scientific publications articles and methodological recommendations in the field of oncology and radiotherapy. he is an expert with extensive academic and clinical experience in radiation oncology and healthcare management. he is phd",
+      "after": "kamal akbarov radiation oncologist and healthcare project management specialist medicine austria kamal.akbarov@gmail.com kamal akbarov is a radiation oncologist with extensive clinical research and international experience in cancer treatment healthcare project management and professional education. his work focuses on improving radiotherapy services strengthening cancer control programs and developing international scientific coop phd dmsc mba"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6617,
+      "jsonPointer": "/entries/508/summary",
+      "field": "summary",
+      "before": "Ümumdünya Səhiyyə Təşkilatı (ÜST), radiasiya, nüvə, kimyəvi və bioloji təhlükələrə qarşı mütəxəssis, Ukrayna və Avropa regionu · Həkim · Avstriya",
+      "after": "Şüa onkoloqu və səhiyyə layihələrinin idarə olunması üzrə mütəxəssis · Həkim · Avstriya"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6621,
+      "jsonPointer": "/entries/508/norm",
+      "field": "norm",
+      "before": "kamal ekberov umumdunya sehiyye teskilati ust radiasiya nuve kimyevi ve bioloji tehlukelere qarsi mutexessis ukrayna ve avropa regionu hekim avstriya kamal.akbarov@gmail.com tibb uzre felsefe doktoru ve tibb elmleri doktoru onkologiya ve radioterapiya sahesinde 100-den artiq elmi nesrin meqalenin ve metodik tovsiyenin muellifidir. sua onkologiyasi ve sehiyye idareciliyi uzre genis akademik ve klinik tecrubeye malik mutexessisdir. sehiyye layihelerinin idare olunmasi xercengle mubarize p phd",
+      "after": "kamal ekberov sua onkoloqu ve sehiyye layihelerinin idare olunmasi uzre mutexessis hekim avstriya kamal.akbarov@gmail.com kamal ekberov xercengin mualicesi sehiyye layihelerinin idare olunmasi ve pesekar tehsil sahelerinde genis klinik elmi ve beynelxalq tecrubeye malik sua onkoloqudur. onun fealiyyeti radioterapiya xidmetlerinin tekmillesdirilmesine xercengle mubarize proqramlarinin guclendirilmesine ve beynelxalq elmi emekdasligin in phd dmsc mba"
+    }
+  ],
+  "fileHashes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "before": "9e3805fd52cb1f474c2227614ed2c03b6922f5218d1174573c7d4f6fa4fcc2ff",
+      "after": "1bc91e1ea2fd3fe5a1764abaabc2cbe77131b8f39e0a854375e9eee738a64512"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "before": "cb9c692f6bfa43c49ca59d202c89b5a7152ead1c1aebbda5a146b8218cbd35c8",
+      "after": "6dcf8123e13b621a2e0c35966912c7f37c089ab22d9e9a78ec101e474f123e35"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "before": "9e3805fd52cb1f474c2227614ed2c03b6922f5218d1174573c7d4f6fa4fcc2ff",
+      "after": "1bc91e1ea2fd3fe5a1764abaabc2cbe77131b8f39e0a854375e9eee738a64512"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "before": "cb9c692f6bfa43c49ca59d202c89b5a7152ead1c1aebbda5a146b8218cbd35c8",
+      "after": "6dcf8123e13b621a2e0c35966912c7f37c089ab22d9e9a78ec101e474f123e35"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "before": "41f02e57f26e2e1d9c0fdfc03d63dc9a22dac11e393e47c509327b72d2a222a7",
+      "after": "e97f20b3febdbd4c9352925a329b7d17aefff8ac158f9a700fec324d69524c94"
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "before": "77fc1d0d2f756c9f08d7d206fb1876ee11dadf6eed748925940fb28ebe68c48e",
+      "after": "681c92cf1904c43b651b3abf895348413723cbebdfd21d2a180dc19169f75b8c"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "before": "77fc1d0d2f756c9f08d7d206fb1876ee11dadf6eed748925940fb28ebe68c48e",
+      "after": "681c92cf1904c43b651b3abf895348413723cbebdfd21d2a180dc19169f75b8c"
+    },
+    {
+      "file": "js/scientists-catalog-data.js",
+      "before": "83f51600ba049d95e9e1abd0761bf845f91d248c25a72fee4afdb8bf10274c89",
+      "after": "d4a68eea7452f433b2bf9fae992544ace1ea2264b5aad168d0e488d8c26ea0f0"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data.js",
+      "before": "83f51600ba049d95e9e1abd0761bf845f91d248c25a72fee4afdb8bf10274c89",
+      "after": "d4a68eea7452f433b2bf9fae992544ace1ea2264b5aad168d0e488d8c26ea0f0"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "before": "2bbde4febd0314b4fd9644e738a5e3825d770064e14462747391d0cf48777b9c",
+      "after": "0afed0852f3a8cff17285494eb7e1beaf38af7e6ad52dbb7fb2ab3431857e887"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "before": "2bbde4febd0314b4fd9644e738a5e3825d770064e14462747391d0cf48777b9c",
+      "after": "0afed0852f3a8cff17285494eb7e1beaf38af7e6ad52dbb7fb2ab3431857e887"
+    }
+  ]
+}

@@ -65,7 +65,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "ad_soyad": "Toğrul Talişinski ",
     "email": "talishinskiy.toghrul@gmail.com",
     "ixtilas": "Həkim",
-    "elmi_derece": "PhD",
+    "elmi_derece": "MD, FACS, FASMBS",
     "cinsi": "kişi",
     "url": ""
   },
@@ -85,7 +85,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "ad_soyad": "Mirzə Mütəllimov",
     "email": "m.mutallimov@yahoo.com",
     "ixtilas": "Həkim",
-    "elmi_derece": "PhD",
+    "elmi_derece": "Dr. med., MHBA, FESC",
     "cinsi": "kişi",
     "url": ""
   },
@@ -155,7 +155,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "ad_soyad": "Yaşar Musayev",
     "email": "Mussa_98@hotmail.de",
     "ixtilas": "Mühəndis",
-    "elmi_derece": "PhD",
+    "elmi_derece": "Dr.-Ing.",
     "cinsi": "kişi",
     "url": ""
   },
@@ -175,7 +175,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "ad_soyad": "Dinara Abbasova",
     "email": "dinara_abasova@hotmail.com",
     "ixtilas": "Kimya",
-    "elmi_derece": "PhD",
+    "elmi_derece": "PhD, EMBA",
     "cinsi": "qadın",
     "url": ""
   },
@@ -185,7 +185,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "ad_soyad": "Kamal Əkbərov",
     "email": "kamal.akbarov@gmail.com",
     "ixtilas": "Həkim",
-    "elmi_derece": "PhD",
+    "elmi_derece": "PhD, DMSc, MBA",
     "cinsi": "kişi",
     "url": ""
   },

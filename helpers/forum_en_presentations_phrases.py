@@ -1003,7 +1003,7 @@ PRESENTATIONS_PHRASES: dict[str, str] = {
     "Nizami Məmmədov": "Nizami Mammadov",
     "Seymur Nəsi̇rov": "Seymur Nasirov",
     "Səadət Kəri̇mi̇": "Saadat Karimi",
-    "Toğrul Kəri̇mov": "Togrul Karimov",
+    "Toğrul Kəri̇mov": "Toghrul Karimov",
     "Yulduz Rəhi̇mov": "Yulduz Rahimov",
     "Mehdi Gəncəli̇": "Mehdi Ganjali",
     "Nigar Məsumova": "Nigar Masumova",

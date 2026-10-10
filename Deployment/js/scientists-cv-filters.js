@@ -266,7 +266,7 @@
     });
     localeSort(Object.keys(countries)).forEach(function (c) {
       var o = document.createElement("option");
-      o.value = c;
+      o.value = (shared.countryIso && shared.countryIso(c)) || c;
       o.textContent = c;
       filterCountry.appendChild(o);
     });
@@ -279,9 +279,13 @@
       });
     }
     if (filterIxtilas) {
+      var seenFields = {};
       localeSort(Object.keys(ixtisaslar)).forEach(function (x) {
+        var code = (shared.fieldCode && shared.fieldCode(x)) || x;
+        if (seenFields[code]) return;
+        seenFields[code] = 1;
         var o = document.createElement("option");
-        o.value = x;
+        o.value = code;
         o.textContent = x;
         filterIxtilas.appendChild(o);
       });
@@ -317,7 +321,7 @@
     );
     countries.forEach(function (c) {
       var o = document.createElement("option");
-      o.value = c;
+      o.value = (shared.countryIso && shared.countryIso(c)) || c;
       o.textContent = c;
       filterCountry.appendChild(o);
     });
@@ -327,9 +331,13 @@
       o.textContent = d;
       filterDegree.appendChild(o);
     });
+    var seenFieldCodes = {};
     ixtisaslar.forEach(function (x) {
+      var code = (shared.fieldCode && shared.fieldCode(x)) || x;
+      if (seenFieldCodes[code]) return;
+      seenFieldCodes[code] = 1;
       var o = document.createElement("option");
-      o.value = x;
+      o.value = code;
       o.textContent = x;
       filterIxtilas.appendChild(o);
     });
@@ -637,6 +645,29 @@
 
     mountMultiFilters();
 
+    var profileUrl = window.DAAB_URL_STATE;
+    if (profileUrl) {
+      if (profileUrl.get("q")) searchInput.value = profileUrl.get("q");
+      var urlSort = profileUrl.get("sort");
+      if (urlSort === "name" || urlSort === "country" || urlSort === "ixtilas") {
+        sortCol = urlSort;
+      }
+      if (profileUrl.get("dir") === "desc") sortDir = -1;
+      else if (profileUrl.get("dir") === "asc") sortDir = 1;
+      var urlGroup = profileUrl.get("group");
+      if (urlGroup && GROUP_COLUMNS.indexOf(urlGroup) !== -1) groupCol = urlGroup;
+      if (ms && ms.setSelected) {
+        ["country", "field", "degree"].forEach(function (key) {
+          var id = key === "country" ? "filterCountry" : key === "field" ? "filterIxtilas" : "filterDegree";
+          var values = profileUrl.list(key);
+          if (values.length) ms.setSelected(id, values, true);
+        });
+      }
+      applySortState(sortCol, sortDir, false);
+      applyGroupState(groupCol, false);
+      applyFilters();
+    }
+
     function updateFilterStyles() {
       profileFilterIds.forEach(function (id) {
         var el = document.getElementById(id);
@@ -649,10 +680,14 @@
     }
 
     function cardMatches(card, q, countryCodes, degreeFilter, ixtilasFilter) {
-      var code = card.dataset.country || "";
+      var code = shared.countryIso
+        ? shared.countryIso(card.dataset.country || card.dataset.countryName || "")
+        : card.dataset.country || "";
       var hay = normQuery(card.dataset.search || "");
       var deg = (card.dataset.degree || "").trim();
-      var ixt = (card.dataset.ixtilas || "").trim();
+      var ixt = shared.fieldCode
+        ? shared.fieldCode((card.dataset.ixtilas || "").trim())
+        : (card.dataset.ixtilas || "").trim();
       var matchFn = ms ? ms.matches.bind(ms) : function (selected, value) {
         if (selected === null) return true;
         if (!selected.length) return false;
@@ -668,19 +703,29 @@
       return true;
     }
 
+    function syncProfileUrl() {
+      var state = window.DAAB_URL_STATE;
+      if (!state) return;
+      var countries = getMultiFilter("filterCountry");
+      var degrees = getMultiFilter("filterDegree");
+      var fieldsFilter = getMultiFilter("filterIxtilas");
+      state.write({
+        q: (searchInput.value || "").trim(),
+        country: countries || [],
+        field: fieldsFilter || [],
+        degree: degrees || [],
+        sort: sortCol || "",
+        dir: sortDir === -1 ? "desc" : "asc",
+        group: groupCol || ""
+      });
+    }
+
     function applyFilters() {
       var q = normQuery(searchInput.value);
-      var countryNames = getMultiFilter("filterCountry");
+      var countryCodes = getMultiFilter("filterCountry");
       var degreeFilter = getMultiFilter("filterDegree");
       var ixtilasFilter = getMultiFilter("filterIxtilas");
-      var countryCodes = null;
-      if (countryNames !== null) {
-        countryCodes = countryNames
-          .map(function (name) {
-            return countryNameToCode[name] || "";
-          })
-          .filter(Boolean);
-      }
+      var countryNames = countryCodes;
       var filtering =
         !!q ||
         countryNames !== null ||
@@ -693,6 +738,7 @@
         updateFilterStyles();
         reorderCards();
         syncToolbarFilterBadge();
+        syncProfileUrl();
         return;
       }
 
@@ -711,14 +757,18 @@
       updateFilterStyles();
       reorderCards();
       syncToolbarFilterBadge();
+      syncProfileUrl();
     }
 
-    function scrollToFirstVisible(countryCode) {
-      if (!countryCode) return;
+    function scrollToFirstVisible(iso) {
+      if (!iso) return;
       var target = null;
       cards.forEach(function (card) {
         if (target || card.classList.contains("is-filtered-out")) return;
-        if (card.dataset.country === countryCode) target = card;
+        var cardIso = shared.countryIso
+          ? shared.countryIso(card.dataset.country || card.dataset.countryName || "")
+          : card.dataset.country;
+        if (cardIso === iso) target = card;
       });
       if (target) {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -736,7 +786,7 @@
       applyFilters();
       var selected = getMultiFilter("filterCountry");
       if (selected && selected.length === 1) {
-        scrollToFirstVisible(countryNameToCode[selected[0]] || "");
+        scrollToFirstVisible(selected[0]);
       }
     });
 
@@ -750,6 +800,7 @@
     if (sortBy) {
       sortBy.addEventListener("change", function () {
         applySortState(sortBy.value, sortDir, true);
+        syncProfileUrl();
       });
     }
 
@@ -764,6 +815,7 @@
       });
       groupBy.addEventListener("change", function () {
         applyGroupState(groupBy.value, true);
+        syncProfileUrl();
       });
       updateGroupUi();
     }
@@ -771,11 +823,13 @@
     if (sortAscBtn) {
       sortAscBtn.addEventListener("click", function () {
         setSortDir(1);
+        syncProfileUrl();
       });
     }
     if (sortDescBtn) {
       sortDescBtn.addEventListener("click", function () {
         setSortDir(-1);
+        syncProfileUrl();
       });
     }
 

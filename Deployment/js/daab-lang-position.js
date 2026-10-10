@@ -69,8 +69,11 @@
 
   var ANCHOR_SELECTOR = [
     "main article.news-card[id]",
+    "main article.scientist-card[id]",
     "main section.charter-card[id]",
     "main section.section-block[id]",
+    "main .card[id]",
+    "main tr[id]",
     "main article[id]",
     "main section[id]",
     "main [data-daab-section-id]"
@@ -113,14 +116,27 @@
     return 0;
   }
 
+  function anchorElement(id) {
+    if (!id) return null;
+    var byId = document.getElementById(id);
+    if (byId) return byId;
+    try {
+      return document.querySelector('[data-daab-section-id="' + id.replace(/"/g, "") + '"]');
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function elementInView(el) {
+    if (!el || !el.getBoundingClientRect) return false;
+    var rect = el.getBoundingClientRect();
+    var topLimit = navOffset();
+    return rect.bottom > topLimit + 4 && rect.top < window.innerHeight - 4;
+  }
+
   function getLogicalAnchor() {
     if (isNearPageTop()) {
       return null;
-    }
-
-    var id = hashId();
-    if (id && !SKIP_IDS[id] && document.getElementById(id)) {
-      return id;
     }
 
     var candidates = document.querySelectorAll(ANCHOR_SELECTOR);
@@ -135,11 +151,10 @@
       if (!anchorId || SKIP_IDS[anchorId]) continue;
       var rect = el.getBoundingClientRect();
       if (rect.bottom <= 0 || rect.top >= viewBottom) continue;
-      var visible =
-        Math.min(rect.bottom, viewBottom) - Math.max(rect.top, 0);
-      var mid = rect.top + rect.height / 2;
+      var mid = rect.top + Math.min(rect.height, viewBottom) / 2;
       var dist = Math.abs(mid - focusLine);
-      var score = visible * 2 - dist + anchorWeight(el);
+      var containsFocus = rect.top <= focusLine && rect.bottom >= focusLine;
+      var score = (containsFocus ? 5000 : 0) - dist + anchorWeight(el);
       if (score > bestScore) {
         bestScore = score;
         best = anchorId;
@@ -175,10 +190,29 @@
     return Math.ceil(h) + 20;
   }
 
+  /** Scroll position, including the offset saved while the mobile menu locks the page. */
+  function pageScrollY() {
+    var root = document.documentElement;
+    var body = document.body;
+    var locked =
+      (root && root.classList.contains("daab-scroll-lock")) ||
+      (body && body.classList.contains("daab-scroll-lock"));
+    if (locked) {
+      var fromVar = parseFloat(
+        (root && root.style.getPropertyValue("--daab-scroll-lock-y")) || ""
+      );
+      if (isFinite(fromVar) && fromVar >= 0) return fromVar;
+      if (body && body.style.top) {
+        var fromTop = parseFloat(body.style.top);
+        if (isFinite(fromTop)) return Math.abs(fromTop);
+      }
+    }
+    return window.scrollY || (root && root.scrollTop) || 0;
+  }
+
   /** True when nav + hero/header should remain in view (not mid-article). */
   function isNearPageTop() {
-    var y = window.scrollY || document.documentElement.scrollTop || 0;
-    return y <= navOffset() + 32;
+    return pageScrollY() <= navOffset() + 32;
   }
 
   function clearUrlHash() {
@@ -288,12 +322,30 @@
     } catch (e) { /* ignore */ }
   }
 
+  /** Hash only when that element is the one on screen. An older #id is ignored. */
+  function explicitHashAnchor() {
+    var id = hashId();
+    if (!id || SKIP_IDS[id]) return "";
+    var el = anchorElement(id);
+    if (!el || !elementInView(el)) return "";
+    return id;
+  }
+
+  /**
+   * Section to carry across a language switch: nothing at the top of the page,
+   * otherwise the hash if it is in view, otherwise the section in view now.
+   */
+  function currentSwitchAnchor() {
+    if (isNearPageTop()) return "";
+    var logical = getLogicalAnchor();
+    if (logical) return translateAnchor(logical);
+    var explicit = explicitHashAnchor();
+    return explicit ? translateAnchor(explicit) : "";
+  }
+
   function decorateAlternateUrl(url, targetLang) {
-    var anchor = getLogicalAnchor();
-    if (anchor) {
-      anchor = translateAnchor(anchor);
-    }
-    saveIntent(targetLang, anchor);
+    var anchor = currentSwitchAnchor();
+    saveIntent(targetLang, anchor || null);
     return appendHash(url, anchor);
   }
 
@@ -384,13 +436,19 @@
     }
     if (id) {
       var mappedId = translateAnchor(id);
-      if (mappedId !== id && document.getElementById(mappedId)) {
+      var mappedEl = anchorElement(mappedId);
+      var directEl = anchorElement(id);
+      if (!mappedEl && !directEl) {
+        /* Cards and rows may still be rendering. Do not fall through to an old ratio. */
+        return false;
+      }
+      if (mappedId !== id && mappedEl) {
         scrollToAnchor(mappedId, false);
         if (global.history && global.history.replaceState) {
           global.history.replaceState(
             null,
             "",
-            "#" + encodeURIComponent(mappedId)
+            location.pathname + location.search + "#" + encodeURIComponent(mappedId)
           );
         }
         clearIntent();
@@ -415,7 +473,7 @@
         global.history.replaceState(
           null,
           "",
-          "#" + encodeURIComponent(intent.anchor)
+          location.pathname + location.search + "#" + encodeURIComponent(intent.anchor)
         );
       }
       clearIntent();
@@ -536,6 +594,7 @@
 
   global.DAAB_LANG_POSITION = {
     getLogicalAnchor: getLogicalAnchor,
+    currentSwitchAnchor: currentSwitchAnchor,
     isNearPageTop: isNearPageTop,
     decorateAlternateUrl: decorateAlternateUrl,
     appendHash: appendHash,

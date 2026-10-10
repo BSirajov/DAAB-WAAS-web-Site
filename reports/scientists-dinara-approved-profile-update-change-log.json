@@ -1,0 +1,364 @@
+{
+  "date": "2026-10-10",
+  "profile": "Dinara Abbasova",
+  "profileNumber": 18,
+  "languages": [
+    "English",
+    "Azerbaijani"
+  ],
+  "source": "User approval of the complete English and Azerbaijani drafts based on the provided CV, including Simons Associate (2015–2020)",
+  "sources": [
+    {
+      "title": "CV Dinara Abbasova D.2025.pdf",
+      "file": "E:/Documents/Azərbaycanlı Alimlərin Istanbul görüşü, 8-10 Dekabr 2022/1-ci Bakı forumu, 8-12 Sentyabr 2024/Web Site/CV/CV Dinara Abbasova D.2025.pdf",
+      "pages": 2,
+      "sha256": "9f5f6dd02652a37b4a307992e0d915c6ade319a064272d5713fdc3b3fc689dc8",
+      "note": "User-provided 2025 CV. Both pages read and visually inspected. Employment entries end in 2025; no current 2026 IAEA appointment is asserted. The user explicitly approved Simons Associate (2015–2020)."
+    }
+  ],
+  "issueIds": [
+    "V126"
+  ],
+  "resolvedIssueIds": [
+    "V126"
+  ],
+  "summary": [
+    "Applied the approved bilingual title, education, dated career history, international activities, honors, research interests, and language information.",
+    "Updated credentials to PhD, EMBA in the profile and both language directories.",
+    "Replaced the former fellowship wording with Simons Associate (2015–2020), presented as an ICTP affiliation. V126 is resolved.",
+    "Used WiN Global membership and the OECD/NEA liaison role as described in the approved draft; omitted the previous publication and conference counts absent from the CV.",
+    "Synchronized active profile data, the English translation source, directory credentials, and English/Azerbaijani search entries."
+  ],
+  "scopeNote": "The exact approved wording is retained. The existing name, email/profile lookup key, photo, country, subject field, and profile anchor are unchanged. This is an approved profile update, not a new comprehensive proofreading pass or independent verification of every CV claim.",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 302,
+      "jsonPointer": "/profiles/17/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "PhD, EMBA"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 307,
+      "jsonPointer": "/profiles/17/title_en",
+      "field": "title_en",
+      "before": "Advisor to the International Atomic Energy Agency (IAEA), official representative for Azerbaijan of the World Association \"Women in Nuclear\"",
+      "after": "Associate Professor in Nuclear Chemistry; nuclear scientist and consultant, Vienna, Austria"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 308,
+      "jsonPointer": "/profiles/17/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Dinara Abbasova is a scientist specializing in nuclear energy, nuclear safety, radioactive waste management and nuclear knowledge preservation. Her main research areas include the study of international standards for radiation chemistry, isotope and biomarker analyses, chromatography technologies, and nuclear material safety. She worked as a consultant at the International Atomic Energy Agency (IAEA), a research scientist at the Helmholtz-Zentrum Dresden-Rossendorf (HZDR) Institute for Resource Ecology, an invited professor at the Polish Academy of Sciences, and a director at the ANAS Institute of Radiation Problems. The author of more than 80 scientific articles and presentations, Abbasova has organized and spoken at more than 40 international conferences and prepared e-learning materials for the IAEA and the European Commission. She was awarded &quot;Achievements in Science&quot; (2010), \"Young Nuclear Specialist\" of the IAEA (2012), Simon&#x27;s Fellowship (2015–2020) and the OECD/NEA (information-data-knowledge management) expert award (2022). She is a member of the \"Women in Nuclear\" organization and a nuclear safety expert for the IAEA Expert Network and the European Commission.</p>",
+      "after": "<p class=\"bio bio-lead\">Dinara Abbasova is a nuclear scientist and consultant with more than 23 years of international experience in nuclear and radiation chemistry, radioactive waste management, knowledge management, and capacity building. Her work combines scientific research with project management, international collaboration, professional training, and the development of educational materials.</p><p class=\"bio\">She studied chemistry at Baku State University, completing her bachelor’s studies in 1998–2002 and master’s studies in 2002–2004. She earned a PhD in Radiation Chemistry at the Institute of Radiation Problems of the Azerbaijan National Academy of Sciences in 2012 and obtained the academic title of Associate Professor in 2016. In 2022–2024, she completed an Executive MBA in Strategic Project Management at the Vienna University of Economics and Business.</p><p class=\"bio\">She worked as a consultant at the International Atomic Energy Agency (IAEA) in 2017–2019 and 2023–2025. Her responsibilities included scientific support for the Convention on Nuclear Safety, the development of e-learning and training materials, and contributions to IAEA publications. From 2020 to 2023, she worked as a scientist in knowledge management at Helmholtz-Zentrum Dresden-Rossendorf (HZDR), contributing to radioactive waste management under EURAD and serving as a knowledge management expert in the PIANOFORTE Partnership.</p><p class=\"bio\">Earlier, she was a Visiting Professor at the Institute of Geology of the Polish Academy of Sciences (2012–2015) and a consultant at Delta Unlimited (2015–2017). At the Institute of Radiation Problems (2004–2012), her roles included Head of the National INIS Center, Scientific Secretary, Chromatography Expert, and Quality Manager. She began her career as a Chromatography Expert and Quality Manager at Azlab Oil Company (2002–2004).</p><p class=\"bio\">Her international activities include work as an IAEA knowledge management expert, a European Commission expert in radiation chemistry, and an OECD/NEA IDKM liaison to an ISO working group on knowledge management in radioactive waste management. She is a member of Women in Nuclear (WiN Global). She was a <strong>Simons Associate (2015–2020)</strong> at the Abdus Salam International Centre for Theoretical Physics (ICTP).</p><p class=\"bio\">Her honors include recognition for achievement in science from Azerbaijan’s Ministry of Youth and Sports (2010), an IAEA fellowship (2010), recognition as a Young Nuclear Professional Woman of Azerbaijan (2012), appreciation from the UAE Permanent Mission to the IAEA (2019), and an IAEA certificate recognizing voluntary support (2024).</p><p class=\"bio\"><strong>Research and professional interests:</strong></p><ul><li>Nuclear and radiation chemistry, radiation protection, and radioactive waste management.</li><li>Isotope and radiocarbon analysis, chromatography, and alpha and gamma spectrometry.</li><li>Environmental monitoring, quality assurance, and the application of international standards.</li><li>Nuclear knowledge preservation and transfer, professional training, and e-learning.</li></ul><p class=\"bio\">She speaks Azerbaijani and Russian as native languages, is fluent in English and Polish, and has intermediate proficiency in German and Italian.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 303,
+      "jsonPointer": "/profiles/17/title_az",
+      "field": "title_az",
+      "before": "Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) məsləhətçisi, “Qadınlar Nüvə Sahəsində” (“Women in Nuclear”) Ümumdünya Assosiasiyasının Azərbaycan üzrə rəsmi nümayəndəsi",
+      "after": "Nüvə kimyası üzrə dosent; alim və məsləhətçi, Vyana, Avstriya"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 304,
+      "jsonPointer": "/profiles/17/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Dinara Abbasova nüvə enerjisi, nüvə təhlükəsizliyi, radioaktiv tullantıların idarə olunması və nüvə biliklərinin saxlanması sahələrində ixtisaslaşmış alimdir. Onun əsas tədqiqat sahələrinə radiasiya kimyası, izotop və biomarker analizləri, xromatoqrafiya texnologiyaları və nüvə materiallarının təhlükəsizliyi üzrə beynəlxalq standartların öyrənilməsi daxildir. O, Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) məsləhətçi, Helmholtz-Zentrum Dresden-Rossendorf (HZDR) Resurs Ekologiyası İnstitutunda tədqiqatçı alim, Polşa Elmlər Akademiyasında dəvətli professor və AMEA Radiasiya Problemləri İnstitutunda rəhbər vəzifələrində çalışmışdır. 80-dən çox elmi məqalə və təqdimatın müəllifi olan Abbasova 40-dan artıq beynəlxalq konfransın təşkilatçısı və spikeri olmuş, AEBA və Avropa Komissiyası üçün e-öyrənmə materialları hazırlamışdır. O, “Elmdə Nailiyyətlər” (2010), AEBA-nın “Gənc Nüvə Mütəxəssisi” (2012), Simon’s Fellowship (2015–2020) və OECD/NEA üzrə İDKM (information–data–knowledge management) eksperti mükafatı (2022) ilə təltif olunmuşdur. “Women in Nuclear” təşkilatının üzvü, AEBA Ekspertlər Şəbəkəsinin və Avropa Komissiyasının nüvə təhlükəsizliyi üzrə ekspertidir.</p>",
+      "after": "<p class=\"bio bio-lead\">Dinara Abbasova nüvə və radiasiya kimyası, radioaktiv tullantıların idarə olunması, biliklərin idarə edilməsi və kadr potensialının inkişafı sahələrində 23 ildən artıq beynəlxalq təcrübəyə malik alim və məsləhətçidir. Onun fəaliyyəti elmi tədqiqatları, layihələrin idarə olunmasını, beynəlxalq əməkdaşlığı, peşəkar təlimləri və tədris materiallarının hazırlanmasını əhatə edir.</p><p class=\"bio\">O, Bakı Dövlət Universitetində kimya ixtisası üzrə 1998–2002-ci illərdə bakalavr, 2002–2004-cü illərdə isə magistr təhsili almışdır. 2012-ci ildə Azərbaycan Milli Elmlər Akademiyasının Radiasiya Problemləri İnstitutunda radiasiya kimyası üzrə fəlsəfə doktoru elmi dərəcəsini, 2016-cı ildə isə dosent elmi adını almışdır. 2022–2024-cü illərdə Vyana İqtisadiyyat və Biznes Universitetində layihələrin strateji idarə edilməsi üzrə Executive MBA proqramını bitirmişdir.</p><p class=\"bio\">2017–2019-cu və 2023–2025-ci illərdə Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) məsləhətçi kimi çalışmışdır. Onun vəzifələrinə Nüvə Təhlükəsizliyi haqqında Konvensiya üzrə elmi dəstəyin göstərilməsi, elektron tədris və təlim materiallarının hazırlanması, eləcə də AEBA-nın nəşrlərinə töhfə verilməsi daxil olmuşdur. 2020–2023-cü illərdə Helmholtz-Zentrum Dresden-Rossendorf (HZDR) mərkəzində biliklərin idarə edilməsi sahəsində tədqiqatçı alim kimi fəaliyyət göstərmiş, EURAD çərçivəsində radioaktiv tullantıların idarə olunması üzrə işlərə töhfə vermiş və PIANOFORTE tərəfdaşlığında biliklərin idarə edilməsi üzrə ekspert olmuşdur.</p><p class=\"bio\">Əvvəllər Polşa Elmlər Akademiyasının Geologiya İnstitutunda dəvətli professor (2012–2015) və Delta Unlimited şirkətində məsləhətçi (2015–2017) kimi çalışmışdır. 2004–2012-ci illərdə Radiasiya Problemləri İnstitutunda Milli INIS Mərkəzinin rəhbəri, elmi katib, xromatoqrafiya üzrə ekspert və keyfiyyət üzrə menecer vəzifələrini yerinə yetirmişdir. Əmək fəaliyyətinə 2002–2004-cü illərdə Azlab neft şirkətində xromatoqrafiya üzrə ekspert və keyfiyyət üzrə menecer kimi başlamışdır.</p><p class=\"bio\">Onun beynəlxalq fəaliyyətinə AEBA-da biliklərin idarə edilməsi üzrə ekspert, Avropa Komissiyasında radiasiya kimyası üzrə ekspert və radioaktiv tullantıların idarə olunmasında biliklərin idarə edilməsi üzrə ISO işçi qrupunda OECD/NEA-nın IDKM istiqaməti üzrə əlaqələndirici nümayəndə kimi işlər daxildir. O, “Women in Nuclear” (WiN Global) təşkilatının üzvüdür. Əbdüs Salam Beynəlxalq Nəzəri Fizika Mərkəzində (ICTP) “<strong>Simons Associate (2015–2020)</strong>” kimi fəaliyyət göstərmişdir.</p><p class=\"bio\">O, Azərbaycanın Gənclər və İdman Nazirliyi tərəfindən elmdə nailiyyətlərinə görə təltif edilmiş (2010), AEBA təqaüdünə layiq görülmüş (2010), Azərbaycanın nüvə sahəsində gənc qadın mütəxəssisi kimi fərqləndirilmiş (2012), Birləşmiş Ərəb Əmirliklərinin AEBA yanında Daimi Nümayəndəliyinin təşəkkürünü almış (2019) və könüllü dəstəyinə görə AEBA-nın təşəkkür sertifikatı ilə təltif olunmuşdur (2024).</p><p class=\"bio\"><strong>Elmi və peşəkar maraq sahələri:</strong></p><ul><li>Nüvə və radiasiya kimyası, radiasiyadan mühafizə və radioaktiv tullantıların idarə olunması.</li><li>İzotop və radiokarbon analizləri, xromatoqrafiya, alfa və qamma spektrometriyası.</li><li>Ətraf mühitin monitorinqi, keyfiyyətin təmin edilməsi və beynəlxalq standartların tətbiqi.</li><li>Nüvə sahəsində biliklərin qorunması və ötürülməsi, peşəkar təlimlər və elektron tədris.</li></ul><p class=\"bio\">Azərbaycan və rus dilləri onun ana dilləridir. İngilis və polyak dillərini sərbəst, alman və italyan dillərini isə orta səviyyədə bilir.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/17/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "PhD, EMBA"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/17/title_en",
+      "field": "title_en",
+      "before": "Advisor to the International Atomic Energy Agency (IAEA), official representative for Azerbaijan of the World Association \"Women in Nuclear\"",
+      "after": "Associate Professor in Nuclear Chemistry; nuclear scientist and consultant, Vienna, Austria"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/17/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Dinara Abbasova is a scientist specializing in nuclear energy, nuclear safety, radioactive waste management and nuclear knowledge preservation. Her main research areas include the study of international standards for radiation chemistry, isotope and biomarker analyses, chromatography technologies, and nuclear material safety. She worked as a consultant at the International Atomic Energy Agency (IAEA), a research scientist at the Helmholtz-Zentrum Dresden-Rossendorf (HZDR) Institute for Resource Ecology, an invited professor at the Polish Academy of Sciences, and a director at the ANAS Institute of Radiation Problems. The author of more than 80 scientific articles and presentations, Abbasova has organized and spoken at more than 40 international conferences and prepared e-learning materials for the IAEA and the European Commission. She was awarded &quot;Achievements in Science&quot; (2010), \"Young Nuclear Specialist\" of the IAEA (2012), Simon&#x27;s Fellowship (2015–2020) and the OECD/NEA (information-data-knowledge management) expert award (2022). She is a member of the \"Women in Nuclear\" organization and a nuclear safety expert for the IAEA Expert Network and the European Commission.</p>",
+      "after": "<p class=\"bio bio-lead\">Dinara Abbasova is a nuclear scientist and consultant with more than 23 years of international experience in nuclear and radiation chemistry, radioactive waste management, knowledge management, and capacity building. Her work combines scientific research with project management, international collaboration, professional training, and the development of educational materials.</p><p class=\"bio\">She studied chemistry at Baku State University, completing her bachelor’s studies in 1998–2002 and master’s studies in 2002–2004. She earned a PhD in Radiation Chemistry at the Institute of Radiation Problems of the Azerbaijan National Academy of Sciences in 2012 and obtained the academic title of Associate Professor in 2016. In 2022–2024, she completed an Executive MBA in Strategic Project Management at the Vienna University of Economics and Business.</p><p class=\"bio\">She worked as a consultant at the International Atomic Energy Agency (IAEA) in 2017–2019 and 2023–2025. Her responsibilities included scientific support for the Convention on Nuclear Safety, the development of e-learning and training materials, and contributions to IAEA publications. From 2020 to 2023, she worked as a scientist in knowledge management at Helmholtz-Zentrum Dresden-Rossendorf (HZDR), contributing to radioactive waste management under EURAD and serving as a knowledge management expert in the PIANOFORTE Partnership.</p><p class=\"bio\">Earlier, she was a Visiting Professor at the Institute of Geology of the Polish Academy of Sciences (2012–2015) and a consultant at Delta Unlimited (2015–2017). At the Institute of Radiation Problems (2004–2012), her roles included Head of the National INIS Center, Scientific Secretary, Chromatography Expert, and Quality Manager. She began her career as a Chromatography Expert and Quality Manager at Azlab Oil Company (2002–2004).</p><p class=\"bio\">Her international activities include work as an IAEA knowledge management expert, a European Commission expert in radiation chemistry, and an OECD/NEA IDKM liaison to an ISO working group on knowledge management in radioactive waste management. She is a member of Women in Nuclear (WiN Global). She was a <strong>Simons Associate (2015–2020)</strong> at the Abdus Salam International Centre for Theoretical Physics (ICTP).</p><p class=\"bio\">Her honors include recognition for achievement in science from Azerbaijan’s Ministry of Youth and Sports (2010), an IAEA fellowship (2010), recognition as a Young Nuclear Professional Woman of Azerbaijan (2012), appreciation from the UAE Permanent Mission to the IAEA (2019), and an IAEA certificate recognizing voluntary support (2024).</p><p class=\"bio\"><strong>Research and professional interests:</strong></p><ul><li>Nuclear and radiation chemistry, radiation protection, and radioactive waste management.</li><li>Isotope and radiocarbon analysis, chromatography, and alpha and gamma spectrometry.</li><li>Environmental monitoring, quality assurance, and the application of international standards.</li><li>Nuclear knowledge preservation and transfer, professional training, and e-learning.</li></ul><p class=\"bio\">She speaks Azerbaijani and Russian as native languages, is fluent in English and Polish, and has intermediate proficiency in German and Italian.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/17/title_az",
+      "field": "title_az",
+      "before": "Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) məsləhətçisi, “Qadınlar Nüvə Sahəsində” (“Women in Nuclear”) Ümumdünya Assosiasiyasının Azərbaycan üzrə rəsmi nümayəndəsi",
+      "after": "Nüvə kimyası üzrə dosent; alim və məsləhətçi, Vyana, Avstriya"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/17/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Dinara Abbasova nüvə enerjisi, nüvə təhlükəsizliyi, radioaktiv tullantıların idarə olunması və nüvə biliklərinin saxlanması sahələrində ixtisaslaşmış alimdir. Onun əsas tədqiqat sahələrinə radiasiya kimyası, izotop və biomarker analizləri, xromatoqrafiya texnologiyaları və nüvə materiallarının təhlükəsizliyi üzrə beynəlxalq standartların öyrənilməsi daxildir. O, Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) məsləhətçi, Helmholtz-Zentrum Dresden-Rossendorf (HZDR) Resurs Ekologiyası İnstitutunda tədqiqatçı alim, Polşa Elmlər Akademiyasında dəvətli professor və AMEA Radiasiya Problemləri İnstitutunda rəhbər vəzifələrində çalışmışdır. 80-dən çox elmi məqalə və təqdimatın müəllifi olan Abbasova 40-dan artıq beynəlxalq konfransın təşkilatçısı və spikeri olmuş, AEBA və Avropa Komissiyası üçün e-öyrənmə materialları hazırlamışdır. O, “Elmdə Nailiyyətlər” (2010), AEBA-nın “Gənc Nüvə Mütəxəssisi” (2012), Simon’s Fellowship (2015–2020) və OECD/NEA üzrə İDKM (information–data–knowledge management) eksperti mükafatı (2022) ilə təltif olunmuşdur. “Women in Nuclear” təşkilatının üzvü, AEBA Ekspertlər Şəbəkəsinin və Avropa Komissiyasının nüvə təhlükəsizliyi üzrə ekspertidir.</p>",
+      "after": "<p class=\"bio bio-lead\">Dinara Abbasova nüvə və radiasiya kimyası, radioaktiv tullantıların idarə olunması, biliklərin idarə edilməsi və kadr potensialının inkişafı sahələrində 23 ildən artıq beynəlxalq təcrübəyə malik alim və məsləhətçidir. Onun fəaliyyəti elmi tədqiqatları, layihələrin idarə olunmasını, beynəlxalq əməkdaşlığı, peşəkar təlimləri və tədris materiallarının hazırlanmasını əhatə edir.</p><p class=\"bio\">O, Bakı Dövlət Universitetində kimya ixtisası üzrə 1998–2002-ci illərdə bakalavr, 2002–2004-cü illərdə isə magistr təhsili almışdır. 2012-ci ildə Azərbaycan Milli Elmlər Akademiyasının Radiasiya Problemləri İnstitutunda radiasiya kimyası üzrə fəlsəfə doktoru elmi dərəcəsini, 2016-cı ildə isə dosent elmi adını almışdır. 2022–2024-cü illərdə Vyana İqtisadiyyat və Biznes Universitetində layihələrin strateji idarə edilməsi üzrə Executive MBA proqramını bitirmişdir.</p><p class=\"bio\">2017–2019-cu və 2023–2025-ci illərdə Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) məsləhətçi kimi çalışmışdır. Onun vəzifələrinə Nüvə Təhlükəsizliyi haqqında Konvensiya üzrə elmi dəstəyin göstərilməsi, elektron tədris və təlim materiallarının hazırlanması, eləcə də AEBA-nın nəşrlərinə töhfə verilməsi daxil olmuşdur. 2020–2023-cü illərdə Helmholtz-Zentrum Dresden-Rossendorf (HZDR) mərkəzində biliklərin idarə edilməsi sahəsində tədqiqatçı alim kimi fəaliyyət göstərmiş, EURAD çərçivəsində radioaktiv tullantıların idarə olunması üzrə işlərə töhfə vermiş və PIANOFORTE tərəfdaşlığında biliklərin idarə edilməsi üzrə ekspert olmuşdur.</p><p class=\"bio\">Əvvəllər Polşa Elmlər Akademiyasının Geologiya İnstitutunda dəvətli professor (2012–2015) və Delta Unlimited şirkətində məsləhətçi (2015–2017) kimi çalışmışdır. 2004–2012-ci illərdə Radiasiya Problemləri İnstitutunda Milli INIS Mərkəzinin rəhbəri, elmi katib, xromatoqrafiya üzrə ekspert və keyfiyyət üzrə menecer vəzifələrini yerinə yetirmişdir. Əmək fəaliyyətinə 2002–2004-cü illərdə Azlab neft şirkətində xromatoqrafiya üzrə ekspert və keyfiyyət üzrə menecer kimi başlamışdır.</p><p class=\"bio\">Onun beynəlxalq fəaliyyətinə AEBA-da biliklərin idarə edilməsi üzrə ekspert, Avropa Komissiyasında radiasiya kimyası üzrə ekspert və radioaktiv tullantıların idarə olunmasında biliklərin idarə edilməsi üzrə ISO işçi qrupunda OECD/NEA-nın IDKM istiqaməti üzrə əlaqələndirici nümayəndə kimi işlər daxildir. O, “Women in Nuclear” (WiN Global) təşkilatının üzvüdür. Əbdüs Salam Beynəlxalq Nəzəri Fizika Mərkəzində (ICTP) “<strong>Simons Associate (2015–2020)</strong>” kimi fəaliyyət göstərmişdir.</p><p class=\"bio\">O, Azərbaycanın Gənclər və İdman Nazirliyi tərəfindən elmdə nailiyyətlərinə görə təltif edilmiş (2010), AEBA təqaüdünə layiq görülmüş (2010), Azərbaycanın nüvə sahəsində gənc qadın mütəxəssisi kimi fərqləndirilmiş (2012), Birləşmiş Ərəb Əmirliklərinin AEBA yanında Daimi Nümayəndəliyinin təşəkkürünü almış (2019) və könüllü dəstəyinə görə AEBA-nın təşəkkür sertifikatı ilə təltif olunmuşdur (2024).</p><p class=\"bio\"><strong>Elmi və peşəkar maraq sahələri:</strong></p><ul><li>Nüvə və radiasiya kimyası, radiasiyadan mühafizə və radioaktiv tullantıların idarə olunması.</li><li>İzotop və radiokarbon analizləri, xromatoqrafiya, alfa və qamma spektrometriyası.</li><li>Ətraf mühitin monitorinqi, keyfiyyətin təmin edilməsi və beynəlxalq standartların tətbiqi.</li><li>Nüvə sahəsində biliklərin qorunması və ötürülməsi, peşəkar təlimlər və elektron tədris.</li></ul><p class=\"bio\">Azərbaycan və rus dilləri onun ana dilləridir. İngilis və polyak dillərini sərbəst, alman və italyan dillərini isə orta səviyyədə bilir.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 302,
+      "jsonPointer": "/profiles/17/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "PhD, EMBA"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 307,
+      "jsonPointer": "/profiles/17/title_en",
+      "field": "title_en",
+      "before": "Advisor to the International Atomic Energy Agency (IAEA), official representative for Azerbaijan of the World Association \"Women in Nuclear\"",
+      "after": "Associate Professor in Nuclear Chemistry; nuclear scientist and consultant, Vienna, Austria"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 308,
+      "jsonPointer": "/profiles/17/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Dinara Abbasova is a scientist specializing in nuclear energy, nuclear safety, radioactive waste management and nuclear knowledge preservation. Her main research areas include the study of international standards for radiation chemistry, isotope and biomarker analyses, chromatography technologies, and nuclear material safety. She worked as a consultant at the International Atomic Energy Agency (IAEA), a research scientist at the Helmholtz-Zentrum Dresden-Rossendorf (HZDR) Institute for Resource Ecology, an invited professor at the Polish Academy of Sciences, and a director at the ANAS Institute of Radiation Problems. The author of more than 80 scientific articles and presentations, Abbasova has organized and spoken at more than 40 international conferences and prepared e-learning materials for the IAEA and the European Commission. She was awarded &quot;Achievements in Science&quot; (2010), \"Young Nuclear Specialist\" of the IAEA (2012), Simon&#x27;s Fellowship (2015–2020) and the OECD/NEA (information-data-knowledge management) expert award (2022). She is a member of the \"Women in Nuclear\" organization and a nuclear safety expert for the IAEA Expert Network and the European Commission.</p>",
+      "after": "<p class=\"bio bio-lead\">Dinara Abbasova is a nuclear scientist and consultant with more than 23 years of international experience in nuclear and radiation chemistry, radioactive waste management, knowledge management, and capacity building. Her work combines scientific research with project management, international collaboration, professional training, and the development of educational materials.</p><p class=\"bio\">She studied chemistry at Baku State University, completing her bachelor’s studies in 1998–2002 and master’s studies in 2002–2004. She earned a PhD in Radiation Chemistry at the Institute of Radiation Problems of the Azerbaijan National Academy of Sciences in 2012 and obtained the academic title of Associate Professor in 2016. In 2022–2024, she completed an Executive MBA in Strategic Project Management at the Vienna University of Economics and Business.</p><p class=\"bio\">She worked as a consultant at the International Atomic Energy Agency (IAEA) in 2017–2019 and 2023–2025. Her responsibilities included scientific support for the Convention on Nuclear Safety, the development of e-learning and training materials, and contributions to IAEA publications. From 2020 to 2023, she worked as a scientist in knowledge management at Helmholtz-Zentrum Dresden-Rossendorf (HZDR), contributing to radioactive waste management under EURAD and serving as a knowledge management expert in the PIANOFORTE Partnership.</p><p class=\"bio\">Earlier, she was a Visiting Professor at the Institute of Geology of the Polish Academy of Sciences (2012–2015) and a consultant at Delta Unlimited (2015–2017). At the Institute of Radiation Problems (2004–2012), her roles included Head of the National INIS Center, Scientific Secretary, Chromatography Expert, and Quality Manager. She began her career as a Chromatography Expert and Quality Manager at Azlab Oil Company (2002–2004).</p><p class=\"bio\">Her international activities include work as an IAEA knowledge management expert, a European Commission expert in radiation chemistry, and an OECD/NEA IDKM liaison to an ISO working group on knowledge management in radioactive waste management. She is a member of Women in Nuclear (WiN Global). She was a <strong>Simons Associate (2015–2020)</strong> at the Abdus Salam International Centre for Theoretical Physics (ICTP).</p><p class=\"bio\">Her honors include recognition for achievement in science from Azerbaijan’s Ministry of Youth and Sports (2010), an IAEA fellowship (2010), recognition as a Young Nuclear Professional Woman of Azerbaijan (2012), appreciation from the UAE Permanent Mission to the IAEA (2019), and an IAEA certificate recognizing voluntary support (2024).</p><p class=\"bio\"><strong>Research and professional interests:</strong></p><ul><li>Nuclear and radiation chemistry, radiation protection, and radioactive waste management.</li><li>Isotope and radiocarbon analysis, chromatography, and alpha and gamma spectrometry.</li><li>Environmental monitoring, quality assurance, and the application of international standards.</li><li>Nuclear knowledge preservation and transfer, professional training, and e-learning.</li></ul><p class=\"bio\">She speaks Azerbaijani and Russian as native languages, is fluent in English and Polish, and has intermediate proficiency in German and Italian.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 303,
+      "jsonPointer": "/profiles/17/title_az",
+      "field": "title_az",
+      "before": "Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) məsləhətçisi, “Qadınlar Nüvə Sahəsində” (“Women in Nuclear”) Ümumdünya Assosiasiyasının Azərbaycan üzrə rəsmi nümayəndəsi",
+      "after": "Nüvə kimyası üzrə dosent; alim və məsləhətçi, Vyana, Avstriya"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 304,
+      "jsonPointer": "/profiles/17/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Dinara Abbasova nüvə enerjisi, nüvə təhlükəsizliyi, radioaktiv tullantıların idarə olunması və nüvə biliklərinin saxlanması sahələrində ixtisaslaşmış alimdir. Onun əsas tədqiqat sahələrinə radiasiya kimyası, izotop və biomarker analizləri, xromatoqrafiya texnologiyaları və nüvə materiallarının təhlükəsizliyi üzrə beynəlxalq standartların öyrənilməsi daxildir. O, Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) məsləhətçi, Helmholtz-Zentrum Dresden-Rossendorf (HZDR) Resurs Ekologiyası İnstitutunda tədqiqatçı alim, Polşa Elmlər Akademiyasında dəvətli professor və AMEA Radiasiya Problemləri İnstitutunda rəhbər vəzifələrində çalışmışdır. 80-dən çox elmi məqalə və təqdimatın müəllifi olan Abbasova 40-dan artıq beynəlxalq konfransın təşkilatçısı və spikeri olmuş, AEBA və Avropa Komissiyası üçün e-öyrənmə materialları hazırlamışdır. O, “Elmdə Nailiyyətlər” (2010), AEBA-nın “Gənc Nüvə Mütəxəssisi” (2012), Simon’s Fellowship (2015–2020) və OECD/NEA üzrə İDKM (information–data–knowledge management) eksperti mükafatı (2022) ilə təltif olunmuşdur. “Women in Nuclear” təşkilatının üzvü, AEBA Ekspertlər Şəbəkəsinin və Avropa Komissiyasının nüvə təhlükəsizliyi üzrə ekspertidir.</p>",
+      "after": "<p class=\"bio bio-lead\">Dinara Abbasova nüvə və radiasiya kimyası, radioaktiv tullantıların idarə olunması, biliklərin idarə edilməsi və kadr potensialının inkişafı sahələrində 23 ildən artıq beynəlxalq təcrübəyə malik alim və məsləhətçidir. Onun fəaliyyəti elmi tədqiqatları, layihələrin idarə olunmasını, beynəlxalq əməkdaşlığı, peşəkar təlimləri və tədris materiallarının hazırlanmasını əhatə edir.</p><p class=\"bio\">O, Bakı Dövlət Universitetində kimya ixtisası üzrə 1998–2002-ci illərdə bakalavr, 2002–2004-cü illərdə isə magistr təhsili almışdır. 2012-ci ildə Azərbaycan Milli Elmlər Akademiyasının Radiasiya Problemləri İnstitutunda radiasiya kimyası üzrə fəlsəfə doktoru elmi dərəcəsini, 2016-cı ildə isə dosent elmi adını almışdır. 2022–2024-cü illərdə Vyana İqtisadiyyat və Biznes Universitetində layihələrin strateji idarə edilməsi üzrə Executive MBA proqramını bitirmişdir.</p><p class=\"bio\">2017–2019-cu və 2023–2025-ci illərdə Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) məsləhətçi kimi çalışmışdır. Onun vəzifələrinə Nüvə Təhlükəsizliyi haqqında Konvensiya üzrə elmi dəstəyin göstərilməsi, elektron tədris və təlim materiallarının hazırlanması, eləcə də AEBA-nın nəşrlərinə töhfə verilməsi daxil olmuşdur. 2020–2023-cü illərdə Helmholtz-Zentrum Dresden-Rossendorf (HZDR) mərkəzində biliklərin idarə edilməsi sahəsində tədqiqatçı alim kimi fəaliyyət göstərmiş, EURAD çərçivəsində radioaktiv tullantıların idarə olunması üzrə işlərə töhfə vermiş və PIANOFORTE tərəfdaşlığında biliklərin idarə edilməsi üzrə ekspert olmuşdur.</p><p class=\"bio\">Əvvəllər Polşa Elmlər Akademiyasının Geologiya İnstitutunda dəvətli professor (2012–2015) və Delta Unlimited şirkətində məsləhətçi (2015–2017) kimi çalışmışdır. 2004–2012-ci illərdə Radiasiya Problemləri İnstitutunda Milli INIS Mərkəzinin rəhbəri, elmi katib, xromatoqrafiya üzrə ekspert və keyfiyyət üzrə menecer vəzifələrini yerinə yetirmişdir. Əmək fəaliyyətinə 2002–2004-cü illərdə Azlab neft şirkətində xromatoqrafiya üzrə ekspert və keyfiyyət üzrə menecer kimi başlamışdır.</p><p class=\"bio\">Onun beynəlxalq fəaliyyətinə AEBA-da biliklərin idarə edilməsi üzrə ekspert, Avropa Komissiyasında radiasiya kimyası üzrə ekspert və radioaktiv tullantıların idarə olunmasında biliklərin idarə edilməsi üzrə ISO işçi qrupunda OECD/NEA-nın IDKM istiqaməti üzrə əlaqələndirici nümayəndə kimi işlər daxildir. O, “Women in Nuclear” (WiN Global) təşkilatının üzvüdür. Əbdüs Salam Beynəlxalq Nəzəri Fizika Mərkəzində (ICTP) “<strong>Simons Associate (2015–2020)</strong>” kimi fəaliyyət göstərmişdir.</p><p class=\"bio\">O, Azərbaycanın Gənclər və İdman Nazirliyi tərəfindən elmdə nailiyyətlərinə görə təltif edilmiş (2010), AEBA təqaüdünə layiq görülmüş (2010), Azərbaycanın nüvə sahəsində gənc qadın mütəxəssisi kimi fərqləndirilmiş (2012), Birləşmiş Ərəb Əmirliklərinin AEBA yanında Daimi Nümayəndəliyinin təşəkkürünü almış (2019) və könüllü dəstəyinə görə AEBA-nın təşəkkür sertifikatı ilə təltif olunmuşdur (2024).</p><p class=\"bio\"><strong>Elmi və peşəkar maraq sahələri:</strong></p><ul><li>Nüvə və radiasiya kimyası, radiasiyadan mühafizə və radioaktiv tullantıların idarə olunması.</li><li>İzotop və radiokarbon analizləri, xromatoqrafiya, alfa və qamma spektrometriyası.</li><li>Ətraf mühitin monitorinqi, keyfiyyətin təmin edilməsi və beynəlxalq standartların tətbiqi.</li><li>Nüvə sahəsində biliklərin qorunması və ötürülməsi, peşəkar təlimlər və elektron tədris.</li></ul><p class=\"bio\">Azərbaycan və rus dilləri onun ana dilləridir. İngilis və polyak dillərini sərbəst, alman və italyan dillərini isə orta səviyyədə bilir.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/17/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "PhD, EMBA"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/17/title_en",
+      "field": "title_en",
+      "before": "Advisor to the International Atomic Energy Agency (IAEA), official representative for Azerbaijan of the World Association \"Women in Nuclear\"",
+      "after": "Associate Professor in Nuclear Chemistry; nuclear scientist and consultant, Vienna, Austria"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/17/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Dinara Abbasova is a scientist specializing in nuclear energy, nuclear safety, radioactive waste management and nuclear knowledge preservation. Her main research areas include the study of international standards for radiation chemistry, isotope and biomarker analyses, chromatography technologies, and nuclear material safety. She worked as a consultant at the International Atomic Energy Agency (IAEA), a research scientist at the Helmholtz-Zentrum Dresden-Rossendorf (HZDR) Institute for Resource Ecology, an invited professor at the Polish Academy of Sciences, and a director at the ANAS Institute of Radiation Problems. The author of more than 80 scientific articles and presentations, Abbasova has organized and spoken at more than 40 international conferences and prepared e-learning materials for the IAEA and the European Commission. She was awarded &quot;Achievements in Science&quot; (2010), \"Young Nuclear Specialist\" of the IAEA (2012), Simon&#x27;s Fellowship (2015–2020) and the OECD/NEA (information-data-knowledge management) expert award (2022). She is a member of the \"Women in Nuclear\" organization and a nuclear safety expert for the IAEA Expert Network and the European Commission.</p>",
+      "after": "<p class=\"bio bio-lead\">Dinara Abbasova is a nuclear scientist and consultant with more than 23 years of international experience in nuclear and radiation chemistry, radioactive waste management, knowledge management, and capacity building. Her work combines scientific research with project management, international collaboration, professional training, and the development of educational materials.</p><p class=\"bio\">She studied chemistry at Baku State University, completing her bachelor’s studies in 1998–2002 and master’s studies in 2002–2004. She earned a PhD in Radiation Chemistry at the Institute of Radiation Problems of the Azerbaijan National Academy of Sciences in 2012 and obtained the academic title of Associate Professor in 2016. In 2022–2024, she completed an Executive MBA in Strategic Project Management at the Vienna University of Economics and Business.</p><p class=\"bio\">She worked as a consultant at the International Atomic Energy Agency (IAEA) in 2017–2019 and 2023–2025. Her responsibilities included scientific support for the Convention on Nuclear Safety, the development of e-learning and training materials, and contributions to IAEA publications. From 2020 to 2023, she worked as a scientist in knowledge management at Helmholtz-Zentrum Dresden-Rossendorf (HZDR), contributing to radioactive waste management under EURAD and serving as a knowledge management expert in the PIANOFORTE Partnership.</p><p class=\"bio\">Earlier, she was a Visiting Professor at the Institute of Geology of the Polish Academy of Sciences (2012–2015) and a consultant at Delta Unlimited (2015–2017). At the Institute of Radiation Problems (2004–2012), her roles included Head of the National INIS Center, Scientific Secretary, Chromatography Expert, and Quality Manager. She began her career as a Chromatography Expert and Quality Manager at Azlab Oil Company (2002–2004).</p><p class=\"bio\">Her international activities include work as an IAEA knowledge management expert, a European Commission expert in radiation chemistry, and an OECD/NEA IDKM liaison to an ISO working group on knowledge management in radioactive waste management. She is a member of Women in Nuclear (WiN Global). She was a <strong>Simons Associate (2015–2020)</strong> at the Abdus Salam International Centre for Theoretical Physics (ICTP).</p><p class=\"bio\">Her honors include recognition for achievement in science from Azerbaijan’s Ministry of Youth and Sports (2010), an IAEA fellowship (2010), recognition as a Young Nuclear Professional Woman of Azerbaijan (2012), appreciation from the UAE Permanent Mission to the IAEA (2019), and an IAEA certificate recognizing voluntary support (2024).</p><p class=\"bio\"><strong>Research and professional interests:</strong></p><ul><li>Nuclear and radiation chemistry, radiation protection, and radioactive waste management.</li><li>Isotope and radiocarbon analysis, chromatography, and alpha and gamma spectrometry.</li><li>Environmental monitoring, quality assurance, and the application of international standards.</li><li>Nuclear knowledge preservation and transfer, professional training, and e-learning.</li></ul><p class=\"bio\">She speaks Azerbaijani and Russian as native languages, is fluent in English and Polish, and has intermediate proficiency in German and Italian.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/17/title_az",
+      "field": "title_az",
+      "before": "Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) məsləhətçisi, “Qadınlar Nüvə Sahəsində” (“Women in Nuclear”) Ümumdünya Assosiasiyasının Azərbaycan üzrə rəsmi nümayəndəsi",
+      "after": "Nüvə kimyası üzrə dosent; alim və məsləhətçi, Vyana, Avstriya"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/17/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">Dinara Abbasova nüvə enerjisi, nüvə təhlükəsizliyi, radioaktiv tullantıların idarə olunması və nüvə biliklərinin saxlanması sahələrində ixtisaslaşmış alimdir. Onun əsas tədqiqat sahələrinə radiasiya kimyası, izotop və biomarker analizləri, xromatoqrafiya texnologiyaları və nüvə materiallarının təhlükəsizliyi üzrə beynəlxalq standartların öyrənilməsi daxildir. O, Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) məsləhətçi, Helmholtz-Zentrum Dresden-Rossendorf (HZDR) Resurs Ekologiyası İnstitutunda tədqiqatçı alim, Polşa Elmlər Akademiyasında dəvətli professor və AMEA Radiasiya Problemləri İnstitutunda rəhbər vəzifələrində çalışmışdır. 80-dən çox elmi məqalə və təqdimatın müəllifi olan Abbasova 40-dan artıq beynəlxalq konfransın təşkilatçısı və spikeri olmuş, AEBA və Avropa Komissiyası üçün e-öyrənmə materialları hazırlamışdır. O, “Elmdə Nailiyyətlər” (2010), AEBA-nın “Gənc Nüvə Mütəxəssisi” (2012), Simon’s Fellowship (2015–2020) və OECD/NEA üzrə İDKM (information–data–knowledge management) eksperti mükafatı (2022) ilə təltif olunmuşdur. “Women in Nuclear” təşkilatının üzvü, AEBA Ekspertlər Şəbəkəsinin və Avropa Komissiyasının nüvə təhlükəsizliyi üzrə ekspertidir.</p>",
+      "after": "<p class=\"bio bio-lead\">Dinara Abbasova nüvə və radiasiya kimyası, radioaktiv tullantıların idarə olunması, biliklərin idarə edilməsi və kadr potensialının inkişafı sahələrində 23 ildən artıq beynəlxalq təcrübəyə malik alim və məsləhətçidir. Onun fəaliyyəti elmi tədqiqatları, layihələrin idarə olunmasını, beynəlxalq əməkdaşlığı, peşəkar təlimləri və tədris materiallarının hazırlanmasını əhatə edir.</p><p class=\"bio\">O, Bakı Dövlət Universitetində kimya ixtisası üzrə 1998–2002-ci illərdə bakalavr, 2002–2004-cü illərdə isə magistr təhsili almışdır. 2012-ci ildə Azərbaycan Milli Elmlər Akademiyasının Radiasiya Problemləri İnstitutunda radiasiya kimyası üzrə fəlsəfə doktoru elmi dərəcəsini, 2016-cı ildə isə dosent elmi adını almışdır. 2022–2024-cü illərdə Vyana İqtisadiyyat və Biznes Universitetində layihələrin strateji idarə edilməsi üzrə Executive MBA proqramını bitirmişdir.</p><p class=\"bio\">2017–2019-cu və 2023–2025-ci illərdə Atom Enerjisi üzrə Beynəlxalq Agentlikdə (AEBA) məsləhətçi kimi çalışmışdır. Onun vəzifələrinə Nüvə Təhlükəsizliyi haqqında Konvensiya üzrə elmi dəstəyin göstərilməsi, elektron tədris və təlim materiallarının hazırlanması, eləcə də AEBA-nın nəşrlərinə töhfə verilməsi daxil olmuşdur. 2020–2023-cü illərdə Helmholtz-Zentrum Dresden-Rossendorf (HZDR) mərkəzində biliklərin idarə edilməsi sahəsində tədqiqatçı alim kimi fəaliyyət göstərmiş, EURAD çərçivəsində radioaktiv tullantıların idarə olunması üzrə işlərə töhfə vermiş və PIANOFORTE tərəfdaşlığında biliklərin idarə edilməsi üzrə ekspert olmuşdur.</p><p class=\"bio\">Əvvəllər Polşa Elmlər Akademiyasının Geologiya İnstitutunda dəvətli professor (2012–2015) və Delta Unlimited şirkətində məsləhətçi (2015–2017) kimi çalışmışdır. 2004–2012-ci illərdə Radiasiya Problemləri İnstitutunda Milli INIS Mərkəzinin rəhbəri, elmi katib, xromatoqrafiya üzrə ekspert və keyfiyyət üzrə menecer vəzifələrini yerinə yetirmişdir. Əmək fəaliyyətinə 2002–2004-cü illərdə Azlab neft şirkətində xromatoqrafiya üzrə ekspert və keyfiyyət üzrə menecer kimi başlamışdır.</p><p class=\"bio\">Onun beynəlxalq fəaliyyətinə AEBA-da biliklərin idarə edilməsi üzrə ekspert, Avropa Komissiyasında radiasiya kimyası üzrə ekspert və radioaktiv tullantıların idarə olunmasında biliklərin idarə edilməsi üzrə ISO işçi qrupunda OECD/NEA-nın IDKM istiqaməti üzrə əlaqələndirici nümayəndə kimi işlər daxildir. O, “Women in Nuclear” (WiN Global) təşkilatının üzvüdür. Əbdüs Salam Beynəlxalq Nəzəri Fizika Mərkəzində (ICTP) “<strong>Simons Associate (2015–2020)</strong>” kimi fəaliyyət göstərmişdir.</p><p class=\"bio\">O, Azərbaycanın Gənclər və İdman Nazirliyi tərəfindən elmdə nailiyyətlərinə görə təltif edilmiş (2010), AEBA təqaüdünə layiq görülmüş (2010), Azərbaycanın nüvə sahəsində gənc qadın mütəxəssisi kimi fərqləndirilmiş (2012), Birləşmiş Ərəb Əmirliklərinin AEBA yanında Daimi Nümayəndəliyinin təşəkkürünü almış (2019) və könüllü dəstəyinə görə AEBA-nın təşəkkür sertifikatı ilə təltif olunmuşdur (2024).</p><p class=\"bio\"><strong>Elmi və peşəkar maraq sahələri:</strong></p><ul><li>Nüvə və radiasiya kimyası, radiasiyadan mühafizə və radioaktiv tullantıların idarə olunması.</li><li>İzotop və radiokarbon analizləri, xromatoqrafiya, alfa və qamma spektrometriyası.</li><li>Ətraf mühitin monitorinqi, keyfiyyətin təmin edilməsi və beynəlxalq standartların tətbiqi.</li><li>Nüvə sahəsində biliklərin qorunması və ötürülməsi, peşəkar təlimlər və elektron tədris.</li></ul><p class=\"bio\">Azərbaycan və rus dilləri onun ana dilləridir. İngilis və polyak dillərini sərbəst, alman və italyan dillərini isə orta səviyyədə bilir.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 107,
+      "jsonPointer": "/profiles/dinara_abasova@hotmail.com/title",
+      "field": "title",
+      "before": "Advisor to the International Atomic Energy Agency (IAEA), official representative for Azerbaijan of the World Association \"Women in Nuclear\"",
+      "after": "Associate Professor in Nuclear Chemistry; nuclear scientist and consultant, Vienna, Austria"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 108,
+      "jsonPointer": "/profiles/dinara_abasova@hotmail.com/bio_html",
+      "field": "bio_html",
+      "before": "<p class=\"bio bio-lead\">Dinara Abbasova is a scientist specializing in nuclear energy, nuclear safety, radioactive waste management and nuclear knowledge preservation. His main research areas include the study of international standards for radiation chemistry, isotope and biomarker analyses, chromatography technologies, and nuclear material safety. He worked as a consultant at the International Atomic Energy Agency (IAEA), a research scientist at the Helmholtz-Zentrum Dresden-Rossendorf (HZDR) Institute for Resource Ecology, an invited professor at the Polish Academy of Sciences, and a director at the ANAS Institute of Radiation Problems. Author of more than 80 scientific articles and presentations, Abbasova has been the organizer and speaker of more than 40 international conferences, prepared e-learning materials for IAEA and the European Commission. He was awarded with &quot;Achievements in Science&quot; (2010), &quot;Young Nuclear Specialist&quot; of IAEA (2012), Simon&#x27;s Fellowship (2015-2020) and OECD/NEA (information-data-knowledge management) expert award (2022). Member of &quot;Women in Nuclear&quot; organization, expert on nuclear safety of IAEA Expert Network and European Commission.</p>",
+      "after": "<p class=\"bio bio-lead\">Dinara Abbasova is a nuclear scientist and consultant with more than 23 years of international experience in nuclear and radiation chemistry, radioactive waste management, knowledge management, and capacity building. Her work combines scientific research with project management, international collaboration, professional training, and the development of educational materials.</p><p class=\"bio\">She studied chemistry at Baku State University, completing her bachelor’s studies in 1998–2002 and master’s studies in 2002–2004. She earned a PhD in Radiation Chemistry at the Institute of Radiation Problems of the Azerbaijan National Academy of Sciences in 2012 and obtained the academic title of Associate Professor in 2016. In 2022–2024, she completed an Executive MBA in Strategic Project Management at the Vienna University of Economics and Business.</p><p class=\"bio\">She worked as a consultant at the International Atomic Energy Agency (IAEA) in 2017–2019 and 2023–2025. Her responsibilities included scientific support for the Convention on Nuclear Safety, the development of e-learning and training materials, and contributions to IAEA publications. From 2020 to 2023, she worked as a scientist in knowledge management at Helmholtz-Zentrum Dresden-Rossendorf (HZDR), contributing to radioactive waste management under EURAD and serving as a knowledge management expert in the PIANOFORTE Partnership.</p><p class=\"bio\">Earlier, she was a Visiting Professor at the Institute of Geology of the Polish Academy of Sciences (2012–2015) and a consultant at Delta Unlimited (2015–2017). At the Institute of Radiation Problems (2004–2012), her roles included Head of the National INIS Center, Scientific Secretary, Chromatography Expert, and Quality Manager. She began her career as a Chromatography Expert and Quality Manager at Azlab Oil Company (2002–2004).</p><p class=\"bio\">Her international activities include work as an IAEA knowledge management expert, a European Commission expert in radiation chemistry, and an OECD/NEA IDKM liaison to an ISO working group on knowledge management in radioactive waste management. She is a member of Women in Nuclear (WiN Global). She was a <strong>Simons Associate (2015–2020)</strong> at the Abdus Salam International Centre for Theoretical Physics (ICTP).</p><p class=\"bio\">Her honors include recognition for achievement in science from Azerbaijan’s Ministry of Youth and Sports (2010), an IAEA fellowship (2010), recognition as a Young Nuclear Professional Woman of Azerbaijan (2012), appreciation from the UAE Permanent Mission to the IAEA (2019), and an IAEA certificate recognizing voluntary support (2024).</p><p class=\"bio\"><strong>Research and professional interests:</strong></p><ul><li>Nuclear and radiation chemistry, radiation protection, and radioactive waste management.</li><li>Isotope and radiocarbon analysis, chromatography, and alpha and gamma spectrometry.</li><li>Environmental monitoring, quality assurance, and the application of international standards.</li><li>Nuclear knowledge preservation and transfer, professional training, and e-learning.</li></ul><p class=\"bio\">She speaks Azerbaijani and Russian as native languages, is fluent in English and Polish, and has intermediate proficiency in German and Italian.</p>"
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "line": 178,
+      "jsonPointer": "/17/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "PhD, EMBA"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "line": 178,
+      "jsonPointer": "/17/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "PhD, EMBA"
+    },
+    {
+      "file": "js/scientists-catalog-data.js",
+      "line": 178,
+      "jsonPointer": "/17/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "PhD, EMBA"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data.js",
+      "line": 178,
+      "jsonPointer": "/17/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "PhD, EMBA"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6604,
+      "jsonPointer": "/entries/507/summary",
+      "field": "summary",
+      "before": "Advisor to the International Atomic Energy Agency (IAEA), official representative for Azerbaijan of the World Association \"Women in Nuclear\" · Chemistry · Austria",
+      "after": "Associate Professor in Nuclear Chemistry; nuclear scientist and consultant, Vienna, Austria · Chemistry · Austria"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6608,
+      "jsonPointer": "/entries/507/norm",
+      "field": "norm",
+      "before": "dinara abbasova advisor to the international atomic energy agency iaea official representative for azerbaijan of the world association women in nuclear chemistry austria dinara_abasova@hotmail.com dinara abbasova is a scientist specializing in nuclear energy nuclear safety radioactive waste management and nuclear knowledge preservation. her main research areas include the study of international standards for radiation chemistry isotope and biomarker analyses chromatography technologies and nuclear material phd",
+      "after": "dinara abbasova associate professor in nuclear chemistry nuclear scientist and consultant vienna austria chemistry austria dinara_abasova@hotmail.com dinara abbasova is a nuclear scientist and consultant with more than 23 years of international experience in nuclear and radiation chemistry radioactive waste management knowledge management and capacity building. her work combines scientific research with project management international collaboration professiona phd emba"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6591,
+      "jsonPointer": "/entries/506/summary",
+      "field": "summary",
+      "before": "Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) məsləhətçisi, “Qadınlar Nüvə Sahəsində” (“Women in Nuclear”) Ümumdünya Assosiasiyasının Azərbaycan üzrə rəsmi nümayəndəsi · Kimya · Avstriya",
+      "after": "Nüvə kimyası üzrə dosent; alim və məsləhətçi, Vyana, Avstriya · Kimya · Avstriya"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6595,
+      "jsonPointer": "/entries/506/norm",
+      "field": "norm",
+      "before": "dinara abbasova atom enerjisi uzre beynelxalq agentliyin aeba meslehetcisi qadinlar nuve sahesinde women in nuclear umumdunya assosiasiyasinin azerbaycan uzre resmi numayendesi kimya avstriya dinara_abasova@hotmail.com dinara abbasova nuve enerjisi nuve tehlukesizliyi radioaktiv tullantilarin idare olunmasi ve nuve biliklerinin saxlanmasi sahelerinde ixtisaslasmis alimdir. onun esas tedqiqat sahelerine radiasiya kimyasi izotop ve biomarker analizleri xromatoqrafiya texnologiyalari ve nuve materiallarinin tehlukesizliyi uzre beyne phd",
+      "after": "dinara abbasova nuve kimyasi uzre dosent alim ve meslehetci vyana avstriya kimya avstriya dinara_abasova@hotmail.com dinara abbasova nuve ve radiasiya kimyasi radioaktiv tullantilarin idare olunmasi biliklerin idare edilmesi ve kadr potensialinin inkisafi sahelerinde 23 ilden artiq beynelxalq tecrubeye malik alim ve meslehetcidir. onun fealiyyeti elmi tedqiqatlari layihelerin idare olunmasini beynelxalq emekdasligi pesekar telim phd emba"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6604,
+      "jsonPointer": "/entries/507/summary",
+      "field": "summary",
+      "before": "Advisor to the International Atomic Energy Agency (IAEA), official representative for Azerbaijan of the World Association \"Women in Nuclear\" · Chemistry · Austria",
+      "after": "Associate Professor in Nuclear Chemistry; nuclear scientist and consultant, Vienna, Austria · Chemistry · Austria"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6608,
+      "jsonPointer": "/entries/507/norm",
+      "field": "norm",
+      "before": "dinara abbasova advisor to the international atomic energy agency iaea official representative for azerbaijan of the world association women in nuclear chemistry austria dinara_abasova@hotmail.com dinara abbasova is a scientist specializing in nuclear energy nuclear safety radioactive waste management and nuclear knowledge preservation. her main research areas include the study of international standards for radiation chemistry isotope and biomarker analyses chromatography technologies and nuclear material phd",
+      "after": "dinara abbasova associate professor in nuclear chemistry nuclear scientist and consultant vienna austria chemistry austria dinara_abasova@hotmail.com dinara abbasova is a nuclear scientist and consultant with more than 23 years of international experience in nuclear and radiation chemistry radioactive waste management knowledge management and capacity building. her work combines scientific research with project management international collaboration professiona phd emba"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6591,
+      "jsonPointer": "/entries/506/summary",
+      "field": "summary",
+      "before": "Atom Enerjisi üzrə Beynəlxalq Agentliyin (AEBA) məsləhətçisi, “Qadınlar Nüvə Sahəsində” (“Women in Nuclear”) Ümumdünya Assosiasiyasının Azərbaycan üzrə rəsmi nümayəndəsi · Kimya · Avstriya",
+      "after": "Nüvə kimyası üzrə dosent; alim və məsləhətçi, Vyana, Avstriya · Kimya · Avstriya"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6595,
+      "jsonPointer": "/entries/506/norm",
+      "field": "norm",
+      "before": "dinara abbasova atom enerjisi uzre beynelxalq agentliyin aeba meslehetcisi qadinlar nuve sahesinde women in nuclear umumdunya assosiasiyasinin azerbaycan uzre resmi numayendesi kimya avstriya dinara_abasova@hotmail.com dinara abbasova nuve enerjisi nuve tehlukesizliyi radioaktiv tullantilarin idare olunmasi ve nuve biliklerinin saxlanmasi sahelerinde ixtisaslasmis alimdir. onun esas tedqiqat sahelerine radiasiya kimyasi izotop ve biomarker analizleri xromatoqrafiya texnologiyalari ve nuve materiallarinin tehlukesizliyi uzre beyne phd",
+      "after": "dinara abbasova nuve kimyasi uzre dosent alim ve meslehetci vyana avstriya kimya avstriya dinara_abasova@hotmail.com dinara abbasova nuve ve radiasiya kimyasi radioaktiv tullantilarin idare olunmasi biliklerin idare edilmesi ve kadr potensialinin inkisafi sahelerinde 23 ilden artiq beynelxalq tecrubeye malik alim ve meslehetcidir. onun fealiyyeti elmi tedqiqatlari layihelerin idare olunmasini beynelxalq emekdasligi pesekar telim phd emba"
+    }
+  ],
+  "fileHashes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "before": "c49cca15bf1ca4fb69d8fac63773d9545025c7b940c286e8f0d2bbcb382211d1",
+      "after": "f79fd1ab2c5868aa068e91a636ee61841bffef6b1ae560287c2f0dbcdd907e96"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "before": "aada04c975facebcd897ce89d77d3c84967c65a1f5772f2610f1ec90019e6f7b",
+      "after": "df0f5b80b85de80378b1d32119a245ff1b78b0575818a2777937ff029bb2f5e4"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "before": "c49cca15bf1ca4fb69d8fac63773d9545025c7b940c286e8f0d2bbcb382211d1",
+      "after": "f79fd1ab2c5868aa068e91a636ee61841bffef6b1ae560287c2f0dbcdd907e96"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "before": "aada04c975facebcd897ce89d77d3c84967c65a1f5772f2610f1ec90019e6f7b",
+      "after": "df0f5b80b85de80378b1d32119a245ff1b78b0575818a2777937ff029bb2f5e4"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "before": "244ba48eef32c0610436209a16a637254880118602fc0ed435d44ccfe05107cd",
+      "after": "7eea5a5a41fd81d5ee2d1e71f44b0f2869210dbfd1d7c0a1e5d030535f3a71e9"
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "before": "b145befa041920f9c02832288b5c07ac844d7dbdf009c542f07065a3b282fd5f",
+      "after": "ecbc3bf795a37560fcf6ada6032e0fd35f0b9c191db79f3416af16f1d3dba689"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "before": "b145befa041920f9c02832288b5c07ac844d7dbdf009c542f07065a3b282fd5f",
+      "after": "ecbc3bf795a37560fcf6ada6032e0fd35f0b9c191db79f3416af16f1d3dba689"
+    },
+    {
+      "file": "js/scientists-catalog-data.js",
+      "before": "c15a6b120bda2baf2623790c53fc8e4ddc429fd0c5abce99ab8f88af7f4e3483",
+      "after": "d050ccf36fc7318b619a366fa1749e0e22cec45294728eac86c4150a1077b378"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data.js",
+      "before": "c15a6b120bda2baf2623790c53fc8e4ddc429fd0c5abce99ab8f88af7f4e3483",
+      "after": "d050ccf36fc7318b619a366fa1749e0e22cec45294728eac86c4150a1077b378"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "before": "0dfeb28fcacd1997fabecde566c7d1cb318d6b6fe6eaeac559a352d0e7ace8d4",
+      "after": "f45fc408dfb34e96a98a582042011abb36fdedb8be5295cda95502e95775d14a"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "before": "0dfeb28fcacd1997fabecde566c7d1cb318d6b6fe6eaeac559a352d0e7ace8d4",
+      "after": "f45fc408dfb34e96a98a582042011abb36fdedb8be5295cda95502e95775d14a"
+    }
+  ]
+}

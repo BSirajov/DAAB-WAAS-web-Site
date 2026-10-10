@@ -4,6 +4,52 @@
 (function () {
   "use strict";
 
+  function urlParams() {
+    return new URLSearchParams(location.search || "");
+  }
+
+  function readParam(key) {
+    return urlParams().get(key) || "";
+  }
+
+  function readListParam(key) {
+    var raw = readParam(key);
+    if (!raw) return [];
+    return raw
+      .split(",")
+      .map(function (part) {
+        return part.trim();
+      })
+      .filter(Boolean);
+  }
+
+  function writeParams(map) {
+    var params = urlParams();
+    Object.keys(map || {}).forEach(function (key) {
+      var val = map[key];
+      if (val == null || val === "" || (Array.isArray(val) && !val.length)) {
+        params.delete(key);
+      } else if (Array.isArray(val)) {
+        params.set(key, val.join(","));
+      } else {
+        params.set(key, String(val));
+      }
+    });
+    var qs = params.toString();
+    var next = location.pathname + (qs ? "?" + qs : "") + (location.hash || "");
+    var current = location.pathname + location.search + location.hash;
+    if (next !== current && window.history && window.history.replaceState) {
+      window.history.replaceState(null, "", next);
+    }
+    if (typeof refreshLangHrefs === "function") refreshLangHrefs();
+  }
+
+  window.DAAB_URL_STATE = {
+    get: readParam,
+    list: readListParam,
+    write: writeParams
+  };
+
   function navCompactMediaQuery() {
     if (window.DAAB_DESIGN && typeof window.DAAB_DESIGN.navCompactMq === "function") {
       return window.DAAB_DESIGN.navCompactMq();
@@ -13,6 +59,8 @@
 
   var compactNavMq = navCompactMediaQuery();
   var switcherNode = null;
+  var loadedRoutes = null;
+  var langNavBound = false;
 
   function getI18n() {
     return window.DAAB_I18N || null;
@@ -137,20 +185,256 @@
     return { az: azUrl, en: enUrl };
   }
 
-  function navigateLangSwitch(url, lang) {
+  function stripHash(url) {
+    var hashIdx = (url || "").indexOf("#");
+    return hashIdx >= 0 ? url.slice(0, hashIdx) : url || "";
+  }
+
+  function withParam(url, key, value) {
+    var hash = "";
+    var base = url || "";
+    var hashIdx = base.indexOf("#");
+    if (hashIdx >= 0) {
+      hash = base.slice(hashIdx);
+      base = base.slice(0, hashIdx);
+    }
+    var qIdx = base.indexOf("?");
+    var path = qIdx >= 0 ? base.slice(0, qIdx) : base;
+    var params = new URLSearchParams(qIdx >= 0 ? base.slice(qIdx + 1) : "");
+    params.set(key, value);
+    var qs = params.toString();
+    return path + (qs ? "?" + qs : "") + hash;
+  }
+
+  /**
+   * Equivalent page in `lang`, plus whether routes.json knows the pair.
+   * Query string is copied; the section hash is added at navigation time.
+   */
+  function applyLiveQuery(url) {
+    var hash = "";
+    var base = url || "";
+    var hashIdx = base.indexOf("#");
+    if (hashIdx >= 0) {
+      hash = base.slice(hashIdx);
+      base = base.slice(0, hashIdx);
+    }
+    var qIdx = base.indexOf("?");
+    if (qIdx >= 0) base = base.slice(0, qIdx);
+    return base + (location.search || "") + hash;
+  }
+
+  function alternateBase(lang) {
     var I18N = getI18n();
+    var url = stripHash(fallbackAlternateUrl(lang));
+    var known = false;
+    if (I18N && loadedRoutes) {
+      var page = I18N.findPage(loadedRoutes);
+      if (page) {
+        var routed = I18N.getAlternateUrl(lang, loadedRoutes);
+        if (routed) {
+          url = routed;
+          known = true;
+        }
+      }
+    }
+    return { url: applyLiveQuery(stripHash(url)), known: known };
+  }
+
+  function liveLangUrl(lang) {
+    var alt = alternateBase(lang);
     var Pos = window.DAAB_LANG_POSITION;
+    var anchor = "";
+    if (Pos && typeof Pos.currentSwitchAnchor === "function") {
+      anchor = Pos.currentSwitchAnchor() || "";
+    }
+    if (anchor && Pos && typeof Pos.appendHash === "function") {
+      return { url: Pos.appendHash(alt.url, anchor), anchor: anchor, known: alt.known };
+    }
+    return { url: alt.url, anchor: anchor, known: alt.known };
+  }
+
+  function refreshLangHrefs() {
+    var links = document.querySelectorAll("a.daab-lang-link[data-lang]");
+    for (var i = 0; i < links.length; i++) {
+      var link = links[i];
+      if (
+        link.classList.contains("daab-lang-link--disabled") ||
+        link.getAttribute("aria-disabled") === "true"
+      ) {
+        continue;
+      }
+      var code = link.getAttribute("data-lang");
+      if (code !== "az" && code !== "en") continue;
+      link.href = liveLangUrl(code).url;
+    }
+  }
+
+  function parentCandidates(lang) {
+    var path = location.pathname.replace(/\\/g, "/");
+    var swapped = path.replace(/\/(az|en)(?=\/|$)/i, "/" + lang);
+    var parts = swapped.split("/").filter(Boolean);
+    if (parts.length && /\.html?$/i.test(parts[parts.length - 1])) parts.pop();
+    if (parts.length && parts[parts.length - 1].toLowerCase() === "index.html") parts.pop();
+    var urls = [];
+    while (parts.length > 1) {
+      parts.pop();
+      urls.push("/" + parts.join("/") + "/index.html");
+    }
+    urls.push("/" + lang + "/index.html");
+    return urls;
+  }
+
+  function urlExists(url) {
+    return fetch(url, { method: "HEAD", cache: "no-store" })
+      .then(function (res) {
+        return !!(res && res.ok);
+      })
+      .catch(function () {
+        return true;
+      });
+  }
+
+  function goReplace(url, anchor) {
+    var Pos = window.DAAB_LANG_POSITION;
+    if (window.history && "scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    if (Pos && typeof Pos.saveIntent === "function") {
+      Pos.saveIntent(null, anchor || null);
+    }
+    location.replace(url);
+  }
+
+  /**
+   * Shared language switch for the nav strip, footer, and mobile menu.
+   * Replaces the current history entry so toggling AZ ⇄ EN does not stack.
+   */
+  function navigateLangSwitch(lang) {
+    if (lang !== "az" && lang !== "en") return;
+    var I18N = getI18n();
     if (I18N) I18N.persistLang(lang);
-    var target = url;
-    if (Pos) target = Pos.decorateAlternateUrl(url, lang);
-    location.assign(target);
+    document.dispatchEvent(
+      new CustomEvent("daab-before-lang-switch", { detail: { lang: lang } })
+    );
+    var alt = liveLangUrl(lang);
+    if (alt.known) {
+      goReplace(alt.url, alt.anchor);
+      return;
+    }
+    urlExists(alt.url).then(function (ok) {
+      if (ok) {
+        goReplace(alt.url, alt.anchor);
+        return;
+      }
+      var parents = parentCandidates(lang);
+      var i = 0;
+      function next() {
+        if (i >= parents.length) {
+          goReplace(withParam(parents[parents.length - 1], "notice", "missing"));
+          return;
+        }
+        var candidate = parents[i];
+        i += 1;
+        urlExists(candidate).then(function (exists) {
+          if (exists) goReplace(withParam(candidate, "notice", "missing"));
+          else next();
+        });
+      }
+      next();
+    });
+  }
+
+  function bindLangLinkClicks() {
+    if (langNavBound) return;
+    langNavBound = true;
+    document.addEventListener(
+      "pointerdown",
+      function (ev) {
+        var link = ev.target && ev.target.closest && ev.target.closest("a.daab-lang-link[data-lang]");
+        if (!link) return;
+        refreshLangHrefs();
+      },
+      true
+    );
+    document.addEventListener(
+      "click",
+      function (ev) {
+        var link = ev.target && ev.target.closest && ev.target.closest("a.daab-lang-link[data-lang]");
+        if (!link) return;
+        if (
+          link.classList.contains("daab-lang-link--disabled") ||
+          link.getAttribute("aria-disabled") === "true"
+        ) {
+          ev.preventDefault();
+          return;
+        }
+        var lang = link.getAttribute("data-lang");
+        if (lang !== "az" && lang !== "en") return;
+        var built = liveLangUrl(lang);
+        link.href = built.url;
+        if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button !== 0) {
+          var I18N = getI18n();
+          if (I18N) I18N.persistLang(lang);
+          return;
+        }
+        ev.preventDefault();
+        navigateLangSwitch(lang);
+      },
+      true
+    );
+  }
+
+  function mirrorLangSwitch(node) {
+    if (!node) return;
+    var footer = document.querySelector(".footer-bottom");
+    if (footer && !footer.querySelector(".daab-lang-switch")) {
+      var footerClone = node.cloneNode(true);
+      footerClone.classList.add("daab-lang-switch--footer");
+      footer.insertBefore(footerClone, footer.firstChild);
+    }
+    var menu = document.getElementById("primaryNavMenu");
+    if (menu && !menu.querySelector(".daab-lang-switch")) {
+      var menuClone = node.cloneNode(true);
+      menuClone.classList.add("daab-lang-switch--menu");
+      var divider = menu.querySelector(".nav-divider");
+      if (divider && divider.nextSibling) menu.insertBefore(menuClone, divider.nextSibling);
+      else if (divider) menu.appendChild(menuClone);
+      else menu.insertBefore(menuClone, menu.firstChild);
+    }
+    if (menu && menu.getAttribute("data-daab-lang-mirror") !== "1") {
+      menu.setAttribute("data-daab-lang-mirror", "1");
+      var obs = new MutationObserver(function () {
+        if (!switcherNode || menu.querySelector(".daab-lang-switch")) return;
+        var again = switcherNode.cloneNode(true);
+        again.classList.add("daab-lang-switch--menu");
+        var div = menu.querySelector(".nav-divider");
+        if (div && div.nextSibling) menu.insertBefore(again, div.nextSibling);
+        else menu.appendChild(again);
+      });
+      obs.observe(menu, { childList: true });
+    }
+  }
+
+  function showMissingLangNotice() {
+    if (readParam("notice") !== "missing") return;
+    if (document.querySelector(".daab-lang-notice")) return;
+    var lang = detectLang();
+    var bar = document.createElement("div");
+    bar.className = "daab-lang-notice";
+    bar.setAttribute("role", "status");
+    bar.textContent =
+      lang === "en"
+        ? "This page has no English version. Showing the closest related page."
+        : "Bu səhifənin azərbaycanca versiyası yoxdur. Ən yaxın səhifə göstərilir.";
+    var main = document.querySelector("main") || document.body;
+    if (main.firstChild) main.insertBefore(bar, main.firstChild);
+    else main.appendChild(bar);
+    writeParams({ notice: "" });
   }
 
   function buildSwitcher(ui, routes, lang) {
     var labels = resolveLabels(ui, lang);
     var urls = resolveUrls(routes, lang);
-    var I18N = getI18n();
-    var Pos = window.DAAB_LANG_POSITION;
     var pairMode = (document.documentElement.getAttribute("data-daab-lang-pair") || "").trim();
 
     var wrap = document.createElement("div");
@@ -175,37 +459,6 @@
       linkEn.classList.add("daab-lang-link--disabled");
       linkEn.removeAttribute("href");
       linkEn.title = "English version coming soon";
-    }
-
-    if (I18N) {
-      linkAz.addEventListener("click", function (ev) {
-        if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button !== 0) {
-          I18N.persistLang("az");
-          if (Pos) linkAz.href = Pos.decorateAlternateUrl(urls.az, "az");
-          return;
-        }
-        ev.preventDefault();
-        navigateLangSwitch(urls.az, "az");
-      });
-      if (!(pairMode === "az-only")) {
-        linkEn.addEventListener("click", function (ev) {
-          if (linkEn.classList.contains("daab-lang-link--disabled")) {
-            ev.preventDefault();
-            return;
-          }
-          if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button !== 0) {
-            I18N.persistLang("en");
-            if (Pos) linkEn.href = Pos.decorateAlternateUrl(urls.en, "en");
-            return;
-          }
-          ev.preventDefault();
-          navigateLangSwitch(urls.en, "en");
-        });
-      } else {
-        linkEn.addEventListener("click", function (ev) {
-          ev.preventDefault();
-        });
-      }
     }
 
     wrap.appendChild(linkAz);
@@ -256,12 +509,16 @@
   }
 
   function mountSwitcher(ui, routes, lang) {
+    bindLangLinkClicks();
+    var node;
     try {
-      placeSwitcher(buildSwitcher(ui, routes, lang));
+      node = buildSwitcher(ui, routes, lang);
     } catch (err) {
       console.warn("[daab-shell] Switcher build failed:", err);
-      placeSwitcher(buildSwitcher(null, null, lang));
+      node = buildSwitcher(null, null, lang);
     }
+    placeSwitcher(node);
+    mirrorLangSwitch(node);
   }
 
   function repositionSwitcher() {
@@ -360,6 +617,39 @@
     document.documentElement.style.setProperty("scroll-behavior", "auto", "important");
   }
 
+  function mountPrefsReset() {
+    var nav = document.querySelector(".footer-legal-links");
+    if (!nav || nav.querySelector(".daab-prefs-reset")) return;
+    var lang = detectLang();
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "daab-prefs-reset";
+    btn.textContent = lang === "en" ? "Reset preferences" : "Seçimləri sıfırla";
+    btn.title = lang === "en"
+      ? "Clear saved language and catalogue display settings on this browser"
+      : "Bu brauzerdə saxlanmış dil və kataloq görünüşü seçimlərini sil";
+    btn.addEventListener("click", function () {
+      try {
+        if (window.DAAB_PREFS && typeof window.DAAB_PREFS.reset === "function") {
+          window.DAAB_PREFS.reset();
+        }
+      } catch (err) { /* ignore */ }
+      var params;
+      try {
+        params = new URLSearchParams(location.search || "");
+      } catch (err2) {
+        location.reload();
+        return;
+      }
+      ["sort", "dir", "group", "view", "per"].forEach(function (key) {
+        params.delete(key);
+      });
+      var qs = params.toString();
+      location.replace(location.pathname + (qs ? "?" + qs : "") + (location.hash || ""));
+    });
+    nav.appendChild(btn);
+  }
+
   function bindFooterLegalTopJump() {
     if (document.documentElement.getAttribute("data-daab-footer-legal-top") === "1") {
       return;
@@ -435,10 +725,13 @@
 
     bindFooterLegalTopJump();
 
+    showMissingLangNotice();
+
     Promise.all([I18N.loadRoutes(), I18N.loadUi()])
       .then(function (results) {
         var routes = results[0];
         var ui = results[1];
+        loadedRoutes = routes;
         var page = I18N.findPage(routes);
         if (page) I18N.injectHreflang(page, routes);
         mountSwitcher(ui, routes, lang);
@@ -469,10 +762,12 @@
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
       bindFooterLegalTopJump();
+      mountPrefsReset();
       boot(0);
     });
   } else {
     bindFooterLegalTopJump();
+    mountPrefsReset();
     boot(0);
   }
 
@@ -492,12 +787,18 @@
     compactNavMq.addListener(onCompactNavChange);
   }
 
-  document.addEventListener("daab-primary-nav-ready", repositionSwitcher);
+  document.addEventListener("daab-primary-nav-ready", function () {
+    repositionSwitcher();
+    if (switcherNode) mirrorLangSwitch(switcherNode);
+  });
   document.addEventListener("daab-nav-tools-mounted", repositionSwitcher);
 
   window.DAAB_SHELL = {
     ensureNavActions: ensureNavActions,
     repositionSwitcher: repositionSwitcher,
+  };
+  window.DAAB_LANG_SWITCH = {
+    navigate: navigateLangSwitch
   };
 })();
 

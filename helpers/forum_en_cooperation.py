@@ -78,7 +78,7 @@ COOPERATION_EN = {
         (
             "Scientific presentations by Asaf Salamov, Bakhtiyar Siracov, Dinara Abbasova, "
             "Eldar Akhadov, Mehdi Ganjali, Nigar Masumova, Nizami Mammadov, Reza Moridi, "
-            "Saadat Karimi, Seymur Nasirov, Togrul Ismayil, Togrul Karimov, Khadija "
+            "Saadat Karimi, Seymur Nasirov, Togrul Ismayil, Toghrul Karimov, Khadija "
             "Zeynalova and Yulduz Rahimov made a significant contribution to shaping the "
             "forum programme."
         ),

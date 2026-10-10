@@ -1,0 +1,789 @@
+{
+  "date": "2026-10-09",
+  "profile": "Toghrul Karimov",
+  "previousName": "Togrul Karimov",
+  "profileNumber": 13,
+  "language": "English",
+  "source": "User-approved English spelling for V124",
+  "issueIds": [
+    "V124"
+  ],
+  "resolvedIssueIds": [
+    "V124"
+  ],
+  "summary": [
+    "Changed the English name to Toghrul Karimov in the scientist profile and directory.",
+    "Synchronized the canonical name mappings, English board and forum/report pages, their generation sources, and search records.",
+    "Retained photo filenames, URL anchors, record IDs, Azerbaijani names, and biographical facts."
+  ],
+  "scopeNote": "This is a spelling correction only. Historical proofreading reports and earlier change logs are retained as audit records. The English award-name correction V123 remains applied; V124 is now resolved.",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 212,
+      "column": 19,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "pi-sws.org\",\r\n      \"name\": \"Toğrul Kərimov\",\r\n      \"name_en\": \"Togrul Karimov\",\r\n      \"photo\": \"togrul-karimov.jpg\",\r\n      \"country_az\": \"Al"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "column": 39551,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "3,\"email\":\"toghs@mpi-sws.org\",\"name\":\"Toğrul Kərimov\",\"name_en\":\"Togrul Karimov\",\"photo\":\"togrul-karimov.jpg\",\"country_az\":\"Almaniya\",\"country_c"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 212,
+      "column": 19,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "pi-sws.org\",\r\n      \"name\": \"Toğrul Kərimov\",\r\n      \"name_en\": \"Togrul Karimov\",\r\n      \"photo\": \"togrul-karimov.jpg\",\r\n      \"country_az\": \"Al"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "column": 39551,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "3,\"email\":\"toghs@mpi-sws.org\",\"name\":\"Toğrul Kərimov\",\"name_en\":\"Togrul Karimov\",\"photo\":\"togrul-karimov.jpg\",\"country_az\":\"Almaniya\",\"country_c"
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "line": 125,
+      "column": 18,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "   \"say\": 13,\r\n    \"yasadigi_olke\": \"Germany\",\r\n    \"ad_soyad\": \"Togrul Karimov\",\r\n    \"email\": \"toghs@mpi-sws.org\",\r\n    \"ixtilas\": \"Computer s"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "line": 125,
+      "column": 18,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "   \"say\": 13,\r\n    \"yasadigi_olke\": \"Germany\",\r\n    \"ad_soyad\": \"Togrul Karimov\",\r\n    \"email\": \"toghs@mpi-sws.org\",\r\n    \"ixtilas\": \"Computer s"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 18,
+      "column": 24,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "Prof. Dr.\": \"Togrul Ismayil, Prof. Dr.\",\r\n    \"Toğrul Kərimov\": \"Togrul Karimov\",\r\n    \"Toğrul Kərimov, Dr.\": \"Togrul Karimov, Dr.\",\r\n    \"Yuldu"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 19,
+      "column": 29,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "\"Toğrul Kərimov\": \"Togrul Karimov\",\r\n    \"Toğrul Kərimov, Dr.\": \"Togrul Karimov, Dr.\",\r\n    \"Yulduz Rəhimov\": \"Yulduz Rahimov\",\r\n    \"Yulduz Rəh"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 248,
+      "column": 35,
+      "occurrence": 3,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "NDU\": \"Togrul Ismayil — NDU\",\r\n    \"Toğrul Kərimov, Prof. Dr.\": \"Togrul Karimov, Prof. Dr.\",\r\n    \"Toğrul Kərimov, Prof.\": \"Togrul Karimov, Prof"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 249,
+      "column": 31,
+      "occurrence": 4,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "r.\": \"Togrul Karimov, Prof. Dr.\",\r\n    \"Toğrul Kərimov, Prof.\": \"Togrul Karimov, Prof.\",\r\n    \"Toğrul Kərimov — NDU\": \"Togrul Karimov — NDU\",\r\n "
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 250,
+      "column": 30,
+      "occurrence": 5,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": ", Prof.\": \"Togrul Karimov, Prof.\",\r\n    \"Toğrul Kərimov — NDU\": \"Togrul Karimov — NDU\",\r\n    \"Yulduz Rəhimov, Dr.\": \"Yulduz Rahimov, Dr.\",\r\n    "
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 3847,
+      "column": 17,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "sentations\",\r\n      \"anchor\": \"togrul-kerimov\",\r\n      \"title\": \"Togrul Karimov\",\r\n      \"summary\": \"The role of modern mathematical methods in "
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 5056,
+      "column": 17,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "ageId\": \"executive-board\",\r\n      \"anchor\": \"\",\r\n      \"title\": \"Togrul Karimov, Dr.\",\r\n      \"summary\": \"Executive Board\",\r\n      \"tag\": \"Perso"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6473,
+      "column": 17,
+      "occurrence": 3,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "s-profiles\",\r\n      \"anchor\": \"togrul-karimov\",\r\n      \"title\": \"Togrul Karimov\",\r\n      \"summary\": \"Max Planck Institute for Software Systems, "
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 3852,
+      "column": 16,
+      "occurrence": 1,
+      "before": "togrul karimov",
+      "after": "toghrul karimov",
+      "contextBefore": "ection\",\r\n      \"icon\": \"🎤\",\r\n      \"boost\": 9,\r\n      \"norm\": \"togrul karimov the role of modern mathematical methods in industrial revolution"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 5061,
+      "column": 16,
+      "occurrence": 2,
+      "before": "togrul karimov",
+      "after": "toghrul karimov",
+      "contextBefore": "Person\",\r\n      \"icon\": \"🎓\",\r\n      \"boost\": 7,\r\n      \"norm\": \"togrul karimov dr. executive board\"\r\n    },\r\n    {\r\n      \"id\": \"person-board-y"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6478,
+      "column": 16,
+      "occurrence": 3,
+      "before": "togrul karimov",
+      "after": "toghrul karimov",
+      "contextBefore": "entist\",\r\n      \"icon\": \"👤\",\r\n      \"boost\": 6,\r\n      \"norm\": \"togrul karimov max planck institute for software systems postdoctoral researche"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 3847,
+      "column": 17,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "sentations\",\r\n      \"anchor\": \"togrul-kerimov\",\r\n      \"title\": \"Togrul Karimov\",\r\n      \"summary\": \"The role of modern mathematical methods in "
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 5056,
+      "column": 17,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "ageId\": \"executive-board\",\r\n      \"anchor\": \"\",\r\n      \"title\": \"Togrul Karimov, Dr.\",\r\n      \"summary\": \"Executive Board\",\r\n      \"tag\": \"Perso"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6473,
+      "column": 17,
+      "occurrence": 3,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "s-profiles\",\r\n      \"anchor\": \"togrul-karimov\",\r\n      \"title\": \"Togrul Karimov\",\r\n      \"summary\": \"Max Planck Institute for Software Systems, "
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 3852,
+      "column": 16,
+      "occurrence": 1,
+      "before": "togrul karimov",
+      "after": "toghrul karimov",
+      "contextBefore": "ection\",\r\n      \"icon\": \"🎤\",\r\n      \"boost\": 9,\r\n      \"norm\": \"togrul karimov the role of modern mathematical methods in industrial revolution"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 5061,
+      "column": 16,
+      "occurrence": 2,
+      "before": "togrul karimov",
+      "after": "toghrul karimov",
+      "contextBefore": "Person\",\r\n      \"icon\": \"🎓\",\r\n      \"boost\": 7,\r\n      \"norm\": \"togrul karimov dr. executive board\"\r\n    },\r\n    {\r\n      \"id\": \"person-board-y"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6478,
+      "column": 16,
+      "occurrence": 3,
+      "before": "togrul karimov",
+      "after": "toghrul karimov",
+      "contextBefore": "entist\",\r\n      \"icon\": \"👤\",\r\n      \"boost\": 6,\r\n      \"norm\": \"togrul karimov max planck institute for software systems postdoctoral researche"
+    },
+    {
+      "file": "en/executive-board.html",
+      "line": 214,
+      "column": 11,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "iv>\n<div class=\"person-card\">\n<div class=\"photo-wrap\">\n<img alt=\"Togrul Karimov, Dr.\" src=\"../images/scientists-photos/togrul-karimov.jpg\" loadi"
+    },
+    {
+      "file": "en/executive-board.html",
+      "line": 218,
+      "column": 100,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "person-name-link\" href=\"scientists/profiles.html#togrul-karimov\">Togrul Karimov, Dr.</a></h2>\n<div class=\"person-country\">Germany</div>\n<a class"
+    },
+    {
+      "file": "en/executive-board.html",
+      "line": 221,
+      "column": 110,
+      "occurrence": 3,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "mages/qr/en/togrul-karimov.webp?v=1\" width=\"64\" height=\"64\" alt=\"Togrul Karimov — profile QR code\" decoding=\"async\" loading=\"lazy\"/>\n</a>\n</div>"
+    },
+    {
+      "file": "en/forum/2024/sessions_organization.html",
+      "line": 125,
+      "column": 22854,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "./images/scientists-photos/_thumbs/togrul-karimov.jpg?v=12\" alt=\"Togrul Karimov\" width=\"44\" height=\"44\" loading=\"lazy\" decoding=\"async\"></span><"
+    },
+    {
+      "file": "en/forum/2024/sessions_organization.html",
+      "line": 125,
+      "column": 22941,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "\"44\" height=\"44\" loading=\"lazy\" decoding=\"async\"></span></td><td>Togrul Karimov</td><td>Programme systems / Dr.</td><td>Germany</td></tr></tbody"
+    },
+    {
+      "file": "en/forum/2024/sessions_organization.html",
+      "line": 134,
+      "column": 33676,
+      "occurrence": 3,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "./images/scientists-photos/_thumbs/togrul-karimov.jpg?v=12\" alt=\"Togrul Karimov\" width=\"44\" height=\"44\" loading=\"lazy\" decoding=\"async\"></span><"
+    },
+    {
+      "file": "en/forum/2024/sessions_organization.html",
+      "line": 134,
+      "column": 33763,
+      "occurrence": 4,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "\"44\" height=\"44\" loading=\"lazy\" decoding=\"async\"></span></td><td>Togrul Karimov</td><td>Programme systems / Dr.</td><td>Germany</td></tr><tr><td"
+    },
+    {
+      "file": "en/forum/2024/presentations.html",
+      "line": 96,
+      "column": 375,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "jpg?v=12\" width=\"44\"/></span><span class=\"presentation-toc-name\">Togrul Karimov</span></span><span class=\"presentation-toc-title\">The role of mo"
+    },
+    {
+      "file": "en/forum/2024/presentations.html",
+      "line": 513,
+      "column": 24,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "ogrul-kerimov\">\n<div class=\"card-header\">\n<h2 class=\"card-title\">Togrul Karimov</h2>\n</div>\n<div class=\"card-body\"><div class=\"presentation-lead"
+    },
+    {
+      "file": "en/forum/2024/impressions.html",
+      "line": 106,
+      "column": 3810,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": " never forget my conversation in Karabakh with the young scholar Togrul Karimov, who joined the forum from Germany. I was greatly heartened when"
+    },
+    {
+      "file": "en/forum/2024/cooperation.html",
+      "line": 91,
+      "column": 252,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "s Emil Ahmadov, Sevinc Mammadova, Teymur Rzayev, Togrul Ismayil, Togrul Karimov and Yulduz Rahimov — who undertook the forum&#x27;s conceptual p"
+    },
+    {
+      "file": "en/forum/2024/cooperation.html",
+      "line": 95,
+      "column": 223,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "dov, Reza Moridi, Saadat Karimi, Seymur Nasirov, Togrul Ismayil, Togrul Karimov, Khadija Zeynalova and Yulduz Rahimov made a significant contrib"
+    },
+    {
+      "file": "en/work_done_2024_2026.html",
+      "line": 107,
+      "column": 9683,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "ssoud Efendiyev (Germany)</li><li>Saadat Karimi (Sweden)</li><li>Togrul Karimov (Germany)</li></ol><p>Togrul Karimov currently teaches \"Artifici"
+    },
+    {
+      "file": "en/work_done_2024_2026.html",
+      "line": 107,
+      "column": 9720,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "dat Karimi (Sweden)</li><li>Togrul Karimov (Germany)</li></ol><p>Togrul Karimov currently teaches \"Artificial Intelligence\" and \"Fundamentals of"
+    },
+    {
+      "file": "en/work_done_2024_2026.html",
+      "line": 107,
+      "column": 16085,
+      "occurrence": 3,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "w information. This work is carried out by Bakhtiyar Sirajov and Togrul Karimov. At the same time, work continues on the design and development "
+    },
+    {
+      "file": "en/work_done_2024_2026.html",
+      "line": 107,
+      "column": 16193,
+      "occurrence": 4,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "inues on the design and development of WAAS's new website. Under Togrul Karimov's project leadership, this is being implemented together with a "
+    },
+    {
+      "file": "Deployment/en/executive-board.html",
+      "line": 214,
+      "column": 11,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "iv>\n<div class=\"person-card\">\n<div class=\"photo-wrap\">\n<img alt=\"Togrul Karimov, Dr.\" src=\"../images/scientists-photos/togrul-karimov.jpg\" loadi"
+    },
+    {
+      "file": "Deployment/en/executive-board.html",
+      "line": 218,
+      "column": 100,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "person-name-link\" href=\"scientists/profiles.html#togrul-karimov\">Togrul Karimov, Dr.</a></h2>\n<div class=\"person-country\">Germany</div>\n<a class"
+    },
+    {
+      "file": "Deployment/en/executive-board.html",
+      "line": 221,
+      "column": 110,
+      "occurrence": 3,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "mages/qr/en/togrul-karimov.webp?v=1\" width=\"64\" height=\"64\" alt=\"Togrul Karimov — profile QR code\" decoding=\"async\" loading=\"lazy\"/>\n</a>\n</div>"
+    },
+    {
+      "file": "Deployment/en/forum/2024/sessions_organization.html",
+      "line": 125,
+      "column": 22854,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "./images/scientists-photos/_thumbs/togrul-karimov.jpg?v=12\" alt=\"Togrul Karimov\" width=\"44\" height=\"44\" loading=\"lazy\" decoding=\"async\"></span><"
+    },
+    {
+      "file": "Deployment/en/forum/2024/sessions_organization.html",
+      "line": 125,
+      "column": 22941,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "\"44\" height=\"44\" loading=\"lazy\" decoding=\"async\"></span></td><td>Togrul Karimov</td><td>Programme systems / Dr.</td><td>Germany</td></tr></tbody"
+    },
+    {
+      "file": "Deployment/en/forum/2024/sessions_organization.html",
+      "line": 134,
+      "column": 33676,
+      "occurrence": 3,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "./images/scientists-photos/_thumbs/togrul-karimov.jpg?v=12\" alt=\"Togrul Karimov\" width=\"44\" height=\"44\" loading=\"lazy\" decoding=\"async\"></span><"
+    },
+    {
+      "file": "Deployment/en/forum/2024/sessions_organization.html",
+      "line": 134,
+      "column": 33763,
+      "occurrence": 4,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "\"44\" height=\"44\" loading=\"lazy\" decoding=\"async\"></span></td><td>Togrul Karimov</td><td>Programme systems / Dr.</td><td>Germany</td></tr><tr><td"
+    },
+    {
+      "file": "Deployment/en/forum/2024/presentations.html",
+      "line": 96,
+      "column": 375,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "jpg?v=12\" width=\"44\"/></span><span class=\"presentation-toc-name\">Togrul Karimov</span></span><span class=\"presentation-toc-title\">The role of mo"
+    },
+    {
+      "file": "Deployment/en/forum/2024/presentations.html",
+      "line": 513,
+      "column": 24,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "ogrul-kerimov\">\n<div class=\"card-header\">\n<h2 class=\"card-title\">Togrul Karimov</h2>\n</div>\n<div class=\"card-body\"><div class=\"presentation-lead"
+    },
+    {
+      "file": "Deployment/en/forum/2024/impressions.html",
+      "line": 106,
+      "column": 3810,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": " never forget my conversation in Karabakh with the young scholar Togrul Karimov, who joined the forum from Germany. I was greatly heartened when"
+    },
+    {
+      "file": "Deployment/en/forum/2024/cooperation.html",
+      "line": 91,
+      "column": 252,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "s Emil Ahmadov, Sevinc Mammadova, Teymur Rzayev, Togrul Ismayil, Togrul Karimov and Yulduz Rahimov — who undertook the forum&#x27;s conceptual p"
+    },
+    {
+      "file": "Deployment/en/forum/2024/cooperation.html",
+      "line": 95,
+      "column": 223,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "dov, Reza Moridi, Saadat Karimi, Seymur Nasirov, Togrul Ismayil, Togrul Karimov, Khadija Zeynalova and Yulduz Rahimov made a significant contrib"
+    },
+    {
+      "file": "Deployment/en/work_done_2024_2026.html",
+      "line": 107,
+      "column": 9683,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "ssoud Efendiyev (Germany)</li><li>Saadat Karimi (Sweden)</li><li>Togrul Karimov (Germany)</li></ol><p>Togrul Karimov currently teaches \"Artifici"
+    },
+    {
+      "file": "Deployment/en/work_done_2024_2026.html",
+      "line": 107,
+      "column": 9720,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "dat Karimi (Sweden)</li><li>Togrul Karimov (Germany)</li></ol><p>Togrul Karimov currently teaches \"Artificial Intelligence\" and \"Fundamentals of"
+    },
+    {
+      "file": "Deployment/en/work_done_2024_2026.html",
+      "line": 107,
+      "column": 16085,
+      "occurrence": 3,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "w information. This work is carried out by Bakhtiyar Sirajov and Togrul Karimov. At the same time, work continues on the design and development "
+    },
+    {
+      "file": "Deployment/en/work_done_2024_2026.html",
+      "line": 107,
+      "column": 16193,
+      "occurrence": 4,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "inues on the design and development of WAAS's new website. Under Togrul Karimov's project leadership, this is being implemented together with a "
+    },
+    {
+      "file": "helpers/i18n_person_names_en.py",
+      "line": 60,
+      "column": 24,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "Prof. Dr.\": \"Togrul Ismayil, Prof. Dr.\",\r\n    \"Toğrul Kərimov\": \"Togrul Karimov\",\r\n    \"Toğrul Kərimov, Dr.\": \"Togrul Karimov, Dr.\",\r\n    \"Yuldu"
+    },
+    {
+      "file": "helpers/i18n_person_names_en.py",
+      "line": 61,
+      "column": 29,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "\"Toğrul Kərimov\": \"Togrul Karimov\",\r\n    \"Toğrul Kərimov, Dr.\": \"Togrul Karimov, Dr.\",\r\n    \"Yulduz Rəhimov\": \"Yulduz Rahimov\",\r\n    \"Yulduz Rəh"
+    },
+    {
+      "file": "helpers/forum_en_presentations_phrases.py",
+      "line": 1006,
+      "column": 25,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "    \"Səadət Kəri̇mi̇\": \"Saadat Karimi\",\r\n    \"Toğrul Kəri̇mov\": \"Togrul Karimov\",\r\n    \"Yulduz Rəhi̇mov\": \"Yulduz Rahimov\",\r\n    \"Mehdi Gəncəli̇"
+    },
+    {
+      "file": "helpers/forum_en_impressions_phrases.py",
+      "line": 88,
+      "column": 155,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": " never forget my conversation in Karabakh with the young scholar Togrul Karimov, who joined the forum from Germany. I was greatly heartened when"
+    },
+    {
+      "file": "helpers/forum_en_cooperation.py",
+      "line": 81,
+      "column": 61,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": ", \"\r\n            \"Saadat Karimi, Seymur Nasirov, Togrul Ismayil, Togrul Karimov, Khadija \"\r\n            \"Zeynalova and Yulduz Rahimov made a sig"
+    },
+    {
+      "file": "helpers/work_done_2024_2026_en_content.py",
+      "line": 19,
+      "column": 10158,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "ssoud Efendiyev (Germany)</li><li>Saadat Karimi (Sweden)</li><li>Togrul Karimov (Germany)</li></ol><p>Togrul Karimov currently teaches \"Artifici"
+    },
+    {
+      "file": "helpers/work_done_2024_2026_en_content.py",
+      "line": 19,
+      "column": 10195,
+      "occurrence": 2,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "dat Karimi (Sweden)</li><li>Togrul Karimov (Germany)</li></ol><p>Togrul Karimov currently teaches \"Artificial Intelligence\" and \"Fundamentals of"
+    },
+    {
+      "file": "helpers/work_done_2024_2026_en_content.py",
+      "line": 19,
+      "column": 16824,
+      "occurrence": 3,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "w information. This work is carried out by Bakhtiyar Sirajov and Togrul Karimov. At the same time, work continues on the design and development "
+    },
+    {
+      "file": "helpers/work_done_2024_2026_en_content.py",
+      "line": 19,
+      "column": 16932,
+      "occurrence": 4,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "inues on the design and development of WAAS's new website. Under Togrul Karimov's project leadership, this is being implemented together with a "
+    },
+    {
+      "file": "helpers/_presentations_en_map.json",
+      "line": 332,
+      "column": 23,
+      "occurrence": 1,
+      "before": "Togrul Karimov",
+      "after": "Toghrul Karimov",
+      "contextBefore": "\",\r\n  \"Səadət Kəri̇mi̇\": \"Saadat Karimi\",\r\n  \"Toğrul Kəri̇mov\": \"Togrul Karimov\",\r\n  \"Yulduz Rəhi̇mov\": \"Yulduz Rahimov\",\r\n  \"Mehdi Gəncəli̇\": \""
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 118,
+      "column": 24,
+      "occurrence": 1,
+      "before": "TOGRUL KARIMOV",
+      "after": "TOGHRUL KARIMOV",
+      "contextBefore": "\n    \"SEVDA KƏRIMOVA\": \"SEVDA KERIMOVA\",\r\n    \"TOĞRUL KƏRIMOV\": \"TOGRUL KARIMOV\",\r\n    \"VALEH RÜSTƏMOV\": \"VALEH RUSTAMOV\",\r\n    \"XƏDICƏ ZEYNALOV"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 623,
+      "column": 35,
+      "occurrence": 2,
+      "before": "TOGRUL KARIMOV",
+      "after": "TOGHRUL KARIMOV",
+      "contextBefore": "NDU\": \"SEVDA KERIMOVA — NDU\",\r\n    \"TOĞRUL KƏRIMOV, Prof. Dr.\": \"TOGRUL KARIMOV, Prof. Dr.\",\r\n    \"TOĞRUL KƏRIMOV, Dr.\": \"TOGRUL KARIMOV, Dr.\",\r"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 624,
+      "column": 29,
+      "occurrence": 3,
+      "before": "TOGRUL KARIMOV",
+      "after": "TOGHRUL KARIMOV",
+      "contextBefore": " Dr.\": \"TOGRUL KARIMOV, Prof. Dr.\",\r\n    \"TOĞRUL KƏRIMOV, Dr.\": \"TOGRUL KARIMOV, Dr.\",\r\n    \"TOĞRUL KƏRIMOV, Prof.\": \"TOGRUL KARIMOV, Prof.\",\r\n "
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 625,
+      "column": 31,
+      "occurrence": 4,
+      "before": "TOGRUL KARIMOV",
+      "after": "TOGHRUL KARIMOV",
+      "contextBefore": "MOV, Dr.\": \"TOGRUL KARIMOV, Dr.\",\r\n    \"TOĞRUL KƏRIMOV, Prof.\": \"TOGRUL KARIMOV, Prof.\",\r\n    \"TOĞRUL KƏRIMOV — NDU\": \"TOGRUL KARIMOV — NDU\",\r\n "
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "line": 626,
+      "column": 30,
+      "occurrence": 5,
+      "before": "TOGRUL KARIMOV",
+      "after": "TOGHRUL KARIMOV",
+      "contextBefore": ", Prof.\": \"TOGRUL KARIMOV, Prof.\",\r\n    \"TOĞRUL KƏRIMOV — NDU\": \"TOGRUL KARIMOV — NDU\",\r\n    \"VALEH RÜSTƏMOV, Prof. Dr.\": \"VALEH RUSTAMOV, Prof."
+    }
+  ],
+  "fileHashes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "before": "57e4d50482d1e3ad203b86c5ec24822bdfe32adc16baf2f32bbf487aef253d72",
+      "after": "2b719668d1d9f31c95496cb93eca87b48f44a15b8e04d3592292355068712ba0"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "before": "36f22b5db492062b565a0edae2423f6437ca299cd3e707cf3f972163c5efb7ef",
+      "after": "17a520929ee72ac1a9fe08d6e885ca43205671861fa0cc67a96a515cd380722d"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "before": "57e4d50482d1e3ad203b86c5ec24822bdfe32adc16baf2f32bbf487aef253d72",
+      "after": "2b719668d1d9f31c95496cb93eca87b48f44a15b8e04d3592292355068712ba0"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "before": "36f22b5db492062b565a0edae2423f6437ca299cd3e707cf3f972163c5efb7ef",
+      "after": "17a520929ee72ac1a9fe08d6e885ca43205671861fa0cc67a96a515cd380722d"
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "before": "1d0a8a3dd47857ea164c4591949d1ed1d5919dac26e16be392d4c4b8ab001d66",
+      "after": "b145befa041920f9c02832288b5c07ac844d7dbdf009c542f07065a3b282fd5f"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "before": "1d0a8a3dd47857ea164c4591949d1ed1d5919dac26e16be392d4c4b8ab001d66",
+      "after": "b145befa041920f9c02832288b5c07ac844d7dbdf009c542f07065a3b282fd5f"
+    },
+    {
+      "file": "i18n/person-names-en.json",
+      "before": "bfc9c61dd8b978f6d9d4a023caac25837beabdac4b5cde50a15e24824f462bd6",
+      "after": "6cf252ad21f3df110968bdb1d157c0eedc34aacb66f9daf7bd8a22fbbbbcacb5"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "before": "614d65b322db2dfda7301ec180e52423d3875d66ba8f6960989d8f8f1eee469a",
+      "after": "b353acca00097af118924ddef851e82be477fd29ff73e25c6078e9d8b3a0a472"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "before": "614d65b322db2dfda7301ec180e52423d3875d66ba8f6960989d8f8f1eee469a",
+      "after": "b353acca00097af118924ddef851e82be477fd29ff73e25c6078e9d8b3a0a472"
+    },
+    {
+      "file": "en/executive-board.html",
+      "before": "d05aaee7e28346277466ffc4b0d2265e01a3562a1d05b60c74132d0f53766df7",
+      "after": "729a070304ca7838f61974d8f1f1402ba3c77529c28cc5679a0bfbabf1bdb188"
+    },
+    {
+      "file": "en/forum/2024/sessions_organization.html",
+      "before": "84668d5545e5fe655cb6e63a1a14ddb22d889174897132f3fd808834a473984a",
+      "after": "cd5b73c6f64409f834e1b1272c265257c056d5a0db7b0d04435c3ad31bb356e8"
+    },
+    {
+      "file": "en/forum/2024/presentations.html",
+      "before": "ea426b6127b1bb51294ce6c7c41a14a81d6468bd5cf8cae2a1081e3ad3c123c8",
+      "after": "d277afb1362eda1227b1e71259f9cadb2444ad1ce966777548d1f924a3b6803f"
+    },
+    {
+      "file": "en/forum/2024/impressions.html",
+      "before": "f1d1872ec2efca46f60a6a496def7af73ddf9b183b00d13cfa9acfb6652ec2d0",
+      "after": "b7f71023994fc06eb2cdba4684b64a3a7fb10851d848dab0ff9d569ea9e13b97"
+    },
+    {
+      "file": "en/forum/2024/cooperation.html",
+      "before": "b3d71e1ed96df9173bebf4889734757da0eaf84b540ce684e5a4fce2177a071c",
+      "after": "dc16788f2c0b8295ee169526d65b08b815e14c42fb00ac2b8338f3188619b0af"
+    },
+    {
+      "file": "en/work_done_2024_2026.html",
+      "before": "4ed67d1db05b4f9283c5d4e3229a065ffc9a2de2b77503bbb71d4b1124f1365c",
+      "after": "708002fb38357fe66ddb8e9b157eccf5910694a9a2ac61fc1585a195a53ca447"
+    },
+    {
+      "file": "Deployment/en/executive-board.html",
+      "before": "d05aaee7e28346277466ffc4b0d2265e01a3562a1d05b60c74132d0f53766df7",
+      "after": "729a070304ca7838f61974d8f1f1402ba3c77529c28cc5679a0bfbabf1bdb188"
+    },
+    {
+      "file": "Deployment/en/forum/2024/sessions_organization.html",
+      "before": "84668d5545e5fe655cb6e63a1a14ddb22d889174897132f3fd808834a473984a",
+      "after": "cd5b73c6f64409f834e1b1272c265257c056d5a0db7b0d04435c3ad31bb356e8"
+    },
+    {
+      "file": "Deployment/en/forum/2024/presentations.html",
+      "before": "ea426b6127b1bb51294ce6c7c41a14a81d6468bd5cf8cae2a1081e3ad3c123c8",
+      "after": "d277afb1362eda1227b1e71259f9cadb2444ad1ce966777548d1f924a3b6803f"
+    },
+    {
+      "file": "Deployment/en/forum/2024/impressions.html",
+      "before": "f1d1872ec2efca46f60a6a496def7af73ddf9b183b00d13cfa9acfb6652ec2d0",
+      "after": "b7f71023994fc06eb2cdba4684b64a3a7fb10851d848dab0ff9d569ea9e13b97"
+    },
+    {
+      "file": "Deployment/en/forum/2024/cooperation.html",
+      "before": "b3d71e1ed96df9173bebf4889734757da0eaf84b540ce684e5a4fce2177a071c",
+      "after": "dc16788f2c0b8295ee169526d65b08b815e14c42fb00ac2b8338f3188619b0af"
+    },
+    {
+      "file": "Deployment/en/work_done_2024_2026.html",
+      "before": "4ed67d1db05b4f9283c5d4e3229a065ffc9a2de2b77503bbb71d4b1124f1365c",
+      "after": "708002fb38357fe66ddb8e9b157eccf5910694a9a2ac61fc1585a195a53ca447"
+    },
+    {
+      "file": "helpers/i18n_person_names_en.py",
+      "before": "09578b649a4e3f216568c7979fc6128282a57e2861bfbbb232895581fff30a51",
+      "after": "cad501af90b2c2cc0c6a0cc9edea2a8da0998b96cf32f9e696a4b64ccf5b2235"
+    },
+    {
+      "file": "helpers/forum_en_presentations_phrases.py",
+      "before": "7e22628cf8bd3b3e005fe39228bc768b661d65a23638be6c1e963ecdd1a1ca4d",
+      "after": "ca8b1aa537e49cef2dc151946a1fb9484c5c221f9ea88e9af8b8763ed8915b89"
+    },
+    {
+      "file": "helpers/forum_en_impressions_phrases.py",
+      "before": "ad59dff30b7dcc9594d294fc6af8cfd628ecd1a12a7b9a6b8bec3db22d3a7573",
+      "after": "04e1b6e5eabd4f2009ce06fb490f52a13b6e387a353fbc1cbf974bf5ab774b09"
+    },
+    {
+      "file": "helpers/forum_en_cooperation.py",
+      "before": "cdebbee621289ea0607f443afa95b0673ac3bc910d04a4bdae5e8e1d1855541f",
+      "after": "ae2b1a838c94177e8d0f5733981804bed8c23cb7f55918b450a2c44aca4a154a"
+    },
+    {
+      "file": "helpers/work_done_2024_2026_en_content.py",
+      "before": "43505d2dc06c2f5465ce3c4e980b31b2b8c73299cd500cd377a7da5009f3e221",
+      "after": "de2b6d0162bfc613266239d046c6de672b66e6e2d9f2d25d415b996cbedd3477"
+    },
+    {
+      "file": "helpers/_presentations_en_map.json",
+      "before": "1a28a236703b5f0f3c2bf55b01ec0db1fdb2179c5238d616b0d0206a6fe6577e",
+      "after": "0bb5f63d379e8ae6a1aae3e7b76fee9ae03cdca1f139925fd571786d2c5324fb"
+    }
+  ]
+}

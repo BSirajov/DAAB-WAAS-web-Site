@@ -59,6 +59,18 @@ Then open http://127.0.0.1:8010/index.html (do not use `file://` for final testi
 
 In VS Code/Cursor: run task **“Start DAAB static server”** before **“Launch Chrome against localhost”**.
 
+## Deploy
+
+Production is the `Deployment/` folder, uploaded to Hostinger. Build it from the repository root:
+
+```bash
+python helpers/_build_deployment_folder.py
+```
+
+Each run writes the footer `Build YYYYMMDD - HHmm` and stamps every local CSS, JS, image, font, and JSON reference in that package with `?v=YYYYMMDD-HHmm`. HTML is always revalidated (`Cache-Control: no-cache, must-revalidate`, plus the host's Last-Modified and ETag). Requests that carry `?v=` may be cached for a year as immutable. Unversioned assets do not get that header.
+
+This repo has no Hostinger or CDN purge token, so nothing here clears a remote cache. After upload, the headers above are what the origin sends. The GitHub Actions workflow checks the site and the version stamper; it does not deploy. A deploy workflow must run `helpers/_build_deployment_folder.py` and upload `Deployment/`.
+
 ## Validate before deploy
 
 ```bash

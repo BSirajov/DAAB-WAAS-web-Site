@@ -12,7 +12,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 2,
     "yasadigi_olke": "USA",
-    "ad_soyad": "Aytekin Huseynli",
+    "ad_soyad": "Aytakin Huseynli",
     "email": "ahuseynli@wustl.edu",
     "ixtilas": "Social policy",
     "elmi_derece": "PhD",
@@ -25,7 +25,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "ad_soyad": "Jamila Javadova-Spitzberg",
     "email": "aamfusa@gmail.com",
     "ixtilas": "Musician",
-    "elmi_derece": "PhD",
+    "elmi_derece": "DMA",
     "cinsi": "female",
     "url": ""
   },
@@ -45,7 +45,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "ad_soyad": "Sevinj Mammadova",
     "email": "mammadova.sevinj@gmail.com",
     "ixtilas": "Education",
-    "elmi_derece": "PhD",
+    "elmi_derece": "EdD",
     "cinsi": "female",
     "url": ""
   },
@@ -62,10 +62,10 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 7,
     "yasadigi_olke": "USA",
-    "ad_soyad": "Togrul Talishinski",
+    "ad_soyad": "Toghrul Talishinskiy",
     "email": "talishinskiy.toghrul@gmail.com",
     "ixtilas": "Medicine",
-    "elmi_derece": "PhD",
+    "elmi_derece": "MD, FACS, FASMBS",
     "cinsi": "male",
     "url": ""
   },
@@ -85,7 +85,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "ad_soyad": "Mirza Mutallimov",
     "email": "m.mutallimov@yahoo.com",
     "ixtilas": "Medicine",
-    "elmi_derece": "PhD",
+    "elmi_derece": "Dr. med., MHBA, FESC",
     "cinsi": "male",
     "url": ""
   },
@@ -122,7 +122,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 13,
     "yasadigi_olke": "Germany",
-    "ad_soyad": "Togrul Karimov",
+    "ad_soyad": "Toghrul Karimov",
     "email": "toghs@mpi-sws.org",
     "ixtilas": "Computer science",
     "elmi_derece": "PhD",
@@ -155,7 +155,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "ad_soyad": "Yasar Musayev",
     "email": "Mussa_98@hotmail.de",
     "ixtilas": "Engineering",
-    "elmi_derece": "PhD",
+    "elmi_derece": "Dr.-Ing.",
     "cinsi": "male",
     "url": ""
   },
@@ -175,7 +175,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "ad_soyad": "Dinara Abbasova",
     "email": "dinara_abasova@hotmail.com",
     "ixtilas": "Chemistry",
-    "elmi_derece": "PhD",
+    "elmi_derece": "PhD, EMBA",
     "cinsi": "female",
     "url": ""
   },
@@ -185,7 +185,7 @@ window.SCIENTISTS_CATALOG_DATA = [
     "ad_soyad": "Kamal Akbarov",
     "email": "kamal.akbarov@gmail.com",
     "ixtilas": "Medicine",
-    "elmi_derece": "PhD",
+    "elmi_derece": "PhD, DMSc, MBA",
     "cinsi": "male",
     "url": ""
   },
@@ -212,7 +212,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 22,
     "yasadigi_olke": "United Kingdom",
-    "ad_soyad": "Vehid Geruslu",
+    "ad_soyad": "Vehid Goruslu",
     "email": " vehid.geruslu@gmail.com",
     "ixtilas": "Computer science",
     "elmi_derece": "Prof.Dr.",

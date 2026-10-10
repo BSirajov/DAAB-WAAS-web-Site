@@ -1,0 +1,67 @@
+{
+  "confirmation": {
+    "date": "2026-10-10",
+    "profile": "Murad Abuzerli / Murad Abuzərli",
+    "profileNumber": 20,
+    "section": "Biography — publication and patent attribution",
+    "source": "Explicit user instruction: give the final version of the profile info. Close the issue V082",
+    "resolvedIssueIds": [
+      "V082"
+    ],
+    "sourceChanges": 0,
+    "outcome": "V082 closed by editorial instruction, not by verification of the patent attribution or publication count. A replacement biography omitting those statements is being presented for approval; website profile text is not changed in this step."
+  },
+  "supportingDocument": {
+    "title": "CV Murad Abuzərli.pdf",
+    "file": "E:/Documents/Azərbaycanlı Alimlərin Istanbul görüşü, 8-10 Dekabr 2022/1-ci Bakı forumu, 8-12 Sentyabr 2024/Web Site/CV/CV Murad Abuzərli.pdf",
+    "pages": 1,
+    "sha256": "7dcbd562d912bc4ad551e03465f9512bd8ad7db724799178c2f7b9b6f7780a1e",
+    "note": "Complete one-page CV read and visually inspected. It provides academic and research experience but no publication count, patent reference, or patent-role attribution. English name in this document is Murad Abuzarli; the website spelling Murad Abuzerli is retained pending explicit approval of any name change."
+  },
+  "closedFinding": {
+    "p": 20,
+    "c": "the co-author of 6 scientific articles published in international journals and 1 scientific patent",
+    "s": "Retain pending verification.",
+    "t": "Style",
+    "e": "Clarify whether patent attribution means inventor, co-inventor, applicant, or holder; do not substitute these different roles.",
+    "verify": true,
+    "status": "Carried over",
+    "section": "Biography",
+    "id": "V082",
+    "previousId": "V082",
+    "previousReport": "Round 8 after fixes",
+    "locations": [
+      {
+        "file": "i18n/scientists-profiles.json",
+        "line": 342,
+        "jsonPointer": "/profiles/19/bio_html_en"
+      },
+      {
+        "file": "i18n/scientists-profiles/chunk-01.json",
+        "line": 1,
+        "jsonPointer": "/profiles/19/bio_html_en"
+      },
+      {
+        "file": "Deployment/i18n/scientists-profiles.json",
+        "line": 342,
+        "jsonPointer": "/profiles/19/bio_html_en"
+      },
+      {
+        "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+        "line": 1,
+        "jsonPointer": "/profiles/19/bio_html_en"
+      }
+    ],
+    "severity": "High",
+    "group": "Verification",
+    "parts": [
+      {
+        "c": "the co-author of 6 scientific articles published in international journals and 1 scientific patent",
+        "s": "Retain pending verification."
+      }
+    ],
+    "previousStatus": "Carried over",
+    "e_ru": "Необходимо уточнить роль в отношении патента: изобретатель, соизобретатель, заявитель или патентообладатель. Нельзя подменять эти разные роли друг другом."
+  },
+  "profileFilesChanged": 0
+}

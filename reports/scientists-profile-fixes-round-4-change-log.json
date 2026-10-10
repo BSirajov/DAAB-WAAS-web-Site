@@ -1,0 +1,1031 @@
+{
+  "date": "2026-10-09",
+  "sourceReport": "scientists-english-proofreading-report-round-4.html",
+  "confirmedIssuesApplied": 10,
+  "verificationItemsSkipped": [
+    "V001",
+    "V002",
+    "V003",
+    "V004",
+    "V005",
+    "V006",
+    "V007",
+    "V008",
+    "V009",
+    "V010",
+    "V011",
+    "V012",
+    "V013",
+    "V014",
+    "V015",
+    "V016",
+    "V017",
+    "V018",
+    "V019",
+    "V020",
+    "V021",
+    "V022",
+    "V023",
+    "V024",
+    "V025",
+    "V026",
+    "V027",
+    "V028",
+    "V029",
+    "V030",
+    "V031",
+    "V032",
+    "V033",
+    "V034",
+    "V035",
+    "V036",
+    "V037",
+    "V038",
+    "V039",
+    "V040",
+    "V041",
+    "V042",
+    "V043",
+    "V044",
+    "V045",
+    "V046",
+    "V047",
+    "V048",
+    "V049",
+    "V050",
+    "V051",
+    "V052",
+    "V053",
+    "V054",
+    "V055",
+    "V056",
+    "V057",
+    "V058",
+    "V059",
+    "V060",
+    "V061",
+    "V062",
+    "V063",
+    "V064",
+    "V065",
+    "V066",
+    "V067",
+    "V068",
+    "V069",
+    "V070",
+    "V071",
+    "V072",
+    "V073",
+    "V074",
+    "V075",
+    "V076",
+    "V077",
+    "V078",
+    "V079",
+    "V080",
+    "V081",
+    "V082",
+    "V083",
+    "V084",
+    "V085",
+    "V086",
+    "V087",
+    "V088",
+    "V089",
+    "V090",
+    "V091",
+    "V092",
+    "V093",
+    "V094",
+    "V095",
+    "V096",
+    "V097",
+    "V098"
+  ],
+  "files": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "beforeSha256": "2a6767d966554b742d9ac3a030bf33c7233848fed2ae4d9cbdd74eae4b78cc27",
+      "afterSha256": "3b7a06681437c2b0bdf89b7d233a9cc507c0a8e54b0095c1b85e009af71aa280"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "beforeSha256": "75faac6c91e58e7341e82635c982c60d1358aeee36b4143280d425477db7ad71",
+      "afterSha256": "75faac6c91e58e7341e82635c982c60d1358aeee36b4143280d425477db7ad71"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-02.json",
+      "beforeSha256": "d1432b95405c3f04c452f929644802fed3dddfb503bbe288d465d998f18c1d1e",
+      "afterSha256": "86435f75c013fe9cb8c2e91151d2aa208330d48a7b467d8fac8d378046747c1e"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "beforeSha256": "9b9e9d22001e1daa1a9644b601a08c95f37556dd742ea5383d3156d875e720f0",
+      "afterSha256": "b4dae6cc5d7c2384f4b6c77f78649f4b7142416c61d114a42b676e644f6612f2"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-04.json",
+      "beforeSha256": "d2413d6a7ffefe394989f3d29cac5e56f94a96f5cad106c504ebb7e50eb41641",
+      "afterSha256": "fcf703fea508a0f97b99846344aa53839ef29072707834b6f80bb4b16d4163de"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "beforeSha256": "2a6767d966554b742d9ac3a030bf33c7233848fed2ae4d9cbdd74eae4b78cc27",
+      "afterSha256": "3b7a06681437c2b0bdf89b7d233a9cc507c0a8e54b0095c1b85e009af71aa280"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "beforeSha256": "75faac6c91e58e7341e82635c982c60d1358aeee36b4143280d425477db7ad71",
+      "afterSha256": "75faac6c91e58e7341e82635c982c60d1358aeee36b4143280d425477db7ad71"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+      "beforeSha256": "d1432b95405c3f04c452f929644802fed3dddfb503bbe288d465d998f18c1d1e",
+      "afterSha256": "86435f75c013fe9cb8c2e91151d2aa208330d48a7b467d8fac8d378046747c1e"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "beforeSha256": "9b9e9d22001e1daa1a9644b601a08c95f37556dd742ea5383d3156d875e720f0",
+      "afterSha256": "b4dae6cc5d7c2384f4b6c77f78649f4b7142416c61d114a42b676e644f6612f2"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+      "beforeSha256": "d2413d6a7ffefe394989f3d29cac5e56f94a96f5cad106c504ebb7e50eb41641",
+      "afterSha256": "fcf703fea508a0f97b99846344aa53839ef29072707834b6f80bb4b16d4163de"
+    }
+  ],
+  "issues": [
+    {
+      "p": 28,
+      "c": "\"Russian Journal of Physical Chemistry,\" \"World Journal of Physics.\"",
+      "s": "\"Russian Journal of Physical Chemistry,\" and \"World Journal of Physics.\"",
+      "t": "Grammar",
+      "e": "Add the conjunction before the final journal in the list.",
+      "section": "Biography",
+      "verify": false,
+      "status": "New",
+      "id": "L001",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 482,
+          "jsonPointer": "/profiles/27/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/6/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 482,
+          "jsonPointer": "/profiles/27/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/6/bio_html_en"
+        }
+      ],
+      "field": "bio_html_en",
+      "occurrences": 1
+    },
+    {
+      "p": 37,
+      "c": "publications of scientists engaged in the study of similar problems",
+      "s": "publications by scientists engaged in the study of similar problems",
+      "t": "Style",
+      "e": "Use by to identify the authors of publications naturally.",
+      "section": "Biography",
+      "verify": false,
+      "status": "New",
+      "id": "L002",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 635,
+          "jsonPointer": "/profiles/36/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 635,
+          "jsonPointer": "/profiles/36/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        }
+      ],
+      "field": "bio_html_en",
+      "occurrences": 1
+    },
+    {
+      "p": 42,
+      "c": "Languages ​​and Literature",
+      "s": "Languages and Literature",
+      "t": "Orthography",
+      "e": "Remove two stray zero-width spaces from the affiliation; ordinary spaces already separate the words.",
+      "section": "Title",
+      "verify": false,
+      "status": "New",
+      "id": "L003",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 719,
+          "jsonPointer": "/profiles/41/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/20/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 719,
+          "jsonPointer": "/profiles/41/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+          "line": 1,
+          "jsonPointer": "/profiles/20/title_en"
+        }
+      ],
+      "field": "title_en",
+      "occurrences": 1
+    },
+    {
+      "p": 47,
+      "c": "Former USSR Ministry of Electronic Industry, Scientific Research Institute \"Fonon\" - head of department, Moscow State Academy of Business Administration - professor, head of department, dean, vice-rector, first vice-rector, \"MIET\" National Research University - professor, head of the Quality of Education Process, deputy vice-rector",
+      "s": "Former USSR Ministry of Electronic Industry, Scientific Research Institute \"Fonon\" — head of department, Moscow State Academy of Business Administration — professor, head of department, dean, vice-rector, first vice-rector, \"MIET\" National Research University — professor, head of the Quality of Education Process, deputy vice-rector",
+      "t": "Orthography",
+      "e": "Use dashes rather than hyphens to separate institutions from roles; all three separators are grouped here.",
+      "section": "Title",
+      "verify": false,
+      "status": "New",
+      "id": "L004",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 805,
+          "jsonPointer": "/profiles/46/title_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/4/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 805,
+          "jsonPointer": "/profiles/46/title_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/4/title_en"
+        }
+      ],
+      "field": "title_en",
+      "occurrences": 1
+    },
+    {
+      "p": 58,
+      "c": "he is the author of more than 70 scientific articles, 2 teaching methodology resources, and the owner of 6 invention patents.",
+      "s": "he is the author of more than 70 scientific articles and 2 teaching methodology resources, and the owner of 6 invention patents.",
+      "t": "Grammar",
+      "e": "Complete the list governed by author of before coordinating the separate owner role.",
+      "section": "Biography",
+      "verify": false,
+      "status": "New",
+      "id": "L005",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 993,
+          "jsonPointer": "/profiles/57/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 993,
+          "jsonPointer": "/profiles/57/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/15/bio_html_en"
+        }
+      ],
+      "field": "bio_html_en",
+      "occurrences": 1
+    },
+    {
+      "p": 59,
+      "c": "as a leader and participant of various international projects",
+      "s": "as a leader of and participant in various international projects",
+      "t": "Grammar",
+      "e": "Leader takes of; participant takes in. Supply the preposition for each role.",
+      "section": "Biography",
+      "verify": false,
+      "status": "New",
+      "id": "L006",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1010,
+          "jsonPointer": "/profiles/58/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/16/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1010,
+          "jsonPointer": "/profiles/58/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+          "line": 1,
+          "jsonPointer": "/profiles/16/bio_html_en"
+        }
+      ],
+      "field": "bio_html_en",
+      "occurrences": 1
+    },
+    {
+      "p": 64,
+      "c": "science and technology centers - Stanford",
+      "s": "science and technology centers—Stanford",
+      "t": "Orthography",
+      "e": "Use an em dash, rather than a hyphen, to introduce the examples.",
+      "section": "Biography",
+      "verify": false,
+      "status": "New",
+      "id": "L007",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1097,
+          "jsonPointer": "/profiles/63/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/0/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1097,
+          "jsonPointer": "/profiles/63/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/0/bio_html_en"
+        }
+      ],
+      "field": "bio_html_en",
+      "occurrences": 1
+    },
+    {
+      "p": 71,
+      "c": "Currently, associate professor Dr. O. Allahverdiyev",
+      "s": "Currently, Associate Professor Dr. O. Allahverdiyev",
+      "t": "Orthography",
+      "e": "Capitalize the academic title immediately before the personal name, consistently with other named titles.",
+      "section": "Biography",
+      "verify": false,
+      "status": "New",
+      "id": "L008",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1216,
+          "jsonPointer": "/profiles/70/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/7/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1216,
+          "jsonPointer": "/profiles/70/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/7/bio_html_en"
+        }
+      ],
+      "field": "bio_html_en",
+      "occurrences": 1
+    },
+    {
+      "p": 75,
+      "c": "the author of the ATAM (Ankara Fundamental Research Center) initiative, a participant in ATLAS",
+      "s": "the author of the ATAM (Ankara Fundamental Research Center) initiative, and a participant in ATLAS",
+      "t": "Grammar",
+      "e": "Add and before the final coordinated role.",
+      "section": "Biography",
+      "verify": false,
+      "status": "New",
+      "id": "L009",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1284,
+          "jsonPointer": "/profiles/74/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/11/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1284,
+          "jsonPointer": "/profiles/74/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/11/bio_html_en"
+        }
+      ],
+      "field": "bio_html_en",
+      "occurrences": 1
+    },
+    {
+      "p": 82,
+      "c": "intelligent control models and methods of robots, control systems in the field of electronics.",
+      "s": "intelligent control models and methods of robots, and control systems in the field of electronics.",
+      "t": "Grammar",
+      "e": "Add the conjunction before the final research topic.",
+      "section": "Biography",
+      "verify": false,
+      "status": "New",
+      "id": "L010",
+      "locations": [
+        {
+          "file": "i18n/scientists-profiles.json",
+          "line": 1403,
+          "jsonPointer": "/profiles/81/bio_html_en"
+        },
+        {
+          "file": "i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/18/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles.json",
+          "line": 1403,
+          "jsonPointer": "/profiles/81/bio_html_en"
+        },
+        {
+          "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+          "line": 1,
+          "jsonPointer": "/profiles/18/bio_html_en"
+        }
+      ],
+      "field": "bio_html_en",
+      "occurrences": 1
+    }
+  ],
+  "fieldChanges": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 719,
+      "jsonPointer": "/profiles/41/title_en",
+      "profileNumber": 42,
+      "profile": "Arzu Gurbanova",
+      "field": "title_en",
+      "issueIds": [
+        "L003"
+      ],
+      "before": "Candidate of Pedagogical Sciences, professor of the Department of Languages ​​and Literature of the Central Asia Innovation University",
+      "after": "Candidate of Pedagogical Sciences, professor of the Department of Languages and Literature of the Central Asia Innovation University"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 805,
+      "jsonPointer": "/profiles/46/title_en",
+      "profileNumber": 47,
+      "profile": "Aladdin Allahverdiyev",
+      "field": "title_en",
+      "issueIds": [
+        "L004"
+      ],
+      "before": "Former USSR Ministry of Electronic Industry, Scientific Research Institute \"Fonon\" - head of department, Moscow State Academy of Business Administration - professor, head of department, dean, vice-rector, first vice-rector, \"MIET\" National Research University - professor, head of the Quality of Education Process, deputy vice-rector",
+      "after": "Former USSR Ministry of Electronic Industry, Scientific Research Institute \"Fonon\" — head of department, Moscow State Academy of Business Administration — professor, head of department, dean, vice-rector, first vice-rector, \"MIET\" National Research University — professor, head of the Quality of Education Process, deputy vice-rector"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 482,
+      "jsonPointer": "/profiles/27/bio_html_en",
+      "profileNumber": 28,
+      "profile": "Lev Eppelbaum",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L001"
+      ],
+      "before": "<p class=\"bio bio-lead\">Honorary professor of Azerbaijan State Oil and Industry University</p><p class=\"bio\">Professor Lev Eppelbaum (Tel Aviv University, Department of Geophysics) is the author of approximately 460 scientific publications. These include 12 books, 18 book chapters, 194 peer-reviewed journal articles, 81 conference materials and 171 abstracts published by international scientific publishers (Kluwer Academic Publisher, Springer, Elsevier, Chapman and Hall, Institute of Physics (Great Britain)). Prof. Eppelbaum&#x27;s main research areas are geodynamics and tectonic reconstructions, applied and environmental geophysics, archaeological geophysics, and integrated analysis of geophysical, geological and related data.</p><p class=\"bio\">He was elected head of scientific departments 26 times at international conferences. Professor Lev Eppelbaum is the editor-in-chief of the journal \"Geology, Geophysics, and Earth Sciences\" and a member of the editorial boards of such prestigious journals as \"Positioning,\" \"Open Petroleum Engineering Journal,\" \"Archaeological Discovery,\" \"Stratigraphy, Petroleum, Sedimentology, Geochemistry,\" \"ANAS Transactions, Earth Sciences,\" \"International Journal of Earthquake Engineering,\" \"Discover Geoscience,\" \"Academy Green Energy,\" \"Contributions to Geosciences,\" \"Geosciences,\" \"Russian Journal of Physical Chemistry,\" \"World Journal of Physics.\" At the same time, he served as a guest editor for the journals \"Advances in Geosciences,\" \"Journal of Geophysics and Engineering,\" \"Continent and Life Evolution,\" \"Frontiers in Earth Sciences,\" \"Geosciences (Switzerland),\" &quot;Land&quot; and \"Applied Sciences (Switzerland).\"</p><p class=\"bio\">Professor Lev Eppelbaum is a member of two international geophysical commissions: the \"Rotation of the Earth\" commission and \"WebmedCentral Ecology Advisory Board.\"</p><p class=\"bio\">In 2020, he was awarded the title of honorary professor of the Azerbaijan State Oil and Industry University, and in 2023, he was elected a foreign member of the Georgian Academy of Sciences.</p><p class=\"bio\">Professor Eppelbaum has received several awards; among them is the Christian Huygens medal of the European Geosciences Union (2019).</p><p class=\"bio\">According to Google Scholar, his scholarly publications have been cited nearly 8,000 times.</p>",
+      "after": "<p class=\"bio bio-lead\">Honorary professor of Azerbaijan State Oil and Industry University</p><p class=\"bio\">Professor Lev Eppelbaum (Tel Aviv University, Department of Geophysics) is the author of approximately 460 scientific publications. These include 12 books, 18 book chapters, 194 peer-reviewed journal articles, 81 conference materials and 171 abstracts published by international scientific publishers (Kluwer Academic Publisher, Springer, Elsevier, Chapman and Hall, Institute of Physics (Great Britain)). Prof. Eppelbaum&#x27;s main research areas are geodynamics and tectonic reconstructions, applied and environmental geophysics, archaeological geophysics, and integrated analysis of geophysical, geological and related data.</p><p class=\"bio\">He was elected head of scientific departments 26 times at international conferences. Professor Lev Eppelbaum is the editor-in-chief of the journal \"Geology, Geophysics, and Earth Sciences\" and a member of the editorial boards of such prestigious journals as \"Positioning,\" \"Open Petroleum Engineering Journal,\" \"Archaeological Discovery,\" \"Stratigraphy, Petroleum, Sedimentology, Geochemistry,\" \"ANAS Transactions, Earth Sciences,\" \"International Journal of Earthquake Engineering,\" \"Discover Geoscience,\" \"Academy Green Energy,\" \"Contributions to Geosciences,\" \"Geosciences,\" \"Russian Journal of Physical Chemistry,\" and \"World Journal of Physics.\" At the same time, he served as a guest editor for the journals \"Advances in Geosciences,\" \"Journal of Geophysics and Engineering,\" \"Continent and Life Evolution,\" \"Frontiers in Earth Sciences,\" \"Geosciences (Switzerland),\" &quot;Land&quot; and \"Applied Sciences (Switzerland).\"</p><p class=\"bio\">Professor Lev Eppelbaum is a member of two international geophysical commissions: the \"Rotation of the Earth\" commission and \"WebmedCentral Ecology Advisory Board.\"</p><p class=\"bio\">In 2020, he was awarded the title of honorary professor of the Azerbaijan State Oil and Industry University, and in 2023, he was elected a foreign member of the Georgian Academy of Sciences.</p><p class=\"bio\">Professor Eppelbaum has received several awards; among them is the Christian Huygens medal of the European Geosciences Union (2019).</p><p class=\"bio\">According to Google Scholar, his scholarly publications have been cited nearly 8,000 times.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 635,
+      "jsonPointer": "/profiles/36/bio_html_en",
+      "profileNumber": 37,
+      "profile": "Natig Atakisiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L002"
+      ],
+      "before": "<p class=\"bio bio-lead\">He is the author or co-author of 131 scientific articles published in the world&#x27;s leading journals in the field of mathematical physics and 62 scientific reports at international conferences held in 15 countries of Europe, North and South America. These scientific works have been cited in 2825 publications of scientists engaged in the study of similar problems (his Google Scholar h-index is 28). He was the scientific supervisor of 4 graduate students who defended their dissertations in Azerbaijan and one doctoral student in Mexico.</p>",
+      "after": "<p class=\"bio bio-lead\">He is the author or co-author of 131 scientific articles published in the world&#x27;s leading journals in the field of mathematical physics and 62 scientific reports at international conferences held in 15 countries of Europe, North and South America. These scientific works have been cited in 2825 publications by scientists engaged in the study of similar problems (his Google Scholar h-index is 28). He was the scientific supervisor of 4 graduate students who defended their dissertations in Azerbaijan and one doctoral student in Mexico.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 993,
+      "jsonPointer": "/profiles/57/bio_html_en",
+      "profileNumber": 58,
+      "profile": "Azer Abdullayev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L005"
+      ],
+      "before": "<p class=\"bio bio-lead\">Professor Azer Jafar oglu Abdullayev, a doctor of medical sciences, traumatologist-orthopedic surgeon, and inventor, is a medical scientist with extensive scientific and practical experience in the field of traumatology and orthopedics. He has worked as a teacher, assistant and associate professor at Azerbaijan Medical University for many years, and since 2004 he has been the head of the Orthopedic Department and consultant surgeon at King Fahad and Sabya Hospitals located in Gizan, Saudi Arabia.</p><p class=\"bio\">Abdullayev, who was born in 1955 in Sharur, Nakhchivan Autonomous Republic, entered the Faculty of Medicine and Prevention of Azerbaijan Medical University in 1972, and in 1979 he completed the surgery internship. In 1989, he was awarded the degree of doctor of philosophy in medicine, and in 2012, he was awarded the degree of doctor of medical sciences.</p><p class=\"bio\">His research is marked by considerable inventiveness. He is the author of 6 inventions—including an external fixation device, a compression pin and a healing ointment—that are widely used in medical practice, known by such names as \"Abdullayev apparatus,\" &quot;Abdullayev stick&quot; and \"Abdullayev ointment.\" These inventions have been used in the treatment of thousands of patients and have given positive results.</p><p class=\"bio\">Professor Abdullayev&#x27;s research and teaching activities are also extensive: he is the author of more than 70 scientific articles, 2 teaching methodology resources, and the owner of 6 invention patents. His work made significant contributions to the development of practical health care, along with important scientific innovations in the field of traumatology and orthopedics.</p>",
+      "after": "<p class=\"bio bio-lead\">Professor Azer Jafar oglu Abdullayev, a doctor of medical sciences, traumatologist-orthopedic surgeon, and inventor, is a medical scientist with extensive scientific and practical experience in the field of traumatology and orthopedics. He has worked as a teacher, assistant and associate professor at Azerbaijan Medical University for many years, and since 2004 he has been the head of the Orthopedic Department and consultant surgeon at King Fahad and Sabya Hospitals located in Gizan, Saudi Arabia.</p><p class=\"bio\">Abdullayev, who was born in 1955 in Sharur, Nakhchivan Autonomous Republic, entered the Faculty of Medicine and Prevention of Azerbaijan Medical University in 1972, and in 1979 he completed the surgery internship. In 1989, he was awarded the degree of doctor of philosophy in medicine, and in 2012, he was awarded the degree of doctor of medical sciences.</p><p class=\"bio\">His research is marked by considerable inventiveness. He is the author of 6 inventions—including an external fixation device, a compression pin and a healing ointment—that are widely used in medical practice, known by such names as \"Abdullayev apparatus,\" &quot;Abdullayev stick&quot; and \"Abdullayev ointment.\" These inventions have been used in the treatment of thousands of patients and have given positive results.</p><p class=\"bio\">Professor Abdullayev&#x27;s research and teaching activities are also extensive: he is the author of more than 70 scientific articles and 2 teaching methodology resources, and the owner of 6 invention patents. His work made significant contributions to the development of practical health care, along with important scientific innovations in the field of traumatology and orthopedics.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 1010,
+      "jsonPointer": "/profiles/58/bio_html_en",
+      "profileNumber": 59,
+      "profile": "Elvin Efendi",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L006"
+      ],
+      "before": "<p class=\"bio bio-lead\">Elvin Efendi is an economist with extensive international experience in economics and development. Currently, he works as the head of strategy and research in the Strategic department of the Islamic Private Sector Development Corporation (ICD), a part of the Islamic Development Bank Group. In this role, he leads the development of corporate and country strategies, the management of economic research and policy documents, the publication of leading reports, and the creation of private sector development initiatives in member countries.</p><p class=\"bio\">Before that, Elvin Efendi worked in important positions in the field of economic analysis and policy planning in institutions such as the Central Bank of Azerbaijan, the World Bank and the Ministry of Economic Development of the Republic of Azerbaijan. He studied at the University of London, Michigan State University and Baku State University, and received a Ph.D. in economics.</p><p class=\"bio\">Elvin Efendi has authored more than 20 peer-reviewed scientific articles in academic journals, as well as more than 25 research documents (working papers). He gave presentations at more than 10 international scientific conferences and participated in events held in more than 15 countries. For the first time, he developed the \"Private Sector Development Index of Islamic Countries,\" which evaluates the level of development of the private sector in Islamic countries, and this academic innovation was published in a prestigious scientific journal. He has taught more than 300 graduate and undergraduate students economic development, macroeconomics, microeconomics, and econometrics at various universities, including Dar Al Hekma University. He also taught at Khazar University and UNEC.</p><p class=\"bio\">Elvin Efendi has extensive research experience in economic policy, development economics, entrepreneurship and social capital. He was a member of the editorial boards of a number of prestigious academic journals, performed extensive scientific and organizational activities as a leader and participant of various international projects, and was awarded various prizes and scholarships.</p>",
+      "after": "<p class=\"bio bio-lead\">Elvin Efendi is an economist with extensive international experience in economics and development. Currently, he works as the head of strategy and research in the Strategic department of the Islamic Private Sector Development Corporation (ICD), a part of the Islamic Development Bank Group. In this role, he leads the development of corporate and country strategies, the management of economic research and policy documents, the publication of leading reports, and the creation of private sector development initiatives in member countries.</p><p class=\"bio\">Before that, Elvin Efendi worked in important positions in the field of economic analysis and policy planning in institutions such as the Central Bank of Azerbaijan, the World Bank and the Ministry of Economic Development of the Republic of Azerbaijan. He studied at the University of London, Michigan State University and Baku State University, and received a Ph.D. in economics.</p><p class=\"bio\">Elvin Efendi has authored more than 20 peer-reviewed scientific articles in academic journals, as well as more than 25 research documents (working papers). He gave presentations at more than 10 international scientific conferences and participated in events held in more than 15 countries. For the first time, he developed the \"Private Sector Development Index of Islamic Countries,\" which evaluates the level of development of the private sector in Islamic countries, and this academic innovation was published in a prestigious scientific journal. He has taught more than 300 graduate and undergraduate students economic development, macroeconomics, microeconomics, and econometrics at various universities, including Dar Al Hekma University. He also taught at Khazar University and UNEC.</p><p class=\"bio\">Elvin Efendi has extensive research experience in economic policy, development economics, entrepreneurship and social capital. He was a member of the editorial boards of a number of prestigious academic journals, performed extensive scientific and organizational activities as a leader of and participant in various international projects, and was awarded various prizes and scholarships.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 1097,
+      "jsonPointer": "/profiles/63/bio_html_en",
+      "profileNumber": 64,
+      "profile": "Emirullah Mehmedov",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L007"
+      ],
+      "before": "<p class=\"bio bio-lead\">Honorary professor of Bilkend University, leading researcher of Nanotechnology Scientific Research Center</p><p class=\"bio\">Professor Amirulla Mammadov (known as Emirullah M. Mehmetov in scientific publications) is an internationally recognized scientist in the fields of optics, nonlinear optics, laser physics, metamaterials, topological insulators, photonics, nanophotonics and biomedical modeling. He received a doctor of philosophy (Ph.D.) degree in physics and mathematics at the &quot;Ioffe&quot; Institute of Physics and Mathematics of the former USSR Academy of Sciences, and then a doctor of sciences (habilitas doctor) degree, and in 1988 he was awarded the title of professor of \"Optics.\"</p><p class=\"bio\">He continued his research activities in the world&#x27;s leading science and technology centers - Stanford, Caltech, Wisconsin and Rome &quot;La Sapienza&quot; universities, US military laboratories, as well as in Japan and various European countries. Currently, he works as a professor-researcher at the Nanotechnology Research Center (NANOTAM) of Bilkent University.</p><p class=\"bio\">Professor Mammadov is the author of more than 350 articles in prestigious international scientific publications and an invited speaker at more than 50 international conferences. He also worked as a scientific consultant at ASELSAN and the Ministry of Defense of Turkey.</p><p class=\"bio\">For his outstanding scientific and social activities, he was awarded the State Prizes of the former USSR and the Republic of Azerbaijan, the honorary title of Honored Scientist of the Republic of Azerbaijan, the Order of \"Friendship,\" the medal &quot;For service in Diaspora activity&quot; and the 100th anniversary medal of Baku State University. At the same time, he is a member of the Board of Trustees of the Turkey-Azerbaijan Friendship, Cooperation and Solidarity Charitable Society and the chairman of the Association of Azerbaijani Scientists (ABID) operating in Turkey. His multifaceted scientific activity made important contributions to the development of scientific cooperation in the region and the world.</p>",
+      "after": "<p class=\"bio bio-lead\">Honorary professor of Bilkend University, leading researcher of Nanotechnology Scientific Research Center</p><p class=\"bio\">Professor Amirulla Mammadov (known as Emirullah M. Mehmetov in scientific publications) is an internationally recognized scientist in the fields of optics, nonlinear optics, laser physics, metamaterials, topological insulators, photonics, nanophotonics and biomedical modeling. He received a doctor of philosophy (Ph.D.) degree in physics and mathematics at the &quot;Ioffe&quot; Institute of Physics and Mathematics of the former USSR Academy of Sciences, and then a doctor of sciences (habilitas doctor) degree, and in 1988 he was awarded the title of professor of \"Optics.\"</p><p class=\"bio\">He continued his research activities in the world&#x27;s leading science and technology centers—Stanford, Caltech, Wisconsin and Rome &quot;La Sapienza&quot; universities, US military laboratories, as well as in Japan and various European countries. Currently, he works as a professor-researcher at the Nanotechnology Research Center (NANOTAM) of Bilkent University.</p><p class=\"bio\">Professor Mammadov is the author of more than 350 articles in prestigious international scientific publications and an invited speaker at more than 50 international conferences. He also worked as a scientific consultant at ASELSAN and the Ministry of Defense of Turkey.</p><p class=\"bio\">For his outstanding scientific and social activities, he was awarded the State Prizes of the former USSR and the Republic of Azerbaijan, the honorary title of Honored Scientist of the Republic of Azerbaijan, the Order of \"Friendship,\" the medal &quot;For service in Diaspora activity&quot; and the 100th anniversary medal of Baku State University. At the same time, he is a member of the Board of Trustees of the Turkey-Azerbaijan Friendship, Cooperation and Solidarity Charitable Society and the chairman of the Association of Azerbaijani Scientists (ABID) operating in Turkey. His multifaceted scientific activity made important contributions to the development of scientific cooperation in the region and the world.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 1216,
+      "jsonPointer": "/profiles/70/bio_html_en",
+      "profileNumber": 71,
+      "profile": "Oruc Allahverdiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L008"
+      ],
+      "before": "<p class=\"bio bio-lead\">Oruj Allahverdiyev graduated from Istanbul University Jarrahpaşa Faculty of Medicine in the field of medical pharmacology. He is the co-author of 4 scientific books, 1 textbook, and more than 100 scientific works in the field of medicine and pharmacy. He participated in many scientific symposia in Turkey and other countries.</p><p class=\"bio\">After high school, Oruj Allahverdiyev was admitted to the Faculty of Pharmacy of Azerbaijan Medical University. Having succeeded in the Turkish government&#x27;s educational exam, he was sent to Turkey to continue his studies at Istanbul University. After graduating from Istanbul University Faculty of Pharmacy in 2006, he began his master&#x27;s studies at the Department of Pharmacology and Clinical Pharmacology, Faculty of Medicine of Istanbul University, and graduated in 2009. During his master's studies, he conducted many scientific studies on brain diseases, and these studies were published in world-renowned international journals. During his studies, several of his research projects received awards from TUBITAK.</p><p class=\"bio\">Later, he began his doctoral studies at the Department of Medical Pharmacology of the Czarrahpaşa Medical Faculty of Istanbul University. In 2014, he completed his doctoral studies as an &quot;Honor Student&quot; and received the scientific degree of Doctor of Philosophy in Medical Sciences. During his doctoral studies, he conducted a number of scientific studies on brain diseases such as substance addiction, epilepsy, depression, Parkinson&#x27;s and multiple sclerosis. These studies have been presented at world-renowned international symposia, congresses and conferences and published in prestigious journals.</p><p class=\"bio\">Oruj Allahverdiyev graduated from the Faculty of Management of Medical Institutions of Istanbul University in 2017 and was awarded the title of associate professor in the field of medical pharmacology by the Higher Education Council of Turkey (YÖK). He trained more than 10 graduate students under his scientific guidance. Currently, he is the co-author of more than 100 scientific works, 1 textbook and 4 scientific books, as well as a number of scientific articles. More than 30 of his scientific works have been published in journals indexed in \"Science Citation Index.\" Currently, associate professor Dr. O. Allahverdiyev continues his scientific activities in Turkey.</p>",
+      "after": "<p class=\"bio bio-lead\">Oruj Allahverdiyev graduated from Istanbul University Jarrahpaşa Faculty of Medicine in the field of medical pharmacology. He is the co-author of 4 scientific books, 1 textbook, and more than 100 scientific works in the field of medicine and pharmacy. He participated in many scientific symposia in Turkey and other countries.</p><p class=\"bio\">After high school, Oruj Allahverdiyev was admitted to the Faculty of Pharmacy of Azerbaijan Medical University. Having succeeded in the Turkish government&#x27;s educational exam, he was sent to Turkey to continue his studies at Istanbul University. After graduating from Istanbul University Faculty of Pharmacy in 2006, he began his master&#x27;s studies at the Department of Pharmacology and Clinical Pharmacology, Faculty of Medicine of Istanbul University, and graduated in 2009. During his master's studies, he conducted many scientific studies on brain diseases, and these studies were published in world-renowned international journals. During his studies, several of his research projects received awards from TUBITAK.</p><p class=\"bio\">Later, he began his doctoral studies at the Department of Medical Pharmacology of the Czarrahpaşa Medical Faculty of Istanbul University. In 2014, he completed his doctoral studies as an &quot;Honor Student&quot; and received the scientific degree of Doctor of Philosophy in Medical Sciences. During his doctoral studies, he conducted a number of scientific studies on brain diseases such as substance addiction, epilepsy, depression, Parkinson&#x27;s and multiple sclerosis. These studies have been presented at world-renowned international symposia, congresses and conferences and published in prestigious journals.</p><p class=\"bio\">Oruj Allahverdiyev graduated from the Faculty of Management of Medical Institutions of Istanbul University in 2017 and was awarded the title of associate professor in the field of medical pharmacology by the Higher Education Council of Turkey (YÖK). He trained more than 10 graduate students under his scientific guidance. Currently, he is the co-author of more than 100 scientific works, 1 textbook and 4 scientific books, as well as a number of scientific articles. More than 30 of his scientific works have been published in journals indexed in \"Science Citation Index.\" Currently, Associate Professor Dr. O. Allahverdiyev continues his scientific activities in Turkey.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 1284,
+      "jsonPointer": "/profiles/74/bio_html_en",
+      "profileNumber": 75,
+      "profile": "Saleh Sultansoy",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L009"
+      ],
+      "before": "<p class=\"bio bio-lead\">He has authored more than 1,500 scientific articles in high-energy physics and accelerator technologies, spoken at more than 100 international scientific conferences, and supervised more than 20 Ph.D. students.</p><p class=\"bio\">Professor Saleh Sultansoy currently works at TOBB University of Economics and Technology located in Ankara. He specializes in high-energy physics, particle accelerators, history of science and science policy. In 1969–1974, he studied at Azerbaijan State University, and in 1985, he received a doctoral degree at the Institute of High Energy Physics in Serpukhov, Russia. During his career, he worked in prestigious institutions such as the Azerbaijan National Academy of Sciences, Ankara University, DESY (Germany), Gazi University and TOBB ETÜ.</p><p class=\"bio\">His works have been cited more than 81,000 times in Web of Science, more than 275,000 times in Google Scholar, and more than 235,000 times by HEP Inspire. His h-indices are 127, 208 and 215, respectively.</p><p class=\"bio\">His main research areas are high-energy physics, accelerator technologies and scientific strategies. In 2013, he was awarded the &quot;Engin Arık&quot; science prize of the Turkish Physics Society, and in 2016, he was awarded the &quot;Golden Apple&quot; science prize of the Turkish world.</p><p class=\"bio\">Saleh Sultansoy was a member of scientific councils at CERN and other international research centers, and actively participated in the development of scientific policy in Turkey and the Turkic world. He is one of the founders and leaders of the Turkish Accelerator Complex (TAC) project, a long-term national scientific research initiative, the author of the ATAM (Ankara Fundamental Research Center) initiative, a participant in ATLAS, CLIC, LHeC, FCC and other CERN projects. He was also the scientific leader of a number of advanced projects on accelerator technologies conducted within the framework of DPT-TAEK and TUBITAK.</p>",
+      "after": "<p class=\"bio bio-lead\">He has authored more than 1,500 scientific articles in high-energy physics and accelerator technologies, spoken at more than 100 international scientific conferences, and supervised more than 20 Ph.D. students.</p><p class=\"bio\">Professor Saleh Sultansoy currently works at TOBB University of Economics and Technology located in Ankara. He specializes in high-energy physics, particle accelerators, history of science and science policy. In 1969–1974, he studied at Azerbaijan State University, and in 1985, he received a doctoral degree at the Institute of High Energy Physics in Serpukhov, Russia. During his career, he worked in prestigious institutions such as the Azerbaijan National Academy of Sciences, Ankara University, DESY (Germany), Gazi University and TOBB ETÜ.</p><p class=\"bio\">His works have been cited more than 81,000 times in Web of Science, more than 275,000 times in Google Scholar, and more than 235,000 times by HEP Inspire. His h-indices are 127, 208 and 215, respectively.</p><p class=\"bio\">His main research areas are high-energy physics, accelerator technologies and scientific strategies. In 2013, he was awarded the &quot;Engin Arık&quot; science prize of the Turkish Physics Society, and in 2016, he was awarded the &quot;Golden Apple&quot; science prize of the Turkish world.</p><p class=\"bio\">Saleh Sultansoy was a member of scientific councils at CERN and other international research centers, and actively participated in the development of scientific policy in Turkey and the Turkic world. He is one of the founders and leaders of the Turkish Accelerator Complex (TAC) project, a long-term national scientific research initiative, the author of the ATAM (Ankara Fundamental Research Center) initiative, and a participant in ATLAS, CLIC, LHeC, FCC and other CERN projects. He was also the scientific leader of a number of advanced projects on accelerator technologies conducted within the framework of DPT-TAEK and TUBITAK.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 1403,
+      "jsonPointer": "/profiles/81/bio_html_en",
+      "profileNumber": 82,
+      "profile": "Murad Omarov",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L010"
+      ],
+      "before": "<p class=\"bio bio-lead\">He is the co-author of more than 150 scientific works (17 of them are indexed in Scopus), 3 monographs and 11 textbooks. He has 12 copyright certificates and invention patents of Ukraine. He supervised the writing and defense of candidate dissertations of 5 graduate students. He works as vice-rector for international cooperation at Kharkiv National Radioelectronics University of Ukraine. He holds the scientific degrees of candidate of technical sciences (research and improvement of fiber-optic information transmission systems) and doctor of technical sciences (development of the theory of designing electrodynamic devices with distributed and quasi-distributed nonlinear elements). Prof. Omarov, who has more than 40 years of experience in higher education and research, worked in various academic and administrative positions—as a professor, head of the department, director of the center for foreign students and dean.</p><p class=\"bio\">Several candidate theses were defended under his guidance; these works include distance education systems, production logistics, intelligent control models and methods of robots, control systems in the field of electronics. He taught subjects such as computerized communication systems, robotics and advanced mathematics. Prof. Omarov is also an active member of national expert councils and participant in international scientific conferences. Since 2019, ICONAT has been chairing a series of conferences.</p><p class=\"bio\">His research interests include information and measurement systems, fiber-optic communication and designing electrodynamic devices with nonlinear elements. He has been an academician of the Academy of Applied Radioelectronics of Ukraine since 2004. In 2016, he was awarded the honorary title of \"Honored Scientist of the Republic of Azerbaijan.\"</p>",
+      "after": "<p class=\"bio bio-lead\">He is the co-author of more than 150 scientific works (17 of them are indexed in Scopus), 3 monographs and 11 textbooks. He has 12 copyright certificates and invention patents of Ukraine. He supervised the writing and defense of candidate dissertations of 5 graduate students. He works as vice-rector for international cooperation at Kharkiv National Radioelectronics University of Ukraine. He holds the scientific degrees of candidate of technical sciences (research and improvement of fiber-optic information transmission systems) and doctor of technical sciences (development of the theory of designing electrodynamic devices with distributed and quasi-distributed nonlinear elements). Prof. Omarov, who has more than 40 years of experience in higher education and research, worked in various academic and administrative positions—as a professor, head of the department, director of the center for foreign students and dean.</p><p class=\"bio\">Several candidate theses were defended under his guidance; these works include distance education systems, production logistics, intelligent control models and methods of robots, and control systems in the field of electronics. He taught subjects such as computerized communication systems, robotics and advanced mathematics. Prof. Omarov is also an active member of national expert councils and participant in international scientific conferences. Since 2019, ICONAT has been chairing a series of conferences.</p><p class=\"bio\">His research interests include information and measurement systems, fiber-optic communication and designing electrodynamic devices with nonlinear elements. He has been an academician of the Academy of Applied Radioelectronics of Ukraine since 2004. In 2016, he was awarded the honorary title of \"Honored Scientist of the Republic of Azerbaijan.\"</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-02.json",
+      "line": 1,
+      "jsonPointer": "/profiles/20/title_en",
+      "profileNumber": 42,
+      "profile": "Arzu Gurbanova",
+      "field": "title_en",
+      "issueIds": [
+        "L003"
+      ],
+      "before": "Candidate of Pedagogical Sciences, professor of the Department of Languages ​​and Literature of the Central Asia Innovation University",
+      "after": "Candidate of Pedagogical Sciences, professor of the Department of Languages and Literature of the Central Asia Innovation University"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-02.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/bio_html_en",
+      "profileNumber": 28,
+      "profile": "Lev Eppelbaum",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L001"
+      ],
+      "before": "<p class=\"bio bio-lead\">Honorary professor of Azerbaijan State Oil and Industry University</p><p class=\"bio\">Professor Lev Eppelbaum (Tel Aviv University, Department of Geophysics) is the author of approximately 460 scientific publications. These include 12 books, 18 book chapters, 194 peer-reviewed journal articles, 81 conference materials and 171 abstracts published by international scientific publishers (Kluwer Academic Publisher, Springer, Elsevier, Chapman and Hall, Institute of Physics (Great Britain)). Prof. Eppelbaum&#x27;s main research areas are geodynamics and tectonic reconstructions, applied and environmental geophysics, archaeological geophysics, and integrated analysis of geophysical, geological and related data.</p><p class=\"bio\">He was elected head of scientific departments 26 times at international conferences. Professor Lev Eppelbaum is the editor-in-chief of the journal \"Geology, Geophysics, and Earth Sciences\" and a member of the editorial boards of such prestigious journals as \"Positioning,\" \"Open Petroleum Engineering Journal,\" \"Archaeological Discovery,\" \"Stratigraphy, Petroleum, Sedimentology, Geochemistry,\" \"ANAS Transactions, Earth Sciences,\" \"International Journal of Earthquake Engineering,\" \"Discover Geoscience,\" \"Academy Green Energy,\" \"Contributions to Geosciences,\" \"Geosciences,\" \"Russian Journal of Physical Chemistry,\" \"World Journal of Physics.\" At the same time, he served as a guest editor for the journals \"Advances in Geosciences,\" \"Journal of Geophysics and Engineering,\" \"Continent and Life Evolution,\" \"Frontiers in Earth Sciences,\" \"Geosciences (Switzerland),\" &quot;Land&quot; and \"Applied Sciences (Switzerland).\"</p><p class=\"bio\">Professor Lev Eppelbaum is a member of two international geophysical commissions: the \"Rotation of the Earth\" commission and \"WebmedCentral Ecology Advisory Board.\"</p><p class=\"bio\">In 2020, he was awarded the title of honorary professor of the Azerbaijan State Oil and Industry University, and in 2023, he was elected a foreign member of the Georgian Academy of Sciences.</p><p class=\"bio\">Professor Eppelbaum has received several awards; among them is the Christian Huygens medal of the European Geosciences Union (2019).</p><p class=\"bio\">According to Google Scholar, his scholarly publications have been cited nearly 8,000 times.</p>",
+      "after": "<p class=\"bio bio-lead\">Honorary professor of Azerbaijan State Oil and Industry University</p><p class=\"bio\">Professor Lev Eppelbaum (Tel Aviv University, Department of Geophysics) is the author of approximately 460 scientific publications. These include 12 books, 18 book chapters, 194 peer-reviewed journal articles, 81 conference materials and 171 abstracts published by international scientific publishers (Kluwer Academic Publisher, Springer, Elsevier, Chapman and Hall, Institute of Physics (Great Britain)). Prof. Eppelbaum&#x27;s main research areas are geodynamics and tectonic reconstructions, applied and environmental geophysics, archaeological geophysics, and integrated analysis of geophysical, geological and related data.</p><p class=\"bio\">He was elected head of scientific departments 26 times at international conferences. Professor Lev Eppelbaum is the editor-in-chief of the journal \"Geology, Geophysics, and Earth Sciences\" and a member of the editorial boards of such prestigious journals as \"Positioning,\" \"Open Petroleum Engineering Journal,\" \"Archaeological Discovery,\" \"Stratigraphy, Petroleum, Sedimentology, Geochemistry,\" \"ANAS Transactions, Earth Sciences,\" \"International Journal of Earthquake Engineering,\" \"Discover Geoscience,\" \"Academy Green Energy,\" \"Contributions to Geosciences,\" \"Geosciences,\" \"Russian Journal of Physical Chemistry,\" and \"World Journal of Physics.\" At the same time, he served as a guest editor for the journals \"Advances in Geosciences,\" \"Journal of Geophysics and Engineering,\" \"Continent and Life Evolution,\" \"Frontiers in Earth Sciences,\" \"Geosciences (Switzerland),\" &quot;Land&quot; and \"Applied Sciences (Switzerland).\"</p><p class=\"bio\">Professor Lev Eppelbaum is a member of two international geophysical commissions: the \"Rotation of the Earth\" commission and \"WebmedCentral Ecology Advisory Board.\"</p><p class=\"bio\">In 2020, he was awarded the title of honorary professor of the Azerbaijan State Oil and Industry University, and in 2023, he was elected a foreign member of the Georgian Academy of Sciences.</p><p class=\"bio\">Professor Eppelbaum has received several awards; among them is the Christian Huygens medal of the European Geosciences Union (2019).</p><p class=\"bio\">According to Google Scholar, his scholarly publications have been cited nearly 8,000 times.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-02.json",
+      "line": 1,
+      "jsonPointer": "/profiles/15/bio_html_en",
+      "profileNumber": 37,
+      "profile": "Natig Atakisiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L002"
+      ],
+      "before": "<p class=\"bio bio-lead\">He is the author or co-author of 131 scientific articles published in the world&#x27;s leading journals in the field of mathematical physics and 62 scientific reports at international conferences held in 15 countries of Europe, North and South America. These scientific works have been cited in 2825 publications of scientists engaged in the study of similar problems (his Google Scholar h-index is 28). He was the scientific supervisor of 4 graduate students who defended their dissertations in Azerbaijan and one doctoral student in Mexico.</p>",
+      "after": "<p class=\"bio bio-lead\">He is the author or co-author of 131 scientific articles published in the world&#x27;s leading journals in the field of mathematical physics and 62 scientific reports at international conferences held in 15 countries of Europe, North and South America. These scientific works have been cited in 2825 publications by scientists engaged in the study of similar problems (his Google Scholar h-index is 28). He was the scientific supervisor of 4 graduate students who defended their dissertations in Azerbaijan and one doctoral student in Mexico.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/4/title_en",
+      "profileNumber": 47,
+      "profile": "Aladdin Allahverdiyev",
+      "field": "title_en",
+      "issueIds": [
+        "L004"
+      ],
+      "before": "Former USSR Ministry of Electronic Industry, Scientific Research Institute \"Fonon\" - head of department, Moscow State Academy of Business Administration - professor, head of department, dean, vice-rector, first vice-rector, \"MIET\" National Research University - professor, head of the Quality of Education Process, deputy vice-rector",
+      "after": "Former USSR Ministry of Electronic Industry, Scientific Research Institute \"Fonon\" — head of department, Moscow State Academy of Business Administration — professor, head of department, dean, vice-rector, first vice-rector, \"MIET\" National Research University — professor, head of the Quality of Education Process, deputy vice-rector"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/15/bio_html_en",
+      "profileNumber": 58,
+      "profile": "Azer Abdullayev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L005"
+      ],
+      "before": "<p class=\"bio bio-lead\">Professor Azer Jafar oglu Abdullayev, a doctor of medical sciences, traumatologist-orthopedic surgeon, and inventor, is a medical scientist with extensive scientific and practical experience in the field of traumatology and orthopedics. He has worked as a teacher, assistant and associate professor at Azerbaijan Medical University for many years, and since 2004 he has been the head of the Orthopedic Department and consultant surgeon at King Fahad and Sabya Hospitals located in Gizan, Saudi Arabia.</p><p class=\"bio\">Abdullayev, who was born in 1955 in Sharur, Nakhchivan Autonomous Republic, entered the Faculty of Medicine and Prevention of Azerbaijan Medical University in 1972, and in 1979 he completed the surgery internship. In 1989, he was awarded the degree of doctor of philosophy in medicine, and in 2012, he was awarded the degree of doctor of medical sciences.</p><p class=\"bio\">His research is marked by considerable inventiveness. He is the author of 6 inventions—including an external fixation device, a compression pin and a healing ointment—that are widely used in medical practice, known by such names as \"Abdullayev apparatus,\" &quot;Abdullayev stick&quot; and \"Abdullayev ointment.\" These inventions have been used in the treatment of thousands of patients and have given positive results.</p><p class=\"bio\">Professor Abdullayev&#x27;s research and teaching activities are also extensive: he is the author of more than 70 scientific articles, 2 teaching methodology resources, and the owner of 6 invention patents. His work made significant contributions to the development of practical health care, along with important scientific innovations in the field of traumatology and orthopedics.</p>",
+      "after": "<p class=\"bio bio-lead\">Professor Azer Jafar oglu Abdullayev, a doctor of medical sciences, traumatologist-orthopedic surgeon, and inventor, is a medical scientist with extensive scientific and practical experience in the field of traumatology and orthopedics. He has worked as a teacher, assistant and associate professor at Azerbaijan Medical University for many years, and since 2004 he has been the head of the Orthopedic Department and consultant surgeon at King Fahad and Sabya Hospitals located in Gizan, Saudi Arabia.</p><p class=\"bio\">Abdullayev, who was born in 1955 in Sharur, Nakhchivan Autonomous Republic, entered the Faculty of Medicine and Prevention of Azerbaijan Medical University in 1972, and in 1979 he completed the surgery internship. In 1989, he was awarded the degree of doctor of philosophy in medicine, and in 2012, he was awarded the degree of doctor of medical sciences.</p><p class=\"bio\">His research is marked by considerable inventiveness. He is the author of 6 inventions—including an external fixation device, a compression pin and a healing ointment—that are widely used in medical practice, known by such names as \"Abdullayev apparatus,\" &quot;Abdullayev stick&quot; and \"Abdullayev ointment.\" These inventions have been used in the treatment of thousands of patients and have given positive results.</p><p class=\"bio\">Professor Abdullayev&#x27;s research and teaching activities are also extensive: he is the author of more than 70 scientific articles and 2 teaching methodology resources, and the owner of 6 invention patents. His work made significant contributions to the development of practical health care, along with important scientific innovations in the field of traumatology and orthopedics.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/16/bio_html_en",
+      "profileNumber": 59,
+      "profile": "Elvin Efendi",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L006"
+      ],
+      "before": "<p class=\"bio bio-lead\">Elvin Efendi is an economist with extensive international experience in economics and development. Currently, he works as the head of strategy and research in the Strategic department of the Islamic Private Sector Development Corporation (ICD), a part of the Islamic Development Bank Group. In this role, he leads the development of corporate and country strategies, the management of economic research and policy documents, the publication of leading reports, and the creation of private sector development initiatives in member countries.</p><p class=\"bio\">Before that, Elvin Efendi worked in important positions in the field of economic analysis and policy planning in institutions such as the Central Bank of Azerbaijan, the World Bank and the Ministry of Economic Development of the Republic of Azerbaijan. He studied at the University of London, Michigan State University and Baku State University, and received a Ph.D. in economics.</p><p class=\"bio\">Elvin Efendi has authored more than 20 peer-reviewed scientific articles in academic journals, as well as more than 25 research documents (working papers). He gave presentations at more than 10 international scientific conferences and participated in events held in more than 15 countries. For the first time, he developed the \"Private Sector Development Index of Islamic Countries,\" which evaluates the level of development of the private sector in Islamic countries, and this academic innovation was published in a prestigious scientific journal. He has taught more than 300 graduate and undergraduate students economic development, macroeconomics, microeconomics, and econometrics at various universities, including Dar Al Hekma University. He also taught at Khazar University and UNEC.</p><p class=\"bio\">Elvin Efendi has extensive research experience in economic policy, development economics, entrepreneurship and social capital. He was a member of the editorial boards of a number of prestigious academic journals, performed extensive scientific and organizational activities as a leader and participant of various international projects, and was awarded various prizes and scholarships.</p>",
+      "after": "<p class=\"bio bio-lead\">Elvin Efendi is an economist with extensive international experience in economics and development. Currently, he works as the head of strategy and research in the Strategic department of the Islamic Private Sector Development Corporation (ICD), a part of the Islamic Development Bank Group. In this role, he leads the development of corporate and country strategies, the management of economic research and policy documents, the publication of leading reports, and the creation of private sector development initiatives in member countries.</p><p class=\"bio\">Before that, Elvin Efendi worked in important positions in the field of economic analysis and policy planning in institutions such as the Central Bank of Azerbaijan, the World Bank and the Ministry of Economic Development of the Republic of Azerbaijan. He studied at the University of London, Michigan State University and Baku State University, and received a Ph.D. in economics.</p><p class=\"bio\">Elvin Efendi has authored more than 20 peer-reviewed scientific articles in academic journals, as well as more than 25 research documents (working papers). He gave presentations at more than 10 international scientific conferences and participated in events held in more than 15 countries. For the first time, he developed the \"Private Sector Development Index of Islamic Countries,\" which evaluates the level of development of the private sector in Islamic countries, and this academic innovation was published in a prestigious scientific journal. He has taught more than 300 graduate and undergraduate students economic development, macroeconomics, microeconomics, and econometrics at various universities, including Dar Al Hekma University. He also taught at Khazar University and UNEC.</p><p class=\"bio\">Elvin Efendi has extensive research experience in economic policy, development economics, entrepreneurship and social capital. He was a member of the editorial boards of a number of prestigious academic journals, performed extensive scientific and organizational activities as a leader of and participant in various international projects, and was awarded various prizes and scholarships.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/0/bio_html_en",
+      "profileNumber": 64,
+      "profile": "Emirullah Mehmedov",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L007"
+      ],
+      "before": "<p class=\"bio bio-lead\">Honorary professor of Bilkend University, leading researcher of Nanotechnology Scientific Research Center</p><p class=\"bio\">Professor Amirulla Mammadov (known as Emirullah M. Mehmetov in scientific publications) is an internationally recognized scientist in the fields of optics, nonlinear optics, laser physics, metamaterials, topological insulators, photonics, nanophotonics and biomedical modeling. He received a doctor of philosophy (Ph.D.) degree in physics and mathematics at the &quot;Ioffe&quot; Institute of Physics and Mathematics of the former USSR Academy of Sciences, and then a doctor of sciences (habilitas doctor) degree, and in 1988 he was awarded the title of professor of \"Optics.\"</p><p class=\"bio\">He continued his research activities in the world&#x27;s leading science and technology centers - Stanford, Caltech, Wisconsin and Rome &quot;La Sapienza&quot; universities, US military laboratories, as well as in Japan and various European countries. Currently, he works as a professor-researcher at the Nanotechnology Research Center (NANOTAM) of Bilkent University.</p><p class=\"bio\">Professor Mammadov is the author of more than 350 articles in prestigious international scientific publications and an invited speaker at more than 50 international conferences. He also worked as a scientific consultant at ASELSAN and the Ministry of Defense of Turkey.</p><p class=\"bio\">For his outstanding scientific and social activities, he was awarded the State Prizes of the former USSR and the Republic of Azerbaijan, the honorary title of Honored Scientist of the Republic of Azerbaijan, the Order of \"Friendship,\" the medal &quot;For service in Diaspora activity&quot; and the 100th anniversary medal of Baku State University. At the same time, he is a member of the Board of Trustees of the Turkey-Azerbaijan Friendship, Cooperation and Solidarity Charitable Society and the chairman of the Association of Azerbaijani Scientists (ABID) operating in Turkey. His multifaceted scientific activity made important contributions to the development of scientific cooperation in the region and the world.</p>",
+      "after": "<p class=\"bio bio-lead\">Honorary professor of Bilkend University, leading researcher of Nanotechnology Scientific Research Center</p><p class=\"bio\">Professor Amirulla Mammadov (known as Emirullah M. Mehmetov in scientific publications) is an internationally recognized scientist in the fields of optics, nonlinear optics, laser physics, metamaterials, topological insulators, photonics, nanophotonics and biomedical modeling. He received a doctor of philosophy (Ph.D.) degree in physics and mathematics at the &quot;Ioffe&quot; Institute of Physics and Mathematics of the former USSR Academy of Sciences, and then a doctor of sciences (habilitas doctor) degree, and in 1988 he was awarded the title of professor of \"Optics.\"</p><p class=\"bio\">He continued his research activities in the world&#x27;s leading science and technology centers—Stanford, Caltech, Wisconsin and Rome &quot;La Sapienza&quot; universities, US military laboratories, as well as in Japan and various European countries. Currently, he works as a professor-researcher at the Nanotechnology Research Center (NANOTAM) of Bilkent University.</p><p class=\"bio\">Professor Mammadov is the author of more than 350 articles in prestigious international scientific publications and an invited speaker at more than 50 international conferences. He also worked as a scientific consultant at ASELSAN and the Ministry of Defense of Turkey.</p><p class=\"bio\">For his outstanding scientific and social activities, he was awarded the State Prizes of the former USSR and the Republic of Azerbaijan, the honorary title of Honored Scientist of the Republic of Azerbaijan, the Order of \"Friendship,\" the medal &quot;For service in Diaspora activity&quot; and the 100th anniversary medal of Baku State University. At the same time, he is a member of the Board of Trustees of the Turkey-Azerbaijan Friendship, Cooperation and Solidarity Charitable Society and the chairman of the Association of Azerbaijani Scientists (ABID) operating in Turkey. His multifaceted scientific activity made important contributions to the development of scientific cooperation in the region and the world.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/7/bio_html_en",
+      "profileNumber": 71,
+      "profile": "Oruc Allahverdiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L008"
+      ],
+      "before": "<p class=\"bio bio-lead\">Oruj Allahverdiyev graduated from Istanbul University Jarrahpaşa Faculty of Medicine in the field of medical pharmacology. He is the co-author of 4 scientific books, 1 textbook, and more than 100 scientific works in the field of medicine and pharmacy. He participated in many scientific symposia in Turkey and other countries.</p><p class=\"bio\">After high school, Oruj Allahverdiyev was admitted to the Faculty of Pharmacy of Azerbaijan Medical University. Having succeeded in the Turkish government&#x27;s educational exam, he was sent to Turkey to continue his studies at Istanbul University. After graduating from Istanbul University Faculty of Pharmacy in 2006, he began his master&#x27;s studies at the Department of Pharmacology and Clinical Pharmacology, Faculty of Medicine of Istanbul University, and graduated in 2009. During his master's studies, he conducted many scientific studies on brain diseases, and these studies were published in world-renowned international journals. During his studies, several of his research projects received awards from TUBITAK.</p><p class=\"bio\">Later, he began his doctoral studies at the Department of Medical Pharmacology of the Czarrahpaşa Medical Faculty of Istanbul University. In 2014, he completed his doctoral studies as an &quot;Honor Student&quot; and received the scientific degree of Doctor of Philosophy in Medical Sciences. During his doctoral studies, he conducted a number of scientific studies on brain diseases such as substance addiction, epilepsy, depression, Parkinson&#x27;s and multiple sclerosis. These studies have been presented at world-renowned international symposia, congresses and conferences and published in prestigious journals.</p><p class=\"bio\">Oruj Allahverdiyev graduated from the Faculty of Management of Medical Institutions of Istanbul University in 2017 and was awarded the title of associate professor in the field of medical pharmacology by the Higher Education Council of Turkey (YÖK). He trained more than 10 graduate students under his scientific guidance. Currently, he is the co-author of more than 100 scientific works, 1 textbook and 4 scientific books, as well as a number of scientific articles. More than 30 of his scientific works have been published in journals indexed in \"Science Citation Index.\" Currently, associate professor Dr. O. Allahverdiyev continues his scientific activities in Turkey.</p>",
+      "after": "<p class=\"bio bio-lead\">Oruj Allahverdiyev graduated from Istanbul University Jarrahpaşa Faculty of Medicine in the field of medical pharmacology. He is the co-author of 4 scientific books, 1 textbook, and more than 100 scientific works in the field of medicine and pharmacy. He participated in many scientific symposia in Turkey and other countries.</p><p class=\"bio\">After high school, Oruj Allahverdiyev was admitted to the Faculty of Pharmacy of Azerbaijan Medical University. Having succeeded in the Turkish government&#x27;s educational exam, he was sent to Turkey to continue his studies at Istanbul University. After graduating from Istanbul University Faculty of Pharmacy in 2006, he began his master&#x27;s studies at the Department of Pharmacology and Clinical Pharmacology, Faculty of Medicine of Istanbul University, and graduated in 2009. During his master's studies, he conducted many scientific studies on brain diseases, and these studies were published in world-renowned international journals. During his studies, several of his research projects received awards from TUBITAK.</p><p class=\"bio\">Later, he began his doctoral studies at the Department of Medical Pharmacology of the Czarrahpaşa Medical Faculty of Istanbul University. In 2014, he completed his doctoral studies as an &quot;Honor Student&quot; and received the scientific degree of Doctor of Philosophy in Medical Sciences. During his doctoral studies, he conducted a number of scientific studies on brain diseases such as substance addiction, epilepsy, depression, Parkinson&#x27;s and multiple sclerosis. These studies have been presented at world-renowned international symposia, congresses and conferences and published in prestigious journals.</p><p class=\"bio\">Oruj Allahverdiyev graduated from the Faculty of Management of Medical Institutions of Istanbul University in 2017 and was awarded the title of associate professor in the field of medical pharmacology by the Higher Education Council of Turkey (YÖK). He trained more than 10 graduate students under his scientific guidance. Currently, he is the co-author of more than 100 scientific works, 1 textbook and 4 scientific books, as well as a number of scientific articles. More than 30 of his scientific works have been published in journals indexed in \"Science Citation Index.\" Currently, Associate Professor Dr. O. Allahverdiyev continues his scientific activities in Turkey.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/11/bio_html_en",
+      "profileNumber": 75,
+      "profile": "Saleh Sultansoy",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L009"
+      ],
+      "before": "<p class=\"bio bio-lead\">He has authored more than 1,500 scientific articles in high-energy physics and accelerator technologies, spoken at more than 100 international scientific conferences, and supervised more than 20 Ph.D. students.</p><p class=\"bio\">Professor Saleh Sultansoy currently works at TOBB University of Economics and Technology located in Ankara. He specializes in high-energy physics, particle accelerators, history of science and science policy. In 1969–1974, he studied at Azerbaijan State University, and in 1985, he received a doctoral degree at the Institute of High Energy Physics in Serpukhov, Russia. During his career, he worked in prestigious institutions such as the Azerbaijan National Academy of Sciences, Ankara University, DESY (Germany), Gazi University and TOBB ETÜ.</p><p class=\"bio\">His works have been cited more than 81,000 times in Web of Science, more than 275,000 times in Google Scholar, and more than 235,000 times by HEP Inspire. His h-indices are 127, 208 and 215, respectively.</p><p class=\"bio\">His main research areas are high-energy physics, accelerator technologies and scientific strategies. In 2013, he was awarded the &quot;Engin Arık&quot; science prize of the Turkish Physics Society, and in 2016, he was awarded the &quot;Golden Apple&quot; science prize of the Turkish world.</p><p class=\"bio\">Saleh Sultansoy was a member of scientific councils at CERN and other international research centers, and actively participated in the development of scientific policy in Turkey and the Turkic world. He is one of the founders and leaders of the Turkish Accelerator Complex (TAC) project, a long-term national scientific research initiative, the author of the ATAM (Ankara Fundamental Research Center) initiative, a participant in ATLAS, CLIC, LHeC, FCC and other CERN projects. He was also the scientific leader of a number of advanced projects on accelerator technologies conducted within the framework of DPT-TAEK and TUBITAK.</p>",
+      "after": "<p class=\"bio bio-lead\">He has authored more than 1,500 scientific articles in high-energy physics and accelerator technologies, spoken at more than 100 international scientific conferences, and supervised more than 20 Ph.D. students.</p><p class=\"bio\">Professor Saleh Sultansoy currently works at TOBB University of Economics and Technology located in Ankara. He specializes in high-energy physics, particle accelerators, history of science and science policy. In 1969–1974, he studied at Azerbaijan State University, and in 1985, he received a doctoral degree at the Institute of High Energy Physics in Serpukhov, Russia. During his career, he worked in prestigious institutions such as the Azerbaijan National Academy of Sciences, Ankara University, DESY (Germany), Gazi University and TOBB ETÜ.</p><p class=\"bio\">His works have been cited more than 81,000 times in Web of Science, more than 275,000 times in Google Scholar, and more than 235,000 times by HEP Inspire. His h-indices are 127, 208 and 215, respectively.</p><p class=\"bio\">His main research areas are high-energy physics, accelerator technologies and scientific strategies. In 2013, he was awarded the &quot;Engin Arık&quot; science prize of the Turkish Physics Society, and in 2016, he was awarded the &quot;Golden Apple&quot; science prize of the Turkish world.</p><p class=\"bio\">Saleh Sultansoy was a member of scientific councils at CERN and other international research centers, and actively participated in the development of scientific policy in Turkey and the Turkic world. He is one of the founders and leaders of the Turkish Accelerator Complex (TAC) project, a long-term national scientific research initiative, the author of the ATAM (Ankara Fundamental Research Center) initiative, and a participant in ATLAS, CLIC, LHeC, FCC and other CERN projects. He was also the scientific leader of a number of advanced projects on accelerator technologies conducted within the framework of DPT-TAEK and TUBITAK.</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/18/bio_html_en",
+      "profileNumber": 82,
+      "profile": "Murad Omarov",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L010"
+      ],
+      "before": "<p class=\"bio bio-lead\">He is the co-author of more than 150 scientific works (17 of them are indexed in Scopus), 3 monographs and 11 textbooks. He has 12 copyright certificates and invention patents of Ukraine. He supervised the writing and defense of candidate dissertations of 5 graduate students. He works as vice-rector for international cooperation at Kharkiv National Radioelectronics University of Ukraine. He holds the scientific degrees of candidate of technical sciences (research and improvement of fiber-optic information transmission systems) and doctor of technical sciences (development of the theory of designing electrodynamic devices with distributed and quasi-distributed nonlinear elements). Prof. Omarov, who has more than 40 years of experience in higher education and research, worked in various academic and administrative positions—as a professor, head of the department, director of the center for foreign students and dean.</p><p class=\"bio\">Several candidate theses were defended under his guidance; these works include distance education systems, production logistics, intelligent control models and methods of robots, control systems in the field of electronics. He taught subjects such as computerized communication systems, robotics and advanced mathematics. Prof. Omarov is also an active member of national expert councils and participant in international scientific conferences. Since 2019, ICONAT has been chairing a series of conferences.</p><p class=\"bio\">His research interests include information and measurement systems, fiber-optic communication and designing electrodynamic devices with nonlinear elements. He has been an academician of the Academy of Applied Radioelectronics of Ukraine since 2004. In 2016, he was awarded the honorary title of \"Honored Scientist of the Republic of Azerbaijan.\"</p>",
+      "after": "<p class=\"bio bio-lead\">He is the co-author of more than 150 scientific works (17 of them are indexed in Scopus), 3 monographs and 11 textbooks. He has 12 copyright certificates and invention patents of Ukraine. He supervised the writing and defense of candidate dissertations of 5 graduate students. He works as vice-rector for international cooperation at Kharkiv National Radioelectronics University of Ukraine. He holds the scientific degrees of candidate of technical sciences (research and improvement of fiber-optic information transmission systems) and doctor of technical sciences (development of the theory of designing electrodynamic devices with distributed and quasi-distributed nonlinear elements). Prof. Omarov, who has more than 40 years of experience in higher education and research, worked in various academic and administrative positions—as a professor, head of the department, director of the center for foreign students and dean.</p><p class=\"bio\">Several candidate theses were defended under his guidance; these works include distance education systems, production logistics, intelligent control models and methods of robots, and control systems in the field of electronics. He taught subjects such as computerized communication systems, robotics and advanced mathematics. Prof. Omarov is also an active member of national expert councils and participant in international scientific conferences. Since 2019, ICONAT has been chairing a series of conferences.</p><p class=\"bio\">His research interests include information and measurement systems, fiber-optic communication and designing electrodynamic devices with nonlinear elements. He has been an academician of the Academy of Applied Radioelectronics of Ukraine since 2004. In 2016, he was awarded the honorary title of \"Honored Scientist of the Republic of Azerbaijan.\"</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 719,
+      "jsonPointer": "/profiles/41/title_en",
+      "profileNumber": 42,
+      "profile": "Arzu Gurbanova",
+      "field": "title_en",
+      "issueIds": [
+        "L003"
+      ],
+      "before": "Candidate of Pedagogical Sciences, professor of the Department of Languages ​​and Literature of the Central Asia Innovation University",
+      "after": "Candidate of Pedagogical Sciences, professor of the Department of Languages and Literature of the Central Asia Innovation University"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 805,
+      "jsonPointer": "/profiles/46/title_en",
+      "profileNumber": 47,
+      "profile": "Aladdin Allahverdiyev",
+      "field": "title_en",
+      "issueIds": [
+        "L004"
+      ],
+      "before": "Former USSR Ministry of Electronic Industry, Scientific Research Institute \"Fonon\" - head of department, Moscow State Academy of Business Administration - professor, head of department, dean, vice-rector, first vice-rector, \"MIET\" National Research University - professor, head of the Quality of Education Process, deputy vice-rector",
+      "after": "Former USSR Ministry of Electronic Industry, Scientific Research Institute \"Fonon\" — head of department, Moscow State Academy of Business Administration — professor, head of department, dean, vice-rector, first vice-rector, \"MIET\" National Research University — professor, head of the Quality of Education Process, deputy vice-rector"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 482,
+      "jsonPointer": "/profiles/27/bio_html_en",
+      "profileNumber": 28,
+      "profile": "Lev Eppelbaum",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L001"
+      ],
+      "before": "<p class=\"bio bio-lead\">Honorary professor of Azerbaijan State Oil and Industry University</p><p class=\"bio\">Professor Lev Eppelbaum (Tel Aviv University, Department of Geophysics) is the author of approximately 460 scientific publications. These include 12 books, 18 book chapters, 194 peer-reviewed journal articles, 81 conference materials and 171 abstracts published by international scientific publishers (Kluwer Academic Publisher, Springer, Elsevier, Chapman and Hall, Institute of Physics (Great Britain)). Prof. Eppelbaum&#x27;s main research areas are geodynamics and tectonic reconstructions, applied and environmental geophysics, archaeological geophysics, and integrated analysis of geophysical, geological and related data.</p><p class=\"bio\">He was elected head of scientific departments 26 times at international conferences. Professor Lev Eppelbaum is the editor-in-chief of the journal \"Geology, Geophysics, and Earth Sciences\" and a member of the editorial boards of such prestigious journals as \"Positioning,\" \"Open Petroleum Engineering Journal,\" \"Archaeological Discovery,\" \"Stratigraphy, Petroleum, Sedimentology, Geochemistry,\" \"ANAS Transactions, Earth Sciences,\" \"International Journal of Earthquake Engineering,\" \"Discover Geoscience,\" \"Academy Green Energy,\" \"Contributions to Geosciences,\" \"Geosciences,\" \"Russian Journal of Physical Chemistry,\" \"World Journal of Physics.\" At the same time, he served as a guest editor for the journals \"Advances in Geosciences,\" \"Journal of Geophysics and Engineering,\" \"Continent and Life Evolution,\" \"Frontiers in Earth Sciences,\" \"Geosciences (Switzerland),\" &quot;Land&quot; and \"Applied Sciences (Switzerland).\"</p><p class=\"bio\">Professor Lev Eppelbaum is a member of two international geophysical commissions: the \"Rotation of the Earth\" commission and \"WebmedCentral Ecology Advisory Board.\"</p><p class=\"bio\">In 2020, he was awarded the title of honorary professor of the Azerbaijan State Oil and Industry University, and in 2023, he was elected a foreign member of the Georgian Academy of Sciences.</p><p class=\"bio\">Professor Eppelbaum has received several awards; among them is the Christian Huygens medal of the European Geosciences Union (2019).</p><p class=\"bio\">According to Google Scholar, his scholarly publications have been cited nearly 8,000 times.</p>",
+      "after": "<p class=\"bio bio-lead\">Honorary professor of Azerbaijan State Oil and Industry University</p><p class=\"bio\">Professor Lev Eppelbaum (Tel Aviv University, Department of Geophysics) is the author of approximately 460 scientific publications. These include 12 books, 18 book chapters, 194 peer-reviewed journal articles, 81 conference materials and 171 abstracts published by international scientific publishers (Kluwer Academic Publisher, Springer, Elsevier, Chapman and Hall, Institute of Physics (Great Britain)). Prof. Eppelbaum&#x27;s main research areas are geodynamics and tectonic reconstructions, applied and environmental geophysics, archaeological geophysics, and integrated analysis of geophysical, geological and related data.</p><p class=\"bio\">He was elected head of scientific departments 26 times at international conferences. Professor Lev Eppelbaum is the editor-in-chief of the journal \"Geology, Geophysics, and Earth Sciences\" and a member of the editorial boards of such prestigious journals as \"Positioning,\" \"Open Petroleum Engineering Journal,\" \"Archaeological Discovery,\" \"Stratigraphy, Petroleum, Sedimentology, Geochemistry,\" \"ANAS Transactions, Earth Sciences,\" \"International Journal of Earthquake Engineering,\" \"Discover Geoscience,\" \"Academy Green Energy,\" \"Contributions to Geosciences,\" \"Geosciences,\" \"Russian Journal of Physical Chemistry,\" and \"World Journal of Physics.\" At the same time, he served as a guest editor for the journals \"Advances in Geosciences,\" \"Journal of Geophysics and Engineering,\" \"Continent and Life Evolution,\" \"Frontiers in Earth Sciences,\" \"Geosciences (Switzerland),\" &quot;Land&quot; and \"Applied Sciences (Switzerland).\"</p><p class=\"bio\">Professor Lev Eppelbaum is a member of two international geophysical commissions: the \"Rotation of the Earth\" commission and \"WebmedCentral Ecology Advisory Board.\"</p><p class=\"bio\">In 2020, he was awarded the title of honorary professor of the Azerbaijan State Oil and Industry University, and in 2023, he was elected a foreign member of the Georgian Academy of Sciences.</p><p class=\"bio\">Professor Eppelbaum has received several awards; among them is the Christian Huygens medal of the European Geosciences Union (2019).</p><p class=\"bio\">According to Google Scholar, his scholarly publications have been cited nearly 8,000 times.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 635,
+      "jsonPointer": "/profiles/36/bio_html_en",
+      "profileNumber": 37,
+      "profile": "Natig Atakisiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L002"
+      ],
+      "before": "<p class=\"bio bio-lead\">He is the author or co-author of 131 scientific articles published in the world&#x27;s leading journals in the field of mathematical physics and 62 scientific reports at international conferences held in 15 countries of Europe, North and South America. These scientific works have been cited in 2825 publications of scientists engaged in the study of similar problems (his Google Scholar h-index is 28). He was the scientific supervisor of 4 graduate students who defended their dissertations in Azerbaijan and one doctoral student in Mexico.</p>",
+      "after": "<p class=\"bio bio-lead\">He is the author or co-author of 131 scientific articles published in the world&#x27;s leading journals in the field of mathematical physics and 62 scientific reports at international conferences held in 15 countries of Europe, North and South America. These scientific works have been cited in 2825 publications by scientists engaged in the study of similar problems (his Google Scholar h-index is 28). He was the scientific supervisor of 4 graduate students who defended their dissertations in Azerbaijan and one doctoral student in Mexico.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 993,
+      "jsonPointer": "/profiles/57/bio_html_en",
+      "profileNumber": 58,
+      "profile": "Azer Abdullayev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L005"
+      ],
+      "before": "<p class=\"bio bio-lead\">Professor Azer Jafar oglu Abdullayev, a doctor of medical sciences, traumatologist-orthopedic surgeon, and inventor, is a medical scientist with extensive scientific and practical experience in the field of traumatology and orthopedics. He has worked as a teacher, assistant and associate professor at Azerbaijan Medical University for many years, and since 2004 he has been the head of the Orthopedic Department and consultant surgeon at King Fahad and Sabya Hospitals located in Gizan, Saudi Arabia.</p><p class=\"bio\">Abdullayev, who was born in 1955 in Sharur, Nakhchivan Autonomous Republic, entered the Faculty of Medicine and Prevention of Azerbaijan Medical University in 1972, and in 1979 he completed the surgery internship. In 1989, he was awarded the degree of doctor of philosophy in medicine, and in 2012, he was awarded the degree of doctor of medical sciences.</p><p class=\"bio\">His research is marked by considerable inventiveness. He is the author of 6 inventions—including an external fixation device, a compression pin and a healing ointment—that are widely used in medical practice, known by such names as \"Abdullayev apparatus,\" &quot;Abdullayev stick&quot; and \"Abdullayev ointment.\" These inventions have been used in the treatment of thousands of patients and have given positive results.</p><p class=\"bio\">Professor Abdullayev&#x27;s research and teaching activities are also extensive: he is the author of more than 70 scientific articles, 2 teaching methodology resources, and the owner of 6 invention patents. His work made significant contributions to the development of practical health care, along with important scientific innovations in the field of traumatology and orthopedics.</p>",
+      "after": "<p class=\"bio bio-lead\">Professor Azer Jafar oglu Abdullayev, a doctor of medical sciences, traumatologist-orthopedic surgeon, and inventor, is a medical scientist with extensive scientific and practical experience in the field of traumatology and orthopedics. He has worked as a teacher, assistant and associate professor at Azerbaijan Medical University for many years, and since 2004 he has been the head of the Orthopedic Department and consultant surgeon at King Fahad and Sabya Hospitals located in Gizan, Saudi Arabia.</p><p class=\"bio\">Abdullayev, who was born in 1955 in Sharur, Nakhchivan Autonomous Republic, entered the Faculty of Medicine and Prevention of Azerbaijan Medical University in 1972, and in 1979 he completed the surgery internship. In 1989, he was awarded the degree of doctor of philosophy in medicine, and in 2012, he was awarded the degree of doctor of medical sciences.</p><p class=\"bio\">His research is marked by considerable inventiveness. He is the author of 6 inventions—including an external fixation device, a compression pin and a healing ointment—that are widely used in medical practice, known by such names as \"Abdullayev apparatus,\" &quot;Abdullayev stick&quot; and \"Abdullayev ointment.\" These inventions have been used in the treatment of thousands of patients and have given positive results.</p><p class=\"bio\">Professor Abdullayev&#x27;s research and teaching activities are also extensive: he is the author of more than 70 scientific articles and 2 teaching methodology resources, and the owner of 6 invention patents. His work made significant contributions to the development of practical health care, along with important scientific innovations in the field of traumatology and orthopedics.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 1010,
+      "jsonPointer": "/profiles/58/bio_html_en",
+      "profileNumber": 59,
+      "profile": "Elvin Efendi",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L006"
+      ],
+      "before": "<p class=\"bio bio-lead\">Elvin Efendi is an economist with extensive international experience in economics and development. Currently, he works as the head of strategy and research in the Strategic department of the Islamic Private Sector Development Corporation (ICD), a part of the Islamic Development Bank Group. In this role, he leads the development of corporate and country strategies, the management of economic research and policy documents, the publication of leading reports, and the creation of private sector development initiatives in member countries.</p><p class=\"bio\">Before that, Elvin Efendi worked in important positions in the field of economic analysis and policy planning in institutions such as the Central Bank of Azerbaijan, the World Bank and the Ministry of Economic Development of the Republic of Azerbaijan. He studied at the University of London, Michigan State University and Baku State University, and received a Ph.D. in economics.</p><p class=\"bio\">Elvin Efendi has authored more than 20 peer-reviewed scientific articles in academic journals, as well as more than 25 research documents (working papers). He gave presentations at more than 10 international scientific conferences and participated in events held in more than 15 countries. For the first time, he developed the \"Private Sector Development Index of Islamic Countries,\" which evaluates the level of development of the private sector in Islamic countries, and this academic innovation was published in a prestigious scientific journal. He has taught more than 300 graduate and undergraduate students economic development, macroeconomics, microeconomics, and econometrics at various universities, including Dar Al Hekma University. He also taught at Khazar University and UNEC.</p><p class=\"bio\">Elvin Efendi has extensive research experience in economic policy, development economics, entrepreneurship and social capital. He was a member of the editorial boards of a number of prestigious academic journals, performed extensive scientific and organizational activities as a leader and participant of various international projects, and was awarded various prizes and scholarships.</p>",
+      "after": "<p class=\"bio bio-lead\">Elvin Efendi is an economist with extensive international experience in economics and development. Currently, he works as the head of strategy and research in the Strategic department of the Islamic Private Sector Development Corporation (ICD), a part of the Islamic Development Bank Group. In this role, he leads the development of corporate and country strategies, the management of economic research and policy documents, the publication of leading reports, and the creation of private sector development initiatives in member countries.</p><p class=\"bio\">Before that, Elvin Efendi worked in important positions in the field of economic analysis and policy planning in institutions such as the Central Bank of Azerbaijan, the World Bank and the Ministry of Economic Development of the Republic of Azerbaijan. He studied at the University of London, Michigan State University and Baku State University, and received a Ph.D. in economics.</p><p class=\"bio\">Elvin Efendi has authored more than 20 peer-reviewed scientific articles in academic journals, as well as more than 25 research documents (working papers). He gave presentations at more than 10 international scientific conferences and participated in events held in more than 15 countries. For the first time, he developed the \"Private Sector Development Index of Islamic Countries,\" which evaluates the level of development of the private sector in Islamic countries, and this academic innovation was published in a prestigious scientific journal. He has taught more than 300 graduate and undergraduate students economic development, macroeconomics, microeconomics, and econometrics at various universities, including Dar Al Hekma University. He also taught at Khazar University and UNEC.</p><p class=\"bio\">Elvin Efendi has extensive research experience in economic policy, development economics, entrepreneurship and social capital. He was a member of the editorial boards of a number of prestigious academic journals, performed extensive scientific and organizational activities as a leader of and participant in various international projects, and was awarded various prizes and scholarships.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 1097,
+      "jsonPointer": "/profiles/63/bio_html_en",
+      "profileNumber": 64,
+      "profile": "Emirullah Mehmedov",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L007"
+      ],
+      "before": "<p class=\"bio bio-lead\">Honorary professor of Bilkend University, leading researcher of Nanotechnology Scientific Research Center</p><p class=\"bio\">Professor Amirulla Mammadov (known as Emirullah M. Mehmetov in scientific publications) is an internationally recognized scientist in the fields of optics, nonlinear optics, laser physics, metamaterials, topological insulators, photonics, nanophotonics and biomedical modeling. He received a doctor of philosophy (Ph.D.) degree in physics and mathematics at the &quot;Ioffe&quot; Institute of Physics and Mathematics of the former USSR Academy of Sciences, and then a doctor of sciences (habilitas doctor) degree, and in 1988 he was awarded the title of professor of \"Optics.\"</p><p class=\"bio\">He continued his research activities in the world&#x27;s leading science and technology centers - Stanford, Caltech, Wisconsin and Rome &quot;La Sapienza&quot; universities, US military laboratories, as well as in Japan and various European countries. Currently, he works as a professor-researcher at the Nanotechnology Research Center (NANOTAM) of Bilkent University.</p><p class=\"bio\">Professor Mammadov is the author of more than 350 articles in prestigious international scientific publications and an invited speaker at more than 50 international conferences. He also worked as a scientific consultant at ASELSAN and the Ministry of Defense of Turkey.</p><p class=\"bio\">For his outstanding scientific and social activities, he was awarded the State Prizes of the former USSR and the Republic of Azerbaijan, the honorary title of Honored Scientist of the Republic of Azerbaijan, the Order of \"Friendship,\" the medal &quot;For service in Diaspora activity&quot; and the 100th anniversary medal of Baku State University. At the same time, he is a member of the Board of Trustees of the Turkey-Azerbaijan Friendship, Cooperation and Solidarity Charitable Society and the chairman of the Association of Azerbaijani Scientists (ABID) operating in Turkey. His multifaceted scientific activity made important contributions to the development of scientific cooperation in the region and the world.</p>",
+      "after": "<p class=\"bio bio-lead\">Honorary professor of Bilkend University, leading researcher of Nanotechnology Scientific Research Center</p><p class=\"bio\">Professor Amirulla Mammadov (known as Emirullah M. Mehmetov in scientific publications) is an internationally recognized scientist in the fields of optics, nonlinear optics, laser physics, metamaterials, topological insulators, photonics, nanophotonics and biomedical modeling. He received a doctor of philosophy (Ph.D.) degree in physics and mathematics at the &quot;Ioffe&quot; Institute of Physics and Mathematics of the former USSR Academy of Sciences, and then a doctor of sciences (habilitas doctor) degree, and in 1988 he was awarded the title of professor of \"Optics.\"</p><p class=\"bio\">He continued his research activities in the world&#x27;s leading science and technology centers—Stanford, Caltech, Wisconsin and Rome &quot;La Sapienza&quot; universities, US military laboratories, as well as in Japan and various European countries. Currently, he works as a professor-researcher at the Nanotechnology Research Center (NANOTAM) of Bilkent University.</p><p class=\"bio\">Professor Mammadov is the author of more than 350 articles in prestigious international scientific publications and an invited speaker at more than 50 international conferences. He also worked as a scientific consultant at ASELSAN and the Ministry of Defense of Turkey.</p><p class=\"bio\">For his outstanding scientific and social activities, he was awarded the State Prizes of the former USSR and the Republic of Azerbaijan, the honorary title of Honored Scientist of the Republic of Azerbaijan, the Order of \"Friendship,\" the medal &quot;For service in Diaspora activity&quot; and the 100th anniversary medal of Baku State University. At the same time, he is a member of the Board of Trustees of the Turkey-Azerbaijan Friendship, Cooperation and Solidarity Charitable Society and the chairman of the Association of Azerbaijani Scientists (ABID) operating in Turkey. His multifaceted scientific activity made important contributions to the development of scientific cooperation in the region and the world.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 1216,
+      "jsonPointer": "/profiles/70/bio_html_en",
+      "profileNumber": 71,
+      "profile": "Oruc Allahverdiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L008"
+      ],
+      "before": "<p class=\"bio bio-lead\">Oruj Allahverdiyev graduated from Istanbul University Jarrahpaşa Faculty of Medicine in the field of medical pharmacology. He is the co-author of 4 scientific books, 1 textbook, and more than 100 scientific works in the field of medicine and pharmacy. He participated in many scientific symposia in Turkey and other countries.</p><p class=\"bio\">After high school, Oruj Allahverdiyev was admitted to the Faculty of Pharmacy of Azerbaijan Medical University. Having succeeded in the Turkish government&#x27;s educational exam, he was sent to Turkey to continue his studies at Istanbul University. After graduating from Istanbul University Faculty of Pharmacy in 2006, he began his master&#x27;s studies at the Department of Pharmacology and Clinical Pharmacology, Faculty of Medicine of Istanbul University, and graduated in 2009. During his master's studies, he conducted many scientific studies on brain diseases, and these studies were published in world-renowned international journals. During his studies, several of his research projects received awards from TUBITAK.</p><p class=\"bio\">Later, he began his doctoral studies at the Department of Medical Pharmacology of the Czarrahpaşa Medical Faculty of Istanbul University. In 2014, he completed his doctoral studies as an &quot;Honor Student&quot; and received the scientific degree of Doctor of Philosophy in Medical Sciences. During his doctoral studies, he conducted a number of scientific studies on brain diseases such as substance addiction, epilepsy, depression, Parkinson&#x27;s and multiple sclerosis. These studies have been presented at world-renowned international symposia, congresses and conferences and published in prestigious journals.</p><p class=\"bio\">Oruj Allahverdiyev graduated from the Faculty of Management of Medical Institutions of Istanbul University in 2017 and was awarded the title of associate professor in the field of medical pharmacology by the Higher Education Council of Turkey (YÖK). He trained more than 10 graduate students under his scientific guidance. Currently, he is the co-author of more than 100 scientific works, 1 textbook and 4 scientific books, as well as a number of scientific articles. More than 30 of his scientific works have been published in journals indexed in \"Science Citation Index.\" Currently, associate professor Dr. O. Allahverdiyev continues his scientific activities in Turkey.</p>",
+      "after": "<p class=\"bio bio-lead\">Oruj Allahverdiyev graduated from Istanbul University Jarrahpaşa Faculty of Medicine in the field of medical pharmacology. He is the co-author of 4 scientific books, 1 textbook, and more than 100 scientific works in the field of medicine and pharmacy. He participated in many scientific symposia in Turkey and other countries.</p><p class=\"bio\">After high school, Oruj Allahverdiyev was admitted to the Faculty of Pharmacy of Azerbaijan Medical University. Having succeeded in the Turkish government&#x27;s educational exam, he was sent to Turkey to continue his studies at Istanbul University. After graduating from Istanbul University Faculty of Pharmacy in 2006, he began his master&#x27;s studies at the Department of Pharmacology and Clinical Pharmacology, Faculty of Medicine of Istanbul University, and graduated in 2009. During his master's studies, he conducted many scientific studies on brain diseases, and these studies were published in world-renowned international journals. During his studies, several of his research projects received awards from TUBITAK.</p><p class=\"bio\">Later, he began his doctoral studies at the Department of Medical Pharmacology of the Czarrahpaşa Medical Faculty of Istanbul University. In 2014, he completed his doctoral studies as an &quot;Honor Student&quot; and received the scientific degree of Doctor of Philosophy in Medical Sciences. During his doctoral studies, he conducted a number of scientific studies on brain diseases such as substance addiction, epilepsy, depression, Parkinson&#x27;s and multiple sclerosis. These studies have been presented at world-renowned international symposia, congresses and conferences and published in prestigious journals.</p><p class=\"bio\">Oruj Allahverdiyev graduated from the Faculty of Management of Medical Institutions of Istanbul University in 2017 and was awarded the title of associate professor in the field of medical pharmacology by the Higher Education Council of Turkey (YÖK). He trained more than 10 graduate students under his scientific guidance. Currently, he is the co-author of more than 100 scientific works, 1 textbook and 4 scientific books, as well as a number of scientific articles. More than 30 of his scientific works have been published in journals indexed in \"Science Citation Index.\" Currently, Associate Professor Dr. O. Allahverdiyev continues his scientific activities in Turkey.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 1284,
+      "jsonPointer": "/profiles/74/bio_html_en",
+      "profileNumber": 75,
+      "profile": "Saleh Sultansoy",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L009"
+      ],
+      "before": "<p class=\"bio bio-lead\">He has authored more than 1,500 scientific articles in high-energy physics and accelerator technologies, spoken at more than 100 international scientific conferences, and supervised more than 20 Ph.D. students.</p><p class=\"bio\">Professor Saleh Sultansoy currently works at TOBB University of Economics and Technology located in Ankara. He specializes in high-energy physics, particle accelerators, history of science and science policy. In 1969–1974, he studied at Azerbaijan State University, and in 1985, he received a doctoral degree at the Institute of High Energy Physics in Serpukhov, Russia. During his career, he worked in prestigious institutions such as the Azerbaijan National Academy of Sciences, Ankara University, DESY (Germany), Gazi University and TOBB ETÜ.</p><p class=\"bio\">His works have been cited more than 81,000 times in Web of Science, more than 275,000 times in Google Scholar, and more than 235,000 times by HEP Inspire. His h-indices are 127, 208 and 215, respectively.</p><p class=\"bio\">His main research areas are high-energy physics, accelerator technologies and scientific strategies. In 2013, he was awarded the &quot;Engin Arık&quot; science prize of the Turkish Physics Society, and in 2016, he was awarded the &quot;Golden Apple&quot; science prize of the Turkish world.</p><p class=\"bio\">Saleh Sultansoy was a member of scientific councils at CERN and other international research centers, and actively participated in the development of scientific policy in Turkey and the Turkic world. He is one of the founders and leaders of the Turkish Accelerator Complex (TAC) project, a long-term national scientific research initiative, the author of the ATAM (Ankara Fundamental Research Center) initiative, a participant in ATLAS, CLIC, LHeC, FCC and other CERN projects. He was also the scientific leader of a number of advanced projects on accelerator technologies conducted within the framework of DPT-TAEK and TUBITAK.</p>",
+      "after": "<p class=\"bio bio-lead\">He has authored more than 1,500 scientific articles in high-energy physics and accelerator technologies, spoken at more than 100 international scientific conferences, and supervised more than 20 Ph.D. students.</p><p class=\"bio\">Professor Saleh Sultansoy currently works at TOBB University of Economics and Technology located in Ankara. He specializes in high-energy physics, particle accelerators, history of science and science policy. In 1969–1974, he studied at Azerbaijan State University, and in 1985, he received a doctoral degree at the Institute of High Energy Physics in Serpukhov, Russia. During his career, he worked in prestigious institutions such as the Azerbaijan National Academy of Sciences, Ankara University, DESY (Germany), Gazi University and TOBB ETÜ.</p><p class=\"bio\">His works have been cited more than 81,000 times in Web of Science, more than 275,000 times in Google Scholar, and more than 235,000 times by HEP Inspire. His h-indices are 127, 208 and 215, respectively.</p><p class=\"bio\">His main research areas are high-energy physics, accelerator technologies and scientific strategies. In 2013, he was awarded the &quot;Engin Arık&quot; science prize of the Turkish Physics Society, and in 2016, he was awarded the &quot;Golden Apple&quot; science prize of the Turkish world.</p><p class=\"bio\">Saleh Sultansoy was a member of scientific councils at CERN and other international research centers, and actively participated in the development of scientific policy in Turkey and the Turkic world. He is one of the founders and leaders of the Turkish Accelerator Complex (TAC) project, a long-term national scientific research initiative, the author of the ATAM (Ankara Fundamental Research Center) initiative, and a participant in ATLAS, CLIC, LHeC, FCC and other CERN projects. He was also the scientific leader of a number of advanced projects on accelerator technologies conducted within the framework of DPT-TAEK and TUBITAK.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 1403,
+      "jsonPointer": "/profiles/81/bio_html_en",
+      "profileNumber": 82,
+      "profile": "Murad Omarov",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L010"
+      ],
+      "before": "<p class=\"bio bio-lead\">He is the co-author of more than 150 scientific works (17 of them are indexed in Scopus), 3 monographs and 11 textbooks. He has 12 copyright certificates and invention patents of Ukraine. He supervised the writing and defense of candidate dissertations of 5 graduate students. He works as vice-rector for international cooperation at Kharkiv National Radioelectronics University of Ukraine. He holds the scientific degrees of candidate of technical sciences (research and improvement of fiber-optic information transmission systems) and doctor of technical sciences (development of the theory of designing electrodynamic devices with distributed and quasi-distributed nonlinear elements). Prof. Omarov, who has more than 40 years of experience in higher education and research, worked in various academic and administrative positions—as a professor, head of the department, director of the center for foreign students and dean.</p><p class=\"bio\">Several candidate theses were defended under his guidance; these works include distance education systems, production logistics, intelligent control models and methods of robots, control systems in the field of electronics. He taught subjects such as computerized communication systems, robotics and advanced mathematics. Prof. Omarov is also an active member of national expert councils and participant in international scientific conferences. Since 2019, ICONAT has been chairing a series of conferences.</p><p class=\"bio\">His research interests include information and measurement systems, fiber-optic communication and designing electrodynamic devices with nonlinear elements. He has been an academician of the Academy of Applied Radioelectronics of Ukraine since 2004. In 2016, he was awarded the honorary title of \"Honored Scientist of the Republic of Azerbaijan.\"</p>",
+      "after": "<p class=\"bio bio-lead\">He is the co-author of more than 150 scientific works (17 of them are indexed in Scopus), 3 monographs and 11 textbooks. He has 12 copyright certificates and invention patents of Ukraine. He supervised the writing and defense of candidate dissertations of 5 graduate students. He works as vice-rector for international cooperation at Kharkiv National Radioelectronics University of Ukraine. He holds the scientific degrees of candidate of technical sciences (research and improvement of fiber-optic information transmission systems) and doctor of technical sciences (development of the theory of designing electrodynamic devices with distributed and quasi-distributed nonlinear elements). Prof. Omarov, who has more than 40 years of experience in higher education and research, worked in various academic and administrative positions—as a professor, head of the department, director of the center for foreign students and dean.</p><p class=\"bio\">Several candidate theses were defended under his guidance; these works include distance education systems, production logistics, intelligent control models and methods of robots, and control systems in the field of electronics. He taught subjects such as computerized communication systems, robotics and advanced mathematics. Prof. Omarov is also an active member of national expert councils and participant in international scientific conferences. Since 2019, ICONAT has been chairing a series of conferences.</p><p class=\"bio\">His research interests include information and measurement systems, fiber-optic communication and designing electrodynamic devices with nonlinear elements. He has been an academician of the Academy of Applied Radioelectronics of Ukraine since 2004. In 2016, he was awarded the honorary title of \"Honored Scientist of the Republic of Azerbaijan.\"</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+      "line": 1,
+      "jsonPointer": "/profiles/20/title_en",
+      "profileNumber": 42,
+      "profile": "Arzu Gurbanova",
+      "field": "title_en",
+      "issueIds": [
+        "L003"
+      ],
+      "before": "Candidate of Pedagogical Sciences, professor of the Department of Languages ​​and Literature of the Central Asia Innovation University",
+      "after": "Candidate of Pedagogical Sciences, professor of the Department of Languages and Literature of the Central Asia Innovation University"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+      "line": 1,
+      "jsonPointer": "/profiles/6/bio_html_en",
+      "profileNumber": 28,
+      "profile": "Lev Eppelbaum",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L001"
+      ],
+      "before": "<p class=\"bio bio-lead\">Honorary professor of Azerbaijan State Oil and Industry University</p><p class=\"bio\">Professor Lev Eppelbaum (Tel Aviv University, Department of Geophysics) is the author of approximately 460 scientific publications. These include 12 books, 18 book chapters, 194 peer-reviewed journal articles, 81 conference materials and 171 abstracts published by international scientific publishers (Kluwer Academic Publisher, Springer, Elsevier, Chapman and Hall, Institute of Physics (Great Britain)). Prof. Eppelbaum&#x27;s main research areas are geodynamics and tectonic reconstructions, applied and environmental geophysics, archaeological geophysics, and integrated analysis of geophysical, geological and related data.</p><p class=\"bio\">He was elected head of scientific departments 26 times at international conferences. Professor Lev Eppelbaum is the editor-in-chief of the journal \"Geology, Geophysics, and Earth Sciences\" and a member of the editorial boards of such prestigious journals as \"Positioning,\" \"Open Petroleum Engineering Journal,\" \"Archaeological Discovery,\" \"Stratigraphy, Petroleum, Sedimentology, Geochemistry,\" \"ANAS Transactions, Earth Sciences,\" \"International Journal of Earthquake Engineering,\" \"Discover Geoscience,\" \"Academy Green Energy,\" \"Contributions to Geosciences,\" \"Geosciences,\" \"Russian Journal of Physical Chemistry,\" \"World Journal of Physics.\" At the same time, he served as a guest editor for the journals \"Advances in Geosciences,\" \"Journal of Geophysics and Engineering,\" \"Continent and Life Evolution,\" \"Frontiers in Earth Sciences,\" \"Geosciences (Switzerland),\" &quot;Land&quot; and \"Applied Sciences (Switzerland).\"</p><p class=\"bio\">Professor Lev Eppelbaum is a member of two international geophysical commissions: the \"Rotation of the Earth\" commission and \"WebmedCentral Ecology Advisory Board.\"</p><p class=\"bio\">In 2020, he was awarded the title of honorary professor of the Azerbaijan State Oil and Industry University, and in 2023, he was elected a foreign member of the Georgian Academy of Sciences.</p><p class=\"bio\">Professor Eppelbaum has received several awards; among them is the Christian Huygens medal of the European Geosciences Union (2019).</p><p class=\"bio\">According to Google Scholar, his scholarly publications have been cited nearly 8,000 times.</p>",
+      "after": "<p class=\"bio bio-lead\">Honorary professor of Azerbaijan State Oil and Industry University</p><p class=\"bio\">Professor Lev Eppelbaum (Tel Aviv University, Department of Geophysics) is the author of approximately 460 scientific publications. These include 12 books, 18 book chapters, 194 peer-reviewed journal articles, 81 conference materials and 171 abstracts published by international scientific publishers (Kluwer Academic Publisher, Springer, Elsevier, Chapman and Hall, Institute of Physics (Great Britain)). Prof. Eppelbaum&#x27;s main research areas are geodynamics and tectonic reconstructions, applied and environmental geophysics, archaeological geophysics, and integrated analysis of geophysical, geological and related data.</p><p class=\"bio\">He was elected head of scientific departments 26 times at international conferences. Professor Lev Eppelbaum is the editor-in-chief of the journal \"Geology, Geophysics, and Earth Sciences\" and a member of the editorial boards of such prestigious journals as \"Positioning,\" \"Open Petroleum Engineering Journal,\" \"Archaeological Discovery,\" \"Stratigraphy, Petroleum, Sedimentology, Geochemistry,\" \"ANAS Transactions, Earth Sciences,\" \"International Journal of Earthquake Engineering,\" \"Discover Geoscience,\" \"Academy Green Energy,\" \"Contributions to Geosciences,\" \"Geosciences,\" \"Russian Journal of Physical Chemistry,\" and \"World Journal of Physics.\" At the same time, he served as a guest editor for the journals \"Advances in Geosciences,\" \"Journal of Geophysics and Engineering,\" \"Continent and Life Evolution,\" \"Frontiers in Earth Sciences,\" \"Geosciences (Switzerland),\" &quot;Land&quot; and \"Applied Sciences (Switzerland).\"</p><p class=\"bio\">Professor Lev Eppelbaum is a member of two international geophysical commissions: the \"Rotation of the Earth\" commission and \"WebmedCentral Ecology Advisory Board.\"</p><p class=\"bio\">In 2020, he was awarded the title of honorary professor of the Azerbaijan State Oil and Industry University, and in 2023, he was elected a foreign member of the Georgian Academy of Sciences.</p><p class=\"bio\">Professor Eppelbaum has received several awards; among them is the Christian Huygens medal of the European Geosciences Union (2019).</p><p class=\"bio\">According to Google Scholar, his scholarly publications have been cited nearly 8,000 times.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-02.json",
+      "line": 1,
+      "jsonPointer": "/profiles/15/bio_html_en",
+      "profileNumber": 37,
+      "profile": "Natig Atakisiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L002"
+      ],
+      "before": "<p class=\"bio bio-lead\">He is the author or co-author of 131 scientific articles published in the world&#x27;s leading journals in the field of mathematical physics and 62 scientific reports at international conferences held in 15 countries of Europe, North and South America. These scientific works have been cited in 2825 publications of scientists engaged in the study of similar problems (his Google Scholar h-index is 28). He was the scientific supervisor of 4 graduate students who defended their dissertations in Azerbaijan and one doctoral student in Mexico.</p>",
+      "after": "<p class=\"bio bio-lead\">He is the author or co-author of 131 scientific articles published in the world&#x27;s leading journals in the field of mathematical physics and 62 scientific reports at international conferences held in 15 countries of Europe, North and South America. These scientific works have been cited in 2825 publications by scientists engaged in the study of similar problems (his Google Scholar h-index is 28). He was the scientific supervisor of 4 graduate students who defended their dissertations in Azerbaijan and one doctoral student in Mexico.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/4/title_en",
+      "profileNumber": 47,
+      "profile": "Aladdin Allahverdiyev",
+      "field": "title_en",
+      "issueIds": [
+        "L004"
+      ],
+      "before": "Former USSR Ministry of Electronic Industry, Scientific Research Institute \"Fonon\" - head of department, Moscow State Academy of Business Administration - professor, head of department, dean, vice-rector, first vice-rector, \"MIET\" National Research University - professor, head of the Quality of Education Process, deputy vice-rector",
+      "after": "Former USSR Ministry of Electronic Industry, Scientific Research Institute \"Fonon\" — head of department, Moscow State Academy of Business Administration — professor, head of department, dean, vice-rector, first vice-rector, \"MIET\" National Research University — professor, head of the Quality of Education Process, deputy vice-rector"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/15/bio_html_en",
+      "profileNumber": 58,
+      "profile": "Azer Abdullayev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L005"
+      ],
+      "before": "<p class=\"bio bio-lead\">Professor Azer Jafar oglu Abdullayev, a doctor of medical sciences, traumatologist-orthopedic surgeon, and inventor, is a medical scientist with extensive scientific and practical experience in the field of traumatology and orthopedics. He has worked as a teacher, assistant and associate professor at Azerbaijan Medical University for many years, and since 2004 he has been the head of the Orthopedic Department and consultant surgeon at King Fahad and Sabya Hospitals located in Gizan, Saudi Arabia.</p><p class=\"bio\">Abdullayev, who was born in 1955 in Sharur, Nakhchivan Autonomous Republic, entered the Faculty of Medicine and Prevention of Azerbaijan Medical University in 1972, and in 1979 he completed the surgery internship. In 1989, he was awarded the degree of doctor of philosophy in medicine, and in 2012, he was awarded the degree of doctor of medical sciences.</p><p class=\"bio\">His research is marked by considerable inventiveness. He is the author of 6 inventions—including an external fixation device, a compression pin and a healing ointment—that are widely used in medical practice, known by such names as \"Abdullayev apparatus,\" &quot;Abdullayev stick&quot; and \"Abdullayev ointment.\" These inventions have been used in the treatment of thousands of patients and have given positive results.</p><p class=\"bio\">Professor Abdullayev&#x27;s research and teaching activities are also extensive: he is the author of more than 70 scientific articles, 2 teaching methodology resources, and the owner of 6 invention patents. His work made significant contributions to the development of practical health care, along with important scientific innovations in the field of traumatology and orthopedics.</p>",
+      "after": "<p class=\"bio bio-lead\">Professor Azer Jafar oglu Abdullayev, a doctor of medical sciences, traumatologist-orthopedic surgeon, and inventor, is a medical scientist with extensive scientific and practical experience in the field of traumatology and orthopedics. He has worked as a teacher, assistant and associate professor at Azerbaijan Medical University for many years, and since 2004 he has been the head of the Orthopedic Department and consultant surgeon at King Fahad and Sabya Hospitals located in Gizan, Saudi Arabia.</p><p class=\"bio\">Abdullayev, who was born in 1955 in Sharur, Nakhchivan Autonomous Republic, entered the Faculty of Medicine and Prevention of Azerbaijan Medical University in 1972, and in 1979 he completed the surgery internship. In 1989, he was awarded the degree of doctor of philosophy in medicine, and in 2012, he was awarded the degree of doctor of medical sciences.</p><p class=\"bio\">His research is marked by considerable inventiveness. He is the author of 6 inventions—including an external fixation device, a compression pin and a healing ointment—that are widely used in medical practice, known by such names as \"Abdullayev apparatus,\" &quot;Abdullayev stick&quot; and \"Abdullayev ointment.\" These inventions have been used in the treatment of thousands of patients and have given positive results.</p><p class=\"bio\">Professor Abdullayev&#x27;s research and teaching activities are also extensive: he is the author of more than 70 scientific articles and 2 teaching methodology resources, and the owner of 6 invention patents. His work made significant contributions to the development of practical health care, along with important scientific innovations in the field of traumatology and orthopedics.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-03.json",
+      "line": 1,
+      "jsonPointer": "/profiles/16/bio_html_en",
+      "profileNumber": 59,
+      "profile": "Elvin Efendi",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L006"
+      ],
+      "before": "<p class=\"bio bio-lead\">Elvin Efendi is an economist with extensive international experience in economics and development. Currently, he works as the head of strategy and research in the Strategic department of the Islamic Private Sector Development Corporation (ICD), a part of the Islamic Development Bank Group. In this role, he leads the development of corporate and country strategies, the management of economic research and policy documents, the publication of leading reports, and the creation of private sector development initiatives in member countries.</p><p class=\"bio\">Before that, Elvin Efendi worked in important positions in the field of economic analysis and policy planning in institutions such as the Central Bank of Azerbaijan, the World Bank and the Ministry of Economic Development of the Republic of Azerbaijan. He studied at the University of London, Michigan State University and Baku State University, and received a Ph.D. in economics.</p><p class=\"bio\">Elvin Efendi has authored more than 20 peer-reviewed scientific articles in academic journals, as well as more than 25 research documents (working papers). He gave presentations at more than 10 international scientific conferences and participated in events held in more than 15 countries. For the first time, he developed the \"Private Sector Development Index of Islamic Countries,\" which evaluates the level of development of the private sector in Islamic countries, and this academic innovation was published in a prestigious scientific journal. He has taught more than 300 graduate and undergraduate students economic development, macroeconomics, microeconomics, and econometrics at various universities, including Dar Al Hekma University. He also taught at Khazar University and UNEC.</p><p class=\"bio\">Elvin Efendi has extensive research experience in economic policy, development economics, entrepreneurship and social capital. He was a member of the editorial boards of a number of prestigious academic journals, performed extensive scientific and organizational activities as a leader and participant of various international projects, and was awarded various prizes and scholarships.</p>",
+      "after": "<p class=\"bio bio-lead\">Elvin Efendi is an economist with extensive international experience in economics and development. Currently, he works as the head of strategy and research in the Strategic department of the Islamic Private Sector Development Corporation (ICD), a part of the Islamic Development Bank Group. In this role, he leads the development of corporate and country strategies, the management of economic research and policy documents, the publication of leading reports, and the creation of private sector development initiatives in member countries.</p><p class=\"bio\">Before that, Elvin Efendi worked in important positions in the field of economic analysis and policy planning in institutions such as the Central Bank of Azerbaijan, the World Bank and the Ministry of Economic Development of the Republic of Azerbaijan. He studied at the University of London, Michigan State University and Baku State University, and received a Ph.D. in economics.</p><p class=\"bio\">Elvin Efendi has authored more than 20 peer-reviewed scientific articles in academic journals, as well as more than 25 research documents (working papers). He gave presentations at more than 10 international scientific conferences and participated in events held in more than 15 countries. For the first time, he developed the \"Private Sector Development Index of Islamic Countries,\" which evaluates the level of development of the private sector in Islamic countries, and this academic innovation was published in a prestigious scientific journal. He has taught more than 300 graduate and undergraduate students economic development, macroeconomics, microeconomics, and econometrics at various universities, including Dar Al Hekma University. He also taught at Khazar University and UNEC.</p><p class=\"bio\">Elvin Efendi has extensive research experience in economic policy, development economics, entrepreneurship and social capital. He was a member of the editorial boards of a number of prestigious academic journals, performed extensive scientific and organizational activities as a leader of and participant in various international projects, and was awarded various prizes and scholarships.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/0/bio_html_en",
+      "profileNumber": 64,
+      "profile": "Emirullah Mehmedov",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L007"
+      ],
+      "before": "<p class=\"bio bio-lead\">Honorary professor of Bilkend University, leading researcher of Nanotechnology Scientific Research Center</p><p class=\"bio\">Professor Amirulla Mammadov (known as Emirullah M. Mehmetov in scientific publications) is an internationally recognized scientist in the fields of optics, nonlinear optics, laser physics, metamaterials, topological insulators, photonics, nanophotonics and biomedical modeling. He received a doctor of philosophy (Ph.D.) degree in physics and mathematics at the &quot;Ioffe&quot; Institute of Physics and Mathematics of the former USSR Academy of Sciences, and then a doctor of sciences (habilitas doctor) degree, and in 1988 he was awarded the title of professor of \"Optics.\"</p><p class=\"bio\">He continued his research activities in the world&#x27;s leading science and technology centers - Stanford, Caltech, Wisconsin and Rome &quot;La Sapienza&quot; universities, US military laboratories, as well as in Japan and various European countries. Currently, he works as a professor-researcher at the Nanotechnology Research Center (NANOTAM) of Bilkent University.</p><p class=\"bio\">Professor Mammadov is the author of more than 350 articles in prestigious international scientific publications and an invited speaker at more than 50 international conferences. He also worked as a scientific consultant at ASELSAN and the Ministry of Defense of Turkey.</p><p class=\"bio\">For his outstanding scientific and social activities, he was awarded the State Prizes of the former USSR and the Republic of Azerbaijan, the honorary title of Honored Scientist of the Republic of Azerbaijan, the Order of \"Friendship,\" the medal &quot;For service in Diaspora activity&quot; and the 100th anniversary medal of Baku State University. At the same time, he is a member of the Board of Trustees of the Turkey-Azerbaijan Friendship, Cooperation and Solidarity Charitable Society and the chairman of the Association of Azerbaijani Scientists (ABID) operating in Turkey. His multifaceted scientific activity made important contributions to the development of scientific cooperation in the region and the world.</p>",
+      "after": "<p class=\"bio bio-lead\">Honorary professor of Bilkend University, leading researcher of Nanotechnology Scientific Research Center</p><p class=\"bio\">Professor Amirulla Mammadov (known as Emirullah M. Mehmetov in scientific publications) is an internationally recognized scientist in the fields of optics, nonlinear optics, laser physics, metamaterials, topological insulators, photonics, nanophotonics and biomedical modeling. He received a doctor of philosophy (Ph.D.) degree in physics and mathematics at the &quot;Ioffe&quot; Institute of Physics and Mathematics of the former USSR Academy of Sciences, and then a doctor of sciences (habilitas doctor) degree, and in 1988 he was awarded the title of professor of \"Optics.\"</p><p class=\"bio\">He continued his research activities in the world&#x27;s leading science and technology centers—Stanford, Caltech, Wisconsin and Rome &quot;La Sapienza&quot; universities, US military laboratories, as well as in Japan and various European countries. Currently, he works as a professor-researcher at the Nanotechnology Research Center (NANOTAM) of Bilkent University.</p><p class=\"bio\">Professor Mammadov is the author of more than 350 articles in prestigious international scientific publications and an invited speaker at more than 50 international conferences. He also worked as a scientific consultant at ASELSAN and the Ministry of Defense of Turkey.</p><p class=\"bio\">For his outstanding scientific and social activities, he was awarded the State Prizes of the former USSR and the Republic of Azerbaijan, the honorary title of Honored Scientist of the Republic of Azerbaijan, the Order of \"Friendship,\" the medal &quot;For service in Diaspora activity&quot; and the 100th anniversary medal of Baku State University. At the same time, he is a member of the Board of Trustees of the Turkey-Azerbaijan Friendship, Cooperation and Solidarity Charitable Society and the chairman of the Association of Azerbaijani Scientists (ABID) operating in Turkey. His multifaceted scientific activity made important contributions to the development of scientific cooperation in the region and the world.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/7/bio_html_en",
+      "profileNumber": 71,
+      "profile": "Oruc Allahverdiyev",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L008"
+      ],
+      "before": "<p class=\"bio bio-lead\">Oruj Allahverdiyev graduated from Istanbul University Jarrahpaşa Faculty of Medicine in the field of medical pharmacology. He is the co-author of 4 scientific books, 1 textbook, and more than 100 scientific works in the field of medicine and pharmacy. He participated in many scientific symposia in Turkey and other countries.</p><p class=\"bio\">After high school, Oruj Allahverdiyev was admitted to the Faculty of Pharmacy of Azerbaijan Medical University. Having succeeded in the Turkish government&#x27;s educational exam, he was sent to Turkey to continue his studies at Istanbul University. After graduating from Istanbul University Faculty of Pharmacy in 2006, he began his master&#x27;s studies at the Department of Pharmacology and Clinical Pharmacology, Faculty of Medicine of Istanbul University, and graduated in 2009. During his master's studies, he conducted many scientific studies on brain diseases, and these studies were published in world-renowned international journals. During his studies, several of his research projects received awards from TUBITAK.</p><p class=\"bio\">Later, he began his doctoral studies at the Department of Medical Pharmacology of the Czarrahpaşa Medical Faculty of Istanbul University. In 2014, he completed his doctoral studies as an &quot;Honor Student&quot; and received the scientific degree of Doctor of Philosophy in Medical Sciences. During his doctoral studies, he conducted a number of scientific studies on brain diseases such as substance addiction, epilepsy, depression, Parkinson&#x27;s and multiple sclerosis. These studies have been presented at world-renowned international symposia, congresses and conferences and published in prestigious journals.</p><p class=\"bio\">Oruj Allahverdiyev graduated from the Faculty of Management of Medical Institutions of Istanbul University in 2017 and was awarded the title of associate professor in the field of medical pharmacology by the Higher Education Council of Turkey (YÖK). He trained more than 10 graduate students under his scientific guidance. Currently, he is the co-author of more than 100 scientific works, 1 textbook and 4 scientific books, as well as a number of scientific articles. More than 30 of his scientific works have been published in journals indexed in \"Science Citation Index.\" Currently, associate professor Dr. O. Allahverdiyev continues his scientific activities in Turkey.</p>",
+      "after": "<p class=\"bio bio-lead\">Oruj Allahverdiyev graduated from Istanbul University Jarrahpaşa Faculty of Medicine in the field of medical pharmacology. He is the co-author of 4 scientific books, 1 textbook, and more than 100 scientific works in the field of medicine and pharmacy. He participated in many scientific symposia in Turkey and other countries.</p><p class=\"bio\">After high school, Oruj Allahverdiyev was admitted to the Faculty of Pharmacy of Azerbaijan Medical University. Having succeeded in the Turkish government&#x27;s educational exam, he was sent to Turkey to continue his studies at Istanbul University. After graduating from Istanbul University Faculty of Pharmacy in 2006, he began his master&#x27;s studies at the Department of Pharmacology and Clinical Pharmacology, Faculty of Medicine of Istanbul University, and graduated in 2009. During his master's studies, he conducted many scientific studies on brain diseases, and these studies were published in world-renowned international journals. During his studies, several of his research projects received awards from TUBITAK.</p><p class=\"bio\">Later, he began his doctoral studies at the Department of Medical Pharmacology of the Czarrahpaşa Medical Faculty of Istanbul University. In 2014, he completed his doctoral studies as an &quot;Honor Student&quot; and received the scientific degree of Doctor of Philosophy in Medical Sciences. During his doctoral studies, he conducted a number of scientific studies on brain diseases such as substance addiction, epilepsy, depression, Parkinson&#x27;s and multiple sclerosis. These studies have been presented at world-renowned international symposia, congresses and conferences and published in prestigious journals.</p><p class=\"bio\">Oruj Allahverdiyev graduated from the Faculty of Management of Medical Institutions of Istanbul University in 2017 and was awarded the title of associate professor in the field of medical pharmacology by the Higher Education Council of Turkey (YÖK). He trained more than 10 graduate students under his scientific guidance. Currently, he is the co-author of more than 100 scientific works, 1 textbook and 4 scientific books, as well as a number of scientific articles. More than 30 of his scientific works have been published in journals indexed in \"Science Citation Index.\" Currently, Associate Professor Dr. O. Allahverdiyev continues his scientific activities in Turkey.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/11/bio_html_en",
+      "profileNumber": 75,
+      "profile": "Saleh Sultansoy",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L009"
+      ],
+      "before": "<p class=\"bio bio-lead\">He has authored more than 1,500 scientific articles in high-energy physics and accelerator technologies, spoken at more than 100 international scientific conferences, and supervised more than 20 Ph.D. students.</p><p class=\"bio\">Professor Saleh Sultansoy currently works at TOBB University of Economics and Technology located in Ankara. He specializes in high-energy physics, particle accelerators, history of science and science policy. In 1969–1974, he studied at Azerbaijan State University, and in 1985, he received a doctoral degree at the Institute of High Energy Physics in Serpukhov, Russia. During his career, he worked in prestigious institutions such as the Azerbaijan National Academy of Sciences, Ankara University, DESY (Germany), Gazi University and TOBB ETÜ.</p><p class=\"bio\">His works have been cited more than 81,000 times in Web of Science, more than 275,000 times in Google Scholar, and more than 235,000 times by HEP Inspire. His h-indices are 127, 208 and 215, respectively.</p><p class=\"bio\">His main research areas are high-energy physics, accelerator technologies and scientific strategies. In 2013, he was awarded the &quot;Engin Arık&quot; science prize of the Turkish Physics Society, and in 2016, he was awarded the &quot;Golden Apple&quot; science prize of the Turkish world.</p><p class=\"bio\">Saleh Sultansoy was a member of scientific councils at CERN and other international research centers, and actively participated in the development of scientific policy in Turkey and the Turkic world. He is one of the founders and leaders of the Turkish Accelerator Complex (TAC) project, a long-term national scientific research initiative, the author of the ATAM (Ankara Fundamental Research Center) initiative, a participant in ATLAS, CLIC, LHeC, FCC and other CERN projects. He was also the scientific leader of a number of advanced projects on accelerator technologies conducted within the framework of DPT-TAEK and TUBITAK.</p>",
+      "after": "<p class=\"bio bio-lead\">He has authored more than 1,500 scientific articles in high-energy physics and accelerator technologies, spoken at more than 100 international scientific conferences, and supervised more than 20 Ph.D. students.</p><p class=\"bio\">Professor Saleh Sultansoy currently works at TOBB University of Economics and Technology located in Ankara. He specializes in high-energy physics, particle accelerators, history of science and science policy. In 1969–1974, he studied at Azerbaijan State University, and in 1985, he received a doctoral degree at the Institute of High Energy Physics in Serpukhov, Russia. During his career, he worked in prestigious institutions such as the Azerbaijan National Academy of Sciences, Ankara University, DESY (Germany), Gazi University and TOBB ETÜ.</p><p class=\"bio\">His works have been cited more than 81,000 times in Web of Science, more than 275,000 times in Google Scholar, and more than 235,000 times by HEP Inspire. His h-indices are 127, 208 and 215, respectively.</p><p class=\"bio\">His main research areas are high-energy physics, accelerator technologies and scientific strategies. In 2013, he was awarded the &quot;Engin Arık&quot; science prize of the Turkish Physics Society, and in 2016, he was awarded the &quot;Golden Apple&quot; science prize of the Turkish world.</p><p class=\"bio\">Saleh Sultansoy was a member of scientific councils at CERN and other international research centers, and actively participated in the development of scientific policy in Turkey and the Turkic world. He is one of the founders and leaders of the Turkish Accelerator Complex (TAC) project, a long-term national scientific research initiative, the author of the ATAM (Ankara Fundamental Research Center) initiative, and a participant in ATLAS, CLIC, LHeC, FCC and other CERN projects. He was also the scientific leader of a number of advanced projects on accelerator technologies conducted within the framework of DPT-TAEK and TUBITAK.</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-04.json",
+      "line": 1,
+      "jsonPointer": "/profiles/18/bio_html_en",
+      "profileNumber": 82,
+      "profile": "Murad Omarov",
+      "field": "bio_html_en",
+      "issueIds": [
+        "L010"
+      ],
+      "before": "<p class=\"bio bio-lead\">He is the co-author of more than 150 scientific works (17 of them are indexed in Scopus), 3 monographs and 11 textbooks. He has 12 copyright certificates and invention patents of Ukraine. He supervised the writing and defense of candidate dissertations of 5 graduate students. He works as vice-rector for international cooperation at Kharkiv National Radioelectronics University of Ukraine. He holds the scientific degrees of candidate of technical sciences (research and improvement of fiber-optic information transmission systems) and doctor of technical sciences (development of the theory of designing electrodynamic devices with distributed and quasi-distributed nonlinear elements). Prof. Omarov, who has more than 40 years of experience in higher education and research, worked in various academic and administrative positions—as a professor, head of the department, director of the center for foreign students and dean.</p><p class=\"bio\">Several candidate theses were defended under his guidance; these works include distance education systems, production logistics, intelligent control models and methods of robots, control systems in the field of electronics. He taught subjects such as computerized communication systems, robotics and advanced mathematics. Prof. Omarov is also an active member of national expert councils and participant in international scientific conferences. Since 2019, ICONAT has been chairing a series of conferences.</p><p class=\"bio\">His research interests include information and measurement systems, fiber-optic communication and designing electrodynamic devices with nonlinear elements. He has been an academician of the Academy of Applied Radioelectronics of Ukraine since 2004. In 2016, he was awarded the honorary title of \"Honored Scientist of the Republic of Azerbaijan.\"</p>",
+      "after": "<p class=\"bio bio-lead\">He is the co-author of more than 150 scientific works (17 of them are indexed in Scopus), 3 monographs and 11 textbooks. He has 12 copyright certificates and invention patents of Ukraine. He supervised the writing and defense of candidate dissertations of 5 graduate students. He works as vice-rector for international cooperation at Kharkiv National Radioelectronics University of Ukraine. He holds the scientific degrees of candidate of technical sciences (research and improvement of fiber-optic information transmission systems) and doctor of technical sciences (development of the theory of designing electrodynamic devices with distributed and quasi-distributed nonlinear elements). Prof. Omarov, who has more than 40 years of experience in higher education and research, worked in various academic and administrative positions—as a professor, head of the department, director of the center for foreign students and dean.</p><p class=\"bio\">Several candidate theses were defended under his guidance; these works include distance education systems, production logistics, intelligent control models and methods of robots, and control systems in the field of electronics. He taught subjects such as computerized communication systems, robotics and advanced mathematics. Prof. Omarov is also an active member of national expert councils and participant in international scientific conferences. Since 2019, ICONAT has been chairing a series of conferences.</p><p class=\"bio\">His research interests include information and measurement systems, fiber-optic communication and designing electrodynamic devices with nonlinear elements. He has been an academician of the Academy of Applied Radioelectronics of Ukraine since 2004. In 2016, he was awarded the honorary title of \"Honored Scientist of the Republic of Azerbaijan.\"</p>"
+    }
+  ]
+}

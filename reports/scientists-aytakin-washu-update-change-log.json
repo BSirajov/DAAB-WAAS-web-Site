@@ -1,0 +1,179 @@
+{
+  "date": "2026-10-09T10:35:05.528Z",
+  "profile": "Aytakin Huseynli",
+  "previousName": "Aytekin Huseynli",
+  "profileNumber": 2,
+  "issueIds": [
+    "V002",
+    "V099"
+  ],
+  "source": "https://brownschool.washu.edu/faculty-and-research/aytakin-huseynli/",
+  "sourceChecked": "2026-10-09",
+  "authorization": "Change spelling to Aytakin and update her profile information as per official WashU profile.",
+  "summary": [
+    "Changed the English name to Aytakin Huseynli in the profile, biography, and English catalog.",
+    "Corrected the appointment to Research Assistant Professor, Brown School, Washington University in St. Louis.",
+    "Replaced the English biography with a paraphrased account based on the official WashU profile, retaining its supported research, education, founding activities, editorial boards, and international involvement."
+  ],
+  "scopeNote": "The new biography omits previously stated publication, award, presentation, supervision and Kazakhstan-fund figures, and additional director/associate-professor/UNICEF specialist roles that the current official page does not substantiate. Omission is not a finding that those claims are false. Their exact original wording is preserved below and in the backup. Azerbaijani prose, degree code, contact email, and other profiles were not changed.",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 25,
+      "jsonPointer": "/profiles/1/name_en",
+      "field": "name_en",
+      "before": "Aytekin Huseynli",
+      "after": "Aytakin Huseynli",
+      "issueIds": [
+        "V099"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 35,
+      "jsonPointer": "/profiles/1/title_en",
+      "field": "title_en",
+      "before": "Assistant Research Professor, Washington University (St. Louis)",
+      "after": "Research Assistant Professor, Brown School, Washington University in St. Louis",
+      "issueIds": [
+        "V002"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 36,
+      "jsonPointer": "/profiles/1/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Aytekin Huseynli is an international specialist in social policy, social work, child and family welfare. Dr Huseynli is an assistant professor at the University of Washington. Her applied research focuses on the formulation of social policies, especially the improvement of family and child welfare. Aytekin Huseynli also explores strategies and ways to channel natural resource revenues into social development in countries rich in oil, gas and minerals. Aytekin Huseynli&#x27;s doctoral dissertation led to the creation of the National Children&#x27;s Fund state program, which covers 7 million children in Kazakhstan and is financed by a portion of the oil and gas wealth.</p><p class=\"bio\">She is the author of 3 chapters in 3 books in the field of social policy, social work and social development, 15 scientific articles in 15 international scientific journals, and more than 20 publications. She is also a member of the editorial boards of 2 scientific journals in the field of social development, social policy and social work. She gave presentations at more than 20 international scientific conferences and received 2 international awards for her scientific work. She was the scientific supervisor of more than 10 students. Aytekin Huseynli teaches social research, statistics, program evaluation and social policy. Currently, she is the head of several research projects.</p><p class=\"bio\">A pioneer in her field, Aytekin Huseynli is one of the first professional social workers who received an education in the field of social work in the post-Soviet region and is one of the founders of the social work profession and social work education in Azerbaijan. She is the founder of the \"Azerbaijan Social Work\" Public Union, which represents Azerbaijan in the field of international and regional social development.</p><p class=\"bio\">She is a member of the Board of Directors of the Global Program at the Brown School of the University of Washington, the deputy director of international programs at the Center for Social Development, and an associate professor at the Center for Child Abuse Research, Training and Education. At the global level, Aytekin Huseynli is a research and statistics specialist for Eurasia at UNICEF and a member of the Research Committee of the International Association of Schools of Social Work.</p>",
+      "after": "<p class=\"bio bio-lead\">Aytakin Huseynli is a research assistant professor at the Brown School, Washington University in St. Louis, where she earned her PhD. Her research connects political science and social policy to examine child and family well-being, including wealth, health, education, and violence.</p><p class=\"bio\">She studies how fossil fuel wealth and the resource curse affect social development and marginalized populations. She works with policymakers and international organizations to develop social policies that support children and families.</p><p class=\"bio\">She helped establish the national association of social workers in Azerbaijan and develop social work as a profession and field of study. She has contributed to policies and services for disadvantaged children and families in former Soviet countries.</p><p class=\"bio\">She serves on the editorial boards of International Social Work and the International Journal of School Social Work. Her international activities involve UNICEF, the International Federation of Social Workers, the International Council on Social Welfare, the International Consortium on Social Development, and the Social Services in the Context of Conflict Network.</p>",
+      "issueIds": [
+        "V002",
+        "V099"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/1/name_en",
+      "field": "name_en",
+      "before": "Aytekin Huseynli",
+      "after": "Aytakin Huseynli",
+      "issueIds": [
+        "V099"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/1/title_en",
+      "field": "title_en",
+      "before": "Assistant Research Professor, Washington University (St. Louis)",
+      "after": "Research Assistant Professor, Brown School, Washington University in St. Louis",
+      "issueIds": [
+        "V002"
+      ]
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/1/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Aytekin Huseynli is an international specialist in social policy, social work, child and family welfare. Dr Huseynli is an assistant professor at the University of Washington. Her applied research focuses on the formulation of social policies, especially the improvement of family and child welfare. Aytekin Huseynli also explores strategies and ways to channel natural resource revenues into social development in countries rich in oil, gas and minerals. Aytekin Huseynli&#x27;s doctoral dissertation led to the creation of the National Children&#x27;s Fund state program, which covers 7 million children in Kazakhstan and is financed by a portion of the oil and gas wealth.</p><p class=\"bio\">She is the author of 3 chapters in 3 books in the field of social policy, social work and social development, 15 scientific articles in 15 international scientific journals, and more than 20 publications. She is also a member of the editorial boards of 2 scientific journals in the field of social development, social policy and social work. She gave presentations at more than 20 international scientific conferences and received 2 international awards for her scientific work. She was the scientific supervisor of more than 10 students. Aytekin Huseynli teaches social research, statistics, program evaluation and social policy. Currently, she is the head of several research projects.</p><p class=\"bio\">A pioneer in her field, Aytekin Huseynli is one of the first professional social workers who received an education in the field of social work in the post-Soviet region and is one of the founders of the social work profession and social work education in Azerbaijan. She is the founder of the \"Azerbaijan Social Work\" Public Union, which represents Azerbaijan in the field of international and regional social development.</p><p class=\"bio\">She is a member of the Board of Directors of the Global Program at the Brown School of the University of Washington, the deputy director of international programs at the Center for Social Development, and an associate professor at the Center for Child Abuse Research, Training and Education. At the global level, Aytekin Huseynli is a research and statistics specialist for Eurasia at UNICEF and a member of the Research Committee of the International Association of Schools of Social Work.</p>",
+      "after": "<p class=\"bio bio-lead\">Aytakin Huseynli is a research assistant professor at the Brown School, Washington University in St. Louis, where she earned her PhD. Her research connects political science and social policy to examine child and family well-being, including wealth, health, education, and violence.</p><p class=\"bio\">She studies how fossil fuel wealth and the resource curse affect social development and marginalized populations. She works with policymakers and international organizations to develop social policies that support children and families.</p><p class=\"bio\">She helped establish the national association of social workers in Azerbaijan and develop social work as a profession and field of study. She has contributed to policies and services for disadvantaged children and families in former Soviet countries.</p><p class=\"bio\">She serves on the editorial boards of International Social Work and the International Journal of School Social Work. Her international activities involve UNICEF, the International Federation of Social Workers, the International Council on Social Welfare, the International Consortium on Social Development, and the Social Services in the Context of Conflict Network.</p>",
+      "issueIds": [
+        "V002",
+        "V099"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 25,
+      "jsonPointer": "/profiles/1/name_en",
+      "field": "name_en",
+      "before": "Aytekin Huseynli",
+      "after": "Aytakin Huseynli",
+      "issueIds": [
+        "V099"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 35,
+      "jsonPointer": "/profiles/1/title_en",
+      "field": "title_en",
+      "before": "Assistant Research Professor, Washington University (St. Louis)",
+      "after": "Research Assistant Professor, Brown School, Washington University in St. Louis",
+      "issueIds": [
+        "V002"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 36,
+      "jsonPointer": "/profiles/1/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Aytekin Huseynli is an international specialist in social policy, social work, child and family welfare. Dr Huseynli is an assistant professor at the University of Washington. Her applied research focuses on the formulation of social policies, especially the improvement of family and child welfare. Aytekin Huseynli also explores strategies and ways to channel natural resource revenues into social development in countries rich in oil, gas and minerals. Aytekin Huseynli&#x27;s doctoral dissertation led to the creation of the National Children&#x27;s Fund state program, which covers 7 million children in Kazakhstan and is financed by a portion of the oil and gas wealth.</p><p class=\"bio\">She is the author of 3 chapters in 3 books in the field of social policy, social work and social development, 15 scientific articles in 15 international scientific journals, and more than 20 publications. She is also a member of the editorial boards of 2 scientific journals in the field of social development, social policy and social work. She gave presentations at more than 20 international scientific conferences and received 2 international awards for her scientific work. She was the scientific supervisor of more than 10 students. Aytekin Huseynli teaches social research, statistics, program evaluation and social policy. Currently, she is the head of several research projects.</p><p class=\"bio\">A pioneer in her field, Aytekin Huseynli is one of the first professional social workers who received an education in the field of social work in the post-Soviet region and is one of the founders of the social work profession and social work education in Azerbaijan. She is the founder of the \"Azerbaijan Social Work\" Public Union, which represents Azerbaijan in the field of international and regional social development.</p><p class=\"bio\">She is a member of the Board of Directors of the Global Program at the Brown School of the University of Washington, the deputy director of international programs at the Center for Social Development, and an associate professor at the Center for Child Abuse Research, Training and Education. At the global level, Aytekin Huseynli is a research and statistics specialist for Eurasia at UNICEF and a member of the Research Committee of the International Association of Schools of Social Work.</p>",
+      "after": "<p class=\"bio bio-lead\">Aytakin Huseynli is a research assistant professor at the Brown School, Washington University in St. Louis, where she earned her PhD. Her research connects political science and social policy to examine child and family well-being, including wealth, health, education, and violence.</p><p class=\"bio\">She studies how fossil fuel wealth and the resource curse affect social development and marginalized populations. She works with policymakers and international organizations to develop social policies that support children and families.</p><p class=\"bio\">She helped establish the national association of social workers in Azerbaijan and develop social work as a profession and field of study. She has contributed to policies and services for disadvantaged children and families in former Soviet countries.</p><p class=\"bio\">She serves on the editorial boards of International Social Work and the International Journal of School Social Work. Her international activities involve UNICEF, the International Federation of Social Workers, the International Council on Social Welfare, the International Consortium on Social Development, and the Social Services in the Context of Conflict Network.</p>",
+      "issueIds": [
+        "V002",
+        "V099"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/1/name_en",
+      "field": "name_en",
+      "before": "Aytekin Huseynli",
+      "after": "Aytakin Huseynli",
+      "issueIds": [
+        "V099"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/1/title_en",
+      "field": "title_en",
+      "before": "Assistant Research Professor, Washington University (St. Louis)",
+      "after": "Research Assistant Professor, Brown School, Washington University in St. Louis",
+      "issueIds": [
+        "V002"
+      ]
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/1/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">Aytekin Huseynli is an international specialist in social policy, social work, child and family welfare. Dr Huseynli is an assistant professor at the University of Washington. Her applied research focuses on the formulation of social policies, especially the improvement of family and child welfare. Aytekin Huseynli also explores strategies and ways to channel natural resource revenues into social development in countries rich in oil, gas and minerals. Aytekin Huseynli&#x27;s doctoral dissertation led to the creation of the National Children&#x27;s Fund state program, which covers 7 million children in Kazakhstan and is financed by a portion of the oil and gas wealth.</p><p class=\"bio\">She is the author of 3 chapters in 3 books in the field of social policy, social work and social development, 15 scientific articles in 15 international scientific journals, and more than 20 publications. She is also a member of the editorial boards of 2 scientific journals in the field of social development, social policy and social work. She gave presentations at more than 20 international scientific conferences and received 2 international awards for her scientific work. She was the scientific supervisor of more than 10 students. Aytekin Huseynli teaches social research, statistics, program evaluation and social policy. Currently, she is the head of several research projects.</p><p class=\"bio\">A pioneer in her field, Aytekin Huseynli is one of the first professional social workers who received an education in the field of social work in the post-Soviet region and is one of the founders of the social work profession and social work education in Azerbaijan. She is the founder of the \"Azerbaijan Social Work\" Public Union, which represents Azerbaijan in the field of international and regional social development.</p><p class=\"bio\">She is a member of the Board of Directors of the Global Program at the Brown School of the University of Washington, the deputy director of international programs at the Center for Social Development, and an associate professor at the Center for Child Abuse Research, Training and Education. At the global level, Aytekin Huseynli is a research and statistics specialist for Eurasia at UNICEF and a member of the Research Committee of the International Association of Schools of Social Work.</p>",
+      "after": "<p class=\"bio bio-lead\">Aytakin Huseynli is a research assistant professor at the Brown School, Washington University in St. Louis, where she earned her PhD. Her research connects political science and social policy to examine child and family well-being, including wealth, health, education, and violence.</p><p class=\"bio\">She studies how fossil fuel wealth and the resource curse affect social development and marginalized populations. She works with policymakers and international organizations to develop social policies that support children and families.</p><p class=\"bio\">She helped establish the national association of social workers in Azerbaijan and develop social work as a profession and field of study. She has contributed to policies and services for disadvantaged children and families in former Soviet countries.</p><p class=\"bio\">She serves on the editorial boards of International Social Work and the International Journal of School Social Work. Her international activities involve UNICEF, the International Federation of Social Workers, the International Council on Social Welfare, the International Consortium on Social Development, and the Social Services in the Context of Conflict Network.</p>",
+      "issueIds": [
+        "V002",
+        "V099"
+      ]
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "line": 15,
+      "jsonPointer": "/1/ad_soyad",
+      "field": "ad_soyad",
+      "before": "Aytekin Huseynli",
+      "after": "Aytakin Huseynli",
+      "issueIds": [
+        "V099"
+      ]
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "line": 15,
+      "jsonPointer": "/1/ad_soyad",
+      "field": "ad_soyad",
+      "before": "Aytekin Huseynli",
+      "after": "Aytakin Huseynli",
+      "issueIds": [
+        "V099"
+      ]
+    }
+  ]
+}

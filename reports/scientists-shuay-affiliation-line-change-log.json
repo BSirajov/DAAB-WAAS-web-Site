@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-09",
+  "profile": "Shuay Abdullayev",
+  "authorization": "User supplied the complete replacement English affiliation line.",
+  "replacement": "Postdoctoral Fellow, Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center, University of Georgia, Athens, USA",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 103,
+      "jsonPointer": "/profiles/5/title_en",
+      "before": "Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center – postdoctoral fellow, University of Georgia",
+      "after": "Postdoctoral Fellow, Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center, University of Georgia, Athens, USA"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/5/title_en",
+      "before": "Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center – postdoctoral fellow, University of Georgia",
+      "after": "Postdoctoral Fellow, Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center, University of Georgia, Athens, USA"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 103,
+      "jsonPointer": "/profiles/5/title_en",
+      "before": "Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center – postdoctoral fellow, University of Georgia",
+      "after": "Postdoctoral Fellow, Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center, University of Georgia, Athens, USA"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/5/title_en",
+      "before": "Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center – postdoctoral fellow, University of Georgia",
+      "after": "Postdoctoral Fellow, Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center, University of Georgia, Athens, USA"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 35,
+      "jsonPointer": "/profiles/shuay.abdullayev@gmail.com/title",
+      "before": "Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center – postdoctoral fellow, University of Georgia",
+      "after": "Postdoctoral Fellow, Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center, University of Georgia, Athens, USA"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6292,
+      "jsonPointer": "/entries/483/summary",
+      "before": "Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center – postdoctoral fellow, University of Georgia · Chemistry · USA",
+      "after": "Postdoctoral Fellow, Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center, University of Georgia, Athens, USA · Chemistry · USA"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6292,
+      "jsonPointer": "/entries/483/summary",
+      "before": "Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center – postdoctoral fellow, University of Georgia · Chemistry · USA",
+      "after": "Postdoctoral Fellow, Department of Pharmaceutical and Biomedical Sciences and Complex Carbohydrate Research Center, University of Georgia, Athens, USA · Chemistry · USA"
+    }
+  ]
+}

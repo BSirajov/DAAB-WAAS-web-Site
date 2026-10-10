@@ -1,0 +1,313 @@
+{
+  "date": "2026-10-09",
+  "profile": "Mirza Mutallimov / Mirzə Mütəllimov",
+  "profileNumber": 9,
+  "languages": [
+    "English",
+    "Azerbaijani"
+  ],
+  "source": "User-authorized update using the official hospital directory and University of Cologne dissertation record",
+  "sources": [
+    {
+      "title": "Klinikum Idar-Oberstein — current medical team",
+      "url": "https://www.shg-kliniken.de/idar-oberstein/klinik/kardiologie-pneumologie-internistische-intensivmedizin/",
+      "supports": "Head of Rhythmology; Dr. med.; MHBA; FESC; internal medicine, cardiology, and intensive care medicine"
+    },
+    {
+      "title": "University of Cologne — dissertation record",
+      "url": "https://kups.ub.uni-koeln.de/72620/",
+      "supports": "Medical doctorate at the University of Cologne, completed March 19, 2024"
+    },
+    {
+      "title": "University of Cologne — dissertation title page",
+      "url": "https://kups.ub.uni-koeln.de/72620/1/Dissertation-Endversion.pdf",
+      "supports": "Author, faculty, university, and date of doctorate"
+    }
+  ],
+  "issueIds": [
+    "V122"
+  ],
+  "resolvedIssueIds": [],
+  "summary": [
+    "Replaced the ambiguous Mainz/Saarland heading with the confirmed Head of Rhythmology role at Klinikum Idar-Oberstein.",
+    "Updated the displayed credentials to Dr. med., MHBA, FESC, retaining the official German doctorate designation rather than equating it with PhD or MD.",
+    "Replaced the ongoing-master’s statement with the completed MHBA qualification, corrected honorary membership to FESC fellowship, and added the confirmed medical specialties and 2024 Cologne doctorate.",
+    "Removed unverified associate-professor and other additional employment claims from the published heading and biography; retained their verification question V122 in the report.",
+    "Synchronized both language profiles, the English translation source, directory credentials, and search records."
+  ],
+  "scopeNote": "Other biographical statements, including the publication count, conference activities, and journal-reviewer role, were retained from the existing profile and were not independently verified by this update. The master’s awarding institution was omitted because the hospital directory does not identify it. Names and photos are unchanged. V122 remains a historical appointment question, not a current error in the corrected hospital title.",
+  "changes": [
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 149,
+      "jsonPointer": "/profiles/8/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "Dr. med., MHBA, FESC"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 154,
+      "jsonPointer": "/profiles/8/title_en",
+      "field": "title_en",
+      "before": "Head of the Department of Rhythmology at the Mainz University Teaching Clinic, senior research doctor, leading cardiologist at the Saarland University Clinic, associate professor",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein, Idar-Oberstein, Germany"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 155,
+      "jsonPointer": "/profiles/8/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his doctoral studies at the University of Cologne. He is currently studying for a master&#x27;s degree in health care management at the University of Nuremberg-Erlangen. He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is an associate professor at the Teaching Clinic of Saarland University and Mainz University. He is an honorary member of the European Society of Cardiology (ESC). This honor is presented to medical professionals who have made significant scientific and clinical contributions to the field of cardiology.</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 150,
+      "jsonPointer": "/profiles/8/title_az",
+      "field": "title_az",
+      "before": "Mainz Universitetinin Tədris Klinikasında Ritmologiya şöbəsinin müdiri, baş tədqiqatçı həkim, Saarland Universitet Klinikasında aparıcı baş mütəxəssis-kardioloq, dosent",
+      "after": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein, İdar-Oberştayn, Almaniya"
+    },
+    {
+      "file": "i18n/scientists-profiles.json",
+      "line": 151,
+      "jsonPointer": "/profiles/8/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. Doktorantura təhsilini Köln Universitetində tamamlamışdır. Hazırda Nürnberq-Erlangen Universitetində səhiyyənin idarə edilməsi üzrə magistratura təhsili alır. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Saarland Universiteti və Mainz Universitetinin Tədris Klinikasında dosentdir. Avropa Kardiologiya Cəmiyyətinin (ESC) fəxri üzvüdür (Fellow of the ESC). Bu fəxri ad kardiologiya sahəsinə elmi və kliniki baxımdan mühüm töhfələr vermiş tibb mütəxəssislərinə təqdim edilir.</p>",
+      "after": "<p class=\"bio bio-lead\">Daxili xəstəliklər, kardiologiya və intensiv terapiya üzrə mütəxəssisdir. 10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. 2024-cü ildə Köln Universitetində tibb üzrə doktorluq dərəcəsi almışdır. Səhiyyə biznesinin idarə edilməsi üzrə magistr (Master of Health Business Administration, MHBA) dərəcəsinə malikdir. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Avropa Kardiologiya Cəmiyyətinin Fellow statuslu üzvüdür (FESC).</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "Dr. med., MHBA, FESC"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/title_en",
+      "field": "title_en",
+      "before": "Head of the Department of Rhythmology at the Mainz University Teaching Clinic, senior research doctor, leading cardiologist at the Saarland University Clinic, associate professor",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein, Idar-Oberstein, Germany"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his doctoral studies at the University of Cologne. He is currently studying for a master&#x27;s degree in health care management at the University of Nuremberg-Erlangen. He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is an associate professor at the Teaching Clinic of Saarland University and Mainz University. He is an honorary member of the European Society of Cardiology (ESC). This honor is presented to medical professionals who have made significant scientific and clinical contributions to the field of cardiology.</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/title_az",
+      "field": "title_az",
+      "before": "Mainz Universitetinin Tədris Klinikasında Ritmologiya şöbəsinin müdiri, baş tədqiqatçı həkim, Saarland Universitet Klinikasında aparıcı baş mütəxəssis-kardioloq, dosent",
+      "after": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein, İdar-Oberştayn, Almaniya"
+    },
+    {
+      "file": "i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. Doktorantura təhsilini Köln Universitetində tamamlamışdır. Hazırda Nürnberq-Erlangen Universitetində səhiyyənin idarə edilməsi üzrə magistratura təhsili alır. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Saarland Universiteti və Mainz Universitetinin Tədris Klinikasında dosentdir. Avropa Kardiologiya Cəmiyyətinin (ESC) fəxri üzvüdür (Fellow of the ESC). Bu fəxri ad kardiologiya sahəsinə elmi və kliniki baxımdan mühüm töhfələr vermiş tibb mütəxəssislərinə təqdim edilir.</p>",
+      "after": "<p class=\"bio bio-lead\">Daxili xəstəliklər, kardiologiya və intensiv terapiya üzrə mütəxəssisdir. 10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. 2024-cü ildə Köln Universitetində tibb üzrə doktorluq dərəcəsi almışdır. Səhiyyə biznesinin idarə edilməsi üzrə magistr (Master of Health Business Administration, MHBA) dərəcəsinə malikdir. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Avropa Kardiologiya Cəmiyyətinin Fellow statuslu üzvüdür (FESC).</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 149,
+      "jsonPointer": "/profiles/8/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "Dr. med., MHBA, FESC"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 154,
+      "jsonPointer": "/profiles/8/title_en",
+      "field": "title_en",
+      "before": "Head of the Department of Rhythmology at the Mainz University Teaching Clinic, senior research doctor, leading cardiologist at the Saarland University Clinic, associate professor",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein, Idar-Oberstein, Germany"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 155,
+      "jsonPointer": "/profiles/8/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his doctoral studies at the University of Cologne. He is currently studying for a master&#x27;s degree in health care management at the University of Nuremberg-Erlangen. He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is an associate professor at the Teaching Clinic of Saarland University and Mainz University. He is an honorary member of the European Society of Cardiology (ESC). This honor is presented to medical professionals who have made significant scientific and clinical contributions to the field of cardiology.</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 150,
+      "jsonPointer": "/profiles/8/title_az",
+      "field": "title_az",
+      "before": "Mainz Universitetinin Tədris Klinikasında Ritmologiya şöbəsinin müdiri, baş tədqiqatçı həkim, Saarland Universitet Klinikasında aparıcı baş mütəxəssis-kardioloq, dosent",
+      "after": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein, İdar-Oberştayn, Almaniya"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles.json",
+      "line": 151,
+      "jsonPointer": "/profiles/8/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. Doktorantura təhsilini Köln Universitetində tamamlamışdır. Hazırda Nürnberq-Erlangen Universitetində səhiyyənin idarə edilməsi üzrə magistratura təhsili alır. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Saarland Universiteti və Mainz Universitetinin Tədris Klinikasında dosentdir. Avropa Kardiologiya Cəmiyyətinin (ESC) fəxri üzvüdür (Fellow of the ESC). Bu fəxri ad kardiologiya sahəsinə elmi və kliniki baxımdan mühüm töhfələr vermiş tibb mütəxəssislərinə təqdim edilir.</p>",
+      "after": "<p class=\"bio bio-lead\">Daxili xəstəliklər, kardiologiya və intensiv terapiya üzrə mütəxəssisdir. 10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. 2024-cü ildə Köln Universitetində tibb üzrə doktorluq dərəcəsi almışdır. Səhiyyə biznesinin idarə edilməsi üzrə magistr (Master of Health Business Administration, MHBA) dərəcəsinə malikdir. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Avropa Kardiologiya Cəmiyyətinin Fellow statuslu üzvüdür (FESC).</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/degree",
+      "field": "degree",
+      "before": "PhD",
+      "after": "Dr. med., MHBA, FESC"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/title_en",
+      "field": "title_en",
+      "before": "Head of the Department of Rhythmology at the Mainz University Teaching Clinic, senior research doctor, leading cardiologist at the Saarland University Clinic, associate professor",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein, Idar-Oberstein, Germany"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/bio_html_en",
+      "field": "bio_html_en",
+      "before": "<p class=\"bio bio-lead\">He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his doctoral studies at the University of Cologne. He is currently studying for a master&#x27;s degree in health care management at the University of Nuremberg-Erlangen. He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is an associate professor at the Teaching Clinic of Saarland University and Mainz University. He is an honorary member of the European Society of Cardiology (ESC). This honor is presented to medical professionals who have made significant scientific and clinical contributions to the field of cardiology.</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p>"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/title_az",
+      "field": "title_az",
+      "before": "Mainz Universitetinin Tədris Klinikasında Ritmologiya şöbəsinin müdiri, baş tədqiqatçı həkim, Saarland Universitet Klinikasında aparıcı baş mütəxəssis-kardioloq, dosent",
+      "after": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein, İdar-Oberştayn, Almaniya"
+    },
+    {
+      "file": "Deployment/i18n/scientists-profiles/chunk-01.json",
+      "line": 1,
+      "jsonPointer": "/profiles/8/bio_html_az",
+      "field": "bio_html_az",
+      "before": "<p class=\"bio bio-lead\">10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. Doktorantura təhsilini Köln Universitetində tamamlamışdır. Hazırda Nürnberq-Erlangen Universitetində səhiyyənin idarə edilməsi üzrə magistratura təhsili alır. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Saarland Universiteti və Mainz Universitetinin Tədris Klinikasında dosentdir. Avropa Kardiologiya Cəmiyyətinin (ESC) fəxri üzvüdür (Fellow of the ESC). Bu fəxri ad kardiologiya sahəsinə elmi və kliniki baxımdan mühüm töhfələr vermiş tibb mütəxəssislərinə təqdim edilir.</p>",
+      "after": "<p class=\"bio bio-lead\">Daxili xəstəliklər, kardiologiya və intensiv terapiya üzrə mütəxəssisdir. 10-dan çox elmi məqalənin müəllifidir və tədqiqatları nüfuzlu beynəlxalq elmi jurnallarda dərc olunmuşdur. 2024-cü ildə Köln Universitetində tibb üzrə doktorluq dərəcəsi almışdır. Səhiyyə biznesinin idarə edilməsi üzrə magistr (Master of Health Business Administration, MHBA) dərəcəsinə malikdir. Bir çox beynəlxalq elmi konfranslarda məruzələrlə çıxış etmişdir. Dəfələrlə Azərbaycanda keçirilən Beynəlxalq Kardiologiya konfranslarında Almaniya Federativ Respublikasını təmsil edərək məruzəçi qismində iştirak etmişdir. Həmkarlarını ən son elmi tədqiqatlar və müasir kardioloji əməliyyatlarla bağlı məlumatlandırmışdır. “Clinical Research in Cardiology” jurnalında rəyçi (reviewer) kimi fəaliyyət göstərir. Avropa Kardiologiya Cəmiyyətinin Fellow statuslu üzvüdür (FESC).</p>"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 53,
+      "jsonPointer": "/profiles/m.mutallimov@yahoo.com/title",
+      "field": "title",
+      "before": "Head of the Department of Rhythmology at the Mainz University Teaching Clinic, senior research doctor, leading cardiologist at the Saarland University Clinic, associate professor",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein, Idar-Oberstein, Germany"
+    },
+    {
+      "file": "i18n/scientists-profiles-en.json",
+      "line": 54,
+      "jsonPointer": "/profiles/m.mutallimov@yahoo.com/bio_html",
+      "field": "bio_html",
+      "before": "<p class=\"bio bio-lead\">He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his doctoral studies at the University of Cologne. He is currently studying for a master&#x27;s degree in health care management at the University of Nuremberg-Erlangen. He has delivered reports at many international scientific conferences. He represented the Federal Republic of Germany and participated as a speaker in international cardiology conferences held in Azerbaijan many times. He informed his colleagues about the latest scientific research and modern cardiac operations. He works as a reviewer in &quot;Clinical Research in Cardiology&quot; magazine. He is an associate professor at the Teaching Clinic of Saarland University and Mainz University. He is an honorary member of the European Society of Cardiology (ESC). This honor is presented to medical professionals who have made significant scientific and clinical contributions to the field of cardiology.</p>",
+      "after": "<p class=\"bio bio-lead\">He is a specialist in internal medicine, cardiology, and intensive care medicine. He is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. He completed his medical doctorate at the University of Cologne in 2024. He holds a Master of Health Business Administration (MHBA). He has given presentations at many international scientific conferences. On many occasions, he represented the Federal Republic of Germany and spoke at international cardiology conferences held in Azerbaijan. He informed his colleagues about the latest scientific research and modern cardiac operations. He reviews manuscripts for the journal \"Clinical Research in Cardiology.\" He is a Fellow of the European Society of Cardiology (FESC).</p>"
+    },
+    {
+      "file": "js/scientists-catalog-data-en.js",
+      "line": 88,
+      "jsonPointer": "/8/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "Dr. med., MHBA, FESC"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data-en.js",
+      "line": 88,
+      "jsonPointer": "/8/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "Dr. med., MHBA, FESC"
+    },
+    {
+      "file": "js/scientists-catalog-data.js",
+      "line": 88,
+      "jsonPointer": "/8/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "Dr. med., MHBA, FESC"
+    },
+    {
+      "file": "Deployment/js/scientists-catalog-data.js",
+      "line": 88,
+      "jsonPointer": "/8/elmi_derece",
+      "field": "elmi_derece",
+      "before": "PhD",
+      "after": "Dr. med., MHBA, FESC"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6370,
+      "jsonPointer": "/entries/489/summary",
+      "field": "summary",
+      "before": "Head of the Department of Rhythmology at the Mainz University Teaching Clinic, senior research doctor, leading cardiologist at the Saarland University Clinic, associate professor · Medicine · Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein, Idar-Oberstein, Germany · Medicine · Germany"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6374,
+      "jsonPointer": "/entries/489/norm",
+      "field": "norm",
+      "before": "mirza mutallimov head of the department of rhythmology at the mainz university teaching clinic senior research doctor leading cardiologist at the saarland university clinic associate professor medicine germany m.mutallimov@yahoo.com he is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. he completed his doctoral studies at the university of cologne. he is currently studying for a master s degree in health care management at the university of nuremberg-erlangen. he phd",
+      "after": "mirza mutallimov head of rhythmology klinikum idar-oberstein idar-oberstein germany medicine germany m.mutallimov@yahoo.com he is a specialist in internal medicine cardiology and intensive care medicine. he is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. he completed his medical doctorate at the university of cologne in 2024. he holds a master of healt dr. med. mhba fesc"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6357,
+      "jsonPointer": "/entries/488/summary",
+      "field": "summary",
+      "before": "Mainz Universitetinin Tədris Klinikasında Ritmologiya şöbəsinin müdiri, baş tədqiqatçı həkim, Saarland Universitet Klinikasında aparıcı baş mütəxəssis-kardioloq, dosent · Həkim · Almaniya",
+      "after": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein, İdar-Oberştayn, Almaniya · Həkim · Almaniya"
+    },
+    {
+      "file": "i18n/search-index.json",
+      "line": 6361,
+      "jsonPointer": "/entries/488/norm",
+      "field": "norm",
+      "before": "mirze mutellimov mainz universitetinin tedris klinikasinda ritmologiya sobesinin mudiri bas tedqiqatci hekim saarland universitet klinikasinda aparici bas mutexessis-kardioloq dosent hekim almaniya m.mutallimov@yahoo.com 10-dan cox elmi meqalenin muellifidir ve tedqiqatlari nufuzlu beynelxalq elmi jurnallarda derc olunmusdur. doktorantura tehsilini koln universitetinde tamamlamisdir. hazirda nurnberq-erlangen universitetinde sehiyyenin idare edilmesi uzre magistratura tehsili alir. bir cox beynelxalq elmi konfranslarda meruzelerle cixi phd",
+      "after": "mirze mutellimov ritmologiya bolmesinin rehberi klinikum idar-oberstein idar-oberstayn almaniya hekim almaniya m.mutallimov@yahoo.com daxili xestelikler kardiologiya ve intensiv terapiya uzre mutexessisdir. 10-dan cox elmi meqalenin muellifidir ve tedqiqatlari nufuzlu beynelxalq elmi jurnallarda derc olunmusdur. 2024-cu ilde koln universitetinde tibb uzre doktorluq derecesi almisdir. sehiyye biznesinin idare edilmesi uzre magistr master of health b dr. med. mhba fesc"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6370,
+      "jsonPointer": "/entries/489/summary",
+      "field": "summary",
+      "before": "Head of the Department of Rhythmology at the Mainz University Teaching Clinic, senior research doctor, leading cardiologist at the Saarland University Clinic, associate professor · Medicine · Germany",
+      "after": "Head of Rhythmology, Klinikum Idar-Oberstein, Idar-Oberstein, Germany · Medicine · Germany"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6374,
+      "jsonPointer": "/entries/489/norm",
+      "field": "norm",
+      "before": "mirza mutallimov head of the department of rhythmology at the mainz university teaching clinic senior research doctor leading cardiologist at the saarland university clinic associate professor medicine germany m.mutallimov@yahoo.com he is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. he completed his doctoral studies at the university of cologne. he is currently studying for a master s degree in health care management at the university of nuremberg-erlangen. he phd",
+      "after": "mirza mutallimov head of rhythmology klinikum idar-oberstein idar-oberstein germany medicine germany m.mutallimov@yahoo.com he is a specialist in internal medicine cardiology and intensive care medicine. he is the author of more than 10 scientific articles and his research has been published in prestigious international scientific journals. he completed his medical doctorate at the university of cologne in 2024. he holds a master of healt dr. med. mhba fesc"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6357,
+      "jsonPointer": "/entries/488/summary",
+      "field": "summary",
+      "before": "Mainz Universitetinin Tədris Klinikasında Ritmologiya şöbəsinin müdiri, baş tədqiqatçı həkim, Saarland Universitet Klinikasında aparıcı baş mütəxəssis-kardioloq, dosent · Həkim · Almaniya",
+      "after": "Ritmologiya bölməsinin rəhbəri, Klinikum Idar-Oberstein, İdar-Oberştayn, Almaniya · Həkim · Almaniya"
+    },
+    {
+      "file": "Deployment/i18n/search-index.json",
+      "line": 6361,
+      "jsonPointer": "/entries/488/norm",
+      "field": "norm",
+      "before": "mirze mutellimov mainz universitetinin tedris klinikasinda ritmologiya sobesinin mudiri bas tedqiqatci hekim saarland universitet klinikasinda aparici bas mutexessis-kardioloq dosent hekim almaniya m.mutallimov@yahoo.com 10-dan cox elmi meqalenin muellifidir ve tedqiqatlari nufuzlu beynelxalq elmi jurnallarda derc olunmusdur. doktorantura tehsilini koln universitetinde tamamlamisdir. hazirda nurnberq-erlangen universitetinde sehiyyenin idare edilmesi uzre magistratura tehsili alir. bir cox beynelxalq elmi konfranslarda meruzelerle cixi phd",
+      "after": "mirze mutellimov ritmologiya bolmesinin rehberi klinikum idar-oberstein idar-oberstayn almaniya hekim almaniya m.mutallimov@yahoo.com daxili xestelikler kardiologiya ve intensiv terapiya uzre mutexessisdir. 10-dan cox elmi meqalenin muellifidir ve tedqiqatlari nufuzlu beynelxalq elmi jurnallarda derc olunmusdur. 2024-cu ilde koln universitetinde tibb uzre doktorluq derecesi almisdir. sehiyye biznesinin idare edilmesi uzre magistr master of health b dr. med. mhba fesc"
+    }
+  ]
+}
