@@ -111,6 +111,8 @@
     return "../az/index.html";
   }
 
+  var ukFlagSerial = 0;
+
   function flagSvg(code) {
     if (code === "az") {
       return (
@@ -124,10 +126,12 @@
         "</svg>"
       );
     }
+    ukFlagSerial += 1;
+    var clipId = "daab-uk-clip-" + ukFlagSerial;
     return (
       '<svg class="daab-lang-flag" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">' +
-      '<defs><clipPath id="daab-uk-clip"><rect width="60" height="30"/></clipPath></defs>' +
-      '<g clip-path="url(#daab-uk-clip)">' +
+      '<defs><clipPath id="' + clipId + '"><rect width="60" height="30"/></clipPath></defs>' +
+      '<g clip-path="url(#' + clipId + ')">' +
       '<rect width="60" height="30" fill="#012169"/>' +
       '<path d="M0 0L60 30M60 0L0 30" stroke="#fff" stroke-width="6"/>' +
       '<path d="M0 0L60 30M60 0L0 30" stroke="#c8102e" stroke-width="3.6"/>' +
@@ -384,17 +388,34 @@
     );
   }
 
+  function uniquifyFlagClips(root) {
+    if (!root || !root.querySelectorAll) return;
+    root.querySelectorAll("clipPath[id]").forEach(function (clip) {
+      ukFlagSerial += 1;
+      var next = "daab-uk-clip-" + ukFlagSerial;
+      var prev = clip.id;
+      clip.id = next;
+      root.querySelectorAll("[clip-path]").forEach(function (node) {
+        if ((node.getAttribute("clip-path") || "") === "url(#" + prev + ")") {
+          node.setAttribute("clip-path", "url(#" + next + ")");
+        }
+      });
+    });
+  }
+
   function mirrorLangSwitch(node) {
     if (!node) return;
     var footer = document.querySelector(".footer-bottom");
     if (footer && !footer.querySelector(".daab-lang-switch")) {
       var footerClone = node.cloneNode(true);
+      uniquifyFlagClips(footerClone);
       footerClone.classList.add("daab-lang-switch--footer");
       footer.insertBefore(footerClone, footer.firstChild);
     }
     var menu = document.getElementById("primaryNavMenu");
     if (menu && !menu.querySelector(".daab-lang-switch")) {
       var menuClone = node.cloneNode(true);
+      uniquifyFlagClips(menuClone);
       menuClone.classList.add("daab-lang-switch--menu");
       var divider = menu.querySelector(".nav-divider");
       if (divider && divider.nextSibling) menu.insertBefore(menuClone, divider.nextSibling);
@@ -406,6 +427,7 @@
       var obs = new MutationObserver(function () {
         if (!switcherNode || menu.querySelector(".daab-lang-switch")) return;
         var again = switcherNode.cloneNode(true);
+        uniquifyFlagClips(again);
         again.classList.add("daab-lang-switch--menu");
         var div = menu.querySelector(".nav-divider");
         if (div && div.nextSibling) menu.insertBefore(again, div.nextSibling);

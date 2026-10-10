@@ -23,8 +23,6 @@
       });
     };
 
-  var SORT_STORAGE_KEY = "daab-profiles-sort";
-  var GROUP_STORAGE_KEY = "daab-profiles-group";
   var GROUP_COLUMNS = ["country", "ixtilas", "degree"];
 
   var COUNTRY_NAME_TO_CODE_AZ = {
@@ -165,9 +163,42 @@
     return key || labels.groupOther;
   }
 
+  function displayPrefs() {
+    try {
+      return window.DAAB_PREFS || null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function readProfilePrefs() {
+    try {
+      var api = displayPrefs();
+      var stored = api && api.readProfiles ? api.readProfiles() : null;
+      return stored && typeof stored === "object" ? stored : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function writeProfilePrefs(snapshot) {
+    try {
+      var api = displayPrefs();
+      if (api && api.writeProfiles) api.writeProfiles(snapshot);
+    } catch (e) { /* ignore */ }
+  }
+
+  function urlHas(key) {
+    try {
+      return new URLSearchParams(location.search || "").has(key);
+    } catch (e) {
+      return false;
+    }
+  }
+
   function readGroupState() {
     try {
-      var col = sessionStorage.getItem(GROUP_STORAGE_KEY) || "";
+      var col = readProfilePrefs().group || "";
       return GROUP_COLUMNS.indexOf(col) >= 0 ? col : "";
     } catch (e) {
       return "";
@@ -175,28 +206,16 @@
   }
 
   function saveGroupState(groupCol) {
-    try {
-      if (!groupCol) sessionStorage.removeItem(GROUP_STORAGE_KEY);
-      else sessionStorage.setItem(GROUP_STORAGE_KEY, groupCol);
-    } catch (e) {
-      /* ignore */
-    }
+    writeProfilePrefs({ group: GROUP_COLUMNS.indexOf(groupCol) >= 0 ? groupCol : "" });
   }
 
   function readSortState() {
     try {
-      var raw = sessionStorage.getItem(SORT_STORAGE_KEY);
-      if (!raw) return null;
-      var s = JSON.parse(raw);
-      if (!s || typeof s !== "object") return null;
-      var col = s.sortCol;
-      var dir = s.sortDir;
-      if (col === "degree") {
-        col = "name";
-      }
-      if (col !== "name" && col !== "country" && col !== "ixtilas") {
-        return null;
-      }
+      var stored = readProfilePrefs();
+      var col = stored.sort;
+      var dir = stored.dir;
+      if (col === "degree") col = "name";
+      if (col !== "name" && col !== "country" && col !== "ixtilas") return null;
       if (dir !== 1 && dir !== -1) return null;
       return { sortCol: col, sortDir: dir };
     } catch (e) {
@@ -205,14 +224,10 @@
   }
 
   function saveSortState(sortCol, sortDir) {
-    try {
-      sessionStorage.setItem(
-        SORT_STORAGE_KEY,
-        JSON.stringify({ sortCol: sortCol, sortDir: sortDir })
-      );
-    } catch (e) {
-      /* ignore */
-    }
+    writeProfilePrefs({
+      sort: sortCol === "degree" ? "name" : sortCol,
+      dir: sortDir === -1 ? -1 : 1
+    });
   }
 
   function defaultSortState() {
@@ -646,16 +661,29 @@
     mountMultiFilters();
 
     var profileUrl = window.DAAB_URL_STATE;
+    var urlDisplay = false;
     if (profileUrl) {
       if (profileUrl.get("q")) searchInput.value = profileUrl.get("q");
       var urlSort = profileUrl.get("sort");
-      if (urlSort === "name" || urlSort === "country" || urlSort === "ixtilas") {
+      if (urlHas("sort") && (urlSort === "name" || urlSort === "country" || urlSort === "ixtilas")) {
         sortCol = urlSort;
+        urlDisplay = true;
       }
-      if (profileUrl.get("dir") === "desc") sortDir = -1;
-      else if (profileUrl.get("dir") === "asc") sortDir = 1;
+      if (urlHas("dir") && profileUrl.get("dir") === "desc") {
+        sortDir = -1;
+        urlDisplay = true;
+      } else if (urlHas("dir") && profileUrl.get("dir") === "asc") {
+        sortDir = 1;
+        urlDisplay = true;
+      }
       var urlGroup = profileUrl.get("group");
-      if (urlGroup && GROUP_COLUMNS.indexOf(urlGroup) !== -1) groupCol = urlGroup;
+      if (urlHas("group") && urlGroup && GROUP_COLUMNS.indexOf(urlGroup) !== -1) {
+        groupCol = urlGroup;
+        urlDisplay = true;
+      }
+      if (urlDisplay) {
+        writeProfilePrefs({ sort: sortCol, dir: sortDir, group: groupCol });
+      }
       if (ms && ms.setSelected) {
         ["country", "field", "degree"].forEach(function (key) {
           var id = key === "country" ? "filterCountry" : key === "field" ? "filterIxtilas" : "filterDegree";

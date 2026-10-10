@@ -28,6 +28,29 @@ COMPRESSIBLE_SUFFIXES = {
     ".map",
 }
 
+def query_has_version(query: str) -> bool:
+    for part in (query or "").split("&"):
+        if part.startswith("v=") and len(part) > 2:
+            return True
+    return False
+
+
+def cache_control_for(path: str, query: str = "", force_html: bool = False) -> str | None:
+    """Match .htaccess: HTML revalidates; only ?v= assets are immutable."""
+    clean = (path or "").split("?", 1)[0].lower()
+    suffix = Path(clean).suffix
+    if (
+        force_html
+        or suffix in (".html", ".htm")
+        or clean.endswith("/")
+        or clean in ("", "/")
+    ):
+        return "no-cache, must-revalidate"
+    if query_has_version(query) and suffix in LONG_CACHE_SUFFIXES:
+        return "public, max-age=31536000, immutable"
+    return None
+
+
 LONG_CACHE_SUFFIXES = {
     ".css",
     ".js",
@@ -48,14 +71,35 @@ class DAABRequestHandler(SimpleHTTPRequestHandler):
         super().__init__(*args, directory=directory or str(ROOT), **kwargs)
 
     def end_headers(self) -> None:
-        path = self.path.split("?", 1)[0].lower()
-        suffix = Path(path).suffix
-        if suffix in LONG_CACHE_SUFFIXES:
-            self.send_header("Cache-Control", "public, max-age=604800, immutable")
-        elif suffix in (".html", ".json") or path.endswith("/"):
-            self.send_header("Cache-Control", "no-cache")
+        path = self.path.split("?", 1)[0]
+        query = self.path.split("?", 1)[1] if "?" in self.path else ""
+        header = cache_control_for(path, query, force_html=getattr(self, "_daab_force_html_cache", False))
+        if header:
+            self.send_header("Cache-Control", header)
         self.send_header("X-Content-Type-Options", "nosniff")
         super().end_headers()
+
+    def send_error(self, code, message=None, explain=None) -> None:
+        """Serve the site 404 page for missing URLs, matching .htaccess ErrorDocument."""
+        if code == 404:
+            request_path = self.path.split("?", 1)[0]
+            error_page = Path(self.directory) / "404.html"
+            if error_page.is_file() and request_path != "/404.html":
+                try:
+                    data = error_page.read_bytes()
+                except OSError:
+                    data = b""
+                if data:
+                    self.log_error("code %d, message %s", code, message)
+                    self.send_response(code, message)
+                    self.send_header("Content-Type", "text/html; charset=utf-8")
+                    self.send_header("Content-Length", str(len(data)))
+                    self._daab_force_html_cache = True
+                    self.end_headers()
+                    if self.command != "HEAD":
+                        self.wfile.write(data)
+                    return
+        super().send_error(code, message, explain)
 
     def send_head(self):
         path = self.translate_path(self.path)
