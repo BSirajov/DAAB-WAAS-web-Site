@@ -111,6 +111,8 @@
     return "../az/index.html";
   }
 
+  var ukFlagSerial = 0;
+
   function flagSvg(code) {
     if (code === "az") {
       return (
@@ -124,10 +126,12 @@
         "</svg>"
       );
     }
+    ukFlagSerial += 1;
+    var clipId = "daab-uk-clip-" + ukFlagSerial;
     return (
       '<svg class="daab-lang-flag" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">' +
-      '<defs><clipPath id="daab-uk-clip"><rect width="60" height="30"/></clipPath></defs>' +
-      '<g clip-path="url(#daab-uk-clip)">' +
+      '<defs><clipPath id="' + clipId + '"><rect width="60" height="30"/></clipPath></defs>' +
+      '<g clip-path="url(#' + clipId + ')">' +
       '<rect width="60" height="30" fill="#012169"/>' +
       '<path d="M0 0L60 30M60 0L0 30" stroke="#fff" stroke-width="6"/>' +
       '<path d="M0 0L60 30M60 0L0 30" stroke="#c8102e" stroke-width="3.6"/>' +
@@ -384,17 +388,34 @@
     );
   }
 
+  function uniquifyFlagClips(root) {
+    if (!root || !root.querySelectorAll) return;
+    root.querySelectorAll("clipPath[id]").forEach(function (clip) {
+      ukFlagSerial += 1;
+      var next = "daab-uk-clip-" + ukFlagSerial;
+      var prev = clip.id;
+      clip.id = next;
+      root.querySelectorAll("[clip-path]").forEach(function (node) {
+        if ((node.getAttribute("clip-path") || "") === "url(#" + prev + ")") {
+          node.setAttribute("clip-path", "url(#" + next + ")");
+        }
+      });
+    });
+  }
+
   function mirrorLangSwitch(node) {
     if (!node) return;
     var footer = document.querySelector(".footer-bottom");
     if (footer && !footer.querySelector(".daab-lang-switch")) {
       var footerClone = node.cloneNode(true);
+      uniquifyFlagClips(footerClone);
       footerClone.classList.add("daab-lang-switch--footer");
       footer.insertBefore(footerClone, footer.firstChild);
     }
     var menu = document.getElementById("primaryNavMenu");
     if (menu && !menu.querySelector(".daab-lang-switch")) {
       var menuClone = node.cloneNode(true);
+      uniquifyFlagClips(menuClone);
       menuClone.classList.add("daab-lang-switch--menu");
       var divider = menu.querySelector(".nav-divider");
       if (divider && divider.nextSibling) menu.insertBefore(menuClone, divider.nextSibling);
@@ -406,6 +427,7 @@
       var obs = new MutationObserver(function () {
         if (!switcherNode || menu.querySelector(".daab-lang-switch")) return;
         var again = switcherNode.cloneNode(true);
+        uniquifyFlagClips(again);
         again.classList.add("daab-lang-switch--menu");
         var div = menu.querySelector(".nav-divider");
         if (div && div.nextSibling) menu.insertBefore(again, div.nextSibling);
@@ -617,6 +639,39 @@
     document.documentElement.style.setProperty("scroll-behavior", "auto", "important");
   }
 
+  function mountPrefsReset() {
+    var nav = document.querySelector(".footer-legal-links");
+    if (!nav || nav.querySelector(".daab-prefs-reset")) return;
+    var lang = detectLang();
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "daab-prefs-reset";
+    btn.textContent = lang === "en" ? "Reset preferences" : "Seçimləri sıfırla";
+    btn.title = lang === "en"
+      ? "Clear saved language and catalogue display settings on this browser"
+      : "Bu brauzerdə saxlanmış dil və kataloq görünüşü seçimlərini sil";
+    btn.addEventListener("click", function () {
+      try {
+        if (window.DAAB_PREFS && typeof window.DAAB_PREFS.reset === "function") {
+          window.DAAB_PREFS.reset();
+        }
+      } catch (err) { /* ignore */ }
+      var params;
+      try {
+        params = new URLSearchParams(location.search || "");
+      } catch (err2) {
+        location.reload();
+        return;
+      }
+      ["sort", "dir", "group", "view", "per"].forEach(function (key) {
+        params.delete(key);
+      });
+      var qs = params.toString();
+      location.replace(location.pathname + (qs ? "?" + qs : "") + (location.hash || ""));
+    });
+    nav.appendChild(btn);
+  }
+
   function bindFooterLegalTopJump() {
     if (document.documentElement.getAttribute("data-daab-footer-legal-top") === "1") {
       return;
@@ -729,10 +784,12 @@
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
       bindFooterLegalTopJump();
+      mountPrefsReset();
       boot(0);
     });
   } else {
     bindFooterLegalTopJump();
+    mountPrefsReset();
     boot(0);
   }
 

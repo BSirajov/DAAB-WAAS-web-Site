@@ -368,7 +368,7 @@
         forum2026Register: "Register",
         forums: "Projects",
         complexTopics: "Complex Topics, Clear Explanations",
-        complexTopicsApproach: "Organisation of competition",
+        complexTopicsApproach: "Organization of competition",
         complexTopicsInformatics: "Guide to topic selection",
         complexTopicsPresentation: "Presentation"
       }
@@ -430,7 +430,7 @@
         forum2026Register: "Register",
         forums: "Projects",
         complexTopics: "Complex Topics, Clear Explanations",
-        complexTopicsApproach: "Organisation of competition",
+        complexTopicsApproach: "Organization of competition",
         complexTopicsInformatics: "Guide to topic selection",
         complexTopicsPresentation: "Presentation",
         forumOfficial: "Official addresses",

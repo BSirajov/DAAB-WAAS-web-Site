@@ -503,11 +503,19 @@
 
   function retireLegacyInput() {
     var old = document.getElementById("pageContentSearch");
-    if (!old) return;
-    old.removeAttribute("id");
-    old.setAttribute("data-daab-page-search-legacy", "1");
-    old.tabIndex = -1;
-    old.setAttribute("aria-hidden", "true");
+    if (old) {
+      old.removeAttribute("id");
+      old.setAttribute("data-daab-page-search-legacy", "1");
+      old.tabIndex = -1;
+      old.setAttribute("aria-hidden", "true");
+    }
+    /* Charter keeps a hidden Clear control with this id. The mounted bar
+       creates another, so the first id must be released before that. */
+    var oldClear = document.getElementById("pageContentSearchClear");
+    if (oldClear) {
+      oldClear.removeAttribute("id");
+      oldClear.setAttribute("data-daab-page-search-legacy", "1");
+    }
   }
 
   function ensureEmpty() {

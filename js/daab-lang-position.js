@@ -500,6 +500,39 @@
   }
 
   var restorePending = false;
+  var homeEntry = false;
+
+  function closeTransientUi() {
+    try {
+      var overlay = document.getElementById("search-overlay");
+      if (overlay && overlay.classList) overlay.classList.remove("open");
+      var strip = document.querySelector(".nav-strip");
+      if (strip && strip.classList) strip.classList.remove("is-menu-open");
+      document.querySelectorAll("dialog[open]").forEach(function (dialog) {
+        try {
+          dialog.close();
+        } catch (err) { /* ignore */ }
+      });
+    } catch (e) { /* ignore */ }
+  }
+
+  /** Root entry opens the language home at the top. It does not restore an earlier route. */
+  function consumeHomeEntry() {
+    var flag = false;
+    try {
+      flag = sessionStorage.getItem("daab-home-entry") === "1";
+      if (flag) sessionStorage.removeItem("daab-home-entry");
+    } catch (e) {
+      return false;
+    }
+    if (!flag || pageId() !== "home") return false;
+    homeEntry = true;
+    clearIntent();
+    clearUrlHash();
+    restoreTop();
+    closeTransientUi();
+    return true;
+  }
 
   function tryRestore(attempt) {
     if (restoreFromIntent()) {
@@ -517,6 +550,9 @@
 
   function initRestore() {
     if (document.body && document.body.classList.contains("daab-gateway")) {
+      return;
+    }
+    if (consumeHomeEntry()) {
       return;
     }
     if (pageId() === "scientists-profiles") {
@@ -568,12 +604,22 @@
   }
 
   global.addEventListener("pageshow", function (ev) {
+    if (homeEntry && !ev.persisted) {
+      restoreTop();
+      closeTransientUi();
+      return;
+    }
     if (ev.persisted || location.hash) {
       initRestore();
     }
   });
 
   global.addEventListener("load", function () {
+    if (homeEntry) {
+      restoreTop();
+      closeTransientUi();
+      return;
+    }
     initRestore();
   }, { once: true });
 

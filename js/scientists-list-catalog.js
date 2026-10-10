@@ -5,9 +5,6 @@
 (function () {
   "use strict";
 
-  var SORT_STORAGE_KEY = "daab-scientists-list-sort";
-  var GROUP_STORAGE_KEY = "daab-scientists-list-group";
-  var VIEW_STORAGE_KEY = "daab-scientists-list-view";
   var SORT_COLUMNS = ["ad_soyad", "yasadigi_olke", "ixtilas", "elmi_derece", "cinsi"];
   var GROUP_COLUMNS = ["yasadigi_olke", "ixtilas", "elmi_derece", "cinsi"];
 
@@ -129,33 +126,51 @@
     return String(s || "");
   }
 
+  var LIST_PER = ["20", "50", "100", "999999"];
+
+  function displayPrefs() {
+    try {
+      return window.DAAB_PREFS || null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function readListPrefs() {
+    try {
+      var api = displayPrefs();
+      var stored = api && api.readList ? api.readList() : null;
+      return stored && typeof stored === "object" ? stored : {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function writeListPrefs(snapshot) {
+    try {
+      var api = displayPrefs();
+      if (api && api.writeList) api.writeList(snapshot);
+    } catch (e) { /* ignore */ }
+  }
+
   function readSortState() {
     try {
-      var raw = sessionStorage.getItem(SORT_STORAGE_KEY);
-      if (!raw) return null;
-      var s = JSON.parse(raw);
-      if (!s || SORT_COLUMNS.indexOf(s.sortCol) === -1) return null;
-      if (s.sortDir !== 1 && s.sortDir !== -1) return null;
-      return { sortCol: s.sortCol, sortDir: s.sortDir };
+      var stored = readListPrefs();
+      if (SORT_COLUMNS.indexOf(stored.sort) === -1) return null;
+      if (stored.dir !== 1 && stored.dir !== -1) return null;
+      return { sortCol: stored.sort, sortDir: stored.dir };
     } catch (e) {
       return null;
     }
   }
 
   function saveSortState(sortCol, sortDir) {
-    try {
-      sessionStorage.setItem(
-        SORT_STORAGE_KEY,
-        JSON.stringify({ sortCol: sortCol, sortDir: sortDir })
-      );
-    } catch (e) {
-      /* ignore */
-    }
+    writeListPrefs({ sort: sortCol, dir: sortDir });
   }
 
   function readGroupState() {
     try {
-      var col = sessionStorage.getItem(GROUP_STORAGE_KEY) || "";
+      var col = readListPrefs().group || "";
       return GROUP_COLUMNS.indexOf(col) >= 0 ? col : "";
     } catch (e) {
       return "";
@@ -163,29 +178,31 @@
   }
 
   function saveGroupState(groupCol) {
-    try {
-      if (!groupCol) sessionStorage.removeItem(GROUP_STORAGE_KEY);
-      else sessionStorage.setItem(GROUP_STORAGE_KEY, groupCol);
-    } catch (e) {
-      /* ignore */
-    }
+    writeListPrefs({ group: GROUP_COLUMNS.indexOf(groupCol) >= 0 ? groupCol : "" });
   }
 
   function readViewState() {
     try {
-      var raw = sessionStorage.getItem(VIEW_STORAGE_KEY);
-      if (raw === "table") return "table";
-      return "cards";
+      return readListPrefs().view === "table" ? "table" : "cards";
     } catch (e) {
       return "cards";
     }
   }
 
   function saveViewState(mode) {
+    writeListPrefs({ view: mode === "table" ? "table" : "cards" });
+  }
+
+  function savePerState(per) {
+    if (LIST_PER.indexOf(String(per)) === -1) return;
+    writeListPrefs({ per: String(per) });
+  }
+
+  function urlHas(key) {
     try {
-      sessionStorage.setItem(VIEW_STORAGE_KEY, mode === "cards" ? "cards" : "table");
+      return new URLSearchParams(location.search || "").has(key);
     } catch (e) {
-      /* ignore */
+      return false;
     }
   }
 
@@ -249,20 +266,53 @@
     var perPage = 50;
     var booting = true;
     var urlState = window.DAAB_URL_STATE;
+    var urlDisplay = false;
+    try {
+      var storedPer = readListPrefs().per;
+      if (storedPer && perPageSel && !urlHas("per")) perPageSel.value = storedPer;
+    } catch (e) { /* ignore */ }
     if (urlState) {
       var urlSort = urlState.get("sort");
-      if (urlSort && SORT_COLUMNS.indexOf(urlSort) !== -1) sortCol = urlSort;
-      if (urlState.get("dir") === "desc") sortDir = -1;
-      else if (urlState.get("dir") === "asc") sortDir = 1;
+      if (urlHas("sort") && urlSort && SORT_COLUMNS.indexOf(urlSort) !== -1) {
+        sortCol = urlSort;
+        urlDisplay = true;
+      }
+      if (urlHas("dir") && urlState.get("dir") === "desc") {
+        sortDir = -1;
+        urlDisplay = true;
+      } else if (urlHas("dir") && urlState.get("dir") === "asc") {
+        sortDir = 1;
+        urlDisplay = true;
+      }
       var urlGroup = urlState.get("group");
-      if (urlGroup && GROUP_COLUMNS.indexOf(urlGroup) !== -1) groupCol = urlGroup;
+      if (urlHas("group") && urlGroup && GROUP_COLUMNS.indexOf(urlGroup) !== -1) {
+        groupCol = urlGroup;
+        urlDisplay = true;
+      }
       var urlView = urlState.get("view");
-      if (urlView === "list" || urlView === "table") viewMode = "table";
-      else if (urlView === "grid" || urlView === "cards") viewMode = "cards";
+      if (urlHas("view") && (urlView === "list" || urlView === "table")) {
+        viewMode = "table";
+        urlDisplay = true;
+      } else if (urlHas("view") && (urlView === "grid" || urlView === "cards")) {
+        viewMode = "cards";
+        urlDisplay = true;
+      }
       var urlPage = parseInt(urlState.get("page"), 10);
       if (urlPage > 1) page = urlPage;
       if (urlState.get("q")) searchInput.value = urlState.get("q");
-      if (perPageSel && urlState.get("per")) perPageSel.value = urlState.get("per");
+      if (urlHas("per") && perPageSel && LIST_PER.indexOf(urlState.get("per")) !== -1) {
+        perPageSel.value = urlState.get("per");
+        urlDisplay = true;
+      }
+    }
+    if (urlDisplay) {
+      writeListPrefs({
+        view: viewMode,
+        group: groupCol,
+        sort: sortCol,
+        dir: sortDir,
+        per: perPageSel ? String(perPageSel.value || "50") : "50"
+      });
     }
 
     var countries = sortValues(
@@ -932,7 +982,7 @@
 
     function setViewMode(mode) {
       viewMode = mode === "cards" ? "cards" : "table";
-      saveViewState(viewMode);
+      if (!booting) saveViewState(viewMode);
       updateViewUi();
       if (!booting) page = 1;
       render();
@@ -1031,6 +1081,7 @@
         page = 1;
         render();
         syncCatalogUrl();
+        savePerState(perPageSel.value);
       });
     }
 

@@ -207,44 +207,265 @@
     return page ? page.id : null;
   }
 
-  function persistLang(lang) {
-    try {
-      localStorage.setItem("daab-lang", lang);
-    } catch (e) { /* ignore */ }
+  var PREFS_KEY = "daab-prefs";
+  var PREFS_VERSION = 1;
+  var LANG_KEY = "daab-lang";
+  var LIST_SORT = ["ad_soyad", "yasadigi_olke", "ixtilas", "elmi_derece", "cinsi"];
+  var LIST_GROUP = ["", "yasadigi_olke", "ixtilas", "elmi_derece", "cinsi"];
+  var LIST_VIEW = ["cards", "table"];
+  var LIST_PER = ["20", "50", "100", "999999"];
+  var PROFILE_SORT = ["name", "country", "ixtilas"];
+  var PROFILE_GROUP = ["", "country", "ixtilas", "degree"];
+  var SESSION_PREF_KEYS = [
+    "daab-scientists-list-sort",
+    "daab-scientists-list-group",
+    "daab-scientists-list-view",
+    "daab-profiles-sort",
+    "daab-profiles-group"
+  ];
+
+  function emptyPrefs() {
+    return { v: PREFS_VERSION };
   }
 
-  function readPersistedLang() {
+  function readPrefs() {
     try {
-      var v = localStorage.getItem("daab-lang");
-      return v === "en" || v === "az" ? v : null;
+      var raw = localStorage.getItem(PREFS_KEY);
+      if (!raw) return emptyPrefs();
+      var data = JSON.parse(raw);
+      if (!data || typeof data !== "object" || data.v !== PREFS_VERSION) return emptyPrefs();
+      return data;
+    } catch (e) {
+      return emptyPrefs();
+    }
+  }
+
+  function writePrefs(data) {
+    try {
+      data.v = PREFS_VERSION;
+      localStorage.setItem(PREFS_KEY, JSON.stringify(data));
+    } catch (e) { /* private mode or blocked storage */ }
+  }
+
+  function sanitizeDir(dir) {
+    if (dir === 1 || dir === -1) return dir;
+    if (dir === "asc" || dir === "1") return 1;
+    if (dir === "desc" || dir === "-1") return -1;
+    return null;
+  }
+
+  function allow(value, allowed) {
+    return allowed.indexOf(value) >= 0 ? value : null;
+  }
+
+  function readLang() {
+    try {
+      var data = readPrefs();
+      if (data.lang === "en" || data.lang === "az") return data.lang;
+      var legacy = localStorage.getItem(LANG_KEY);
+      return legacy === "en" || legacy === "az" ? legacy : null;
     } catch (e) {
       return null;
     }
   }
 
-  function initGateway() {
-    var params = new URLSearchParams(location.search);
-    if (params.get("choose") === "1") return;
-    var lang = params.get("lang");
-    if (lang === "en") {
-      persistLang("en");
-      location.replace(assetRoot() + "en/index.html");
-      return;
-    }
-    if (lang === "az") {
-      persistLang("az");
-      location.replace(assetRoot() + "az/index.html");
-      return;
-    }
-    var saved = readPersistedLang();
-    if (saved === "en") {
-      location.replace(assetRoot() + "en/index.html");
-      return;
-    }
-    if (saved === "az") {
-      location.replace(assetRoot() + "az/index.html");
+  function writeLang(lang) {
+    if (lang !== "en" && lang !== "az") return;
+    try {
+      var data = readPrefs();
+      data.lang = lang;
+      writePrefs(data);
+      localStorage.setItem(LANG_KEY, lang);
+    } catch (e) { /* ignore */ }
+  }
+
+  function sectionFrom(src, sortAllowed, groupAllowed) {
+    if (!src || typeof src !== "object") return null;
+    var out = {};
+    var sort = allow(src.sort, sortAllowed);
+    var group = allow(src.group, groupAllowed);
+    var dir = sanitizeDir(src.dir);
+    if (sort) out.sort = sort;
+    if (group != null && groupAllowed.indexOf(src.group) >= 0) out.group = src.group;
+    if (dir) out.dir = dir;
+    return out;
+  }
+
+  function readList() {
+    try {
+      var src = readPrefs().list;
+      var out = sectionFrom(src, LIST_SORT, LIST_GROUP) || {};
+      if (src && typeof src === "object") {
+        var view = allow(src.view, LIST_VIEW);
+        var per = allow(src.per == null ? "" : String(src.per), LIST_PER);
+        if (view) out.view = view;
+        if (per) out.per = per;
+      }
+      if (!out.sort && !out.view && !out.group && !out.per) {
+        out = migrateListSession(out);
+      }
+      return out;
+    } catch (e) {
+      return {};
     }
   }
+
+  function migrateListSession(out) {
+    try {
+      var raw = sessionStorage.getItem("daab-scientists-list-sort");
+      if (raw) {
+        var parsed = JSON.parse(raw);
+        var sort = parsed && allow(parsed.sortCol, LIST_SORT);
+        var dir = parsed && sanitizeDir(parsed.sortDir);
+        if (sort) out.sort = sort;
+        if (dir) out.dir = dir;
+      }
+      var group = sessionStorage.getItem("daab-scientists-list-group") || "";
+      if (LIST_GROUP.indexOf(group) >= 0 && group) out.group = group;
+      var view = sessionStorage.getItem("daab-scientists-list-view");
+      if (allow(view, LIST_VIEW)) out.view = view;
+      if (out.sort || out.view || out.group) writeList(out);
+    } catch (e) { /* ignore */ }
+    return out;
+  }
+
+  function writeList(snapshot) {
+    try {
+      var data = readPrefs();
+      var prev = data.list && typeof data.list === "object" ? data.list : {};
+      var next = {
+        view: prev.view,
+        group: prev.group,
+        sort: prev.sort,
+        dir: prev.dir,
+        per: prev.per
+      };
+      snapshot = snapshot || {};
+      if (allow(snapshot.view, LIST_VIEW)) next.view = snapshot.view;
+      if (LIST_GROUP.indexOf(snapshot.group) >= 0) next.group = snapshot.group;
+      if (allow(snapshot.sort, LIST_SORT)) next.sort = snapshot.sort;
+      if (sanitizeDir(snapshot.dir)) next.dir = sanitizeDir(snapshot.dir);
+      if (allow(snapshot.per == null ? "" : String(snapshot.per), LIST_PER)) {
+        next.per = String(snapshot.per);
+      }
+      if (!allow(next.view, LIST_VIEW)) delete next.view;
+      if (LIST_GROUP.indexOf(next.group) < 0) delete next.group;
+      if (!allow(next.sort, LIST_SORT)) delete next.sort;
+      if (!sanitizeDir(next.dir)) delete next.dir;
+      else next.dir = sanitizeDir(next.dir);
+      if (!allow(next.per == null ? "" : String(next.per), LIST_PER)) delete next.per;
+      data.list = next;
+      writePrefs(data);
+    } catch (e) { /* ignore */ }
+  }
+
+  function readProfiles() {
+    try {
+      var out = sectionFrom(readPrefs().profiles, PROFILE_SORT, PROFILE_GROUP) || {};
+      if (!out.sort && !out.group) out = migrateProfileSession(out);
+      return out;
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function migrateProfileSession(out) {
+    try {
+      var raw = sessionStorage.getItem("daab-profiles-sort");
+      if (raw) {
+        var parsed = JSON.parse(raw);
+        var sort = parsed && allow(parsed.sortCol, PROFILE_SORT);
+        var dir = parsed && sanitizeDir(parsed.sortDir);
+        if (sort) out.sort = sort;
+        if (dir) out.dir = dir;
+      }
+      var group = sessionStorage.getItem("daab-profiles-group") || "";
+      if (PROFILE_GROUP.indexOf(group) >= 0 && group) out.group = group;
+      if (out.sort || out.group) writeProfiles(out);
+    } catch (e) { /* ignore */ }
+    return out;
+  }
+
+  function writeProfiles(snapshot) {
+    try {
+      var data = readPrefs();
+      var prev = data.profiles && typeof data.profiles === "object" ? data.profiles : {};
+      var next = { group: prev.group, sort: prev.sort, dir: prev.dir };
+      snapshot = snapshot || {};
+      if (PROFILE_GROUP.indexOf(snapshot.group) >= 0) next.group = snapshot.group;
+      if (allow(snapshot.sort, PROFILE_SORT)) next.sort = snapshot.sort;
+      if (sanitizeDir(snapshot.dir)) next.dir = sanitizeDir(snapshot.dir);
+      if (PROFILE_GROUP.indexOf(next.group) < 0) delete next.group;
+      if (!allow(next.sort, PROFILE_SORT)) delete next.sort;
+      if (!sanitizeDir(next.dir)) delete next.dir;
+      else next.dir = sanitizeDir(next.dir);
+      data.profiles = next;
+      writePrefs(data);
+    } catch (e) { /* ignore */ }
+  }
+
+  function resetPrefs() {
+    try {
+      localStorage.removeItem(PREFS_KEY);
+    } catch (e) { /* ignore */ }
+    try {
+      localStorage.removeItem(LANG_KEY);
+    } catch (e2) { /* ignore */ }
+    try {
+      var drop = [];
+      var i;
+      for (i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        if (key && key.indexOf("daab-table-col-width:") === 0) drop.push(key);
+      }
+      for (i = 0; i < drop.length; i++) localStorage.removeItem(drop[i]);
+    } catch (e3) { /* ignore */ }
+    try {
+      SESSION_PREF_KEYS.forEach(function (key) {
+        sessionStorage.removeItem(key);
+      });
+    } catch (e4) { /* ignore */ }
+  }
+
+  function persistLang(lang) {
+    writeLang(lang);
+  }
+
+  function readPersistedLang() {
+    return readLang();
+  }
+
+  function initGateway() {
+    var params;
+    try {
+      params = new URLSearchParams(location.search);
+    } catch (e) {
+      params = new URLSearchParams();
+    }
+    if (params.get("choose") === "1" || params.get("legacy") === "1") return;
+    var requested = params.get("lang");
+    if (requested !== "en" && requested !== "az") requested = "";
+    if (requested) writeLang(requested);
+    var lang = requested || readPersistedLang() || "az";
+    try {
+      sessionStorage.removeItem("daab-lang-position");
+      sessionStorage.removeItem("daab-force-page-top");
+      sessionStorage.setItem("daab-home-entry", "1");
+    } catch (e2) { /* ignore */ }
+    location.replace(assetRoot() + lang + "/index.html" + (location.search || ""));
+  }
+
+  global.DAAB_PREFS = {
+    VERSION: PREFS_VERSION,
+    KEY: PREFS_KEY,
+    readLang: readLang,
+    writeLang: writeLang,
+    readList: readList,
+    writeList: writeList,
+    readProfiles: readProfiles,
+    writeProfiles: writeProfiles,
+    reset: resetPrefs
+  };
 
   function absoluteUrl(rel) {
     try {
