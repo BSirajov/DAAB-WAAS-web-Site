@@ -17,6 +17,9 @@
     Dr: "Dr.",
   };
 
+  // English credential display follows the profile house style.
+  var CRED_LABEL_EN = { PhD: "PhD", "Prof.Dr.": "Prof Dr" };
+
   var META_LABELS = {
     az: { field: "İxtisas:", email: "E-məktub:" },
     en: { field: "Field:", email: "Email:" },
@@ -150,7 +153,7 @@
 
   function buildSearchBlob(profile, lang) {
     var degree = String(profile.degree || "").trim();
-    var cred = CRED_LABEL[degree] || degree;
+    var cred = (lang === "en" && CRED_LABEL_EN[degree]) || CRED_LABEL[degree] || degree;
     var name = profileName(profile, lang);
     if (cred) name = name + " " + cred;
     var country = profileCountry(profile, lang);
@@ -165,7 +168,7 @@
   function renderCard(profile, lang, prefix) {
     var email = String(profile.email || "").trim();
     var degree = String(profile.degree || "").trim();
-    var cred = CRED_LABEL[degree] || degree;
+    var cred = (lang === "en" && CRED_LABEL_EN[degree]) || CRED_LABEL[degree] || degree;
     var country = profileCountry(profile, lang);
     var field = profileField(profile, lang);
     var code = profileCountryCode(profile);

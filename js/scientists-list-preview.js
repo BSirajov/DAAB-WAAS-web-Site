@@ -461,7 +461,7 @@
   }
 
   function onDocumentPointerDown(e) {
-    if (!touchMode || !popover || popover.hidden) return;
+    if (!tapPreview || !popover || popover.hidden) return;
     var t = e.target;
     if (containsRelated(t, popover) || (activeTrigger && containsRelated(t, activeTrigger))) return;
     hide();

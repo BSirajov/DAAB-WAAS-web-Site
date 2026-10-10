@@ -443,6 +443,9 @@
   function apply() {
     if (!input) return;
     var q = norm(input.value);
+    if (window.DAAB_URL_STATE && mode !== "hub") {
+      window.DAAB_URL_STATE.write({ q: input.value.trim() });
+    }
     if (clearBtn) clearBtn.hidden = !q;
     if (prevBtn) prevBtn.hidden = mode === "hub" || !q;
     if (nextBtn) nextBtn.hidden = mode === "hub" || !q;
@@ -673,6 +676,9 @@
       ensureEmpty();
       applyLabels();
       bind();
+      if (input && window.DAAB_URL_STATE && window.DAAB_URL_STATE.get("q")) {
+        input.value = window.DAAB_URL_STATE.get("q");
+      }
       apply();
       notifyChrome();
     });

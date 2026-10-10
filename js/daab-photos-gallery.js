@@ -203,6 +203,8 @@
     try {
       var url = new URL(window.location.href);
       url.searchParams.set("category", id);
+      if (opts.photo) url.searchParams.set("photo", opts.photo);
+      else if (opts.clearPhoto) url.searchParams.delete("photo");
       if (opts.syncHash) {
         url.hash = id;
       } else if (opts.clearHash) {
@@ -379,6 +381,7 @@
       }
     };
     loader.src = fullSrc;
+    if (currentCat && file) updateUrl(currentCat.id, { photo: file });
   }
 
   function openLightboxAt(cat, images, idx) {
@@ -390,6 +393,10 @@
     lightbox.classList.add("open", "is-loading-view");
     lightbox.setAttribute("aria-hidden", "false");
     showAt(idx || 0, { skipAnim: true });
+    var file = currentImages && currentImages[idx || 0];
+    if (currentCat && file) {
+      updateUrl(currentCat.id, { photo: file });
+    }
     if (lightboxClose) lightboxClose.focus();
   }
 
@@ -413,6 +420,7 @@
     lightboxImg.setAttribute("aria-hidden", "true");
     if (lightboxCaption) lightboxCaption.textContent = "";
     currentIndex = -1;
+    if (currentCat) updateUrl(currentCat.id, { clearPhoto: true });
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
 
@@ -478,7 +486,8 @@
     activateLink(link);
     updateUrl(cat.id, {
       syncHash: !!opts.syncHash,
-      clearHash: !opts.syncHash
+      clearHash: !opts.syncHash,
+      clearPhoto: !opts.keepPhoto
     });
 
     if (titleEl) titleEl.textContent = titleFor(cat);
@@ -543,6 +552,19 @@
       return hash;
     }
     return null;
+  }
+
+  function restoreOpenPhoto() {
+    var file = "";
+    try {
+      file = new URL(window.location.href).searchParams.get("photo") || "";
+    } catch (e) {
+      return;
+    }
+    if (!file || !currentCat || !currentImages) return;
+    var idx = currentImages.indexOf(file);
+    if (idx < 0) return;
+    openLightboxAt(currentCat, currentImages, idx);
   }
 
   function initialCategoryId() {
@@ -668,7 +690,8 @@
       initLightbox();
       closeSidebarMenu = bindSidebarMobile();
       var start = initialCategoryId();
-      if (start) selectCategory(start, { syncHash: false, skipScroll: true });
+      if (start) selectCategory(start, { syncHash: false, skipScroll: true, keepPhoto: true });
+      restoreOpenPhoto();
       restorePageTop();
       window.addEventListener("load", restorePageTop, { once: true });
       window.addEventListener("hashchange", function () {

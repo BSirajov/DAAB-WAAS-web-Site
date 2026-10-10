@@ -82,6 +82,9 @@
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     var L = labels();
     toggle.setAttribute("aria-label", open ? L.close : L.open);
+    if (persist && window.DAAB_URL_STATE) {
+      window.DAAB_URL_STATE.write({ panel: open ? "filters" : "" });
+    }
     if (persist) {
       try {
         sessionStorage.setItem(storageKey(), open ? "1" : "0");
@@ -90,6 +93,7 @@
   }
 
   function readPersistedOpen() {
+    if (window.DAAB_URL_STATE && window.DAAB_URL_STATE.get("panel") === "filters") return true;
     try {
       return sessionStorage.getItem(storageKey()) === "1";
     } catch (e) {
@@ -100,7 +104,7 @@
   function initToolbar(toolbar) {
     if (toolbar.getAttribute("data-daab-toolbar-mobile") === "1") return;
 
-    var toggle = toolbar.querySelector(".catalog-toolbar__toggle");
+    var toggle = toolbar.querySelector("button.catalog-toolbar__toggle");
     var panel = toolbar.querySelector("#catalogFilterPanel");
     var badge = toolbar.querySelector(".catalog-toolbar__badge");
     if (!toggle || !panel) return;

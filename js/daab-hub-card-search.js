@@ -31,7 +31,17 @@
         .trim();
     }
 
+    if (window.DAAB_URL_STATE && window.DAAB_URL_STATE.get("q")) {
+      input.value = window.DAAB_URL_STATE.get("q");
+    }
+
+    function publishQuery() {
+      if (!window.DAAB_URL_STATE) return;
+      window.DAAB_URL_STATE.write({ q: input.value.trim() });
+    }
+
     input.addEventListener("input", function () {
+      publishQuery();
       var q = fold(input.value);
       var visible = 0;
 
@@ -58,6 +68,8 @@
         emptyState.hidden = !q || visible !== 0;
       }
     });
+
+    if (input.value) input.dispatchEvent(new Event("input"));
   }
 
   if (document.readyState === "loading") {

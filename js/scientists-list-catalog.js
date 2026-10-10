@@ -247,6 +247,23 @@
     var filtered = DATA.slice();
     var page = 1;
     var perPage = 50;
+    var booting = true;
+    var urlState = window.DAAB_URL_STATE;
+    if (urlState) {
+      var urlSort = urlState.get("sort");
+      if (urlSort && SORT_COLUMNS.indexOf(urlSort) !== -1) sortCol = urlSort;
+      if (urlState.get("dir") === "desc") sortDir = -1;
+      else if (urlState.get("dir") === "asc") sortDir = 1;
+      var urlGroup = urlState.get("group");
+      if (urlGroup && GROUP_COLUMNS.indexOf(urlGroup) !== -1) groupCol = urlGroup;
+      var urlView = urlState.get("view");
+      if (urlView === "list" || urlView === "table") viewMode = "table";
+      else if (urlView === "grid" || urlView === "cards") viewMode = "cards";
+      var urlPage = parseInt(urlState.get("page"), 10);
+      if (urlPage > 1) page = urlPage;
+      if (urlState.get("q")) searchInput.value = urlState.get("q");
+      if (perPageSel && urlState.get("per")) perPageSel.value = urlState.get("per");
+    }
 
     var countries = sortValues(
       DATA.map(function (r) {
@@ -276,7 +293,7 @@
 
     countries.forEach(function (c) {
       var o = document.createElement("option");
-      o.value = c;
+      o.value = (shared.countryIso && shared.countryIso(c)) || c;
       o.textContent = c;
       filterCountry.appendChild(o);
     });
@@ -288,7 +305,7 @@
     });
     fields.forEach(function (x) {
       var o = document.createElement("option");
-      o.value = x;
+      o.value = (shared.fieldCode && shared.fieldCode(x)) || x;
       o.textContent = x;
       filterIxtilas.appendChild(o);
     });
@@ -319,6 +336,43 @@
     }
 
     mountMultiFilters();
+
+    if (urlState && ms && ms.setSelected) {
+      ["country", "field", "degree", "gender"].forEach(function (key) {
+        var id =
+          key === "country"
+            ? "filterCountry"
+            : key === "field"
+              ? "filterIxtilas"
+              : key === "degree"
+                ? "filterDegree"
+                : "filterCins";
+        var values = urlState.list(key);
+        if (values.length) ms.setSelected(id, values, true);
+      });
+    }
+
+    function syncCatalogUrl() {
+      if (!urlState) return;
+      var countries = getMultiFilter("filterCountry");
+      var degrees = getMultiFilter("filterDegree");
+      var fieldsFilter = getMultiFilter("filterIxtilas");
+      var genders = getMultiFilter("filterCins");
+      var perVal = perPageSel ? String(perPageSel.value || "50") : "50";
+      urlState.write({
+        q: (searchInput.value || "").trim(),
+        country: countries || [],
+        field: fieldsFilter || [],
+        degree: degrees || [],
+        gender: genders || [],
+        sort: sortCol || "",
+        dir: sortDir === -1 ? "desc" : "asc",
+        group: groupCol || "",
+        view: viewMode === "table" ? "list" : "",
+        page: viewMode === "table" && page > 1 ? String(page) : "",
+        per: viewMode === "table" && perVal !== "50" ? perVal : ""
+      });
+    }
 
     function sortRows(rows) {
       rows.sort(function (a, b) {
@@ -368,7 +422,11 @@
             "</button>"
           : nameLabel;
       return (
-        '<tr class="' + stripeClass + '">' +
+        '<tr' +
+        (r.say != null ? ' id="scientist-' + esc(String(r.say)) + '"' : "") +
+        ' class="' +
+        stripeClass +
+        '">' +
         '<td class="col-no">' +
         idx +
         "</td>" +
@@ -543,6 +601,7 @@
     function renderCard(row) {
       var card = document.createElement("article");
       card.className = "scientist-card";
+      if (row.say != null) card.id = "scientist-" + String(row.say);
       var email = (row.email || "").trim();
       var field = (row.ixtilas || "").trim();
       var country = row.yasadigi_olke || "";
@@ -725,6 +784,7 @@
         el.addEventListener("click", function () {
           page = parseInt(el.getAttribute("data-page"), 10);
           render();
+          syncCatalogUrl();
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
       });
@@ -830,10 +890,13 @@
         return selected.indexOf((value == null ? "" : String(value)).trim()) !== -1;
       };
       filtered = DATA.filter(function (r) {
-        if (!matchFn(countries, r.yasadigi_olke)) return false;
+        var countryCode = shared.countryIso ? shared.countryIso(r.yasadigi_olke) : r.yasadigi_olke;
+        var fieldId = shared.fieldCode ? shared.fieldCode((r.ixtilas || "").trim()) : (r.ixtilas || "").trim();
+        var genderId = shared.genderCode ? shared.genderCode(r.cinsi) : (r.cinsi || "").trim();
+        if (!matchFn(countries, countryCode)) return false;
         if (!matchFn(degrees, (r.elmi_derece || "").trim())) return false;
-        if (!matchFn(fieldsFilter, (r.ixtilas || "").trim())) return false;
-        if (!matchFn(genders, (r.cinsi || "").trim())) return false;
+        if (!matchFn(fieldsFilter, fieldId)) return false;
+        if (!matchFn(genders, genderId)) return false;
         if (q) {
           var hay = (shared.normQuery || function (s) {
             return String(s || "").toLowerCase().replace(/\s+/g, " ").trim();
@@ -842,8 +905,10 @@
         }
         return true;
       });
-      page = 1;
+      if (!applyFilters.keepPage) page = 1;
+      applyFilters.keepPage = false;
       render();
+      syncCatalogUrl();
     }
 
     function applySortState(nextCol, nextDir, persist) {
@@ -852,6 +917,7 @@
       if (persist !== false) saveSortState(sortCol, sortDir);
       updateSortUi();
       render();
+      if (!booting) syncCatalogUrl();
     }
 
     function applyGroupState(nextCol, persist) {
@@ -859,16 +925,18 @@
       if (persist !== false) saveGroupState(groupCol);
       updateGroupUi();
       updateViewUi();
-      page = 1;
+      if (!booting) page = 1;
       render();
+      if (!booting) syncCatalogUrl();
     }
 
     function setViewMode(mode) {
       viewMode = mode === "cards" ? "cards" : "table";
       saveViewState(viewMode);
       updateViewUi();
-      page = 1;
+      if (!booting) page = 1;
       render();
+      if (!booting) syncCatalogUrl();
     }
 
     function updateFilterStyles() {
@@ -962,6 +1030,7 @@
       perPageSel.addEventListener("change", function () {
         page = 1;
         render();
+        syncCatalogUrl();
       });
     }
 
@@ -1021,6 +1090,8 @@
     applyGroupState(groupCol, false);
     setViewMode(viewMode);
     updateFilterStyles();
+    applyFilters.keepPage = page > 1;
+    booting = false;
     applyFilters();
 
     if (

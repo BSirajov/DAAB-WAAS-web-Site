@@ -54,6 +54,9 @@
       document.querySelectorAll(".sitemap-section .sitemap-link, .sitemap-start .sitemap-link")
     );
     if (!input) return;
+    if (window.DAAB_URL_STATE && window.DAAB_URL_STATE.get("q")) {
+      input.value = window.DAAB_URL_STATE.get("q");
+    }
 
     var launch = document.getElementById("sitemap-tools-launch");
     var panel = document.getElementById("sitemap-tools-panel");
@@ -217,6 +220,9 @@
       if (clearBtn) clearBtn.hidden = !q;
       if (emptyEl) emptyEl.classList.toggle("is-visible", visibleLinks === 0);
       setCount(visibleLinks);
+      if (window.DAAB_URL_STATE) {
+        window.DAAB_URL_STATE.write({ q: (input.value || "").trim() });
+      }
     }
 
     function syncActiveChip(hashId) {
