@@ -8,7 +8,14 @@
   "use strict";
 
   var DEFAULTS = {
-    breakpoints: { navCompact: 1180, sidebarStack: 1060 },
+    breakpoints: {
+      navCompact: 1180,
+      sidebarStack: 1060,
+      contentStack: 900,
+      phone: 760,
+      phoneNarrow: 640,
+      compact: 480,
+    },
     layout: { contentMax: 1220, contentMaxNarrow: 1060, shellPaddingX: 24 },
     sticky: { navHeightDesktop: 86, navHeightCompact: 72, breadcrumbsMinHeight: 40 },
     zIndex: { nav: 9999, searchOverlay: 999999 },

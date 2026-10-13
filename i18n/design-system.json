@@ -3,7 +3,11 @@
   "version": 1,
   "breakpoints": {
     "navCompact": 1180,
-    "sidebarStack": 1060
+    "sidebarStack": 1060,
+    "contentStack": 900,
+    "phone": 760,
+    "phoneNarrow": 640,
+    "compact": 480
   },
   "layout": {
     "contentMax": 1220,

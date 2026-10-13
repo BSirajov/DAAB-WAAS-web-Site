@@ -66,9 +66,11 @@ html[data-daab-page-id="forum-photos-gallery"] .photos-gallery-main{
   justify-content: center;
   content-visibility: auto;
   contain-intrinsic-size: auto 126px;
-}.photos-gallery-item:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 45, 82, 0.14);
+}@media (hover: hover) and (pointer: fine){
+  .photos-gallery-item:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 45, 82, 0.14);
+  }
 }.photos-gallery-item:focus-visible{
   outline: 3px solid var(--gold, #f0c75e);
   outline-offset: 2px;
@@ -118,7 +120,7 @@ html[data-daab-page-id="forum-photos-gallery"] .lightbox{
   display: flex;
 }html[data-daab-page-id="forum-photos-gallery"] .lightbox img{
   max-width: min(100%, 1200px);
-  max-height: 90vh;
+  max-height: min(85dvh, 90vh);
   width: auto;
   height: auto;
   object-fit: contain;
@@ -165,9 +167,11 @@ html[data-daab-page-id="forum-photos-gallery"] .lightbox{
   font-size: 34px;
   line-height: 1;
   margin-top: -2px;
-}html[data-daab-page-id="forum-photos-gallery"] .lightbox-nav:hover{
-  background: rgba(255, 255, 255, 0.22);
-  transform: translateY(-50%) scale(1.02);
+}@media (hover: hover) and (pointer: fine){
+  html[data-daab-page-id="forum-photos-gallery"] .lightbox-nav:hover{
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateY(-50%) scale(1.02);
+  }
 }html[data-daab-page-id="forum-photos-gallery"] .lightbox-nav:active{
   transform: translateY(-50%) scale(0.985);
 }html[data-daab-page-id="forum-photos-gallery"] .lightbox-nav:disabled{
@@ -192,11 +196,17 @@ html[data-daab-page-id="forum-photos-gallery"] .lightbox{
   text-align: center;
 }
 
-@media (max-width: 600px) {html[data-daab-page-id="forum-photos-gallery"] .lightbox{
+@media (max-width: 640px) {html[data-daab-page-id="forum-photos-gallery"] .lightbox{
     padding: 16px;
+  }html[data-daab-page-id="forum-photos-gallery"] .lightbox img{
+    max-height: min(78dvh, 85vh);
   }html[data-daab-page-id="forum-photos-gallery"] .lightbox-nav{
     width: 44px;
     height: 44px;
+  }html[data-daab-page-id="forum-photos-gallery"] .lightbox-nav-prev{
+    left: 10px;
+  }html[data-daab-page-id="forum-photos-gallery"] .lightbox-nav-next{
+    right: 10px;
   }html[data-daab-page-id="forum-photos-gallery"] .lightbox-nav span{
     font-size: 30px;
   }.photos-gallery-grid{
