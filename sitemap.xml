@@ -110,6 +110,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/complex-topics.html"/>
   </url>
   <url>
+    <loc>https://daab-waas.com/az/complex-topics-apply.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/complex-topics-apply.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/complex-topics-apply.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/complex-topics-apply.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/en/complex-topics-apply.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/complex-topics-apply.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/complex-topics-apply.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/complex-topics-apply.html"/>
+  </url>
+  <url>
     <loc>https://daab-waas.com/az/complex-topics-approach.html</loc>
     <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/complex-topics-approach.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/complex-topics-approach.html"/>
@@ -300,6 +312,18 @@
     <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/charter.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/charter.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/charter.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/az/feedback.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/feedback.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/feedback.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/feedback.html"/>
+  </url>
+  <url>
+    <loc>https://daab-waas.com/en/feedback.html</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://daab-waas.com/az/feedback.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://daab-waas.com/en/feedback.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://daab-waas.com/az/feedback.html"/>
   </url>
   <url>
     <loc>https://daab-waas.com/az/privacy.html</loc>
