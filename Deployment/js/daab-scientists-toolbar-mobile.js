@@ -1,5 +1,5 @@
 /**
- * Collapsible filter panel for scientist catalogue toolbars (all viewports).
+ * Collapsible filter panel for scientist catalog toolbars (all viewports).
  * Shared by scientists/list.html and scientists/profiles.html.
  */
 (function (window) {
