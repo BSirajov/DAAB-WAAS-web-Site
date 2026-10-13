@@ -406,11 +406,10 @@
   function mirrorLangSwitch(node) {
     if (!node) return;
     var footer = document.querySelector(".footer-bottom");
-    if (footer && !footer.querySelector(".daab-lang-switch")) {
-      var footerClone = node.cloneNode(true);
-      uniquifyFlagClips(footerClone);
-      footerClone.classList.add("daab-lang-switch--footer");
-      footer.insertBefore(footerClone, footer.firstChild);
+    if (footer) {
+      footer.querySelectorAll(".daab-lang-switch").forEach(function (el) {
+        el.parentNode.removeChild(el);
+      });
     }
     var menu = document.getElementById("primaryNavMenu");
     if (menu && !menu.querySelector(".daab-lang-switch")) {

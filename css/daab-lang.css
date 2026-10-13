@@ -233,8 +233,13 @@ main [data-daab-section-id]{
   filter: grayscale(0.35);
 }
 
-/* Same switcher in the footer (dark) and inside the mobile menu (light) */
+/* Footer language switch is not shown; keep only nav + mobile menu */
 .daab-lang-switch--footer,
+.footer-bottom > .daab-lang-switch{
+  display: none !important;
+}
+
+/* Same switcher inside the mobile menu (light) */
 .nav-menu .daab-lang-switch--menu{
   --daab-lang-control-h: 40px;
   margin: 0;

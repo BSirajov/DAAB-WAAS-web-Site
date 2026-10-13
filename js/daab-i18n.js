@@ -104,10 +104,10 @@
   }
 
   function loadRoutes() {
-    ROUTES_URL = ROUTES_URL || i18nUrl("routes.json");
+    ROUTES_URL = ROUTES_URL || i18nUrl("routes.json?v=20261010-1309");
     /* Browser cache bust: bump ?v= below when routes.json content changes (JSON "version" field is documentary). */
     return loadCachedJson(
-      ROUTES_URL + "?v=22",
+      ROUTES_URL + "?v=20261010-1309",
       function () { return routesCache; },
       function (data) { routesCache = data; },
       function () { return routesInflight; },
@@ -116,9 +116,9 @@
   }
 
   function loadUi() {
-    UI_URL = UI_URL || i18nUrl("ui.json");
+    UI_URL = UI_URL || i18nUrl("ui.json?v=20261010-1309");
     return loadCachedJson(
-      UI_URL + "?v=58",
+      UI_URL + "?v=20261010-1309",
       function () { return uiCache; },
       function (data) { uiCache = data; },
       function () { return uiInflight; },
@@ -128,7 +128,7 @@
 
   function loadSearchIndex() {
     return loadCachedJson(
-      i18nUrl("search-index.json") + "?v=32",
+      i18nUrl("search-index.json?v=20261010-1309") + "?v=20261010-1309",
       function () { return searchIndexCache; },
       function (data) { searchIndexCache = data; },
       function () { return searchIndexInflight; },
@@ -138,7 +138,7 @@
 
   function loadNav() {
     return loadCachedJson(
-      i18nUrl("nav.json") + "?v=26",
+      i18nUrl("nav.json?v=20261010-1309") + "?v=20261010-1309",
       function () { return navCache; },
       function (data) { navCache = data; },
       function () { return navInflight; },

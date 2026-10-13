@@ -54,8 +54,8 @@
     if (pdfLibsPromise) return pdfLibsPromise;
     var root = assetRoot();
     /* Bump ?v= when replacing vendor files under js/vendor/ */
-    pdfLibsPromise = loadScript(root + "js/vendor/html2canvas.min.js?v=1").then(function () {
-      return loadScript(root + "js/vendor/jspdf.umd.min.js?v=1");
+    pdfLibsPromise = loadScript(root + "js/vendor/html2canvas.min.js?v=20261010-1309").then(function () {
+      return loadScript(root + "js/vendor/jspdf.umd.min.js?v=20261010-1309");
     });
     return pdfLibsPromise;
   }
