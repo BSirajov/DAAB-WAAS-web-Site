@@ -1,5 +1,5 @@
 /**
- * Mouse / keyboard resizable columns for fixed-layout catalogue tables.
+ * Mouse / keyboard resizable columns for fixed-layout catalog tables.
  * Persists widths in localStorage (per page + column). Disabled on coarse pointers.
  */
 (function (window, document) {

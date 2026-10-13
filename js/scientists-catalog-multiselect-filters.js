@@ -1,5 +1,5 @@
 /**
- * Excel-style multi-select checkbox filters for scientists catalogue toolbars.
+ * Excel-style multi-select checkbox filters for scientists catalog toolbars.
  * Shared by scientists/list.html and scientists/profiles.html.
  */
 (function (window) {

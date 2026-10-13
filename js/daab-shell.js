@@ -647,7 +647,7 @@
     btn.className = "daab-prefs-reset";
     btn.textContent = lang === "en" ? "Reset preferences" : "Seçimləri sıfırla";
     btn.title = lang === "en"
-      ? "Clear saved language and catalogue display settings on this browser"
+      ? "Clear saved language and catalog display settings on this browser"
       : "Bu brauzerdə saxlanmış dil və kataloq görünüşü seçimlərini sil";
     btn.addEventListener("click", function () {
       try {

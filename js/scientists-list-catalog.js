@@ -1,5 +1,5 @@
 /**
- * Scientists list catalogue — filters, sort, group, cards/table views.
+ * Scientists list catalog — filters, sort, group, cards/table views.
  * Used by az/scientists/list.html and en/scientists/list.html.
  */
 (function () {

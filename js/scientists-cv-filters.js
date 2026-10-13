@@ -559,7 +559,7 @@
 
     var profileHash = hashProfileId();
 
-    /* Restore filters; reveal catalogue immediately unless hash deep-link boot */
+    /* Restore filters; reveal catalog immediately unless hash deep-link boot */
     showAllCards(cards, resultCount, noResults, countLabels);
     clearFilterInputs(searchInput, filterCountry, filterIxtilas, filterDegree);
     if (!profileHash) {
