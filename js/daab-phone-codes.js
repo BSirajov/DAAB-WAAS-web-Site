@@ -210,7 +210,7 @@
     if (!cc || cc.length !== 2) return "";
     var root = String(assetRoot || "");
     if (root && !/\/$/.test(root)) root += "/";
-    return root + "images/flags/4x3/" + String(cc).toLowerCase() + ".svg?v=20261010-1309";
+    return root + "images/flags/4x3/" + String(cc).toLowerCase() + ".svg?v=20261013-1556";
   }
 
   global.DAAB_PHONE_CODES = ENTRIES;

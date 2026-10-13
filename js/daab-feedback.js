@@ -734,7 +734,7 @@
         if (!stillFlagged) clearWarnings();
       });
     });
-    fetch(assetRoot() + "i18n/feedback-language.json?v=20261010-1309")
+    fetch(assetRoot() + "i18n/feedback-language.json?v=20261013-1556")
       .then(function (res) {
         if (!res.ok) throw new Error("lexicon");
         return res.json();
