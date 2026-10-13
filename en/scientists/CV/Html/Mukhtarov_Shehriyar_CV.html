@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shahriyar Mukhtarov — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>SHAHRIYAR MUKHTAROV</h1>
+      <p class="subtitle">PhD<br>Professor<br>Department of Economics, Korea University, Seoul, South Korea</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/sehriyar-muxtarov.jpg" alt="Shahriyar Mukhtarov"></div>
+  <aside class="side">
+    <h2>Contact</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Poland</span></li></ul><div class="block"><h2>Awards &amp; recognitions</h2><div class="rule"></div><ul class="items awards"><li>Listed in the Stanford University top 2 percent of most influential scientists — Stanford University (2023 and 2024)</li>
+<li>Second place, Victory Award in Science — Science Development Foundation under the President of the Republic of Azerbaijan, ANAS, ICESCO, and IETI (2021)</li>
+<li>Second place, scientific article among young economist researchers — Institute of Economics, Azerbaijan National Academy of Sciences (18 October 2018)</li></ul></div><div class="block"><h2>Languages</h2><div class="rule"></div><ul class="items langs"><li>Azerbaijani (Native in speaking, reading, and writing)</li>
+<li>English (Excellent in speaking, reading, and writing)</li>
+<li>Turkish (Excellent in speaking, reading, and writing)</li></ul></div>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profile</h2>
+      <div class="rule"></div>
+      <p>Shahriyar Mukhtarov is a professor in the Department of Economics at Korea University in Seoul, where he has worked since May 2024. He is also professor and head of the PhD program at Vistula University in Warsaw, a post he has held since August 2023, and professor at Khazar University in Baku since November 2023. He received a PhD from the Institute of Banking and Insurance at Marmara University in 2012–2016. The Supreme Attestation Commission under the President of the Republic of Azerbaijan confirmed the diploma on 27 April 2018 and awarded the associate professor title on 12 October 2021. His master’s degree is from Marmara University (2010–2012) and his bachelor’s degree in international economics is from Azerbaijan State University of Economics (2006–2010).</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>Work experience</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Economics, Korea University, Seoul, South Korea</h3>
+          <span class="when">May 2024–present</span>
+        </div>
+        <p class="role">Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Faculty of Business and International Relations, Vistula University, Warsaw, Poland</h3>
+          <span class="when">August 2023–present</span>
+        </div>
+        <p class="role">Professor and head of the PhD program</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Research Center for Sustainable Economic Development, Khazar University, Baku, Azerbaijan</h3>
+          <span class="when">July 2024–present</span>
+        </div>
+        <p class="role">Director</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Economics and Management, Khazar University, Baku, Azerbaijan</h3>
+          <span class="when">November 2023–present</span>
+        </div>
+        <p class="role">Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>UNEC Empirical Research Center, Azerbaijan State University of Economics, Baku</h3>
+          <span class="when">September 2018–present</span>
+        </div>
+        <p class="role">Research Fellow</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Faculty of Economics and International Relations, Vistula University, Warsaw, Poland</h3>
+          <span class="when">March 2021–August 2023</span>
+        </div>
+        <p class="role">Research Fellow and Associate Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Baku Engineering University, Baku, Azerbaijan</h3>
+          <span class="when">February 2019–September 2022</span>
+        </div>
+        <p class="role">Head of the Department of Economics</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Economics, Baku Engineering University, Baku, Azerbaijan</h3>
+          <span class="when">May 2019–September 2022</span>
+        </div>
+        <p class="role">Associate Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Economics, Baku Engineering University, Baku, Azerbaijan</h3>
+          <span class="when">February 2017–May 2019</span>
+        </div>
+        <p class="role">Senior lecturer</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Economics and Management, Azerbaijan State University of Economics, Baku</h3>
+          <span class="when">March 2017–June 2020</span>
+        </div>
+        <p class="role">Senior lecturer</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Faculty of Economics and Management, Khazar University, Baku, Azerbaijan</h3>
+          <span class="when">September 2017–February 2019</span>
+        </div>
+        <p class="role">Vice dean</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Qafqaz University, Baku, Azerbaijan</h3>
+          <span class="when">December 2014–February 2017</span>
+        </div>
+        <p class="role">Deputy head of the Department of Economics</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Economics, Qafqaz University, Baku, Azerbaijan</h3>
+          <span class="when">September 2011–March 2014</span>
+        </div>
+        <p class="role">Research assistant</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Education</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Associate Professor</h3>
+          <span class="when">12 October 2021</span>
+        </div>
+        <p>Title awarded by the Supreme Attestation Commission under the President of the Republic of Azerbaijan</p><p>Baku, Azerbaijan</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>PhD</h3>
+          <span class="when">2012–2016</span>
+        </div>
+        <p>The diploma was confirmed by the Supreme Attestation Commission on 27 April 2018</p><p>Institute of Banking and Insurance, Marmara University, Istanbul, Turkey</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Master’s degree</h3>
+          <span class="when">2010–2012</span>
+        </div>
+        <p>Institute of Banking and Insurance, Marmara University, Istanbul, Turkey</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Bachelor’s degree</h3>
+          <span class="when">2006–2010</span>
+        </div>
+        <p>International economics</p><p>Azerbaijan State University of Economics, Baku, Azerbaijan</p>
+      </article>
+    </section><section class="sec grants">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Grants &amp; projects</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>2020 — Exploring exports-driven growth through free trade agreements among CAREC members: learning from the Pakistan–China free trade agreement — CTTN Research Grants Program, CAREC Institute</li></ul>
+    </section><section class="sec teaching">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Teaching</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>Introduction to economics; microeconomics; macroeconomics; monetary policy; environmental economics; economic development; research methods — Qafqaz University and later appointments</li></ul>
+    </section><section class="sec supervision">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Supervision</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>Master’s — 14 — Named theses at Azerbaijan State University of Economics, Baku Engineering University, and Qafqaz University (2016–2020)</li></ul>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Publications</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Books and textbooks</h3>
+<p class="pub-item">1. Shahriyar Mukhtarov, Elvin Alirzayev and Elchin Suleymanov, 2019. International Financial Institutions and Azerbaijan. Adiloglu, Baku/Azerbijan.</p>
+<p class="pub-item">2. Shahriyar Mukhtarov, Murad Isgandarov, 2023, Monetary Economics, Baku Engineering University, Baku/Azerbijan.</p>
+<h3 class="pub-sub">Book chapters</h3>
+<p class="pub-item">1. Shahriyar Mukhtarov and Javid Aliyev. 2021. The Relationship between Financial Innovation and Economic Growth: An Evidence from Azerbaijan. In “Strategic Outlook in Business and Finance Innovation: Multidimensional Policies for Emerging Economies”. Emerald Publishing Limited. 207-217. https://doi.org/10.1108/978-1-80043-444-820211019</p>
+<p class="pub-item">2. Shahriyar Mukhtarov, Javid Aliyev and Shahin Maharramli. (2022). Does Institutional Quality Affect Renewable Energy in Oil-Rich Developing Countries? Evidence from Azerbaijan. In: Dinçer, H., Yüksel, S. (eds) Circular Economy and the Energy Market. Contributions to Economics. Springer, Cham. https://doi.org/10.1007/978-3-031-13146-2_14</p>
+<h3 class="pub-sub">Peer-reviewed journal articles</h3>
+<p class="pub-item">1. Shahriyar Mukhtarov, Mustafa Tevfik Kartal, Nigar Hajiyeva (2025). Investigation of Displacement between Main Clean Energy Types: Evidence from Leading Developed Countries through Quantile Approaches Renewable Energy, 238, 121988</p>
+<p class="pub-item">2. Shahriyar Mukhtarov, Mustafa Tevfik Kartal, Dervis Kirikkaleli, (2025). Achieving environmental quality through stringent environmental policies: Comparative evidence from G7 countries by multiple environmental indicators, Geoscience Frontiers, 16(1), https://doi.org/10.1016/j.gsf.2024.101956.</p>
+<p class="pub-item">3. Shahriyar Mukhtarov, (2024). Oil prices and the renewable energy transition: Empirical evidence from China, Utilities Policy, 91, https://doi.org/10.1016/j.jup.2024.101840.</p>
+<p class="pub-item">4. Shahriyar Mukhtarov, Fakhri J. Hasanov, Elchin Suleymanov, Sad Shannak, (2024), The role of renewable energy and total factor productivity in reducing carbon emissions: A case of top-ranked nations in the renewable energy country attractiveness index, Journal of Environmental Management, 361, https://doi.org/10.1016/j.jenvman.2024.121220.</p>
+<p class="pub-item">5. Shahriyar Mukhtarov, Mayis Azizov, Mustafa Tevfik Kartal, Hazi Eynalov. (2024). Catalyzing green transformation: mitigating oil price impact on CO2 emissions in Saudi Arabia via renewable energy transition. Environmental Economics and Policy Studies. https://doi.org/10.1007/s10018-024-00416-1</p>
+<p class="pub-item">6. Shahriyar Mukhtarov, Mustafa Tevfik Kartal, Ugur Korkut Pata, Dilvin Taşkın (2024). Impact of disaggregated level clean electricity on CO2 emissions: Evidence from EU-5 countries by bivariate and multivariate QQ approaches. Energy and Environment. https://doi.org/10.1177/0958305X2412662</p>
+<p class="pub-item">7. Shahriyar Mukhtarov, Ugur Korkut Pata, Mustafa Tevfik Kartal, Cosimo Magazzino, (2024). Do energy and geopolitical risks influence environmental quality? A quantile-based load capacity factor assessment for fragile countries, Energy Strategy Reviews, 53, https://doi.org/10.1016/j.esr.2024.101430.</p>
+<p class="pub-item">8. Ugur Korkut Pata, Mustafa Tevfik Kartal, Shahriyar Mukhtarov, (2024), Technological changes and carbon neutrality targets in European countries: A sustainability approach with Fourier approximations, Technological Forecasting and Social Change, 198, https://doi.org/10.1016/j.techfore.2023.122994.</p>
+<p class="pub-item">9. Shahriyar Mukhtarov, Rıdvan Karacan, Sugra Humbatova, (2024), The long-run effect of financial development on carbon emissions in Kazakhstan, Energy Efficiency, 17(3), DOI: 10.1007/s12053-024-10201-4.</p>
+<p class="pub-item">10. Shahriyar Mukhtarov. (2024). Do renewable energy and total factor productivity eliminate CO2 emissions in Turkey? Environmental Economics and Policy Studies. https://doi.org/10.1007/s10018-023-00377-x</p>
+<p class="pub-item">11. Shahriyar Mukhtarov, Jeyhun I. Mikayilov, 2023. Could financial development eliminate energy poverty through renewable energy in Poland?, Energy Policy, 182, https://doi.org/10.1016/j.enpol.2023.113747.</p>
+<p class="pub-item">12. Shahriyar Mukhtarov, Sarvar Gurbanov, Jeyhun Mikayilov, Shahin Maharramli. 2023. The price and income elasticities of natural gas demand in Azerbaijan: Is there room to export more?. Humanities and Social Sciences Communications, 10, 458. https://doi.org/10.1057/s41599-023-01987-2.</p>
+<p class="pub-item">13. Shahriyar Mukhtarov, Fakhri J. Hasanov, Elchin Suleymanov. 2023. The role of renewable energy and total factor productivity in reducing CO2 emissions in Azerbaijan. Fresh insights from a new theoretical framework coupled with Autometrics, Energy Strategy Reviews, 47, https://www.sciencedirect.com/science/article/pii/S2211467X23000299</p>
+<p class="pub-item">14. Shahriyar Mukhtarov, Sarvar Gurbanov, Jeyhun Mikayilov. Sakit Yagubov. 2023. Forecasting 2030 CO2 reduction targets for Russia as a major emitter using different estimation scenarios. Journal of Applied Economics. 26(1). https://doi.org/10.1080/15140326.2022.2146861</p>
+<p class="pub-item">15. Shahriyar Mukhtarov, 2022. The impact of carbon pricing on international competitiveness in the case of Azerbaijan, Environmental Science and Pollution Research. https://doi.org/10.1007/s11356-022-18606-3</p>
+<p class="pub-item">16. Shahriyar Mukhtarov, Jeyhun Mikayilov, Shahin Maharramov, Javid Aliyev Elchin Suleymanov. 2022. Higher Oil Prices, Are they Good or Bad for Renewable Energy Consumption: The Case of Iran? Renewable Energy. 186, 411-419, https://doi.org/10.1016/j.renene.2021.12.135</p>
+<p class="pub-item">17. Shahriyar Mukhtarov, Serhat Yüksel, Hasan Dinçer. 2022. The impact of financial development on renewable energy consumption: Evidence from Turkey, Renewable Energy. 187, 169-176, https://doi.org/10.1016/j.renene.2022.01.061</p>
+<p class="pub-item">18. Shahriyar Mukhtarov, Hasan Dinçer, Halim Baş, Serhat Yüksel. 2022. Policy Recommendations for Handling Brain Drains to Provide Sustainability in Emerging Economies. Sustainability, 14(23), 16244; https://doi.org/10.3390/su142316244</p>
+<p class="pub-item">19. Shahriyar Mukhtarov, Fuzuli Aliyev, Javid Aliyev, Richard Ajayi. 2023. Renewable Energy Consumption and Carbon Emissions: Evidence from an Oil-Rich Economy. Sustainability, 15(1),134; https://doi.org/10.3390/su15010134</p>
+<p class="pub-item">20. Li Zhe, Serhat Yüksel, Hasan Dinçer, Shahriyar Mukhtarov, Mayis Azizov. 2021. The Positive Influences of Renewable Energy Consumption on Financial Development and Economic Growth. SAGE Open. 11(3). https://doi.org/10.1177/21582440211040133</p>
+<p class="pub-item">21. Rıdvan Karacan, Shahriyar Mukhtarov, İsmail Barış, Aykut İşleyen and Mehmet Emin Yardımcı, 2021. The Impact of Oil Price on Transition toward Renewable Energy Consumption? Evidence from Russia. Energies, 14(10), 2947; https://doi.org/10.3390/en14102947</p>
+<p class="pub-item">22. Shahriyar Mukhtarov, Sugra Humbatova, Mubariz Mammadli and Natig Gadim‒Oglu Hajiyev, 2021. The Impact of Oil Price Shocks on National Income: Evidence from Azerbaijan. Energies, 14(6), 1695; https://doi.org/10.3390/en14061695</p>
+<p class="pub-item">23. Jeyhun I. Mikayilov, Shahriyar Mukhtarov and Jeyhun Mammadov. 2020. Gasoline Demand Elasticities at the Backdrop of Lower Oil Prices: Fuel-Subsidizing Country Case. Energies, 13(24). 6752; https://doi.org/10.3390/en13246752</p>
+<p class="pub-item">24. Shahriyar Mukhtarov, Sugra Humbatova, Natig Hajiyev and Sannur Aliyev. 2020. The Financial Development-Renewable Energy Consumption Nexus in the Case of Azerbaijan. Energies, 13(23). 6265. https://doi.org/10.3390/en13236265</p>
+<p class="pub-item">25. Shahriyar Mukhtarov, Jeyhun I. Mikayilov, Shahriyar Aliyev, Altay İsmiyilov and Anar Rzayev. (2020). The FDI-CO2 nexus from the sustainable development perspective: the case of Azerbaijan. International Journal of Sustainable Development &amp; World Ecology. https://doi.org/10.1080/13504509.2020.1804479</p>
+<p class="pub-item">26. Shahriyar Mukhtarov, Sugra Humbatova, İlgar Seyfullayev and Yashar Kelbiyev. 2020. The effect of financial development on energy consumption in the case of Kazakhstan. Journal of Applied Economics. 23(1),75-88.</p>
+<p class="pub-item">27. Jeyhun I. Mikayilov, Shahriyar Mukhtarov, Hasan Dincer, Serhat Yuksel and Ridvan Aydin. 2020. Elasticity Analysis of Fossil Energy Sources for Sustainable Economies: A Case of Gasoline Consumption in Turkey. Energies 13(3), 731. https://www.mdpi.com/1996-1073/13/3/731/htm</p>
+<p class="pub-item">28. Shahriyar Mukhtarov, Jeyhun I. Mikayilov, Sugra Humbatova, Vugar Muradov. 2020. Do High Oil Prices Obstruct the Transition to Renewable Energy Consumption? Sustainability 12 (11), 4689.</p>
+<p class="pub-item">29. Jeyhun I. Mikayilov, Shahriyar Mukhtarov, Jeyhun Mammadov and Shahriyar Aliyev. 2020. Environmental consequences of tourism: do oil-exporting countries import more CO2 emissions? Energy Sources, Part B: Economics, Planning, and Policy, 1- 14. DOI: 10.1080/15567249.2020.1753856</p>
+<p class="pub-item">30. Fakhri J. Hasanov, Jeyhun I. Mikayilov, Shahriyar Mukhtarov, Elchin Suleymanov. 2019. Does CO2 emissions economic growth relationship reveal EKC in developing countries? Evidence from Kazakhstan. Environmental Science and Pollution Research 26 (34), 35282-35282. https://doi.org/10.1007/s11356-019-06166-y</p>
+<p class="pub-item">31. Jeyhun I. Mikayilov, Shahriyar Mukhtarov, Jeyhun Mammadov, Mayis Azizov. 2019. Re-evaluating the environmental impacts of tourism: does EKC exist? Environmental Science and Pollution Research, https://doi.org/10.1007/s11356-019-05269-w</p>
+<p class="pub-item">32. Serhat Yüksel, Shahriyar Mukhtarov, Ceyhun Mahmudlu, Jeyhun I. Mikayilov, Anar Iskandarov. 2018. Measuring International Migration in Azerbaijan, Sustainability, 10, 132. https://doi.org/10.3390/su10010132</p>
+<p class="pub-item">33. Shahriyar Mukhtarov, Jeyhun I. Mikayilov, Jeyhun Mammadov, Elvin Mammadov. 2018. The Impact of Financial Development on Energy Consumption: Evidence from an Oil-Rich Economy, Energies, 11(6), 1536; https://doi.org/10.3390/en11061536</p>
+<p class="pub-item">34. Serhat Yüksel, Shahriyar Mukhtarov, Elvin Mammadov, 2018. Determinants of Profitability in the Banking Sector: An Analysis of Post-Soviet Countries, Economies, 6(3), 1-15,</p>
+<p class="pub-item">35. Shahriyar Mukhtarov, Javid Aliyev, Farid Jabiyev, Davur Han Aslan, 2024. The role of institutional quality in reducing environmental degradation in Canada. Economics and Sociology, 17(1), 89-102. doi:10.14254/2071-789X.2024/17-1/6</p>
+<p class="pub-item">36. Shahriyar Mukhtarov, Javid Aliyev, Piotr F. Borowski, Mustafa Disli, 2023. Institutional quality and renewable energy transition: Empirical evidence from Poland. Journal of International Studies. 16(3). DOI: 10.14254/2071-8330.2023/16-3/12</p>
+<p class="pub-item">37. Shahriyar Mukhtarov, 2022. The Relationship between Renewable Energy Consumption and Economic Growth in Azerbaijan. International Journal of Energy Economics and Policy. 12(1), 416-419.</p>
+<p class="pub-item">38. Shahriyar Mukhtarov, Ridvan Karacan, Fuzuli Aliyev, Vugar Ismayilov, 2022. The Effect of Financial Development on Energy Consumption: Evidence from Russia. International Journal of Energy Economics and Policy. 12(1), 243-249.</p>
+<p class="pub-item">39. Shahriyar Mukhtarov, Sugra Humbatova, Natig Gadim-Oglu Hajiyev, 2021. Is the Transition to Renewable Energy Consumption Hampered by High Oil Prices?. International Journal of Energy Economics and Policy. 11(5), 377-380.</p>
+<p class="pub-item">40. Shahriyar Mukhtarov, Mustafa M. Alalawneh, Mayis Aziziov, Farid Jabiyev. 2020. The Impact of Monetary Policy and Tax Revenues on Foreign Direct Investment Inflows: An Empirical Study on Jordan, Acta Universitatis Agriculturae et Silviculturae Mendelianae Brunensis, 68(6).</p>
+<p class="pub-item">41. Javid Aliyev, Shahriyar Mukhtarov, Khanlar Haydarov and Murad Isgandarov. 2020. Does Monetary Policy Boost Economic Growth? The Case of Small Open Economy. Research in World Economy. 11(3).</p>
+<p class="pub-item">42. Shahriyar Mukhtarov, İlkin Mammadov, Suqra Humbatova, (2020). The relationship between government expenditures on education and economic growth: The case of Azerbaijan. Research in World Economy. 11(1).</p>
+<p class="pub-item">43. Shahriyar Mukhtarov, Sannur Aliyev, Cavid Zeynalov. 2020. The Effect of Oil Prices on Macroeconomic Variables: Evidence from Azerbaijan, Journal of Energy Economics and Policy, 9(7), 97-102.</p>
+<p class="pub-item">44. Shahriyar Mukhtarov, Mustafa M. Alalawneh, Elsevar Ibadov, Ayten Huseynli. 2019. The Impact of Foreign Direct Investment on Exports in Jordan: An Empirical Analysis, Journal of International Studies, 12(3), 277-288.</p>
+<p class="pub-item">45. Shahriyar Mukhtarov, Sugra Humbatova, Ilgar Seyfullayev. 2019. The impact of bank credits on non-oil GDP: evidence from Azerbaijan”, Banks and Banks Systems, 14(2), 120-127.</p>
+<p class="pub-item">46. Shahriyar Mukhtarov, Serhat Yüksel, Elvsevar Ibadov and Hamid Hamidov (2019). The effectiveness of exchange rate channel in Azerbaijan: an empirical analysis. Banks and Bank Systems, 14(1), 111-121. doi:10.21511/bbs.14(1).2019.10</p>
+<p class="pub-item">47. Jeyhun I. Mikayilov, Shahriyar Mukhtarov. 2019. Income and Price Elasticities of Gasoline Demand: An Empirical Analysis for Russia. ASERC Journal of Socio-Economic Studies 2 (1), 3-12. https://www.ajses.az/archive2019-2-1?</p>
+<p class="pub-item">48. Shahriyar Mukhtarov, Ilkin Gasimov, Ulvi Rustamov. 2018. Evaluation of Fiscal Policy Impact on Economic Growth:The Case of Azerbaijan. ASERC Journal of Socio-Economic Studies 1 (1), 82-90. https://www.ajses.az/archive2018-1-1</p>
+<p class="pub-item">49. Rasul Rasulov, Jeyhun I. Mikayilov and Sahriyar Muxtarov, 2017. The Impact of Urbanization on Energy Consumption in Azerbaıjan”. Journal of Baku Engineering University, 1/1, 86-97.</p>
+<p class="pub-item">50. Sahriyar Muxtarov, Jeyhun I. Mikayilov, Zamiq Mammadov. 2016. Processing of Bank Lending Channel in Azerbaijan: An Empirical Analysis. Akademik Bakış. 56:475-488. http://dergipark.gov.tr/abuhsbd/issue/32964/366331</p>
+<p class="pub-item">51. Shahriyar Mukhtarov, Hasan Selcuk, Elvin Mammadov, 2016. Monetary Transmission Mechanisms: The Case of Azerbaijan, Journal of Research in Business &amp; Social Science 5(2) Special Issue, 16-33.</p>
+<p class="pub-item">52. Shahriyar Mukhtarov, Fərid Cəbiyev, 2016. The assesment of Azerbaijan`s macroeconomic indicators on independence years, Journal of Qafqaz University, 4(2), Azerbaijan.</p>
+<p class="pub-item">53. Batu K. Tunay, Shahriyar Mukhtarov, 2016. Determinants of Bank Profitability in Azerbaijan, Journal of Akademik Bakış Dergisi, 54, 689-704.</p>
+<p class="pub-item">54. Shahriyar Mukhtarov, Jeyhun Mikayılov, 2016. Testing of Monetary Policy Transmission Mechanisms in the Case of Azerbaijan, Journal of Qafqaz University, Vol. 4, Nu. 1, 2016, Azerbaijan.</p>
+<p class="pub-item">55. Hasan Selcuk, Shahriyar Mukhtarov, “Evaluation of Efficiency of Monetary Policy Tools in Azerbaijan Over the Period 2005- 2014”, Journal of Qafqaz University, 2(2), Azerbaijan.</p>
+<p class="pub-item">56. Batu K. Tunay, Shahriyar Mukhtarov, 2015. The Persistence of Profits in Azerbaijan&#x27;s Banking System, Journal of Economic and Administration Faculty of Cankiri University, 243-257.</p>
+<p class="pub-item">57. Shahriyar Mukhtarov, Khatai Aliyev, 2014. Effectiveness of the Interest rate channel as a monetary transmission mechanism: the case of Azerbaijan&quot;, Journal of Qafqaz University, 2(2), 111-118, Azerbaijan.</p>
+<p class="pub-item">58. Zamig Mammadov, Shahriyar Mukhtarov, Public Supervision in Banking Sector: Case of Azerbaijan, Journal of QafqazUniversity, 2(1), 40-50, Azerbaijan.</p>
+<p class="pub-item">59. Gülcan Çağıl, Shahriyar Mukhtarov, 2014. Performance Analysis of Commercial Banking Sector of Azerbaijan by Camels Method, Marmara Üniversitesi Öneri Dergisi, 41, 77-94, Turkey.</p>
+<p class="pub-item">60. Qahir Mikayılov, Shahriyar Mukhtarov, 2013. Financial Analysis of Azerbaijan Banking System: 2006-2011, Journal of Qafqaz University, 32, 75-83. Azerbaijan,</p>
+<p class="pub-item">61. Qahir Mikayılov, Shahriyar Mukhtarov, 2012. Evaluation of Bank System of Azerbaijan Based on CAEL Method, Journal of Qafqaz University, 33, 68-75, Azerbaijan.</p>
+<h3 class="pub-sub">Conference papers and abstracts</h3>
+<p class="pub-item">1. Shahriyar Mukhtarov, Fakhri J. Hasanov, Elchin Suleymanov, Sa’d Shannak, The Role of Renewable Energy and TFP in Reducing CO2 Emissions in RECAI Countries. Fresh Insights from A New Theoretical Framework Coupled with Advanced Panel Methods, Pathways to a Clean, Stable, and Sustainable Energy Future, 44th IAEE International Conference, February 04-09, 2023. Riyadh, Saudi Arabia</p>
+<p class="pub-item">2. Shahriyar Mukhtarov. 2020. The Relationship Between Financial Development and Economic Growth in Azerbaijan. 55th International Scientific Conference on Economic and Social Development. June 16-17, 2020. Baku, Azerbaijan. [Web of Science]</p>
+<p class="pub-item">3. Shahriyar Mukhtarov and Javid Aliyev, 2020. The Effect of Monetary Policy on Economic Growth in Azerbaijan. 20th International Symposium on Econometrics, Operations Research and Statistics, February12-14, 2020, Ankara, Turkey.</p>
+<p class="pub-item">4. Shahriyar Mukhtarov, Javid Aliyev and Suqra Humbatova. 2020. Does Financial Development Increase Renewable Energy Consumption? Evidence from Azerbaijan. 4th International Management and Social Research Conference. Jun 5-6, 2020. UYSAD, İstanbul, Turkey</p>
+<p class="pub-item">5. Shahriyar Mukhtarov, Shahriyar Aliyev, Jeyhun Mikayilov and Altay Ismayilov, The Impact of FDI on Environmental Degradation in Azerbaijan. 37th International Scientific Conference on Economic and Social Development, &quot;Socio Economic Problems of Sustainable Development&quot;. Baku, 14-15 February 2019. [Web of Science]</p>
+<p class="pub-item">6. Shahriyar Mukhtarov, Ilkin Mammadov and Hamid Hamidov, The Impact of Government Education Expenditures on Economic Growth: Evidence from Azerbaijan. 37th International Scientific Conference on Economic and Social Development, &quot;Socio Economic Problems of Sustainable Development&quot;. Baku, 14-15 February 2019. [Web of Science]</p>
+<p class="pub-item">7. Shahriyar Mukhtarov, Jeyhun Mikayılov. Azerbaycan’da Faiz Oranı Kanalının İşleyişi: Ampirik Bir Analiz. II International Scientific Conference of Young Researchers. Azerbaijan. April 2018. Pp. 527-531</p>
+<p class="pub-item">8. Shahriyar Mukhtarov, Ülvi Rüstəmov. Fiskal Siyasətin İqtisadi Artıma Təsirlərinin Qiymətləndirilməsi: Azərbaycan Nümunəsi. II International Scientific Conference of Young Researchers. Azerbaijan. April 2018. pp. 764-768.</p>
+<p class="pub-item">9. Şəhriyar Muxtarov, Jeyhun Mikayılov və Rəsul Rəsulov. Azərbaycanda Urbanizasiyanin Enerji İstehlakına Təsirləri: Empirik Bir Analiz. I International Scientific Conference of Young Researchers. Azerbaijan. May 2017. pp. 374-375</p>
+<p class="pub-item">10. Shahriyar Mukhtarov, Fakhri Hasanov, Jeyhun Mikayilov. Parasal Aktarım Mekanizması Olarak Döviz Kuru Kanalının Azerbaycan’da Analizi. I International Scientific Conference of Young Researchers. Azerbaijan. May 2017. Pp.331-333</p>
+<p class="pub-item">11. Shahriyar Mukhtarov, Jeyhun Mikayılov and Rəsul Rəsulov. The Impact of Urbanization on Energy Consumption: Azerbaijan case. Implication of Urbanization and idustrialization for cultural heritage and biodiversity International scientific- practical conference. Azerbaijan. April 2017, pp.22-23</p>
+<p class="pub-item">12. Şəhriyar Muxtarov, Cavid Əliyev. Azərbaycanda Pul Siyasətinin Transmissiyası Mexanizmlərinin Qiymətləndirilməsi. IV International Scientific Conference of Young Researchers. Azerbaijan. April 2016, pp. 615-616</p>
+<p class="pub-item">13. Şəhriyar Muxtarov, Jeyhun Mikayılov. Azərbaycanda pul siyasətinin transmissiyası mexanizmlərinin qiymətləndirilməsi. İqtisadiyyatın davamlı inkişafı problemlər, perspektivlər. Azərbaycan. April 2016, pp.196-199.</p>
+<p class="pub-item">14. Jeyhun Mikayilov, Vusal Shkurov, Shahriyar Mukhtarov, “The Impact of Urbanization and Economic Growth on Atmospheric Pollution From Transport Sector”, International Scientific Conference Implications of Urbanization and Industrialization for Biodiversity Conservation, 1-2 October 2016, Azerbaijan Technological University, Ganja, Azerbaijan, pp.222-231</p>
+<p class="pub-item">15. Shahriyar Mukhtarov, Elvin Mammadov, “Parasal Aktarım Mekanizmaları ve Azerbaycan Değerlendirilmesi”, III International Scientific Conference of Young Researchers, Qafqaz University, 17-18 April 2015, Baku, pp.550-551.</p>
+<p class="pub-item">16. Zamig Mammadov, Şhahriyar Mukhtarov, &quot;New Requirements on Institutional Capacity Building of Banks-FATCA&quot;, Caucasus and Central Asia in the Globalizatıon Process, IV International Conferences, Qafqaz University, Page 383-387, Azerbaijan, (May, 2014)</p>
+<p class="pub-item">17. Elvin Mammadov, Shahriyar Mukhtarov, Murad Isgenderov,&quot;Comparision of Performances Between Participation and Conventional Banks During Global Crisis: Evidence from Turkey&quot;, Caucasus and Central Asia in the Globalization Process, IV International Conferences, Qafqaz University, Page 80-89, Azerbaijan (May, 2014)</p>
+<p class="pub-item">18. Shahriyar Mukhtarov, Elvin Mammadov, &quot;Sukuk as an Alternative Financial Instrument&quot;, I International Scientific Conference of Young Researchers, Qafqaz University, pp.105-106, Azerbaijan, (Apr, 2013)</p>
+<p class="pub-item">19. Shahriyar Mukhtarov, Fuzuli Aliyev and Elvin Mammadov, &quot;Structural analysis of Azerbaijan banking sector and current situation&quot;, Sustainable Development and Management Models, Lenkeran State University, Page 129-130, Azerbaijan, (Dec,2011).</p>
+<h3 class="pub-sub">Invited talks and conference participation</h3>
+<ul class="plain"><li>3–4 May 2019 — Azerbaijan Tourism and Management University, Baku — Keynote — Re-evaluating the environmental impacts of tourism: the case of Azerbaijan</li></ul>
+    </section>
+  </main>
+</article>
+</body>
+</html>

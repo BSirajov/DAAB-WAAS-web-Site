@@ -33,11 +33,12 @@
 <link href="../css/daab-search.css?v=10" rel="stylesheet"/>
 <link href="../css/daab-page-content-search.css?v=10" rel="stylesheet"/>
 <link href="../css/daab-back-to-top.css?v=4" rel="stylesheet"/>
-<link href="../css/daab-lang.css?v=16" rel="stylesheet"/>
+<link href="../css/daab-lang.css?v=17" rel="stylesheet"/>
 <link href="../css/daab-nav-mega.css?v=87" rel="stylesheet"/>
 <link href="../css/daab-hero-summary.css?v=13" rel="stylesheet"/>
 <link href="../css/daab-content-hero.css?v=9" rel="stylesheet"/>
-<link href="../css/daab-complex-topics.css?v=43" rel="stylesheet"/>
+<link href="../css/daab-sidebar-widget.css?v=7" rel="stylesheet"/>
+<link href="../css/daab-complex-topics.css?v=61" rel="stylesheet"/>
 <script src="../js/daab-mobile.js?v=6" defer></script>
 <script src="../js/daab-perf.js?v=4" defer></script>
 <script src="../js/daab-sticky-chrome.js?v=8" defer></script>
@@ -49,9 +50,10 @@
 <script src="../js/daab-nav.js?v=36" defer></script>
 <script src="../js/daab-primary-nav.js?v=69" defer></script>
 <script src="../js/daab-breadcrumbs.js?v=56" defer></script>
-<script src="../js/daab-shell.js?v=20" defer></script>
+<script src="../js/daab-shell.js?v=21" defer></script>
 <script src="../js/daab-page-subtitle.js?v=8" defer></script>
 <script src="../js/daab-search.js?v=17" defer></script>
+<script src="../js/daab-complex-topics-guide.js?v=1" defer></script>
 <script src="../js/daab-analytics.js?v=7" defer></script>
 </head>
 <body>
@@ -82,7 +84,8 @@
 </header>
 <main class="main" id="content">
 <section class="ct-poster" aria-label="Open competition">
-<h2 class="ct-title"><span class="ct-title__flourish ct-title__flourish--start" aria-hidden="true"></span><span class="ct-title__text">Open competition</span><span class="ct-title__flourish ct-title__flourish--end" aria-hidden="true"></span></h2>
+<h2 class="ct-title"><span class="ct-title__text">Open competition</span></h2>
+<p class="ct-kicker ct-kicker--under-title">Informatics • Computer science • ICT</p>
 <div class="forum-register-sponsors" role="group" aria-label="Organizing partners">
 <figure class="forum-register-sponsors__item">
 <div class="forum-register-sponsors__logo"><img src="../images/forum/2026/sponsors/waas.webp" alt="World Association of Azerbaijani Scientists" width="182" height="180" decoding="async"/></div>
@@ -103,8 +106,8 @@
 </div>
 <div class="ct-lead">
 <div>
-<p class="ct-kicker">Informatics • Computer science • ICT</p>
-<p class="ct-tagline"><b>Can you explain a difficult topic simply and clearly?</b> Share your knowledge. Turn your experience into a useful, lasting open educational resource for hundreds of people.</p>
+<p class="ct-tagline"><b>Can you explain a difficult topic simply and clearly?</b></p>
+<p class="ct-tagline-follow">Share your knowledge. Turn your experience into a useful, lasting open educational resource for hundreds of people.</p>
 <div class="ct-pills">
 <span class="ct-pill" tabindex="0" aria-describedby="ct-tip-ai"><span class="ct-pill-icon" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path fill="currentColor" d="M8 1.2 9 5h4L9.8 7.4 11 11.2 8 8.8 5 11.2l1.2-3.8L2.9 5H7L8 1.2Zm5.4 6.5.5 1.6h1.7l-1.4 1 .5 1.7-1.3-1-1.4 1 .5-1.7-1.3-1h1.7l.5-1.6Z"/></svg></span>Artificial intelligence<span class="ct-pill-tip" id="ct-tip-ai" role="tooltip">Machine learning, generative AI and related methods that let computers learn from data and produce useful results.</span></span>
 <span class="ct-pill" tabindex="0" aria-describedby="ct-tip-programming"><span class="ct-pill-icon" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5.2 3.8 1.8 8l3.4 4.2M10.8 3.8 14.2 8l-3.4 4.2"/></svg></span>Programming<span class="ct-pill-tip" id="ct-tip-programming" role="tooltip">Writing and structuring code — languages, software design and how programs are built.</span></span>
@@ -156,20 +159,27 @@
 </section>
 <section class="ct-guide" aria-label="Competition working plan">
 <p class="ct-guide-note">The flyer above is the public invitation. The sections below give a concise account of the core idea of the <strong>“Complex Topics, Clear Explanations”</strong> competition. That text is not an approved regulation. Dates, prize amounts, volume ranges and procedures are proposals for WAAS to review. The official call will confirm the rules.</p>
-<nav class="ct-guide-toc" aria-label="On this page">
-<a href="#purpose">Purpose</a>
-<a href="#who">Who</a>
-<a href="#topics">Topics</a>
-<a href="#what">What is submitted</a>
-<a href="#criterion">Main criterion</a>
-<a href="#judging">Judging</a>
-<a href="#outcome">Outcome</a>
-<a href="#apply">How to apply</a>
-<a href="#rights">Publication</a>
-<a class="ct-guide-toc-details" href="complex-topics-informatics.html">Topic guide</a>
-<a class="ct-guide-toc-details" href="complex-topics-approach.html">More ...</a>
-</nav>
-<article class="ct-guide-block" id="purpose">
+<div class="ct-guide-layout">
+<aside class="sidebar ct-guide-nav" aria-label="Competition details">
+<div class="sidebar-widget">
+<div class="widget-head"><span><span aria-hidden="true">📋</span> Details</span><button aria-controls="ctGuideMenu" aria-expanded="false" aria-label="Open details menu" class="events-menu-toggle" type="button"><span></span><span></span><span></span></button></div>
+<div class="widget-body">
+<ul class="timeline-list" id="ctGuideMenu" role="tablist" aria-label="Competition sections">
+<li><a href="#purpose" role="tab" aria-controls="purpose" aria-selected="true" class="tl-active">Purpose</a></li>
+<li><a href="#who" role="tab" aria-controls="who" aria-selected="false">Who</a></li>
+<li><a href="#topics" role="tab" aria-controls="topics" aria-selected="false">Topics</a></li>
+<li><a href="#what" role="tab" aria-controls="what" aria-selected="false">What is submitted</a></li>
+<li><a href="#criterion" role="tab" aria-controls="criterion" aria-selected="false">Main Criterion</a></li>
+<li><a href="#judging" role="tab" aria-controls="judging" aria-selected="false">Judging</a></li>
+<li><a href="#outcome" role="tab" aria-controls="outcome" aria-selected="false">Outcome</a></li>
+<li><a href="#apply" role="tab" aria-controls="apply" aria-selected="false">How to apply</a></li>
+<li><a href="#rights" role="tab" aria-controls="rights" aria-selected="false">Publication</a></li>
+</ul>
+</div>
+</div>
+</aside>
+<div class="ct-guide-panels">
+<article class="ct-guide-block is-active" id="purpose" aria-hidden="false">
 <h2>Purpose</h2>
 <p class="ct-guide-kicker">Can you explain a difficult ICT topic clearly and simply?</p>
 <p>The English name of this competition and collection is <strong>Complex Topics, Clear Explanations</strong>. In Azerbaijani it is <strong>Çətin mövzu, aydın izah</strong>. The final wording of both names, the platform name and any quality badge still need confirmation, so every public text should use the same pair until then.</p>
@@ -179,7 +189,7 @@
 <p>The planned survey question is: “In informatics and ICT, which topic do you find hardest to understand?” Taking the survey will not be required in order to enter. Motivational lines that may appear with the call are “Share your knowledge. Leave a mark.” and “Biliyini paylaş, izin qalsın.”</p>
 <p class="ct-guide-status">Working plan. Survey wording, dates and the final official names will be confirmed in the call.</p>
 </article>
-<article class="ct-guide-block" id="who">
+<article class="ct-guide-block" id="who" hidden aria-hidden="true">
 <h2>Who?</h2>
 <p class="ct-guide-kicker">Select the group that best describes your current role.</p>
 <p>The first-year model is open to these participant groups. A person may belong to more than one — for example, a researcher who also teaches — so the application asks for one primary group.</p>
@@ -214,7 +224,7 @@
 <p>Level, terms, examples and pace must match that choice. Stating prior knowledge and learning outcomes is an editorial suggestion, not a confirmed rule. School pupils are an audience, and a school pupil may also enter as an author.</p>
 <p class="ct-guide-status">Settled as a working plan: one primary participant group, and entries from one person or a recommended team of two or three. Age and residence belong in the official call.</p>
 </article>
-<article class="ct-guide-block" id="topics">
+<article class="ct-guide-block" id="topics" hidden aria-hidden="true">
 <h2>Topics</h2>
 <p>Priority goes to topics that are hard to learn, scientifically or practically important, and poorly explained in Azerbaijani. A topic may also be justified if current resources are too theoretical, if students and teachers keep reporting difficulty, or if the technology is new and consequential. “What is Python?” and “How does Excel work?” are not the main priority. Popularity alone is not enough; the work should answer a real learning difficulty rather than repeat thousands of introductions.</p>
 <p>Directions are grouped only to make reading easier. They do not close the list:</p>
@@ -229,7 +239,7 @@
 <p>A working guide that gathers current curriculum priorities, learner interest and documented teaching difficulties is on <a href="complex-topics-informatics.html">Guide to topic selection</a>. That list does not close the topic list and does not replace the official call.</p>
 <p class="ct-guide-status">Topic list, approval step and survey dates will be announced with the official call.</p>
 </article>
-<article class="ct-guide-block" id="what">
+<article class="ct-guide-block" id="what" hidden aria-hidden="true">
 <h2>What is submitted?</h2>
 <p class="ct-guide-kicker">One format or a combination that best explains the topic</p>
 <p>Submit work that explains one genuinely difficult ICT topic. The formats are the same as on the application form: Article, Video lecture, Presentation, Teaching pack, Educational cartoon, Animation, Comic, Infographic and Interactive material. You may use one format or combine several, choosing the approach that best explains the topic to the intended audience. The ranges below are recommendations from the working document. They are not confirmed minimums or maximums.</p>
@@ -249,7 +259,7 @@
 <p>Authors are responsible for facts, technical claims and examples. Personal opinion should be separated from scientific fact. Important scientific, technical and statistical points need sources — preferably papers, academic books, standards, university resources, official technical documents and materials from trusted organizations. File types, maximum size, video resolution, captions and how to upload are not yet fixed; they will appear in a separate technical note.</p>
 <p class="ct-guide-status">Recommended ranges and the full format list are not published rules until the official call.</p>
 </article>
-<article class="ct-guide-block" id="criterion">
+<article class="ct-guide-block" id="criterion" hidden aria-hidden="true">
 <h2>Main criterion</h2>
 <p class="ct-guide-kicker">A simple, clear and scientifically accurate explanation of a hard topic</p>
 <p>Clarity without accuracy fails. Accuracy without clarity also fails. A serious factual error cannot be hidden by a high total score. Heavy jargon is not an advantage.</p>
@@ -278,7 +288,7 @@
 </table>
 <p class="ct-guide-status">This table is the proposed working model, not a published rulebook.</p>
 </article>
-<article class="ct-guide-block" id="judging">
+<article class="ct-guide-block" id="judging" hidden aria-hidden="true">
 <h2>How entries will be judged</h2>
 <p>The planned path is a technical check, expert review, a shortlist, a final talk and a separate audience award. None of this is a locked regulation.</p>
 <ul>
@@ -291,7 +301,7 @@
 </ul>
 <p class="ct-guide-status">Jury names, exact weights and whether a final talk is held will be confirmed in the official call.</p>
 </article>
-<article class="ct-guide-block" id="outcome">
+<article class="ct-guide-block" id="outcome" hidden aria-hidden="true">
 <h2>Outcome</h2>
 <p class="ct-guide-kicker">Selected works shared on the WAAS platform</p>
 <p>The lasting result is publication, with the author’s name, in the WAAS <strong>Complex Topics, Clear Explanations</strong> collection. Selected works may pass scientific and language editing, design and technical adaptation before they appear. The author’s scientific position must not be distorted; substantial changes would be agreed first.</p>
@@ -299,7 +309,7 @@
 <p>A work that is not in the top three may still be selected if it meets a quality floor. A proposed name for that recognition is “DAAB Selected Lecture”; the official wording still needs confirmation. Suggested minimums in the working document are 80/100 overall, at least 16/20 for science and 20/25 for clarity, no serious plagiarism, sources shown, rights respected, and required edits completed. A critical scientific flaw should block the status regardless of the total. Which score those floors apply to — first review, final total or post-edit review — is not yet settled.</p>
 <p class="ct-guide-status">Prize amounts, nomination list and quality-badge name belong in the official call.</p>
 </article>
-<article class="ct-guide-block" id="apply">
+<article class="ct-guide-block" id="apply" hidden aria-hidden="true">
 <h2>How to apply</h2>
 <p>The planned path for a participant is: read the rules; choose a topic and audience; register; prepare the work; submit the files and statements; pass a technical check and expert review; if invited, give a final talk; and, if selected for publication, complete edits and a separate publication agreement before the work goes on the platform.</p>
 <p>Two online seminars are planned as support: “How to prepare a good lecture” and “How to explain a complex topic simply.” Sample materials and a frequently-asked-questions page may follow. Personal data should be used only to run the competition. Passing contact details to sponsors or other third parties would need separate consent.</p>
@@ -317,7 +327,7 @@
 <p>An expression of interest can come before the finished file. A finished entry still needs the work itself. Rules for late submissions, technical faults and withdrawing an entry are not written yet.</p>
 <p class="ct-guide-status">The online form collects these details. Prize amounts, a fixed file-size rule and other items this page marks as not yet confirmed stay open until the official call.</p>
 </article>
-<article class="ct-guide-block" id="rights">
+<article class="ct-guide-block" id="rights" hidden aria-hidden="true">
 <h2>Publication, ethics and rights</h2>
 <p>You keep the copyright in your work. Sending it for this competition lets WAAS read and assess it. That is not a transfer of ownership and not a publication licence. If a work is selected, a separate agreement would follow.</p>
 <p>The intended publication terms are:</p>
@@ -334,6 +344,8 @@
 <p>An appeal, if offered, would cover procedure only — not an academic or professional mark. The proposed window is five working days after results are announced, before a separately appointed commission.</p>
 <p class="ct-guide-status">This is the intended model, not a signed contract or a finished ethics code.</p>
 </article>
+</div>
+</div>
 </section>
 </main>
 <footer class="footer-pro">
@@ -359,7 +371,7 @@
       </div>
     </div>
   </div>
-  <div class="footer-bottom"><nav class="footer-legal-links" aria-label="Legal documents and sitemap"><a href="/en/feedback.html">Feedback</a><a href="/en/privacy.html#page-title">Privacy notice</a><a href="/en/terms.html#page-title">Terms of use</a><a href="/en/cookies.html#page-title">Cookie policy</a><a href="/en/legal-notice.html#page-title">Legal notice (Imprint)</a><a href="/en/sitemap.html#page-title">Sitemap</a></nav><div class="footer-copy">© DAAB-WAAS - All rights reserved | Build 20261005 - 1710</div></div>
+  <div class="footer-bottom"><nav class="footer-legal-links" aria-label="Legal documents and sitemap"><a href="/en/feedback.html">Feedback</a><a href="/en/privacy.html#page-title">Privacy notice</a><a href="/en/terms.html#page-title">Terms of use</a><a href="/en/cookies.html#page-title">Cookie policy</a><a href="/en/legal-notice.html#page-title">Legal notice (Imprint)</a><a href="/en/sitemap.html#page-title">Sitemap</a></nav><div class="footer-copy">© DAAB-WAAS - All rights reserved | Build 20261010 - 1309</div></div>
 </footer>
 </body>
 </html>

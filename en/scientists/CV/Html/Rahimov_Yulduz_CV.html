@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iouldouz Raguimov — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>IOULDOUZ RAGUIMOV</h1>
+      <p class="subtitle">PhD<br>Sessional Associate Professor<br>Department of Mathematics and Statistics, York University, Toronto, Ontario, Canada</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/yulduz-rahimov.jpg" alt="Iouldouz Raguimov"></div>
+  <aside class="side">
+    <h2>Contact</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Canada</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zm0 1.5c1.7 0 3.3.6 4.5 1.5H7.5A7.9 7.9 0 0 1 12 4zm-6.6 3h13.2c.5.8.9 1.7 1.1 2.7H4.3c.2-1 .6-1.9 1.1-2.7zM4.2 11.2h15.6c0 .3.1.6.1.9s0 .6-.1.9H4.2c0-.3-.1-.6-.1-.9s0-.6.1-.9zm.1 3.6h15.4c-.2 1-.6 1.9-1.1 2.7H7.5c1.2.9 2.8 1.5 4.5 1.5a7.9 7.9 0 0 0 4.5-1.5H5.4c-.5-.8-.9-1.7-1.1-2.7z"/></svg><span><a href="https://link.springer.com/book/10.1007/978-3-030-96651-5">https://link.springer.com/book/10.1007/978-3-030-96651-5</a></span></li></ul><div class="block"><h2>Awards &amp; recognitions</h2><div class="rule"></div><ul class="items awards"><li>Excellence in Teaching Award — Faculty of Science, York University (2013)</li></ul></div><div class="block"><h2>Languages</h2><div class="rule"></div><ul class="items langs"><li>Azerbaijani (Fluent)</li>
+<li>English (Fluent)</li>
+<li>Russian (Fluent)</li>
+<li>Turkish (Fluent)</li></ul></div>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profile</h2>
+      <div class="rule"></div>
+      <p>Iouldouz Raguimov was a sessional associate professor, on a long-service teaching appointment, in the Department of Mathematics and Statistics at York University in Toronto from 2015 to 2024. He received a PhD in applied mathematics from the Dorodnitsyn Computing Centre of the USSR Academy of Sciences in 1981. The thesis is The Best Guaranteed Result Principle in a Class of Operations Research Problems, supervised by N. N. Moiseev. He received an MSc in applied mathematics and computer science from Azerbaijan State University, now Baku State University, in 1975. In 1991 he received the science title Senior Research Fellow in applications of computational techniques, mathematical modeling, and mathematical methods.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>Work experience</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Mathematics and Statistics, York University, Toronto, Canada</h3>
+          <span class="when">2015–2024</span>
+        </div>
+        <p class="role">Sessional Associate Professor, long-service teaching appointment</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Mathematics and Statistics, York University, Toronto, Canada</h3>
+          <span class="when">2000–2015</span>
+        </div>
+        <p class="role">Sessional Assistant Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Mathematics, University of Toronto at Mississauga, Canada</h3>
+          <span class="when">1999–2000</span>
+        </div>
+        <p class="role">Tutorial leader</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Computer Science Department, University of Toronto at Mississauga, Canada</h3>
+          <span class="when">September–December 2000</span>
+        </div>
+        <p class="role">Tutorial leader</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>RiskLab, Department of Mathematics, University of Toronto at Mississauga, Canada</h3>
+          <span class="when">1998–1999</span>
+        </div>
+        <p class="role">Project associate</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Computational Mathematics, Baku State University, Baku, Azerbaijan</h3>
+          <span class="when">1994–1996</span>
+        </div>
+        <p class="role">Associate Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Baku State University, Baku, Azerbaijan</h3>
+          <span class="when">1992–1994</span>
+        </div>
+        <p class="role">Head of the Laboratory of Information and Computational Systems</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Automatic Control, Huazhong University of Science and Technology, Wuhan, China</h3>
+          <span class="when">1991–1992</span>
+        </div>
+        <p class="role">Scientific research fellow</p>
+        <ul><li>USSR–China scientific exchange</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Azerbaijan State University, Baku, Azerbaijan</h3>
+          <span class="when">1988–1991</span>
+        </div>
+        <p class="role">Head of the Laboratory of Problems of Higher and Post-Secondary Education</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Scientific Research Centre, Azerbaijan State University, Baku, Azerbaijan</h3>
+          <span class="when">1984–1988</span>
+        </div>
+        <p class="role">Vice director</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Scientific Research Centre, Azerbaijan State University, Baku, Azerbaijan</h3>
+          <span class="when">1982–1984</span>
+        </div>
+        <p class="role">Head of department</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Education</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>PhD</h3>
+          <span class="when">1981</span>
+        </div>
+        <p>Applied mathematics. Thesis: The Best Guaranteed Result Principle in a Class of Operations Research Problems. Supervisor: N. N. Moiseev. Committee: V. V. Fedorov and A. V. Lotov</p><p>Dorodnitsyn Computing Centre, USSR Academy of Sciences, Moscow</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>MSc</h3>
+          <span class="when">1975</span>
+        </div>
+        <p>Applied mathematics and computer science</p><p>Azerbaijan State University, now Baku State University, Baku, Azerbaijan</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Senior Research Fellow</h3>
+          <span class="when">1991</span>
+        </div>
+        <p>Science title in applications of computational techniques, mathematical modeling, and mathematical methods to research</p><p>Moscow, USSR</p>
+      </article>
+    </section><section class="sec grants">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Grants &amp; projects</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>2008 — On decision-making in a stochastic environment — York University research grant</li><li>2003 — Method of optimization on time series in decision-making in operations with stochastic parameters — York University research grant</li></ul>
+    </section><section class="sec teaching">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Teaching</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>2000–2024 — Operations research, combinatorial and linear optimization, mathematical theory of interest, probability, linear algebra, calculus, discrete mathematics, and mathematics for management and the life sciences. Course codes include MATH 4170, 3172, 3171, 3170, 2280, 2030, 2580, and 1505 — York University, Toronto, Canada</li></ul>
+    </section><section class="sec daab">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>WAAS / DAAB activity</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>September 2024 — 1st Forum of Azerbaijani Scientists Living Abroad, Baku, Azerbaijan — Ətraf mühit nümunələrinin proqnozlaşdırılmasında və insan müdaxilələrinin təsirinin qiymətləndirilməsində riyazi modellərin rolu</li></ul>
+    </section><section class="sec metrics">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Research metrics</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>Scientific papers — More than 25 — Self-reported</li><li>Years of teaching — 30 — Self-reported</li></ul>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Publications</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Books and textbooks</h3>
+<p class="pub-item">1. Moiseev, N. N. How Far It Is to Tomorrow. English translation by Iouldouz Raguimov and Robert G. Burns. Birkhäuser, 2022. https://doi.org/10.1007/978-3-030-96651-5.</p>
+<h3 class="pub-sub">Peer-reviewed journal articles</h3>
+<p class="pub-item">1. Aliev, F. A., Mutallimov, M. M., Askerov, I. M., &amp; Raguimov, I. Asymptotic method of solution for a problem of construction of optimal gas-lift process modes. Mathematical Problems in Engineering, 2010, vol. 2010, pp. 1–11.</p>
+<p class="pub-item">2. Raguimov, I. On the duality of linear multi-objective models. Reports of the Azerbaijan Academy of Sciences, 4, 1994. In Azerbaijani.</p>
+<p class="pub-item">3. Gasanov, I. I., &amp; Raguimov, I. A control problem in a two-level hierarchical system. USSR Computational Mathematics and Mathematical Physics, 1980, vol. 5, pp. 49–62.</p>
+<h3 class="pub-sub">Conference papers and abstracts</h3>
+<p class="pub-item">1. Raguimov, I., &amp; Gasanov, I. I. On efficiency of solutions of a stochastic optimal control problem with discrete time. Proceedings of the Second International Conference on Advanced Communications and Computation, INFOCOMP 2012, pp. 1–4. ISBN 978-1-61208-226-4.</p>
+<p class="pub-item">2. Raguimov, I., &amp; Gasanov, I. I. On an algorithm of financial portfolio control by the method of optimization on time series. Proceedings of CIMCA 2004, pp. 511–519. ISBN 1740881885.</p>
+<p class="pub-item">3. Raguimov, I., &amp; Gasanov, I. I. Experimental analysis of the method of optimization on time series using a mathematical model of a financial market. Proceedings of the 4th International Conference on High Technology Control Systems, HTCS 2004, Tver, Russia, 24–25 May 2004. 6 pages. In Russian.</p>
+<p class="pub-item">4. Raguimov, I., &amp; Gasanov, I. I. On solution of a stochastic control problem by the method of optimization on time series. Proceedings of the 2003 Hawaii International Conference on Statistics and Related Fields, 5–9 June 2003. 7 pages. ISSN 1539-7211.</p>
+<p class="pub-item">5. Raguimov, I. On decision making in operations with stochastic factors. Proceedings of CIMCA 2001, pp. 580–587. ISBN 0858898470.</p>
+<p class="pub-item">6. Raguimov, I. Finding of the deregulated prices by multi-person decision-making with a multi-objective approach. 7th IFAC/IFORS/IIASA Conference on Modeling and Control of National Economies, Beijing, 1992, pp. 138–142.</p>
+<h3 class="pub-sub">Invited talks and conference participation</h3>
+<ul class="plain"><li>May 2024 — ADA University, Baku, Azerbaijan — Presentation — The Best Guaranteed Result Principle and Decision-Making in Operations with Stochastic and Uncertain Factors</li><li>September 2015 — Fields Institute, University of Toronto, Canada — Presentation — Best guaranteed result principle and decision making in operations with stochastic factors and uncertainty</li><li>July 1994 — NATO Advanced Study Institute, Stony Brook, New York, United States — Presentation — The game-theoretical approach to modeling of international economic cooperation</li></ul>
+    </section>
+  </main>
+</article>
+</body>
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Varga Kalantarov — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>VARGA KALANTAROV</h1>
+      <p class="subtitle">DSc, PhD<br>Professor, Department of Mathematics<br>Koç University, Istanbul, Turkey</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/varqa-kelenterov.jpg" alt="Varga Kalantarov"></div>
+  <aside class="side">
+    <h2>Contact</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Turkey</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zm0 1.5c1.7 0 3.3.6 4.5 1.5H7.5A7.9 7.9 0 0 1 12 4zm-6.6 3h13.2c.5.8.9 1.7 1.1 2.7H4.3c.2-1 .6-1.9 1.1-2.7zM4.2 11.2h15.6c0 .3.1.6.1.9s0 .6-.1.9H4.2c0-.3-.1-.6-.1-.9s0-.6.1-.9zm.1 3.6h15.4c-.2 1-.6 1.9-1.1 2.7H7.5c1.2.9 2.8 1.5 4.5 1.5a7.9 7.9 0 0 0 4.5-1.5H5.4c-.5-.8-.9-1.7-1.1-2.7z"/></svg><span><a href="https://mysite.ku.edu.tr/vkalantarov/">https://mysite.ku.edu.tr/vkalantarov/</a></span></li></ul><div class="block"><h2>Languages</h2><div class="rule"></div><ul class="items langs"><li>Azerbaijani (Native)</li>
+<li>English (Fluent)</li>
+<li>Russian (Fluent)</li>
+<li>Turkish (Fluent)</li>
+<li>German (Advanced)</li></ul></div>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profile</h2>
+      <div class="rule"></div>
+      <p>Varga Kalantarov is professor in the Department of Mathematics at Koç University in Istanbul, where he has worked since 2001. He received a Doctor of Sciences in differential equations and mathematical physics from the V. A. Steklov Institute of Mathematics at St. Petersburg in 1988. The dissertation is Global behavior of solutions of nonlinear equations of mathematical physics of classical and non-classical types. He received a PhD in the same field in 1974 from the Institute of Mathematics and Mechanics of the Academy of Sciences of Azerbaijan. The dissertation is On mixed problem for semi-linear parabolic-hyperbolic systems. He studied at Azerbaijan State University in 1966–1971. From 1989 to 1993 he headed the Department of Partial Differential Equations at the Institute of Mathematics and Mechanics in Baku and was deputy director of the institute in 1984–1993.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>Work experience</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Mathematics, Koç University, Istanbul, Turkey</h3>
+          <span class="when">2001–present</span>
+        </div>
+        <p class="role">Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Mathematics, Hacettepe University, Ankara, Turkey</h3>
+          <span class="when">1993–2001</span>
+        </div>
+        <p class="role">Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Applied Mathematics, Baku State University, Baku, Azerbaijan</h3>
+          <span class="when">1991–1993</span>
+        </div>
+        <p class="role">Professor, part-time</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Department of Mathematics, Azerbaijan Institute of Civil Engineering, Baku, Azerbaijan</h3>
+          <span class="when">1989–1991</span>
+        </div>
+        <p class="role">Professor, part-time</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Institute of Mathematics and Mechanics, Baku, Azerbaijan</h3>
+          <span class="when">1989–1993</span>
+        </div>
+        <p class="role">Head of the Department of Partial Differential Equations</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Institute of Mathematics and Mechanics, Baku, Azerbaijan</h3>
+          <span class="when">1984–1993</span>
+        </div>
+        <p class="role">Deputy director</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Institute of Mathematics and Mechanics, Baku, Azerbaijan</h3>
+          <span class="when">1977–1984</span>
+        </div>
+        <p class="role">Senior scientific researcher</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Institute of Mathematics and Mechanics, Baku, Azerbaijan</h3>
+          <span class="when">1974–1977</span>
+        </div>
+        <p class="role">Scientific researcher</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>V. A. Steklov Institute of Mathematics, St. Petersburg</h3>
+          <span class="when">September 1975–May 1980</span>
+        </div>
+        <p class="role">Visiting researcher</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Silkroad Mathematics Center, Beijing, China</h3>
+          <span class="when">April 2017</span>
+        </div>
+        <p class="role">Visiting professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Weizmann Institute, Rehovot, Israel</h3>
+          <span class="when">January 2017</span>
+        </div>
+        <p class="role">Visiting professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>University of Toronto, Canada</h3>
+          <span class="when">July–August 2015</span>
+        </div>
+        <p class="role">Visiting professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>KAUST</h3>
+          <span class="when">December 2013–February 2014</span>
+        </div>
+        <p class="role">Visiting professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>University of Tennessee, United States</h3>
+          <span class="when">July–August 2008</span>
+        </div>
+        <p class="role">Visiting professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Feza Gürsey Institute of Basic Sciences</h3>
+          <span class="when">February–June 2001</span>
+        </div>
+        <p class="role">Research associate</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Weierstrass Institute for Applied Analysis and Stochastics, Berlin, Germany</h3>
+          <span class="when">November 1997</span>
+        </div>
+        <p class="role">Visiting professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Autonomous University of Barcelona, Spain</h3>
+          <span class="when">September 1994</span>
+        </div>
+        <p class="role">Visiting professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Gazi University, Ankara, Turkey</h3>
+          <span class="when">September–December 1992</span>
+        </div>
+        <p class="role">Visiting professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Polytechnic University of Catalonia, Barcelona, Spain</h3>
+          <span class="when">September 1991</span>
+        </div>
+        <p class="role">Visiting professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Karl Weierstrass Institute for Mathematics</h3>
+          <span class="when">December 1983</span>
+        </div>
+        <p class="role">Visiting professor</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Education</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>DSc</h3>
+          <span class="when">1988</span>
+        </div>
+        <p>Differential equations and mathematical physics. Dissertation: Global behavior of solutions of nonlinear equations of mathematical physics of classical and non-classical types</p><p>V. A. Steklov Institute of Mathematics, St. Petersburg, Russia</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>PhD</h3>
+          <span class="when">1974</span>
+        </div>
+        <p>Differential equations and mathematical physics. Dissertation: On mixed problem for semi-linear parabolic-hyperbolic systems</p><p>Institute of Mathematics and Mechanics, Academy of Sciences of Azerbaijan, Baku</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>University study</h3>
+          <span class="when">1966–1971</span>
+        </div>
+        <p>Azerbaijan State University, Baku, Azerbaijan</p>
+      </article>
+    </section><section class="sec grants">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Grants &amp; projects</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>2022–2025 — Stabilization of infinite-dimensional dissipative systems by finite-dimensional boundary controllers. With T. Özsarı. Grant 112F084 — TÜBİTAK</li><li>2013–2014 — Blow-up of solutions to damped nonlinear wave equations and nonlinear parabolic equations. Grant 112T914 — TÜBİTAK</li><li>2006–2009 — Partial differential equations in phase transitions. With H. M. Soner. Grant 106T337 — TÜBİTAK</li><li>1996–1997 — Initial-boundary-value problems for the nonlinear Schrödinger equation — TÜBİTAK</li></ul>
+    </section><section class="sec teaching">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Teaching</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>2001–present — Calculus, differential equations, multivariable calculus, linear algebra, applied mathematics, partial differential equations, complex analysis, and applied functional analysis. Course numbers include Math 106, 204, 200, 203, 303, 309, 401, 503, 552, 505, 207, and 557 — Koç University, Istanbul</li><li>Calculus, ordinary and partial differential equations, functional analysis, Sobolev spaces, nonlinear partial differential equations, blow-up theorems, and dissipative dynamical systems — Graduate and undergraduate — Baku State University, Azerbaijan University of Architecture and Construction, St. Petersburg State University, Ankara University, and Hacettepe University</li></ul>
+    </section><section class="sec supervision">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Supervision</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>PhD — 16 — Named theses from 1985 to 2019 at Koç University, Hacettepe University, Middle East Technical University, Sakarya University, Al-Farabi Kazakh National University, and the Institute of Mathematics and Mechanics in Baku. The titles are not printed</li></ul>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Publications</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Book chapters</h3>
+<p class="pub-item">1. Kalantarov, V. K. Global solutions of coupled Kuramoto-Sivashinsky and Ginzburg-Landau equations, Nonlinear problems in mathematical physics and related topics, II, pp.213–227, Int. Math. Ser. (N. Y.), 2, Kluwer/Plenum, New York, 2002.</p>
+<p class="pub-item">2. Kalantarov, V. K. Blow-up theorems for second order nonlinear evolutionary equations, in O.Boratav., A.Eden, A.Erzan.(Eds.) ”Turbulence modeling and vortex dynamics” Lecture Not. in Physics, Springer Verlag, 1997, pp.169-181</p>
+<h3 class="pub-sub">Peer-reviewed journal articles</h3>
+<p class="pub-item">1. Kalantarov, V. K. Determining functionals and finite-dimensional reduction for dissipative PDEs revisited. Journal of Differential Equations, 345 (2023), 78-103 (with A. Kostienko and S. Zelik)</p>
+<p class="pub-item">2. Kalantarov, V. K. On blow up of solutions of coupled systems of parabolic and hyperbolic equations. Math. Notes, 112:3 (2022), 406–411 (with J. Kalantarova)</p>
+<p class="pub-item">3. Kalantarov, V. K. Asymptotic regularity and attractors for slightly compressible Brinkman - Forchheimer equations, Applied Mathematics and Optimization, 2021 (with S. Zelik)</p>
+<p class="pub-item">4. Kalantarov, V. K. Blow-up Solutions of Helmholtz Equation for a Kerr Slab with a Complex Linear and Nonlinear Permittivity, J. Math. Phys. 60, 043508 (2019) (with A. Mostafazadeh and N. Oflaz)</p>
+<p class="pub-item">5. Kalantarov, V. K. Global Stabilization of the Navier-Stokes-Voight and the damped nonlinear wave equations by finite number of feedback controllers Discrete and Continuous Dynamical Systems – B, 23(3) (2018), 1325–1345. (with E.S. Titi)</p>
+<p class="pub-item">6. Kalantarov, V. K. Existence of an attractor and determining modes for structurally damped nonlinear wave equations, Physica D, Nonlinear Phenomena, 376-377(2018) 15-22. (with B.A. Bilgin)</p>
+<p class="pub-item">7. Kalantarov, V. K. Non-existence of Global Solutions to Nonlinear Wave Equations with Positive Initial, Communi- cations in Pure and Applied Analysis, 17(3)(2018) 987-999. (with B.A. Bilgin)</p>
+<p class="pub-item">8. Kalantarov, V. K. Determining functionals for damped nonlinear wave equations, Complex Variables and Elliptic Equations, 63 (2018) 931-944, (with B.A. Bilgin)</p>
+<p class="pub-item">9. Kalantarov, V. K. On Decay of Solutions of Generalised Pipe Equation Under Nonhomogeneous Dirichlet Boundary Control, Appl. Comp. Math., (2018),17(1), 48-55. (with M.Meyvaci) 4 ===== PAGE 5/8 =====</p>
+<p class="pub-item">10. Kalantarov, V. K. Preventing blow up by convective terms in dissipative PDE’s. J. Math. fluid Mech. 18(2016), no. 3, 463-479.(with B. A. Bilgin and S. Zelik)</p>
+<p class="pub-item">11. Kalantarov, V. K. Attractors of damped quintic wave equations in bounded domains, Annales Henri Poincaré, A Journal of Theoretical and Mathematical Physics, Ann. Henri Poincaré 17 (2016), no. 9, 2555-2584.(with A. Savostianov and S. Zelik)</p>
+<p class="pub-item">12. Kalantarov, V. K. Finite-Parameters Feedback Control for nonlinear Wave Equations, Contemporary Mathematics, AMS 269 (2016)(with E. S. Titi)</p>
+<p class="pub-item">13. Kalantarov, V. K. Qualitative Properties of solutions for nonlinear Schrödinger equations with nonlinear boundary conditions on the half line, J. Math. Phys. 57 021511 (2016) (with T. Özsarı)</p>
+<p class="pub-item">14. Kalantarov, V. K. A note on strongly damped wave equation with fast growing nonlinearities, (with S. Zelik)Journal of magthem. Phys,56,011501 (2015)</p>
+<p class="pub-item">15. Kalantarov, V. K. Blow up of solutions to the initial boundary value problem for quasilinear strongly damped wave equations (with Bilgesu A. Bilgen). J. Math. Anal. Appl. 403 (2013), no. 1, 89–94.</p>
+<p class="pub-item">16. Kalantarov, V. K. Smooth attractors for the Brinkman-Forchheimer equations with fast growing nonlinearities. (with S.V. Zelik) Commun. Pure Appl. Anal. 11 (2012), no. 5, 2037–2054.</p>
+<p class="pub-item">17. Kalantarov, V. K. Uniform decay rates for the energy of weakly damped defocusing semilinear Schrödinger equations with inhomogeneous Dirichlet boundary control (with I.Lasiecka and T. Özsarı), Journal of Differential Equations, Vol. 251 (2011) 1841 - 1863</p>
+<p class="pub-item">18. Kalantarov, V. K. Global attractors and determining modes for the 3D Navier–Stokes–Voight equation (with E.S. Titi) Chin. Ann. Math. Ser. B 30 (2009), no. 6, 697–714.</p>
+<p class="pub-item">19. Kalantarov, V. K. Finite-dimensional attractors for the quasi-linear strongly-damped wave equation (with S. Zelik) J. Differential Equations 247 (2009), no. 4, 1120–1155.</p>
+<p class="pub-item">20. Kalantarov, V. K. Gevrey regularity for the attractor of the 3D Navier-Stokes-Voight equations (with B.Levant and E.S.Titi) Journal of Nonlinear Science, 19 (2009) 133 - 152</p>
+<p class="pub-item">21. Kalantarov, V. K. 3D Convective Cahn - Hilliard Equation, (with A. Eden) Comm. Pure Appl. Anal. Vol.6, (2007) no.4, pp. 1075 -1086</p>
+<p class="pub-item">22. Kalantarov, V. K. On continuous dependence on coefficients of the Brinkman-Forchheimer equations. (with A.O.Çelebi and D.Uğurlu) Appl. Math. Lett., 19 (2006), no. 8, 801–807.</p>
+<p class="pub-item">23. Kalantarov, V. K. On global behavior of solutions to an inverse problem for nonlinear parabolic equations, (with A.Eden) J. Math.Anal.Appl. 307(2005)120-133</p>
+<p class="pub-item">24. Kalantarov, V. K. The asymptotic behavior of solutions to an inverse problem for differential operator equations. Math. Comput. Modelling 37 (2003), no. 9-10, 907–914</p>
+<p class="pub-item">25. Kalantarov, V. K. A remark on nonexistence of global solutions to quasi-linear hyperbolic and parabolic equations, (with Erdem D.) Appl. Math. Lett. vol. 15, no. 5, 521-653 (2002) 5 ===== PAGE 6/8 =====</p>
+<p class="pub-item">26. Kalantarov, V. K. Spatial behavior estimates for the wave equation under nonlinear boundary conditions, (with A.O. Çelebi) Math. Comp. Modeling, 34,(2001),no.5-6.,527-532</p>
+<p class="pub-item">27. Kalantarov, V. K. Determining functionals for nonlinear damped wave equations, (with Chueshov I.D.) Math. Phys. Anal. Geom. 8(2001), no. 215-227.</p>
+<p class="pub-item">28. Kalantarov, V. K. Attractors for the Generalized Benjamin- Bona -Mahony Equation, (With O. Çelebi,M.Polat) Journal of Differential Equations, 1999,vol.157, pp. 439 - 451.</p>
+<p class="pub-item">29. Kalantarov, V. K. A remark on two constructions of exponential attractors for a-contractions (with A.Eden and C.Foias) Journal of Dynamics and Diff.Eq.,1998, vol.10, no.1, pp.37-45</p>
+<p class="pub-item">30. Kalantarov, V. K. Finite dimensional attractors for a class of semi-linear wave equations, (with A.Eden) Turkish Journal of Mathematics, 1996, v.20, pp. 425-450.</p>
+<p class="pub-item">31. Kalantarov, V. K. On minimal global attractor for the phase -field equations, Zap. Nauchn.Sem. Leningrad Otd. Mat. Inst. Steklov, 1991, v.188, no.22, pp.70-86</p>
+<p class="pub-item">32. Kalantarov, V. K. Global behavior of solutions to some fourth-order nonlinear equations Zap. Nauchn. Sem.Leningrad Otd. Mat. Inst. Steklov 1987, v.1163, no. 19, pp. 6675.</p>
+<p class="pub-item">33. Kalantarov, V. K. Global behavior of solutions to the Cauchy problem for second order operator- differential equations, Izv. AN.Azerb.SSR ser.fiz.tech.mat.nauk, 1987, v.8, no.6, pp. 28-34.</p>
+<p class="pub-item">34. Kalantarov, V. K. Attractors for some nonlinear problems of mathematical physics Zap. Nauchn. Sem. Leningrad Otd. Mat. Inst. Steklov 1986, v.182, pp.50-54. (English translation in J. Sov. Math., 1988, v.40., pp.619-622)</p>
+<p class="pub-item">35. Kalantarov, V. K. Determination of solutions of the first boundary value problem for a system of Karman equations having an unbounded energy integral, Zap.Nauchn. Sem. Leningrad Otd.Mat.Inst.Steklov 1980, v.96, pp.97-100 (English translation in J.Sov.Math., 1983, v.21., pp.711-714)</p>
+<p class="pub-item">36. Kalantarov, V. K. On stabilisation of solutions of some quasi-linear parabolic equations, (with O. A. Ladyzhenskaya) Sibirski Mat.Zhurnall, 1978, v.19, no.5, pp.1043-1052 (English transl. in Sibirian Math J., 1978)</p>
+<p class="pub-item">37. Kalantarov, V. K. The occurrence of collapse for quasi-linear equations of parabolic and hyperbolic type, (with O.A.Ladyzhenskaya)Zap.Nauchn. Sem. Leningrad Otd.Mat.Inst.Steklov1977</p>
+<p class="pub-item">38. Kalantarov, V. K. Investigation of generalized solutions of mixed problem for the system of two equations of parabolic and hyperbolic type, Uch. Zap. Azerb. Gos. Univ., ser.fiz.mat. nauk, 1972, no.4, pp. 50-58</p>
+<h3 class="pub-sub">Invited talks and conference participation</h3>
+<ul class="plain"><li>International Conference ”O.A. Ladyzhenskaya centennial conference on PDE’s”, Euler Interna- tional Mathematical Institute, St. Petersburg, Julyt, 2022. — Selected presentation — International Conference ”O.A. Ladyzhenskaya centennial conference on PDE’s”, Euler Interna- tional Mathematical Institute, St. Petersburg, Julyt, 2022.</li><li>International Conference ”Differential Equations and Dynamical Systems”, Silkroad Mathematics Center, Shanghay, March, 2021. 2 ===== PAGE 3/8 ===== — Selected presentation — International Conference ”Differential Equations and Dynamical Systems”, Silkroad Mathematics Center, Shanghay, March, 2021. 2 ===== PAGE 3/8 =====</li><li>International conference ”Infinite-dimensional Dynamical Systems and Attractors” Lanzhou University, China, 1-6 July, 2019. — Selected presentation — International conference ”Infinite-dimensional Dynamical Systems and Attractors” Lanzhou University, China, 1-6 July, 2019.</li><li>International conference “ PDE’s and Mathematical Hydrodynamics” St.Petersburg, 30 Jukay - 3 August 2018 — Selected presentation — International conference “ PDE’s and Mathematical Hydrodynamics” St.Petersburg, 30 Jukay - 3 August 2018</li><li>International conference ”Operators, Functions and Systems of Mathematical Physics”, Baku, 21-24 May 2018. — Selected presentation — International conference ”Operators, Functions and Systems of Mathematical Physics”, Baku, 21-24 May 2018.</li><li>International workshop ”Applied and numerical analysis, with applications”, Bath, July 2016. — Selected presentation — International workshop ”Applied and numerical analysis, with applications”, Bath, July 2016.</li><li>International conference “Progress in Nonlinear Partial Differential Equations”, Lisbon, March, 2014, — Selected presentation — International conference “Progress in Nonlinear Partial Differential Equations”, Lisbon, March, 2014,</li><li>International workshop “Advances in Analysis of PDEs”, Stockholm, July, 2012, — Selected presentation — International workshop “Advances in Analysis of PDEs”, Stockholm, July, 2012,</li><li>Dissipative PDEs in Bounded and Unbounded Domains and Related Attractors, Edinburgh, UK, September, 2010 — Selected presentation — Dissipative PDEs in Bounded and Unbounded Domains and Related Attractors, Edinburgh, UK, September, 2010</li><li>Third Conference of the World Mathematical Society of Turcic Countries, Almaty, Kazakhstan, July 2009, — Selected presentation — Third Conference of the World Mathematical Society of Turcic Countries, Almaty, Kazakhstan, July 2009,</li><li>Conference on parabolic and Navier – Stokes equations, The Banach Center, Bedlewo, Poland, September, 2008, — Selected presentation — Conference on parabolic and Navier – Stokes equations, The Banach Center, Bedlewo, Poland, September, 2008,</li><li>Annual conference of Turkish mathematical Society, Istanbul, September, 2008, — Selected presentation — Annual conference of Turkish mathematical Society, Istanbul, September, 2008,</li><li>6th International ISAAC Congress, 14-18 August, 2007, — Selected presentation — 6th International ISAAC Congress, 14-18 August, 2007,</li><li>AIMS International Conference on Dynamical Systems and Differential equations, Poitiers, France, Jun 25-28, 2006, — Selected presentation — AIMS International Conference on Dynamical Systems and Differential equations, Poitiers, France, Jun 25-28, 2006,</li><li>International Conference “ Differential and Difference Equations and Applications”, Melbourne, Florida, USA, August 1-5,2005, — Selected presentation — International Conference “ Differential and Difference Equations and Applications”, Melbourne, Florida, USA, August 1-5,2005,</li><li>International Conference “Navier – Stokes Equations and Applications”, St.Petersburg, Russia, September 11-18,2002, — Selected presentation — International Conference “Navier – Stokes Equations and Applications”, St.Petersburg, Russia, September 11-18,2002,</li><li>International Conference ”Nonlinear Partial Differential Equations”, Alushta, the Crimea, Ukraine, September 15-21,2003, — Selected presentation — International Conference ”Nonlinear Partial Differential Equations”, Alushta, the Crimea, Ukraine, September 15-21,2003,</li><li>Ninth International Symposium on continuum models and discrete systems, Istanbul, 29 June - 3 July 1998, — Selected presentation — Ninth International Symposium on continuum models and discrete systems, Istanbul, 29 June - 3 July 1998,</li><li>International workshop on turbulence modelling and vortex dynamics, Istanbul, 2-6 September 1996, — Selected presentation — International workshop on turbulence modelling and vortex dynamics, Istanbul, 2-6 September 1996,</li><li>International workshop on non-linear problems in mathematical physics II, Ankara, September 14-18, 1995, — Selected presentation — International workshop on non-linear problems in mathematical physics II, Ankara, September 14-18, 1995,</li><li>International workshop on dynamical systems, Barcelona, Spain, September, 1994, — Selected presentation — International workshop on dynamical systems, Barcelona, Spain, September, 1994,</li><li>International conference on partial differential equations ”Equdiff 91” Barcelona, Spain, August 1991, 3 ===== PAGE 4/8 ===== — Selected presentation — International conference on partial differential equations ”Equdiff 91” Barcelona, Spain, August 1991, 3 ===== PAGE 4/8 =====</li><li>International conference on continuum mechanics and related problems of analysis dedicated to 100th anniversary of academician N.I.Muskhelishvili, Tbilisi,Georgia,June 1991, — Selected presentation — International conference on continuum mechanics and related problems of analysis dedicated to 100th anniversary of academician N.I.Muskhelishvili, Tbilisi,Georgia,June 1991,</li><li>Annual Iranian mathematical conference, Mashhad, Iran, 1991, — Selected presentation — Annual Iranian mathematical conference, Mashhad, Iran, 1991,</li><li>All-union conference on differential equations and mathematical physics dedicated to 80-th anniversary of academician N.N.Bogolyubov, Ternopol, Ukraine, 1990, — Selected presentation — All-union conference on differential equations and mathematical physics dedicated to 80-th anniversary of academician N.N.Bogolyubov, Ternopol, Ukraine, 1990,</li><li>International conference on partial differential equations,Holzhau, Germany,1988, — Selected presentation — International conference on partial differential equations,Holzhau, Germany,1988,</li><li>International topological conference, Baku, 1987, — Selected presentation — International topological conference, Baku, 1987,</li><li>All-union conference on the theory of functions and differential equations dedicated to 100th anniversary of academician V.I. Smirnov, Leningrad, 1987, — Selected presentation — All-union conference on the theory of functions and differential equations dedicated to 100th anniversary of academician V.I. Smirnov, Leningrad, 1987,</li><li>All-union seminar on nonlinear problems of mathematical physics, Leningrad, 1984, — Selected presentation — All-union seminar on nonlinear problems of mathematical physics, Leningrad, 1984,</li><li>All-union conference on mathematical problems of physics, Moscow, 1984, — Selected presentation — All-union conference on mathematical problems of physics, Moscow, 1984,</li><li>All-union conference on nonlinear problems of mathematical physics, Leningrad, 1982, — Selected presentation — All-union conference on nonlinear problems of mathematical physics, Leningrad, 1982,</li><li>All-union conference on mathematical problems of physics,Moscow,1978, — Selected presentation — All-union conference on mathematical problems of physics,Moscow,1978,</li><li>International conference on partial differential equations dedicated to 75th anniversary of aca- demician I.G. Petrovski, Moscow, 1975. — Selected presentation — International conference on partial differential equations dedicated to 75th anniversary of aca- demician I.G. Petrovski, Moscow, 1975.</li></ul>
+    </section>
+  </main>
+</article>
+</body>
+</html>

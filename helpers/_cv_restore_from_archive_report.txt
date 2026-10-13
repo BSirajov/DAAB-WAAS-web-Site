@@ -1,0 +1,6 @@
+Restored from C:\dev\Archive\CV\Unified
+Completed: 2026-10-10T17:26:49
+EN SHA256 match: 78/78
+AZ SHA256 match: 78/78
+Source of truth: Archive Unified Word CVs (built from original PDF/DOC/DOCX in Archive\\CV).
+Site polish overlays (contact emails, Sevinj Associate Provost titles, meta wording) were replaced by Archive content.

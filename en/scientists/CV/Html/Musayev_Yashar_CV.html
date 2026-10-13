@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yashar Musayev — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>YASHAR MUSAYEV</h1>
+      <p class="subtitle">Dr.-Ing.<br>Head of Development, New Energy Business<br>Siemens Energy AG, Erlangen and Munich, Germany</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/yasar-musayev.jpg" alt="Yashar Musayev"></div>
+  <aside class="side">
+    <h2>Contact</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Germany</span></li></ul><div class="block"><h2>Awards &amp; recognitions</h2><div class="rule"></div><ul class="items awards"><li>Best Innovation and Export Award — Latvian state (November 2017)</li>
+<li>Customer Supplier Award — A global Japanese OEM (2017)</li>
+<li>Materialica Design + Technology Best Award, thin-film sensors Sensotect — Munich (2016 and 2014)</li>
+<li>Customer Innovation Award for engine components — A global Japanese OEM (2006)</li></ul></div><div class="block"><h2>Languages</h2><div class="rule"></div><ul class="items langs"><li>Azerbaijani (Native)</li>
+<li>German (Fluent)</li>
+<li>English (Fluent)</li>
+<li>Russian (Fluent)</li>
+<li>Turkish (Conversational)</li></ul></div>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profile</h2>
+      <div class="rule"></div>
+      <p>Yashar Musayev is head of development for new energy business at Siemens Energy AG in Erlangen and Munich, an executive post he has held since May 2020. The work covers green hydrogen, electrolysis, fuel technology, and renewable energy, with about 32 direct reports. He holds a Dr.-Ing. from Friedrich-Alexander University Erlangen-Nuremberg, from doctoral research in 1998–2001, and a Dipl.-Ing. in mechanical engineering technology from the Technical University of Azerbaijan (1984–1991), with distinction. From 2005 to 2020 he worked at Schaeffler AG, including as senior vice president and head of the Competency Center for Surface Technology from 2015 to 2020.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>Work experience</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Siemens Energy AG, Erlangen and Munich, Germany. About 32 direct reports. Reporting line: senior vice president</h3>
+          <span class="when">May 2020–present</span>
+        </div>
+        <p class="role">Head of Development, New Energy Business, executive (OFK)</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Schaeffler AG, Herzogenaurach, Germany. Reporting line: executive board, chief technology officer. 12 direct and 100 indirect reports</h3>
+          <span class="when">September 2015–January 2020</span>
+        </div>
+        <p class="role">Senior vice president and head of the Competency Center for Surface Technology</p>
+        <ul><li>Competency Center for Surface Technology</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>SIA Schaeffler Baltic, Riga, Latvia. Parallel role. Acquisition of Naco Technologies, Riga, in December 2015</h3>
+          <span class="when">February 2016–December 2018</span>
+        </div>
+        <p class="role">Chief executive officer</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Schaeffler AG, Herzogenaurach, Germany</h3>
+          <span class="when">September 2012–August 2015</span>
+        </div>
+        <p class="role">Director of the Coating Center</p>
+        <ul><li>Competency Center for Surface Technology</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Schaeffler AG</h3>
+          <span class="when">October 2009–August 2012</span>
+        </div>
+        <p class="role">Team lead and expert</p>
+        <ul><li>Surface Technology Department</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Schaeffler AG</h3>
+          <span class="when">December 2005–September 2009</span>
+        </div>
+        <p class="role">Project leader, setup of the Coating Center</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>H-O-T Härte- und Oberflächentechnik GmbH &amp; Co. KG, Nuremberg, Germany</h3>
+          <span class="when">December 2001–November 2005</span>
+        </div>
+        <p class="role">Head of research and development</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Friedrich-Alexander University Erlangen-Nuremberg, Germany</h3>
+          <span class="when">April 2000–June 2001</span>
+        </div>
+        <p class="role">Research associate</p>
+        <ul><li>Department for Design Technology</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Autostern, Baku, Azerbaijan. Joint-venture partner of Daimler AG</h3>
+          <span class="when">September 1998–March 2000</span>
+        </div>
+        <p class="role">Plant manager</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Technical University of Azerbaijan, Baku, Azerbaijan</h3>
+          <span class="when">April 1995–June 1997</span>
+        </div>
+        <p class="role">Research engineer and assistant</p>
+        <ul><li>Department of Mechanical Engineering</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Technical University of Azerbaijan, Baku, Azerbaijan</h3>
+          <span class="when">September 1991–March 1995</span>
+        </div>
+        <p class="role">Assistant professor and instructor</p>
+        <ul><li>Department of Mechanical Engineering</li></ul>
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Education</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Dr.-Ing.</h3>
+          <span class="when">September 1998–April 2001</span>
+        </div>
+        <p>Engineering technology</p><p>Friedrich-Alexander University Erlangen-Nuremberg, Germany</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>DAAD scholarship</h3>
+          <span class="when">October 1997–October 1998</span>
+        </div>
+        <p>Friedrich-Alexander University Erlangen-Nuremberg, Germany</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Dipl.-Ing.</h3>
+          <span class="when">September 1984–June 1991</span>
+        </div>
+        <p>Mechanical engineering technology, with distinction. The period includes mandatory military service in a tank division, June 1985–June 1988</p><p>Technical University of Azerbaijan, Baku, Azerbaijan</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>International development program for top managers</h3>
+          <span class="when">2016–2020</span>
+        </div>
+        <p>Schaeffler. South Korea, the United States, and Germany</p>
+      </article>
+    </section><section class="sec metrics">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Research metrics</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>Inventions and patents since 2005 — More than 40 — Self-reported</li><li>National and international publications and lectures since 2005 — 150 — Self-reported</li></ul>
+    </section>
+  </main>
+</article>
+</body>
+</html>

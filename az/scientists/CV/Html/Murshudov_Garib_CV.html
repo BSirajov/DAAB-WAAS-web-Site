@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qərib Mürşüdov — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>QƏRIB MÜRŞÜDOV</h1>
+      <p class="subtitle">PhD<br>Qrup rəhbəri<br>MRC Molekulyar Biologiya Laboratoriyası, Kembric, Birləşmiş Krallıq</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/qerib-mursudov.jpg" alt="Qərib Mürşüdov"></div>
+  <aside class="side">
+    <h2>Əlaqə</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Birləşmiş Krallıq</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M3.5 6.5h17a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm8.5 6.1L4.7 8.2v7.8h14.6V8.2L12 12.6zm0-1.5 7.1-4.1H4.9L12 11.1z"/></svg><span><a href="mailto:garib@mrc-lmb.cam.ac.uk">garib@mrc-lmb.cam.ac.uk</a></span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zm0 1.5c1.7 0 3.3.6 4.5 1.5H7.5A7.9 7.9 0 0 1 12 4zm-6.6 3h13.2c.5.8.9 1.7 1.1 2.7H4.3c.2-1 .6-1.9 1.1-2.7zM4.2 11.2h15.6c0 .3.1.6.1.9s0 .6-.1.9H4.2c0-.3-.1-.6-.1-.9s0-.6.1-.9zm.1 3.6h15.4c-.2 1-.6 1.9-1.1 2.7H7.5c1.2.9 2.8 1.5 4.5 1.5a7.9 7.9 0 0 0 4.5-1.5H5.4c-.5-.8-.9-1.7-1.1-2.7z"/></svg><span><a href="http://www2.mrc-lmb.cam.ac.uk/groups/murshudov/">http://www2.mrc-lmb.cam.ac.uk/groups/murshudov/</a></span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M10.5 13.5a3.5 3.5 0 0 0 5 0l2.1-2.1a3.5 3.5 0 0 0-5-5L11.4 7.6l1.1 1.1 1.2-1.2a2 2 0 1 1 2.8 2.8l-2.1 2.1a2 2 0 0 1-2.8 0l-1.1 1.1zm3-3a3.5 3.5 0 0 0-5 0L6.4 12.6a3.5 3.5 0 0 0 5 5l1.2-1.2-1.1-1.1-1.2 1.2a2 2 0 1 1-2.8-2.8l2.1-2.1a2 2 0 0 1 2.8 0l1.1-1.1z"/></svg><span>Struktur biologiyası; kristalloqrafiya</span></li></ul><div class="block"><h2>Mükafatlar və təltiflər</h2><div class="rule"></div><ul class="items awards"><li>Azərbaycanın əməkdar elm xadimi</li>
+<li>Wellcome Trust baş fellowship-i — Wellcome Trust</li></ul></div>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profil</h2>
+      <div class="rule"></div>
+      <p>Qərib Mürşüdov 2011-ci ildən Kembricdəki MRC Molekulyar Biologiya Laboratoriyasında qrup rəhbəridir və Bakıda Molekulyar Biologiya və Biotexnologiyalar İnstitutunda laboratoriya müdiridir. 1989–1992-ci illərdə Moskvanın Kristalloqrafiya İnstitutunda PhD dərəcəsi alıb. Dissertasiya Micrococcus lysodeikticus katalazasının 1,5 Å dəqiqliklə üçölçülü quruluşudur. 1980–1985-ci illərdə Bakı Dövlət Universitetində tətbiqi riyaziyyat üzrə birinci dərəcə alıb. Əvvəl York Universitetində Wellcome Trust-ın baş elmi işçisi və universitet elmi işçisi olub.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>İş təcrübəsi</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>MRC Molekulyar Biologiya Laboratoriyası, Kembric, Birləşmiş Krallıq</h3>
+          <span class="when">2011–hazırda</span>
+        </div>
+        <p class="role">Qrup rəhbəri</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Molekulyar Biologiya və Biotexnologiyalar İnstitutu, Elm və Təhsil Nazirliyi, Bakı, Azərbaycan</h3>
+          <span class="when">2011–hazırda</span>
+        </div>
+        <p class="role">Laboratoriya müdiri</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>York Struktur Biologiya Laboratoriyası, York Universiteti, Birləşmiş Krallıq</h3>
+          <span class="when">2008–2011</span>
+        </div>
+        <p class="role">Wellcome Trust universitet elmi işçisi</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kimya departamenti, York Universiteti</h3>
+          <span class="when">2001–2008</span>
+        </div>
+        <p class="role">Wellcome Trust baş elmi işçisi</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kimya departamenti, York Universiteti</h3>
+          <span class="when">1996–2001</span>
+        </div>
+        <p class="role">BBSRC postdoktorantı</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kimya departamenti, York Universiteti</h3>
+          <span class="when">1993–1996</span>
+        </div>
+        <p class="role">Avropa Komissiyasının postdoktorantı</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kristalloqrafiya İnstitutu, Moskva, Rusiya</h3>
+          <span class="when">1987–1993</span>
+        </div>
+        <p class="role">Tədqiqatçı, PhD təhsili daxil olmaqla</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Fizika İnstitutu, Bakı, Azərbaycan</h3>
+          <span class="when">1985–1987</span>
+        </div>
+        <p class="role">Tədqiqatçı</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Təhsil</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>PhD</h3>
+          <span class="when">1989–1992</span>
+        </div>
+        <p>Kristalloqrafiya və kristallofizika nəzəriyyəsi. Dissertasiya: Micrococcus lysodeikticus katalazasının 1,5 Å dəqiqliklə üçölçülü quruluşu</p><p>Kristalloqrafiya İnstitutu, Moskva, Rusiya</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Birinci dərəcə</h3>
+          <span class="when">1980–1985</span>
+        </div>
+        <p>Tətbiqi riyaziyyat. Layihə: Stekloff tipli tənliklərin spektral təhlili</p><p>Bakı Dövlət Universiteti, Bakı, Azərbaycan</p>
+      </article>
+    </section><section class="sec teaching">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Tədris</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>2001–2011 — Qabaqcıl statistika — Riyaziyyat departamenti, York Universiteti</li><li>2011 — Hesablama kimyası — Kimya departamenti, York Universiteti</li><li>2013–2023 — Hesablama struktur biologiyası — Molekulyar Biologiya və Biotexnologiyalar İnstitutu, AMEA, Azərbaycan</li><li>2019–2023 — Biologiyanın müasir problemləri, ildə üç və ya dörd mühazirə — Molekulyar Biologiya və Biotexnologiyalar İnstitutu, AMEA</li><li>2022–2023 — Bioloqlar üçün statistika — Molekulyar Biologiya və Biotexnologiyalar İnstitutu, AMEA</li></ul>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Nəşrlər</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Kitab fəsilləri</h3>
+<p class="pub-item">1. Low Resolution Refinement of Atomic Models Against Crystallographic Data. Nicholls RA, Kovalevskiy O, Murshudov GN, in Method in Molecular Biology, v1607, in Protein Crystallography. Wlodawer, Dauter and Jaskolskiy eds, pp565-593 (2017)</p>
+<p class="pub-item">2. Low resolution refinement of atomic models against crystallographic data. Nicholls R.A., Kovalevskiy O. and Murshudov G.N. Methods in Molecular Biology: Protein Crystyallography. 565-593 (2017)</p>
+<p class="pub-item">3. Nicholls RA, Long F and Murshudov GN &quot;Recent Advances in Low Resolution Refinement Tools in REFMAC5&quot; in &quot;Advancing Methods for Biomolecular Crystallography&quot; 231-258 (2013)</p>
+<p class="pub-item">4. Vagin AA., Murshudov GN. Organisation of prior chemical knowledge for macromolecular structure refinement. Newsletter of Commission of Crystallographic computing, 2004;4:59-73</p>
+<p class="pub-item">5. Dauter Z, Murshudov GN, Wilson KS. Refinement at atomic resolution. In Rossmann MG, Arnold E editors. International Table for Crystallographers vol F. Crystallography of biological macromolecules. 2001:</p>
+<p class="pub-item">6. Vagin AA, Murshudov GN, Strokopytov BV. The BLANC: program suite for protein crystallography. CCP4 newsletter, 1997 January:33;25-30</p>
+<p class="pub-item">7. Murshudov GN, Dodson EJ. Simplified error estimation a la Cruickshank in macromolecular crystallography. CCP4 Newsletters, 1997 January:33:31-39</p>
+<p class="pub-item">8. Bravo J, Fita I, Gouet P, Jouve HM, Melik-Adamyan WR, Murshudov GN. Structure of catalases. In: Scandalios JG editor. Oxidative stress and the molecular biology of Antioxidant Defenses. Cold Spring Harbor Laboratory Press 1997</p>
+<p class="pub-item">9. Murshudov GN, Davies GJ, Isupov M, Krzywda S, Dodson EJ. The effect of overall anisotropic scaling in macromolecular refinement. CCP4 Newsletters 1998;35:37-42</p>
+<p class="pub-item">10. Murshudov GN, Vagin AA, Dodson EJ. Application of Maximum likelihood methods for macromolecular refinement. In Dodson E, Moore M, Ralph A, Bailey S editors. Proceedings of CCP4 study weekend on Macromolecular refinement, 1996;93-104 List of software</p>
+<p class="pub-item">11. Warsmanage R, Murshudov GN “EMDA – a program for maximum likelihood fitting map manupilation, map to map, model to map fitting designed for cryoEM modelling”, 2019-present</p>
+<p class="pub-item">12. Long F, Murshudov GN. &quot;AceDRG - a program for designing small compound description&quot;, 2015</p>
+<p class="pub-item">13. Long F, Murshudov GN &quot;libg - a program for extraction invariant features of RNA/DNA&quot;, 2014-present</p>
+<p class="pub-item">14. Vagin AA, Lebedev A and Murshudov GN. “REFMAC a maximum likelihood program for Macromolecular crystal structure refinement” 1997-present</p>
+<p class="pub-item">15. Long F, Vagin AA, Young P and Murshudov GN “BALBES – an automatic structure solution pipileine” 2006-present</p>
+<p class="pub-item">16. Vagin AA, Long F and Murshudov GN “Database of Macromolecular structures and domaisn” 2006-present</p>
+<p class="pub-item">17. Vagin AA and Murshudov GN “Ligand database – organization of prior chemical knowledge for Macromolecular crystal structure solution and refinement” 2000-present</p>
+<p class="pub-item">18. Young P, Long F, Vagin AA, Lebedev A and Murshudov GN. “Webserver for macromolecular crystallography”, 2007-2012</p>
+<p class="pub-item">19. Young P, Lebedev A, Murshudov GN JLigand – a graphical interface for manipulation of ligands geometry, 2009-present</p>
+<p class="pub-item">20. Tykac M. Murshudov GN. ProSHADE – SO3 Fourier transformation based software for classification and manipulation of three-dimensional density maps and coordinates. 2018- present</p>
+<p class="pub-item">21. Yamashita, K., Murshudov GN., SERVALCAT – Bayesian statistics based software for refinement of atomic models against cryoEM maps.</p>
+<p class="pub-item">22. Babai K, Long F and Murshudov GN. MetalCoordAnalysis – Prior probability distribution for metal environment learnt from COD and appied to the PDB. 2023-present</p>
+<h3 class="pub-sub">Rəylənmiş (peer-reviewed) jurnal məqalələri</h3>
+<p class="pub-item">1. Community recommendations on cryoEM data archiving and validation. Kleywegt GJ,… Murshudov GN, Velankar S (2024) IUCRj, v11, 140-151</p>
+<p class="pub-item">2. A redox switch allows binding of Fe(II) and Fe(III) ions in the cyanobacterial iron-binding protein FutA from Prochlorococcus. (2024) Bolton R, … Murshudov GN.,. Tews I. PNAS, V121, e2308478121</p>
+<p class="pub-item">3. Neutron crystallographic refinement with REFMAC5 from the CCP4 suite (2023), Catapano L., Long F., Yamashita K., Nicholls RA, Steiner R and Murshudov GN (2023), Acta Cryst D79, 1056-1070</p>
+<p class="pub-item">4. GEMMI and Servalcat restrain REFMAC5. Yamashita K, Wojdyr M, Long F, Nicholls RN and Murshudov GN. (2023), Acta Cryst. D79, 368-373</p>
+<p class="pub-item">5. Interdigitated immunoglobulin arrays form the hyperstable surface layer of the extremophilic bacterium Deinococcus radiodurans. von Kügelgen A, van Dorst S, Yamashita K, Sexton TL, Tocheva EI, Murshudov G, Alva V, Bharat TAM. (2023) PNAS, 120, e2215808120</p>
+<p class="pub-item">6. The CCP4 suite: integrative software for macromolecular crystallography. Agirre J,…,Murshudov GN,… (2023). Acta Cryst. D79, 449-461</p>
+<p class="pub-item">7. EMDA: a Python package for electron microscopy data analysis. Warshmanage, R, Yamashita, K. &amp; Murshudov, G.N. (2022) J. Structural Biology, 214, 107826</p>
+<p class="pub-item">8. Cryo-EM single particle structure refinement and map calculation using Servalcat. Yamashita, K., Palmer, C. M., Burnley, T. &amp; Murshudov, G. N. (2021). Acta Cryst. D77, 1282-1291.</p>
+<p class="pub-item">9. Bipartite binding and partial inhibition links DEPTOR and mTOR in a mutually antagonistic embrace. Heimhalt, M., Berndt, A., Wagsaff, J., Anandapadamanaban, M., Perisic, O., Maslen, S., McLauglin, S., Yu, C.W-H.,Masson, G.R., Boland, A., Yamashita, K., Murshudov, G.N., Skehel, M., Freund, S.M., Williams, R.L. eLife, 10, e68799 (2021)</p>
+<p class="pub-item">10. The missing link: covalent linkages in structural models. Nicholls, R.A., Wojdyr, M., Joosten, R.P., Catapano, L., Long, F., Fischer, M., Emsley, P., Murshudov, G.N. Acta Crystallographica, D77, 727-745 (2021)</p>
+<p class="pub-item">11. Modelling covalent linkages in CCP4. Nicholls, R.A., Joosten, R.P., Long, F.,Wojdyr, M., Lebedev, A., Krissinel, E., Catapano, L., Fischer, M., Emsley, P., Murshudov, G.N. Acta Crystallographica, D77, 712-726 (2021)</p>
+<p class="pub-item">12. Single-particle cryo-EM at atomic resolution. Nakane T, Nakane, T., Kotecha, A., Sente, A., McMullan, G., Masiulis, S., Brown, P. M. G. E., Grigoras, I. T., Malinauskaite, L., Malinauskas, T., Miehling, J., Yu, L., Karia, D., Pechnikova, E. V., de Jong, E., Keizer, J., Bischoff, M., McCormack, J., Tiemeijer, P., Hardwick, S. W., Chirgadze, D. Y., Murshudov, G., Aricescu, A. R. and Scheres, S. H. W. Nature, 587, 152-156 (2020)</p>
+<p class="pub-item">13. Local and global analysis of macromolecular Atomic Displacement Parameters. Masmaliyeva RC, Babai K. and Murshudov GN Acta Crystallographica D76, 926-937 (2020)</p>
+<p class="pub-item">14. Predictive power of data-processing statistics. Vollmar M, Parkhurst JM, Jaques D, Basle A, Murshudov GN, Waterman D, Evans G. IUCrJ, 7, 342-354 (2020)</p>
+<p class="pub-item">15. On the complementarity of X-ray and NMR data. Schirò, Antonio; Carlon, Azzurra; Parigi, Giacomo; Murshudov, Garib; Calderone, Vito; Ravera, Enrico; Luchinat, Claudio; Journal of Structural Biology: X (2020)</p>
+<p class="pub-item">16. Supercell refinement: a cautionary tale. Lovelace J, Petricek V, Murshudov G, Borgstahl GEO. Acta Crystallographica, D75, 852-860 (2019)</p>
+<p class="pub-item">17. Analysis and validation of macromolecular B values. Masmaliyeva RC and Murshudov GN. Acta Crystallographica D75, 505-518 (2019)</p>
+<p class="pub-item">18. DNA topoisomerase inhibitors: trapping a DNA-cleaving machine in motion. BAx BD, Murshudov G, Maxwell A, Germe T. Journal of Molecular Biology, 431, 3427-3449 (2019)</p>
+<p class="pub-item">19. Joint X-ray/NMR structure refinement of multidomain/multisubunit systems. Carlon A, Ravera E, Parigi G, Murshudov GN and Luchinat C. Journal of biomolecular NMR, 265-278 (2019)</p>
+<p class="pub-item">20. Pathological macromolecular crystallographic data affected by twinning, partial-disorder and exhibiting multiple lattices for testing of data processing and refinement tools. Campeotto I, Lebedev A, Schreurs AMM, Kroon-Batenburg KMJ, Lowe E, Philips SEV, Murshudov GN and Pearson AR Scientific reports 8, 14876 (2018)</p>
+<p class="pub-item">21. Current approaches for the fitting and refinement of atomic models into cryo-EM maps using CCP-EM. Nicholls AN, Tykac M, Kovalevskiy, Murshudov GN. Acta Crystallographica D74, 492-505 (2018)</p>
+<p class="pub-item">22. Overview of refinement procedures within REFMAC5: utilizing data from different sources. Kovalevskiy O, Nichols AN, Long F, Carlon A, Murshudov GN. Acta Crystallographica D74, 215-227 (2018)</p>
+<p class="pub-item">23. Cryo-EM structures of tau filaments from Alzheimer&#x27;s disease. Fitzpatrick, AWP, Falcon B, He S, Murzin AG, Murshudov GN, Garringer HJ, Crowther RA, Ghetti BF, Goedert M, Scheres SHW. Nature, 547, 185-190 (2017)</p>
+<p class="pub-item">24. AUSPEX: a graphical tool for X-ray diffraction data analysis. Thorn A, Parkhurst J, Emsley P, Nicholls RA, Volmar M, Evans G and Murshudov GN Acta Cryst. D73, 729-737 (2017)</p>
+<p class="pub-item">25. Background modelling of diffraction data in the presence of ice rings. Parkhurst JM, Thorn, Vollmar V, Winter G, Waterman DG, Fuentes-Montero L, Gildea RJ, Murshudov GN and Evans G. IUCrJ, 5, 626-638 (2017)</p>
+<p class="pub-item">26. ACEDRG: A stereo-chemical description generator for ligands. Long F., Nicholls R.A., Emsley P., Grazulis S., Merkys A., Vatikus A. and Murshudov G.N. Acta Cryst. D73, 112- 122 (2017)</p>
+<p class="pub-item">27. Validation and extraction of stereochemical information from small molecular databases.Long F., Nicholls R.A., Emsley P., Grazulis S., Merkys A., Vatikus A. and Murshudov G.N. Acta Cryst. D73, 103-111 (2017)</p>
+<p class="pub-item">28. Data mining of Fe(II) and Fe(III) bond valence parameters, and their relevance for macromolecular crystallography. Zheng, H., Langner, K.M., Shields, G.P., Hou, J., Kowiel, M., Allen, F.H., Murshudov, G. and Minor, W., Acta Cryst D53, 316-325 (2017)</p>
+<p class="pub-item">29. Automated refinement of macromolecular structures at low resolution using prior information. Kovalevskij, O, Nicholls, RA and Murshudov GN, Acta Cryst, D72, 1149-1161 (2016)</p>
+<p class="pub-item">30. Refinement of Atomic Structures Against cyro-EM maps. Murshudov GN. Methods in Enzymology, Crowther A ed. 579, 277-305 (2016)</p>
+<p class="pub-item">31. Robust background modelling in DIALS. Parkhurst J, Winter G, Waterman DG, Fuentos- Montero L, Gildea R, Murshudov GN and Evans G. 49, J. Appl. Cryst. 1-10 (2016)</p>
+<p class="pub-item">32. Outcome of the First wwPDB/CCDC/D3R Ligand Validation Workshop. Adams, P.D., Aertgeerts, K.,. Murshudov, G.N.,. Structure. 24, 502-508 (2016)</p>
+<p class="pub-item">33. How to tackle protein structural data from solution and solid state: An integrated approach. Carlon A, Ravera, E., Andralojc, W., Parigi, G., Murshudov, G.N. and Luchinat, C. Progress in Nuclear Magnetic Resonance Spectroscopy. V92-93, 54-70 (2016)</p>
+<p class="pub-item">34. Structures of actin-like ParM filaments show architecture of plasmid-segregating spindles. Lowe J, Bharat T, Murshudov G and Sachse C. Nature, 523, 106-110, 2015</p>
+<p class="pub-item">35. MutS/MutL crystal structure reveals that the mutS sliding clamp loads MutL onto DNA. Groothuizen FS, Winkler I, Cristóvão M, Fish A, Winterwerp HHK, Reumer A, Marx A, Hermans N, Nicholls RA, Murshudov GN, Lebbink JH, Friedhoff P, Sixma TK. eLife, 4, e06744 (2015)</p>
+<p class="pub-item">36. Data to knowledge; how to get meaning from your result. Berman HM, Gabani MJ, Groom CR, Johnson JE, Murshudov GN, Nicholls RA, Redy V, Schwede T, Zimmerman MD, Westbrook J, Minor W IUCRj 2, 45-58 (2015)</p>
+<p class="pub-item">37. Tools for macromolecular model building and refinement into electron cryo-microscopy reconstructions. Brown A, Long F, Nicholls RA, Toots J, Emsley P and Murshudov G. Acta Cryst. D70, 136-153 (2015)</p>
+<p class="pub-item">38. Structure of the yeast mitochondrial large ribosomal subunit. Amunts, A., Brown, A., Bai, X. C., Llacer, J. L., Hussain, T., Emsley, P., Long, F., Murshudov, G., Scheres, S. H. &amp; Ramakrishnan, V. Science 343, 1485-1489 (2014)</p>
+<p class="pub-item">39. Structure of the large ribosomal subunit from human mitochondria. Brown, A., Amunts, A., Bai, X. C., Sugimoto, Y., Edwards, P. C., Murshudov, G., Scheres, S. H. &amp; Ramakrishnan, V. Science 346, 718- 722 (2014)</p>
+<p class="pub-item">40. Initiation of translation by cricket paralysis virus IRES requires its translocation in the ribosome. Fernandez, I. S., Bai, X. C., Murshudov, G., Scheres, S. H. &amp; Ramakrishnan, V. Cell 157, 823-831 (2014)</p>
+<p class="pub-item">41. The PDB_REDO server for macromolecular structure model optimization. Joosten, R. P., Long, F., Murshudov, G. N. &amp; Perrakis, A. IUCrJ. 1, 213-220 (2014)</p>
+<p class="pub-item">42. Conformation-independent structural comparison of macromolecules with ProSMART, Nicholls, R. A., Fischer, M., McNicholas, S. &amp; Murshudov, G. N. Acta Cryst. D70, 2487-2499 (2014)</p>
+<p class="pub-item">43. Simultaneous use of solution NMR and X-ray data in REFMAC5 for joint refinement/detection of structural differences. Rinaldelli, M; Ravera, E; Calderone, V; Parigi, G; Murshudov, GN; Luchinat, C. Acta Cryst, D70, 958-967, (2014)</p>
+<p class="pub-item">44. High-resolution noise substitution to measure overfitting and validate resolution in 3D structure determination by single particle electron cryomicroscopy. Chen S, McMullan, G, Faruqi, AR, Murshudov, GN, Short, JM, Scheres, SHW, Henderson, R. Ultramicroscopy; 134, 24-35 (2013)</p>
+<p class="pub-item">45. How good are my data and what is the resolution? Evans, PR and Murshudov, GN. Acta Cryst: D69, 1204-1214 (2013)</p>
+<p class="pub-item">46. Low-resolution refinement tools in REFMAC5 Nicholls RA, Long F and Murshudov GN. Acta Cryst. D68, 404-417, (2012)</p>
+<p class="pub-item">47. PDB_REDO: constructive validation, more than just looking for errors. Joosten RJ, Joosten K, Murshudov GN and Perrakis A. Acta Cryst. D68; 484-496 (2012)</p>
+<p class="pub-item">48. JLigand: a graphical tool for CCP4 template restraint library. Lebedev AA, Young P, Isupov M, Moroz OV, Vagin AA and Murshudov GN. Acta Cryst. D68, 431-440 (2012)</p>
+<p class="pub-item">49. Structural characterization of H. pylori dethiobiotin synthetase reveals differences between family members. Porebski PJ, Klimecka M, Chruszcz M, Nicholls RA, Murzyn M, Cuff ME, Xu X, Cymborowski M, Murshudov GN, Savchenko A, Edwards A, and Wladek Minor W Febs Letters. 1093-1105 (2012)</p>
+<p class="pub-item">50. Structural flexbility of the dengue virus receptor CLEC5A: implications for ligand binding and signalling. Watson, A. A., Lebedev, A. A., Hall, B. A., Fenton-May, A., Vagin, A. A., Dejnirattisai, W., Felce, J., Mongkolsapaya, J., Screaton, G. R., Murshudov, G. N. &amp; O&#x27;Callaghan, C. A. JBC, 24208-24218 (2011)</p>
+<p class="pub-item">51. Heme-catalases. Mate MJ, Murshudov G, Bravo J, Melik-Adamyan W, Lowen PC and Fit I. Encyclopedia of Organic and Inorganic Chemistry. R. A. Scott (Ed.) 1-18</p>
+<p class="pub-item">52. Structural flexbility of the dengue virus receptor CLEC5A: implications for ligand binding and signalling. Watson, A. A., Lebedev, A. A., Hall, B. A., Fenton-May, A., Vagin, A. A., Dejnirattisai, W., Felce, J., Mongkolsapaya, J., Screaton, G. R., Murshudov, G. N. &amp; O&#x27;Callaghan, C. A. Annual Congress of the British-Society-for-Immunology, 101-101 (2011)</p>
+<p class="pub-item">53. Evaluating the solution from MrBUMP and BALBES. Keegan R, Long F, Fazio F, Winn M and Murshudov G Acta Cryst. D67, 313-323 (2011)</p>
+<p class="pub-item">54. Some statistical properties of the crystallographic reliability index – Rfactor. Murshudov GN. Applied and Computational Mathematics. An International Journal. 10 (2011)</p>
+<p class="pub-item">55. REFMAC5 for the Refinement of Macromolecular Crystal Structures. Murshudov GN, Skubak P, Lebedev AA, Pannu NS, Steiner RA, Nicholls RA, Winn MD, Long F, Vagin AA Acta Cryst:, D67, 355-367 (2011)</p>
+<p class="pub-item">56. Overview of CCP4 suite and current developments. Winn MD, Ballard CC, Cowtan KD, Dodson EJ, Emsley P, Evans PR, Keegan RN, Krissinel EB, Leslie AGW, McCoy A, McNicholas SJ, Murshudov GN, Pannu NS, EPotterton EA, Powell HR, Read RJ, Vagin A and Wilson KS. Acta Cryst: D67, 235-242 (2011)</p>
+<p class="pub-item">57. A redesigned database of three-dimensional protein structures for Reuse in Macromolecular Crystallpgraphy. Vagin, AA, Long F and Murshudov GN. Proceedings of the National Academy of Sciences of Azerbaijan Republic (Biological Sciences) 168-176 (2010)</p>
+<p class="pub-item">58. A multivariate likelihood SIRAS function for phasing and model refinement. Skubak, P, Murshudov GN and Pannu NP Acta Cryst:2D65, 1051-1061 (2009)</p>
+<p class="pub-item">59. Conditional Restraints&quot;: Restraining the Free Atoms in ARP/wARP. Mooij WTM, Cohen SX, Joosten K, Murshudov GN and Perrakis A. Structure 17, 183-189 (2009)</p>
+<p class="pub-item">60. BALBES: a molecular replacement pipeline. Long F, Vagin A, Young P, Murshudov GN. Acta Cryst D64, 125-134 (2008)</p>
+<p class="pub-item">61. Model preparation in MOLREP and examples of model improvement using X-ray data. Lebedev A, Vagin A, Murshudov GN. Acta Cryst. D64, 33-39 (2008)</p>
+<p class="pub-item">62. ARP/wARP and molecular replacement: the next generation. Cohen SX, Jelloul MB, Long F, Vagin A, Knipscheer P, Lebbink J, Sixma TK, Lamzin VS, Murshudov GN and Perrakis A Acta Cryst. D64, 49-60 (2008)</p>
+<p class="pub-item">63. Surprises and pitfalls arising from (pseudo)symmetry. Zwart PH, Gross-Kunstlve RW, Lebedev AA, Murshudov GN and Adam PD. Acta Cryst. D64, 99-107 (2008)</p>
+<p class="pub-item">64. The structures and electronic configuration of compound I intermediates of Helicobacter pylori and Penicillium vitale catalases determined by X-Ray crystallography and QM/MM DFT calculations. Alfonso-Prieto M, Borovik A, Carpena X, Murshudov G, Melik-Adamyan W, Fita I, Rovira C and Loewen PC. JACS, 129(14), 4193-4205 (2007)</p>
+<p class="pub-item">65. Intensity statistics in twinned crystals with examples from the PDB. Lebedev, AA, Vagin AA and Murshidov, GN Acta Cryst. D62, 83-95 (2006)</p>
+<p class="pub-item">66. Heme-catalases. Mate MJ, Murshudov G, Bravo J, Melik-Adamyan W, Lowen PC and Fit I. Encyclopedia of Organic and Inorganic Chemistry. eds A. Messerschmidt, R. Huber, T. Poulas, K. Wieghardt, M. Cygler and W. Bode</p>
+<p class="pub-item">67. SPINE workshop on automated X-ray analysis: a progress report. Bahar M, Ballard C, Cohen SX, Cowtan KD, Dodson EJ, Emsley P, Esnouf RM, Keegan R, Lamzin V, Langer G, Levdikov V, Long F, Meier C, Muller A, Murshudov GN, Perrakis A, Siebold C, Stein N, Turkenburg MGW, Vagin AA, Winn M, Winter G, Wilson KS. Acta Cryst. D62, 1170-1183 (2006)</p>
+<p class="pub-item">68. Variable role of ions in two drug interaction complexes of DNA. Vallis, N., Steiner, RA, Wright, G, Murshudov, GN, Subirana JA. J.Biol.Inorg.Chem 10, 476-482 (2005)</p>
+<p class="pub-item">69. Structures of Plasmodium falciparum purine nucleoside phosphorylase complexed with sulfate and its natural substrate ionosine. Schnick, C., Robien, MA, Dodson, EJ, Murshudov, GN, Anderson, L, Luft, JR, Mehlin, C., Hol, WGJ, Branniganm JA and Wilkinson AJ. Acta Cryst., D61, 1245-1254 (2005)</p>
+<p class="pub-item">70. REFMAC5 dictionary: organisation of prior chemical knowledge and guidelines for its use. Vagin, AA, Steiner, RS, Lebedev, AA, Potterton, L, McNicholas, S, Long, F and Murshudov, GN. Acta Cryst. D60, 2184-2195 (2004)</p>
+<p class="pub-item">71. Direct incorporation of experimental phase information in model refinement. Skubak P, Murshudov GN, Pannu NS. Acta Cryst. D60, 2196-2201 (2004)</p>
+<p class="pub-item">72. Developments in the CCP4 molecular-graphics project. Potterton L, McNicholas S, Krissinel E, Gruber J, Cowtan K, Emsley P, Murshudov GN, Cohen S, Perrakis A, Noble M Acta Cryst., D60, 2288-2294 (2004)</p>
+<p class="pub-item">73. Crystallization and preliminary X-ray diffraction studies of a fungal hydrolase from Ophiostoma novo-ulmi. Isupov MN, Brindley AA, Hollingsworth EJ, Murshudov GN, Vagin AA, Littlechild JA. Acta Cryst. D60, 1879-1882 (2004)</p>
+<p class="pub-item">74. DNA variability in five crystal structures of d(CGCAATTGCG). Valls N, Wright G, Steiner RA, Murshudov GN, Subirana JA. Acta Cryst., D60, 680-685 (2004)</p>
+<p class="pub-item">75. Macromolecular TLS refinement in REFMAC at moderate resolutions. Winn MD, Murshudov GN, Papiz MZ. Methods in Enzymology, 374, 300-321 (2003)</p>
+<p class="pub-item">76. Fisher’s information matrix in maximum likelihood molecular refinement. Steiner R, Lebedev, A, Murshudov GN. Acta Cryst. D59, 2114-2124 (2003)</p>
+<p class="pub-item">77. Face-to-face and edge-to-edge pi-pi interaction in a synthetic DNA hairpin with stilbenediether linker. Egli, M, Tereshko, V, Murshudov, GN, Sanishvili, R, Liu, XY, Lewis FD. JACS, 125, 10842-10849 (2003)</p>
+<p class="pub-item">78. The structure of NADH in the enzyme of dTDP-D-glucose dehydratase (RmIB). Beis, K, Allard, STM, Hegeman, AD, Murshudov, G, Philip, D, Naismith, JH. JACS, 125, 11872-11878 (2003)</p>
+<p class="pub-item">79. The structures of Micrococcus lysodeikticus catalase, its ferryl intermediate (compound II) and NADPH complex. Murshudov GN, Grebenko AI, Brannigan JA, Antson AA, Barynin VV, Dodson GG, Dauter Z, Wilson KS, Melik-Adamyan WR. Acta Cryst. D58, 1972-1982 (2002)</p>
+<p class="pub-item">80. Substrate distortion by a beta-mannanase: Snapshot of the Michelis and covalent intermediate complexes suggest a B2,5 conformation for the transition state. Ducros VMA, Zeche DL, Murshudov GN, Gilbert HJ, Szabo L, Stoll D, Withers SG, Davies GJ. Angew Chem Int ed. 41(15), 2824 (2002)</p>
+<p class="pub-item">81. Structural origin of the functional divergence of human insulin like growth factor-I and insulin. Biochemistry. Brzozowski AM, Dodson EJ, Dodsnon GG, Murshudov GN, Verma C, Turkenburg JP, de Bree FM, Dauter Z. 41(30), 9389-9397 (2002)</p>
+<p class="pub-item">82. NMR trial model: experiences with colicin immunity protein IM7 and the p85 alpha terminal SH2-peptide complex. Pauptit RA, Dennis CA, Derbyshire DJ, Breeze AL, Weston SA, Roswell S, Murshudov GN. Acta Cryst. D57, 1397-1404 (2001)</p>
+<p class="pub-item">83. Structure of Bacillus cell fate determinant SpoIIAA in phosphorilated and unphsphorilated forms. Seavers PR, Lewis RJ, Branningan JA, Verschuren KHG, Murshudov GN, Wilkinson AJ. Structure 9(7), 605-614 (2001)</p>
+<p class="pub-item">84. X-ray structure of bovine pancreatic phospholipase A(2) at atomic resolution. Steiner RA, Rozeboom HJ, de Vries A, Kalj KH, Murshudov GN, Wilson KS, Dijkstra BW. Acta Cryst D57, 516-526 (2001)</p>
+<p class="pub-item">85. Crystal structure of GerE, the ultimate transcriptional regulator of spore formation in Bacillus. Ducros VMA, Lewis RJ, Verma CS, Dodson EJ, Leonard G, Turkenburg JP, Murshudov GN, Wilkinson AJ, Brannigan JA. J.Mol.Biol. 306(4), 759-771 (2001)</p>
+<p class="pub-item">86. The three-dimensional structure of human S100 A12. Moroz OV, Antson AA, Murshudov GN, Maiyland NJ, Dodson GG, Wilson KS, Skibshoj I, Lukindina EM, Bronstein IB., Acta Cryst. D57, 20-29 (2001)</p>
+<p class="pub-item">87. Use of TLS parameter to model anisotropic displacement in macromolecular refinement. Winn MD, Isupov M, Murshudov GN. Acta Cryst. D57, 122-133 (2001)</p>
+<p class="pub-item">88. Structure of Slow processing Precursor Penicillin Acylase from Escherichia coli reveals the linker peptide blocking active site cleft. Hewitt L, Kasche V, Lummer K, Lewis RJ, Murshudov GN, Verma CS, Dodson GG, Wilson KS. J Mol Biol 302, 887-898 (2000)</p>
+<p class="pub-item">89. Crystal structure of dodecameric vanadium-dependent bromoperoxidase from the red algae Carollina officinalis. Isupov MN, Dalby AR, Brindley AA, Izumi Y, Tanabe T, Murshudov GN, Littlechild JA. J Mol Biol. 299, 1035-1049 (2000)</p>
+<p class="pub-item">90. The three dimensional structure of a Trichoderma reesi beta-mannanase from glycoside hydrolase famili 5. Sabini E, Schubert H, Murshudov GN, Wilson KS, Siika-Aho S, Penttila M. Acta Cryst. D56, 3-13 (2000)</p>
+<p class="pub-item">91. The structure of the exa-beta-(1,3)-glucanase from Candida albicans in native and bound forms: Relationship between a pocket and groove in family 5 glycosil hydrolases. Cutfield SM, Davies GJ, Murshudov GN, Anderson BF, Moody PCE, Sullivan PA, Cutfield JF. J Mol Biol. 294, 771-783 (1999)</p>
+<p class="pub-item">92. Binding of non-catlytic ATP to human hexokinase I highlights the structural components for enzyme-membrane association control. Rosano C, Sabini E, Rizzi M, Deriu D, Murshudov GN, Blanchi M, Serafini G, Mangani M, Bolognesu M. Sturcture 7, 1427-1437 (1999)</p>
+<p class="pub-item">93. Efficient anisotropic refinement of macromolecular structures using FFT. Murshudov GN, Vagin AA, Lebedev A, Wilson KS, Dodson EJ. Acta Cryst. D55, 247-255 (1999)</p>
+<p class="pub-item">94. Solution of the structure of the cofactor binding fragment of CysB: A struggle against non- isomorphism. Verschuren KHG, Tyrrel R, Murshudov GN, Dodson EJ, Wilkinson AJ. Acta Cryst. D55, 369-378 (1999)</p>
+<p class="pub-item">95. Incorporation of prior phase information strengthens Maximum likelihood structure refinement. Pannu N, Murshudov GN, Dodson EJ, Read R. Acta Cryst. D54, 1285-1294 (1999)</p>
+<p class="pub-item">96. Validation tools: can they indicate the information content of macromolecular crystal structure? Dodson EJ, Davies GJ, Lamzin VS, Murshudov GN, Wilson KS. Structure. 6, 685-690 (1999)</p>
+<p class="pub-item">97. Stbilizing bound O-2 in myoglobin by valine(58) (E11_ to asparagin substitution. Krzywda S, Murshudov GN, Brzozowski AM, Jaskolski M, Scott EE, Klizas SA, Gibson QH, Olson JS, Wilkinson AJ. Biochemsitry 37, 15896-15907 (1998)</p>
+<p class="pub-item">98. BLANC: the program suite for protein crystallography. Vagin AA, Murshudov GN, Strokopytov BV. J. Appl. Cryst. 31, 98-102 (1998)</p>
+<p class="pub-item">99. An unexpected symmetry in the LysR-type transcriptional activator, CysB. Verschuren KHG, Tyrrel R, Dodson EJ, Murshudov GN, Wilkinson AJ. General physiology and biophysics. 17, 43-46 (1998)</p>
+<p class="pub-item">100. Who checks the checkers? Four validation tools applied to eight atomic resolution structures. Wilson KS, Butterworth, S, Dauter Z, Lamzin VS, Walsh M, Wodak S, Pontius J, Richelle J, Vaguine A, Sander C, Hooft RWW, Vriend G, Thornton JM, Laskowski RM, MacArthur NW, Dodson EJ, Murshudov GN, Oldfield TJ, Kaptein R, Rullman JAC. J Mol Biol. 276, 417-436 (1998)</p>
+<p class="pub-item">101. The structure of the cofactor binding fragment of the LysR family member, CysB; a familiar fold with surprising subunit arrangement. Tyrrel R, Verschuren KHG, Dodson EJ, Murshudov GN, Addy C, Wilkinson AJ. Structure 5, 1017-1032 (1997)</p>
+<p class="pub-item">102. Refinement of Macromolecular structures by Maximum likelihood method. Murshudov GN, Vagin AA, Dodson EJ. Acta Cryst. D53:240-255 (1997)</p>
+<p class="pub-item">103. Structure of Heme D of Penicillum vitale and Escherichia coli Catalases. Murshudov GN, Grebenko AI, Barynin V, Dauter Z, Wilson KS, Vainshtein BK, Melik-Adamyan W, Bravo J, Ferran JM, Ferrer JC. J.Bio.Chem. 271, 8863-8868 (1996)</p>
+<p class="pub-item">104. The crystal structure of the oligopeptide-binding protein OPPA complexed with tripeptide and tetrapeptide ligands. Tame JRH, Dodson EJ, Murshudov G, Higgins CF, Wilkinson AJ. Structure. 3, 1395-1406 (1995)</p>
+<p class="pub-item">105. Crystal structure of an extracellular fragment of the rat CD4 receptor-containing domain-3 and domain-4. Lang G, Lewis SJ, Murshudov GN, Dodson GG, Moody PCE, Turkenburg JP, Barclay AN, Brady RL. Structure 6, 469-481 (1994)</p>
+<p class="pub-item">106. The structural basis of sequence-independent peptide binding of OPPA protein. Tame JRH, Murshudov GN, Dodson EJ, Neil TK, Dodson GG, Higgins CF, Wilkinson AJ. Science 264, 1578-1681 (1994)</p>
+<p class="pub-item">107. Comparison of the quality if catalase crystals prepared under microgravitation and on the earth. Grebenko AI, Barynin VV, Murshudov GN, Melik-Adamyan VR. Kristallographia 38(6), 244- 248 (1993)</p>
+<p class="pub-item">108. 3-dimensional structure of catalase from Micrococcuys lysodeikticus at 1.5A resolution. Murshudov GN, Melik-Adamyan WR, Grebenko AI, Barynin VV, Vagin AA, Vainshtein BK, Dauter Z, Wilson KS. FEBS letters 312,1 27-131 (1992)</p>
+<p class="pub-item">109. The polypeptide-chain fold in tyrosine phenol-lyase, a pyrodoxal-5’-phosphate dependent enzyme. Antson AA, Strokpytov BV, Murshudov GN, Isupov MN, Harutunyan EH, Demidkina TV, Vassylyev DG, Dauter Z, Terry H, Wilson KS. FEBS letters 302, 256-260 (1992)</p>
+<p class="pub-item">110. Spatial structure of tyrosine phenolliase at a resolution 4.5-Angstrom.Antson AA, Strokopytov BV, Murshudov GN, Demidkina TV, Fogelman NK, Paskhina GG, Henning M, Nekrasov YV, Popov AN, Rubinski SV, Harutunyan EG Kristallografia 37, 82-89 (1992)</p>
+<p class="pub-item">111. Space structure of Micrococcus lysodeikticus catalase at a resolution 3.0A. Isupov EF, Grebenko AI, Barynin VV. Murshudov GN, Vagin AA, Melik-Adamyan VR, Vainshtein BK. Kristallografia 34, 1451-1456 (1989)</p>
+<p class="pub-item">112. The 3-A –resolution X-ray study of Micrococcus lysodeikticus bacterium catalase. Melik- Adamyan VR, Grebenko AI, Barynin VV, Isupov EF, Vagin AA, Murshudov FN, Rubinski SV, Vainshtein BK. Doklady akademii Nauk SSSR. 306, 620-623 (1989)</p>
+    </section>
+  </main>
+</article>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elvin Əfəndi — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>ELVIN ƏFƏNDI</h1>
+      <p class="subtitle">PhD<br>Korporativ strategiya və tədqiqat bölməsinin rəhbəri<br>İslam Özəl Sektorunun İnkişafı Korporasiyası, İslam İnkişaf Bankı Qrupu, Ciddə, Səudiyyə Ərəbistanı</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/elvin-efendi.jpg" alt="Elvin Əfəndi"></div>
+  <aside class="side">
+    <h2>Əlaqə</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Səudiyyə Ərəbistanı</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M10.5 13.5a3.5 3.5 0 0 0 5 0l2.1-2.1a3.5 3.5 0 0 0-5-5L11.4 7.6l1.1 1.1 1.2-1.2a2 2 0 1 1 2.8 2.8l-2.1 2.1a2 2 0 0 1-2.8 0l-1.1 1.1zm3-3a3.5 3.5 0 0 0-5 0L6.4 12.6a3.5 3.5 0 0 0 5 5l1.2-1.2-1.1-1.1-1.2 1.2a2 2 0 1 1-2.8-2.8l2.1-2.1a2 2 0 0 1 2.8 0l1.1-1.1z"/></svg><span>İqtisadiyyat</span></li></ul><div class="block"><h2>Mükafatlar və təltiflər</h2><div class="rule"></div><ul class="items awards"><li>Ən yaxşı məqalə mükafatı — World Business Institute konfransı (2013)</li>
+<li>Hubert H. Humphrey fellowship-i — ABŞ Dövlət Departamenti (2009–2010)</li>
+<li>Ən yaxşı tələbə — Azərbaycan Dövlət İqtisad Universiteti (2001–2002)</li></ul></div><div class="block"><h2>Dillər</h2><div class="rule"></div><ul class="items langs"><li>Azərbaycan dili (Ana dili)</li>
+<li>İngilis dili (Səlis)</li>
+<li>Rus dili (Yaxşı)</li>
+<li>Türk dili (Yaxşı)</li>
+<li>Ərəb dili (Başlanğıc)</li></ul></div>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profil</h2>
+      <div class="rule"></div>
+      <p>Elvin Əfəndi 2022-ci ilin yanvarından Ciddədə İslam İnkişaf Bankı Qrupunun İslam Özəl Sektorunun İnkişafı Korporasiyasında korporativ strategiya və tədqiqat bölməsinin rəhbəridir. 2006–2008-ci illərdə Bakı Dövlət Universitetində iqtisadiyyat üzrə PhD dərəcəsi alıb. Dissertasiya Essays on Pro-poor Growth adlanır. 2003–2005-ci illərdə Azərbaycan Dövlət İqtisad Universitetində iqtisadiyyat üzrə magistr, 1999–2003-cü illərdə bakalavr dərəcəsi alıb. 2009–2010-cu illərdə Miçiqan Ştat Universitetində inkişaf iqtisadiyyatı üzrə post-graduate təhsil keçib. Dar Al-Hekma Universitetində, Azərbaycan Dövlət İqtisad Universitetində və Xəzər Universitetində dərs deyib.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>İş təcrübəsi</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>İslam Özəl Sektorunun İnkişafı Korporasiyası, İslam İnkişaf Bankı Qrupu, Ciddə, Səudiyyə Ərəbistanı</h3>
+          <span class="when">yanvar 2022–hazırda</span>
+        </div>
+        <p class="role">Korporativ strategiya və tədqiqat bölməsinin rəhbəri</p>
+        <ul><li>Strategiya departamenti</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>ICD, İslam İnkişaf Bankı Qrupu, Ciddə, Səudiyyə Ərəbistanı</h3>
+          <span class="when">August 2020–January 2022</span>
+        </div>
+        <p class="role">İqtisadi siyasət və tədqiqat bölməsinin rəhbəri</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>ICD, İslam İnkişaf Bankı Qrupu, Ciddə, Səudiyyə Ərəbistanı</h3>
+          <span class="when">July 2014–August 2020</span>
+        </div>
+        <p class="role">Aparıcı iqtisadçı</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>ICD, İslam İnkişaf Bankı Qrupu, Ciddə, Səudiyyə Ərəbistanı</h3>
+          <span class="when">July 2011–July 2014</span>
+        </div>
+        <p class="role">Baş iqtisadçı</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Azərbaycan Mərkəzi Bankı, Bakı, Azərbaycan</h3>
+          <span class="when">July 2010–July 2011</span>
+        </div>
+        <p class="role">Baş iqtisadçı</p>
+        <ul><li>Tədqiqat departamenti</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Dünya Bankının baş qərargahı</h3>
+          <span class="when">May–July 2010</span>
+        </div>
+        <p class="role">Məsləhətçi</p>
+        <ul><li>Avropa və Mərkəzi Asiya regionu</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Azərbaycan Mərkəzi Bankı, Bakı, Azərbaycan</h3>
+          <span class="when">September 2008–August 2009</span>
+        </div>
+        <p class="role">Baş iqtisadçı</p>
+        <ul><li>Tədqiqat departamenti</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Şərq və Afrika Tədqiqatları Məktəbi, London Universiteti. Asiya İnkişaf Bankının layihəsi</h3>
+          <span class="when">January 2006–September 2008</span>
+        </div>
+        <p class="role">Əsas koordinator</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>İqtisadi İslahatlar Mərkəzi, Azərbaycan İqtisadi İnkişaf Nazirliyi, Bakı</h3>
+          <span class="when">January 2004–December 2005</span>
+        </div>
+        <p class="role">İqtisadi analitiki</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Euro-Mediterranean Investment Company</h3>
+          <span class="when">2019–hazırda</span>
+        </div>
+        <p class="role">İnvestisiya komitəsinin sədri</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Islamic Bank Growth Fund</h3>
+          <span class="when">2019–hazırda</span>
+        </div>
+        <p class="role">Məsləhət şurasının sədri</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Təhsil</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Post-graduate təhsil</h3>
+          <span class="when">August 2009–May 2010</span>
+        </div>
+        <p>İnkişaf iqtisadiyyatı</p><p>Miçiqan Ştat Universiteti, Amerika Birləşmiş Ştatları</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>PhD</h3>
+          <span class="when">January 2006–December 2008</span>
+        </div>
+        <p>İqtisadiyyat. Dissertasiya: Essays on Pro-poor Growth</p><p>Bakı Dövlət Universiteti, Bakı, Azərbaycan</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>MSc</h3>
+          <span class="when">2003–2005</span>
+        </div>
+        <p>İqtisadiyyat. Fərqlənmə diplomu</p><p>Azərbaycan Dövlət İqtisad Universiteti, Bakı, Azərbaycan</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>BSc</h3>
+          <span class="when">1999–2003</span>
+        </div>
+        <p>İqtisadiyyat. Fərqlənmə diplomu</p><p>Azərbaycan Dövlət İqtisad Universiteti, Bakı, Azərbaycan</p>
+      </article>
+    </section><section class="sec grants">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Qrantlar və layihələr</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>2010 — Keçid iqtisadiyyatlarında işçilərin fəaliyyətinin determinantları. Tədqiqat koordinatoru — Delaver Universiteti və Miçiqan Ştat Universiteti</li><li>2008 — Azərbaycanda miqrasiya siyasəti: nailiyyətlər və çağırışlar. Əsas müəllif — Birləşmiş Millətlər Təşkilatının İnsan Hüquqları Komitəsi</li><li>2007 — Mərkəzi Asiyanın beynəlxalq inteqrasiyası, texniki əməkdaşlıq yardımının səmərəliliyi. Əsas tədqiqatçı — Birləşmiş Millətlər Təşkilatı və Avropa Komissiyası</li><li>2007 — CRRC Data Initiative (sorğu seçməsinin dizaynı). Sorğu seçməsi qrupunun rəhbəri — Qafqaz Araşdırmaları Resurs Mərkəzləri</li><li>2006 — Dövlət investisiya siyasəti və səmərəlilik. Təlimçi və tədqiqatçı — ABŞ Beynəlxalq İnkişaf Agentliyi</li><li>2005 — İqtisadi artımın yoxsulluğa təsiri: nümunə tədqiqatı. Əsas müəllif — Birləşmiş Millətlər Təşkilatının İnkişaf Proqramı</li></ul>
+    </section><section class="sec teaching">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Tədris</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>2014–2015 — İqtisadiyyat; beynəlxalq inkişaf — Dar Al-Hekma Universiteti</li><li>2010-2011 — Ekonometrika; inkişaf iqtisadiyyatı — Azərbaycan Dövlət İqtisad Universiteti, Bakı</li><li>2006–2009 — İqtisadiyyat; inkişaf iqtisadiyyatı — Xəzər Universiteti, Bakı, Azərbaycan</li></ul>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Nəşrlər</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Rəylənmiş (peer-reviewed) jurnal məqalələri</h3>
+<p class="pub-item">1. Afandi, E. Introducing a private-sector development index of 57 OIC member countries. Journal of Economic Cooperation and Development, 2019, 40(3), 141–157.</p>
+<p class="pub-item">2. Afandi, E. Sand or grease? The corruption–institutional trust nexus in post-Soviet countries. Journal of Eurasian Studies, 2017, in press.</p>
+<p class="pub-item">3. Afandi, E. What is the effect of university education on chances to be self-employed? Instrumental-variable analysis of a cross-sectional sample of 29 nations. International Entrepreneurship and Management Journal, 2017, 13(2), 487–500.</p>
+<p class="pub-item">4. Afandi, E. Pre- and post-crisis trust in banks: lessons from developing countries. Journal of Economic Development, 2017, 42(1), 73–94.</p>
+<p class="pub-item">5. Afandi, E. Community social capital and household strategies for coping with global crisis in transitional countries. Social Indicators Research, 2017, 130(2), 687–710.</p>
+<p class="pub-item">6. Afandi, E. Social capital and the entrepreneurial process. International Entrepreneurship and Management Journal, 2016, in press.</p>
+<p class="pub-item">7. Afandi, E. Social trust and use of banking services across households in 28 countries. International Journal of Social Economics, 2016, 43(4), 431–443.</p>
+<p class="pub-item">8. Afandi, E. Does life satisfaction determine subjective health? Applied Research in Quality of Life, 2016, 11(2), 413–428.</p>
+<p class="pub-item">9. Afandi, E. Bridging the gender gap in entrepreneurship: an empirical analysis. Journal of Developmental Entrepreneurship, 2015, 20(2).</p>
+<p class="pub-item">10. Afandi, E. Inter-firm trust and access to financing. Transition Studies Review, 2015, 22(1), 159–183.</p>
+<p class="pub-item">11. Afandi, E. Pre- and post-crisis life satisfaction and social trust: an initial assessment. Social Indicators Research, 2015, 121(2), 503–524.</p>
+<p class="pub-item">12. Afandi, E. What determines firms’ innovation in Eastern Europe and Central Asia. Perspectives of Innovations, Economics and Business, 2014, 14(1), 6–20.</p>
+<p class="pub-item">13. Afandi, E. Financing obstacles of Bangladeshi firms: evidence from pre-crisis and post-crisis periods. Asian Economic and Financial Review, 2014, 4(9), 1158–1174.</p>
+<p class="pub-item">14. Afandi, E. What prevents firms from access to finance? A case study of OIC countries. Journal of Economic Cooperation and Development, 2014, 35(1), 103–132.</p>
+<p class="pub-item">15. Afandi, E. Self-rated health and social capital in transitional countries: multilevel analysis of comparative surveys in Armenia, Azerbaijan, and Georgia. Social Science &amp; Medicine, 2011, 72(7), 1193–1204.</p>
+<p class="pub-item">16. Afandi, E. Analysis of subjective wellbeing in low-income transitional countries: evidence from Armenia, Azerbaijan, and Georgia. Journal of Comparative Social Welfare, 2009, 25(3), 203–219.</p>
+<p class="pub-item">17. Afandi, E. Evidence of pro-poor growth in the Republic of Azerbaijan. Problems of Economic Transition, 2007, 50(6), 5–31.</p>
+<h3 class="pub-sub">Dəvətli məruzələr və konfranslarda iştirak</h3>
+<ul class="plain"><li>2017 — XII Astana İqtisadi Forumu, Astana, Qazaxıstan — Məruzə — XII Astana İqtisadi Forumu, Astana, Qazaxıstan</li><li>2017 — Oksford Universiteti, Birləşmiş Krallıq — Dəvətli məruzə — Oksford Universiteti, Birləşmiş Krallıq</li><li>2015 — Qrats, Avstriya — Məruzə — Qrats, Avstriya</li><li>2014 — Bakı, Azərbaycan — Məruzə — Bakı, Azərbaycan</li><li>2014 — 13-cü EBES konfransı, İstanbul, Türkiyə — Məruzə — 13-cü EBES konfransı, İstanbul, Türkiyə</li><li>2013 — Dubay, Birləşmiş Ərəb Əmirlikləri — Məruzə — Dubay, Birləşmiş Ərəb Əmirlikləri</li><li>2010 — Enerji iqtisadiyyatı və siyasəti, PhD seminarı, Bakı, Azərbaycan — Məruzə — Enerji iqtisadiyyatı və siyasəti, PhD seminarı, Bakı, Azərbaycan</li><li>2008 — Yoxsulluq üzrə beynəlxalq simpozium, DEYAM, İstanbul, Türkiyə — Məruzə — Yoxsulluq üzrə beynəlxalq simpozium, DEYAM, İstanbul, Türkiyə</li><li>2007 — Berlin, Almaniya — Məruzə — Berlin, Almaniya</li><li>2006 — Moskva, Rusiya — Məruzə — Moskva, Rusiya</li><li>2004 — Tbilisi, Gürcüstan — Məruzə — Tbilisi, Gürcüstan</li></ul>
+    </section>
+  </main>
+</article>
+</body>
+</html>

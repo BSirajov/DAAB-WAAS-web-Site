@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aygul Isayeva, DBA — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>AYGUL ISAYEVA, DBA</h1>
+      <p class="subtitle">DBA<br>Business Communications and PR department<br>SOCAR Energy Georgia, Tbilisi, Georgia</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/aygul-isayeva.jpg" alt="Aygul Isayeva, DBA"></div>
+  <aside class="side">
+    <h2>Contact</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Georgia</span></li></ul><div class="block"><h2>Awards &amp; recognitions</h2><div class="rule"></div><ul class="items awards"><li>Medal of the Republic of Azerbaijan For Service to the Diaspora — State Committee on Work with Diaspora of the Republic of Azerbaijan. Decree of the President No. 899 of 25 December 2019 authorized the award (December 2020)</li>
+<li>Thank-you note for work with the Azerbaijani community in Georgia — State Committee on Work with Diaspora of the Republic of Azerbaijan (August 2020)</li>
+<li>Medal of Honor for achievements in science — Borchali Public Union (December 2013)</li>
+<li>Dean’s honor list. GPA higher than 89 — Khazar University (2002–2005)</li></ul></div><div class="block"><h2>Languages</h2><div class="rule"></div><ul class="items langs"><li>Azerbaijani (Native)</li>
+<li>English (Fluent)</li>
+<li>Turkish (Fluent)</li>
+<li>Georgian (Very good)</li>
+<li>Russian (Good)</li></ul></div>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profile</h2>
+      <div class="rule"></div>
+      <p>Aygul Isayeva has worked in the Business Communications and PR department of SOCAR Energy Georgia in Tbilisi since January 2021. She was executive director of the Integration Center for Azerbaijanis of Georgia in 2018–2020 and an associate professor at Caucasus International University in 2016–2020. She received a Doctor of Business Administration (also awarded as a PhD), from International Black Sea University in 2011–2013, and an MSc in business and economics with a major in marketing from BI Norwegian Business School in 2006–2008. Her bachelor’s degree in international economic relations, with an honor diploma, is from Khazar University (2002–2006). Since September 2023 she has been enrolled in a Master of Science in Teaching and Learning at ADA University, with graduation expected in May 2025.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>Work experience</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>SOCAR Energy Georgia, Tbilisi, Georgia</h3>
+          <span class="when">January 2021–present</span>
+        </div>
+        <p class="role">Business Communications and PR department</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Integration Center for Azerbaijanis of Georgia, Marneuli, Georgia</h3>
+          <span class="when">December 2018–November 2020</span>
+        </div>
+        <p class="role">Executive Director</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Caucasus International University, Tbilisi, Georgia</h3>
+          <span class="when">September 2016–2020</span>
+        </div>
+        <p class="role">Associate Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>SOCAR Georgia Petroleum, Tbilisi, Georgia</h3>
+          <span class="when">February 2011–April 2019</span>
+        </div>
+        <p class="role">Marketing Manager</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>International Black Sea University, Tbilisi, Georgia</h3>
+          <span class="when">March 2011–2013</span>
+        </div>
+        <p class="role">Invited lecturer</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Azerbaijan Marketing Society, Baku, Azerbaijan</h3>
+          <span class="when">June 2010–January 2011</span>
+        </div>
+        <p class="role">Executive Director</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Khazar University, Baku, Azerbaijan</h3>
+          <span class="when">September 2008–June 2010</span>
+        </div>
+        <p class="role">Assistant to the president for international relations and projects</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Khazar University, Baku, Azerbaijan</h3>
+          <span class="when">May 2009–June 2010</span>
+        </div>
+        <p class="role">Deputy Director</p>
+        <ul><li>Center on Economic Policy and Development</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Khazar University, Baku, Azerbaijan</h3>
+          <span class="when">2008–2011</span>
+        </div>
+        <p class="role">Lecturer</p>
+        <ul><li>Principles of marketing; international business; services marketing</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Khazar University, Baku, Azerbaijan</h3>
+          <span class="when">July 2005–August 2006</span>
+        </div>
+        <p class="role">Career Development Center coordinator</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Education</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>MSc</h3>
+          <span class="when">September 2023–present</span>
+        </div>
+        <p>Teaching and learning. Graduation expected May 2025</p><p>ADA University, Faculty of Education, Baku and Gazakh, Azerbaijan</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>DBA</h3>
+          <span class="when">October 2011–March 2013</span>
+        </div>
+        <p>Business management and marketing. Also awarded as a PhD.</p><p>International Black Sea University, Tbilisi, Georgia</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>MSc</h3>
+          <span class="when">August 2006–August 2008</span>
+        </div>
+        <p>Business and economics, major in marketing</p><p>BI Norwegian Business School, Oslo, Norway</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Bachelor’s degree</h3>
+          <span class="when">September 2002–January 2006</span>
+        </div>
+        <p>International economic relations. Honor diploma</p><p>Khazar University, Baku, Azerbaijan</p>
+      </article>
+    </section><section class="sec teaching">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Teaching</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>September 2016–2020 — Associate professor — Caucasus International University, Tbilisi</li><li>March 2011–2013 — Invited lecturer — International Black Sea University, Tbilisi</li><li>2008–2011 — Principles of marketing; international business; services marketing — Khazar University, Baku</li></ul>
+    </section><section class="sec daab">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>WAAS / DAAB activity</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>8–12 September 2024 — Forum of Azerbaijani Scientists Living Abroad, Baku, Khankendi, and Shusha — Supported by the State Committee for Work with Diaspora, the Ministry of Science and Education, and the World Association of Azerbaijani Scientists</li></ul>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Publications</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Books and textbooks</h3>
+<p class="pub-item">1. Isayeva, Aygul. (2020). Corporate Responsibility: Sustainability challenges to the oil and gas sector of the economy. LAP LAMBERT Academic Publishing. ISBN 978-620-2-91810-7.</p>
+<p class="pub-item">2. Isayeva, Aygul. (2013). Customer Loyalty Phases. Customer Satisfaction with Service Recovery: comparative analyses in Azerbaijan and Georgia. Universal Publishing House. ISBN 978-9941-17-997-6.</p>
+<p class="pub-item">3. Isayeva, Aygul. (2013). Customer Satisfaction. LAP LAMBERT Academic Publishing. ISBN 978-3-659-18293-8.</p>
+<h3 class="pub-sub">Peer-reviewed journal articles</h3>
+<p class="pub-item">1. Isayeva, Aygul. (2014). Ethics in International Marketing. International Journal of Economic Practices and Theories, special issue on Marketing and Business Development, 4(5), 552–561.</p>
+<p class="pub-item">2. Isayeva, Aygul. (2012). Relationship between Satisfaction with Service Recovery and its Drivers. International Journal of Marketing Practices and Principles, 2 (April), 44–55.</p>
+<p class="pub-item">3. Isayeva, Aygul. (2012). Ethics in International Marketing. Journal of Qafqaz University, 33, 1–11.</p>
+<p class="pub-item">4. Isayeva, Aygul. (2011). Relationship between Satisfaction with Service Recovery and its Drivers. Khazar Journal of Humanities and Social Sciences, 14(2), 73–89.</p>
+<p class="pub-item">5. Isayeva, Aygul. (2011). The role of the advertising agency: Standardization/Adaptation. IBSU Scientific Journal, 5(2), 5–12.</p>
+<p class="pub-item">6. Isayeva, Aygul. (2011). Comperative Analysis of Economic Factors Affecting Export and Import in the Countries of the South Caucasus. Journal of Qafqaz University, 32, 79–86.</p>
+    </section>
+  </main>
+</article>
+</body>
+</html>

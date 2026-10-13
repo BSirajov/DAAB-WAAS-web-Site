@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Şahin Əhmədoğlu — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>ŞAHIN ƏHMƏDOĞLU</h1>
+      <p class="subtitle">PhD<br>Professor<br>İslami Elmlər fakültəsi, Kırıkkale Universiteti, Kırıkkale, Türkiyə</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/sahin-ehmedoglu.jpg" alt="Şahin Əhmədoğlu"></div>
+  <aside class="side">
+    <h2>Əlaqə</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Türkiyə</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M10.5 13.5a3.5 3.5 0 0 0 5 0l2.1-2.1a3.5 3.5 0 0 0-5-5L11.4 7.6l1.1 1.1 1.2-1.2a2 2 0 1 1 2.8 2.8l-2.1 2.1a2 2 0 0 1-2.8 0l-1.1 1.1zm3-3a3.5 3.5 0 0 0-5 0L6.4 12.6a3.5 3.5 0 0 0 5 5l1.2-1.2-1.1-1.1-1.2 1.2a2 2 0 1 1-2.8-2.8l2.1-2.1a2 2 0 0 1 2.8 0l1.1-1.1z"/></svg><span>İslam məzhəbləri tarixi</span></li></ul><div class="block"><h2>Dillər</h2><div class="rule"></div><ul class="items langs"><li>Fars dili (KPDS 2012 balı 77,5)</li></ul></div>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profil</h2>
+      <div class="rule"></div>
+      <p>Şahin Əhmədoğlu Kırıkkale Universitetinin İslami Elmlər fakültəsində İslam məzhəbləri tarixi professorudur. Professor elmi adı 7 mart 2022-ci il tarixlidir. Dosent elmi adını Universitetlərarası Şuradan 19 oktyabr 2015-ci ildə alıb. İslam məzhəbləri tarixi üzrə doktorluğu Ankara Universitetindədir (2001–2005). Magistr dərəcəsi də oradandır (1998–2001). İlahiyyat üzrə bakalavr dərəcəsi 1993–1998-ci illərdədir. 2023-cü ildən əsas İslam elmləri bölməsinin və İslam məzhəbləri tarixi proqramının sədridir.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>İş təcrübəsi</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kırıkkale University</h3>
+          <span class="when">2023–hazırda</span>
+        </div>
+        <p class="role">Əsas İslam elmləri bölməsinin sədri</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kırıkkale University</h3>
+          <span class="when">2023–hazırda</span>
+        </div>
+        <p class="role">İslam məzhəbləri tarixinin sədri</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kırıkkale University</h3>
+          <span class="when">2017–2023</span>
+        </div>
+        <p class="role">Kəlam və etiqadi İslam məzhəblərinin sədri</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>İlahiyyat fakültəsi, Iğdır Universiteti, Türkiyə</h3>
+          <span class="when">2010–2015</span>
+        </div>
+        <p class="role">Köməkçi dosent</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Təhsil</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Professor</h3>
+          <span class="when">7 March 2022</span>
+        </div>
+        <p>İslam məzhəbləri tarixi</p><p>Kırıkkale Universiteti</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Dosent</h3>
+          <span class="when">19 October 2015</span>
+        </div>
+        <p>İlahiyyat, əsas İslam elmləri, İslam məzhəbləri tarixi</p><p>Universitetlərarası Şura, Ankara</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>PhD</h3>
+          <span class="when">2001–2005</span>
+        </div>
+        <p>İslam məzhəbləri tarixi</p><p>Ankara Universiteti, Sosial Elmlər İnstitutu</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Magistr dərəcəsi</h3>
+          <span class="when">1998–2001</span>
+        </div>
+        <p>İslam məzhəbləri tarixi</p><p>Ankara University</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Bakalavr dərəcəsi</h3>
+          <span class="when">1993–1998</span>
+        </div>
+        <p>İlahiyyat</p><p>İlahiyyat fakültəsi, Ankara Universiteti</p>
+      </article>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Nəşrlər</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Kitablar və dərsliklər</h3>
+<p class="pub-item">1. Ahmetoğlu, Ş. Şiî-İmâmiyye’nin Mezhepler Tarihi Yazıcılığı. İlahiyat. ISBN 978-605-4696-39-0. 2014.</p>
+<p class="pub-item">2. Ahmetoğlu, Ş. Mezhepler Tarihinin 100’ü. OTTO. ISBN 978-605-9621-89-2. 2017.</p>
+<p class="pub-item">3. Ahmetoğlu, Ş. Mezhepler Tarihinin 200’ü. OTTO. ISBN 978-605-2300-03-9. 2017.</p>
+<p class="pub-item">4. Ahmetoğlu, Ş. İslam Mezhepleri I. Gazi Yayınevi. ISBN 978-625-7855-53-2. 2020.</p>
+<p class="pub-item">5. Ahmetoğlu, Ş. İslam Mezhepleri II. Gazi Yayınevi. ISBN 978-625-7216-09-8. 2020.</p>
+<p class="pub-item">6. Ahmetoğlu, Ş. Vehhabilik-Selefilik İdeologiyası (Azerbaycan Türkçesinde). Dava Adamı. ISBN 978-605-0624-43-4. 2020.</p>
+<h3 class="pub-sub">Kitab fəsilləri</h3>
+<p class="pub-item">1. Ş. Ahmetoğlu. “Ebû Mûsa el-Murdâr (840)”. İslam’ın Akılcıları / Mu’tezilî Öncüler. ed. M. Azimli-Ö. Kanter. İstanbul: Mana Yayınları, 2021. ss. 121-123.</p>
+<p class="pub-item">2. Ş. Ahmetoğlu. “Cafer b. Mübeşşir es-Sekafî (849)”. İslam’ın Akılcıları / Mu’tezilî Öncüler. ed. M. Azimli-Ö.Kanter. İstanbul: Mana Yayınları, 2021. Ss. 132-134.</p>
+<p class="pub-item">3. Ş. Ahmetoğlu. “Ca’fer b. Harb (851)”. İslam’ın Akılcıları / Mu’tezilî Öncüler. ed. M. Azimli-Ö. Kanter. İstanbul: Mana Yayınları, 2021. ss. 140-142.</p>
+<p class="pub-item">4. Ş. Ahmetoğlu. “Aras Havzası Saatlı Âlimlerinden Molla Musa’nın Hayatı, Elyazmaları ve Bazı Görüşleri”. Aras Havzası Uleması ve Tarihi Şahsiyetleri. ed. M.H. Alma vd. İstanbul: Hiperyayın</p>
+<p class="pub-item">5. 2021Ş. Ahmetoğlu. Ss. 56-71. “Kacarlar Dönemi Dinî-Mezhebî Hareketler.” Modern İran Tarihi- Kaçar Hanedanı’ndan İslam Devrimi’ne. Ed. Osman Karacan. İstanbul: Selenge Yayınları, 2021. Ss. 519</p>
+<p class="pub-item">6. 532.Ş. Ahmetoğlu. “Âhiret’e İman.” İslam İnanç Esasları. Ed. Vechi Sönmez-Hilmi Karaağaç. İstanbul: Lisans Yayıncılık, 2021. ss. 255-269.</p>
+<p class="pub-item">7. Ş. Ahmetoğlu. “İmâmiyye/İsnâaşeriyye.” İslâm Mezhepleri Tarihi. Ed. Mehmet Saffet Sarıkaya – Mehmet Ümit. Ankara: Nobel Yayınları, 2020. Ss. 99-124.</p>
+<p class="pub-item">8. Ş. Ahmetoğlu. “Eyyûbîler’in Mezhebî Siyaseti.” Eyyubiler’de Siyasî ve Ekonomik İlişkiler. Ed. Abdulhalim Oflaz vd. İstanbul: Hiperyayın, 2020. ss. 305-324.</p>
+<p class="pub-item">9. Ş. Ahmetoğlu. “İmadeddin Nesimi’nin Kur’an ve İnsanla İlgili Bazı Görüşleri.” “Azerbaycan elyazmaları dünya kitabhanalarında”: IV beynelhalk elmi-nezeri konfransın materialları. Böyük Azerbaycan şairi İmadeddin Nesiminin 650 illik yubileyine hesr olunur. Bakı, 12 oktyabr 2019-cu il. (ISSN 2410-5600 ISSN-L: 2663-998X). Bakı: Elm ve Tehsil, 2019. ss. 39-47.</p>
+<p class="pub-item">10. Ş. Ahmetoğlu. “Globallaşma, Din, İslam”. Globallaşmaya Doğru. Bakü: “QASİM” Yayınları, 2006. ss. 92-101. Müzakere</p>
+<p class="pub-item">11. Ş. Ahmetoğlu. “Bekir Kuzudişli’nin “Yüz Elli Uydurma Sahâbî Var Mı? Murteza el-Askerî’nin Hamsûne ve Mie Sahâbîyyin Muhtelakin Adlı Kitabındaki İddialarının Tahlili” Adlı Tebliğin Müzakeresi”, İslâm Medeniyetinin Kurucu Nesli Sahâbe-Sahâbe Kimliği ve Algısı. Tartışmalı İlmi Toplantı, İstanbul: Ensar Yayınları, (2013). Ss. 299-305.</p>
+<h3 class="pub-sub">Rəylənmiş (peer-reviewed) jurnal məqalələri</h3>
+<p class="pub-item">1. Ş. Ahmetoğlu. “İslam Mezhepleri Tarihi’nde Karizmatik Liderlik Anlayışı: Hz. Ali Örneği”. Milel ve Nihal İnanç, Kültür ve Mitoloji Araştırmaları Dergisi 7/3 (2010): 167-188.</p>
+<p class="pub-item">2. Ş. Ahmetoğlu. “Muhammed Cevâd Meşkûr’un Hayatı, Eserleri ve Mezhepler Tarihçiliği”. e-Makâlât Mezhep Araştırmaları 6/1 (2013): 93-122.</p>
+<p class="pub-item">3. Ş. Ahmetoğlu. “Serbedârî Hareketi ve Temel Görüşleri”. e-Makâlât Mezhep Araştırmaları Dergisi 7/1 (2014): 129-154.</p>
+<p class="pub-item">4. Ş. Ahmetoğlu. “İslam Mezhepleri Tarihi Dersinin Aktüel Meseleleri”. Azerbaycan İlahiyyat İnstitutu “Din Araşdırmları” Jurnalı 1/2 (İyun 2019): 51-75.</p>
+<p class="pub-item">5. Ş. Ahmetoğlu. “Azerbaycanlı Âlim Şeyh Hasan Mollazâde Gencevî’nin Hayatı, Eserleri ve Görüşleri”. E-Makâlât Mezhep Araştırmaları Dergisi 12/2 (Güz 2019): 472-516.</p>
+<p class="pub-item">6. G. Y. Ahmetoğlu-Ş. Ahmetoğlu. “Şiîliğin Hint Coğrafyasına Girişi”. Turkish Journal of Shiite Studies 2/1 (Temmuz 2020): 32-51.</p>
+<p class="pub-item">7. Ş. Ahmetoğlu. “Modern Dönem Şiîlik Eleştirileri Bağlamında Ahmed Kesrevî’nin Görüşleri ve Pâkdinîyân Hareketi”. Turkish Journal of Shiite Studies 2/2 (Aralık 2020): 126-154.</p>
+<p class="pub-item">8. Ş.Ahmetoğlu- H. Demir. “Ebû’l-Kâsım Abdilvâhid b. Ahmed el-Kirmânî’ye Nispet Edilen 73 Fırka Tasnifli Bir Risâle’nin Tahlil ve Tercümesi”. e-Makâlât Mezhep Araştırmaları Dergisi, 15/1, 2022. ss. 3- 42.</p>
+<h3 class="pub-sub">Konfrans məqalələri və tezisləri</h3>
+<p class="pub-item">1. Ş. Ahmetoğlu. “Azerbaycan’da Sufilik ve Safevi Tarikatı”, Uluslararası Türk İnançları Sempozyumu, 23- 26 Ekim 2010, Isparta 2011. ss. 359-388.</p>
+<p class="pub-item">2. Ş. Ahmetoğlu. “Aras Havzası Eğitim Faaliyetleri Bağlamında CAMER”, (Caferilik Uygulama ve Araştırma Merkezi). II. Uluslararası Aras Havzası Sempozyumu, Iğdır 2011. ss. 516-520.</p>
+<p class="pub-item">3. Ş. Ahmetoğlu. “Caferi Medrese Gelenekleri: Irak ve Suriye Örneği”, Uluslararası Medrese ve İlahiyat Kavşağında İslami İlimler Sempozyumu, 29 Haziran-01 Temmuz 2012, Bingöl. Ss.155-166.</p>
+<p class="pub-item">4. Ş. Ahmetoğlu. “Caferi Medrese Gelenekleri: İran ve Azerbaycan Örneği”, Uluslararası Medrese Geleneği ve Modernleşme Sürecinde Medreseler, Muş, 05-07 Ekim 2012. ss. 429-445.</p>
+<p class="pub-item">5. Ş. Ahmetoğlu. “Hz. Ali’nin Vaaz Açısından Yeri ve Konumu”, Vaaz ve Vaizlik Sempozyumu, (17-18 Aralık 2011 DİB Ankara), Ankara: DİB Yay. C. II, ss 535-544.</p>
+<p class="pub-item">6. Ş. Ahmetoğlu. “In the Example of Iğdır, the Islam Common Value and Together Living Culture”, Second International Igdır Symposium, Iğdır, 9-11 October 2017. P.371.</p>
+<p class="pub-item">7. Ş. Ahmetoğlu. “Azerbaycan’da Hanefiliğin Yayılışı”, IV. Uluslararası Şeyh Şa’bân-ı Velî Sempozyumu- Hanefilik-Mâturîdîlik, 05-07 Mayıs 2017, Kastamonu 2017, ss. 294-303. 8. Ş. Ahmetoğlu. “Farklı, Benzer ve Bütünleştirici Yönleriyle İnsanın Birlikte Yaşama Kültürüne Katkısı”. Uluslararası İslam Medeniyetinde Birlikte Yaşama Tecrübesi Sempozyumu. 20-21 Eylül 2022. Bakü. AvePrınt, s. 17-18. 9. Ş. Ahmetoğlu. “Islam&#x27;s View on Differences of Belief and the Phenomenon of Coexistence”, 3rd International Symposium on “The Practice of Coexistence in Islamic Culture, May 28th-30th 2024, State Islamic University (UIN) Sunan Kalijaga Yogyakarta, Indonesia, p.82 PROJELER</p>
+<p class="pub-item">8. Ş. Ahmetoğlu. Kavramlar Atlası/İslam Mezhepleri I-II. Yazar. Ed. B. Akot. Ankara: Gazi Yayınevi 2021</p>
+<p class="pub-item">9. Ş. Ahmetoğlu. İslam’ın Akılcıları / Mu’tezilî Öncüler. Yazar. ed. M. Azimli-Ö. Kanter. İstanbul: Mana Yayınları, 2021.</p>
+<p class="pub-item">10. Ş. Ahmetoğlu. “Farklı, Benzer ve Bütünleştirici Yönleriyle İnsanın Birlikte Yaşama Kültürüne Katkısı”. BAP. Yürütücü. 1. Uluslararası İslam Medeniyetinde Birlikte Yaşama Tecrübesi Sempozyumu. 20-21 Eylül 2022, Bakü/AZERBAYCAN.</p>
+<p class="pub-item">11. Ş. Ahmetoğlu. “İnsan Ortak Paydası ve Mezhepler.” BAP. Yürütücü. Uluslararası İslam ve Yorum Konferansı. 27 Ocak 2023. İslamabad/PAKİSTAN.</p>
+<p class="pub-item">12. Ş. Ahmetoğlu. “İslam Dininin İnanç Farklılıklarına Bakışı ve Birlikte Yaşama Olgusu”, BAP. Yürütücü. 3. Uluslararası İslam Medeniyetinde Birlikte Yaşama Tecrübesi Sempozyumu. 28-30 Mayıs 2024. Yogyakarta/ENDONEZYA. KONFERANS, PANEL VE SEMİNERLER 1. Ş. Ahmetoğlu. “Maturidi’de Din ve Siyaset Ayrımı”. Kırıkkale Üniversitesi İktisadi ve İdari Bilimler Fakültesi, Siyaset Bilimi ve Kamu Yönetimi Topluluğu. Saat. 15:30. 20 Aralık 2022. 2. Ş. Ahmetoğlu. “İslam Mezhepleri”. Kırıkkale Türk Ocağı Şubesi. Saat. 15:00. 26 Kasım 2022. 3. Ş. Ahmetoğlu. “Azerbaycan Şairi Nizami Gencevi’nin (1141-1209) Hayatı, Eserleri ve Bazı Görüşleri”. ZOOM Online Konferans. Düzenleyen İslam Ülkeleri Uygulama ve Araştırma Merkezi (İSÜMER). Saat: 20:00. 30.12.2021. 4. Ş. Ahmetoğlu. “Hacı Bektaş-i Veli”, Kırıkkale İl Müftülüğü Konferans Salonu. Kırıkkale. 16.08.2021. 5. Ş. Ahmetoğlu. “Anlaşma Sonrası Karabağ”, ZOOM Online Konferans. Düzenleyen: TUGVA Bulancak Derneği. Saat: 20: 00. 19 Kasım 2020. 6. Ş. Ahmetoğlu. “Anlaşma Sonrası Karabağ”, ZOOM Online Konferans. Düzenleyen: Genç Akademisyenler Derneği. Saat: 18: 00. 18 Kasım 2020. 7. Ş. Ahmetoğlu. &quot;Şii Düşüncede Modernist Yaklaşımlar&quot;. Hitit Üniversitesi İlahiyat Fakültesi, &quot;İslâm Dünyası ve Modernite&quot; paneli. Çorum 04 Mart 2020. 8. Ş. Ahmetoğlu. “Şiî-İmamiyye’de Muharrem ve Aşura”, Ankara Sosyal Bilimler Üniversitesi İslami İlimler Fakültesi, Ankara, 12 Eylül 2019. 9. Ş. Ahmetoğlu. “Mezhepler Tarihi Açısından Kerbela Olayı”, 9. Ehl-i Beyt Paneli, Iğdır Üniversitesi İlahiyat Fakültesi, Iğdır, 2018. 10. Ş. Ahmetoğlu. “Şahsiyetin İnşasında Namaz”, Hacı Abdullah İpekçi Yatılı Kız Kursu, Geylani Erkek Yatılı Hafızlık Kursu ve Çullu Hz. Ali Yatılı Erkek Hafızlık Kursu, Kırıkkale, Ekim 2018. 11. Ş. Ahmetoğlu. “İslam Dünyasında Takrib Çalışmaları”, 8. Ehl-i Beyt Paneli, Iğdır Üniversitesi İlahiyat Fakültesi, Iğdır, 27 Ekim 2017. 12. Ş. Ahmetoğlu. “Ahmet Yesevi Hayatı ve Fikirleri”, Tuzluca-Iğdır, 21 Kasım 2016. 13. Ş. Ahmetoğlu. “Hz. Peygamber (sav) ve Birlikte Yaşama Kültürü”, Kutlu Doğum Haftası, Iğdır, Nisan 2015. 14. Ş. Ahmetoğlu. “Karizmatik Liderlik”, Iğdır Üniversitesi İlahiyat Fakültesi. Iğdır, 28 Aralık 2012. 15. Ş. Ahmetoğlu. “Hz. Peygamber (sav) ve Kardeşliğin Evrensel Boyutu”, Kutlu Doğum Haftası, Tuzluca- Iğdır, 2012. 16. Ş. Ahmetoğlu. “Hz. Peygamber (sav) ve Hz. Ali (r.a.) İlişkileri”, 3. Ehl-i Beyt Paneli, Iğdır Üniversitesi İlahiyat Fakültesi, Iğdır, 2010. 17. Ş. Ahmetoğlu. “Azerbaycan Gencinin Manevi-Ahlaki Vaziyeti”, Muasır İnkişaf STK, “Türk-İslam Dünyası” Diskussiya Kulübü, Bakü, 14 Mart 2009. 18. Ş. Ahmetoğlu. “Dünyevi Devlet ve Din”, Muasır İnkişaf STK, “Türk-İslam Dünyası” Diskussiya Kulübü, Bakü Devlet Üniversitesi Tarih Enstitüsü Konferans Salonu, Bakü, 12 Kasım 2008. 19. Ş. Ahmetoğlu. “Azerbaycan Genci Bugün”, Muasır İnkişaf STK, “Türk-İslam Dünyası” Diskussiya Kulübü, Bakü, 1 Mart 2008. Transkripsiyon/Sadeleştirme</p>
+<p class="pub-item">13. Cemâleddin Efgani. “Seadetin Altı Guşeli Qesri”. “Türk Yurdu” Dergisi, Təşrini-Sani, 1328/1912, Yıl 2, Sayı 3, ss. 70-77. Çev. M. E. Resulzade. Transkripsiyon ve sadeleştirme Şahin Ahmetoğlu. https://yenicag.az/seadetin-alti-gus%CC%A7eli-qesri-resulzadenin-tercumesinde/embed. Erişim tarihi: 10.07.2020</p>
+<p class="pub-item">14. Cemâleddin Efgani. “Milli Birlik Felsefesi ve Dil Birliyinin Hegigi Mahiyyeti”. “Türk Yurdu” Dergisi, Teşrini-Sani, 1328/1912, Yıl 2, Sayı 2, ss. 45-55. Çev. M. E. Resulzade. Transkripsiyon ve sadeleştirme Şahin Ahmetoğlu. https://yenicag.az/milli-birlik-felsefesi-ve-dil-birliyinin- heqiqihttps://yenicag.az/milli-birlik-felsefesi-ve-dil-birliyinin-heqiqi-mahiyyeti-resulzadenin- tercumesinde/embedmahiyyeti-resulzadenin-tercumesinde/embed. Erişim tarihi: 17.10.2020</p>
+<p class="pub-item">15. “Azerbaycanın Ruslaşması”. “Sebilür-Reşad” Dergisi, cild 23, sayı 593, ss. 335-336, 1340/1924. Transkripsiyon ve sadeleştirme Şahin Ahmetoğlu. http://www.xeber365.com/yazar-az- rbaycaninhttp://www.xeber365.com/yazar-az-rbaycanin-ruslasmasi-225.htmlruslasmasi-225.html Erişim tarihi: 01.12.2020 ÇEVİRİLER Kitap Bölümü ve Makaleler</p>
+<p class="pub-item">16. Kâzım Mudîr Şâneçî, “Dinler ve Mezhepler Tarihine Bir Bakış”, Farsça’dan çeviren Şahin Ahmetoğlu, Iğdır Üniversitesi İlahiyat Fakültesi Dergisi, Ekim 2013, Sayı: 2, ss. 179-209.</p>
+<p class="pub-item">17. Muhammed Cevâd Meşkûr, “İbnü’l-Âtâikî’nin Hayatı, Eserleri ve er-Risâletü’l-Fârıkâ ve’l- Milhetü’lFaikâ Risâlesi”, Farsça’dan çeviren Şahin Ahmetoğlu, e-Makâlât Mezhep Araştırmaları Dergisi, 2013, Sayı: VI (1), ss. 147-158.</p>
+<p class="pub-item">18. Muhammed Cevâd Meşkûr, “Sa’d b. Abdillah Eş’arî Kummî’nin Kitabu’l -Mâkâlât’ı ve Nevbahtî’nin Fıraku’ş-Şîa Eseri ile Mukayesesi”, Farsça’dan çeviren Şahin Ahmetoğlu, Iğdır Üniversitesi İlahiyat Fakültesi Dergisi, Nisan 2013, Sayı: 1, ss. 223-230.</p>
+<p class="pub-item">19. Hâdî Vekîlî - Enîse Sâdat Hüseynî Şerîf, “Maturidiliğin Yayılışı (V-VII. Yüzyıllar)”, Farsça’dan çeviren Şahin Ahmetoğlu, Iğdır Üniversitesi İlahiyat Fakültesi Dergisi, Nisan-Ekim, 2014, Sayı: 1-2, ss. 307- 320.</p>
+<p class="pub-item">20. Ali Ğofrânî, “Maverâünnehir’de Şiiliğin Tarihi: Sâmânîlerin Çöküşünden Moğolların Gelişine Kadar (616-1219)”, Farsça’dan çeviren Şahin Ahmetoğlu, Iğdır Üniversitesi İlahiyat Fakültesi Dergisi, Nisan 2015, Sayı: 5, s. 221-237.</p>
+<p class="pub-item">21. Hüseyin Hüseyniyan Mukaddem, “Nevbahtî Ailesinin Şiî Düşüncenin Gelişimindeki Etkisi”, Farsça’dan çeviren Şahin Ahmetoğlu, Turkish Journal of Shite Studies, Sayı 1, (Haziran 2019), ss. 95- 117.</p>
+<p class="pub-item">22. Ali Ekber Feyyaz, “Milel ve Nihal Tarihinin Gelişimi”, Farsça’dan çeviren Şahin Ahmetoğlu, e-Makâlât Mezhep Araştırmaları Dergisi 12, sy 2, (Bahar 2019), ss. 180-187.</p>
+<p class="pub-item">23. M. C. Meşkûr-H. Ğ. Isfahani, “Suriye’de Aleviler (Nusayriler)”, Farsça’dan çeviren Şahin Ahmetoğlu, Turkish Journal of Shiite Studies, 1/2, (Aralık 2019), ss. 357-364. KİTAP KRİTİĞİ</p>
+<p class="pub-item">24. Ş. Ahmetoğlu. “Abbas İkbâl Aştiyâni’nin “Hanedân-e Nevbahtî” Adlı Eseri”, Milel ve Nihal İnanç, Kültür ve Mitoloji Araştırmaları Dergisi 8 (3), İstanbul 2011, ss. 253-259.</p>
+<p class="pub-item">25. Ş. Ahmetoğlu. “Keyhüsrev Esfendiyâr b. Azerkeyvân’ın “Debestân-e Mezâhib” Adlı Eseri”, Milel ve Nihal İnanç, Kültür ve Mitoloji Araştırmaları Dergisi 8 (3), İstanbul 2011, ss. 267-282.</p>
+<p class="pub-item">26. Ş. Ahmetoğlu. “Muhammed Cevâd Meşkûr’un “Târîh-e Şîa ve Fırkahâ-ye İslâm tâ Karn-e Çahârrum” Adlı Eseri”, Iğdır Üniversitesi İlahiyat Fakültesi Dergisi, Nisan 2013, Sayı: 1, ss. 231-236. EDİTÖR</p>
+<p class="pub-item">27. Globallaşmaya Doğru. ed. Şahin Ahmetoğlu. Bakü: “Globallaşan Azerbaycan” Sivil İnkişaf Merkezi, 2006.</p>
+<p class="pub-item">28. Yeni Dünyada Yenileşen Azerbaycan İgtisadiyyatı. ed. Şahin Ahmetoğlu. Bakü: “Globallaşan Azerbaycan” Sivil İnkişaf Merkezi, 2006.</p>
+<p class="pub-item">29. İlkin Sabiroğlu. Kapitalizm Kapitalizme Benzemez. ed. Şahin Ahmetoğlu. Bakü: “Globallaşan Azerbaycan” Sivil İnkişaf Merkezi, 2006.</p>
+<p class="pub-item">30. Natig Sabiroğlu. Globallaşma ve Harici İnvestisiyalar. ed. Şahin Ahmetoğlu. Bakü: “Globallaşan Azerbaycan” Sivil İnkişaf Merkezi, 2006.</p>
+<p class="pub-item">31. Şahin Ahmetoğlu vd. 2. Uluslararası “İslam Medeniyetinde Birlikte Yaşama Tecrübesi” Sempozyumu Bildiri Özetleri Kitabı. Ankara: Grafiker Yayınları, 2023.</p>
+<p class="pub-item">32. Şahin Ahmetoğlu vd. 2. Uluslararası “İslam Medeniyetinde Birlikte Yaşama Tecrübesi” Sempozyumu Bildiri Tam Metin Kitabı. Ankara: Grafiker Yayınları, 2024. DİĞER YAYINLAR</p>
+<p class="pub-item">33. Ş. Ahmetoğlu. “20 Ocak Bakü Katliamı”. “Azerbaycan” Dergisi, Sayı 337, s.34. Ankara 2001.</p>
+<p class="pub-item">34. Ş. Ahmetoğlu. “Azerbaycan’da Din-Devlet İlişkileri”, “Azerbaycan” Dergisi, Temmuz-Ağustos, Sayı 343, s.9. Ankara 2002.</p>
+<p class="pub-item">35. Ş. Ahmetoğlu. “Orta Şark’ta İki Devlet: Irak ve İsrail”, “Kelam” Dergisi, Ocak, Bakü 2003.</p>
+<p class="pub-item">36. Ş. Ahmetoğlu. “Tehsil Sistemimizde Din Tedrisi”, İrfan Dergisi, Sayı 3, s. 19. Ekim-Kasım Aralık, Bakü 2005.</p>
+<p class="pub-item">37. Ş. Ahmetoğlu. “İslam Mezhepleri ve Tarihçiliği”, Furkan Dergisi, Sayı I, Bakü 2006.</p>
+<p class="pub-item">38. Ş. Ahmetoğlu. “20 Ocak”, İrfan Dergisi, Ocak, Bakü 2006.</p>
+<p class="pub-item">39. Ş. Ahmetoğlu. “Ananevi Bayramımız: Nevruz”, İrfan Dergisi, Mart, Bakü 2006</p>
+<p class="pub-item">40. Ş. Ahmetoğlu. “Azerbaycan Şairlerinin Vatan ve Vatanseverliği Terennüm Eden Şiîrleri”, İrfan Dergisi, Haziran, Bakü 2006.</p>
+<p class="pub-item">41. Ş. Ahmetoğlu. “Milli Şüur”, İrfan Dergisi, Sayı IV, Bakü 2006.</p>
+<p class="pub-item">42. Ş. Ahmetoğlu. “XXI asır Azerbaycan Cemiyeti”, “XXI Asır” Dergisi, Sayı III, Mart, Bakü 2008, s. 23- 24.</p>
+<p class="pub-item">43. Ş. Ahmetoğlu. “Azerbaycan’da Din-Devlet Münasebetleri Çerçevesinde Dini Eğitim Meselesi”, Türkeli Dergisi, Sayı II, Bakü 2008.</p>
+    </section>
+  </main>
+</article>
+</body>
+</html>

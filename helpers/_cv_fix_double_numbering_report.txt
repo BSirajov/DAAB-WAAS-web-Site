@@ -1,0 +1,205 @@
+Fix double bib numbering @ 2026-10-10T17:37:29
+
+## C:\dev\daab-waas-web-site\en\scientists\CV\Word
+Aliyev_Ramin_CV_EN.docx: 48 paras
+  BEFORE: 1. 1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulus
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulusal/
+  BEFORE: 2. 1. Eğitimde Pozitif Psikolojisi Uygulamaları, Bölüm adı:(Azim) (2015)., ALİYEV RAMİN, P
+  AFTER:  2. Eğitimde Pozitif Psikolojisi Uygulamaları, Bölüm adı:(Azim) (2015)., ALİYEV RAMİN, Pege
+  BEFORE: 3. 2. Haydar Aliyev ve Çağdaş Azerbaycan Devletçiliyi, Bölüm adı:(Haydar Aliyev Döneminde 
+  AFTER:  3. Haydar Aliyev ve Çağdaş Azerbaycan Devletçiliyi, Bölüm adı:(Haydar Aliyev Döneminde Kül
+Gulusoy_Ilkin_CV_EN.docx: 82 paras
+  BEFORE: 1. 57. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 1. TÜRKİYE TÜRKÇESİ İLE AZERBAYCAN TÜRKÇESİNİN KARŞILAŞTIRMALI DEYİMBİLGİSİ (Organ Adla
+  AFTER:  2. TÜRKİYE TÜRKÇESİ İLE AZERBAYCAN TÜRKÇESİNİN KARŞILAŞTIRMALI DEYİMBİLGİSİ (Organ Adları 
+  BEFORE: 3. 2. Neriman Nerimanov. Türk-Azerbaycan Dilinin Muhtasar Sarf-Nahivi (Azerbaycan Türkçesi
+  AFTER:  3. Neriman Nerimanov. Türk-Azerbaycan Dilinin Muhtasar Sarf-Nahivi (Azerbaycan Türkçesinin
+Ismayil_Togrul_CV_EN.docx: 3 paras
+  BEFORE: 15. 2. Uluslararası bilimsel toplantılarda sunulan ve bildiri kitabında (Proceedings) bası
+  AFTER:  15. Uluslararası bilimsel toplantılarda sunulan ve bildiri kitabında (Proceedings) basılan
+  BEFORE: 47. 3. Yazılan uluslararası kitaplar veya kitaplarda bölümler:
+  AFTER:  47. Yazılan uluslararası kitaplar veya kitaplarda bölümler:
+  BEFORE: 73. 5. Ulusal bilimsel toplantılarda sunulan ve bildiri kitaplarında basılan bildiriler:
+  AFTER:  73. Ulusal bilimsel toplantılarda sunulan ve bildiri kitaplarında basılan bildiriler:
+Kurban_Vefa_CV_EN.docx: 51 paras
+  BEFORE: 1. 18. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 1. STRATEJİK PARALAKSIN DOĞDUĞU NOKTADATÜRK VE RUS İLİŞKİLERİNİN GELECEĞİ:KIBRIS VE ÖTE
+  AFTER:  2. STRATEJİK PARALAKSIN DOĞDUĞU NOKTADATÜRK VE RUS İLİŞKİLERİNİN GELECEĞİ:KIBRIS VE ÖTESİ 
+  BEFORE: 3. 2. The Caucasus Policy of Russia in the Early 21st Century (2020)., KURBAN VEFA, Cambri
+  AFTER:  3. The Caucasus Policy of Russia in the Early 21st Century (2020)., KURBAN VEFA, Cambridge
+Mammadli_Barmanbay_Afina_CV_EN.docx: 44 paras
+  BEFORE: 2. 2. Azerbaycan Romantik Edebiyatında Vatan (Abbas Sehhet, Mehemmed Hadi, Abdulla Şaik) (
+  AFTER:  2. Azerbaycan Romantik Edebiyatında Vatan (Abbas Sehhet, Mehemmed Hadi, Abdulla Şaik) (202
+  BEFORE: 3. 3. Ehmed Cavad ve Türkiye (2010)., MEMMEDLİ AFİNA, Elm ve Tehsil, Editör:Bekir Nebiyev,
+  AFTER:  3. Ehmed Cavad ve Türkiye (2010)., MEMMEDLİ AFİNA, Elm ve Tehsil, Editör:Bekir Nebiyev, Ba
+  BEFORE: 1. 9. TÜRK DÜNYASI ŞİİR ANTOLOJİSİ AZERBAYCAN ŞİİRİ , Bölüm adı:(Mehemmed Hadi) (2023)., B
+  AFTER:  1. TÜRK DÜNYASI ŞİİR ANTOLOJİSİ AZERBAYCAN ŞİİRİ , Bölüm adı:(Mehemmed Hadi) (2023)., BARM
+Rzayev_Teymur_CV_EN.docx: 11 paras
+  BEFORE: 1. 3. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulus
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 1. RZAYEV TEYMUR (2019). Azerbaycan’da kabartma sanatı. Arayışlar, 10(2), 194-197.
+  AFTER:  2. RZAYEV TEYMUR (2019). Azerbaycan’da kabartma sanatı. Arayışlar, 10(2), 194-197.
+  BEFORE: 3. 2. RZAYEV TEYMUR (2018). ”XX. yüzyıl Azerbaycan Tasviri Sanatında Sembolik ve Mecazi An
+  AFTER:  3. RZAYEV TEYMUR (2018). ”XX. yüzyıl Azerbaycan Tasviri Sanatında Sembolik ve Mecazi Anlam
+Sabziyeva_Makbule_CV_EN.docx: 82 paras
+  BEFORE: 1. 43. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 7. Bir Daha Tolstoy Hakkında (Ещё раз о Толстом) (2010)., SABZİYEVA MAKBULE, Qanun Yayı
+  AFTER:  2. Bir Daha Tolstoy Hakkında (Ещё раз о Толстом) (2010)., SABZİYEVA MAKBULE, Qanun Yayınev
+  BEFORE: 1. 23. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulusal/
+
+## C:\dev\daab-waas-web-site\az\scientists\CV\Word
+Aliyev_Ramin_CV_AZ.docx: 48 paras
+  BEFORE: 1. 1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulus
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulusal/
+  BEFORE: 2. 1. Eğitimde Pozitif Psikolojisi Uygulamaları, Bölüm adı:(Azim) (2015)., ALİYEV RAMİN, P
+  AFTER:  2. Eğitimde Pozitif Psikolojisi Uygulamaları, Bölüm adı:(Azim) (2015)., ALİYEV RAMİN, Pege
+  BEFORE: 3. 2. Haydar Aliyev ve Çağdaş Azerbaycan Devletçiliyi, Bölüm adı:(Haydar Aliyev Döneminde 
+  AFTER:  3. Haydar Aliyev ve Çağdaş Azerbaycan Devletçiliyi, Bölüm adı:(Haydar Aliyev Döneminde Kül
+Gulusoy_Ilkin_CV_AZ.docx: 82 paras
+  BEFORE: 1. 57. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 1. TÜRKİYE TÜRKÇESİ İLE AZERBAYCAN TÜRKÇESİNİN KARŞILAŞTIRMALI DEYİMBİLGİSİ (Organ Adla
+  AFTER:  2. TÜRKİYE TÜRKÇESİ İLE AZERBAYCAN TÜRKÇESİNİN KARŞILAŞTIRMALI DEYİMBİLGİSİ (Organ Adları 
+  BEFORE: 3. 2. Neriman Nerimanov. Türk-Azerbaycan Dilinin Muhtasar Sarf-Nahivi (Azerbaycan Türkçesi
+  AFTER:  3. Neriman Nerimanov. Türk-Azerbaycan Dilinin Muhtasar Sarf-Nahivi (Azerbaycan Türkçesinin
+Ismayil_Togrul_CV_AZ.docx: 3 paras
+  BEFORE: 15. 2. Uluslararası bilimsel toplantılarda sunulan ve bildiri kitabında (Proceedings) bası
+  AFTER:  15. Uluslararası bilimsel toplantılarda sunulan ve bildiri kitabında (Proceedings) basılan
+  BEFORE: 47. 3. Yazılan uluslararası kitaplar veya kitaplarda bölümler:
+  AFTER:  47. Yazılan uluslararası kitaplar veya kitaplarda bölümler:
+  BEFORE: 73. 5. Ulusal bilimsel toplantılarda sunulan ve bildiri kitaplarında basılan bildiriler:
+  AFTER:  73. Ulusal bilimsel toplantılarda sunulan ve bildiri kitaplarında basılan bildiriler:
+Kurban_Vefa_CV_AZ.docx: 51 paras
+  BEFORE: 1. 18. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 1. STRATEJİK PARALAKSIN DOĞDUĞU NOKTADATÜRK VE RUS İLİŞKİLERİNİN GELECEĞİ:KIBRIS VE ÖTE
+  AFTER:  2. STRATEJİK PARALAKSIN DOĞDUĞU NOKTADATÜRK VE RUS İLİŞKİLERİNİN GELECEĞİ:KIBRIS VE ÖTESİ 
+  BEFORE: 3. 2. The Caucasus Policy of Russia in the Early 21st Century (2020)., KURBAN VEFA, Cambri
+  AFTER:  3. The Caucasus Policy of Russia in the Early 21st Century (2020)., KURBAN VEFA, Cambridge
+Mammadli_Barmanbay_Afina_CV_AZ.docx: 44 paras
+  BEFORE: 2. 2. Azerbaycan Romantik Edebiyatında Vatan (Abbas Sehhet, Mehemmed Hadi, Abdulla Şaik) (
+  AFTER:  2. Azerbaycan Romantik Edebiyatında Vatan (Abbas Sehhet, Mehemmed Hadi, Abdulla Şaik) (202
+  BEFORE: 3. 3. Ehmed Cavad ve Türkiye (2010)., MEMMEDLİ AFİNA, Elm ve Tehsil, Editör:Bekir Nebiyev,
+  AFTER:  3. Ehmed Cavad ve Türkiye (2010)., MEMMEDLİ AFİNA, Elm ve Tehsil, Editör:Bekir Nebiyev, Ba
+  BEFORE: 1. 9. TÜRK DÜNYASI ŞİİR ANTOLOJİSİ AZERBAYCAN ŞİİRİ , Bölüm adı:(Mehemmed Hadi) (2023)., B
+  AFTER:  1. TÜRK DÜNYASI ŞİİR ANTOLOJİSİ AZERBAYCAN ŞİİRİ , Bölüm adı:(Mehemmed Hadi) (2023)., BARM
+Rzayev_Teymur_CV_AZ.docx: 11 paras
+  BEFORE: 1. 3. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulus
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 1. RZAYEV TEYMUR (2019). Azerbaycan’da kabartma sanatı. Arayışlar, 10(2), 194-197.
+  AFTER:  2. RZAYEV TEYMUR (2019). Azerbaycan’da kabartma sanatı. Arayışlar, 10(2), 194-197.
+  BEFORE: 3. 2. RZAYEV TEYMUR (2018). ”XX. yüzyıl Azerbaycan Tasviri Sanatında Sembolik ve Mecazi An
+  AFTER:  3. RZAYEV TEYMUR (2018). ”XX. yüzyıl Azerbaycan Tasviri Sanatında Sembolik ve Mecazi Anlam
+Sabziyeva_Makbule_CV_AZ.docx: 82 paras
+  BEFORE: 1. 43. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 7. Bir Daha Tolstoy Hakkında (Ещё раз о Толстом) (2010)., SABZİYEVA MAKBULE, Qanun Yayı
+  AFTER:  2. Bir Daha Tolstoy Hakkında (Ещё раз о Толстом) (2010)., SABZİYEVA MAKBULE, Qanun Yayınev
+  BEFORE: 1. 23. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulusal/
+
+## C:\dev\Archive\CV\Unified
+Aliyev_Ramin_CV_AZ.docx: 48 paras
+  BEFORE: 1. 1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulus
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulusal/
+  BEFORE: 2. 1. Eğitimde Pozitif Psikolojisi Uygulamaları, Bölüm adı:(Azim) (2015)., ALİYEV RAMİN, P
+  AFTER:  2. Eğitimde Pozitif Psikolojisi Uygulamaları, Bölüm adı:(Azim) (2015)., ALİYEV RAMİN, Pege
+  BEFORE: 3. 2. Haydar Aliyev ve Çağdaş Azerbaycan Devletçiliyi, Bölüm adı:(Haydar Aliyev Döneminde 
+  AFTER:  3. Haydar Aliyev ve Çağdaş Azerbaycan Devletçiliyi, Bölüm adı:(Haydar Aliyev Döneminde Kül
+Aliyev_Ramin_CV_EN.docx: 48 paras
+  BEFORE: 1. 1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulus
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulusal/
+  BEFORE: 2. 1. Eğitimde Pozitif Psikolojisi Uygulamaları, Bölüm adı:(Azim) (2015)., ALİYEV RAMİN, P
+  AFTER:  2. Eğitimde Pozitif Psikolojisi Uygulamaları, Bölüm adı:(Azim) (2015)., ALİYEV RAMİN, Pege
+  BEFORE: 3. 2. Haydar Aliyev ve Çağdaş Azerbaycan Devletçiliyi, Bölüm adı:(Haydar Aliyev Döneminde 
+  AFTER:  3. Haydar Aliyev ve Çağdaş Azerbaycan Devletçiliyi, Bölüm adı:(Haydar Aliyev Döneminde Kül
+Gulusoy_Ilkin_CV_AZ.docx: 82 paras
+  BEFORE: 1. 57. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 1. TÜRKİYE TÜRKÇESİ İLE AZERBAYCAN TÜRKÇESİNİN KARŞILAŞTIRMALI DEYİMBİLGİSİ (Organ Adla
+  AFTER:  2. TÜRKİYE TÜRKÇESİ İLE AZERBAYCAN TÜRKÇESİNİN KARŞILAŞTIRMALI DEYİMBİLGİSİ (Organ Adları 
+  BEFORE: 3. 2. Neriman Nerimanov. Türk-Azerbaycan Dilinin Muhtasar Sarf-Nahivi (Azerbaycan Türkçesi
+  AFTER:  3. Neriman Nerimanov. Türk-Azerbaycan Dilinin Muhtasar Sarf-Nahivi (Azerbaycan Türkçesinin
+Gulusoy_Ilkin_CV_EN.docx: 82 paras
+  BEFORE: 1. 57. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 1. TÜRKİYE TÜRKÇESİ İLE AZERBAYCAN TÜRKÇESİNİN KARŞILAŞTIRMALI DEYİMBİLGİSİ (Organ Adla
+  AFTER:  2. TÜRKİYE TÜRKÇESİ İLE AZERBAYCAN TÜRKÇESİNİN KARŞILAŞTIRMALI DEYİMBİLGİSİ (Organ Adları 
+  BEFORE: 3. 2. Neriman Nerimanov. Türk-Azerbaycan Dilinin Muhtasar Sarf-Nahivi (Azerbaycan Türkçesi
+  AFTER:  3. Neriman Nerimanov. Türk-Azerbaycan Dilinin Muhtasar Sarf-Nahivi (Azerbaycan Türkçesinin
+Ismayil_Togrul_CV_AZ.docx: 3 paras
+  BEFORE: 15. 2. Uluslararası bilimsel toplantılarda sunulan ve bildiri kitabında (Proceedings) bası
+  AFTER:  15. Uluslararası bilimsel toplantılarda sunulan ve bildiri kitabında (Proceedings) basılan
+  BEFORE: 47. 3. Yazılan uluslararası kitaplar veya kitaplarda bölümler:
+  AFTER:  47. Yazılan uluslararası kitaplar veya kitaplarda bölümler:
+  BEFORE: 73. 5. Ulusal bilimsel toplantılarda sunulan ve bildiri kitaplarında basılan bildiriler:
+  AFTER:  73. Ulusal bilimsel toplantılarda sunulan ve bildiri kitaplarında basılan bildiriler:
+Ismayil_Togrul_CV_EN.docx: 3 paras
+  BEFORE: 15. 2. Uluslararası bilimsel toplantılarda sunulan ve bildiri kitabında (Proceedings) bası
+  AFTER:  15. Uluslararası bilimsel toplantılarda sunulan ve bildiri kitabında (Proceedings) basılan
+  BEFORE: 47. 3. Yazılan uluslararası kitaplar veya kitaplarda bölümler:
+  AFTER:  47. Yazılan uluslararası kitaplar veya kitaplarda bölümler:
+  BEFORE: 73. 5. Ulusal bilimsel toplantılarda sunulan ve bildiri kitaplarında basılan bildiriler:
+  AFTER:  73. Ulusal bilimsel toplantılarda sunulan ve bildiri kitaplarında basılan bildiriler:
+Kurban_Vefa_CV_AZ.docx: 51 paras
+  BEFORE: 1. 18. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 1. STRATEJİK PARALAKSIN DOĞDUĞU NOKTADATÜRK VE RUS İLİŞKİLERİNİN GELECEĞİ:KIBRIS VE ÖTE
+  AFTER:  2. STRATEJİK PARALAKSIN DOĞDUĞU NOKTADATÜRK VE RUS İLİŞKİLERİNİN GELECEĞİ:KIBRIS VE ÖTESİ 
+  BEFORE: 3. 2. The Caucasus Policy of Russia in the Early 21st Century (2020)., KURBAN VEFA, Cambri
+  AFTER:  3. The Caucasus Policy of Russia in the Early 21st Century (2020)., KURBAN VEFA, Cambridge
+Kurban_Vefa_CV_EN.docx: 51 paras
+  BEFORE: 1. 18. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 1. STRATEJİK PARALAKSIN DOĞDUĞU NOKTADATÜRK VE RUS İLİŞKİLERİNİN GELECEĞİ:KIBRIS VE ÖTE
+  AFTER:  2. STRATEJİK PARALAKSIN DOĞDUĞU NOKTADATÜRK VE RUS İLİŞKİLERİNİN GELECEĞİ:KIBRIS VE ÖTESİ 
+  BEFORE: 3. 2. The Caucasus Policy of Russia in the Early 21st Century (2020)., KURBAN VEFA, Cambri
+  AFTER:  3. The Caucasus Policy of Russia in the Early 21st Century (2020)., KURBAN VEFA, Cambridge
+Mammadli_Barmanbay_Afina_CV_AZ.docx: 44 paras
+  BEFORE: 2. 2. Azerbaycan Romantik Edebiyatında Vatan (Abbas Sehhet, Mehemmed Hadi, Abdulla Şaik) (
+  AFTER:  2. Azerbaycan Romantik Edebiyatında Vatan (Abbas Sehhet, Mehemmed Hadi, Abdulla Şaik) (202
+  BEFORE: 3. 3. Ehmed Cavad ve Türkiye (2010)., MEMMEDLİ AFİNA, Elm ve Tehsil, Editör:Bekir Nebiyev,
+  AFTER:  3. Ehmed Cavad ve Türkiye (2010)., MEMMEDLİ AFİNA, Elm ve Tehsil, Editör:Bekir Nebiyev, Ba
+  BEFORE: 1. 9. TÜRK DÜNYASI ŞİİR ANTOLOJİSİ AZERBAYCAN ŞİİRİ , Bölüm adı:(Mehemmed Hadi) (2023)., B
+  AFTER:  1. TÜRK DÜNYASI ŞİİR ANTOLOJİSİ AZERBAYCAN ŞİİRİ , Bölüm adı:(Mehemmed Hadi) (2023)., BARM
+Mammadli_Barmanbay_Afina_CV_EN.docx: 44 paras
+  BEFORE: 2. 2. Azerbaycan Romantik Edebiyatında Vatan (Abbas Sehhet, Mehemmed Hadi, Abdulla Şaik) (
+  AFTER:  2. Azerbaycan Romantik Edebiyatında Vatan (Abbas Sehhet, Mehemmed Hadi, Abdulla Şaik) (202
+  BEFORE: 3. 3. Ehmed Cavad ve Türkiye (2010)., MEMMEDLİ AFİNA, Elm ve Tehsil, Editör:Bekir Nebiyev,
+  AFTER:  3. Ehmed Cavad ve Türkiye (2010)., MEMMEDLİ AFİNA, Elm ve Tehsil, Editör:Bekir Nebiyev, Ba
+  BEFORE: 1. 9. TÜRK DÜNYASI ŞİİR ANTOLOJİSİ AZERBAYCAN ŞİİRİ , Bölüm adı:(Mehemmed Hadi) (2023)., B
+  AFTER:  1. TÜRK DÜNYASI ŞİİR ANTOLOJİSİ AZERBAYCAN ŞİİRİ , Bölüm adı:(Mehemmed Hadi) (2023)., BARM
+Rzayev_Teymur_CV_AZ.docx: 11 paras
+  BEFORE: 1. 3. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulus
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 1. RZAYEV TEYMUR (2019). Azerbaycan’da kabartma sanatı. Arayışlar, 10(2), 194-197.
+  AFTER:  2. RZAYEV TEYMUR (2019). Azerbaycan’da kabartma sanatı. Arayışlar, 10(2), 194-197.
+  BEFORE: 3. 2. RZAYEV TEYMUR (2018). ”XX. yüzyıl Azerbaycan Tasviri Sanatında Sembolik ve Mecazi An
+  AFTER:  3. RZAYEV TEYMUR (2018). ”XX. yüzyıl Azerbaycan Tasviri Sanatında Sembolik ve Mecazi Anlam
+Rzayev_Teymur_CV_EN.docx: 11 paras
+  BEFORE: 1. 3. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulus
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 1. RZAYEV TEYMUR (2019). Azerbaycan’da kabartma sanatı. Arayışlar, 10(2), 194-197.
+  AFTER:  2. RZAYEV TEYMUR (2019). Azerbaycan’da kabartma sanatı. Arayışlar, 10(2), 194-197.
+  BEFORE: 3. 2. RZAYEV TEYMUR (2018). ”XX. yüzyıl Azerbaycan Tasviri Sanatında Sembolik ve Mecazi An
+  AFTER:  3. RZAYEV TEYMUR (2018). ”XX. yüzyıl Azerbaycan Tasviri Sanatında Sembolik ve Mecazi Anlam
+Sabziyeva_Makbule_CV_AZ.docx: 82 paras
+  BEFORE: 1. 43. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 7. Bir Daha Tolstoy Hakkında (Ещё раз о Толстом) (2010)., SABZİYEVA MAKBULE, Qanun Yayı
+  AFTER:  2. Bir Daha Tolstoy Hakkında (Ещё раз о Толстом) (2010)., SABZİYEVA MAKBULE, Qanun Yayınev
+  BEFORE: 1. 23. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulusal/
+Sabziyeva_Makbule_CV_EN.docx: 82 paras
+  BEFORE: 1. 43. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/
+  BEFORE: 2. 7. Bir Daha Tolstoy Hakkında (Ещё раз о Толстом) (2010)., SABZİYEVA MAKBULE, Qanun Yayı
+  AFTER:  2. Bir Daha Tolstoy Hakkında (Ещё раз о Толстом) (2010)., SABZİYEVA MAKBULE, Qanun Yayınev
+  BEFORE: 1. 23. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulu
+  AFTER:  1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulusal/
+
+TOTAL files=28 paragraphs=1284

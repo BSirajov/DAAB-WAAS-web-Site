@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aytakin Huseynli — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>AYTAKIN HUSEYNLI</h1>
+      <p class="subtitle">PhD, MSW<br>Assistant Research Professor<br>Brown School, Washington University in St. Louis, St. Louis, Missouri, United States</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/aytekin-huseynli.jpg" alt="Aytakin Huseynli"></div>
+  <aside class="side">
+    <h2>Contact</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>United States</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zm0 1.5c1.7 0 3.3.6 4.5 1.5H7.5A7.9 7.9 0 0 1 12 4zm-6.6 3h13.2c.5.8.9 1.7 1.1 2.7H4.3c.2-1 .6-1.9 1.1-2.7zM4.2 11.2h15.6c0 .3.1.6.1.9s0 .6-.1.9H4.2c0-.3-.1-.6-.1-.9s0-.6.1-.9zm.1 3.6h15.4c-.2 1-.6 1.9-1.1 2.7H7.5c1.2.9 2.8 1.5 4.5 1.5a7.9 7.9 0 0 0 4.5-1.5H5.4c-.5-.8-.9-1.7-1.1-2.7z"/></svg><span><a href="https://sites.wustl.edu/aytakinhuseynli/">https://sites.wustl.edu/aytakinhuseynli/</a></span></li></ul><div class="block"><h2>Awards &amp; recognitions</h2><div class="rule"></div><ul class="items awards"><li>Outstanding Social Work Doctoral Dissertation Award, honorable mention — Society for Social Work and Research (2024)</li>
+<li>Award for social work and social development — Ministry of Women, Family and Children Affairs of Azerbaijan (2018)</li>
+<li>Mary’s College Women’s Fellowship — Durham University, United Kingdom (2014)</li>
+<li>Award for the development of social work — Turkish Association of Social Workers (2013)</li>
+<li>Award for the development of social work — U.S. Embassy in Azerbaijan (2007)</li>
+<li>Academic Fellowship and Higher Education Support Program — Open Society Foundations (2007)</li>
+<li>Social Work Fellowship — Open Society Foundations (2004)</li>
+<li>Women Human Rights Fellowship — Open Society Foundations (1999)</li></ul></div><div class="block"><h2>Languages</h2><div class="rule"></div><ul class="items langs"><li>Azerbaijani (Native)</li>
+<li>English (Fluent)</li>
+<li>Russian (Fluent)</li>
+<li>Turkish (Fluent)</li>
+<li>German (Basic)</li></ul></div>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profile</h2>
+      <div class="rule"></div>
+      <p>Aytakin Huseynli is an assistant research professor at the Brown School of Washington University in St. Louis, where she has worked since 2024. She was a postdoctoral scholar there in 2022–2024. She received a PhD from the Brown School in 2022. The dissertation is Exploring the Relationship between Resource Curse and Child Wellbeing, specifically in post-Soviet Countries, chaired by Michael Sherraden. She received an MSW from the Brown School in 2005 and a bachelor’s degree in English and German philology from Azerbaijan State University of Languages in 1995. She is also a regional household-survey consultant for UNICEF Europe and Central Asia.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>Work experience</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Brown School, Washington University in St. Louis, United States</h3>
+          <span class="when">2024–present</span>
+        </div>
+        <p class="role">Assistant Research Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>UNICEF Europe and Central Asia</h3>
+          <span class="when">2022–present</span>
+        </div>
+        <p class="role">Regional household-survey consultant</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>UNICEF</h3>
+          <span class="when">2019–2022</span>
+        </div>
+        <p class="role">Data, statistics, research, and evaluation expert for Eurasia</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Center for Social Development, Washington University in St. Louis</h3>
+          <span class="when">2015–2022</span>
+        </div>
+        <p class="role">Graduate research associate</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Center for Innovation in Child Maltreatment Policy, Research, and Training, Washington University in St. Louis</h3>
+          <span class="when">2018–2022</span>
+        </div>
+        <p class="role">Graduate research assistant</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Social Policy Institute, Washington University in St. Louis</h3>
+          <span class="when">2018–2019</span>
+        </div>
+        <p class="role">Graduate research assistant</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Crown Family School of Social Work, Practice and Policy, University of Chicago</h3>
+          <span class="when">2015–2017</span>
+        </div>
+        <p class="role">Graduate research assistant</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Hilfsverk Austria International</h3>
+          <span class="when">2009–2014</span>
+        </div>
+        <p class="role">Head of the country office in Azerbaijan</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Azerbaijan Public Social Work Union</h3>
+          <span class="when">2009–present</span>
+        </div>
+        <p class="role">Founder and board member</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>UNICEF</h3>
+          <span class="when">2007–2010</span>
+        </div>
+        <p class="role">National consultant on social work</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Open Society Foundations</h3>
+          <span class="when">2007–2013</span>
+        </div>
+        <p class="role">National scholar for higher-education reform support</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>UNICEF</h3>
+          <span class="when">2007 and 2009</span>
+        </div>
+        <p class="role">National consultant on child protection</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Ministry of Labor and Social Protection of Azerbaijan</h3>
+          <span class="when">2006–2007</span>
+        </div>
+        <p class="role">Senior advisor to the minister</p>
+        <ul><li>Direct practice with children and families</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Save the Children</h3>
+          <span class="when">2004–2006</span>
+        </div>
+        <p class="role">Family support manager</p>
+        <ul><li>Direct practice with children and families</li></ul>
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Education</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Postdoctoral scholar</h3>
+          <span class="when">2022–2024</span>
+        </div>
+        <p>Brown School, Washington University in St. Louis, United States</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>PhD</h3>
+          <span class="when">2022</span>
+        </div>
+        <p>Dissertation: Exploring the Relationship between Resource Curse and Child Wellbeing, specifically in post-Soviet Countries. Chair: Michael Sherraden</p><p>Brown School, Washington University in St. Louis, United States</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>MSW</h3>
+          <span class="when">2005</span>
+        </div>
+        <p>Brown School, Washington University in St. Louis, United States</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Bachelor’s degree</h3>
+          <span class="when">1995</span>
+        </div>
+        <p>English and German philology</p><p>Azerbaijan State University of Languages, Azerbaijan</p>
+      </article>
+    </section><section class="sec grants">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Grants &amp; projects</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>2020–2021 — Labor rights of people with disabilities in Azerbaijan, Georgia, and Moldova. Principal investigator. $31,000 — European Union, Eastern Partnership Civil Society Forum</li><li>2018 — Awareness raising on child savings accounts and Child Development Accounts in Azerbaijan. Principal investigator. $7,000 — Azerbaijan government funding for nonprofits</li><li>2017–2018 — Upgrading national social work education quality standards to comply with global standards. Principal investigator. $7,000 — International Association of Schools of Social Work</li><li>2017 — Applying an ecological perspective to increase mental-health awareness among children. Principal investigator. $6,500 — BEARR Trust Small Grants Scheme, United Kingdom</li><li>2015–2017 — Shaping sustainable social change by strengthening social workers and their associations in Moldova, Georgia, Azerbaijan, and Armenia. Co-principal investigator. $500,000 — European Union and Austrian Development Agency</li><li>2014 — Examining the relationship between the resource curse and child well-being in Azerbaijan. Principal investigator. $6,000 — Open Society Foundations</li><li>2018 — Finding local needs and conditions for Child Development Accounts. Principal investigator. $7,000 — Center for Social Development, Washington University in St. Louis</li><li>2019–2020 — Dissertation grant. $22,000 — Washington University in St. Louis</li></ul>
+    </section><section class="sec teaching">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Teaching</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>Evaluation of Programs and Services; International Social and Economic Development Policy. Redesigned and taught — Brown School, Washington University in St. Louis</li><li>Practice and Program Evaluation — University of Missouri–St. Louis, School of Social Work</li><li>Research Methods for MBA; Quantitative and Qualitative Data Analysis — Azerbaijan Diplomatic Academy, School of Business</li><li>Social Work with Families and Children; Introduction to Social Work; Family and Child Well-being Policies and Services — Baku State University</li><li>Practice in Global Issues — Saint Louis University, School of Social Work</li><li>Co-taught: Global Anti-poverty Strategies; Evaluation of Programs and Services; Research Methods for Social Sciences with Statistical Application — Brown School, Washington University in St. Louis</li></ul>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Publications</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Book chapters</h3>
+<p class="pub-item">1. Huseynli, A. (2018). Predictors of child marriages in Azerbaijan: Multilevel analysis. In L. Sayfutdinova, C. Buckley, &amp; A. Valiyev (Eds.), Study Series on Public Policy Issues (Vol. 1, pp. 178–197). Caucasus Resource Center.</p>
+<p class="pub-item">2. Huseynli, A. (2023). The role of social workers in achieving sustainable development goals in Azerbaijan. In D. Androff &amp; J. Damanik (Eds.), International handbook on social work, social development, and the sustainable development goals. Routledge.</p>
+<h3 class="pub-sub">Peer-reviewed journal articles</h3>
+<p class="pub-item">1. Huseynli, A. (2022). Asset building policies to lift the resource curse: child development accounts in oil-and-gas-rich countries. Children and Youth Services Review, 145, 106717.</p>
+<p class="pub-item">2. Huseynli, A. (2022). Social work education in post-soviet countries: progress of Azerbaijan. The British Journal of Social Work, 53(5), 2560–2580.</p>
+<p class="pub-item">3. Huseynli, A., &amp; Jonson-Reid, M. (2022). Child well-being in post-Soviet countries: discipline practices in families in Azerbaijan. Child Indicators Research, 16(1), 317–336.</p>
+<p class="pub-item">4. Huseynli, A. (2022). Social work in Azerbaijan: achievements and challenges of the profession. International Social Work. https://doi.org/10.1177/00208728221075824.</p>
+<p class="pub-item">5. Kennedy, A., Kaushik, G., Dubinsky, E., Jonson-Reid, M., &amp; Huseynli, A. (2021). Direct and indirect cost savings from STI testing, treatment, and counseling among foster youth. Sexually Transmitted Disease, 49(1), 86–89. https://doi.org/10.1097/OLQ.0000000000001511.</p>
+<p class="pub-item">6. Rosen, M. H., Pinto, O., Kondratjeva, O., Roll, S. P., Huseynli, A., &amp; Grinstein-Weiss, M. (2020). Household savings decisions in Israel’s child savings program: The role of demographic, financial, and intrinsic factors. Journal of Family &amp; Economic Issues, 42, 368–386. https://doi.org/10.1007/s10834-020-09724-6.</p>
+<p class="pub-item">7. Huseynli, A. (2018). Implementation of deinstitutionalization of childcare institutions in postsoviet countries: The case of Azerbaijan. Child Abuse and Neglect, 76, 160–172. https://doi.org/10.1016/j.chiabu.2017.10.020.</p>
+<p class="pub-item">8. Ismayilova, L., Ssewamala, F., &amp; Huseynli, A. (2014). Reforming child institutional care in the Post-Soviet bloc: The potential role of family-based empowerment strategies. Children and Youth Services Review, 47(2), 136–148. https://doi.org/10.1016/j.childyouth.2014.09.007.</p>
+<h3 class="pub-sub">Invited talks and conference participation</h3>
+<ul class="plain"><li>2024 — Society for Social Work and Research 28th Annual Conference, Washington, D.C. — Symposium organized — Building Assets for Child Development: A Global Policy Innovation Symposium</li><li>2024 — Society for Social Work and Research 28th Annual Conference, Washington, D.C. — Paper — Effects of Child Development Accounts on Family Financial Well-Being: Evidence from a Randomized Policy Experiment</li><li>2024 — Society for Social Work and Research 28th Annual Conference, Washington, D.C. — Paper — Design and Development of Child Development Accounts in Kazakhstan</li><li>2024 — Society for Social Work and Research 28th Annual Conference, Washington, D.C. — Paper — Governance and child well-being: evidence from low- to middle-income countries</li><li>2023 — Society for Social Work and Research 27th Annual Conference, Washington, D.C. — Symposium organized — Financial Capability and Asset Building in International Perspective</li><li>2023 — China Financial Social Work Forum, China — Invited lecture — Asset-building policies in oil-, gas-, and mineral-rich countries: the cases of Kazakhstan and Azerbaijan</li><li>2023 — International Conference on Prevention of Domestic Violence, Baku, Azerbaijan — Invited lecture — Financial capability and asset-building to reduce and prevent domestic violence</li><li>2023 — Early Childhood Education Conference, Baku, Azerbaijan — Invited lecture — Child maltreatment in early childhood development and education</li><li>2023 — Early Childhood Education Conference, Baku, Azerbaijan — Invited lecture — U.S. models in community, family, and school collaboration in early childhood education</li><li>2023 — International Conference on Social Work and Social Research, Baku, Azerbaijan — Invited lecture — Child Development Accounts in oil- and gas-rich countries: the cases of Azerbaijan and Kazakhstan</li><li>2023 — Baku Business University, Baku, Azerbaijan — Invited lecture — Social work development in Azerbaijan: achievements and challenges</li><li>2023 — Azerbaijan Social Work Public Union conference, virtual — Invited lecture — What does inclusion, equity, and diversity mean to you?</li><li>2023 — Society for Social Work and Research 27th Annual Conference, Phoenix, Arizona — Paper — Child well-being in Ukraine, Moldova, Azerbaijan, Georgia, Kazakhstan, and Kyrgyzstan</li><li>2018 — World Conference on Social Work, Education and Social Development, Dublin, Ireland — Symposium organized — Professionalization of social work in post-socialist countries</li><li>2021 — Oxford School of Global and Area Studies, University of Oxford, United Kingdom — Invited lecture — Child well-being and child savings accounts in Azerbaijan: theory and possible policy design</li></ul>
+    </section>
+  </main>
+</article>
+</body>
+</html>

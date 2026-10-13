@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vefa Kurban — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>VEFA KURBAN</h1>
+      <p class="subtitle">PhD<br>Professor<br>Institute of Turkish World Studies, Ege University, Izmir, Turkey</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/vefa-qurban.jpg" alt="Vefa Kurban"></div>
+  <aside class="side">
+    <h2>Contact</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Turkey</span></li></ul>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profile</h2>
+      <div class="rule"></div>
+      <p>Vefa Kurban is a professor at the Institute of Turkish World Studies of Ege University. She received a doctorate in the history of the Republic of Turkey from Ege University on 26 March 2007. The thesis is urbanization and settled life in Azerbaijan between 1900 and 1978, supervised by Tuncer Baykara. Her master’s thesis, on land ownership in Azerbaijan in the late nineteenth and early twentieth centuries, was completed on 23 June 2000. Her bachelor’s degree in history is from Ege University, dated 3 September 1997. She was an associate professor at Izmir University of Economics from 2007 to 2019 and at Ege University from 2015 to 2019.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>Work experience</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Ege University, Izmir, Turkey</h3>
+          <span class="when">2021</span>
+        </div>
+        <p class="role">Professor</p>
+        <ul><li>2021</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Ege University</h3>
+          <span class="when">2015–2019</span>
+        </div>
+        <p class="role">Associate Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Faculty of Arts and Sciences, Izmir University of Economics</h3>
+          <span class="when">2007–2019</span>
+        </div>
+        <p class="role">Associate Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Faculty of Letters, Dokuz Eylül University</h3>
+          <span class="when">2012–2014</span>
+        </div>
+        <p class="role">Assistant professor</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Education</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>PhD</h3>
+          <span class="when">26 March 2007</span>
+        </div>
+        <p>History of the Republic of Turkey. Thesis: urbanization and settled life in Azerbaijan, 1900–1978. Advisor: Tuncer Baykara</p><p>Ege University</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Master’s degree</h3>
+          <span class="when">23 June 2000</span>
+        </div>
+        <p>Land ownership in Azerbaijan in the late nineteenth and early twentieth centuries. Advisor: Tuncer Baykara</p><p>Ege University</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Bachelor’s degree</h3>
+          <span class="when">3 September 1997</span>
+        </div>
+        <p>History</p><p>Faculty of Letters, Ege University</p>
+      </article>
+    </section><section class="sec supervision">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Supervision</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>Master’s — Completed theses at Ege University are listed, including work on the Organization of Turkic States</li></ul>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Publications</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Books and textbooks</h3>
+<p class="pub-item">1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/uluslararası kitaplar: Historical Background of the Karabakh Conflict and Shusha, the Cultural Capital (2023)., KURBAN VEFA, Cambridge Scholars Publishing, Basım sayısı:1, Sayfa Sayısı 595, ISBN:ISBN: 1-5275-1263- 0, İngilizce(Bilimsel Kitap)</p>
+<p class="pub-item">2. STRATEJİK PARALAKSIN DOĞDUĞU NOKTADATÜRK VE RUS İLİŞKİLERİNİN GELECEĞİ:KIBRIS VE ÖTESİ (2020)., ERGÜN OĞUZHAN,KURBAN VEFA,ÇÜMEN NUR,GÜL BURCU, Iksad, Editör:Doç. Dr. Vefa KURBAN, Basım sayısı:1, Sayfa Sayısı 212, ISBN:978-625-7914-82-6, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">3. The Caucasus Policy of Russia in the Early 21st Century (2020)., KURBAN VEFA, Cambridge Scholars Publishing, Editör:KURBAN VEFA, Basım sayısı:1, Sayfa Sayısı 159, ISBN:(10):1-5275-5788-X, İngilizce(Bilimsel Kitap)</p>
+<p class="pub-item">4. Sovyet Sosyalist Cumhuriyetler Birliği Tarihi (2020)., KURBAN VEFA, Yeditepe, Basım sayısı:1, Sayfa Sayısı 464, ISBN:9786057800657, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">5. No: 6539776) 5. TARİHİ, SOSYO-KÜLTÜREL YAPISI VE SİYASAL YÖNLERİYLE ÇEÇENLER (2020)., KURBAN VEFA,FEDAKAR PINAR,UÇKUN RABİA,ÖRAZ BEŞİKÇİ SEÇİL,KUREŞ Mehmet Nuri,ÇÜMEN Nur,GÜL Burcu, İKSAD, Editör:-, Basım sayısı:1, Sayfa Sayısı 218, ISBN:978-625-7279-91-8, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">6. JEOPOLİTİK ŞEKİLLENDİRME VETÜRK-RUS İLİŞKİLERİPostmodern Jeopolitik,İnfosfer Kirliliği ve Güç Siyaseti (2020)., ERGÜN OĞUZHAN,KURBAN VEFA, Yeditepe, Editör:Yağmur Yıldırımay, Basım sayısı:1, Sayfa Sayısı 144, ISBN:978-605-7800-69-5, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">7. RUSSİAN-TURKİSH RELATİONS FROM THE FİRST WORLD WAR (2017)., KURBAN VEFA, CAMBRİDGE, Basım sayısı:1, Sayfa Sayısı 306, ISBN:(10):1-4438-1777-5, İngilizce(Bilimsel Kitap)</p>
+<p class="pub-item">8. NOBELLER NOBEL ÖDÜLÜ VE BAKÜ PETROLLERİ (2013)., KURBAN VEFA, YEDİTEPE, Editör:AYKUT CAN, Basım sayısı:1, Sayfa Sayısı 343, ISBN:978-605-5200-27-5, Türkçe(Bilimsel Kitap)</p>
+<h3 class="pub-sub">Book chapters</h3>
+<p class="pub-item">1. ATATÜRK’E ARMAĞAN, Bölüm adı:(TÜRK TARİHİ VE TÜRK SANATI AÇISINDAN ŞUŞA’DAKİ SAATLI MESCİDİ’NİN YERİ VE ÖNEMİ) (2023)., KURBAN VEFA, UÇAR AYGÜL, BERİKAN, Editör:Prof. Dr. Şayan ULUSAN ve Doç. Dr. Nilgün Nurhan KARA, Basım sayısı:1, Sayfa Sayısı 436, ISBN:ISBN: 978-625-6591-04-2, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">2. Beşeri Bilimler Araştırma, Metodoloji ve Değerlendirme, Bölüm adı:(DAYATILAN KİMLİK VE HEGEMONYA: YENİ RUS ÇARLIĞI’NA GİRİŞ) (2022)., KURBAN VEFA, ERGÜN OĞUZHAN, Livre de Lyon, Editör:Ruhi İNAN, M. Fatih SANSAR, Basım sayısı:1, Sayfa Sayısı 297, ISBN:978-2-38236-454-3, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">3. Sosyal ve Beşeri Bilimlerde Değerlendirme ve Araştırmalar, Bölüm adı:(DENGE POLİTİKALARI VE TÜRKİYENİN STRATEJİK İKİLEMİ) (2021)., ERGÜN OĞUZHAN, KURBAN VEFA, Livre de Lyon, Editör:Doç. Dr. Ruhi İNAN, Basım sayısı:1, Sayfa Sayısı 278, ISBN:978-2-38236-186-3, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">4. KAFKASYA 4., Bölüm adı:(Algı ve Olgu Arasında Karabağ Zaferi Silahlı Savaştan Silahlı Siyasete Azerbaycan) (2021)., KURBAN VEFA, ERGÜN OĞUZHAN, İKSAD, Editör:Vefa Kurban Seçil Öraz Beşikçi Recep Efe Çoban, Basım sayısı:1, Sayfa Sayısı 618, ISBN:ISBN: 978-625-7562-15-7, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">5. TOPLUM BİLİMLERİNDE AKADEMİK ÇALIŞMALAR, Bölüm adı:(UKRAYNA’DAN AZERBAYCAN’A LİMİNAL SİYASET VE RUSYA) (2021)., ERGÜN OĞUZHAN, KURBAN VEFA, Livre de Lyon, Editör:Prof. Dr. Türkan ERDOĞAN Dr. M. Fatih SANSAR, Basım sayısı:1, Sayfa Sayısı 251, ISBN:978-2-38236-162-7, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">6. WAR ERA, Bölüm adı:(INSIDE AND OUTSIDE SHAPING INITIATIVES OF RUSSIA IN SOUTH CAUCASUS AND NAGORNO-KARABAKH WAR WITH REFLECTIONS FROM TASS NEWS AGENCY) (2021)., KURBAN VEFA, İKSAD, Editör:Vefa KURBAN Muvaffk DURANLI, Basım sayısı:1, Sayfa Sayısı 364, ISBN:ISBN: 978-625-7562-14-0 İngilizce(Bilimsel Kitap)</p>
+<p class="pub-item">7. Turkish-Russian Relations in the Context of Social Economic and Political Progress in the Post Cold Era, Bölüm adı:(Rus Stratejik Kültürünün Yeni Dönem Dış Politikalarına Etkisine İlişkin Sorgular) (2021)., ERGÜN OĞUZHAN, KURBAN VEFA, Livre de Lyon, Editör:Prof. Dr. Vefa KURBAN ve Dr. Çağdaş DUMAN, Basım sayısı:1, Sayfa Sayısı 18, ISBN:978-2-38-236-221-1, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">8. The Evaluations and Researches in Social Sciences and Humanities, Bölüm adı:(THE FUTURE of UKRAİNE WITHİN THE FRAMEWORK of GLOBAL POWER BALANCES) (2021)., KURBAN VEFA, DUMAN ÇAĞDAŞ, Livre de Lyon, Editör:Assoc. Prof. Dr. Mehmet Sarioglan Dr. M. Fatih Sansar, Basım sayısı:1, Sayfa Sayısı 409, ISBN:978-2-38236-187-0, İngilizce(Bilimsel Kitap)</p>
+<p class="pub-item">9. New Perspectives and Research in Social Sciences, Bölüm adı:(BASIC PARAMETERS OF RUSSIA AND TURKEY IN THE EASTERN MEDITERRANEAN CRISIS IN THE LIGHT OF RECENT DEVELOPMENTS) (2021)., KURBAN VEFA, ÇÜMEN Nur, Lambert Academic Publishing, Editör:Ayça Sarıalioğlu Hayali, Basım sayısı:1, Sayfa Sayısı 225, ISBN:978-620-3-85455-8, İngilizce(Bilimsel Kitap)</p>
+<p class="pub-item">10. 100. Yılında Türkiye-Rusya İlişkileri (Moskova Antlaşması&#x27;ndan Günümüze), Bölüm adı:(SURİYE MESELESİ DİYALEKTİĞİNDE TÜRKİYE-RUSYA DİPLOMATİK PARADİGMASI (2015-2020)) (2021)., KURBAN VEFA, GÜL Burcu, AKÇAĞ, Editör:Prof. Dr. Mehmet OKUR, Dr. Öğr. Üyesi Yüksel KÜÇÜKER, Dr. Ahmet Nafiz ÜNALMIŞ, Basım sayısı:1, Sayfa Sayısı 52, ISBN:9978-605-342-713- 1, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">11. Critical Studies in SOCIAL SCIENCES AND HUMANİTİES, Bölüm adı:(MILLENNIAL PAIN IN THE TRANS-CAUCASUS AND AZERBAIJAN) (2020)., KURBAN VEFA,ERGÜN OĞUZHAN, Livre de Lyon, Editör:Assoc. Prof. Dr. Mehmet SarıoğlanAsst. Prof. Dr. Sercan Hamza Bağlama, Basım sayısı:1, Sayfa Sayısı 24, ISBN:978-2-38236-066-8, İngilizce(Bilimsel Kitap)</p>
+<p class="pub-item">12. DİSİPLİNLERARASI POLİTİKA VİZYONU VE STRATEJİLER, Bölüm adı:(Tarihi Ve Güncel Boyutları İle Karabağ) (2020)., KURBAN VEFA, ÇÜMEN Nur, İKSAD, Editör:İbrahim Demir, Basım sayısı:1, Sayfa Sayısı 383, ISBN:978-625-7687-59-1, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">13. SİYASİ, Sosyal ve Kültürel Yönleriyle Türkiye ve Rusya 3, Bölüm adı:(SSCB ve Türkiye-İki Ülkenin Sansürlü Basınında 12 Eylül1980 Askeri Darbesinin Yansımaları-Karşılaştırmalı Yaklaşım) (2019)., KURBAN VEFA, Berikan Yayınevi, Editör:Muhammed Mücahit Küçükyılmaz, Basım sayısı:1, Sayfa Sayısı 17, ISBN:9786057634986, İngilizce(Bilimsel Kitap)</p>
+<p class="pub-item">14. Bağımsızlıklarının Yirmi Yedinci Yılında Türk Cumhuriyetleri, Bölüm adı:(Azerbaycan) (2018)., KURBAN VEFA,Aslanlı Araz,Musayev Geray,Caferov Nazim, Ahmet Yesevi Üniversitesi, Editör:Ayşe Çolpan Yıldız, Murat Yılmaz, Basım sayısı:1, Sayfa Sayısı 465, ISBN:9789944237741, Türkçe(Bilimsel Kitap)</p>
+<h3 class="pub-sub">Peer-reviewed journal articles</h3>
+<p class="pub-item">1. across the Turkic World. Türk Kültürü ve Hacı Bektaş Veli Araştırma Dergisi, Doi: 10.60163/tkhcbva.1470705</p>
+<p class="pub-item">2. Şuşa Yukarı Gövher Ağa Camii. Sanat Tarihi Dergisi, 32(2), 1001-1023., Doi: 10.29135/std.1309474</p>
+<p class="pub-item">3. KURBAN VEFA, BURCU GÜL (2023). CONSIDERING TURKISH-RUSSIAN RELATIONS FROM A HISTORICAL PERSPECTIVE: BORIS NIKOLAYEVICH YELTSIN’S PERIOD. ISLAMIC HISTORY AND LITERATURE, 2, 135-147.</p>
+<p class="pub-item">4. SAVAŞI YILLARINDA GERÇEKLEŞEN ADANA GÖRÜŞMELERİ (30-31 Ocak 1943). Çağdaş Türkiye Tarihi Araştırmaları Dergisi, 22(45), 797-823.</p>
+<p class="pub-item">5. KURBAN VEFA, Aslanlı Araz, Jafarov Nazim (2022). TURKEY-USSR RELATIONS DURING THE TURGUT OZAL ADMINISTRATION. STORINKY ISTORIYI-HISTORY PAGES(53)-286., Doi: 10.20535/2307- 5244.53.2021.248561</p>
+<p class="pub-item">6. ADMINISTRATION. Сторінки Історії, 53, 1-40., Doi: 10.20535/2307-5244.53.2021.248561 (Yayın No: 7556895) 6. KURBAN VEFA, ERGÜN OĞUZHAN (2021). The War Between Period and Exclamation Mark: New Reality and Nagorno-Karabakh: The Cemre that Fell to Nagorno-Karabakh. Tarih İncelemeleri Dergisi, 36(1), 209-251.</p>
+<p class="pub-item">7. ERGÜN OĞUZHAN,KURBAN VEFA (2020). BIG SHOWDOWNS IN SMALL SCALE: GEORGIA, RUSSIA AND OTHERS. International Journal of Social and Economic Sciences, 10(1), 22-32.</p>
+<p class="pub-item">8. KURBAN VEFA (2019). Causes of World War IFrom the Perspective of the Zionist Leader Vladimir Jabotinsky. ijsr, 9(2), 71-77., Doi: E-ISSN: 2667-4904, 9(2):71-77, 2019</p>
+<p class="pub-item">9. KURBAN VEFA (2018). STALIN’xxS TURKEY POLICY IN THE LIGHT OF ARCHIVE DOCUMENTS. International Refereed Journal of Research on Economics Management, 0(15), 0-0., Doi: 10.17373/UHEYAD.2018.1.2</p>
+<p class="pub-item">10. Uluslararası hakemli dergilerde yayımlanan makaleler: KURBAN VEFA (2018). STALIN’xxS TURKEY POLICY IN THE LIGHT OF ARCHIVE DOCUMENTS. International Refereed Journal of Research on Economics Management, 0(15), 0-0., Doi: 10.17373/UHEYAD.2018.1.2</p>
+<p class="pub-item">11. MERT HASAN,KURBAN VEFA (2016). Azerbaycan Basınında 1915 Ermeni Meselesi. Anadolu Üniversitesi Sosyal Bilimler Dergisi, 16(3)</p>
+<p class="pub-item">12. KURBAN VEFA (2014). 1950-1960 Yıllarında Türkiye İle Sovyetler Birliği Arasındaki İlişkiler. Çağdaş Türkiye Tarihi Araştırmaları</p>
+<p class="pub-item">13. KURBAN VEFA (2018). XIX. Yüzyıl Sonlarında Azerbaycan’da Faaliyet Gösteren Misyoner Okullarından Birisi: Gori Seminaryası. Uluslararası Türk Coğrafyası Sosyal Bilimler Kongresi (/Sözlü Sunum)</p>
+<p class="pub-item">14. Kitap) (Yayın No: 8. I.Dünya Savaşı ve Türkiye (2020)., KURBAN VEFA, Yeditepe, Editör:KURBAN VEFA, Basım sayısı:1, Sayfa Sayısı 119, ISBN:9786057800954, Türkçe(Kitap Tercümesi)</p>
+<p class="pub-item">15. Rusya’xxnın Doğuşundan Çar II.Nikolay’xxa Rus Hükumeti (2018)., KURBAN VEFA, Yeditepe, Basım sayısı:1, Sayfa Sayısı 102, ISBN:9786052070536, Osmanlıca(Kitap Tercümesi)</p>
+<p class="pub-item">16. İLK ÇAĞLARDAN XX.YÜZYIL BAŞLARINA KADAR AZERBAYCAN TARİHİ (2014)., KURBAN VEFA, İQ, Editör:KURBAN VEFA, Basım sayısı:1, Sayfa Sayısı 360, ISBN:978-975-255-417-7, Türkçe(Kitap Tercümesi)</p>
+<p class="pub-item">17. Neriman Nerimanov ve Türkiye Politikası (2012)., KURBAN VEFA, Bakü İlmi Araştırmalar Merkezi, Editör:Hasan Mert, Basım sayısı:1, Sayfa Sayısı 161, Türkçe(Araştırma (Tez Hariç) Kitabı)</p>
+<p class="pub-item">18. Diğer Yayınlar KURBAN VEFA (2021). VLADİMİR PUTİN İKTİDARININ İLK YILLARI VE TÜRKİYE İLE İLİŞKİLER CUMHURİYET GAZETESİ SAYFALARINDA. Yeni Türkiye(120), 308-317. (Ulusal) (Hakemsiz) (MAKALE Özgün Makale)</p>
+<p class="pub-item">19. KURBAN VEFA,ÇÜMEN NUR (2020). Tarihi ve Güncel Boyutları İle Karabağ. ULİSA 12, 12(8), 20- 33. (Ulusal) (Hakemsiz) (MAKALE Özgün Makale)</p>
+<p class="pub-item">20. KURBAN VEFA (2016). Bağdat Paktı’xxnın Türk-Sovyet İlişkilerine Etkisi. Yeni Türkiye(83), 875- 883. (Ulusal) (Hakemsiz) (MAKALE Özgün Makale)</p>
+<p class="pub-item">21. KURBAN VEFA,ÇANAKLI OKTAY (2015). Sovyetler Birliği’xxnde Dine Bakış ve ”Allahsız” Dergisi. Yeni Türkiye(74), 237-245. (Ulusal) (Hakemsiz) (MAKALE Özgün Makale)</p>
+<p class="pub-item">22. KURBAN VEFA (2015). Türkiye Azerbaycan Ermenistan Üçgeni Sınır Problemi. VatanBir(10), 37-38. (Ulusal) (Hakemsiz) (MAKALE Özgün Makale)</p>
+<p class="pub-item">23. Aslanlı Araz,KURBAN VEFA (2012). 2011 yılında Azerbaycan-Türkiye Siyasi Münasebetleri. EcoVision(10), 56-60. (Uluslararası) (Hakemsiz) (MAKALE Özgün Makale)</p>
+<p class="pub-item">24. KURBAN VEFA (2009). Nevruz. VatanBir(8), 16-17. (Ulusal) (Hakemsiz) (MAKALE Özgün Makale)</p>
+<p class="pub-item">25. KURBAN VEFA (2009). Azerbaycan ın Etnik ve Dini Yapısı. VatanBir(6), 12-14. (Ulusal) (Hakemsiz) (MAKALE Özgün Makale)</p>
+<p class="pub-item">26. KURBAN VEFA (2009). Milli Egemenlik ve Atatürk. VatanBir(9), 5-6. (Ulusal) (Hakemsiz) (MAKALE Özgün Makale)</p>
+<p class="pub-item">27. KURBAN VEFA (2008). Türkler ve Şehircilik. VatanBir(4), 48-50. (Ulusal) (Hakemsiz) (MAKALE Özgün Makale)</p>
+<p class="pub-item">28. KURBAN VEFA (2008). Kafkasya da Ermeni İskanları. VatanBir(3), 50-52. (Ulusal) (Hakemsiz) (MAKALE Özgün Makale)</p>
+<p class="pub-item">29. KURBAN VEFA (2008). Nazar ve Üzerlik otu. VatanBir(2), 31-32. (Ulusal) (Hakemsiz) (MAKALE Özgün Makale)</p>
+<h3 class="pub-sub">Conference papers and abstracts</h3>
+<p class="pub-item">1. ОМЕЛЯНА ПРІЦАКА 17-18 БЕРЕЗНЯ 2022 Р., 174-178. (Tam Metin Bildiri/Davetli Konuşmacı) (Yayın No: 7607357) 1. BATU MİKAİL, KURBAN VEFA, TOS ONUR (2022). Nevruz Kutlamalarının Basına Yansıma Şekilleri: Türkiye Azerbaycan ve Kuzey Kıbrıs Türk Cumhuriyeti Örneği. 5.Uluslararası Dede Korkut Türk Kültürü Tarihi ve Edebiyatı Kongresi, 2 (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">2. SOSYAL EKONOMİK VE SİYASAL GELİŞMELER BAĞLAMINDA GÜNEY KAFKASYA BİLDİRİ KİTABI (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">3. KURBAN VEFA,ERGÜN OĞUZHAN (2020). Türkiye ve Rusya İlişkilerinde Paradoksal Sürtünmeler. I.ULUSLARARASI SOVYET SONRASI TÜRKİYE-RUSYA İLİŞKİLERİ SEMPOZYUMU, 111-127. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">4. KURBAN VEFA,EFE ESMA,AVCI BÜŞRA (2019). TÜRK ve RUS DIŞ POLİTİKALARINDA AVRASYACILIK: KARŞILAŞTIRMALI YAKLAŞIM. İnternational EUROASİA Congress on Scientific Researches and Recent Trends-V (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">5. KURBAN VEFA (2019). VLADİMİR JABOTİNSKY: TÜRKLER, OSMANLIDEVLETİ’NDEKİ AZINLIKLAR VE TÜRKÇE. ULUSLARARASI TÜRK KÜLTÜRÜ SEMPOZYUMUDİL – TARİH – COĞRAFYA, 1, 29-36. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">6. KURBAN VEFA (2019). USSR and Turkey, Reflection of The Turkish Military Coup 12 September 1980 in Two Censored Press Comparative Approach. UTRAK, II.Uluslararası Türk-Rus Dünyası Akademik Araştırmalar Kongresi (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">7. KURBAN VEFA (2019). Causes of World War I, From the Perspective of the Zionist Leader Vladimir Jabotinsky. İCPEMS, 5TH İnternational Congress on Political Economic and Management Sciences (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">8. KURBAN VEFA (2019). Bezbojnik” Gazetesi ve Ateizm Propagandası. 5.Uluslararası Sosyal Bilimler Kongresi, (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">9. KURBAN VEFA (2017). Arşiv Belgeleri Işığında Stalin’in Türkiye Politikası. I.Uluslararası Sosyal Beşeri ve Eğitim Bilimleri Kongresi (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">10. KURBAN VEFA (2013). Manas Destanı İpek Yolu Hakkında. Medeniyetler Güzergahı İpekyolu, 55- 70. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">11. KURBAN VEFA (2013). One Piece of the Kyrgyz Culture The Epic of Manas. İnterdisciplinary Perspectives on Social Sciences, 179-188. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">12. KURBAN VEFA (2013). Azerbaycan da Petrol ve Küresel Güç Olma Mücadelesi Tarihi. 11.Uluslararası Türk Dünyası Sosyal Bilimler Kongresi, 551-560. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">13. KURBAN VEFA (2013). The Nobel Prize and Connection Between Sweden Russia and Azerbaijan. 1st Annual International Interdisciplinary Conference, AIIC 2013 (Tam Metin Bildiri/Sözlü Sunum) (Yayın No: 1137359) 15. KURBAN VEFA (2012). Modern Rus İncelemelerinde Balkan Savaşları. Savaştan Barışa Balkan Savaşları, 285-303. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">14. Kurban Vefa, Kuruoğlu Gülmira (2012). Türk Dünyasında Latin Alfabesine Geçiş Süreci. 10.Uluslararası Türk Dünyası Sosyal Bilimler Kongresi (Tam Metin Bildiri/)</p>
+<p class="pub-item">15. KURBAN VEFA (2005). Azerbaycan Şehirlerinin Dünü ve Bugününden Kısa Notlar. Azerbaycan Genç Bilim Adamları I. Sempozyumu Bildirileri, 321-329. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">16. İLİŞKİLERİ. Journal of Qafqaz University(30), 14-20. (Kontrol No: 352168) 15. E. Ulusal bilimsel toplantılarda sunulan ve bildiri kitaplarında KURBAN VEFA,Çümen Nur (2019). RUSSIA’S BANDWAGONING OR BALANCING STRATEGY WITHIN THE SCOP OF THE CYPRUS ISSUE: TURKEY. İnternational EUROASİA Congress on Scientific Researches and Recent Trends-V (Özet Bildiri/Sözlü Sunum)</p>
+    </section>
+  </main>
+</article>
+</body>
+</html>

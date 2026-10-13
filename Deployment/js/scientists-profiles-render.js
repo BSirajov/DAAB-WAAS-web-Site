@@ -176,7 +176,7 @@
     var title = profileTitle(profile, lang);
     var bioHtml = profileBio(profile, lang);
     var labels = META_LABELS[lang] || META_LABELS.az;
-    var photo = String(profile.photo || "img_001_p61.jpeg").trim();
+    var photo = String(profile.photo || "img_001_p61.jpeg?v=20261010-1309").trim();
     var slug = slugFromPhoto(photo);
     var nameDisplay = profileName(profile, lang);
     var nameHeading;
@@ -218,7 +218,7 @@
     var credHtml = cred ? ' <span class="cred">' + escHtml(cred) + "</span>" : "";
     var qrLabels = QR_LABELS[lang] || QR_LABELS.en;
     var profileHref = "#" + escAttr(slug);
-    var qrSrc = assetUrl(prefix, "images/qr/" + lang + "/" + slug + ".webp?v=1");
+    var qrSrc = assetUrl(prefix, "images/qr/" + lang + "/" + slug + ".webp?v=20261010-1309");
     var listenLead =
       lang === "az"
         ? String(profile.listen_lead_az || "").trim()
@@ -248,7 +248,7 @@
       escAttr(degree) +
       '">\n' +
       '  <div class="card-avatar card-photo"><img src="' +
-      escAttr(assetUrl(prefix, "images/scientists-photos/" + photo) + "?v=" + PHOTO_VER) +
+      escAttr(assetUrl(prefix, "images/scientists-photos/" + photo) + "?v=20261010-1309") +
       '" alt="' +
       escHtml(nameDisplay) +
       '" decoding="async" loading="eager"/></div>\n' +
@@ -329,7 +329,7 @@
     var loadProfiles =
       loader && typeof loader.load === "function"
         ? loader.load(prefix)
-        : fetch(prefix + "i18n/scientists-profiles.json", { credentials: "same-origin" }).then(
+        : fetch(prefix + "i18n/scientists-profiles.json?v=20261010-1309", { credentials: "same-origin" }).then(
             function (res) {
               if (!res.ok) throw new Error("HTTP " + res.status);
               return res.json();

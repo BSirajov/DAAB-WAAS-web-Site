@@ -1617,8 +1617,8 @@
     if (window.html2canvas && getJsPDFConstructor()) return Promise.resolve();
     if (reviewPdfLibsPromise) return reviewPdfLibsPromise;
     var root = applicationAssetRoot();
-    reviewPdfLibsPromise = loadScriptOnce(root + "js/vendor/html2canvas.min.js?v=1").then(function () {
-      return loadScriptOnce(root + "js/vendor/jspdf.umd.min.js?v=1");
+    reviewPdfLibsPromise = loadScriptOnce(root + "js/vendor/html2canvas.min.js?v=20261010-1309").then(function () {
+      return loadScriptOnce(root + "js/vendor/jspdf.umd.min.js?v=20261010-1309");
     });
     return reviewPdfLibsPromise;
   }
@@ -2772,16 +2772,16 @@
         var scripts = document.getElementsByTagName("script");
         var i;
         for (i = 0; i < scripts.length; i++) {
-          if ((scripts[i].src || "").indexOf("daab-membership-application.js") !== -1) {
+          if ((scripts[i].src || "").indexOf("daab-membership-application.js?v=20261010-1309") !== -1) {
             src = scripts[i].src;
             break;
           }
         }
       }
-      if (!src) return "../js/cities/" + encodeURIComponent(countryCode) + ".json";
+      if (!src) return "../js/cities/" + encodeURIComponent(countryCode) + ".json?v=20261010-1309";
       return src.replace(
         /daab-membership-application\.js(?:\?.*)?$/,
-        "cities/" + encodeURIComponent(countryCode) + ".json"
+        "cities/" + encodeURIComponent(countryCode) + ".json?v=20261010-1309"
       );
     }
 
@@ -3276,7 +3276,7 @@
       phoneFlagAssetRoot() +
       "images/flags/4x3/" +
       String(countryCode || "").toLowerCase() +
-      ".svg"
+      ".svg?v=20261010-1309"
     );
   }
 

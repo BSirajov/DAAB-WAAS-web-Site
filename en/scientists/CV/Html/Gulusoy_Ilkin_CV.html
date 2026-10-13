@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ilkin Gulusoy — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>ILKIN GULUSOY</h1>
+      <p class="subtitle">PhD<br>Associate Professor<br>Department of Contemporary Turkish Dialects and Literatures, Kafkas University, Kars, Turkey</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/ilkin-qulusoy.jpg" alt="Ilkin Gulusoy"></div>
+  <aside class="side">
+    <h2>Contact</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Turkey</span></li></ul>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profile</h2>
+      <div class="rule"></div>
+      <p>Ilkin Gulusoy is an associate professor of Azerbaijani Turkish and literature at Kafkas University. He received a doctorate from Baku Slavic University on 18 November 2008. The thesis is the syntax of the language of Qadi Burhan al-Din, supervised by Gazanfar Kazimov. His master’s thesis, on the rubai of Muhammad Fuzuli, was completed at Baku State University on 2 June 2003. His bachelor’s degree in Azerbaijani language and literature is from Baku State University, dated 5 July 2001. He taught at Baku Slavic University from 2003 to 2012 and has taught at Kafkas University since 2012.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>Work experience</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kafkas University, Kars, Turkey</h3>
+          <span class="when"></span>
+        </div>
+        <p class="role">Associate Professor</p>
+        <ul><li>Azerbaijani Turkish and literature</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kafkas University</h3>
+          <span class="when">2015–2018</span>
+        </div>
+        <p class="role">Associate Professor, visiting contract</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kafkas University</h3>
+          <span class="when">2012–2015</span>
+        </div>
+        <p class="role">Assistant professor, visiting contract</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Baku Slavic University</h3>
+          <span class="when">2010–2012</span>
+        </div>
+        <p class="role">Assistant professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Baku Slavic University</h3>
+          <span class="when">2005–2010</span>
+        </div>
+        <p class="role">Lecturer</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Baku Slavic University</h3>
+          <span class="when">2003–2005</span>
+        </div>
+        <p class="role">Research assistant</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Education</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>PhD</h3>
+          <span class="when">18 November 2008</span>
+        </div>
+        <p>Contemporary Turkish dialects and literature. Thesis: syntax of the language of Qadi Burhan al-Din. Advisor: Gazanfar Kazimov</p><p>Baku Slavic University, Baku, Azerbaijan</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Master’s degree</h3>
+          <span class="when">2 June 2003</span>
+        </div>
+        <p>Azerbaijani literature. Thesis: the rubai of Muhammad Fuzuli. Advisor: Muharrem Veliyev</p><p>Baku State University</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Bachelor’s degree</h3>
+          <span class="when">5 July 2001</span>
+        </div>
+        <p>Azerbaijani language and literature</p><p>Baku State University</p>
+      </article>
+    </section><section class="sec supervision">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Supervision</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>Master’s — Supervised completed master’s theses at Kafkas University</li></ul>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Publications</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Books and textbooks</h3>
+<p class="pub-item">1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/uluslararası kitaplar: ÇAĞDAŞ AZERBAYCAN ŞAİRİ ALİZADE NURİ’NİN ŞİİR DÜNYASINA YOLCULUK (2023)., GULUSOY İLKİN, AY Habibe, Sonçağ Akademi, Editör:Şureddin Memmedli, Basım sayısı:1, Sayfa Sayısı 154, ISBN:978-625-6875-37-1, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">2. TÜRKİYE TÜRKÇESİ İLE AZERBAYCAN TÜRKÇESİNİN KARŞILAŞTIRMALI DEYİMBİLGİSİ (Organ Adları İçeren Deyimler) (2022)., GULUSOY İLKİN, ŞAHİN DEDE SEMA, Sonçağ Yayıncılık, Editör:Mahire Hüseynova, Mayrambek Orozobayev, Basım sayısı:1, Sayfa Sayısı 661, ISBN:978-625-8227-99-4, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">3. Neriman Nerimanov. Türk-Azerbaycan Dilinin Muhtasar Sarf-Nahivi (Azerbaycan Türkçesinin Kısa Dilbilgisi) (2020)., GULUSOY İLKİN, Ertem Kafkars Eğitim Yayınları, Editör:Oktay KIZILKAYA, Basım sayısı:2, Sayfa Sayısı 170, ISBN:978 - 605 - 0000 - 00 - 0, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">4. Qazi Bürhaneddin ”Divan”ının Dilinin Sintaksisi (2019)., GULUSOY İLKİN, Sonçağ Akademi Yayınları, Editör:Qezenfer Kazımov, Basım sayısı:1, Sayfa Sayısı 210, ISBN:978 - 605 - 7539 - 94 - 6, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">5. Neriman Nerimanov. Türk-Azerbaycan Dilinin Muhtasar Sarf-Nahivi (2019)., GULUSOY İLKİN, Sonçağ Akademi Yayınları, Editör:Oktay Kızılkaya, Basım sayısı:1, ISBN:978 - 605 - 7539 - 96 - 0, Türkçe(Bilimsel Kitap)</p>
+<h3 class="pub-sub">Book chapters</h3>
+<p class="pub-item">1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulusal/uluslararası kitaplardaki bölümler: LUÇŞAYA NAUÇNAYA STATYA 2023, Bölüm adı:(THE EXPRESSIVE FUNCTION OF LANGUAGE) (2023)., GULUSOY İLKİN, NAUKA İ PROSVEŞENİE ULUSLARARASI BİLİMSEL İŞBİRLİĞİ MERKEZİ, Basım sayısı:1, Sayfa Sayısı 149, ISBN:978-5-00236-105-2, İngilizce(Bilimsel Kitap)</p>
+<p class="pub-item">2. EDEBİYAT VE KÜLTÜR ARAŞTIRMALARI (HASANBEY ZERDÂBÎ ANISINA), Bölüm adı:(KRIM-TATAR ATASÖZLERİNDE ERKEK) (2022)., GULUSOY İLKİN, Yalçın Ceren, Sonçağ Yayıncılık, Editör:İLKİN GULUSOY, Basım sayısı:1, Sayfa Sayısı 16, ISBN:978-625-8227-00-0., Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">3. SOSYAL BİLİMLER ALANINDA GÜNCEL ARAŞTIRMALAR (HÜSEYİN CAVİD-140), Bölüm adı:(HÜSEYİN CAVİD’İN “ŞEYH SENAN” ESERİ ÜZERİNE) (2022)., GULUSOY İLKİN, AY Habibe, Sonçağ Yayıncılık, Editör:ELLADA GERAYZADE, Basım sayısı:1, Sayfa Sayısı 13, ISBN:978 - 625 - 8379 - 73 – 0, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">4. DİL ARAŞTIRMALARI, Bölüm adı:(Azerbaycan Türkçesi ve Türkiye Türkçesi Şekil Bilgisi Kitaplarında Kök ve Ek Kavramı Üzerine) (2020)., GULUSOY İLKİN,Bulut Ceren, Sonçağ Akademi, Editör:İlkin GULUSOY, Basım sayısı:1, Sayfa Sayısı 125, ISBN:978-625-7714-38-9, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">5. Filoloji Alanında Araştırma ve Değerlendirmeler, Bölüm adı:(XIX. Y.Y. Azerbaycan Şairi Kasımbey Zakir’ın “Vilayetin Mağşuşluğu Hakkında”Adlı Satiresi Üzerine) (2019)., GULUSOY İLKİN, Gece Akademi, Editör:Dursun KÖSE, Basım sayısı:1, ISBN:978-605-7631-50-3, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">6. Language and Literatura I, Bölüm adı:(Psychology Of Natıon In “Kamancha” Play By Jalıl Mammadguluzada (In The Background Of The Relations Between Azerbaijan and Armenia)) (2019)., GULUSOY İLKİN, AKADEMİSYEN KİTABEVİ A.Ş., Editör:Mesut Gün, Başak Karakoç Öztürk, Basım sayısı:1, Sayfa Sayısı 118, ISBN:978-605-258-320-3, İngilizce(Bilimsel Kitap)</p>
+<p class="pub-item">7. İnnovatsionnıe Protsessı v Nauke i Obrazovanii, Bölüm adı:(Tematicheskiy Diapazon Novoyazerbaydjanskoy Prozı) (2019)., Gerayzade Ellada,GULUSOY İLKİN, ”NAUKA İ PROSVEŞENİE”, Editör:G. Y. Gulyayev, Basım sayısı:1, Sayfa Sayısı 187, ISBN:978-5-907160-83-5, Rusça(Bilimsel Kitap)</p>
+<p class="pub-item">8. İnnovasionnıe Prosessı V Nauke İ Obrazovanii - Monografiya, Bölüm adı:(Structural and Semantic Features of The Imperatıve Sentences Used in The Language of Mahmud Al-Kashgarı’s ”Dıwan-Lughat-Al Turk” (In Comparıson Wıth The Azerbaijanı Turkısh)) (2018)., GULUSOY İLKİN, NAUKA İ PROSVEŞENİE, Editör:G.Y. GULYAYEV, Basım sayısı:1, Sayfa Sayısı 364, ISBN:978-5-907103-40-5, İngilizce(Bilimsel Kitap)</p>
+<h3 class="pub-sub">Peer-reviewed journal articles</h3>
+<p class="pub-item">1. GULUSOY İLKİN (2024). ONOMASTIC RESEARCH IN THE PARADIGM OF MODERN LINGUISTICS. BUTA, 3(16), 22-34.</p>
+<p class="pub-item">2. GULUSOY İLKİN (2024). Azerbaycan Atasözlerinde Aile ve Toplumsal Cinsiyet Olgusu (Family and Gender Roles in Azerbaijan Proverbs). Folklor/Edebiyat(118), 487-508.</p>
+<p class="pub-item">3. GULUSOY İLKİN (2023). CULTURAL MEMORY AS A FACTORIN PRESERVING NATIONAL IDENTITY. BUTA International Journal of Scientific Research, 3(12), 58-65.</p>
+<p class="pub-item">4. GULUSOY İLKİN (2023). ABOUT THE CONJUNCTIONS and PREPOSITIONS IN THE LANGUAGE OF KUL ALI’S POEM “KISSA-I-YUSUF”. TURAN-SAM, 15(59), 70-75.</p>
+<p class="pub-item">5. GULUSOY İLKİN (2019). TÜRKİYE TÜRKÇESİ VE AZERBAYCAN TÜRKÇESİNDE ŞART CÜMLESİNE DAİR. Türkiyat Mecmuası / Journal of Turkology, 29(1), 81-92., Doi: 10.18345/iuturkiyat.560218 5. Uluslararası hakemli dergilerde yayımlanan makaleler:</p>
+<p class="pub-item">6. GULUSOY İLKİN (2019). Mirze Feteli Ahundzade’nin Komedilerinin Dilinde Kullanılmış Yüklem Yan Tümceli Bağımlı Birleşik Cümlelerin Yapısal-Anlamsal Özellikleri. TURAN-SAM: TURAN Stratejik Araştırmalar Merkezi, 125-129. (Yayın No: 4956153) 6. GULUSOY İLKİN (2019). Analysis Of The Story “Dark-Complexioned Girl” (“Garaja Giz”) By Suleyman Sani Akhundov. Internаtіоnаl Scіentіfіc Jоurnаl “Internаukа”, 35-41., Doi: 10.25313/2520-2057-2019-4-4811</p>
+<p class="pub-item">7. GULUSOY İLKİN (2018). Lexıcal And Semantıc Features Of Antroponıms In The Poem “Greetıngs To Heydar Baba” By Mohammad Hosseın Shahrıar. Studia Humanitatis(4)</p>
+<p class="pub-item">8. GULUSOY İLKİN (2018). Azerbaijani Complex Noun Phrases of XIII-XIV Centuries. Educational Researcher, 9(47), 870- 883.</p>
+<p class="pub-item">9. Gerayzade Ellada,GULUSOY İLKİN (2018). Retsepsiya Tvoçestva Bayrona v Azerbaydjanskom Literaturavedenii. Kremenetski Komparativnı Studii, 45-53.</p>
+<p class="pub-item">10. GULIYEVA KONUL,GULUSOY İLKİN (2018). AZERBAYCAN EDEBİYATINDA KARABAĞ TEMALI ŞİİRLER (ŞİİRRLERDE VATAN ÖZLEMİ). Uluslararası Türkçe Edebiyat Kültür Eğitim Dergisi, 7(4)</p>
+<p class="pub-item">11. GULUSOY İLKİN (2018). The Subordınate Complex Sentences Used In The Dramatıc Works By Mirza Fatali Akhundzadeh. INTERNATIONAL JOURNAL OF INNOVATIVETECHNOLOGIES IN SOCIAL SCIENCE(2), 50-56.</p>
+<p class="pub-item">12. GULİYEV İLKİN (2017). Gövsi Tebrizi’nin Dilinde Kullanılmış Şart Yan Cümleli ve Karşılaştırma Yan Cümleli Birleşik Tümcelerin Yapısal Özellikleri. TURAN-SAM: TURAN Stratejik Araştırmalar Merkezi, 9(36), 124-132., Doi: 0.15189/1308- 8041</p>
+<p class="pub-item">13. GULİYEV İLKİN (2015). Türk ve Azerbaycan Dilbilgisinde Ad Tamlamalarının Araştırılması Üzerine. International Journal of Languages’ Education and Teaching, 1453-1465.</p>
+<p class="pub-item">14. Azerbaycan Türkçesi Grameri (Ses Bilgisi ve Söz Varlığı) (2018)., GULUSOY İLKİN, Sonçağ, Editör:Ellada GERAYZADE, Basım sayısı:1, Sayfa Sayısı 168, ISBN:978-605753914-4, Türkçe(Ders Kitabı)</p>
+<p class="pub-item">15. Ümmi İsa’nın ”Mehri ve Vefa” Poemasının Dili (2013)., GULİYEV İLKİN,Bağırov Nizami, Mütercim, Basım sayısı:1, Türkçe(Ders Kitabı)</p>
+<p class="pub-item">16. Müasir Azerbaycan Dilinde Karışık Tipli Mürekkeb Cümlelerin Sxematik Strukturu (2012)., GULİYEV İLKİN,ABBASOV Edalet,İSMİHANOVA Gülhanım, Mütercim, Basım sayısı:1, Sayfa Sayısı 68, Türkçe(Ders Kitabı)</p>
+<p class="pub-item">17. Qul Eli’nin ”Qisseyi-Yusif” Poemasının Dili (2011)., GULUSOY İLKİN, Kİtab Alemi, Editör:Şaban Hüseynov, Basım sayısı:1, Türkçe(Ders Kitabı)</p>
+<p class="pub-item">18. Azerbaycan Dilinin Tarihi Grammatikası (2011)., GULİYEV İLKİN, Mütercim, Editör:Dürdane Eliyeva, Basım sayısı:1, Sayfa Sayısı 71, Türkçe(Ders Kitabı)</p>
+<p class="pub-item">19. Sade Cümle Sintaksisine Dair Praktikum (2011)., ABBASOV Edalet,GULİYEV İLKİN, Mütercim, Basım sayısı:1, Türkçe(Ders Kitabı)</p>
+<h3 class="pub-sub">Conference papers and abstracts</h3>
+<p class="pub-item">1. B. Uluslararası bilimsel toplantılarda sunulan ve bildiri kitaplarında (proceedings) basılan bildiriler: GULUSOY İLKİN, AY Habibe (2022). MOLLA PENAH VAGIF’IN HAYATI VE ŞİİRLERİ ÜZERİNE. The XXIII International Scientific Symposium “Integration of cultures and multiculturalism”, dedicated to the 305 anniversary of Molla Panah Vagif, 15-19. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">2. GULUSOY İLKİN, AY Habibe (2022). KİTAB-I DEDE KORKUT DESTANINDA AİLE KAVRAMI ÜZERİNE. The XXV International Scientific Symposium Civilizational bridges between people and cultures Azerbaijan – Ukraine, 20-24. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">3. to the 190th anniversary of Khurshidbanu Natavan, 26-29. (Tam Metin Bildiri/Sözlü Sunum) (Yayın No: 8030530) 3. GULUSOY İLKİN (2022). CELİL MEMMEDQULUZADE&#x27;NİN “KAMANÇA” PYESİNİN DİLİNDE KARIŞIK TİPLİ MÜREKKEB CÜMLELER. The XXXI International Scientific Symposium &quot;Turkic World and National Unity&quot;, 77-85. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">4. GULUSOY İLKİN (2022). AZERBAYCAN VE TÜRKİYE TÜRKÇESİ DİLBİLGİSİNDE CÜMLENİN ÖĞRETİMİ ÜZERİNE. Hasan Mirzayev – 95 Uluslararası Dil, Edebiyat ve Kültür Kongresi, 2, 36-42. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">5. GULUSOY İLKİN, AY Habibe (2022). KIRIM-TATAR ATASÖZLERİNDE KADIN. The XXXIII International Scientific Symposium &quot;Dialogue of Sciences and Cultures in the Modern World”, 27-32. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">6. GULUSOY İLKİN, AY Habibe (2023). EMİN ABİD GÜLTEKİN’İN ŞİİRLERİNDE VATAN, MİLLET VE İSTİKLAL. The XXXVI International Scientific Symposium &quot;Multidisciplinary Studies of the Turkish World&quot; dedicated to the 125th anniversary of the famous Turkologist Amin Abid Gultekin, 17-23. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">7. GULUSOY İLKİN (2023). MODERN LINGUISTICS: KEY TRENDS AND PRINCIPLES. International Scientific Symposium “DEMOCRACY AND NATIONAL UNITY”, 54-55. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">8. GULUSOY İLKİN (2023). ISOMORPHISM AS A SYNTACTIC PHENOMENON IN LANGUAGE. International Scientific Symposium: “Actual problems of Turkology”, dedicated to the 150th anniversary of the birth of Turkish poet Mehmet Akif Ersoy, author of the National Anthem, 59-61. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">9. GULUSOY İLKİN (2023). ON COMPARATIVE HISTORICAL LINGUISTICS IN THE XX CENTURY. International Scientific Symposium &quot;Actual problems of Science in a globalized world&quot;, dedicated 10. to the 85th anniversary of the birth of Azerbaijani writer Anar, 102-109. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">10. GULUSOY İLKİN (2023). GÜNEY-BATI VE KUZEY-BATI TÜRK LEHÇELERİNDE ŞARTLI BİRLEŞİK CÜMLE ÜZERİNE. International Scientific Symposium “The triumphant leader of the victorious people: Ilham Aliyev” dedicated to the 44-Day Patriotic War and the Victory in Karabakh, 125-126. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">11. GULUSOY İLKİN (2023). ETHICAL REFLECTIONS AND MORAL DILEMMAS IN THE WORK OF CHINGIZ AYTMATOV. International Scientific Symposium &quot;Unity of Turkic Peoples - Turan&quot; dedicated to the 95th anniversary of the birth of the outstanding writer of the Turkic world Chinghiz Aytmatov, 12- 16. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">12. GULUSOY İLKİN (2024). LINGUOCULTURAL ASPECTS OF TRANSLATION. International Scientific Symposium &quot;A flag once raised will never fall again!&quot; dedicated to the 140th anniversary of the founder of the Azerbaijan Democratic Republic Mammad Amin Rasulzadeh, 130-137. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">13. GULUSOY İLKİN,AY Habibe (2024). TÜRKİYE’DE AĞIZ ARAŞTIRMALARI İLE İLGİLİ GÖRÜŞLER ÜZERİNE. KARABAĞ ZAFERİ: TÜRK BİRLİĞİNE GİDEN YOL ULUSLARARASI SEMPOZYUMU, 25-30. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">14. GULUSOY İLKİN (2024). THE INTERCONNECTION BETWEEN LANGUAGE AND SPEECH. International Scientific Symposium Unity in Language, Opinion and Work dedicated to the 110th anniversary of the death of the great thinker of the Turkic world Ismail Gaspirali, 41-46. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">15. GULUSOY İLKİN (2024). TÜRK ATASÖZLERİNDE AİLE DİNAMİKLERİ: ROLLER VE SORUMLULUKLAR. International Scientific Symposium Unity in Language, Opinion and Work dedicated to the 110th anniversary of the death of the great thinker of the Turkic world Ismail Gaspirali, 63-71. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">16. GULUSOY İLKİN (2024). THE ROLE OF ARTIFICIAL INTELLIGENCE IN ENHANCING LANGUAGE LEARNING. International Scientific Symposium &quot;TURKIC WORLD: INTERNATIONAL STUDIES AND INNOVATIVE APPROACHES&quot;, dedicated to the 155th anniversary of Ahmad Bey Agaoglu, 159-163. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">17. GULUSOY İLKİN (2024). PSYCHOLOGICAL FACTORS IN LANGUAGE LEARNING: MOTIVATION AND PERCEPTION. International Scientific Symposium &quot;People and National Unity”, dedicated to the Azerbaijani national press day (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">18. GULUSOY İLKİN (2024). COMPARATIVE STUDY OF LANGUAGES WITH DIFFERENT STRUCTURES: A LINGUISTIC AND METHODOLOGICAL PERSPECTIVE. International Scientific Symposium A Glorious Page in Azerbaijan History – Operation ”Iron Fist&quot; Dedicated to the Day of Restoration of the Territorial Integrity of Azerbaijan (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">19. GULUSOY İLKİN (2024). THE SYMBIOTIC RELATIONSHIP BETWEEN MUSIC AND LITERATURE. International Scientific Symposium “Azerbaijan Culture and Music” dedicated to the 115th anniversary of the birth of Azerbaijani composer Asaf Zeynalli, 40-44. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">20. GULUSOY İLKİN, AY Habibe (2023). YUNUS OĞUZ’UN “ÇİNGİZ XAN” ROMANI İLE M. TURHAN TAN’IN “CENGİZ HAN” ROMANININ KONU BAKIMINDAN KARŞILAŞTIRILMASI. International Scientific Symposium “Heydar Aliyev and Türkiye” held within the framework of the 100th anniversary of the establishment of the Republic of Türkiye and 2023, the year of Heydar Aliyev, 166-174. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">21. GULUSOY İLKİN (2023). QÖVSİ TEBRİZİNİN QEZELLERİNİN DİLİNDE İŞLENMİŞ HİTABLARIN LEKSİK-QRAMMATİK VE SEMANTİK-ÜSLUBİ HÜSUSİYYETLERİNE DAİR. International Scientific Symposium “Heydar Aliyev and Türkiye” held within the framework of the 100th anniversary of the establishment of the Republic of Türkiye and 2023, the year of Heydar Aliyev, 291-298. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">22. GULUSOY İLKİN (2023). MOLLA CUMA’NIN ŞİİRLERİNDE KADIN. 1st INTERNATIONAL SILK ROAD CONFERENCE 26-27 May 2023, 225-230. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">23. GULUSOY İLKİN, YOKUŞ MERVE (2021). TÜRKİYE TÜRKÇESİ VE AZERBAYCAN TÜRKÇESİ GRAMERİNDE FİİLLER. THE XVII INTERNATIONAL SCIENTIFIC SYMPOSIUM “KARABAG: WAY TO VICTORY” (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">24. GULUSOY İLKİN (2021). AŞIK ALESKER&#x27;İN KOŞMALARINDA GÜZELİN TASVİRİ. THE XIII INTERNATİONAL SCIENTIFIC SYMPOSIUM SCIENCE AND EDUCATİON: PRESERVING THE PAST, CREATİNG THE FUTURE (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">25. GULUSOY İLKİN, Guliyeva Könül (2021). LITERARY EXPRESSİON OF THE STRUGGLE FOR FREEDOM DURİNG THE AZERBAIJAN DEMOKRATIK REPUBLİC PERİOD İN THE NOVEL &quot;MY DEAD WORLD&quot; BY ISMAİL SHİKHLİ. The X International Scientific Symposium dedicated to the 880th anniversary of Nizami Ganjavi “Science and Education: yesterday, today, tomorrow”, 63-66. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">26. GULUSOY İLKİN,KÜÇÜKLER BÜŞRA (2020). DUYU ORGANLARI İLE İLGİLİ AZERBAYCAN ATASÖZLERİNİN ANLAMSAL ÖZELLİKLERİ ÜZERİNE. THE VIII INTERNATIONAL SCIENTIFIC SYMPOSIUM DEDICATED TO THE 135 th ANNIVERSARY OF UZEYIR HAJIBEYLI, 89-92. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">27. GERAYZADE ELLADA,GULUSOY İLKİN (2020). ROL LİÇNOSTİ V İSTORİİ (NA MATERİALE ROMANA ANUARA ALİMCANOVA ”VOZVRAŞENİE UÇİTELYA”). EASTERN COUNTRIES IN THE CONTEXT OF MODERNINTERNATIONAL RELATIONS: PROBLEMS AND NEWAPPROACHES RESEARCH, 279-285. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">28. GARAY ZADA ELLADA, GULUSOY İLKİN (2020). Rol liçnosti v istorii (na materiale romana Anuara Alimdjanova &quot;Vozvraşeniye uçitelya&quot;). Eastern Countries in the Context of Modern İnternational Relations: Problems and Neü Approaches Research, 1(1), 279-285. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">29. GULUSOY İLKİN (2020). İMADEDDİN NESİMİ’NİN DİLİNDE HABERLİK KATEGORİSİNE DAİR. THE VII INTERNATIONAL SCIENTIFIC CONFEREVCE DEDICATED TO THE 185 th ANNIVERSARY OF SEYYID AZIM SHIRVANI, 127-131. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">30. GULUSOY İLKİN,KÜÇÜKLER BÜŞRA (2020). KAŞGARLI MAHMUTUN DİVANU LUGATİT-TÜRK ESERİNDE KULLANILAN SAVAŞ TERİMLERİ ÜZERİNE. THE VII INTERNATIONAL SCIENTIFIC CONFEREVCE DEDICATED TO THE 185 th ANNIVERSARY OF SEYYID AZIM SHIRVANI, 66-71. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">31. GULUSOY İLKİN (2020). MIXED TYPE COMPLEX SENTENCES IN THE LANGUAGE OF THE COMEDY ”NADANLIG” BY NERIMAN NERIMANOV. THE IV INTERNATIONAL SCIENTIFIC CONFERENCE DEDICATEDTO THE 150th ANNIVERSARY OF NARIMAN NARIMANOVDialogue of Cultures inthe Modern World, 64-71. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">32. GULUSOY İLKİN (2020). FARSÇA KÖKENLİ SÖZCÜKLERIN FONETİK ÖZELLİKLERİ. PROCEEDİNGS OF THE INTERNATIONAL SCIENTIFICCONFERENCEDEDICATEDTO THE 150TH ANNIVERSARY ABDURRAHMAN BEY HAQVERDIYEV, 113-117. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">33. GULUSOY İLKİN (2019). CELİL MEMMEDGULUZADENİN ”BUZ” HEKAYESİNİN DİLİNDE İŞLENMİŞ KARIŞIK TİPLİ MÜREKKEB CÜMLELER. Bilim, Kültür Ve Eğitim: 21. Yüzyılda Bilimin Gelişiminin Güncel Sorunları, 24-29. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">34. GULUSOY İLKİN,KÜÇÜKLER BÜŞRA (2019). AZERBAYCAN EDEBÎ DİLİ TARİHİ ÜZERİNE. DİL SİYASETİ VE MÜASİR DÖVR, 139-143. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">35. GULUSOY İLKİN (2019). MAHMUD KAŞĞARİ’NİN “DİVANÜ-LÜĞAT-İT-TÜRK” ESERİNİN DİLİNDE ŞAHISSIZ CÜMLELER. DİL SİYASETİ VE MÜASİR DÖVR, 182-185. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">36. GULUSOY İLKİN (2019). İmennıe Soçetaniya v Azerbaydjanskom Literaturnim Yazıke XIV Veka (Po Materiale Tvorçestva Poeta Kadı Burhaneddina). Bilim ve Eğitimin Güncel Sorunları - I Uluslararası Bilimsel Sempozyum Bildiri Kitabı, 132-138. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">37. GULUSOY İLKİN,GULIYEVA KONUL (2019). Türkiye Türkçesi Ve Azerbaycan Türkçesi Dilbilgisinde Cümlenin Dahili Öğelerine Göre Tahlili Üzerine. 2. DERGİ KARADENİZ ULUSLARARASI SOSYALBİLİMLER SEMPOZYUMU, 12-20. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">38. GULUSOY İLKİN (2019). MİRZE FETELI AHUNDZADE’NIN DİLİNDE TEYİN BUDAG CUMLELİ TABELI MÜREKKEB CUMLELER. III INTERNATIONAL SCIENTIFIC CONFERENCE OF YOUNG RESEARCHERS DEVOTED TO THE 96-TH ANNIVERSARY OFAZERBAIJANI NATIONAL LEADER HEYDAR ALIYEV, 1007- 1010. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">39. GULUSOY İLKİN,İsmihanova Gülhanım (2018). Mehemmed Fuzulinin Gazellerinin Dilinde Şahs- Haberlik Kategoriyasının Sentaktik Vazifesi. Bekir Çobanzade-125 Azerbaycan dili dünen ve bugün, 124-126. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">40. GULUSOY İLKİN,Guliyeva Könül (2018). Celil Memmedguluzadenin ”Anamın Kitabı” Piyesinde Azerbaycançılık İdeyaları. Azerbaycan Halk Cumhuriyeti 100 Uluslararası Sempozyum, 66-67. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">41. GULUSOY İLKİN (2018). Necef Bey Vezirov’un Pyeslerinin Dilinde Tabesiz Mürekkeb Cümleler. Azerbaycanşinaslığın aktual problemleri, 498-500. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">42. GULUSOY İLKİN (2018). Mirze Feteli Ahundzadenin Komediyalarının Dilinde Tamamlık Budak Cümleli Tabeli Mürekkep Cümlelerin Strüktür Hususiyetleri. Genç Araştırmacıların II Uluslararası Konferansı, 1033-1036. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">43. GULUSOY İLKİN (2018). Azerbaycan Atasözlerinde Aile ve Ailedahili Münasebetlere Dair. I Uluslararası Bahtiyar Vahapzade Azerbaycan Kültürü, Tarihi ve Edebiyatı Sempozyumu, 23-24. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">44. GULUSOY İLKİN (2017). Azerbaycan Aşık Edebiyatı: Tarihte ve Bugünü. Uluslararası M. F. Köprülü Türkoloji ve Beşeri Bilimler Sempozyumu, 263-270. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">45. Üzerine. XII. Uluslararası Büyük Türk Dili Kurultayı, 488-496. (Tam Metin Bildiri/Sözlü Sunum) (Yayın No: 4485923) 46. GULUSOY İLKİN (2016). Gövsi Tebrizinin Dilinde Halk Deyim ve İfade Usulları. Ulu Önder Haydar Aliyev İrsinde Multikultural ve Tolerant Deyerler Uluslararası Bilimsel Konferansı, 124-126. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">46. GULİYEV İLKİN (2016). Gövsi Tebrizi’inin Gazellerinin Dilinde İşlenmiş Hitapların Leksik-Grammatik ve Semantik-Üslubi Hususiyetlerine Dair. Genç araştırmacıların IV Uluslararası bilimsel konferansı, 813-814. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">47. GULİYEV İLKİN (2015). “Kitabi-Dede Qorgud” Dastanlarının Dilindeki Karışık Tipli Mürekkeb Cümlelerin Şemalarla Tasviri. Kitabi Dede Korkut ve Türk Dünyası Uluslararası sempozyumu, 293- 298. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">48. GULİYEV İLKİN (2015). Qövsi Tebrizi’nin Dilinde İşlenmiş Qeyri-Türk Menşeli Sözlere Dair. Bahtiyar Vahapzade ve Azerbaycan Filologiyasının Aktual Problemleri, 309-312. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">49. GULİYEV İLKİN (2015). Azerbaycan Dilinin Luğat Terkibinin Zenginleşmesinde Zaman Mezmunlu Sözlerin Rolü. Genç araştırmaçıların III Uluslararası sempozyumu, 797-798. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">50. GULİYEV İLKİN (2014). Türkçedeki Farsça Kökenli Sözcüklerin Sesbilimsel Özellikleri Üzerine. 2. Uluslararası Türk-İran Dil ve Edebiyat İlişkileri Sempozyumu, 39-41. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">51. GULİYEV İLKİN (2013). Türkiyeli Öğrencilerin Azerbaycan Türkçesi Gramerinin Öğretiminde Karşılaştığı Sorunlar ve Onların Çözüm Yolları. 13. Uluslararası Dil, Yazın ve Deyişbilim Sempozyumu, 1267-1270. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">52. GULİYEV İLKİN (2012). Azerbaycan Dili Sintaksisinin Katı Mübahiseli Meseleleri. Ümummilli Lider Haydar Aliyev’in anadan olmasının 89-cu ildönümüne hesr olunmuş 3. Beynelhalk ilmi konferans, 413-414. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">53. GULİYEV İLKİN,Guliyeva Könül (2010). Şehriyar Şiirlerinin Tercüme Problemlerine Dair. Medeniyetlerarası dialog: lingvistik, pedagoji ve edebi aspektler beynelhalk konfransı, 285-286. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">54. GULİYEV İLKİN (2010). Yunus Emrenin Dilinde Emir Cümlesinin Anlatım Şekilleri. Uluslararası Selçuklu Sempozyumu, 88-89. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">55. GULİYEV İLKİN (2010). XIV. Asır Azerbaycan Dilinin Sentaksisine Dair. Azerbaycanşinaslığın aktual problemleri konferansı materialları, 373-374. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">56. GULİYEV İLKİN (2007). Qazi Burhaneddinin Dilinde Şert Budag Cümleli Tabeli Mürekkeb Cümleler. Filologiya Meseleleri (Kontrol No: 4981858) 12. E. Ulusal bilimsel toplantılarda sunulan ve bildiri kitaplarında GULİYEV İLKİN (2010). Azerbaycan Dili Derslerinde Esas Nitg Hisselerinin Tedrisi Meseleleri (Yeni Bakış ve Teklifler). Ali Mekteblerde Dilçilik Üzre Dersliklerin Dili, 81-83. (Özet Bildiri/Sözlü Sunum)</p>
+    </section>
+  </main>
+</article>
+</body>
+</html>

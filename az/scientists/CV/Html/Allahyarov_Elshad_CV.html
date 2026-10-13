@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elşad Allahyarov — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>ELŞAD ALLAHYAROV</h1>
+      <p class="subtitle">DSc, PhD<br>Elmi işlər üzrə professor<br>Fizika departamenti, Keys Qərbi Rezerv Universiteti, Klivlend, Ohayo, Amerika Birləşmiş Ştatları</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/elsad-allahyarov.jpg" alt="Elşad Allahyarov"></div>
+  <aside class="side">
+    <h2>Əlaqə</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Amerika Birləşmiş Ştatları</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M3.5 6.5h17a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm8.5 6.1L4.7 8.2v7.8h14.6V8.2L12 12.6zm0-1.5 7.1-4.1H4.9L12 11.1z"/></svg><span>elshad.allakhyarov@case.edu; exa54@case.edu</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M10.5 13.5a3.5 3.5 0 0 0 5 0l2.1-2.1a3.5 3.5 0 0 0-5-5L11.4 7.6l1.1 1.1 1.2-1.2a2 2 0 1 1 2.8 2.8l-2.1 2.1a2 2 0 0 1-2.8 0l-1.1 1.1zm3-3a3.5 3.5 0 0 0-5 0L6.4 12.6a3.5 3.5 0 0 0 5 5l1.2-1.2-1.1-1.1-1.2 1.2a2 2 0 1 1-2.8-2.8l2.1-2.1a2 2 0 0 1 2.8 0l1.1-1.1z"/></svg><span>Nəzəri fizika; yumşaq maddə</span></li></ul>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profil</h2>
+      <div class="rule"></div>
+      <p>Elşad Allahyarov Klivlenddəki Keys Qərbi Rezerv Universitetində fizika üzrə elmi işlər professorudur. Düsseldorfda Heinrich Heine Universitetində və Rusiya Elmlər Akademiyasının Yüksək Temperaturlar İnstitutunda da vəzifələri var. 2005-ci ildə Rusiya Elmlər Akademiyasında fizika və riyaziyyat üzrə elmlər doktoru dərəcəsi alıb. Dissertasiya The role of Coulomb correlations in colloids and biocolloids adlanır. Alman Dr. habil. dərəcəsinə ekvivalentdir. 1994-cü ildə fizika üzrə fəlsəfə doktoru dərəcəsi alıb. Alman Dr. və ABŞ PhD dərəcəsinə ekvivalentdir. 1988-ci ildə Moskva Dövlət Universitetində fizika diplomu alıb. 2021–2025-ci illər üçün Alman Tədqiqat Cəmiyyətinin 300.000 avroluq qrantı kompozit elastomerlərin aktuasiyasına həsr olunub.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>İş təcrübəsi</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Fizika departamenti, Keys Qərbi Rezerv Universiteti, Klivlend, Ohayo, Amerika Birləşmiş Ştatları</h3>
+          <span class="when"></span>
+        </div>
+        <p class="role">Elmi işlər üzrə professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Yumşaq Maddə İnstitutu, Nəzəri Fizika II, Heinrich Heine Universiteti, Düsseldorf, Almaniya</h3>
+          <span class="when"></span>
+        </div>
+        <p class="role">Elmi işlər üzrə professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Nəzəri şöbə, Yüksək Temperaturlar İnstitutu, Rusiya Elmlər Akademiyası, Moskva, Rusiya</h3>
+          <span class="when"></span>
+        </div>
+        <p class="role">Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Fizika departamenti, Keys Qərbi Rezerv Universiteti</h3>
+          <span class="when">2018–2025</span>
+        </div>
+        <p class="role">Elmi işlər üzrə professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Nəzəri Fizika II İnstitutu, Heinrich Heine Universiteti, Düsseldorf</h3>
+          <span class="when">2012–2017</span>
+        </div>
+        <p class="role">Tədqiqatçı</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Makromolekulyar elm, Keys Qərbi Rezerv Universiteti</h3>
+          <span class="when">2014 and 2015</span>
+        </div>
+        <p class="role">Hər il altı ay qonaq professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Fizika departamenti, Keys Qərbi Rezerv Universiteti</h3>
+          <span class="when">2006–2011</span>
+        </div>
+        <p class="role">Elmi işçi</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Nəzəri Fizika II İnstitutu, Heinrich Heine Universiteti, Düsseldorf</h3>
+          <span class="when">2004–2006</span>
+        </div>
+        <p class="role">Postdoktorant</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Bərk Cisim Tədqiqatı İnstitutu, IFF Theory II, Yulix Nüvə Tədqiqat Mərkəzi, Almaniya</h3>
+          <span class="when">2000–2003</span>
+        </div>
+        <p class="role">Privatdozent</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Mürəkkəb mayelər laboratoriyası, Eyndhoven Texnologiya Universiteti, Niderland</h3>
+          <span class="when">1995–1997</span>
+        </div>
+        <p class="role">Qonaq tədqiqatçı</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Yüksək Temperaturlar İnstitutu, Rusiya Elmlər Akademiyası, Moskva</h3>
+          <span class="when">1988–1999</span>
+        </div>
+        <p class="role">Aspirant və tədqiqatçı</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Təhsil</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>DSc</h3>
+          <span class="when">2005</span>
+        </div>
+        <p>Fizika və riyaziyyat. Dissertasiya: The role of Coulomb correlations in colloids and biocolloids. Alman Dr. habil. dərəcəsinə ekvivalentdir.</p><p>Rusiya Elmlər Akademiyası, Moskva, Rusiya</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>PhD</h3>
+          <span class="when">1994</span>
+        </div>
+        <p>Fizika. Dissertasiya: Structure factor and effective interactions in non-ideal plasma and liquid metals. Alman Dr. və ABŞ PhD dərəcəsinə ekvivalentdir.</p><p>Rusiya Elmlər Akademiyası, Moskva, Rusiya</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Fizika diplomu</h3>
+          <span class="when">1988</span>
+        </div>
+        <p>Dissertasiya: Injection of relativistic electron beams into dense plasma. Fizika üzrə Master of Arts ekvivalentidir.</p><p>Moskva Dövlət Universiteti, Moskva, Rusiya</p>
+      </article>
+    </section><section class="sec grants">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Qrantlar və layihələr</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>2021–2025 — Kompozit elastomerlərin aktuasiya xassələri. 300.000 avro — Alman Tədqiqat Cəmiyyəti (DFG)</li></ul>
+    </section><section class="sec teaching">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Tədris</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>1990–1998 — Nəzəri mexanika, optika, elektromaqnetizm, kvant mexanikası, statistik mexanika, mayelər nəzəriyyəsi, termodinamika, bərk cisim fizikası, plazma fizikası, hidrodinamika və riyaziyyat — Moskva Energetika İnstitutu</li><li>2000–2004 — Yumşaq maddə fizikası, statistik fizika və termodinamika — Düsseldorf Universiteti, Almaniya</li><li>2009–2010 — PHYS 116, Introduction to Physics II — Case Western Reserve University</li><li>2017–2020 — Kvant molekulyar dinamika, CP2K, Kar–Parrinello və DFT modelləşdirməsi — Duisburq-Essen Universiteti, Almaniya</li></ul>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Nəşrlər</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Rəylənmiş (peer-reviewed) jurnal məqalələri</h3>
+<p class="pub-item">1. Dispersion of plasma oscillations in non-ideal Coulomb systems E. Allahyarov, S. A. Trigger, Teplofizika Vysokikh Tepmeratur 30, 136 (1992).</p>
+<p class="pub-item">2. Three-dimensional dispersion of Langmuir oscillations in non-ideal plasma E. Allahyarov, S. A. Trigger,Teplofizika Vysokikh Temperatur 30, 462 (1992).</p>
+<p class="pub-item">3. The influence of non-Coulomb interaction on plasma oscillation spectrum in classical two-component plasma E. Allahyarov, V. B. Bobrov, S. A. Trigger, Teplofizika Vysokikh Temperatur 30, 876 (1992).</p>
+<p class="pub-item">4. On the temperature dependence of the liquid lithium electric resistance, E. Allahyarov, V. B. Bobrov, Teplofizika Vysokikh Temperatur 31, 207 (1993)</p>
+<p class="pub-item">5. Static structure factor and electric conduction of expanded liquid cesium, E. Allahyarov, V. B. Bobrov, S. A. Trigger, Teplofizika Vysokikh Temperatur 31, 44 (1993).</p>
+<p class="pub-item">6. Electrical conductivity of fully ionized plasmas with arbitrary electron degeneracy. 1: Classical plasma, V. B. Bobrov, E. Allahyarov, High temperatures 31, 422 (1993).</p>
+<p class="pub-item">7. Electric conductivity of a fully ionized plasma with arbitrary electron degeneration. 2. Liquid-metal plasma V. B. Bobrov, E. Allahyarov, Teplofizika Vysokikh Temperatur 31, 352 (1993).</p>
+<p class="pub-item">8. Kramers–Kronig relations for the dielectric constant of a classical plasma and the spectrum of plasma oscillations. E. Allahyarov, V.B. Bobrov, High Tempertures 31, 644 (1993)</p>
+<p class="pub-item">9. Structure factor of liquid metals at small wave vectors and a model of a one-component plasma, E. Allahyarov., V. B. Bobrov, S. A. Trigger, High Temperatures 32, 341 (1994).</p>
+<p class="pub-item">10. OCP reference theory of dynamic structure factors of expanded liquid metals S. A. Trigger, E. Allahyarov, P. P. J. M.Schram, Physica B 212, 97 (1995).</p>
+<p class="pub-item">11. Low-angle structure behavior of expanded liquid metals, E. Allahyrov, P. P. J. M.Schram, S. A. Trigger, Physica B 212, 88 (1995).</p>
+<p class="pub-item">12. Overscreening in colloidal systems: the attractive branch of pair macroion interaction, E. Allahyarov, L. I. Podloubny, P. P. J. M.Schram, S. A. Trigger, Physica A 220, 349 (1995).</p>
+<p class="pub-item">13. MD simulation of the pair correlation function and static structure of charged colloidal suspensions, E. Allahyarov, P. P. J. M. Schram, S. A. Trigger, Phys.B, 228, 136 (1996).</p>
+<p class="pub-item">14. Effective macroion interaction in colloidal systems: Possibility of attraction, E. Allahyarov, L. I. Podloubny, P. P. J. M. Schram, S. A. Trigger, Physica B 229, 132 (1996).</p>
+<p class="pub-item">15. Damping of longtudinal waves in charged colloids, E. Allahyarov, L. I. Podloubny, P. P. J. M. Schram, S. A. Trigger, Physica B 228, 166 (1996).</p>
+<p class="pub-item">16. The breaking crack build-up in perforated planes by uniform ring switching, V. M. Mirsalimov, E. Allahyarov, Int. J. Fracture 79, R17 (1996).</p>
+<p class="pub-item">17. Damping of longtudinal waves in colloidal crystals of finite size E. Allahyarov, L. I. Podloubny, P. P. J. M.Schram, S. A. Trigger, Phys. Rev. E 55, 592 (1997).</p>
+<p class="pub-item">18. Attraction between like-charged macroions by Coulomb depletion E. Allahyarov, I. D&#x27;Amico, H. Löwen, Phys. Rev. Letters 81, 1334 (1998).</p>
+<p class="pub-item">19. Possibility of an attraction between highly charged colloids E. Allahyarov, P. P. J. M. Schram, S. A. Trigger, Proc. Int. Conf. Strongly Coupled Coulomb Systems, Plenum Press, New-York, 247 (1998).</p>
+<p class="pub-item">20. Role of effective triplet interactions in charged colloidal suspensions H.Löwen, E. Allahyarov, J. Phys. Condensed Matter 10, 4147 (1998).</p>
+<p class="pub-item">21. Effective forces between macroions: the cases of asymmetric macroions and added salt E. Allahyarov, H. Löwen, S. Trigger, Phys. Rev. E 57, 5818 (1998).</p>
+<p class="pub-item">22. Effect of confinement on the interaction between charged colloidal particles E. Allahyarov, I. D&#x27;Amico, H. Löwen, Phys. Rev. E 60, 3199 (1999).</p>
+<p class="pub-item">23. The hard physics of soft matter H. Löwen, E. Allahyarov, et al, Advances in Solid State Physics 40, 809 (2000).</p>
+<p class="pub-item">24. Effective interaction between helical biomolecules E. Allahyarov, H. Löwen, Phys. Rev. E 62, 5542 (2000).</p>
+<p class="pub-item">25. Effective interaction between confined colloids: repulsion or attraction H. Löwen, E. Allahyarov, I. D&#x27;Amico, Progr. Colloid Polym. Sci. 115, 367 (2000).</p>
+<p class="pub-item">26. Influence of solvent granularity on the effective interaction between charged colloidal suspensions E. Allahyarov, H. Löwen, Phys. Rev. E 63, 041403 (2001).</p>
+<p class="pub-item">27. Discrete solvent effects on the effective interaction between charged colloids E. Allahyarov, H. Löwen, J. Phys. Condensed Matter 13, L277 (2001).</p>
+<p class="pub-item">28. Interactions and phase transitions of colloidal dispersions in bulk and at interfaces H. Löwen, E. Allahyarov, et al, Phil. Trans. Roy. Soc. Lond. A 359, 909 (2001).</p>
+<p class="pub-item">29. Discrete charge patterns, Coulomb correlations and interactions in protein solutions E. Allahyarov, H. Löwen, J. P. Hansen, A. A. Louis, Europhys. Letters. 57, 731 (2002).</p>
+<p class="pub-item">30. Effective forces in colloidal mixtures: from depletion attraction to accumulation repulsion A. A. Louis, E. Allahyarov, H. Löwen, R. Roth, Phys. Rev. E 65, 061407 (2002).</p>
+<p class="pub-item">31. Adsorption of monovalent and multivalent cations and anions on DNA molecules E. Allahyarov, H. Löwen, G. Gompper, Phys. Rev. E 68, 061903 (2003).</p>
+<p class="pub-item">32. Nonmonotonicity of second virial coefficient in strongly correlated systems E. Allahyarov, H. Löwen, J.-P. Hansen, A. A. Louis, Phys. Rev. E 67, 051404 (2003); Virtual Journal of Biological Physics Research 5,(2003).</p>
+<p class="pub-item">33. Charged colloids, polyelectrolytes and biomolecules viewed as strongly coupled Coulomb systems H. Löwen, E. Allahyarov, et al., J. Phys. A: Math. Gen. 36, 5827 (2003).</p>
+<p class="pub-item">34. Mesoscopic solvent simulations: Multi-particle-collision dynamics of three-dimensional flows E. Allahyarov, G. Gompper, Phys. Rev. E 66, 036702 (2003).</p>
+<p class="pub-item">35. Erratum: Mesoscopic solvent simulations: Multiparticle-collision dynamics of three-dimensional flows E. Allahyarov, G. Gompper, Phys. Rev. E 67, 059901 (2003).</p>
+<p class="pub-item">36. Re entrance in DNA condensation, E. Allahyarov, N. Gusein-zade, Phys. Reports of Russian Academy of Sciences 6, 49 (2004).</p>
+<p class="pub-item">37. Crystallization of colloidal plasma: charge renormalization in added salt E. Allahyarov, S. Trigger, High Temperature Physics 43, 315 (2005).</p>
+<p class="pub-item">38. Attraction between DNA molecules mediated by multivalent ions E. Allahyarov, G. Gompper, H. Löwen, Phys. Rev. E. 69, 041904 (2004); Virtual Journal of Biological Physics Research 7, (2004).</p>
+<p class="pub-item">39. DNA condensation, re dissolution and mesocrystals induced by tetravalent counterions E. Allahyarov, H. Löwen, G. Gompper, Euro. Phys. Letters 68, 894 (2004).</p>
+<p class="pub-item">40. Interaction between overcharged DNA molecules E. Allahyarov, G.Gompper, H.Löwen, J.Phys. Cond. Matter 17, S1827 (2005).</p>
+<p class="pub-item">41. Charged colloids and polyelectrolytes: from statics to electrokinetics H. Löwen, E. Allahyarov et al, J. Phys.: Conf. Ser. 11, 207 (2005).</p>
+<p class="pub-item">42. Interaction between charged colloids in a low dielectric constant solvent E. Allahyarov et al, Euro.Phys. Letters 78, 38802 (2007).</p>
+<p class="pub-item">43. Role of electrostatic forces in cluster formation in a dry ionomer E. Allahyarov, P. Taylor, J. Chem. Phys. 127, 154901 (2007).</p>
+<p class="pub-item">44. Charged colloidal particles in a charged wedge: do they go in or out H. Löwen, E.Allahyarov et al, J. Phys.: Condens. Matter 20, 404221 (2008).</p>
+<p class="pub-item">45. Colloids in a low dielectric constant solvent, E. Allahyarov, E. Zaccarelli, F. Sciortino, H. Löwen, Europhys. Lett. 81, 59901 (2008).</p>
+<p class="pub-item">46. Predicted electric-field-induced hexatic structure in an ionomer membrane E. Allahyarov, P. Taylor, Phys. Rev. E 80, 020801(R) (2009).</p>
+<p class="pub-item">47. Simulation Study of the Correlation between Structure and Conductivity in Stretched Nafion E. Allahyarov, P. Taylor, J. Phys. Chem. B 113, 610 (2009).</p>
+<p class="pub-item">48. Nonadditivity in the effective interactions of binary charged colloidal suspensions, E. Allahyarov, H. Löwen, J. Phys.: Condens. Matter 21, 424117 (2009).</p>
+<p class="pub-item">49. Simulation Study of Sulfonate Cluster Swelling in Ionomers E. Allahyarov, P. Taylor, H. Löwen, Phys. Rev. E 80, 061802 (2009).</p>
+<p class="pub-item">50. Simulation study of field-induced morphological changes in a proton-conducting ionomer E. Allahyarov, P. Taylor, H. Löwen, Phys. Rev. E 81, 031805 (2010).</p>
+<p class="pub-item">51. Simulation study of the equilibrium morphology in ionomers with different architectures E. Allahyarov, P. Taylor, J. Polymer Sci. B: Polymer Physics 49, 368 (2011).</p>
+<p class="pub-item">52. Simulation study of field-induced proton conduction pathways in dry ionomers E. Allahyarov, P. Taylor, H. Löwen, J. Phys.: Condens. Matter 23, 234105 (2011).</p>
+<p class="pub-item">53. Heterogeneous crystallization of hard-sphere colloids near a wall K. Sandomirski, E. Allahyarov, H. Löwen, S. U. Egelhaaf, Soft Matter 7, 8050 (2011).</p>
+<p class="pub-item">54. Huge broadening of the crystal-fluid interface for sedimenting colloids E. Allahyarov, H. Löwen, Euro. Phys. Letters 95, 38004 (2011).</p>
+<p class="pub-item">55. Simulation study of poled low-water ionomers with different architectures E. Allahyarov, P. Taylor, H. Löwen, J. Phys.: Condens. Matter 23, 455102 (2011).</p>
+<p class="pub-item">56. Double clustering in binary mass hard sphere system E. Allahyarov, H. Löwen, J. Chem. Phys. 135, 134115 (2011).</p>
+<p class="pub-item">57. Heterogeneous crystallization in colloids and complex plasmas: the role of binary mobilities. H. Löwen, E. Allahyarov, A. Ivlev, G. E. Morfill, J. Phys.: Condens. Matter 24, 284125 (2012).</p>
+<p class="pub-item">58. Crystal Orientation and Temperature Effects on Double Hysteresis Loop Behavior in a Poly(vinylidene fluoride-co-trifluoroethylene-co-chlorotrifluoroethylene)-graft-Polystyrene Graft Copolymer, L. Yang, E. Allahyarov, F. Guan, L. Zhu, Macromolecules 46, 9698–9711 (2013).</p>
+<p class="pub-item">59. Novel polymer ferroelectric behavior via crystal isomorphism and the nanoconfinement effect, L. Yang, X. Li, E. Allahyarov, P. Taylor, Q.M. Zhang, L. Zhu, Polymer 54, 1709-1728 (2013).</p>
+<p class="pub-item">60. Highly asymmetric electrolytes in the primitive model: Hypernetted chain solution in arbitrary spatial dimensions. M. Heinen, E. Allahyarov, H. Löwen, J. Comp. Chem. 35, 275-289 (2014).</p>
+<p class="pub-item">61. Magnetomechanical response of bilayered magnetic elastomers, E. Allahyarov, A. M. Menzel, L. Zhu, H. Löwen, Smart Materials and Structures 23, 115004 (1-12) (2014).</p>
+<p class="pub-item">62. Heterogeneous crystallization of hard and soft spheres near flat and curved walls, K. Sandomirski, S. Walta, J. Dubbert, E. Allahyarov, A. B. Schofield, H. Löwen, W. Richtering, S. U. Egelhaaf, Eur. Phys. J 223, 439-454 (2014).</p>
+<p class="pub-item">63. Analysis of the actuation properties of charged multilayer films, E. Allahyarov, H. Löwen and L. Zhu, J. Appl. Phys. 117, 034504 (1-14) (2015).</p>
+<p class="pub-item">64. Crystallization seeds favour crystallization only during initial growth, E. Allahyarov, K. Sandomirski, S. U. Egelhaaf, and H. Löwen, Nature Communications 6, 1-9 (2015).</p>
+<p class="pub-item">65. A simulation study of the electrostriction effects in dielectric elastomer composites containing polarizable inclusions with different spatial distributions, E. Allahyarov, H. Löwen, L. Zhu, Phys. Chem. Chem. Phys. 17, 32479-32497 (2015).</p>
+<p class="pub-item">66. Semicrystalline structure - dielectric property relationship and electrical conduction in a biaxially oriented poly(vinylidene fluoride) film under high electric fields and high temperatures, Yang, J. Ho, E. Allahyarov, R. Mu, L. Zhu, ACS Appl. Mater. Interfaces 7, 19894-19905 (2015).</p>
+<p class="pub-item">67. Enhanced ionic diffusion in ionomer-filled nanopores, E. Allahyarov, P. L. Taylor, and H. Löwen, J. Chem. Phys. 143, 243126 (1-10) (2015).</p>
+<p class="pub-item">68. Interfacial Polarization-Induced Loss Mechanisms in Polypropylene/BaTiO3 Nanocomposite Dielectrics, G. Zhang, D. Brannum, D. Dong, L. Tang, E. Allahyarov, S. Tang, Saide, K. Kodweis, J.-K. Lee, L. Zhu, Chemistry of Materials 28, 4646-4660 (2016).</p>
+<p class="pub-item">69. Dipole Correlation Effects on Local Field and Effective Dielectric Constant in Composite Dielectrics containing High-k Inclusions, E. Allahyarov, H. Löwen and L. Zhu, Phys. Chem. Chem. Phys. 8, 19103-19117 (2016).</p>
+<p class="pub-item">70. Simulation Study of Ion Diffusion in Charged Nanopores with Anchored Terminal Groups, E. Allahyarov, H. Löwen, P. L. Taylor, Electrochimica Acta 242, 73-85 (2017).</p>
+<p class="pub-item">71. Triple junction at the triple point resolved on the individual particle level, M. Chaudhuri, E. Allahyarov, H. Löwen, S. U. Egelhaaf, D. A. Weitz, Phys. Rev. Lett. 119, 128001 (1-6) ((2017).</p>
+<p class="pub-item">72. Smectic monolayer confined on a sphere: Topology at the particle scale, E. Allahyarov, A. Voigt, H. Löwen, Soft Matter, 13, 8120-8135 (2017)</p>
+<p class="pub-item">73. Understanding reversible Maxwellian electroactuation in a 3M VHB dielectric elastomer with prestrain, L. Liu, Y. Huang, Y. Zhang, E. Allahyarov, Z. Zhang, F. Lv, L. Zhu, Polymer 144, 150-158 (2018).</p>
+<p class="pub-item">74. Polymer Nanodielectrics: Current Accomplishments and Future Challenges for Electric Energy Storage, G. Zhang, E. Allahyarov, L. Zhu, Springer Nature, Editors B. Li and T. Jiao, 1-48, (2018)</p>
+<p class="pub-item">75. Length segregation in mixtures of spherocylinders induced by imposed topological defects, E. Allahyarov, H. Löwen, Soft Matter 14, 8962-8973 (2018)</p>
+<p class="pub-item">76. Reducing dielectric loss and enhancing electrical insulation for multilayer polymer films by nanoconfined ion transport under high poling electric fields, E. Allahyarov et all, J. Mater. Chem. C 1-20 (2020), https://doi.org/10.1039/D0TC00522C</p>
+<p class="pub-item">77. Reducing Dielectric Loss by Nanoconfined Impurity Ion Transport in Multilayer Films under Low Electric Fields, E. Allahyarov et all, Composites Part B- Engineering 190, 107908 1-16 (2020).</p>
+<p class="pub-item">78. Theoretical Study of Nanocomposite Permittivity with a Tunable Clustering of Inclusions, E. Allahyarov, Advanced Theory and Simulations 1-20 (2020), https://doi.org/10.1002/adts.202000005</p>
+<p class="pub-item">79. G. Zhang, Q. Li, E. Allahyarov, Y. Li, L. Zhu, Challenges and opportunities of polymer nanodielectrics for electric energy storage, ACS APPL MATER INTER 13, 37939-37960 (2021).</p>
+<p class="pub-item">80. E. Allahyarov, L. Zhu, R. Li, F. Santos, Q. Li, G. Rui, Zh. Zhu, T. Soulestin, H. He, P. Taylor, Electrostriction- enhanced giant piezoelectricity via relaxor-like secondary crystals in extended-chain ferroelectric polymers, CELL 4, 11, 3696-3709. (2021).</p>
+<p class="pub-item">81. Y. Huang, G. Rui, Q. Li, Elshad Allahyarov, R. Li, M. Fukuto, G.-J. Zhong, J.-Z. Xu, Z.-M. Li, P. L. Taylor, L. Zhu, Enhanced piezoelectricity from highly polarizable oriented amorphous fractions in biaxially oriented poly(vinylidene fluoride) with pure β crystals, NATURE 12, 675, 1-8 (2021)</p>
+<p class="pub-item">82. G. Rui, E. Allahyarov, R. Li, P. L. Taylor, L. Zhu, Hard-to-soft transition-enhanced piezoelectricity in poly(vinylidene fluoride) via relaxor-like secondary crystals activated by high-power ultrasonication, Material Horizons 9. 1992-1998 (2022).</p>
+<p class="pub-item">83. E. Allahyarov, Q. Li, T. Ju, Y.-W. Harn, H. Luo, D. Zhang, Z. Lin, L. Zhu, High electric field-induced ferroelectric behavior of polymer/paraelectric barium titanate particle nanocomposites, to appear in Chem. Engineering J. (2022).</p>
+<p class="pub-item">84. Elshad Allahyarov and Hartmut Löwen, Structural correlations and phase separation in binary mixtures of charged and neutral colloids, accepted to J. Chem. Phys. 157, 164902 (2022).</p>
+<p class="pub-item">85. Elshad Allahyarov, Hartmut Löwen, Alan R. Denton, Structural correlations in highly asymmetric binary charged colloidal mixtures, Phys. Chem. Chem. Phys. 25, 15439-15451 (2022).</p>
+<p class="pub-item">86. G. Rui, E. Allahyarov, P. Taylor, L. Zhu, Temperature-dependent rotational dipole mobility and devitrification of rigid amorphous fraction in unpoled and poled biaxially oriented poly(vinylidene fluoride), Macromolecules 55, 21, 9705– 9714 (2022).</p>
+<p class="pub-item">87. Namik G. Gusein-zade, Andrey A. Slezkin, Elshad Allahyarov, Statistical processing of time slices of electroencephalography signals during brain reaction to visual stimuli, BIOMED. SIGNAL PROCES. 83, 104656 1- 11 (2023).</p>
+<p class="pub-item">88. E. Allahyarov, Q. Li, T. Ju, Y.-W. Harn, H. Luo, D. Zhang, Z. Lin, L. Zhu, High electric field-induced ferroelectric behavior of polymer/paraelectric barium titanate particle nanocomposites, CHEM. ENG. J. 463, 142490 (1-12) (2023).</p>
+<p class="pub-item">89. Guanchun Rui, Elshad Allahyarov, Honghu Zhang, Ruipeng Li, Shihai Zhang, Philip L. Taylor, Lei Zhu, Effect of chemical defects on electrostriction-enhanced piezoelectric property of poly(vinylidene fluoride) via high- power ultrasonication, NANO ENERGY 113, 108590 1-20 (2023).</p>
+<p class="pub-item">90. Q. Li, E. Allahyarov, T. Ju, Z. Lin, L. Zhu, Nonlinear ferroelectric characteristics of barium titanate nanocrystals determined via a polymer nanocomposite approach, Nanoscale 16, 3606-3621 (2024).</p>
+<p class="pub-item">91. Y. Zhu, H. Wu, A. Martin, P. Beck, E. Allahyarov, T. Wongwirat, G. Rui, Y. Zhu, D. Hawthorne, J. Fan, J. Wu, S. Zhang, L. Zhu, S. Kaur, Q. Pei, Operando investigation of the molecular origins of dipole switching in P(VDF-TrFE- CFE) terpolymer for large adiabatic temperature change, Adv. Func. Mater 34, 2314705 1-12 ((2024).</p>
+<p class="pub-item">92. Rui, G.; Allahyrov, E.; Zhu, Z.; Huang, Y.; Wongwirat, T.; Zou, Q.; Talyor, P. L.; Zhu, L., Challenges and opportunities in piezoelectric polymers: Effect of oriented amorphous fraction in ferroelectric semicrystalline polymers. Responsive Materials 2, 1-22 (2024).</p>
+<p class="pub-item">93. Elshad Allahyarov and Hartmut Lowen, Electric field-induced clustering in nanocomposite films of highly polarizable inclusions, J. Colloid &amp; Interface Science 668, 587-598 (2024).</p>
+<p class="pub-item">94. Namik G. Gusein-zade, Andrey A. Slezkin, Vitaly V. Podlepich, and Elshad Allahyarov, Machine learning in predicting the development of neurogenic dysphagia after neurosurgical intervention, to appear in Clinical Neurophysiology (2024).</p>
+    </section>
+  </main>
+</article>
+</body>
+</html>

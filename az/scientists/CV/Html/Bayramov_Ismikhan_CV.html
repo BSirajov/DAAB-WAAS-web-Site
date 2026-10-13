@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İsmixan Bayramov — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>İSMIXAN BAYRAMOV</h1>
+      <p class="subtitle">PhD<br>Professor<br>İzmir İqtisad Universiteti, İzmir, Türkiyə</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/ismixan-bayramov.jpg" alt="İsmixan Bayramov"></div>
+  <aside class="side">
+    <h2>Əlaqə</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Türkiyə</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zm0 1.5c1.7 0 3.3.6 4.5 1.5H7.5A7.9 7.9 0 0 1 12 4zm-6.6 3h13.2c.5.8.9 1.7 1.1 2.7H4.3c.2-1 .6-1.9 1.1-2.7zM4.2 11.2h15.6c0 .3.1.6.1.9s0 .6-.1.9H4.2c0-.3-.1-.6-.1-.9s0-.6.1-.9zm.1 3.6h15.4c-.2 1-.6 1.9-1.1 2.7H7.5c1.2.9 2.8 1.5 4.5 1.5a7.9 7.9 0 0 0 4.5-1.5H5.4c-.5-.8-.9-1.7-1.1-2.7z"/></svg><span><a href="https://orcid.org/0000-0002-8575-8405">0000-0002-8575-8405</a></span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M10.5 13.5a3.5 3.5 0 0 0 5 0l2.1-2.1a3.5 3.5 0 0 0-5-5L11.4 7.6l1.1 1.1 1.2-1.2a2 2 0 1 1 2.8 2.8l-2.1 2.1a2 2 0 0 1-2.8 0l-1.1 1.1zm3-3a3.5 3.5 0 0 0-5 0L6.4 12.6a3.5 3.5 0 0 0 5 5l1.2-1.2-1.1-1.1-1.2 1.2a2 2 0 1 1-2.8-2.8l2.1-2.1a2 2 0 0 1 2.8 0l1.1-1.1z"/></svg><span>E-7721-2018</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zm0 1.5c1.7 0 3.3.6 4.5 1.5H7.5A7.9 7.9 0 0 1 12 4zm-6.6 3h13.2c.5.8.9 1.7 1.1 2.7H4.3c.2-1 .6-1.9 1.1-2.7zM4.2 11.2h15.6c0 .3.1.6.1.9s0 .6-.1.9H4.2c0-.3-.1-.6-.1-.9s0-.6.1-.9zm.1 3.6h15.4c-.2 1-.6 1.9-1.1 2.7H7.5c1.2.9 2.8 1.5 4.5 1.5a7.9 7.9 0 0 0 4.5-1.5H5.4c-.5-.8-.9-1.7-1.1-2.7z"/></svg><span><a href="https://scholar.google.com/citations?user=hYlaue0AAAAJ">https://scholar.google.com/citations?user=hYlaue0AAAAJ</a></span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zm0 1.5c1.7 0 3.3.6 4.5 1.5H7.5A7.9 7.9 0 0 1 12 4zm-6.6 3h13.2c.5.8.9 1.7 1.1 2.7H4.3c.2-1 .6-1.9 1.1-2.7zM4.2 11.2h15.6c0 .3.1.6.1.9s0 .6-.1.9H4.2c0-.3-.1-.6-.1-.9s0-.6.1-.9zm.1 3.6h15.4c-.2 1-.6 1.9-1.1 2.7H7.5c1.2.9 2.8 1.5 4.5 1.5a7.9 7.9 0 0 0 4.5-1.5H5.4c-.5-.8-.9-1.7-1.1-2.7z"/></svg><span><a href="https://ismihanbayramoglu.academia.edu/">https://ismihanbayramoglu.academia.edu/</a></span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M10.5 13.5a3.5 3.5 0 0 0 5 0l2.1-2.1a3.5 3.5 0 0 0-5-5L11.4 7.6l1.1 1.1 1.2-1.2a2 2 0 1 1 2.8 2.8l-2.1 2.1a2 2 0 0 1-2.8 0l-1.1 1.1zm3-3a3.5 3.5 0 0 0-5 0L6.4 12.6a3.5 3.5 0 0 0 5 5l1.2-1.2-1.1-1.1-1.2 1.2a2 2 0 1 1-2.8-2.8l2.1-2.1a2 2 0 0 1 2.8 0l1.1-1.1z"/></svg><span>Ehtimal və statistika</span></li></ul><div class="block"><h2>Mükafatlar və təltiflər</h2><div class="rule"></div><ul class="items awards"><li>Elmi mükafat — Ankara Universiteti (2000–2001)</li></ul></div>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profil</h2>
+      <div class="rule"></div>
+      <p>İsmixan Bayramov 2001-ci ildən İzmir İqtisad Universitetində professordur. 2001–2022-ci illərdə İncəsənət və Elmlər fakültəsinin dekanı, 2001–2015-ci illərdə riyaziyyat kafedrasının müdiri olub. 1988-ci ildə Kiyev Dövlət Universitetində PhD dərəcəsi alıb. Dissertasiya təlim nümunələrinə əsaslanan invariant etibarlılıq intervalları və statistik meyarlar haqqındadır. 1981-ci ildə Azərbaycan Dövlət Universitetində tətbiqi riyaziyyat üzrə magistr və bakalavr dərəcələrini bir sətirdə göstərir. 1993–2001-ci illərdə Ankara Universitetinin statistika kafedrasında professor olub. Nəşrlərdə Bairamov yazılışı da var.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>İş təcrübəsi</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>İzmir İqtisad Universiteti, Türkiyə</h3>
+          <span class="when">2001–hazırda</span>
+        </div>
+        <p class="role">Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Izmir University of Economics</h3>
+          <span class="when">2001–2022</span>
+        </div>
+        <p class="role">İncəsənət və Elmlər fakültəsinin dekanı</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Izmir University of Economics</h3>
+          <span class="when">2001–2015</span>
+        </div>
+        <p class="role">Riyaziyyat kafedrasının müdiri</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Statistika kafedrası, Ankara Universiteti, Türkiyə</h3>
+          <span class="when">1993–2001</span>
+        </div>
+        <p class="role">Professor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Azərbaycan Milli Aerokosmik Agentliyi</h3>
+          <span class="when">1989–1993</span>
+        </div>
+        <p class="role">Elmi işçi, böyük elmi işçi və aparıcı elmi işçi</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Azerbaijan National Aerospace Agency</h3>
+          <span class="when">1983–1989</span>
+        </div>
+        <p class="role">Elmi işçi</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Azərbaycan Dövlət Universiteti və Azərbaycan Neft Akademiyası</h3>
+          <span class="when">1988–1993</span>
+        </div>
+        <p class="role">Müəllim</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kibernetika İnstitutu, Azərbaycan Elmlər Akademiyası</h3>
+          <span class="when">1981–1983</span>
+        </div>
+        <p class="role">Köməkçi elmi işçi</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Təhsil</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>PhD</h3>
+          <span class="when">1988</span>
+        </div>
+        <p>Hesablama riyaziyyatı. Dissertasiya: təlim nümunələrinə əsaslanan invariant etibarlılıq intervalları və statistik meyarlar</p><p>Kiyev Dövlət Universiteti, Kibernetika fakültəsi, Ukrayna</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Magistr və bakalavr</h3>
+          <span class="when">1981</span>
+        </div>
+        <p>Tətbiqi riyaziyyat. 1981-ci il üçün hər iki adı verir</p><p>Azərbaycan Dövlət Universiteti, Tətbiqi riyaziyyat fakültəsi</p>
+      </article>
+    </section><section class="sec teaching">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Tədris</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>1989–2024 — Ehtimal və statistika kursları — 1989–2024-cü illərdə tədris olunan kursları göstərir</li></ul>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Nəşrlər</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Rəylənmiş (peer-reviewed) jurnal məqalələri</h3>
+<p class="pub-item">1. BAYRAMOGLU, I. (2024) On the new properties of conditional expectations. REVSTAT (in press)</p>
+<p class="pub-item">2. BAYRAMOGLU, I. and STEPANOV, A. (2024) Asymptotic properties of th spacings based on records. Statistics and Probability Letters. 208, 110052, P. 1-10. EREM, A. AND I.BAYRAMOGLU, I. (2023) A consistent statistical test based on bivariate random samples. Hacettepe Journal Of Mathematics &amp; Statistics, Vol. 52, Issue 1, 209 – 228.</p>
+<p class="pub-item">3. BAYRAMOGLU. I. (2022) A note on fıbonaccı sequences of random varıables. Statıstıca, Vol. 82, No. 1, 1-12, ISBN: 1973-2201.</p>
+<p class="pub-item">4. BAYRAMOGLU, I. And ÖZKUT, C.M. (2022) Recent Developments About Marshall-Olkin Bivariate Distribution. Journal Of Statistical Theory And Practice, Vol. 16, No. 1, 1-14, ISBN: 1559-8608.</p>
+<p class="pub-item">5. BAYRAMOGLU, I. (2022) Fuzzy improved distribution function and order statistics. Journal Of Computational And Applied Mathematics, Vol. 411, 1-12.</p>
+<p class="pub-item">6. BAYRAMOGLU, I. and GEBİZLİOGLU, O.L. (2021) A max–min model of random variables in bivariate random Sequences. Journal of Computational and Applied Mathematics. 388, 113304.</p>
+<p class="pub-item">7. BAYRAMOGLU. I. (2021) Bivariate and multivariate distributions with bimodal marginals. Communications In Statistics-Theory And Methods, Vol. 49, No. 2, 361-384, ISBN: 0361-0926. TAVANGAR M. and BAYRAMOGLU, I. (2020) On some models of ordered random variables and characterizations of distributions. Mathematical Methodso of Statistics, Volume 29, pages149–158.</p>
+<p class="pub-item">8. BAYRAMOGLU, I. (2020) Joint distribution of a random sample and an order statistic: A new approach with an application in reliability analysis. Reliability Engineering and System Safety. 193 (2020) 106594</p>
+<p class="pub-item">9. BAYRAMOGLU, I. (2020) Bivariate and Multivariate distributions with bimodal marginals. Communications in Statistics-Theory and Methods. Vol. 49, Issue 2, 361-384. KEMALBAY, G. and BAYRAMOGLU, I. (2019) On distribution of upper marginal records in bivariate random sequences. Turkish Journal of Mathematics. 43, 1474-1491. Kemalbay. G. and Bayramoglu, I, (2015) Joint distribution of new sample rank of bivariate order statistics. Journal of Applied Statistics. Vol. 42, No. 10, 2280-2289. Gurler, S., Hudaverdi, B. and Bairamov, I. (2015) On the remaining strength at the system level for some bivariate survival models based on exponential distribution. Journal of Computational and Applied Mathematics. Vol. 290,535-542.</p>
+<p class="pub-item">10. Bayramoglu (Bairamov), I. and Ozkut, M. (2015) The reliability of coherent systems subjected to Marshall-Olkin type shocks. IEEE Trancactions on Reliability. Vol. 64. No1, 435-443.</p>
+<p class="pub-item">11. Bayramoglu (Bairamov), I. and Eryilmaz, S. (2015) Order statistics of dependent sequences consisting of two different sets of exchangeable variables. Journal of Computational and Applied Mathematics. Vol. 286, 1-6.</p>
+<p class="pub-item">12. Bairamov, I., Gürler, S. and Hudaverdi, B. (2015) On the mean remaining strength of the k-out-of-n:F system with exchangeable components. Communications in Statistics-Simulation and Computation. Vol. 44, issue 1, 1-13.</p>
+<p class="pub-item">13. Bairamov, I. and Yapakci Giner, G. (2014) Order statistics and exceedances for some models of INID random variables. Brazilian Journal of Probability and Statistics. Vol. 28, Issue 4, 492-514 Baranov, I. and Tavangar, M. (2014) More on Progressively Type-II order statistics for multivariate obervations. Australian and New Zealand Journal of Statistics. Vol. 56, Issue 4, 385-394.</p>
+<p class="pub-item">14. Bayramoglu, K. and Bairamov, I. (2014) On censored bivariate random variables: copula, characterization and estimation. Communications in Statistics-Simulation and Computation. 43, 2173– 2185. Ozkut, M. and Bayramoglu (Bairamov), I. (2014) On Marshall–Olkin type distribution with effect of shock magnitude. Journal of Computational and Applied Mathematics, 271, 150–162.</p>
+<p class="pub-item">15. Bairamov, I., Khaledi, B.E. and Shaked, M. (2014) Stochastic comparison of order statistics and their concomitants. Journal of Multivariate Analysis. 124, 105-115.</p>
+<p class="pub-item">16. Bairamov I. (2014) On conditionally independent random variables, copula and order statistics. Communications in Statistics-Theory and Methods. Vol. 43, issue 10-12, 2105-2117.</p>
+<p class="pub-item">17. Bayramoglu, K. and Bairamov, I. (2014) Baker-Lin-Huang type bivariate distributions based on order statistics. Communications in Statistics-Theory and Methods. Vol. 43, issue 10-12, 1992-2006.</p>
+<p class="pub-item">18. Bairamov, I. (2013) Reliability and mean residual life of complex systems with two dependent components per element. IEEE Transactions on Reliability. Vol. 62, 276-285.</p>
+<p class="pub-item">19. Bairamov, I. and Kemalbay, G. (2013) Some novel discrete distributions under fourfold sampling schemes and conditional bivariate order statistics. Journal of Computational and Applied Mathematics. 248, 1-14.</p>
+<p class="pub-item">20. Bairamov, I. and Stepanov, A. (2013) Number of observations near the maximum in an F-alfa scheme. Statistics. Vol. 47, No.1, 191-201.</p>
+<p class="pub-item">21. Bairamov, I. and Bayramoglu, K. (2013) From the Huang-Kotz distribution to Baker’s bivariate distribution. Journal of Multivariate Analysis. 113, 106-115 Tavangar, M. and Bairamov, I. (2012) A Note on the residual lifetimes in a life-test under Progressive Type-II right censoring scheme. Applied and Computational Mathematics. N. 3, 368-377.</p>
+<p class="pub-item">22. Bairamov, I. (2012) Corrigendum to “Majorization bounds for distribution functions” Statist. Probab. Lett. 82 (2012) 1799–1806], pp. 7-8.</p>
+<p class="pub-item">23. Bairamov, I. (2012) Majorization bounds for distribution functions. Statistics and Probability Letters. 82, 1799-1809. Eryılmaz, S. and Bayramoglu, I. (2012) On extreme residual lives after the failure of the system. Mathematical Problems in Engineering. Volume 2012, Article ID 342940, 11 pages. Tavangar, M. and Bairamov, I. (2012) On the residual lifetimes of coherent systems with exchangeable components. Pakistan Journal of Statistics. Vol. 28(3), 303-313.</p>
+<p class="pub-item">24. Bairamov, I., Altınsoy (Yağcı), B. and Kerns, G. Jay. (2011) On generalized Sarmanov bivariate distributions. TWMS Journal of Applied and Engineering Mathematics. Vol. 1, No. 1, 2011.</p>
+<p class="pub-item">25. Bairamov, I and Parsi, S. (2011) Order statistics from mixed exchangeable random variables. Journal of Computational and Applied Mathematics, Volume 35, Issue 16, 4629-4638.</p>
+<p class="pub-item">26. Bairamov, I. and Parsi, S. (2011) On flexible progressive censoring. Journal of Computational and Applied Mathematics, Volume 35, Issue 16, 4517-4898.</p>
+<p class="pub-item">27. Bairamov, I. and Stepanov, A. (2011) Numbers of near bivariate record-concomitant obsrvations. Journal of Multivariate Analysis. 102, Issue 5, 908-917.</p>
+<p class="pub-item">28. Bairamov I (2010), Order Statistics. In: Penelope Peterson, Eva Baker, Barry McGaw, (Editors), International Encyclopedia of Education, Volume 7, pp. 360-365. Oxford: Elsevier.</p>
+<p class="pub-item">29. Bairamov, I. and Elmastas G. O. (2010) Discrete distributions connected with the bivariate binomial. Hacettepe Journal of Mathematics and Statistics. Volume 39(1),109-120.</p>
+<p class="pub-item">30. Bairamov, I. Stepanov, A. (2010) Numbers of near-maxima for the bivariate case. Statistics and Probability Letters,80, 196-205.</p>
+<p class="pub-item">31. Bairamov, I. Berred, A. and Stepanov, A. (2010) Limit results for ordered uniform spacings. Statistical Papers. 51, 227-241.</p>
+<p class="pub-item">32. Bairamov, I. and Ucer, B. (2009) On a dependence between random variables in a neighborhood of a particular point Journal of Statistical Theory and Applications. Volume, 8, No. 4, pp. 392-402 Parsi, S. Bairamov, I. (2009) Expected values of the number of failures for two populations under joint Type-II progressive censoring. Comput. Statist. Data. Anal.</p>
+<p class="pub-item">33. Bairamov I. and Eryılmaz, S. (2009) Wating times of exceedances in random threshold models. Statist. and Probab. Letters. 79, 676-683. Gurler, S. and Bairamov, I. (2009) Parallel and k-out-of-n:G systems with nonidentical components and their mean residual life functions. Applied Mathematical Modeling. 33. 1116-1125.</p>
+<p class="pub-item">34. Bairamov I. and Eryılmaz, S. (2009) Wating times of exceedances in random threshold models. Statistics and Probability Letters. 79, 676-683</p>
+<p class="pub-item">35. Bairamov, I. Berred, A. and Stepanov, A. (2009) Limit results for ordered uniform spacings. Statistical Papers. (Forthcoming)</p>
+<p class="pub-item">36. Bairamov, I. and Eryilmaz, S. (2008) Joint Behaviour of precedences and exceedances in random threshold models. Australian and New Zealand Journal of Statistics</p>
+<p class="pub-item">37. Bairamov, I. and Arnold, B. (2008) On the residual lifelengths of the remaining components in an n-k+1 out of n system. Statistics and Probability Letters.78, 945-952. PDF</p>
+<p class="pub-item">38. Bairamov, I. and Tanil, H. (2008) Distributions of exceedances of generalized order statistics. Statistics., 42, Issue 1, 67-76.</p>
+<p class="pub-item">39. Bairamov, I. and Ozkal, T. (2007) On characterization of distributions through the properties of conditional expectations of order statistics. Communications in Statistics-Theory and Methods, 36,1319-1326</p>
+<p class="pub-item">40. Bairamov, I. and Tanil, H. (2007) On distributions of exceedances based on generalized order statistics.Communications in Statistics—Theory and Methods, 36: 1479–1491.</p>
+<p class="pub-item">41. Bairamov, I. (2007) Preface. Communications in Statistics—Theory and Methods, 36: 1271–1272 (Special Issue: Ordered Statistical Data)</p>
+<p class="pub-item">42. Bairamov, I. and Khan, M.K. (2007) On exceedances of record and order statistics. Proceedings of the American Mathematical Society. Volume 135, Number 6, pp. 1935-1945. Ismihan Bairamov and Alexei Stepanov (2006) A note on large deviations for weak records. Statistics and Probability Letters. 76, pp. 1449-1453. Ismihan Bairamov (2006) Advances in Exceedance Statistics Based on Ordered Random Variables. Recent Developments in Ordered Random Variables. Eds. Mohammad Ahsanullah and M.Z. Raqab. Nova Science Publishers. New York. Asadi M. and Bayramoglu I. (2006) The Mean Residual Lifetime and Mean Past Lifetime of k- out-of-n-Structures at the System Level. Recent Developments in Ordered Random Variables. Eds. Mohammad Ahsanullah and M.Z. Raqab. Nova Science Publishers. New York. Asadi, M. and Bayramoglu, I. (2006) The mean residual life function of a k-out-of- n structure at the system level. IEEE Transactions on Reliability. Vol. 55, No. 2, June.</p>
+<p class="pub-item">43. Bairamov, I. (2006) Progressive Type II censored order statistics for multivariate observations. Journal of Multivariate Analysis. 97, 797-809.</p>
+<p class="pub-item">44. Bairamov I.G. and Eryılmaz S. (2006) Spaciings, exceedances and concomitants in progressive type II censoring scheme. Journal of Statistical Planning and inference. 136, pp. 527-536.</p>
+<p class="pub-item">45. Bairamov I., Ahsanullah M. and Anthony Pakes (2005) A characterization of continuous distributions via regression of pairs of record values. Australian and New Zealand Journal of Statistics.47 (4), 543-547. Arslan, G., Ahsanullah, M. and Bayramoglu, I. (2005) On Characteristics Properties of Uniform Distribution. Sankhya: The Indian Journal of Statistics. Volume 67, Part 4, pp 717- 723. Balakrishnan, N., Bairamov, I. and O.L. Gebizlioglu.(2005) Advances on Models, Characterizations and Applications. Chapman and Hall/CRC. Asadi M. and Bairamoglu I. (2005) A Note on the Mean Residual Life Function of a Parallel System. Communications in Statistics. Vol. 34, Issue 2. pp. 475-485. O. Ege Oruc and I. Bayramoglu (2005) On the general class of two sided power distribution. Communications in Statistics. Vol. 34, Issue 5. 34, 1009-1017.</p>
+<p class="pub-item">46. Bairamov I. and Eryılmaz S. (2004) Characterization of symmetry and exceedance models in multivariate FGM distributions. Journal of Applied Statistical Science. Vol. 13, Number 2, pp. 87-99.</p>
+<p class="pub-item">47. Bairamov I.G., Kotz S. and Kozubovski T. (2003) A new measure on linear local dependence. Statistics. Vol. 37(3),pp. 243-258. Eryilmaz, S. and Bairamov, I.G. (2003). On a new sample rank of an order statistic and its concomitant. Statistics &amp;Probability Letters, 63, pp. 123-131.</p>
+<p class="pub-item">48. Bairamov, I. and Kotz, S (2003) On a new family of positive quadrant dependent bivariate distributions. International Mathematical Journal. Vol. 3, No. 11.</p>
+<p class="pub-item">49. Bairamov I.G. and Kotz S. (2002) Dependence structure and symmetry of Huang -Kotz FGM distributions and their extensions. Metrika, 56 /1, 55-72 Springer.</p>
+<p class="pub-item">50. Bairamov I.G., Ahsanullah M. and Akhundov I. (2002) A residual life function of a system having parallel or series structure. J. Statist. Theor. Appl., Vol 1, No 2.</p>
+<p class="pub-item">51. Bairamov I.G. and Kotz S. (2001) On distributions of exceedances associated with order statistics and record values for arbitrary distributions. Statistical Papers. Volume 42, Issue 2, pp 171-185. Springer.</p>
+<p class="pub-item">52. Bairamov I.G., Gebizlioglu O.L. and Kaya M.F. (2001) Asymptotic Distributions of Statistics Based on Order Statistics and Record Values and Invariant Confidence Intervals. In &#x27;&#x27;Asymptotic Methods in Probability and Statistics with Applications&#x27;&#x27; (Eds. N. Balakrishnan, I.A. Ibragimov, V.B. Nevzorov). P. 309-320. Birkhauser Boston. Lai C.D., Xie M. and Bairamov I.G. (2001) Dependence and Ageing Properties of Bivariate Lomax Distribution. In System and Bayesian Reliability. (Essays in Honor of Professor Richard E. Barlow on His 70 th Birthday. Eds. Yu. Hayakava, T. Irony and M. Xie)</p>
+<p class="pub-item">53. Bairamov I.G., Kotz S. and Gebizlioglu O.L. (2001) On a generalization of FGM and Sarmanov class of distributions. South African Statistical Journal. 35, 205-224</p>
+<p class="pub-item">54. Bairamov, I.G. and Eryilmaz, S. (2001). On properties of statistics connected with minimal spacing and record exceedances. Applied Statistical Science V, 245-254, Nova Science Publishers, USA.</p>
+<p class="pub-item">55. Bairamov I.G., Kotz s. and Bekci M. (2000) New generalized Farlie-Gumbel-Morgenstern distributions and concomitants of order statistics. Journal of Applied Statistics. Vol. 28, No. 5, 521-536. CARFAX PUBLISHING, UK.</p>
+<p class="pub-item">56. Bairamov I.G. (2000) On the characteristic properties of exponential distribution. Annals of Institute of Statistical Mathematics. Vol. 52, No. 3, 448-458. Kluwer Academic Publishers, Tokyo.</p>
+<p class="pub-item">57. Bairamov I. G. and Apaydin A. (2000) Characterizations of continuous distributions by property of conditional expectation. South African Statist. Journal, 34, 37-48.</p>
+<p class="pub-item">58. Bairamov I.G. and Eryilmaz S.N. (2000) Distributional properties of statistics based on minimal spacing and record exceedance statistics. Journal of Statistical Planning and Inference, 90, 21-33.</p>
+<p class="pub-item">59. Bairamov I.G. and Ahsanullah M. (2000) Distributional relations between order statistics and the sample itself and characterization of exponential distribution. Journal of Applied Statistical Science. Vol 10, No. 1, 1-16. Nova Science Publisher, USA.</p>
+<p class="pub-item">60. Bairamov I.G. and Özkaya N. (2000) On the nonparametric Test for two Sample Problem based on spacings. Journal of Applied Statistical Science. Vol. 10, No. 1, 57-68. Nova Science Publisher, USA.</p>
+<p class="pub-item">61. Bairamov, I.G. and Kotz, S. (2000) On local dependence function for multivariate distributions. New Trends in Probability and Statistics. Vol. 5, pp. 27-44.</p>
+<p class="pub-item">62. Bairamov I.G., Gebizlioglu O.L. and Kaya M.F. (1999) Distributional properties of statistics based on invariant confidence intervals. Istatistik. Journal of the Turkish Statistical Association. Vol. 2. No 1, 15- 32.</p>
+<p class="pub-item">63. Bairamov I.G. and Gebizlioglu O.L. (1998) On the distance sequence of distribution functions. Journal of Applied Statistical Science. Vol. 8. No 1, p. 59-66. Nova Science Publisher, USA.</p>
+<p class="pub-item">64. Bairamov I.G. and Aliev F.A. (1998) On characterization of distributions through the properties of records. Journal of Applied Statistical Science. Vol. 8. No 1. Nova Science Publisher, USA.</p>
+<p class="pub-item">65. Bairamov I.G. and Gebizlioglu O.L. (1998) On the distance sequence of distribution functions and goodness of fit tests. Istatistic. Journal of the Turkish Statistical Association. Vol. 1. No 1, pp. 51-61.</p>
+<p class="pub-item">66. Bairamov I.G., Klyushin D. and Petunin Yu.I. (1998) Construction of confidence intervals for dependent observations. Istatistic. Journal of the Turkish Statistical Association. Vol.1. No 2, 67-74. Klyushin D., Petunin Yu.I. and Bairamov I.G. (1998) Test of heterogeneity of general population. Istatistik. Journal of the Turkish Statistical Association. Vol 1, No 3,19-29.</p>
+<p class="pub-item">67. Bairamov I.G. (1998) (with Petunin, Klyushin, Ganina, Boroday) Statistical Investigation of the Malignancy Associated Changes in Buccal Ephidelium Under Breast Cancer. Applied Statistical Science 4. Nova Science Publishers. USA.</p>
+<p class="pub-item">68. Bairamov I.G. (1998) On the new test based on training samples for the observation classification problem. Applied Statistical Science 4. Nova Science Publishers. USA.</p>
+<p class="pub-item">69. Bairamov I.G. (1998) (with Petunin, Klyushin, Ganina, Boroday) Retrospective determination of prognostic significance of cytogenetic, morphological and clinical factors in the linear regression model and calculation of confidence limits for survival time of patients suffering from malignant melanoma. Applied Statistical Science 4. Nova Science Publishers. USA.</p>
+<p class="pub-item">70. Bairamov I.G. (1997) Some distribution free properties of statistics based on record values and characterizations of distributions through a record. Journal of Applied Statistical Science. Vol 5. No 1, pp. 17-25. Nova Science Publisher, USA.</p>
+<p class="pub-item">71. Bairamov I.G. and Gebizlioglu O.L. (1997) On the ordering of random vectors in a norm sense. Journal of Applied Statistical Science. Vol. 6, No 1, p.77-86. Nova Science Publisher, USA.</p>
+<p class="pub-item">72. Bairamov I.G. and Petunin Yu.I. (1992) Statistical criteria based on training samples. Cybernetics. No 3, p. 408-413.</p>
+<p class="pub-item">73. Bairamov I.G. (1992) Statistical criteria based on training samples in the problem of classification of observations. Theory of Probability and Mathematical Statistics. No 46, p. 13-17.</p>
+<p class="pub-item">74. Bairamov I.G. and Guseynov P.M. (1992) On the problem of classification of observations on the basis of samples of brightnesses of the homogenous natural formations. J.Soobsheniya NPO Kosmicheskih issledovaniy. N 6. Baku-1990.P.41-44. (in russian)</p>
+<p class="pub-item">75. Bairamov I.G. and Petunin Yu.I. (1991) Structure of invariant confidence intervals containing the main distributed mass. Theory of Probabability and Its Applications. Vol. 35, No 1, p. 15-26.</p>
+<p class="pub-item">76. Bairamov I.G. (1991) Distributions related with differences of addjacent order statistics. Transactions of Academy of Sciences of Azerbaijan. Series of Physical-Technical and Mathematical Sciences. Vol. 12. No 1, p. 42-44.</p>
+<p class="pub-item">77. Bairamov I.G. (1990) Testing of statistical hypothesis with the help of statistical criteria based on training samples. Transactions of Academy of Sciences of Azerbaijan. Series of Physical-Technical and Mathematical Sciences. Vol. 11, No 1-2, p. 151-156.</p>
+<p class="pub-item">78. Bairamov I.G. and Petunin Yu.I. (1988) Invariant confidence intervals containing the general part of the distributed mass of general set. Vichislitelnaya i pricladnaya matematica. Kiev, Vol. 65, p. 112- 117. (in russian) English translation in J. Soviet. Math. 66 (1993), No. 5, 2534-2538. TEACHING: COURSES TAUGHT in 1989-2024</p>
+    </section>
+  </main>
+</article>
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mark Applebaum — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>MARK APPLEBAUM</h1>
+      <p class="subtitle">PhD<br>Associate Professor<br>Kaye Academic College of Education, Beersheba, Israel</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/mark-applebaum.jpg" alt="Mark Applebaum"></div>
+  <aside class="side">
+    <h2>Contact</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Israel</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zm0 1.5c1.7 0 3.3.6 4.5 1.5H7.5A7.9 7.9 0 0 1 12 4zm-6.6 3h13.2c.5.8.9 1.7 1.1 2.7H4.3c.2-1 .6-1.9 1.1-2.7zM4.2 11.2h15.6c0 .3.1.6.1.9s0 .6-.1.9H4.2c0-.3-.1-.6-.1-.9s0-.6.1-.9zm.1 3.6h15.4c-.2 1-.6 1.9-1.1 2.7H7.5c1.2.9 2.8 1.5 4.5 1.5a7.9 7.9 0 0 0 4.5-1.5H5.4c-.5-.8-.9-1.7-1.1-2.7z"/></svg><span><a href="https://orcid.org/0000-0002-1131-6188">0000-0002-1131-6188</a></span></li></ul>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profile</h2>
+      <div class="rule"></div>
+      <p>Mark Applebaum is an associate professor in the Department of Mathematics and Teaching Mathematics at Kaye Academic College of Education (Associate Professor since 2018). He received an MSc from Azerbaijan State University named after Kirov in 1981–1986 and a PhD from Azerbaijan State Pedagogical University in 1996–2001. The dissertation is Teaching Mathematics using the idea of inquiry-based problems, supervised by Peter Samovol. He was a postdoctoral fellow with Roza Leikin at the University of Haifa in 2006–2007. He heads the MEd program in integrative STEM education and the Research and Evaluation Authority at Kaye.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>Work experience</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kaye Academic College of Education, Israel</h3>
+          <span class="when">2018–present</span>
+        </div>
+        <p class="role">Associate Professor</p>
+        <ul><li>Associate Professor</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kaye Academic College of Education</h3>
+          <span class="when">2015–2018</span>
+        </div>
+        <p class="role">Senior Lecturer Alef</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kaye Academic College of Education</h3>
+          <span class="when">2011–2015</span>
+        </div>
+        <p class="role">Senior lecturer</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kaye Academic College of Education</h3>
+          <span class="when">2007–2011</span>
+        </div>
+        <p class="role">Lecturer</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kaye Academic College of Education</h3>
+          <span class="when">2003–2007</span>
+        </div>
+        <p class="role">Senior teacher</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Negev Academic College of Engineering, Israel</h3>
+          <span class="when">2001–2004</span>
+        </div>
+        <p class="role">Invited lecturer</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kaye Academic College of Education</h3>
+          <span class="when">2016–present</span>
+        </div>
+        <p class="role">Head of the Research and Evaluation Authority</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kaye Academic College of Education</h3>
+          <span class="when">2023–present</span>
+        </div>
+        <p class="role">Head of the MEd program in integrative STEM education</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Kaye Academic College of Education</h3>
+          <span class="when">2002–2008</span>
+        </div>
+        <p class="role">Head of the Department of Mathematics and Teaching Mathematics</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Education</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Postdoctoral studies</h3>
+          <span class="when">2006–2007</span>
+        </div>
+        <p>Fellow with Roza Leikin</p><p>University of Haifa, Faculty of Education, Israel</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>PhD</h3>
+          <span class="when">1996–2001</span>
+        </div>
+        <p>Dissertation: Teaching Mathematics using the idea of inquiry-based problems. Supervisor: Peter Samovol</p><p>Azerbaijan State Pedagogical University, Baku, Azerbaijan</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>MSc</h3>
+          <span class="when">1981–1986</span>
+        </div>
+        <p>Azerbaijan State University named after Kirov, Baku, Azerbaijan</p>
+      </article>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Publications</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Books and textbooks</h3>
+<p class="pub-item">1. Samovol, P., Applebaum, M., Shapiro E., &amp; Shechter, M. (2000). The Methods of Solving Problems with Integer Numbers. Ben Gurion University Publ. [86 pages]. (in Hebrew).</p>
+<p class="pub-item">2. Gukov, A., Samovol, P., &amp; Applebaum, M. (2006). Elegant Mathematics in Tasks, URSS, Moskva. [205 pages]. (In Russian).</p>
+<p class="pub-item">3. Gukov, A., Samovol, P., &amp; Applebaum, M. (2008). La Matematica Elegante, URSS, Moskva. [232 pages]. (In Spanish). C. OTHER SCIENTIFIC BOOKS</p>
+<p class="pub-item">4. Applebaum, M., &amp; Samovol, P. (2004). Tests in Algebra for7-th Grade. Yesod, Tel-Aviv. [101 pages]. (in Hebrew). November, 2024</p>
+<p class="pub-item">5. Applebaum, M., &amp; Samovol, P. (2004). Mathematics From School to University. Part 1: Induction. Sefer Lakol, Tel-Aviv. [100 pages]. (in Hebrew).</p>
+<p class="pub-item">6. Applebaum, M., &amp; Samovol, P. (2005). Mathematics From School to University. Part 2: Introduction to Number’s Theory. Sefer Lakol, Tel-Aviv. [173 pages]. (in Hebrew).</p>
+<p class="pub-item">7. Applebaum, M., &amp; Samovol, P. (2005). 120 tasks for Children Mathematical Thinking Development (the 7th Grade). Yesod, Tel-Aviv. [54 pages]. (in Hebrew).</p>
+<p class="pub-item">8. Applebaum, M., Aburis, Y., &amp; Samovol, P. (2007). 100 problems and one problem for Mathematical Thinking Development (the 7th Grade). MOFET Association, Tel-Aviv. [48 pages]. (In Arabic).</p>
+<p class="pub-item">9. Applebaum, M., &amp; Samovol, P. (2006). Multiplication Impossible, 250 tasks for Children Mathematical Thinking’ Development (the 8th Grade). Meirav, Tel-Aviv. [85 pages]. (in Hebrew).</p>
+<p class="pub-item">10. Samovol, P., &amp; Applebaum, M. (2012). Through the challenge. Shoresh, Tel-Aviv. [185 pages]. (In Hebrew).</p>
+<p class="pub-item">11. Applebaum, M. (2017). Kangaroo Contest for 2-d grade students. Yesod, Tel-Aviv. [104 pages]. (In Hebrew).</p>
+<p class="pub-item">12. *Applebaum, M. (2019). Kangaroo Contest for 1st-grade students. Yesod, Tel-Aviv. [56 pages]. (In Hebrew).</p>
+<p class="pub-item">13. *Applebaum, M. (2019). Kangaroo Contest for 3rd-grade students. Yesod, Tel-Aviv. [56 pages]. (In Hebrew).</p>
+<p class="pub-item">14. *Applebaum, M. (2021). Kangaroo Contest for 3rd-grade students. Yesod, Tel-Aviv. [56 pages]. (In Arabic).</p>
+<p class="pub-item">15. *Applebaum, M. (2019). Kangaroo Contest for 4th-grade students. Yesod, Tel-Aviv. [56 pages]. (In Hebrew).</p>
+<p class="pub-item">16. *Applebaum, M. (2020). Kangaroo Contest for 4th-grade students. Yesod, Tel-Aviv. [56 pages]. (In Arabic).</p>
+<p class="pub-item">17. *Applebaum, M. (2019). Kangaroo Contest for 5th-grade students. Yesod, Tel-Aviv. [56 pages]. (In Hebrew).</p>
+<p class="pub-item">18. *Applebaum, M. (2022). Kangaroo Contest for 5th-grade students. Yesod, Tel-Aviv. [56 pages]. (In Arabic).</p>
+<p class="pub-item">19. *Applebaum, M. (2019). Kangaroo Contest for 6th-grade students. Yesod, Tel-Aviv. [56 pages]. (In Hebrew).</p>
+<p class="pub-item">20. *Applebaum, M. (2023). Kangaroo Contest for 6th-grade students. Yesod, Tel-Aviv. [56 pages]. (In Arabic).</p>
+<p class="pub-item">21. *Applebaum, M. (2021). Development of spatial abilities from childhood. Municipality of Jerusalem. [20 pages]. (In Hebrew).</p>
+<p class="pub-item">22. *Applebaum, M. (2023). Kangaroo Contest for 7th-grade students. Yesod, Tel-Aviv. [56 pages]. (In Hebrew).</p>
+<p class="pub-item">23. *Applebaum, M. (2024). Kangaroo Contest for 7th-grade students. Yesod, Tel-Aviv. [56 pages]. (In Arabic). November, 2024</p>
+<h3 class="pub-sub">Book chapters</h3>
+<p class="pub-item">1. Protassov V., Applebaum, M., &amp; Karp, A. (2009). Challenging problems: mathematical contents and sources. In E. Barbeau &amp; P. Taylor (Eds.). ICMI Study – 16 Volume: Mathematical challenge in and beyond the classroom (pp. 11-51). Springer.</p>
+<p class="pub-item">2. Applebaum, M., &amp; Saul M. (2009). Anecdotes and Assertions about Creativity In The Working Mathematics Classroom. In R. Leikin, A. Berman &amp; B. Koichu (Eds.). Creativity in mathematics and the education of gifted students. (pp. 271-285). Sense Publishers.</p>
+<p class="pub-item">3. Applebaum, M., Gruszczyk-Kolczynska, E., &amp; Kotarba-Kanczugowska, M. (2012). Poczatek bezpiecznego przeprowadzania uczniow przez drugi okres krytyczny rozwijania uzdolnien mathematycznych (pp. 276-305). In E. Gruszczyk-Kolczynska (Ed.). O dzieciach matematycznie uzdolnionych. Nowa Era. (in Polish).</p>
+<p class="pub-item">4. *Applebaum, M., &amp; Zazkis, R. (2023). Mathematical challenge of seeking causality in unexpected results. In R. Leikin (eds). Mathematical Challenge for all. Research in Mathematics Education. Springer, Cham. (pp. 261-282) https://doi.org/10.1007/978-3- 031-18868-8_14</p>
+<h3 class="pub-sub">Peer-reviewed journal articles</h3>
+<p class="pub-item">1. Applebaum, M. (1998). Using Sophismes in Teaching Mathematics, Aleh - The (Israeli) Senior School Mathematics Journal, 23, 79-82 (in Hebrew).</p>
+<p class="pub-item">2. Applebaum, M. (2000). Application of Mathematics Games in Teaching Mathematics, Aleh - The (Israeli) Senior School Mathematics Journal, 25, 90-93 (in Hebrew).</p>
+<p class="pub-item">3. Samovol, P., &amp; Applebaum, M. (2001). Development of the Scientific Mathematical Creativeness in Schoolchildren by Research Problems, Didactics of Mathematics, 15, 98109.</p>
+<p class="pub-item">4. Samovol, P., &amp; Applebaum, M. (2001). Research and Training Potential of the Olympiad Tasks, Didactics of Mathematics, 16, 109-118.</p>
+<p class="pub-item">5. Samovol, P., Applebaum, M., &amp; Shechter, M. (2001). Our Choice: ”The Reduction ad Absurdum” Proof Method, Mathematics in School, 30 (4), 18-21.</p>
+<p class="pub-item">6. Samovol, P., &amp; Applebaum, M. (2002). Schoolchildren training in the classical methods of demonstrative reasoning as an effective way of developing their mathematical thinking. Didactics of Mathematics, 17, 39-50.</p>
+<p class="pub-item">7. Applebaum, M., &amp; Samovol P. (2003). Find the mistake Aleh - The (Israeli) Senior School Mathematics Journal, 30, 45-47, (in Hebrew).</p>
+<p class="pub-item">8. Samovol, P., &amp; Applebaum, M. (2003). About one “maxima-minima problem”. Mathematics in School, 2, 19-20 (in Russian).</p>
+<p class="pub-item">9. Applebaum, M., &amp; Samovol, P. (2003-2004). Problems, School Science and Mathematics, No:103(5), 103(6), 103(7), 103(8), 104(1), 104(2), 104(3), 104(4), 104(6),104(7), 104(8), 105(1), 105(2), 105(8).</p>
+<p class="pub-item">10. Applebaum, M., &amp; Samovol, P. (2004). Mathematics Mistakes of Students: Training Potential. Didactics of Mathematics, 21, 69-74.</p>
+<p class="pub-item">11. Applebaum, M., &amp; Samovol, P. (2004-2006). Problems 2(3), 3 (4), 14(6), M1986 (1). Quantum. (In Russian).</p>
+<p class="pub-item">12. Samovol, P., Applebaum, M., &amp; Gukov, A. (2005). On One Paradoxical Task. Quantum, 13(1), 35-36. (In Russian).</p>
+<p class="pub-item">13. Applebaum, M., &amp; Samovol P. (2005). Prove in another way. Aleh - The (Israeli) Senior School Mathematics Journal, 35, 80-82, (in Hebrew).</p>
+<p class="pub-item">14. Broverman, A., Samovol, P., &amp; Applebaum, M. (2005). Positive Impressing of a School Research Problem. Didactics of Mathematics, 22, 116-120.</p>
+<p class="pub-item">15. Samovol, P., &amp; Applebaum, M. (2005). Two Approaches in Teaching Students to Solve Creative Mathematical Problems. Mathematics Education, 1 (32), 78-92. (in Russian).</p>
+<p class="pub-item">16. Broverman, A., Kizner, F., Samovol, P., &amp; Applebaum, M. (2005). Mathematical games in the teaching process. Didactics of Mathematics, 24, 243-248. November, 2024</p>
+<p class="pub-item">17. Samovol, P., &amp; Applebaum, M. (2005). From School task to Student’ Problems, Mathematics Education, 3(4), 51-57 (in Russian).</p>
+<p class="pub-item">18. Samovol, P., Applebaum, M., &amp; Broverman, A. (2006). Creative Potential of Olympiad Problems, Journal of the Korea Society of Mathematical Education Series D: Research in Mathematical Education, 10(2), 89-102.</p>
+<p class="pub-item">19. Samovol, P., Applebaum, M., &amp; Zuravlev V. (2006). On one property of an integrable function, Mathematics Competitions, 19(1), 29-42.</p>
+<p class="pub-item">20. Samovol, P., Applebaum, M., &amp; Gukov, A. (2006). Complete and Dominate. Quantum, 5, 2527. (In Russian).</p>
+<p class="pub-item">21. Broverman, A., Samovol, P., &amp; Applebaum, M. (2006). The conformist effects in teaching mathematics, Didactics of Mathematics, 25, 254-256.</p>
+<p class="pub-item">22. Applebaum, M., &amp; Leikin, R. (2006). Looking back at the beginning: Critical Thinking in Solving Unrealistic problems, The Montana Mathematical Enthusiast, 4(2), 258-265.</p>
+<p class="pub-item">23. Applebaum, M., &amp; Samovol, P. (2007). Complementary Constructions in Algebra: Learning to Think Creatively, Mathematics Competitions, 20(1), 36-53.</p>
+<p class="pub-item">24. Samovol, P., Shainskii, S., &amp; Applebaum, M. (2007). Non-standard lesson, Hemdaat, 5, 161169.) in Hebrew).</p>
+<p class="pub-item">25. Applebaum, M. (2007). Mathematical proof without formulas. Aleh - The (Israeli) Senior School Mathematics Journal, 38, 53-55 (in Hebrew).</p>
+<p class="pub-item">26. Applebaum, M., &amp; Leikin, R. (2010). Translations towards Connected Mathematics. Mathematics Teacher, 103(8), 562-569.</p>
+<p class="pub-item">27. Applebaum, M., &amp; Freiman, V. (2010). Do Mathematical Laboratories Enhance Primary Students&#x27; Hands-On Learning Experiences? In: B. Sriraman and V. Freiman (Eds.). Interdisciplinary for the Twenty-First Century. Proceedings of the Third International Symposium on Mathematics and Its Connections to Arts and Sciences, Moncton, Canada, 2009. A Volume in the Montana Mathematics Enthusiast Monographs in Mathematics Education. Monograph 11. Charlotte, NC: Information Age Publishing Inc., 193-204.</p>
+<p class="pub-item">28. Applebaum, M., Freiman, V., &amp; Leikin, R. (2011). Prospective teachers&#x27; conceptions associated with teaching mathematically talented students: comparative examples from Canada and Israel. The Montana Mathematics Enthusiast, 8(1&amp;2), 255-290.</p>
+<p class="pub-item">29. Freiman, V., &amp; Applebaum, M. (2011). Online Mathematical Competition: Using Virtual Marathon to Challenge Promising Students and to Develop Their Persistence. Canadian Journal of Science, Mathematics and Technology Education, 11(1), 55 - 66.</p>
+<p class="pub-item">30. Applebaum, M., Kondratieva, M. &amp; Freiman, V. (2013). Mathematics Competitions and Gender Issues: A Case of the Virtual Marathon. Mathematics Competitions, 26(1), 23-40.</p>
+<p class="pub-item">31. Applebaum, M., &amp; Freiman, V. (2013). Attracting primary school children to mathematics: The case of a city mathematical marathon. European Journal of Science and Mathematics Education, 1(3), 144-157.</p>
+<p class="pub-item">32. Applebaum, M. (2014). The relationships between students’ comprehension of difficultness’ level and challenging’ level of mathematical tasks in different conditions of students&#x27; November, 2024 involvement. Israel Journal on Research in Mathematics Education, 1, 40-57. (in Hebrew)</p>
+<p class="pub-item">33. Applebaum, M., &amp; Freiman, V. (2014). Use of Recreational Mathematics in the classroom: example of Bachet&#x27;s game. Mathematics Teaching Journal, 241, 22-26.</p>
+<p class="pub-item">34. Applebaum, M., &amp; Leikin, R. (2014). A mathematical challenge in the eyes of the beholder: Mathematics teachers&#x27; views. Canadian Journal of Science, Mathematics and Technology Education, 14(4), 388-403.</p>
+<p class="pub-item">35. Applebaum, M. (2015). Activating pre-service mathematics teachers&#x27; critical thinking. European Journal of Science and Mathematics Education 3(1), 77-89.</p>
+<p class="pub-item">36. Freiman, V., &amp; Applebaum, M. (2016). Engaging elementary school students in mathematical reasoning using investigations: Example of a Bachet strategy game. Mathematics Teaching Research Journal, 8(1 &amp; 2), 61-82.</p>
+<p class="pub-item">37. Applebaum, M. (2016). Crossing bridge problem. Mispar Hazak 2000 – The (Israeli) Primary School Mathematics Journal, 27, 61-62. (in Hebrew)</p>
+<p class="pub-item">38. Applebaum, M. (2017). Spatial Abilities as a Predictor to Success in the Kangaroo Contest. Journal of Mathematics and System Science, 7, 154-163.</p>
+<p class="pub-item">39. *Applebaum, M. (2019). Gender Issues in Solving Problems in the Kangaroo Contest. Mediterranean Journal for Research in Mathematics Education, 16, 19-31.</p>
+<p class="pub-item">40. *Azar, O., &amp; Applebaum, M. (2020). Do children cheat to be honored? A natural experiment on dishonesty in a math competition. Journal of Economic Behavior &amp; Organization, 169, 143</p>
+<p class="pub-item">41. *Applebaum, M., Heller, E., Solomovich, L., &amp; Zamir, J. (2020). Gender Issues in Virtual Training for Mathematical Kangaroo Contest. Mathematics and Informatics Journal, 63 (1), 51</p>
+<p class="pub-item">42. *Applebaum, M. (2020). Some New Questions about Sequences of Semi-Prime and Prime Numbers. Mathematics and Informatics Journal, 63 (2), 130-133.</p>
+<p class="pub-item">43. *Applebaum, M. (2021). Some aspects of girls&#x27; outcomes in Math Competition. Mediterranean Journal for Research in Mathematics Education, 18, 36-45.</p>
+<p class="pub-item">44. *Applebaum, M., &amp; Zamir, J. (2021). Making the Difference: Training Early Childhood Math Teachers in STEM Skills. Vietnam Journal of Educational Sciences, 18 (1), 11-22.</p>
+<p class="pub-item">45. *Applebaum, M., &amp; Gazit, A. (2022). Nonstandard mathematics problems, humor, and creative thinking. Humor Mekkuvan 18, 49-66. (in Hebrew).</p>
+<p class="pub-item">46. *Applebaum, M., &amp; Lambrou, M. (2024). Beyond Tradition: Fostering Creative Thinking Through Non-Standard Problems and Mathematics Competitions. Mediterranean Journal for Research in Mathematics Education, 20, 5 – 22.</p>
+<p class="pub-item">47. *Applebaum, M. (2024). Enhancing Critical Thinking in Pre-Service Mathematics Teachers: Bridging Procedural Fluency and Conceptual Understanding. Mathematics Plus Journal, 32, (3), 58-66.</p>
+<p class="pub-item">48. *Applebaum, M. (to be published). Fostering Creative and Critical Thinking Through Math Games: A Case Study of Bachet’s Game. European Journal of Science and Mathematics Education. November, 2024</p>
+<h3 class="pub-sub">Conference papers and abstracts</h3>
+<p class="pub-item">1. Samovol, P., &amp; Applebaum, M. (2001). Mathematics mistakes of students: Training potential, Proceedings of the 1st International Virtual Conference: Opening Gates in Teacher Education, Mofet Institute, Israel.</p>
+<p class="pub-item">2. Applebaum, M., &amp; Samovol, P. (2002). Teaching Mathematics Using the Idea of “Research problems”, Proceedings of the 2nd International Conference on the Teaching Mathematics (at the undergraduate level), electronic version, University of Crete. Hersonissos, Crete, Greece.</p>
+<p class="pub-item">3. Applebaum, M., &amp; Samovol, P. (2003). “12-Years Old Scientists! Whether it is Possible? In Velikova, E. (Ed.) Proceedings of The 3rd International Conference &quot;Creativity in mathematics education and the education of gifted students&quot;. (pp. 251-256). Athens, Greece:</p>
+    </section>
+  </main>
+</article>
+</body>
+</html>

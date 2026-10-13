@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sevda Karimova — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>SEVDA KARIMOVA</h1>
+      <p class="subtitle">Medical Law Consultant<br>Vice Versa Consulting Ltd., Azerbaijan</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/sevda-kerimova.jpg" alt="Sevda Karimova"></div>
+  <aside class="side">
+    <h2>Contact</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Germany</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.5a9.5 9.5 0 1 0 0 19 9.5 9.5 0 0 0 0-19zm0 1.5c1.7 0 3.3.6 4.5 1.5H7.5A7.9 7.9 0 0 1 12 4zm-6.6 3h13.2c.5.8.9 1.7 1.1 2.7H4.3c.2-1 .6-1.9 1.1-2.7zM4.2 11.2h15.6c0 .3.1.6.1.9s0 .6-.1.9H4.2c0-.3-.1-.6-.1-.9s0-.6.1-.9zm.1 3.6h15.4c-.2 1-.6 1.9-1.1 2.7H7.5c1.2.9 2.8 1.5 4.5 1.5a7.9 7.9 0 0 0 4.5-1.5H5.4c-.5-.8-.9-1.7-1.1-2.7z"/></svg><span><a href="https://www.linkedin.com/in/sevda-aydin-karimova-3b948a192/">https://www.linkedin.com/in/sevda-aydin-karimova-3b948a192/</a></span></li></ul><div class="block"><h2>Awards &amp; recognitions</h2><div class="rule"></div><ul class="items awards"><li>Honours certificate for contribution to the organization of medical services during the Second Karabakh War — Ministry of Defence of the Republic of Azerbaijan, Main Medical Department (10 December 2020)</li></ul></div><div class="block"><h2>Languages</h2><div class="rule"></div><ul class="items langs"><li>Azerbaijani (Native)</li>
+<li>Turkish (Native)</li>
+<li>English (C1 (listening, reading, writing); B2 (speaking))</li>
+<li>Russian (B2 (listening, reading, writing); B1 (spoken production))</li>
+<li>German (A2)</li></ul></div>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profile</h2>
+      <div class="rule"></div>
+      <p>Sevda Karimova is a medical-law consultant at Vice Versa Consulting Ltd. She holds a bachelor’s degree in law from Nakhchivan State University (2009–2014), with an honors diploma, and a master’s degree in law, in transnational criminal law, from Baku State University (2014–2016). From 2017 to 2020 she was a doctoral candidate in bioethics and criminal law at the Institute of Law and Human Rights of the Azerbaijan National Academy of Sciences; thesis defense transferred to Baku State University. The thesis subject is the bioethical aspects of the right to life and health in criminal law. She has taught bioethics and medical law and has worked at TABIB and at the Hacettepe University Center for Bioethics.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>Work experience</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Vice Versa Consulting Ltd., remote</h3>
+          <span class="when">May 2023–present</span>
+        </div>
+        <p class="role">Medical law consultant</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Institute for Medical Ethics and History of Medicine, Ruhr University Bochum, Germany</h3>
+          <span class="when">April–May 2023</span>
+        </div>
+        <p class="role">International visiting fellow</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Administration of the Regional Medical Divisions (TABIB), Azerbaijan</h3>
+          <span class="when">January–July 2022</span>
+        </div>
+        <p class="role">Senior specialist, law department</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>TABIB, Azerbaijan</h3>
+          <span class="when">September 2020–January 2022</span>
+        </div>
+        <p class="role">Ethics consultant</p>
+        <ul><li>Section for work with ethics commissions, Scientific Research and Education Department</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Sabah Center, Ministry of Education, Faculty of Law, Baku State University</h3>
+          <span class="when">December 2020–June 2021</span>
+        </div>
+        <p class="role">Law lecturer</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Faculty of Law, Baku State University</h3>
+          <span class="when">September 2020–January 2021</span>
+        </div>
+        <p class="role">Adjunct lecturer</p>
+        <ul><li>UNESCO Chair on Human Rights, master’s program</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Azerbaijan Science Association, nongovernmental organization</h3>
+          <span class="when">March 2020–June 2021</span>
+        </div>
+        <p class="role">General manager</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Center for Bioethics, Hacettepe University, Ankara, Turkey</h3>
+          <span class="when">September 2018–March 2019</span>
+        </div>
+        <p class="role">International scientific researcher</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Faculty of Social Sciences, Azerbaijan State Pedagogical University</h3>
+          <span class="when">September 2017–August 2019</span>
+        </div>
+        <p class="role">Law lecturer</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Institute of Folklore, Azerbaijan National Academy of Sciences</h3>
+          <span class="when">July 2012–July 2017</span>
+        </div>
+        <p class="role">Legal consultant</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Independent Scientific-Practical Legal Center</h3>
+          <span class="when">January 2010–July 2012</span>
+        </div>
+        <p class="role">Lawyer</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Independent Scientific-Practical Legal Center</h3>
+          <span class="when">September 2009–January 2010</span>
+        </div>
+        <p class="role">Office manager</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Education</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Summer institute</h3>
+          <span class="when">June–July 2020</span>
+        </div>
+        <p>Bioethics. Sherwin B. Nuland Summer Institute, virtual</p><p>Yale Interdisciplinary Center for Bioethics, United States</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Doctoral candidate</h3>
+          <span class="when">April 2017–March 2020</span>
+        </div>
+        <p>Bioethics and criminal law. Thesis: Bioethical aspects of the right to life and health in criminal law. State scholarship. Defense transferred to Baku State University</p><p>Institute of Law and Human Rights, Azerbaijan National Academy of Sciences, Baku, Azerbaijan</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Master’s degree</h3>
+          <span class="when">September 2014–June 2016</span>
+        </div>
+        <p>Law, transnational criminal law, English section. State scholarship</p><p>Baku State University, Baku, Azerbaijan</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Bachelor’s degree</h3>
+          <span class="when">September 2009–June 2014</span>
+        </div>
+        <p>Law, social management and law. Honors diploma</p><p>Nakhchivan State University, Nakhchivan, Azerbaijan</p>
+      </article>
+    </section><section class="sec grants">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Grants &amp; projects</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>Nine projects in law, human rights, and social issues — Council of State Support to Non-Governmental Organizations under the President of the Republic of Azerbaijan — Chief of project</li></ul>
+    </section><section class="sec teaching">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Teaching</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>2020–2022 — Bioethics; medical law — Master’s, UNESCO Chair; Sabah Center — Baku State University</li><li>2017–2019 — Constitutional law; combating human trafficking — Azerbaijan State Pedagogical University</li></ul>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Publications</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Books and textbooks</h3>
+<p class="pub-item">1. Karimova, S. Oviedo Convention on Human Rights and Biomedicine. Kohlen, Baku, 2019. 48 pp.</p>
+<h3 class="pub-sub">Book chapters</h3>
+<p class="pub-item">1. Karimova, S. Artificial intelligence and citizenship: ethical and legal problems. In: Academic Researches in Social Sciences and Humanities. Gece Kitaplığı, Turkey, April 2019.</p>
+<p class="pub-item">2. Karimova, S. Artificial intelligence and human rights. In: Artificial Intelligence and Robotics Technique in the Context of Human Rights. Institute of Law and Human Rights, Azerbaijan National Academy of Sciences. Science and Education, Baku, 2020.</p>
+<h3 class="pub-sub">Peer-reviewed journal articles</h3>
+<p class="pub-item">1. Karimova, S. Children’s rights in the new system of public relations. Transactions of Azerbaijan Pedagogical University. Series of humanitarian, social, pedagogical and psychological sciences, 2021, 69(3), 61–68.</p>
+<p class="pub-item">2. Karimova, S. Ethical and legal status and responsibility of medical personnel in armed conflicts, in the context of the Second Karabakh War. Newsletter of the Turkish Ethics Unit of the International Network, UNESCO Chair in Bioethics. Reflections on Bioethics from Turkey, December 2020.</p>
+<p class="pub-item">3. Karimova, S. Criminal law and bioethics. Newsletter of the Turkish Ethics Unit of the International Network, UNESCO Chair in Bioethics. Reflections on Bioethics from Turkey, December 2019.</p>
+<p class="pub-item">4. Karimova, S. Oviedo Convention on Human Rights and Biomedicine. Law, Baku, February 2019, no. 02.</p>
+<p class="pub-item">5. Karimova, S. The Nuremberg process and its influence on the development of bioethics. Law, Baku, October 2018, no. 08.</p>
+<p class="pub-item">6. Karimova, S. Legal aspects of bioethics. Journal of the Institute of Law and Human Rights, Baku, December 2017.</p>
+<p class="pub-item">7. Karimova, S. Legislation on folklore. Tourism and Hospitality Studies, Baku, December 2016, IV.</p>
+<p class="pub-item">8. Karimova, S. National prosecution problems in international crimes. Geostrategic, Baku, May–June 2016, no. 03 (33).</p>
+<p class="pub-item">9. Karimova, S. Ethnocide as an international crime. Legal State and Law, Baku, February 2016, no. 2.</p>
+<h3 class="pub-sub">Invited talks and conference participation</h3>
+<ul class="plain"><li>2023 — Ruhr University, Institute for Medical Ethics and History of Medicine, Bochum, Germany — Seminar — Criminal law and bioethics</li><li>2023 — Ruhr University, Institute for Medical Ethics and History of Medicine, Bochum, Germany — Seminar — An overview of the state of medical ethics in Azerbaijan</li><li>2022 — Conference of Baku State University, Baku, Azerbaijan — Conference — The importance of establishing bioethical and medical-scientific research ethics committees in Azerbaijan in the aspects of protection of human rights</li><li>2021 — TABIB annual conference, Baku, Azerbaijan — Conference — Importance of ethical and bioethical commissions</li><li>2021 — First Forum of Women Lawyers in Azerbaijan, Baku — Conference — Gender problems in scientific activity in Azerbaijan</li><li>2021 — 2nd International Ethics Congress, Ankara, Turkey — Conference — Ethical and legal status and responsibility of medical personnel in armed conflicts, in the context of the Second Karabakh War</li><li>2019 — 3rd International Paris Conference on Social Sciences, Paris, France — Conference — Criminal legal aspects of bioethics</li><li>2019 — 2nd International Science and Academic Congress, Konya, Turkey — Conference — Artificial intelligence and citizenship: ethical and legal problems</li><li>2019 — Hacettepe University, HUBAM, Ankara, Turkey — Seminar — Legal aspects of informed consent</li><li>2019 — Hacettepe University, HUBAM, Ankara, Turkey — Seminar — Death penalty and bioethics</li><li>2019 — Hacettepe University, MEDISEP, Ankara, Turkey — Seminar — Migrant smuggling and human trafficking</li><li>2018 — HUBAM annual conference, Hacettepe University, Ankara, Turkey — Conference — The Nuremberg process and its influence on the development of bioethics</li><li>2017 — Conference on Folklore and Statehood, Azerbaijan National Academy of Sciences, Baku — Conference — Legislation on folklore</li></ul>
+    </section>
+  </main>
+</article>
+</body>
+</html>

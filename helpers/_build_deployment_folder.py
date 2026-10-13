@@ -55,6 +55,13 @@ HARD_EXCLUDES = {
 EXTRA_FILE_GLOBS = ("*.zip", "*.docx", "*.tmp", "~$*", "*.pyc", "*.pyo")
 EXTRA_DIR_NAMES = {".git", "__pycache__", "node_modules"}
 
+# Scientist CV trees stay in the repo. Exclude the whole directories
+# (pdf, docx, and html), not only the *.docx glob above.
+CV_TREE_EXCLUDES = (
+    "az/scientists/CV",
+    "en/scientists/CV",
+)
+
 # Nothing under Deployment/ is host-managed. images/ and Books/ are copied
 # from the repo on every rebuild.
 PRESERVE_DEPLOY_DIRS = frozenset()
@@ -113,6 +120,12 @@ def should_exclude(
         p in extra_dir_names_lower for p in parts_lower
     ):
         return True
+    rel_lower = rel_posix.lower()
+    for prefix in CV_TREE_EXCLUDES:
+        prefix_lower = prefix.lower()
+        if rel_lower == prefix_lower or rel_lower.startswith(prefix_lower + "/"):
+            return True
+
     name = parts[-1]
     for pat in EXTRA_FILE_GLOBS:
         if fnmatch.fnmatch(name, pat):

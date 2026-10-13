@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Makbulə Sabziyeva — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>MAKBULƏ SABZIYEVA</h1>
+      <p class="subtitle">PhD<br>Professor və kafedra müdiri<br>Rus dili və ədəbiyyatı kafedrası, Anadolu Universiteti, Eskişehir, Türkiyə</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/meqbule-sebziyeva.jpg" alt="Makbulə Sabziyeva"></div>
+  <aside class="side">
+    <h2>Əlaqə</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Türkiyə</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M3.5 6.5h17a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm8.5 6.1L4.7 8.2v7.8h14.6V8.2L12 12.6zm0-1.5 7.1-4.1H4.9L12 11.1z"/></svg><span><a href="mailto:makbulesabziyeva@anadolu.edu.tr">makbulesabziyeva@anadolu.edu.tr</a></span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M10.5 13.5a3.5 3.5 0 0 0 5 0l2.1-2.1a3.5 3.5 0 0 0-5-5L11.4 7.6l1.1 1.1 1.2-1.2a2 2 0 1 1 2.8 2.8l-2.1 2.1a2 2 0 0 1-2.8 0l-1.1 1.1zm3-3a3.5 3.5 0 0 0-5 0L6.4 12.6a3.5 3.5 0 0 0 5 5l1.2-1.2-1.1-1.1-1.2 1.2a2 2 0 1 1-2.8-2.8l2.1-2.1a2 2 0 0 1 2.8 0l1.1-1.1z"/></svg><span>Rus dili və ədəbiyyatı; tərcümə</span></li></ul><div class="block"><h2>Mükafatlar və təltiflər</h2><div class="rule"></div><ul class="items awards"><li>Manasın varisləri: türk dünyası mədəniyyətinə xidmət — Qırğız-Türk Manas Universiteti (2018)</li>
+<li>Türk dünyasına xidmət — Muğla Sıtkı Koçman Universiteti (2017)</li></ul></div>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profil</h2>
+      <div class="rule"></div>
+      <p>Makbulə Sabziyeva Anadolu Universitetində rus dili və ədəbiyyatı kafedrasının professoru və müdiridir. 1 iyun 1996-cı ildə Bakı Dövlət Universitetində dünya ədəbiyyatı üzrə doktorluq dərəcəsi alıb. Dissertasiya Tolstoyun Müharibə və sülh romanının Azərbaycan dilinə tərcüməsidir. Elmi rəhbər Bayram Tahirbəyovdur. 16 iyun 1984-cü ildə Moskva Dövlət Universitetində rus dili və ədəbiyyatı üzrə magistr, 1 iyun 1984-cü ildə həmin universitetdə filologiya dərəcəsi alıb. Müasir rus qadın ədəbiyyatı üzrə milli layihəyə 13 may 2016-dan 1 dekabr 2017-dək rəhbərlik edib.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>İş təcrübəsi</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Anadolu Universiteti, Eskişehir, Türkiyə</h3>
+          <span class="when"></span>
+        </div>
+        <p class="role">Professor və kafedra müdiri</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Təhsil</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>PhD</h3>
+          <span class="when">1 June 1996</span>
+        </div>
+        <p>Dünya ədəbiyyatı. Dissertasiya: Müharibə və sülhün Azərbaycan dilinə tərcüməsi. Elmi rəhbər: Bayram Tahirbəyov</p><p>Bakı Dövlət Universiteti</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Magistr dərəcəsi</h3>
+          <span class="when">16 June 1984</span>
+        </div>
+        <p>Rus dili və ədəbiyyatı. Müharibə və sülhün Azərbaycan dilinə tərcüməsi. Elmi rəhbər: Nikolay Liban</p><p>Moskva Dövlət Universiteti</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Filologiya dərəcəsi</h3>
+          <span class="when">1 June 1984</span>
+        </div>
+        <p>İki ixtisas, Filologiya fakültəsi</p><p>Moskva Dövlət Universiteti</p>
+      </article>
+    </section><section class="sec grants">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Qrantlar və layihələr</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>13 May 2016–1 December 2017 — Müasir rus qadın ədəbiyyatına gender yanaşması. Əsas icraçı — Ali təhsil müəssisələri, milli layihə</li></ul>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Nəşrlər</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Kitablar və dərsliklər</h3>
+<p class="pub-item">1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C1. Yazılan ulusal/uluslararası kitaplar: Metinlerarasılık Bağlamında Çeviribilim (2020)., SABZİYEVA MAKBULE, Lambert Academic Publishing, Editör:F.Betül ÜYÜMEZ, Basım sayısı:2, Sayfa Sayısı 144, ISBN:978-620-3-20077-5, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">2. Bir Daha Tolstoy Hakkında (Ещё раз о Толстом) (2010)., SABZİYEVA MAKBULE, Qanun Yayınevi, Editör:Nigar Kasımzade, Basım sayısı:1000, Sayfa Sayısı 196, ISBN:1500005104/AB022051, Rusça(Bilimsel Kitap)</p>
+<h3 class="pub-sub">Kitab fəsilləri</h3>
+<p class="pub-item">1. C. Yazılan ulusal/uluslararası kitaplar veya kitaplardaki bölümler: C2. Yazılan ulusal/uluslararası kitaplardaki bölümler: Sosyal ve Beşeri Bilimler. Modern Değerlendirmeler ve Araştırmalar, Bölüm adı:(Cengiz Aytmatov&#x27;un Eserlerinde Mitlerin Rolü) (2023)., SABZİYEVA MAKBULE, Lıvre De Lyon, Editör:İbrahim Serbestoğlu, Özkan Özer Keskin, Basım sayısı:1, Sayfa Sayısı 205, ISBN:978-2-38236-646-2, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">2. Doğu&#x27;dan Batı&#x27;ya Masalın Serüveni. Cilt 1, Bölüm adı:(İnsanın Gördüğü Şey, Görülebilecek Şeyin Hepsi Değildir. Etiyopya Masalları.) (2022)., SABZİYEVA MAKBULE, Nobel Akademik Yayıncılık, Editör:Tatma Ahsen TURAN, Habibe YAZICI ERSOY, Şengül DEMİREL, Basım sayısı:1, Sayfa Sayısı 447, ISBN:978-605-70764-9-6, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">3. Naslediye F.M.Dostoyevskogo v Nasionalnıx Kulturax., Bölüm adı:(Yabancı Okurların F.M.Dostoyevski&#x27;nin Eserlerindeki Onomastik Birimlerin Algılaması Üzerine) (2022)., SABZİYEVA MAKBULE, Sonçağ Akademi, Editör:Firangiz Paşayeva Yunus, Basım sayısı:1, Sayfa Sayısı 155, ISBN:978-625-8227-51-2, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">4. Doğudan Batıya Masalın Serüveni. Dünya Masalları. Cilt 2., Bölüm adı:(Eskimo Masalları: Geçmişe Uzanan Yollar) (2022)., SABZİYEVA MAKBULE, Nobel Akademik Yayıncılık, Editör:Tatma Ahsen TURAN, Habibe YAZICI ERSOY, Şengül DEMİREL, Basım sayısı:1, Sayfa Sayısı 671, ISBN:978-625-8171-03-7, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">5. Doğu&#x27;dan Batı&#x27;ya Masalın Serüveni. Dünya Masalları. Cilt 2, Bölüm adı:(Norveç Masalları: Güneş&#x27;in Doğusuna, Ay&#x27;ın Batısına Doğru) (2022)., SABZİYEVA MAKBULE, Nobel Akademik Yayıncılık, Editör:Tatma Ahsen TURAN, Habibe YAZICI ERSOY, Şengül DEMİREL, Basım sayısı:1, Sayfa Sayısı 671, ISBN:978-625-8171-03-7, Türkçe(Bilimsel Kitap)</p>
+<p class="pub-item">6. Siyasi Sosyal ve Kültürel Yönleriyle Türkiye ve Rusya, Bölüm adı:(Bir Çevirinin Peşinde ”Kroyçer Sonatı”.) (2019)., SABZİYEVA MAKBULE, Berikan Yayınevi, Editör:Muhammet Mücahit KÜÇÜKYILMAZ, Basım sayısı:1, Sayfa Sayısı 800, ISBN:978-605-7634-98-6, Rusça(Bilimsel Kitap)</p>
+<p class="pub-item">7. Tolstoy ve Tolstoy Hakkında, Bölüm adı:(Наследие Л.Н.Толстого в переводе на турецкий язык / Lev Tolstoy’un Mirası Türkçede) (2010)., SABZİYEVA MAKBULE, Rusya Bilimler Akademisi, Editör:Marina Şçerbakova, Basım sayısı:1, Sayfa Sayısı 545, ISBN:978-5-9208-0366-5, Rusça(Bilimsel Kitap)</p>
+<p class="pub-item">8. Yasnopolyanskiy Sbornik, Bölüm adı:(L. N.Tolstoy Bakü Sahnelerinde) (2004)., SABZİYEVA MAKBULE, Yasnaya Polyana Yayınevi, Basım sayısı:1, Sayfa Sayısı 200, ISBN:1234, Rusça 8. (Bilimsel Kitap)</p>
+<h3 class="pub-sub">Rəylənmiş (peer-reviewed) jurnal məqalələri</h3>
+<p class="pub-item">1. SABZİYEVA MAKBULE (2023). Çeviri Eserlerinde Çevirmenin Dini Aidiyetinin Rolü. Language and Literature, 2(122), 205-209.</p>
+<p class="pub-item">2. SABZİYEVA MAKBULE (2021). Azerbaycan&#x27;ın Görsel Sanatında Kitab-ı Dede Korkut. Bilimsel Eksen, 12(33), 24-34.</p>
+<p class="pub-item">3. SABZİYEVA MAKBULE (2019). On the Basic Methods for the Development of Speech Activity of Foreign Students. Russian Studies Without Borders, 3(4), 60-68.</p>
+<p class="pub-item">4. SABZİYEVA MAKBULE (2019). Yabancı Öğrencilere Rusçanın Öğretiminde Diyalogların Rolü. Kültür Evreni(36), 50-58.</p>
+<p class="pub-item">5. SABZİYEVA MAKBULE (2019). Paul Eluard’ın Şiirlerinde Evrensellik ve Barış. Route Educational and Social Science Journal, 6(8), 135-140.</p>
+<p class="pub-item">6. SABZİYEVA MAKBULE (2018). Cengiz Aytmatov’un ”Gün Uzar Yüzyıl Olur” Romanının Türkçe Çevirisi Üzerine. Language and Literature, 3(107), 302-307.</p>
+<p class="pub-item">7. SABZİYEVA MAKBULE (2018). Azerbaycan’da Sözlü Edebiyat Örneği: Bayatılar. Bilimsel Eksen, 9(23), 70-78. (Yayın No: 4593797) 7. SABZİYEVA MAKBULE (2017). A.S.Puşkin’in ”Kurana Benzetmeler” Eserinin Benzetmeleri Üzerine. Dil ve Edebiyat, 1(101), 252-255., Doi: E-İSSN 2219-5513</p>
+<p class="pub-item">8. SABZİYEVA MAKBULE (2014). Antik Kaynaklarda Midas. Folklor/Edebiyat, 3(79), 119-136., Doi: 22559</p>
+<p class="pub-item">9. KUTLU MURAT,ERGİN ÇAĞRI,BİR FERDA,Hilmioğlu polat süheyla,Ramazan Gümral,NECAN CEYDA,KOÇYİĞİT ALİ,SAYIN KUTLU SELDA (2014). Pulmonary Mucormycosis due to Lichtheimia ramosa in a Patient with HIV Infection. Mycopathologia, 178(1-2), 111-115., Doi: 10.1007/s11046-014-9761-5</p>
+<p class="pub-item">10. SABZİYEVA MAKBULE (2010). Lev Tolstoy&#x27;s Comparative Assessment of the 20th Century English Writers / Tolstoy’un Gözüyle XX. Yüzyıl İngiliz Yazarları. Eskişehir Osmangazi Üniversitesi Sosyal Bilimler Dergisi, 11(2), 61-73.</p>
+<p class="pub-item">11. SABZİYEVA MAKBULE (2002). Mir Muhsin Nevvab. Türksoy Dergisi(3), 31-38.</p>
+<p class="pub-item">12. SABZİYEVA MAKBULE (2001). Sibirya Türklerinin Etnik Tarihine Dair. Türk Dünyası Dergisi(21), 3-6.</p>
+<p class="pub-item">13. SABZİYEVA MAKBULE (1998). Перевод - область литературоведения / Tercüme Bir Edebiyat Bilimidir. Dil ve Edebiyat, 109-111.</p>
+<p class="pub-item">14. SABZİYEVA MAKBULE (1994). L.N. Tolstoy’un ‘Savaş ve Barış’ Romanında Tercüme Olunmayan Öğelerin Azerbaycan Diline Çevirisi Üzerine. Dil ve Edebiyat, 3(21), 109-112.</p>
+<p class="pub-item">15. Çeviribilim Düzleminde Metinlerarasılık (2015)., SABZİYEVA MAKBULE, Eser Ofset Yayın Basım, Editör:ÜYÜMEZ F.Betül, Basım sayısı:1, Sayfa Sayısı 130, ISBN:978-605-63654-1-6, Türkçe(Araştırma (Tez Hariç) Kitabı)</p>
+<p class="pub-item">16. Kutsal Döngü/Священный кругооборот (2012)., SABZİYEVA MAKBULE, Krug Yayınevi, Editör:Dergaçeva İrina, Basım sayısı:1, Sayfa Sayısı 79, ISBN:1234, Rusça(Kitap Tercümesi)</p>
+<p class="pub-item">17. Boğazdaki Mutlu Çocuk Kuzguncuk/Кузгунчук – счастливое дитя на Босфоре (2012)., SABZİYEVA MAKBULE, Krug Yayınevi, Editör:Dergaçeva İrina, Basım sayısı:1, Sayfa Sayısı 123, ISBN:1234, Rusça(Kitap Tercümesi)</p>
+<p class="pub-item">18. Yergök (2011)., SABZİYEVA MAKBULE, Krug Yayınevi, Editör:Dergaçeva İrina, Basım sayısı:1, Sayfa Sayısı 126, ISBN:1234, Rusça(Kitap Tercümesi)</p>
+<p class="pub-item">19. Эльмар и друзья / Elmar ve Arkadaşları (2010)., SABZİYEVA MAKBULE, Verlag Anadolu, Basım sayısı:1, Sayfa Sayısı 16, ISBN:1234, Rusça(Kitap Tercümesi)</p>
+<p class="pub-item">20. Кошачьий остров / Kedi Adası (2010)., SABZİYEVA MAKBULE, Verlag Anadolu, Basım sayısı:1, Sayfa Sayısı 30, ISBN:1234, Rusça(Kitap Tercümesi)</p>
+<p class="pub-item">21. Эльмар и цвета / Elmar ve Renkler (2010)., SABZİYEVA MAKBULE, Verlag Anadolu, Basım sayısı:1, Sayfa Sayısı 16, ISBN:1234, Rusça(Kitap Tercümesi)</p>
+<p class="pub-item">22. Город на ветру / Rüzgârdaki Şehir (2010)., SABZİYEVA MAKBULE, Verlag Anadolu, Basım sayısı:1, Sayfa Sayısı 30, ISBN:1234, Rusça(Kitap Tercümesi)</p>
+<p class="pub-item">23. Дни Айше / Ayşe’nin Günleri (2010)., SABZİYEVA MAKBULE, Krug Yayınevi, Editör:Dergaçeva İrina, Basım sayısı:1, Sayfa Sayısı 215, ISBN:1234, Rusça(Kitap Tercümesi)</p>
+<p class="pub-item">24. Karacaoğlan Rus Dilinde (2008)., SABZİYEVA MAKBULE, Kültür Ajans Yayınları, Editör:Hayrettin İVGİN, Basım sayısı:1, Sayfa Sayısı 160, ISBN:978-975-8951-25-3, Rusça(Kitap Tercümesi)</p>
+<p class="pub-item">25. Rus Masalları (2008)., SABZİYEVA MAKBULE, Morpa, Editör:CENGİZ Gülsüm, Basım sayısı:1, Sayfa Sayısı 64, ISBN:0107-34-006548, Türkçe(Kitap Tercümesi)</p>
+<p class="pub-item">26. Eskimo Masalları (2007)., SABZİYEVA MAKBULE, Morpa, Editör:CENGİZ Gülsüm, Basım sayısı:1, Sayfa Sayısı 48, ISBN:0107-34-006548, Türkçe(Kitap Tercümesi)</p>
+<p class="pub-item">27. Çin Masalları (2007)., SABZİYEVA MAKBULE, Morpa, Editör:CENGİZ Gülsüm, Basım sayısı:1, Sayfa Sayısı 48, ISBN:0107-34-006548, Türkçe(Kitap Tercümesi)</p>
+<p class="pub-item">28. Angola Masalları (2007)., SABZİYEVA MAKBULE, Morpa, Editör:CENGİZ Gülsüm, Basım sayısı:1, Sayfa Sayısı 48, ISBN:0107-34-006548, Türkçe(Kitap Tercümesi)</p>
+<p class="pub-item">29. Norveç Masalları (2007)., SABZİYEVA MAKBULE, Morpa, Editör:CENGİZ Gülsüm, Basım sayısı:1, Sayfa Sayısı 48, ISBN:0107-34-006548, Türkçe(Kitap Tercümesi)</p>
+<p class="pub-item">30. Kızılderili Masalları (2007)., SABZİYEVA MAKBULE, Morpa, Editör:CENGİZ Gülsüm, Basım sayısı:1, Sayfa Sayısı 48, ISBN:0107-34-006548, Türkçe(Kitap Tercümesi)</p>
+<p class="pub-item">31. Порог / Eşik (2007)., SABZİYEVA MAKBULE, Mütercim Yayınevi, Editör:Cəfərov Telman, Basım sayısı:1, Sayfa Sayısı 104, ISBN:1234, Rusça(Kitap Tercümesi)</p>
+<p class="pub-item">32. Azerbaycan Masalları (2007)., SABZİYEVA MAKBULE, Morpa, Editör:CENGİZ Gülsüm, Basım sayısı:1, Sayfa Sayısı 48, ISBN:0107-34-006548, Türkçe(Kitap Tercümesi)</p>
+<p class="pub-item">33. Avustralya Masalları (2007)., SABZİYEVA MAKBULE, Morpa, Editör:CENGİZ Gülsüm, Basım sayısı:1, Sayfa Sayısı 48, ISBN:0107-34-006548, Türkçe(Kitap Tercümesi)</p>
+<h3 class="pub-sub">Konfrans məqalələri və tezisləri</h3>
+<p class="pub-item">1. B. Uluslararası bilimsel toplantılarda sunulan ve bildiri kitaplarında (proceedings) basılan bildiriler: SABZİYEVA MAKBULE (1998). Köroğlu Rusya’da. Bolu’da Halk Kültürü ve Köroğlu Uluslararası Sempozyumu (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">2. SABZİYEVA MAKBULE (2000). Yunus Emre Rusya’da. 8. Uluslararası Türk Halk Edebiyatı Semineri, 201-206. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">3. SABZİYEVA MAKBULE (2004). Azerbaycan Fıkralarının Özellikleri. 3. Uluslararası Türk Medeniyetlerinde Sözlü Kültür Geleneği: Fıkralar’ Sempozyumu, 156-161. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">4. SABZİYEVA MAKBULE (2005). Hayrettin İvgin’in Kıbrıs’la İlgili Çalışmaları. XI. Uluslararası Edebiyat Şöleni (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">5. SABZİYEVA MAKBULE (2006). Karacaoğlan Rus Dilinde. Uluslararası Karacaoğlan Sempozyumu, 64-69. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">6. на турецкий и азербайджанский языки / L.N. Tolstoy’un Eserlerinin Türk ve Azerbaycan Dillerine Çevirileri Üzerine. Rus Edebiyatı Çevirmenlerinin 2. Uluslararası Sempozyumunun, 43-49. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">7. SABZİYEVA MAKBULE (2008). Türk Halklarının Masallarına Karşılaştırmalı Bir Bakış. Türk Halkları Çocuk Edebiyatı Uluslararası Kongresi, 845-848. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">8. SABZİYEVA MAKBULE (2009). “Kazan Tarihi”nde Avrasyalılık Düşünceleri. &quot;XI-XXI. Yüzyıllar Rus Edebiyatında Doğu ve Batı” Uluslararası Sempozyumu, 117-123. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">9. SABZİYEVA MAKBULE (2009). К вопросу перевода некоторых особенностей стиля Л.Н.Толстого на турецкий язык / Tolstoy’un Üslup Özelliklerinin Türkçedeki Çevirilere Yansıması Üzerine (Tolstoy’un Gençlik Dönemi Eserlerinin Çevirileri Üzerine). 180. Doğum Yıldönümünde L.N. Tolstoy’un Yazınsal Mirası Uluslararası Bilim Sempozyumu, 145-156. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">10. SABZİYEVA MAKBULE (2009). Первые переводчики Толстого на турецкий язык / Tolstoy’u Türkçeye İlk Çevirenler. Çağdaş Azerbaycan’da Rus Dili ve Edebiyatı Uluslararası Sempozyumu (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">11. SABZİYEVA MAKBULE (2010). 11.-12. Yüzyıl Rus Destanlarında Kıpçaklar. III. Uluslararası Karşılaştırmalı Edebiyatbilimi Kongresi, 1, 411-417. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">12. SABZİYEVA MAKBULE (2010). Azerbaycan’da Oyun Yazarlığı Geleneği. Interplay Uluslararası Genç Oyun Yazarları Festivali (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">13. SABZİYEVA MAKBULE (2021). XIX. Yüzyılda Şuşa&#x27;nın Edebi Meclisleri. 4th International Nowruz Conference on Scientific Research, 1(1), 408-415. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">14. SABZİYEVA MAKBULE (2021). &quot;Çevrilemeyenlerin&quot; Çeviri Sorunu. 4.Uluslararası Türk-Rus Dünyası Akademik Araştırmalar Kongresi, 1(1), 147-151. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">15. SABZİYEVA MAKBULE (2021). О работе над переводом русских былин на турецкий язык. V. Uluslararası Rus Dili Eğitimi Konferansı, 1(1), 11-15. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">16. SABZİYEVA MAKBULE (2022). Anadolu Üniversitesinde Rusça Eğitimi (Ob İzuçenii Russkogo Yazıka v Anatoliyskom Universitete). 5. Uluslararası Türk-Rus Dünyası Akademik Araştırmalar Kongresi, 1, 153-161. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">17. SABZİYEVA MAKBULE (2022). Ortak Üslup Özellikleri Bağlamında Cengiz Aytmatov&#x27;un ve Elçin Efendiyev&#x27;in Eserleri. 2.Uluslararası Karadeniz Modern Bilimsel Araştırmalar Kongresi, 1, 535-539. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">18. SABZİYEVA MAKBULE (2022). Konu Oluşturma Arketipi: Masallar. Anadolu 11.Uluslararası Sosyal Bilimler Kongresi, 2, 1912-1917. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">19. SABZİYEVA MAKBULE (2023). Lev Tolstoy&#x27;un &quot;İlyas&quot; Eserinde Sembollerin Rolü. Rus Edebiyatında ve Kültüründe İslam ve Müslümanlar, 1(1), 19-24. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">20. SABZİYEVA MAKBULE (2023). Роль интертекста в обучении иностранному языку. VI Uluslararası Rus Dili Eğitimi Sempozyumu, 79-83. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">21. SABZİYEVA MAKBULE (2023). Lev Tolstoy&#x27;un &quot;İlyas&quot; Öyküsünün Türkçeye Çevirisi Üzerine. Uluslararası 6. Usbilim Uygulamalı ve Sosyal Bilimler Sempozyumu, 1(1), 42-47. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">22. SABZİYEVA MAKBULE (2023). Öğrencilerle Tolstoy&#x27;u Çeviriyoruz: Lev Tolstoy &quot;Yeni Alfabe&quot;. Uluslararası 6. Usbilim Uygulamalı ve Sosyal Bilimler Sempozyumu, 1(1), 36-41. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">23. SABZİYEVA MAKBULE (2023). Tolstoy&#x27;un &quot;Savaş ve Barış&quot; Romanında Napolyon İmgesi. 6. Uluslararası Türk-Rus Dünyası Akademik Araştırmalar Kongresi, 14-19. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">24. SABZİYEVA MAKBULE (2019). Bir Ömrün Hikayesi. İnternational Euroasia Congress on Scientific Researches and Recent Trends-V, 1, 152-158. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">25. SABZİYEVA MAKBULE (2019). Bir Çevirinin Peşinde ”Kroyçer Sonatı”. II. Uluslararası Türk-Rus Dünyası Akademik Araştırmalar Kongresi, 485-495. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">26. SABZİYEVA MAKBULE (2019). Yabancı Dil Derslerinde Metin Çalışmaları. Türkiye’de Rusça Eğitmenlerinin III. Uluslararası Sempozyumu, 1-117. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">27. Bilimleri ve Sosyal Bilimler Sempozyumu, 6(8), 135-140. (Tam Metin Bildiri/Sözlü Sunum) (Yayın No: 5741160) 27. SABZİYEVA MAKBULE (2019). Edebiyatta İki İsim: Hallac-i Mansur ve Nesimi. History and Knowledge: The Paradigm of Studying The Language of The Ancient Heritage, 71-74. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">28. SABZİYEVA MAKBULE (2019). Nevruz, Türklerin Geleneksel Bayramı. 24.Uluslararası Türk Kültürü Sempozyumu, 40-46. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">29. SABZİYEVA MAKBULE (2019). Cengiz Aytmatov’un İlk Hikayelerinin Türkçeye Çevirileri. Modern Trends in Architecture and Construction: Energy Efficiency, Energy Saving, BIM Technologies, Problems of the Urban Enviroment, 494-497. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">30. SABZİYEVA MAKBULE (2018). Azerbaycan’ın Görsel Sanatında Kitab-i Dede Korkut. Türk Halklarının Türkçe İlk Yazılı Eserleri, 80-90. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">31. SABZİYEVA MAKBULE (2018). Lev Tolstoy’un ”Çocukluk.Yeniyetmelik. Gençlik.” Eserlerinin Türkçeye Çevirileri Üzerine. The International scientific-theoretical conference ”Problems of Poetics and Prosody VIII”, 142-146. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">32. SABZİYEVA MAKBULE (2018). Dünya Halklarının Masallarında Yolculuğun Anlamı. Indıa and Russia Cross-Cultural Synergies, 83-84. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">33. SABZİYEVA MAKBULE (2018). Anadolu Üniversitesi Rus Dili ve Edebiyatı Bölümünün Hazırlık Sınıfında Eğitim Sistemi. I. Rus Dili Eğitimi Çalıştayı, 3-5. (Tam Metin Bildiri/Sözlü Sunum) (Yayın No: 4593915) 34. SABZİYEVA MAKBULE (2017). Yabancı Dil Öğretimine Metodolojik Yaklaşım. Uluslararası Eğitim ve Değerler Sempozyumu, 47-49. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">34. SABZİYEVA MAKBULE (2017). Alevi-Bektaşi Edebiyatında Nesimi’nin Yeri. ”Nesimi 600” III. Uluslararası Bilimsel Sempozyum, 25-29. (Tam Metin Bildiri/Davetli Konuşmacı)</p>
+<p class="pub-item">35. SABZİYEVA MAKBULE (2017). Bir Kitabın Yayınlanması Üzerine. VI. Uluslararası Bilimsel Uygulamalı Sempozyum, 182-190. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">36. SABZİYEVA MAKBULE (2017). Günümüz Gagavuzların Yaşamında Türk Gelenekleri. I. Uluslararası Türklerin Dünyası Sosyal Bilimler Sempozyumu, 249-253. (Tam Metin Bildiri/Sözlü Sunum) (Yayın No: 3940207) 38. SABZİYEVA MAKBULE (2016). Metinlerarası Unsurların Çevirisi Üzerine. Müasir Dilçiliğin Aktüel Problemleri, 100-101. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">37. SABZİYEVA MAKBULE (2016). Radloff un Türk Ağızları İçin Sözlük Denemesi nin Türk Sözlük Tarihindeki Yeri ve Önemi. III.Uluslararası Sözlükbilim Sempozyumu, 93-95. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">38. SABZİYEVA MAKBULE (2016). Rus Şairi Osip MANDELSHTAM ın Şiirlerinde Kültürlerarasılık. VI. Uluslararası Karşılaştırmalı Edebiyat Bilim Kongresi, 528-536. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">39. SABZİYEVA MAKBULE (2016). Unutulanlar Mehmet Sadık AĞABEYZADE. III.Uluslararası Türk Dünyası Araştırmaları Sempozyumu, 223-226. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">40. SABZİYEVA MAKBULE (2016). Rus Destanlarında Türkler. Oljas Suleymenov ve Milli İdrak Uluslararası Sempozyumu, 87-90. (Tam Metin Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">41. Oljas Suleymanov ve Rus Türk Kültürel İlişkileri Uluslararası Sempozyumu Bildiri Özet Kitabı (2015)., SABZİYEVA MAKBULE, Eser Ofset Basım Yayın, Editör:Prof.Dr. Zinaida SABİTOVA, Basım sayısı:1, Rusça(Kitap Tercümesi) (Yayın No: 2328754) 3. Bir Gençlik Şarkısı/Песня юности (2013)., SABZİYEVA MAKBULE, Krug Yayınevi, Editör:Dergaçeva İrina, Basım sayısı:1, Sayfa Sayısı 123, ISBN:1234, Rusça(Kitap Tercümesi)</p>
+<p class="pub-item">42. SABZİYEVA MAKBULE (1988). Вопросы литературы / Edebiyat Meseleleri. Azerbaycan Dilli Mekteplerde Rus Dili ve Edebiyatı, 1(465), 6-10. (Kontrol No: 7677023) 1. E. Ulusal bilimsel toplantılarda sunulan ve bildiri kitaplarında SABZİYEVA MAKBULE (1991). L.N. Tolstoy’un ‘Savaş ve Barış’ Romanının Kurgusu Üzerine. Azerbaycan Cumhuriyetinin XIII İlmi Konferansı, 94-95. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">43. SABZİYEVA MAKBULE (1991). L.N. Tolstoy&#x27;un Yazarlık Üslubu Üzerine. İki Dilin Gelişiminin Güncel Problemleri” İlmi Konferansı, 141-142. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">44. SABZİYEVA MAKBULE (1993). Rus Dilsel Öğelerin Azerbaycan Diline Tercümesi. Azerbaycan Cumhuriyetinin XIV İlmi Konferansı, 142-143. (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">45. SABZİYEVA MAKBULE (1993). Rus Kültürel Ögelerin Azerbaycan Dilinde İfadesine Dair. Azerbaycan Cumhuriyetinin XIV İlmi Konferansı’ (Özet Bildiri/Sözlü Sunum)</p>
+<p class="pub-item">46. SABZİYEVA MAKBULE (2007). Dünya Masallarında Örnek Tiplemeler. III. Sakarya Çocuk ve Gençlik Edebiyatı Günleri/Söyleşi (Tam Metin Bildiri/Sözlü Sunum)</p>
+    </section>
+  </main>
+</article>
+</body>
+</html>

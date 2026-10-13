@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emirullah Mehmedov — CV</title>
+<style>
+
+  :root {
+    --ink: #323b4c;
+    --rule: #163853;
+    --side: #e3e3e3;
+    --paper: #fdfdfd;
+    --white: #fdfdfd;
+    --line: #323b4c;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #cfcfcf;
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 8mm auto;
+    position: relative;
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 2mm 6mm rgba(0, 0, 0, 0.28);
+    display: grid;
+    grid-template-columns: 74mm 1fr;
+    grid-template-rows: 49.8mm auto;
+  }
+  .banner {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 49.8mm;
+    background: linear-gradient(90deg,
+      #000000 0%, #050514 12%, #100f3d 30%,
+      #1a1966 50%, #27269a 75%, #3432c9 100%);
+    z-index: 1;
+  }
+  .banner-text {
+    position: absolute;
+    left: 88mm;
+    right: 8mm;
+    top: 8.6mm;
+    color: var(--white);
+  }
+  h1 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 22pt;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    color: #fdfdfd;
+  }
+  .subtitle {
+    margin: 2.6mm 0 0;
+    font-family: Bahnschrift, "Segoe UI", Calibri, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12pt;
+    line-height: 1.32;
+    letter-spacing: 0.012em;
+    color: #fdfdfd;
+    text-transform: uppercase;
+  }
+  .photo {
+    position: absolute;
+    left: 3mm;
+    top: 13mm;
+    width: 68mm;
+    height: 68mm;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3;
+    background: #111;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .side {
+    background: var(--side);
+    color: var(--ink);
+    padding: 40mm 4.2mm 8mm 7.2mm;
+    z-index: 2;
+  }
+  .side h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .side .rule {
+    height: 2.15mm;
+    width: 50mm;
+    background: var(--ink);
+    margin: 1.5mm 0 3.2mm;
+  }
+  .contacts { list-style: none; margin: 0 0 6.5mm; padding: 0; }
+  .contacts li {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4mm;
+    font-size: 10pt;
+    line-height: 1.25;
+    margin: 0 0 3.2mm;
+    overflow-wrap: anywhere;
+  }
+  .contacts a { color: inherit; }
+  .contacts svg {
+    width: 4.2mm; height: 4.2mm; flex: 0 0 4.2mm; margin-top: 0.2mm;
+  }
+  .side .block { margin-top: 5.2mm; }
+  .side ul.items {
+    list-style: disc;
+    margin: 0;
+    padding: 0 0 0 3.4mm;
+  }
+  .side ul.items li {
+    font-size: 10pt;
+    line-height: 1.3;
+    margin: 0 0 1.8mm;
+  }
+  .side ul.awards li {
+    font-size: 10pt;
+    line-height: 1.34;
+    margin: 0 0 3.5mm;
+  }
+  .side ul.langs li { margin: 0 0 0.7mm; }
+  .main {
+    position: relative;
+    z-index: 2;
+    padding: 4mm 9.2mm 8mm 8mm;
+  }
+  .main::before {
+    content: "";
+    position: absolute;
+    left: 7.5mm;
+    top: 4mm;
+    bottom: 8mm;
+    width: 0.32mm;
+    background: var(--line);
+    z-index: 0;
+  }
+  .sec {
+    position: relative;
+    z-index: 1;
+    padding-left: 13.2mm;
+    margin-bottom: 4mm;
+  }
+  .sec h2 {
+    margin: 0;
+    font-family: Bahnschrift, "Arial Narrow", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-stretch: condensed;
+    font-size: 14pt;
+    letter-spacing: 0.045em;
+    line-height: 1.1;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .sec .rule {
+    height: 2.35mm;
+    background: var(--rule);
+    margin: 1mm 0 1.8mm;
+  }
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7.15mm;
+    height: 7.15mm;
+    z-index: 2;
+  }
+  .icon svg { width: 100%; height: 100%; display: block; }
+  .profile p {
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .job { position: relative; margin: 0 0 3mm; }
+  .dot {
+    position: absolute;
+    left: -11.15mm;
+    top: 0.85mm;
+    width: 2.15mm;
+    height: 2.15mm;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 0.48mm solid var(--line);
+    z-index: 2;
+  }
+  .job-top, .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+  .job-top h3, .edu-top h3 {
+    margin: 0;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .when {
+    font-size: 10pt;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .role {
+    margin: 0.2mm 0 0.4mm;
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+  .job ul, .plain {
+    margin: 0;
+    padding: 0 0 0 4.2mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .job li, .plain li { margin: 0 0 0.4mm; }
+  .edu-item { position: relative; margin: 0 0 2mm; }
+  .edu-item p {
+    margin: 0.15mm 0 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+  .pub-sub {
+    margin: 2.5mm 0 1mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .pub-item {
+    margin: 0 0 1.2mm;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; }
+    a { color: inherit; text-decoration: none; }
+  }
+  @page { size: A4; margin: 0; }
+  @media screen and (max-width: 900px) {
+    .sheet {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .banner { height: auto; min-height: 36mm; padding: 8mm 6mm 8mm 6mm; }
+    .banner-text { position: static; }
+    .photo {
+      position: static;
+      margin: -18mm auto 4mm;
+      width: 50mm;
+      height: 50mm;
+    }
+    .side { padding: 8mm 6mm; }
+    .main { padding: 6mm; }
+    .main::before { display: none; }
+    .sec { padding-left: 0; }
+    .icon { display: none; }
+    .dot { display: none; }
+    h1 { white-space: normal; font-size: 18pt; }
+    .when { white-space: normal; }
+  }
+
+</style>
+</head>
+<body>
+<article class="sheet sheet-1">
+  <header class="banner">
+    <div class="banner-text">
+      <h1>EMIRULLAH MEHMEDOV</h1>
+      <p class="subtitle">DSc, PhD<br>Emeritus Professor and leading researcher<br>Nanotechnology Research Center (NANOTAM), Bilkent University, Ankara, Turkey</p>
+    </div>
+  </header>
+  <div class="photo"><img src="../../../../images/scientists-photos/emirulla-memmedov.jpg" alt="Emirullah Mehmedov"></div>
+  <aside class="side">
+    <h2>Contact</h2><div class="rule"></div><ul class="contacts"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#323b4c" d="M12 2.2a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 12.4 7.2 12.4s7.2-7 7.2-12.4A7.2 7.2 0 0 0 12 2.2zm0 9.7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Turkey</span></li></ul><div class="block"><h2>Awards &amp; recognitions</h2><div class="rule"></div><ul class="items awards"><li>State prizes of the USSR and Azerbaijan</li>
+<li>Honor Scientist of Azerbaijan</li>
+<li>Order of Friendship — Republic of Azerbaijan</li>
+<li>Medal for service in diaspora activity — Republic of Azerbaijan</li>
+<li>Jubilee medal, 100th anniversary of Baku State University — Baku State University (2019)</li></ul></div><div class="block"><h2>Languages</h2><div class="rule"></div><ul class="items langs"><li>English (Fluent)</li>
+<li>Turkish (Fluent)</li>
+<li>Russian (Fluent)</li>
+<li>Azerbaijani (Fluent)</li>
+<li>Hebrew (Good)</li></ul></div>
+  </aside>
+  <main class="main">
+    <section class="sec profile">
+      <div class="icon icon-profile" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><circle cx="12" cy="9.1" r="3.15" fill="#fdfdfd"/><path fill="#fdfdfd" d="M6.1 18.4c.9-3.05 3-4.5 5.9-4.5s5 1.45 5.9 4.5A8.9 8.9 0 0 1 12 20.6a8.9 8.9 0 0 1-5.9-2.2z"/></svg></div>
+      <h2>Profile</h2>
+      <div class="rule"></div>
+      <p>Emirullah Mehmedov is an emeritus professor and leading researcher at the Nanotechnology Research Center of Bilkent University, where he has worked since 2011. Publications use the name Amirullah M. Mamedov. He received a PhD in physics and mathematics from the Ioffe Institute in 1973. The thesis is on the optical and electro-optical properties of photoferroelectric materials and was carried out at the Vavilov State Optical Institute. He received the Doctor of Sciences in physics and mathematics in 1982 from the regional council in Riga, and the title of full professor of optics in 1988. Published more than 350 works. He was scientific advisor to ASELSAN in 1992–2006.</p>
+    </section><section class="sec work">
+      <div class="icon icon-work" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M9.1 8.15V7.25c0-.7.55-1.25 1.25-1.25h3.3c.7 0 1.25.55 1.25 1.25v.9h1.55c.72 0 1.3.58 1.3 1.3v6.05c0 .72-.58 1.3-1.3 1.3H7.55c-.72 0-1.3-.58-1.3-1.3V9.45c0-.72.58-1.3 1.3-1.3H9.1zm1.35 0h3.1V7.4h-3.1v.75zM7.7 12.15h8.6v.95H7.7v-.95z"/></svg></div>
+      <h2>Work experience</h2>
+      <div class="rule"></div>
+      <article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>NANOTAM, Bilkent University, Ankara, Turkey</h3>
+          <span class="when">2011–present</span>
+        </div>
+        <p class="role">Emeritus professor and leading researcher</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>ASELSAN, Turkey</h3>
+          <span class="when">1992–2006</span>
+        </div>
+        <p class="role">Scientific advisor</p>
+        <ul><li>Microelectronics, guidance, and electro-optics division</li></ul>
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>SAVTAG, TÜBİTAK, and SATEM, Ministry of National Defence of Turkey</h3>
+          <span class="when">2004–2010</span>
+        </div>
+        <p class="role">Advisor</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Çukurova University, Adana, Turkey</h3>
+          <span class="when"></span>
+        </div>
+        <p class="role">Professor of physics and of electrical and electronics engineering</p>
+        
+      </article>
+<article class="job">
+        <span class="dot"></span>
+        <div class="job-top">
+          <h3>Baku State University, Baku, Azerbaijan</h3>
+          <span class="when"></span>
+        </div>
+        <p class="role">Full professor and head of the Nonlinear Optics Division</p>
+        
+      </article>
+    </section><section class="sec education">
+      <div class="icon icon-edu" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#323b4c"/><path fill="#fdfdfd" d="M12 5.7 4.4 9.15 12 12.6l6.2-2.8v3.15h1.15V8.9L12 5.7zM7.7 12.15v2.15c0 1.45 1.9 2.6 4.3 2.6s4.3-1.15 4.3-2.6v-2.15l-4.3 1.95-4.3-1.95z"/></svg></div>
+      <h2>Education</h2>
+      <div class="rule"></div>
+      <article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Full professor of optics</h3>
+          <span class="when">1988</span>
+        </div>
+        <p>Supreme Attestation Committee of the USSR, Moscow</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>DSc</h3>
+          <span class="when">1982</span>
+        </div>
+        <p>Physics and mathematics. Habilitation. Awarded in Riga</p><p>Regional council of the Supreme Attestation Committee of the USSR, Riga, Latvia</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>Associate professor of physics</h3>
+          <span class="when">1977</span>
+        </div>
+        <p>Solid-state physics</p><p>USSR</p>
+      </article>
+<article class="edu-item">
+        <span class="dot"></span>
+        <div class="edu-top">
+          <h3>PhD</h3>
+          <span class="when">1973</span>
+        </div>
+        <p>Physics and mathematics. Thesis on optical and electro-optical properties of photoferroelectric materials. Work done at the Vavilov State Optical Institute</p><p>Ioffe Physical-Technical Institute, St. Petersburg, Russia</p>
+      </article>
+    </section><section class="sec metrics">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Research metrics</h2>
+      <div class="rule"></div>
+      <ul class="plain"><li>Publications in international journals — More than 350 — Self-reported</li></ul>
+    </section><section class="sec publications">
+      <div class="icon icon-globe" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.3" fill="#fdfdfd" stroke="#323b4c" stroke-width="1.35"/><ellipse cx="12" cy="12" rx="3.5" ry="8.3" fill="none" stroke="#323b4c" stroke-width="1.15"/><path d="M3.8 12h16.4M5.1 8.15h13.8M5.1 15.85h13.8" fill="none" stroke="#323b4c" stroke-width="1.15"/></svg></div>
+      <h2>Publications</h2>
+      <div class="rule"></div>
+      <h3 class="pub-sub">Peer-reviewed journal articles</h3>
+<p class="pub-item">1. Modeling and Simulation of the Ferroelectric Based Micro-Gyroscope: FEM Analysis, Ferroelectrics, 447(1), 46, (2013)</p>
+<p class="pub-item">2. 2D Anisotropic Photonic Crystals of Hollow Semiconductor Nanorod with Liquid Crystals, Applied Mechanics and Materials, 394(1), 38 (2013)</p>
+<p class="pub-item">3. Electron Energy Loss Spectroscopy and the Electronic Band Structure of KNbO3 Ferroelectric, Ferroelectrics, 461(1), 1 (2014)</p>
+<p class="pub-item">4. Mechanical, Electronic and Optical Properties of Bi2S3 and Bi2Se3 Compounds: first principle investigations, J. Molecular Modeling, 20(4), 2180 (2014)</p>
+<p class="pub-item">5. Optical Properties of Metamaterial Based Devices Modulated by a Liquid Crystal, Appl. Phys. A, 117(2) (2014), 611</p>
+<p class="pub-item">6. Ferroelectric Based Photonic Crystal Cavity by Liquid Crystal Infiltration, Integrated Ferroelectrics, 158(1), (2014) 1-12</p>
+<p class="pub-item">7. Organic semiconductor-based photonic crystals for solar cell arrays: band gap and optical properties, J. Modern Opt. 161 (21), (2014) 1754</p>
+<p class="pub-item">8. Band Gap and Optical Transmission in Fibonacci Type One Dimensional A5B6C7 Based Photonic Crystals, Phys. Stat.Sol.(c) 12(6), 540-544 (2015)</p>
+<p class="pub-item">9. Dynamic Nonlinear Optical Processes in Some Oxygen-Octahedra Ferroelectrics: first principle calculations, Ferroelectrics, 483(1), 26-42 (2015)</p>
+<p class="pub-item">10. Optical Properties of the Narrow-Band Ferroelectrics: first principle calculations, Ferroelectrics 483(1), 43-52 (2015)</p>
+<p class="pub-item">11. Influence of Crown Margin Design on the Stress Distribution in Maxillary Canine Restored by All-ceramic Crown: A Finite Element Analysis, J. Korean Dent Sci., 8(1),28-35 (2015)</p>
+<p class="pub-item">12. BaTiO3 and TeO2 based gyroscopes for guidance systems: FEM analysis, Ferroelectrics, 497(1), 15-23 (2016)</p>
+<p class="pub-item">13. Phononic band gap and wave propagation on polyvinylidene fluoride-based acoustic metamaterials, Cogent Physics, 2, 1169570 (2016)</p>
+<p class="pub-item">14. Topological Insulator Based Locally Resonant Phononic Crystals: Wave Propagation and Acoustic Band Gaps, Ferroelectrics, 499(1) 123-129 (2016)</p>
+<p class="pub-item">15. AIBIIICVI2 (A=Cu, Ag; B=Ga, In; C=S, Se, Te) Based Photonic Crystal Superlattices: Optical Properties&quot; Physica Status Solidi (C), 1600156 (2017)</p>
+<p class="pub-item">16. Optical and Magnetic Properties of Some XMnSb and Co2YZ Compounds: ab initio calculations, Physica Status Solidi (C), 1600182 (2017)</p>
+<p class="pub-item">17. Wave Propagation and Acoustic Band Gaps of Two-Dimensional Liquid Crystal/Solid Phononic Crystals, Appl. Phys. A, 123(1):23 (2017)</p>
+<p class="pub-item">18. Spectral Scalability and Optical Spectra of Fractal Multilayer Structures: FDTD analysis, Appl. Phys. A, 123(1):33 (2017)</p>
+<p class="pub-item">19. Band gap structure of elliptic rods in water for a 2D phononic crystal, Appl. Phys. A, 123 (3): 212 (2017)</p>
+<p class="pub-item">20. Topological Insulators: Electronic Band Structure and Spectroscopy, J. Physics, Materials Science and Engineering, 175 (2017) 012004</p>
+<p class="pub-item">21. Fracture of Femoral Neck: Analysis of New Implant Models with and without Slit by the FEM, Azerbaijan Medical Journal, iss.3, 12 (2017)</p>
+<p class="pub-item">22. A5B6C7 Ferroelectrics as Novel Materials for Phononic Crystals, Ferroelectrics, 511 (1) 12, 2017</p>
+<p class="pub-item">23. Bud Sümüyü Boynu Sınığı: Dəlikli və Dəliksiz Yeni Implant Modellerinin Sonlu Elementlər Üsülu ilə Təhlili, Azərbaycan Tibb Jurnalı 2017(3) s. 12</p>
+<p class="pub-item">24. Fibonacci Sequences Quasiperiodic A5B6C7 Ferroelectric Based Photonic Crystal: FDTD analysis, Integrated Ferroelectrics, 2017</p>
+<p class="pub-item">25. Wave Propagations in Metamaterial Based 2D Phononic Crystal: Finite Element Analysis, J. Physics, Materials Science and Engineering, 1045 (2018) 012034</p>
+<p class="pub-item">26. Stress Distribution of a New Type of Perforated Implants in Femur Neck Fracture: Finite Element Model, J. Physics: Materials Science and Engineering, 1045 (2018) 012017</p>
+<p class="pub-item">27. Electronic band structure of rare-earth ferroelastics: theoretical investigations, JOAM 20 (12) 69, 2018</p>
+<p class="pub-item">28. Electronic, Mechanical, and Optical Properties of Ruddlesden-Popper Perovskite Sulfides: first principle calculation, Ferroelectrics, 535(1), 142 (2018)</p>
+<p class="pub-item">29. Multiple Band gaps of a Ferroelectric Based 2D-Phononic crystal slab, Ferroelectrics, 535(1) 152 (2018)</p>
+<p class="pub-item">30. Phononic Band Gap and Wave Propagation on multiferroic based acoustic metamaterials, Ferroelectrics, 2019, 539 (1) 84</p>
+<p class="pub-item">31. Photonic Band Gap of Multiferroic-Dielectric Materials in the IR region: FDTD method, Ferroelectrics, 2019, 539(1) 50</p>
+<p class="pub-item">32. Electronic properties of spin excitation in multiferroics with a spinel structure: First principles calculation, Ferroelectrics, 2019, 539 (1) 41</p>
+<p class="pub-item">33. Electronic and Elastic Properties of the Multiferroic Crystals with the Kagome Type Lattices -Mn3V2O8 and Ni3V2O8: First Principle Calculations, Ferroelectrics, 544(1), 11, 2019</p>
+<p class="pub-item">34. Two‐Dimensional Phononic Band structure of Archimedean-Logarithmic Spiral- Based Slabs Ferroelectrics, 544(1), 112, 2019</p>
+<p class="pub-item">35. BaTiO3 Based Photonic Time Crystals and Momentum Stop -Bands, Ferroelectrics, 2020 557(1), 105</p>
+<p class="pub-item">36. Complete Photonic Band Gaps in Sn2P2X6 (X=S, Se) Supercell Photonic Crystals, Ferroelectrics, 2020 557(1), 92</p>
+<p class="pub-item">37. Band structure and transmission spectra in multiferroic based Sierpinski- carpet phononic crystal, European Physical J.- Applied Physics, 2020, 90(2)</p>
+<p class="pub-item">38. Phononic Crystals with Archimedean-like Tiling: Band Structure and the Transformation of Sound, Integrated Ferroelectrics, 2021, 220(1)</p>
+<p class="pub-item">39. Slater insulator phase of X2 (X = Na, Li)IrO3: First principles calculation, Integrated Ferroelectrics 2021, 220(1)</p>
+<p class="pub-item">40. Second Harmonic Generation in Generalized Ferroelectric Superlattices, Integrated Ferroelectrics, 2021, 220(1)</p>
+<p class="pub-item">41. Band structures of metacomposite based phononic crystals in quasi- Sierpinski fractals, EPITOANYAG-JOURNAL OF SILICATE BASED AND COMPOSITE MATERIALS, 2022, 74 (2)</p>
+<p class="pub-item">42. Observation of shear bond strength between zirconia core and silica based composite material; a finite element analysis, EPITOANYAG-JOURNAL OF SILICATE BASED AND COMPOSITE MATERIALS, 2022, 74 (2)</p>
+<p class="pub-item">43. SECOND HARMONIC GENERATION IN LOCALLY RESONANT NONLINEAR WEYL SEMIMETAL BASED ACOUSTIC METAMATERIALS: FINITE ELEMENT ANALYSIS, AJP, Fizika (C) 2023, 77</p>
+<p class="pub-item">44. DIRAC CONE AND TOPOLOGICAL STATES IN 2D PHONONIC CRYSTALS, AJP, Fizika (C) 2023, p.71</p>
+<p class="pub-item">45. TUNABLE PHONONIC WAVEGUIDE: FINITE ELEMENT ANALYSIS, AJP, Fizika (C) 2023,</p>
+<p class="pub-item">46. Topological semimetals in the ZrB5 (B = Se, Te) material class: Weyl points and electronic properties, Ferroelectrics, 2024, 618 (4)</p>
+<p class="pub-item">47. Observation of elastic Weyl points in ferroelectric based sonic metamaterials Ferroelectrics, 2024, 618 (4)</p>
+<p class="pub-item">48. The structural, elastic, electronic, and optical properties of Li2RuO3 compound in different structures, Chinese Journal of Physics, 2024, 90, 1026</p>
+<p class="pub-item">49. The structural, elastic, electronic, and optical properties of the rhombohedral La2NiMnO6 double perovskite compound at different temperatures, Comp. Cond. Matt., 2024, 41, e00984.</p>
+<p class="pub-item">50. The structural, mechanical, electronic, and optical properties of multiferroic LiCu2O2 under different pressures, Bulletin of Materials Science, 2025, 48:6 Conferences (more than 50 international conferences, meetings and workshops; below are some conferences from 2012 up to now): inv. presentations Bilkent University</p>
+<p class="pub-item">51. 21-st International Symposium on Applications of Ferroelectrics, ISAF2012, (2012, Portugal, Aveiro)</p>
+<p class="pub-item">52. 11-th European Conference on Applications of Polar Dielectrics, ECAPD-11, (2012, Portugal, Aveiro)</p>
+<p class="pub-item">53. 4-th Conference Piezoresponse Force Microscopy and Nanoscale Phenomena in Polar Materials, (2012, Portugal Aveiro)</p>
+<p class="pub-item">54. International Ultrasonic Symposium (2013, Czech Republic, Prague)</p>
+<p class="pub-item">55. International Symposium on the Applications of Ferroelectrics (2013, Czech Republic, Prague)</p>
+<p class="pub-item">56. 13-th International Meeting on Ferroelectricity (2013, Poland, Katowice – Krakow)</p>
+<p class="pub-item">57. International Conference “Novel Semiconductor Materials and Structures (2013, Azerbaijan, Baku)</p>
+<p class="pub-item">58. International Conference on Mechatronics, Applied Mechanics and Energy Engineering - MAMEE 2013 (2013, Singapur).</p>
+<p class="pub-item">59. 5th International Conference on Metamaterials, Photonic Crystals and Plasmonics, META – 2014, (2014, Singapur)</p>
+<p class="pub-item">60. 19th International Conference on Ternary and Multinary Compounds, ICTMC19, (2014, Niigata Japan)</p>
+<p class="pub-item">61. 12th Russia/CIS/Baltic/Japanese Symposium on Ferroelectricity, RCBJSF-2014, (2014, Riga Latvia)</p>
+<p class="pub-item">62. 9th International Conference on Functional Materials and Nanotechnologies, 2014 –FM&amp;NT, (2014, Riga, Latvia)</p>
+<p class="pub-item">63. Science and Application of Thin Films, Conference and Exhibition, SATF2014, (2014, Izmir, Turkey)</p>
+<p class="pub-item">64. International Organic Electronic Material Technologies Conference, OEMT 2015 (Elazığ, Turkey; 25-28 March, 2015)</p>
+<p class="pub-item">65. 13-th European Meeting on Ferroelectricity, EMF-2015 (Porto, Portugal;28 June-03 July, 2015)</p>
+<p class="pub-item">66. 13th Russia/CIS/Baltic/Japanese Symposium on Ferroelectricity, RCBJSF2016, (2016, Shimane, Japan)</p>
+<p class="pub-item">67. 7th International Conference on Metamaterials, Photonic Crystals and Plasmonics, META – 2016, (2016, Malaga, Spain)</p>
+<p class="pub-item">68. 20th International Conference on Ternary and Multinary Compounds, ICTMC- 20, (2016, Halle, Germany)</p>
+<p class="pub-item">69. 4th International Conference on Competitive Materials and Technology Processes, IC-CMTP 4, (2016, Miskolc-Lillafüred, Hungary)</p>
+<p class="pub-item">70. The 1st International Symposium on Intelligent and Smart Materials. (2016, Miskolc-Lillafüred, Hungary)</p>
+<p class="pub-item">71. 6th International Conference on Materials and Applications for Sensors and Transducers – IC-MAST (2016, Athens, Greece)</p>
+<p class="pub-item">72. 2nd International Congress on the World of Technology and Advanced Materials - WITAM 2016 (2016, Kirshehir, Turkey)</p>
+<p class="pub-item">73. 14-th International Meeting on Ferroelectricity (IMF 2017, San Antonio, USA)</p>
+<p class="pub-item">74. 3rd International Conference on Rheology and Modelling of Materials (ICRMM3, 2017, Miskolc-Lillafüred, Hungary).</p>
+<p class="pub-item">75. 14th Russia/CIS/Baltic/Japanese Symposium on Ferroelectricity, (RCBJSF-2018, St. Petersburg, Russia)</p>
+<p class="pub-item">76. 14-th European Conference on Applications of Polar Dielectrics, (ECAPD2018, Moscow, Russia)</p>
+<p class="pub-item">77. 4th International Conference on Competitive Materials and Technology Processes, (IC-CMTP 5 2018, Miskolc-Lillafüred, Hungary)</p>
+<p class="pub-item">78. The European Federation of National Associations of Orthopaedics and Traumatology Congress (EFORT 2018, Barselona, Spain)</p>
+<p class="pub-item">79. 14-th European Meeting on Ferroelectricity, EMF-2019 (Lausanne, Switzerland;15 July-19 July, 2019)</p>
+<p class="pub-item">80. 10th International Conference on Metamaterials, Photonic Crystals and Plasmonics, META – 2019, (Lisbon, Portugal; 23-26 July 2019)</p>
+<p class="pub-item">81. 4th International Conference on Rheology and Modelling of Materials (IC- RMM4, 2019, Miskolc-Lillafüred, Hungary).</p>
+<p class="pub-item">82. 36-th International Physics Congress of the Turkish Physical Society (TPS-36, September, 1- 5, 2020. Istanbul, Turkey)</p>
+<p class="pub-item">83. International Conference “Functional Materials &amp; Nanotechnologies” (FM&amp;NT 2020, November 23-26, 2020. Vilnius, Lithuania)</p>
+<p class="pub-item">84. 6th International Conference on Competitive Materials and Technology Processes (IC-CMTP 6 October 4-8, 2021, Miskolc-Lillafüred, Hungary)</p>
+<p class="pub-item">85. 7th International Conference “Modern Trends in Physics” (MTP-7, 15-17 December, 2021, Baku Azerbaijan),</p>
+<p class="pub-item">86. 15-th International Meeting on Ferroelectricity (IMF 2023, Tel-Aviv. Israel)</p>
+<p class="pub-item">87. 8th International Conference “Modern Trends in Physics” (MTP-8, November, 30 – December 01, 2023, Baku Azerbaijan)</p>
+<p class="pub-item">88. Functional Materials Science and Engineering Symposium, (June 11-12, 2024, Mersin, Türkiye)</p>
+<p class="pub-item">89. International Conference on Energy and Environmental Technologies in Engineering and Architecture (ICETEA, 19-21 December 2024, Baku, Azerbaijan</p>
+    </section>
+  </main>
+</article>
+</body>
+</html>

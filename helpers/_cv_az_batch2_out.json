@@ -1,0 +1,3353 @@
+[
+  {
+    "base": "Javadova-Spitzberg_Jamila",
+    "az_file": "Javadova-Spitzberg_Jamila_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Jamila Javadova-Spitzberg, DMA",
+      "Baş müəllim",
+      "Texas Universiteti Arlington, Arlington, Texas, Amerika Birləşmiş Ştatları"
+    ],
+    "profile": "Jamila Javadova-Spitzberg Texas Universiteti Arlington-da baş müəllimdir və orada orqan və klavesin tədris edir. O, Şimali Texas Universitetindən ifaçılıq üzrə musiqi sənətləri doktoru dərəcəsini (2008), Azərbaycan Dövlət Konservatoriyasından musiqi magistrini (1986), həmçinin Amsterdam Konservatoriyası, Associated Board of the Royal Schools of Music və Auqsburqdakı Leopold Mozart Mərkəzindən əlavə ixtisaslar almışdır. Orqan, klavesin və tarixi fortepianoda ifa edir; 2017-ci ildə Azərbaycan-Amerika Musiqi Fondunu təsis etmişdir və onun icraçı direktorudur. 2022-ci ildə Azərbaycan Respublikasının Tərəqqi medalı ilə təltif olunmuşdur.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "May 2008",
+            "DMA",
+            "İfaçılıq (orqan), musiqi nəzəriyyəsi üzrə əlavə ixtisas; dissertasiya: A. van Noordt, Tabulatuurboeck van Psalmen en Fantasyen (1659); rəhbər: Dr. Lenora McCroskey",
+            "Şimali Texas Universiteti, Denton, Texas, Amerika Birləşmiş Ştatları"
+          ],
+          [
+            "",
+            "Sertifikat",
+            "Tarixi klaviatura alətləri; birillik təqaüd",
+            "Leopold Mozart Mərkəzi, Auqsburq, Almaniya"
+          ],
+          [
+            "İyul 2000",
+            "Muziek 1e fase, Orgel",
+            "İfaçılıq",
+            "Amsterdam Konservatoriyası, Amsterdam, Niderland"
+          ],
+          [
+            "İyul 1997",
+            "LRSM",
+            "İfaçılıq",
+            "Associated Board of the Royal Schools of Music, Birləşmiş Krallıq"
+          ],
+          [
+            "İyun 1986",
+            "MM",
+            "Musiqi nəzəriyyəsi və ifaçılıq (iki ixtisas); orqan üzrə təhsil Dr. T. Yaqubova ilə",
+            "Azərbaycan Dövlət Konservatoriyası, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "hazırda",
+            "Baş müəllim (orqan və klavesin)",
+            "",
+            "Texas Universiteti Arlington, Arlington, Texas, Amerika Birləşmiş Ştatları"
+          ],
+          [
+            "2017–hazırda",
+            "Təsisçi və icraçı direktor",
+            "Azərbaycan-Amerika Musiqi Fondu",
+            "Amerika Birləşmiş Ştatları"
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "2022",
+            "Tərəqqi medalı",
+            "Azərbaycan Respublikasının Prezidenti"
+          ]
+        ]
+      },
+      {
+        "section": "Tədris fəaliyyəti",
+        "rows": [
+          [
+            "İllər",
+            "Kurs",
+            "Səviyyə",
+            "Təşkilat"
+          ],
+          [
+            "",
+            "Piano, orqan və klavesin üzrə fərdi dərslər; klaviatura alətlərinin tarixi; tarixi ifaçılıq təcrübəsi; qrup ifası; musiqi nəzəriyyəsi və solfecio; klaviatura bacarığı; musiqi tarixi və qiymətləndirmə",
+            "",
+            "Texas Universiteti Arlington; həmçinin Şimali Texas Universiteti, Texas Universiteti Dallas, Bakı Musiqi Akademiyası və şəxsi studiya"
+          ],
+          [
+            "",
+            "Orqan ifaçılığı üzrə master-klasslar",
+            "",
+            "Bakı Musiqi Akademiyası, Bakı, Azərbaycan"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Kalantar_Khalil",
+    "az_file": "Kalantar_Khalil_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Khalil Kalantar, PhD",
+      "Baş tədqiqatçı və developer",
+      "Global Optical Solutions & Kepler, Yaponiya"
+    ],
+    "profile": "Khalil Kalantar Global Optical Solutions & Kepler-də baş tədqiqatçı və developerdir. O, 1980-ci ildə elektronika mühəndisliyi üzrə bakalavr, 1984-cü ildə Toyohashi Texnologiya Universitetində magistr, 1987-ci ildə Naqoya Universitetində doktorluq, 2003-cü ildə isə Tohoku Universitetində əlavə doktorluq dərəcəsi almışdır. 1995-ci ildən işi maye kristal displeylər üçün optik qurğulara, o cümlədən işıq yönləndirici lövhələrə yönəlmişdir. Onun 96-dan çox məqaləsi, təxminən 100 patenti, yapon dilində üç kitabı və 15-dən çox kitab fəsli vardır.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "2003",
+            "DE",
+            "",
+            "Tohoku Universiteti, Yaponiya"
+          ],
+          [
+            "1987",
+            "DE",
+            "",
+            "Naqoya Universiteti, Yaponiya"
+          ],
+          [
+            "1984",
+            "ME",
+            "",
+            "Toyohashi Texnologiya Universiteti, Yaponiya"
+          ],
+          [
+            "1980",
+            "BE",
+            "Elektronika mühəndisliyi",
+            "Politexnik Universitet"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "",
+            "Baş tədqiqatçı və developer",
+            "",
+            "Global Optical Solutions & Kepler"
+          ],
+          [
+            "1995–hazırda",
+            "LCD blokları üçün optik qurğuların və modulların işlənməsi",
+            "",
+            ""
+          ],
+          [
+            "",
+            "Samsung-Cheil Mojik-də üç il",
+            "",
+            "Cənubi Koreya"
+          ],
+          [
+            "",
+            "Məsləhətçi",
+            "",
+            "Aomori prefekturası, Yaponiya"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi göstəricilər",
+        "rows": [
+          [
+            "Göstərici",
+            "Dəyər",
+            "Mənbə",
+            "Yoxlanma tarixi"
+          ],
+          [
+            "İngilis, yapon və çin dillərində məqalələr",
+            "96-dan çox",
+            "CV",
+            ""
+          ],
+          [
+            "Yaponiya, Amerika Birləşmiş Ştatları, Kanada, Avropa, Cənubi Koreya və Tayvanda verilmiş və gözləmədə olan patentlər",
+            "təxminən 100",
+            "CV",
+            ""
+          ],
+          [
+            "Yapon və ingilis dillərində kitab fəsilləri",
+            "15-dən çox",
+            "CV",
+            ""
+          ],
+          [
+            "2008-ci ildən IEC sənədləri",
+            "7",
+            "CV",
+            ""
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "Dekabr 2023",
+            "KUM (Kobayashi-Uchiike-Mikoshiba) mükafatı",
+            "International Display Workshops, Yaponiya"
+          ],
+          [
+            "2018",
+            "IEC 1906 mükafatı",
+            "Beynəlxalq Elektrotexniki Komissiya"
+          ],
+          [
+            "2016",
+            "Tədqiqat və inkişaf mükafatı",
+            "Yapon Maye Kristal Cəmiyyəti"
+          ],
+          [
+            "2013",
+            "SID Fellow",
+            "Society for Information Display"
+          ],
+          [
+            "2011 və 2018",
+            "Seçilmiş məqalə mükafatı",
+            "Society for Information Display"
+          ],
+          [
+            "May 2007",
+            "Xüsusi tanınma mükafatı, LCD arxa işıqlandırma işıq yönləndiricilərinin optik dizaynı",
+            "Society for Information Display"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Kalantarov_Varga",
+    "az_file": "Kalantarov_Varga_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Varga Kalantarov, DSc, PhD",
+      "Professor, Riyaziyyat kafedrası",
+      "Koç Universiteti, İstanbul, Türkiyə"
+    ],
+    "profile": "Varga Kalantarov İstanbuldakı Koç Universitetinin Riyaziyyat kafedrasında professordur və 2001-ci ildən burada çalışır. O, 1988-ci ildə Sankt-Peterburqdakı V. A. Steklov Riyaziyyat İnstitutundan diferensial tənliklər və riyazi fizika üzrə elmlər doktoru dərəcəsini almışdır. Dissertasiyanın mövzusu Global behavior of solutions of nonlinear equations of mathematical physics of classical and non-classical types-dir. Eyni sahədə PhD dərəcəsini 1974-cü ildə Azərbaycan Elmlər Akademiyasının Riyaziyyat və Mexanika İnstitutundan almışdır; dissertasiya On mixed problem for semi-linear parabolic-hyperbolic systems mövzusundadır. 1966–1971-ci illərdə Azərbaycan Dövlət Universitetində təhsil almışdır. 1989–1993-cü illərdə Bakıdakı Riyaziyyat və Mexanika İnstitutunda Xüsusi törəməli diferensial tənliklər şöbəsinin müdiri olmuş, 1984–1993-cü illərdə isə institutun direktor müavini işləmişdir.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "1988",
+            "DSc",
+            "Diferensial tənliklər və riyazi fizika. Dissertasiya: Global behavior of solutions of nonlinear equations of mathematical physics of classical and non-classical types",
+            "V. A. Steklov Riyaziyyat İnstitutu, Sankt-Peterburq, Rusiya"
+          ],
+          [
+            "1974",
+            "PhD",
+            "Diferensial tənliklər və riyazi fizika. Dissertasiya: On mixed problem for semi-linear parabolic-hyperbolic systems",
+            "Riyaziyyat və Mexanika İnstitutu, Azərbaycan Elmlər Akademiyası, Bakı"
+          ],
+          [
+            "1966–1971",
+            "Universitet təhsili",
+            "",
+            "Azərbaycan Dövlət Universiteti, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "2001–hazırda",
+            "Professor",
+            "",
+            "Riyaziyyat kafedrası, Koç Universiteti, İstanbul, Türkiyə"
+          ],
+          [
+            "1993–2001",
+            "Professor",
+            "",
+            "Riyaziyyat kafedrası, Hacettepe Universiteti, Ankara, Türkiyə"
+          ],
+          [
+            "1991–1993",
+            "Professor, yarımştat",
+            "",
+            "Tətbiqi riyaziyyat kafedrası, Bakı Dövlət Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "1989–1991",
+            "Professor, yarımştat",
+            "",
+            "Riyaziyyat kafedrası, Azərbaycan İnşaat Mühəndisləri İnstitutu, Bakı, Azərbaycan"
+          ],
+          [
+            "1989–1993",
+            "Xüsusi törəməli diferensial tənliklər şöbəsinin müdiri",
+            "",
+            "Riyaziyyat və Mexanika İnstitutu, Bakı, Azərbaycan"
+          ],
+          [
+            "1984–1993",
+            "Direktor müavini",
+            "",
+            "Riyaziyyat və Mexanika İnstitutu, Bakı, Azərbaycan"
+          ],
+          [
+            "1977–1984",
+            "Böyük elmi işçi",
+            "",
+            "Riyaziyyat və Mexanika İnstitutu, Bakı, Azərbaycan"
+          ],
+          [
+            "1974–1977",
+            "Elmi işçi",
+            "",
+            "Riyaziyyat və Mexanika İnstitutu, Bakı, Azərbaycan"
+          ],
+          [
+            "Sentabr 1975–may 1980",
+            "Qonaq tədqiqatçı",
+            "",
+            "V. A. Steklov Riyaziyyat İnstitutu, Sankt-Peterburq"
+          ],
+          [
+            "Aprel 2017",
+            "Qonaq professor",
+            "",
+            "Silkroad Mathematics Center, Pekin, Çin"
+          ],
+          [
+            "Yanvar 2017",
+            "Qonaq professor",
+            "",
+            "Weizmann İnstitutu, Rehovot, İsrail"
+          ],
+          [
+            "İyul–avqust 2015",
+            "Qonaq professor",
+            "",
+            "Toronto Universiteti, Kanada"
+          ],
+          [
+            "Dekabr 2013–fevral 2014",
+            "Qonaq professor",
+            "",
+            "KAUST"
+          ],
+          [
+            "İyul–avqust 2008",
+            "Qonaq professor",
+            "",
+            "Tennessee Universiteti, Amerika Birləşmiş Ştatları"
+          ],
+          [
+            "Fevral–iyun 2001",
+            "Tədqiqat əməkdaşı",
+            "",
+            "Feza Gürsey Əsas Elmlər İnstitutu"
+          ],
+          [
+            "Noyabr 1997",
+            "Qonaq professor",
+            "",
+            "Weierstrass Tətbiqi Analiz və Stokastika İnstitutu, Berlin, Almaniya"
+          ],
+          [
+            "Sentabr 1994",
+            "Qonaq professor",
+            "",
+            "Barselona Muxtar Universiteti, İspaniya"
+          ],
+          [
+            "Sentabr–dekabr 1992",
+            "Qonaq professor",
+            "",
+            "Gazi Universiteti, Ankara, Türkiyə"
+          ],
+          [
+            "Sentabr 1991",
+            "Qonaq professor",
+            "",
+            "Kataloniya Politexnik Universiteti, Barselona, İspaniya"
+          ],
+          [
+            "Dekabr 1983",
+            "Qonaq professor",
+            "",
+            "Karl Weierstrass Riyaziyyat İnstitutu"
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ]
+        ]
+      },
+      {
+        "section": "Qrantlar və tədqiqat layihələri",
+        "rows": [
+          [
+            "İllər",
+            "Layihənin adı",
+            "Maliyyələşdirən qurum",
+            "Rolunuz"
+          ],
+          [
+            "2022–2025",
+            "Stabilization of infinite-dimensional dissipative systems by finite-dimensional boundary controllers. T. Özsarı ilə. Qrant 112F084",
+            "TÜBİTAK",
+            ""
+          ],
+          [
+            "2013–2014",
+            "Blow-up of solutions to damped nonlinear wave equations and nonlinear parabolic equations. Qrant 112T914",
+            "TÜBİTAK",
+            ""
+          ],
+          [
+            "2006–2009",
+            "Partial differential equations in phase transitions. H. M. Soner ilə. Qrant 106T337",
+            "TÜBİTAK",
+            ""
+          ],
+          [
+            "1996–1997",
+            "Initial-boundary-value problems for the nonlinear Schrödinger equation",
+            "TÜBİTAK",
+            ""
+          ]
+        ]
+      },
+      {
+        "section": "Elmi rəhbərlik",
+        "rows": [
+          [
+            "Səviyyə",
+            "Say",
+            "Qeydlər"
+          ],
+          [
+            "PhD",
+            "16",
+            "1985–2019-cu illərdə Koç Universiteti, Hacettepe Universiteti, Orta Şərq Texniki Universiteti, Sakarya Universiteti, Əl-Farabi Qazax Milli Universiteti və Bakıdakı Riyaziyyat və Mexanika İnstitutunda adlı dissertasiyalar"
+          ]
+        ]
+      },
+      {
+        "section": "Tədris fəaliyyəti",
+        "rows": [
+          [
+            "İllər",
+            "Kurs",
+            "Səviyyə",
+            "Təşkilat"
+          ],
+          [
+            "2001–hazırda",
+            "Kalkulus, diferensial tənliklər, çoxdəyişənli kalkulus, xətti cəbr, tətbiqi riyaziyyat, xüsusi törəməli diferensial tənliklər, kompleks analiz və tətbiqi funksional analiz. Kurs nömrələrinə Math 106, 204, 200, 203, 303, 309, 401, 503, 552, 505, 207 və 557 daxildir",
+            "",
+            "Koç Universiteti, İstanbul"
+          ],
+          [
+            "",
+            "Kalkulus, adi və xüsusi törəməli diferensial tənliklər, funksional analiz, Sobolev fəzaları, qeyri-xətti xüsusi törəməli diferensial tənliklər, blow-up teoremləri və dissipativ dinamik sistemlər",
+            "Magistratura və bakalavr",
+            "Bakı Dövlət Universiteti, Azərbaycan Memarlıq və İnşaat Universiteti, Sankt-Peterburq Dövlət Universiteti, Ankara Universiteti və Hacettepe Universiteti"
+          ]
+        ]
+      },
+      {
+        "section": "Dillər",
+        "rows": [
+          [
+            "Dil",
+            "Səviyyə"
+          ],
+          [
+            "Azərbaycan",
+            "Ana dili"
+          ],
+          [
+            "İngilis",
+            "Səlis"
+          ],
+          [
+            "Rus",
+            "Səlis"
+          ],
+          [
+            "Türk",
+            "Səlis"
+          ],
+          [
+            "Alman",
+            "İrəliləmiş"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Karimi_Saadat",
+    "az_file": "Karimi_Saadat_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Saadat Karimi, PhD",
+      "Baş müəllim və kurs rəhbəri",
+      "Borås Universiteti, Borås, İsveç"
+    ],
+    "profile": "Saadat Karimi Borås Universitetində baş müəllim və kurs rəhbəridir; daimi təyinatı 2021-ci ilin yanvarından qüvvədədir. 2016-cı ilin yanvarından isə Geteborq Universitetində universitet müəllimi kimi çalışır. PhD dərəcəsinə malikdir. 1993–1999-cu illərdə Azərbaycan Milli Elmlər Akademiyasının Riyaziyyat və Mexanika İnstitutunda doktorant, 1996–1999-cu illərdə isə böyük elmi işçi və müəllim olmuşdur. Stokholmdakı Kral Texnologiya İnstitutunda və Umeå Universitetində də dərs demiş, orada milli riyaziyyat imtahanlarına cavabdeh olmuşdur. Nəşrlərinə əsasən Azərbaycan tarixi, ədəbiyyatı və təhsili üzrə kitablar, fəsillər və simpozium məruzələri daxildir.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "1993–1999",
+            "PhD",
+            "Doktorantura təhsili",
+            "Riyaziyyat və Mexanika İnstitutu, Azərbaycan Milli Elmlər Akademiyası, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "Yanvar 2021–hazırda",
+            "Baş müəllim və kurs rəhbəri",
+            "SONOMA",
+            "Borås Universiteti, Borås, İsveç"
+          ],
+          [
+            "Yanvar 2016–hazırda",
+            "Universitet müəllimi",
+            "",
+            "Geteborq Universiteti, Geteborq, İsveç"
+          ],
+          [
+            "2020–2021",
+            "Baş müəllim",
+            "",
+            "KTH Kral Texnologiya İnstitutu, Stokholm, İsveç"
+          ],
+          [
+            "2002–2020",
+            "Müəllim",
+            "",
+            "Umeå Universiteti, Umeå, İsveç"
+          ],
+          [
+            "2010–2019",
+            "Nümunə hazırlayıcısı, riyaziyyat üzrə milli imtahanlar",
+            "",
+            "Umeå Universiteti, Umeå, İsveç"
+          ],
+          [
+            "1996–1999",
+            "Böyük elmi işçi və müəllim",
+            "",
+            "Riyaziyyat və Mexanika İnstitutu, Azərbaycan Milli Elmlər Akademiyası, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "2022",
+            "Azərbaycan dilinin və mədəniyyətinin xaricdə təbliğinə töhfəyə görə medal",
+            "Azərbaycan Respublikası"
+          ]
+        ]
+      },
+      {
+        "section": "Qrantlar və tədqiqat layihələri",
+        "rows": [
+          [
+            "İllər",
+            "Layihənin adı",
+            "Maliyyələşdirən qurum",
+            "Rolunuz"
+          ],
+          [
+            "2021–",
+            "EU-Belong: An Intercultural Approach to Migrant Integration in Europe’s Regions",
+            "EU",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Karimov_Toghrul",
+    "az_file": "Karimov_Toghrul_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Toghrul Karimov, PhD",
+      "Postdoktorant tədqiqatçı",
+      "Max Planck Proqram Sistemləri İnstitutu, Saarbrücken, Almaniya"
+    ],
+    "profile": "Toghrul Karimov Saarbrücken-dəki Max Planck Proqram Sistemləri İnstitutunda postdoktorant tədqiqatçıdır və 2024-cü ilin fevralından burada çalışır. 2019–2024-cü illərdə eyni institutda Joël Ouaknine-nin rəhbərliyi altında PhD tələbəsi olmuşdur. Algorithmic verification of linear dynamical systems adlı dissertasiya 2024-cü ildə Saarland Universitetinə təqdim edilmiş və summa cum laude qiyməti almışdır. Oksford Universitetindən kompüter elmləri üzrə MCompSci dərəcəsinə malikdir (2015–2019), birinci dərəcəli fərqlənmə ilə. Məqalələri xətti dinamik sistemlərin həllolunması və yoxlanmasına aiddir.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "2019–2024",
+            "PhD",
+            "Algorithmic verification of linear dynamical systems. Rəhbər: Joël Ouaknine. Qiymət: summa cum laude. Saarland Universiteti, 2024",
+            "Max Planck Proqram Sistemləri İnstitutu, Saarbrücken, Almaniya; dərəcə Saarland Universitetində"
+          ],
+          [
+            "2015–2019",
+            "MCompSci",
+            "Kompüter elmləri. Birinci dərəcəli fərqlənmə",
+            "Oksford Universiteti, Oksford, Birləşmiş Krallıq"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "Fevral 2024–hazırda",
+            "Postdoktorant tədqiqatçı",
+            "",
+            "Max Planck Proqram Sistemləri İnstitutu, Saarbrücken, Almaniya"
+          ]
+        ]
+      },
+      {
+        "section": "Qrantlar və tədqiqat layihələri",
+        "rows": [
+          [
+            "İllər",
+            "Layihənin adı",
+            "Maliyyələşdirən qurum",
+            "Rolunuz"
+          ],
+          [
+            "",
+            "CPEC mini-layihəsi, Amaury Pouly ilə xətti zamandan asılı olmayan sistemlərdə çatılma üzərində işləmək üçün Oksforda səfər",
+            "DFG qrantı 389792660, TRR 248",
+            ""
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "2024",
+            "Seçilmiş məqalə mükafatı, LICS",
+            "LICS"
+          ],
+          [
+            "2024",
+            "ACM SIGBED Ən yaxşı məqalə mükafatı, HSCC",
+            "HSCC"
+          ],
+          [
+            "2016–2019",
+            "Keble College təqaüdü",
+            "Keble College, Oksford Universiteti"
+          ],
+          [
+            "2015–2019",
+            "Oksford Universitetində təhsilin tam dəyərini əhatə edən təqaüd",
+            "Azərbaycan Təhsil Nazirliyi"
+          ]
+        ]
+      },
+      {
+        "section": "Tədris fəaliyyəti",
+        "rows": [
+          [
+            "İllər",
+            "Kurs",
+            "Səviyyə",
+            "Təşkilat"
+          ],
+          [
+            "Qış 2022",
+            "Topics in algorithmic dynamical systems theory",
+            "Tədris assistenti",
+            "Saarland Universiteti"
+          ],
+          [
+            "Yay 2020",
+            "Automata and sequences",
+            "Tədris assistenti",
+            "Saarland Universiteti"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Karimova_Sevda",
+    "az_file": "Karimova_Sevda_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Sevda Karimova",
+      "Tibbi hüquq məsləhətçisi",
+      "Vice Versa Consulting Ltd., Azərbaycan"
+    ],
+    "profile": "Sevda Karimova Vice Versa Consulting Ltd.-də tibbi hüquq məsləhətçisidir. Naxçıvan Dövlət Universitetindən hüquq üzrə bakalavr dərəcəsi (2009–2014, fərqlənmə diplomu) və Bakı Dövlət Universitetindən transmilli cinayət hüququ üzrə magistr dərəcəsi (2014–2016) almışdır. Dissertasiya mövzusu cinayət hüququnda yaşamaq və sağlamlıq hüququnun bioetik aspektləridir. Bioetika və tibbi hüquq tədris etmiş, TABİB-də və Hacettepe Universitetinin Bioetika Mərkəzində çalışmışdır.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "İyun–iyul 2020",
+            "Yay institutu",
+            "Bioetika. Sherwin B. Nuland Yay İnstitutu, virtual",
+            "Yale Fənlərarası Bioetika Mərkəzi, Amerika Birləşmiş Ştatları"
+          ],
+          [
+            "Aprel 2017–mart 2020",
+            "Doktorant",
+            "Bioetika və cinayət hüququ. Dissertasiya: Cinayət hüququnda yaşamaq və sağlamlıq hüququnun bioetik aspektləri. Dövlət təqaüdü. Müdafiə Bakı Dövlət Universitetinə keçirilmişdir",
+            "Hüquq və İnsan Haqları İnstitutu, Azərbaycan Milli Elmlər Akademiyası, Bakı, Azərbaycan"
+          ],
+          [
+            "Sentabr 2014–iyun 2016",
+            "Magistr dərəcəsi",
+            "Hüquq, transmilli cinayət hüququ, ingilis bölməsi. Dövlət təqaüdü",
+            "Bakı Dövlət Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "Sentabr 2009–iyun 2014",
+            "Bakalavr dərəcəsi",
+            "Hüquq, sosial idarəetmə və hüquq. Fərqlənmə diplomu",
+            "Naxçıvan Dövlət Universiteti, Naxçıvan, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "May 2023–hazırda",
+            "Tibbi hüquq məsləhətçisi",
+            "",
+            "Vice Versa Consulting Ltd., uzaqdan"
+          ],
+          [
+            "Aprel–may 2023",
+            "Beynəlxalq qonaq tədqiqatçı",
+            "",
+            "Tibbi Etika və Tibb Tarixi İnstitutu, Ruhr Universiteti Boxum, Almaniya"
+          ],
+          [
+            "Yanvar–iyul 2022",
+            "Baş mütəxəssis, hüquq şöbəsi",
+            "",
+            "Tibbi Ərazi Bölmələrini İdarəetmə Birliyi (TABİB), Azərbaycan"
+          ],
+          [
+            "Sentabr 2020–yanvar 2022",
+            "Etika məsləhətçisi",
+            "Etika komissiyaları ilə iş bölməsi, Elmi Tədqiqat və Təhsil Departamenti",
+            "TABİB, Azərbaycan"
+          ],
+          [
+            "Dekabr 2020–iyun 2021",
+            "Hüquq müəllimi",
+            "",
+            "Sabah Mərkəzi, Təhsil Nazirliyi, Hüquq fakültəsi, Bakı Dövlət Universiteti"
+          ],
+          [
+            "Sentabr 2020–yanvar 2021",
+            "Əvəzedici müəllim",
+            "UNESCO İnsan Haqları kafedrası, magistratura proqramı",
+            "Hüquq fakültəsi, Bakı Dövlət Universiteti"
+          ],
+          [
+            "Mart 2020–iyun 2021",
+            "Baş menecer",
+            "",
+            "Azərbaycan Elm Assosiasiyası, qeyri-hökumət təşkilatı"
+          ],
+          [
+            "Sentabr 2018–mart 2019",
+            "Beynəlxalq elmi tədqiqatçı",
+            "",
+            "Bioetika Mərkəzi, Hacettepe Universiteti, Ankara, Türkiyə"
+          ],
+          [
+            "Sentabr 2017–avqust 2019",
+            "Hüquq müəllimi",
+            "",
+            "Sosial Elmlər fakültəsi, Azərbaycan Dövlət Pedaqoji Universiteti"
+          ],
+          [
+            "İyul 2012–iyul 2017",
+            "Hüquq məsləhətçisi",
+            "",
+            "Folklor İnstitutu, Azərbaycan Milli Elmlər Akademiyası"
+          ],
+          [
+            "Yanvar 2010–iyul 2012",
+            "Hüquqşünas",
+            "",
+            "Müstəqil Elmi-Praktik Hüquq Mərkəzi"
+          ],
+          [
+            "Sentabr 2009–yanvar 2010",
+            "Ofis meneceri",
+            "",
+            "Müstəqil Elmi-Praktik Hüquq Mərkəzi"
+          ]
+        ]
+      },
+      {
+        "section": "Qrantlar və tədqiqat layihələri",
+        "rows": [
+          [
+            "İllər",
+            "Layihənin adı",
+            "Maliyyələşdirən qurum",
+            "Rolunuz"
+          ],
+          [
+            "",
+            "Hüquq, insan haqları və sosial məsələlər üzrə doqquz layihə",
+            "Azərbaycan Respublikası Prezidenti yanında Qeyri-Hökumət Təşkilatlarına Dövlət Dəstəyi Şurası",
+            "Layihə rəhbəri"
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "10 dekabr 2020",
+            "İkinci Qarabağ müharibəsi dövründə tibbi xidmətlərin təşkilinə töhfəyə görə fəxri fərman",
+            "Azərbaycan Respublikası Müdafiə Nazirliyi, Baş Tibb İdarəsi"
+          ]
+        ]
+      },
+      {
+        "section": "Tədris fəaliyyəti",
+        "rows": [
+          [
+            "İllər",
+            "Kurs",
+            "Səviyyə",
+            "Təşkilat"
+          ],
+          [
+            "2020–2022",
+            "Bioetika; tibbi hüquq",
+            "Magistratura, UNESCO kafedrası; Sabah Mərkəzi",
+            "Bakı Dövlət Universiteti"
+          ],
+          [
+            "2017–2019",
+            "Konstitusiya hüququ; insan alverinə qarşı mübarizə",
+            "",
+            "Azərbaycan Dövlət Pedaqoji Universiteti"
+          ]
+        ]
+      },
+      {
+        "section": "Dillər",
+        "rows": [
+          [
+            "Dil",
+            "Səviyyə"
+          ],
+          [
+            "Azərbaycan",
+            "Ana dili"
+          ],
+          [
+            "Türk",
+            "Ana dili"
+          ],
+          [
+            "İngilis",
+            "C1 (dinləmə, oxuma, yazma); B2 (danışıq)"
+          ],
+          [
+            "Rus",
+            "B2 (dinləmə, oxuma, yazma); B1 (şifahi ifadə)"
+          ],
+          [
+            "Alman",
+            "A2"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Khalilova_Saida",
+    "az_file": "Khalilova_Saida_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Saida Khalilova, PhD",
+      "Təsisçi və direktor; Dosent",
+      "Kral Musiqi və İncəsənət Konservatoriyası, Maskat, Oman"
+    ],
+    "profile": "Saida Khalilova Maskatdakı Kral Musiqi və İncəsənət Konservatoriyasının təsisçisi və direktorudur; bu vəzifəni 2023-cü ilin noyabrından tutur. 2011-ci ilin oktyabrından Bakı Musiqi Akademiyasında dosentdir. 2014-cü ildə Bakı Musiqi Akademiyasından musiqi pedaqogikası üzrə PhD, 1996-cı ildə isə musiqi üzrə MA dərəcəsi almışdır. 2011–2018-ci illərdə Sultan Qabus Universitetində, həmçinin Bakı və Şuşa musiqi kolleclərində piano tədris etmişdir. Nəşrlərinə 2016-cı il kitabı və Elmira Əliyeva ilə Azərbaycanda piano təhsili haqqında bir neçə məqalə daxildir. 20-dən çox proqram işləmiş, təxminən 20 layihə, müsabiqə və konsertin müəllifi və bədii rəhbəri olmuş, Yaponiya, Türkiyə, Fransa və Rusiya səfirliklərində çıxış etmişdir.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "2014",
+            "PhD",
+            "Musiqi pedaqogikası",
+            "Bakı Musiqi Akademiyası, Bakı, Azərbaycan"
+          ],
+          [
+            "1996",
+            "MA",
+            "Musiqi",
+            "Bakı Musiqi Akademiyası, Bakı, Azərbaycan"
+          ],
+          [
+            "1991",
+            "Diplom",
+            "",
+            "Bakı Musiqi Kolleci, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "Noyabr 2023–hazırda",
+            "Təsisçi və direktor",
+            "",
+            "Kral Musiqi və İncəsənət Konservatoriyası, Maskat, Oman"
+          ],
+          [
+            "Oktyabr 2011–hazırda",
+            "Dosent",
+            "Elmi laboratoriya",
+            "Bakı Musiqi Akademiyası, Bakı, Azərbaycan"
+          ],
+          [
+            "Noyabr 2019–oktyabr 2023",
+            "Direktor",
+            "",
+            "Maskat Musiqi və İncəsənət Akademiyası, Maskat, Oman"
+          ],
+          [
+            "Sentabr 2011–2018",
+            "Piano müəllimi",
+            "",
+            "Sultan Qabus Universiteti, Maskat, Oman"
+          ],
+          [
+            "Sentabr 2003–sentabr 2011",
+            "Piano müəllimi",
+            "",
+            "Şuşa Musiqi Kolleci, Bakı, Azərbaycan"
+          ],
+          [
+            "Sentabr 1997–sentabr 2011",
+            "Piano müəllimi",
+            "",
+            "Bakı Musiqi Kolleci, Bakı, Azərbaycan"
+          ],
+          [
+            "Sentabr 1997–sentabr 2007",
+            "Piano konsertmeysteri",
+            "",
+            "Bakı Musiqi Akademiyası, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi göstəricilər",
+        "rows": [
+          [
+            "Göstərici",
+            "Dəyər",
+            "Mənbə",
+            "Yoxlanma tarixi"
+          ],
+          [
+            "Jurnal məqalələri, Bakı Musiqi Akademiyasındakı vəzifə üzrə göstərildiyi kimi",
+            "5-dən çox",
+            "CV",
+            ""
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ]
+        ]
+      },
+      {
+        "section": "Tədris fəaliyyəti",
+        "rows": [
+          [
+            "İllər",
+            "Kurs",
+            "Səviyyə",
+            "Təşkilat"
+          ],
+          [
+            "",
+            "Piano, uşaqlar, yeniyetmələr və böyüklər üçün",
+            "",
+            "Kral Musiqi və İncəsənət Konservatoriyası; Sultan Qabus Universiteti; Bakı və Şuşa musiqi kollecləri"
+          ]
+        ]
+      },
+      {
+        "section": "DAAB-da iştirak",
+        "rows": [
+          [
+            "İl",
+            "Fəaliyyət",
+            "Rol"
+          ],
+          [
+            "",
+            "Diasporla İş üzrə Dövlət Komitəsinin təşkil etdiyi xaricdə yaşayan azərbaycanlı alimlərin forumu",
+            "İştirakçı"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Kurban_Vefa",
+    "az_file": "Kurban_Vefa_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Vefa Kurban, PhD",
+      "Professor",
+      "Türk Dünyası Araşdırmaları İnstitutu, Ege Universiteti, İzmir, Türkiyə"
+    ],
+    "profile": "Vefa Kurban Ege Universitetinin Türk Dünyası Araşdırmaları İnstitutunda professordur. 26 mart 2007-ci ildə Ege Universitetindən Türkiyə Respublikası tarixi üzrə doktorluq dərəcəsi almışdır. Dissertasiya 1900–1978-ci illərdə Azərbaycanda urbanizasiya və oturaq həyat haqqındadır; rəhbər Tuncer Baykara. XIX əsrin sonu və XX əsrin əvvəlində Azərbaycanda torpaq mülkiyyəti mövzusunda magistr dissertasiyasını 23 iyun 2000-ci ildə tamamlamışdır. Tarix üzrə bakalavr dərəcəsi Ege Universitetindəndir, 3 sentyabr 1997. 2007–2019-cu illərdə İzmir İqtisadiyyat Universitetində, 2015–2019-cu illərdə isə Ege Universitetində dosent olmuşdur.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "26 mart 2007",
+            "PhD",
+            "Türkiyə Respublikası tarixi. Dissertasiya: 1900–1978-ci illərdə Azərbaycanda urbanizasiya və oturaq həyat. Rəhbər: Tuncer Baykara",
+            "Ege Universiteti"
+          ],
+          [
+            "23 iyun 2000",
+            "Magistr dərəcəsi",
+            "XIX əsrin sonu və XX əsrin əvvəlində Azərbaycanda torpaq mülkiyyəti. Rəhbər: Tuncer Baykara",
+            "Ege Universiteti"
+          ],
+          [
+            "3 sentyabr 1997",
+            "Bakalavr dərəcəsi",
+            "Tarix",
+            "Ədəbiyyat fakültəsi, Ege Universiteti"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "2021",
+            "Professor",
+            "",
+            "Ege Universiteti, İzmir, Türkiyə"
+          ],
+          [
+            "2015–2019",
+            "Dosent",
+            "",
+            "Ege Universiteti"
+          ],
+          [
+            "2007–2019",
+            "Dosent",
+            "",
+            "İncəsənət və Elmlər fakültəsi, İzmir İqtisadiyyat Universiteti"
+          ],
+          [
+            "2012–2014",
+            "Baş müəllim",
+            "",
+            "Ədəbiyyat fakültəsi, Dokuz Eylül Universiteti"
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi rəhbərlik",
+        "rows": [
+          [
+            "Səviyyə",
+            "Say",
+            "Qeydlər"
+          ],
+          [
+            "Magistratura",
+            "",
+            "Ege Universitetində tamamlanmış dissertasiyalar, o cümlədən Türk Dövlətləri Təşkilatı üzrə işlər"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Mammadli_Barmanbay_Afina",
+    "az_file": "Mammadli_Barmanbay_Afina_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Afina Barmanbay, PhD",
+      "Dosent",
+      "Müasir Türk Lehçələri və Ədəbiyyatları kafedrası, Kafkas Universiteti, Qars, Türkiyə"
+    ],
+    "profile": "Afina Barmanbay Qarsdakı Kafkas Universitetində Azərbaycan türkcəsi və ədəbiyyatı üzrə dosentdir. Dosent elmi adına 20 yanvar 2021-ci ildə layiq görülmüşdür. Azərbaycan Milli Elmlər Akademiyasında ədəbiyyat üzrə inteqrasiya olunmuş doktoranturanı tamamlamışdır; Ehmed Cavad ve Türkiye adlı dissertasiya 2010-cu ildə Bəkir Nəbiyevin rəhbərliyi ilə müdafiə edilmiş, dərəcə 12 yanvar 2011-ci ildə verilmişdir. Azərbaycan dili və ədəbiyyatı üzrə bakalavr dərəcəsini Azərbaycan Dövlət Pedaqoji Universitetindən almışdır (1989–1994). 2017–2018-ci illərdə kafedra müdiri olmuşdur.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "12 yanvar 2011",
+            "PhD",
+            "Ədəbiyyat üzrə inteqrasiya olunmuş doktorantura. Dissertasiya: Ehmed Cavad ve Türkiye (2010). Rəhbər: Bəkir Nəbiyev",
+            "Azərbaycan Milli Elmlər Akademiyası"
+          ],
+          [
+            "7 iyul 1994",
+            "Bakalavr dərəcəsi",
+            "Azərbaycan dili və ədəbiyyatı. Təhsil 1989-cu ildən",
+            "Azərbaycan Dövlət Pedaqoji Universiteti"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "20 yanvar 2021",
+            "Dosent",
+            "Azərbaycan türkcəsi və ədəbiyyatı",
+            "Kafkas Universiteti, Qars, Türkiyə"
+          ],
+          [
+            "1 iyul 2016",
+            "Fakültə üzvü",
+            "",
+            "Kafkas Universiteti, Qars, Türkiyə"
+          ],
+          [
+            "2017–2018",
+            "Kafedra müdiri",
+            "",
+            "Kafkas Universiteti"
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "2016",
+            "Hoca Ahmet Yesevi təşviq mükafatı",
+            "Beynəlxalq Avrasiya Təhsil Həmkarlar İttifaqları Assosiasiyası"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi rəhbərlik",
+        "rows": [
+          [
+            "Səviyyə",
+            "Say",
+            "Qeydlər"
+          ],
+          [
+            "Magistratura",
+            "",
+            "Tamamlanmış dissertasiyalara Əli və Nino, İlyas Əfəndiyev və Azərbaycan atalar sözləri üzrə işlər daxildir"
+          ]
+        ]
+      },
+      {
+        "section": "Tədris fəaliyyəti",
+        "rows": [
+          [
+            "İllər",
+            "Kurs",
+            "Səviyyə",
+            "Təşkilat"
+          ],
+          [
+            "2024–2025",
+            "Azərbaycan ədəbi dilinin tarixi; Azərbaycan ədəbiyyatı; müasir ədəbi proses",
+            "",
+            "Kafkas Universiteti"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Mammadov_Agamali",
+    "az_file": "Mammadov_Agamali_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Agamali Mammadov, DSc",
+      "Professor və Kommunikasiya Sistemlərinin Sosiologiyası kafedrasının müdiri",
+      "Sosiologiya fakültəsi, Lomonosov Moskva Dövlət Universiteti, Moskva, Rusiya Federasiyası"
+    ],
+    "profile": "Agamali Mammadov Lomonosov Moskva Dövlət Universitetinin Sosiologiya fakültəsində Kommunikasiya Sistemlərinin Sosiologiyası kafedrasının professoru və müdiridir; 2009-cu ilin sentyabrından burada çalışır. 1980-ci ildə eyni universitetin Fəlsəfə fakültəsini sosiologiya ixtisası üzrə fərqlənmə ilə bitirmiş, həmçinin hüquq ixtisasına malikdir. 1998-ci ildə sosiologiya elmləri doktoru dərəcəsini, 2000-ci ildə professor elmi adını almışdır. Göstəricilərinə h-indeks 44, 52-dən çox monoqrafiya və dərslik, 25 elmlər namizədi və 3 elmlər doktorunun rəhbərliyi daxildir.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "1998",
+            "DSc",
+            "Sosiologiya elmləri",
+            ""
+          ],
+          [
+            "1980",
+            "Fərqlənmə ilə universitet diplomu",
+            "Sosiologiya; Fəlsəfə fakültəsi. Hüquq ixtisası və aspirantura da qeyd olunur",
+            "Lomonosov Moskva Dövlət Universiteti, Moskva, Rusiya Federasiyası"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "Sentabr 2009–hazırda",
+            "Professor və kafedra müdiri",
+            "Kommunikasiya Sistemlərinin Sosiologiyası kafedrası, Sosiologiya fakültəsi",
+            "Lomonosov Moskva Dövlət Universiteti, Moskva, Rusiya Federasiyası"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi göstəricilər",
+        "rows": [
+          [
+            "Göstərici",
+            "Dəyər",
+            "Mənbə",
+            "Yoxlanma tarixi"
+          ],
+          [
+            "h-indeks",
+            "44",
+            "CV",
+            ""
+          ],
+          [
+            "Monoqrafiyalar və dərsliklər",
+            "52-dən çox",
+            "CV",
+            ""
+          ]
+        ]
+      },
+      {
+        "section": "Qrantlar və tədqiqat layihələri",
+        "rows": [
+          [
+            "İllər",
+            "Layihənin adı",
+            "Maliyyələşdirən qurum",
+            "Rolunuz"
+          ],
+          [
+            "",
+            "Professor Online",
+            "V. Potanin Xeyriyyə Fondu",
+            "Qrant sahibi"
+          ],
+          [
+            "2013",
+            "Mədəniyyət və incəsənət üzrə Rusiya Federasiyası Prezidentinin qrantı",
+            "Rusiya Federasiyasının Prezidenti",
+            "Alan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi rəhbərlik",
+        "rows": [
+          [
+            "Səviyyə",
+            "Say",
+            "Qeydlər"
+          ],
+          [
+            "Elmlər namizədləri",
+            "25",
+            ""
+          ],
+          [
+            "Elmlər doktorları",
+            "3",
+            ""
+          ]
+        ]
+      },
+      {
+        "section": "Tədris fəaliyyəti",
+        "rows": [
+          [
+            "İllər",
+            "Kurs",
+            "Səviyyə",
+            "Təşkilat"
+          ],
+          [
+            "",
+            "Mühazirə kursu",
+            "",
+            "Lomonosov Moskva Dövlət Universitetinin Bakı filialı, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "",
+            "Rusiya Prezidentinin mədəniyyət mükafatı",
+            "Rusiya Federasiyası"
+          ],
+          [
+            "",
+            "Education-Online qrant mükafatı",
+            "V. Potanin Fondu"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Mammadov_Nizami",
+    "az_file": "Mammadov_Nizami_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Nizami Mammadov, DSc",
+      "Professor",
+      "Rusiya Federasiyası Prezidenti yanında Xalq Təsərrüfatı və Dövlət İdarəçiliyi Akademiyası, Moskva, Rusiya Federasiyası"
+    ],
+    "profile": "Nizami Mammadov Moskvadakı Rusiya Federasiyası Prezidenti yanında Xalq Təsərrüfatı və Dövlət İdarəçiliyi Akademiyasında professordur və 1995-ci ildən burada çalışır. 1962–1967-ci illərdə Azərbaycan Politexnik İnstitutunda avtomatika və hesablama texnikası üzrə təhsil almış, 1975-ci ildə fəlsəfə elmləri namizədi dərəcəsini almış, 1984-cü ildə isə SSRİ Elmlər Akademiyasının Fəlsəfə İnstitutunda doktorluq dissertasiyasını müdafiə etmişdir. SSRİ Ali Attestasiya Komissiyası ona 1988-ci ildə professor elmi adını vermişdir. Göstəricilərinə 400 nəşr, h-indeks 33 və 41 elmlər namizədi və doktorunun hazırlanması daxildir.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "1988",
+            "Professor",
+            "Təbiətşünaslığın fəlsəfi məsələləri",
+            "SSRİ Ali Attestasiya Komissiyası"
+          ],
+          [
+            "1984",
+            "DSc",
+            "Fəlsəfə (doktorluq dissertasiyası)",
+            "SSRİ Elmlər Akademiyasının Fəlsəfə İnstitutu, Moskva"
+          ],
+          [
+            "1972–1975",
+            "Fəlsəfə elmləri namizədi",
+            "",
+            "SSRİ Elmlər Akademiyasının Fəlsəfə İnstitutu, Moskva. Həmçinin 1973–1975-ci illərdə Lomonosov Moskva Dövlət Universitetinin Fəlsəfə fakültəsinin aspirantı"
+          ],
+          [
+            "1962–1967",
+            "Diplom",
+            "Avtomatika və hesablama texnikası",
+            "Azərbaycan Politexnik İnstitutu, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "1995–hazırda",
+            "Professor",
+            "",
+            "Rusiya Federasiyası Prezidenti yanında Xalq Təsərrüfatı və Dövlət İdarəçiliyi Akademiyası, Moskva, Rusiya Federasiyası"
+          ],
+          [
+            "1987–1995",
+            "Professor",
+            "",
+            "Moskva Dövlət Pedaqoji Universiteti, Moskva, Rusiya Federasiyası"
+          ],
+          [
+            "1975–1987",
+            "Kiçik elmi işçi, böyük elmi işçi və 1981-ci ildən şöbə müdiri",
+            "Təbiət Elmlərinin Fəlsəfi Məsələləri şöbəsi",
+            "Fəlsəfə və Hüquq İnstitutu, Azərbaycan SSR Elmlər Akademiyası, Bakı"
+          ],
+          [
+            "1967–1972",
+            "Tədqiqatçı",
+            "Optimal İdarəetmə Laboratoriyası",
+            "Azərbaycan Politexnik İnstitutu, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi göstəricilər",
+        "rows": [
+          [
+            "Göstərici",
+            "Dəyər",
+            "Mənbə",
+            "Yoxlanma tarixi"
+          ],
+          [
+            "Nəşrlər",
+            "400",
+            "CV",
+            "Yanvar 2025"
+          ],
+          [
+            "h-indeks",
+            "33",
+            "CV",
+            "Yanvar 2025"
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "2018",
+            "Lomonosov medalı",
+            "Rusiya Ekologiya Akademiyası"
+          ],
+          [
+            "2017",
+            "Vernadski Milli Ekoloji Mükafatı",
+            ""
+          ],
+          [
+            "2016",
+            "V. İ. Vernadski ordeni",
+            "V. İ. Vernadski Qeyri-Hökumət Ekoloji Fondu"
+          ],
+          [
+            "2007",
+            "Rusiya Federasiyasının ali peşə təhsilinin fəxri işçisi",
+            "Rusiya Federasiyası"
+          ],
+          [
+            "2006",
+            "Fəxri fərman",
+            "Rusiya Federasiyası Təhsil və Elm Nazirliyi"
+          ],
+          [
+            "1997",
+            "Moskvanın 850 illiyi xatirə medalı",
+            ""
+          ],
+          [
+            "1986",
+            "Əmək igidliyinə görə medal",
+            ""
+          ]
+        ]
+      },
+      {
+        "section": "Elmi rəhbərlik",
+        "rows": [
+          [
+            "Səviyyə",
+            "Say",
+            "Qeydlər"
+          ],
+          [
+            "Elmlər namizədləri və doktorları",
+            "41",
+            ""
+          ]
+        ]
+      },
+      {
+        "section": "Tədris fəaliyyəti",
+        "rows": [
+          [
+            "İllər",
+            "Kurs",
+            "Səviyyə",
+            "Təşkilat"
+          ],
+          [
+            "",
+            "Fəlsəfə; elmin tarixi və fəlsəfəsi; məntiq; müasir təbiətşünaslığın konsepsiyaları; sosial ekologiya. Xüsusi kurslar: mədəniyyət və ekologiya; dayanıqlı inkişaf mədəniyyəti",
+            "",
+            "Rusiya Federasiyası Prezidenti yanında Xalq Təsərrüfatı və Dövlət İdarəçiliyi Akademiyası"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Mammadova_Sevinj",
+    "az_file": "Mammadova_Sevinj_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Sevinj Mammadova, EdD",
+      "Proqram direktoru",
+      "George Washington Universiteti, Vaşinqton, D.C., Amerika Birləşmiş Ştatları"
+    ],
+    "profile": "Sevinj Mammadova Vaşinqtondakı George Washington Universitetində proqram direktorudur və 2019-cu ilin sentyabrından burada çalışır; 2022-ci ilin avqustundan isə eyni universitetdə əvəzedici professordur. 2024-cü ilin mayında George Washington Universitetindən təhsil idarəetməsi və siyasət tədqiqatları üzrə EdD, 2017-ci ilin mayında oradan təhsil siyasəti tədqiqatları üzrə MA, 2010-cu ilin mayında isə Texas Universiteti Arlington-dan təhsil rəhbərliyi və siyasət tədqiqatları üzrə MA almışdır. İngilis dili və tərcümə üzrə bakalavr dərəcəsi Gəncə Dövlət Universitetindəndir (may 2007). Əvvəlki vəzifələrinə Dünya Bankı, Azərbaycan Mərkəzi Bankı və SOCAR-ın ABŞ-dakı nümayəndəliyi daxildir.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "May 2024",
+            "EdD",
+            "Təhsil idarəetməsi və siyasət tədqiqatları",
+            "George Washington Universiteti, Vaşinqton, D.C., Amerika Birləşmiş Ştatları"
+          ],
+          [
+            "May 2017",
+            "MA",
+            "Təhsil siyasəti tədqiqatları",
+            "George Washington Universiteti, Vaşinqton, D.C., Amerika Birləşmiş Ştatları"
+          ],
+          [
+            "May 2010",
+            "MA",
+            "Təhsil rəhbərliyi və siyasət tədqiqatları",
+            "Texas Universiteti Arlington, Arlington, Texas, Amerika Birləşmiş Ştatları"
+          ],
+          [
+            "May 2007",
+            "Bakalavr dərəcəsi",
+            "İngilis dili və tərcümə",
+            "Gəncə Dövlət Universiteti, Gəncə, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "Sentabr 2019–hazırda",
+            "Proqram direktoru",
+            "",
+            "George Washington Universiteti, Vaşinqton, D.C., Amerika Birləşmiş Ştatları"
+          ],
+          [
+            "Avqust 2022–hazırda",
+            "Əvəzedici professor",
+            "",
+            "George Washington Universiteti, Vaşinqton, D.C., Amerika Birləşmiş Ştatları"
+          ],
+          [
+            "İyun 2022–iyun 2024",
+            "Məsləhətçi",
+            "",
+            "Dünya Bankı, Vaşinqton, D.C., Amerika Birləşmiş Ştatları"
+          ],
+          [
+            "Sentabr 2018–sentabr 2019",
+            "Proqram meneceri",
+            "",
+            "Partnership for Finance and Development, Vaşinqton, D.C., Amerika Birləşmiş Ştatları"
+          ],
+          [
+            "Fevral 2016–iyul 2018",
+            "Dil və mədəniyyət fasilitatoru",
+            "",
+            "Diplomatic Language Services, Arlington, Virginia, Amerika Birləşmiş Ştatları"
+          ],
+          [
+            "İyul 2016–noyabr 2017",
+            "Layihə meneceri",
+            "",
+            "Azərbaycan Təhsil Nazirliyi və ABŞ-ın Bakı səfirliyi, Vaşinqton, D.C. bazasında"
+          ],
+          [
+            "Oktyabr 2013–iyul 2015",
+            "Təhsil proqramlarının rəhbəri",
+            "",
+            "SOCAR-ın ABŞ-dakı nümayəndəliyi, Vaşinqton, D.C."
+          ],
+          [
+            "İyun 2012–sentabr 2013",
+            "Təhsil şöbəsinin müdiri",
+            "",
+            "Azərbaycan Mərkəzi Bankı, Bakı, Azərbaycan"
+          ],
+          [
+            "Avqust 2011–iyun 2012",
+            "İcraçı direktor",
+            "",
+            "ABŞ-da təhsil almış azərbaycanlı məzunlar assosiasiyası, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "Fevral 2013",
+            "Ayın məzunu beynəlxalq mükafatı",
+            "ABŞ Dövlət Departamenti"
+          ],
+          [
+            "Noyabr 2009",
+            "University Scholar",
+            "Texas Universiteti Arlington"
+          ],
+          [
+            "Aprel 2008",
+            "Edmund S. Muskie Magistratura Təqaüdü",
+            "ABŞ Dövlət Departamenti"
+          ],
+          [
+            "İyul 2005",
+            "Undergraduate UGRAD Təqaüdü",
+            "ABŞ Dövlət Departamenti"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Masumova_Nigar",
+    "az_file": "Masumova_Nigar_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Nigar Masumova, PhD",
+      "Dosent; Reklam və İctimaiyyətlə Əlaqələr kafedrasının müdiri; Dekan müavini",
+      "MGIMO Universiteti, Moskva, Rusiya Federasiyası"
+    ],
+    "profile": "Nigar Masumova Moskvadakı MGIMO Universitetinin Dünya İqtisadiyyatı kafedrasında dosent, Reklam və İctimaiyyətlə Əlaqələr kafedrasının müdiri və Beynəlxalq Jurnalistika məktəbinin dekan müavinidir. 2012-ci ilin mayında MGIMO-da iqtisadiyyat üzrə PhD, 2007-ci ilin iyununda isə xarici iqtisadi əlaqələr üzrə mütəxəssis diplomu almışdır. Tədqiqat maraqlarına Türkiyə və İranın sosial-iqtisadi inkişafı və brendləşmə daxildir. Əsas işlərinə 2015-ci ildə Türkiyə haqqında kitab və A. Bulatovun redaktəsi ilə nəşrlərə bağlı töhfələr aiddir.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "May 2012",
+            "PhD",
+            "İqtisadiyyat",
+            "MGIMO, Moskva, Rusiya Federasiyası"
+          ],
+          [
+            "İyun 2007",
+            "Mütəxəssis diplomu",
+            "Xarici iqtisadi əlaqələr",
+            "MGIMO, Moskva, Rusiya Federasiyası"
+          ],
+          [
+            "İyun 2002",
+            "İxtisaslaşdırılmış orta təhsil diplomu",
+            "",
+            "Rusiya Federasiyası Xarici İşlər Nazirliyinin kolleci"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "2023–hazırda",
+            "Kafedra müdiri",
+            "Reklam və İctimaiyyətlə Əlaqələr kafedrası",
+            "MGIMO, Moskva, Rusiya Federasiyası"
+          ],
+          [
+            "2015–hazırda",
+            "Dosent",
+            "Dünya İqtisadiyyatı kafedrası",
+            "MGIMO, Moskva, Rusiya Federasiyası"
+          ],
+          [
+            "2015–hazırda",
+            "Dekan müavini",
+            "Beynəlxalq Jurnalistika məktəbi",
+            "MGIMO, Moskva, Rusiya Federasiyası"
+          ],
+          [
+            "2012–2015",
+            "Böyük elmi işçi, müəllim və dosent",
+            "Dünya İqtisadiyyatı kafedrası",
+            "MGIMO, Moskva, Rusiya Federasiyası"
+          ],
+          [
+            "2002–2012",
+            "Mütəxəssis",
+            "Multimedia Mərkəzi",
+            "Beynəlxalq Jurnalistika məktəbi, MGIMO, Moskva, Rusiya Federasiyası"
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ]
+        ]
+      },
+      {
+        "section": "Tədris fəaliyyəti",
+        "rows": [
+          [
+            "İllər",
+            "Kurs",
+            "Səviyyə",
+            "Təşkilat"
+          ],
+          [
+            "",
+            "Rusiya iqtisadiyyatı",
+            "",
+            "MGIMO"
+          ],
+          [
+            "",
+            "Türkiyə iqtisadiyyatı",
+            "",
+            "MGIMO"
+          ],
+          [
+            "",
+            "İran iqtisadiyyatı",
+            "",
+            "MGIMO"
+          ],
+          [
+            "",
+            "MDB iqtisadiyyatı",
+            "",
+            "MGIMO"
+          ],
+          [
+            "",
+            "Sosial-iqtisadi coğrafiya",
+            "",
+            "MGIMO"
+          ],
+          [
+            "",
+            "Brendləşmə",
+            "",
+            "MGIMO"
+          ]
+        ]
+      },
+      {
+        "section": "Dillər",
+        "rows": [
+          [
+            "Dil",
+            "Səviyyə"
+          ],
+          [
+            "İngilis",
+            ""
+          ],
+          [
+            "İspan",
+            ""
+          ],
+          [
+            "Azərbaycan",
+            ""
+          ],
+          [
+            "Türk",
+            ""
+          ],
+          [
+            "Fars",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Mehdiyev_Gafar",
+    "az_file": "Mehdiyev_Gafar_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Gafar Mehdiyev, PhD",
+      "Professor",
+      "Erməni Dili və Mədəniyyəti kafedrası, Ədəbiyyat fakültəsi, Erciyes Universiteti, Kayseri, Türkiyə"
+    ],
+    "profile": "Gafar Mehdiyev Kayseri şəhərindəki Erciyes Universitetinin Erməni Dili və Mədəniyyəti kafedrasında professordur; bu elmi adı 2016-cı ildən daşıyır. 2010-cu ildən həmin universitetdə fakültə üzvüdür. 1980-ci ildə Bakı Dövlət Universitetinin Jurnalistika fakültəsini bitirmiş, 2007-ci ildə erməni və türk mətbuat materialları əsasında erməni məsələsi ilə bağlı faktların üzə çıxarılmasında mətbuatın rolu mövzusunda siyasi elmlər üzrə PhD almışdır. 1980–2017-ci illərdə Bakıda jurnalist və redaktor işləmiş, 2004–2012-ci illərdə Bakı Dövlət Universitetində dərs demişdir. Göstəricilərinə 100-dən çox məqalə və təxminən 20 kitab daxildir.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "2007",
+            "PhD",
+            "Siyasi elmlər. Dissertasiya: erməni və türk mətbuatı materialları əsasında erməni məsələsi faktlarının üzə çıxarılmasında mətbuatın rolu",
+            ""
+          ],
+          [
+            "1980",
+            "Universitet diplomu",
+            "Jurnalistika",
+            "Bakı Dövlət Universiteti, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "2016–hazırda",
+            "Professor",
+            "Erməni Dili və Mədəniyyəti kafedrası",
+            "Erciyes Universiteti, Kayseri, Türkiyə"
+          ],
+          [
+            "2010–hazırda",
+            "Fakültə üzvü",
+            "Erməni Dili və Mədəniyyəti kafedrası",
+            "Erciyes Universiteti, Kayseri, Türkiyə"
+          ],
+          [
+            "2008–2017",
+            "Baş redaktor müavini",
+            "",
+            "Azərbaycan Ordusu qəzeti"
+          ],
+          [
+            "2004–2015",
+            "Təsisçi və baş redaktor",
+            "",
+            "Yeni Avrasiya"
+          ],
+          [
+            "2004–2012",
+            "Müəllim",
+            "Jurnalistika fakültəsi",
+            "Bakı Dövlət Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "2002–2008",
+            "İdarə heyətinin üzvü",
+            "",
+            "Mətbuat Şurası"
+          ],
+          [
+            "2000–2006",
+            "Mətbuat xidmətinin rəhbəri",
+            "",
+            "Bakı Dövlət Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "1996–1999",
+            "Baş redaktor müavini",
+            "",
+            "Respublika"
+          ],
+          [
+            "1995–1996",
+            "Baş redaktor",
+            "",
+            "Avrasiya"
+          ],
+          [
+            "1993–1994",
+            "Baş redaktor",
+            "",
+            "Vətəndaş"
+          ],
+          [
+            "1993",
+            "Redaktor",
+            "",
+            "Yeni Azərbaycan"
+          ],
+          [
+            "1992–1993",
+            "Redaktor və baş redaktor",
+            "",
+            "Millət"
+          ],
+          [
+            "1991–1992",
+            "Məsul katib",
+            "",
+            "Xalq qəzeti"
+          ],
+          [
+            "1990–1991",
+            "Məsul katib",
+            "",
+            "Vətən səsi"
+          ],
+          [
+            "1980–1989",
+            "Ədəbi işçi, müxbir və regional nümayəndə",
+            "",
+            "Kommunist (erməni dilində)"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi göstəricilər",
+        "rows": [
+          [
+            "Göstərici",
+            "Dəyər",
+            "Mənbə",
+            "Yoxlanma tarixi"
+          ],
+          [
+            "Elmi məqalələr",
+            "100-dən çox",
+            "CV",
+            ""
+          ],
+          [
+            "Kitablar",
+            "20",
+            "CV",
+            ""
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "2005",
+            "Tərəqqi medalı",
+            "Azərbaycan Respublikasının Prezidenti"
+          ]
+        ]
+      },
+      {
+        "section": "Tədris fəaliyyəti",
+        "rows": [
+          [
+            "İllər",
+            "Kurs",
+            "Səviyyə",
+            "Təşkilat"
+          ],
+          [
+            "2013",
+            "Ermenice Dersler, Türkiyə universitetlərində tədris olunub",
+            "",
+            "Erciyes Universiteti nəşrləri"
+          ]
+        ]
+      },
+      {
+        "section": "Dillər",
+        "rows": [
+          [
+            "Dil",
+            "Səviyyə"
+          ],
+          [
+            "Erməni",
+            "Səlis"
+          ],
+          [
+            "Rus",
+            "Səlis"
+          ],
+          [
+            "Türk",
+            "Səlis"
+          ],
+          [
+            "Alman",
+            "Kafi"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Mehmedov_Emirullah",
+    "az_file": "Mehmedov_Emirullah_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Emirullah Mehmedov, DSc, PhD",
+      "Emeritus professor və aparıcı tədqiqatçı",
+      "Nanotexnologiya Tədqiqat Mərkəzi (NANOTAM), Bilkent Universiteti, Ankara, Türkiyə"
+    ],
+    "profile": "Emirullah Mehmedov Bilkent Universitetinin Nanotexnologiya Tədqiqat Mərkəzində emeritus professor və aparıcı tədqiqatçıdır; 2011-ci ildən burada çalışır. Nəşrlərdə Amirullah M. Mamedov adı istifadə olunur. 1973-cü ildə İoffe İnstitutundan fizika-riyaziyyat üzrə PhD almışdır; dissertasiya fotoferroelektrik materialların optik və elektro-optik xassələrinə aiddir və Vavilov Dövlət Optika İnstitutunda yerinə yetirilmişdir. 1982-ci ildə Riqadakı regional şuradan fizika-riyaziyyat üzrə elmlər doktoru, 1988-ci ildə isə optika üzrə professor elmi adı almışdır. Göstəricilərinə 350-dən çox nəşr daxildir. 1992–2006-cı illərdə ASELSAN-ın elmi məsləhətçisi olmuşdur.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "1988",
+            "Optika üzrə professor",
+            "",
+            "SSRİ Ali Attestasiya Komissiyası, Moskva"
+          ],
+          [
+            "1982",
+            "DSc",
+            "Fizika-riyaziyyat. Habilitasiya. Riqada verilmişdir",
+            "SSRİ Ali Attestasiya Komissiyasının regional şurası, Riqa, Latviya"
+          ],
+          [
+            "1977",
+            "Fizika üzrə dosent",
+            "Bərk cisimlər fizikası",
+            "SSRİ"
+          ],
+          [
+            "1973",
+            "PhD",
+            "Fizika-riyaziyyat. Fotoferroelektrik materialların optik və elektro-optik xassələri üzrə dissertasiya. İş Vavilov Dövlət Optika İnstitutunda yerinə yetirilmişdir",
+            "İoffe Fizika-Texnika İnstitutu, Sankt-Peterburq, Rusiya"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "2011–hazırda",
+            "Emeritus professor və aparıcı tədqiqatçı",
+            "",
+            "NANOTAM, Bilkent Universiteti, Ankara, Türkiyə"
+          ],
+          [
+            "1992–2006",
+            "Elmi məsləhətçi",
+            "Mikroelektronika, yönləndirmə və elektro-optika bölməsi",
+            "ASELSAN, Türkiyə"
+          ],
+          [
+            "2004–2010",
+            "Məsləhətçi",
+            "",
+            "SAVTAG, TÜBİTAK və SATEM, Türkiyə Milli Müdafiə Nazirliyi"
+          ],
+          [
+            "",
+            "Fizika və elektrik-elektronika mühəndisliyi professoru",
+            "",
+            "Çukurova Universiteti, Adana, Türkiyə"
+          ],
+          [
+            "",
+            "Professor və Qeyri-xətti Optika şöbəsinin müdiri",
+            "",
+            "Bakı Dövlət Universiteti, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi göstəricilər",
+        "rows": [
+          [
+            "Göstərici",
+            "Dəyər",
+            "Mənbə",
+            "Yoxlanma tarixi"
+          ],
+          [
+            "Beynəlxalq jurnallarda nəşrlər",
+            "350-dən çox",
+            "CV",
+            ""
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "",
+            "SSRİ və Azərbaycanın dövlət mükafatları",
+            ""
+          ],
+          [
+            "",
+            "Azərbaycanın əməkdar elm xadimi",
+            ""
+          ],
+          [
+            "",
+            "Dostluq ordeni",
+            "Azərbaycan Respublikası"
+          ],
+          [
+            "",
+            "Diaspor fəaliyyətində xidmətə görə medal",
+            "Azərbaycan Respublikası"
+          ],
+          [
+            "2019",
+            "Yubiley medalı, Bakı Dövlət Universitetinin 100 illiyi",
+            "Bakı Dövlət Universiteti"
+          ]
+        ]
+      },
+      {
+        "section": "Dillər",
+        "rows": [
+          [
+            "Dil",
+            "Səviyyə"
+          ],
+          [
+            "İngilis",
+            "Səlis"
+          ],
+          [
+            "Türk",
+            "Səlis"
+          ],
+          [
+            "Rus",
+            "Səlis"
+          ],
+          [
+            "Azərbaycan",
+            "Səlis"
+          ],
+          [
+            "İvrit",
+            "Yaxşı"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Moridi_Reza",
+    "az_file": "Moridi_Reza_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Reza Moridi, PhD",
+      "Baş elmi üzv (Senior Fellow)",
+      "Massey College, Toronto Universiteti, Toronto, Kanada"
+    ],
+    "profile": "Reza Moridi Toronto Universitetinin Massey College-ində baş elmi üzvdür (Senior Fellow); bu vəzifəni 2020-ci ildən tutur. 2014–2016-cı illərdə Ontario-nun Tədqiqat, İnnovasiya və Elm naziri, həmçinin Təlim, Kolleclər və Universitetlər naziri olmuş, 2007–2018-ci illərdə Richmond Hill dairəsindən Ontario parlamentinin üzvü olmuşdur. 1975-ci ildə Brunel Universitetindən fizika üzrə PhD, 1972-ci ildə oradan yarımkeçiricilər fizikası və texnologiyası üzrə MTech, 1968-ci ildə Tehran Universitetindən nüvə fizikası üzrə MSc, 1966-cı ildə isə fizika üzrə BSc almışdır. Odlar Yurdu Universiteti ona 2017-ci ildə fəxri doktorluq vermişdir. 2019-cu ildən Kanada Radiasiya Təhlükəsizliyi İnstitutunun idarə heyətinin sədridir.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "2017",
+            "Fəxri doktorluq",
+            "",
+            "Odlar Yurdu Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "1975",
+            "PhD",
+            "Fizika",
+            "Brunel Universiteti, London, Birləşmiş Krallıq"
+          ],
+          [
+            "1972",
+            "MTech",
+            "Yarımkeçiricilər fizikası və texnologiyası. Yekun imtahanlarda ən yüksək qiymət",
+            "Brunel Universiteti, London, Birləşmiş Krallıq"
+          ],
+          [
+            "1968",
+            "MSc",
+            "Nüvə fizikası",
+            "Tehran Universiteti, İran"
+          ],
+          [
+            "1966",
+            "BSc",
+            "Fizika",
+            "Tehran Universiteti, İran"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "2020–hazırda",
+            "Baş elmi üzv (Senior Fellow)",
+            "",
+            "Massey College, Toronto Universiteti, Kanada"
+          ],
+          [
+            "2019–hazırda",
+            "Fəxri əvəzedici professor",
+            "",
+            "Şandun Normal Universiteti, Çin"
+          ],
+          [
+            "2019–hazırda",
+            "İdarə heyətinin sədri",
+            "",
+            "Kanada Radiasiya Təhlükəsizliyi İnstitutu, Toronto"
+          ],
+          [
+            "2014–2016",
+            "Tədqiqat, İnnovasiya və Elm naziri",
+            "",
+            "Ontario Kabineti, Kanada"
+          ],
+          [
+            "2013–2018",
+            "Təlim, Kolleclər və Universitetlər naziri",
+            "",
+            "Ontario Kabineti, Kanada"
+          ],
+          [
+            "2007–2018",
+            "Əyalət parlamentinin üzvü, Richmond Hill",
+            "",
+            "Ontario Parlamenti, Kanada"
+          ],
+          [
+            "2003–2007",
+            "Vitse-prezident və baş alim",
+            "",
+            "Kanada Radiasiya Təhlükəsizliyi İnstitutu"
+          ],
+          [
+            "1991–2003",
+            "Baş alim, direktor və vitse-prezident",
+            "",
+            "Kanada Radiasiya Təhlükəsizliyi İnstitutu"
+          ],
+          [
+            "1987–1990",
+            "Fizika üzrə baş müəllim",
+            "",
+            "Cənubi Sakit Okean Universiteti, Suva, Fici"
+          ],
+          [
+            "1976–1981",
+            "Baş müəllim, fizika kafedrasının təsisçi müdiri və Elmlər məktəbinin təsisçi dekanı",
+            "",
+            "Farah Pahlavi Universiteti, Tehran, İran"
+          ],
+          [
+            "1972–1975",
+            "Assistent müəllim",
+            "",
+            "Acton Texniki Kolleci, London, Birləşmiş Krallıq"
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "2022",
+            "Kraliça II Yelizavetanın Platin Yubiley medalı",
+            ""
+          ],
+          [
+            "2019",
+            "Çin–Kanada innovasiya əməkdaşlığına xüsusi töhfə mükafatı",
+            "Canada Confederation of Shenzhen Association"
+          ],
+          [
+            "2018",
+            "Qlobal innovasiya ekosistemi təsir mükafatı",
+            "UBI Global, Stokholm"
+          ],
+          [
+            "2017",
+            "Fəxri doktorluq",
+            "Odlar Yurdu Universiteti"
+          ],
+          [
+            "2016",
+            "50 ən uğurlu məzun",
+            "Brunel Universiteti London"
+          ],
+          [
+            "2016",
+            "Paul Harris Fellow",
+            "Rotary Foundation"
+          ],
+          [
+            "2015",
+            "Delmar McCormack Smyth mükafatı",
+            "Kanada Radiasiya Təhlükəsizliyi İnstitutu"
+          ],
+          [
+            "2012",
+            "Kraliça II Yelizavetanın Almaz Yubiley medalı",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Mukhtarov_Shehriyar",
+    "az_file": "Mukhtarov_Shehriyar_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Shahriyar Mukhtarov, PhD",
+      "Professor",
+      "İqtisadiyyat kafedrası, Koreya Universiteti, Seul, Cənubi Koreya"
+    ],
+    "profile": "Shahriyar Mukhtarov Seuldakı Koreya Universitetinin İqtisadiyyat kafedrasında professordur və 2024-cü ilin mayından burada çalışır. Həmçinin 2023-cü ilin avqustundan Varşavadakı Vistula Universitetində professor və PhD proqramının rəhbəri, 2023-cü ilin noyabrından isə Bakıdakı Xəzər Universitetində professordur. 2012–2016-cı illərdə Marmara Universitetinin Bankçılıq və Sığorta İnstitutundan PhD almışdır. Azərbaycan Respublikası Prezidenti yanında Ali Attestasiya Komissiyası diplomu 27 aprel 2018-ci ildə təsdiq etmiş, 12 oktyabr 2021-ci ildə isə dosent elmi adını vermişdir. Magistr dərəcəsi Marmara Universitetindəndir (2010–2012), beynəlxalq iqtisadiyyat üzrə bakalavr dərəcəsi isə Azərbaycan Dövlət İqtisad Universitetindəndir (2006–2010).",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "12 oktyabr 2021",
+            "Dosent",
+            "Azərbaycan Respublikası Prezidenti yanında Ali Attestasiya Komissiyası tərəfindən verilmiş elmi ad",
+            "Bakı, Azərbaycan"
+          ],
+          [
+            "2012–2016",
+            "PhD",
+            "Diplom 27 aprel 2018-ci ildə Ali Attestasiya Komissiyası tərəfindən təsdiq edilmişdir",
+            "Bankçılıq və Sığorta İnstitutu, Marmara Universiteti, İstanbul, Türkiyə"
+          ],
+          [
+            "2010–2012",
+            "Magistr dərəcəsi",
+            "",
+            "Bankçılıq və Sığorta İnstitutu, Marmara Universiteti, İstanbul, Türkiyə"
+          ],
+          [
+            "2006–2010",
+            "Bakalavr dərəcəsi",
+            "Beynəlxalq iqtisadiyyat",
+            "Azərbaycan Dövlət İqtisad Universiteti, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "May 2024–hazırda",
+            "Professor",
+            "",
+            "İqtisadiyyat kafedrası, Koreya Universiteti, Seul, Cənubi Koreya"
+          ],
+          [
+            "Avqust 2023–hazırda",
+            "Professor və PhD proqramının rəhbəri",
+            "",
+            "Biznes və Beynəlxalq Münasibətlər fakültəsi, Vistula Universiteti, Varşava, Polşa"
+          ],
+          [
+            "İyul 2024–hazırda",
+            "Direktor",
+            "",
+            "Dayanıqlı İqtisadi İnkişaf Tədqiqat Mərkəzi, Xəzər Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "Noyabr 2023–hazırda",
+            "Professor",
+            "",
+            "İqtisadiyyat və İdarəetmə kafedrası, Xəzər Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "Sentabr 2018–hazırda",
+            "Tədqiqat əməkdaşı",
+            "",
+            "UNEC Empirik Tədqiqatlar Mərkəzi, Azərbaycan Dövlət İqtisad Universiteti, Bakı"
+          ],
+          [
+            "Mart 2021–avqust 2023",
+            "Tədqiqat əməkdaşı və dosent",
+            "",
+            "İqtisadiyyat və Beynəlxalq Münasibətlər fakültəsi, Vistula Universiteti, Varşava, Polşa"
+          ],
+          [
+            "Fevral 2019–sentabr 2022",
+            "İqtisadiyyat kafedrasının müdiri",
+            "",
+            "Bakı Mühəndislik Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "May 2019–sentabr 2022",
+            "Dosent",
+            "",
+            "İqtisadiyyat kafedrası, Bakı Mühəndislik Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "Fevral 2017–may 2019",
+            "Baş müəllim",
+            "",
+            "İqtisadiyyat kafedrası, Bakı Mühəndislik Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "Mart 2017–iyun 2020",
+            "Baş müəllim",
+            "",
+            "İqtisadiyyat və İdarəetmə kafedrası, Azərbaycan Dövlət İqtisad Universiteti, Bakı"
+          ],
+          [
+            "Sentabr 2017–fevral 2019",
+            "Dekan müavini",
+            "",
+            "İqtisadiyyat və İdarəetmə fakültəsi, Xəzər Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "Dekabr 2014–fevral 2017",
+            "İqtisadiyyat kafedrasının müdir müavini",
+            "",
+            "Qafqaz Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "Sentabr 2011–mart 2014",
+            "Tədqiqat assistenti",
+            "",
+            "İqtisadiyyat kafedrası, Qafqaz Universiteti, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Qrantlar və tədqiqat layihələri",
+        "rows": [
+          [
+            "İllər",
+            "Layihənin adı",
+            "Maliyyələşdirən qurum",
+            "Rolunuz"
+          ],
+          [
+            "2020",
+            "Exploring exports-driven growth through free trade agreements among CAREC members: learning from the Pakistan–China free trade agreement",
+            "CTTN Research Grants Program, CAREC Institute",
+            ""
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "2023 və 2024",
+            "Stanford Universitetinin ən nüfuzlu alimlərin top 2 faiz siyahısına daxil edilib",
+            "Stanford Universiteti"
+          ],
+          [
+            "2021",
+            "İkinci yer, Elmdə Qələbə mükafatı",
+            "Azərbaycan Respublikası Prezidenti yanında Elm İnkişafı Fondu, AMEA, ICESCO və IETI"
+          ],
+          [
+            "18 oktyabr 2018",
+            "İkinci yer, gənc iqtisadçı tədqiqatçılar arasında elmi məqalə",
+            "İqtisadiyyat İnstitutu, Azərbaycan Milli Elmlər Akademiyası"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi rəhbərlik",
+        "rows": [
+          [
+            "Səviyyə",
+            "Say",
+            "Qeydlər"
+          ],
+          [
+            "Magistratura",
+            "14",
+            "2016–2020-ci illərdə Azərbaycan Dövlət İqtisad Universiteti, Bakı Mühəndislik Universiteti və Qafqaz Universitetində dissertasiyalar. Adlar və başlıqlar mənbədədir"
+          ]
+        ]
+      },
+      {
+        "section": "Tədris fəaliyyəti",
+        "rows": [
+          [
+            "İllər",
+            "Kurs",
+            "Səviyyə",
+            "Təşkilat"
+          ],
+          [
+            "",
+            "İqtisadiyyata giriş; mikroiqtisadiyyat; makroiqtisadiyyat; monetar siyasət; ekoloji iqtisadiyyat; iqtisadi inkişaf; tədqiqat metodları",
+            "",
+            "Qafqaz Universiteti və sonrakı təyinatlar"
+          ]
+        ]
+      },
+      {
+        "section": "Dillər",
+        "rows": [
+          [
+            "Dil",
+            "Səviyyə"
+          ],
+          [
+            "Azərbaycan",
+            "Danışıq, oxuma və yazmada ana dili"
+          ],
+          [
+            "İngilis",
+            "Danışıq, oxuma və yazmada əla"
+          ],
+          [
+            "Türk",
+            "Danışıq, oxuma və yazmada əla"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Murshudov_Garib",
+    "az_file": "Murshudov_Garib_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Garib Murshudov, PhD",
+      "Qrup rəhbəri",
+      "MRC Molekulyar Biologiya Laboratoriyası, Kembric, Birləşmiş Krallıq"
+    ],
+    "profile": "Garib Murshudov Kembricdəki MRC Molekulyar Biologiya Laboratoriyasında qrup rəhbəridir; bu vəzifəni 2011-ci ildən tutur. Həmçinin Bakıdakı Molekulyar Biologiya və Biotexnologiyalar İnstitutunda laboratoriyanın müdiridir. 1989–1992-ci illərdə Moskva Kristalloqrafiya İnstitutundan PhD almışdır. Dissertasiya mövzusu Micrococcus lysodeikticus-dan katalazanın 1,5 Å ayırdetmə ilə üçölçülü quruluşudur. Tətbiqi riyaziyyat üzrə ilk dərəcəsi Bakı Dövlət Universitetindəndir (1980–1985). Əvvəllər Wellcome Trust baş tədqiqat təqaüdçüsü və York Universitetində universitet tədqiqat təqaüdçüsü olmuşdur.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "1989–1992",
+            "PhD",
+            "Kristalloqrafiya və kristalloifizika nəzəriyyəsi. Dissertasiya: Three-dimensional structure of catalase from Micrococcus lysodeikticus at 1.5 Å resolution",
+            "Kristalloqrafiya İnstitutu, Moskva, Rusiya"
+          ],
+          [
+            "1980–1985",
+            "İlk dərəcə",
+            "Tətbiqi riyaziyyat. Layihə: Spectral analysis of Stekloff type equations",
+            "Bakı Dövlət Universiteti, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "2011–hazırda",
+            "Qrup rəhbəri",
+            "",
+            "MRC Molekulyar Biologiya Laboratoriyası, Kembric, Birləşmiş Krallıq"
+          ],
+          [
+            "2011–hazırda",
+            "Laboratoriya müdiri",
+            "",
+            "Molekulyar Biologiya və Biotexnologiyalar İnstitutu, Elm və Təhsil Nazirliyi, Bakı, Azərbaycan"
+          ],
+          [
+            "2008–2011",
+            "Wellcome Trust universitet tədqiqat təqaüdçüsü",
+            "",
+            "York Struktur Biologiya Laboratoriyası, York Universiteti, Birləşmiş Krallıq"
+          ],
+          [
+            "2001–2008",
+            "Wellcome Trust baş tədqiqat təqaüdçüsü",
+            "",
+            "Kimya kafedrası, York Universiteti"
+          ],
+          [
+            "1996–2001",
+            "BBSRC postdoktorant",
+            "",
+            "Kimya kafedrası, York Universiteti"
+          ],
+          [
+            "1993–1996",
+            "Avropa Komissiyası postdoktorantı",
+            "",
+            "Kimya kafedrası, York Universiteti"
+          ],
+          [
+            "1987–1993",
+            "Tədqiqatçı, o cümlədən PhD təhsili",
+            "",
+            "Kristalloqrafiya İnstitutu, Moskva, Rusiya"
+          ],
+          [
+            "1985–1987",
+            "Tədqiqatçı",
+            "",
+            "Fizika İnstitutu, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "",
+            "Azərbaycanın əməkdar elm xadimi",
+            ""
+          ],
+          [
+            "",
+            "Wellcome Trust Senior Fellowship",
+            "Wellcome Trust"
+          ]
+        ]
+      },
+      {
+        "section": "Tədris fəaliyyəti",
+        "rows": [
+          [
+            "İllər",
+            "Kurs",
+            "Səviyyə",
+            "Təşkilat"
+          ],
+          [
+            "2001–2011",
+            "Qabaqcıl statistika",
+            "",
+            "Riyaziyyat kafedrası, York Universiteti"
+          ],
+          [
+            "2011",
+            "Hesablama kimyası",
+            "",
+            "Kimya kafedrası, York Universiteti"
+          ],
+          [
+            "2013–2023",
+            "Hesablama struktur biologiyası",
+            "",
+            "Molekulyar Biologiya və Biotexnologiyalar İnstitutu, AMEA, Azərbaycan"
+          ],
+          [
+            "2019–2023",
+            "Biologiyanın müasir problemləri, ildə üç-dörd mühazirə",
+            "",
+            "Molekulyar Biologiya və Biotexnologiyalar İnstitutu, AMEA"
+          ],
+          [
+            "2022–2023",
+            "Bioloqlar üçün statistika",
+            "",
+            "Molekulyar Biologiya və Biotexnologiyalar İnstitutu, AMEA"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Musayev_Yashar",
+    "az_file": "Musayev_Yashar_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Yashar Musayev, Dr.-Ing.",
+      "İnkişaf rəhbəri, Yeni Enerji Biznesi",
+      "Siemens Energy AG, Erlangen və Münxen, Almaniya"
+    ],
+    "profile": "Yashar Musayev Erlangen və Münxendəki Siemens Energy AG-də yeni enerji biznesi üzrə inkişaf rəhbəridir; bu icraçı vəzifəni 2020-ci ilin mayından tutur. İşinə yaşıl hidrogen, elektroliz, yanacaq texnologiyası və bərpa olunan enerji daxildir; təxminən 32 birbaşa tabeliyində olan əməkdaşı vardır. Friedrich-Alexander Erlangen-Nürnberq Universitetindən Dr.-Ing. (doktorantura tədqiqatı, 1998–2001) və Azərbaycan Texniki Universitetindən mexanika mühəndisliyi texnologiyası üzrə Dipl.-Ing. (1984–1991, fərqlənmə ilə) almışdır. 2005–2020-ci illərdə Schaeffler AG-də çalışmış, o cümlədən 2015–2020-ci illərdə səth texnologiyası üzrə Kompetensiya Mərkəzinin baş vitse-prezidenti və rəhbəri olmuşdur. Alman Mühəndislər Assosiasiyasının (VDI) üzvüdür və BalticNet-Plasmatech e.V.-nin idarə heyətinin sədri olmuşdur.",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "Sentabr 1998–aprel 2001",
+            "Dr.-Ing.",
+            "Mühəndislik texnologiyası",
+            "Friedrich-Alexander Erlangen-Nürnberq Universiteti, Almaniya"
+          ],
+          [
+            "Oktyabr 1997–oktyabr 1998",
+            "DAAD təqaüdü",
+            "",
+            "Friedrich-Alexander Erlangen-Nürnberq Universiteti, Almaniya"
+          ],
+          [
+            "Sentabr 1984–iyun 1991",
+            "Dipl.-Ing.",
+            "Mexanika mühəndisliyi texnologiyası, fərqlənmə ilə. Dövrə tank diviziyasında məcburi hərbi xidmət daxildir, iyun 1985–iyun 1988",
+            "Azərbaycan Texniki Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "2016–2020",
+            "Ən yüksək səviyyəli menecerlər üçün beynəlxalq inkişaf proqramı",
+            "",
+            "Schaeffler. Cənubi Koreya, Amerika Birləşmiş Ştatları və Almaniya"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "May 2020–hazırda",
+            "İnkişaf rəhbəri, Yeni Enerji Biznesi, icraçı (OFK)",
+            "",
+            "Siemens Energy AG, Erlangen və Münxen, Almaniya. Təxminən 32 birbaşa tabeli. Hesabat xətti: baş vitse-prezident"
+          ],
+          [
+            "Sentabr 2015–yanvar 2020",
+            "Baş vitse-prezident və Səth Texnologiyası Kompetensiya Mərkəzinin rəhbəri",
+            "Səth Texnologiyası Kompetensiya Mərkəzi",
+            "Schaeffler AG, Herzogenaurach, Almaniya. Hesabat xətti: icraçı şura, baş texnologiya direktoru. 12 birbaşa və 100 dolayı tabeli"
+          ],
+          [
+            "Fevral 2016–dekabr 2018",
+            "Baş icraçı direktor",
+            "",
+            "SIA Schaeffler Baltic, Riqa, Latviya. Paralel vəzifə. 2015-ci ilin dekabrında Riqada Naco Technologies-in alınması"
+          ],
+          [
+            "Sentabr 2012–avqust 2015",
+            "Örtük Mərkəzinin direktoru",
+            "Səth Texnologiyası Kompetensiya Mərkəzi",
+            "Schaeffler AG, Herzogenaurach, Almaniya"
+          ],
+          [
+            "Oktyabr 2009–avqust 2012",
+            "Komanda rəhbəri və ekspert",
+            "Səth Texnologiyası şöbəsi",
+            "Schaeffler AG"
+          ],
+          [
+            "Dekabr 2005–sentabr 2009",
+            "Layihə rəhbəri, Örtük Mərkəzinin qurulması",
+            "",
+            "Schaeffler AG"
+          ],
+          [
+            "Dekabr 2001–noyabr 2005",
+            "Tədqiqat və inkişaf rəhbəri",
+            "",
+            "H-O-T Härte- und Oberflächentechnik GmbH & Co. KG, Nürnberq, Almaniya"
+          ],
+          [
+            "Aprel 2000–iyun 2001",
+            "Tədqiqat əməkdaşı",
+            "Dizayn Texnologiyası kafedrası",
+            "Friedrich-Alexander Erlangen-Nürnberq Universiteti, Almaniya"
+          ],
+          [
+            "Sentabr 1998–mart 2000",
+            "Zavod meneceri",
+            "",
+            "Autostern, Bakı, Azərbaycan. Daimler AG-nin birgə müəssisə tərəfdaşı"
+          ],
+          [
+            "Aprel 1995–iyun 1997",
+            "Tədqiqat mühəndisi və assistent",
+            "Mexanika mühəndisliyi kafedrası",
+            "Azərbaycan Texniki Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "Sentabr 1991–mart 1995",
+            "Baş müəllim və təlimatçı",
+            "Mexanika mühəndisliyi kafedrası",
+            "Azərbaycan Texniki Universiteti, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi göstəricilər",
+        "rows": [
+          [
+            "Göstərici",
+            "Dəyər",
+            "Mənbə",
+            "Yoxlanma tarixi"
+          ],
+          [
+            "2005-ci ildən ixtiralar və patentlər",
+            "40-dan çox",
+            "CV",
+            ""
+          ],
+          [
+            "2005-ci ildən milli və beynəlxalq nəşrlər və mühazirələr",
+            "150",
+            "CV",
+            ""
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ],
+          [
+            "Noyabr 2017",
+            "Ən yaxşı innovasiya və ixrac mükafatı",
+            "Latviya dövləti"
+          ],
+          [
+            "2017",
+            "Customer Supplier Award",
+            "Qlobal yapon OEM"
+          ],
+          [
+            "2016 və 2014",
+            "Materialica Design + Technology Best Award, nazik təbəqə sensorları Sensotect",
+            "Münxen"
+          ],
+          [
+            "2006",
+            "Mühərrik komponentləri üçün Customer Innovation Award",
+            "Qlobal yapon OEM"
+          ]
+        ]
+      },
+      {
+        "section": "Dillər",
+        "rows": [
+          [
+            "Dil",
+            "Səviyyə"
+          ],
+          [
+            "Azərbaycan",
+            "Ana dili"
+          ],
+          [
+            "Alman",
+            "Səlis"
+          ],
+          [
+            "İngilis",
+            "Səlis"
+          ],
+          [
+            "Rus",
+            "Səlis"
+          ],
+          [
+            "Türk",
+            "Danışıq səviyyəsində"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "base": "Mutallimov_Mirza",
+    "az_file": "Mutallimov_Mirza_CV_AZ.docx",
+    "header": [
+      "ELMİ CV",
+      "Mirza Mutallimov, Dr. med.",
+      "Həkim-mütəxəssis və dosent",
+      "Daxili xəstəliklər və kardiologiya kafedrası, Saarland Universitet Klinikası, Almaniya"
+    ],
+    "profile": "Mirza Mutallimov Saarland Universitet Klinikasında daxili xəstəliklər və kardiologiya üzrə həkim-mütəxəssis və dosentdir; 2019-cu ilin iyunundan isə Mainz Universitetinin tədris xəstəxanası olan Klinikum Idar-Oberstein-də daxili xəstəliklər, kardiologiya və ritmologiya şöbəsinin müdiridir. 2004–2011-ci illərdə Bakıda tibb təhsili almış, 2013-cü ildə Almaniyada həkimlik hüququ (Approbation) əldə etmişdir. 2019-cu ilin dekabrından 2024-cü ilin martına qədər Köln Universitetində doktorant olmuşdur; diastolik ürək çatışmazlığının diaqnostikasında EKQ-yə dair dissertasiya 2024-cü ilə aiddir. Daxili xəstəliklər və kardiologiya, invaziv elektrofiziologiya, ürək çatışmazlığı və intervension kardiologiya üzrə mütəxəssis tanınmasına malikdir. Avropa Kardiologiya Cəmiyyətinin üzvüdür (FESC).",
+    "tables": [
+      {
+        "section": "Təhsil",
+        "rows": [
+          [
+            "İllər",
+            "Dərəcə",
+            "Sahə / dissertasiya mövzusu",
+            "Təhsil müəssisəsi, şəhər, ölkə"
+          ],
+          [
+            "Dekabr 2019–mart 2024",
+            "Dr. med.",
+            "Stellenwert des EKGs in der Diagnostik der diastolischen Herzinsuffizienz. Universität zu Köln, 2024. https://kups.ub.uni-koeln.de/72620/",
+            "Köln Universiteti, Köln, Almaniya"
+          ],
+          [
+            "2022–hazırda",
+            "Magistr dərəcəsi",
+            "Səhiyyə menecmenti",
+            "Erlangen-Nürnberq Universiteti, Almaniya"
+          ],
+          [
+            "2024",
+            "Mütəxəssis",
+            "İntervension kardiologiya",
+            ""
+          ],
+          [
+            "2024",
+            "Mütəxəssis",
+            "Ürək çatışmazlığı",
+            ""
+          ],
+          [
+            "2020",
+            "Mütəxəssis",
+            "İnvaziv elektrofiziologiya və aktiv ürək ritm cihazı implantları",
+            ""
+          ],
+          [
+            "2019",
+            "Mütəxəssis",
+            "Daxili xəstəliklər və kardiologiya",
+            ""
+          ],
+          [
+            "2013",
+            "Approbation",
+            "Almaniyada həkimlik hüququ",
+            ""
+          ],
+          [
+            "2004–2011",
+            "Tibb dərəcəsi və internatura",
+            "",
+            "Azərbaycan Beynəlxalq Universiteti və Azərbaycan Tibb Universiteti, Bakı, Azərbaycan"
+          ],
+          [
+            "Sentabr 1993–iyul 2004",
+            "Orta məktəb attestatı",
+            "Fizika, riyaziyyat və informatika",
+            "Respublika liseyi, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Elmi və peşəkar vəzifələr",
+        "rows": [
+          [
+            "İllər",
+            "Vəzifə",
+            "Kafedra / bölmə",
+            "Təşkilat, şəhər, ölkə"
+          ],
+          [
+            "1 sentyabr 2022–hazırda",
+            "Həkim-mütəxəssis və dosent",
+            "Daxili xəstəliklər və kardiologiya",
+            "Saarland Universitet Klinikası, Almaniya"
+          ],
+          [
+            "1 iyun 2019–hazırda",
+            "Şöbə müdiri; daxili xəstəliklər, kardiologiya və ritmologiya üzrə mütəxəssis",
+            "Kardiologiya və pulmonologiya",
+            "Klinikum Idar-Oberstein, Mainz Universitetinin tədris xəstəxanası, Almaniya"
+          ],
+          [
+            "Sentabr 2016–iyun 2019",
+            "Ordinator həkim",
+            "İnvaziv kardiologiya, elektrofiziologiya və ritmologiya",
+            "Klinikum Gütersloh, Münster Universitetinin tədris xəstəxanası, Almaniya"
+          ],
+          [
+            "İyun 2012–iyul 2016",
+            "Ordinator həkim",
+            "Kardiologiya, nefrologiya və diabetologiya",
+            "Bielefeld Bethel Xəstəxanası, Bielefeld Universitet Klinikası, Almaniya"
+          ],
+          [
+            "Avqust 2011–may 2012",
+            "Kardioloq",
+            "Kardiologiya və elektrofiziologiya",
+            "Mərkəzi Klinik Xəstəxana, Bakı, Azərbaycan"
+          ],
+          [
+            "Avqust 2007–may 2010",
+            "Orta səviyyəli tibb işçisi",
+            "İntensiv kardiologiya",
+            "Kardiologiya Elmi-Tədqiqat İnstitutu, Bakı, Azərbaycan"
+          ]
+        ]
+      },
+      {
+        "section": "Mükafatlar, fəxri adlar və təqaüdlər",
+        "rows": [
+          [
+            "İl",
+            "Mükafat / fəxri ad",
+            "Təltif edən qurum"
+          ]
+        ]
+      },
+      {
+        "section": "Dillər",
+        "rows": [
+          [
+            "Dil",
+            "Səviyyə"
+          ],
+          [
+            "Azərbaycan",
+            "Ana dili"
+          ],
+          [
+            "Alman",
+            ""
+          ],
+          [
+            "Türk",
+            ""
+          ],
+          [
+            "Rus",
+            ""
+          ],
+          [
+            "İngilis",
+            ""
+          ]
+        ]
+      }
+    ]
+  }
+]
