@@ -159,7 +159,13 @@
   /*
    * Breakpoints (reference for authors; @media cannot use these variables in all browsers).
    * JS: i18n/design-system.json → DAAB_DESIGN.breakpoints
-   * --bp-nav-compact: 1180px
-   * --bp-sidebar-stack: 1060px
+   * Primary:
+   *   --bp-nav-compact: 1180px   (hamburger / compact chrome)
+   *   --bp-sidebar-stack: 1060px (sidebar under main column)
+   * Secondary (prefer these over inventing new values):
+   *   --bp-content-stack: 900px  (two-column content → one)
+   *   --bp-phone: 760px          (phone layout / denser chrome)
+   *   --bp-phone-narrow: 640px   (narrow phone grids)
+   *   --bp-compact: 480px        (smallest type / spacing)
    */
 }

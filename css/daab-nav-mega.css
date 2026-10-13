@@ -339,7 +339,7 @@ div.breadcrumbs.forum-breadcrumbs{
     margin: 0 0 0 -2px;
     width: max-content;
     min-width: 0;
-    max-width: min(520px, calc(100vw - 32px));
+    max-width: min(520px, calc(100dvw - 32px));
     padding: 8px 8px;
     overflow: visible;
     transform: none;
@@ -394,7 +394,7 @@ div.breadcrumbs.forum-breadcrumbs{
     align-items: start;
     gap: 6px 10px;
     width: max-content;
-    max-width: min(504px, calc(100vw - 48px));
+    max-width: min(504px, calc(100dvw - 48px));
   }
 
   .nav-dropdown--forums .nav-dropdown--nested .nav-mega-col{
@@ -496,8 +496,8 @@ div.breadcrumbs.forum-breadcrumbs{
 /* Legacy / standalone Forum 2024 mega (if ever rendered top-level) */
 .nav-dropdown--forum:not(.nav-dropdown--nested) .nav-dropdown-panel--mega{
   left: 50%;
-  min-width: min(940px, calc(100vw - 24px));
-  max-width: calc(100vw - 24px);
+  min-width: min(940px, calc(100dvw - 24px));
+  max-width: calc(100dvw - 24px);
   padding: 14px;
   transform: translateX(-50%);
   animation: navForumMegaIn .18s ease-out;
@@ -573,18 +573,18 @@ div.breadcrumbs.forum-breadcrumbs{
 
 @media (max-width: 1320px) and (min-width: 1181px) {
   .nav-dropdown--forum:not(.nav-dropdown--nested) .nav-dropdown-panel--mega{
-    min-width: min(860px, calc(100vw - 24px));
+    min-width: min(860px, calc(100dvw - 24px));
   }
 
   .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel--mega{
     width: max-content;
     min-width: 0;
-    max-width: min(480px, calc(100vw - 32px));
+    max-width: min(480px, calc(100dvw - 32px));
   }
 
   .nav-dropdown--forums .nav-dropdown--nested .nav-mega-grid{
     grid-template-columns: repeat(3, auto);
-    max-width: min(464px, calc(100vw - 48px));
+    max-width: min(464px, calc(100dvw - 48px));
   }
 
   .nav-dropdown--forums .nav-dropdown--nested .nav-mega-col{
@@ -785,7 +785,7 @@ div.breadcrumbs.forum-breadcrumbs{
   text-indent: 0 !important;
 }
 .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel:not(.nav-dropdown-panel--mega){
-  min-width: min(320px, calc(100vw - 32px));
+  min-width: min(320px, calc(100dvw - 32px));
 }
 .nav-dropdown--forums .nav-dropdown--nested > .nav-dropdown-panel:not(.nav-dropdown-panel--mega) .nav-dropdown-link-desc{
   display: block !important;
