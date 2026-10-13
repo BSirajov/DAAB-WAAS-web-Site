@@ -81,6 +81,7 @@
       a.classList.toggle("tl-active", match);
       a.setAttribute("aria-selected", match ? "true" : "false");
       a.setAttribute("aria-current", match ? "true" : "false");
+      a.setAttribute("tabindex", match ? "0" : "-1");
     });
 
     if (opts.updateHash !== false) setHash(id);
@@ -108,13 +109,34 @@
     return first || "";
   }
 
-  links.forEach(function (link) {
+  panels.forEach(function (panel) {
+    panel.setAttribute("role", "tabpanel");
+    panel.setAttribute("tabindex", "0");
+  });
+
+  links.forEach(function (link, index) {
+    link.setAttribute("tabindex", link.classList.contains("tl-active") ? "0" : "-1");
     link.addEventListener("click", function (event) {
       var href = link.getAttribute("href") || "";
       var id = href.slice(1);
       if (!panelById(id)) return;
       event.preventDefault();
       showPanel(id, { scrollIntoView: true, smooth: false });
+      link.focus();
+    });
+    link.addEventListener("keydown", function (event) {
+      var key = event.key;
+      var next = -1;
+      if (key === "ArrowDown" || key === "ArrowRight") next = (index + 1) % links.length;
+      else if (key === "ArrowUp" || key === "ArrowLeft") next = (index - 1 + links.length) % links.length;
+      else if (key === "Home") next = 0;
+      else if (key === "End") next = links.length - 1;
+      if (next < 0) return;
+      event.preventDefault();
+      var target = links[next];
+      var href = target.getAttribute("href") || "";
+      showPanel(href.slice(1), { scrollIntoView: false });
+      target.focus();
     });
   });
 
@@ -130,5 +152,14 @@
     if (id) showPanel(id, { updateHash: false, scrollIntoView: false });
   });
 
-  showPanel(idFromHash(), { updateHash: false, scrollIntoView: false, closeMenu: false });
+  var initial = showPanel(idFromHash(), {
+    updateHash: false,
+    scrollIntoView: false,
+    closeMenu: false,
+  });
+  if (initial) {
+    links.forEach(function (link) {
+      link.setAttribute("tabindex", link.classList.contains("tl-active") ? "0" : "-1");
+    });
+  }
 })();
