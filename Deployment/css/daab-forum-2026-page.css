@@ -237,11 +237,11 @@ html[data-daab-page-id="forum-2026"] .forum-register-cta__flourish{
   height: 48px;
   flex: 0 1 168px;
   pointer-events: none;
-  background: url("../images/forum/2026/register-embroidery-left.webp?v=20261010-1309") no-repeat center / contain;
+  background: url("../images/forum/2026/register-embroidery-left.webp?v=20261013-1556") no-repeat center / contain;
 }
 
 html[data-daab-page-id="forum-2026"] .forum-register-cta__flourish--end{
-  background-image: url("../images/forum/2026/register-embroidery-right.webp?v=20261010-1309");
+  background-image: url("../images/forum/2026/register-embroidery-right.webp?v=20261013-1556");
 }
 
 @media (max-width: 520px){

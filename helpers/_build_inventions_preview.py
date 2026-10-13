@@ -674,7 +674,7 @@ def build_html(data: dict) -> str:
 <div class="footer-col"><div class="footer-title">Leadership</div><p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Executive Board</p></div>
 </div>
 </div>
-<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261010 - 1309</div>
+<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261013 - 1556</div>
 </footer>
 </body>
 </html>
