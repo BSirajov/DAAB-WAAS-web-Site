@@ -645,7 +645,7 @@
     var lang = document.documentElement.getAttribute("data-daab-lang");
     if (lang !== "en") lang = "az";
     var isEn = lang === "en";
-    var imgSrc = root + "images/qr/home-" + (isEn ? "en" : "az") + ".webp?v=20261013-1556";
+    var imgSrc = root + "images/qr/home-" + (isEn ? "en" : "az") + ".webp?v=20261014-1714";
     var href = isEn ? "https://daab-waas.com/en/" : "https://daab-waas.com/az/";
     var label = isEn
       ? "QR code for the WAAS home page — daab-waas.com"

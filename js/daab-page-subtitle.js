@@ -41,7 +41,7 @@
 
   function loadSubtitles() {
     if (CACHE) return Promise.resolve(CACHE);
-    var url = assetRoot() + "i18n/page-subtitles.json?v=20261013-1556";
+    var url = assetRoot() + "i18n/page-subtitles.json?v=20261014-1714";
     return fetch(url)
       .then(function (res) {
         if (!res.ok) throw new Error("page-subtitles.json " + res.status);
