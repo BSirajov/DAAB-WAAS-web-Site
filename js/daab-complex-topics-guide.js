@@ -360,7 +360,7 @@
     return;
   }
 
-  var TIP_HOSTS = ".ct-pill, .ct-format, .ct-core-item";
+  var TIP_HOSTS = ".ct-core-item";
   var hosts = Array.prototype.slice.call(document.querySelectorAll(TIP_HOSTS));
   if (!hosts.length) return;
 
