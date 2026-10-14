@@ -1012,13 +1012,13 @@ def fix_footer(text: str) -> str:
         1,
     )
     text = text.replace(
-        '<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261013 - 1556</div>',
-        '<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261013 - 1556</div>',
+        '<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261014 - 1714</div>',
+        '<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261014 - 1714</div>',
         1,
     )
     text = text.replace(
-        '<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261013 - 1556</div>',
-        '<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261013 - 1556</div>',
+        '<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261014 - 1714</div>',
+        '<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261014 - 1714</div>',
         1,
     )
     return text

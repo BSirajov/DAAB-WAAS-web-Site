@@ -4,8 +4,8 @@
 (function () {
   "use strict";
 
-  var MANIFEST_URL = "photos-gallery-manifest.json?v=20261013-1556";
-  var THUMB_INDEX_URL = "photos-gallery-thumbs.json?v=20261013-1556";
+  var MANIFEST_URL = "photos-gallery-manifest.json?v=20261014-1714";
+  var THUMB_INDEX_URL = "photos-gallery-thumbs.json?v=20261014-1714";
   var EAGER_COUNT = 4;
   var IO_ROOT_MARGIN = "280px 0px";
   // Old folder query values (?category=10.%20Party) → kebab folder names.
@@ -107,7 +107,7 @@
 
   function thumbUrl(folder, file) {
     var stem = file.replace(/\.[^.]+$/, "");
-    return thumbBase + encodeURIComponent(folder) + "/" + encodeURIComponent(stem + ".jpg?v=20261013-1556");
+    return thumbBase + encodeURIComponent(folder) + "/" + encodeURIComponent(stem + ".jpg?v=20261014-1714");
   }
 
   function thumbDimensions(folder, file) {
@@ -670,8 +670,8 @@
   setStatus(t("loading"), false);
 
   Promise.all([
-    loadJson(manifestPath + "?v=20261013-1556"),
-    loadJson(thumbIndexPath + "?v=20261013-1556").catch(function () {
+    loadJson(manifestPath + "?v=20261014-1714"),
+    loadJson(thumbIndexPath + "?v=20261014-1714").catch(function () {
       return { folders: {} };
     })
   ])

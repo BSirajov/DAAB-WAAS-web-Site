@@ -84,7 +84,7 @@ def build() -> None:
 <div class="footer-col"><h4 class="footer-title">Rəhbərlik</h4><p class="footer-leader"><strong>Prof. Dr. Məsud Əfəndiyev</strong><br/>DAAB İdarə Heyətinin Sədri<br/>Almaniya — James D. Murray mükafatlı professoru</p></div>
 </div>
 </div>
-<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261013 - 1556</div>
+<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261014 - 1714</div>
 </footer>
 {SIDEBAR_SCRIPT}
 </body>
