@@ -10,7 +10,7 @@ FORUM_FOOTER_EN = """<footer class="footer-pro">
 <div class="footer-col"><h4 class="footer-title">Leadership</h4><p class="footer-leader"><strong>Prof. Dr. Messoud Efendiyev</strong><br/>Chair of the WAAS Executive Board<br/>Germany — James D. Murray Distinguished Professor</p></div>
 </div>
 </div>
-<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261014 - 1714</div>
+<div class="footer-bottom">© DAAB-WAAS - All rights reserved | Build 20261016 - 0703</div>
 </footer>"""
 
 SHELL_REPLACEMENTS: list[tuple[str, str]] = [

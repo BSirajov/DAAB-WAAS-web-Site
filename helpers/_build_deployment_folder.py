@@ -307,9 +307,12 @@ _FORUM_REGISTER_HTML = (
     "en/forum/2026/index.html",
     "az/forum/2026/index.html",
 )
-_PARTICIPANT_PILL_URL = "https://diaspor.gov.az/forum/"
+_PARTICIPANT_PILL_URL = (
+    "https://www.cognitoforms.com/Diasporgovaz/"
+    "Xaricd%C9%99Ya%C5%9FayanAz%C9%99rbaycanl%C4%B1Aliml%C9%99rin2ciForumu"
+)
 _PARTICIPANT_PILL_ACTIVE = (
-    '<a class="btn btn-primary" href="https://diaspor.gov.az/forum/" '
+    f'<a class="btn btn-primary" href="{_PARTICIPANT_PILL_URL}" '
     'rel="noopener noreferrer" target="_blank">{label}</a>'
 )
 _PARTICIPANT_PILL_RE = re.compile(
@@ -317,7 +320,9 @@ _PARTICIPANT_PILL_RE = re.compile(
     re.DOTALL,
 )
 _PARTICIPANT_PILL_CONTROL_RE = re.compile(
-    r'(?:<a class="btn btn-primary" href="(?:register\.html|https://diaspor\.gov\.az/forum/)"[^>]*>'
+    r'(?:<a class="btn btn-primary" href="(?:register\.html|https://diaspor\.gov\.az/forum/|'
+    r'https://www\.cognitoforms\.com/Diasporgovaz/'
+    r'Xaricd%C9%99Ya%C5%9FayanAz%C9%99rbaycanl%C4%B1Aliml%C9%99rin2ciForumu)"[^>]*>'
     r'|<button type="button" class="btn btn-primary"[^>]*>)'
     r'([^<]*)(?:</a>|</button>)'
 )

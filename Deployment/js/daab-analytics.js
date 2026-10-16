@@ -49,7 +49,7 @@
   }
 
   function fetchConfig() {
-    var url = assetRoot() + "i18n/analytics.json?v=20261014-1714";
+    var url = assetRoot() + "i18n/analytics.json?v=20261016-0703";
     return fetch(url, { credentials: "same-origin", cache: "no-cache" }).then(function (res) {
       if (!res.ok) throw new Error("analytics config " + res.status);
       return res.json();
@@ -111,7 +111,7 @@
     if (global.DAAB_COOKIE) return;
     var script = document.createElement("script");
     script.id = "daab-cookie-consent-script";
-    script.src = assetRoot() + "js/daab-cookie-consent.js?v=20261014-1714";
+    script.src = assetRoot() + "js/daab-cookie-consent.js?v=20261016-0703";
     script.defer = true;
     document.head.appendChild(script);
   }
