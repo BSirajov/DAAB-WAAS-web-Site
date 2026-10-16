@@ -43,7 +43,7 @@
   --color-nav-hover-bg: rgba(255, 255, 255, 0.12);
   --color-hero-scrim: rgba(255, 255, 255, 0.36);
   --color-site-bg-scrim: rgba(255, 255, 255, 0.07);
-  --site-bg-image: url("../images/diaspor-body-top-bg.webp?v=20261014-1714");
+  --site-bg-image: url("../images/diaspor-body-top-bg.webp?v=20261016-0703");
   --site-bg-size: cover;
   --site-bg-position: top center;
   --site-bg-repeat: no-repeat;
@@ -201,7 +201,7 @@ body::before {
       var(--color-site-bg-scrim, rgba(255, 255, 255, 0.07)),
       var(--color-site-bg-scrim, rgba(255, 255, 255, 0.07))
     ),
-    var(--site-bg-image, url("../images/diaspor-body-top-bg.webp?v=20261014-1714"));
+    var(--site-bg-image, url("../images/diaspor-body-top-bg.webp?v=20261016-0703"));
   background-position: center, var(--site-bg-position, top center);
   background-size: 100% 100%, var(--site-bg-size, cover);
   background-repeat: no-repeat, var(--site-bg-repeat, no-repeat);
@@ -861,7 +861,7 @@ button,
   overflow: hidden !important;
   color: var(--white) !important;
   background-color: #274380 !important;
-  background-image: url("../images/diaspor-footer-bg.jpg?v=20261014-1714") !important;
+  background-image: url("../images/diaspor-footer-bg.jpg?v=20261016-0703") !important;
   background-repeat: no-repeat !important;
   background-position: top center !important;
   background-size: 100% auto !important;

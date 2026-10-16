@@ -26,7 +26,7 @@
   }
 
   function loadMonolithic(prefix) {
-    return fetch(joinUrl(prefix, "i18n/scientists-profiles.json?v=20261014-1714"), {
+    return fetch(joinUrl(prefix, "i18n/scientists-profiles.json?v=20261016-0703"), {
       credentials: "same-origin",
     }).then(function (res) {
       if (!res.ok) throw new Error("HTTP " + res.status);
@@ -56,7 +56,7 @@
   }
 
   function load(prefix) {
-    var manifestUrl = joinUrl(prefix, "i18n/scientists-profiles/manifest.json?v=20261014-1714");
+    var manifestUrl = joinUrl(prefix, "i18n/scientists-profiles/manifest.json?v=20261016-0703");
     return fetch(manifestUrl, { credentials: "same-origin" })
       .then(function (res) {
         if (!res.ok) return loadMonolithic(prefix);
