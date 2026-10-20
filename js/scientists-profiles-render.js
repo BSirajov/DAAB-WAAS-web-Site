@@ -8,7 +8,7 @@
   // Bump when scientist portrait files are replaced so browsers fetch the new
   // images instead of a cached copy (filenames are stable, so this is the only
   // cache-buster the portraits have).
-  var PHOTO_VER = "12";
+  var PHOTO_VER = "20261016-white";
 
   var CRED_LABEL = {
     PhD: "Ph.D.",

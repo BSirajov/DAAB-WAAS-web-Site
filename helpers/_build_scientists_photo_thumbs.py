@@ -42,7 +42,9 @@ def make_thumb(src: Path, dest: Path) -> None:
             im = bg
         else:
             im = im.convert("RGB")
-        im.thumbnail((MAX_EDGE, MAX_EDGE), Image.Resampling.LANCZOS)
+        # This portrait is also used on board, profile, and HTML CV pages.
+        max_edge = 520 if src.stem == "bakhtiyar-sirajov" else MAX_EDGE
+        im.thumbnail((max_edge, max_edge), Image.Resampling.LANCZOS)
         im.save(
             dest,
             "JPEG",

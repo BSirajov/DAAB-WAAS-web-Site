@@ -10,6 +10,7 @@
     "sponsors-flyer": 1,
     "scientists-list": 1,
     "scientists-profiles": 1,
+    home: 1,
   };
 
   var PAGE_CFG = {

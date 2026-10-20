@@ -128,6 +128,49 @@ html[data-daab-page-id="forum-2024"] .forum-partner-logos{
   flex-wrap: wrap;
   gap: 12px;
   margin: 0;
+}/* Home: hide Support us — author display:flex otherwise overrides [hidden] */
+html[data-daab-page-id="home"] .hero-actions{
+  display: none !important;
+}/* Home: minimal gap between title and subtitle */
+html[data-daab-page-id="home"] .hero h1{
+  margin-bottom: 4px;
+}html[data-daab-page-id="home"] .hero-copy > .page-hero-subtitle{
+  margin-top: 0;
+}/* Home: tighten gap between hero and forum poster */
+html[data-daab-page-id="home"] .hero-wrap{
+  padding-bottom: 4px !important;
+}html[data-daab-page-id="home"] .main{
+  padding-top: 28px;
+}html[data-daab-page-id="home"] .home-forum-register-link{
+  margin: 0 0 24px;
+  text-align: center;
+}html[data-daab-page-id="home"] .home-forum-register-link .btn{
+  display: inline-flex;
+  max-width: 100%;
+  padding: 14px 28px;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  text-wrap: balance;
+}/* Poster spans hero content width: title left ↔ summary panel right */
+html[data-daab-page-id="home"] .home-forum-poster{
+  position: relative;
+  z-index: 2;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}html[data-daab-page-id="home"] .home-forum-poster figure{
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius, 16px);
+}html[data-daab-page-id="home"] .home-forum-poster img{
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin-inline: 0;
+  border-radius: var(--radius, 16px);
 }.daab-hub-page .hero-actions .btn--sponsor-gold{
   background: #f8e58c;
   border-color: #f8e58c;

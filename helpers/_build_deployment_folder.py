@@ -299,10 +299,10 @@ def stamp_footer_copyrights(line: str) -> int:
     return changed
 
 
-# The Register submenu stays linked in source so local preview can open
-# register.html. This lock runs only on the staged Deployment copy and mutes
-# that submenu. The Second Forum participant pill stays an active external link
-# in both trees.
+# register.html is a Cognito Forms bridge (redirect + CTA). The Register
+# submenu stays linked in source for that bridge. This lock runs only on the
+# staged Deployment copy and mutes that submenu; the Second Forum participant
+# pill stays an active Cognito link in both trees.
 _FORUM_REGISTER_HTML = (
     "en/forum/2026/index.html",
     "az/forum/2026/index.html",
