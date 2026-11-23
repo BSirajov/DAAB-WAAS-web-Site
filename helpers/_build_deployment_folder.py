@@ -299,32 +299,16 @@ def stamp_footer_copyrights(line: str) -> int:
     return changed
 
 
-# register.html is a Cognito Forms bridge (redirect + CTA). The Register
-# submenu stays linked in source for that bridge. This lock runs only on the
-# staged Deployment copy and mutes that submenu; the Second Forum participant
-# pill stays an active Cognito link in both trees.
+# Forum 2026 participant registration is closed. This lock runs only on the
+# staged Deployment copy: strip any leftover participant CTA pills, and mute
+# the Register submenu if it is still present in nav.json.
 _FORUM_REGISTER_HTML = (
     "en/forum/2026/index.html",
     "az/forum/2026/index.html",
 )
-_PARTICIPANT_PILL_URL = (
-    "https://www.cognitoforms.com/Diasporgovaz/"
-    "Xaricd%C9%99Ya%C5%9FayanAz%C9%99rbaycanl%C4%B1Aliml%C9%99rin2ciForumu"
-)
-_PARTICIPANT_PILL_ACTIVE = (
-    f'<a class="btn btn-primary" href="{_PARTICIPANT_PILL_URL}" '
-    'rel="noopener noreferrer" target="_blank">{label}</a>'
-)
 _PARTICIPANT_PILL_RE = re.compile(
-    r'<p class="forum-register-cta">(.*?)</p>',
+    r'\s*<p class="forum-register-cta">.*?</p>\s*',
     re.DOTALL,
-)
-_PARTICIPANT_PILL_CONTROL_RE = re.compile(
-    r'(?:<a class="btn btn-primary" href="(?:register\.html|https://diaspor\.gov\.az/forum/|'
-    r'https://www\.cognitoforms\.com/Diasporgovaz/'
-    r'Xaricd%C9%99Ya%C5%9FayanAz%C9%99rbaycanl%C4%B1Aliml%C9%99rin2ciForumu)"[^>]*>'
-    r'|<button type="button" class="btn btn-primary"[^>]*>)'
-    r'([^<]*)(?:</a>|</button>)'
 )
 _NAV_REGISTER_OBJECT_RE = re.compile(
     r'\{[^{}]*"id": "forum-2026-register"[^{}]*\}'
@@ -452,7 +436,8 @@ def _with_source_newlines(original: str, updated: str) -> str:
 def _lock_nav_json(text: str) -> str:
     match = _NAV_REGISTER_OBJECT_RE.search(text)
     if not match:
-        raise SystemExit("Production lock: forum-2026-register entry missing from i18n/nav.json")
+        # Register submenu already removed from source nav — nothing to mute.
+        return text
     block = match.group(0)
     if re.search(r'"disabled"\s*:\s*true', block):
         return text
@@ -490,28 +475,11 @@ def _lock_primary_nav_js(text: str) -> str:
     return _with_source_newlines(text, updated)
 
 
-def _active_participant_pill(label: str) -> str:
-    return _PARTICIPANT_PILL_ACTIVE.format(label=label)
-
-
 def _lock_forum_html(text: str, rel: str) -> str:
-    """Keep the participant pill enabled and linked. Do not mute it."""
-    match = _PARTICIPANT_PILL_RE.search(text)
-    if not match:
-        raise SystemExit(f"Production lock: participant registration pill missing in {rel}")
-    control = _PARTICIPANT_PILL_CONTROL_RE.search(match.group(1))
-    if not control:
-        raise SystemExit(f"Production lock: participant registration pill missing in {rel}")
-    active = _active_participant_pill(control.group(1))
-    if control.group(0) == active and "disabled" not in control.group(0):
-        return text
-    updated = (
-        text[: match.start(1)]
-        + match.group(1).replace(control.group(0), active, 1)
-        + text[match.end(1) :]
-    )
-    if _PARTICIPANT_PILL_URL not in updated or "disabled" in active:
-        raise SystemExit(f"Production lock: participant pill was not left enabled in {rel}")
+    """Strip Forum 2026 participant registration CTA (registration is closed)."""
+    updated = _PARTICIPANT_PILL_RE.sub("\n", text)
+    if "forum-register-cta" in updated:
+        raise SystemExit(f"Production lock: could not remove participant registration CTA in {rel}")
     return updated
 
 
@@ -526,10 +494,10 @@ def _append_css_once(text: str, marker: str, addition: str) -> str:
 
 
 def lock_production_forum_registration(deploy_root: Path) -> list[str]:
-    """Mute the Forum 2026 Register submenu inside a deployment tree.
+    """Keep Forum 2026 registration closed in a deployment tree.
 
-    The participant pill stays an active link to the external forum form.
-    Does not touch source.
+    Strips leftover participant CTA pills. If a Register submenu entry still
+    exists in nav.json, mute it. Does not touch source.
     """
     changed: list[str] = []
 
@@ -539,17 +507,19 @@ def lock_production_forum_registration(deploy_root: Path) -> list[str]:
     if _write_if_changed(nav_path, nav_orig, nav_updated):
         changed.append("i18n/nav.json")
 
-    nav_js = deploy_root / "js" / "daab-primary-nav.js"
-    js_orig = nav_js.read_text(encoding="utf-8")
-    js_updated = _lock_primary_nav_js(js_orig)
-    if _write_if_changed(nav_js, js_orig, js_updated):
-        changed.append("js/daab-primary-nav.js")
+    # Only patch primary-nav / disabled CSS when the Register nav entry remains.
+    if _NAV_REGISTER_OBJECT_RE.search(nav_updated or nav_orig):
+        nav_js = deploy_root / "js" / "daab-primary-nav.js"
+        js_orig = nav_js.read_text(encoding="utf-8")
+        js_updated = _lock_primary_nav_js(js_orig)
+        if _write_if_changed(nav_js, js_orig, js_updated):
+            changed.append("js/daab-primary-nav.js")
 
-    common_css = deploy_root / "css" / "daab-common.css"
-    common_orig = common_css.read_text(encoding="utf-8")
-    common_updated = _append_css_once(common_orig, "nav-dropdown-link--disabled", _NAV_DISABLED_CSS)
-    if _write_if_changed(common_css, common_orig, common_updated):
-        changed.append("css/daab-common.css")
+        common_css = deploy_root / "css" / "daab-common.css"
+        common_orig = common_css.read_text(encoding="utf-8")
+        common_updated = _append_css_once(common_orig, "nav-dropdown-link--disabled", _NAV_DISABLED_CSS)
+        if _write_if_changed(common_css, common_orig, common_updated):
+            changed.append("css/daab-common.css")
 
     for rel in _FORUM_REGISTER_HTML:
         path = deploy_root / rel
@@ -618,7 +588,7 @@ def main() -> int:
         copied += 1
         bytes_total += src.stat().st_size
 
-    print("→ Muting Forum 2026 Register menu item for production…")
+    print("→ Keeping Forum 2026 registration closed in production…")
     for rel in lock_production_forum_registration(DEPLOY_STAGING):
         print(f"  locked {rel}")
 

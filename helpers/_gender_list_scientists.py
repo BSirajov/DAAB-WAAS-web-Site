@@ -14,7 +14,7 @@ MALE_FIRST = {
     "rasim", "rauf", "yaşar", "bəxtiyar", "kamal", "murad", "qərib", "vəhid",
     "xaqani", "lev", "mark", "ilham", "rıza", "natiq", "seymur", "şəhriyar",
     "akif", "tofiq", "eldar", "əliheydər", "emil", "ismayıl", "kamran", "nizami",
-    "suleyman", "vahid", "zahid", "azər", "elvin", "cavid", "əmirullah", "hacıəli",
+    "suleyman", "vahid", "zahid", "azər", "elvin", "cavid", "əmirullah", "hacalı",
     "ilkin", "ismixan", "mehdi", "mehmet", "oruc", "qafar", "ramin", "şahin",
     "saleh", "teymur", "varqa", "arif", "xəlil", "ağamalı", "agamali",
     "əhməd", "rövşən", "rovshan", "şuay", "elçin", "vəfa", "əhməd",

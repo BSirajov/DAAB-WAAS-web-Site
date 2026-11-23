@@ -48,10 +48,12 @@
         onActivate(links[activeIndex] || null);
         return;
       }
-      var mid = window.scrollY + window.innerHeight * scrollFraction;
+      // Use viewport Y (not offsetTop): news cards' offsetParent is often
+      // .content-wrap, so offsetTop is not comparable to document scrollY.
+      var probe = window.innerHeight * scrollFraction;
       var activeIndex = -1;
       for (var i = cards.length - 1; i >= 0; i--) {
-        if (cards[i] && cards[i].offsetTop <= mid) {
+        if (cards[i] && cards[i].getBoundingClientRect().top <= probe) {
           activeIndex = i;
           break;
         }

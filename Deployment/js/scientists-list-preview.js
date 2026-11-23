@@ -34,7 +34,7 @@
   var labels = LABELS[lang];
 
   var assetRoot = document.documentElement.getAttribute("data-daab-asset-root") || "../../";
-  var profilesUrl = assetRoot + "i18n/scientists-profiles.json?v=20261021-0040";
+  var profilesUrl = assetRoot + "i18n/scientists-profiles.json?v=20261124-0158";
 
   var byEmail = Object.create(null);
   var bySay = Object.create(null);
@@ -69,10 +69,17 @@
   }
 
   function azUpperName(name) {
-    return String(name || "")
-      .trim()
-      .toUpperCase()
-      .replace(/I/g, "İ");
+    // AZ: i→İ, ı→I. Do not map every Latin I to İ after toUpperCase
+    // (that turns Hacalı into the wrong HACALİ / “Hacali”).
+    var s = String(name || "").trim();
+    var out = "";
+    for (var i = 0; i < s.length; i++) {
+      var ch = s.charAt(i);
+      if (ch === "i") out += "İ";
+      else if (ch === "ı") out += "I";
+      else out += ch.toUpperCase();
+    }
+    return out;
   }
 
   function enUpperName(name) {
@@ -160,12 +167,12 @@
 
   function photoUrlForProfile(profile) {
     if (!profile || !profile.photo) return "";
-    return assetRoot + "images/scientists-photos/" + profile.photo + "?v=20261021-0040";
+    return assetRoot + "images/scientists-photos/" + profile.photo + "?v=20261124-0158";
   }
 
   function qrUrlForProfile(profile) {
     if (!profile || !profile.slug) return "";
-    return assetRoot + "images/qr/" + lang + "/" + profile.slug + ".webp?v=20261021-0040";
+    return assetRoot + "images/qr/" + lang + "/" + profile.slug + ".webp?v=20261124-0158";
   }
 
   function profileHrefForProfile(profile) {
@@ -227,7 +234,7 @@
       : "";
     var photoHtml = profile.photo
       ? '<img src="' +
-        esc(assetRoot + "images/scientists-photos/" + profile.photo + "?v=20261021-0040") +
+        esc(assetRoot + "images/scientists-photos/" + profile.photo + "?v=20261124-0158") +
         '" alt="' +
         esc(profile.name) +
         '" width="88" height="88" decoding="async" loading="lazy"/>'

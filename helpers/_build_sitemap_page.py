@@ -157,7 +157,7 @@ GROUPS: list[tuple[str, str, list[str]]] = [
             "forum-cooperation",
         ],
     ),
-    ("forum-2026", "forum2026Year", ["forum-2026", "forum-2026-register"]),
+    ("forum-2026", "forum2026Year", ["forum-2026"]),
     ("complex-topics", "complexTopics", ["complex-topics", "complex-topics-apply", "complex-topics-approach", "complex-topics-informatics"]),
     ("scientists", "scientists", ["scientists-list", "scientists-profiles"]),
     (

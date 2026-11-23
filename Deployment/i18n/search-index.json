@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated": "2026-09-23",
-  "entryCount": 638,
+  "generated": "2026-11-24",
+  "entryCount": 648,
   "entries": [
     {
       "id": "page-home-az",
@@ -192,11 +192,11 @@
       "pageId": "forum-2026-register",
       "anchor": "",
       "title": "DAAB — Forum 2026 iştirakçı qeydiyyatı",
-      "summary": "Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumu üçün iştirakçı qeydiyyatı — 9–10 dekabr 2026, Bakı.",
+      "summary": "Xaricdə Yaşayan Azərbaycanlı Alimlərin II Forumu üçün iştirakçı qeydiyyatı bağlanıb.",
       "tag": "Səhifə",
       "icon": "📝",
       "boost": 12,
-      "norm": "daab forum 2026 istirakci qeydiyyati xaricde yasayan azerbaycanli alimlerin ii forumu ucun istirakci qeydiyyati 9 10 dekabr 2026 baki."
+      "norm": "daab forum 2026 istirakci qeydiyyati xaricde yasayan azerbaycanli alimlerin ii forumu ucun istirakci qeydiyyati baglanib."
     },
     {
       "id": "page-forum-2026-register-en",
@@ -205,11 +205,11 @@
       "pageId": "forum-2026-register",
       "anchor": "",
       "title": "WAAS — Forum 2026 Participant Registration",
-      "summary": "Register as a participant in the 2nd Forum of Azerbaijani Scientists Living Abroad, 9–10 December 2026, Baku.",
+      "summary": "Participant registration for the 2nd Forum of Azerbaijani Scientists Living Abroad is closed.",
       "tag": "Page",
       "icon": "📝",
       "boost": 12,
-      "norm": "waas forum 2026 participant registration register as a participant in the 2nd forum of azerbaijani scientists living abroad 9 10 december 2026 baku."
+      "norm": "waas forum 2026 participant registration participant registration for the 2nd forum of azerbaijani scientists living abroad is closed."
     },
     {
       "id": "page-complex-topics-az",
@@ -1382,19 +1382,6 @@
       "norm": "umumi menzere ii forumun konsepsiyasi tarixi ve mekani 9 10 dekabr 2026 baki ii forum"
     },
     {
-      "id": "nav-forum-2026-register-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "forum-2026-register",
-      "anchor": "",
-      "title": "Qeydiyyat",
-      "summary": "Şəxsi məlumatlar, təhsil və karyera, ixtisas sahəsi və s.",
-      "tag": "Naviqasiya",
-      "icon": "📝",
-      "boost": 11,
-      "norm": "qeydiyyat sexsi melumatlar tehsil ve karyera ixtisas sahesi ve s. ii forum"
-    },
-    {
       "id": "nav-complex-topics-group-az",
       "lang": "az",
       "type": "nav",
@@ -1421,19 +1408,6 @@
       "norm": "cetin movzu aydin izah cetin movzularin aydin ve sade izahi musabiqe"
     },
     {
-      "id": "nav-complex-topics-apply-az",
-      "lang": "az",
-      "type": "nav",
-      "pageId": "complex-topics-apply",
-      "anchor": "",
-      "title": "Müraciət",
-      "summary": "Müsabiqəyə müraciət formasını doldurun",
-      "tag": "Naviqasiya",
-      "icon": "📝",
-      "boost": 11,
-      "norm": "muraciet musabiqeye muraciet formasini doldurun musabiqe"
-    },
-    {
       "id": "nav-complex-topics-approach-az",
       "lang": "az",
       "type": "nav",
@@ -1458,6 +1432,19 @@
       "icon": "📗",
       "boost": 11,
       "norm": "movzu secimi uzre beledci populyar ve cetin informatika movzulari uzre isci beledci musabiqe"
+    },
+    {
+      "id": "nav-complex-topics-apply-az",
+      "lang": "az",
+      "type": "nav",
+      "pageId": "complex-topics-apply",
+      "anchor": "",
+      "title": "Müraciət",
+      "summary": "Müsabiqəyə müraciət formasını doldurun",
+      "tag": "Naviqasiya",
+      "icon": "📝",
+      "boost": 11,
+      "norm": "muraciet musabiqeye muraciet formasini doldurun musabiqe"
     },
     {
       "id": "nav-foundation-az",
@@ -1759,19 +1746,6 @@
       "norm": "highlights forum concept dates and venue 9 10 december 2026 baku ii forum"
     },
     {
-      "id": "nav-forum-2026-register-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "forum-2026-register",
-      "anchor": "",
-      "title": "Register",
-      "summary": "Personal information, education and career, field of study, and more",
-      "tag": "Navigation",
-      "icon": "📝",
-      "boost": 11,
-      "norm": "register personal information education and career field of study and more ii forum"
-    },
-    {
       "id": "nav-complex-topics-group-en",
       "lang": "en",
       "type": "nav",
@@ -1798,19 +1772,6 @@
       "norm": "complex topics clear explanations making difficult subjects understandable competition"
     },
     {
-      "id": "nav-complex-topics-apply-en",
-      "lang": "en",
-      "type": "nav",
-      "pageId": "complex-topics-apply",
-      "anchor": "",
-      "title": "Apply",
-      "summary": "Submit an application for the competition",
-      "tag": "Navigation",
-      "icon": "📝",
-      "boost": 11,
-      "norm": "apply submit an application for the competition competition"
-    },
-    {
       "id": "nav-complex-topics-approach-en",
       "lang": "en",
       "type": "nav",
@@ -1835,6 +1796,19 @@
       "icon": "📗",
       "boost": 11,
       "norm": "guide to topic selection a working guide to popular and difficult informatics topics competition"
+    },
+    {
+      "id": "nav-complex-topics-apply-en",
+      "lang": "en",
+      "type": "nav",
+      "pageId": "complex-topics-apply",
+      "anchor": "",
+      "title": "Apply",
+      "summary": "Submit an application for the competition",
+      "tag": "Navigation",
+      "icon": "📝",
+      "boost": 11,
+      "norm": "apply submit an application for the competition competition"
     },
     {
       "id": "nav-foundation-en",
@@ -2344,6 +2318,84 @@
       "norm": "transparency"
     },
     {
+      "id": "activity-goruslu-top1-2026-az",
+      "lang": "az",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "goruslu-top1-2026",
+      "title": "Prof. Dr. Vəhid Gəruslu dünyanın ilk 1% tədqiqatçısı sırasındadır",
+      "summary": "Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) İdarə Heyəti məmnuniyyətlə xəbər verir ki, birliyin üzvü, Belfastdakı Queen’s Universitetində (Birləşmiş Krallıq) proqram mühəndisliyi və süni intellekt professoru, Azərbaycan Texniki Universitet",
+      "tag": "Fəaliyyət",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "prof. dr. vehid geruslu dunyanin ilk 1 tedqiqatcisi sirasindadir dunya azerbaycanli alimler birliyinin daab idare heyeti memnuniyyetle xeber verir ki birliyin uzvu belfastdaki queen s universitetinde birlesmis kralliq proqram muhendisliyi ve suni intellekt professoru azerbaycan texniki universitet"
+    },
+    {
+      "id": "activity-ldu-seminar-2026-az",
+      "lang": "az",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "ldu-seminar-2026",
+      "title": "Dünyaşöhrətli alim LDU-da elmi seminar keçib",
+      "summary": "Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) İdarə Heyətinin sədri, Almaniyada yaşayan dünyaşöhrətli azərbaycanlı riyaziyyatçı alim, Münxendəki Helmholtz Mərkəzinin professoru, Humboldt mükafatı alan ilk azərbaycanlı, Əməkdar elm xadimi, Ka",
+      "tag": "Fəaliyyət",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "dunyasohretli alim ldu-da elmi seminar kecib dunya azerbaycanli alimler birliyinin daab idare heyetinin sedri almaniyada yasayan dunyasohretli azerbaycanli riyaziyyatci alim munxendeki helmholtz merkezinin professoru humboldt mukafati alan ilk azerbaycanli emekdar elm xadimi ka"
+    },
+    {
+      "id": "activity-sheki-zaqatala-2026-az",
+      "lang": "az",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "sheki-zaqatala-2026",
+      "title": "Şəki-Zaqatala Regional Təhsil İdarəsində görüş",
+      "summary": "Şəki-Zaqatala Regional Təhsil İdarəsində Dünya Azərbaycanlı Alimlər Birliyinin İdarə Heyətinin sədri, tanınmış riyaziyyatçı, professor Məsud Əfəndiyevlə görüş keçirilib.",
+      "tag": "Fəaliyyət",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "seki-zaqatala regional tehsil idaresinde gorus seki-zaqatala regional tehsil idaresinde dunya azerbaycanli alimler birliyinin idare heyetinin sedri taninmis riyaziyyatci professor mesud efendiyevle gorus kecirilib."
+    },
+    {
+      "id": "activity-daab-azedu-2026-az",
+      "lang": "az",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "daab-azedu-2026",
+      "title": "Dünya Azərbaycanlı Alimlər Birliyi ilə AzEdu arasında MEMORANDUM",
+      "summary": "Dünya Azərbaycanlı Alimlər Birliyi ilə AzEdu Təhsil Platforması arasında anlaşma memorandumu imzalanıb.",
+      "tag": "Fəaliyyət",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "dunya azerbaycanli alimler birliyi ile azedu arasinda memorandum dunya azerbaycanli alimler birliyi ile azedu tehsil platformasi arasinda anlasma memorandumu imzalanib."
+    },
+    {
+      "id": "activity-zaqatala-muellimler-2026-az",
+      "lang": "az",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "zaqatala-muellimler-2026",
+      "title": "Dünyaşöhrətli alim Zaqatalada müəllimlərlə görüşüb",
+      "summary": "Zaqatala şəhər akademik Zərifə Əliyeva adına texniki fənlər təmayüllü liseydə Zaqatalanın gənc və qabaqcıl müəllimləri dünyaşöhrətli azərbaycanlı riyaziyyatçı-alim, professor Məsud Əfəndiyevlə görüşüblər.",
+      "tag": "Fəaliyyət",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "dunyasohretli alim zaqatalada muellimlerle gorusub zaqatala seher akademik zerife eliyeva adina texniki fenler temayullu liseyde zaqatalanin genc ve qabaqcil muellimleri dunyasohretli azerbaycanli riyaziyyatci-alim professor mesud efendiyevle gorusubler."
+    },
+    {
+      "id": "activity-efendiyev-taleb-2026-az",
+      "lang": "az",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "efendiyev-taleb-2026",
+      "title": "Professor Məsud Əfəndiyev Nassim Nicholas Talebə cavab verib",
+      "summary": "Dünya Azərbaycanlı Alimlər Birliyinin İdarə Heyətinin sədri, professor Məsud Əfəndiyev News.az-a müsahibəsində Livan əsilli amerikalı alim və yazıçı Nassim Nikolas Talebin fikirlərinə münasibət bildirib. Taleb Azərbaycanda mühazirə oxumaq d",
+      "tag": "Fəaliyyət",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "professor mesud efendiyev nassim nicholas talebe cavab verib dunya azerbaycanli alimler birliyinin idare heyetinin sedri professor mesud efendiyev news.az-a musahibesinde livan esilli amerikali alim ve yazici nassim nikolas talebin fikirlerine munasibet bildirib. taleb azerbaycanda muhazire oxumaq d"
+    },
+    {
       "id": "activity-summer-school-2026-az",
       "lang": "az",
       "type": "activity",
@@ -2760,6 +2812,84 @@
       "norm": "qarabag universiteti ile onlayn gorus 15 oktyabr 2024-cu il tarixinde dunya azerbaycanli alimler birliyinin daab idare heyetinin uzvleri ve qarabag universitetinin rehber heyeti arasinda gorus kecirilib. daab-in tesebbusu ile onlayn formatda kecirilen gorus tedris elmi-tedqi"
     },
     {
+      "id": "activity-goruslu-top1-2026-en",
+      "lang": "en",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "goruslu-top1-2026",
+      "title": "Prof. Dr. Vahid Garousi ranked among the top 1% of researchers worldwide",
+      "summary": "The Board of Directors of the World Association of Azerbaijani Scientists (WAAS) is pleased to announce that its member Prof. Dr. Vahid Garousi, Professor of Software Engineering and AI at Queen’s University Belfast (UK) and Visiting Profes",
+      "tag": "Activity",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "prof. dr. vahid garousi ranked among the top 1 of researchers worldwide the board of directors of the world association of azerbaijani scientists waas is pleased to announce that its member prof. dr. vahid garousi professor of software engineering and ai at queen s university belfast uk and visiting profes"
+    },
+    {
+      "id": "activity-ldu-seminar-2026-en",
+      "lang": "en",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "ldu-seminar-2026",
+      "title": "World-renowned scientist holds a scientific seminar at LSU",
+      "summary": "Professor Messoud Efendiyev, Chair of the Executive Board of the World Union of Azerbaijani Scientists (WAAS), a world-renowned Azerbaijani mathematician living in Germany, professor at the Helmholtz Center in Munich, the first Azerbaijani ",
+      "tag": "Activity",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "world-renowned scientist holds a scientific seminar at lsu professor messoud efendiyev chair of the executive board of the world union of azerbaijani scientists waas a world-renowned azerbaijani mathematician living in germany professor at the helmholtz center in munich the first azerbaijani"
+    },
+    {
+      "id": "activity-sheki-zaqatala-2026-en",
+      "lang": "en",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "sheki-zaqatala-2026",
+      "title": "Meeting at the Sheki-Zagatala Regional Education Department",
+      "summary": "A meeting with Professor Messoud Efendiyev, Chair of the Executive Board of the World Union of Azerbaijani Scientists and a renowned mathematician, was held at the Sheki-Zagatala Regional Education Department.",
+      "tag": "Activity",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "meeting at the sheki-zagatala regional education department a meeting with professor messoud efendiyev chair of the executive board of the world union of azerbaijani scientists and a renowned mathematician was held at the sheki-zagatala regional education department."
+    },
+    {
+      "id": "activity-daab-azedu-2026-en",
+      "lang": "en",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "daab-azedu-2026",
+      "title": "Memorandum between the World Union of Azerbaijani Scientists and AzEdu",
+      "summary": "A memorandum of understanding has been signed between the World Union of Azerbaijani Scientists and the AzEdu Education Platform.",
+      "tag": "Activity",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "memorandum between the world union of azerbaijani scientists and azedu a memorandum of understanding has been signed between the world union of azerbaijani scientists and the azedu education platform."
+    },
+    {
+      "id": "activity-zaqatala-muellimler-2026-en",
+      "lang": "en",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "zaqatala-muellimler-2026",
+      "title": "World-renowned scientist meets teachers in Zagatala",
+      "summary": "In Zagatala, young and leading teachers met Professor Messoud Efendiyev, the world-renowned Azerbaijani mathematician, at the Academician Zarifa Aliyeva Technical Sciences Lyceum.",
+      "tag": "Activity",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "world-renowned scientist meets teachers in zagatala in zagatala young and leading teachers met professor messoud efendiyev the world-renowned azerbaijani mathematician at the academician zarifa aliyeva technical sciences lyceum."
+    },
+    {
+      "id": "activity-efendiyev-taleb-2026-en",
+      "lang": "en",
+      "type": "activity",
+      "pageId": "activities-news",
+      "anchor": "efendiyev-taleb-2026",
+      "title": "Distinguished Professor Messoud Efendiyev Responds to Nassim Nicholas Taleb",
+      "summary": "Distinguished Professor Messoud Efendiyev, Chair of the Executive Board of the World Association of Azerbaijani Scientists, has responded to remarks by Lebanese-American scholar and author Nassim Nicholas Taleb regarding Azerbaijan.",
+      "tag": "Activity",
+      "icon": "📰",
+      "boost": 8,
+      "norm": "distinguished professor messoud efendiyev responds to nassim nicholas taleb distinguished professor messoud efendiyev chair of the executive board of the world association of azerbaijani scientists has responded to remarks by lebanese-american scholar and author nassim nicholas taleb regarding azerbaijan."
+    },
+    {
       "id": "activity-summer-school-2026-en",
       "lang": "en",
       "type": "activity",
@@ -2818,11 +2948,11 @@
       "pageId": "activities-news",
       "anchor": "garuslu-book-2026",
       "title": "WAAS member publishes book Azerbaijan, North and South",
-      "summary": "Born in Miyana, Vahid Garuslu writes from personal experience as much as from analysis. Raised with Mugham, the qarmon, and the Lezginka, and shaped by roots in northern Azerbaijan and formative years in the south, he sees Azerbaijan as one",
+      "summary": "Born in Miyana, Vahid Garousi writes from personal experience as much as from analysis. Raised with Mugham, the qarmon, and the Lezginka, and shaped by roots in northern Azerbaijan and formative years in the south, he sees Azerbaijan as one",
       "tag": "Activity",
       "icon": "📰",
       "boost": 8,
-      "norm": "waas member publishes book azerbaijan north and south born in miyana vahid garuslu writes from personal experience as much as from analysis. raised with mugham the qarmon and the lezginka and shaped by roots in northern azerbaijan and formative years in the south he sees azerbaijan as one"
+      "norm": "waas member publishes book azerbaijan north and south born in miyana vahid garousi writes from personal experience as much as from analysis. raised with mugham the qarmon and the lezginka and shaped by roots in northern azerbaijan and formative years in the south he sees azerbaijan as one"
     },
     {
       "id": "activity-forum-book-2026-en",
@@ -2922,11 +3052,11 @@
       "pageId": "activities-news",
       "anchor": "serencam-2026",
       "title": "Several WAAS members honored by President of Azerbaijan Ilham Aliyev",
-      "summary": "By Decree of the President of the Republic of Azerbaijan Ilham Aliyev dated 7 January 2026, a group of Azerbaijanis were awarded high state honors for strengthening friendship among peoples and contributing to the development of the Azerba",
+      "summary": "By Decree of the President of the Republic of Azerbaijan Ilham Aliyev dated 7 January 2026, a group of Azerbaijanis were awarded high state honors for strengthening friendship among peoples and contributing to the development of the Azerbai",
       "tag": "Activity",
       "icon": "📰",
       "boost": 8,
-      "norm": "several waas members honored by president of azerbaijan ilham aliyev by decree of the president of the republic of azerbaijan ilham aliyev dated 7 january 2026 a group of azerbaijanis were awarded high state honors for strengthening friendship among peoples and contributing to the development of the azerba"
+      "norm": "several waas members honored by president of azerbaijan ilham aliyev by decree of the president of the republic of azerbaijan ilham aliyev dated 7 january 2026 a group of azerbaijanis were awarded high state honors for strengthening friendship among peoples and contributing to the development of the azerbai"
     },
     {
       "id": "activity-azmiu-2025-en",
@@ -2974,11 +3104,11 @@
       "pageId": "activities-news",
       "anchor": "amea-80-2025",
       "title": "Professor Messoud Efendiyev: \"ANAS has remained true to its principles in every era\"",
-      "summary": "Professor Messoud Efendiyev, the first Azerbaijani laureate of the Humboldt Award — one of the highest honors in world science — and Head of the Dynamic Systems Division at the Helmholtz Research Center in Germany, issued a statement on th",
+      "summary": "Professor Messoud Efendiyev, the first Azerbaijani laureate of the Humboldt Award — one of the highest honors in world science — and Head of the Dynamic Systems Division at the Helmholtz Research Center in Germany, issued a statement on the",
       "tag": "Activity",
       "icon": "📰",
       "boost": 8,
-      "norm": "professor messoud efendiyev anas has remained true to its principles in every era professor messoud efendiyev the first azerbaijani laureate of the humboldt award one of the highest honors in world science and head of the dynamic systems division at the helmholtz research center in germany issued a statement on th"
+      "norm": "professor messoud efendiyev anas has remained true to its principles in every era professor messoud efendiyev the first azerbaijani laureate of the humboldt award one of the highest honors in world science and head of the dynamic systems division at the helmholtz research center in germany issued a statement on the"
     },
     {
       "id": "activity-yulduz-ada-2025-en",
@@ -3182,11 +3312,11 @@
       "pageId": "complex-topics-informatics",
       "anchor": "about",
       "title": "Bələdçidən istifadə",
-      "summary": "Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) bu səhifəsi informatika üzrə tədris materialı hazırlamaq istəyən müəllimlərə, mütəxəssislərə və «Çətin mövzu, aydın izah» müsabiqəsinin iştirakçılarına mövzu seçməkdə kömək edir. Burada təhsil ba",
+      "summary": "Dünya Azərbaycanlı Alimlər Birliyinin (DAAB) bu səhifəsi «Çətin mövzu, aydın izah» müsabiqəsinin iştirakçılarına informatika mövzusu seçməkdə kömək edir. Burada təhsil baxımından əhəmiyyətli və praktikada aktual olan mövzular, onların öyrən",
       "tag": "Bölmə",
       "icon": "📗",
       "boost": 9,
-      "norm": "beledciden istifade dunya azerbaycanli alimler birliyinin daab bu sehifesi informatika uzre tedris materiali hazirlamaq isteyen muellimlere mutexessislere ve cetin movzu aydin izah musabiqesinin istirakcilarina movzu secmekde komek edir. burada tehsil ba"
+      "norm": "beledciden istifade dunya azerbaycanli alimler birliyinin daab bu sehifesi cetin movzu aydin izah musabiqesinin istirakcilarina informatika movzusu secmekde komek edir. burada tehsil baximindan ehemiyyetli ve praktikada aktual olan movzular onlarin oyren"
     },
     {
       "id": "section-complex-topics-informatics-differences-az",
@@ -3286,11 +3416,11 @@
       "pageId": "complex-topics-informatics",
       "anchor": "languages",
       "title": "Tədris üçün tövsiyə olunan dillər",
-      "summary": "Hər iki mənbə eyni üç istiqaməti göstərir: proqramlaşdırma, verilənlər elmi və süni intellekt nümunələrində Python; veb nümunələrində JavaScript və TypeScript; verilənlər bazası mövzularında SQL. Aydın izah başqa dildən də istifadə edə bilə",
+      "summary": "Hər iki mənbə eyni üç istiqaməti göstərir: proqramlaşdırma, data elmi və süni intellekt nümunələrində Python; veb nümunələrində JavaScript və TypeScript; data bazası mövzularında SQL. Aydın izah başqa dildən də istifadə edə bilər, əgər həmi",
       "tag": "Bölmə",
       "icon": "📗",
       "boost": 9,
-      "norm": "tedris ucun tovsiye olunan diller her iki menbe eyni uc istiqameti gosterir proqramlasdirma verilenler elmi ve suni intellekt numunelerinde python veb numunelerinde javascript ve typescript verilenler bazasi movzularinda sql. aydin izah basqa dilden de istifade ede bile"
+      "norm": "tedris ucun tovsiye olunan diller her iki menbe eyni uc istiqameti gosterir proqramlasdirma data elmi ve suni intellekt numunelerinde python veb numunelerinde javascript ve typescript data bazasi movzularinda sql. aydin izah basqa dilden de istifade ede biler eger hemi"
     },
     {
       "id": "section-complex-topics-informatics-proposal-az",
@@ -3351,11 +3481,11 @@
       "pageId": "complex-topics-informatics",
       "anchor": "about",
       "title": "How to use this guide",
-      "summary": "This page from the World Association of Azerbaijani Scientists (WAAS / DAAB) helps teachers, specialists and participants in the “Complex Topics, Clear Explanations” competition choose an informatics topic. It brings together topics that ma",
+      "summary": "This page from the World Association of Azerbaijani Scientists (WAAS / DAAB) helps participants in the “Complex Topics, Clear Explanations” competition choose an informatics topic. It brings together topics that matter in education and in p",
       "tag": "Section",
       "icon": "📗",
       "boost": 9,
-      "norm": "how to use this guide this page from the world association of azerbaijani scientists waas daab helps teachers specialists and participants in the complex topics clear explanations competition choose an informatics topic. it brings together topics that ma"
+      "norm": "how to use this guide this page from the world association of azerbaijani scientists waas daab helps participants in the complex topics clear explanations competition choose an informatics topic. it brings together topics that matter in education and in p"
     },
     {
       "id": "section-complex-topics-informatics-differences-en",
@@ -5048,7 +5178,7 @@
       "norm": "togrul ismayil prof. dr. executive board"
     },
     {
-      "id": "person-board-togrul-karimov-dr.-en",
+      "id": "person-board-toghrul-karimov-dr.-en",
       "lang": "en",
       "type": "person",
       "pageId": "executive-board",
@@ -6159,11 +6289,11 @@
       "pageId": "scientists-profiles",
       "anchor": "asef-salamov",
       "title": "Asaf Salamov",
-      "summary": "Staff data scientist, United Genome Institute, Lawrence Berkeley National Laboratory · Biology · USA",
+      "summary": "Staff data scientist, Joint Genome Institute, Lawrence Berkeley National Laboratory · Biology · USA",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "asaf salamov staff data scientist united genome institute lawrence berkeley national laboratory biology usa aasalamov@lbl.gov in 2014-2020 he was selected as one of the most cited scientists in the world by clarivate analytics. his computer program fgenesh is designed to predict genes in genomes and is licensed by more than 50 leading pharmaceutical biotech and agricultural companies. he is a member of the american association for the advan phd"
+      "norm": "asaf salamov staff data scientist joint genome institute lawrence berkeley national laboratory biology usa aasalamov@lbl.gov in 2014 2020 he was selected as one of the most cited scientists in the world by clarivate analytics. his computer program fgenesh is designed to predict genes in genomes and is licensed by more than 50 leading pharmaceutical biotech and agricultural companies. he is a member of the american association for the advan phd"
     },
     {
       "id": "scientist-aytekin-huseynli-az",
@@ -6184,12 +6314,12 @@
       "type": "scientist",
       "pageId": "scientists-profiles",
       "anchor": "aytekin-huseynli",
-      "title": "Aytekin Huseynli",
-      "summary": "Assistant Research Professor, Washington University (St. Louis) · Social policy · USA",
+      "title": "Aytakin Huseynli",
+      "summary": "Research Assistant Professor, Brown School, Washington University in St. Louis · Social policy · USA",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "aytekin huseynli assistant research professor washington university st. louis social policy usa ahuseynli@wustl.edu aytekin huseynli is an international specialist in social policy social work child and family welfare. dr. huseynli is an assistant professor at the university of washington. her applied research focuses on the formulation of social policies especially the improvement of family and child welfare. aytekin huseynli al phd"
+      "norm": "aytakin huseynli research assistant professor brown school washington university in st. louis social policy usa ahuseynli@wustl.edu aytakin huseynli is a research assistant professor at the brown school washington university in st. louis where she earned her phd. her research connects political science and social policy to examine child and family well-being including wealth health education and violence. she studies how fossil fuel wealth an phd"
     },
     {
       "id": "scientist-cemile-cavadova-spitzberq-az",
@@ -6202,7 +6332,7 @@
       "tag": "Alim",
       "icon": "👤",
       "boost": 6,
-      "norm": "cemile cavadova-spitzberg tetbiqi orqan ve klavesin professoru musiqi ifaciligi uzre incesenet doktoru texas dovlet universiteti arlinqton musiqici abs aamfusa@gmail.com konsert proqramlari abs kecmis ssri ve qerbi avropa olkelerini o cumleden hollandiya almaniya fransa danimarka cexiya ve ingiltereni ehate edir. holland barokko bestekari antoni van noordt ve onun 1659-cu ilde yazdigi tabulatuurboeck van psalmen en fantasyen eserine hesr olunmus doktorluq dissertasiyasini ugurl phd"
+      "norm": "cemile cavadova-spitzberg tetbiqi orqan ve klavesin professoru musiqi ifaciligi uzre incesenet doktoru texas dovlet universiteti arlinqton musiqici abs aamfusa@gmail.com konsert proqramlari abs kecmis ssri ve qerbi avropa olkelerini o cumleden hollandiya almaniya fransa danimarka cexiya ve ingiltereni ehate edir. holland barokko bestekari antoni van noordt ve onun 1659-cu ilde yazdigi tabulatuurboeck van psalmen en fantasyen eserine hesr olunmus doktorluq dissertasiyasini ugurl dma"
     },
     {
       "id": "scientist-cemile-cavadova-spitzberq-en",
@@ -6211,11 +6341,11 @@
       "pageId": "scientists-profiles",
       "anchor": "cemile-cavadova-spitzberq",
       "title": "Jamila Javadova-Spitzberg",
-      "summary": "Professor of Applied Organ and Harpsichord, Doctor of Arts in Music Performance, Texas State University, Arlington · Musician · USA",
+      "summary": "Adjunct Assistant Professor (Organ and Harpsichord), The University of Texas at Arlington · Music · USA",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "jamila javadova-spitzberg professor of applied organ and harpsichord doctor of arts in music performance texas state university arlington musician usa aamfusa@gmail.com concert programs include the usa the former ussr and western european countries including the netherlands germany france denmark the czech republic and england. she successfully defended her doctoral dissertation dedicated to the dutch baroque composer antoni van noordt and his work tabulatuurboeck van psalmen e phd"
+      "norm": "jamila javadova-spitzberg adjunct assistant professor organ and harpsichord the university of texas at arlington music usa aamfusa@gmail.com her concert performances have taken place in the usa the former ussr and western european countries including the netherlands germany france denmark the czech republic and england. she earned a doctor of musical arts degree in organ performance with a minor in music theory from the university of north texas. he dma"
     },
     {
       "id": "scientist-elsad-allahyarov-az",
@@ -6228,7 +6358,7 @@
       "tag": "Alim",
       "icon": "👤",
       "boost": 6,
-      "norm": "elsad allahyarov tedqiqat professoru fizika case western reserve universiteti klivlend ohayo fizika abs exa54@case.edu tedqiqat professoru yumsaq madde institutu nezeri fizika ii hhu dusseldorf professor nezeri fizika bolmesi yuksek temperaturlar institutu rusiya elmler akademiyasi moskva 200-den cox elmi meqalesi 40-a yaxin elmi jurnalda derc olunub. 30-a yaxin elmi jurnalda reyci kimi calisir. 10-a yaxin telebeye elmi rehber phd"
+      "norm": "elsad allahyarov tedqiqat professoru fizika case western reserve universiteti klivlend ohayo fizika abs exa54@case.edu tedqiqat professoru yumsaq madde institutu nezeri fizika ii hhu dusseldorf professor nezeri fizika bolmesi yuksek temperaturlar institutu rusiya elmler akademiyasi moskva elmi maraqlari protonu keciren ionomerlerin morfoloji deyisiklikleri ionomerlerin keciriciliyi sudan azad kecirici nanokompozit ionomerle phd"
     },
     {
       "id": "scientist-elsad-allahyarov-en",
@@ -6237,11 +6367,11 @@
       "pageId": "scientists-profiles",
       "anchor": "elsad-allahyarov",
       "title": "Elshad Allahyarov",
-      "summary": "Research Professor, Physics, Case Western Reserve University, Cleveland, Ohio, · Physics · USA",
+      "summary": "Research Professor, Institute for Theoretical Physics II: Soft Matter, Heinrich Heine University Düsseldorf (HHU), Düsseldorf; Professor, Theoretical Physics Division, Joint Institute for High Temperatures, Russian Academy of Sciences, Mosc",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "elshad allahyarov research professor physics case western reserve university cleveland ohio physics usa exa54@case.edu research professor institute of soft matter theoretical physics ii hhu dusseldorf professor department of theoretical physics institute of high temperatures russian academy of sciences moscow more than 200 scientific articles have been published in about 40 scientific journals. he works as a reviewer in about phd"
+      "norm": "elshad allahyarov research professor institute for theoretical physics ii soft matter heinrich heine university dusseldorf hhu dusseldorf professor theoretical physics division joint institute for high temperatures russian academy of sciences moscow physics usa exa54@case.edu research professor institute for theoretical physics ii soft matter heinrich heine university dusseldorf hhu dusseldorf professor theoretical physics division joint institute for high temperatures russian academy of sciences moscow has published more than 200 scientific papers in nearly 40 scientific journa phd"
     },
     {
       "id": "scientist-sevinj-mammadova-az",
@@ -6250,11 +6380,11 @@
       "pageId": "scientists-profiles",
       "anchor": "sevinj-mammadova",
       "title": "Sevinc Məmmədova",
-      "summary": "Qlobal akademik tərəfdaşlıqlar üzrə prorektor müavini; təcrübə professoru, Corc Vaşinqton Universitetinin Təhsil və İnsan İnkişafı Ali Məktəbi · Təhsil · ABŞ",
+      "summary": "Qlobal akademik tərəfdaşlıqlar üzrə Associate Prorektor; Təhsil və İnsan İnkişafı Magistratura Məktəbinin təcrübə professoru (Professor of Practice), Corc Vaşinqton Universiteti · Təhsil · ABŞ",
       "tag": "Alim",
       "icon": "👤",
       "boost": 6,
-      "norm": "sevinc memmedova dekan muavini tehsil siyaseti ve tehsilin idare edilmesi uzre professor corc vasinqton universiteti tehsil abs mammadova.sevinj@gmail.com sevinc memmedova tehsil siyaseti sahesinde cox tecrubeli bir mutexessisdir. o tehsil sistemlerinin tekmillesdirilmesine yonelmis strategiyalarin hazirlanmasi ve tetbiqi sahesinde ixtisaslasib. sevinc memmedova tehsilin keyfiyyetinin ve elcatanliginin artirilmasina ve tehsil almaq isteyen her bir sexsin menseyinden so phd"
+      "norm": "sevinc memmedova qlobal akademik terefdasliqlar uzre associate prorektor tehsil ve insan inkisafi magistratura mektebinin tecrube professoru professor of practice corc vasinqton universiteti tehsil abs mammadova.sevinj@gmail.com sevinc memmedova tehsil siyaseti sahesinde cox tecrubeli bir mutexessisdir. o tehsil sistemlerinin tekmillesdirilmesine yonelmis strategiyalarin hazirlanmasi ve tetbiqi sahesinde ixtisaslasib. sevinc memmedova tehsilin keyfiyyetinin ve elcatanliginin artirilmasina ve tehsil almaq isteyen her bir sexsin menseyinden so edd"
     },
     {
       "id": "scientist-sevinj-mammadova-en",
@@ -6263,11 +6393,11 @@
       "pageId": "scientists-profiles",
       "anchor": "sevinj-mammadova",
       "title": "Sevinj Mammadova",
-      "summary": "Associate Dean, Professor of Educational Policy and Educational Administration, George Washington University · Education · USA",
+      "summary": "Associate Provost for Global Academic Partnerships; Professor of Practice, Graduate School of Education and Human Development, George Washington University · Education · USA",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "sevinj mammadova associate dean professor of educational policy and educational administration george washington university education usa mammadova.sevinj@gmail.com sevinj mammadova is a very experienced specialist in the field of education policy. she specializes in the development and implementation of strategies aimed at improving education systems. sevinj mammadova has led large-scale international projects to increase the quality and accessibility of education and ensure that phd"
+      "norm": "sevinj mammadova associate provost for global academic partnerships professor of practice graduate school of education and human development george washington university education usa mammadova.sevinj@gmail.com sevinj mammadova is a very experienced specialist in the field of education policy. she specializes in the development and implementation of strategies aimed at improving education systems. sevinj mammadova has led large-scale international projects to increase the quality and accessibility of education and ensure that edd"
     },
     {
       "id": "scientist-suay-abdullayev-az",
@@ -6293,7 +6423,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "shuay abdullayev department of pharmaceutical and biomedical sciences and center for complex carbohydrate research postdoctoral fellow university of georgia chemistry usa shuay.abdullayev@gmail.com claude bernard received his master s degree from lyon 1 university in lyon france. during his studies he had a scientific internship at the institute of molecular and supramolecular chemistry and biochemistry and wayne state university in michigan usa. in 2016-2021 he received a phd degree in synthesis of therapeu phd"
+      "norm": "shuay abdullayev postdoctoral fellow department of pharmaceutical and biomedical sciences and complex carbohydrate research center university of georgia athens usa chemistry usa shuay.abdullayev@gmail.com he completed his master s degree at claude bernard university lyon 1 in lyon france. during his studies he completed research internships at the institute of molecular and supramolecular chemistry and biochemistry and at wayne state university in michigan usa. from 2016 to 2021 he studied at the university of quebe phd"
     },
     {
       "id": "scientist-togrul-talisinski-az",
@@ -6423,7 +6553,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "rauf abdullayev stadler company computer science germany rauf_abdullayev@yahoo.fr he studied french language teaching at the university of strasbourg france from 2009 to 2012 and earned a bachelor s degree in computer engineering at the university of duisburg-essen germany in 2022. his final thesis completed in september 2022 was titled managedata mobile application in xamarin. he works as a phd"
+      "norm": "rauf abdullayev stadler company computer science germany rauf_abdullayev@yahoo.fr he studied french language teaching at the university of strasbourg france from 2009 to 2012 and earned a bachelor s degree in computer engineering at the university of duisburg-essen germany in 2022. his final thesis completed in september 2022 was titled managedata mobile application in xamarin . he works as phd"
     },
     {
       "id": "scientist-sevda-kerimova-az",
@@ -6562,11 +6692,11 @@
       "pageId": "scientists-profiles",
       "anchor": "bakhtiyar-sirajov",
       "title": "Bəxtiyar Siracov",
-      "summary": "Təqaüdçü (noyabr 2021). Son vəzifə: şöbə müdiri (P5), Application Development Section, Office of Safeguards Information Systems, International Atomic Energy Agency (IAEA), Vyana, Avstriya.",
+      "summary": "DAAB-nin İdarə Heyətinin həmsədri · Kompüter Elmləri · Avstriya",
       "tag": "Alim",
       "icon": "👤",
       "boost": 6,
-      "norm": "bextiyar siracov daab-nin idare heyetinin hemsedri komputer elmleri avstriya b.sirajov@hotmail.com atom enerjisi uzre beynelxalq agentliyin aeba safeguards departamentinde informasiya sistemleri yaradilmasi sobesinin rehberi olmusdur 1995 2021-ci iller erzinde atom enerjisi uzre beynelxalq agentliyin aeba safeguards departamentinde heyata kecirilen proqram teminati yaradilmasi uzre layihelerde istirak etmi phd"
+      "norm": "bextiyar siracov daab-nin idare heyetinin hemsedri komputer elmleri avstriya b.sirajov@hotmail.com teqaudcu noyabr 2021 . son vezife sobe mudiri p5 application development section office of safeguards information systems international atomic energy agency iaea vyana avstriya. bextiyar siracov 1995-ci ilin iyulundan 2021-ci ilin noyabrinda teqaude cixanadek vyanada international atomic energy agency iaea phd"
     },
     {
       "id": "scientist-bakhtiyar-sirajov-en",
@@ -6575,11 +6705,11 @@
       "pageId": "scientists-profiles",
       "anchor": "bakhtiyar-sirajov",
       "title": "Bakhtiyar Sirajov",
-      "summary": "Retired (November 2021). Last post: Section Head (P5), Application Development Section, Office of Safeguards Information Systems, International Atomic Energy Agency (IAEA), Vienna, Austria.",
+      "summary": "Co-Chair of the WAAS Executive Board · Computer science · Austria",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "bakhtiyar sirajov co-chair of the waas executive board computer science austria b.sirajov@hotmail.com he was the head of the application development section in the department of safeguards of the international atomic energy agency iaea . during the years 1995-2021 he participated in software development projects implemented in the safeguards department of the international atomic energy agency iaea worked as phd"
+      "norm": "bakhtiyar sirajov co-chair of the waas executive board computer science austria b.sirajov@hotmail.com retired november 2021 . last post section head p5 application development section office of safeguards information systems international atomic energy agency iaea vienna austria. bakhtiyar sirajov worked at the international atomic energy agency iaea in vienna from july 1995 until his retirement in novembe phd"
     },
     {
       "id": "scientist-dinara-abbasova-az",
@@ -6704,12 +6834,12 @@
       "type": "scientist",
       "pageId": "scientists-profiles",
       "anchor": "vehid-geruslu",
-      "title": "Vehid Goruslu",
+      "title": "Vahid Garousi",
       "summary": "Professor of Software Engineering at Queen's University, Belfast, United Kingdom · Computer science · United Kingdom",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "vehid goruslu professor of software engineering at queen s university belfast united kingdom computer science united kingdom vehid.geruslu@gmail.com dr. vahid garousi works in two professional roles as an it specialist and an it professor. since 1998 he has provided consulting and training to international it companies in software engineering testing and qa and he is also a professor of software engineering at queen s university in belfast united kingdom. at th prof.dr."
+      "norm": "vahid garousi professor of software engineering at queen s university belfast united kingdom computer science united kingdom vehid.geruslu@gmail.com dr vahid garousi works in two professional roles as an it specialist and an it professor. since 1998 he has provided consulting and training to international it companies in software engineering testing and qa and he is also a professor of software engineering at queen s university in belfast united kingdom. at the prof.dr."
     },
     {
       "id": "scientist-xaqani-qayibli-az",
@@ -6757,11 +6887,11 @@
       "pageId": "scientists-profiles",
       "anchor": "aynur-quliyeva",
       "title": "Aynur Guliyeva",
-      "summary": "Associate professor at the National Engineering Academy of Tarbes (ENIT/UTTOP) under the University of Toulouse, France; civil servant of France · Chemistry · France",
+      "summary": "Associate professor at the National Engineering Academy of Tarbes (ENIT/UTTOP) under the University of Toulouse, France; French civil servant · Chemistry · France",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "aynur guliyeva associate professor at the national engineering academy of tarbes enit uttop under the university of toulouse france civil servant of france chemistry france aynur_guliyeva@yahoo.com in 2019 she obtained a phd degree in materials chemistry from the university of orleans france. her research areas include structure-property relations of polymer materials nanostructuring preparation of functional materials and application of these fields in modern technologies. she collaborated with numerous inte phd"
+      "norm": "aynur guliyeva associate professor at the national engineering academy of tarbes enit uttop under the university of toulouse france french civil servant chemistry france aynur_guliyeva@yahoo.com in 2019 she obtained a phd degree in materials chemistry from the university of orleans france. her research areas include structure-property relations of polymer materials nanostructuring preparation of functional materials and application of these fields in modern technologies. she collaborated with numerous inte phd"
     },
     {
       "id": "scientist-gunel-seferova-az",
@@ -6783,11 +6913,11 @@
       "pageId": "scientists-profiles",
       "anchor": "gunel-seferova",
       "title": "Gunel Safarova",
-      "summary": "Doctor of philosophy in economic sciences of Paris-Saclay University (Université Paris-Saclay), head of scientific association ALIM founded in France and organizer of scientific conferences within the association's projects · Economics · Fr",
+      "summary": "Doctor of philosophy in economic sciences from Paris-Saclay University (Université Paris-Saclay), head of the scientific association ALIM founded in France and organizer of scientific conferences within the association's projects · Economic",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "gunel safarova doctor of philosophy in economic sciences of paris-saclay university université paris-saclay head of scientific association alim founded in france and organizer of scientific conferences within the association s projects economics france gunelsafarova@hotmail.com for 7 years she worked as the head of scientific research and educational projects between the french university of versailles université de versailles saint-quentin-en-yvelines and the us georgetown university georgetown university . currently she works as a manager-consultant in onepoint international consulti phd"
+      "norm": "gunel safarova doctor of philosophy in economic sciences from paris-saclay university université paris-saclay head of the scientific association alim founded in france and organizer of scientific conferences within the association s projects economics france gunelsafarova@hotmail.com for 7 years she led scientific research and educational projects between the french university of versailles université de versailles saint-quentin-en-yvelines and georgetown university in the us. currently she works as a manager-consultant at the international consulting company onepoint. she lectures on projec phd"
     },
     {
       "id": "scientist-reyhan-hesenova-az",
@@ -6813,7 +6943,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "reyhan hasanova research consultant at oracle france an international company biology france reyhan.hasanova@gmail.com reyhan hasanova who completed her first education as a medical biologist later received two master s studies in molecular biology and genetics in france. after that she earned her doctorate in medical sciences on the topic of biomarkers research in colon cancer . she currently works as a research consultant on onco phd"
+      "norm": "reyhan hasanova research consultant at oracle france an international company biology france reyhan.hasanova@gmail.com reyhan hasanova who initially trained as a medical biologist later earned two master s degrees in molecular biology and genetics in france. after that she earned her doctorate in medical sciences on the topic of biomarker research in colon cancer. she currently works as a research consultant on oncology and rare d phd"
     },
     {
       "id": "scientist-aygul-isayeva-az",
@@ -6839,7 +6969,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "aygul isayeva socar-energy georgia business communications and public relations specialist economics georgia isayevaaygul2003@yahoo.com she is the author of 2 books and 8 scientific articles in the field of economics. she gave scientific reports at 12 international scientific conferences. her articles have been published in local and international scientific journals. she was a member of the board of directors of the international black sea university phd"
+      "norm": "aygul isayeva socar-energy georgia business communications and public relations specialist economics georgia isayevaaygul2003@yahoo.com she is the author of 2 books and 8 scientific articles in the field of economics. she gave research presentations at 12 international scientific conferences. her articles have been published in local and international scientific journals. she was a member of the board of directors of the international black sea univers phd"
     },
     {
       "id": "scientist-lev-v-eppelbaum-az",
@@ -6861,7 +6991,7 @@
       "pageId": "scientists-profiles",
       "anchor": "lev-v-eppelbaum",
       "title": "Lev Eppelbaum",
-      "summary": "Tel Aviv University professor, · Geophysics · Israel",
+      "summary": "Tel Aviv University professor · Geophysics · Israel",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
@@ -6887,11 +7017,11 @@
       "pageId": "scientists-profiles",
       "anchor": "mark-applebaum",
       "title": "Mark Applebaum",
-      "summary": "Professor of Mathematics Education and Head of the Integrative STEM Education Master's Program in the Kaye College of Academic Education · Mathematics · Israel",
+      "summary": "Professor of Mathematics Education and Head of the Integrative STEM Education Master's Program at the Kaye College of Academic Education · Mathematics · Israel",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "mark applebaum professor of mathematics education and head of the integrative stem education master s program in the kaye college of academic education mathematics israel applebaum.mark@gmail.com professor mark applebaum is the author of 16 books and more than 90 articles published in scientific journals and conference proceedings in english hebrew russian spanish arabic ukrainian and polish. his research interests include popularizing mathematics teaching mathematics for gifted children developing creat prof.dr."
+      "norm": "mark applebaum professor of mathematics education and head of the integrative stem education master s program at the kaye college of academic education mathematics israel applebaum.mark@gmail.com professor mark applebaum is the author of 16 books and more than 90 articles published in scientific journals and conference proceedings in english hebrew russian spanish arabic ukrainian and polish. his research interests include popularizing mathematics teaching mathematics to gifted children developing creati prof.dr."
     },
     {
       "id": "scientist-saadat-karimi-az",
@@ -6917,7 +7047,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "saadat karimi member of the waas executive board press secretary mathematics sweden saadat953@hotmail.com boras university associate professor university lecturer course leader she worked in these positions until 2021 at the universities of gothenburg stockholm and umea. she is a scientific worker-researcher of the joint sonoma scientific center of these universities in 1999 she defended her dissertation at the instit prof.dr."
+      "norm": "saadat karimi member of the waas executive board press secretary mathematics sweden saadat953@hotmail.com boras university associate professor university lecturer course leader she worked in these positions until 2021 at the universities of gothenburg stockholm and umea. she is a researcher at the joint sonoma scientific center of these universities. in 1999 she defended her dissertation at the institute of mathematic prof.dr."
     },
     {
       "id": "scientist-zerife-osmanli-az",
@@ -6965,11 +7095,11 @@
       "pageId": "scientists-profiles",
       "anchor": "ilham-axundov",
       "title": "Ilham Akhundov",
-      "summary": "University of Waterloo (University of Waterloo), director of mathematics, business and accounting programs · Mathematics · Canada",
+      "summary": "University of Waterloo, director of mathematics, business and accounting programs · Mathematics · Canada",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "ilham akhundov university of waterloo university of waterloo director of mathematics business and accounting programs mathematics canada iakhundo@uwaterloo.ca he is the author of 24 scientific articles and 3 textbooks in the field of probability theory and mathematical statistics. he acted as a reviewer referee for three scientific journals and one book. in addition to various scientific seminars at st. petersburg university the institute of mathematics and mechanics of t phd"
+      "norm": "ilham akhundov university of waterloo director of mathematics business and accounting programs mathematics canada iakhundo@uwaterloo.ca he is the author of 24 scientific articles and 3 textbooks in the field of probability theory and mathematical statistics. he acted as a reviewer referee for three scientific journals and one book. in addition to speaking at various scientific seminars at st. petersburg university the institute of mathematics and me phd"
     },
     {
       "id": "scientist-reza-moridi-az",
@@ -7021,7 +7151,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "sabina isgenderova faculty member and instructor in applied environmental technologies university of calgary environmental management program bay river college calgary alberta canada biology canada sabina@ualberta.net the research results were presented in 18 scientific articles published in well-known scientific journals for example journal of biological chemistry jbc biochemistry and a number of conference materials. she has received several individual awards for her research including a max planck society doctoral fellowsh phd"
+      "norm": "sabina isgenderova faculty member and instructor in applied environmental technologies university of calgary environmental management program bay river college calgary alberta canada biology canada sabina@ualberta.net the research results were presented in 18 scientific articles published in well-known scientific journals for example journal of biological chemistry jbc biochemistry and a number of conference proceedings. she has received several individual awards for her research including a max planck society doctoral fellow phd"
     },
     {
       "id": "scientist-yulduz-rahimov-az",
@@ -7073,7 +7203,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "rovshan ibrahimov hankook university professor of regional studies international law south korea rovshanibrahimov@gmail.com rovshan ibrahimov worked as a professor in the field of international relations and energy policy at various universities in azerbaijan turkey germany poland kazakhstan and south korea and currently works as a professor at hankuk university of foreign languages hufs and khazar university. he was awarded for hi prof.dr."
+      "norm": "rovshan ibrahimov hankook university professor of regional studies international law south korea rovshanibrahimov@gmail.com rovshan ibrahimov worked as a professor in the field of international relations and energy policy at various universities in azerbaijan turkey germany poland kazakhstan and south korea and currently works as a professor at hankuk university of foreign languages hufs and khazar university. he was honored for his prof.dr."
     },
     {
       "id": "scientist-natiq-agakisiyev-az",
@@ -7099,7 +7229,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "natig atakisiyev institute of mathematics of the national autonomous university of mexico doctor of physical and mathematical sciences emeritus national researcher of mexico member of the mexican academy of sciences physics mexico natig_atakishiyev@hotmail.com author and co-author of 131 scientific articles published in the world s leading journals in the field of mathematical physics and 62 scientific reports at international conferences held in 15 countries of europe north and south america. these scientific works have been cited in 2825 publications of scientists engaged phd"
+      "norm": "natig atakisiyev institute of mathematics of the national autonomous university of mexico doctor of physical and mathematical sciences emeritus national researcher of mexico member of the mexican academy of sciences physics mexico natig_atakishiyev@hotmail.com he is the author or co-author of 131 scientific articles published in the world s leading journals in the field of mathematical physics and 62 scientific reports at international conferences held in 15 countries of europe north and south america. these scientific works have been cited in 2 825 publications by scientis phd"
     },
     {
       "id": "scientist-seymur-nasirov-az",
@@ -7125,7 +7255,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "seymur nasirov co-chair of the waas executive board arabic language and literature egypt seymur.nasirov@gmail.com a teacher of azerbaijani language and literature at the faculty of literature of cairo university a scientific leader at the department of oriental languages and arabic president of the egypt-azerbaijan peoples friendship academy adviser on foreign relations of the general secretariat of the world fatwa organizat phd"
+      "norm": "seymur nasirov co-chair of the waas executive board arabic language and literature egypt seymur.nasirov@gmail.com a teacher of azerbaijani language and literature at the faculty of literature of cairo university a scientific leader at the department of oriental languages and arabic president of the egypt-azerbaijan peoples friendship academy adviser on foreign relations of the general secretariat of the world fatwa organizatio phd"
     },
     {
       "id": "scientist-seide-xelilova-az",
@@ -7147,11 +7277,11 @@
       "pageId": "scientists-profiles",
       "anchor": "seide-xelilova",
       "title": "Saida Khalilova",
-      "summary": "Founder and director of the Royal Conservatory in Muscat (Oman). · Musician · Oman",
+      "summary": "Founder and director of the Royal Conservatory in Muscat (Oman) · Music · Oman",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "saida khalilova founder and director of the royal conservatory in muscat oman . musician oman dr.saidakhalilova@gmail.com she is the author of seven journal articles two methodical works and one educational book. she held five seminars at oman royal opera house and one seminar at sultan qaboos university. she is the developer of more than 20 programs as well as the author and artistic director of about 20 different projects competition phd"
+      "norm": "saida khalilova founder and director of the royal conservatory in muscat oman music oman dr.saidakhalilova@gmail.com she is the author of seven journal articles two methodological works and one educational book. she held five seminars at oman royal opera house and one seminar at sultan qaboos university. she is the developer of more than 20 programs as well as the author and artistic director of about 20 different projects competi phd"
     },
     {
       "id": "scientist-sehriyar-muxtarov-az",
@@ -7173,11 +7303,11 @@
       "pageId": "scientists-profiles",
       "anchor": "sehriyar-muxtarov",
       "title": "Shehriyar Mukhtarov",
-      "summary": "Head of doctoral program at Vistula University, professor of the Department of Economics and Finance, and also professor of the Department of Economics at Korea University. · Economics · Poland",
+      "summary": "Head of the doctoral program at Vistula University, professor of the Department of Economics and Finance, and also professor of the Department of Economics at Korea University · Economics · Poland",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "shehriyar mukhtarov head of doctoral program at vistula university professor of the department of economics and finance and also professor of the department of economics at korea university. economics poland s.mukhtarov@vistula.edu.pl he is the author of 2 textbooks 3 book chapters 1 research grant and more than 100 scientific articles in the field of economics. more than 70 of these articles have been published in prestigious journals indexed in web of science and scopus databases. in addition he gave reports at more than 30 international sc phd"
+      "norm": "shehriyar mukhtarov head of the doctoral program at vistula university professor of the department of economics and finance and also professor of the department of economics at korea university economics poland s.mukhtarov@vistula.edu.pl he is the author of 2 textbooks 3 book chapters 1 research grant and more than 100 scientific articles in the field of economics. more than 70 of these articles have been published in prestigious journals indexed in the web of science and scopus databases. in addition he gave presentations at more than 30 intern phd"
     },
     {
       "id": "scientist-akif-suleymanov-az",
@@ -7203,7 +7333,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "akif suleymanov member of the scientific advisory council under the constitutional court of the republic of kazakhstan professor of the department of international law and law of turan university doctor of law head of the project program of the fund for the development of parliamentarianism law kazakhstan a.suleimanov@turan-edu.kz professor akif suleymanov is a well-known lawyer and scientist in the field of constitutional law and public administration. he has the degrees of doctor of philosophy in law phd and doctor of legal sciences. his scientific researches are mainly devoted to theoretical and practical aspects of interaction between the phd"
+      "norm": "akif suleymanov member of the scientific advisory council under the constitutional court of the republic of kazakhstan professor of the department of international law and law of turan university doctor of law head of the project program of the fund for the development of parliamentarianism law kazakhstan a.suleimanov@turan-edu.kz professor akif suleymanov is a well-known lawyer and scientist in the field of constitutional law and public administration. he has the degrees of doctor of philosophy in law phd and doctor of legal sciences. his research is mainly devoted to theoretical and practical aspects of interaction between the president of k phd"
     },
     {
       "id": "scientist-arzu-qurbanova-az",
@@ -7225,7 +7355,7 @@
       "pageId": "scientists-profiles",
       "anchor": "arzu-qurbanova",
       "title": "Arzu Gurbanova",
-      "summary": "Candidate of Pedagogical Sciences, professor of the Department of Languages ​​and Literature of the Central Asia Innovation University · Philology · Kazakhstan",
+      "summary": "Candidate of Pedagogical Sciences, professor of the Department of Languages and Literature of the Central Asia Innovation University · Philology · Kazakhstan",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
@@ -7255,7 +7385,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "tofig aydarov head of the department of management and marketing south kazakhstan university named after m. auezov engineering kazakhstan tofik-750908@mail.ru he is the author of 5 monographs 7 articles published in rated scientific journals and 15 articles published in journals recommended by the ministry of science and higher education of the republic of kazakhstan. he is the author of more than 70 articles presented with speeches at international scientific and practical phd"
+      "norm": "tofig aydarov head of the department of management and marketing south kazakhstan university named after m. auezov engineering kazakhstan tofik-750908@mail.ru he is the author of 5 monographs 7 articles published in rated scientific journals and 15 articles published in journals recommended by the ministry of science and higher education of the republic of kazakhstan. he is the author of more than 70 papers presented at international scientific and practical conferences as phd"
     },
     {
       "id": "scientist-akif-alaferdov-az",
@@ -7281,7 +7411,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "akif alaferdov honored doctor of the kyrgyz republic doctor of philosophy in medicine chairman of the friendship and cooperation society kyrgyzstan-azerbaijan medicine kyrgyzstan akif_allahverdi@mail.ru akif alaferdov is a well-known traumatologist a descendant of azerbaijanis who were deported to kyrgyzstan in 1933. dr. akif made important contributions to the methodology of surgical treatment of femoral neck fractures. mcmurray received a patent for the invention of the detachable fixator used in surgery. akif al phd"
+      "norm": "akif alaferdov honored doctor of the kyrgyz republic doctor of philosophy in medicine chairman of the friendship and cooperation society kyrgyzstan-azerbaijan medicine kyrgyzstan akif_allahverdi@mail.ru akif alaferdov is a well-known traumatologist a descendant of azerbaijanis who were deported to kyrgyzstan in 1933. dr akif made important contributions to the methodology of surgical treatment of femoral neck fractures. mcmurray received a patent for the invention of the detachable fixator used in surgery. akif ala phd"
     },
     {
       "id": "scientist-agamali-memmedov-az",
@@ -7303,11 +7433,11 @@
       "pageId": "scientists-profiles",
       "anchor": "agamali-memmedov",
       "title": "Agamali Mammadov",
-      "summary": "Head of the Department of Communication and Sociology of Lomonosov Moscow State University, member of the Union of Russian Writers · Philosophy, Law · Russia",
+      "summary": "Head of the Department of Communication and Sociology of Lomonosov Moscow State University, member of the Union of Russian Writers · Philosophy, law · Russia",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "agamali mammadov head of the department of communication and sociology of lomonosov moscow state university member of the union of russian writers philosophy law russia akmnauka@yandex.ru professor mammadov is the author of 42 books 128 scientific articles and more than 250 social and journalistic articles in the field of sociology. he participated as a speaker in more than 60 international and local scientific conferences authored or co-authored 54 monographs and textbooks. under his scientific leade prof.dr."
+      "norm": "agamali mammadov head of the department of communication and sociology of lomonosov moscow state university member of the union of russian writers philosophy law russia akmnauka@yandex.ru professor mammadov is the author of 42 books 128 scientific articles and more than 250 social and journalistic articles in the field of sociology. he participated as a speaker in more than 60 international and local scientific conferences and authored or co-authored 54 monographs and textbooks. under his research supe prof.dr."
     },
     {
       "id": "scientist-eldar-ehedov-az",
@@ -7333,7 +7463,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "eldar ahadov writer and poet member of the russian writers union honorary member of the azerbaijani writers union head of the coordination council of the world writers organization philology russia dolma60@yandex.ru he is a graduate of st. petersburg mining university. he worked in such prestigious companies as tnk-bp and rosneft. he is the author of about 100 books published in azerbaijani english spanish italian chinese russian and serbian languages. he is an honorary member of the azerbaijan writers union 2021 a member phd"
+      "norm": "eldar ahadov writer and poet member of the russian writers union honorary member of the azerbaijani writers union head of the coordination council of the world writers organization philology russia dolma60@yandex.ru he is a graduate of st. petersburg mining university. he worked for such prestigious companies as tnk-bp and rosneft. he is the author of about 100 books published in azerbaijani english spanish italian chinese russian and serbian languages. he is an honorary member of the azerbaijan writers union 2021 a membe phd"
     },
     {
       "id": "scientist-eleddin-allahverdiyev-az",
@@ -7355,11 +7485,11 @@
       "pageId": "scientists-profiles",
       "anchor": "eleddin-allahverdiyev",
       "title": "Aladdin Allahverdiyev",
-      "summary": "Former USSR Ministry of Electronic Industry, Scientific Research Institute \"Fonon\" - head of department, Moscow State Academy of Business Administration - professor, head of department, dean, vice-rector, first vice-rector, \"MIET\" National ",
+      "summary": "Former USSR Ministry of Electronic Industry, Scientific Research Institute \"Fonon\" — head of department, Moscow State Academy of Business Administration — professor, head of department, dean, vice-rector, first vice-rector, \"MIET\" National ",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "aladdin allahverdiyev former ussr ministry of electronic industry scientific research institute fonon - head of department moscow state academy of business administration - professor head of department dean vice-rector first vice-rector miet national research university - professor head of the quality of education process deputy vice-rector mathematics russia aallahverdiyev@mail.ru he is a graduate of the faculty of mechanics and mathematics of the moscow state university named after m. v. lomonosov and his postgraduate studies. he is a well-known soviet russian and azerbaijani scientist in the field of development of mathematical models and methods for the study of wave and oscillation processe prof.dr."
+      "norm": "aladdin allahverdiyev former ussr ministry of electronic industry scientific research institute fonon head of department moscow state academy of business administration professor head of department dean vice-rector first vice-rector miet national research university professor head of the quality of education process deputy vice-rector mathematics russia aallahverdiyev@mail.ru he completed his undergraduate and postgraduate studies at the faculty of mechanics and mathematics of the moscow state university named after m. v. lomonosov. he is a well-known soviet russian and azerbaijani scientist who develops mathematical models and methods for studying wave and oscillation processes in the cre prof.dr."
     },
     {
       "id": "scientist-eliheyder-rehimov-az",
@@ -7381,11 +7511,11 @@
       "pageId": "scientists-profiles",
       "anchor": "eliheyder-rehimov",
       "title": "Aliheydar Rahimov",
-      "summary": "Professor of the Department of Anesthesiology and Reanimatology of the First Moscow State Medical University named after I.M. Sechenov, doctor of medical sciences, professor, senior transfusionist doctor · Medicine · Russia",
+      "summary": "Professor of the Department of Anesthesiology and Reanimatology of the First Moscow State Medical University named after I. M. Sechenov, doctor of medical sciences, professor, senior transfusionist doctor · Medicine · Russia",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "aliheydar rahimov professor of the department of anesthesiology and reanimatology of the first moscow state medical university named after i.m. sechenov doctor of medical sciences professor senior transfusionist doctor medicine russia ra50@mail.ru he graduated from azerbaijan state medical institute in 1976. in 1980 he received the doctor of philosophy degree in medicine in 1988 he received the scientific degree of doctor of medical sciences and since 1993 he has been a professor. he is the author of more than 390 scientific works in the field of transfusiolo prof.dr."
+      "norm": "aliheydar rahimov professor of the department of anesthesiology and reanimatology of the first moscow state medical university named after i. m. sechenov doctor of medical sciences professor senior transfusionist doctor medicine russia ra50@mail.ru he graduated from azerbaijan state medical institute in 1976. in 1980 he received the doctor of philosophy degree in medicine in 1988 he received the scientific degree of doctor of medical sciences and since 1993 he has been a professor. he is the author of more than 390 scientific works in the field of transfusiolo prof.dr."
     },
     {
       "id": "scientist-emil-ahmadov-az",
@@ -7411,7 +7541,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "emil ahmadov head of the department of theoretical physics named after l. d. landau moscow physico-technical institute physics russia akhmedov.et@mipt.ru he is the author of 6 scientific books and a textbook in the field of theoretical physics and mathematics. about 80 scientific articles have been published in prestigious international journals. he has delivered nearly 100 reports at prestigious international conferences held in europe america india korea and japan. phd"
+      "norm": "emil ahmadov head of the department of theoretical physics named after l. d. landau moscow physico-technical institute physics russia akhmedov.et@mipt.ru he is the author of 6 scientific books and a textbook in the field of theoretical physics and mathematics. about 80 scientific articles have been published in prestigious international journals. he has given nearly 100 presentations at prestigious international conferences held in europe america india korea and japa phd"
     },
     {
       "id": "scientist-ismayil-eliyev-az",
@@ -7433,11 +7563,11 @@
       "pageId": "scientists-profiles",
       "anchor": "ismayil-eliyev",
       "title": "Ismayil Aliyev",
-      "summary": "Head of department at St. Petersburg State University of Economics (2020-2023) Professor at St. Petersburg State University of Economics \"Economics and Management of Enterprises and Industrial Complexes\" · Economics · Russia",
+      "summary": "Head of department at St. Petersburg State University of Economics (2020–2023); Professor at St. Petersburg State University of Economics \"Economics and Management of Enterprises and Industrial Complexes\" · Economics · Russia",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "ismayil aliyev head of department at st. petersburg state university of economics 2020-2023 professor at st. petersburg state university of economics economics and management of enterprises and industrial complexes economics russia aliev.05@mail.ru more than 150 scientific works of professor ismayil aliyev have been published. these works include monographs textbooks teaching aids as well as articles published in local and international scientific journals. among his main publications the textbook economics of labor 5th edition the textbook management o prof.dr."
+      "norm": "ismayil aliyev head of department at st. petersburg state university of economics 2020 2023 professor at st. petersburg state university of economics economics and management of enterprises and industrial complexes economics russia aliev.05@mail.ru more than 150 scientific works of professor ismayil aliyev have been published. these works include monographs textbooks teaching aids as well as articles published in local and international scientific journals. his main publications include the textbook economics of labor 5th edition the textbook management prof.dr."
     },
     {
       "id": "scientist-kamran-rustemov-az",
@@ -7459,11 +7589,11 @@
       "pageId": "scientists-profiles",
       "anchor": "kamran-rustemov",
       "title": "Kamran Rustamov",
-      "summary": "Honored Scientist of the Republic of Azerbaijan, foreign member of the Russian Academy of Architecture and Construction Sciences (RAACS), member of the Azerbaijan and Russia Journalists Unions · Engineering · Russia",
+      "summary": "Honored Scientist of the Republic of Azerbaijan, foreign member of the Russian Academy of Architecture and Construction Sciences (RAACS), member of the journalists’ unions of Azerbaijan and Russia · Engineering · Russia",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "kamran rustamov honored scientist of the republic of azerbaijan foreign member of the russian academy of architecture and construction sciences raacs member of the azerbaijan and russia journalists unions engineering russia k-rust@rambler.ru he is the author of more than 300 scientific articles and textbooks in various fields of science and technology including development and operation of oil and gas fields drilling hydraulics non-newtonian mechanics and pipeline systems. doctors of sciences candidates engineers and specialists trained by k. e. rust prof.dr."
+      "norm": "kamran rustamov honored scientist of the republic of azerbaijan foreign member of the russian academy of architecture and construction sciences raacs member of the journalists unions of azerbaijan and russia engineering russia k-rust@rambler.ru he is the author of more than 300 scientific articles and textbooks in various fields of science and technology including development and operation of oil and gas fields drilling hydraulics non-newtonian mechanics and pipeline systems. doctors of sciences candidates engineers and specialists trained by k. e. rust prof.dr."
     },
     {
       "id": "scientist-nigar-masimova-az",
@@ -7489,7 +7619,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "nigar masumova candidate of economic sciences associate professor head of the department of advertising and public relations deputy dean of the international journalism faculty of the moscow state institute of international relations of the ministry of foreign affairs of the russian federation economics russia masumova@mail.ru she is an expert on turkish economy. she is the author of the monograph features of modernization of the turkish economy at the turn of the 20th-21st centuries and the co-author of the textbook turkey s economy . in addition she is the co-author of the monographs industrial policy and world economy and internati phd"
+      "norm": "nigar masumova candidate of economic sciences associate professor head of the department of advertising and public relations deputy dean of the international journalism faculty of the moscow state institute of international relations of the ministry of foreign affairs of the russian federation economics russia masumova@mail.ru she is an expert on the turkish economy. she is the author of the monograph features of modernization of the turkish economy at the turn of the 20th 21st centuries and the co-author of the textbook turkey s economy. in addition she is the co-author of the monographs industrial policy and world economy and inter phd"
     },
     {
       "id": "scientist-nizami-memmedov-az",
@@ -7515,7 +7645,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "nizami mammadov professor of the russian presidential academy ranepa honored educationist of russia full member of the russian academy of natural sciences russian academy of ecology and the international academy of communicology official expert of unesco engineering russia nizami-mamedov@mail.ru he is the author of more than 400 publications including monographs and textbooks printed in azerbaijani english spanish and russian languages. the textbook ecology prepared by him for grades 10-11 has been published since 1996 and is widely distributed in the cis countries. under his scientific guidance 40 candi prof.dr."
+      "norm": "nizami mammadov professor of the russian presidential academy ranepa honored educationist of russia full member of the russian academy of natural sciences russian academy of ecology and the international academy of communicology official expert of unesco engineering russia nizami-mamedov@mail.ru he is the author of more than 400 publications including monographs and textbooks printed in azerbaijani english spanish and russian languages. the textbook ecology prepared by him for grades 10 11 has been published since 1996 and is widely distributed in the cis countries. under his scientific guidance 40 candi prof.dr."
     },
     {
       "id": "scientist-sevinc-esgerova-az",
@@ -7537,11 +7667,11 @@
       "pageId": "scientists-profiles",
       "anchor": "sevinc-esgerova",
       "title": "Sevinj Asgerova",
-      "summary": "Doctor of medical sciences, academician of the Russian Academy of Natural Sciences (TEA), Honored scientist and educator, professor and senior researcher of the Russian National Research Medical University named after N.I. Pirogov · Medicin",
+      "summary": "Doctor of medical sciences, academician of the Russian Academy of Natural Sciences (TEA), Honored scientist and educator, professor and senior researcher of the Russian National Research Medical University named after N. I. Pirogov · Medici",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "sevinj asgerova doctor of medical sciences academician of the russian academy of natural sciences tea honored scientist and educator professor and senior researcher of the russian national research medical university named after n.i. pirogov medicine russia s_askerova@yahoo.com she is a full member of the european society of plastic and reconstructive ophthalmological surgeons esoprs an honorary member and coordinator of the society of ophthalmologists of turkic-speaking countries. at the same time she is a member of the expert council of the american society of ophthalmologists the inte phd"
+      "norm": "sevinj asgerova doctor of medical sciences academician of the russian academy of natural sciences tea honored scientist and educator professor and senior researcher of the russian national research medical university named after n. i. pirogov medicine russia s_askerova@yahoo.com she is a full member of the european society of plastic and reconstructive ophthalmological surgeons esoprs and an honorary member and coordinator of the society of ophthalmologists of turkic-speaking countries. at the same time she is a member of the expert council of the american society of ophthalmologists the i phd"
     },
     {
       "id": "scientist-suleyman-allahverdiyev-az",
@@ -7567,7 +7697,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "suleyman allahverdiyev doctor of biological sciences corresponding member of the russian academy of sciences rea rea s k.a. head of the controlled photobiosynthesis laboratory of the timiryazev institute of plant physiology moscow senior researcher of the institute of fundamental problems of biology of rea pushchino professor of m.v. lomonosov moscow state university and moscow institute of physics and technology and head of the photosynthesis and hydrogen energy laboratory of bahcesehir university in turkey physics russia suleyman.allakhverdiev@gmail.com he is the author of 12 scientific books in the field of biophysics biochemistry and molecular biology - 4 of them were published in russian and 8 in english. more than 450 articles have been published in international scientific journals and 48 book chapters have been published in scientific collections published in phd"
+      "norm": "suleyman allahverdiyev doctor of biological sciences corresponding member of the russian academy of sciences rea rea s k.a. head of the controlled photobiosynthesis laboratory of the timiryazev institute of plant physiology moscow senior researcher of the institute of fundamental problems of biology of rea pushchino professor of m. v. lomonosov moscow state university and moscow institute of physics and technology and head of the photosynthesis and hydrogen energy laboratory of bahcesehir university in turkey physics russia suleyman.allakhverdiev@gmail.com he is the author of 12 scientific books in biophysics biochemistry and molecular biology 4 of them were published in russian and 8 in english. more than 450 articles have been published in international scientific journals and 48 book chapters have been published in scholarly collections in russia and abroad. accord phd"
     },
     {
       "id": "scientist-vahid-qedimov-az",
@@ -7615,11 +7745,11 @@
       "pageId": "scientists-profiles",
       "anchor": "zahid-qocayev",
       "title": "Zahid Gojayev",
-      "summary": "Deputy Director for Innovation and Implementation of the Federal Scientific Agrotechnical Center VIM (FGBNU), professor of Moscow Polytechnic University and N.E. Bauman Moscow State Technical University, doctor of technical sciences, profes",
+      "summary": "Deputy Director for Innovation and Implementation of the Federal Scientific Agrotechnical Center VIM (FGBNU), professor of Moscow Polytechnic University and N. E. Bauman Moscow State Technical University, doctor of technical sciences, profe",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "zahid gojayev deputy director for innovation and implementation of the federal scientific agrotechnical center vim fgbnu professor of moscow polytechnic university and n.e. bauman moscow state technical university doctor of technical sciences professor corresponding member of the russian academy of sciences engineering russia fic51@mail.ru he has more than 150 scientific works monographs and inventions. he is the author of a number of textbooks in the fields of mechanical engineering applied mathematics and informatics. in recent years he has been leading scientific projects on the creation of intelligent machine technologies and the application of prof.dr."
+      "norm": "zahid gojayev deputy director for innovation and implementation of the federal scientific agrotechnical center vim fgbnu professor of moscow polytechnic university and n. e. bauman moscow state technical university doctor of technical sciences professor corresponding member of the russian academy of sciences engineering russia fic51@mail.ru he has more than 150 scientific works monographs and inventions. he is the author of a number of textbooks in the fields of mechanical engineering applied mathematics and informatics. in recent years he has been leading scientific projects on the creation of intelligent machine technologies and the application of prof.dr."
     },
     {
       "id": "scientist-azer-abdullayev-az",
@@ -7641,11 +7771,11 @@
       "pageId": "scientists-profiles",
       "anchor": "azer-abdullayev",
       "title": "Azer Abdullayev",
-      "summary": "Consultant surgeon, head of Orthopedic Department at King Fahad and Sabya hospitals in Saudi Arabia · Medicine · Saudi Arabia",
+      "summary": "Consultant surgeon, head of the Orthopedic Department at King Fahad and Sabya hospitals in Saudi Arabia · Medicine · Saudi Arabia",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "azer abdullayev consultant surgeon head of orthopedic department at king fahad and sabya hospitals in saudi arabia medicine saudi arabia aabdullayev@moh.sa.gov doctor of medical sciences traumatologist-orthopedic surgeon inventor professor azer jafar oglu abdullayev is a medical scientist with rich scientific and practical experience in the field of traumatology and orthopedics. he has worked as a teacher assistant and associate professor at azerbaijan medical university f phd"
+      "norm": "azer abdullayev consultant surgeon head of the orthopedic department at king fahad and sabya hospitals in saudi arabia medicine saudi arabia aabdullayev@moh.sa.gov professor azer jafar oglu abdullayev a doctor of medical sciences traumatologist-orthopedic surgeon and inventor is a medical scientist with extensive scientific and practical experience in the field of traumatology and orthopedics. he has worked as a teacher assistant and associate professor at azerbaijan medical phd"
     },
     {
       "id": "scientist-elvin-efendi-az",
@@ -7671,7 +7801,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "elvin efendi islamic development bank group head of corporate strategy and research department economics saudi arabia e.afandi@yahoo.com elvin efendi is an economist with rich international experience in the field of economy and development. currently he works as the head of strategy and research in the strategic department of the islamic private sector development corporation icd a part of the islamic development bank group. in this role he leads phd"
+      "norm": "elvin efendi islamic development bank group head of corporate strategy and research department economics saudi arabia e.afandi@yahoo.com elvin efendi is an economist with extensive international experience in economics and development. currently he works as the head of strategy and research in the strategic department of the islamic private sector development corporation icd a part of the islamic development bank group. in this role he leads the de phd"
     },
     {
       "id": "scientist-afina-memmedli-barmanbay-az",
@@ -7693,11 +7823,11 @@
       "pageId": "scientists-profiles",
       "anchor": "afina-memmedli-barmanbay",
       "title": "Afina Mammadli Barmanbay",
-      "summary": "Kars city, Qafqaz University, Faculty of Science and Literature · Philology · Türkiye",
+      "summary": "Kars, Qafqaz University, Faculty of Science and Literature · Philology · Türkiye",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "afina mammadli barmanbay kars city qafqaz university faculty of science and literature philology turkiye afina.barmanbay@gmail.com lecturer in the department of contemporary turkish dialects and literature her scientific work focuses on modern azerbaijani literature dialectology ashiq literature and azerbaijani folklore. she teaches azerbaijani literature the history of azerbaijani literary criticism and the history of the azerbaijani literary phd"
+      "norm": "afina mammadli barmanbay kars qafqaz university faculty of science and literature philology turkiye afina.barmanbay@gmail.com lecturer in the department of contemporary turkish dialects and literature her scientific work focuses on modern azerbaijani literature dialectology ashiq literature and azerbaijani folklore. she teaches azerbaijani literature the history of azerbaijani literary criticism and the history of the azerbaijani literary phd"
     },
     {
       "id": "scientist-cavid-qasimov-az",
@@ -7719,11 +7849,11 @@
       "pageId": "scientists-profiles",
       "anchor": "cavid-qasimov",
       "title": "Javid Gasimov",
-      "summary": "Van Yüzüncü Yıl University, Professor of the Faculty of History and International Relations · History, Oriental studies · Türkiye",
+      "summary": "Van Yüzüncü Yıl University, Professor of the Faculty of History and International Relations · History, oriental studies · Türkiye",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "javid gasimov van yuzuncu yil university professor of the faculty of history and international relations history oriental studies turkiye cavidahmedoglu@gmail.com for the first time in azerbaijan he conducted research on the management system of the ottoman state. he conducted extensive research on karabakh in ottoman sources and conducted research in turkish archives for a long time in this field. he is a member of ataturk research center and turkish historical institution. he prof.dr."
+      "norm": "javid gasimov van yuzuncu yil university professor of the faculty of history and international relations history oriental studies turkiye cavidahmedoglu@gmail.com for the first time in azerbaijan he conducted research on the management system of the ottoman state. he conducted extensive research on karabakh in ottoman sources and spent an extended period researching this topic in turkish archives. he is a member of the ataturk research center and the turkish historical institut prof.dr."
     },
     {
       "id": "scientist-ebulfez-suleymanov-az",
@@ -7749,7 +7879,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "ebulfez suleymanov head of the department of sociology at uskudar university expert of the international turkish academy vice-president of the turkish world sociologists union member of the board of the international philosophical research center ufad sociology turkiye ebulfez.suleymanli@uskudar.edu.tr he is the author of more than 150 scientific works including 5 monographs dedicated to issues of migration family youth and national identity in azerbaijan turkey usa russia england germany sweden italy kazakhstan and other foreign countries. 12 articles were published in web of science and scopus index phd"
+      "norm": "ebulfez suleymanov head of the department of sociology at uskudar university expert of the international turkish academy vice-president of the turkish world sociologists union member of the board of the international philosophical research center ufad sociology turkiye ebulfez.suleymanli@uskudar.edu.tr he is the author of more than 150 scientific works including 5 monographs dedicated to issues of migration family youth and national identity in azerbaijan turkey the usa russia england germany sweden italy kazakhstan and other foreign countries. 12 articles were published in journals indexed in web of sci phd"
     },
     {
       "id": "scientist-elcin-bedelov-az",
@@ -7797,7 +7927,7 @@
       "pageId": "scientists-profiles",
       "anchor": "emirulla-memmedov",
       "title": "Emirullah Mehmedov",
-      "summary": "Chairman of the Association of Azerbaijani Scientists (Turkey), · Nanotechnology · Türkiye",
+      "summary": "Chairman of the Association of Azerbaijani Scientists (Turkey) · Nanotechnology · Türkiye",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
@@ -7809,12 +7939,12 @@
       "type": "scientist",
       "pageId": "scientists-profiles",
       "anchor": "hacali-necefoglu",
-      "title": "Hacıəli Nəcəfoğlu",
+      "title": "Hacalı Nəcəfoğlu",
       "summary": "Qars şəhəri, Qafqaz Universitetinin Xarici əlaqələr ofisinin rəhbəri, Universitet İdarə Heyətinin üzvü, Qafqaz və Orta Asiya Araşdırma Mərkəzinin müdiri, Qeyri-üzvi kimya kafedrasının müdiri · Kimya · Türkiyə",
       "tag": "Alim",
       "icon": "👤",
       "boost": 6,
-      "norm": "hacieli necefoglu qars seheri qafqaz universitetinin xarici elaqeler ofisinin rehberi universitet idare heyetinin uzvu qafqaz ve orta asiya arasdirma merkezinin mudiri qeyri-uzvi kimya kafedrasinin mudiri kimya turkiye alinecef@hotmail.com professor hacali necefoglu azerbaycan dovlet universitetinde kimya uzre ali tehsil almis daha sonra azerbaycan milli elmler akademiyasinda anorganik kimya uzre doktorluq derecesini qazanmisdir. 1990-ci illerden etibaren turkiyenin muxtelif universitetlerinde xususile de qafqaz universitetinde dosent ve professor kimi prof.dr."
+      "norm": "hacali necefoglu qars seheri qafqaz universitetinin xarici elaqeler ofisinin rehberi universitet idare heyetinin uzvu qafqaz ve orta asiya arasdirma merkezinin mudiri qeyri-uzvi kimya kafedrasinin mudiri kimya turkiye alinecef@hotmail.com professor hacali necefoglu azerbaycan dovlet universitetinde kimya uzre ali tehsil almis daha sonra azerbaycan milli elmler akademiyasinda anorganik kimya uzre doktorluq derecesini qazanmisdir. 1990-ci illerden etibaren turkiyenin muxtelif universitetlerinde xususile de qafqaz universitetinde dosent ve professor kimi prof.dr."
     },
     {
       "id": "scientist-hacali-necefoglu-en",
@@ -7823,11 +7953,11 @@
       "pageId": "scientists-profiles",
       "anchor": "hacali-necefoglu",
       "title": "Hajali Najafoglu",
-      "summary": "Kars city, Head of the Foreign Relations Office of the Caucasus University, Member of the University Board, Head of the Caucasus and Central Asia Research Center, Head of the Department of Inorganic Chemistry · Chemistry · Türkiye",
+      "summary": "Kars, Head of the Foreign Relations Office of the Caucasus University, Member of the University Board, Head of the Caucasus and Central Asia Research Center, Head of the Department of Inorganic Chemistry · Chemistry · Türkiye",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "hajali najafoglu kars city head of the foreign relations office of the caucasus university member of the university board head of the caucasus and central asia research center head of the department of inorganic chemistry chemistry turkiye alinecef@hotmail.com professor hajali najafoglu received his higher education in chemistry at azerbaijan state university and then received his doctorate in inorganic chemistry at the azerbaijan national academy of sciences. since the 1990s he has worked academically as an associate professor and professor at various universities in turk prof.dr."
+      "norm": "hajali najafoglu kars head of the foreign relations office of the caucasus university member of the university board head of the caucasus and central asia research center head of the department of inorganic chemistry chemistry turkiye alinecef@hotmail.com professor hajali najafoglu received his higher education in chemistry at azerbaijan state university and then received his doctorate in inorganic chemistry at the azerbaijan national academy of sciences. since the 1990s he has held academic posts as an associate professor and professor at various universities in turk prof.dr."
     },
     {
       "id": "scientist-ilkin-qulusoy-az",
@@ -7905,7 +8035,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "makbule sabziyeva head of the department of russian language and literature of anadolu university philology turkiye makbulesabziyeva@anadolu.edu.tr professor maqbula sabziyeva is an expert in the field of russian language and literature and currently works as the head of the russian language and literature department at the faculty of literature of anadolu university. she received a bachelor s and master s degree at moscow state university and a doctoral degree a prof.dr."
+      "norm": "makbule sabziyeva head of the department of russian language and literature of anadolu university philology turkiye makbulesabziyeva@anadolu.edu.tr professor maqbula sabziyeva is an expert in the field of russian language and literature and currently works as the head of the russian language and literature department at the faculty of literature of anadolu university. she received a bachelor s degree and a master s degree at moscow state university and a doctoral prof.dr."
     },
     {
       "id": "scientist-mehdi-genceli-ismayilov-az",
@@ -7931,7 +8061,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "mehdi ismayilov genceli docent of marmara university turkish language and literature turkiye mehdi.genceli@marmara.edu.tr dr. who is the author of five books in the field of literature and history. mehdi ganjali also acted as a chapter author in five other books published in these fields. he is one of the co-authors of the azerbaijan newspaper project implemented at the initiative of ada university. within the framework of his scientifi prof.dr."
+      "norm": "mehdi ismayilov genceli docent of marmara university turkish language and literature turkiye mehdi.genceli@marmara.edu.tr dr mehdi ganjali is the author of five books in literature and history and also contributed chapters to five other books in these fields. he is one of the co-authors of the azerbaijan newspaper project implemented at the initiative of ada university. within the framework of his scientific activity eight articles wer prof.dr."
     },
     {
       "id": "scientist-mehmet-riza-heyet-az",
@@ -7953,11 +8083,11 @@
       "pageId": "scientists-profiles",
       "anchor": "mehmet-riza-heyet",
       "title": "Mehmet Riza Heyet",
-      "summary": "Teacher of Ankara University's Department of Contemporary Turkish Dialects and Literatures · Turkish language and literature · Türkiye",
+      "summary": "Teacher in Ankara University's Department of Contemporary Turkish Dialects and Literatures · Turkish language and literature · Türkiye",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "mehmet riza heyet teacher of ankara university s department of contemporary turkish dialects and literatures turkish language and literature turkiye mrheyet@gmail.com he translated a one-volume book on historical topics and supervised the compilation of two-volume scientific and two-volume literary books. he was the scientific editor of two scientific-research books and published 18 scientific articles. he acted as the chairman of the organizing committee of 11 scientific symposia phd"
+      "norm": "mehmet riza heyet teacher in ankara university s department of contemporary turkish dialects and literatures turkish language and literature turkiye mrheyet@gmail.com he translated a one-volume book on historical topics and supervised the compilation of two-volume scientific and two-volume literary books. he was the scientific editor of two research books and published 18 scientific articles. he acted as the chairman of the organizing committee of 11 scientific symposia and partici phd"
     },
     {
       "id": "scientist-oruc-allahverdiyev-az",
@@ -7983,7 +8113,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "oruc allahverdiyev bolu abant izzet baysal university faculty of medicine department of pharmacology educational coordinator pharmacology turkiye orucfarm@gmail.com oruj allahverdiyev graduated from istanbul university jarrahpasa faculty of medicine in the field of medical pharmacology. he is the co-author of 4 scientific books and 1 textbook more than 100 scientific works in the field of medicine and pharmacy. he participated in many scientific symposia as well as in turkey and phd"
+      "norm": "oruc allahverdiyev bolu abant izzet baysal university faculty of medicine department of pharmacology educational coordinator pharmacology turkiye orucfarm@gmail.com oruj allahverdiyev graduated from istanbul university jarrahpasa faculty of medicine in the field of medical pharmacology. he is the co-author of 4 scientific books 1 textbook and more than 100 scientific works in the field of medicine and pharmacy. he participated in many scientific symposia in turkey and other coun phd"
     },
     {
       "id": "scientist-qafar-caxmaqli-mehdiyev-az",
@@ -8009,7 +8139,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "gafar mehdiyev chakhmatchi erciyes university kayseri faculty of literature head of the department of armenian language and culture armenian studies turkiye qafar56@gmail.com after graduating from the journalism faculty of baku state university he worked as a journalist and editor in the azerbaijani press for many years. he worked in responsible positions in millat yeni azerbaijan respublika azerbaijani ordusu and other influential press organizations starting from communist prof.dr."
+      "norm": "gafar mehdiyev chakhmatchi erciyes university kayseri faculty of literature head of the department of armenian language and culture armenian studies turkiye qafar56@gmail.com after graduating from the journalism faculty of baku state university he worked as a journalist and editor in the azerbaijani press for many years. he held positions of responsibility in millat yeni azerbaijan respublika azerbaijani ordusu and other influential press organizations starting with the commun prof.dr."
     },
     {
       "id": "scientist-ramin-eliyev-az",
@@ -8035,7 +8165,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "ramin aliyev hasan kalyoncu university cafe director psychology turkiye aliyevus@gmail.com as one of the first professors in his field in turkey he was the author of 3 scientific books in the fields of educational psychology and positive psychology 35 scientific articles in international indexed journals and speaker at 40 international scientific conferences. also he supervised 6 phd doctorate and 19 m prof.dr."
+      "norm": "ramin aliyev hasan kalyoncu university cafe director psychology turkiye aliyevus@gmail.com as one of the first professors in his field in turkey he was the author of 3 scientific books in the fields of educational psychology and positive psychology and 35 scientific articles in indexed international journals. he also spoke at 40 international scientific conferences. also he supervised 6 phd students and 19 prof.dr."
     },
     {
       "id": "scientist-sahin-ehmedoglu-az",
@@ -8061,7 +8191,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "shahin ahmedoglu kilis 7 aralik university kilisli muallim rifat dean of the faculty of education history turkiye sehmetoglu@hotmail.com he is the first professor of azerbaijan in the field of theology and history of islamic sects. he is the author of 6 scientific books 10 scientific book chapters and many scientific articles on the history of islamic sects. he has also delivered reports at many international scientific conferences. he is the author of prof.dr."
+      "norm": "shahin ahmedoglu kilis 7 aralik university kilisli muallim rifat dean of the faculty of education history turkiye sehmetoglu@hotmail.com he is the first azerbaijani professor in the field of theology and history of islamic sects. he is the author of 6 scientific books 10 scientific book chapters and many scientific articles on the history of islamic sects. he has also given presentations at many international scientific conferences. he conceived the id prof.dr."
     },
     {
       "id": "scientist-saleh-sultansoy-az",
@@ -8083,11 +8213,11 @@
       "pageId": "scientists-profiles",
       "anchor": "saleh-sultansoy",
       "title": "Saleh Sultansoy",
-      "summary": "University of Economics and Technology of the Union of Chambers and Exchanges of Turkey (TOBB). · Physics · Türkiye",
+      "summary": "University of Economics and Technology of the Union of Chambers and Exchanges of Turkey (TOBB) · Physics · Türkiye",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "saleh sultansoy university of economics and technology of the union of chambers and exchanges of turkey tobb . physics turkiye ssultansoy@etu.edu.tr author of more than 1 500 scientific articles in the field of high energy physics and accelerator technologies speaker at more than 100 international scientific conferences supervised more than 20 phd students. professor saleh sultansoy currently works at tobb university of economics and technology located in ankara. prof.dr."
+      "norm": "saleh sultansoy university of economics and technology of the union of chambers and exchanges of turkey tobb physics turkiye ssultansoy@etu.edu.tr he has authored more than 1 500 scientific articles in high-energy physics and accelerator technologies spoken at more than 100 international scientific conferences and supervised more than 20 phd students. professor saleh sultansoy currently works at tobb university of economics and technology located in ankara. he prof.dr."
     },
     {
       "id": "scientist-teymur-rzayev-az",
@@ -8109,11 +8239,11 @@
       "pageId": "scientists-profiles",
       "anchor": "teymur-rzayev",
       "title": "Teymur Rzayev",
-      "summary": "Member of the WAAS Executive Board, Honored Artist of the Republic of Azerbaijan, Yeditepe University of the Republic of Turkey, Faculty of Fine Arts, teacher of plastic arts-painting department · Artist · Türkiye",
+      "summary": "Member of the WAAS Executive Board, Honored Artist of the Republic of Azerbaijan, Yeditepe University of the Republic of Turkey, Faculty of Fine Arts, teacher in the plastic arts-painting department · Art · Türkiye",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "teymur rzayev member of the waas executive board honored artist of the republic of azerbaijan yeditepe university of the republic of turkey faculty of fine arts teacher of plastic arts-painting department artist turkiye teymurrr@gmail.com honored artist of the republic of azerbaijan prof. dr. in 2008 teymur rzayev was the author and head of the desen anfisi black pencil drawing workshop project at the faculty of fine arts of yeditepe university of the republic of turkey. the workshop as the first and only example in this field in turkey has beco prof.dr."
+      "norm": "teymur rzayev member of the waas executive board honored artist of the republic of azerbaijan yeditepe university of the republic of turkey faculty of fine arts teacher in the plastic arts-painting department art turkiye teymurrr@gmail.com in 2008 prof dr teymur rzayev honored artist of the republic of azerbaijan was the creator and head of the desen anfisi black pencil drawing workshop project at the faculty of fine arts of yeditepe university of the republic of turkey. the workshop as the first and only example in this field in turkey has beco prof.dr."
     },
     {
       "id": "scientist-togrul-ismayil-az",
@@ -8139,7 +8269,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "togrul ismayil member of the waas executive board political history turkiye togrul65@hotmail.com kahramanmaras sutcu imam university head of the department of political science and international relations academic career and scientific activity prof. dr. togrul ismayil worked as a teacher and researcher in various universities 2003-2010 - worked as a teacher at the department of international relations of baku s prof.dr."
+      "norm": "togrul ismayil member of the waas executive board political history turkiye togrul65@hotmail.com kahramanmaras sutcu imam university head of the department of political science and international relations academic career and scientific activity prof dr togrul ismayil worked as a teacher and researcher in various universities 2003 2010 worked as a teacher at the department of international relations of baku sla prof.dr."
     },
     {
       "id": "scientist-varqa-kelenterov-az",
@@ -8165,7 +8295,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "varga kalantarov hacettepe university koc university mathematics turkiye vkalantarov@ku.edu.tr he is the author of 75 scientific articles 1 book and 2 textbooks published in various scientific journals in the field of mathematics received more than 2000 references according to google scholar . 17 candidate phd theses were defended under his scientific guidance. he is a member of the editorial board of 6 int phd"
+      "norm": "varga kalantarov hacettepe university koc university mathematics turkiye vkalantarov@ku.edu.tr he is the author of 75 scientific articles 1 book and 2 textbooks published in various scientific journals in the field of mathematics and has received more than 2 000 citations according to google scholar. 17 candidate phd theses were defended under his scientific guidance. he is a member of the editorial boards phd"
     },
     {
       "id": "scientist-vefa-qurban-az",
@@ -8191,7 +8321,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "vefa kurban ege university institute of turkish world studies economics turkiye vefa.kurban@ege.edu.tr head of the department of social economic and political relations she participated in scientific conferences and symposiums in turkey and other countries. she worked in scientific positions as a docent and professor. she has been awarded various prizes in turkey. she was the editor of 86 scientific publications. artic prof.dr."
+      "norm": "vefa kurban ege university institute of turkish world studies economics turkiye vefa.kurban@ege.edu.tr head of the department of social economic and political relations she participated in scientific conferences and symposiums in turkey and other countries. she held academic positions as a docent and professor. she has been awarded various prizes in turkey. she was the editor of 86 scientific publications. articles hav prof.dr."
     },
     {
       "id": "scientist-arif-quliyev-az",
@@ -8213,7 +8343,7 @@
       "pageId": "scientists-profiles",
       "anchor": "arif-quliyev",
       "title": "Arif Guliyev",
-      "summary": "Member of the Academic Council at the Kyiv University of Intellectual Property and Law of the National University \"Odessa Law Academy\", professor of the Department of Constitution, International Law and Public-Legal Sciences, Doctor of Law,",
+      "summary": "Member of the Academic Council at the Kyiv University of Intellectual Property and Law of the National University \"Odessa Law Academy,\" professor of the Department of Constitution, International Law and Public-Legal Sciences, Doctor of Law,",
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
@@ -8295,7 +8425,7 @@
       "tag": "Scientist",
       "icon": "👤",
       "boost": 6,
-      "norm": "khalil kalantar senior researcher for global optical solutions and kepler projects physics japan gosx2020@gmail.com he received doctorates from both nagoya and tohoku universities. as one of the leading experts in the field of developing and manufacturing electronic displays and sensors he is the author of 105 patents and 28 technical documents in various countries including japan usa canada europe south korea and taiwan. 35 a phd"
+      "norm": "khalil kalantar senior researcher for global optical solutions and kepler projects physics japan gosx2020@gmail.com he received doctorates from both nagoya and tohoku universities. as one of the leading experts in the field of developing and manufacturing electronic displays and sensors he is the author of 105 patents and 28 technical documents in various countries and regions including japan the usa canada europe south korea phd"
     }
   ]
 }

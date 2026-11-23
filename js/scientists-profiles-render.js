@@ -92,10 +92,17 @@
   }
 
   function azUpperName(name) {
-    return String(name || "")
-      .trim()
-      .toUpperCase()
-      .replace(/I/g, "İ");
+    // AZ: i→İ, ı→I. Do not map every Latin I to İ after toUpperCase
+    // (that turns Hacalı into the wrong HACALİ / “Hacali”).
+    var s = String(name || "").trim();
+    var out = "";
+    for (var i = 0; i < s.length; i++) {
+      var ch = s.charAt(i);
+      if (ch === "i") out += "İ";
+      else if (ch === "ı") out += "I";
+      else out += ch.toUpperCase();
+    }
+    return out;
   }
 
   function azUpperNameLatin(name) {

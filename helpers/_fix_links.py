@@ -18,7 +18,7 @@ CATALOG = {
     "İlham Axundov": "ilham_akhundov.html",
     "İsmayıl Əliyev": "ismayil_aliyev.html",
     "Kamran Rüstəmov": "kamran_rustemov.html",
-    "Hacıəli Nəcəfoğlu ": "hacali_necefoglu.html",
+    "Hacalı Nəcəfoğlu ": "hacali_necefoglu.html",
     "İlkin Gulusoy": "ilkin_qulusoy.html",
     "İsmixan Bayramov": "ismixan_bayramov.html",
     "Xəlil Kələntər": "xelil_kelenter.html",

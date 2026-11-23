@@ -132,24 +132,12 @@ def _forum_2026_drop(lang: str) -> str:
         desc = "Second Forum of Azerbaijani Scientists Living Abroad — December 2026, draft concept"
         items = [
             ("forum/2026/index.html", "forum-2026", "✨ Highlights", "Forum concept, dates, and venue — 9–10 December 2026, Baku"),
-            (
-                "forum/2026/register.html",
-                "forum-2026-register",
-                "📝 Register",
-                "Personal information, education and career, field of study, and more",
-            ),
         ]
     else:
         label = "🎤 II Forum"
         desc = "Xaricdə yaşayan alimlərin II Forumu — dekabr 2026, konsepsiya layihəsi"
         items = [
             ("forum/2026/index.html", "forum-2026", "✨ Ümumi Mənzərə", "II Forumun konsepsiyası, tarixi və məkanı — 9–10 dekabr 2026, Bakı"),
-            (
-                "forum/2026/register.html",
-                "forum-2026-register",
-                "📝 Qeydiyyat",
-                "Şəxsi məlumatlar, təhsil və karyera, ixtisas sahəsi və s.",
-            ),
         ]
     return (
         '<div class="nav-dropdown nav-dropdown--nested" data-nav-dropdown data-nav-group="forum-2026-year">'
