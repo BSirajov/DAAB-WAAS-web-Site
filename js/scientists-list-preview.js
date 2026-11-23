@@ -34,7 +34,7 @@
   var labels = LABELS[lang];
 
   var assetRoot = document.documentElement.getAttribute("data-daab-asset-root") || "../../";
-  var profilesUrl = assetRoot + "i18n/scientists-profiles.json?v=20261124-0158";
+  var profilesUrl = assetRoot + "i18n/scientists-profiles.json?v=20261124-0210";
 
   var byEmail = Object.create(null);
   var bySay = Object.create(null);
@@ -167,12 +167,12 @@
 
   function photoUrlForProfile(profile) {
     if (!profile || !profile.photo) return "";
-    return assetRoot + "images/scientists-photos/" + profile.photo + "?v=20261124-0158";
+    return assetRoot + "images/scientists-photos/" + profile.photo + "?v=20261124-0210";
   }
 
   function qrUrlForProfile(profile) {
     if (!profile || !profile.slug) return "";
-    return assetRoot + "images/qr/" + lang + "/" + profile.slug + ".webp?v=20261124-0158";
+    return assetRoot + "images/qr/" + lang + "/" + profile.slug + ".webp?v=20261124-0210";
   }
 
   function profileHrefForProfile(profile) {
@@ -234,7 +234,7 @@
       : "";
     var photoHtml = profile.photo
       ? '<img src="' +
-        esc(assetRoot + "images/scientists-photos/" + profile.photo + "?v=20261124-0158") +
+        esc(assetRoot + "images/scientists-photos/" + profile.photo + "?v=20261124-0210") +
         '" alt="' +
         esc(profile.name) +
         '" width="88" height="88" decoding="async" loading="lazy"/>'
