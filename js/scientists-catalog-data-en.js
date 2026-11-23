@@ -212,7 +212,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 22,
     "yasadigi_olke": "United Kingdom",
-    "ad_soyad": "Vehid Goruslu",
+    "ad_soyad": "Vahid Garousi",
     "email": " vehid.geruslu@gmail.com",
     "ixtilas": "Computer science",
     "elmi_derece": "Prof.Dr.",

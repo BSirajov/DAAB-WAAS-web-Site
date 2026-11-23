@@ -1,5 +1,5 @@
 {
-  "version": 24,
+  "version": 25,
   "primary": [
     {
       "type": "page",
@@ -143,12 +143,6 @@
               "id": "forum-2026",
               "labelKey": "forum2026Highlights",
               "descKey": "forum2026HighlightsDesc"
-            },
-            {
-              "id": "forum-2026-register",
-              "labelKey": "forum2026Register",
-              "descKey": "forum2026RegisterDesc",
-              "disabled": true
             }
           ]
         },
@@ -340,7 +334,6 @@
       "pages": [
         "forum-2024",
         "forum-2026",
-        "forum-2026-register",
         "complex-topics",
         "complex-topics-approach",
         "complex-topics-informatics",
@@ -350,8 +343,7 @@
     "forum-2026-year": {
       "landingId": "forum-2026",
       "pages": [
-        "forum-2026",
-        "forum-2026-register"
+        "forum-2026"
       ]
     },
     "forum": {
