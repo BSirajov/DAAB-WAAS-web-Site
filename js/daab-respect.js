@@ -465,8 +465,8 @@
 
   var script = document.currentScript;
   var lexiconUrl = script && script.src
-    ? new URL("../i18n/feedback-language.json?v=20261124-0210", script.src).href
-    : "i18n/feedback-language.json?v=20261124-0210";
+    ? new URL("../i18n/feedback-language.json?v=20261126-1153", script.src).href
+    : "i18n/feedback-language.json?v=20261126-1153";
   root.daabRespectReady = fetch(lexiconUrl)
     .then(function (res) {
       if (!res.ok) throw new Error("lexicon");
