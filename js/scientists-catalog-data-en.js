@@ -642,7 +642,7 @@ window.SCIENTISTS_CATALOG_DATA = [
   {
     "say": 65,
     "yasadigi_olke": "Türkiye",
-    "ad_soyad": "Hajali Najafoglu",
+    "ad_soyad": "Hacali Necefoglu",
     "email": "alinecef@hotmail.com",
     "ixtilas": "Chemistry",
     "elmi_derece": "Prof.Dr.",
