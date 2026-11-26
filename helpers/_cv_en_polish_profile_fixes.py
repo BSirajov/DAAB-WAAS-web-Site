@@ -119,7 +119,7 @@ PROFILE_FIXES: dict[str, str] = {
         "He was scientific advisor to ASELSAN in 1992–2006."
     ),
     "Najafoglu_Hajali_CV_EN.docx": (
-        "Hajali Najafoglu is professor of inorganic chemistry at Kafkas University. He earned a doctorate in "
+        "Hacali Necefoglu is professor of inorganic chemistry at Kafkas University. He earned a doctorate in "
         "inorganic chemistry from the Azerbaijan Academy of Sciences and a master’s degree in organic chemistry "
         "and a first degree in chemistry from Azerbaijan State University. He was an assistant professor at Kafkas "
         "University in 1992–1995, an associate professor in 1995–1998, and a professor from 1998. Publications "

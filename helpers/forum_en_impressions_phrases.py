@@ -13,7 +13,7 @@ IMPRESSIONS_PHRASES: dict[str, str] = {
     ),
     "Afina Məmmədli Barmanbay": "Afina Mammadli Barmanbay",
     "Arif Quliyev": "Arif Guliyev",
-    "Hacalı Nəcəfoğlu": "Hajali Najafoglu",
+    "Hacalı Nəcəfoğlu": "Hacali Necefoglu",
     "İlkin Qulusoy": "Ilkin Qulusoy",
     "Lev Eppelbaum": "Lev Eppelbaum",
     "Nizami Məmmədov": "Nizami Mammadov",

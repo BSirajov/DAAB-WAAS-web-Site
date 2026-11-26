@@ -379,7 +379,7 @@ def build_specific_profiles() -> dict[str, str]:
             "of Bilkent University, where he has worked since 2011."
         ),
         "Najafoglu_Hajali_CV_EN.docx": (
-            "Hajali Najafoglu is professor of inorganic chemistry at Kafkas University. He earned a doctorate in "
+            "Hacali Necefoglu is professor of inorganic chemistry at Kafkas University. He earned a doctorate in "
             "inorganic chemistry from the Azerbaijan Academy of Sciences and a master’s degree in organic chemistry."
         ),
         "Rahimov_Aliheydar_CV_EN.docx": (
