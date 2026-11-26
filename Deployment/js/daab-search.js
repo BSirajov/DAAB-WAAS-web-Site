@@ -603,8 +603,8 @@
     if (I18N && I18N.loadSearchIndex) {
       return I18N.loadSearchIndex();
     }
-    INDEX_URL = INDEX_URL || assetRoot() + "i18n/search-index.json?v=20261124-0210";
-    return fetch(INDEX_URL + "?v=20261124-0210").then(function (res) {
+    INDEX_URL = INDEX_URL || assetRoot() + "i18n/search-index.json?v=20261126-1153";
+    return fetch(INDEX_URL + "?v=20261126-1153").then(function (res) {
       if (!res.ok) throw new Error("search index");
       return res.json();
     });
